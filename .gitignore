@@ -216,3 +216,50 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Shared local environments and runtime dependencies (any project directory)
+.runtime-venv/
+.deps/
+logs/
+.env.*
+!.env.example
+!.env.*.example
+!.env.template
+
+# Temporary files and operating-system metadata
+*.tmp
+*.temp
+*.partial
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Generated model weights, exports, training runs, and evaluation output
+*.onnx
+*.pt
+*.pth
+*.ckpt
+*.tflite
+/model/artifacts/
+/model/runs/
+/model/reports/
+/model/data/raw/
+/model/data/processed/
+
+# Rebuilt by acquisition, preparation, and evaluation scripts.
+# Keep *.source.json: their pinned revisions and hashes are inputs to rebuilds.
+/model/data/manifests/slurp.all.jsonl
+/model/data/manifests/slurp.source_records.jsonl
+/model/data/manifests/libri.all.jsonl
+/model/data/manifests/vcm.jsonl
+/model/data/manifests/asr.jsonl
+/model/data/manifests/labels.json
+/model/data/manifests/voice_test_suite.jsonl
+/model/data/manifests/philippine_english_diagnostic.jsonl
+/model/data/annotations/review_queue.jsonl
+
+# Source, configuration, tests, notebooks, .python-version, and dependency
+# lockfiles intentionally remain available to Git.
