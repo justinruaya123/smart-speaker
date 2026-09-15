@@ -1,0 +1,31 @@
+{
+  "source": "slurp",
+  "retrieved_utc": "2026-09-15T09:32:53Z",
+  "revision": "8eb16545762be97ace75334109d73824217311f1",
+  "files": [
+    {
+      "path": "data\\raw\\slurp\\train.jsonl",
+      "url": "https://raw.githubusercontent.com/pswietojanski/slurp/8eb16545762be97ace75334109d73824217311f1/dataset/slurp/train.jsonl",
+      "sha256": "4a05a3de6c7f028aff298c4a90196e6a3fecd1938d96fb1c125d6fd10d5e301e",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "data\\raw\\slurp\\devel.jsonl",
+      "url": "https://raw.githubusercontent.com/pswietojanski/slurp/8eb16545762be97ace75334109d73824217311f1/dataset/slurp/devel.jsonl",
+      "sha256": "00d346b183ecc2d160853cd3dc20e8ccd207d9e1809cf6e2c05182076bd0ecc9",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "data\\raw\\slurp\\test.jsonl",
+      "url": "https://raw.githubusercontent.com/pswietojanski/slurp/8eb16545762be97ace75334109d73824217311f1/dataset/slurp/test.jsonl",
+      "sha256": "fe3449af69b42fda7163345482556066c35a80f7e552a6d67e212a0e2f0783cc",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "data\\raw\\slurp\\metadata.json",
+      "url": "https://raw.githubusercontent.com/pswietojanski/slurp/8eb16545762be97ace75334109d73824217311f1/dataset/slurp/metadata.json",
+      "sha256": "be7943d576c0b79b34ae32796e5c9474bd3d4d123bb35e38f73497f4a429fb83",
+      "license": "CC-BY-4.0"
+    }
+  ]
+}

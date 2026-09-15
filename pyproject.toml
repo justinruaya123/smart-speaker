@@ -1,0 +1,30 @@
+[project]
+name = "smart-speaker"
+version = "0.1.0"
+description = "Local smart-speaker voice service and reproducible model workspace"
+requires-python = ">=3.12,<3.13"
+dependencies = ["tinyvcm"]
+
+[project.optional-dependencies]
+train = ["tinyvcm[train]", "torch==2.13.0", "onnx==1.22.0"]
+report = ["tinyvcm[report]"]
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["model"]
+
+[tool.uv.sources]
+tinyvcm = { workspace = true }
+torch = [
+    { index = "pytorch-cu130", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "model/tests"]

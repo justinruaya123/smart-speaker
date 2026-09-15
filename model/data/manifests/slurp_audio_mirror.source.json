@@ -1,0 +1,89 @@
+{
+  "source": "slurp_audio_mirror",
+  "retrieved_utc": "2026-09-15T09:42:02Z",
+  "revision": "91b0abfee2e735282967ee00d631d6d5f0fb7ff9",
+  "authority": "Upstream SLURP metadata",
+  "files": [
+    {
+      "url": "https://huggingface.co/datasets/qmeeus/slurp/resolve/91b0abfee2e735282967ee00d631d6d5f0fb7ff9/data/devel-00000-of-00001-acfd964400397e39.parquet",
+      "path": "data/raw/slurp/mirror/devel-00000-of-00001-acfd964400397e39.parquet",
+      "sha256": "5f194efcf61396135aadf8ec0777a3273a27703ef3abd935c30dc588189580f0",
+      "lfs_sha256": "5f194efcf61396135aadf8ec0777a3273a27703ef3abd935c30dc588189580f0",
+      "bytes": 470698889,
+      "recordings": 8690,
+      "license": "CC-BY-NC-4.0"
+    },
+    {
+      "url": "https://huggingface.co/datasets/qmeeus/slurp/resolve/91b0abfee2e735282967ee00d631d6d5f0fb7ff9/data/test-00000-of-00002-252f381b70e1d25d.parquet",
+      "path": "data/raw/slurp/mirror/test-00000-of-00002-252f381b70e1d25d.parquet",
+      "sha256": "ef8f212b86cd14d1d2fcb0df7335771fdffc02bb036f046c794996d44bf9abe0",
+      "lfs_sha256": "ef8f212b86cd14d1d2fcb0df7335771fdffc02bb036f046c794996d44bf9abe0",
+      "bytes": 354854830,
+      "recordings": 6539,
+      "license": "CC-BY-NC-4.0"
+    },
+    {
+      "url": "https://huggingface.co/datasets/qmeeus/slurp/resolve/91b0abfee2e735282967ee00d631d6d5f0fb7ff9/data/test-00001-of-00002-98f9c20d1ab96932.parquet",
+      "path": "data/raw/slurp/mirror/test-00001-of-00002-98f9c20d1ab96932.parquet",
+      "sha256": "bc89c4528a6a971f594b7e0bd983ac698ccb74dd75fe0e5680380a133cb44a49",
+      "lfs_sha256": "bc89c4528a6a971f594b7e0bd983ac698ccb74dd75fe0e5680380a133cb44a49",
+      "bytes": 345657063,
+      "recordings": 6539,
+      "license": "CC-BY-NC-4.0"
+    },
+    {
+      "url": "https://huggingface.co/datasets/qmeeus/slurp/resolve/91b0abfee2e735282967ee00d631d6d5f0fb7ff9/data/train-00000-of-00006-6b7ed9dd4c07ecfa.parquet",
+      "path": "data/raw/slurp/mirror/train-00000-of-00006-6b7ed9dd4c07ecfa.parquet",
+      "sha256": "1499a123518964303474b8646675e8d63b81eabe630f8f3cf1e2bcdf402a1b0e",
+      "lfs_sha256": "1499a123518964303474b8646675e8d63b81eabe630f8f3cf1e2bcdf402a1b0e",
+      "bytes": 465146267,
+      "recordings": 8438,
+      "license": "CC-BY-NC-4.0"
+    },
+    {
+      "url": "https://huggingface.co/datasets/qmeeus/slurp/resolve/91b0abfee2e735282967ee00d631d6d5f0fb7ff9/data/train-00001-of-00006-7be080cd723e45c5.parquet",
+      "path": "data/raw/slurp/mirror/train-00001-of-00006-7be080cd723e45c5.parquet",
+      "sha256": "58e1d7a6c687e135820434f0b5e312aeab17f691eb41daf6ab4fc430dfe8d97a",
+      "lfs_sha256": "58e1d7a6c687e135820434f0b5e312aeab17f691eb41daf6ab4fc430dfe8d97a",
+      "bytes": 462524810,
+      "recordings": 8438,
+      "license": "CC-BY-NC-4.0"
+    },
+    {
+      "url": "https://huggingface.co/datasets/qmeeus/slurp/resolve/91b0abfee2e735282967ee00d631d6d5f0fb7ff9/data/train-00002-of-00006-b0ab6761444c7eee.parquet",
+      "path": "data/raw/slurp/mirror/train-00002-of-00006-b0ab6761444c7eee.parquet",
+      "sha256": "b60ef7770dedb53f61d9d1fc83c29d8079e43d8f5262f18b6fa2783fc3269225",
+      "lfs_sha256": "b60ef7770dedb53f61d9d1fc83c29d8079e43d8f5262f18b6fa2783fc3269225",
+      "bytes": 455796648,
+      "recordings": 8438,
+      "license": "CC-BY-NC-4.0"
+    },
+    {
+      "url": "https://huggingface.co/datasets/qmeeus/slurp/resolve/91b0abfee2e735282967ee00d631d6d5f0fb7ff9/data/train-00003-of-00006-6335e57f85dbf1d6.parquet",
+      "path": "data/raw/slurp/mirror/train-00003-of-00006-6335e57f85dbf1d6.parquet",
+      "sha256": "fa5920f1e96a7127e8a0519cfc02e21ad0965f0f9a7d656a6063add60599ce6b",
+      "lfs_sha256": "fa5920f1e96a7127e8a0519cfc02e21ad0965f0f9a7d656a6063add60599ce6b",
+      "bytes": 460224406,
+      "recordings": 8438,
+      "license": "CC-BY-NC-4.0"
+    },
+    {
+      "url": "https://huggingface.co/datasets/qmeeus/slurp/resolve/91b0abfee2e735282967ee00d631d6d5f0fb7ff9/data/train-00004-of-00006-7fe67171d325df43.parquet",
+      "path": "data/raw/slurp/mirror/train-00004-of-00006-7fe67171d325df43.parquet",
+      "sha256": "70edf7f9509cf2353d70e9b09db2f2b30fb5e6da5ecf75a09c48aa0e42153291",
+      "lfs_sha256": "70edf7f9509cf2353d70e9b09db2f2b30fb5e6da5ecf75a09c48aa0e42153291",
+      "bytes": 446069282,
+      "recordings": 8438,
+      "license": "CC-BY-NC-4.0"
+    },
+    {
+      "url": "https://huggingface.co/datasets/qmeeus/slurp/resolve/91b0abfee2e735282967ee00d631d6d5f0fb7ff9/data/train-00005-of-00006-5d297ba98a634b5e.parquet",
+      "path": "data/raw/slurp/mirror/train-00005-of-00006-5d297ba98a634b5e.parquet",
+      "sha256": "488298d1a6c76444ac7f6b01bdd2df05276d281d9742145e77c4289a0dd55524",
+      "lfs_sha256": "488298d1a6c76444ac7f6b01bdd2df05276d281d9742145e77c4289a0dd55524",
+      "bytes": 453025456,
+      "recordings": 8438,
+      "license": "CC-BY-NC-4.0"
+    }
+  ]
+}
