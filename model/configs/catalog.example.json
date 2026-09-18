@@ -1,8 +1,0 @@
-{
-  "description": "Example aliases only. Replace IDs and names for your application; this CLI emits JSON and never controls devices.",
-  "entities": [
-    {"id": "example.main_lights", "name": "lights", "kind": "light", "aliases": ["the lights", "light", "lighting"]},
-    {"id": "example.bedroom", "name": "bedroom lights", "kind": "light", "aliases": ["bedroom light"]},
-    {"id": "example.wemo", "name": "wemo plug", "kind": "switch", "aliases": ["wemo", "plug"]}
-  ]
-}

@@ -1,104 +1,97 @@
-# Smart speaker
+# Smart speaker: train, validate and publish
 
-AI 231 project using local voice command models. The [voice service](src/voice/README.md)
-accepts a numeric microphone index, waits for speech with VAD, and prints the
-detected intent and required parameters.
+The current package uses the **v12 shared encoder with finite parameter heads** (seed 17, epoch 2) and the independent local **CTC ASR** (epoch 19). It includes the microphone input, energy VAD, audio frontend, VCM, finite heads, ASR, routing and JSON output. Everything runs locally.
 
-## One repository setup
+This checkpoint remains experimental. Its accuracy gates are unmet. The notebook and `validation.json` separate software checks from recognition quality; physical Pi4 and live-microphone performance still need measurement.
 
-Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then run
-these commands from the repository root:
+## Workstation workflow
 
-```powershell
-uv sync --locked
-uv run --locked python scripts/check_setup.py
-uv run --locked python -m src.voice --list-mics
-uv run --locked python -m src.voice --mic 2
+```bash
+python train.py
+python publish.py
 ```
 
-Generated models are ignored by Git. On a fresh clone, restore an existing
-bundle into `model/artifacts/tinyvcm/` or follow **Reproduce the models** below
-before running the setup check or voice service.
+`train.py` sets up one `.venv`, checks the selected components, validates the current held-out dataset and updates **Architecture.ipynb** and `validation.json`. It preserves the current weights by default. To explicitly continue training the enabled models before validation:
 
-Replace `2` with your microphone's index. Stop with **Ctrl+C**.
-
-The root `pyproject.toml` manages the app and local `model/` package as one
-[uv workspace](https://docs.astral.sh/uv/concepts/projects/workspaces/).
-It uses one root `.venv`, one `uv.lock`, and Python **3.12.13** from
-`.python-version`. `--locked` rejects dependency changes that have not been
-resolved into the lockfile. There is no separate model-environment setup step.
-On Debian/Ubuntu, microphone capture also needs the system packages
-`libportaudio2` and `libsndfile1`.
-
-## Models and Git
-
-The root `.gitignore` controls exclusions for the whole repository. Model
-rules use `/model/` paths; shared cache, environment, and temporary-file rules
-apply throughout the project.
-
-The generated runtime bundle under `model/artifacts/tinyvcm/` is ignored by
-Git: six FP32/INT8 ONNX files plus `bundle.json`, about **9.2 MB** total. Keep
-the bundle locally or regenerate it using the recipe below.
-`scripts/check_setup.py` checks each model's byte size and SHA-256 against
-`bundle.json`, then loads both VCM variants.
-
-| Included in the repository | Generated locally and ignored |
-|---|---|
-| Application and model source, tests, configuration | `.venv`, caches, local dependencies |
-| `pyproject.toml`, `uv.lock`, `.python-version` | Raw datasets and processed features |
-| Training and export recipe | Runtime ONNX files, bundle metadata, and training checkpoints |
-| Pinned source ledgers and experiment notebook | Generated reports, figures, manifests, review queue, archives, and logs |
-
-The model package's `requirements-runtime.lock` remains a snapshot for the
-standalone Pi distribution. The repository setup uses the root `uv.lock`.
-
-## Reproduce the models
-
-The recorded acquisition, preparation, training, model selection, export, and
-calibration steps have a root entry point. Inspect the steps without changing
-data or models:
-
-```powershell
-uv run --locked python scripts/reproduce.py --dry-run
+```bash
+python train.py --fit
 ```
 
-To execute the recipe in a fresh checkout:
+Training uses the current local data and checkpoints. It requires PyTorch and, by default, CUDA; set `training.device = "cpu"` if needed. The VCM family encoder remains frozen while finite heads train. ASR trains separately. Train/development partitions select weights and provisional thresholds; calibration/test partitions are never used for fitting. Debug runs with example limits must use `update_artifacts = false`.
 
-```powershell
-uv run --locked --extra train python scripts/reproduce.py
-uv run --locked python scripts/check_setup.py
+For quick checks or an already installed environment:
+
+```bash
+python train.py --tests-only
+python train.py --no-setup
 ```
 
-Training requires an NVIDIA GPU with a compatible CUDA driver. The `train`
-extra pins PyTorch 2.13.0 with CUDA 13.0 on Windows/Linux, matching the recorded
-training version, and adds training dependencies to the same root `.venv`.
-It downloads the public datasets and runs the full training schedule; it is
-not part of ordinary setup. Existing training runs cause an early error to
-avoid overwriting them.
+## Select what to test
 
-Acquisition uses the revisions, URLs, and checksums in
-`model/data/manifests/*.source.json`, including the pinned SLURP upstream and
-audio-mirror revisions. Updating a dataset is an explicit change to those
-ledgers. Seeds and training options are recorded in the recipe. Reusing a saved
-bundle preserves the exact weights; retraining can produce different
-weights and metrics across GPU, driver, and platform combinations.
+Edit **pipeline.toml**. For example, test only VAD and VCM:
 
-The [model documentation](model/README.md) and
-[executed experiment report](model/TinyVCM_report.ipynb) describe the datasets,
-model accuracy, and existing evaluation results. Running setup does not rerun
-that experiment.
-
-## Tests
-
-```powershell
-uv run --locked python -m unittest discover -s tests -v
+```toml
+[tests]
+vad = true
+vcm = true
+asr = false
+pipeline = "vad and vcm and asr"
 ```
 
-For the model's PyTorch tests as well:
+Use `true`, `false`, or quoted expressions with switch names, `and`, `or`, `not` and parentheses. Names refer to switches in the same section. Unknown names, cycles and arbitrary Python expressions are rejected. Set `pipeline = true` to exercise all stages regardless of the separate component-test switches.
 
-```powershell
-uv run --locked --extra train python -m pytest
+- `[workflow]` selects setup, training, checks, dataset validation and report updates.
+- `[tests]` selects checks and dataset metrics. Disabling a test does not remove a shipped component.
+- `[runtime]` selects the stages used for microphone/audio-file inference. ASR without VCM is transcription-only diagnostics.
+- `[validation]` selects the held-out split, example limit and inference threads. `max_examples = 0` uses the full split. `require_quality_gate = true` fails the command when the declared quality gates are unmet.
+- `[training]` selects model continuation and its settings. `--fit` enables training for that run.
+- `[publish]` controls the output and bundled ARM64 wheels. Defaults support CPython 3.11–3.13 on 64-bit Pi OS.
+- `[audio]` controls the energy VAD, preroll and endpoint silence within the checkpoint's eight-second limit.
+
+The same editable config travels with the published pipeline. `--config PATH` selects a different config with either workstation script or the Pi application.
+
+## Publish and run on Raspberry Pi 4
+
+`python publish.py` checks the executable using packaged human-speech samples, then writes **dist/smart-speaker-rpi4.zip**. On the workstation, the first publication downloads hash-pinned ARM64 Python wheels; later builds reuse the verified cache. The ZIP contains both model graphs, all runtime code in one executable `pipeline.pyz`, config, requirements, small attributed test recordings, build evidence and the wheels. It excludes training datasets, PyTorch and research checkpoints.
+
+Copy the ZIP to a Pi4 running **64-bit Raspberry Pi OS** with **Python 3.11, 3.12 or 3.13**, then:
+
+```bash
+unzip smart-speaker-rpi4.zip
+cd smart-speaker
+python3 pipeline.pyz setup --system-packages
+python3 pipeline.pyz --test
+python3 pipeline.pyz --list-mics
+python3 pipeline.pyz --mic 2
 ```
 
-Notebook dependencies are available in the same workspace with
-`uv sync --locked --extra train --extra report`.
+Replace `2` with the numeric microphone index. Stop with **Ctrl+C**. The launcher uses its local `.venv` automatically.
+
+`--system-packages` installs `python3-venv`, `libportaudio2` and `libsndfile1` through apt and needs internet/sudo. If these OS prerequisites are already present, run `python3 pipeline.pyz setup`; Python dependencies install **offline from the bundled wheels**. Recognition itself needs no network. For a different supported desktop platform, `setup --online` fetches that platform's pinned wheels.
+
+```bash
+python3 pipeline.pyz --wav recording.wav
+python3 pipeline.pyz --mic 2 --channel 0 --capture-rate 48000
+```
+
+WAV mode runs the configured VAD by default. Set `runtime.vad = false` for already segmented recordings. Microphone mode requires VAD. The same endpointing code is used by microphone and replay, with channel selection, resampling, repeated utterances, timeout and overflow handling. `--test` never opens a microphone; it writes `launch-validation.json`. Its small packaged sample set is a launch smoke check, not the full held-out benchmark.
+
+**ASR is included**, but ordinary v12 command inference retains its disabled custom-media gate. `runtime.asr = true` makes ASR available; it does not bypass family or parameter acceptance. Only separately accepted CUSTOM media can reach ASR for title/artist extraction. Uncertain finite values request clarification, and ASR never changes the VCM-selected family. Parameter boundaries remain unverified, so eligible ASR uses explicitly labelled whole-utterance audio. The service emits JSON; it does not control real devices or call a cloud/LLM service. The catalog contains example entities.
+
+## Current files
+
+```text
+train.py                setup, optional training, selected checks, validation/report
+publish.py              complete Pi pipeline publisher
+pipeline.toml           workflow, test, runtime and training configuration
+Architecture.ipynb      single architecture, implementation and report notebook
+requirements.lock       pinned CPU dependencies and wheel hashes
+artifacts/              current VCM/ASR weights, graphs, metadata and provenance
+data/                   current manifests, references, source ledgers and audio
+validation.json         latest workstation validation result
+dist/                   generated transfer ZIP, checksum and build report
+.cache/                 disposable features, wheels, logs and training candidates
+.venv/                  single workstation environment
+```
+
+The two root Python scripts load implementation modules directly from the notebook. Old notebooks, test trees, obsolete model versions and superseded documentation are removed. The dataset retains only audio referenced by the current VCM/ASR manifests; source/license ledgers and hashes remain available. Audio and generated/cache files are ignored by Git, so keep the current `data/audio` directory with the workstation copy.

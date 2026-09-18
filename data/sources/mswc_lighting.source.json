@@ -1,0 +1,164 @@
+{
+  "dataset": "MLCommons Multilingual Spoken Words Corpus",
+  "revision": "0bc9df68e92fd6bb54176bf7eb29e2b9e97cb218",
+  "authority": "https://mlcommons.org/datasets/multilingual-spoken-words/",
+  "license": "CC-BY-4.0",
+  "words_requested": [
+    "blue",
+    "bright",
+    "brighten",
+    "brighter",
+    "brightness",
+    "color",
+    "colors",
+    "colour",
+    "colours",
+    "cool",
+    "cyan",
+    "dark",
+    "darker",
+    "decrease",
+    "dim",
+    "dimmer",
+    "dimming",
+    "green",
+    "increase",
+    "light",
+    "lights",
+    "lower",
+    "orange",
+    "pink",
+    "purple",
+    "raise",
+    "red",
+    "volume",
+    "warm",
+    "white",
+    "yellow"
+  ],
+  "files": [
+    {
+      "path": "data/splits/en/splits.tar.gz",
+      "sha256": "11c773dc47fece8993693798414f04475e19d596671e1742a3dd040e66d6cbce",
+      "bytes": 382747534
+    },
+    {
+      "path": "data/opus/en/train/audio/9.tar.gz",
+      "sha256": "880dd8fdd066f02cd93e9a96a71e774e69369ecf4fa7d99db596842954e7ddb2",
+      "bytes": 322756046,
+      "first_word": "begin"
+    },
+    {
+      "path": "data/opus/en/train/audio/10.tar.gz",
+      "sha256": "777496a36ab938cc447f7518bf1d442e941864dd040a1e01382c000ea19a4374",
+      "bytes": 296652504,
+      "first_word": "blue"
+    },
+    {
+      "path": "data/opus/en/train/audio/11.tar.gz",
+      "sha256": "55f5db595fd3cb93e17c6fc23f23ce842eabce5d97930dcecfa8c2f593788321",
+      "bytes": 298391579,
+      "first_word": "breakdown"
+    },
+    {
+      "path": "data/opus/en/train/audio/15.tar.gz",
+      "sha256": "d29bf918f8afebd387fa5434f94a13191e31270df09759ba6ee4d238db5ec615",
+      "bytes": 362544134,
+      "first_word": "clock"
+    },
+    {
+      "path": "data/opus/en/train/audio/16.tar.gz",
+      "sha256": "94db4301d1adf11967b2e4b0af364422d31493adc4cf076092e0de554ffa1308",
+      "bytes": 420528683,
+      "first_word": "complete"
+    },
+    {
+      "path": "data/opus/en/train/audio/18.tar.gz",
+      "sha256": "9e6c67400d7ba96fadff506bf07bb6d39d9fe647dd578ef6a2982b851954bfff",
+      "bytes": 350131504,
+      "first_word": "curtains"
+    },
+    {
+      "path": "data/opus/en/train/audio/19.tar.gz",
+      "sha256": "acffd91cba000d5bed40c99169f1c863e4d802dde8d7efb34aadf7c3a2eb9152",
+      "bytes": 350903922,
+      "first_word": "density"
+    },
+    {
+      "path": "data/opus/en/train/audio/30.tar.gz",
+      "sha256": "98297c06ab7a0cb11c8a6ea626710e8c335bd3680c7b1f87d0b6e209fc69c60f",
+      "bytes": 315969906,
+      "first_word": "good"
+    },
+    {
+      "path": "data/opus/en/train/audio/36.tar.gz",
+      "sha256": "8f4e7482525ac80d9a997e46519503b059fff96e78a7b2881f3cec9eb2f5379d",
+      "bytes": 399821180,
+      "first_word": "human"
+    },
+    {
+      "path": "data/opus/en/train/audio/41.tar.gz",
+      "sha256": "40a095eac7f1b912b01507284dddf340cd452769d7f6fd1d44ce940105a0b349",
+      "bytes": 306486277,
+      "first_word": "lieu"
+    },
+    {
+      "path": "data/opus/en/train/audio/42.tar.gz",
+      "sha256": "10cba2cc03ef6d372bd6a85963192b2294302e41ce3852004c8eeb9e632f58c8",
+      "bytes": 308506588,
+      "first_word": "located"
+    },
+    {
+      "path": "data/opus/en/train/audio/51.tar.gz",
+      "sha256": "d9e08573b23dc6862ff29b8c71c06b5ecc1d9f1eb970332207fe9e9ec42b8b0b",
+      "bytes": 307110107,
+      "first_word": "open"
+    },
+    {
+      "path": "data/opus/en/train/audio/53.tar.gz",
+      "sha256": "7f6c4323a88d42478a574391fb65acba82a6257e1757819ba581517ee65ed625",
+      "bytes": 353745170,
+      "first_word": "pasta"
+    },
+    {
+      "path": "data/opus/en/train/audio/56.tar.gz",
+      "sha256": "8bb7c5d0afd559b421616df99c4fca1dc8c4844166f7683bbd3cb66e86eed107",
+      "bytes": 360753193,
+      "first_word": "projects"
+    },
+    {
+      "path": "data/opus/en/train/audio/57.tar.gz",
+      "sha256": "2cb82c3f4b7ac51ce0c2469512464e5d7d6d656fd2a33355a0fbd3511a87a1ed",
+      "bytes": 366780057,
+      "first_word": "ranking"
+    },
+    {
+      "path": "data/opus/en/train/audio/78.tar.gz",
+      "sha256": "b1567295d576a84e0a709855fe82281aa7a28d4a253178b5f3e4756b0d32ac07",
+      "bytes": 328398500,
+      "first_word": "veins"
+    },
+    {
+      "path": "data/opus/en/train/audio/79.tar.gz",
+      "sha256": "47566c7ae1c2ed36487ac216b63ee0de1663fc16e18d68621d07d34718c0e3b9",
+      "bytes": 243342487,
+      "first_word": "wanted"
+    },
+    {
+      "path": "data/opus/en/train/audio/83.tar.gz",
+      "sha256": "fa2e423a9792b3e94f094cb199115d60aba37ad87623b57ad0b842dd682db6f4",
+      "bytes": 253111543,
+      "first_word": "when"
+    },
+    {
+      "path": "data/opus/en/train/audio/86.tar.gz",
+      "sha256": "d79eadd796f214b4bedf36c9c98cca461e66098d41ccada9d79444ad2416f2f7",
+      "bytes": 218508895,
+      "first_word": "years"
+    }
+  ],
+  "collection": "Human Common Voice recordings, automatically aligned word crops; not studio-isolated or manually verified word boundaries.",
+  "identity_policy": "Opaque source speaker IDs used only to separate partitions; no speaker reidentification.",
+  "source_partition": "official train only",
+  "validation": "Internal speaker-separated keyword dev/test, never command evaluation audio."
+}

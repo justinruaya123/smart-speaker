@@ -1,9 +1,0 @@
-bundle = "artifacts/tinyvcm"
-asr = "off"
-variant = "fp32"
-threads = 2
-channel = 0
-# Set a unique name from `python -m tinyvcm devices`, or leave OS default.
-# mic = "USB Audio"
-# host_api = "ALSA"
-# capture_rate = 48000

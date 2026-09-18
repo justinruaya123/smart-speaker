@@ -1,0 +1,20 @@
+{
+  "revision": "d1a41a6e3c09b45bbfdc64220dff7b3176679964",
+  "files": [
+    {
+      "url": "https://huggingface.co/datasets/MWilinski/snips_slu_v1.0/resolve/d1a41a6e3c09b45bbfdc64220dff7b3176679964/data/train-00000-of-00002-8a79c77a8d003471.parquet?download=true",
+      "path": "data/raw/smartlights/train-00000-of-00002-8a79c77a8d003471.parquet",
+      "sha256": "b9707008986cb6fcfd1ce8a49377b9ffe68451225cf3537ed13e56100815a70c",
+      "bytes": 288362399
+    },
+    {
+      "url": "https://huggingface.co/datasets/MWilinski/snips_slu_v1.0/resolve/d1a41a6e3c09b45bbfdc64220dff7b3176679964/data/train-00001-of-00002-30a6f2d916e23e78.parquet?download=true",
+      "path": "data/raw/smartlights/train-00001-of-00002-30a6f2d916e23e78.parquet",
+      "sha256": "a0b7c699367715c4208958689206dc353bf2a2fdfda666908e0b215ea905c7c1",
+      "bytes": 286310583
+    }
+  ],
+  "authority": "https://github.com/sonos/spoken-language-understanding-research-datasets",
+  "license": "Sonos Crowdsourced Data License Terms; academic/research only, no commercial use",
+  "license_note": "Use publisher terms. The mirror card's MIT tag does not override the source speech license."
+}

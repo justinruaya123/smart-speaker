@@ -1,0 +1,1036 @@
+{
+  "run_utc": "2026-09-17T10:47:14.455845+00:00",
+  "selected_checks": {
+    "vad": true,
+    "vcm": true,
+    "asr": true,
+    "pipeline": true
+  },
+  "training_performed": false,
+  "physical_raspberry_pi_tested": false,
+  "live_microphone_tested": false,
+  "tests": {
+    "config": {
+      "status": "passed",
+      "safe_boolean_expressions": true
+    },
+    "vad": {
+      "status": "passed",
+      "silence": true,
+      "repeated_utterances": 2,
+      "timeout": true,
+      "numeric_microphone": true,
+      "simulated_native_capture_rate": 48000,
+      "simulated_capture_endpoints": 2,
+      "overflow_rejected": true,
+      "live_microphone": false
+    },
+    "vcm": {
+      "status": "passed",
+      "labels": [
+        "UNKNOWN",
+        "POWER_ON",
+        "POWER_OFF",
+        "BRIGHTNESS",
+        "COLOR_SET",
+        "MEDIA_PLAY",
+        "MEDIA_RESUME",
+        "TIME_QUERY",
+        "DATE_QUERY",
+        "VOLUME"
+      ],
+      "silence": "rejected",
+      "asr_loaded": false,
+      "providers": [
+        "CPUExecutionProvider"
+      ]
+    },
+    "asr": {
+      "status": "passed",
+      "real_graph_executed": true,
+      "vcm_required": false,
+      "providers": [
+        "CPUExecutionProvider"
+      ]
+    },
+    "pipeline": {
+      "status": "passed",
+      "real_vad_vcm_replay": true,
+      "routing_fixtures": [
+        "frozen gate blocks ASR",
+        "permitted custom handoff executes real ASR and preserves intent",
+        "finite uncertainty never invokes ASR",
+        "UNKNOWN never invokes ASR"
+      ],
+      "production_thresholds_modified": false
+    }
+  },
+  "validation": {
+    "examples": 4314,
+    "elapsed_seconds": 101.33420820001629,
+    "quality_gate_passed": false,
+    "target_hardware_measured": false,
+    "vcm": {
+      "intent": {
+        "per_family": {
+          "UNKNOWN": {
+            "support": 1970,
+            "raw_correct": 1668,
+            "abstentions": 1947,
+            "correct_accepted": 0,
+            "false_accepts_on_reference": 23,
+            "raw_recall": 0.8467005076142132,
+            "correct_accepted_recall": 0.0,
+            "accepted_precision": null,
+            "raw_recall_wilson95": [
+              0.8301176674731187,
+              0.8619338617394355
+            ],
+            "correct_accepted_recall_wilson95": [
+              1.0842021724855044e-19,
+              0.001946184078527397
+            ],
+            "accepted_precision_wilson95": null
+          },
+          "POWER_ON": {
+            "support": 572,
+            "raw_correct": 543,
+            "abstentions": 33,
+            "accepted_predictions": 540,
+            "wrong_accepts": 7,
+            "correct_accepted": 533,
+            "false_accepts_on_reference": 6,
+            "raw_recall": 0.9493006993006993,
+            "correct_accepted_recall": 0.9318181818181818,
+            "accepted_precision": 0.987037037037037,
+            "raw_recall_wilson95": [
+              0.9281360295248283,
+              0.9644707672359613
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.908149780960764,
+              0.9497252338248977
+            ],
+            "accepted_precision_wilson95": [
+              0.9734867823067677,
+              0.993706857436361
+            ]
+          },
+          "POWER_OFF": {
+            "support": 629,
+            "raw_correct": 577,
+            "abstentions": 93,
+            "accepted_predictions": 547,
+            "wrong_accepts": 21,
+            "correct_accepted": 526,
+            "false_accepts_on_reference": 10,
+            "raw_recall": 0.9173290937996821,
+            "correct_accepted_recall": 0.8362480127186009,
+            "accepted_precision": 0.9616087751371115,
+            "raw_recall_wilson95": [
+              0.8931912535838638,
+              0.9364004121997631
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.8053036527380121,
+              0.863110203693367
+            ],
+            "accepted_precision_wilson95": [
+              0.9420244851879426,
+              0.974754729436104
+            ]
+          },
+          "BRIGHTNESS": {
+            "support": 150,
+            "raw_correct": 102,
+            "abstentions": 73,
+            "accepted_predictions": 87,
+            "wrong_accepts": 21,
+            "correct_accepted": 66,
+            "false_accepts_on_reference": 11,
+            "raw_recall": 0.68,
+            "correct_accepted_recall": 0.44,
+            "accepted_precision": 0.7586206896551724,
+            "raw_recall_wilson95": [
+              0.6016560026038712,
+              0.7493547094236214
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.3630449619604422,
+              0.519951467363727
+            ],
+            "accepted_precision_wilson95": [
+              0.6590101624669179,
+              0.8363583684240542
+            ]
+          },
+          "COLOR_SET": {
+            "support": 70,
+            "raw_correct": 41,
+            "abstentions": 65,
+            "correct_accepted": 0,
+            "false_accepts_on_reference": 5,
+            "raw_recall": 0.5857142857142857,
+            "correct_accepted_recall": 0.0,
+            "accepted_precision": null,
+            "raw_recall_wilson95": [
+              0.46881211784560456,
+              0.6936982143126353
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.0,
+              0.05202306241026692
+            ],
+            "accepted_precision_wilson95": null
+          },
+          "MEDIA_PLAY": {
+            "support": 485,
+            "raw_correct": 354,
+            "abstentions": 435,
+            "accepted_predictions": 54,
+            "wrong_accepts": 7,
+            "correct_accepted": 47,
+            "false_accepts_on_reference": 3,
+            "raw_recall": 0.7298969072164948,
+            "correct_accepted_recall": 0.09690721649484536,
+            "accepted_precision": 0.8703703703703703,
+            "raw_recall_wilson95": [
+              0.6886884615324647,
+              0.7674921589451364
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.07365965750491466,
+              0.12649001690431366
+            ],
+            "accepted_precision_wilson95": [
+              0.7557826977763024,
+              0.9357627925267374
+            ]
+          },
+          "MEDIA_RESUME": {
+            "support": 52,
+            "raw_correct": 13,
+            "abstentions": 46,
+            "correct_accepted": 0,
+            "false_accepts_on_reference": 6,
+            "raw_recall": 0.25,
+            "correct_accepted_recall": 0.0,
+            "accepted_precision": null,
+            "raw_recall_wilson95": [
+              0.15233153863595772,
+              0.3820645794259735
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.0,
+              0.06879223612386234
+            ],
+            "accepted_precision_wilson95": null
+          },
+          "TIME_QUERY": {
+            "support": 100,
+            "raw_correct": 68,
+            "abstentions": 69,
+            "accepted_predictions": 30,
+            "wrong_accepts": 0,
+            "correct_accepted": 30,
+            "false_accepts_on_reference": 1,
+            "raw_recall": 0.68,
+            "correct_accepted_recall": 0.3,
+            "accepted_precision": 1.0,
+            "raw_recall_wilson95": [
+              0.5833738138954762,
+              0.7633085267500092
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.2189488529493276,
+              0.3958485463334666
+            ],
+            "accepted_precision_wilson95": [
+              0.8864866068260312,
+              0.9999999999999999
+            ]
+          },
+          "DATE_QUERY": {
+            "support": 103,
+            "raw_correct": 89,
+            "abstentions": 58,
+            "accepted_predictions": 47,
+            "wrong_accepts": 2,
+            "correct_accepted": 45,
+            "false_accepts_on_reference": 0,
+            "raw_recall": 0.8640776699029126,
+            "correct_accepted_recall": 0.4368932038834951,
+            "accepted_precision": 0.9574468085106383,
+            "raw_recall_wilson95": [
+              0.7846989505636784,
+              0.9172757400465291
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.34508430443595695,
+              0.5332400825249405
+            ],
+            "accepted_precision_wilson95": [
+              0.8575147232210055,
+              0.9882517240332106
+            ]
+          },
+          "VOLUME": {
+            "accepted_predictions": 126,
+            "wrong_accepts": 8,
+            "support": 183,
+            "raw_correct": 137,
+            "abstentions": 64,
+            "correct_accepted": 118,
+            "false_accepts_on_reference": 1,
+            "raw_recall": 0.7486338797814208,
+            "correct_accepted_recall": 0.644808743169399,
+            "accepted_precision": 0.9365079365079365,
+            "raw_recall_wilson95": [
+              0.6811109495272237,
+              0.805932989084548
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.5731457591472202,
+              0.7105171941101853
+            ],
+            "accepted_precision_wilson95": [
+              0.8797075709803873,
+              0.9674794600272171
+            ]
+          }
+        },
+        "confusion": {
+          "UNKNOWN": {
+            "UNKNOWN": 1668,
+            "POWER_ON": 11,
+            "POWER_OFF": 40,
+            "BRIGHTNESS": 39,
+            "COLOR_SET": 17,
+            "MEDIA_PLAY": 93,
+            "MEDIA_RESUME": 6,
+            "TIME_QUERY": 26,
+            "DATE_QUERY": 32,
+            "VOLUME": 38
+          },
+          "POWER_ON": {
+            "UNKNOWN": 8,
+            "POWER_ON": 543,
+            "POWER_OFF": 11,
+            "BRIGHTNESS": 4,
+            "COLOR_SET": 1,
+            "MEDIA_PLAY": 3,
+            "MEDIA_RESUME": 0,
+            "TIME_QUERY": 0,
+            "DATE_QUERY": 0,
+            "VOLUME": 2
+          },
+          "POWER_OFF": {
+            "UNKNOWN": 22,
+            "POWER_ON": 8,
+            "POWER_OFF": 577,
+            "BRIGHTNESS": 13,
+            "COLOR_SET": 4,
+            "MEDIA_PLAY": 2,
+            "MEDIA_RESUME": 0,
+            "TIME_QUERY": 0,
+            "DATE_QUERY": 1,
+            "VOLUME": 2
+          },
+          "BRIGHTNESS": {
+            "UNKNOWN": 13,
+            "POWER_ON": 3,
+            "POWER_OFF": 18,
+            "BRIGHTNESS": 102,
+            "COLOR_SET": 6,
+            "MEDIA_PLAY": 3,
+            "MEDIA_RESUME": 0,
+            "TIME_QUERY": 1,
+            "DATE_QUERY": 0,
+            "VOLUME": 4
+          },
+          "COLOR_SET": {
+            "UNKNOWN": 13,
+            "POWER_ON": 2,
+            "POWER_OFF": 2,
+            "BRIGHTNESS": 8,
+            "COLOR_SET": 41,
+            "MEDIA_PLAY": 3,
+            "MEDIA_RESUME": 0,
+            "TIME_QUERY": 1,
+            "DATE_QUERY": 0,
+            "VOLUME": 0
+          },
+          "MEDIA_PLAY": {
+            "UNKNOWN": 110,
+            "POWER_ON": 4,
+            "POWER_OFF": 3,
+            "BRIGHTNESS": 5,
+            "COLOR_SET": 1,
+            "MEDIA_PLAY": 354,
+            "MEDIA_RESUME": 0,
+            "TIME_QUERY": 1,
+            "DATE_QUERY": 3,
+            "VOLUME": 4
+          },
+          "MEDIA_RESUME": {
+            "UNKNOWN": 5,
+            "POWER_ON": 0,
+            "POWER_OFF": 1,
+            "BRIGHTNESS": 0,
+            "COLOR_SET": 0,
+            "MEDIA_PLAY": 33,
+            "MEDIA_RESUME": 13,
+            "TIME_QUERY": 0,
+            "DATE_QUERY": 0,
+            "VOLUME": 0
+          },
+          "TIME_QUERY": {
+            "UNKNOWN": 24,
+            "POWER_ON": 0,
+            "POWER_OFF": 0,
+            "BRIGHTNESS": 1,
+            "COLOR_SET": 0,
+            "MEDIA_PLAY": 0,
+            "MEDIA_RESUME": 0,
+            "TIME_QUERY": 68,
+            "DATE_QUERY": 4,
+            "VOLUME": 3
+          },
+          "DATE_QUERY": {
+            "UNKNOWN": 10,
+            "POWER_ON": 0,
+            "POWER_OFF": 0,
+            "BRIGHTNESS": 0,
+            "COLOR_SET": 0,
+            "MEDIA_PLAY": 3,
+            "MEDIA_RESUME": 0,
+            "TIME_QUERY": 1,
+            "DATE_QUERY": 89,
+            "VOLUME": 0
+          },
+          "VOLUME": {
+            "UNKNOWN": 36,
+            "POWER_ON": 1,
+            "POWER_OFF": 3,
+            "BRIGHTNESS": 1,
+            "COLOR_SET": 0,
+            "MEDIA_PLAY": 4,
+            "MEDIA_RESUME": 1,
+            "TIME_QUERY": 0,
+            "DATE_QUERY": 0,
+            "VOLUME": 137
+          }
+        },
+        "correct_accepted": 1365,
+        "accepted": 1431,
+        "accepted_precision": 0.9538784067085954,
+        "unknown_false_accepts": 23,
+        "unknown_support": 1970,
+        "unknown_false_accept_rate": 0.011675126903553299,
+        "unknown_rate_wilson95": [
+          0.007792292283044026,
+          0.01745870171040101
+        ],
+        "gates": {
+          "low_raw_recall": [
+            "BRIGHTNESS",
+            "COLOR_SET",
+            "MEDIA_PLAY",
+            "MEDIA_RESUME",
+            "TIME_QUERY",
+            "VOLUME"
+          ],
+          "low_accepted_recall": [
+            "BRIGHTNESS",
+            "COLOR_SET",
+            "MEDIA_PLAY",
+            "MEDIA_RESUME",
+            "TIME_QUERY",
+            "DATE_QUERY"
+          ],
+          "additional_low_per_intent_precision": [
+            "BRIGHTNESS",
+            "COLOR_SET",
+            "MEDIA_PLAY",
+            "MEDIA_RESUME",
+            "VOLUME"
+          ],
+          "global_precision_pass": true,
+          "unknown_pass": false,
+          "inherited_pass": false
+        },
+        "uncertainty_note": "Wilson intervals describe recording counts, not independent-speaker or seed uncertainty."
+      },
+      "commands": {
+        "finite_references": 1783,
+        "emitted": 100,
+        "correct_complete": 97,
+        "asr_calls": 0
+      },
+      "exact_finite_command_recall": 0.05440269209197981,
+      "accepted_command_precision": 0.97
+    },
+    "pipeline": {
+      "intent": {
+        "per_family": {
+          "UNKNOWN": {
+            "support": 1970,
+            "raw_correct": 1667,
+            "abstentions": 1940,
+            "correct_accepted": 0,
+            "false_accepts_on_reference": 30,
+            "raw_recall": 0.8461928934010152,
+            "correct_accepted_recall": 0.0,
+            "accepted_precision": null,
+            "raw_recall_wilson95": [
+              0.8295895827855934,
+              0.8614486938219644
+            ],
+            "correct_accepted_recall_wilson95": [
+              1.0842021724855044e-19,
+              0.001946184078527397
+            ],
+            "accepted_precision_wilson95": null
+          },
+          "POWER_ON": {
+            "support": 572,
+            "raw_correct": 518,
+            "abstentions": 52,
+            "accepted_predictions": 519,
+            "wrong_accepts": 7,
+            "correct_accepted": 512,
+            "false_accepts_on_reference": 8,
+            "raw_recall": 0.9055944055944056,
+            "correct_accepted_recall": 0.8951048951048951,
+            "accepted_precision": 0.9865125240847784,
+            "raw_recall_wilson95": [
+              0.8788543407233204,
+              0.9269230010996495
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.8673035863832025,
+              0.9176346862546904
+            ],
+            "accepted_precision_wilson95": [
+              0.9724243286693153,
+              0.9934516390457608
+            ]
+          },
+          "POWER_OFF": {
+            "support": 629,
+            "raw_correct": 560,
+            "abstentions": 106,
+            "accepted_predictions": 538,
+            "wrong_accepts": 23,
+            "correct_accepted": 515,
+            "false_accepts_on_reference": 8,
+            "raw_recall": 0.890302066772655,
+            "correct_accepted_recall": 0.8187599364069952,
+            "accepted_precision": 0.9572490706319703,
+            "raw_recall_wilson95": [
+              0.8634695747150253,
+              0.9123961546178522
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.7867499335166719,
+              0.8469000816818695
+            ],
+            "accepted_precision_wilson95": [
+              0.9366683667522894,
+              0.9713463153852256
+            ]
+          },
+          "BRIGHTNESS": {
+            "support": 150,
+            "raw_correct": 98,
+            "abstentions": 72,
+            "accepted_predictions": 88,
+            "wrong_accepts": 18,
+            "correct_accepted": 70,
+            "false_accepts_on_reference": 8,
+            "raw_recall": 0.6533333333333333,
+            "correct_accepted_recall": 0.4666666666666667,
+            "accepted_precision": 0.7954545454545454,
+            "raw_recall_wilson95": [
+              0.5742042146686651,
+              0.7248049103917914
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.38866050759928206,
+              0.5463375086919231
+            ],
+            "accepted_precision_wilson95": [
+              0.6996803607394827,
+              0.8665127362312627
+            ]
+          },
+          "COLOR_SET": {
+            "support": 70,
+            "raw_correct": 41,
+            "abstentions": 68,
+            "correct_accepted": 0,
+            "false_accepts_on_reference": 2,
+            "raw_recall": 0.5857142857142857,
+            "correct_accepted_recall": 0.0,
+            "accepted_precision": null,
+            "raw_recall_wilson95": [
+              0.46881211784560456,
+              0.6936982143126353
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.0,
+              0.05202306241026692
+            ],
+            "accepted_precision_wilson95": null
+          },
+          "MEDIA_PLAY": {
+            "support": 485,
+            "raw_correct": 330,
+            "abstentions": 438,
+            "accepted_predictions": 50,
+            "wrong_accepts": 7,
+            "correct_accepted": 43,
+            "false_accepts_on_reference": 4,
+            "raw_recall": 0.6804123711340206,
+            "correct_accepted_recall": 0.088659793814433,
+            "accepted_precision": 0.86,
+            "raw_recall_wilson95": [
+              0.6376327433981065,
+              0.720356532761446
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.0664876473327495,
+              0.11729680302347067
+            ],
+            "accepted_precision_wilson95": [
+              0.7381380628941446,
+              0.9304916657298371
+            ]
+          },
+          "MEDIA_RESUME": {
+            "support": 52,
+            "raw_correct": 12,
+            "abstentions": 45,
+            "correct_accepted": 0,
+            "false_accepts_on_reference": 7,
+            "raw_recall": 0.23076923076923078,
+            "correct_accepted_recall": 0.0,
+            "accepted_precision": null,
+            "raw_recall_wilson95": [
+              0.13724260925492748,
+              0.3613378255809984
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.0,
+              0.06879223612386234
+            ],
+            "accepted_precision_wilson95": null
+          },
+          "TIME_QUERY": {
+            "support": 100,
+            "raw_correct": 69,
+            "abstentions": 73,
+            "accepted_predictions": 26,
+            "wrong_accepts": 0,
+            "correct_accepted": 26,
+            "false_accepts_on_reference": 1,
+            "raw_recall": 0.69,
+            "correct_accepted_recall": 0.26,
+            "accepted_precision": 1.0,
+            "raw_recall_wilson95": [
+              0.5937394428051057,
+              0.7722030278762395
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.18404698464748132,
+              0.3537098944918718
+            ],
+            "accepted_precision_wilson95": [
+              0.8712710781407846,
+              1.0
+            ]
+          },
+          "DATE_QUERY": {
+            "support": 103,
+            "raw_correct": 84,
+            "abstentions": 60,
+            "accepted_predictions": 44,
+            "wrong_accepts": 1,
+            "correct_accepted": 43,
+            "false_accepts_on_reference": 0,
+            "raw_recall": 0.8155339805825242,
+            "correct_accepted_recall": 0.4174757281553398,
+            "accepted_precision": 0.9772727272727273,
+            "raw_recall_wilson95": [
+              0.7297734374257518,
+              0.8786046277697614
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.3268873640675524,
+              0.5139983727274672
+            ],
+            "accepted_precision_wilson95": [
+              0.8819229030178671,
+              0.9959767479399467
+            ]
+          },
+          "VOLUME": {
+            "accepted_predictions": 138,
+            "wrong_accepts": 13,
+            "support": 183,
+            "raw_correct": 137,
+            "abstentions": 57,
+            "correct_accepted": 125,
+            "false_accepts_on_reference": 1,
+            "raw_recall": 0.7486338797814208,
+            "correct_accepted_recall": 0.6830601092896175,
+            "accepted_precision": 0.9057971014492754,
+            "raw_recall_wilson95": [
+              0.6811109495272237,
+              0.805932989084548
+            ],
+            "correct_accepted_recall_wilson95": [
+              0.6124744114085297,
+              0.7461183785583791
+            ],
+            "accepted_precision_wilson95": [
+              0.8454945222747072,
+              0.9441194659851178
+            ]
+          }
+        },
+        "confusion": {
+          "UNKNOWN": {
+            "UNKNOWN": 1667,
+            "POWER_ON": 16,
+            "POWER_OFF": 46,
+            "BRIGHTNESS": 47,
+            "COLOR_SET": 20,
+            "MEDIA_PLAY": 82,
+            "MEDIA_RESUME": 3,
+            "TIME_QUERY": 20,
+            "DATE_QUERY": 28,
+            "VOLUME": 41
+          },
+          "POWER_ON": {
+            "UNKNOWN": 29,
+            "POWER_ON": 518,
+            "POWER_OFF": 16,
+            "BRIGHTNESS": 3,
+            "COLOR_SET": 1,
+            "MEDIA_PLAY": 2,
+            "MEDIA_RESUME": 0,
+            "TIME_QUERY": 0,
+            "DATE_QUERY": 0,
+            "VOLUME": 3
+          },
+          "POWER_OFF": {
+            "UNKNOWN": 47,
+            "POWER_ON": 9,
+            "POWER_OFF": 560,
+            "BRIGHTNESS": 8,
+            "COLOR_SET": 2,
+            "MEDIA_PLAY": 1,
+            "MEDIA_RESUME": 0,
+            "TIME_QUERY": 0,
+            "DATE_QUERY": 0,
+            "VOLUME": 2
+          },
+          "BRIGHTNESS": {
+            "UNKNOWN": 17,
+            "POWER_ON": 2,
+            "POWER_OFF": 17,
+            "BRIGHTNESS": 98,
+            "COLOR_SET": 8,
+            "MEDIA_PLAY": 3,
+            "MEDIA_RESUME": 0,
+            "TIME_QUERY": 1,
+            "DATE_QUERY": 0,
+            "VOLUME": 4
+          },
+          "COLOR_SET": {
+            "UNKNOWN": 17,
+            "POWER_ON": 2,
+            "POWER_OFF": 2,
+            "BRIGHTNESS": 5,
+            "COLOR_SET": 41,
+            "MEDIA_PLAY": 2,
+            "MEDIA_RESUME": 0,
+            "TIME_QUERY": 1,
+            "DATE_QUERY": 0,
+            "VOLUME": 0
+          },
+          "MEDIA_PLAY": {
+            "UNKNOWN": 135,
+            "POWER_ON": 2,
+            "POWER_OFF": 3,
+            "BRIGHTNESS": 3,
+            "COLOR_SET": 1,
+            "MEDIA_PLAY": 330,
+            "MEDIA_RESUME": 1,
+            "TIME_QUERY": 1,
+            "DATE_QUERY": 4,
+            "VOLUME": 5
+          },
+          "MEDIA_RESUME": {
+            "UNKNOWN": 9,
+            "POWER_ON": 0,
+            "POWER_OFF": 1,
+            "BRIGHTNESS": 0,
+            "COLOR_SET": 0,
+            "MEDIA_PLAY": 30,
+            "MEDIA_RESUME": 12,
+            "TIME_QUERY": 0,
+            "DATE_QUERY": 0,
+            "VOLUME": 0
+          },
+          "TIME_QUERY": {
+            "UNKNOWN": 25,
+            "POWER_ON": 0,
+            "POWER_OFF": 0,
+            "BRIGHTNESS": 1,
+            "COLOR_SET": 0,
+            "MEDIA_PLAY": 0,
+            "MEDIA_RESUME": 0,
+            "TIME_QUERY": 69,
+            "DATE_QUERY": 2,
+            "VOLUME": 3
+          },
+          "DATE_QUERY": {
+            "UNKNOWN": 12,
+            "POWER_ON": 0,
+            "POWER_OFF": 0,
+            "BRIGHTNESS": 1,
+            "COLOR_SET": 0,
+            "MEDIA_PLAY": 4,
+            "MEDIA_RESUME": 1,
+            "TIME_QUERY": 1,
+            "DATE_QUERY": 84,
+            "VOLUME": 0
+          },
+          "VOLUME": {
+            "UNKNOWN": 38,
+            "POWER_ON": 0,
+            "POWER_OFF": 3,
+            "BRIGHTNESS": 1,
+            "COLOR_SET": 0,
+            "MEDIA_PLAY": 3,
+            "MEDIA_RESUME": 1,
+            "TIME_QUERY": 0,
+            "DATE_QUERY": 0,
+            "VOLUME": 137
+          }
+        },
+        "correct_accepted": 1334,
+        "accepted": 1403,
+        "accepted_precision": 0.9508196721311475,
+        "unknown_false_accepts": 30,
+        "unknown_support": 1970,
+        "unknown_false_accept_rate": 0.015228426395939087,
+        "unknown_rate_wilson95": [
+          0.01068771317030829,
+          0.021656049058111672
+        ],
+        "gates": {
+          "low_raw_recall": [
+            "BRIGHTNESS",
+            "COLOR_SET",
+            "MEDIA_PLAY",
+            "MEDIA_RESUME",
+            "TIME_QUERY",
+            "VOLUME"
+          ],
+          "low_accepted_recall": [
+            "BRIGHTNESS",
+            "COLOR_SET",
+            "MEDIA_PLAY",
+            "MEDIA_RESUME",
+            "TIME_QUERY",
+            "DATE_QUERY"
+          ],
+          "additional_low_per_intent_precision": [
+            "BRIGHTNESS",
+            "COLOR_SET",
+            "MEDIA_PLAY",
+            "MEDIA_RESUME",
+            "VOLUME"
+          ],
+          "global_precision_pass": true,
+          "unknown_pass": false,
+          "inherited_pass": false
+        },
+        "uncertainty_note": "Wilson intervals describe recording counts, not independent-speaker or seed uncertainty."
+      },
+      "commands": {
+        "finite_references": 1783,
+        "emitted": 91,
+        "correct_complete": 87,
+        "asr_calls": 0
+      },
+      "exact_finite_command_recall": 0.04879416713404375,
+      "accepted_command_precision": 0.9560439560439561
+    },
+    "vad": {
+      "recordings_with_speech": 4314,
+      "endpoints": 4548,
+      "timeouts": 2,
+      "boundary_accuracy_assessed": false
+    },
+    "asr": {
+      "wer": 0.4383355614973262,
+      "cer": 0.22294728526521948,
+      "exact_match": 0.35906351414000925,
+      "reference_words": 23936,
+      "scope": "independent whole-utterance ASR; not proof of parameter-boundary accuracy"
+    },
+    "quality_gate_criteria": {
+      "per_family_raw_recall": 0.8,
+      "per_family_accepted_recall": 0.6,
+      "global_and_per_family_accepted_precision": 0.95,
+      "maximum_unknown_false_accept_rate": 0.01,
+      "finite_command_recall": 0.6,
+      "finite_command_precision": 0.95,
+      "scope": "selected command paths only; ASR-only or VAD-only does not establish command quality"
+    },
+    "quality_gate_note": "Software quality gates are separate from production readiness. Target-device, live microphone, reviewed-reference and custom-ASR acceptance remain unestablished.",
+    "split": "test",
+    "limited": false,
+    "data_audit": {
+      "audio_files_verified": 39951,
+      "split_counts": {
+        "vcm": {
+          "train": 18434,
+          "dev": 5364,
+          "calibration": 4850,
+          "test": 4314
+        },
+        "asr": {
+          "train": 31623,
+          "dev": 5364,
+          "calibration": 4850,
+          "test": 4314
+        }
+      },
+      "recording_speaker_pair_split_leaks": 0,
+      "reference_quality": "programmatic silver"
+    },
+    "prediction_log": ".cache/validation/predictions.jsonl"
+  },
+  "artifact_manifest_sha256": "37c001609a44fa818e3e516014c73b228d771d420c2f49b060310a0608fef2ed",
+  "config_sha256": "f6b5c33290db336c2d3aa87605cad794b59e0ec4cc0c82827fe60c9a23e340f6",
+  "workflow_verification": {
+    "fresh_runtime_only_windows_install": true,
+    "space_in_launch_path_tested": true,
+    "notebook_code_cells_executed": 26,
+    "bounded_training_check": {
+      "vcm": {
+        "epochs": 1,
+        "selected_epoch": 1,
+        "train_examples": 16,
+        "dev_examples": 16,
+        "encoder_frozen": true
+      },
+      "asr": {
+        "epochs": 1,
+        "selected_epoch": 1,
+        "dev_wer": 0.43820224719101125,
+        "train_examples": 16,
+        "dev_examples": 16
+      },
+      "export_max_errors": {
+        "vcm": 4.291534423828125e-06,
+        "asr": 1.33514404296875e-05
+      },
+      "artifacts_updated": false
+    },
+    "offline_arm64_dependency_resolution": {
+      "3.11": [
+        "cffi==2.1.1",
+        "einops==0.8.2",
+        "flatbuffers==25.12.19",
+        "numpy==2.4.6",
+        "onnxruntime==1.30.0",
+        "packaging==26.3",
+        "protobuf==7.36.1",
+        "pycparser==3.0",
+        "scipy==1.17.1",
+        "sounddevice==0.5.6",
+        "soundfile==0.14.0",
+        "typing_extensions==4.16.0"
+      ],
+      "3.12": [
+        "cffi==2.1.1",
+        "einops==0.8.2",
+        "flatbuffers==25.12.19",
+        "numpy==2.5.3",
+        "onnxruntime==1.30.0",
+        "packaging==26.3",
+        "protobuf==7.36.1",
+        "pycparser==3.0",
+        "scipy==1.18.1",
+        "sounddevice==0.5.6",
+        "soundfile==0.14.0",
+        "typing_extensions==4.16.0"
+      ],
+      "3.13": [
+        "cffi==2.1.1",
+        "einops==0.8.2",
+        "flatbuffers==25.12.19",
+        "numpy==2.5.3",
+        "onnxruntime==1.30.0",
+        "packaging==26.3",
+        "protobuf==7.36.1",
+        "pycparser==3.0",
+        "scipy==1.18.1",
+        "sounddevice==0.5.6",
+        "soundfile==0.14.0",
+        "typing_extensions==4.16.0"
+      ]
+    },
+    "isolated_pipeline_checks": {
+      "all": {
+        "checks": [
+          "config",
+          "vad",
+          "vcm",
+          "asr",
+          "pipeline"
+        ],
+        "samples": 20,
+        "no_training_dependencies": true
+      },
+      "vad": {
+        "checks": [
+          "config",
+          "vad"
+        ],
+        "samples": 20,
+        "no_training_dependencies": true
+      },
+      "vcm": {
+        "checks": [
+          "config",
+          "vcm"
+        ],
+        "samples": 20,
+        "no_training_dependencies": true
+      },
+      "asr": {
+        "checks": [
+          "config",
+          "asr"
+        ],
+        "samples": 20,
+        "no_training_dependencies": true
+      },
+      "quality_gate_enforced": true,
+      "asr_tampering_rejected": true
+    },
+    "current_checkpoint_hashes": {
+      "vcm.pt": "73085f226c88a376213c3505a8557185354fb6fe3f3f26e08fadf66ebb9ab9b1",
+      "asr.pt": "6349dd41e9290f3faef07192bf39977347530abee92a21ee2b4d05caa9687551",
+      "vcm.fp32.onnx": "e421c4578865a111ebb97afaaa7ec3df6b3adce0f40bec03bc5ff90db3c3b834",
+      "asr.fp32.onnx": "fb448d731a0324da8507de115643ca78a9529d2da2547ba8aade4c80ac5a8b65"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "created": "2026-09-17",
+  "audio_files": 39951,
+  "bytes": 2929941586,
+  "origin_manifests": {
+    "vcm": "c19b43a44e062ce3b33068b7fe866e5771923f575320809d6ab6233089cb8f5d",
+    "asr": "7272922f762076e98ef20de37083ea78ed9e62382336f76cf5d8d25c7e8ec8f9"
+  },
+  "current_manifests": {
+    "vcm": "469cce17725828be978017529ed305bb9416e88ae7bc1ec58bf2cd74f623d95b",
+    "asr": "eb619aba98dfc7f5f2ffd684a5eac7bc7cfd6bae9f5228e5ab2b47edda2534e5"
+  },
+  "references_sha256": "f3906a1b1e9c6de7eb7c48f0b38792872fd7ddeaef6b9ede94107f795a3d03a7",
+  "notes": "Existing current public human-speech recordings only. Audio bytes unchanged; paths relocated. No new data or labels."
+}

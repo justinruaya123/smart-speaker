@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "name": "v12-family-finite-with-independent-local-asr",
+  "files": {
+    "asr-training-config.json": {
+      "bytes": 4022,
+      "sha256": "354614c6831bb91a32a38ff41ce049aecb737013387a75f8cb8f0b711ad6ea62"
+    },
+    "asr.fp32.onnx": {
+      "bytes": 5319980,
+      "sha256": "fb448d731a0324da8507de115643ca78a9529d2da2547ba8aade4c80ac5a8b65"
+    },
+    "asr.pt": {
+      "bytes": 15944361,
+      "sha256": "6349dd41e9290f3faef07192bf39977347530abee92a21ee2b4d05caa9687551"
+    },
+    "bundle.json": {
+      "bytes": 29764,
+      "sha256": "f24cd52206214c8c946edb2cbf75c36fc1b0ab440c679a63aa0e9b273936c01c"
+    },
+    "export-verification.json": {
+      "bytes": 21779,
+      "sha256": "e63937b03ec2b5259536da9a230aad139e84544ac9c9b7c8f540dd9dadc62413"
+    },
+    "family-metrics.json": {
+      "bytes": 9988,
+      "sha256": "f8504dd6a1de29edcee9603b8a40d971c490cad419b4c5b839b4fb814ab2335c"
+    },
+    "pilot-results.json": {
+      "bytes": 20716,
+      "sha256": "b65ddc0c72039499936b701ff76a99ed9dc4fdd95039c0bac3a0c173be89f9b7"
+    },
+    "training-config.json": {
+      "bytes": 5836,
+      "sha256": "14c005c2c120a7e4eb0cb42ea4d1060d6532d1a5d3990fcb0689e3f7ce3a6cf0"
+    },
+    "training-history.json": {
+      "bytes": 34528,
+      "sha256": "acb1061afa7f4ef1f7422b3ba3b496eb0d8cb40ccd9a1dcbfd6c746b686a7c4d"
+    },
+    "vcm.fp32.onnx": {
+      "bytes": 1647732,
+      "sha256": "e421c4578865a111ebb97afaaa7ec3df6b3adce0f40bec03bc5ff90db3c3b834"
+    },
+    "vcm.pt": {
+      "bytes": 1876425,
+      "sha256": "73085f226c88a376213c3505a8557185354fb6fe3f3f26e08fadf66ebb9ab9b1"
+    }
+  }
+}

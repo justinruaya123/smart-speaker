@@ -1,0 +1,11 @@
+{
+  "url": "https://huggingface.co/datasets/leo19941227/fluent_speech_commands/resolve/c4cc0e2c898585329319835ed55f47a6ab9e0d92/fluent.tar.gz?download=true",
+  "filename": "fluent.tar.gz",
+  "revision": "c4cc0e2c898585329319835ed55f47a6ab9e0d92",
+  "lfs_sha256": "c9fd67f2efa078daa84daddcad2de937eb96581c140e3131ed8cd06fbae9ba1b",
+  "authority": "https://fluent.ai/fr/fluent-speech-commands-a-dataset-for-spoken-language-understanding-research/",
+  "license": "Fluent Speech Commands Public License; academic research only",
+  "sha256": "c9fd67f2efa078daa84daddcad2de937eb96581c140e3131ed8cd06fbae9ba1b",
+  "bytes": 1552390845,
+  "path": "data/raw/fluent/fluent.tar.gz"
+}

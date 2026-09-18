@@ -1,0 +1,56 @@
+# One configuration for train.py, publish.py and the published application.
+# Stage switches accept true/false or expressions using and, or, not and
+# parentheses. Expressions can refer to other switches in the same section.
+
+[workflow]
+setup = true
+train = false                 # Keep the current weights unless explicitly enabled.
+test = true
+validate = true
+report = true
+
+[tests]
+vad = true
+vcm = true
+asr = true
+pipeline = "vad and vcm and asr"
+
+[runtime]
+vad = true
+vcm = true
+asr = true
+
+[validation]
+split = "test"
+max_examples = 0              # 0 means every recording in the chosen split.
+require_quality_gate = false  # Record failed quality gates; this remains experimental.
+threads = 2
+
+[training]
+vcm = true
+asr = true
+device = "cuda"
+seed = 17
+vcm_epochs = 12
+asr_epochs = 20
+batch_size = 48
+learning_rate = 0.0001
+patience = 6
+max_train_examples = 0
+max_dev_examples = 0
+update_artifacts = true       # Applies only when workflow.train or --fit is enabled.
+
+[publish]
+include_wheels = true         # Offline Python dependency installation on the Pi.
+python_versions = ["3.11", "3.12", "3.13"]
+sample_per_intent = 2
+output = "dist/smart-speaker-rpi4.zip"
+
+[audio]
+sample_rate = 16000
+block_ms = 40
+preroll_ms = 200
+silence_ms = 400
+max_utterance_seconds = 8.0
+energy_floor = 0.008
+noise_multiplier = 3.0

@@ -1,0 +1,12 @@
+{
+  "url": "https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz",
+  "filename": "speech_commands_v0.02.tar.gz",
+  "authority": "https://www.tensorflow.org/datasets/catalog/speech_commands",
+  "license": "CC-BY-4.0",
+  "version": "0.02",
+  "expected_sha256": "af14739ee7dc311471de98f5f9d2c9191b18aedfe957f4a6ff791c709868ff58",
+  "checksum_authority": "https://raw.githubusercontent.com/tensorflow/datasets/master/tensorflow_datasets/datasets/speech_commands/checksums.tsv",
+  "sha256": "af14739ee7dc311471de98f5f9d2c9191b18aedfe957f4a6ff791c709868ff58",
+  "bytes": 2428923189,
+  "path": "data/raw/speech_commands/speech_commands_v0.02.tar.gz"
+}

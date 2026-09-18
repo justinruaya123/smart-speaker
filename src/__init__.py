@@ -1,1 +1,0 @@
-"""Smart-speaker application services."""
