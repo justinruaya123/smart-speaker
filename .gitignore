@@ -3,15 +3,38 @@
 /.runtime/
 /.cache/
 /dist/
+/.worktrees/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
 
 # Public dataset audio stays local; manifests, references and licenses are versionable.
 /data/audio/
+# Shared pool payloads; function manifests, source receipts and audits stay versionable.
+/data/pool/
+/data/downloads/
+/data/quarantine/
+# Legacy study outputs outside .cache; retain small protocols and evidence beside them.
+/STT/data/features/
+/STT/**/*.pt
+/STT/**/*.onnx
+/STT/**/*.zip
+/STT/**/*.tar
+/STT/**/*.gz
+/experiments/**/*.pt
+/experiments/**/*.onnx
+/experiments/**/*.npy
+/experiments/**/*.npz
 # Local recordings and credentials
 *.wav
 *.flac
+*.mp3
+*.ogg
+*.m4a
+*.opus
 .env
 .env.*
 !.env.example
@@ -22,3 +45,5 @@ Thumbs.db
 Desktop.ini
 
 # Current artifacts, notebook, configuration and validation evidence are versionable.
+# Do not blanket-ignore data/, docs/, registries/, experiments/, artifacts/, JSON or CSV.
+# Installable weights under artifacts/ are intentionally not matched by study rules.
