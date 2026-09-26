@@ -44,6 +44,18 @@ __pycache__/
 Thumbs.db
 Desktop.ini
 
-# Current artifacts, notebook, configuration and validation evidence are versionable.
-# Do not blanket-ignore data/, docs/, registries/, experiments/, artifacts/, JSON or CSV.
-# Installable weights under artifacts/ are intentionally not matched by study rules.
+# Model graphs and checkpoints are local, including installed artifacts.
+*.onnx
+*.pt
+*.pth
+*.ckpt
+*.tflite
+*.safetensors
+*.npz
+*.bin
+
+# Dataset row manifests and their large audio index stay local.
+/data/**/*.jsonl
+/data/audio-index.json
+
+# Keep source, tests, compact metrics, metadata, licenses and provenance receipts in Git.
