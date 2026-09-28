@@ -1,0 +1,11 @@
+numpy
+scipy
+soundfile
+torch
+opencv-python-headless
+pytest
+nbformat
+nbclient
+ipykernel
+cmudict
+playwright
