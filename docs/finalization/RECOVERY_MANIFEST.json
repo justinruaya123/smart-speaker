@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "recorded_date": "2026-09-29",
   "purpose": "Recovery inventory and Codex finalization handoff; not a model release",
   "repository": "justinruaya123/smart-speaker",
@@ -68,7 +68,8 @@
       "sha256": "652f373eac815df19507de31bdc4126734981983258bf233f18b552ead7bcf44",
       "members": 676,
       "crc_checked": true,
-      "availability": "User-supplied recovery archive; not stored in this Git commit"
+      "availability": "Not stored in this repository. Optional historical recovery evidence only if separately supplied and hash-matched; Codex must not search for or require this file.",
+      "required_for_finalization": false
     },
     {
       "filename": "VCM_NO_ASR_FOLLOWUP.zip",
@@ -76,7 +77,8 @@
       "sha256": "a66363cde63233241424cba1eff3a9303cbcc056e15b3f3b17ffa7c25500776a",
       "members": 52,
       "crc_checked": true,
-      "availability": "User-supplied recovery archive; not stored in this Git commit"
+      "availability": "Not stored in this repository. Optional historical recovery evidence only if separately supplied and hash-matched; Codex must not search for or require this file.",
+      "required_for_finalization": false
     }
   ],
   "checks_in_this_handoff": {
@@ -88,7 +90,7 @@
       "1 full-evidence test requires restored payload",
       "6 grammar-extension tests require restored payload"
     ],
-    "archive_crc_checked": 2,
+    "archive_crc_checked": "Historical local verification only; archives are not repository inputs",
     "listed_artifact_hashes_checked": 5,
     "training_performed": false,
     "acoustic_replay_performed": false,
@@ -96,6 +98,9 @@
     "physical_pi4_tested": false,
     "physical_microphone_tested": false
   },
-  "cleanup_status": "Planned in CODEX_HANDOFF.md; no runtime, model, dataset, or evidence file deleted by this handoff commit",
-  "release_winner": null
+  "cleanup_status": "Planned in CODEX_HANDOFF.md; repository-only finalization does not require external recovery ZIPs; no runtime/model/dataset/evidence file deleted by this correction",
+  "release_winner": null,
+  "repo_only_bootstrap": true,
+  "project_archive_dependency": false,
+  "repo_only_instruction": "Finalization must start from tracked branch source. The two historical ZIP names are not present in the project and must not be required. Rebuild models/data from checked-in producers and pinned pulls, or mark unavailable evidence as historical."
 }
