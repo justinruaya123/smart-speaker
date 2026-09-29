@@ -3,9 +3,19 @@
 ## 1. Assignment and release status
 
 Work in `justinruaya123/smart-speaker`, on the existing branch
-`research/vcm-final-suite-visualizer`. Continue from its current remote head;
-do not reset the branch to an older hash, force-push, or modify `main`.
-The inspected baseline is `7ec54fc6343058b5141ca4cc88618a34f0ca983e`.
+`research/vcm-final-suite-visualizer`.
+
+**Invocation assumption:** the user will run this handoff only after freshly
+pulling this branch into a clean checkout. Treat the checked-out repository as
+the complete starting state. Do not search parent directories, ChatGPT sandboxes,
+old local project folders, download caches, or other branches for missing
+artifacts. Do not require untracked files. If an input is not present in the
+fresh branch and cannot be reproduced by checked-in code plus version-pinned
+dataset pulls, mark it unavailable and rebuild the experiment reproducibly.
+
+Do not reset to an older hash, force-push, switch to `main`, or modify `main`.
+Historical commit hashes in this document are evidence references, not checkout
+targets.
 
 The user requests a clean semi-final VCM: a small, genuinely streaming acoustic
 model, reproducible dataset/training/validation scripts, typed parameters and
@@ -74,23 +84,26 @@ The root v12 model has 398,422 parameters; the research CNN has 113,064. They ar
 alternatives, not an ensemble. The old root publisher still packages v12 unless
 you explicitly migrate and verify it. Renaming a file does not migrate a model.
 
-## 3. First execution: recover, audit, establish a baseline
+## 3. First execution: audit the freshly pulled branch
 
-Run read-only inventory before touching the user's working files:
+Assume the user has already fetched and freshly pulled this branch. Do not
+perform recovery searches outside the checkout. Confirm the handoff really
+started from the expected clean branch before changing anything:
 
 ```bash
 git status --short
 git branch --show-current
-git fetch origin
 git rev-parse HEAD
-git rev-parse origin/research/vcm-final-suite-visualizer
 git log -8 --oneline
 git ls-files
 ```
 
-Stop for reconciliation if the worktree contains unrelated edits or the remote
-has diverged. Do not stash, discard, or overwrite another person's work.
-Use an isolated worktree if the current checkout cannot be kept clean.
+Expected branch: `research/vcm-final-suite-visualizer`. Expected worktree:
+clean. If either condition is false, stop and report the mismatch; do not stash,
+discard, merge, reset, switch branches, or search another checkout on the user's
+behalf. All subsequent work must be reproducible from this branch plus the
+version-pinned public/manual dataset acquisition procedures that you create or
+retain in the repository.
 
 Do **not** run an archive restore as a prerequisite. Start from tracked source:
 
