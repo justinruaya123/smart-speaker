@@ -1032,5 +1032,8 @@
       "vcm.fp32.onnx": "e421c4578865a111ebb97afaaa7ec3df6b3adce0f40bec03bc5ff90db3c3b834",
       "asr.fp32.onnx": "fb448d731a0324da8507de115643ca78a9529d2da2547ba8aade4c80ac5a8b65"
     }
-  }
+  },
+  "historical_result_only": true,
+  "pipeline_revision_at_recording": "v12-with-independent-transcription",
+  "current_pipeline_note": "The separate transcription component was removed later. These are preserved pre-removal measurements, not current validation results."
 }

@@ -12,13 +12,11 @@ report = true
 [tests]
 vad = true
 vcm = true
-asr = true
-pipeline = "vad and vcm and asr"
+pipeline = "vad and vcm"
 
 [runtime]
 vad = true
 vcm = true
-asr = true
 
 [validation]
 split = "test"
@@ -28,11 +26,9 @@ threads = 2
 
 [training]
 vcm = true
-asr = true
 device = "cuda"
 seed = 17
 vcm_epochs = 12
-asr_epochs = 20
 batch_size = 48
 learning_rate = 0.0001
 patience = 6

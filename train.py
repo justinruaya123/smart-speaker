@@ -124,9 +124,9 @@ def verify_artifacts(root=ROOT):
 def refresh_artifact_manifest(root=ROOT):
     folder = root / "artifacts"
     files = {p.name: {"bytes": p.stat().st_size, "sha256": digest(p)}
-             for p in sorted(folder.iterdir()) if p.is_file() and p.name != "manifest.json"}
+             for p in sorted(folder.iterdir()) if p.is_file() and p.name != "manifest.json" and not p.name.startswith("asr")}
     save_json(folder / "manifest.json", {"format_version": 1,
-              "name": "v12-family-finite-with-independent-local-asr", "files": files})
+              "name": "v12-family-finite-vcm-only", "files": files})
 
 
 def update_report(result, root=ROOT):
@@ -149,9 +149,6 @@ def update_report(result, root=ROOT):
             text += (f"| {name} | {counts['correct_complete']} / {counts['finite_references']} | "
                      f"{counts['correct_complete']} / {counts['emitted']} | {validation[name]['exact_finite_command_recall']:.2%} |\n")
         text += "\n"
-        if "asr" in validation:
-            asr = validation["asr"]
-            text += f"Standalone ASR: WER **{asr['wer']:.2%}**, CER **{asr['cer']:.2%}**, exact transcript **{asr['exact_match']:.2%}**.\n\n"
         for name in ("vcm", "pipeline"):
             if name not in validation:
                 continue

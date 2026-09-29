@@ -248,7 +248,6 @@
     "selection": 1794
   },
   "hardware": "NVIDIA GeForce RTX 4080 SUPER",
-  "asr": "off; no model loaded",
   "command_threshold_rule": "exploratory >=20 accepts and >=95% observed joint precision; not a historical promotion gate",
   "latency_memory_promotion_budgets": "unassessed; no target-device measurement"
 }

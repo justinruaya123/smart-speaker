@@ -4,7 +4,7 @@
     python publish.py --config pipeline.toml
 
 All runtime code comes from Architecture.ipynb. Tests may be selected in the
-configuration; VAD, VCM, finite heads and ASR are always included in the package.
+configuration; VAD, VCM and finite heads are always included in the package.
 """
 from __future__ import annotations
 
@@ -24,6 +24,9 @@ import zipfile
 
 from train import ROOT, digest, load_config, notebook_sources, save_json, verify_artifacts
 
+
+MODEL_FILES = ("bundle.json", "vcm.fp32.onnx")
+RUNTIME_COMPONENTS = ["vad", "vcm", "finite_heads", "routing", "microphone"]
 
 def download_json(url):
     request = urllib.request.Request(url, headers={"User-Agent": "smart-speaker-publisher/1.0"})
@@ -121,7 +124,7 @@ def package_sources(config):
     for name, source in sources.items():
         target = "__main__.py" if name == "tinyvcm.launcher" else name.replace(".", "/") + ".py"
         entries[target] = source.encode("utf-8")
-    for name in ("bundle.json", "vcm.fp32.onnx", "asr.fp32.onnx"):
+    for name in MODEL_FILES:
         entries["model/" + name] = (ROOT / "artifacts" / name).read_bytes()
     refs = {row["id"]: row for row in map(json.loads, (ROOT / "data/references.jsonl").read_text(encoding="utf-8").splitlines())}
     counts, samples = {}, []
@@ -141,7 +144,7 @@ def package_sources(config):
     entries["samples/samples.jsonl"] = "".join(json.dumps(row) + "\n" for row in samples).encode()
     for path in (ROOT / "data/sources").glob("*.json"):
         entries["samples/sources/" + path.name] = path.read_bytes()
-    manifest = {"format_version": 1, "components": ["vad", "vcm", "finite_heads", "asr", "routing", "microphone"],
+    manifest = {"format_version": 1, "components": RUNTIME_COMPONENTS,
                 "artifact_manifest_sha256": digest(ROOT / "artifacts/manifest.json"),
                 "notebook_sha256": digest(ROOT / "Architecture.ipynb"),
                 "sample_counts": counts,
