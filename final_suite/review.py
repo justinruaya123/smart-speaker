@@ -40,7 +40,10 @@ def normalize_row(row: dict, trial: str, dataset: str) -> dict:
     reference = row.get('target', row.get('reference'))
     candidate = row.get('candidate', row.get('raw_command'))
     is_ambiguous = row.get('category') == 'ambiguous'
-    exact = (reference is not None and reference == candidate
+    # JSON type fidelity prevents True == 1 from hiding a parser error.
+    expected_json = json.dumps(reference, sort_keys=True, allow_nan=False)
+    candidate_json = json.dumps(candidate, sort_keys=True, allow_nan=False)
+    exact = (reference is not None and expected_json == candidate_json
              and not row.get('ties', []) and not row.get('ambiguous', False))
     saved = row.get('raw_correct', row.get('raw_exact', row.get('exact')))
     accepted = bool(row.get('accepted', row.get('status') == 'recognized'))

@@ -115,3 +115,21 @@ def test_schema_of_every_retained_prediction():
     assert len(sources) >= 79
     assert not any(r['inconsistent_saved_flag'] for r in rows)
     assert not any(r['action_executed'] for r in rows)
+
+
+def test_boolean_parameter_is_not_counted_as_integer_match():
+    review = load_module()
+    result = review.normalize_row({
+        "id": "typed", "target": {"intent": "SET_VOLUME", "value": 1},
+        "candidate": {"intent": "SET_VOLUME", "value": True},
+    }, "test", "test")
+    assert result["raw_exact"] is False
+
+
+def test_nonfinite_parameter_cannot_enter_evidence():
+    review = load_module()
+    with pytest.raises(ValueError):
+        review.normalize_row({
+            "id": "typed", "target": {"value": 1},
+            "candidate": {"value": float("nan")},
+        }, "test", "test")

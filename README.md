@@ -79,3 +79,14 @@ verified source changes, reference-dataset findings and newly measured tests.
 The external reference is read-only and no third-party model weights or WAVs
 are committed here. The active VCM's acoustic weights and acceptance thresholds
 were not weakened by removal.
+
+## Follow-up: no external pretrained initialization
+
+Both active paths retain this project's own trained weights. External pretrained
+models are permitted only in separate benchmark experiments; they must not
+initialize the VCM or enter the publisher's single-graph allowlist.
+
+[Follow-up verification and Option B re-audit](research/no_asr_followup/RESULTS.md)
+records the new first-convolution-only experiment, strict paired-development
+selection, ONNX Runtime replay, and the reference folder's move to `MEX2/Data`.
+The frozen baseline remains selected; failed candidates never overwrite it.

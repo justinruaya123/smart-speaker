@@ -1,0 +1,401 @@
+{
+  "schema_version": 1,
+  "base_commit": "0268974d7e8f73bb1a6303dd1899e02164b5ec20",
+  "removal_commit": "8607d1519228ae6d1d6f307956acbea3da121c48",
+  "external_source": {
+    "repository": "markandrian30/AI231",
+    "original_commit": "ed245708c2573188eb769096aba76588f79b8de1",
+    "current_commit": "79d7d524aee9b46a110ca87a36ddcc6bcbd37599",
+    "original_path": "MEX2/OptionB",
+    "current_path": "MEX2/Data",
+    "original_tree": "5ecea2a846815c358bb54b1b71ca8f75950d8a54",
+    "current_tree": "5c72d06d63ed7edf41d3530297d5a471046bfc8a",
+    "changed_top_level_blobs": [
+      "README.md"
+    ],
+    "method": "Reconstructed the Git tree digest after replacing only the README blob; matches live current tree exactly. All dataset descendants and other metadata unchanged."
+  },
+  "dataset": {
+    "manifest_rows": 18375,
+    "tree_wavs": 18375,
+    "tree_wav_bytes": 934819540,
+    "speakers": 100,
+    "phrases": 96,
+    "intent_counts": {
+      "ALARM": 1730,
+      "BRIGHTNESS": 1787,
+      "CALL": 536,
+      "COLOR": 2317,
+      "CREATE_REMINDER": 1761,
+      "LIGHT_OFF": 570,
+      "LIGHT_ON": 566,
+      "LIST_REMINDERS": 552,
+      "MESSAGE": 525,
+      "NEXT": 589,
+      "PAUSE": 549,
+      "PLAY_MUSIC": 590,
+      "STOP": 548,
+      "TEMPERATURE": 1795,
+      "TIME": 544,
+      "TIMER": 1741,
+      "VOLUME_DOWN": 575,
+      "VOLUME_UP": 561,
+      "WEATHER": 539
+    },
+    "slot_label_counts": {
+      "ALARM_4_00AM": 566,
+      "ALARM_8_00AM": 583,
+      "ALARM_9_00PM": 581,
+      "BRIGHTNESS_100": 597,
+      "BRIGHTNESS_20": 595,
+      "BRIGHTNESS_60": 595,
+      "CALL": 536,
+      "COLOR_BLUE": 588,
+      "COLOR_GREEN": 578,
+      "COLOR_RED": 568,
+      "COLOR_YELLOW": 583,
+      "CREATE_REMINDER_DRINK_WATER": 596,
+      "CREATE_REMINDER_EXERCISE": 590,
+      "CREATE_REMINDER_STUDY": 575,
+      "LIGHT_OFF": 570,
+      "LIGHT_ON": 566,
+      "LIST_REMINDERS": 552,
+      "MESSAGE": 525,
+      "NEXT": 589,
+      "PAUSE": 549,
+      "PLAY_MUSIC": 590,
+      "STOP": 548,
+      "TEMPERATURE_18": 598,
+      "TEMPERATURE_22": 599,
+      "TEMPERATURE_26": 598,
+      "TIME": 544,
+      "TIMER_10s": 587,
+      "TIMER_1m": 562,
+      "TIMER_30s": 592,
+      "VOLUME_DOWN": 575,
+      "VOLUME_UP": 561,
+      "WEATHER": 539
+    },
+    "conditions": {
+      "clean": 9192,
+      "noisy": 9183
+    },
+    "splits": {
+      "test": {
+        "rows": 1842,
+        "speakers": 10,
+        "conditions": {
+          "clean": 922,
+          "noisy": 920
+        },
+        "phrases": 96
+      },
+      "train": {
+        "rows": 14677,
+        "speakers": 80,
+        "conditions": {
+          "clean": 7344,
+          "noisy": 7333
+        },
+        "phrases": 96
+      },
+      "val": {
+        "rows": 1856,
+        "speakers": 10,
+        "conditions": {
+          "clean": 926,
+          "noisy": 930
+        },
+        "phrases": 96
+      }
+    },
+    "duplicate_manifest_paths": [],
+    "manifest_paths_absent_from_tree": [],
+    "tree_wavs_absent_from_manifest": [],
+    "cross_split_speakers": [],
+    "cross_split_clean_noisy_groups": [],
+    "cross_split_identical_blobs": [],
+    "file_extensions": {
+      ".wav": 18375,
+      ".md": 2,
+      ".txt": 1,
+      ".json": 2,
+      ".csv": 1
+    },
+    "training_source_files": [],
+    "limits": [
+      "Source IDs do not establish command-recording provenance.",
+      "Blob identity does not exclude near-duplicates or cloning.",
+      "Shared texts across splits are not unseen-phrase validation."
+    ],
+    "waveform_audit": {
+      "recordings_decoded": 1845,
+      "sample_rates": {
+        "16000": 603,
+        "12000": 1242
+      },
+      "channels": {
+        "1": 1845
+      },
+      "metadata_or_pcm_problems": [],
+      "identical_pcm_groups": [],
+      "duration_seconds": {
+        "min": 0.76,
+        "max": 4.52
+      },
+      "recordings_with_clipped_samples": 0,
+      "limits": "PCM audit, not listening or transcript adjudication."
+    }
+  },
+  "training": {
+    "baseline": {
+      "own": {
+        "phone_error_rate": 0.25801791389771744,
+        "raw_correct": 114,
+        "valid": 128
+      },
+      "external": {
+        "phone_error_rate": 0.8787671232876713,
+        "raw_correct": 1,
+        "valid": 180
+      }
+    },
+    "epochs": [
+      {
+        "epoch": 1,
+        "mean_training_loss": 4.159466082308473,
+        "seconds_training_and_development": 49.27313858999992,
+        "own_development_correct": 83,
+        "own_development_valid": 128,
+        "external_development_correct": 0,
+        "external_development_valid": 180,
+        "own_phone_error_rate": 0.4570933256284311,
+        "external_phone_error_rate": 0.8221461187214611,
+        "lost_previously_correct_own_development": 31,
+        "eligible": false
+      },
+      {
+        "epoch": 2,
+        "mean_training_loss": 2.8578007060940527,
+        "seconds_training_and_development": 48.56950435900012,
+        "own_development_correct": 97,
+        "own_development_valid": 128,
+        "external_development_correct": 1,
+        "external_development_valid": 180,
+        "own_phone_error_rate": 0.4672060098237504,
+        "external_phone_error_rate": 0.8029680365296804,
+        "lost_previously_correct_own_development": 18,
+        "eligible": false
+      },
+      {
+        "epoch": 3,
+        "mean_training_loss": 2.391219955532491,
+        "seconds_training_and_development": 55.8867418939999,
+        "own_development_correct": 99,
+        "own_development_valid": 128,
+        "external_development_correct": 2,
+        "external_development_valid": 180,
+        "own_phone_error_rate": 0.47067321583357413,
+        "external_phone_error_rate": 0.7851598173515981,
+        "lost_previously_correct_own_development": 18,
+        "eligible": false
+      },
+      {
+        "epoch": 4,
+        "mean_training_loss": 2.1620601115106535,
+        "seconds_training_and_development": 72.49923087699995,
+        "own_development_correct": 99,
+        "own_development_valid": 128,
+        "external_development_correct": 1,
+        "external_development_valid": 180,
+        "own_phone_error_rate": 0.45998266396995086,
+        "external_phone_error_rate": 0.7737442922374429,
+        "lost_previously_correct_own_development": 18,
+        "eligible": false
+      },
+      {
+        "epoch": 5,
+        "mean_training_loss": 2.0545291630159905,
+        "seconds_training_and_development": 49.4074117319999,
+        "own_development_correct": 98,
+        "own_development_valid": 128,
+        "external_development_correct": 2,
+        "external_development_valid": 180,
+        "own_phone_error_rate": 0.4654724068188385,
+        "external_phone_error_rate": 0.7666666666666667,
+        "lost_previously_correct_own_development": 18,
+        "eligible": false
+      },
+      {
+        "epoch": 6,
+        "mean_training_loss": 2.0066553364280892,
+        "seconds_training_and_development": 45.72113434500011,
+        "own_development_correct": 98,
+        "own_development_valid": 128,
+        "external_development_correct": 2,
+        "external_development_valid": 180,
+        "own_phone_error_rate": 0.4622941346431667,
+        "external_phone_error_rate": 0.7614155251141552,
+        "lost_previously_correct_own_development": 18,
+        "eligible": false
+      }
+    ],
+    "all_candidates_rejected": true,
+    "selected_epoch": 0,
+    "trainable_parameters": 7744,
+    "total_parameters": 113064,
+    "runtime_architecture_changed": false,
+    "external_pretrained_weights": false,
+    "note": "Trial continued this project's own checkpoint. No external pretrained initialization. Parent retained; no new held-out quality claim for rejected checkpoints."
+  },
+  "protocol": {
+    "seed": 811,
+    "epochs": 6,
+    "batch_size": 24,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.0001,
+    "minimum_learning_rate": 2e-05,
+    "gradient_clip": 3.0,
+    "trainable": [
+      "blocks.0.conv.weight",
+      "blocks.0.conv.bias"
+    ],
+    "initialization": "own_from_scratch_lineage_checkpoint_continuation",
+    "external_pretrained_weights": false,
+    "parent_sha256": "2cb858cffd656fe87537f4af80d94c9502354d6f0bebbe6a70f716ea9c15d4aa",
+    "normalization_sha256": "9d4e3ab8e8a4524b4694e1eac409fb2692a1c5a0969ee77ea80959a1a8b4733f",
+    "graph_sha256": "9eac2070d17847219ab8e9c9f37267a629dd407059ea5b3e0eccbd0999f1a631",
+    "external_revision": "ed245708c2573188eb769096aba76588f79b8de1",
+    "selection": "external dev command gain; zero lost correct own dev commands",
+    "test_used_for_selection": false,
+    "automatic_acceptance": false
+  },
+  "replay": {
+    "engine": "ONNX Runtime 1.23.2 CPUExecutionProvider",
+    "host": "x86_64",
+    "python": "3.13.5",
+    "torch": "2.10.0+cpu",
+    "model_sha256": "2cb858cffd656fe87537f4af80d94c9502354d6f0bebbe6a70f716ea9c15d4aa",
+    "normalization_sha256": "9d4e3ab8e8a4524b4694e1eac409fb2692a1c5a0969ee77ea80959a1a8b4733f",
+    "graph_sha256": "9eac2070d17847219ab8e9c9f37267a629dd407059ea5b3e0eccbd0999f1a631",
+    "selected_policy_sha256_before_and_after": "ba0236fd50b337a890146a1533c578e7d9b4a8435fbd72a5d31a578f88756c5b",
+    "summaries": {
+      "own_v6_test": {
+        "recordings": 754,
+        "valid": 706,
+        "raw_correct": 645,
+        "categories": {
+          "number": {
+            "recordings": 404,
+            "raw_correct": 375
+          },
+          "relative": {
+            "recordings": 24,
+            "raw_correct": 24
+          },
+          "ambiguous": {
+            "recordings": 6,
+            "raw_correct": 0
+          },
+          "track_by_artist": {
+            "recordings": 108,
+            "raw_correct": 100
+          },
+          "track_title": {
+            "recordings": 90,
+            "raw_correct": 85
+          },
+          "light": {
+            "recordings": 40,
+            "raw_correct": 34
+          },
+          "named_level": {
+            "recordings": 40,
+            "raw_correct": 27
+          },
+          "negative": {
+            "recordings": 42,
+            "raw_correct": 0
+          }
+        }
+      },
+      "external_brightness_test": {
+        "recordings": 180,
+        "valid": 180,
+        "raw_correct": 0,
+        "categories": {
+          "external_brightness": {
+            "recordings": 180,
+            "raw_correct": 0
+          }
+        }
+      }
+    },
+    "max_absolute_logp_error": {
+      "4": 6.866455078125e-05,
+      "8": 6.866455078125e-05
+    },
+    "changed_frame_paths": {
+      "4": 0,
+      "8": 0
+    },
+    "changed_commands_or_ties": {
+      "4": 0,
+      "8": 0
+    },
+    "changed_vs_saved_v6": [],
+    "engine_step_ms": {
+      "4": {
+        "calls": 50527,
+        "median": 0.0881309999840596,
+        "p95": 0.30721279986209993,
+        "scope": "Neural call and cache transfer only; exclude frontend/decoder."
+      },
+      "8": {
+        "calls": 25497,
+        "median": 0.09458499994252634,
+        "p95": 0.3293659999144429,
+        "scope": "Neural call and cache transfer only; exclude frontend/decoder."
+      }
+    },
+    "elapsed_seconds": 314.6411071499999,
+    "physical_pi4_tested": false,
+    "acceptance_enabled": false,
+    "external_pretrained_weights": false,
+    "root_v12_trained_weights_tested": false
+  },
+  "verification": {
+    "python_tests_passed": 450,
+    "javascript_tests_passed": 18,
+    "browser_scenarios_passed": 8,
+    "v12_graph_check": "random-weight software fixture; trained v12 weights absent",
+    "external_pretrained_weights_downloaded": false,
+    "pi4_measured": false,
+    "live_microphone_measured": false,
+    "retained_ledger_rows": 36972,
+    "changed_saved_ledger_flags": 0,
+    "offline_subset_materialization_verified": true
+  },
+  "release": {
+    "eligible": false,
+    "default_changed": false,
+    "reason": "All new adapted candidates regressed matched development commands; acceptance and target-hardware requirements remain unmet."
+  },
+  "full_evidence": {
+    "baseline_development.json": "5cf2044f4d3bec458b303b768730942d1e8efffb9f4c3858286fdf1ff1223e23",
+    "dataset_summary.json": "ee187fb95508b2ae0ac5ddcd03cb66fa18433b1e731411ab7e740dd747e52a3e",
+    "optionb_reaudit.json": "e8b31d9dc9452a8ab62237bb7d49b82eb11ede95e391ae4054cbcc7314bfa300",
+    "protocol.json": "03c1e1cda31b5c60c312e75a4129e77ad90bdcb7434e8b8cf9931416f16d005a",
+    "replay_predictions.json": "429e58dbdef029c0b2887ad79ddf8d42c9e42253e1a386aa07c46f3302054547",
+    "replay_summary.json": "b8a9faa6a0272b252246433e605ede190eaeb008f14de782ef9d66a8d210b909",
+    "selected.json": "ba0236fd50b337a890146a1533c578e7d9b4a8435fbd72a5d31a578f88756c5b",
+    "source_move_audit.json": "0607db87ece03c4d6608bac0ee48c7e8eeeeb824a6afc6c44983d4acc3af6f12",
+    "stem_epoch_1.json": "1172b7d1ca26b28ada40049c6ea94e79d93b01fc732c2478994b413866c35a0e",
+    "stem_epoch_2.json": "daa20425697278abb2df86da26aefa355de1b5e90077858cfa86d7577c77e67d",
+    "stem_epoch_3.json": "e5aabebac752bd26d8c8f3cbb9ab5e813dcf54daff6ef64d153aa13d55bc97f1",
+    "stem_epoch_4.json": "cd26d041dc4384b5b4680dccf58837100edf8f6a19410a2fcf81bd85620afdbe",
+    "stem_epoch_5.json": "e47374894254f4a2306e994689093736a9a15abe1355bbff870489a4fe05ddbf",
+    "stem_epoch_6.json": "7db518a63c531fc355c59b1f00d44a5a55f6ad0ab452ab76486648611801042a",
+    "training_summary.json": "36c13e52c34107b9f96196aabe3292cc02b0966b69426cdb3a588458165bf27d"
+  }
+}
