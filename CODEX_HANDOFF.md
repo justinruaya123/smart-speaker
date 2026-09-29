@@ -57,7 +57,7 @@ weights or infer old accuracy from reports as a substitute.
 | `artifacts/`, `validation.json` | Root v12 metadata and historical results. Trained v12 weights and its full recordings are local prerequisites, not in the Git source snapshot. |
 | `research/no_asr_review/` | Removal verification, Option B audit, and failed transfer results. |
 | `research/no_asr_followup/` | First-layer adaptation, paired command-selection guard, and failed-candidate report. |
-| `final_suite/` | Evidence consolidation, typed exactness, scope checks, restoration, numerical/browser checks. Some require the separate payload. |
+| `final_suite/` | Evidence consolidation, typed exactness, scope checks and source tests. Payload-only historical checks are optional legacy evidence and should be migrated or retired rather than made release prerequisites. |
 | `visualizer/` | Development-only inspector. Preserve its source and recipe compatibility; never ship it in the Pi inference ZIP. |
 | Historical `experiments/vcm_streaming_v3/` paths | Reports describe the own-trained `phone_s53` lineage. These files are not guaranteed to be tracked. If absent, regenerate a new candidate; do not make them a bootstrap dependency. |
 | Historical `experiments/vcm_services_v6/` paths | Reports describe fictional Home Assistant/music catalogs and compiler logic. Recreate only the canonical catalog fixtures needed by the final package from checked-in specifications/tests. |
@@ -177,7 +177,7 @@ back to random weights. A test fixture must never enter a deployment directory.
 
 ## 5. Candidate and ONNX contract
 
-Start with the recovered causal CNN, not a larger architecture search:
+Use the historical causal CNN design as the first bounded candidate, not a larger architecture search. If its exact project-trained binary is absent, reproduce the architecture and train a new candidate from project/audited data rather than blocking on recovery:
 
 - 16 kHz mono; 400-sample periodic Hann window; 160-sample hop; FFT 512.
 - 40 HTK mel bins, 20-7,600 Hz; log floor 1e-8; no centered windows or future
@@ -301,8 +301,7 @@ data support it, and disclose small denominators.
 ## 8. Bounded training and model selection
 
 Close the previous failed trials with reasons in `RESEARCH_SUMMARY.md`; do not
-repeat them indefinitely. Start with one audited mixed-data recipe and the
-recovered model as epoch zero. Record seeds, data/graph hashes, objective,
+repeat them indefinitely. Start with one audited mixed-data recipe. Use the historical project checkpoint as epoch zero only if its exact tracked/reproducible artifact is available; otherwise use genuinely random initialization or another project-produced checkpoint with complete provenance. Record seeds, data/graph hashes, objective,
 optimizer, schedule, batch composition, augmentation and checkpoint selection.
 Use project-only continuation or genuinely random initialization; never an
 external checkpoint. Preserve phonetic evidence for short number/negation words.
