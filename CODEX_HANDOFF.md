@@ -5,12 +5,17 @@
 Work in `justinruaya123/smart-speaker`, on the existing branch
 `research/vcm-final-suite-visualizer`.
 
-**Invocation assumption:** the user will run this handoff only after freshly
-pulling this branch into a clean checkout. Treat the checked-out repository as
-the complete starting state. Do not search parent directories, ChatGPT sandboxes,
-old local project folders, download caches, or other branches for missing
-artifacts. Do not require untracked files. If an input is not present in the
-fresh branch and cannot be reproduced by checked-in code plus version-pinned
+**Invocation assumption:** the user will run this handoff after freshly pulling
+this branch. Assume there has been **no prior model training and no dataset
+procurement** beyond files actually tracked in Git. Treat the checked-out
+repository as the complete starting state. Do not search parent directories,
+ChatGPT sandboxes, old local project folders, download caches, or other branches
+for missing artifacts.
+
+Untracked files may already exist in the checkout and are not a blocker. Preserve
+them byte-for-byte: do not delete, move, overwrite, stage, or use them as hidden
+inputs. Only tracked/staged modifications are a stop condition. If an input is
+not tracked and cannot be reproduced by checked-in code plus version-pinned
 dataset pulls, mark it unavailable and rebuild the experiment reproducibly.
 
 Do not reset to an older hash, force-push, switch to `main`, or modify `main`.
@@ -98,23 +103,45 @@ git log -8 --oneline
 git ls-files
 ```
 
-Expected branch: `research/vcm-final-suite-visualizer`. Expected worktree:
-clean. If either condition is false, stop and report the mismatch; do not stash,
-discard, merge, reset, switch branches, or search another checkout on the user's
-behalf. All subsequent work must be reproducible from this branch plus the
-version-pinned public/manual dataset acquisition procedures that you create or
-retain in the repository.
+Expected branch: `research/vcm-final-suite-visualizer`. Tracked and staged
+files must be clean. **Untracked paths are allowed and must be preserved.** If
+tracked/staged files are modified, stop and report the mismatch; do not stash,
+discard, merge, reset, switch branches, or search another checkout. Never run
+`git clean` as part of this handoff.
 
-Do **not** run an archive restore as a prerequisite. Start from tracked source:
+Do **not** run an archive restore as a prerequisite. Start from tracked source
+and explicitly bootstrap the zero-data state:
 
 ```bash
 python -m pytest -q
+
+# Safe dry plan: no network writes.
+python scripts/bootstrap_semifinal.py --profile core
+
+# Procure the open/core source set after reviewing the plan.
+python scripts/bootstrap_semifinal.py --profile core --apply
+
+# The broader semi-final profile contains restricted/noncommercial sources.
+# Run only after reviewing their terms:
+python scripts/bootstrap_semifinal.py \
+  --profile semifinal --apply --allow-restricted
+
+# This must evaluate qualification even if historical payloads are absent.
 python final_suite/run_all.py --qualify
 ```
+
+The bootstrap hashes every direct download, reuses only exact existing files,
+refuses to overwrite mismatches, writes its receipt under ignored `.cache/`,
+and permits unrelated untracked work. Dataset preparation/training scripts must
+follow the same non-destructive rule.
 
 Run optional browser/full-evidence checks only when their declared tracked inputs
 exist. A missing historical payload is an expected repository state, not a reason
 to search for `VCM_FINAL_PAYLOAD.zip` or `VCM_NO_ASR_FOLLOWUP.zip`.
+
+The bootstrap is the canonical starting point for dataset procurement. Extend
+its checked-in source ledgers/profiles when the selected training recipe changes;
+do not add undocumented one-off download commands.
 
 Next inventory what the branch can actually regenerate:
 
