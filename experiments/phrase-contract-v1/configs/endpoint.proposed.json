@@ -1,0 +1,7 @@
+{
+  "min_speech_ms": 300,
+  "trailing_silence_ms": 700,
+  "max_utterance_ms": 12000,
+  "activity_threshold_dbfs": -45.0,
+  "version": 1
+}

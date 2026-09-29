@@ -1,0 +1,20 @@
+{
+  "experiment_id": "pc-v1-human-primary",
+  "prepared": ".cache/phrase-contract-v1/prepared",
+  "rights_and_near_duplicate_audit_receipt": ".cache/phrase-contract-v1/rights-and-duplicates.json",
+  "device": "cuda",
+  "seeds": [53, 71],
+  "epochs": 40,
+  "selection_epochs": [1, 4, 8, 12, 18, 24, 30, 36, 40],
+  "batch_size": 64,
+  "wall_clock_seconds": 28800,
+  "positive_sampling_fraction": 0.8,
+  "hard_example_multiplier": 1.0,
+  "augmentation": "none",
+  "initialization": "random",
+  "source_policy": "new consented original human recordings; no inherited FSC weights",
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "gradient_clip": 5.0
+}

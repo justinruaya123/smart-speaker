@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-30",
+  "experiment_tests": {
+    "command": "python -m pytest experiments/phrase-contract-v1/tests -q",
+    "passed": 50,
+    "failed": 0,
+    "context": "PC-v1 experiment overlaid with the pinned repository vcm.frontend/model source required by the experiment"
+  },
+  "contract_bootstrap": {
+    "generator_source_sha256": "93a4e3e73b61899d08b5dd5bb9690349a028910f094d5a1c3360e1ca09a64ec8",
+    "generated_and_verified": true,
+    "second_run_verified_existing": true,
+    "bound_generated_files_verified": 6,
+    "contract_sha256": "ae004037a95bf8ab8fb170896927ab262898f4d11e1e5a251fdff0bafa10c35f"
+  },
+  "cli_check": {
+    "phrases": 570,
+    "commands": 402,
+    "rejections": 200,
+    "compiled_entries": 770
+  },
+  "training_smoke": {
+    "parameters": 113064,
+    "cache_bytes": 32064,
+    "initial_loss": 52.18103790283203,
+    "final_loss": 12.338113784790039,
+    "maximum_chunk_error": 0.000019073486328125,
+    "human_recordings": 0,
+    "checkpoint_saved": false,
+    "evidence_type": "generated_feature_training_smoke_NOT_SPEECH"
+  },
+  "not_verified_here": [
+    "human acoustic accuracy",
+    "trained successor checkpoint",
+    "ONNX/ONNX Runtime execution",
+    "sealed confirmation set",
+    "physical Raspberry Pi and microphone qualification",
+    "full repository suite from a complete fresh clone"
+  ],
+  "qualified": false
+}
