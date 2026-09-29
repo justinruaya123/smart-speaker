@@ -51,7 +51,8 @@ jobs:
           print(json.dumps(ledger, indent=2))
           PY
       - name: Download pinned CPU inference libraries, not model weights
-        run: python -m pip download --only-binary=:all: --dest audit-materials/wheels onnx==1.20.0 onnxruntime==1.23.2
+        run: |
+          python -m pip download --only-binary=:all: --dest audit-materials/wheels onnx==1.20.0 onnxruntime==1.23.2
       - uses: actions/upload-artifact@v4
         with:
           name: vcm-audit-materials
