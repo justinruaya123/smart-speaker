@@ -1,0 +1,18 @@
+{
+  "raw_exact_valid": 0.7255470603743739,
+  "raw_exact_supported": 0.9408547008547009,
+  "valid_speakers": 10,
+  "speaker_cluster_bootstrap_95": [
+    0.6949589925607057,
+    0.7500017146776405
+  ],
+  "resamples": 2000,
+  "seed": 929,
+  "negative_accepts": 0,
+  "negative_denominator": 200,
+  "negative_far_wilson_95": [
+    0,
+    0.018845326377265558
+  ],
+  "interpretation": "Acceptance disabled; zero emissions does not establish useful precision or recall. Existing corpus test replay, not independent human confirmation. Isolated-word negatives do not cover continuous/near-command unknowns."
+}

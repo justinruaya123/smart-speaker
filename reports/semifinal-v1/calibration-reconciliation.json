@@ -1,0 +1,18 @@
+{
+  "calibration_csv_sha256": "2d1bb679ba953c43121ded2bd02de39152c748ae9d1a8d7f0dbb29f923137271",
+  "rows": 1835,
+  "selected_thresholds_unchanged": true,
+  "all_decisions_equal_runtime": true,
+  "best": {
+    "min_score": -0.03218887146147304,
+    "min_margin": 0.033226845146327504,
+    "precision": 0.9900332225913622,
+    "recall": 0.18226299694189602,
+    "far": 0.005,
+    "emitted": 301,
+    "correct": 298
+  },
+  "original_policy_sha256": "6c81885d649b06d30d4e8dbb9b0f30559b32e8e29f739ff319edde8cec652247",
+  "policy_rewritten": false,
+  "test_used": false
+}

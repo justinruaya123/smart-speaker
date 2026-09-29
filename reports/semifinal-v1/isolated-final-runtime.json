@@ -1,0 +1,11 @@
+{
+  "python": "3.12.13 (main, Jul 23 2026, 14:44:57) [MSC v.1944 64 bit (AMD64)]",
+  "isolation": "-I -S; separately installed hash-locked runtime site only",
+  "network_socket_connections": "blocked",
+  "training_imports": "blocked",
+  "wav_file_sha256": "6ef9ed13130016c0903bcb2d18c5991669fa09e129a7777374258c6a93704ac7",
+  "exit_code": 0,
+  "live_microphone_tested": false,
+  "physical_pi_tested": false,
+  "environment_note": "Elevated install-created directories were inaccessible to sandbox token; verification used the installation user, with in-process socket blocks."
+}

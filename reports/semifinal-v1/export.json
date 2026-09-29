@@ -1,0 +1,46 @@
+{
+  "max_absolute_error": 1.52587890625e-05,
+  "nonzero_cache_tested": true,
+  "frame_counts": [
+    1,
+    3,
+    4,
+    8,
+    17
+  ],
+  "outputs": "raw logits; runtime applies log-softmax once",
+  "state_shapes": [
+    [
+      1,
+      40,
+      2
+    ],
+    [
+      1,
+      64,
+      4
+    ],
+    [
+      1,
+      64,
+      8
+    ],
+    [
+      1,
+      64,
+      16
+    ],
+    [
+      1,
+      64,
+      32
+    ],
+    [
+      1,
+      64,
+      64
+    ]
+  ],
+  "parameters": 113064,
+  "onnx_bytes": 468395
+}

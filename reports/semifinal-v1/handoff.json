@@ -1,0 +1,34 @@
+{
+  "baseline_commit": "cd98092436fb71e8f7ce196b4392d60f6a2a624e",
+  "source_commit": "ab2ea4f6ffb5b266d71f1d3b98093468e3a7178f",
+  "branch": "research/vcm-final-suite-visualizer",
+  "qualified": false,
+  "acceptance_enabled": false,
+  "artifacts": {
+    "onnx": "871c4a218684d50d132d8458b178e30c53ebff92c82b194bf3adaaa8652b1599",
+    "policy": "6c81885d649b06d30d4e8dbb9b0f30559b32e8e29f739ff319edde8cec652247",
+    "recipe": "88f0733d6a36bdd0aad16bff5282a72e8193f06e46fd7e4dbd540ca7aee439a5",
+    "package": "4488fe9c9d52d3e51f7c75fa81535dd5dc4002886266aac58f25200b084d55de",
+    "manifest_archive": "86fe19d64808743b52e0f160dd397cbde52217856a8b8dc3c51dbdec38f91765"
+  },
+  "data_manifests": {
+    "train": "a6d97413895f640f16b65acbe7c6bb3858e7c623f6e3aff2a6b3d112a7908d0c",
+    "dev": "5c6b74103c99d49028a7f5ed980acd544ebcc7ce63f6b327882df6de8b6c8e7d",
+    "calibration": "f20f401bc40b7a126e707d1da0791e2cfd9c255251d92c6c65ebabccc3f91d86",
+    "test": "3f020b8a230feb522875add31738fe1f72d9f619751d8e6fe42bc383728e8a9d"
+  },
+  "removed_tracked_paths": [
+    "VCM_Final_Review.ipynb",
+    "final_suite/refresh_notebook.py",
+    "research/no_asr_followup/experiment.py",
+    "research/no_asr_followup/selection.py",
+    "research/no_asr_followup/verify_replay.py",
+    "research/no_asr_review/optionb_audit.py",
+    "tools/retire_asr.py"
+  ],
+  "preexisting_untracked_preserved": 433,
+  "physical_actions": false,
+  "cleanup_manifest": "reports/cleanup_manifest.csv",
+  "changed_file_manifest": "reports/semifinal-v1/changed-files.csv",
+  "archive_restore": "python -m zipfile -e docs/finalization/baseline-cd98092.zip .cache/baseline-recovery"
+}

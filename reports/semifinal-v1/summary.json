@@ -1,0 +1,80 @@
+{
+  "examples": 3993,
+  "valid_requests": 3793,
+  "negatives": 200,
+  "correct_accepted": 0,
+  "emitted": 0,
+  "accepted_recall": 0.0,
+  "accepted_precision": null,
+  "negative_false_accepts": 0,
+  "raw_correct": 2752,
+  "per_family": {
+    "POWER_ON": {
+      "total": 472,
+      "raw_correct": 461,
+      "accepted": 0,
+      "correct_accepted": 0
+    },
+    "POWER_OFF": {
+      "total": 353,
+      "raw_correct": 339,
+      "accepted": 0,
+      "correct_accepted": 0
+    },
+    "UNSUPPORTED": {
+      "total": 868,
+      "raw_correct": 0,
+      "accepted": 0,
+      "correct_accepted": 0
+    },
+    "MEDIA_PAUSE": {
+      "total": 59,
+      "raw_correct": 58,
+      "accepted": 0,
+      "correct_accepted": 0
+    },
+    "MEDIA_RESUME": {
+      "total": 32,
+      "raw_correct": 32,
+      "accepted": 0,
+      "correct_accepted": 0
+    },
+    "VOLUME": {
+      "total": 741,
+      "raw_correct": 698,
+      "accepted": 0,
+      "correct_accepted": 0
+    },
+    "TEMPERATURE_RELATIVE": {
+      "total": 1133,
+      "raw_correct": 1044,
+      "accepted": 0,
+      "correct_accepted": 0
+    },
+    "MEDIA_STOP": {
+      "total": 46,
+      "raw_correct": 44,
+      "accepted": 0,
+      "correct_accepted": 0
+    },
+    "MEDIA_PLAY": {
+      "total": 89,
+      "raw_correct": 76,
+      "accepted": 0,
+      "correct_accepted": 0
+    },
+    "NEGATIVE": {
+      "total": 200,
+      "raw_correct": 0,
+      "accepted": 0,
+      "correct_accepted": 0
+    }
+  },
+  "binding": {
+    "model": "871c4a218684d50d132d8458b178e30c53ebff92c82b194bf3adaaa8652b1599",
+    "catalog": "d8eabaa0dd73060f18725575e18c4b0c20b8d44dbc109ab110615a7b6f7db3ea",
+    "frontend": "4410aa8bebc1fd2f9433f94613e17ca26d7d29834199c68494cf440ac37f1bda",
+    "recipe": "88f0733d6a36bdd0aad16bff5282a72e8193f06e46fd7e4dbd540ca7aee439a5"
+  },
+  "evidence": "fresh waveform replay"
+}
