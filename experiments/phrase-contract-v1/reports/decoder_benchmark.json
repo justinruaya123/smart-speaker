@@ -1,0 +1,14 @@
+{
+  "catalog_entries": 770,
+  "evidence_type": "desktop_decoder_only_generated_logits",
+  "frames": 250,
+  "maximum_score_absolute_error": 4.884981308350689e-15,
+  "median_speedup": 3.5427888011808197,
+  "padded_alpha_bytes": 572880,
+  "padded_ms": [295.6659569999829, 289.4067610000093, 289.4030250000128, 297.5295460000211, 289.50802099996054],
+  "physical_pi_tested": false,
+  "prefix_median_ms": 81.71755000000758,
+  "prefix_state_bytes": 115888,
+  "reference_median_ms": 289.50802099996054,
+  "shared_prefix_ms": [81.92162099999223, 80.97835000000941, 82.10293900003762, 81.71755000000758, 81.61787300002743]
+}
