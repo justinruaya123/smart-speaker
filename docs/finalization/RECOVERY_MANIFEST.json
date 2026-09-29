@@ -21,7 +21,7 @@
       "published_runtime_bundle"
     ],
     "claims_of_new_training_or_acceptance_verified": false,
-    "instruction": "Recover local artifacts with hashes and rerun, or restart from the verified reference; never infer their results from conversation"
+    "instruction": "Do not search for an external archive. Restart from tracked source and reproducible data pulls; if a separately supplied artifact later appears, verify its hash and evaluate it as an optional candidate."
   },
   "reference": {
     "name": "phone_s53",
@@ -96,7 +96,8 @@
     "acoustic_replay_performed": false,
     "onnx_runtime_executed": false,
     "physical_pi4_tested": false,
-    "physical_microphone_tested": false
+    "physical_microphone_tested": false,
+    "status": "Historical handoff-time source verification only; skipped payload-dependent tests are not repository bootstrap requirements."
   },
   "cleanup_status": "Planned in CODEX_HANDOFF.md; repository-only finalization does not require external recovery ZIPs; no runtime/model/dataset/evidence file deleted by this correction",
   "release_winner": null,
