@@ -35,10 +35,20 @@ that a recognizable intent implements an external service.
 
 Read `docs/finalization/RECOVERY_MANIFEST.json` first. It records byte counts,
 SHA-256 identities, the verified source tree, and absent semi-final artifacts.
-The attached `VCM_FINAL_PAYLOAD.zip` and `VCM_NO_ASR_FOLLOWUP.zip` are local recovery
-inputs, not durable public download URLs. Request them from the user's local
-project/archive when absent; do not assume that a ChatGPT sandbox path exists
-on another machine. Never download similarly named model weights as a substitute.
+**Repository-only rule:** `VCM_FINAL_PAYLOAD.zip` and
+`VCM_NO_ASR_FOLLOWUP.zip` are not in this project and are not required inputs.
+Do not ask Codex to find them, do not fail because they are absent, and do not
+depend on any ChatGPT sandbox path. The checked-out branch is the only guaranteed
+starting point. The manifest keeps historical hashes only so a separately supplied
+archive can be identified later; such an archive is optional recovery evidence,
+not part of the finalization procedure.
+
+If a historical graph/checkpoint/raw recording mentioned below is not tracked in
+Git, treat it as unavailable. Reconstruct it only from checked-in source,
+version-pinned dataset pull scripts, and recorded configuration/provenance. If
+that cannot be done reproducibly, record the artifact as missing and train/evaluate
+a new candidate under the frozen protocol. Never download similarly named model
+weights or infer old accuracy from reports as a substitute.
 
 | Existing path | Meaning / required treatment |
 |---|---|
@@ -49,9 +59,9 @@ on another machine. Never download similarly named model weights as a substitute
 | `research/no_asr_followup/` | First-layer adaptation, paired command-selection guard, and failed-candidate report. |
 | `final_suite/` | Evidence consolidation, typed exactness, scope checks, restoration, numerical/browser checks. Some require the separate payload. |
 | `visualizer/` | Development-only inspector. Preserve its source and recipe compatibility; never ship it in the Pi inference ZIP. |
-| Restored `experiments/vcm_streaming_v3/` | The own-trained `phone_s53` graph/checkpoint, frontend, decoder, and historical training implementation. |
-| Restored `experiments/vcm_services_v6/` | Fictional Home Assistant/music catalogs, normalization/compiler logic, and per-recording service-task evidence. |
-| Restored `experiments/vcm_acceptance_v4/` and `vcm_acceptance_v5/` | Historical gates and failure evidence; not permission to reuse their thresholds for a new model/catalog. |
+| Historical `experiments/vcm_streaming_v3/` paths | Reports describe the own-trained `phone_s53` lineage. These files are not guaranteed to be tracked. If absent, regenerate a new candidate; do not make them a bootstrap dependency. |
+| Historical `experiments/vcm_services_v6/` paths | Reports describe fictional Home Assistant/music catalogs and compiler logic. Recreate only the canonical catalog fixtures needed by the final package from checked-in specifications/tests. |
+| Historical `experiments/vcm_acceptance_v4/` and `vcm_acceptance_v5/` paths | Historical gate/failure evidence only. Never require these directories or reuse stale thresholds in the final runtime. |
 
 Historical results to preserve, not newly measured here: `phone_s53` matched
 645/706 valid V6 synthetic commands, but 0/180 external brightness test commands
@@ -82,42 +92,41 @@ Stop for reconciliation if the worktree contains unrelated edits or the remote
 has diverged. Do not stash, discard, or overwrite another person's work.
 Use an isolated worktree if the current checkout cannot be kept clean.
 
-Hash the available archives against `RECOVERY_MANIFEST.json`. Restore the
-baseline payload using the existing dry-run-first tool, preserving newer source:
-
-```bash
-python final_suite/restore_payload.py /absolute/path/VCM_FINAL_PAYLOAD.zip \
-  --repo . --sha256 652f373eac815df19507de31bdc4126734981983258bf233f18b552ead7bcf44
-python final_suite/restore_payload.py /absolute/path/VCM_FINAL_PAYLOAD.zip \
-  --repo . --sha256 652f373eac815df19507de31bdc4126734981983258bf233f18b552ead7bcf44 --apply
-```
-
-Inspect the reported skipped/conflicting files. Do not blindly overlay an old
-notebook or Python module. The restorer can skip newer source; that does not by
-itself establish compatibility. Extract the follow-up supplement outside the
-active tree; its `source/` files are already committed. Preserve its reports and
-provenance before cleanup. Do not reapply its patch on top of its own commit.
-
-Use the pinned CPU dependencies in the branch workflows for baseline checks;
-do not interpret installation of ONNX libraries as downloading model weights.
-Execute the source tests, then the restored suite:
+Do **not** run an archive restore as a prerequisite. Start from tracked source:
 
 ```bash
 python -m pytest -q
-python final_suite/run_all.py --browser
 python final_suite/run_all.py --qualify
 ```
 
-The existing qualification check is expected to fail while evidence is missing.
-Record skipped tests and missing dependencies distinctly from passes. Before
-new training, reproduce the baseline's complete-command and acceptance results
-from waveform data that really exists. Saved predictions can establish regression
-history, but cannot be represented as a fresh waveform replay.
+Run optional browser/full-evidence checks only when their declared tracked inputs
+exist. A missing historical payload is an expected repository state, not a reason
+to search for `VCM_FINAL_PAYLOAD.zip` or `VCM_NO_ASR_FOLLOWUP.zip`.
 
-Search local project folders for the interrupted semi-final run once. Recover it
-only with config, data identity, checkpoint, policy, and per-recording outputs.
-If these are absent, record `not_recovered` and restart a bounded experiment from
-the verified reference; do not spend repeated sessions searching imaginary paths.
+Next inventory what the branch can actually regenerate:
+
+```bash
+git ls-files
+find . -maxdepth 4 -type f \( -name '*.onnx' -o -name '*.pt' -o -name '*.jsonl' -o -name '*.csv' \) -print
+```
+
+For every absent model or dataset artifact, trace the checked-in producer and
+configuration. Convert that producer into the canonical `scripts/`, `configs/`,
+`train.py`, and `validate.py` flow described below. If the old `phone_s53`
+binary cannot be recreated from tracked inputs, keep its reported numbers as
+historical comparison only and train the semi-final candidate anew. Promotion
+must use fresh waveform replay of artifacts produced by the repository itself.
+
+The existing qualification check is expected to fail while human/Pi/calibration
+evidence is missing. Record skipped tests and missing dependencies distinctly
+from passes. Saved predictions can establish regression history, but cannot be
+represented as a fresh waveform replay.
+
+Do not search for the interrupted semi-final workspace outside this repository.
+It is not a required input. Treat it as `not_recovered` and restart the bounded
+experiment from tracked source and reproducible data pulls. If the user later
+supplies a separately hashed artifact, evaluate it as an additional candidate
+under the same frozen protocol; never make it a hidden dependency.
 
 ## 4. Minimal target layout and migration
 
