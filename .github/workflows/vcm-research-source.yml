@@ -24,7 +24,8 @@ jobs:
           path: |
             visualizer/
             final_suite/
-            VCM_Final_Review.ipynb
+            Architecture.ipynb
+            docs/finalization/baseline-cd98092.zip
             FINAL_REVIEW.md
           if-no-files-found: error
           retention-days: 7

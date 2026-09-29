@@ -3,7 +3,7 @@ from copy import deepcopy
 
 import pytest
 
-from research.no_asr_followup.selection import assess_candidate
+from vcm.selection import assess_candidate
 
 
 def row(key, category, correct=True):

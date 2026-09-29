@@ -1,0 +1,6 @@
+# Preserve bytes of frozen evidence and identity-bound metadata across hosts.
+models/selected/*.json -text
+configs/train*.json -text
+reports/semifinal-v1/** -text
+releases/semifinal-v1/** -text
+data/sources/cmudict-LICENSE.txt -text

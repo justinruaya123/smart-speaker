@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "fictional": true,
+  "entities": [
+    {"id": "light.kitchen", "aliases": ["kitchen lamp"], "area": "kitchen", "exposed": true, "available": true, "capabilities": ["power", "brightness", "color"]},
+    {"id": "light.bedroom", "aliases": ["bedroom lamp", "lamp two"], "area": "bedroom", "exposed": true, "available": false, "capabilities": ["power", "brightness"]}
+  ],
+  "tracks": [
+    {"id": "track.river", "title": "river", "artists": ["alpha"]},
+    {"id": "track.river.beta", "title": "river", "artists": ["beta"]},
+    {"id": "track.seventy_three", "title": "seventy three", "artists": ["alpha", "beta"]}
+  ],
+  "colors": ["red", "green", "blue", "white", "yellow"],
+  "acoustic_support": "unverified; symbolic fixtures only; changing competition invalidates calibration"
+}

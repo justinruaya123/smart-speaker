@@ -30,7 +30,7 @@ def plan_checks(root: Path = ROOT, include_browser: bool = False) -> list[dict]:
             "name": "source_tests",
             "required": True,
             "ready": True,
-            "command": [python, "-m", "pytest", "-q"],
+            "command": [python, "-m", "pytest", "-q", "final_suite/tests", "tests"],
             "reason": "Repository source and contract tests.",
         },
         {

@@ -5,8 +5,8 @@ import sys
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "research/no_asr_review"))
-from optionb_audit import metadata_audit
+sys.path.insert(0, str(ROOT))
+from vcm.source_audit import metadata_audit
 
 
 def row(path="a.wav", speaker="s1", split="train"):

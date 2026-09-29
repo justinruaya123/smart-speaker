@@ -1,0 +1,86 @@
+{
+  "tinyvcm.__init__": {
+    "module": "tinyvcm.__init__",
+    "runtime": true
+  },
+  "tinyvcm.audio": {
+    "module": "tinyvcm.audio",
+    "runtime": true
+  },
+  "tinyvcm.levels": {
+    "module": "tinyvcm.levels",
+    "runtime": true
+  },
+  "tinyvcm.routing": {
+    "module": "tinyvcm.routing",
+    "runtime": true
+  },
+  "tinyvcm.slot_contract": {
+    "module": "tinyvcm.slot_contract",
+    "runtime": true
+  },
+  "tinyvcm.family_contract": {
+    "module": "tinyvcm.family_contract",
+    "runtime": true
+  },
+  "tinyvcm.bundle": {
+    "module": "tinyvcm.bundle",
+    "runtime": true
+  },
+  "tinyvcm.inference": {
+    "module": "tinyvcm.inference",
+    "runtime": true
+  },
+  "tinyvcm.text": {
+    "module": "tinyvcm.text",
+    "runtime": true
+  },
+  "tinyvcm.config": {
+    "module": "tinyvcm.config",
+    "runtime": true
+  },
+  "tinyvcm.metrics": {
+    "module": "tinyvcm.metrics",
+    "runtime": true
+  },
+  "tinyvcm.pipeline": {
+    "module": "tinyvcm.pipeline",
+    "runtime": true
+  },
+  "tinyvcm.capture": {
+    "module": "tinyvcm.capture",
+    "runtime": true
+  },
+  "tinyvcm.validation": {
+    "module": "tinyvcm.validation",
+    "runtime": true
+  },
+  "tinyvcm.launcher": {
+    "module": "tinyvcm.launcher",
+    "runtime": true
+  },
+  "tinyvcm.vcm": {
+    "module": "tinyvcm.vcm",
+    "runtime": false
+  },
+  "tinyvcm.slot_model": {
+    "module": "tinyvcm.slot_model",
+    "runtime": false
+  },
+  "tinyvcm.data": {
+    "module": "tinyvcm.data",
+    "runtime": false
+  },
+  "tinyvcm.train_helpers": {
+    "module": "tinyvcm.train_helpers",
+    "runtime": false
+  },
+  "tinyvcm.finite_policy": {
+    "module": "tinyvcm.finite_policy",
+    "runtime": false
+  },
+  "tinyvcm.training": {
+    "module": "tinyvcm.training",
+    "runtime": false
+  }
+}

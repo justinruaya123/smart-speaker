@@ -103,5 +103,8 @@ def test_untracked_paths_are_allowed_but_tracked_edits_are_not():
 
 
 def test_pipeline_stage_order_is_fixed():
-    names = [item["name"] for item in MODULE.pipeline_stages("run-001")]
-    assert names == ["train", "validate", "publish_diagnostic"]
+    stages=MODULE.pipeline_stages("run-001")
+    assert [item['name'] for item in stages]==['prepare','prepare_negatives','train','calibrate','validate','publish_diagnostic']
+    assert '--config' in stages[2]['command'] and '--fit' not in stages[2]['command']
+    assert '--diagnostic' in stages[-1]['command']
+    assert any('run-001' in arg for arg in stages[2]['command'])

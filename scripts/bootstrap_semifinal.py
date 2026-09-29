@@ -29,6 +29,7 @@ import urllib.request
 ROOT = Path(__file__).resolve().parents[1]
 
 PROFILES = {
+    "bounded": ("fluent", "speech_commands", "cmudict"),
     "core": (
         "slurp",
         "speech_commands",
@@ -322,22 +323,20 @@ def require_tracked_clean(root: Path = ROOT) -> dict:
 
 
 def pipeline_stages(run_id: str) -> list[dict]:
-    """Stable stage order; qualification must pass before publication."""
-    del run_id
+    """Reproduce the frozen bounded recipe; qualified publication is separate."""
+    if not run_id or any(ch not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_" for ch in run_id):
+        raise ValueError("Run ID must be a simple directory name")
     python = sys.executable
+    run = f".cache/{run_id}"
+    bundle = run + '/bundle'
+    data = '.cache/semifinal-v1/mixed-v2'
     return [
-        {
-            "name": "train",
-            "command": [python, "train.py", "--fit"],
-        },
-        {
-            "name": "validate",
-            "command": [python, "final_suite/run_all.py", "--qualify"],
-        },
-        {
-            "name": "publish_diagnostic",
-            "command": [python, "publish.py"],
-        },
+        {"name":"prepare", "command":[python,'scripts/prepare_semifinal.py','--output','.cache/semifinal-v1/prepared']},
+        {"name":"prepare_negatives", "command":[python,'scripts/prepare_negatives.py','--base','.cache/semifinal-v1/prepared','--output',data]},
+        {"name":"train", "command":[python,'train.py','--config','configs/train-longer.json','--output',run]},
+        {"name":"calibrate", "command":[python,'scripts/calibrate_semifinal.py','--bundle',bundle,'--manifest',data+'/calibration.jsonl','--output',run+'/calibration']},
+        {"name":"validate", "command":[python,'validate.py','--bundle',bundle,'--manifest',data+'/test.jsonl','--output',run+'/test']},
+        {"name":"publish_diagnostic", "command":[python,'publish.py','--bundle',bundle,'--diagnostic','--output',f'dist/{run_id}-diagnostic.zip']},
     ]
 
 

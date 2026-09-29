@@ -13,7 +13,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-import train
+from vcm import legacy_workflow as train
 
 
 @pytest.fixture(scope="module")
@@ -118,7 +118,7 @@ def test_invalid_audio_rejected_before_model_call(modules, bad):
 
 
 def publisher_module():
-    spec = importlib.util.spec_from_file_location("checked_publisher", ROOT / "publish.py")
+    spec = importlib.util.spec_from_file_location("checked_publisher", ROOT / "vcm/legacy_publish.py")
     publisher = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(publisher)
     return publisher
@@ -222,9 +222,7 @@ def test_package_has_one_graph_even_if_old_file_is_present(modules, graph_bundle
     ("slot_model", "1d3f5b8107494675328462566d8d8a64d5bdb712974b377ffc3d78695fdfb38b"),
     ("audio", "b097aecf362f0636bffbe267888e24ed80727d208e0f20f819a44fe43cdfd0b5")])
 def test_removal_preserves_vcm_model_and_frontend(name, digest):
-    notebook = json.loads((ROOT / "Architecture.ipynb").read_text())
-    source = next("".join(c["source"]) for c in notebook["cells"] if
-                  c.get("metadata", {}).get("checkpoint", {}).get("module") == "tinyvcm." + name)
+    source = f'%%module tinyvcm.{name}\n' + (ROOT / 'vcm/legacy/tinyvcm' / (name+'.py')).read_text(encoding='utf-8')
     assert hashlib.sha256(source.encode()).hexdigest() == digest
 
 
