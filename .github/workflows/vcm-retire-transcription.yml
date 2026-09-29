@@ -26,6 +26,27 @@ jobs:
       - name: Check VCM-only graph export and publisher allowlist
         run: |
           python -m pytest -q tests/test_vcm_only.py tests/test_optionb_audit.py tests/test_grammar_extension.py tests/test_checkpoint_selection.py tests/test_pretrained_contract.py tests/test_bootstrap_semifinal.py final_suite/tests/test_review.py final_suite/tests/test_restore.py final_suite/tests/test_run_all_repo_only.py
+      - name: Fresh checkout reaches fail-closed qualification gate
+        run: |
+          set +e
+          python final_suite/run_all.py --qualify
+          code=$?
+          set -e
+          test "$code" -eq 2
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(
+              Path("final_suite/reports/final_verification.json").read_text()
+          )
+          assert report["software_checks_passed"] is True
+          assert report["qualification_evaluated"] is True
+          assert report["release"]["eligible"] is False
+          assert report["qualification_evidence_source"] == (
+              "fail_closed_repository_state"
+          )
+          PY
       - name: Archive verified source (not acoustic qualification)
         run: git archive --format=zip HEAD -o vcm-only-verified-source.zip
       - uses: actions/upload-artifact@v4
