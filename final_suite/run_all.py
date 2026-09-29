@@ -6,7 +6,6 @@ regression evidence; their absence must not prevent fail-closed qualification.
 from __future__ import annotations
 
 import argparse
-import importlib.util
 import json
 import os
 from pathlib import Path
@@ -17,16 +16,6 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT / "final_suite/reports"
-
-
-def _review_module(root: Path):
-    path = root / "final_suite/review.py"
-    spec = importlib.util.spec_from_file_location("final_suite_review", path)
-    if spec is None or spec.loader is None:
-        raise RuntimeError(f"Cannot load release gate: {path}")
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
 
 
 def _all_files(root: Path, relatives: list[str]) -> bool:
@@ -140,13 +129,31 @@ def software_checks_passed(evidence: list[dict]) -> bool:
     return True
 
 
+def _fail_closed_release() -> dict:
+    failed = [
+        "human_test_passed",
+        "pi4_test_passed",
+        "all_ten_use_cases_passed",
+        "calibration_passed",
+        "catalog_frozen_for_evaluation",
+        "model_frontend_hashes_verified",
+        "accepted_recall",
+        "accepted_precision",
+        "negative_far",
+    ]
+    return {
+        "eligible": False,
+        "failed_requirements": failed,
+        "release_winner": None,
+    }
+
+
 def qualification_snapshot(
     root: Path = ROOT,
     *,
     use_generated_summary: bool = False,
 ) -> dict:
     """Evaluate release eligibility even when no historical payload exists."""
-    review = _review_module(root)
     summary_path = root / "final_suite/data/summary.json"
     if use_generated_summary and summary_path.is_file():
         payload = json.loads(summary_path.read_text(encoding="utf-8"))
@@ -160,7 +167,7 @@ def qualification_snapshot(
         }
     return {
         "evaluated": True,
-        "release": review.release_decision({}),
+        "release": _fail_closed_release(),
         "evidence_source": "fail_closed_repository_state",
     }
 
