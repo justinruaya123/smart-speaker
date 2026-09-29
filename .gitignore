@@ -11,8 +11,9 @@ __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
 
-# Public dataset audio stays local; manifests, references and licenses are versionable.
+# Public dataset payloads stay local; manifests, references and licenses are versionable.
 /data/audio/
+/data/raw/
 # Shared pool payloads; function manifests, source receipts and audits stay versionable.
 /data/pool/
 /data/downloads/
