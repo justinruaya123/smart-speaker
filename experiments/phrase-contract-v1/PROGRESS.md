@@ -17,6 +17,14 @@ Binding input: original PC-v1 package and the user's request to perform experime
 
 ## Completed work
 
+## 2026-09-30 current-checkout continuation
+
+- Baseline: `f13ffcaa4974eee96e8c6576af136c95b6e1d6a5`, branch `codex/semifinal-handoff`; no staged changes. Unrelated untracked research remains untouched. Existing committed ignore rules cover all planned cache/checkpoint/audio outputs; no ignore commit required.
+- Ruling: execute the existing five-step handoff in the current checkout, using this existing ledger; no worktree, architecture redesign, maintenance migration or new documentation hierarchy. New code/tests/reports stay under this experiment.
+- Baseline defect: `init-spec` failed on Windows CRLF output. All six regenerated files match the original bound hashes after LF conversion. Normalize only temporary generated text, then verify original hashes; existing frozen files still fail on any mutation. Regression added before fix. Baseline: 51 tests pass; contract unchanged (570/402/200).
+- Interfaces: CV consumes verified raw features and recomputes fit-fold normalization; endpoint selection consumes reviewed development timestamps and feeds the shared runtime; capture consumes the same runtime; packaging must bind the selected endpoint, policy, data, replay and physical measurements.
+- Remaining: (1) CV and shared compute budget, (2) development endpoint selection, (3) bounded capture, (4) exact-graph/target dependencies, (5) evidence-derived release; then original human recording and physical qualification only if real inputs are available.
+
 Strict full-command membership; all 770 pronunciations; context-specific AM and unmute; exact shared-prefix decoder; sticky capture/endpoint faults; shared calibration decision predicate; recording-slot plan; provenance/duplicate checks; frozen feature preparation; own-model training and immutable epoch retention; full-development selection; ONNX export adapter; a single real-endpoint runtime; immutable calibration/replay/report orchestration; diagnostic-only allowlist publisher; software regression tests and retained preliminary experiments.
 
 ## Explicit incomplete validation/integration

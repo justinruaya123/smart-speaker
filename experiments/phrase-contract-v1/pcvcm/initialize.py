@@ -34,6 +34,11 @@ def initialize(root: Path) -> dict:
         temp = Path(temporary)
         _stage_generator(spec, temp)
         subprocess.run([sys.executable, str(temp / 'build_contract.py')], check=True)
+        # The frozen generator used platform-default text newlines. Canonicalize
+        # newly generated text only; never repair or relax existing frozen files.
+        for path in _generated_artifacts(temp):
+            if path.name != 'build_contract.py':
+                path.write_bytes(path.read_bytes().replace(b'\r\n', b'\n'))
         for name, expected in binding['files'].items():
             if file_hash(temp / name) != expected:
                 raise ValueError(f'Generated spec differs: {name}')
