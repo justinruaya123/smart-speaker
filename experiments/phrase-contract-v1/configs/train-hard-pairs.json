@@ -1,6 +1,8 @@
 {
   "experiment_id": "pc-v1-human-hard-pairs",
   "prepared": ".cache/phrase-contract-v1/prepared",
+  "cv_receipt": ".cache/phrase-contract-v1/cv/cv.json",
+  "compute_budget": ".cache/phrase-contract-v1/compute-budget.json",
   "rights_and_near_duplicate_audit_receipt": ".cache/phrase-contract-v1/rights-and-duplicates.json",
   "device": "cuda",
   "seeds": [53, 71],

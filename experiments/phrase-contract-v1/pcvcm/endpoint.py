@@ -10,7 +10,7 @@ class EndpointConfig:
     sample_rate: int = 16000
     frame_samples: int = 320
     rms_threshold: float = 0.01
-    minimum_speech_ms: int = 150
+    minimum_speech_ms: int = 300
     trailing_silence_ms: int = 700
     maximum_ms: int = 12000
 
@@ -19,7 +19,7 @@ class EndpointConfig:
             raise ValueError('PC-v1 endpoint uses 16 kHz and 20 ms frames')
         if not 0 < self.rms_threshold < 1:
             raise ValueError('RMS threshold must be in (0,1)')
-        if self.trailing_silence_ms != 700 or self.maximum_ms != 12000:
+        if self.minimum_speech_ms != 300 or self.trailing_silence_ms != 700 or self.maximum_ms != 12000:
             raise ValueError('Endpoint timing changes require a protocol revision')
 
 

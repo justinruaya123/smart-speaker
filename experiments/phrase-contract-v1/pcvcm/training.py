@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import time
 import numpy as np
+from einops import rearrange
 
 from .contract import Contract, canonical, compile_catalog, file_hash, identity, read_jsonl, write_json
 from .data import batch_arrays, verified_features
@@ -151,10 +152,31 @@ def sampling_weights(rows: list[dict], positive_fraction: float,
     return result / result.sum()
 
 
-def fit(config_path: Path, contract: Contract, lexicon_path: Path, output: Path) -> dict:
+def fit(config_path: Path, contract: Contract, lexicon_path: Path, output: Path, *, fold=None) -> dict:
+    from .compute import ComputeBudget
+    config = json.loads(Path(config_path).read_text())
+    budget_path = Path(config.get('compute_budget', '.cache/phrase-contract-v1/compute-budget.json'))
+    with ComputeBudget(budget_path, str(output)) as budget:
+        try:
+            return _fit(config_path, contract, lexicon_path, output, fold=fold, budget=budget)
+        except RuntimeError as exc:
+            if 'compute budget' not in str(exc):
+                raise
+            write_json(Path(output) / 'stopped.json', {'reason': str(exc), 'qualified': False})
+            return {'status': 'STOPPED_BUDGET', 'qualified': False}
+
+
+def _fit(config_path, contract, lexicon_path, output, *, fold, budget):
     import torch
     from vcm.model import CausalVCM
     config = json.loads(Path(config_path).read_text())
+    fixed = {'batch_size': 64, 'positive_sampling_fraction': .8, 'augmentation': 'none',
+             'initialization': 'random', 'optimizer': 'AdamW', 'learning_rate': .001,
+             'weight_decay': .0001, 'gradient_clip': 5.}
+    if any(config.get(k) != v for k, v in fixed.items()) or config['seeds'] != [53, 71]:
+        raise ValueError('Training recipe differs from the fixed protocol')
+    if not 1 <= config['epochs'] <= 40:
+        raise ValueError('Invalid fixed epoch budget')
     prepared = Path(config['prepared'])
     freeze = json.loads((prepared / 'freeze.json').read_text())
     if freeze['contract_sha256'] != contract.sha256:
@@ -175,8 +197,26 @@ def fit(config_path: Path, contract: Contract, lexicon_path: Path, output: Path)
         raise RuntimeError('CUDA unavailable; no silent CPU or pretrained fallback')
     torch.set_num_threads(2)
     train = read_jsonl(prepared / 'train.jsonl')
-    dev = read_jsonl(prepared / 'dev.jsonl')
-    norm = json.loads((prepared / 'normalization.json').read_text())
+    if fold is not None:
+        from .cv import speaker_folds, fold_normalization
+        if fold not in speaker_folds(train) or config['hard_example_multiplier'] != 1.:
+            raise ValueError('Changed fixed CV fold or primary recipe')
+        raw = {r['recording_id']: verified_features(r, prepared) for r in train}
+        dev = [r for r in train if r['speaker_id'] in fold['held_speakers']]
+        train = [r for r in train if r['speaker_id'] in fold['fit_speakers']]
+        norm = fold_normalization(train, raw)
+        config = {**config, 'seeds': [53], 'epochs': min(12, config['epochs']),
+                  'selection_epochs': list(range(1, 13))}
+    else:
+        cv = json.loads(Path(config['cv_receipt']).read_text())
+        if cv.get('status') != 'CV_PASSED' or cv.get('freeze_sha256') != file_hash(prepared / 'freeze.json'):
+            raise ValueError('Passing training-only CV required before full fitting')
+        dev = read_jsonl(prepared / 'dev.jsonl')
+        norm = json.loads((prepared / 'normalization.json').read_text())
+    for role, selected in [('fit', train), ('held', dev)]:
+        observed = {r.get('phrase_id') for r in selected if r['reference_class'] == 'supported_positive'}
+        if observed != set(contract.by_id):
+            raise ValueError(f'Incomplete {role} phrase coverage')
     mean = np.asarray(norm['mean'], dtype=np.float32)[:, None]
     std = np.asarray(norm['std'], dtype=np.float32)[:, None]
     arrays = {r['recording_id']: (verified_features(r, prepared) - mean) / std for r in train + dev}
@@ -189,7 +229,8 @@ def fit(config_path: Path, contract: Contract, lexicon_path: Path, output: Path)
                 'initialization': 'random; no external neural weights',
                 'code': {p.name: file_hash(p) for p in Path(__file__).parent.glob('*.py')},
                 'baseline_model_sha256': file_hash(Path(__import__('vcm.model', fromlist=['x']).__file__)),
-                'test_accessed': False, 'calibration_accessed': False}
+                'test_accessed': False, 'calibration_accessed': False, 'cv_fold': fold,
+                'rights_receipt_sha256': file_hash(audit_path)}
     write_json(Path(output) / 'protocol.json', protocol)
     weights = sampling_weights(train, config.get('positive_sampling_fraction', .8),
                                config.get('hard_example_multiplier', 1.))
@@ -203,6 +244,7 @@ def fit(config_path: Path, contract: Contract, lexicon_path: Path, output: Path)
         seed_dir = Path(output) / f'seed-{seed}'
         seed_dir.mkdir()
         for epoch in range(1, min(int(config['epochs']), 40) + 1):
+            budget.start_epoch(f'seed-{seed}/epoch-{epoch}')
             if time.perf_counter() - all_started >= config['wall_clock_seconds']:
                 write_json(Path(output) / 'stopped.json', {'reason': 'compute_budget', 'history': history})
                 return {'status': 'STOPPED_BUDGET', 'final_model': False}
@@ -210,6 +252,7 @@ def fit(config_path: Path, contract: Contract, lexicon_path: Path, output: Path)
             order = rng.choice(len(train), size=len(train), replace=True, p=weights)
             losses = []
             for start in range(0, len(order), config['batch_size']):
+                budget.check()
                 if time.perf_counter() - all_started >= config['wall_clock_seconds']:
                     write_json(Path(output) / 'stopped.json',
                                {'reason': 'compute_budget', 'history': history,
@@ -220,7 +263,7 @@ def fit(config_path: Path, contract: Contract, lexicon_path: Path, output: Path)
                 logits, _ = model(torch.from_numpy(x).to(device))
                 targets = torch.tensor([p for r in batch for p in r['phones']], dtype=torch.long, device=device)
                 loss = torch.nn.functional.ctc_loss(
-                    logits.log_softmax(1).permute(2, 0, 1), targets,
+                    rearrange(logits.log_softmax(1), 'b c t -> t b c'), targets,
                     torch.tensor(lengths), torch.tensor([len(r['phones']) for r in batch]),
                     zero_infinity=False)
                 if not torch.isfinite(loss):
@@ -233,17 +276,28 @@ def fit(config_path: Path, contract: Contract, lexicon_path: Path, output: Path)
             checkpoint = seed_dir / f'epoch-{epoch:03}.pt'
             torch.save({'weights': model.state_dict(), 'optimizer': optimizer.state_dict(),
                         'epoch': epoch, 'seed': seed, 'torch_rng': torch.get_rng_state(),
+                        'numpy_rng': rng.bit_generator.state,
+                        'cuda_rng': torch.cuda.get_rng_state_all() if device.type == 'cuda' else [],
                         'protocol_sha256': identity(protocol)}, checkpoint)
             record = {'seed': seed, 'epoch': epoch, 'ctc_loss': float(np.mean(losses)),
                       'checkpoint': str(checkpoint), 'checkpoint_sha256': file_hash(checkpoint)}
             if epoch in config['selection_epochs']:
                 metrics, predictions = development(model, dev, arrays, catalog['entries'], device)
                 record.update(metrics)
+                record.update(required_phrases=570, observed_phrases=len({
+                    r['phrase_id'] for r in dev if r['reference_class'] == 'supported_positive'}),
+                    observed_use_cases=len({r['use_case'] for r in dev if r['reference_class'] == 'supported_positive'}))
                 candidates.append(dict(record))
                 write_json(seed_dir / f'development-{epoch:03}.json', predictions)
             history.append(record)
             write_json(Path(output) / 'history.json', history)
             print(json.dumps(record), flush=True)
+    if fold is not None:
+        result = {'status': 'CV_FOLD_COMPLETE', 'fold': fold, 'final_epoch': history[-1],
+                  'normalization_sha256': file_hash(Path(output) / 'normalization.json'),
+                  'qualified': False}
+        write_json(Path(output) / 'cv-fold.json', result)
+        return result
     winner = select_checkpoint(candidates)
     status = 'DEVELOPMENT_SELECTED' if winner['phrases_passing'] == 570 else 'BLOCKED_DEVELOPMENT'
     lock = {'status': status, 'winner': winner, 'candidates': candidates,

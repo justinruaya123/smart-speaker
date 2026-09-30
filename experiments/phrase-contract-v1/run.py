@@ -34,6 +34,17 @@ def main() -> None:
     train = commands.add_parser('train')
     train.add_argument('--config', type=Path, required=True)
     train.add_argument('--output', type=Path, required=True)
+    cv = commands.add_parser('cv')
+    cv.add_argument('--config', type=Path, required=True)
+    cv.add_argument('--output', type=Path, required=True)
+    endpoint = commands.add_parser('select-endpoint')
+    endpoint.add_argument('--run', type=Path, required=True)
+    endpoint.add_argument('--manifest', type=Path, required=True)
+    endpoint.add_argument('--audio-root', type=Path, required=True)
+    endpoint.add_argument('--output', type=Path, required=True)
+    mic = commands.add_parser('microphone')
+    mic.add_argument('--bundle', type=Path, required=True)
+    mic.add_argument('--device', type=int, required=True)
     export = commands.add_parser('export')
     export.add_argument('--run', type=Path, required=True)
     export.add_argument('--endpoint-config', type=Path, required=True)
@@ -86,10 +97,22 @@ def main() -> None:
     elif args.command == 'train':
         from pcvcm.training import fit
         result = fit(args.config, contract, args.lexicon, args.output)
+    elif args.command == 'cv':
+        from pcvcm.cv import run_cv
+        result = run_cv(args.config, contract, args.lexicon, args.output)
     elif args.command == 'export':
         from pcvcm.bundle import export_selected
         endpoint = EndpointConfig(**json.loads(args.endpoint_config.read_text()))
         result = export_selected(args.run, args.output, contract, args.lexicon, endpoint)
+    elif args.command == 'select-endpoint':
+        from pcvcm.endpoint_selection import select_endpoint
+        result = select_endpoint(args.run, args.manifest, args.audio_root, args.output, contract, args.lexicon)
+    elif args.command == 'microphone':
+        from pcvcm.runtime import Runtime
+        from pcvcm.capture import microphone
+        runtime = Runtime.from_bundle(args.bundle, contract)
+        input('Press Enter to arm one utterance (automatic endpoint; no actions): ')
+        result = microphone(runtime, args.device)
     elif args.command == 'calibrate':
         from pcvcm.pipeline import calibrate_bundle
         result = calibrate_bundle(args.bundle, args.manifest, args.audio_root,

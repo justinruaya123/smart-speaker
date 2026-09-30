@@ -12,7 +12,7 @@ from .endpoint import EndpointConfig
 
 ASSETS = ('model.onnx', 'catalog.json', 'normalization.json', 'endpoint.json')
 RUNTIME_CODE = ('contract.py', 'data.py', 'decoder.py', 'endpoint.py',
-                'policy.py', 'runtime.py', 'bundle.py', 'evidence.py')
+                'policy.py', 'runtime.py', 'bundle.py', 'evidence.py', 'capture.py')
 
 
 def code_identity() -> dict:
