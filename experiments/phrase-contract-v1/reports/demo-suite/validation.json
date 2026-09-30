@@ -1,0 +1,20 @@
+{
+  "status": "EXPECTED_OUTPUTS_ONLY_NOT_ACOUSTICALLY_RUN",
+  "contract_sha256": "ae004037a95bf8ab8fb170896927ab262898f4d11e1e5a251fdff0bafa10c35f",
+  "suite_sha256": "47f24fee6c873c53dac747e24e523c6edb178a8ff45872f114f73520aad85e4c",
+  "cases": 770,
+  "positive": 570,
+  "rejection": 200,
+  "demo_cases": 42,
+  "supported_intents_in_demo": 32,
+  "use_cases": 10,
+  "all_cases_match_frozen_source": true,
+  "actual_outputs": 0,
+  "pcv1_software_tests": {
+    "passed": 91,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 4
+  },
+  "model_readiness": "BLOCKED_NO_TRAINED_PC_V1_BUNDLE_OR_ORIGINAL_AUDIO"
+}
