@@ -62,7 +62,7 @@ def test_endpoint_truncation_does_not_decode_late_audio():
 
 
 def test_export_does_not_claim_success_without_a_selected_checkpoint(tmp_path):
-    from pcvcm.bundle import export_selected
+    from pcvcm.exporting import export_selected
     with pytest.raises((FileNotFoundError, ValueError)):
         export_selected(tmp_path / 'absent', tmp_path / 'bundle',
                         Contract(ROOT / 'spec'), ROOT / 'configs/lexicon.json',

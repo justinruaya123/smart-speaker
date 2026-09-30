@@ -8,37 +8,7 @@ from .contract import Contract, canonical
 from .evidence import audit_partitions, validate_reference
 
 
-def candidate_allowed(candidate: dict, limits: list,
-                      endpoint: bool, fault: str | None = None) -> bool:
-    if fault or not endpoint or candidate.get('command') is None:
-        return False
-    score, margin = candidate.get('score'), candidate.get('margin')
-    return bool(limits is not None and score is not None and margin is not None
-                and math.isfinite(score) and math.isfinite(margin)
-                and margin > 0 and score >= limits[0] and margin >= limits[1])
-
-
-def decide(candidate: dict, policy: dict, binding: str, *,
-           endpoint: bool, fault: str | None = None) -> dict:
-    reason = None
-    if fault:
-        reason = 'capture_fault'
-    elif policy.get('binding') != binding:
-        reason = 'invalid_bundle'
-    elif not endpoint:
-        reason = 'tentative'
-    elif policy.get('enabled') is not True:
-        reason = 'policy_disabled'
-    else:
-        thresholds = policy.get('thresholds', {})
-        limits = thresholds.get(candidate.get('use_case'),
-                                thresholds.get('global'))
-        if not candidate_allowed(candidate, limits, endpoint):
-            reason = 'unknown'
-    accepted = reason is None
-    return {'schema_version': 2, 'accepted': accepted,
-            'command': candidate['command'] if accepted else None,
-            'reason': 'accepted' if accepted else reason}
+from .decision import candidate_allowed, decide
 
 
 def calibrate(rows: list[dict], contract: Contract, binding: str) -> dict:
@@ -89,11 +59,16 @@ def calibrate(rows: list[dict], contract: Contract, binding: str) -> dict:
     margin_grid = (np.unique(np.quantile(margins[finite], np.linspace(0, 1, 21)))
                    if finite.any() else [])
     best, history = None, []
+    separate_negatives = [np.array([r.get('natural_unknown') is True for r in rows]),
+                          np.array([r.get('phrase_id') in contract.negative_by_id for r in rows])]
     for threshold in score_grid:
         for margin in margin_grid:
             accept = finite & (scores >= threshold) & (margins >= margin)
             successes = int((accept & good).sum())
             passed = bool(accept.any()) and not (accept & critical).any()
+            for mask in separate_negatives:
+                count = int(mask.sum())
+                passed &= count >= 50 and int((accept & mask).sum()) / max(1, count) <= .01
             for positive, predicted, negatives in masks.values():
                 n = int(positive.sum())
                 emitted = int((accept & predicted).sum())

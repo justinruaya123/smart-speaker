@@ -9,7 +9,7 @@ import numpy as np
 from .contract import Contract
 from .decoder import PrefixCTC, rank_commands
 from .endpoint import Endpoint, EndpointConfig
-from .policy import decide
+from .decision import decide
 
 
 class StreamEngine:
@@ -103,6 +103,7 @@ class OnnxEncoder:
 
     def __init__(self, path, state_shapes: list, threads: int = 1):
         import onnxruntime as ort
+        ort.disable_telemetry_events()
 
         if threads not in (1, 2, 4):
             raise ValueError('Use a predeclared 1/2/4-thread profile')

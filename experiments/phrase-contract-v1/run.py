@@ -45,6 +45,15 @@ def main() -> None:
     mic = commands.add_parser('microphone')
     mic.add_argument('--bundle', type=Path, required=True)
     mic.add_argument('--device', type=int, required=True)
+    deps = commands.add_parser('lock-dependencies')
+    deps.add_argument('--wheels', type=Path, required=True)
+    deps.add_argument('--output', type=Path, required=True)
+    parity = commands.add_parser('verify-graph')
+    parity.add_argument('--run', type=Path, required=True)
+    parity.add_argument('--bundle', type=Path, required=True)
+    parity.add_argument('--manifest', type=Path, required=True)
+    parity.add_argument('--audio-root', type=Path, required=True)
+    parity.add_argument('--output', type=Path, required=True)
     export = commands.add_parser('export')
     export.add_argument('--run', type=Path, required=True)
     export.add_argument('--endpoint-config', type=Path, required=True)
@@ -62,6 +71,14 @@ def main() -> None:
     package = commands.add_parser('package-diagnostic')
     package.add_argument('--bundle', type=Path, required=True)
     package.add_argument('--output', type=Path, required=True)
+    for name in ('publish-diagnostic', 'publish-qualified', 'stage-candidate'):
+        publisher = commands.add_parser(name)
+        publisher.add_argument('--bundle', type=Path, required=True)
+        publisher.add_argument('--dependency-lock', type=Path, required=True)
+        publisher.add_argument('--wheels', type=Path, required=True)
+        publisher.add_argument('--output', type=Path, required=True)
+        if name == 'publish-qualified':
+            publisher.add_argument('--evidence', type=Path, required=True)
     args = parser.parse_args()
     if args.command == 'init-spec':
         from pcvcm.initialize import initialize
@@ -101,9 +118,10 @@ def main() -> None:
         from pcvcm.cv import run_cv
         result = run_cv(args.config, contract, args.lexicon, args.output)
     elif args.command == 'export':
-        from pcvcm.bundle import export_selected
+        from pcvcm.exporting import export_selected
         endpoint = EndpointConfig(**json.loads(args.endpoint_config.read_text()))
-        result = export_selected(args.run, args.output, contract, args.lexicon, endpoint)
+        result = export_selected(args.run, args.output, contract, args.lexicon, endpoint,
+                                 args.endpoint_config.parent / 'selection.json')
     elif args.command == 'select-endpoint':
         from pcvcm.endpoint_selection import select_endpoint
         result = select_endpoint(args.run, args.manifest, args.audio_root, args.output, contract, args.lexicon)
@@ -113,6 +131,26 @@ def main() -> None:
         runtime = Runtime.from_bundle(args.bundle, contract)
         input('Press Enter to arm one utterance (automatic endpoint; no actions): ')
         result = microphone(runtime, args.device)
+    elif args.command == 'lock-dependencies':
+        from pcvcm.dependencies import lock_wheels
+        result = lock_wheels(args.wheels, args.output)
+    elif args.command == 'verify-graph':
+        import torch
+        from vcm.model import CausalVCM
+        from pcvcm.contract import file_hash
+        from pcvcm.graph_validation import check_graph, waveform_parity
+        from pcvcm.training import native_cpu_convolution
+        selection = json.loads((args.run / 'selection.json').read_text())
+        checkpoint = Path(selection['winner']['checkpoint'])
+        if file_hash(checkpoint) != selection['winner']['checkpoint_sha256']:
+            raise ValueError('Selected checkpoint changed')
+        model = CausalVCM()
+        model.load_state_dict(torch.load(checkpoint, map_location='cpu', weights_only=True)['weights'])
+        with native_cpu_convolution():
+            graph = check_graph(model, args.bundle / 'model.onnx')
+        graph.update(checkpoint_sha256=file_hash(checkpoint), selection_sha256=file_hash(args.run / 'selection.json'))
+        result = waveform_parity(model, args.bundle, args.manifest, args.audio_root, contract, args.output)
+        write_json(args.output / 'graph.json', graph)
     elif args.command == 'calibrate':
         from pcvcm.pipeline import calibrate_bundle
         result = calibrate_bundle(args.bundle, args.manifest, args.audio_root,
@@ -121,6 +159,13 @@ def main() -> None:
         from pcvcm.pipeline import evaluate
         result = evaluate(args.bundle, args.manifest, args.audio_root, args.output,
                           contract, args.split, args.confirmation_commitment)
+    elif args.command in ('publish-diagnostic', 'publish-qualified', 'stage-candidate'):
+        from pcvcm.packaging import publish, stage_candidate
+        if args.command == 'stage-candidate':
+            result = stage_candidate(args.bundle, args.output, contract, args.dependency_lock, args.wheels)
+        else:
+            result = publish(args.bundle, args.output, contract, args.dependency_lock, args.wheels,
+                             diagnostic=args.command == 'publish-diagnostic', evidence=getattr(args, 'evidence', None))
     else:
         from pcvcm.pipeline import package_diagnostic
         result = package_diagnostic(args.bundle, args.output, contract)

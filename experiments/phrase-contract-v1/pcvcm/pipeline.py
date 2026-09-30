@@ -18,6 +18,18 @@ from .policy import calibrate
 from .runtime import Runtime
 
 
+def reserve_confirmation(manifest_hash, binding, policy_hash, ledger=None):
+    ledger = Path(ledger or '.cache/phrase-contract-v1/confirmation-access')
+    ledger.mkdir(parents=True, exist_ok=True)
+    path = ledger / f'{manifest_hash}.json'
+    with path.open('x', encoding='utf-8') as stream:
+        json.dump({'state': 'INFERENCE_RESERVED_NOT_UNTOUCHED',
+            'manifest_sha256': manifest_hash, 'binding': binding,
+            'policy_sha256': policy_hash,
+            'recovery': 'A crash requires an explicit reviewed incident; never delete this receipt.'}, stream)
+    return path
+
+
 def verify_confirmation(manifest: Path, commitment: dict,
                         contract: Contract) -> None:
     if (commitment.get('contract_sha256') != contract.sha256
@@ -37,7 +49,7 @@ def verify_confirmation(manifest: Path, commitment: dict,
 
 def replay(bundle: Path, manifest: Path, audio_root: Path,
            contract: Contract, split: str, commitment: Path | None = None,
-           threads: int = 1, diagnostic_development: bool = False) -> list[dict]:
+           threads: int = 1, diagnostic_development: bool = False, prediction_log: Path | None = None) -> list[dict]:
     import soundfile as sf
 
     rows = read_jsonl(manifest)
@@ -53,6 +65,10 @@ def replay(bundle: Path, manifest: Path, audio_root: Path,
     elif split not in ('dev', 'calibration'):
         raise ValueError('Training audio is not evaluation evidence')
     runtime = Runtime.from_bundle(bundle, contract, threads)
+    if split == 'confirmation':
+        if runtime.policy.get('enabled') is not True:
+            raise ValueError('Confirmation requires an enabled calibrated policy')
+        reserve_confirmation(file_hash(manifest), runtime.binding, file_hash(Path(bundle) / 'policy.json'))
     if diagnostic_development:
         if split != 'dev':
             raise ValueError('Tentative endpoint selection is development-only')
@@ -101,6 +117,12 @@ def replay(bundle: Path, manifest: Path, audio_root: Path,
         if error:
             result.update(accepted=False, command=None, reason='capture_fault')
         results.append(result)
+        if prediction_log is not None:
+            with Path(prediction_log).open('a', encoding='utf-8') as stream:
+                stream.write(json.dumps(result, allow_nan=False) + '\n')
+                stream.flush()
+                import os
+                os.fsync(stream.fileno())
     return results
 
 
@@ -109,14 +131,21 @@ def evaluate(bundle: Path, manifest: Path, audio_root: Path, output: Path,
              commitment: Path | None = None) -> dict:
     if output.exists():
         raise FileExistsError('Evaluation outputs are append-only')
-    rows = replay(bundle, manifest, audio_root, contract, split, commitment)
-    report = write_reports(rows, contract, output)
+    output.mkdir(parents=True)
+    write_json(output / 'started.json', {'split': split, 'manifest_sha256': file_hash(manifest),
+                                       'state': 'STARTED_PRESERVE_ON_FAILURE'})
+    rows = replay(bundle, manifest, audio_root, contract, split, commitment,
+                  prediction_log=output / 'predictions.jsonl')
+    report = write_reports(rows, contract, output, existing=True)
     write_json(output / 'per_recording.json', rows)
     write_json(output / 'evaluation.json', {
         'split': split, 'binding': rows[0]['binding'],
         'manifest_sha256': file_hash(manifest),
         'rows_sha256': file_hash(output / 'per_recording.json'),
         'confirmation': split == 'confirmation', 'qualified': False})
+    write_json(output / 'release.json', {'qualified': False,
+        'status': 'ACOUSTIC_GATES_PASSED_PENDING_PHYSICAL' if report['acoustic_gates_passed'] else 'BLOCKED_ACOUSTIC',
+        'failed_gates': report['failed_gates'], 'summary_sha256': file_hash(output / 'summary.json')})
     return report
 
 
@@ -125,6 +154,10 @@ def calibrate_bundle(bundle: Path, manifest: Path, audio_root: Path,
     if output.exists():
         raise FileExistsError('Calibration outputs are append-only')
     content = verify_bundle(bundle, contract)
+    endpoint_receipt = json.loads((Path(bundle) / 'endpoint-selection.json').read_text())
+    if (endpoint_receipt.get('status') != 'ENDPOINT_SELECTED'
+            or endpoint_receipt.get('endpoint_sha256') != file_hash(Path(bundle) / 'endpoint.json')):
+        raise ValueError('Endpoint must be selected and frozen before calibration')
     rows = replay(bundle, manifest, audio_root, contract, 'calibration')
     policy = calibrate(rows, contract, content['binding'])
     output.mkdir(parents=True)

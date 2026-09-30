@@ -7,14 +7,10 @@ from pathlib import Path
 import numpy as np
 
 from .contract import Contract, file_hash, identity, pronounce, read_jsonl, write_json
-from .evidence import audit_partitions, validate_reference
+from .evidence import audit_recording_identities, validate_reference
 
 
-def below(root: Path, relative: str) -> Path:
-    candidate = (Path(root) / relative).resolve()
-    if not candidate.is_relative_to(Path(root).resolve()):
-        raise ValueError('Manifest path escapes its declared data root')
-    return candidate
+from .paths import below
 
 
 def verified_features(row: dict, root: Path) -> np.ndarray:
@@ -73,7 +69,7 @@ def prepare(manifest: Path, audio_root: Path, output: Path,
         if row['reference_class'] == 'supported_positive' and phrase is None:
             raise ValueError('Positive lacks a required phrase ID')
         groups[(row['split'], row.get('phrase_id'))].append(row)
-    audit = audit_partitions(rows)
+    audit = audit_recording_identities(rows)
     for split, recordings, speakers in [('train', 24, 12), ('dev', 8, 4), ('calibration', 8, 4)]:
         for phrase in contract.positive:
             selected = groups[(split, phrase['phrase_id'])]

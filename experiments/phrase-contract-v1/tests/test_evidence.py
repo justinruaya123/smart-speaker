@@ -130,3 +130,40 @@ def test_missing_positive_reference_cannot_be_called_unknown():
                expected_command=None, command=None, accepted=False)
     with pytest.raises(ValueError):
         summarize([row], contract)
+
+
+def test_natural_unknown_far_cannot_hide_in_prompted_denominator():
+    contract = Contract(ROOT / 'spec')
+    command = contract.positive[0]['expected_command']
+    rows = [dict(recording_id=f'n{i}', phrase_id=None, natural_unknown=True,
+                 reference_class='unknown_no_action', use_case='UC-01', expected_command=None,
+                 accepted=i < 11, command=command if i < 11 else None) for i in range(1000)]
+    report = summarize(rows, contract)
+    assert report['negative_classes']['natural_unknown']['far'] == .011
+    assert 'separate_negative_class_far' in report['failed_gates']
+
+
+def test_strict_identity_audit_requires_sessions_and_original_hashes():
+    from pcvcm.evidence import audit_recording_identities
+    a = dict(split='train', speaker_id='s1', utterance_parent_id='p1', pcm_sha256='h1',
+             audio_sha256='raw1', session_id='session1', recording_id='r1')
+    b = dict(split='dev', speaker_id='s2', utterance_parent_id='p2', pcm_sha256='h2',
+             audio_sha256='raw2', session_id='session2', recording_id='r2')
+    assert audit_recording_identities([a, b])['rows'] == 2
+    for field in ['session_id', 'audio_sha256']:
+        bad = {**b, field: a[field]}
+        with pytest.raises(ValueError):
+            audit_recording_identities([a, bad])
+
+
+def test_each_condition_raw_gate_cannot_be_rescued_by_other_condition():
+    contract = Contract(ROOT / 'spec'); phrase = contract.positive[0]
+    rows = []
+    for i in range(20):
+        rows.append(dict(recording_id=str(i), phrase_id=phrase['phrase_id'],
+            expected_command=phrase['expected_command'], use_case=phrase['use_case'],
+            reference_class='supported_positive', condition_id=f'C{i // 5 + 1}',
+            candidate=None if i == 10 else phrase['expected_command'],
+            command=None if i == 10 else phrase['expected_command'], accepted=i != 10))
+    report = summarize(rows, contract)
+    assert report['per_use_case'][phrase['use_case']]['acoustic_slices']['C3']['passed'] is False

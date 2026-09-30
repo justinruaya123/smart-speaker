@@ -1,18 +1,16 @@
 """Immutable graph export and identity-bound runtime assets; not qualification."""
 from __future__ import annotations
 
-from dataclasses import asdict
 import json
 from pathlib import Path
-import shutil
 
 from .contract import Contract, compile_catalog, file_hash, identity, write_json
-from .data import below
+from .paths import below
 from .endpoint import EndpointConfig
 
-ASSETS = ('model.onnx', 'catalog.json', 'normalization.json', 'endpoint.json')
-RUNTIME_CODE = ('contract.py', 'data.py', 'decoder.py', 'endpoint.py',
-                'policy.py', 'runtime.py', 'bundle.py', 'evidence.py', 'capture.py')
+ASSETS = ('model.onnx', 'catalog.json', 'normalization.json', 'endpoint.json', 'endpoint-selection.json')
+RUNTIME_CODE = ('contract.py', 'paths.py', 'decoder.py', 'endpoint.py',
+                'decision.py', 'runtime.py', 'bundle.py', 'capture.py', 'launcher.py')
 
 
 def code_identity() -> dict:
@@ -91,40 +89,3 @@ def verify_bundle(path: Path, contract: Contract) -> dict:
             'normalization': norm,
             'catalog': catalog,
             'endpoint': json.loads((path / 'endpoint.json').read_text())}
-
-
-def export_selected(run: Path, output: Path, contract: Contract,
-                    lexicon: Path, endpoint: EndpointConfig) -> dict:
-    run, output = Path(run), Path(output)
-    selection = json.loads((run / 'selection.json').read_text())
-    if selection.get('status') != 'DEVELOPMENT_SELECTED':
-        raise ValueError('No development-selected candidate; keep failed evidence')
-    checkpoint = Path(selection['winner']['checkpoint'])
-    if file_hash(checkpoint) != selection['winner']['checkpoint_sha256']:
-        raise ValueError('Selected checkpoint changed')
-    if output.exists():
-        raise FileExistsError('Export output already exists')
-    import onnx  # noqa: F401
-    import onnxruntime  # noqa: F401
-    import torch
-    from vcm.model import CausalVCM, STATE_SHAPES, export_model
-    from .training import native_cpu_convolution
-
-    catalog = compile_catalog(contract, lexicon)
-    saved = json.loads((run / 'catalog.json').read_text())
-    if identity(catalog) != identity(saved):
-        raise ValueError('Training/export catalogs differ')
-    loaded = torch.load(checkpoint, map_location='cpu', weights_only=True)
-    model = CausalVCM()
-    model.load_state_dict(loaded['weights'])
-    output.mkdir(parents=True)
-    with native_cpu_convolution():
-        report = export_model(model, output / 'model.onnx')
-    write_json(output / 'export.json', report)
-    write_json(output / 'catalog.json', catalog)
-    shutil.copyfile(run / 'normalization.json', output / 'normalization.json')
-    write_json(output / 'endpoint.json', asdict(endpoint))
-    recipe = seal_bundle(output, contract, [list(s) for s in STATE_SHAPES],
-                         'DEVELOPMENT_CANDIDATE_UNCALIBRATED')
-    verify_bundle(output, contract)
-    return recipe

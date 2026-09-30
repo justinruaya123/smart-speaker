@@ -82,13 +82,15 @@ def _training_smoke(steps: int = 12) -> dict:
             'checkpoint_saved': False}
 
 
-def development(model, rows: list[dict], arrays: dict, entries: list[dict], device) -> tuple[dict, list[dict]]:
+def development(model, rows: list[dict], arrays: dict, entries: list[dict], device, budget_check=None) -> tuple[dict, list[dict]]:
     import torch
     decoder = PrefixCTC([e['phones'] for e in entries])
     records = []
     model.eval()
     with torch.no_grad():
         for row in rows:
+            if budget_check is not None:
+                budget_check()
             x = torch.from_numpy(arrays[row['recording_id']][None]).to(device)
             logits, _ = model(x)
             prediction = rank_commands(decoder.score(logits[0].T.cpu().numpy()), entries)
@@ -97,19 +99,29 @@ def development(model, rows: list[dict], arrays: dict, entries: list[dict], devi
                             'use_case': row['use_case'], 'reference_class': row['reference_class'],
                             'expected': row.get('expected_command'), 'candidate': prediction['command'],
                             'raw_exact': exact})
+    return prediction_metrics(records), records
+
+
+def prediction_metrics(records, required_phrases=None, required_use_cases=None):
+    records = [{**r, 'raw_exact': canonical(r.get('candidate')) == canonical(r.get('expected'))} for r in records]
     positive = [r for r in records if r['reference_class'] == 'supported_positive']
     phrases, families = defaultdict(list), defaultdict(list)
     for row in positive:
         phrases[row['phrase_id']].append(row['raw_exact'])
         families[row['use_case']].append(row['raw_exact'])
+    required_phrases = set(phrases) if required_phrases is None else set(required_phrases)
+    required_use_cases = set(families) if required_use_cases is None else set(required_use_cases)
     metrics = {'phrases_passing': int(sum(np.mean(v) >= .9 for v in phrases.values())),
-               'worst_use_case': min(float(np.mean(v)) for v in families.values()),
-               'macro_exact': float(np.mean([np.mean(v) for v in phrases.values()])),
+               'worst_use_case': min((float(np.mean(families[k])) if families[k] else 0. for k in required_use_cases), default=0.),
+               'macro_exact': float(np.mean([np.mean(phrases[k]) if phrases[k] else 0. for k in required_phrases])) if required_phrases else 0.,
                'correct': sum(r['raw_exact'] for r in positive),
+               'required_phrases': len(required_phrases),
+               'observed_phrases': len({r['phrase_id'] for r in positive}),
+               'observed_use_cases': len({r['use_case'] for r in positive}),
                'positive_recordings': len(positive),
                'critical_negative_errors': sum(not r['raw_exact'] for r in records
                                                 if r['reference_class'] != 'supported_positive')}
-    return metrics, records
+    return metrics
 
 
 def sampling_weights(rows: list[dict], positive_fraction: float,
@@ -211,6 +223,15 @@ def _fit(config_path, contract, lexicon_path, output, *, fold, budget):
         cv = json.loads(Path(config['cv_receipt']).read_text())
         if cv.get('status') != 'CV_PASSED' or cv.get('freeze_sha256') != file_hash(prepared / 'freeze.json'):
             raise ValueError('Passing training-only CV required before full fitting')
+        if config['hard_example_multiplier'] == 2.:
+            primary_path = Path(config['primary_selection'])
+            primary = json.loads(primary_path.read_text())
+            primary_protocol = json.loads((primary_path.parent / 'protocol.json').read_text())
+            if (primary.get('status') != 'BLOCKED_DEVELOPMENT'
+                    or primary_protocol.get('freeze_sha256') != file_hash(prepared / 'freeze.json')
+                    or primary_protocol['config']['hard_example_multiplier'] != 1.
+                    or primary.get('protocol_sha256') != identity(primary_protocol)):
+                raise ValueError('Hard-pair ablation requires a bound primary development failure')
         dev = read_jsonl(prepared / 'dev.jsonl')
         norm = json.loads((prepared / 'normalization.json').read_text())
     for role, selected in [('fit', train), ('held', dev)]:
@@ -282,13 +303,15 @@ def _fit(config_path, contract, lexicon_path, output, *, fold, budget):
             record = {'seed': seed, 'epoch': epoch, 'ctc_loss': float(np.mean(losses)),
                       'checkpoint': str(checkpoint), 'checkpoint_sha256': file_hash(checkpoint)}
             if epoch in config['selection_epochs']:
-                metrics, predictions = development(model, dev, arrays, catalog['entries'], device)
+                metrics, predictions = development(model, dev, arrays, catalog['entries'], device, budget.check)
                 record.update(metrics)
                 record.update(required_phrases=570, observed_phrases=len({
                     r['phrase_id'] for r in dev if r['reference_class'] == 'supported_positive'}),
                     observed_use_cases=len({r['use_case'] for r in dev if r['reference_class'] == 'supported_positive'}))
-                candidates.append(dict(record))
                 write_json(seed_dir / f'development-{epoch:03}.json', predictions)
+                record['predictions_sha256'] = file_hash(seed_dir / f'development-{epoch:03}.json')
+                record['predictions'] = str(seed_dir / f'development-{epoch:03}.json')
+                candidates.append(dict(record))
             history.append(record)
             write_json(Path(output) / 'history.json', history)
             print(json.dumps(record), flush=True)
@@ -299,6 +322,20 @@ def _fit(config_path, contract, lexicon_path, output, *, fold, budget):
         write_json(Path(output) / 'cv-fold.json', result)
         return result
     winner = select_checkpoint(candidates)
+    from .evidence import write_csv
+    selected_predictions = {r['recording_id']: r for r in json.loads(Path(winner['predictions']).read_text())}
+    changes = []
+    for candidate in candidates:
+        if candidate == winner:
+            continue
+        for row in json.loads(Path(candidate['predictions']).read_text()):
+            selected = selected_predictions[row['recording_id']]
+            if row['raw_exact'] != selected['raw_exact']:
+                changes.append({'recording_id': row['recording_id'], 'seed': candidate['seed'],
+                    'epoch': candidate['epoch'], 'selected_seed': winner['seed'], 'selected_epoch': winner['epoch'],
+                    'change': 'gained' if selected['raw_exact'] else 'lost',
+                    'previous_candidate': row['candidate'], 'selected_candidate': selected['candidate']})
+    write_csv(Path(output) / 'gained-lost.csv', changes)
     status = 'DEVELOPMENT_SELECTED' if winner['phrases_passing'] == 570 else 'BLOCKED_DEVELOPMENT'
     lock = {'status': status, 'winner': winner, 'candidates': candidates,
             'calibration_accessed': False, 'confirmation_accessed': False,

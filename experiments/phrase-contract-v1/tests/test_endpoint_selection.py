@@ -50,3 +50,10 @@ def test_premature_endpoint_is_miss_even_when_detected():
     pcm = np.r_[np.ones(4800)*.1, np.zeros(16000), np.ones(4800)*.1].astype('float32')
     result = evaluate_endpoint(pcm, dict(split='dev', speech_end_sample=len(pcm)), -45)
     assert result['miss'] is True
+
+
+def test_extra_pause_category_cannot_mask_missing_negation():
+    from pcvcm.endpoint_selection import validate_pause_coverage
+    rows = [dict(pause_category=k, reviewed_internal_pauses=[[1, 2]]) for k in ['number', 'name', 'other']]
+    with pytest.raises(ValueError, match='negation'):
+        validate_pause_coverage(rows)

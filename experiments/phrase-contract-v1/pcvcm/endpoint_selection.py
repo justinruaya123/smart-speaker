@@ -14,6 +14,12 @@ from .evidence import audit_partitions, validate_reference
 THRESHOLDS = (-50, -45, -40, -35)
 
 
+def validate_pause_coverage(rows):
+    observed = {r.get('pause_category') for r in rows if r.get('reviewed_internal_pauses')}
+    if not {'number', 'name', 'negation'} <= observed:
+        raise ValueError('Curated number/name/negation internal-pause evidence required')
+
+
 def choose_threshold(records):
     if len(records) != 4 or {r['dbfs'] for r in records} != set(THRESHOLDS):
         raise ValueError('Evaluate exactly the four declared endpoint thresholds')
@@ -90,8 +96,7 @@ def select_endpoint(run, manifest, audio_root, output, contract, lexicon):
         if row.get('split') != 'dev' or row.get('human_reviewed') is not True or row.get('synthetic') is not False:
             raise ValueError('Only reviewed human development audio is permitted')
     annotated = [r for r in rows if r.get('nonspeech') is not True]
-    if {r.get('pause_category') for r in annotated if r.get('reviewed_internal_pauses')} < {'number', 'name', 'negation'}:
-        raise ValueError('Curated number/name/negation internal-pause evidence required')
+    validate_pause_coverage(annotated)
     if {r.get('phrase_id') for r in rows if r['reference_class'] == 'supported_positive'} != set(contract.by_id):
         raise ValueError('Endpoint selection requires the full development suite')
     norm = json.loads((run / 'normalization.json').read_text())

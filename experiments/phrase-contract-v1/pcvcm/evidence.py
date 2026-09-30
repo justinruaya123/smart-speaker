@@ -71,6 +71,22 @@ def _exact(a: dict | None, b: dict | None) -> bool:
     return a is not None and canonical(a) == canonical(b)
 
 
+def audit_recording_identities(rows):
+    report = audit_partitions(rows)
+    sessions, raw = {}, set()
+    for row in rows:
+        session, audio = row.get('session_id'), row.get('audio_sha256')
+        if not session or not audio or session in ('unknown', 'pending'):
+            raise ValueError('Original audio and session identity required')
+        if audio in raw:
+            raise ValueError('Repeated original recording identity')
+        raw.add(audio)
+        owner = (row['speaker_id'], row['split'])
+        if sessions.setdefault(session, owner) != owner:
+            raise ValueError('Cross-speaker/session leakage')
+    return {**report, 'raw_identity_unique': True, 'session_overlap': 0}
+
+
 def validate_reference(row: dict, contract: Contract) -> None:
     """Predictions never determine their own reference labels or scope."""
     phrase_id = row.get('phrase_id')
@@ -153,14 +169,14 @@ def summarize(rows: list[dict], contract: Contract) -> dict:
             negative_slices[kind] = {'total': len(subset), 'accepted': count,
                                      'far': count / len(subset) if subset else None}
         acoustic_slices = {}
-        for label, conditions, raw_gate in [('quiet', ('C1', 'C2'), .95),
-                                            ('noisy', ('C3', 'C4'), .9)]:
+        for label, conditions, raw_gate in [('C1', ('C1',), .95), ('C2', ('C2',), .95),
+                                            ('C3', ('C3',), .9), ('C4', ('C4',), .9)]:
             subset = [r for r in positive if r.get('condition_id') in conditions]
             accepted = sum(correct(r) for r in subset)
             raw = sum(_exact(r.get('expected_command'), r.get('candidate')) for r in subset)
             acoustic_slices[label] = {
                 'total': len(subset), 'accepted_exact': accepted, 'raw_exact': raw,
-                'passed': bool(subset) and accepted / len(subset) >= .9 and raw / len(subset) >= raw_gate}
+                'passed': bool(subset) and raw / len(subset) >= raw_gate}
         passed = (recall is not None and recall >= .9
                   and precision is not None and precision >= .99
                   and all(s['total'] >= 100 and s['far'] <= .01 for s in negative_slices.values())
@@ -173,6 +189,18 @@ def summarize(rows: list[dict], contract: Contract) -> dict:
         failures.append('per_use_case_quality')
     if sum(r.get('natural_unknown') is True for r in negatives) < 1000:
         failures.append('natural_unknown_coverage')
+    negative_classes = {}
+    for kind, selected in {
+        'natural_unknown': [r for r in negatives if r.get('natural_unknown') is True],
+        'prompted_rejection': [r for r in negatives if r.get('phrase_id') in contract.negative_by_id],
+        'unknown_no_action': [r for r in negatives if r['reference_class'] == 'unknown_no_action'],
+        'unsupported_valid_request': [r for r in negatives if r['reference_class'] == 'unsupported_valid_request'],
+    }.items():
+        accepted = sum(r.get('accepted') is True for r in selected)
+        negative_classes[kind] = {'total': len(selected), 'accepted': accepted,
+            'far': accepted / len(selected) if selected else None}
+    if any(s['total'] < 100 or s['far'] > .01 for s in negative_classes.values()):
+        failures.append('separate_negative_class_far')
     if not rows or any(r.get('evidence_type') != 'human_waveform'
                        or r.get('replay_verified') is not True
                        or r.get('human_reviewed') is not True for r in rows):
@@ -186,6 +214,7 @@ def summarize(rows: list[dict], contract: Contract) -> dict:
             'recall': correct_count / len(positives) if positives else None,
             'precision': correct_count / len(emitted) if emitted else None,
             'negative_false_accepts': sum(r.get('accepted') is True for r in negatives),
+            'negative_classes': negative_classes,
             'per_phrase': per_phrase, 'per_rejection': per_rejection,
             'per_use_case': per_uc, 'failed_gates': failures,
             'acoustic_gates_passed': not failures,
@@ -202,8 +231,8 @@ def write_csv(path: Path, rows: list[dict], fields: list[str] | None = None) -> 
                              for k, v in row.items()})
 
 
-def write_reports(rows: list[dict], contract: Contract, output: Path) -> dict:
-    Path(output).mkdir(parents=True, exist_ok=False)
+def write_reports(rows: list[dict], contract: Contract, output: Path, *, existing=False) -> dict:
+    Path(output).mkdir(parents=True, exist_ok=existing)
     report = summarize(rows, contract)
     correct = lambda r: r.get('accepted') is True and _exact(r.get('expected_command'), r.get('command'))
     groups = {'all_commands': rows,

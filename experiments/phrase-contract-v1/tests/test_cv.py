@@ -70,3 +70,15 @@ def test_global_budget_is_shared_and_survives_new_instances(tmp_path):
     with pytest.raises(ValueError, match='limits'):
         with ComputeBudget(path, 'ablation', epoch_limit=200, seconds_limit=100):
             pass
+
+
+def test_prediction_metrics_recompute_typed_exactness_and_count_missing_phrases():
+    from pcvcm.training import prediction_metrics
+    records = [dict(recording_id='r', phrase_id='p', use_case='UC-01',
+        reference_class='supported_positive', expected={'intent': 'VOLUME', 'value': 37},
+        candidate={'intent': 'VOLUME', 'value': 73}, raw_exact=True)]
+    result = prediction_metrics(records, required_phrases={'p', 'missing'}, required_use_cases={'UC-01', 'UC-02'})
+    assert result['correct'] == 0
+    assert result['macro_exact'] == 0
+    assert result['observed_phrases'] == 1
+    assert result['required_phrases'] == 2
