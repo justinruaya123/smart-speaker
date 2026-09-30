@@ -1,0 +1,24 @@
+{
+  "branch": "codex/semifinal-handoff",
+  "head": "e8402a46377ce7e8ac7ba7cfcdc42dfb589aaf67",
+  "owner": "current PCV synthetic continuation task",
+  "source_files": {
+    "experiments\\pcv-synthetic-v1\\assets.py": "2030f931ed19245243774c4fba759f50c8a8b5159b98a14048fec9b333474f04",
+    "experiments\\pcv-synthetic-v1\\finishing.py": "8b176098c178122691bbef886368b1e3ad4ae96691bcafc1f1c30a78e111e0f4",
+    "experiments\\pcv-synthetic-v1\\fitting.py": "a4519dcdd9b9e1a613c41eb6f8a29bcaba5bdecbe97ecb2d72bd2e52d357e933",
+    "experiments\\pcv-synthetic-v1\\orchestrate.py": "6db14706f6298ebb2f5e25f810d6a14924854a3def33e46adc1bdd227f9dc536",
+    "experiments\\pcv-synthetic-v1\\reporting.py": "d9e6f862e1e3dacf7370bdc7f4db325f74c7586e45a868e8a97dc5ad17edf2e5",
+    "experiments\\pcv-synthetic-v1\\run.py": "b4b597270120ae7be23d499d3c86934f2529075d39eac503294459c83152c339",
+    "experiments\\pcv-synthetic-v1\\study.py": "76c436f529856d42e1bfae4a5d2611cb2275f4fb49eab6269a4569bb3ebb0f70",
+    "experiments\\pcv-synthetic-v1\\synthbench.py": "098309d7ac4f3a692b74d713394718298d065ea8e6d8a5105010ffeec528f7f3",
+    "experiments\\pcv-synthetic-v1\\synthesis.py": "01878861c538ade73fe04443084b0fd989719a79fb7dc6729db19e87ae364ab9",
+    "experiments\\pcv-synthetic-v1\\tests\\test_audio.py": "860f228b9d45bf5429bcf7db2498e6f7033f1a04bb30e0a9e6717113fd87f985",
+    "experiments\\pcv-synthetic-v1\\tests\\test_benchmark.py": "0bedfb64e38cccfd89d96f6a042bc9cf4a6aa1fea2d825bc2fb217f0ff70808d",
+    "experiments\\pcv-synthetic-v1\\tests\\test_catalog.py": "dd2db084639a754949266b211b85c71a3232cc8d81feb907f5bf8bb73f0bc6ad",
+    "experiments\\pcv-synthetic-v1\\tests\\test_preparation.py": "2c4d552adf76083913860d5c2910047d7a09ca3f4ea7ae0f149e88c9ddd82a97",
+    "experiments\\pcv-synthetic-v1\\tests\\test_reporting.py": "ee765049f977a50eabbb155333dd5b6025e9e1f6cf54c7b6d0a169261993390c",
+    "experiments\\pcv-synthetic-v1\\tests\\test_runtime_binding.py": "0ef5296570c0e48b4b23977a90647f3c01b85c522339a3179623c296bafedca1"
+  },
+  "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "unrelated_dirty_work_preserved": true
+}

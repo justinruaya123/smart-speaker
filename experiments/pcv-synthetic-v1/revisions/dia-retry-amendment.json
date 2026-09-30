@@ -1,0 +1,15 @@
+{
+  "failed_attempts": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v1\\dia-failures.jsonl",
+  "previous_recipe_sha256": "77d5f7e05b09450b69b6eb01a0d595b9ba6bf6648722656b75009f48952f9ac3",
+  "reason": "Generation-only QC: up to three deterministic attempts for cap/invalid waveform failures; no VCM predictions consulted.",
+  "retained_records": {
+    "dia/train-gb-f/UC01-PL-FOCUS-A": "714e112c0553a89faffb9002d679d38a85a7ec8cb982d6d8a78dece14b3f8c88",
+    "dia/train-gb-f/UC01-PL-FOCUS-A-N1": "b5ffc2d1bc4070adc7f5b36f77d4046c2148a2777b6c076db74820fa5ae8ba74",
+    "dia/train-gb-f/UC01-PL-FOCUS-A-N2": "b798d8e4207b872b7c91ec890fd0b8616073ff8294e1b6b7b10d615c0e5f900e",
+    "dia/train-gb-f/UC01-PL-FOCUS-B": "e2f260c203627f8181b6d47053985498b1510ac832e40288c3d4553216a1cbbd",
+    "dia/train-us-m/UC01-PL-FOCUS-A": "08fbe274b518b0790af56b5bbb4014d9652edd8c79496379058655cb9f8b680a",
+    "dia/train-us-m/UC01-PL-FOCUS-A-N1": "155c2da51ac115739e94252ce836a2762f40dc5bdad8718e0a5e65f0c9536740",
+    "dia/train-us-m/UC01-PL-FOCUS-A-N2": "aa7d2df73ab1aa8e7cf32a6cb22590047a09b22b673e740210b2f5d737f028bb",
+    "dia/train-us-m/UC01-PL-FOCUS-B": "669b5848256e01450b26234296c29c7fff35bb4f4c1ce3e013f9f85aba0faef1"
+  }
+}

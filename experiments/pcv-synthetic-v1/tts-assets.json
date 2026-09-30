@@ -1,0 +1,76 @@
+{
+  "codec": {
+    "directory": ".cache\\pcv-synthetic-v1\\models\\dac_44khz",
+    "files": {
+      "README.md": "6b1db50f4974b1544fb795491b6fd57a20320ff17686565c50a08407f06075b1",
+      "config.json": "4eb55fb9af1990b8d608184ad29b70e358589719af7ea8d3c06998f7c2264a64",
+      "model.safetensors": "6128ebff483a41422b0164d079a3773b0d8d82e64c4293d775994cbf8baf913a",
+      "preprocessor_config.json": "c7d295758ce5777d6d88fef1996e94adc8ef3e2237ddfc5ecc24d1407aaddd7d"
+    }
+  },
+  "dia": {
+    "directory": ".cache\\pcv-synthetic-v1\\models\\Dia-1.6B-0626",
+    "files": {
+      "README.md": "f32e9386e5896961ac54bb7358d41737c13f0bc7025ab084a64923a1620e7707",
+      "audio_tokenizer_config.json": "1552f8bdccdfe0a98a8e93f9eb369de315e66a07b1530eba0be41513e2ee8f5e",
+      "config.json": "4f4e9c50e6898fa79d6fe16e9991bebef07a4d3dd6926eee5eb7f7e39c88e04f",
+      "generation_config.json": "df7c1f7e4dc1c3e35811b7b2e49abd89d8a8b9599ec732eb6b0d17d678548ac4",
+      "model-00001-of-00002.safetensors": "9cf8f82d9f87d408f5da9cc0d73a3e9c4d9ca3633a4df3be4d283277b7ff1b1a",
+      "model-00002-of-00002.safetensors": "54bf3a47ac13e28ba6193659d57bc63a46875685b211b071f782c32efc834343",
+      "model.safetensors.index.json": "89664ffd667582a41e71c9aa1a4ba9de8187ec9dcd1e7711d97ec57d6e32dec5",
+      "preprocessor_config.json": "7dfa85b765a7c5b3fb3907abf43ece88cd9edcbf39402e3e32e056b3275e5433",
+      "special_tokens_map.json": "4373f3b7455d5a34196fca520de10a0af2af9d7cc05f6177b4be73a8bcfb3f74",
+      "tokenizer_config.json": "6c84315ff3c5214a5846bc3c08cb23fe01146906e4abf395519316732d602e64"
+    }
+  },
+  "parler": {
+    "directory": ".cache\\pcv-synthetic-v1\\models\\parler-tts-large-v1",
+    "files": {
+      "README.md": "ed32849695dc819c4b11210e8a41f23dd925fd53092e0c2aa1506a37858fd030",
+      "config.json": "33388bd5a7f3ceab0d2427c7c03ccf13385b0ab5eecfc1fdba9118dcf2ed6763",
+      "generation_config.json": "cf7fc96793e9e273f48997fe3a529dda99ae808916ba41bbce73eb79ad603a12",
+      "model-00001-of-00002.safetensors": "c30d2151a8a9c3343b6998eeec019b46db9d17b84ef234d98ea6723941c2851c",
+      "model-00002-of-00002.safetensors": "413db5baa97486c7447a4060bb2ced9235d1785d51ac981e0880eff2cb044ca5",
+      "model.safetensors.index.json": "f0ef12f324f905b06127a5dbb6f9a73e3ccd7256e3d319d8e2527cc3bcf6f160",
+      "preprocessor_config.json": "a40e7af494ad239db3a472a3e0a5e1dbdd80319cce865d3f731c23da7f9e241c",
+      "special_tokens_map.json": "7a1985a994c41886db38c719d2a3d2f40606663cc19d7c5d6a85d349320e06d2",
+      "spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+      "tokenizer.json": "4d4b21a8cc7c0407dafd8ac6215269cd05c8e49a521c3580479b567879526160",
+      "tokenizer_config.json": "a7ac580b91d2867dabcac34173420401f61fe08e3d811ab5bd2a934846eed70d"
+    }
+  },
+  "qwen": {
+    "directory": ".cache\\tts\\models\\Qwen3-TTS-12Hz-1.7B-Base",
+    "files": {
+      "README.md": "621b7e88f1867bc03d817176fc1f7f55f4b5a70654b2a07fdcda1e169efb024b",
+      "config.json": "b4f01752d15a488abde3e1ab44723ae4f4b9e68a4037257b098b3737893cc1f9",
+      "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "model.safetensors": "38fc7fc51c5e776e840414b6fd443962e9411b9654888fd7913e4da643cb857c",
+      "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+      "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+      "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+      "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+      "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+      "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  },
+  "voice_design": {
+    "directory": ".cache\\tts\\models\\Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "files": {
+      "README.md": "acfaf6c0d433866cb5e2bb73e7915ea3767f5a2e3abca413b485635a2c72b5e6",
+      "config.json": "aecd2cc4c1fe9edef1cb7ca7c401685a43879ad43f3f9e883f1c6760b61731e0",
+      "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "model.safetensors": "391e8db219f292c515297cdceeb43e4eae67cdde35fa57e79a6a8a532fca0522",
+      "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+      "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+      "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+      "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+      "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+      "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  }
+}

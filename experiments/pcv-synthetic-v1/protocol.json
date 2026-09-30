@@ -1,0 +1,82 @@
+{
+  "acceptance_precision": 0.99,
+  "acceptance_recall": 0.9,
+  "base_contract": "ae004037a95bf8ab8fb170896927ab262898f4d11e1e5a251fdff0bafa10c35f",
+  "calibration_split": "calibration",
+  "compatible_previous_verbatims": {
+    "revisions/r1/verbatims.jsonl": "90f404b1cfc04fe40907a1387b739cc88ae1afee98e2295e39c1481a4152263a"
+  },
+  "engine_families": [
+    "qwen",
+    "parler",
+    "dia"
+  ],
+  "epochs_per_seed": 40,
+  "expected_clips": 41580,
+  "expected_verbatims": 2310,
+  "final_split": "test",
+  "generation_plan_sha256": "7e982346c2d7db407b863ec200f845ccbd8b21b141f0915bf2f269b578f82281",
+  "human_qualified": false,
+  "max_total_epochs": 200,
+  "max_training_seconds": 86400,
+  "negative_far": 0.01,
+  "selection_split": "dev",
+  "synthetic_acceptance_only": true,
+  "test_audio_used_for_selection": false,
+  "training_seeds": [
+    53,
+    71
+  ],
+  "verbatims_sha256": "fc4b1a46b787f158acdd176d8b72f3388668cd996db94a8ac1c7a57c3ad7b875",
+  "version": "pcv-synthetic-v1-r2",
+  "voices": [
+    {
+      "accent": "American English",
+      "gender": "man",
+      "id": "train-us-m",
+      "parler": "Jon",
+      "seed": 7101,
+      "split": "train"
+    },
+    {
+      "accent": "British English",
+      "gender": "woman",
+      "id": "train-gb-f",
+      "parler": "Lea",
+      "seed": 7102,
+      "split": "train"
+    },
+    {
+      "accent": "Australian English",
+      "gender": "man",
+      "id": "dev-au-m",
+      "parler": "Gary",
+      "seed": 7103,
+      "split": "dev"
+    },
+    {
+      "accent": "American English",
+      "gender": "woman",
+      "id": "cal-us-f",
+      "parler": "Jenna",
+      "seed": 7104,
+      "split": "calibration"
+    },
+    {
+      "accent": "Indian English",
+      "gender": "woman",
+      "id": "test-in-f",
+      "parler": "Laura",
+      "seed": 7105,
+      "split": "test"
+    },
+    {
+      "accent": "British English",
+      "gender": "man",
+      "id": "test-gb-m",
+      "parler": "Mike",
+      "seed": 7106,
+      "split": "test"
+    }
+  ]
+}
