@@ -1,0 +1,221 @@
+{
+  "blockers": [
+    "48,800-slot original-human recording plan remains unrecorded; no 30-speaker split pools",
+    "No frozen manifests, sealed commitment, source/consent/manual listening or near-duplicate review",
+    "No acoustic CV/training/development-selected checkpoint, endpoint selection or calibrated policy",
+    "No sealed confirmation or negative FAR measurements",
+    "No advertised physical Pi4/Pi5 microphone/performance/30-minute/three-hour evidence",
+    "Push rejected by automatic approval review; direct user confirmation pending"
+  ],
+  "branch": "codex/semifinal-handoff",
+  "calibration": null,
+  "confirmation": {
+    "per_use_case": null,
+    "sealed_audio_accessed": false,
+    "worst_phrase": null
+  },
+  "contract": {
+    "calibrated_policy": null,
+    "catalog_canonical_sha256": "70b71d67bb4917ae5bf1e4c9d98da5f12dd1419ff9f7b49910781b87afd7c00e",
+    "contract_sha256": "ae004037a95bf8ab8fb170896927ab262898f4d11e1e5a251fdff0bafa10c35f",
+    "lexicon_sha256": "81340dbdeb5fe8c6f93ac2306280b6127befd9a3e186ce90428b2c45b178c671",
+    "selected_endpoint": null,
+    "trained_model": null
+  },
+  "cv": {
+    "attempt_log": ".cache/phrase-contract-v1/verification/cv-attempt.txt",
+    "fold_results": null,
+    "status": "BLOCKED_MISSING_PREPARED_TRAIN_MANIFEST"
+  },
+  "development": null,
+  "environment": {
+    "packages": {
+      "einops": "0.8.2",
+      "numpy": "2.5.3",
+      "onnx": "1.22.0",
+      "onnxruntime": "1.30.0",
+      "sounddevice": "0.5.6",
+      "soundfile": "0.14.0",
+      "torch": "2.13.0+cu130"
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.13 (main, Jul 23 2026, 14:44:57) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "evidence_limits": [
+    "Software fixture success is not acoustic accuracy",
+    "Temporary random-weight ONNX graph was deleted with test temporary directory; no deployment graph manufactured",
+    "No threshold/gate/catalog scope weakened",
+    "Exact human/physical release workflow cannot be exercised without its actual inputs",
+    "Historical installed graph/model and unrelated research were not changed"
+  ],
+  "final_package": {
+    "path": null,
+    "sha256": null
+  },
+  "implementation_commit": "3427c13989c0b60121b50f84d2abf5a6796e0682",
+  "live_microphone": "NOT_OPERATED",
+  "logs": {
+    "all-tracked-final-tests.txt": {
+      "path": ".cache/phrase-contract-v1/verification/all-tracked-final-tests.txt",
+      "sha256": "007d39c0ff3b954e2ea2d3cfa565e8e4ef541b9a153f8983a69a07c0825e8b71"
+    },
+    "all-tracked-tests.txt": {
+      "path": ".cache/phrase-contract-v1/verification/all-tracked-tests.txt",
+      "sha256": "677ba81be63e6fa82254bf20948c1281542f8d3bd94e9fc5e0edbfd523fa334c"
+    },
+    "cv-attempt.txt": {
+      "path": ".cache/phrase-contract-v1/verification/cv-attempt.txt",
+      "sha256": "518ba6c521ba8ab7eeca6c568b7531c4979f0b85da6d384dc6cb7b8ca96df872"
+    },
+    "final-tests.txt": {
+      "path": ".cache/phrase-contract-v1/verification/final-tests.txt",
+      "sha256": "fc1aee66f014776371e68d60b9828d6c5418ff511057f4ae2a4cb0add71a345f"
+    },
+    "repository-pytest.txt": {
+      "path": ".cache/phrase-contract-v1/verification/repository-pytest.txt",
+      "sha256": "6a44ae55163f3a251d916bcbb5219cb7271bd3f7907acc1f819b9dc901765c9d"
+    },
+    "root-tests.txt": {
+      "path": ".cache/phrase-contract-v1/verification/root-tests.txt",
+      "sha256": "9a474868a0318fd52d88f8e5bce52a63e3364e86c8459c5a25399de1161447bd"
+    },
+    "tracked-pytest.txt": {
+      "path": ".cache/phrase-contract-v1/verification/tracked-pytest.txt",
+      "sha256": "515654c5cd93a3dd702d22446e4c7ffdba10eafb8d4e7cb2b037289f17090cf2"
+    }
+  },
+  "negative_far": {
+    "natural_unknown": null,
+    "prompted_rejection": null,
+    "unsupported_valid_request": null
+  },
+  "onnx_software": {
+    "human_waveform_parity": "NOT_RUN_MISSING_SELECTED_MODEL_AND_DEV_AUDIO",
+    "receipt": "onnx-software.json",
+    "sha256": "a6844506a73b69da78bcf5be2b025b66eb9b6e2cbe02059bd9f4395ae5dbdb5f"
+  },
+  "packaging_tests": {
+    "deterministic_repeat_zip": "PASSED_SOFTWARE_FIXTURE",
+    "extracted_runtime_check_and_wav": "PASSED_WINDOWS_HOST_DEPENDENCIES",
+    "network_scope": "Python create_connection blocked and ORT telemetry disabled; not OS network isolation",
+    "trainer_code_exclusion": "PASSED_AST_AUDIT"
+  },
+  "pi4": {
+    "status": "NOT_TESTED"
+  },
+  "pi5": {
+    "status": "NOT_TESTED"
+  },
+  "preservation_receipt_sha256": "b46e78ba9383d6d5819afe46b07782a9d5bbcfe7e78efc9e9c53249fe97932f2",
+  "proposed_frontend_spec_sha256": "6d3b67388b7b6d539bd6e66ddeb35dadcf8348a936ffadc614590c02e1e78092",
+  "push": {
+    "rejections": 2,
+    "remote_branch_sha": "f13ffcaa4974eee96e8c6576af136c95b6e1d6a5",
+    "status": "BLOCKED_AUTO_REVIEW_PENDING_DIRECT_USER_CONFIRMATION",
+    "verified_destination": "https://github.com/justinruaya123/smart-speaker"
+  },
+  "qualified": false,
+  "recording_plan": {
+    "original_recordings_obtained": 0,
+    "positive_slots": 34200,
+    "sha256": "f15ed966f4bfa34aa33f5f3b7d3b945fa927e51c99472696fe5d3883710057e9",
+    "slots": 48800
+  },
+  "selected_binding": {
+    "catalog": null,
+    "endpoint": null,
+    "frontend_with_normalization": null,
+    "graph": null,
+    "policy": null
+  },
+  "source_sha256": {
+    "pcvcm/__init__.py": "688916fbc68e6ed59683669b63467a81db1411f71df6f9ac6f622281ddf7029d",
+    "pcvcm/bundle.py": "31162c47a3869ae662c36a48449be8c77fcd50ca8d4e3144c1ce1cbd80f08c48",
+    "pcvcm/capture.py": "f3d5b48615b9ab7edf186f2089f9675e8cdf9057988e5debe2e351a99a7935ee",
+    "pcvcm/compute.py": "b5438a3fc97126cdc31d2f7aebbb9b2e410d12ddf76f7e292a9328f101ec8ca3",
+    "pcvcm/contract.py": "44095a4bff5eb9277cef359a952980e2f96b8b6f0da0a65c535fe1d6bad9c09a",
+    "pcvcm/cv.py": "913053c8242d1f8845073122fd59bc10fd8d9abcfa165f423f2a1fca53f43180",
+    "pcvcm/data.py": "44412d83271adfe16b4ce6f84a267f48fcd9877fabb080f53478a7dd1d0f0dec",
+    "pcvcm/decision.py": "6d376e09dd44ac16d1756ac6f70c7f1c6a96bd35c34cff0f425293eab7e93f99",
+    "pcvcm/decoder.py": "6c36e737e459c4b7a2b984200ad2896735000bd7ff25b24ac6ac4bd988493922",
+    "pcvcm/dependencies.py": "956bfcb3592189a2e4c30918e5b8ff7918eef8b5e9a68141a598dfb41525d6e8",
+    "pcvcm/endpoint.py": "cb1927eda28064a5d6a272a3b040a0ec04ad25fcacb943cbf05a248095bb764a",
+    "pcvcm/endpoint_selection.py": "e7ea22583075020a5c1a9a81684c544427fc907af37a2337de9ab91228d37ced",
+    "pcvcm/evidence.py": "fb20e24c172ebb772b9676fde8bf157388dd12d93980426bd86954eb94345efc",
+    "pcvcm/exporting.py": "07d6547de9219463f2b9b34f1e87aea94099a414c92d820bedb37d5a495301f8",
+    "pcvcm/graph_validation.py": "8452f093060912b80ecd9caac68bc1384baaedb9bba957ff64df3d0bae304eab",
+    "pcvcm/initialize.py": "833c2892cb826da1eb2b2fc3b2c997a749c7a1607696e402131705dd31873c4f",
+    "pcvcm/launcher.py": "110c7a6c2bb6b3376750cd49257453cdf651cbfa86d340d54efa0f33b65fd6ea",
+    "pcvcm/packaging.py": "fa8c9aafaf601da7907569d3248fb8735de7d2be4a45228c995128f8710ad345",
+    "pcvcm/paths.py": "426dcddd05b80b36b1e91c63f687e03a8201118611d0672957f212ad17b110ac",
+    "pcvcm/pipeline.py": "e206d815b71736e6b8d73417caedabbd6b371517036e908cfb5035f1f35b1f1f",
+    "pcvcm/policy.py": "37f8734f03b32c1554ce58b9f654885c4d9c935752636253c3aa0d44994cad7d",
+    "pcvcm/release.py": "f143e5186f9a8fed2c620c167c6db6d953ef93e042a4fdb2e7bf2bd8d5c8e986",
+    "pcvcm/runtime.py": "02d6ea62b0851476e052844c4682d67e27ef78d12df26e0f1558a940fd690bb9",
+    "pcvcm/training.py": "7a344c9939bd22c9307df0791d193fb05d18e12acc05445c15a0d2e57832616c"
+  },
+  "starting_commit": "f13ffcaa4974eee96e8c6576af136c95b6e1d6a5",
+  "status": "BLOCKED_HUMAN_DATA_AND_PHYSICAL_EVIDENCE",
+  "target_dependencies": {
+    "arm64_installation": "NOT_RUN_NO_PHYSICAL_TARGET",
+    "lock": "../../configs/runtime-cp312-aarch64/dependencies.json",
+    "pypi_verified_wheels": 11,
+    "requirements_sha256": "f0b94e57fec087bc9f9645430c8bcdd4e77607d4347f6c08e8d8f37fab187abf",
+    "sha256": "a494da595206f17f78b52a9010546e4e1dabcbb9d6afae27e7f5ac35178c42b8",
+    "wheel_source_receipt_sha256": "c44bded9f1a935b16c90636500fb55f371099b56bffca82c92eb606adca7ed6c"
+  },
+  "tests": {
+    "command": ".venv/Scripts/python.exe -m pytest tests final_suite/tests experiments/phrase-contract-v1/tests -q -rs",
+    "failed": 0,
+    "passed": 193,
+    "pcv1_passed": 91,
+    "skipped": 7,
+    "skips": [
+      {
+        "reason": "Restore the VCM research payload",
+        "test": "tests.test_grammar_extension.test_each_template_supports_all_percentages"
+      },
+      {
+        "reason": "Restore the VCM research payload",
+        "test": "tests.test_grammar_extension.test_original_forms_and_ids_are_not_mutated"
+      },
+      {
+        "reason": "Restore the VCM research payload",
+        "test": "tests.test_grammar_extension.test_graph_hash_binds_new_rules"
+      },
+      {
+        "reason": "Restore the VCM research payload",
+        "test": "tests.test_grammar_extension.test_templates_cannot_be_introduced_using_test_only"
+      },
+      {
+        "reason": "Restore the VCM research payload",
+        "test": "tests.test_grammar_extension.test_duplicate_forms_not_created"
+      },
+      {
+        "reason": "Restore the VCM research payload",
+        "test": "tests.test_grammar_extension.test_no_value_outside_zero_to_one_hundred"
+      },
+      {
+        "reason": "Full evidence payload not restored",
+        "test": "final_suite.tests.test_review.test_schema_of_every_retained_prediction"
+      }
+    ],
+    "unrestricted_discovery": {
+      "cause": "untouched untracked historical script imports register_sources from incompatible current train.py",
+      "file": "scripts/test_prototype.py",
+      "status": "COLLECTION_ERROR"
+    },
+    "warnings": 13
+  },
+  "training": {
+    "acoustic_epochs_executed": 0,
+    "calibration_manifest": null,
+    "checkpoint": null,
+    "confirmation_commitment": null,
+    "confirmation_manifest": null,
+    "development_manifest": null,
+    "hard_pair_config_sha256": "db071ea003c7ed720366a87ce7dae9e18cd9c113a64702fd1a63a1d879fa9985",
+    "primary_config_sha256": "75a7658356759f32888a95ac15e4967deeb78296ee32ad508730f3de8ec04c22",
+    "train_manifest": null
+  }
+}

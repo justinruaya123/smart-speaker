@@ -34,5 +34,3 @@ def decide(candidate: dict, policy: dict, binding: str, *,
     return {'schema_version': 2, 'accepted': accepted,
             'command': candidate['command'] if accepted else None,
             'reason': 'accepted' if accepted else reason}
-
-
