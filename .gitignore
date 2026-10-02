@@ -60,3 +60,6 @@ Desktop.ini
 /data/audio-index.json
 
 # Keep source, tests, compact metrics, metadata, licenses and provenance receipts in Git.
+
+# Keyword dataset split rows reference local recordings and stay outside Git.
+/data/keyword-v[34]/*_data.csv
