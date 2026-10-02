@@ -1,0 +1,437 @@
+{
+  "direct": {
+    "totals": {
+      "recordings": 4314,
+      "finite_references": 1783,
+      "correct_complete": 1219,
+      "emitted": 1284,
+      "raw_family_correct": 3635,
+      "accepted_family_correct": 1508,
+      "raw_command_correct": 1408,
+      "unknown_recordings": 1970,
+      "unknown_family_false_accepts": 23,
+      "unknown_command_false_accepts": 10,
+      "parameter_calls": 0,
+      "complete_recall": 0.683679192372406,
+      "complete_precision": 0.9493769470404985,
+      "unknown_family_false_accept_rate": 0.011675126903553299
+    },
+    "per_gold_family": {
+      "MEDIA_PLAY": {
+        "recordings": 485,
+        "finite_references": 75,
+        "correct_complete": 49,
+        "emitted": 51,
+        "raw_family_correct": 340,
+        "accepted_family_correct": 147,
+        "raw_command_correct": 68,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.6533333333333333,
+        "complete_precision": 0.9607843137254902,
+        "unknown_family_false_accept_rate": 0.0
+      },
+      "DATE_QUERY": {
+        "recordings": 103,
+        "finite_references": 103,
+        "correct_complete": 73,
+        "emitted": 73,
+        "raw_family_correct": 78,
+        "accepted_family_correct": 73,
+        "raw_command_correct": 78,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.7087378640776699,
+        "complete_precision": 1.0,
+        "unknown_family_false_accept_rate": 0.0
+      },
+      "BRIGHTNESS": {
+        "recordings": 150,
+        "finite_references": 126,
+        "correct_complete": 25,
+        "emitted": 32,
+        "raw_family_correct": 84,
+        "accepted_family_correct": 51,
+        "raw_command_correct": 47,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.1984126984126984,
+        "complete_precision": 0.78125,
+        "unknown_family_false_accept_rate": 0.0
+      },
+      "POWER_OFF": {
+        "recordings": 629,
+        "finite_references": 600,
+        "correct_complete": 447,
+        "emitted": 466,
+        "raw_family_correct": 589,
+        "accepted_family_correct": 530,
+        "raw_command_correct": 496,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.745,
+        "complete_precision": 0.9592274678111588,
+        "unknown_family_false_accept_rate": 0.0
+      },
+      "TIME_QUERY": {
+        "recordings": 100,
+        "finite_references": 100,
+        "correct_complete": 33,
+        "emitted": 34,
+        "raw_family_correct": 64,
+        "accepted_family_correct": 33,
+        "raw_command_correct": 64,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.33,
+        "complete_precision": 0.9705882352941176,
+        "unknown_family_false_accept_rate": 0.0
+      },
+      "COLOR_SET": {
+        "recordings": 70,
+        "finite_references": 32,
+        "correct_complete": 0,
+        "emitted": 0,
+        "raw_family_correct": 32,
+        "accepted_family_correct": 0,
+        "raw_command_correct": 9,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.0,
+        "complete_precision": 0.0,
+        "unknown_family_false_accept_rate": 0.0
+      },
+      "POWER_ON": {
+        "recordings": 572,
+        "finite_references": 556,
+        "correct_complete": 469,
+        "emitted": 486,
+        "raw_family_correct": 533,
+        "accepted_family_correct": 525,
+        "raw_command_correct": 496,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.8435251798561151,
+        "complete_precision": 0.9650205761316872,
+        "unknown_family_false_accept_rate": 0.0
+      },
+      "MEDIA_RESUME": {
+        "recordings": 52,
+        "finite_references": 52,
+        "correct_complete": 40,
+        "emitted": 40,
+        "raw_family_correct": 44,
+        "accepted_family_correct": 40,
+        "raw_command_correct": 44,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.7692307692307693,
+        "complete_precision": 1.0,
+        "unknown_family_false_accept_rate": 0.0
+      },
+      "UNKNOWN": {
+        "recordings": 1970,
+        "finite_references": 0,
+        "correct_complete": 0,
+        "emitted": 10,
+        "raw_family_correct": 1709,
+        "accepted_family_correct": 0,
+        "raw_command_correct": 0,
+        "unknown_recordings": 1970,
+        "unknown_family_false_accepts": 23,
+        "unknown_command_false_accepts": 10,
+        "parameter_calls": 0,
+        "complete_recall": 0.0,
+        "complete_precision": 0.0,
+        "unknown_family_false_accept_rate": 0.011675126903553299
+      },
+      "VOLUME": {
+        "recordings": 183,
+        "finite_references": 139,
+        "correct_complete": 83,
+        "emitted": 92,
+        "raw_family_correct": 162,
+        "accepted_family_correct": 109,
+        "raw_command_correct": 106,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.5971223021582733,
+        "complete_precision": 0.9021739130434783,
+        "unknown_family_false_accept_rate": 0.0
+      }
+    },
+    "per_predicted_family": {
+      "MEDIA_PLAY": {
+        "emitted": 49,
+        "correct_complete": 49
+      },
+      "DATE_QUERY": {
+        "emitted": 79,
+        "correct_complete": 73
+      },
+      "COLOR_SET": {
+        "emitted": 0
+      },
+      "POWER_OFF": {
+        "emitted": 471,
+        "correct_complete": 447
+      },
+      "TIME_QUERY": {
+        "emitted": 34,
+        "correct_complete": 33
+      },
+      "UNKNOWN": {
+        "emitted": 0
+      },
+      "BRIGHTNESS": {
+        "emitted": 30,
+        "correct_complete": 25
+      },
+      "VOLUME": {
+        "emitted": 91,
+        "correct_complete": 83
+      },
+      "POWER_ON": {
+        "emitted": 486,
+        "correct_complete": 469
+      },
+      "MEDIA_RESUME": {
+        "emitted": 44,
+        "correct_complete": 40
+      }
+    },
+    "target_70_passed": false,
+    "joint_gate_passed": false
+  },
+  "silero": {
+    "totals": {
+      "recordings": 4314,
+      "finite_references": 1783,
+      "correct_complete": 1184,
+      "emitted": 1276,
+      "accepted_family_correct": 1480,
+      "unknown_recordings": 1970,
+      "unknown_family_false_accepts": 32,
+      "unknown_command_false_accepts": 10,
+      "parameter_calls": 0,
+      "complete_recall": 0.6640493550196298,
+      "complete_precision": 0.9278996865203761,
+      "unknown_family_false_accept_rate": 0.016243654822335026
+    },
+    "per_gold_family": {
+      "MEDIA_PLAY": {
+        "recordings": 485,
+        "finite_references": 75,
+        "correct_complete": 45,
+        "emitted": 47,
+        "accepted_family_correct": 134,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.6,
+        "complete_precision": 0.9574468085106383,
+        "unknown_family_false_accept_rate": 0.0
+      },
+      "DATE_QUERY": {
+        "recordings": 103,
+        "finite_references": 103,
+        "correct_complete": 67,
+        "emitted": 67,
+        "accepted_family_correct": 67,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.6504854368932039,
+        "complete_precision": 1.0,
+        "unknown_family_false_accept_rate": 0.0
+      },
+      "BRIGHTNESS": {
+        "recordings": 150,
+        "finite_references": 126,
+        "correct_complete": 21,
+        "emitted": 34,
+        "accepted_family_correct": 46,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.16666666666666666,
+        "complete_precision": 0.6176470588235294,
+        "unknown_family_false_accept_rate": 0.0
+      },
+      "POWER_OFF": {
+        "recordings": 629,
+        "finite_references": 600,
+        "correct_complete": 434,
+        "emitted": 466,
+        "accepted_family_correct": 531,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.7233333333333334,
+        "complete_precision": 0.9313304721030042,
+        "unknown_family_false_accept_rate": 0.0
+      },
+      "TIME_QUERY": {
+        "recordings": 100,
+        "finite_references": 100,
+        "correct_complete": 27,
+        "emitted": 28,
+        "accepted_family_correct": 27,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.27,
+        "complete_precision": 0.9642857142857143,
+        "unknown_family_false_accept_rate": 0.0
+      },
+      "COLOR_SET": {
+        "recordings": 70,
+        "finite_references": 32,
+        "correct_complete": 0,
+        "emitted": 0,
+        "accepted_family_correct": 0,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.0,
+        "complete_precision": 0.0,
+        "unknown_family_false_accept_rate": 0.0
+      },
+      "POWER_ON": {
+        "recordings": 572,
+        "finite_references": 556,
+        "correct_complete": 465,
+        "emitted": 489,
+        "accepted_family_correct": 524,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.8363309352517986,
+        "complete_precision": 0.950920245398773,
+        "unknown_family_false_accept_rate": 0.0
+      },
+      "MEDIA_RESUME": {
+        "recordings": 52,
+        "finite_references": 52,
+        "correct_complete": 42,
+        "emitted": 42,
+        "accepted_family_correct": 42,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.8076923076923077,
+        "complete_precision": 1.0,
+        "unknown_family_false_accept_rate": 0.0
+      },
+      "UNKNOWN": {
+        "recordings": 1970,
+        "finite_references": 0,
+        "correct_complete": 0,
+        "emitted": 10,
+        "accepted_family_correct": 0,
+        "unknown_recordings": 1970,
+        "unknown_family_false_accepts": 32,
+        "unknown_command_false_accepts": 10,
+        "parameter_calls": 0,
+        "complete_recall": 0.0,
+        "complete_precision": 0.0,
+        "unknown_family_false_accept_rate": 0.016243654822335026
+      },
+      "VOLUME": {
+        "recordings": 183,
+        "finite_references": 139,
+        "correct_complete": 83,
+        "emitted": 93,
+        "accepted_family_correct": 109,
+        "unknown_recordings": 0,
+        "unknown_family_false_accepts": 0,
+        "unknown_command_false_accepts": 0,
+        "parameter_calls": 0,
+        "complete_recall": 0.5971223021582733,
+        "complete_precision": 0.8924731182795699,
+        "unknown_family_false_accept_rate": 0.0
+      }
+    },
+    "per_predicted_family": {
+      "UNKNOWN": {
+        "emitted": 0
+      },
+      "MEDIA_PLAY": {
+        "emitted": 45,
+        "correct_complete": 45
+      },
+      "DATE_QUERY": {
+        "emitted": 72,
+        "correct_complete": 67
+      },
+      "COLOR_SET": {
+        "emitted": 0
+      },
+      "POWER_OFF": {
+        "emitted": 476,
+        "correct_complete": 434
+      },
+      "TIME_QUERY": {
+        "emitted": 28,
+        "correct_complete": 27
+      },
+      "BRIGHTNESS": {
+        "emitted": 27,
+        "correct_complete": 21
+      },
+      "VOLUME": {
+        "emitted": 93,
+        "correct_complete": 83
+      },
+      "POWER_ON": {
+        "emitted": 488,
+        "correct_complete": 465
+      },
+      "MEDIA_RESUME": {
+        "emitted": 47,
+        "correct_complete": 42
+      }
+    },
+    "target_70_passed": false,
+    "joint_gate_passed": false
+  },
+  "arm": "human_keywords",
+  "graph_sha256": "31f07cffbd1b73b3c7a02902589196763b0e81792c024294afdc4d6e24611154",
+  "graph_bytes": 2126726,
+  "desktop_cpu": {
+    "threads": 2,
+    "session_load_ms": 22.353900014422834,
+    "predict_p50_ms": 3.2132999622263014,
+    "predict_p95_ms": 6.777660001534969,
+    "excludes": "disk, utterance duration, wake inference and endpoint wait",
+    "Pi_measured": false
+  },
+  "references": "Original programmatic silver; historical regression, not new blind data",
+  "wake_accuracy_test": false
+}

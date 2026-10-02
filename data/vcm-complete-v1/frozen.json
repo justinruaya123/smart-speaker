@@ -1,0 +1,12 @@
+{
+  "files": {
+    "audio-audit.jsonl": "083e057968cddf804cdba5023967ce4251afc7f5d8380f50e96c8169d5874118",
+    "audit.json": "4294942c4c9832c9f7d25a80043719119b8e6db7874b678d7a488952b0b75bbb",
+    "custom-catalog.json": "c2fb6f7e4afb6c29457f662d7972d5e433b388ec001acd66761dec740b1823e5",
+    "label-repairs.jsonl": "845e5b352472958c02f3d433e7e6cae64d82e3111a2f23457a1b596c73ddcfc1",
+    "manifest.jsonl": "0fb678202b9510b4a761c54e9d65b9568375e754a78ae29be70914bb98fb6822",
+    "number-test-plan.json": "3e63754ac2ca9a49271e9df5027787105a9b11bddde4ee7b243b7266e042389e"
+  },
+  "original_test_unchanged": true,
+  "candidate_fitting_started": false
+}

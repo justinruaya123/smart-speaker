@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-09-19T17:24:05.557526+00:00",
+  "selection_sha256": "2204a5ff69be0006ff84c7a5fa7f40a7122568376f2901210b2c099c815e44aa",
+  "evaluation_source_sha256": "8c35641f53ed1fb43d3643b302f4c21b71709d6e7aaadb75010bca72a69b1be6",
+  "purpose": "Supplemental deployment-path check of the already frozen policy. Historical presegmented results have been seen; no model, threshold, grammar or selection is changed.",
+  "input": "Each original historical test file, mono 16 kHz. Wake boundary zero because no annotated wake words exist in these files.",
+  "exact_rule": "Exactly one accepted command matching the reference typed JSON; extra accepted segments make utterance incorrect.",
+  "precision_rule": "At most one correct output per reference; duplicates and wrong accepted outputs count as errors.",
+  "no_calibration": true,
+  "no_live_microphone": true,
+  "no_wake_detector": true
+}

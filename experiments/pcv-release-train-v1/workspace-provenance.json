@@ -1,0 +1,39 @@
+{
+  "branch": "codex/semifinal-handoff",
+  "captured": "after fitting began; before locked qualification",
+  "git_head": "896dd19d629e7db8cbce1b612ac66832570f02a6",
+  "scope": "No clean-checkout or commit claim. This shared checkout contains preserved unrelated work. Training source bindings were frozen before fitting.",
+  "source_hashes": {
+    "publish.py": "ff3c2535bb01b99611f4ad0551ad2f41db5058a2ac0a1e8614ad5f84e7766c25",
+    "release.py": "1377aa4923626157faf70a0e9c78e4385f8c47ffb3c0db670d1b67e8a36b7002",
+    "scripts/models/pcv_release_pooling.py": "553341c0844c46789555a12942289fbb33eb96ea72b8d7192511c20780393fa5",
+    "scripts/modules.json": "7891ed70e7a33a3371924781715926934287de45dc7012701323d2181e428a58",
+    "scripts/pcv_delivery.py": "dc0971ed2aca02ad6af5899d7ecacb989275d8780c55a93bd2e43f544bee31fd",
+    "scripts/pcv_final_delivery.py": "6c6100728f80f6d838e8899b92d6a177bda56322118ec718ddc5beed29be1273",
+    "scripts/pcv_release.py": "67c8a01157cf667d37447c92005dcd79ce82e1bef2fb03219c4a32410aba95d6",
+    "scripts/report/pcv_release_slides.mjs": "00d1f2d37d2774c39996b110aa158324f0ebb84917e2982e8f3ac193d75f1de4",
+    "scripts/runtime/pcv_final_runtime.py": "2d18ff0919316bdfb7940bdbe57f309bfa89fb4f5b1e4711d4b6de435d68839c",
+    "scripts/runtime/pcv_pi_benchmark.py": "e0f80da9f0dd9b9a40ba91ab5267a1703fbafa2227f8689630250dd8d197a010",
+    "scripts/test/pcv_release_qualification.py": "84252c48f70ce9cbb88363169618b0c724d9c9057ab320bc2836ba5a4f4fa503",
+    "scripts/train/pcv_release_data.py": "67d798c3d3748e3c241269604a22b17a0a1ddf804c9bd741587319460108895d",
+    "scripts/train/pcv_release_prepare.py": "4143d0618aa61afceec69be956949691792b3ed0f80e1f43e748f328e1420047",
+    "scripts/train/pcv_release_training.py": "000b4402b4b801a3c479f1e18e8285c8575e9c99dde5c97dcca796354ff0c61d"
+  },
+  "staged_paths": [],
+  "status_paths": [
+    "M publish.py",
+    "?? release.py",
+    "?? scripts/models/pcv_release_pooling.py",
+    "?? scripts/modules.json",
+    "?? scripts/pcv_delivery.py",
+    "?? scripts/pcv_final_delivery.py",
+    "?? scripts/pcv_release.py",
+    "?? scripts/report/pcv_release_slides.mjs",
+    "?? scripts/runtime/pcv_final_runtime.py",
+    "?? scripts/runtime/pcv_pi_benchmark.py",
+    "?? scripts/test/pcv_release_qualification.py",
+    "?? scripts/train/pcv_release_data.py",
+    "?? scripts/train/pcv_release_prepare.py",
+    "?? scripts/train/pcv_release_training.py"
+  ]
+}

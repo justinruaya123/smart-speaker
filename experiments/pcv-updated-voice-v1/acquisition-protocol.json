@@ -1,0 +1,123 @@
+{
+  "audit_scope": "All source rows, declared labels, file/PCM identity, speakers, waveform checks; no ASR or model inference",
+  "bindings": {
+    "experiments\\pcv-updated-voice-v1\\publisher-metadata.json": "5bc628080c0e0637f33010afdfc5d4b968ab1d6e9a49868dc1d7c8bc544552db",
+    "experiments\\pcv-updated-voice-v1\\source-card.txt": "54c4db47877660c2433aceb5b0e99e790f95b96c6526459fb31edb1933119da3",
+    "experiments\\pcv-updated-voice-v1\\variations.csv": "6004b3b2b58137058c705b5769b0d094e05a5cff6ddcbed6de548b4a0105fcda",
+    "scripts\\train\\pcv_updated_data.py": "3e0b1165cfa3f967b2b73a9101e2d1f5e0568d0f3c2455a0f267bb59c6d11356"
+  },
+  "ignore_gate_passed": true,
+  "order": [
+    "human recordings first",
+    "supplied synthetic recordings second",
+    "our synthesis only for measured remaining gaps"
+  ],
+  "payloads": [
+    {
+      "lfs": {
+        "oid": "569680bca109f29f0c8deede839540623dcd9f355b95fae4d66f8d20f3c10d02",
+        "pointerSize": 133,
+        "size": 13976285
+      },
+      "path": "data/holdout-00000-of-00001.parquet",
+      "size": 13976285
+    },
+    {
+      "lfs": {
+        "oid": "cefd4884acf3aec7c33625dc46a970d7b5b921d0507e7b6e41bd430a3eb87504",
+        "pointerSize": 134,
+        "size": 321316611
+      },
+      "path": "data/numerals-00000-of-00006.parquet",
+      "size": 321316611
+    },
+    {
+      "lfs": {
+        "oid": "dcd8edade416bba1553d7d50db3bdfcacd8ac4aaad54b775316990741168a8a8",
+        "pointerSize": 134,
+        "size": 326077666
+      },
+      "path": "data/numerals-00001-of-00006.parquet",
+      "size": 326077666
+    },
+    {
+      "lfs": {
+        "oid": "768f4d9c426668831ddbece9d496c161ac3149ba1ab16bec722d1d0fd35592c8",
+        "pointerSize": 134,
+        "size": 321668264
+      },
+      "path": "data/numerals-00002-of-00006.parquet",
+      "size": 321668264
+    },
+    {
+      "lfs": {
+        "oid": "d9a58e4d10f625f170743f1623b7750f2933d8e6a2902ab99b634488a6041ec7",
+        "pointerSize": 134,
+        "size": 347705349
+      },
+      "path": "data/numerals-00003-of-00006.parquet",
+      "size": 347705349
+    },
+    {
+      "lfs": {
+        "oid": "b057c8930fa00f52481007be50e15382c4b68b9044a46cda1e923b295235f281",
+        "pointerSize": 134,
+        "size": 348820081
+      },
+      "path": "data/numerals-00004-of-00006.parquet",
+      "size": 348820081
+    },
+    {
+      "lfs": {
+        "oid": "aced4a5f0588d285df4155cb2da66ba327c1d35336079228a31f05a142bf315f",
+        "pointerSize": 134,
+        "size": 349447467
+      },
+      "path": "data/numerals-00005-of-00006.parquet",
+      "size": 349447467
+    },
+    {
+      "lfs": {
+        "oid": "905eb81f479e1ecfd7999218c0d51279e72e4407935b01d0477d79335c5bb6c4",
+        "pointerSize": 134,
+        "size": 278435486
+      },
+      "path": "data/test-00000-of-00001.parquet",
+      "size": 278435486
+    },
+    {
+      "lfs": {
+        "oid": "3bc8b76dd8dd53b248801cbc102b7c0bea58ad40b048ac6570a72d8ff1a33c60",
+        "pointerSize": 134,
+        "size": 315514546
+      },
+      "path": "data/train-00000-of-00002.parquet",
+      "size": 315514546
+    },
+    {
+      "lfs": {
+        "oid": "5a1e3734ab7df62c9142f6268edd7e915716d6d11dfb838726cb85268106371b",
+        "pointerSize": 134,
+        "size": 402448551
+      },
+      "path": "data/train-00001-of-00002.parquet",
+      "size": 402448551
+    }
+  ],
+  "repository": "airimonda/ai231-me2-voice-commands",
+  "requirements": [
+    "ME-01",
+    "ME-02",
+    "ME-03",
+    "ME-04",
+    "ME-06",
+    "ME-07",
+    "ME-08",
+    "UC-01..UC-10"
+  ],
+  "retrieved_utc": "2026-10-01T15:36:53.074692+00:00",
+  "revision": "e3e203b360d5c3205d59f99ad65cd380f9c0f517",
+  "source_terms": "Preserve each underlying source license; source-card.txt includes class-only sharing limits for group recordings",
+  "test_inference_accessed": false,
+  "version": "pcv-updated-voice-v1-acquisition"
+}

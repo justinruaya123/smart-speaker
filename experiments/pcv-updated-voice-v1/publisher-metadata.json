@@ -1,0 +1,192 @@
+{
+  "_id": "6abe734cccc830c92461ba2b",
+  "author": "airimonda",
+  "cardData": {
+    "configs": [
+      {
+        "config_name": "default",
+        "data_files": [
+          {
+            "path": "data/train-*",
+            "split": "train"
+          },
+          {
+            "path": "data/test-*",
+            "split": "test"
+          },
+          {
+            "path": "data/holdout-*",
+            "split": "holdout"
+          },
+          {
+            "path": "data/numerals-*",
+            "split": "numerals"
+          }
+        ]
+      }
+    ],
+    "dataset_info": {
+      "dataset_size": 3045123984.118,
+      "download_size": 3025410306,
+      "features": [
+        {
+          "dtype": {
+            "audio": {
+              "sampling_rate": 16000
+            }
+          },
+          "name": "audio"
+        },
+        {
+          "dtype": "string",
+          "name": "file"
+        },
+        {
+          "dtype": "string",
+          "name": "transcript"
+        },
+        {
+          "dtype": "string",
+          "name": "command"
+        },
+        {
+          "dtype": "string",
+          "name": "variation"
+        },
+        {
+          "dtype": "string",
+          "name": "slot_value"
+        },
+        {
+          "dtype": "int64",
+          "name": "out_of_scope"
+        },
+        {
+          "dtype": "string",
+          "name": "bucket"
+        },
+        {
+          "dtype": "string",
+          "name": "speaker_id"
+        },
+        {
+          "dtype": "string",
+          "name": "source"
+        },
+        {
+          "dtype": "int64",
+          "name": "is_synthetic"
+        },
+        {
+          "dtype": "string",
+          "name": "accent_group"
+        },
+        {
+          "dtype": "string",
+          "name": "numerals"
+        },
+        {
+          "dtype": "float64",
+          "name": "duration_s"
+        },
+        {
+          "dtype": "string",
+          "name": "transcript_source"
+        },
+        {
+          "dtype": "string",
+          "name": "variation_match"
+        },
+        {
+          "dtype": "string",
+          "name": "whisper_check"
+        },
+        {
+          "dtype": "string",
+          "name": "whisper_transcript"
+        },
+        {
+          "dtype": "string",
+          "name": "note"
+        }
+      ],
+      "splits": [
+        {
+          "name": "train",
+          "num_bytes": 660249714.16,
+          "num_examples": 10682
+        },
+        {
+          "name": "test",
+          "num_bytes": 269691747.93799996,
+          "num_examples": 4371
+        },
+        {
+          "name": "holdout",
+          "num_bytes": 19000480,
+          "num_examples": 186
+        },
+        {
+          "name": "numerals",
+          "num_bytes": 2096182042.02,
+          "num_examples": 66390
+        }
+      ]
+    }
+  },
+  "createdAt": "2026-10-01T14:50:52.000Z",
+  "description": "\n\t\n\t\t\n\t\n\t\n\t\tAI231 ME2 voice-command dataset\n\t\n\ndataset/\n  train/     manifest.csv  audio/   10,603 clips,  6.3 h\n  test/      manifest.csv  audio/    4,371 clips,  2.5 h\n  holdout/   manifest.csv  audio/      186 clips,  0.2 h\n  numerals/  manifest.csv  audio/   66,390 clips, 21.8 h   number-only clips, separate from the splits\n  variations.csv                     the 93 command variations (sheet \"Option B\")\n\n\nAudio: every file is 16 kHz, mono, 16-bit PCM WAV.\nPaths: file in each manifest is\u2026 See the full description on the dataset page: https://huggingface.co/datasets/airimonda/ai231-me2-voice-commands.",
+  "disabled": false,
+  "downloads": 0,
+  "gated": false,
+  "id": "airimonda/ai231-me2-voice-commands",
+  "lastModified": "2026-10-01T14:58:57.000Z",
+  "likes": 0,
+  "private": false,
+  "sha": "e3e203b360d5c3205d59f99ad65cd380f9c0f517",
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "data/holdout-00000-of-00001.parquet"
+    },
+    {
+      "rfilename": "data/numerals-00000-of-00006.parquet"
+    },
+    {
+      "rfilename": "data/numerals-00001-of-00006.parquet"
+    },
+    {
+      "rfilename": "data/numerals-00002-of-00006.parquet"
+    },
+    {
+      "rfilename": "data/numerals-00003-of-00006.parquet"
+    },
+    {
+      "rfilename": "data/numerals-00004-of-00006.parquet"
+    },
+    {
+      "rfilename": "data/numerals-00005-of-00006.parquet"
+    },
+    {
+      "rfilename": "data/test-00000-of-00001.parquet"
+    },
+    {
+      "rfilename": "data/train-00000-of-00002.parquet"
+    },
+    {
+      "rfilename": "data/train-00001-of-00002.parquet"
+    },
+    {
+      "rfilename": "variations.csv"
+    }
+  ],
+  "tags": [
+    "region:us"
+  ],
+  "usedStorage": 4037007715
+}

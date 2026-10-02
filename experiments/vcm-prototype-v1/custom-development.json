@@ -1,0 +1,40 @@
+{
+  "policy": {
+    "score": 1.1,
+    "margin": 1.1,
+    "custom_probability": 1.1
+  },
+  "gate_passed": false,
+  "test_used": false,
+  "catalog_sha256": "0b6fcfce8785702ffe614601d9ec67ee76d4d1e2f635283e7725b045dbab5e8a",
+  "conditional": {
+    "queries": 184,
+    "known": 10,
+    "unknown": 174,
+    "playlist_queries": 2,
+    "raw_top1_correct": 7,
+    "accepted": 0,
+    "correct": 0,
+    "unknown_false_accepts": 0,
+    "playlist_correct": 0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "unknown_false_accept_rate": 0.0,
+    "conditional_on_gold_custom_family": true
+  },
+  "complete": {
+    "queries": 184,
+    "known": 10,
+    "unknown": 174,
+    "playlist_queries": 2,
+    "raw_top1_correct": 7,
+    "accepted": 0,
+    "correct": 0,
+    "unknown_false_accepts": 0,
+    "playlist_correct": 0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "unknown_false_accept_rate": 0.0,
+    "conditional_on_gold_custom_family": false
+  }
+}

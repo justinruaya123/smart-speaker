@@ -1,0 +1,29 @@
+[Unit]
+Description=Local voice assistant gateway
+After=network.target
+
+[Service]
+Type=simple
+# Alternative single-process deployment of prebuilt assets (no startup build).
+# Set PORT=3000, APP_ORIGIN=http://127.0.0.1:3000 and SERVE_UI=true in .env.
+# This legacy Fastify static path does not use the split frontend Brotli server.
+# Create an unprivileged speaker user and copy the release to /opt/speaker-ui.
+User=speaker
+Group=speaker
+WorkingDirectory=/opt/speaker-ui
+EnvironmentFile=/opt/speaker-ui/.env
+ExecStart=/usr/bin/node /opt/speaker-ui/dist-server/server/main.js
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=15
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/speaker-ui/data
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

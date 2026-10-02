@@ -1,0 +1,34 @@
+{
+  "errors": [
+    7.152557373046875e-07,
+    7.152557373046875e-07,
+    7.37607479095459e-07,
+    9.5367431640625e-07,
+    7.748603820800781e-07,
+    7.748603820800781e-07
+  ],
+  "evidence": "random-weight software compatibility, not speech accuracy",
+  "frame_counts": [
+    1,
+    3,
+    16,
+    37,
+    80,
+    121
+  ],
+  "input_feature_hop_ms": 10,
+  "logits": "raw; finite decoder applies log-softmax once",
+  "max_absolute_error": 9.5367431640625e-07,
+  "mode": "single complete-utterance inference after VAD endpoint; no streaming caches",
+  "onnx_bytes": 1597030,
+  "output_heads": [
+    "ctc",
+    "intent",
+    "target"
+  ],
+  "output_hop_ms": 20,
+  "parameters": 377341,
+  "pass": true,
+  "source_sha256": "0b1130d767209eab2f8de90b3e4c343590d2420d67c34877827c69a11aee0b1d",
+  "tolerance": 2e-05
+}

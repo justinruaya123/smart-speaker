@@ -1,22 +1,25 @@
 # Signal Lab — actual VCM tensor inspection
 
-Restore the supplied payload, then serve the repository root:
+Generate an inspector from the selected model, then serve the repository root:
 
 ```bash
 python -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open `http://localhost:8000/visualizer/`. No CDN, npm install, external font, speech
-service or pretrained model is required. `VCM_SIGNAL_LAB.html` is the downloadable
-self-contained build. Browser microphone support needs localhost/HTTPS and permission.
+Open `http://localhost:8000/visualizer/` when `assets/` has been exported, or open
+the generated standalone HTML. No CDN, npm install, external font or speech
+service is required. Browser microphone support needs localhost/HTTPS and permission.
+The PCV synthetic study is still running; an artificial fixture is not the selected
+trained model. Current architecture and evidence status: [PCV model](../docs/PCV-MODEL.md).
 
 ## What runs
 
 The frontend computes real log-mel features in JavaScript. `kernel.c` supplies
 float32 causal convolution and double-precision log-domain CTC in WebAssembly.
 `weights.bin` contains the own research checkpoint's exact float32 weights.
-`model.onnx` remains the reference artifact; tests independently execute it with
-OpenCV CPU and compare it with WASM and PyTorch.
+`model.onnx` remains the reference artifact. The PCV exporter compares the checkpoint
+with CPU ONNX Runtime using nonzero caches; `tests/check_pcv.py` compares the real
+WASM/frontend tensors with the same ONNX graph on a specified waveform.
 
 The scene draws real activation samples with WebGL, or projected 3D Canvas when
 WebGL is unavailable. This is GPU rendering, **not WebGPU neural inference**.
@@ -56,21 +59,33 @@ permission to act. No Home Assistant/Spotify calls occur here.
 
 ## Rebuild and verify
 
+Once the selected portable bundle and checkpoint exist:
+
 ```bash
+python visualizer/export_assets.py --pcv-runtime --bundle <portable-bundle> --checkpoint <selected.pt> --output visualizer/assets --evidence <demo-results.json>
 python visualizer/build_kernel.py
-python visualizer/export_assets.py
 python visualizer/build_standalone.py
-node --test visualizer/tests/core.test.mjs
-node visualizer/tests/run_parity.mjs
-python final_suite/verify_math.py
-python final_suite/browser_check.py
+node --test visualizer/tests/core.test.mjs visualizer/tests/evidence.test.mjs
+python visualizer/tests/check_pcv.py --module-dir visualizer --assets visualizer/assets --wav <mono-16k.wav> --output <new-parity-receipt>
 ```
 
-Clang with wasm32 is needed only to rebuild the included kernel. These commands
-never download a pretrained model. Browser component tests execute local fixtures;
+Export into a new directory: existing assets and receipts are not overwritten.
+Build the kernel after exporting when using the same assets directory. Alternate
+locations are supported by `build_kernel.py --output-dir ... --module ...` and
+`build_standalone.py --assets-dir ... --kernel-module ... --output ...`.
+The kernel compiler can be Clang with wasm32 support or `--compiler <zig-executable>`.
+These commands never download a pretrained model. Browser component tests execute local fixtures;
 physical GPU, WebGPU and microphone tests are separate. The 32 MiB WASM arena and
 DOM/graphics/evidence memory are not the model's 32,064-byte neural cache. Run the
 visualizer on a development computer, separately from the Pi inference process.
+
+The recorded-results table verifies its evidence file hash plus source/deployment
+bindings. A new PCV model cannot silently display the historical V4/V5 table.
+Changing the model clears old results. Empty sample lists are supported: load a
+WAV explicitly. Browser microphone inspection uses its own diagnostic energy
+endpoint; authoritative acceptance uses the packaged Hey Jarvis + CPU ONNX pipeline.
+The older `final_suite/verify_math.py` checks historical V3 assets and is not the
+selected PCV parity command.
 
 ## References
 

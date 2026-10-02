@@ -1,0 +1,332 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "pi": false,
+  "model_bytes": 908004,
+  "startup_ms": 479.75099994800985,
+  "rss_bytes": 221278208,
+  "sample_ids": [
+    "slurp/audio-1488987445.flac",
+    "slurp/audio-1488988236.flac",
+    "slurp/audio-1488988577.flac",
+    "slurp/audio-1489151166.flac"
+  ],
+  "frontend_inference_samples": [
+    {
+      "frontend_ms": 1.6077000182121992,
+      "inference_ms": 1.206299988552928,
+      "duration_s": 3.3915625
+    },
+    {
+      "frontend_ms": 1.06969999615103,
+      "inference_ms": 0.7471999851986766,
+      "duration_s": 2.943625
+    },
+    {
+      "frontend_ms": 1.8636999884620309,
+      "inference_ms": 1.079399953596294,
+      "duration_s": 5.8871875
+    },
+    {
+      "frontend_ms": 0.6648000562563539,
+      "inference_ms": 0.6343999411910772,
+      "duration_s": 2.6236875
+    }
+  ],
+  "scale": [
+    {
+      "entities": 20,
+      "index_build_ms": 1.1631000088527799,
+      "index_matrix_bytes": 7680,
+      "index_json_bytes": 1478,
+      "unavailable": 0,
+      "queries": 20,
+      "rank_p50_ms": 0.010399962775409222,
+      "rank_p95_ms": 0.02176002017222349
+    },
+    {
+      "entities": 100,
+      "index_build_ms": 3.8710000226274133,
+      "index_matrix_bytes": 38400,
+      "index_json_bytes": 7456,
+      "unavailable": 0,
+      "queries": 20,
+      "rank_p50_ms": 0.033649965189397335,
+      "rank_p95_ms": 0.0749750528484586
+    },
+    {
+      "entities": 500,
+      "index_build_ms": 17.445300007238984,
+      "index_matrix_bytes": 192000,
+      "index_json_bytes": 37646,
+      "unavailable": 0,
+      "queries": 20,
+      "rank_p50_ms": 0.16639998648315668,
+      "rank_p95_ms": 0.2504200383555151
+    },
+    {
+      "entities": 1000,
+      "index_build_ms": 35.41640006005764,
+      "index_matrix_bytes": 384000,
+      "index_json_bytes": 75648,
+      "unavailable": 0,
+      "queries": 20,
+      "rank_p50_ms": 0.3369000041857362,
+      "rank_p95_ms": 0.35594509681686765
+    },
+    {
+      "entities": 5000,
+      "index_build_ms": 171.6438999865204,
+      "index_matrix_bytes": 1920000,
+      "index_json_bytes": 381897,
+      "unavailable": 0,
+      "queries": 20,
+      "rank_p50_ms": 1.9568499992601573,
+      "rank_p95_ms": 3.4311200142838234
+    },
+    {
+      "entities": 10000,
+      "index_build_ms": 347.01979998499155,
+      "index_matrix_bytes": 3840000,
+      "index_json_bytes": 763133,
+      "unavailable": 0,
+      "queries": 20,
+      "rank_p50_ms": 4.175000009126961,
+      "rank_p95_ms": 4.304614936700091
+    }
+  ],
+  "dynamic_demo": [
+    {
+      "role": "device",
+      "name": "bedroom lamp",
+      "old_version": "a14235b4b4fb6b5550a6094f1ebd6d541f7bca160abbbf207821773dcc89db3d",
+      "new_version": "d445794694fb8519ed3d45446ffd201aa98f5ff573ddcf7c7ca23cc6635c4f4d",
+      "queries": [
+        {
+          "id": "slurp/audio-1434542910.flac",
+          "split": "train",
+          "text": "turn off the bedroom lamp",
+          "heldout": false,
+          "old_top5": [
+            [
+              "device:bedroom",
+              0.8546847105026245
+            ],
+            [
+              "device:bathroom",
+              0.42936670780181885
+            ],
+            [
+              "device:lobby",
+              0.3702166974544525
+            ],
+            [
+              "device:living room",
+              0.3438282310962677
+            ],
+            [
+              "device:den",
+              0.30980634689331055
+            ]
+          ],
+          "new_top5": [
+            [
+              "device:bedroom",
+              0.8546847105026245
+            ],
+            [
+              "device:bathroom",
+              0.42936670780181885
+            ],
+            [
+              "device:bedroom lamp",
+              0.4258413016796112
+            ],
+            [
+              "device:lobby",
+              0.3702166974544525
+            ],
+            [
+              "device:living room",
+              0.3438282310962677
+            ]
+          ]
+        }
+      ],
+      "acceptance": "requires calibration of changed catalog; raw ranks only"
+    },
+    {
+      "role": "artist",
+      "name": "adele",
+      "old_version": "fc739f3a3fdb916ba09e6743be03fd1898e93d52cc1e953d38d3c71f3047751c",
+      "new_version": "de595dcb8af9979a60e921b23a6671a9521a572c158659d6095560cb5343d9c2",
+      "queries": [
+        {
+          "id": "slurp/audio-1502100615-headset.flac",
+          "split": "test",
+          "text": "i want to hear the songs of adele",
+          "heldout": true,
+          "old_top5": [
+            [
+              "artist:spectre",
+              0.5184657573699951
+            ],
+            [
+              "artist:madonna",
+              0.5018526315689087
+            ],
+            [
+              "artist:ella fitzgerald",
+              0.41528671979904175
+            ],
+            [
+              "artist:metallica",
+              0.40706950426101685
+            ],
+            [
+              "artist:bob dylan",
+              0.4060704708099365
+            ]
+          ],
+          "new_top5": [
+            [
+              "artist:adele",
+              0.5437520146369934
+            ],
+            [
+              "artist:spectre",
+              0.5184657573699951
+            ],
+            [
+              "artist:madonna",
+              0.5018526315689087
+            ],
+            [
+              "artist:ella fitzgerald",
+              0.41528671979904175
+            ],
+            [
+              "artist:metallica",
+              0.40706950426101685
+            ]
+          ]
+        },
+        {
+          "id": "slurp/audio-1502195946-headset.flac",
+          "split": "test",
+          "text": "i want to hear the songs of adele",
+          "heldout": true,
+          "old_top5": [
+            [
+              "artist:spectre",
+              0.464464008808136
+            ],
+            [
+              "artist:bone thugs",
+              0.4398626685142517
+            ],
+            [
+              "artist:madonna",
+              0.4033123850822449
+            ],
+            [
+              "artist:ella fitzgerald",
+              0.3902915120124817
+            ],
+            [
+              "artist:schubert",
+              0.38949882984161377
+            ]
+          ],
+          "new_top5": [
+            [
+              "artist:spectre",
+              0.464464008808136
+            ],
+            [
+              "artist:bone thugs",
+              0.4398626685142517
+            ],
+            [
+              "artist:madonna",
+              0.4033123850822449
+            ],
+            [
+              "artist:adele",
+              0.40078219771385193
+            ],
+            [
+              "artist:ella fitzgerald",
+              0.3902915120124817
+            ]
+          ]
+        },
+        {
+          "id": "slurp/audio-1502197331-headset.flac",
+          "split": "test",
+          "text": "play adele",
+          "heldout": true,
+          "old_top5": [
+            [
+              "artist:gaga",
+              0.561870813369751
+            ],
+            [
+              "artist:madonna",
+              0.5547370910644531
+            ],
+            [
+              "artist:eminem",
+              0.47664663195610046
+            ],
+            [
+              "artist:rihanna",
+              0.4739387631416321
+            ],
+            [
+              "artist:jennifer s",
+              0.4479464590549469
+            ]
+          ],
+          "new_top5": [
+            [
+              "artist:gaga",
+              0.561870813369751
+            ],
+            [
+              "artist:madonna",
+              0.5547370910644531
+            ],
+            [
+              "artist:eminem",
+              0.47664663195610046
+            ],
+            [
+              "artist:rihanna",
+              0.4739387631416321
+            ],
+            [
+              "artist:jennifer s",
+              0.4479464590549469
+            ]
+          ]
+        }
+      ],
+      "acceptance": "requires calibration of changed catalog; raw ranks only"
+    }
+  ],
+  "models_before": {
+    ".cache\\speechembedding-v1\\dual_kws-audio.onnx": "9285e229d5c0ee8fd03b5c108e4be0a6215039dffe63d3b1d90eb432f784e159",
+    ".cache\\speechembedding-v1\\dual_kws-text.onnx": "160280843f08c85ba53d0519673ccbae48edb11ae2d3b932f5b2bf92457144aa"
+  },
+  "models_after": {
+    ".cache\\speechembedding-v1\\dual_kws-audio.onnx": "9285e229d5c0ee8fd03b5c108e4be0a6215039dffe63d3b1d90eb432f784e159",
+    ".cache\\speechembedding-v1\\dual_kws-text.onnx": "160280843f08c85ba53d0519673ccbae48edb11ae2d3b932f5b2bf92457144aa"
+  },
+  "models_unchanged": true,
+  "caveats": [
+    "single process resident RSS, not peak",
+    "4 desktop dev recordings; 20 rank timings/size",
+    "generated dictionary-word text catalogs; no large-catalog accuracy claim",
+    "no Pi measurements"
+  ]
+}

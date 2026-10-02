@@ -1,0 +1,39 @@
+{
+  "checks": [
+    "unselected cameras cannot open upstream streams",
+    "gateway bounds concurrent camera streams",
+    "disconnect releases upstream streams through the frontend proxy",
+    "Camera call opens centered even with actions disabled",
+    "camera view makes its video-only capability explicit",
+    "ongoing call keeps a floating preview after minimizing",
+    "floating camera leaves music controls accessible at 800 by 480",
+    "floating camera leaves music controls accessible at 1024 by 600",
+    "restoring the centered call reuses its stream",
+    "centered camera fits 800 by 480",
+    "camera off stops the stream",
+    "hidden view releases its stream",
+    "leaving the call modal keeps the ongoing video floating",
+    "HA unavailable state stops video without showing a demo",
+    "invalid upstream data shows a recoverable error without provider details",
+    "manual retry reconnects the feed",
+    "video continues beyond the ordinary request timeout",
+    "an interrupted stream stops showing its last frame as live video",
+    "15 minimize and restore cycles never reconnect the camera",
+    "repeated reopen and hangup leave no streams",
+    "simulated calls also use a centered camera view",
+    "ongoing simulated call has a floating preview",
+    "hangup removes the floating window",
+    "camera UI has no browser errors"
+  ],
+  "errors": [],
+  "resources": {
+    "environment": "Desktop Chromium / SwiftShader; 640x360 JPEG fixture at 5 fps, not Pi or real-camera performance",
+    "initialHeapMB": 3.156152,
+    "finalHeapMB": 3.245716,
+    "heapDeltaMB": 0.089564,
+    "rendererBusyPercent": 1.7446989321967632,
+    "reopenCycles": 15,
+    "peakStreamsIncludingLimitTest": 2,
+    "remainingStreams": 0
+  }
+}

@@ -1,0 +1,5 @@
+# All experimental assets stay here; no root pipeline ignore rules are modified.
+data/
+runs/
+__pycache__/
+*.log

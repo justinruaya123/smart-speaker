@@ -1,0 +1,10 @@
+{
+  "version": "keyword-v4-micro-intent",
+  "epochs": 40,
+  "seed": 29,
+  "selection": "Human development macro family accuracy; ready accuracy breaks ties. No test selection.",
+  "architecture": "Five small 2D convolutions, global max pooling, 64-unit projection, family/readiness/auxiliary keyword-presence heads.",
+  "reference": "https://github.com/AIWintermuteAI/Speech-to-Intent-Micro",
+  "random_initialization": true,
+  "data_protocol_sha256": "6bbe5c958b6b55d1f653ace7e5ef534f6bcf27b144178f3616b02fed9abdaf8e"
+}

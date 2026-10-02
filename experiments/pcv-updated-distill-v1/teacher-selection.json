@@ -1,0 +1,78 @@
+{
+  "acceptance_qualified": false,
+  "distillation_gate_pass": true,
+  "human": {
+    "checkpoint": ".cache\\pcv-updated-distill-v1\\human\\epoch-024.pt",
+    "checkpoint_sha256": "c560de552f1c0be7e061be02da93384e69f1e1a6de60e5819e54be806b99f280",
+    "development": {
+      "human": {
+        "accepted": 187,
+        "exact": 155,
+        "false_accept_rate": 0.31746031746031744,
+        "n": 231,
+        "negative_errors": 20,
+        "negative_n": 63,
+        "positive_n": 168,
+        "precision": 0.8288770053475936,
+        "recall": 0.9226190476190477
+      },
+      "synthetic": {
+        "accepted": 0,
+        "exact": 0,
+        "false_accept_rate": null,
+        "n": 0,
+        "negative_errors": 0,
+        "negative_n": 0,
+        "positive_n": 0,
+        "precision": null,
+        "recall": null
+      }
+    },
+    "epoch": 24,
+    "key": [
+      0.9226190476190477,
+      -20,
+      -24
+    ],
+    "stage": "human",
+    "test_inference_accessed": false
+  },
+  "mixed": {
+    "checkpoint": ".cache\\pcv-updated-distill-v1\\mixed\\epoch-004.pt",
+    "checkpoint_sha256": "f56a1030e7c86c28a09ae248aaec9ef42715bef9ee8cea6bd9f74a709d04289f",
+    "development": {
+      "human": {
+        "accepted": 183,
+        "exact": 155,
+        "false_accept_rate": 0.2698412698412698,
+        "n": 231,
+        "negative_errors": 17,
+        "negative_n": 63,
+        "positive_n": 168,
+        "precision": 0.8469945355191257,
+        "recall": 0.9226190476190477
+      },
+      "synthetic": {
+        "accepted": 108,
+        "exact": 108,
+        "false_accept_rate": null,
+        "n": 108,
+        "negative_errors": 0,
+        "negative_n": 0,
+        "positive_n": 108,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    "epoch": 4,
+    "key": [
+      0.9613095238095238,
+      -17,
+      -4
+    ],
+    "stage": "mixed",
+    "test_inference_accessed": false
+  },
+  "teacher_training_protocol_sha256": "60af5df7807d7bc9070357af80dc4797096ffe50054b9e66e6d2b17452f45db7",
+  "test_inference_accessed": false
+}

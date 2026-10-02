@@ -1,0 +1,813 @@
+{
+  "mode": "mixed",
+  "tests": {
+    "human": {
+      "gated": {
+        "overall": {
+          "n": 1803,
+          "positive_n": 1175,
+          "accepted": 457,
+          "correct_accepted": 446,
+          "precision": 0.975929978118162,
+          "exact_recall": 0.37957446808510636,
+          "negative_n": 628,
+          "false_accepts": 3,
+          "negative_false_accept_rate": 0.004777070063694267,
+          "family_accuracy": 0.7820299500831946
+        },
+        "per_intent": {
+          "UNKNOWN": {
+            "n": 478,
+            "positive_n": 0,
+            "family_correct": 349,
+            "family_recall": 0.7301255230125523,
+            "accepted_intent_recall": 0.0,
+            "accepted_intent_precision": null,
+            "accepted_outputs": 0,
+            "correct_commands": 0,
+            "command_precision": null,
+            "command_recall": null,
+            "negative_false_accepts": 2,
+            "rejection_rate": 0.99581589958159
+          },
+          "POWER_ON": {
+            "n": 251,
+            "positive_n": 232,
+            "family_correct": 215,
+            "family_recall": 0.8565737051792829,
+            "accepted_intent_recall": 0.6653386454183267,
+            "accepted_intent_precision": 0.9881656804733728,
+            "accepted_outputs": 131,
+            "correct_commands": 131,
+            "command_precision": 1.0,
+            "command_recall": 0.5646551724137931,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.4701195219123506
+          },
+          "POWER_OFF": {
+            "n": 287,
+            "positive_n": 268,
+            "family_correct": 239,
+            "family_recall": 0.8327526132404182,
+            "accepted_intent_recall": 0.7317073170731707,
+            "accepted_intent_precision": 0.9051724137931034,
+            "accepted_outputs": 159,
+            "correct_commands": 154,
+            "command_precision": 0.9685534591194969,
+            "command_recall": 0.5746268656716418,
+            "negative_false_accepts": 1,
+            "rejection_rate": 0.45993031358885017
+          },
+          "BRIGHTNESS": {
+            "n": 242,
+            "positive_n": 213,
+            "family_correct": 180,
+            "family_recall": 0.743801652892562,
+            "accepted_intent_recall": 0.0,
+            "accepted_intent_precision": null,
+            "accepted_outputs": 0,
+            "correct_commands": 0,
+            "command_precision": null,
+            "command_recall": 0.0,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.9917355371900827
+          },
+          "COLOR_SET": {
+            "n": 129,
+            "positive_n": 106,
+            "family_correct": 67,
+            "family_recall": 0.5193798449612403,
+            "accepted_intent_recall": 0.0,
+            "accepted_intent_precision": null,
+            "accepted_outputs": 0,
+            "correct_commands": 0,
+            "command_precision": null,
+            "command_recall": 0.0,
+            "negative_false_accepts": 0,
+            "rejection_rate": 1.0
+          },
+          "MEDIA_PLAY": {
+            "n": 90,
+            "positive_n": 73,
+            "family_correct": 83,
+            "family_recall": 0.9222222222222223,
+            "accepted_intent_recall": 0.7888888888888889,
+            "accepted_intent_precision": 0.9466666666666667,
+            "accepted_outputs": 52,
+            "correct_commands": 51,
+            "command_precision": 0.9807692307692307,
+            "command_recall": 0.6986301369863014,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.43333333333333335
+          },
+          "MEDIA_RESUME": {
+            "n": 37,
+            "positive_n": 37,
+            "family_correct": 33,
+            "family_recall": 0.8918918918918919,
+            "accepted_intent_recall": 0.8648648648648649,
+            "accepted_intent_precision": 0.9696969696969697,
+            "accepted_outputs": 29,
+            "correct_commands": 29,
+            "command_precision": 1.0,
+            "command_recall": 0.7837837837837838,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.21621621621621623
+          },
+          "TIME_QUERY": {
+            "n": 50,
+            "positive_n": 50,
+            "family_correct": 34,
+            "family_recall": 0.68,
+            "accepted_intent_recall": 0.5,
+            "accepted_intent_precision": 0.8928571428571429,
+            "accepted_outputs": 13,
+            "correct_commands": 12,
+            "command_precision": 0.9230769230769231,
+            "command_recall": 0.24,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.76
+          },
+          "DATE_QUERY": {
+            "n": 59,
+            "positive_n": 59,
+            "family_correct": 48,
+            "family_recall": 0.8135593220338984,
+            "accepted_intent_recall": 0.6440677966101694,
+            "accepted_intent_precision": 1.0,
+            "accepted_outputs": 23,
+            "correct_commands": 23,
+            "command_precision": 1.0,
+            "command_recall": 0.3898305084745763,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.6101694915254238
+          },
+          "VOLUME": {
+            "n": 180,
+            "positive_n": 137,
+            "family_correct": 162,
+            "family_recall": 0.9,
+            "accepted_intent_recall": 0.6722222222222223,
+            "accepted_intent_precision": 0.983739837398374,
+            "accepted_outputs": 50,
+            "correct_commands": 46,
+            "command_precision": 0.92,
+            "command_recall": 0.3357664233576642,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.7222222222222222
+          }
+        },
+        "operations": {
+          "BRIGHTNESS/SET": {
+            "positive_n": 73,
+            "correct": 0,
+            "recall": 0.0,
+            "accepted_outputs": 0,
+            "precision": null
+          },
+          "BRIGHTNESS/INCREASE": {
+            "positive_n": 75,
+            "correct": 0,
+            "recall": 0.0,
+            "accepted_outputs": 0,
+            "precision": null
+          },
+          "BRIGHTNESS/DECREASE": {
+            "positive_n": 65,
+            "correct": 0,
+            "recall": 0.0,
+            "accepted_outputs": 0,
+            "precision": null
+          },
+          "VOLUME/SET": {
+            "positive_n": 2,
+            "correct": 0,
+            "recall": 0.0,
+            "accepted_outputs": 0,
+            "precision": null
+          },
+          "VOLUME/INCREASE": {
+            "positive_n": 70,
+            "correct": 19,
+            "recall": 0.2714285714285714,
+            "accepted_outputs": 20,
+            "precision": 0.95
+          },
+          "VOLUME/DECREASE": {
+            "positive_n": 65,
+            "correct": 27,
+            "recall": 0.4153846153846154,
+            "accepted_outputs": 30,
+            "precision": 0.9
+          }
+        }
+      },
+      "before_confidence_gates": {
+        "overall": {
+          "n": 1803,
+          "positive_n": 1175,
+          "accepted": 610,
+          "correct_accepted": 524,
+          "precision": 0.8590163934426229,
+          "exact_recall": 0.4459574468085106,
+          "negative_n": 628,
+          "false_accepts": 21,
+          "negative_false_accept_rate": 0.03343949044585987,
+          "family_accuracy": 0.7820299500831946
+        },
+        "per_intent": {
+          "UNKNOWN": {
+            "n": 478,
+            "positive_n": 0,
+            "family_correct": 349,
+            "family_recall": 0.7301255230125523,
+            "accepted_intent_recall": 0.0,
+            "accepted_intent_precision": null,
+            "accepted_outputs": 0,
+            "correct_commands": 0,
+            "command_precision": null,
+            "command_recall": null,
+            "negative_false_accepts": 14,
+            "rejection_rate": 0.9707112970711297
+          },
+          "POWER_ON": {
+            "n": 251,
+            "positive_n": 232,
+            "family_correct": 215,
+            "family_recall": 0.8565737051792829,
+            "accepted_intent_recall": 0.8565737051792829,
+            "accepted_intent_precision": 0.9148936170212766,
+            "accepted_outputs": 151,
+            "correct_commands": 146,
+            "command_precision": 0.9668874172185431,
+            "command_recall": 0.6293103448275862,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.40239043824701193
+          },
+          "POWER_OFF": {
+            "n": 287,
+            "positive_n": 268,
+            "family_correct": 239,
+            "family_recall": 0.8327526132404182,
+            "accepted_intent_recall": 0.8327526132404182,
+            "accepted_intent_precision": 0.8505338078291815,
+            "accepted_outputs": 167,
+            "correct_commands": 162,
+            "command_precision": 0.9700598802395209,
+            "command_recall": 0.6044776119402985,
+            "negative_false_accepts": 1,
+            "rejection_rate": 0.397212543554007
+          },
+          "BRIGHTNESS": {
+            "n": 242,
+            "positive_n": 213,
+            "family_correct": 180,
+            "family_recall": 0.743801652892562,
+            "accepted_intent_recall": 0.743801652892562,
+            "accepted_intent_precision": 0.627177700348432,
+            "accepted_outputs": 61,
+            "correct_commands": 13,
+            "command_precision": 0.21311475409836064,
+            "command_recall": 0.06103286384976526,
+            "negative_false_accepts": 6,
+            "rejection_rate": 0.8140495867768595
+          },
+          "COLOR_SET": {
+            "n": 129,
+            "positive_n": 106,
+            "family_correct": 67,
+            "family_recall": 0.5193798449612403,
+            "accepted_intent_recall": 0.5193798449612403,
+            "accepted_intent_precision": 0.6767676767676768,
+            "accepted_outputs": 13,
+            "correct_commands": 10,
+            "command_precision": 0.7692307692307693,
+            "command_recall": 0.09433962264150944,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.8294573643410853
+          },
+          "MEDIA_PLAY": {
+            "n": 90,
+            "positive_n": 73,
+            "family_correct": 83,
+            "family_recall": 0.9222222222222223,
+            "accepted_intent_recall": 0.9222222222222223,
+            "accepted_intent_precision": 0.9325842696629213,
+            "accepted_outputs": 57,
+            "correct_commands": 54,
+            "command_precision": 0.9473684210526315,
+            "command_recall": 0.7397260273972602,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.4
+          },
+          "MEDIA_RESUME": {
+            "n": 37,
+            "positive_n": 37,
+            "family_correct": 33,
+            "family_recall": 0.8918918918918919,
+            "accepted_intent_recall": 0.8918918918918919,
+            "accepted_intent_precision": 0.868421052631579,
+            "accepted_outputs": 30,
+            "correct_commands": 29,
+            "command_precision": 0.9666666666666667,
+            "command_recall": 0.7837837837837838,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.1891891891891892
+          },
+          "TIME_QUERY": {
+            "n": 50,
+            "positive_n": 50,
+            "family_correct": 34,
+            "family_recall": 0.68,
+            "accepted_intent_recall": 0.68,
+            "accepted_intent_precision": 0.8292682926829268,
+            "accepted_outputs": 15,
+            "correct_commands": 14,
+            "command_precision": 0.9333333333333333,
+            "command_recall": 0.28,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.72
+          },
+          "DATE_QUERY": {
+            "n": 59,
+            "positive_n": 59,
+            "family_correct": 48,
+            "family_recall": 0.8135593220338984,
+            "accepted_intent_recall": 0.8135593220338984,
+            "accepted_intent_precision": 0.7741935483870968,
+            "accepted_outputs": 27,
+            "correct_commands": 25,
+            "command_precision": 0.9259259259259259,
+            "command_recall": 0.423728813559322,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.576271186440678
+          },
+          "VOLUME": {
+            "n": 180,
+            "positive_n": 137,
+            "family_correct": 162,
+            "family_recall": 0.9,
+            "accepted_intent_recall": 0.9,
+            "accepted_intent_precision": 0.6893617021276596,
+            "accepted_outputs": 89,
+            "correct_commands": 71,
+            "command_precision": 0.797752808988764,
+            "command_recall": 0.5182481751824818,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.5388888888888889
+          }
+        },
+        "operations": {
+          "BRIGHTNESS/SET": {
+            "positive_n": 73,
+            "correct": 3,
+            "recall": 0.0410958904109589,
+            "accepted_outputs": 26,
+            "precision": 0.11538461538461539
+          },
+          "BRIGHTNESS/INCREASE": {
+            "positive_n": 75,
+            "correct": 5,
+            "recall": 0.06666666666666667,
+            "accepted_outputs": 28,
+            "precision": 0.17857142857142858
+          },
+          "BRIGHTNESS/DECREASE": {
+            "positive_n": 65,
+            "correct": 5,
+            "recall": 0.07692307692307693,
+            "accepted_outputs": 7,
+            "precision": 0.7142857142857143
+          },
+          "VOLUME/SET": {
+            "positive_n": 2,
+            "correct": 0,
+            "recall": 0.0,
+            "accepted_outputs": 1,
+            "precision": 0.0
+          },
+          "VOLUME/INCREASE": {
+            "positive_n": 70,
+            "correct": 35,
+            "recall": 0.5,
+            "accepted_outputs": 45,
+            "precision": 0.7777777777777778
+          },
+          "VOLUME/DECREASE": {
+            "positive_n": 65,
+            "correct": 36,
+            "recall": 0.5538461538461539,
+            "accepted_outputs": 43,
+            "precision": 0.8372093023255814
+          }
+        }
+      }
+    },
+    "synthetic": {
+      "gated": {
+        "overall": {
+          "n": 672,
+          "positive_n": 576,
+          "accepted": 83,
+          "correct_accepted": 79,
+          "precision": 0.9518072289156626,
+          "exact_recall": 0.1371527777777778,
+          "negative_n": 96,
+          "false_accepts": 0,
+          "negative_false_accept_rate": 0.0,
+          "family_accuracy": 0.9925595238095238
+        },
+        "per_intent": {
+          "UNKNOWN": {
+            "n": 64,
+            "positive_n": 0,
+            "family_correct": 60,
+            "family_recall": 0.9375,
+            "accepted_intent_recall": 0.0,
+            "accepted_intent_precision": null,
+            "accepted_outputs": 0,
+            "correct_commands": 0,
+            "command_precision": null,
+            "command_recall": null,
+            "negative_false_accepts": 0,
+            "rejection_rate": 1.0
+          },
+          "POWER_ON": {
+            "n": 12,
+            "positive_n": 12,
+            "family_correct": 12,
+            "family_recall": 1.0,
+            "accepted_intent_recall": 1.0,
+            "accepted_intent_precision": 1.0,
+            "accepted_outputs": 10,
+            "correct_commands": 10,
+            "command_precision": 1.0,
+            "command_recall": 0.8333333333333334,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.16666666666666666
+          },
+          "POWER_OFF": {
+            "n": 12,
+            "positive_n": 12,
+            "family_correct": 12,
+            "family_recall": 1.0,
+            "accepted_intent_recall": 1.0,
+            "accepted_intent_precision": 1.0,
+            "accepted_outputs": 12,
+            "correct_commands": 12,
+            "command_precision": 1.0,
+            "command_recall": 1.0,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.0
+          },
+          "BRIGHTNESS": {
+            "n": 250,
+            "positive_n": 234,
+            "family_correct": 250,
+            "family_recall": 1.0,
+            "accepted_intent_recall": 0.0,
+            "accepted_intent_precision": null,
+            "accepted_outputs": 0,
+            "correct_commands": 0,
+            "command_precision": null,
+            "command_recall": 0.0,
+            "negative_false_accepts": 0,
+            "rejection_rate": 1.0
+          },
+          "COLOR_SET": {
+            "n": 36,
+            "positive_n": 36,
+            "family_correct": 36,
+            "family_recall": 1.0,
+            "accepted_intent_recall": 0.0,
+            "accepted_intent_precision": null,
+            "accepted_outputs": 0,
+            "correct_commands": 0,
+            "command_precision": null,
+            "command_recall": 0.0,
+            "negative_false_accepts": 0,
+            "rejection_rate": 1.0
+          },
+          "MEDIA_PLAY": {
+            "n": 12,
+            "positive_n": 12,
+            "family_correct": 12,
+            "family_recall": 1.0,
+            "accepted_intent_recall": 1.0,
+            "accepted_intent_precision": 1.0,
+            "accepted_outputs": 12,
+            "correct_commands": 12,
+            "command_precision": 1.0,
+            "command_recall": 1.0,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.0
+          },
+          "MEDIA_RESUME": {
+            "n": 12,
+            "positive_n": 12,
+            "family_correct": 11,
+            "family_recall": 0.9166666666666666,
+            "accepted_intent_recall": 0.9166666666666666,
+            "accepted_intent_precision": 1.0,
+            "accepted_outputs": 10,
+            "correct_commands": 10,
+            "command_precision": 1.0,
+            "command_recall": 0.8333333333333334,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.16666666666666666
+          },
+          "TIME_QUERY": {
+            "n": 12,
+            "positive_n": 12,
+            "family_correct": 12,
+            "family_recall": 1.0,
+            "accepted_intent_recall": 1.0,
+            "accepted_intent_precision": 1.0,
+            "accepted_outputs": 8,
+            "correct_commands": 8,
+            "command_precision": 1.0,
+            "command_recall": 0.6666666666666666,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.3333333333333333
+          },
+          "DATE_QUERY": {
+            "n": 12,
+            "positive_n": 12,
+            "family_correct": 12,
+            "family_recall": 1.0,
+            "accepted_intent_recall": 1.0,
+            "accepted_intent_precision": 1.0,
+            "accepted_outputs": 12,
+            "correct_commands": 12,
+            "command_precision": 1.0,
+            "command_recall": 1.0,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.0
+          },
+          "VOLUME": {
+            "n": 250,
+            "positive_n": 234,
+            "family_correct": 250,
+            "family_recall": 1.0,
+            "accepted_intent_recall": 0.98,
+            "accepted_intent_precision": 1.0,
+            "accepted_outputs": 19,
+            "correct_commands": 15,
+            "command_precision": 0.7894736842105263,
+            "command_recall": 0.0641025641025641,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.924
+          }
+        },
+        "operations": {
+          "BRIGHTNESS/SET": {
+            "positive_n": 202,
+            "correct": 0,
+            "recall": 0.0,
+            "accepted_outputs": 0,
+            "precision": null
+          },
+          "BRIGHTNESS/INCREASE": {
+            "positive_n": 16,
+            "correct": 0,
+            "recall": 0.0,
+            "accepted_outputs": 0,
+            "precision": null
+          },
+          "BRIGHTNESS/DECREASE": {
+            "positive_n": 16,
+            "correct": 0,
+            "recall": 0.0,
+            "accepted_outputs": 0,
+            "precision": null
+          },
+          "VOLUME/SET": {
+            "positive_n": 202,
+            "correct": 0,
+            "recall": 0.0,
+            "accepted_outputs": 0,
+            "precision": null
+          },
+          "VOLUME/INCREASE": {
+            "positive_n": 16,
+            "correct": 4,
+            "recall": 0.25,
+            "accepted_outputs": 4,
+            "precision": 1.0
+          },
+          "VOLUME/DECREASE": {
+            "positive_n": 16,
+            "correct": 11,
+            "recall": 0.6875,
+            "accepted_outputs": 15,
+            "precision": 0.7333333333333333
+          }
+        }
+      },
+      "before_confidence_gates": {
+        "overall": {
+          "n": 672,
+          "positive_n": 576,
+          "accepted": 507,
+          "correct_accepted": 359,
+          "precision": 0.7080867850098619,
+          "exact_recall": 0.6232638888888888,
+          "negative_n": 96,
+          "false_accepts": 1,
+          "negative_false_accept_rate": 0.010416666666666666,
+          "family_accuracy": 0.9925595238095238
+        },
+        "per_intent": {
+          "UNKNOWN": {
+            "n": 64,
+            "positive_n": 0,
+            "family_correct": 60,
+            "family_recall": 0.9375,
+            "accepted_intent_recall": 0.0,
+            "accepted_intent_precision": null,
+            "accepted_outputs": 0,
+            "correct_commands": 0,
+            "command_precision": null,
+            "command_recall": null,
+            "negative_false_accepts": 0,
+            "rejection_rate": 1.0
+          },
+          "POWER_ON": {
+            "n": 12,
+            "positive_n": 12,
+            "family_correct": 12,
+            "family_recall": 1.0,
+            "accepted_intent_recall": 1.0,
+            "accepted_intent_precision": 1.0,
+            "accepted_outputs": 10,
+            "correct_commands": 10,
+            "command_precision": 1.0,
+            "command_recall": 0.8333333333333334,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.16666666666666666
+          },
+          "POWER_OFF": {
+            "n": 12,
+            "positive_n": 12,
+            "family_correct": 12,
+            "family_recall": 1.0,
+            "accepted_intent_recall": 1.0,
+            "accepted_intent_precision": 1.0,
+            "accepted_outputs": 12,
+            "correct_commands": 12,
+            "command_precision": 1.0,
+            "command_recall": 1.0,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.0
+          },
+          "BRIGHTNESS": {
+            "n": 250,
+            "positive_n": 234,
+            "family_correct": 250,
+            "family_recall": 1.0,
+            "accepted_intent_recall": 1.0,
+            "accepted_intent_precision": 0.9960159362549801,
+            "accepted_outputs": 203,
+            "correct_commands": 139,
+            "command_precision": 0.6847290640394089,
+            "command_recall": 0.594017094017094,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.188
+          },
+          "COLOR_SET": {
+            "n": 36,
+            "positive_n": 36,
+            "family_correct": 36,
+            "family_recall": 1.0,
+            "accepted_intent_recall": 1.0,
+            "accepted_intent_precision": 0.972972972972973,
+            "accepted_outputs": 35,
+            "correct_commands": 31,
+            "command_precision": 0.8857142857142857,
+            "command_recall": 0.8611111111111112,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.027777777777777776
+          },
+          "MEDIA_PLAY": {
+            "n": 12,
+            "positive_n": 12,
+            "family_correct": 12,
+            "family_recall": 1.0,
+            "accepted_intent_recall": 1.0,
+            "accepted_intent_precision": 0.9230769230769231,
+            "accepted_outputs": 12,
+            "correct_commands": 12,
+            "command_precision": 1.0,
+            "command_recall": 1.0,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.0
+          },
+          "MEDIA_RESUME": {
+            "n": 12,
+            "positive_n": 12,
+            "family_correct": 11,
+            "family_recall": 0.9166666666666666,
+            "accepted_intent_recall": 0.9166666666666666,
+            "accepted_intent_precision": 1.0,
+            "accepted_outputs": 10,
+            "correct_commands": 10,
+            "command_precision": 1.0,
+            "command_recall": 0.8333333333333334,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.16666666666666666
+          },
+          "TIME_QUERY": {
+            "n": 12,
+            "positive_n": 12,
+            "family_correct": 12,
+            "family_recall": 1.0,
+            "accepted_intent_recall": 1.0,
+            "accepted_intent_precision": 1.0,
+            "accepted_outputs": 8,
+            "correct_commands": 8,
+            "command_precision": 1.0,
+            "command_recall": 0.6666666666666666,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.3333333333333333
+          },
+          "DATE_QUERY": {
+            "n": 12,
+            "positive_n": 12,
+            "family_correct": 12,
+            "family_recall": 1.0,
+            "accepted_intent_recall": 1.0,
+            "accepted_intent_precision": 0.9230769230769231,
+            "accepted_outputs": 12,
+            "correct_commands": 12,
+            "command_precision": 1.0,
+            "command_recall": 1.0,
+            "negative_false_accepts": 0,
+            "rejection_rate": 0.0
+          },
+          "VOLUME": {
+            "n": 250,
+            "positive_n": 234,
+            "family_correct": 250,
+            "family_recall": 1.0,
+            "accepted_intent_recall": 1.0,
+            "accepted_intent_precision": 1.0,
+            "accepted_outputs": 205,
+            "correct_commands": 125,
+            "command_precision": 0.6097560975609756,
+            "command_recall": 0.5341880341880342,
+            "negative_false_accepts": 1,
+            "rejection_rate": 0.18
+          }
+        },
+        "operations": {
+          "BRIGHTNESS/SET": {
+            "positive_n": 202,
+            "correct": 118,
+            "recall": 0.5841584158415841,
+            "accepted_outputs": 177,
+            "precision": 0.6666666666666666
+          },
+          "BRIGHTNESS/INCREASE": {
+            "positive_n": 16,
+            "correct": 9,
+            "recall": 0.5625,
+            "accepted_outputs": 11,
+            "precision": 0.8181818181818182
+          },
+          "BRIGHTNESS/DECREASE": {
+            "positive_n": 16,
+            "correct": 12,
+            "recall": 0.75,
+            "accepted_outputs": 15,
+            "precision": 0.8
+          },
+          "VOLUME/SET": {
+            "positive_n": 202,
+            "correct": 106,
+            "recall": 0.5247524752475248,
+            "accepted_outputs": 181,
+            "precision": 0.585635359116022
+          },
+          "VOLUME/INCREASE": {
+            "positive_n": 16,
+            "correct": 8,
+            "recall": 0.5,
+            "accepted_outputs": 8,
+            "precision": 1.0
+          },
+          "VOLUME/DECREASE": {
+            "positive_n": 16,
+            "correct": 11,
+            "recall": 0.6875,
+            "accepted_outputs": 16,
+            "precision": 0.6875
+          }
+        }
+      }
+    }
+  },
+  "historical_comparison_not_fresh_holdout": true,
+  "new_words_tested": false,
+  "live_microphone_tested": false,
+  "physical_pi_tested": false
+}

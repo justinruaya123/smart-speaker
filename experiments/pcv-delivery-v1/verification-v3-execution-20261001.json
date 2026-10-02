@@ -1,0 +1,246 @@
+{
+  "corrected_corpus_training_started": false,
+  "execution_plan": {
+    "path": "experiments/pcv-synthetic-v3/execution-plan.json",
+    "sha256": "4262e4e963ba626dd7b9be4b831fc6863600f031b60b4d962ee6208c6b1365cf"
+  },
+  "final_commit_made": false,
+  "generation_protocol": {
+    "path": "experiments/pcv-synthetic-v3/generation-protocol.json",
+    "sha256": "4e4fdfca1da2ba2c4536a99e4cdfd88264c7262d7d40a9888d8a2b433f902837"
+  },
+  "host_context_sources": {
+    "experiments/pcv-delivery-v1/tests/test_study_context.py": "9a8485ca1bbb037d3ffcfff5d97a3a90361bfd6df67629b2110236f6b279e06a",
+    "scripts/pcv_study_context.py": "6131eae23b1c8dad0b8366210d6d067dd5314b80dc7ddd13c4eaa275a17f379c"
+  },
+  "ignore_gate": "Existing committed .cache rules cover all payloads; new sources/receipts remain visible",
+  "inherited_budget": {
+    "child_copy_created": false,
+    "epochs": 80,
+    "limits": {
+      "epochs": 200,
+      "seconds": 86400
+    },
+    "seconds": 22475.140999999938,
+    "source": {
+      "path": ".cache/pcv-synthetic-v2-repair1/compute-budget.json",
+      "sha256": "cb6591a908e7a0f2fe6bee5d05d64df6311d310cf1b782ab37d76f24af90bf41"
+    }
+  },
+  "installed_artifacts": [
+    {
+      "path": "artifacts/brightness-validation.json",
+      "sha256": "196232e45035acbbe6debc4313e94d7feb42646b6cd4bd839af0d5d33bed78be",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/bundle.json",
+      "sha256": "735626cebe6281406df93eb711b43621bfa84ce4880d68775aa730c2a97de3b1",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/export-verification.json",
+      "sha256": "e63937b03ec2b5259536da9a230aad139e84544ac9c9b7c8f540dd9dadc62413",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/family-metrics.json",
+      "sha256": "f8504dd6a1de29edcee9603b8a40d971c490cad419b4c5b839b4fb814ab2335c",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/manifest.json",
+      "sha256": "fb15d77f4ebc16d70e5075efb9c7900d308e784802a5e5cc0e9e3fa7ba31a668",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/openwakeword-LICENSE.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/pilot-results.json",
+      "sha256": "b65ddc0c72039499936b701ff76a99ed9dc4fdd95039c0bac3a0c173be89f9b7",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/pretrained-NOTICE.txt",
+      "sha256": "712f16b4da0a452d47b7779fc3587141c6cdd6850392273627f38cfb522b79be",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/silero-LICENSE.txt",
+      "sha256": "2e63e9a38b6e8fc0c7bc37ce174caca1862870856c6daf5697cfb785e925520b",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/silero-vad.onnx",
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/stt.fp32.onnx",
+      "sha256": "6b86cc10e0ac0532bb093e1b54f73487b0c0349d62929bee4446b9249f371a2d",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/stt.pt",
+      "sha256": "556a0cbaf886dfb03fcd3663fa9f10a109c601fd059eb9aac11cb0e661ea80a4",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/training-config.json",
+      "sha256": "9ff335c82c750bede1657545d8a2a81518b0dada86055c2deff90d6882a9a9b5",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/training-history.json",
+      "sha256": "acb1061afa7f4ef1f7422b3ba3b496eb0d8cb40ccd9a1dcbfd6c746b686a7c4d",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/vcm.fp32.onnx",
+      "sha256": "a7fa48af1d8a24a24c08c8a98cf19e303fffdda3d0281fd7f11ea80223fd6eba",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/vcm.pt",
+      "sha256": "d5fd4977350ba624d9ef1fc5dbfb1621b480cd57ee89ae6c6c70e294bd950c8e",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-embedding.onnx",
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-hey-jarvis.onnx",
+      "sha256": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-melspectrogram.onnx",
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-models.json",
+      "sha256": "dc7b4d09efc65f5f53c2d280d7efbc09bae56eb2dc689ce88d7d6229d7592cb0",
+      "unchanged": true
+    }
+  ],
+  "launch": {
+    "controller": {
+      "execution_plan_sha256": "4262e4e963ba626dd7b9be4b831fc6863600f031b60b4d962ee6208c6b1365cf",
+      "job": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v3\\jobs\\continuation-run-20261001",
+      "pid": 5668,
+      "stage": "waiting-generation",
+      "status": "RUNNING",
+      "steps": [],
+      "updated_utc": "2026-10-01T12:30:19.840065+00:00"
+    },
+    "controller_command": [
+      "C:\\Users\\SCL-Jus\\AppData\\Roaming\\uv\\python\\cpython-3.12.13-windows-x86_64-none\\python.exe",
+      "-u",
+      "experiments/pcv-synthetic-v3/orchestrate.py",
+      "--job",
+      ".cache/pcv-synthetic-v3/jobs/continuation-run-20261001"
+    ],
+    "generator": {
+      "batch": 493,
+      "batches": 4182,
+      "elapsed_seconds": 3049.6719999999987,
+      "generated": 1972,
+      "job": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v3\\jobs\\verified-parler-run-20261001",
+      "pid": 6980,
+      "planned": 16704,
+      "protocol_sha256": "4e4fdfca1da2ba2c4536a99e4cdfd88264c7262d7d40a9888d8a2b433f902837",
+      "stage": "generate-parler",
+      "started": "2026-10-01T11:39:41.731995+00:00",
+      "status": "RUNNING",
+      "updated": "2026-10-01T12:30:31.419288+00:00"
+    },
+    "launcher_pid": 19088
+  },
+  "physical_pi_measured": false,
+  "pushed": false,
+  "recorded_utc": "2026-10-01T12:30:45.349811+00:00",
+  "review": {
+    "agent": "/root/v2_review",
+    "read_only": true,
+    "remaining_launch_blockers": 0,
+    "resolved": [
+      "Missing/reset inherited compute budget",
+      "Floating-point prior-charge cancellation",
+      "Missing budget at context entry"
+    ]
+  },
+  "scope": "Separately frozen downstream v3 execution; corrected corpus still generating",
+  "sealed_inference_performed": false,
+  "sources": {
+    "experiments\\pcv-synthetic-v3\\orchestrate.py": "9537e74bb43118fba8fa9186525f778e3deed6a14faa8c64d71e4690c9cbe7ce",
+    "experiments\\pcv-synthetic-v3\\run.py": "3d8c9040227dbce6c34b843fb21485dc92d85097cd25dad18b210e5958aeebb0",
+    "experiments\\pcv-synthetic-v3\\tests\\test_controller.py": "3a61f8da2f63986db2a51005394d56ac8a3766c445d0dc67f2fb067012412aa9",
+    "experiments\\pcv-synthetic-v3\\tests\\test_workflow.py": "2c9a894861994f86496c8af19319f9d89a3927ddaf76f61dc2c9ba64819a64ed",
+    "experiments\\pcv-synthetic-v3\\workflow.py": "d40acaa3482c27bd43e2c3b68c86369d33ea740feed506711da3f593fa8786b4",
+    "scripts\\pcv_atomic_io.py": "0728c2ec3628f340789ef9284285c90bc24ac1c35a0c3f3002c13c3462db6152",
+    "scripts\\pcv_parallel.py": "c43d6e865a305477abc297f72352c680db60dee6a6bc5024bde0b4bb76bdd7fd"
+  },
+  "tests": {
+    "deterministic_v3_budget_cases": {
+      "failed": 0,
+      "passed": 9
+    },
+    "evidence": "Software/artificial PCM/CPU ONNX fixtures only; no corrected-corpus speech qualification",
+    "latest_full_suite": {
+      "all_v3_cases_passed": true,
+      "command": ".venv/Scripts/python.exe -m pytest experiments/pcv-delivery-v1/tests experiments/pcv-synthetic-v3/tests -q --basetemp .cache/pcv-delivery-v1/pytest-v3-execution-constructor",
+      "failed": 1,
+      "failure": "Unchanged frozen test_atomic_io::test_reliable_budget_preserves_limits_and_prior_charges; old helper cancellation 17006.779999999995 < 17006.78",
+      "passed": 112,
+      "seconds": 43.54,
+      "warnings": 36
+    },
+    "logs": [
+      {
+        "path": ".cache\\pcv-delivery-v1\\v3-execution-constructor-tests.log",
+        "sha256": "c412b45cc8579a04b7cc31a260b17fae395afed3cbd57f4f3b8ade8a31730866"
+      },
+      {
+        "path": ".cache\\pcv-delivery-v1\\v3-execution-monotone-tests.log",
+        "sha256": "24f87731e340cd64debc6c4d4b996cdd91a789940007fbc24ec9efc5e397c5cb"
+      },
+      {
+        "path": ".cache\\pcv-delivery-v1\\v3-constructor-green.log",
+        "sha256": "274dd86e046a6acfb40c32c1d330c6500054db1b9806edc48fe5b6bf66665141"
+      },
+      {
+        "path": ".cache\\pcv-delivery-v1\\v3-clock-red2.log",
+        "sha256": "53320b6c8c6d27145592314346c8972c0eb453fc177d198941c90d4249684ced"
+      },
+      {
+        "path": ".cache\\pcv-delivery-v1\\v3-clock-green.log",
+        "sha256": "838489440440687540a820e11e98e0b24da4f5a1a8a95262ed401278500e8391"
+      },
+      {
+        "path": ".cache\\pcv-delivery-v1\\v3-execution-final-verified-tests.log",
+        "sha256": "d81ae7c0ac7022108c7b55f9b26d49107d34ce87225dd01635f7d285fb3f1155"
+      },
+      {
+        "path": ".cache\\pcv-delivery-v1\\v3-execution-final-workspace-tests.log",
+        "sha256": "a91694ea903bc26c8e279630848ac4cb010d3984c2e6e6b169a0ae02a6ac7690"
+      }
+    ],
+    "prior_full_suite_before_constructor_guard": {
+      "failed": 0,
+      "passed": 112,
+      "seconds": 43.51,
+      "warnings": 34
+    },
+    "resolution": "V3-only MonotoneComputeBudget preserves prior charge, validates exact inheritance at entry and retains bounded IO retries; old generator-bound helper/test remain unchanged",
+    "setup_attempts": [
+      "Default system pytest temp directory denied access: 37 passed, 76 setup errors",
+      "First custom basetemp lacked its parent: 37 passed, 76 setup errors; corrected to a fresh path under existing cache"
+    ]
+  }
+}

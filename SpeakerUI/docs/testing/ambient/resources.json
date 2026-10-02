@@ -1,0 +1,382 @@
+{
+  "date": "2026-09-30T22:28:54.728Z",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpu": "Apple M2",
+    "browser": "153.0.8010.12",
+    "viewport": "800x480",
+    "gpu": "SwiftShader software WebGL",
+    "limitation": "Desktop Chromium measurements, not Raspberry Pi hardware or physical touch/audio validation."
+  },
+  "loads": [
+    {
+      "domContentLoadedMs": 34.39999997615814,
+      "loadMs": 115.29999995231628,
+      "fcpMs": 124,
+      "transferBytes": 60657,
+      "encodedBytes": 59157,
+      "decodedBytes": 222021,
+      "requests": [
+        {
+          "name": "/assets/index-CuWeBMkR.js",
+          "encodedBytes": 45197,
+          "decodedBytes": 145319
+        },
+        {
+          "name": "/assets/index-B76dH9Lh.css",
+          "encodedBytes": 12947,
+          "decodedBytes": 74796
+        },
+        {
+          "name": "/api/health",
+          "encodedBytes": 419,
+          "decodedBytes": 419
+        },
+        {
+          "name": "/ambient/camera-grid.svg",
+          "encodedBytes": 408,
+          "decodedBytes": 1116
+        }
+      ],
+      "domNodes": 129
+    },
+    {
+      "domContentLoadedMs": 27.599999964237213,
+      "loadMs": 108,
+      "fcpMs": 116,
+      "transferBytes": 60657,
+      "encodedBytes": 59157,
+      "decodedBytes": 222021,
+      "requests": [
+        {
+          "name": "/assets/index-B76dH9Lh.css",
+          "encodedBytes": 12947,
+          "decodedBytes": 74796
+        },
+        {
+          "name": "/assets/index-CuWeBMkR.js",
+          "encodedBytes": 45197,
+          "decodedBytes": 145319
+        },
+        {
+          "name": "/api/health",
+          "encodedBytes": 419,
+          "decodedBytes": 419
+        },
+        {
+          "name": "/ambient/camera-grid.svg",
+          "encodedBytes": 408,
+          "decodedBytes": 1116
+        }
+      ],
+      "domNodes": 129
+    },
+    {
+      "domContentLoadedMs": 27.30000001192093,
+      "loadMs": 105.40000003576279,
+      "fcpMs": 116,
+      "transferBytes": 60657,
+      "encodedBytes": 59157,
+      "decodedBytes": 222021,
+      "requests": [
+        {
+          "name": "/assets/index-CuWeBMkR.js",
+          "encodedBytes": 45197,
+          "decodedBytes": 145319
+        },
+        {
+          "name": "/assets/index-B76dH9Lh.css",
+          "encodedBytes": 12947,
+          "decodedBytes": 74796
+        },
+        {
+          "name": "/api/health",
+          "encodedBytes": 419,
+          "decodedBytes": 419
+        },
+        {
+          "name": "/ambient/camera-grid.svg",
+          "encodedBytes": 408,
+          "decodedBytes": 1116
+        }
+      ],
+      "domNodes": 129
+    }
+  ],
+  "states": [
+    {
+      "name": "idle",
+      "seconds": 5.016881291,
+      "browserResidentMiB": 327.0625,
+      "rendererMainThreadBusyPercent": 0.9822237589795106,
+      "jsHeapUsedMB": 1.548808,
+      "jsHeapTotalMB": 2.359296,
+      "domNodes": 391,
+      "framePacing": {
+        "frames": 300,
+        "medianMs": 16.699999999999818,
+        "p95Ms": 16.799999999999727,
+        "over50Ms": 0
+      },
+      "cpuProcesses": [
+        {
+          "type": "browser",
+          "id": 35765,
+          "cpuPercent": 0.02222496278714475
+        },
+        {
+          "type": "renderer",
+          "id": 36130,
+          "cpuPercent": 2.141210719749518
+        },
+        {
+          "type": "GPU",
+          "id": 35766,
+          "cpuPercent": 21.010881837905533
+        },
+        {
+          "type": "network.mojom.NetworkService",
+          "id": 35767,
+          "cpuPercent": 0.0019334720989713742
+        }
+      ],
+      "totalBrowserCpuPercent": 23.176250992541167
+    },
+    {
+      "name": "listening",
+      "seconds": 5.016064500000001,
+      "browserResidentMiB": 345.6875,
+      "rendererMainThreadBusyPercent": 26.07187367706296,
+      "jsHeapUsedMB": 2.602112,
+      "jsHeapTotalMB": 3.211264,
+      "domNodes": 395,
+      "framePacing": {
+        "frames": 301,
+        "medianMs": 16.69999999999891,
+        "p95Ms": 16.700000000000728,
+        "over50Ms": 0
+      },
+      "cpuProcesses": [
+        {
+          "type": "browser",
+          "id": 35765,
+          "cpuPercent": 0.015968694182461093
+        },
+        {
+          "type": "renderer",
+          "id": 36130,
+          "cpuPercent": 2.0044598708808468
+        },
+        {
+          "type": "GPU",
+          "id": 35766,
+          "cpuPercent": 182.36721238333357
+        },
+        {
+          "type": "network.mojom.NetworkService",
+          "id": 35767,
+          "cpuPercent": 0
+        }
+      ],
+      "totalBrowserCpuPercent": 184.38764094839686
+    },
+    {
+      "name": "speaking",
+      "seconds": 5.010213083999999,
+      "browserResidentMiB": 345.265625,
+      "rendererMainThreadBusyPercent": 30.86962518498744,
+      "jsHeapUsedMB": 2.699744,
+      "jsHeapTotalMB": 3.473408,
+      "domNodes": 415,
+      "framePacing": {
+        "frames": 299,
+        "medianMs": 16.69999999999891,
+        "p95Ms": 16.799999999999272,
+        "over50Ms": 0
+      },
+      "cpuProcesses": [
+        {
+          "type": "browser",
+          "id": 35765,
+          "cpuPercent": 0.010498555474212617
+        },
+        {
+          "type": "renderer",
+          "id": 36130,
+          "cpuPercent": 1.6524646479486946
+        },
+        {
+          "type": "GPU",
+          "id": 35766,
+          "cpuPercent": 201.90326899078448
+        },
+        {
+          "type": "network.mojom.NetworkService",
+          "id": 35767,
+          "cpuPercent": 0
+        }
+      ],
+      "totalBrowserCpuPercent": 203.5662321942074
+    },
+    {
+      "name": "music playback",
+      "seconds": 5.013111000000001,
+      "browserResidentMiB": 355.625,
+      "rendererMainThreadBusyPercent": 9.667190692565955,
+      "jsHeapUsedMB": 2.590508,
+      "jsHeapTotalMB": 3.473408,
+      "domNodes": 438,
+      "framePacing": {
+        "frames": 300,
+        "medianMs": 16.700000000000728,
+        "p95Ms": 16.799999999999272,
+        "over50Ms": 0
+      },
+      "cpuProcesses": [
+        {
+          "type": "browser",
+          "id": 35765,
+          "cpuPercent": 0.016656323787763768
+        },
+        {
+          "type": "renderer",
+          "id": 36130,
+          "cpuPercent": 2.9920941307702944
+        },
+        {
+          "type": "GPU",
+          "id": 35766,
+          "cpuPercent": 72.03598723427426
+        },
+        {
+          "type": "network.mojom.NetworkService",
+          "id": 35767,
+          "cpuPercent": 0
+        }
+      ],
+      "totalBrowserCpuPercent": 75.04473768883231
+    },
+    {
+      "name": "control center glass",
+      "seconds": 5.019487083,
+      "browserResidentMiB": 373.5,
+      "rendererMainThreadBusyPercent": 0.9368686326391288,
+      "jsHeapUsedMB": 2.613328,
+      "jsHeapTotalMB": 3.473408,
+      "domNodes": 803,
+      "framePacing": {
+        "frames": 301,
+        "medianMs": 16.69999999999709,
+        "p95Ms": 16.799999999999272,
+        "over50Ms": 0
+      },
+      "cpuProcesses": [
+        {
+          "type": "browser",
+          "id": 35765,
+          "cpuPercent": 0.017372292937127016
+        },
+        {
+          "type": "renderer",
+          "id": 36130,
+          "cpuPercent": 2.16546029908371
+        },
+        {
+          "type": "GPU",
+          "id": 35766,
+          "cpuPercent": 46.28634283906578
+        },
+        {
+          "type": "network.mojom.NetworkService",
+          "id": 35767,
+          "cpuPercent": 0.0005777482742852045
+        }
+      ],
+      "totalBrowserCpuPercent": 48.46975317936091
+    },
+    {
+      "name": "alarm flashing edges",
+      "seconds": 5.013157333999996,
+      "browserResidentMiB": 366.4375,
+      "rendererMainThreadBusyPercent": 1.596618551290009,
+      "jsHeapUsedMB": 2.568656,
+      "jsHeapTotalMB": 3.473408,
+      "domNodes": 571,
+      "framePacing": {
+        "frames": 300,
+        "medianMs": 16.69999999999709,
+        "p95Ms": 16.700000000004366,
+        "over50Ms": 0
+      },
+      "cpuProcesses": [
+        {
+          "type": "browser",
+          "id": 35765,
+          "cpuPercent": 0.01749396521134578
+        },
+        {
+          "type": "renderer",
+          "id": 36130,
+          "cpuPercent": 2.6634911115678186
+        },
+        {
+          "type": "GPU",
+          "id": 35766,
+          "cpuPercent": 24.09617172410084
+        },
+        {
+          "type": "network.mojom.NetworkService",
+          "id": 35767,
+          "cpuPercent": 0
+        }
+      ],
+      "totalBrowserCpuPercent": 26.777156800880007
+    },
+    {
+      "name": "simulated camera call",
+      "seconds": 5.012010332999998,
+      "browserResidentMiB": 369.546875,
+      "rendererMainThreadBusyPercent": 3.4071956890357034,
+      "jsHeapUsedMB": 2.701936,
+      "jsHeapTotalMB": 3.473408,
+      "domNodes": 649,
+      "framePacing": {
+        "frames": 300,
+        "medianMs": 16.69999999999709,
+        "p95Ms": 16.700000000004366,
+        "over50Ms": 0
+      },
+      "cpuProcesses": [
+        {
+          "type": "browser",
+          "id": 35765,
+          "cpuPercent": 0.060833872985552706
+        },
+        {
+          "type": "renderer",
+          "id": 36130,
+          "cpuPercent": 5.016091015309565
+        },
+        {
+          "type": "GPU",
+          "id": 35766,
+          "cpuPercent": 3.571760393655093
+        },
+        {
+          "type": "network.mojom.NetworkService",
+          "id": 35767,
+          "cpuPercent": 0
+        }
+      ],
+      "totalBrowserCpuPercent": 8.648685281950211
+    }
+  ],
+  "errors": [],
+  "reopen": {
+    "cycles": 30,
+    "initialUsedMB": 2.590372,
+    "finalUsedMB": 2.862508,
+    "deltaMB": 0.272136
+  }
+}

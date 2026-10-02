@@ -1,0 +1,165 @@
+{
+  "final_commit_made": false,
+  "ignore_gate": "Existing committed .cache/audio payload rules cover new outputs; source/protocol remain visible",
+  "installed_artifacts": [
+    {
+      "path": "artifacts/brightness-validation.json",
+      "sha256": "196232e45035acbbe6debc4313e94d7feb42646b6cd4bd839af0d5d33bed78be",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/bundle.json",
+      "sha256": "735626cebe6281406df93eb711b43621bfa84ce4880d68775aa730c2a97de3b1",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/export-verification.json",
+      "sha256": "e63937b03ec2b5259536da9a230aad139e84544ac9c9b7c8f540dd9dadc62413",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/family-metrics.json",
+      "sha256": "f8504dd6a1de29edcee9603b8a40d971c490cad419b4c5b839b4fb814ab2335c",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/manifest.json",
+      "sha256": "fb15d77f4ebc16d70e5075efb9c7900d308e784802a5e5cc0e9e3fa7ba31a668",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/openwakeword-LICENSE.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/pilot-results.json",
+      "sha256": "b65ddc0c72039499936b701ff76a99ed9dc4fdd95039c0bac3a0c173be89f9b7",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/pretrained-NOTICE.txt",
+      "sha256": "712f16b4da0a452d47b7779fc3587141c6cdd6850392273627f38cfb522b79be",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/silero-LICENSE.txt",
+      "sha256": "2e63e9a38b6e8fc0c7bc37ce174caca1862870856c6daf5697cfb785e925520b",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/silero-vad.onnx",
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/stt.fp32.onnx",
+      "sha256": "6b86cc10e0ac0532bb093e1b54f73487b0c0349d62929bee4446b9249f371a2d",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/stt.pt",
+      "sha256": "556a0cbaf886dfb03fcd3663fa9f10a109c601fd059eb9aac11cb0e661ea80a4",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/training-config.json",
+      "sha256": "9ff335c82c750bede1657545d8a2a81518b0dada86055c2deff90d6882a9a9b5",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/training-history.json",
+      "sha256": "acb1061afa7f4ef1f7422b3ba3b496eb0d8cb40ccd9a1dcbfd6c746b686a7c4d",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/vcm.fp32.onnx",
+      "sha256": "a7fa48af1d8a24a24c08c8a98cf19e303fffdda3d0281fd7f11ea80223fd6eba",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/vcm.pt",
+      "sha256": "d5fd4977350ba624d9ef1fc5dbfb1621b480cd57ee89ae6c6c70e294bd950c8e",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-embedding.onnx",
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-hey-jarvis.onnx",
+      "sha256": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-melspectrogram.onnx",
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-models.json",
+      "sha256": "dc7b4d09efc65f5f53c2d280d7efbc09bae56eb2dc689ce88d7d6229d7592cb0",
+      "unchanged": true
+    }
+  ],
+  "launch": {
+    "job": ".cache\\pcv-synthetic-v3\\jobs\\verified-parler-run-20261001",
+    "launcher_pid": 33024,
+    "post_generation_changed_tensors": [],
+    "real_bf16_tensors_checked": 944,
+    "status_snapshot": {
+      "batch": 21,
+      "batches": 4182,
+      "elapsed_seconds": 131.84400000000096,
+      "generated": 84,
+      "job": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v3\\jobs\\verified-parler-run-20261001",
+      "pid": 6980,
+      "planned": 16704,
+      "protocol_sha256": "4e4fdfca1da2ba2c4536a99e4cdfd88264c7262d7d40a9888d8a2b433f902837",
+      "stage": "generate-parler",
+      "started": "2026-10-01T11:39:41.731995+00:00",
+      "status": "RUNNING",
+      "updated": "2026-10-01T11:41:53.581679+00:00"
+    },
+    "weight_verification": {
+      "path": ".cache\\pcv-synthetic-v3\\jobs\\verified-parler-run-20261001\\weight-verification.json",
+      "sha256": "b995b2f78d514d6f397628434a44359f75653fa4ab14bdbf90ca6490811abb22"
+    },
+    "worker_pid": 6980
+  },
+  "protocol": {
+    "path": "experiments\\pcv-synthetic-v3\\generation-protocol.json",
+    "sha256": "4e4fdfca1da2ba2c4536a99e4cdfd88264c7262d7d40a9888d8a2b433f902837"
+  },
+  "pushed": false,
+  "recorded_utc": "2026-10-01T11:41:53.975828+00:00",
+  "review": {
+    "read_only": true,
+    "remaining_launch_blockers": 0,
+    "resolved": [
+      "DAC/audiotools implementation binding",
+      "Inherited frozen source verification",
+      "Parent manifests authenticated against previous audit/repair lineage",
+      "Final protocol identity compared to launch",
+      "Mixed batch retries and final failure fixtures"
+    ]
+  },
+  "scope": "Generation only; separately frozen audit/training/evaluation adapter remains required",
+  "sources": {
+    "experiments\\pcv-delivery-v1\\tests\\test_parler_corpus.py": "d80bafae1eb88e51ae22b8589055fdf985db470e575772b54610cbb8d653acdf",
+    "experiments\\pcv-delivery-v1\\tests\\test_parler_weights.py": "046d6193dbc81efb40e351d6f538974746fe9510533414e0412ed40022da71ac",
+    "experiments\\pcv-synthetic-v3\\generation.py": "6ffdaa5ee98d0f4380de98c99eb8961d073c7ce40fbbb87ef3bf3cc9b4e61e91",
+    "scripts\\pcv_parler_weights.py": "013e772def076e219cf0b1076e0aebf4a7d64e45aaa9e25eb8c52dabb33aa781"
+  },
+  "tests": {
+    "evidence": "Software fixtures, not speech qualification",
+    "log": {
+      "path": ".cache\\pcv-delivery-v1\\verified-parler-full-final-tests.log",
+      "sha256": "5c252589424fc7ef8ae554554090892bc65f036f062b207a838b89c54c42628a"
+    },
+    "passed": 89,
+    "seconds": 31.25,
+    "warnings": 31
+  }
+}

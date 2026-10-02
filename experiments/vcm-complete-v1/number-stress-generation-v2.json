@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "rows": 404,
+  "manifest_sha256": "51a265313bfa42c82b98758c72e98c945e8e3d1066b49c7a42878fb83df04758",
+  "plan_sha256": "2795bc7ff7bd8ce3548d03fad1c471e9efce9ff14fcd5637e7c87561f3b4d3ad",
+  "seconds": 159.21799999999348,
+  "tts_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+  "local_only": true,
+  "human_adjudicated": false
+}

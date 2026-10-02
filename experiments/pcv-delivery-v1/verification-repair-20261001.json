@@ -1,0 +1,239 @@
+{
+  "acceptance_accuracy_measured": false,
+  "active_job": ".cache\\pcv-synthetic-v2-repair1\\jobs\\repair-run-20261001\\status.json",
+  "active_status_snapshot": {
+    "parent_failure": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2\\jobs\\revised-run-20261001\\status.json",
+    "pid": 24064,
+    "protocol_sha256": "43f1aeac6b960efbf3b43187fa919db6d8612de974cda661524b2f3cc7505277",
+    "status": "RUNNING",
+    "steps": [
+      {
+        "command": [
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.venv\\Scripts\\python.exe",
+          "-u",
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\experiments\\pcv-synthetic-v2-repair1\\run.py",
+          "generate-repair"
+        ],
+        "exit_code": 0,
+        "log": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\jobs\\repair-run-20261001\\generate-repair.log",
+        "name": "generate-repair",
+        "pid": 44112,
+        "seconds": 79.73752570152283,
+        "started": 1790818388.0648644,
+        "status": "SUCCEEDED"
+      },
+      {
+        "command": [
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.venv\\Scripts\\python.exe",
+          "-u",
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\experiments\\pcv-synthetic-v2-repair1\\run.py",
+          "assemble"
+        ],
+        "exit_code": 0,
+        "log": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\jobs\\repair-run-20261001\\assemble.log",
+        "name": "assemble",
+        "pid": 34972,
+        "seconds": 348.61569023132324,
+        "started": 1790818467.9715767,
+        "status": "SUCCEEDED"
+      },
+      {
+        "command": [
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.venv\\Scripts\\python.exe",
+          "-u",
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\experiments\\pcv-synthetic-v2-repair1\\run.py",
+          "prepare"
+        ],
+        "log": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\jobs\\repair-run-20261001\\prepare.log",
+        "name": "prepare",
+        "pid": 81224,
+        "started": 1790818816.7438002,
+        "status": "RUNNING"
+      }
+    ],
+    "updated_utc": "2026-10-01T01:40:16.743800+00:00"
+  },
+  "diagnosis": {
+    "path": "C:/Users/SCL-Jus/Documents/Grad/smart-speaker/.cache/pcv-synthetic-v2/diagnosis-ctc-20261001/audit.json",
+    "sha256": "e6dc78789e19fff68e5df84dd1556f562b444b1c3bbecaf1a1c4bbfa0c160dd1"
+  },
+  "final_commit_made": false,
+  "frozen_child_and_shared_sources_verified": 63,
+  "installed_artifact_reference": {
+    "path": "experiments/pcv-delivery-v1/verification-20261001.json",
+    "sha256": "de4430ac94b761fd912e7a55704887e8697704d2cc297ebad6dd3907211e4cd2"
+  },
+  "installed_artifacts_verified": 20,
+  "no_test_recognition_during_repair": true,
+  "original_generation": {
+    "dia": 696,
+    "parler": 16704,
+    "qwen": 16704,
+    "total": 34104
+  },
+  "parent_audit": {
+    "command_recordings": 33816,
+    "passed": true,
+    "unique_command_pcm": 33816,
+    "wake_recordings": 288
+  },
+  "parent_failed_status": {
+    "path": "C:/Users/SCL-Jus/Documents/Grad/smart-speaker/.cache/pcv-synthetic-v2/jobs/revised-run-20261001/status.json",
+    "sha256": "073233b97ac726d9681cbc5c2a0a64e1dfd338fd4e3b76b1da08cc73d6d2929d"
+  },
+  "parent_sources_verified": 8,
+  "pending": [
+    "continuation training and measured development improvement",
+    "full command/wake sealed results",
+    "declared demo and mistakes reports",
+    "historical human regression",
+    "dynamic new-name acoustic qualification",
+    "portable real-waveform parity",
+    "qualified Pi ZIP and selected-model simulator",
+    "final scoped commit"
+  ],
+  "physical_pi_measured": false,
+  "protocol": {
+    "path": "C:/Users/SCL-Jus/Documents/Grad/smart-speaker/experiments/pcv-synthetic-v2-repair1/protocol.json",
+    "sha256": "43f1aeac6b960efbf3b43187fa919db6d8612de974cda661524b2f3cc7505277"
+  },
+  "remote_push": false,
+  "repair": {
+    "attempt": 2,
+    "complete": true,
+    "ctc_capacity": {
+      "feasible": true,
+      "frames": 328,
+      "required": 30
+    },
+    "duration_seconds": 3.29725,
+    "parent_preserved": true,
+    "recordings": 1,
+    "replacement_manifest_sha256": "b5f939e3602550c149990ac2e15bfeb8f28a041f9cea97079b678839959844e8",
+    "seed": 1389853128
+  },
+  "repair_plan": {
+    "path": "C:/Users/SCL-Jus/Documents/Grad/smart-speaker/experiments/pcv-synthetic-v2-repair1/repair-plan.json",
+    "sha256": "59224fc7a4a6333684e5677270ae83f5d1119d5cf200a9a8971ee607a4ec1392"
+  },
+  "repair_recording": {
+    "accent_requested": "British English",
+    "accent_verified": false,
+    "audio": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\audio\\parler\\train-gb-f\\UC04-BRI-K-073-A.wav",
+    "audio_sha256": "21bee6d0da8866ccd00963b3d140dfd266800122601f4d311d8024e1f672ddf1",
+    "batch_ids": [
+      "parler/train-gb-f/UC04-BRI-K-073-A",
+      "parler/train-gb-f/UC04-BRI-K-073-A-N1",
+      "parler/train-gb-f/UC04-BRI-K-073-A-N2",
+      "parler/train-gb-f/UC04-BRI-K-074-A"
+    ],
+    "batch_seed": 1389853128,
+    "batch_size": 4,
+    "channels": 1,
+    "clipped_fraction": 0.0,
+    "ctc_capacity": {
+      "feasible": true,
+      "frames": 328,
+      "required": 30
+    },
+    "duration_seconds": 3.29725,
+    "engine": "parler",
+    "generation_attempt": 2,
+    "generation_metadata": {
+      "padded_samples": 151040,
+      "returned_samples": 145408,
+      "trim_basis": "model_returned_EOS_length"
+    },
+    "generation_recipe_sha256": "2a4b862b42b6f8de2c903947b65c0daa58eebcef7c469527824a35c38541087e",
+    "generation_source_sha256": "aca0f2b3b25a8c2de1ffbb165ff8cbaef106c09f1527b80d12e015e1775f1305",
+    "model_identity_sha256": "614d04c753f47f73ac54fbf9b2abd2ec88a5348d7a5f9739999f83ce3769167c",
+    "native_audio": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\native\\parler\\train-gb-f\\UC04-BRI-K-073-A.wav",
+    "native_metrics": {
+      "clipped_fraction": 0.0,
+      "duration_seconds": 3.297233560090703,
+      "rms": 0.09715292672395907
+    },
+    "native_sample_rate": 44100,
+    "native_sha256": "14851b46990fe7eac5c064bd3150c6af63ab2c6bc0e8847bbee715eea48bb3b6",
+    "pcm_sha256": "04413a218e37c2b11fb56ed40fc257bb264212bc13bf14dc0789ee02a6c49bcc",
+    "recording_id": "parler/train-gb-f/UC04-BRI-K-073-A",
+    "repair_parent_record_sha256": "d99578143b0897ad22b7e09cad31b9761bd2031c65306c4e3c6112be281f5c65",
+    "repair_plan_sha256": "59224fc7a4a6333684e5677270ae83f5d1119d5cf200a9a8971ee607a4ec1392",
+    "rms": 0.09720008100894086,
+    "sample_rate": 16000,
+    "seed": 1389853127,
+    "source_record_sha256": "3d82feabc24fcd53b8d57ece5e6a81d271ef4f5d5eafffc9407aadd193154a55",
+    "source_version": "v2-repair1",
+    "split": "train",
+    "synthetic": true,
+    "text_verified_by_listener": false,
+    "tts_assets_sha256": "baa9cb59ab5fec8db4ad1e63d0ceb4f78e9b8ef4b82f109b42b0fe7f7e4c8671",
+    "verbatim_id": "UC04-BRI-K-073-A",
+    "verbatim_sha256": "fc4b1a46b787f158acdd176d8b72f3388668cd996db94a8ac1c7a57c3ad7b875",
+    "voice_anchor_sha256": null,
+    "voice_conditioning": {
+      "name": "Lea",
+      "type": "named_voice_description"
+    },
+    "voice_group": "train-gb-f"
+  },
+  "reviews": {
+    "host_compatibility": "No Critical/Important findings; test import isolation fixed and tested",
+    "repair": "No Critical/Important findings"
+  },
+  "source_hashes": {
+    "experiments/pcv-delivery-v1/tests/test_bundle.py": "79e6ce87ef9c7e804a38a24a6ae09175c23555f7d2c2337c7ba8888699124257",
+    "experiments/pcv-delivery-v1/tests/test_package.py": "236bbd0a69d05163f382896cc83faa364ca359c5d06f27689444311e984b4c81",
+    "experiments/pcv-delivery-v1/tests/test_portable_parity.py": "db4af888ba71aa37289d29e3d77c950df26191932c2f8741361fcc6efd29ff91",
+    "experiments/pcv-delivery-v1/tests/test_study_context.py": "352326e3a5552ca3470d8927ea4a8d08b5f162195a4661dbd895db62b8fac3ff",
+    "scripts/pcv_delivery.py": "706a9900405ee3451e910a65100c15f9b58a0d1ace9ff43abf8442a371b2549a",
+    "scripts/pcv_human_regression.py": "f6eb2b6dee8ea14b4233da77b0ef244cecc778b83487f0b422e48f3bde81e58e",
+    "scripts/pcv_portable_parity.py": "8f12b0c9a7de2d2d0c1fb74d6328cfcca6ff0abc6ee307304f01dd949576aa47",
+    "scripts/pcv_study_context.py": "127c899ec4012e0bc6fb96229a6ea78cbbd8b173d3babcb52b936173a20997d5"
+  },
+  "status": "TRAINING_DATA_REPAIR_GENERATED_CONTINUATION_ACTIVE",
+  "test_gates_changed": false,
+  "tests": [
+    {
+      "log": {
+        "path": ".cache/pcv-delivery-v1/repair-green2-20261001.log",
+        "sha256": "f48aafe6e2edca6aea2a664ae151184c68dae8ed7838bb031e7bcf72d461ce54"
+      },
+      "passed": 40,
+      "scope": "repair guards plus inherited v2 tests",
+      "seconds": 16.15,
+      "warnings": 3
+    },
+    {
+      "log": {
+        "path": ".cache/pcv-delivery-v1/repair-green4-20261001.log",
+        "sha256": "fac059f69b1609a4a9cbd54e8bc3927716b289e1b2a611697ad8bea1ceb8d6bf"
+      },
+      "passed": 11,
+      "scope": "final child guards plus real ONNX artificial integration",
+      "seconds": 10.5,
+      "warnings": 3
+    },
+    {
+      "log": {
+        "path": ".cache/pcv-delivery-v1/child-host-green2-20261001.log",
+        "sha256": "98323c345af0641d43499c3f19b2987cf38d56e18790093918e4414c8e6bd2af"
+      },
+      "passed": 41,
+      "scope": "delivery and child host compatibility",
+      "seconds": 14.79,
+      "warnings": 30
+    },
+    {
+      "log": {
+        "path": ".cache/pcv-delivery-v1/child-host-isolated-20261001.log",
+        "sha256": "2b158fd674ebd9c4d132fe77efd513036a69a6648780990340d8011ee2365721"
+      },
+      "passed": 3,
+      "scope": "isolated context tests after review fix",
+      "seconds": 0.2,
+      "warnings": 0
+    }
+  ],
+  "time_utc": "2026-10-01T01:41:04.118633+00:00"
+}

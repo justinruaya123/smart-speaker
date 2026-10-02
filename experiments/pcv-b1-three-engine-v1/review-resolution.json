@@ -1,0 +1,18 @@
+{
+  "findings": [
+    {
+      "issue": "Observed-only metric denominators exclude missing cells",
+      "resolution": "Versioned reporting-v2 over unchanged saved predictions; missing positives count as failures, missing negatives remain unmeasured"
+    }
+  ],
+  "generation_sources_changed": false,
+  "mode": "read-only one bounded review",
+  "remaining_review_blockers": [],
+  "reporting_protocol_sha256": "992c243dd1b10aacf58caf60ad2474993b9625d8a28a6c2c13658100bfd940fa",
+  "reviewer": "pcv_final_review",
+  "test_inference_accessed": false,
+  "tests": {
+    "failed": 0,
+    "passed": 7
+  }
+}

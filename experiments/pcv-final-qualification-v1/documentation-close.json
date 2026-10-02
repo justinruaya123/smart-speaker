@@ -1,0 +1,13 @@
+{
+  "frozen_protocol_and_installed_hashes_reverified": true,
+  "historical_links_modified": false,
+  "new_report_links_pass": true,
+  "overall_task_complete": false,
+  "reason": "Model fails quality and coverage gates; submission slides and publisher integration remain deferred.",
+  "report": "docs\\EXPERIMENT-pcv-final-qualification-v1.md",
+  "sha256": "f9c8201f856fe641415954192fdb6e0fa2d3ff9bc749987aac6d89a872baaf54",
+  "unrelated_historical_unavailable_links": [
+    "dist/smart-speaker-vcm-prototype-v1.zip",
+    "dist/smart-speaker-vcm-prototype-v1.build.json"
+  ]
+}

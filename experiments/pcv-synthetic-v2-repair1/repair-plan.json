@@ -1,0 +1,94 @@
+{
+  "diagnosis": {
+    "path": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2\\diagnosis-ctc-20261001\\audit.json",
+    "sha256": "e6dc78789e19fff68e5df84dd1556f562b444b1c3bbecaf1a1c4bbfa0c160dd1"
+  },
+  "failed_job": {
+    "path": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2\\jobs\\revised-run-20261001\\status.json",
+    "sha256": "073233b97ac726d9681cbc5c2a0a64e1dfd338fd4e3b76b1da08cc73d6d2929d"
+  },
+  "held_out_audio_unchanged": true,
+  "parent_manifests": {
+    "dia-manifest.jsonl": "3b536c10c8991b80d487d636df9254f32150045c02a00c472e1a79c03c3ddb15",
+    "parler-manifest.jsonl": "15780641e6ef4832145aef447ec3f0ad5087323257f736063f98ddb29b7e26f5",
+    "qwen-manifest.jsonl": "35174c8fa3dbe470a35eb465d03a8ad3783c4219763542860208cd977068f55b",
+    "wake-dia-manifest.jsonl": "8746a413091cb9c90e27ef2afe388126cacd56284eaf1d36b945dd4e13d1926f",
+    "wake-parler-manifest.jsonl": "8f46aff91be25e9351529cd74eefe89d3172508fcc8620105d0994fc093f6fbe",
+    "wake-qwen-manifest.jsonl": "c2f078ae285ea847caf4bf262b602717b80c2495a83c532965669dfd8c409b16"
+  },
+  "parent_protocol_sha256": "666c97d2453b288c907a456800d3022af2bd94c6b50bbf1b170c1a517e175c47",
+  "reason": "One 0.2554375-second training clip has 24 frames for a 30-frame CTC target",
+  "recipe": "Same engine, voice, batch texts and generation recipe; next original retry seeds; preflight waveform and CTC",
+  "records": [
+    {
+      "attempts": [
+        2,
+        3
+      ],
+      "batch_ids": [
+        "parler/train-gb-f/UC04-BRI-K-073-A",
+        "parler/train-gb-f/UC04-BRI-K-073-A-N1",
+        "parler/train-gb-f/UC04-BRI-K-073-A-N2",
+        "parler/train-gb-f/UC04-BRI-K-074-A"
+      ],
+      "parent": {
+        "accent_requested": "British English",
+        "accent_verified": false,
+        "audio": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v1\\audio\\parler\\train-gb-f\\UC04-BRI-K-073-A.wav",
+        "audio_sha256": "6f4662787b48b8808ff68321c77a8bdb76514b1e9c381c9b934aa3f8cdcb052a",
+        "batch_ids": [
+          "parler/train-gb-f/UC04-BRI-K-073-A",
+          "parler/train-gb-f/UC04-BRI-K-073-A-N1",
+          "parler/train-gb-f/UC04-BRI-K-073-A-N2",
+          "parler/train-gb-f/UC04-BRI-K-074-A"
+        ],
+        "batch_seed": 1389853127,
+        "batch_size": 4,
+        "channels": 1,
+        "clipped_fraction": 0.0,
+        "duration_seconds": 0.2554375,
+        "engine": "parler",
+        "generation_attempt": 1,
+        "generation_metadata": {
+          "padded_samples": 157696,
+          "returned_samples": 11264,
+          "trim_basis": "model_returned_EOS_length"
+        },
+        "generation_recipe_sha256": "2a4b862b42b6f8de2c903947b65c0daa58eebcef7c469527824a35c38541087e",
+        "generation_source_sha256": "01878861c538ade73fe04443084b0fd989719a79fb7dc6729db19e87ae364ab9",
+        "model_identity_sha256": "614d04c753f47f73ac54fbf9b2abd2ec88a5348d7a5f9739999f83ce3769167c",
+        "native_audio": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v1\\native\\parler\\train-gb-f\\UC04-BRI-K-073-A.wav",
+        "native_metrics": {
+          "clipped_fraction": 0.0,
+          "duration_seconds": 0.25541950113378686,
+          "rms": 0.09326618178080083
+        },
+        "native_sample_rate": 44100,
+        "native_sha256": "f58bc92dce54770aa79b6ebd33f20fe0dabdd57f6897b1cd800e58d1363e276f",
+        "pcm_sha256": "0cfabea1e7f2f6ecf4aa414e8ca215cacf27fea53d921cf11055ea57756a04a9",
+        "recording_id": "parler/train-gb-f/UC04-BRI-K-073-A",
+        "rms": 0.09330930351399262,
+        "sample_rate": 16000,
+        "seed": 1389853127,
+        "source_record_sha256": "3d82feabc24fcd53b8d57ece5e6a81d271ef4f5d5eafffc9407aadd193154a55",
+        "source_version": "v1",
+        "split": "train",
+        "synthetic": true,
+        "text_verified_by_listener": false,
+        "tts_assets_sha256": "baa9cb59ab5fec8db4ad1e63d0ceb4f78e9b8ef4b82f109b42b0fe7f7e4c8671",
+        "verbatim_id": "UC04-BRI-K-073-A",
+        "verbatim_sha256": "fc4b1a46b787f158acdd176d8b72f3388668cd996db94a8ac1c7a57c3ad7b875",
+        "voice_anchor_sha256": null,
+        "voice_conditioning": {
+          "name": "Lea",
+          "type": "named_voice_description"
+        },
+        "voice_group": "train-gb-f"
+      },
+      "parent_record_sha256": "d99578143b0897ad22b7e09cad31b9761bd2031c65306c4e3c6112be281f5c65",
+      "recording_id": "parler/train-gb-f/UC04-BRI-K-073-A"
+    }
+  ],
+  "test_audio_used_for_repair": false,
+  "version": "pcv-synthetic-v2-repair1"
+}

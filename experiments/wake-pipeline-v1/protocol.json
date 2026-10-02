@@ -1,0 +1,208 @@
+{
+  "experiment_id": "wake-pipeline-v1",
+  "status": "implementation_started",
+  "started_utc": "2026-09-19T18:49:08.266893+00:00",
+  "owner": "current user-authorized pipeline task",
+  "requirements": [
+    "ME-05",
+    "ME-06",
+    "ME-07",
+    "ME-08",
+    "UC-01",
+    "UC-02",
+    "UC-03",
+    "UC-04",
+    "UC-08"
+  ],
+  "authorization": "Install the strongest existing VCM artifact and connect microphone, pretrained wake word and VAD; no device action integration.",
+  "baseline_revision": "794d88e297361ff503c85fcf5050fcc3e1fa049a",
+  "baseline_dirty_status": " M Architecture.ipynb\n M README.md\n D artifacts/asr-training-config.json\n D artifacts/asr.fp32.onnx\n D artifacts/asr.pt\n M artifacts/bundle.json\n M artifacts/manifest.json\n M pipeline.toml\n M publish.py\n M train.py\n D validation.json\n?? AGENTS.md\n?? EXPERIMENTS.md\n?? REQUIREMENTS.md\n?? STT/\n?? artifacts/brightness-validation.json\n?? artifacts/stt.fp32.onnx\n?? artifacts/stt.pt\n?? data/keyword-v2/\n?? data/keyword-v3/\n?? data/keyword-v4/\n?? data/parameter-study/\n?? data/phonetic-v2/\n?? data/speechembedding-v1/\n?? data/stt-human/\n?? data/stt/\n?? data/tts/\n?? experiments/\n?? scripts/\n",
+  "baseline_files": {
+    "artifacts/brightness-validation.json": {
+      "bytes": 343533,
+      "sha256": "196232e45035acbbe6debc4313e94d7feb42646b6cd4bd839af0d5d33bed78be"
+    },
+    "artifacts/bundle.json": {
+      "bytes": 23480,
+      "sha256": "9f9d90392c782c654808fad6a6abb765bb38be9b2c35d648b54775fb2bef6cd2"
+    },
+    "artifacts/export-verification.json": {
+      "bytes": 21779,
+      "sha256": "e63937b03ec2b5259536da9a230aad139e84544ac9c9b7c8f540dd9dadc62413"
+    },
+    "artifacts/family-metrics.json": {
+      "bytes": 9988,
+      "sha256": "f8504dd6a1de29edcee9603b8a40d971c490cad419b4c5b839b4fb814ab2335c"
+    },
+    "artifacts/manifest.json": {
+      "bytes": 1683,
+      "sha256": "e500e82c2850d566af7815c4493250b93fa287bcac696ef6405d31f3aa9c16c2"
+    },
+    "artifacts/pilot-results.json": {
+      "bytes": 20716,
+      "sha256": "b65ddc0c72039499936b701ff76a99ed9dc4fdd95039c0bac3a0c173be89f9b7"
+    },
+    "artifacts/stt.fp32.onnx": {
+      "bytes": 2840297,
+      "sha256": "6b86cc10e0ac0532bb093e1b54f73487b0c0349d62929bee4446b9249f371a2d"
+    },
+    "artifacts/stt.pt": {
+      "bytes": 2839856,
+      "sha256": "556a0cbaf886dfb03fcd3663fa9f10a109c601fd059eb9aac11cb0e661ea80a4"
+    },
+    "artifacts/training-config.json": {
+      "bytes": 5836,
+      "sha256": "14c005c2c120a7e4eb0cb42ea4d1060d6532d1a5d3990fcb0689e3f7ce3a6cf0"
+    },
+    "artifacts/training-history.json": {
+      "bytes": 34528,
+      "sha256": "acb1061afa7f4ef1f7422b3ba3b496eb0d8cb40ccd9a1dcbfd6c746b686a7c4d"
+    },
+    "artifacts/vcm.fp32.onnx": {
+      "bytes": 1647732,
+      "sha256": "e421c4578865a111ebb97afaaa7ec3df6b3adce0f40bec03bc5ff90db3c3b834"
+    },
+    "artifacts/vcm.pt": {
+      "bytes": 1876425,
+      "sha256": "73085f226c88a376213c3505a8557185354fb6fe3f3f26e08fadf66ebb9ab9b1"
+    },
+    "pipeline.toml": {
+      "bytes": 1835,
+      "sha256": "dfb1cf961e81088ec364d15dd2191d3ceff06891e02cfd78f9986b26947d619d"
+    },
+    "publish.py": {
+      "bytes": 13376,
+      "sha256": "8e10ae7cbb2c1f78d3a443ca38dd2ef2486aeea5e7c923263a143eb1a0b6398f"
+    },
+    "train.py": {
+      "bytes": 11081,
+      "sha256": "b632f7a4eb80550f5d180e3257d356e4b174beb5927a0a4ab1aa17ef812cde87"
+    },
+    "README.md": {
+      "bytes": 12763,
+      "sha256": "0445cfce718300946224f6fdc0f7711f1ede95948a378b50a9ed9090e06e6cd4"
+    },
+    "Architecture.ipynb": {
+      "bytes": 10666,
+      "sha256": "d30d4a06e0f015bc3ef97d7d805ad9d5820fcad2f4ff5137471f9467304379c0"
+    },
+    "requirements.lock": {
+      "bytes": 35339,
+      "sha256": "ae5e740afc261bd57dbf6cffc35f22e249d09ca85ab1f4f5170551b4e383eb18"
+    },
+    "EXPERIMENTS.md": {
+      "bytes": 53527,
+      "sha256": "ed40f91751827c323be083f03c3d68ce43050e104aca48238a997a7f70c25478"
+    },
+    "REQUIREMENTS.md": {
+      "bytes": 24301,
+      "sha256": "ec00c7c1dc231fbacb154e1b9e6f5727ef2772dccc6addde039e749843f928c9"
+    },
+    "scripts/modules.json": {
+      "bytes": 5384,
+      "sha256": "70e4105f62f18ac6336f7d16ed8f915146149a77a4f285eec9637ae2e8901c08"
+    },
+    "scripts/runtime/audio.py": {
+      "bytes": 4560,
+      "sha256": "b469e4397b57cf46954e2ff674b2137aab0334d5f441d7b076a6b8743607526a"
+    },
+    "scripts/runtime/bundle.py": {
+      "bytes": 5150,
+      "sha256": "17c712d38a83e7f1d2dd9420f1d98b3149864287d7581d24eb4a9ab1ab0c9b0c"
+    },
+    "scripts/runtime/capture.py": {
+      "bytes": 4625,
+      "sha256": "80215f5dc407185816f495cd70cb308983be23a94159c510be581bcd6a590dea"
+    },
+    "scripts/runtime/config.py": {
+      "bytes": 7780,
+      "sha256": "fedf92cbdacea0d973f04604b2253c1d336f1a3d5c49bf42574f0ade9ff9b023"
+    },
+    "scripts/runtime/family_contract.py": {
+      "bytes": 8990,
+      "sha256": "849f41f5e7a33577cc63e94393c1d70a53b94bde6098a507c69d2c3af8bbd89f"
+    },
+    "scripts/runtime/inference.py": {
+      "bytes": 10242,
+      "sha256": "9a5efb06f59f5b5eaa8fbb0e3857b4bb2455502efdbc9de896aa9657e6608e1a"
+    },
+    "scripts/runtime/keyword_runtime.py": {
+      "bytes": 15204,
+      "sha256": "f745cda23e639c9ebb2de949ec6061a75ccbf03b33ba741d8b858dbda183e4af"
+    },
+    "scripts/runtime/launcher.py": {
+      "bytes": 8414,
+      "sha256": "d2dedaeafcb3b0f775c403b04098404e863a4668bba483d5ca6cef2081198e64"
+    },
+    "scripts/runtime/levels.py": {
+      "bytes": 6075,
+      "sha256": "8d197ccd9322a6e5ee779388bdd86914c649855891fe877920e471ca7154b2eb"
+    },
+    "scripts/runtime/metrics.py": {
+      "bytes": 3970,
+      "sha256": "ed0f8aca80739bf18ee8719111f44e5b1838edc9ae3242ac9c8baa71e43b5dd5"
+    },
+    "scripts/runtime/parameter_backend.py": {
+      "bytes": 2693,
+      "sha256": "e2d1c2b4cfdf61b0d6d71100365fd4b5052959f52f4c2b7b5513bd2f896cffb2"
+    },
+    "scripts/runtime/pipeline.py": {
+      "bytes": 6727,
+      "sha256": "ee7d750751acb64d3622c5b4b9503d75bfb7b09f67292ab6ffe2fc57068efa38"
+    },
+    "scripts/runtime/routing.py": {
+      "bytes": 16354,
+      "sha256": "d6892d22729007972ebf71db25c86245255c0b8d7226871e31ed284636935acc"
+    },
+    "scripts/runtime/slot_contract.py": {
+      "bytes": 12538,
+      "sha256": "a87fde52f85e5ce48a9c3c6847d7aef54a2e1e375873b3cb771c8ce590976d50"
+    },
+    "scripts/runtime/stt_runtime.py": {
+      "bytes": 3310,
+      "sha256": "85d78260fc11a9e089ef0a7016e24aa2725b179f9e0f4d3ccdf78770973d0687"
+    },
+    "scripts/runtime/text.py": {
+      "bytes": 679,
+      "sha256": "7ccf78595c68ee58af7d34f0a4896ce1d4656158827b934e38ad255282601409"
+    },
+    "scripts/runtime/__init__.py": {
+      "bytes": 36,
+      "sha256": "f59756b95f5545aeaf025b44fcbb1de5637eec1f79c76e41476088fe2269cad3"
+    },
+    "scripts/test/validation.py": {
+      "bytes": 28029,
+      "sha256": "28275bc85e05815cbb382c62f3cae816e8041c9127f7131f17dd18a3b2702258"
+    }
+  },
+  "recovery_path": ".cache/wake-pipeline-v1/recovery-before-install",
+  "selected_vcm": ".cache/argument-refinement/run-5kxu8o_x/attention/vcm.fp32.onnx",
+  "selected_vcm_sha256": "a7fa48af1d8a24a24c08c8a98cf19e303fffdda3d0281fd7f11ea80223fd6eba",
+  "quality_status": "Experimental; prior quality gates failed; user authorized use as the current artifact, not certification.",
+  "hypothesis": "Pretrained wake gating and neural endpointing can safely feed one unchanged direct VCM graph, excluding transcription and limiting each activation to one bounded command.",
+  "outputs": {
+    "runtime": "scripts/runtime",
+    "tests": "scripts/test/wake_pipeline.py",
+    "entry": "pipeline.py",
+    "artifacts": "artifacts",
+    "evidence": "experiments/wake-pipeline-v1",
+    "cache": ".cache/wake-pipeline-v1"
+  },
+  "checks": [
+    "hash and no-ASR package audit",
+    "pretrained frontend parity",
+    "wake and timeout state transitions",
+    "resampling continuity",
+    "real ONNX audio replay",
+    "bounded live capture if selected microphone is accessible",
+    "isolated Pi package software checks"
+  ],
+  "physical_pi_tested": false,
+  "training_performed": false,
+  "evaluation_plan": {
+    "selection": "Existing attention selection, thresholds and original command references frozen. No fitting or test tuning.",
+    "replay": "All 4314 original test recordings, streamed one audio file at a time; direct and old-energy/new-Silero endpoint paths. Already observed test, so regression only.",
+    "wake": "Real pretrained silence checks and adapter parity; state-machine injection cannot establish acoustic wake recall.",
+    "precision_experiment": "Optional dynamic INT8 of dense MatMul/Gemm operations, measured only on a deterministic bounded development subset; no test-based selection."
+  }
+}

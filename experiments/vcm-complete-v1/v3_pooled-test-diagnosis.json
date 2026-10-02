@@ -1,0 +1,12 @@
+{
+  "arm": "v3_pooled",
+  "scope": "post-test failure attribution, not model selection",
+  "denominator": 1783,
+  "mutually_exclusive_cascade": {
+    "family_policy_rejection": 246,
+    "raw_family_error": 206,
+    "correct": 1095,
+    "raw_argument_or_guard_error": 88,
+    "finite_value_or_joint_policy_rejection": 148
+  }
+}

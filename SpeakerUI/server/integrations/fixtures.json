@@ -1,0 +1,8 @@
+{
+  "spotifyUnauthorized": { "status": 401, "body": { "error": { "status": 401, "message": "Invalid access token" } } },
+  "spotifyRateLimit": { "status": 429, "headers": { "retry-after": "60" }, "body": { "error": { "status": 429, "message": "Too many requests" } } },
+  "spotifyQuota": { "status": 429, "body": { "error": { "status": 429, "reason": "QUOTA_EXCEEDED" } } },
+  "spotifyNoDevice": { "status": 404, "body": { "error": { "status": 404, "reason": "NO_ACTIVE_DEVICE" } } },
+  "homeAssistantAuthInvalid": { "type": "auth_invalid", "message": "Invalid access token" },
+  "homeAssistantStale": { "status": "disconnected", "entities": [{ "id": "light.desk", "name": "Desk", "state": "on", "updatedAt": "2026-01-01T00:00:00Z", "stale": true }] }
+}

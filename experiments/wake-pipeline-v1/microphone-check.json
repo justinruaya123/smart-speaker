@@ -1,0 +1,17 @@
+{
+  "command": [
+    ".venv/Scripts/python.exe",
+    "pipeline.py",
+    "--mic",
+    "1",
+    "--seconds",
+    "8",
+    "--vad-debug"
+  ],
+  "exit_code": 1,
+  "stdout": "{\"stage\": \"service\", \"status\": \"starting\", \"microphone\": 1, \"runtime\": {\"vad\": true, \"vcm\": true}}\n{\"stage\": \"service\", \"status\": \"stopped\"}\n",
+  "stderr": "{\"microphone\": \"Microphone (Steam Streaming Mic\", \"index\": 1, \"capture_rate\": 44100, \"model_rate\": 16000, \"channel\": 0}\nPipeline failed: Error opening InputStream: Unanticipated host error [PaErrorCode -9999]: 'An invalid parameter was passed to a system function.' [MME error 11]\n",
+  "device": "System default virtual Steam microphone, not a confirmed physical microphone.",
+  "audio_saved": false,
+  "spoken_wake_tested": false
+}

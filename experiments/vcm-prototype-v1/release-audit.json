@@ -1,0 +1,27 @@
+{
+  "zip_sha256": "248d261ff3eee77c025016d9c2c46bfd7a147b7f4654d940e34865d1e7ad19e8",
+  "zip_crc_passed": true,
+  "inner_manifest_hashes_passed": true,
+  "graphs": [
+    "model/silero-vad.onnx",
+    "model/vcm.fp32.onnx",
+    "model/wake-embedding.onnx",
+    "model/wake-hey-jarvis.onnx",
+    "model/wake-melspectrogram.onnx"
+  ],
+  "total_onnx_bytes": 8140156,
+  "runtime_only": true,
+  "torch_shipped": false,
+  "transcription_shipped": false,
+  "protected_files_unchanged": {
+    "artifacts/vcm.pt": true,
+    "artifacts/vcm.fp32.onnx": true,
+    "artifacts/bundle.json": true,
+    "artifacts/manifest.json": true,
+    "dist/smart-speaker-rpi4.zip": true,
+    "pipeline.toml": true,
+    "requirements.lock": true
+  },
+  "physical_pi_tested": false,
+  "live_microphone_tested": false
+}

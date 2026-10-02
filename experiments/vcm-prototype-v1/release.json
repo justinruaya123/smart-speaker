@@ -1,0 +1,37 @@
+{
+  "format_version": 1,
+  "experiment": "vcm-prototype-v1",
+  "complete": true,
+  "completed_utc": "2026-09-20T10:05:26.169892+00:00",
+  "arm": "source_balanced",
+  "bundle_directory": ".cache/vcm-prototype-v1/source_balanced",
+  "selection_receipt": "experiments/vcm-prototype-v1/selection-before-test.json",
+  "selection_sha256": "2f21431815227b93208c36986ba703c44f5b079fc0537e7bd0cd053a8a0e3c3d",
+  "test_receipt": "experiments/vcm-prototype-v1/results.json",
+  "test_sha256": "2e4afee368c803c35ddb6f033c9913c6618ab05d21af1cf49487355f804881ab",
+  "files": {
+    "vcm.fp32.onnx": {
+      "sha256": "388ae8ab137adf6a408ddd18119be7e01998cd3710c253d01aac8f7e62de4880",
+      "bytes": 2126726
+    },
+    "bundle.json": {
+      "sha256": "970750399020169d29d61db2aae2b85fa2388a70f82cf3b6f5b99bf438fd9d0f",
+      "bytes": 15700
+    }
+  },
+  "fixed_joint_gate_passed": false,
+  "requirements_complete": false,
+  "status": "experimental_not_installed",
+  "physical_pi_validation": false,
+  "resource_targets": {
+    "threads": 2,
+    "peak_rss_mib": 512,
+    "recognition_p95_ms": 100
+  },
+  "unsupported": [
+    "certified custom playlists",
+    "complete spoken numeric range 0-100",
+    "all ten assignment use cases",
+    "physical Pi and live microphone acceptance"
+  ]
+}

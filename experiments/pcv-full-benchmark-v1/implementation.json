@@ -1,0 +1,21 @@
+{
+  "files": {
+    "scripts/runtime/pcv_full_benchmark.py": "88b9dc9ca1553ccd4a62f1a53e24fd5878dcee93b940fb4e14de3f92cfe80011",
+    "scripts/runtime/pcv_benchmark_adapter.py": "418611b51d1d2675b6290c85ed4c0b1c9fe39e3ea3f9fe6565bbb277b2b9938f",
+    "scripts/runtime/speaker_start.py": "f53f6a42acf9a26b2a9dd522a3d76c60da53fec1450623705ee14a31ef729dae",
+    "scripts/runtime/speaker_worker.py": "671fc38b5a82b1842c61e06952fccb78ca59a6b22fc38d5b84b1ac0d353ee042",
+    "scripts/speaker_publish.py": "5a3142fe32964c8af9af3113a5e824942d00e3b18f7c446d8b1532c4f48a178b",
+    "scripts/pcv_final_delivery.py": "383df8f1a8ccb5d136ec2e62331627158b90f606e6b2e2a0ecd2379017d6a32c",
+    "scripts/pcv_benchmark_package.py": "1416769f3e9ebc8d59b13416086defaa7b3380a7d3956e4b6ed18990ff7b4eaa",
+    "scripts/test/pcv_benchmark_source.py": "6e65d0a3c72eabd2d7bd9495071fad14562d04a56cbae6d6005e47ef56ed5b0e",
+    "scripts/test/pcv_benchmark_supplemental.py": "6be2649af57558d795797210d6216e302e15ba33a083fa67107a2ac0ea95c35a",
+    "scripts/test/pcv_external_benchmark.py": "051650a6e789d7d4fa58a77331fa716cc13e5c7bcc3f6868040ff7a7678690c0",
+    "scripts/test/test_pcv_full_benchmark.py": "7255bee1b023e34f96413630673f53595dbf12ae3f99937b6d8a74b5461c1289",
+    "docs/EXPERIMENT-pcv-full-benchmark-v1.md": "1c93ea3d7bda329dc41416ab7f0022ff01c7204e6a1aacc7f770e7237e7e6ac5"
+  },
+  "branch": "codex/semifinal-handoff",
+  "committed": false,
+  "staged": [],
+  "code_review": "Two findings fixed; expanded-corpus packaging integration fixed.",
+  "tests": "173 Python passed, 7 historical skipped; 84 UI passed; 15/15 serving; extraction 6768 hash checks and 14 replay probes."
+}

@@ -1,0 +1,134 @@
+[
+  {
+    "expected_command": {
+      "color": "orange",
+      "entity_id": "light.kitchen",
+      "intent": "COLOR_SET"
+    },
+    "id": "UC04-REJ-15",
+    "new_reference_sha256": "cd4ab73857d9b82f3b203dceaca0e50d6077b071dad263e34ee1ffa01cf55926",
+    "previous_reference_sha256": "9789cbf23f64c9c4de7f1e427fc060e8d5d17966b7816b835afd183c92e36f7e",
+    "reason": "User-authorized parameter domain expansion before any fitting or final test"
+  },
+  {
+    "expected_command": {
+      "color": "orange",
+      "entity_id": "light.kitchen",
+      "intent": "COLOR_SET"
+    },
+    "id": "UC04-REJ-15-N1",
+    "new_reference_sha256": "c8ad148412d5bf66c198c7b2284560694306109e77be77f52479331204d5ab53",
+    "previous_reference_sha256": "c5298254d47e8ab01d33a8eb064e544961b652faf5d10c40c9d542c88302f010",
+    "reason": "User-authorized parameter domain expansion before any fitting or final test"
+  },
+  {
+    "expected_command": {
+      "color": "orange",
+      "entity_id": "light.kitchen",
+      "intent": "COLOR_SET"
+    },
+    "id": "UC04-REJ-15-N2",
+    "new_reference_sha256": "b418211b78ad476a346bfc5843bff57362d982825587bce003340554577c31b8",
+    "previous_reference_sha256": "d7226004bb4b9d43ef83ae4e650bc34f5dad2ae6b40eaff6c1f4d5f27aab59e3",
+    "reason": "User-authorized parameter domain expansion before any fitting or final test"
+  },
+  {
+    "expected_command": {
+      "color": "cyan",
+      "entity_id": "light.kitchen",
+      "intent": "COLOR_SET"
+    },
+    "id": "UC04-REJ-16",
+    "new_reference_sha256": "3db6dbee358a9a92d73c1f72174128d76c1203c00539ea09d0284d639ee85e31",
+    "previous_reference_sha256": "4472b2321b22e01fd723e1c58ff53d1e3728da8b2b14539f0404335cb66d935c",
+    "reason": "User-authorized parameter domain expansion before any fitting or final test"
+  },
+  {
+    "expected_command": {
+      "color": "cyan",
+      "entity_id": "light.kitchen",
+      "intent": "COLOR_SET"
+    },
+    "id": "UC04-REJ-16-N1",
+    "new_reference_sha256": "227aa1d0067f9fc848a98436fdeb358325459a7bcff3fcb218291a31beb03a00",
+    "previous_reference_sha256": "5b1ad743de69be0e100aae0ca7a22e65fb8ab468e944b9cc3b6e87d59a52d14e",
+    "reason": "User-authorized parameter domain expansion before any fitting or final test"
+  },
+  {
+    "expected_command": {
+      "color": "cyan",
+      "entity_id": "light.kitchen",
+      "intent": "COLOR_SET"
+    },
+    "id": "UC04-REJ-16-N2",
+    "new_reference_sha256": "f6444449bf27aed1a5830ee9f3a0b0dc0c7b55ea7c08cc8631976b9d07c40385",
+    "previous_reference_sha256": "a63379f9dbd17bbbeac3ee3b755d89e205822001d6ab5a102183e4fcac87e61b",
+    "reason": "User-authorized parameter domain expansion before any fitting or final test"
+  },
+  {
+    "expected_command": {
+      "duration_seconds": 180,
+      "intent": "TIMER_SET",
+      "timer_id": "timer.primary"
+    },
+    "id": "UC05-REJ-13",
+    "new_reference_sha256": "7d58816e913942f482604733cff4165bcafd6c3b9d76ff8298ba0983126be87d",
+    "previous_reference_sha256": "b4b0a7cb9691fcfc74c3a93eb44b9f216328c4f97327b98fdb5bb9637a1f9fdf",
+    "reason": "User-authorized parameter domain expansion before any fitting or final test"
+  },
+  {
+    "expected_command": {
+      "duration_seconds": 180,
+      "intent": "TIMER_SET",
+      "timer_id": "timer.primary"
+    },
+    "id": "UC05-REJ-13-N1",
+    "new_reference_sha256": "cb4bdae8915e9f77705df28d5f6313f0cb1253f717191307dcd3d2060da14aac",
+    "previous_reference_sha256": "60a920ab24b7fccbf2c3506eb9fa190bf562a1b8bc06acfb7ace709ba0a50e36",
+    "reason": "User-authorized parameter domain expansion before any fitting or final test"
+  },
+  {
+    "expected_command": {
+      "duration_seconds": 180,
+      "intent": "TIMER_SET",
+      "timer_id": "timer.primary"
+    },
+    "id": "UC05-REJ-13-N2",
+    "new_reference_sha256": "cfaeb62d521b345412c61487d88891e1f668c7b7590e9ccc4ed4367a99c08eb3",
+    "previous_reference_sha256": "be554e0af8c673d68c58737354d2a236ff659655e3ef9d6a4b85c0219d28f4db",
+    "reason": "User-authorized parameter domain expansion before any fitting or final test"
+  },
+  {
+    "expected_command": {
+      "duration_seconds": 7200,
+      "intent": "TIMER_SET",
+      "timer_id": "timer.primary"
+    },
+    "id": "UC05-REJ-15",
+    "new_reference_sha256": "6f493cf91261f55ef0cba743129ca5936ef7b2862c5bc1dcfc2ad013b3416968",
+    "previous_reference_sha256": "662fccc880d775a4ffca46401495d0611c807d118a9fdce1725e84397b659d01",
+    "reason": "User-authorized parameter domain expansion before any fitting or final test"
+  },
+  {
+    "expected_command": {
+      "duration_seconds": 7200,
+      "intent": "TIMER_SET",
+      "timer_id": "timer.primary"
+    },
+    "id": "UC05-REJ-15-N1",
+    "new_reference_sha256": "83ce854034634ace3ab73c89a19e07dcc35fc43a5740fd114e9e85714f47f109",
+    "previous_reference_sha256": "72929362d8a614f57b88f85ebefaa4df39459736b614a9db35a72c005c177c60",
+    "reason": "User-authorized parameter domain expansion before any fitting or final test"
+  },
+  {
+    "expected_command": {
+      "duration_seconds": 7200,
+      "intent": "TIMER_SET",
+      "timer_id": "timer.primary"
+    },
+    "id": "UC05-REJ-15-N2",
+    "new_reference_sha256": "e6a8fd89eca4db03813aecc4f950db34f356d545bdb1c479d5a4fdefe8e1658a",
+    "previous_reference_sha256": "ba77c11616f7dbf41cffaff7c9f9675f2f188709a15efa261854bf757aff5012",
+    "reason": "User-authorized parameter domain expansion before any fitting or final test"
+  }
+]

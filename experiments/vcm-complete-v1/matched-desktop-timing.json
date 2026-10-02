@@ -1,0 +1,29 @@
+{
+  "scope": "Desktop CPU ONNX, identical 150 development PCM recordings, 2 threads, one warmup and 3 repeated calls per model/recording, alternating model order; no training or TTS generation running.",
+  "excludes": "disk, utterance duration, wake inference and 400 ms endpoint wait",
+  "Pi_measured": false,
+  "ids_source_sha256": "1cedd2d56d023bb4c281b638b12ef106d98559ea52e9008d957757604c6030d9",
+  "models": {
+    "installed_baseline": {
+      "graph_sha256": "a7fa48af1d8a24a24c08c8a98cf19e303fffdda3d0281fd7f11ea80223fd6eba",
+      "graph_bytes": 2125235,
+      "session_load_ms": 24.631999956909567,
+      "p50_ms": 2.7958499849773943,
+      "p95_ms": 4.407640002318658
+    },
+    "human_keywords": {
+      "graph_sha256": "31f07cffbd1b73b3c7a02902589196763b0e81792c024294afdc4d6e24611154",
+      "graph_bytes": 2126726,
+      "session_load_ms": 37.46360004879534,
+      "p50_ms": 2.87944998126477,
+      "p95_ms": 4.204425000352785
+    },
+    "v3_pooled": {
+      "graph_sha256": "31f07cffbd1b73b3c7a02902589196763b0e81792c024294afdc4d6e24611154",
+      "graph_bytes": 2126726,
+      "session_load_ms": 22.617600043304265,
+      "p50_ms": 2.8358499985188246,
+      "p95_ms": 4.50998997548595
+    }
+  }
+}

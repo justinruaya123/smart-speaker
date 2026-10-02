@@ -1,0 +1,68 @@
+{
+  "selected_epoch": 29,
+  "development": {
+    "score": 0.5497281495011317,
+    "macro_family": 0.5786942175874286,
+    "macro_exact": 0.5207620814148347,
+    "keyword_sequence_exact": 0.2830390583199572,
+    "per_intent": {
+      "UNKNOWN": {
+        "n": 649,
+        "family": 0.7411402157164869,
+        "exact": 0.9445300462249615
+      },
+      "POWER_ON": {
+        "n": 206,
+        "family": 0.6650485436893204,
+        "exact": 0.5776699029126213
+      },
+      "POWER_OFF": {
+        "n": 247,
+        "family": 0.6558704453441295,
+        "exact": 0.562753036437247
+      },
+      "BRIGHTNESS": {
+        "n": 141,
+        "family": 0.5177304964539007,
+        "exact": 0.24113475177304963
+      },
+      "COLOR_SET": {
+        "n": 99,
+        "family": 0.29292929292929293,
+        "exact": 0.31313131313131315
+      },
+      "MEDIA_PLAY": {
+        "n": 104,
+        "family": 0.8076923076923077,
+        "exact": 0.8076923076923077
+      },
+      "MEDIA_RESUME": {
+        "n": 50,
+        "family": 0.54,
+        "exact": 0.54
+      },
+      "TIME_QUERY": {
+        "n": 71,
+        "family": 0.4225352112676056,
+        "exact": 0.2676056338028169
+      },
+      "DATE_QUERY": {
+        "n": 85,
+        "family": 0.38823529411764707,
+        "exact": 0.29411764705882354
+      },
+      "VOLUME": {
+        "n": 217,
+        "family": 0.7557603686635944,
+        "exact": 0.6589861751152074
+      }
+    }
+  },
+  "width": 128,
+  "parameters": 857899,
+  "onnx_bytes": 3457545,
+  "model_sha256": "39c7600d84cc4b5840128ee44e359a4704fa2c59a5e1ed8c8d6524c757f0d5be",
+  "checkpoint_sha256": "f1f55db59f0e4666645c7a6e0f80ff35f596ca6a3b17bfa6a4d0fac64978f978",
+  "random_initialization": true,
+  "test_used": false
+}

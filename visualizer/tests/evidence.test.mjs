@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {readEvidence} from '../evidence.mjs';
+const hash=async bytes=>createHash('sha256').update(Buffer.from(bytes)).digest('hex');
+const body=JSON.stringify({binding:'source',deployment_binding:'deploy',rows:[{id:'fixture'}]});
+const recipe={source_binding:'source',source_deployment_binding:'deploy',evidence_sha256:await hash(new TextEncoder().encode(body))};
+test('matching evidence loads separately from inference',async()=>assert.deepEqual(await readEvidence(async()=>new Response(body),recipe,hash),[{id:'fixture'}]));
+test('other model cannot display saved results',async()=>assert.rejects(()=>readEvidence(async()=>new Response(body),{...recipe,source_binding:'other'},hash),/another model/));
+test('tampered evidence cannot load',async()=>assert.rejects(()=>readEvidence(async()=>new Response(body+' '),recipe,hash),/identity/));
+test('new model cannot silently fall back to historical evidence',async()=>{let calls=0;await assert.rejects(()=>readEvidence(async()=>{calls++;return new Response('',{status:404});},recipe,hash),/not available/);assert.equal(calls,1);});

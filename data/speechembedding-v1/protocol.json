@@ -1,0 +1,218 @@
+{
+  "version": "speechembedding-v1",
+  "created_utc": "2026-09-19T16:47:46.617152+00:00",
+  "models": [
+    "dual",
+    "dual_kws"
+  ],
+  "seed": 71,
+  "epochs": 28,
+  "patience": 9,
+  "batch_size": 64,
+  "entity_examples_per_batch": 16,
+  "learning_rate": 0.0015,
+  "weight_decay": 0.001,
+  "temperature": 0.1,
+  "entity_loss_weight": 0.75,
+  "kws_loss_weight": 0.3,
+  "initialization": "random; no pretrained acoustic or text weights",
+  "audio": "original complete human utterances only; no TTS, splicing, or audio augmentation",
+  "frontend": "shared mono 16 kHz, 80-bin per-utterance CMVN",
+  "local_windows": "ten fixed fractional pools of intact utterance features; timing unverified",
+  "text": "CMUdict pronunciations only; missing entries abstain; no automatic G2P",
+  "checkpoint_selection": "dev: 0.4 artist top1 + 0.4 song top1 + 0.2 isolated-word top1, expanded catalog, local windows",
+  "confidence_selection": "per model/catalog/role: >=95% dev precision, >=10 emissions, <=1% unknown false accept; otherwise disabled",
+  "test_used_for_selection": false,
+  "role_supplied_from_annotations": true,
+  "full_pipeline_accuracy": false,
+  "catalog_integration": "offline fixtures; no Spotify service calls",
+  "historical_test": "same already-reported recordings; fresh scoring, not a newly blind test",
+  "counts": {
+    "train": 13762,
+    "enroll": 412,
+    "test": 2602,
+    "dev": 2537
+  },
+  "role_counts": {
+    "train": {
+      "number": 6341,
+      "word": 767,
+      "device": 204,
+      "artist": 166,
+      "song": 99
+    },
+    "enroll": {
+      "device": 60,
+      "artist": 43,
+      "song": 20,
+      "number": 3
+    },
+    "dev": {
+      "number": 1177,
+      "word": 109,
+      "device": 117,
+      "song": 68,
+      "artist": 93
+    },
+    "test": {
+      "number": 1282,
+      "word": 145,
+      "device": 79,
+      "artist": 77,
+      "song": 45
+    }
+  },
+  "sources": {
+    "FSDD": {
+      "train": 2000,
+      "dev": 500,
+      "test": 500
+    },
+    "FluentSpeechCommands": {
+      "train": 2172,
+      "enroll": 273,
+      "test": 350,
+      "dev": 317
+    },
+    "GoogleSpeechCommandsV2": {
+      "train": 2812,
+      "test": 461,
+      "dev": 311
+    },
+    "LibriSpeech": {
+      "train": 28
+    },
+    "MLEndSpokenNumerals": {
+      "dev": 290,
+      "train": 1124,
+      "test": 294
+    },
+    "MSWC-English": {
+      "dev": 176,
+      "train": 985,
+      "test": 162
+    },
+    "SLURP-real": {
+      "train": 4362,
+      "enroll": 129,
+      "test": 831,
+      "dev": 939
+    },
+    "SnipsSmartLights": {
+      "train": 279,
+      "test": 4,
+      "enroll": 10,
+      "dev": 4
+    }
+  },
+  "catalog_counts": {
+    "fixed": {
+      "number": 101,
+      "word": 4,
+      "device": 24,
+      "artist": 70,
+      "song": 66
+    },
+    "expanded": {
+      "number": 101,
+      "word": 4,
+      "device": 41,
+      "artist": 127,
+      "song": 109
+    },
+    "playlist10": {
+      "artist": 10,
+      "song": 10
+    },
+    "playlist25": {
+      "artist": 25,
+      "song": 25
+    }
+  },
+  "missing_pronunciations": {
+    "device": [],
+    "artist": [
+      "acdc",
+      "afi",
+      "akon",
+      "anirudh",
+      "arijit s",
+      "arijit singh",
+      "atif aslam",
+      "barenaked ladies",
+      "blackeyed pees",
+      "busdriver",
+      "coldplay",
+      "david guetta",
+      "ella fitzgerals",
+      "enya",
+      "frubs",
+      "hopsin",
+      "jimi hendri",
+      "joe prsaise",
+      "justin bibber",
+      "kanye west",
+      "kfi",
+      "madonnas",
+      "malika",
+      "mf doom",
+      "mgk",
+      "michael buble",
+      "o zaalima",
+      "rihana",
+      "royksopp",
+      "senelena gomez",
+      "serge gainsbourg",
+      "sia",
+      "sufi",
+      "taylor swiftm",
+      "tech n 9 ne",
+      "the broods",
+      "tobymac",
+      "zedd"
+    ],
+    "song": [
+      "badra bahar",
+      "bohemian raphsody",
+      "chhana mereya",
+      "girl from impanema",
+      "heathens",
+      "i ca n't feel my face",
+      "i did n't hear",
+      "jaiho",
+      "nakumukka",
+      "shinedown",
+      "skyfall",
+      "sleepyhead",
+      "surfin usa"
+    ]
+  },
+  "cross_split_speakers": 0,
+  "cross_split_audio_hashes": 0,
+  "reserved_name_training_overlap": 0,
+  "frozen_files": {
+    "data\\speechembedding-v1\\manifest.jsonl": "2d3b5b0ab66c7232e634ef845a9ff0ac13f6a14e418f938cc06fa39ecdc33386",
+    "data\\speechembedding-v1\\catalogs.json": "f99e48669e7e41943808dd24f75aa1b418ba2f48be4c97e7a7f7f9a4b9bf6d8c",
+    "data\\parameter-study\\manifest.jsonl": "2d3b5b0ab66c7232e634ef845a9ff0ac13f6a14e418f938cc06fa39ecdc33386",
+    "data\\parameter-study\\catalogs.json": "d52c82917f0f2be568a63b0051720ee8fb27dea644bfa2a9020fcc8f284b1145",
+    "STT\\alternatives\\sources\\cmudict.dict": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+    "scripts\\runtime\\stt_runtime.py": "85d78260fc11a9e089ef0a7016e24aa2725b179f9e0f4d3ccdf78770973d0687"
+  },
+  "preserved": {
+    "pipeline.toml": "dfb1cf961e81088ec364d15dd2191d3ceff06891e02cfd78f9986b26947d619d",
+    "artifacts\\brightness-validation.json": "196232e45035acbbe6debc4313e94d7feb42646b6cd4bd839af0d5d33bed78be",
+    "artifacts\\bundle.json": "9f9d90392c782c654808fad6a6abb765bb38be9b2c35d648b54775fb2bef6cd2",
+    "artifacts\\export-verification.json": "e63937b03ec2b5259536da9a230aad139e84544ac9c9b7c8f540dd9dadc62413",
+    "artifacts\\family-metrics.json": "f8504dd6a1de29edcee9603b8a40d971c490cad419b4c5b839b4fb814ab2335c",
+    "artifacts\\manifest.json": "e500e82c2850d566af7815c4493250b93fa287bcac696ef6405d31f3aa9c16c2",
+    "artifacts\\pilot-results.json": "b65ddc0c72039499936b701ff76a99ed9dc4fdd95039c0bac3a0c173be89f9b7",
+    "artifacts\\stt.fp32.onnx": "6b86cc10e0ac0532bb093e1b54f73487b0c0349d62929bee4446b9249f371a2d",
+    "artifacts\\stt.pt": "556a0cbaf886dfb03fcd3663fa9f10a109c601fd059eb9aac11cb0e661ea80a4",
+    "artifacts\\training-config.json": "14c005c2c120a7e4eb0cb42ea4d1060d6532d1a5d3990fcb0689e3f7ce3a6cf0",
+    "artifacts\\training-history.json": "acb1061afa7f4ef1f7422b3ba3b496eb0d8cb40ccd9a1dcbfd6c746b686a7c4d",
+    "artifacts\\vcm.fp32.onnx": "e421c4578865a111ebb97afaaa7ec3df6b3adce0f40bec03bc5ff90db3c3b834",
+    "artifacts\\vcm.pt": "73085f226c88a376213c3505a8557185354fb6fe3f3f26e08fadf66ebb9ab9b1",
+    ".cache\\parameter-study\\results.json": "f072e51454affc4480c71a91b875921de251686b5866e451f267373bd49c0cd3",
+    ".cache\\phonetic-v2\\results.json": "b29213a6dc6ae892466a6c289ee1ea7af1294a8ef2fc0995cde9a40a005bdee9"
+  }
+}

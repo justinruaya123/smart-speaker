@@ -1,0 +1,71 @@
+{
+  "schema_version": 2,
+  "catalog": [
+    {
+      "id": "media-000",
+      "reference_arguments": {
+        "selection_text": "i like to listen to jazz"
+      },
+      "enrollment_ids": [
+        "slurp/audio-1488552408.flac",
+        "slurp/audio-1488638026.flac",
+        "slurp/audio-1488639043.flac"
+      ],
+      "playlist_subset": false,
+      "dev_ids": [
+        "slurp/audio-1497557011-headset.flac",
+        "slurp/audio-1497557011.flac",
+        "slurp/audio-1501151863-headset.flac",
+        "slurp/audio-1501151863.flac"
+      ],
+      "test_ids": [
+        "slurp/audio-1488985426.flac",
+        "slurp/audio-1502197713-headset.flac",
+        "slurp/audio-1502197713.flac",
+        "slurp/audio-1488561633.flac"
+      ]
+    },
+    {
+      "id": "media-001",
+      "reference_arguments": {
+        "selection_text": "justin bieber album"
+      },
+      "enrollment_ids": [
+        "slurp/audio--1504191413-headset.flac",
+        "slurp/audio--1504193039-headset.flac",
+        "slurp/audio--1504194465-headset.flac"
+      ],
+      "playlist_subset": false,
+      "dev_ids": [
+        "slurp/audio-1497555506-headset.flac",
+        "slurp/audio-1497555506.flac"
+      ],
+      "test_ids": [
+        "slurp/audio-1502197531-headset.flac",
+        "slurp/audio-1502197531.flac"
+      ]
+    },
+    {
+      "id": "media-002",
+      "reference_arguments": {
+        "selection_text": "rock music"
+      },
+      "enrollment_ids": [
+        "slurp/audio-1498564904-headset.flac",
+        "slurp/audio-1501687221-headset.flac",
+        "slurp/audio-1501692571-headset.flac"
+      ],
+      "playlist_subset": false,
+      "dev_ids": [
+        "slurp/audio-1489152690.flac",
+        "slurp/audio-1498569166-headset.flac"
+      ],
+      "test_ids": [
+        "slurp/audio-1497862836-headset.flac",
+        "slurp/audio-1497862836.flac"
+      ]
+    }
+  ],
+  "enrollment_partition": "original calibration only; not model/policy fitting",
+  "scope": "Original human custom-media proxies, playlist subset labeled; not user-created playlist names."
+}

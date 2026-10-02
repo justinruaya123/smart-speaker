@@ -1,0 +1,56 @@
+{
+  "experiment": "pcv-human-slots-v1-qualification1",
+  "review": "one independent read-only review; one repair pass",
+  "parent_training_changed": false,
+  "parent_test_changed": false,
+  "source_identity_checks": "parent protocol, training sources, manifests, catalog, normalization and installed artifacts matched at review",
+  "findings": [
+    {
+      "id": "R1",
+      "priority": 1,
+      "problem": "CREATE_REMINDER, LIST_REMINDERS and MESSAGE lack positive calibration",
+      "resolution": "Add schema-wide calibration using the already reserved Qwen calibration voice; never access test to set thresholds",
+      "status": "generation pending"
+    },
+    {
+      "id": "R2",
+      "priority": 1,
+      "problem": "Evaluation did not revalidate frozen source/data/feature identity",
+      "resolution": "Child verifies all source and manifest bindings plus original audio and feature file hashes before inference",
+      "status": "implemented; mutation regression passed"
+    },
+    {
+      "id": "R3",
+      "priority": 2,
+      "problem": "Per-intent precision grouped predictions by reference intent",
+      "resolution": "Precision denominator includes every prediction of that intent, including cross-family and OOV false accepts",
+      "status": "implemented; exact 1/3 precision regression passed"
+    },
+    {
+      "id": "R4",
+      "priority": 2,
+      "problem": "Custom registry overwritten or not reconciled with inherited IDs and aliases",
+      "resolution": "Read immutable custom file; preserve historical IDs with explicit provenance; compile aliases; changed catalog requires recalibration",
+      "status": "implemented; registry preservation and aliases regression passed"
+    },
+    {
+      "id": "R5",
+      "priority": 1,
+      "problem": "Uncertain named-versus-all lighting target could pass weak threshold",
+      "resolution": "Named target requires probability >=0.9; all target requires <=0.1; uncertainty rejects",
+      "status": "implemented; uncertainty and confident-target regressions passed"
+    }
+  ],
+  "software_verification": {
+    "passed": 22,
+    "warnings": 2,
+    "warning_kind": "legacy Torch ONNX exporter deprecation",
+    "junit": ".cache/pcv-human-slots-v1/tests-04.xml"
+  },
+  "remaining": [
+    "Run added calibration generation",
+    "Run trained-model CPU ONNX parity and calibration",
+    "Run unchanged sealed test once per predeclared comparison arm",
+    "Collate measured synthetic usefulness and failed gates"
+  ]
+}

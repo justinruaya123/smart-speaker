@@ -1,0 +1,110 @@
+[
+  {
+    "id": "designed-00",
+    "split": "train",
+    "accent_requested": "en-US",
+    "prompt": "A young adult woman with a clear American English accent, medium pitch and conversational pace. Speak only the supplied English text. Clean dry recording without music.",
+    "seed": 1700,
+    "accent_verified_by_human": false,
+    "identity_source": "synthetic_voice_design"
+  },
+  {
+    "id": "designed-01",
+    "split": "train",
+    "accent_requested": "en-US",
+    "prompt": "A middle aged man with a low warm voice, general American English accent, measured pace. Speak only the supplied English text. Clean dry recording without music.",
+    "seed": 1701,
+    "accent_verified_by_human": false,
+    "identity_source": "synthetic_voice_design"
+  },
+  {
+    "id": "designed-02",
+    "split": "train",
+    "accent_requested": "en-GB",
+    "prompt": "An adult British English woman, light husky voice, clear relaxed conversational delivery. Speak only the supplied English text. Clean dry recording without music.",
+    "seed": 1702,
+    "accent_verified_by_human": false,
+    "identity_source": "synthetic_voice_design"
+  },
+  {
+    "id": "designed-03",
+    "split": "train",
+    "accent_requested": "en-AU",
+    "prompt": "An adult Australian English man, mid pitch, brisk but clear delivery. Speak only the supplied English text. Clean dry recording without music.",
+    "seed": 1703,
+    "accent_verified_by_human": false,
+    "identity_source": "synthetic_voice_design"
+  },
+  {
+    "id": "designed-04",
+    "split": "train",
+    "accent_requested": "en-PH-requested",
+    "prompt": "A young adult Filipina woman speaking English with a natural Filipino accent, clear vowels, warm medium pitch and everyday conversational pace. Speak only the supplied English text. Clean dry recording without music.",
+    "seed": 1704,
+    "accent_verified_by_human": false,
+    "identity_source": "synthetic_voice_design"
+  },
+  {
+    "id": "designed-05",
+    "split": "train",
+    "accent_requested": "en-PH-requested",
+    "prompt": "An adult Filipino man speaking English with a natural Manila Filipino accent, low resonant voice, measured relaxed pace. Speak only the supplied English text. Clean dry recording without music.",
+    "seed": 1705,
+    "accent_verified_by_human": false,
+    "identity_source": "synthetic_voice_design"
+  },
+  {
+    "id": "designed-06",
+    "split": "train",
+    "accent_requested": "en-PH-requested",
+    "prompt": "A middle aged Filipina woman speaking English with a noticeable Philippine English accent, bright clear voice, slightly brisk conversational pace. Speak only the supplied English text. Clean dry recording without music.",
+    "seed": 1706,
+    "accent_verified_by_human": false,
+    "identity_source": "synthetic_voice_design"
+  },
+  {
+    "id": "designed-07",
+    "split": "train",
+    "accent_requested": "en-PH-requested",
+    "prompt": "A young Filipino man speaking fluent English with a Filipino accent, soft mid-range voice, relaxed everyday delivery. Speak only the supplied English text. Clean dry recording without music.",
+    "seed": 1707,
+    "accent_verified_by_human": false,
+    "identity_source": "synthetic_voice_design"
+  },
+  {
+    "id": "designed-08",
+    "split": "dev",
+    "accent_requested": "en-US",
+    "prompt": "An older woman with a gentle American English accent, slightly textured low voice and steady delivery. Speak only the supplied English text. Clean dry recording without music.",
+    "seed": 1708,
+    "accent_verified_by_human": false,
+    "identity_source": "synthetic_voice_design"
+  },
+  {
+    "id": "designed-09",
+    "split": "dev",
+    "accent_requested": "en-PH-requested",
+    "prompt": "An older Filipino man speaking English with a Filipino accent, slightly gravelly medium voice and clear steady delivery. Speak only the supplied English text. Clean dry recording without music.",
+    "seed": 1709,
+    "accent_verified_by_human": false,
+    "identity_source": "synthetic_voice_design"
+  },
+  {
+    "id": "designed-10",
+    "split": "test",
+    "accent_requested": "en-GB",
+    "prompt": "A young British English man with a bright high baritone, casual clear natural delivery. Speak only the supplied English text. Clean dry recording without music.",
+    "seed": 1710,
+    "accent_verified_by_human": false,
+    "identity_source": "synthetic_voice_design"
+  },
+  {
+    "id": "designed-11",
+    "split": "test",
+    "accent_requested": "en-PH-requested",
+    "prompt": "An adult Filipina woman speaking English with a natural Filipino accent, low smooth voice and careful conversational delivery. Speak only the supplied English text. Clean dry recording without music.",
+    "seed": 1711,
+    "accent_verified_by_human": false,
+    "identity_source": "synthetic_voice_design"
+  }
+]

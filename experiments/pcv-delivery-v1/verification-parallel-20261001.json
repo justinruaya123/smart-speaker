@@ -1,0 +1,328 @@
+{
+  "final_commit_made": false,
+  "frozen_sources_unchanged": true,
+  "handoff": {
+    "checkpoint_sha256": "9aafbc8fe08994ac263cd5762f9310d1dd72814a02fa2da10c50939c302c84a7",
+    "epoch": 24,
+    "no_optimization_repeated": true,
+    "retained_epochs": 24,
+    "retained_seconds": 16858.34399999994,
+    "seed": 53
+  },
+  "installed_artifacts": [
+    {
+      "path": "artifacts/brightness-validation.json",
+      "sha256": "196232e45035acbbe6debc4313e94d7feb42646b6cd4bd839af0d5d33bed78be",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/bundle.json",
+      "sha256": "735626cebe6281406df93eb711b43621bfa84ce4880d68775aa730c2a97de3b1",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/export-verification.json",
+      "sha256": "e63937b03ec2b5259536da9a230aad139e84544ac9c9b7c8f540dd9dadc62413",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/family-metrics.json",
+      "sha256": "f8504dd6a1de29edcee9603b8a40d971c490cad419b4c5b839b4fb814ab2335c",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/manifest.json",
+      "sha256": "fb15d77f4ebc16d70e5075efb9c7900d308e784802a5e5cc0e9e3fa7ba31a668",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/openwakeword-LICENSE.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/pilot-results.json",
+      "sha256": "b65ddc0c72039499936b701ff76a99ed9dc4fdd95039c0bac3a0c173be89f9b7",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/pretrained-NOTICE.txt",
+      "sha256": "712f16b4da0a452d47b7779fc3587141c6cdd6850392273627f38cfb522b79be",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/silero-LICENSE.txt",
+      "sha256": "2e63e9a38b6e8fc0c7bc37ce174caca1862870856c6daf5697cfb785e925520b",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/silero-vad.onnx",
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/stt.fp32.onnx",
+      "sha256": "6b86cc10e0ac0532bb093e1b54f73487b0c0349d62929bee4446b9249f371a2d",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/stt.pt",
+      "sha256": "556a0cbaf886dfb03fcd3663fa9f10a109c601fd059eb9aac11cb0e661ea80a4",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/training-config.json",
+      "sha256": "9ff335c82c750bede1657545d8a2a81518b0dada86055c2deff90d6882a9a9b5",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/training-history.json",
+      "sha256": "acb1061afa7f4ef1f7422b3ba3b496eb0d8cb40ccd9a1dcbfd6c746b686a7c4d",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/vcm.fp32.onnx",
+      "sha256": "a7fa48af1d8a24a24c08c8a98cf19e303fffdda3d0281fd7f11ea80223fd6eba",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/vcm.pt",
+      "sha256": "d5fd4977350ba624d9ef1fc5dbfb1621b480cd57ee89ae6c6c70e294bd950c8e",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-embedding.onnx",
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-hey-jarvis.onnx",
+      "sha256": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-melspectrogram.onnx",
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-models.json",
+      "sha256": "dc7b4d09efc65f5f53c2d280d7efbc09bae56eb2dc689ce88d7d6229d7592cb0",
+      "unchanged": true
+    }
+  ],
+  "invalidated_probe": ".cache/pcv-delivery-v1/parallel-eval-v1/invalidated-verification.json",
+  "job_status": {
+    "execution_plan_sha256": "63a444b7df71799c293534c3fadca6f6677c374147c4eb472d4cf9b59d4a9ae5",
+    "pid": 20996,
+    "status": "RUNNING",
+    "steps": [
+      {
+        "command": [
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.venv\\Scripts\\python.exe",
+          "-u",
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\scripts\\pcv_parallel_run.py",
+          "train"
+        ],
+        "log": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\jobs\\parallel-run-20261001\\train.log",
+        "name": "train",
+        "pid": 2044,
+        "started": 1790844147.5057282,
+        "status": "RUNNING"
+      }
+    ],
+    "updated_utc": "2026-10-01T08:42:27.505728+00:00"
+  },
+  "limitations": [
+    "This accelerates host training development evaluation; unchanged CPU ONNX/streaming/wake stages still follow.",
+    "Execution equivalence does not qualify recognition accuracy.",
+    "No physical Pi speed result; actual GPU CTC training is nondeterministic."
+  ],
+  "live_process_sample": {
+    "aggregate_core_equivalents": 8.019861593438621,
+    "aggregate_cpu_percent": 25.062067479495692,
+    "processes": [
+      {
+        "command": [
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.venv\\Scripts\\python.exe",
+          "-u",
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\scripts\\pcv_parallel_run.py",
+          "train"
+        ],
+        "core_equivalents": 0.0,
+        "pid": 2044,
+        "rss_mb": 4.11328125
+      },
+      {
+        "command": [
+          "C:\\Users\\SCL-Jus\\AppData\\Roaming\\uv\\python\\cpython-3.12.13-windows-x86_64-none\\python.exe",
+          "-u",
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\scripts\\pcv_parallel_run.py",
+          "train"
+        ],
+        "core_equivalents": 0.057284725667418726,
+        "pid": 24336,
+        "rss_mb": 1834.37109375
+      },
+      {
+        "command": [
+          "C:\\Users\\SCL-Jus\\AppData\\Roaming\\uv\\python\\cpython-3.12.13-windows-x86_64-none\\python.exe",
+          "-c",
+          "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=24336, pipe_handle=1092)",
+          "--multiprocessing-fork"
+        ],
+        "core_equivalents": 0.9998788480131269,
+        "pid": 26144,
+        "rss_mb": 40.5546875
+      },
+      {
+        "command": [
+          "C:\\Users\\SCL-Jus\\AppData\\Roaming\\uv\\python\\cpython-3.12.13-windows-x86_64-none\\python.exe",
+          "-c",
+          "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=24336, pipe_handle=1628)",
+          "--multiprocessing-fork"
+        ],
+        "core_equivalents": 0.9946711456797251,
+        "pid": 31856,
+        "rss_mb": 40.171875
+      },
+      {
+        "command": [
+          "C:\\Users\\SCL-Jus\\AppData\\Roaming\\uv\\python\\cpython-3.12.13-windows-x86_64-none\\python.exe",
+          "-c",
+          "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=24336, pipe_handle=1752)",
+          "--multiprocessing-fork"
+        ],
+        "core_equivalents": 0.9894634433463235,
+        "pid": 3956,
+        "rss_mb": 40.22265625
+      },
+      {
+        "command": [
+          "C:\\Users\\SCL-Jus\\AppData\\Roaming\\uv\\python\\cpython-3.12.13-windows-x86_64-none\\python.exe",
+          "-c",
+          "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=24336, pipe_handle=1216)",
+          "--multiprocessing-fork"
+        ],
+        "core_equivalents": 0.9946711456797251,
+        "pid": 1748,
+        "rss_mb": 40.39453125
+      },
+      {
+        "command": [
+          "C:\\Users\\SCL-Jus\\AppData\\Roaming\\uv\\python\\cpython-3.12.13-windows-x86_64-none\\python.exe",
+          "-c",
+          "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=24336, pipe_handle=1104)",
+          "--multiprocessing-fork"
+        ],
+        "core_equivalents": 0.9946711456797251,
+        "pid": 21816,
+        "rss_mb": 40.71484375
+      },
+      {
+        "command": [
+          "C:\\Users\\SCL-Jus\\AppData\\Roaming\\uv\\python\\cpython-3.12.13-windows-x86_64-none\\python.exe",
+          "-c",
+          "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=24336, pipe_handle=1284)",
+          "--multiprocessing-fork"
+        ],
+        "core_equivalents": 0.9946711456797251,
+        "pid": 23292,
+        "rss_mb": 40.07421875
+      },
+      {
+        "command": [
+          "C:\\Users\\SCL-Jus\\AppData\\Roaming\\uv\\python\\cpython-3.12.13-windows-x86_64-none\\python.exe",
+          "-c",
+          "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=24336, pipe_handle=1804)",
+          "--multiprocessing-fork"
+        ],
+        "core_equivalents": 0.9998788480131269,
+        "pid": 32220,
+        "rss_mb": 40.2734375
+      },
+      {
+        "command": [
+          "C:\\Users\\SCL-Jus\\AppData\\Roaming\\uv\\python\\cpython-3.12.13-windows-x86_64-none\\python.exe",
+          "-c",
+          "from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=24336, pipe_handle=1624)",
+          "--multiprocessing-fork"
+        ],
+        "core_equivalents": 0.9946711456797251,
+        "pid": 31920,
+        "rss_mb": 40.5234375
+      }
+    ],
+    "seconds": 3.0003634999993665
+  },
+  "logs": [
+    {
+      "path": ".cache\\pcv-delivery-v1\\parallel-red-20261001.log",
+      "sha256": "724fe2049ec6cd4ea6b77f7226892c882613542c347e8a3727b4461c3af7ab8f"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\parallel-run-red-20261001.log",
+      "sha256": "0412db36b1cebecda9f969b2cd8381024893c030e9cf745e63588f143052744f"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\parallel-auth-red-20261001.log",
+      "sha256": "2434f58ad4c208e92d9b85f774e41e0f625873085056c62842be26cf6de270c1"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\parallel-final-tests-20261001.log",
+      "sha256": "a6911160cbcaf2cbd7c6c72aa7dcb49f458fa3c2ba3e443c625949dc4dabc281"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\parallel-final-tests-recheck-20261001.log",
+      "sha256": "ca57b56c7a5785b16f813fe991a8103631a04869b3830fc9fe3be3feb5487a0d"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\parallel-continuation-20261001.log",
+      "sha256": "09ac86a6e44ec5708ed022a03be7744aaf0e09bcc2e500de95fa00368ab55798"
+    }
+  ],
+  "parity": {
+    "exact_score_comparisons": 60,
+    "recordings": 5636,
+    "score_parity": {
+      "4": true,
+      "8": true
+    },
+    "typed_output_mismatches": 0
+  },
+  "plan_sha256": "63a444b7df71799c293534c3fadca6f6677c374147c4eb472d4cf9b59d4a9ae5",
+  "review": {
+    "final_review": "No launch-blocking finding",
+    "initial_findings": [
+      "Bind verifier inputs to freeze/history and reject source drift",
+      "Authenticate original process tree, full checkout paths and saved creation times before suspension"
+    ],
+    "resolved": true
+  },
+  "sealed_test_accessed": false,
+  "status": "PARALLEL_DEVELOPMENT_ACTIVE",
+  "tests": {
+    "controlled_continuation": "Exact full 80-epoch/20-selection artificial comparison, with fixture-only deterministic CPU CTC, unchanged study GPU CTC.",
+    "passed": 58,
+    "prior_failure": "One prior full suite failed with Windows PermissionError replacing an artificial fixture compute-budget file in the original trainer; preserved. Unmodified fresh full suite then passed.",
+    "scope": "delivery, recovery, parallel evaluator and guarded handoff",
+    "seconds": 35.05,
+    "warnings": 31
+  },
+  "time_utc": "2026-10-01T08:44:09.658370+00:00",
+  "timing": {
+    "full_development_seconds": 448.8299642000002,
+    "matched_scoring_cases": 60,
+    "measured_speedup": 6.813931628281482,
+    "physical_pi_measured": false,
+    "seconds": {
+      "4": 9.561831200000597,
+      "8": 5.478285700000924,
+      "serial": 37.32866419999846
+    }
+  },
+  "validation_receipt": {
+    "path": ".cache\\pcv-delivery-v1\\parallel-eval-v2\\results.json",
+    "sha256": "08ee53f54b2c7e12569fa05f4427792930778652573b8b973a378778a9281c3a"
+  }
+}

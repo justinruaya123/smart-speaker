@@ -1,0 +1,115 @@
+{
+  "date": "2026-09-22",
+  "experiment": "E12 wake-pipeline-v1",
+  "scope": "Publish installed direct VCM for Pi and prepare Windows microphone acceptance",
+  "model_changed": false,
+  "vcm_sha256": "a7fa48af1d8a24a24c08c8a98cf19e303fffdda3d0281fd7f11ea80223fd6eba",
+  "zip": "dist\\smart-speaker-rpi4-e12-20260922.zip",
+  "zip_sha256": "e9efdf73f5b03762571956923bb528fdcf92819839445507d94b3dc735b8d3a3",
+  "zip_bytes": 219030418,
+  "zip_crc_passed": true,
+  "inner_manifest_files_verified": 56,
+  "graphs": [
+    "model/silero-vad.onnx",
+    "model/vcm.fp32.onnx",
+    "model/wake-embedding.onnx",
+    "model/wake-hey-jarvis.onnx",
+    "model/wake-melspectrogram.onnx"
+  ],
+  "transcription_runtime_excluded": true,
+  "offline_arm64_wheels": true,
+  "source_software_checks": "passed",
+  "wake_behavior_checks": {
+    "passed": 14,
+    "failed": 0
+  },
+  "packaged_software_checks": {
+    "config": "passed",
+    "vad": "passed",
+    "vcm": "passed",
+    "pipeline": "passed",
+    "retired_model": "passed",
+    "pretrained_activation": "passed"
+  },
+  "packaged_smoke_quality_passed": false,
+  "desktop_resource_check": {
+    "hardware": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "python": "3.12.13",
+    "physical_pi_measurement": false,
+    "live_microphone_tested": false,
+    "physical_ram_mib": null,
+    "target_pi4_2gb_arm64": false,
+    "threads": {
+      "vcm": 2,
+      "wake_and_vad": 1
+    },
+    "all_sessions_load_ms": 87.56360004190356,
+    "recognition_including_frontend": {
+      "observations": 60,
+      "p50_ms": 2.4812999763526022,
+      "p95_ms": 4.547205049311742
+    },
+    "wake_80ms_frame": {
+      "observations": 60,
+      "p50_ms": 0.9177500032819808,
+      "p95_ms": 0.9810800082050263
+    },
+    "vad_32ms_frame": {
+      "observations": 60,
+      "p50_ms": 0.1114500337280333,
+      "p95_ms": 0.14302003546617922
+    },
+    "endpointed_command_replay": {
+      "observations": 60,
+      "p50_ms": 11.198899999726564,
+      "p95_ms": 19.425055029569194,
+      "p95_real_time_factor": 0.005796194707653922,
+      "max_real_time_factor": 0.010176535280556225
+    },
+    "estimated_wake_plus_vad_compute_fraction_from_p95": 0.016732876210880928,
+    "sample_duration_seconds": {
+      "min": 1.023875,
+      "max": 4.864
+    },
+    "peak_process_rss_mib": 153.53125,
+    "budgets": {
+      "peak_rss_mib": 512,
+      "recognition_p95_ms": 100
+    },
+    "resource_budget_passed_on_this_host": true,
+    "torch_imported": false,
+    "scope": "Bounded prerecorded CPU benchmark with all neural sessions resident. Excludes disk loading from timed recognition, microphone, playback echo, utterance duration and endpoint wait. Silence frames measure compute, not wake/VAD accuracy. Budgets are proposed prototype targets."
+  },
+  "microphone_preflight": {
+    "device": 29,
+    "name": "Microphone Array ()",
+    "pipeline_seconds": 6,
+    "pipeline_blocks": 150,
+    "overflows": 0,
+    "peak": 0.0,
+    "raw_two_channel_probe": {
+      "index": 29,
+      "name": "Microphone Array ()",
+      "sample_rate": 48000,
+      "seconds": 4,
+      "channel_peaks": [
+        0.0,
+        0.0
+      ],
+      "channel_nonzero_samples": [
+        0,
+        0
+      ],
+      "blocks": 101,
+      "overflows": 0,
+      "audio_saved": false
+    },
+    "audio_saved": false
+  },
+  "acceptance_status": "prepared; device selection pending; preflight device returned only zeros",
+  "spoken_wake_tested": false,
+  "spoken_command_acceptance_tested": false,
+  "physical_pi_validation": false,
+  "instructions": "README.md#local-microphone-acceptance-procedure"
+}

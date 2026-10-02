@@ -1,0 +1,14 @@
+{
+  "id": "designed-00",
+  "split": "train",
+  "accent_requested": "en-US",
+  "prompt": "A young adult woman with a clear American English accent, medium pitch and conversational pace. Speak only the supplied English text. Clean dry recording without music.",
+  "seed": 1700,
+  "accent_verified_by_human": false,
+  "identity_source": "synthetic_voice_design",
+  "text": "Hello, I am ready to help. Please speak clearly and tell me what you would like to do today.",
+  "audio_sha256": "21e5b97104a53963d72132da21318918890aa97839bf17766494e01fc8863648",
+  "rate": 24000,
+  "duration": 6.16,
+  "generation_seconds": 10.86549689999083
+}

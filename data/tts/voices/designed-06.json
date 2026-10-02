@@ -1,0 +1,14 @@
+{
+  "id": "designed-06",
+  "split": "train",
+  "accent_requested": "en-PH-requested",
+  "prompt": "A middle aged Filipina woman speaking English with a noticeable Philippine English accent, bright clear voice, slightly brisk conversational pace. Speak only the supplied English text. Clean dry recording without music.",
+  "seed": 1706,
+  "accent_verified_by_human": false,
+  "identity_source": "synthetic_voice_design",
+  "text": "Hello, I am ready to help. Please speak clearly and tell me what you would like to do today.",
+  "audio_sha256": "f11cd28cdc635e2aa4ee9bc8ea2bfd023e79b04991b642bcfbd2e6eadd488647",
+  "rate": 24000,
+  "duration": 4.4,
+  "generation_seconds": 6.831246399960946
+}

@@ -1,0 +1,51 @@
+{
+  "pass": true,
+  "protocol_sha256": "7568237889ca6773b506b072c8b76372d60bac312d10af407b97f0e98bda8b28",
+  "rows": [
+    {
+      "conditions": [
+        {
+          "cap": 1600,
+          "derived_sha256": "db62a881c48a400d90fc208b0f3bb12e428f070f8bd32fb7a6b42a642d7db417",
+          "duration_seconds": 1.28875,
+          "native_sha256": "484a5dab8458ccc3f4a435036944e3f6ec0d7d63812c2777a6a7c4ff60465332",
+          "pcm_sha256": "8ac6cfcd5e386265056d50d57a18d063e53c2c15b75a67aff97fa75fa8d621f6",
+          "seconds": 10.761222999997699
+        },
+        {
+          "cap": 1050,
+          "derived_sha256": "db62a881c48a400d90fc208b0f3bb12e428f070f8bd32fb7a6b42a642d7db417",
+          "duration_seconds": 1.28875,
+          "native_sha256": "484a5dab8458ccc3f4a435036944e3f6ec0d7d63812c2777a6a7c4ff60465332",
+          "pcm_sha256": "8ac6cfcd5e386265056d50d57a18d063e53c2c15b75a67aff97fa75fa8d621f6",
+          "seconds": 6.9592695999999705
+        }
+      ],
+      "same": true,
+      "text": "The system is ready."
+    },
+    {
+      "conditions": [
+        {
+          "cap": 1600,
+          "derived_sha256": "4fc587694578c8a3ce025847223ce7188d9bae03c88b4a4c47fb908befaef444",
+          "duration_seconds": 3.308875,
+          "native_sha256": "156f456ecd1cc7e4f96a6dcc6932c721fd06e0428c385349744cfc0490687740",
+          "pcm_sha256": "e904fdf768e723b08679164f07fbc6e67c388d21e8beb660fe26b9cb5e4e0860",
+          "seconds": 14.017092800000682
+        },
+        {
+          "cap": 1050,
+          "derived_sha256": "4fc587694578c8a3ce025847223ce7188d9bae03c88b4a4c47fb908befaef444",
+          "duration_seconds": 3.308875,
+          "native_sha256": "156f456ecd1cc7e4f96a6dcc6932c721fd06e0428c385349744cfc0490687740",
+          "pcm_sha256": "e904fdf768e723b08679164f07fbc6e67c388d21e8beb660fe26b9cb5e4e0860",
+          "seconds": 15.222652399999788
+        }
+      ],
+      "same": true,
+      "text": "Please set the brightness to sixty percent."
+    }
+  ],
+  "scope": "Two development voice generations; no VCM inference; not proof for every random sample"
+}

@@ -1,0 +1,42 @@
+{
+  "time_utc": "2026-09-30T18:18:06.464689+00:00",
+  "stage": "generate-parler",
+  "status": "SUCCEEDED",
+  "exit_code": 0,
+  "total_recordings": 16704,
+  "reused_recordings": 13860,
+  "additional_recordings": 2844,
+  "additional_generation_seconds": 4020.366622686386,
+  "original_audio_preserved": true,
+  "frozen_source_hashes_verified": 66,
+  "installed_artifact_hashes_verified": 20,
+  "evidence": [
+    {
+      "path": ".cache\\pcv-synthetic-v2\\jobs\\revised-run-20261001\\status.json",
+      "sha256": "f4162c10ba40074b4b04eec27b8404ada69b268124ac5618061716f1071ed135"
+    },
+    {
+      "path": ".cache\\pcv-synthetic-v2\\jobs\\revised-run-20261001\\generate-parler.log",
+      "sha256": "6c66ef7ba8337c6f0946e573218fb86f11d5b3ecfcbbd57022b7cf97e8f8c623"
+    },
+    {
+      "path": ".cache\\pcv-synthetic-v1\\parler-generation.json",
+      "sha256": "229bbea3a8a26752c153b2995c5beb976859dca8ded655abef9553679af915f8"
+    },
+    {
+      "path": ".cache\\pcv-synthetic-v1\\parler-manifest.jsonl",
+      "sha256": "235ae2ca63c8788e0e2716f70601bedc5f26117a3d16e661aebb05d966eb9269"
+    },
+    {
+      "path": ".cache\\pcv-synthetic-v2\\parler-v2-generation.json",
+      "sha256": "b53a5f6142c2e255379f98a325e6240a75c3c429c8126f8603ae1c5c8c07a0e9"
+    },
+    {
+      "path": ".cache\\pcv-synthetic-v2\\generated-parler.jsonl",
+      "sha256": "c6ca742634f443737a47849cde6dbf1548304b0d6b3f4712936e374a327f3560"
+    }
+  ],
+  "quality_limit": "Generation completion and manifest hashes only; full corpus audit, training and sealed acoustic evaluation remain pending",
+  "speech_accuracy_measured": false,
+  "final_commit_made": false
+}

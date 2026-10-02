@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-09-19T17:30:26.576198+00:00",
+  "installed_hashes_unchanged": 13,
+  "prior_result_hashes_unchanged": 37,
+  "frozen_implementation_hashes_unchanged": 12,
+  "graph_hashes_unchanged": true,
+  "batched_single_recording_decisions_identical": true,
+  "root_runtime_tests_exit_code": 0,
+  "all_requested_intents_meet_quality_targets": false,
+  "candidate_installed": false,
+  "artifact_hashes": {
+    "checks.json": "0adc0539b4d0f89684ea2007835b15b0a17540e5fcdc23f3f955c50edc2dd7bd",
+    "development-diagnostics.json": "285c492733dad593798bdef220e08a58d3364978de443c239032f9567c294bc5",
+    "development-endpoint-replay.json": "c1613e1afa57c04d2a8f4f9adcc067426193a99b2451d56680175ffad9963dbe",
+    "development-search.json": "c4106f458add85616fb7dada7be6aca56153770fa0eea49d70c4312cb240db0f",
+    "endpoint-protocol-before-inference.json": "2f31e34bb5757baf1d416fe9ac06c058bc37449f2ad34c1ae45532f2e2576248",
+    "endpoint-results.json": "d4e3a427cc2551226579d74987bc575acc7b677628a5a5827ae0e13d21b98006",
+    "ENDPOINTS.md": "3b3a175c1a840ef51128547db76932616c678032290a7dfa3a5ad9ed978e3d45",
+    "execution-receipt.json": "603716fe50c13c003eab979659b7cbc4df4fbe0bac2cc2f4f46f3e3ef15410ee",
+    "fluent-incorporation.json": "deb22645bbf6b3c6dca8cb5de0870b95d1a8d77cd0b33bcba6b0c6ef2dc7b4af",
+    "history.json": "447634b0aebf7b3cb28b670946434add09daddd4b244edba5258db21c1bca155",
+    "ordered-cue-examples.json": "eb4c097b8a63ffda36a68267194dbb7914c6218390d8a9fb101b0d0f9370446a",
+    "OUTCOME.md": "cebe63c68b1489e352202e52aba995fe2bb40c4214985332f72810d5a1b6d153",
+    "protocol.json": "6bbe5c958b6b55d1f653ace7e5ef534f6bcf27b144178f3616b02fed9abdaf8e",
+    "REPORT.md": "8d18449871e9e36f4cc5bcfc092b07c398ac6aa0ff16cf594c134096ca8ded4f",
+    "results.json": "a39ef0213aa24e6642329e68d98f530e1c5a02d2a5f29a6a9a84746a9d0e2459",
+    "selection-before-test.json": "2204a5ff69be0006ff84c7a5fa7f40a7122568376f2901210b2c099c815e44aa",
+    "selection-specification.json": "1f572bfd4207f7b73f56b59947ab4e0e2157c56c7b73f1111787a3036eae856d",
+    "training.json": "dba69b5cba7180121f987b28cf0524e646fa8c6973dca7784c84e45426082c59"
+  }
+}

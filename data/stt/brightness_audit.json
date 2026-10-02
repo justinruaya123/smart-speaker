@@ -1,0 +1,32 @@
+{
+  "manifest_sha256": "ccb61fa5a8742e08812ac82dced4c2b8d3c71a61a01915272216bf6a7eab5e87",
+  "vocabulary_sha256": "c5c15299f3a9bf392df974f2e8ffcd9df10a96e03c0bc8ea9836bfc5e4193c77",
+  "counts": {
+    "natural/train": 599,
+    "natural/test": 108,
+    "natural/dev": 180,
+    "negative/train": 1199,
+    "negative/dev": 250,
+    "negative/test": 250,
+    "word/train": 3321,
+    "word/dev": 1324,
+    "word/test": 1387,
+    "constructed/train": 6060,
+    "constructed/dev": 606,
+    "constructed/test": 1010
+  },
+  "natural_absolute": {
+    "SnipsSmartLights/train": 137,
+    "SnipsSmartLights/dev": 28,
+    "SnipsSmartLights/test": 3,
+    "SLURP-real/train": 6,
+    "SLURP-real/test": 3,
+    "SLURP-real/dev": 5
+  },
+  "speaker_overlap": 0,
+  "quarantined": 0,
+  "missing_compositions": [],
+  "vocabulary_size": 226,
+  "source_manifest_sha256": "eb619aba98dfc7f5f2ffd684a5eac7bc7cfd6bae9f5228e5ab2b47edda2534e5",
+  "note": "SmartLights test is unseen by new STT but seen by incumbent ASR; report separately. Constructed speech is not natural connected speech."
+}

@@ -1,0 +1,10 @@
+{
+  "encoder_parameters": 94381936,
+  "index": ".cache\\pcv-updated-distill-v1\\feature-index.jsonl",
+  "rows": 8064,
+  "seconds": 172.86638750000566,
+  "sha256": "30d49c1a853dab029679d970c2970812c7b72bdb4ae481c2bfb8a415f22c7b26",
+  "source_protocol_sha256": "0a6dbb400a74a77532edb1c0cab7ef279c20ccf09d1cec15807d0534733e64e8",
+  "teacher_acquisition_sha256": "5df1594c1260f2c72a3290180b47dfdbbaab71e4230ae101a2a28cca1d91f5ae",
+  "test_inference_accessed": false
+}

@@ -1,0 +1,178 @@
+{
+  "arm": "v2_background",
+  "partition": "original human development selection only",
+  "test_used": false,
+  "graph_sha256": "d0c26f009558ef4602276e62abd37c066cac471d7bb9e22fed75852d731013e2",
+  "commands": {
+    "correct_complete": 346,
+    "resolvable_finite_references": 723,
+    "emitted": 366,
+    "exact_command_success": 0.4785615491009682,
+    "accepted_command_precision": 0.9453551912568307,
+    "per_family": {
+      "UNKNOWN": {
+        "resolvable": 0,
+        "correct_complete": 0,
+        "emitted": 4
+      },
+      "POWER_ON": {
+        "resolvable": 204,
+        "correct_complete": 145,
+        "emitted": 152
+      },
+      "POWER_OFF": {
+        "resolvable": 227,
+        "correct_complete": 118,
+        "emitted": 124
+      },
+      "BRIGHTNESS": {
+        "resolvable": 41,
+        "correct_complete": 0,
+        "emitted": 2
+      },
+      "COLOR_SET": {
+        "resolvable": 34,
+        "correct_complete": 0,
+        "emitted": 1
+      },
+      "MEDIA_PLAY": {
+        "resolvable": 30,
+        "correct_complete": 14,
+        "emitted": 14
+      },
+      "MEDIA_RESUME": {
+        "resolvable": 41,
+        "correct_complete": 30,
+        "emitted": 30
+      },
+      "TIME_QUERY": {
+        "resolvable": 46,
+        "correct_complete": 11,
+        "emitted": 11
+      },
+      "DATE_QUERY": {
+        "resolvable": 50,
+        "correct_complete": 28,
+        "emitted": 28
+      },
+      "VOLUME": {
+        "resolvable": 50,
+        "correct_complete": 0,
+        "emitted": 0
+      }
+    },
+    "parameter_calls": 0,
+    "command_promotion_assessed": false,
+    "denominator": "all silver resolvable finite commands; open-text media reported as clarification"
+  },
+  "failure_cascade": {
+    "family_policy_rejection": 117,
+    "family_acoustic_error": 160,
+    "value_policy_rejection": 37,
+    "correct": 346,
+    "argument_or_guard_acoustic_error": 50,
+    "joint_policy_rejection": 13
+  },
+  "per_family": {
+    "TIME_QUERY": {
+      "references": 46,
+      "raw_family_correct": 28,
+      "accepted_family_correct": 11,
+      "raw_command_correct": 28,
+      "correct_complete": 11,
+      "family_policy_rejection": 17,
+      "family_acoustic_error": 18,
+      "correct": 11
+    },
+    "POWER_OFF": {
+      "references": 227,
+      "raw_family_correct": 182,
+      "accepted_family_correct": 160,
+      "raw_command_correct": 151,
+      "correct_complete": 118,
+      "family_acoustic_error": 45,
+      "correct": 118,
+      "value_policy_rejection": 8,
+      "argument_or_guard_acoustic_error": 24,
+      "joint_policy_rejection": 10,
+      "family_policy_rejection": 22
+    },
+    "DATE_QUERY": {
+      "references": 50,
+      "raw_family_correct": 33,
+      "accepted_family_correct": 28,
+      "raw_command_correct": 33,
+      "correct_complete": 28,
+      "family_acoustic_error": 17,
+      "correct": 28,
+      "family_policy_rejection": 5
+    },
+    "BRIGHTNESS": {
+      "references": 41,
+      "raw_family_correct": 30,
+      "accepted_family_correct": 12,
+      "raw_command_correct": 21,
+      "correct_complete": 0,
+      "value_policy_rejection": 8,
+      "family_acoustic_error": 11,
+      "family_policy_rejection": 18,
+      "argument_or_guard_acoustic_error": 4
+    },
+    "MEDIA_RESUME": {
+      "references": 41,
+      "raw_family_correct": 32,
+      "accepted_family_correct": 30,
+      "raw_command_correct": 32,
+      "correct_complete": 30,
+      "correct": 30,
+      "family_acoustic_error": 9,
+      "family_policy_rejection": 2
+    },
+    "COLOR_SET": {
+      "references": 34,
+      "raw_family_correct": 20,
+      "accepted_family_correct": 0,
+      "raw_command_correct": 5,
+      "correct_complete": 0,
+      "family_acoustic_error": 14,
+      "family_policy_rejection": 20
+    },
+    "POWER_ON": {
+      "references": 204,
+      "raw_family_correct": 178,
+      "accepted_family_correct": 168,
+      "raw_command_correct": 158,
+      "correct_complete": 145,
+      "value_policy_rejection": 5,
+      "correct": 145,
+      "family_acoustic_error": 26,
+      "family_policy_rejection": 10,
+      "joint_policy_rejection": 2,
+      "argument_or_guard_acoustic_error": 16
+    },
+    "MEDIA_PLAY": {
+      "references": 30,
+      "raw_family_correct": 22,
+      "accepted_family_correct": 18,
+      "raw_command_correct": 17,
+      "correct_complete": 14,
+      "argument_or_guard_acoustic_error": 3,
+      "family_acoustic_error": 8,
+      "correct": 14,
+      "family_policy_rejection": 4,
+      "joint_policy_rejection": 1
+    },
+    "VOLUME": {
+      "references": 50,
+      "raw_family_correct": 38,
+      "accepted_family_correct": 19,
+      "raw_command_correct": 27,
+      "correct_complete": 0,
+      "argument_or_guard_acoustic_error": 3,
+      "value_policy_rejection": 16,
+      "family_policy_rejection": 19,
+      "family_acoustic_error": 12
+    }
+  },
+  "note": "Raw commands are diagnostic argmax outputs, not safe emitted commands. Gold-family role analysis is conditional."
+}

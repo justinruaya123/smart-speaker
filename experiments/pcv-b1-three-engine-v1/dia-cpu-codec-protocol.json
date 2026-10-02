@@ -1,0 +1,35 @@
+{
+  "bindings": {
+    ".cache\\pcv-b1-three-engine-v1\\dia-single-failed-attempts.jsonl": "028e9b00862453b08f4f887515fc4c117c42c3c7fc1db2b575c25f093e322546",
+    ".cache\\pcv-b1-three-engine-v1\\dia-single-run.log": "e44dd33dffe948c1d638e2d6ca548c4145f7176230fc3a000125efa34927d027",
+    ".venv\\Lib\\site-packages\\transformers\\models\\dia\\processing_dia.py": "6a64bd3da07ca44819f5100acad647fca1ff34d2bb0d59d803d341053b98f231",
+    "experiments\\pcv-b1-three-engine-v1\\dia-before-cpu-codec.json": "087ea5ea4d2d5f8138170d2af9a496b7b9e7d2f9cf6e0ef63487a98d42fe0a2e",
+    "experiments\\pcv-b1-three-engine-v1\\dia-single-protocol.json": "ed5ffda955486bdb252d0758dda012f024e05daea54773353af4d89df4166dc5",
+    "experiments\\pcv-b1-three-engine-v1\\protocol.json": "1c0bb937fd45f776fc68a1f613bf362818ec85d7ea2747f22d015d572f7ed3b4",
+    "scripts\\train\\pcv_dia_cpu_codec.py": "c8a4a9bbee1bf577898e53c27b1674dbf3b910c05529861f26c0a97c35ca6de0",
+    "scripts\\train\\pcv_dia_single.py": "9b590158bfb27aa4e60226274b83081a34f16e3d9b7610282dfbf3455e5fac05"
+  },
+  "change": "Dia acoustic generator remains FP32 on CUDA; DAC voice encoding and waveform decoding move to FP32 CPU",
+  "codec_equivalence_claim": false,
+  "interrupted_owned_process_ids": [
+    22120,
+    17236
+  ],
+  "note": "CPU/GPU rounding can change anchor codes and generated audio; this is an explicit generation revision",
+  "other_job_interrupted": false,
+  "preflight": "Two development voice phrases pass waveform checks, with at most three attempts each; no VCM inference",
+  "reason": "FP32 single-item CUDA waveform decoding again reached 15669/16376 MiB and had no completion for over five minutes",
+  "retained_cuda_codec_recordings": 15,
+  "test_inference_accessed": false,
+  "unchanged": [
+    "All phrases and labels",
+    "Voice WAV",
+    "All model/codec weights",
+    "Single-item seed rule",
+    "Token limit 1600",
+    "Temperature 1.8",
+    "Twenty attempts",
+    "Waveform and duration/CTC gates"
+  ],
+  "version": "dia-cpu-codec-v1"
+}

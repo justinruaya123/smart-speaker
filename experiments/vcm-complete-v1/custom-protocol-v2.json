@@ -1,0 +1,10 @@
+{
+  "reason": "Strengthen enrollment isolation before custom fitting/testing: use original calibration speakers instead of training-side enrollment. Original v1 catalog is preserved, not used for reported retrieval. No custom test inference has occurred.",
+  "catalog_sha256": "b8cc9de16998b1a6b1b17e015553f6e3ec01728bfbfc67935f1d4b224f5a1298",
+  "enrollment_speakers_disjoint_from_training_and_queries": true,
+  "paired_recordings_disjoint": true,
+  "catalog_size": 3,
+  "playlist_subset_entries": 0,
+  "encoder_fitting": "Original v1 manifests/39 exclusions remain fixed for all arms. Calibration recordings never fit encoder weights.",
+  "acceptance": "Development selects cosine similarity and runner-up margin at >=95% precision and <=1% unknown-name false accepts; no test tuning. Conditional retrieval separated from accepted-family/custom-mode gated recognition."
+}

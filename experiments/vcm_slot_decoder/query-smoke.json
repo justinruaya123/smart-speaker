@@ -1,0 +1,197 @@
+[
+  {
+    "command": [
+      "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.venv\\Scripts\\python.exe",
+      "experiments/vcm_slot_decoder/run.py",
+      "query",
+      "--audio",
+      "data/audio/slurp/slurp_real/audio-1502198868.flac",
+      "--intent",
+      "BRIGHTNESS",
+      "--role",
+      "number"
+    ],
+    "audio_id": "slurp/audio-1502198868.flac",
+    "result": {
+      "status": "abstain",
+      "intent": "BRIGHTNESS",
+      "role": "number",
+      "action_executed": false,
+      "confidence_is_probability": false,
+      "reason": "quality_gate_failed",
+      "raw_top5": [
+        [
+          "number:66",
+          0.6612160205841064
+        ],
+        [
+          "number:67",
+          0.6129894256591797
+        ],
+        [
+          "number:63",
+          0.5782256126403809
+        ],
+        [
+          "number:65",
+          0.5725165605545044
+        ],
+        [
+          "number:56",
+          0.5676034092903137
+        ]
+      ],
+      "raw_candidates_are_not_commands": true,
+      "timing": {
+        "frontend_ms": 1.1897999793291092,
+        "inference_ms": 0.7308999774977565,
+        "duration_s": 1.79175
+      },
+      "unavailable": [],
+      "conditional_on_caller_intent": true
+    }
+  },
+  {
+    "command": [
+      "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.venv\\Scripts\\python.exe",
+      "experiments/vcm_slot_decoder/run.py",
+      "query",
+      "--audio",
+      "data/audio/slurp/slurp_real/audio-1497862421-headset.flac",
+      "--intent",
+      "SET_ALARM",
+      "--role",
+      "time"
+    ],
+    "audio_id": "slurp/audio-1497862421-headset.flac",
+    "result": {
+      "status": "abstain",
+      "intent": "SET_ALARM",
+      "role": "time",
+      "action_executed": false,
+      "confidence_is_probability": false,
+      "reason": "quality_gate_failed",
+      "raw_top5": [
+        [
+          "time:12:00:am",
+          0.6632989645004272
+        ],
+        [
+          "time:07:00:pm",
+          0.6616590619087219
+        ],
+        [
+          "time:10:00:pm",
+          0.6594739556312561
+        ],
+        [
+          "time:06:00:pm",
+          0.64427649974823
+        ],
+        [
+          "time:12:00:pm",
+          0.6420732140541077
+        ]
+      ],
+      "raw_candidates_are_not_commands": true,
+      "timing": {
+        "frontend_ms": 1.5047000488266349,
+        "inference_ms": 0.8484000572934747,
+        "duration_s": 2.624
+      },
+      "unavailable": [],
+      "conditional_on_caller_intent": true
+    }
+  },
+  {
+    "command": [
+      "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.venv\\Scripts\\python.exe",
+      "experiments/vcm_slot_decoder/run.py",
+      "query",
+      "--audio",
+      "data/audio/slurp/slurp_real/audio-1502197331-headset.flac",
+      "--intent",
+      "MEDIA_PLAY",
+      "--role",
+      "artist"
+    ],
+    "audio_id": "slurp/audio-1502197331-headset.flac",
+    "result": {
+      "status": "abstain",
+      "intent": "MEDIA_PLAY",
+      "role": "artist",
+      "action_executed": false,
+      "confidence_is_probability": false,
+      "reason": "quality_gate_failed",
+      "raw_top5": [
+        [
+          "artist:gaga",
+          0.561870813369751
+        ],
+        [
+          "artist:madonna",
+          0.5547370910644531
+        ],
+        [
+          "artist:eminem",
+          0.47664663195610046
+        ],
+        [
+          "artist:rihanna",
+          0.4739387631416321
+        ],
+        [
+          "artist:jennifer s",
+          0.4479464590549469
+        ]
+      ],
+      "raw_candidates_are_not_commands": true,
+      "timing": {
+        "frontend_ms": 1.070300000719726,
+        "inference_ms": 0.6395999807864428,
+        "duration_s": 1.088
+      },
+      "unavailable": [
+        "artist:acdc",
+        "artist:afi",
+        "artist:akon",
+        "artist:anirudh",
+        "artist:arijit s",
+        "artist:arijit singh",
+        "artist:atif aslam",
+        "artist:barenaked ladies",
+        "artist:blackeyed pees",
+        "artist:busdriver",
+        "artist:coldplay",
+        "artist:david guetta",
+        "artist:ella fitzgerals",
+        "artist:enya",
+        "artist:frubs",
+        "artist:hopsin",
+        "artist:jimi hendri",
+        "artist:joe prsaise",
+        "artist:justin bibber",
+        "artist:kanye west",
+        "artist:kfi",
+        "artist:madonnas",
+        "artist:malika",
+        "artist:mf doom",
+        "artist:mgk",
+        "artist:michael buble",
+        "artist:o zaalima",
+        "artist:rihana",
+        "artist:royksopp",
+        "artist:senelena gomez",
+        "artist:serge gainsbourg",
+        "artist:sia",
+        "artist:sufi",
+        "artist:taylor swiftm",
+        "artist:tech n 9 ne",
+        "artist:the broods",
+        "artist:tobymac",
+        "artist:zedd"
+      ],
+      "conditional_on_caller_intent": true
+    }
+  }
+]

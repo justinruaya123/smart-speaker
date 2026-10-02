@@ -1,0 +1,9 @@
+{
+  "tests": 8,
+  "failures": 0,
+  "errors": 0,
+  "known_expected_failures": 1,
+  "known_gap": "Frozen v1 rule misses what time is it in london; broader location qualification requires a new overlay version and refit.",
+  "passed": true,
+  "scope": "Label semantics, training-only sampling, immutable inputs and release lineage; no acoustic/Pi/live quality claim"
+}

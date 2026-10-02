@@ -1,0 +1,229 @@
+{
+  "arm": "mixed",
+  "bundle_binding": {
+    "catalog_sha256": "408213141555e69d888c6b2d8019e3c43ad7c612f6130f885a4d278c7c9e7a90",
+    "custom_slots_sha256": "26e8b3e1aed4a03448da46846b66cb237fa2e301637de1abeb6230e590413556",
+    "model_sha256": "1eab7b6d0d14618027cdae4a9a47ee51b22c3f48e445de04695b9a725210f077",
+    "normalization_sha256": "1d86787c595e139ba28f6e968bd282a3f177b451ce0ac7c534945f430e27ff5a"
+  },
+  "catalog_entries": 3152,
+  "limitations": [
+    "Desktop CPU only; concurrent unrelated GPU work may affect timing",
+    "Disk read, utterance capture, wake/VAD and endpoint wait are excluded",
+    "Development waveform parity is not additional accuracy or physical Pi evidence"
+  ],
+  "onnx_call_count": 447,
+  "onnx_call_p50_ms": 0.29150000045774505,
+  "onnx_call_p95_ms": 0.37937000015517697,
+  "onnx_threads": 1,
+  "pass": false,
+  "pcm_chunk_samples": 1000,
+  "prefix_nodes": 33860,
+  "rows": [
+    {
+      "audio_seconds": 2.4746875,
+      "cpu_seconds": {
+        "decoder": 0.28864179999072803,
+        "frontend": 0.003476799996860791,
+        "onnx": 0.013165900003514253
+      },
+      "feature_error": 2.384185791015625e-07,
+      "head_error": 1.9073486328125e-05,
+      "id": "public/6f77d0d0-45d3-11e9-9992-dfba019cb646",
+      "pass": true,
+      "processing_to_audio_ratio": 0.12336284884095591,
+      "same_raw_command": true,
+      "score_error": 1.707488124225165e-07,
+      "source": "FSC",
+      "state_error": 4.291534423828125e-06
+    },
+    {
+      "audio_seconds": 2.2186875,
+      "cpu_seconds": {
+        "decoder": 0.24191859998609289,
+        "frontend": 0.0030300000034912955,
+        "onnx": 0.0108036999918113
+      },
+      "feature_error": 4.76837158203125e-07,
+      "head_error": 2.288818359375e-05,
+      "id": "public/10456410-4628-11e9-bc65-55b32b211b66",
+      "pass": false,
+      "processing_to_audio_ratio": 0.11527188934061036,
+      "same_raw_command": true,
+      "score_error": 2.10082905738318e-07,
+      "source": "FSC",
+      "state_error": 4.291534423828125e-06
+    },
+    {
+      "audio_seconds": 1.9626875,
+      "cpu_seconds": {
+        "decoder": 0.22143679999862798,
+        "frontend": 0.002599699997517746,
+        "onnx": 0.010166200001549441
+      },
+      "feature_error": 2.384185791015625e-07,
+      "head_error": 4.1961669921875e-05,
+      "id": "public/b9184490-4501-11e9-a1ea-79ca03012c0e",
+      "pass": false,
+      "processing_to_audio_ratio": 0.11932755469105254,
+      "same_raw_command": true,
+      "score_error": 3.2029578966863426e-07,
+      "source": "FSC",
+      "state_error": 6.9141387939453125e-06
+    },
+    {
+      "audio_seconds": 1.087875,
+      "cpu_seconds": {
+        "decoder": 0.11438110000744928,
+        "frontend": 0.0015003999906184617,
+        "onnx": 0.005320599993865471
+      },
+      "feature_error": 2.384185791015625e-07,
+      "head_error": 2.6464462280273438e-05,
+      "id": "slurp/audio-1501687078.flac",
+      "pass": false,
+      "processing_to_audio_ratio": 0.11141178903084749,
+      "same_raw_command": true,
+      "score_error": 4.243125357739075e-07,
+      "source": "SLURP-real",
+      "state_error": 4.76837158203125e-06
+    },
+    {
+      "audio_seconds": 1.28,
+      "cpu_seconds": {
+        "decoder": 0.1356214999977965,
+        "frontend": 0.001797799992345972,
+        "onnx": 0.006274200011830544
+      },
+      "feature_error": 2.384185791015625e-07,
+      "head_error": 4.100799560546875e-05,
+      "id": "slurp/audio-1498646353-headset.flac",
+      "pass": false,
+      "processing_to_audio_ratio": 0.11226054687654141,
+      "same_raw_command": true,
+      "score_error": 8.089035166136682e-07,
+      "source": "SLURP-real",
+      "state_error": 5.245208740234375e-06
+    },
+    {
+      "audio_seconds": 1.024,
+      "cpu_seconds": {
+        "decoder": 0.10116869999183109,
+        "frontend": 0.00147139999535284,
+        "onnx": 0.005360499995731516
+      },
+      "feature_error": 4.76837158203125e-07,
+      "head_error": 1.33514404296875e-05,
+      "id": "slurp/audio-1502895070-headset.flac",
+      "pass": true,
+      "processing_to_audio_ratio": 0.10546933592081587,
+      "same_raw_command": true,
+      "score_error": 3.735022460205073e-07,
+      "source": "SLURP-real",
+      "state_error": 5.4836273193359375e-06
+    },
+    {
+      "audio_seconds": 3.6,
+      "cpu_seconds": {
+        "decoder": 0.40287619999435265,
+        "frontend": 0.004676800010201987,
+        "onnx": 0.016904300016904017
+      },
+      "feature_error": 4.76837158203125e-07,
+      "head_error": 2.384185791015625e-05,
+      "id": "qwen/qwen/dev-au-m/UC04-BRI-K-020-A-N2",
+      "pass": false,
+      "processing_to_audio_ratio": 0.1179048055615163,
+      "same_raw_command": true,
+      "score_error": 2.0721932536549303e-07,
+      "source": "Qwen",
+      "state_error": 3.814697265625e-06
+    },
+    {
+      "audio_seconds": 3.92,
+      "cpu_seconds": {
+        "decoder": 0.4520804999920074,
+        "frontend": 0.0052619999878515955,
+        "onnx": 0.01915700000608922
+      },
+      "feature_error": 3.5762786865234375e-07,
+      "head_error": 3.24249267578125e-05,
+      "id": "qwen/qwen/dev-au-m/UC04-BRI-B2-067-A-N2",
+      "pass": false,
+      "processing_to_audio_ratio": 0.12155599489437455,
+      "same_raw_command": true,
+      "score_error": 1.7335799507023353e-07,
+      "source": "Qwen",
+      "state_error": 3.6954879760742188e-06
+    },
+    {
+      "audio_seconds": 3.92,
+      "cpu_seconds": {
+        "decoder": 0.44463599999289727,
+        "frontend": 0.0050891999853774905,
+        "onnx": 0.018698899992159568
+      },
+      "feature_error": 4.76837158203125e-07,
+      "head_error": 3.147125244140625e-05,
+      "id": "qwen/qwen/dev-au-m/UC04-BRI-B2-088-A-N2",
+      "pass": false,
+      "processing_to_audio_ratio": 0.11949594387000875,
+      "same_raw_command": true,
+      "score_error": 1.081339622288624e-07,
+      "source": "Qwen",
+      "state_error": 4.291534423828125e-06
+    },
+    {
+      "audio_seconds": 1.7,
+      "cpu_seconds": {
+        "decoder": 0.18458440000904375,
+        "frontend": 0.0023725000028207432,
+        "onnx": 0.008500899999489775
+      },
+      "feature_error": 3.5762786865234375e-07,
+      "head_error": 3.3855438232421875e-05,
+      "id": "sapi/mark/B1-035",
+      "pass": false,
+      "processing_to_audio_ratio": 0.11497517647726722,
+      "same_raw_command": true,
+      "score_error": 2.571411128471368e-07,
+      "source": "SAPI",
+      "state_error": 3.5762786865234375e-06
+    },
+    {
+      "audio_seconds": 2.795,
+      "cpu_seconds": {
+        "decoder": 0.3051752999817836,
+        "frontend": 0.0034006999994744547,
+        "onnx": 0.013630599994939985
+      },
+      "feature_error": 4.76837158203125e-07,
+      "head_error": 2.956390380859375e-05,
+      "id": "sapi/mark/X-488d1a078cc71f",
+      "pass": false,
+      "processing_to_audio_ratio": 0.11527964220973097,
+      "same_raw_command": true,
+      "score_error": 2.052594911816641e-07,
+      "source": "SAPI",
+      "state_error": 2.86102294921875e-06
+    },
+    {
+      "audio_seconds": 1.57,
+      "cpu_seconds": {
+        "decoder": 0.1690251999971224,
+        "frontend": 0.0021634000113408547,
+        "onnx": 0.007842600010917522
+      },
+      "feature_error": 4.76837158203125e-07,
+      "head_error": 3.4332275390625e-05,
+      "id": "sapi/mark/B1-020",
+      "pass": false,
+      "processing_to_audio_ratio": 0.1140326114773126,
+      "same_raw_command": true,
+      "score_error": 4.826162829374425e-07,
+      "source": "SAPI",
+      "state_error": 2.86102294921875e-06
+    }
+  ],
+  "session_and_catalog_load_seconds": 0.06021049999981187
+}

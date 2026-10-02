@@ -1,0 +1,34 @@
+{
+  "acquisition_sha256": "994798b431f9d376f70fc74f2e4758a2d5fa630d384200131f5481578955cb0a",
+  "allowed_source_edits": [
+    "scripts/train/pcv_release_prepare.py",
+    "scripts/test/test_pcv_release_prepare.py"
+  ],
+  "baseline": "pcv-updated-voice-v1 raw frontend features only; no old labels, normalization, teacher outputs, or weights reused",
+  "catalog": "Only predefined415 plus eligible train text. No dev/calibration/test/holdout additions.",
+  "command": ".venv/Scripts/python.exe scripts/train/pcv_release_prepare.py",
+  "experiment": "pcv-release-train-v1",
+  "heldout_labels": "Apply exact frozen metadata annotation consistently; no new test-driven rules. Preserve every published test and holdout recording.",
+  "hypothesis": "Exact fitting/development-derived finite metadata corrections remove incorrect negatives without dropping unknown targets, publisher flags, or held-out membership. Fresh fitting normalization removes source revision split-mover contamination.",
+  "installation_authorized": false,
+  "installed_bundle_sha256": "735626cebe6281406df93eb711b43621bfa84ce4880d68775aa730c2a97de3b1",
+  "listening_evidence": false,
+  "normalization": "Fresh equal-utterance human training statistics only, excluding synthetic, auxiliary, and ineligible rows",
+  "outputs": [
+    "experiments/pcv-release-train-v1 preparation receipts",
+    ".cache/pcv-release-train-v1/prepared"
+  ],
+  "physical_device_actions": false,
+  "proposal_sha256": "e1c0fba7d11b87983aa0499669ec2f10c3949e3fdf9304c4c32484f69490a80d",
+  "requirements": [
+    "ME-01",
+    "ME-02",
+    "ME-03",
+    "ME-04",
+    "ME-08"
+  ],
+  "source_only": true,
+  "source_revision": "25111444af3adff7588d86ab27c304bb080895cf",
+  "source_sha256": "7017a509ebd480e9a24e81c38a4f8d26bf4d71047c7b45aa6a71ca8eac10ae52",
+  "stage": "preparation-only"
+}

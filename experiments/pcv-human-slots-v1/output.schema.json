@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:pcv:baseline:output:3",
+  "title": "PCV-B1 command or explicit rejection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "accepted", "command", "reason"],
+  "properties": {
+    "schema_version": {"const": 3},
+    "accepted": {"type": "boolean"},
+    "command": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/command"}]},
+    "reason": {"enum": [null, "OOV", "invalid_argument", "capture_fault", "unqualified_model"]}
+  },
+  "oneOf": [
+    {"properties": {"accepted": {"const": true}, "command": {"$ref": "#/$defs/command"}, "reason": {"type": "null"}}},
+    {"properties": {"accepted": {"const": false}, "command": {"type": "null"}, "reason": {"type": "string"}}}
+  ],
+  "$defs": {
+    "percent": {"type": "integer", "minimum": 0, "maximum": 100},
+    "light_id": {"type": "string", "pattern": "^light\\.[a-z0-9_.-]+$"},
+    "command": {
+      "type": "object", "additionalProperties": false, "required": ["intent", "slots"],
+      "properties": {"intent": {"type": "string"}, "slots": {"type": "object"}},
+      "oneOf": [
+        {"properties": {"intent": {"enum": ["WEATHER", "TIME", "PAUSE", "STOP", "NEXT", "MESSAGE", "LIST_REMINDERS"]}, "slots": {"maxProperties": 0}}},
+        {"properties": {"intent": {"const": "PLAY_MUSIC"}, "slots": {"additionalProperties": false, "properties": {"song_id": {"type": "string", "pattern": "^song\\.[a-z0-9_.-]+$"}, "artist_id": {"type": "string", "pattern": "^artist\\.[a-z0-9_.-]+$"}}, "dependentRequired": {"artist_id": ["song_id"]}}}},
+        {"properties": {"intent": {"enum": ["LIGHT_ON", "LIGHT_OFF"]}, "slots": {"additionalProperties": false, "required": ["light_id"], "properties": {"light_id": {"$ref": "#/$defs/light_id"}}}}},
+        {"properties": {"intent": {"const": "VOLUME"}, "slots": {"additionalProperties": false, "required": ["operation"], "properties": {"operation": {"enum": ["up", "down", "mute", "set"]}, "percent": {"$ref": "#/$defs/percent"}}, "oneOf": [{"properties": {"operation": {"const": "set"}}, "required": ["percent"]}, {"properties": {"operation": {"enum": ["up", "down", "mute"]}}, "not": {"required": ["percent"]}}]}}},
+        {"properties": {"intent": {"const": "CALL"}, "slots": {"additionalProperties": false, "required": ["contact_id"], "properties": {"contact_id": {"type": "string", "pattern": "^contact\\.[a-z0-9_.-]+$"}}}}},
+        {"properties": {"intent": {"const": "TIMER"}, "slots": {"additionalProperties": false, "required": ["duration_seconds"], "properties": {"duration_seconds": {"type": "integer", "minimum": 1, "maximum": 86400}}}}},
+        {"properties": {"intent": {"const": "ALARM"}, "slots": {"additionalProperties": false, "required": ["time", "timezone"], "properties": {"time": {"type": "string", "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$"}, "timezone": {"const": "Asia/Manila"}}}}},
+        {"properties": {"intent": {"const": "TEMPERATURE"}, "slots": {"additionalProperties": false, "required": ["degrees", "unit"], "properties": {"degrees": {"type": "integer", "minimum": -50, "maximum": 60}, "unit": {"const": "C"}}}}},
+        {"properties": {"intent": {"const": "BRIGHTNESS"}, "slots": {"additionalProperties": false, "required": ["light_id", "percent"], "properties": {"light_id": {"$ref": "#/$defs/light_id"}, "percent": {"$ref": "#/$defs/percent"}}}}},
+        {"properties": {"intent": {"const": "COLOR"}, "slots": {"additionalProperties": false, "required": ["light_id", "color"], "properties": {"light_id": {"$ref": "#/$defs/light_id"}, "color": {"enum": ["red", "blue", "green", "yellow", "white", "orange", "purple", "pink", "cyan", "magenta", "warm white", "cool white"]}}}}},
+        {"properties": {"intent": {"const": "CREATE_REMINDER"}, "slots": {"additionalProperties": false, "required": ["task_id"], "properties": {"task_id": {"type": "string", "pattern": "^task\\.[a-z0-9_.-]+$"}}}}}
+      ]
+    }
+  }
+}

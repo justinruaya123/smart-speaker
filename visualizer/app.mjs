@@ -1,5 +1,6 @@
 import {Pipeline, parseWav, canonical, sha256} from './core.mjs';
 import {TensorScene} from './scene.mjs';
+import {readEvidence} from './evidence.mjs';
 
 const $ = id => document.getElementById(id);
 const state = {lastDraw:0, pipeline:null, recipe:null, graph:null, weights:null, samples:[], pcm:new Float32Array(0), position:0, running:false, timer:null, generation:0, selected:'stem', rows:[], filtered:[], page:0, microphone:null, final:null};
@@ -23,11 +24,12 @@ async function loadModel(recipe,weights,graph) {
   $('phase').textContent='Validating…';const model=await Pipeline.create(recipe,weights,graph);
   if(generation!==state.generation)return;
   state.pipeline=model;state.recipe=recipe;state.weights=weights;state.graph=graph;state.final=null;state.position=0;
+  state.rows=[];state.filtered=[];$('trial').replaceChildren(new Option('All studies',''));renderRows();
   $('parameterCount').textContent=recipe.layers.reduce((sum,l)=>sum+l.parameters,0).toLocaleString();
-  $('contract').textContent=JSON.stringify({schema:recipe.schema_version,onnx_sha256:recipe.source_onnx_sha256,weights_sha256:recipe.weights_sha256,graph_hash:recipe.graph_hash,frontend:'16 kHz / 400 / 160 / 512 / 40 mel',chunk_frames:recipe.chunk_frames,acceptance_enabled:false},null,2);
+  $('contract').textContent=JSON.stringify({schema:recipe.schema_version,onnx_sha256:recipe.source_onnx_sha256,weights_sha256:recipe.weights_sha256,graph_hash:recipe.graph_hash,source_binding:recipe.source_binding,source_profile:recipe.source_profile,frontend:'16 kHz / 400 / 160 / 512 / 40 mel',chunk_frames:recipe.chunk_frames,acceptance_enabled:false},null,2);
   if(scene)scene.setLayers(recipe.layers);
   $('layerButtons').replaceChildren();for(const l of [{id:'mel'},...recipe.layers]){const b=document.createElement('button');b.textContent=l.id;b.dataset.layer=l.id;b.addEventListener('click',()=>select(l.id));$('layerButtons').append(b);}
-  select('stem');refresh();
+  select('stem');refresh();await loadEvidence();
 }
 async function loadSample(name) {
   pause();if(state.microphone)await stopMicrophone();
@@ -100,17 +102,17 @@ function refresh() {
   $('progressFill').style.width=`${state.pcm.length?state.position/state.pcm.length*100:0}%`;
   $('phones').textContent=p.decoder.greedy.map(i=>p.r.vocabulary[i]).join(' ')||'No phoneme evidence yet.';
   $('result').textContent=JSON.stringify(state.final||p.last||{status:'waiting',action_executed:false},null,2);
-  if(p.costs.length)$('cost').textContent=`Last chunk: ${p.costs.at(-1).toFixed(2)} ms · ${p.decoder.nodes.toLocaleString()} decoder states`;
+  if(p.costs.length)$('cost').textContent=`Last chunk compute: ${p.costs.at(-1).toFixed(2)} ms · ${p.decoder.nodes.toLocaleString()} decoder states`;
   const now=performance.now();if(state.final||(!state.running&&!state.microphone)||now-state.lastDraw>=120){state.lastDraw=now;if(scene){scene.probes=p.probes;scene.draw();}refreshProbe();plotWave();}
 }
 function renderRows() {
   const query=$('search').value.toLowerCase(),trial=$('trial').value,filter=$('outcome').value;
   state.filtered=state.rows.filter(r=>(!trial||`${r.trial}:${r.dataset}`===trial)&&(!query||JSON.stringify([r.verbatim,r.id,r.expected,r.raw_output]).toLowerCase().includes(query))&&(!filter||(filter==='raw_wrong'&&r.expected&&!r.raw_exact)||(filter==='raw_correct'&&r.raw_exact)||(filter==='wrong_accept'&&r.accepted&&!r.raw_exact)||r.outcome===filter));
   const pages=Math.max(1,Math.ceil(state.filtered.length/50));state.page=Math.min(state.page,pages-1);$('rows').replaceChildren();
-  for(const r of state.filtered.slice(state.page*50,state.page*50+50)){const tr=document.createElement('tr');for(const v of [`${r.trial} / ${r.dataset}\n${r.voice}`,r.verbatim,JSON.stringify(r.expected),JSON.stringify(r.raw_output),`${r.accepted?'DIAGNOSTIC ACCEPT':'REJECT / CLARIFY'}\n${r.outcome}`]){const td=document.createElement('td');td.textContent=v;tr.append(td);}$('rows').append(tr);}
+  for(const r of state.filtered.slice(state.page*50,state.page*50+50)){const tr=document.createElement('tr');for(const v of [`${r.trial} / ${r.dataset}\n${r.voice}`,r.verbatim,JSON.stringify(r.expected),JSON.stringify(r.raw_output),`${r.accepted?'RECORDED ACCEPT':'REJECT / CLARIFY'}\n${r.outcome}`]){const td=document.createElement('td');td.textContent=v;tr.append(td);}$('rows').append(tr);}
   $('pageInfo').textContent=`${state.filtered.length.toLocaleString()} rows · page ${state.page+1} / ${pages}`;$('prev').disabled=state.page===0;$('next').disabled=state.page>=pages-1;
 }
-async function loadEvidence() {try {const r=await fetch('../final_suite/data/evidence.json.gz');if(!r.ok)throw new Error('Restore generated evidence to load the exhaustive table.');const stream=r.body.pipeThrough(new DecompressionStream('gzip'));const evidence=JSON.parse(await new Response(stream).text());state.rows=evidence.rows;for(const trial of [...new Set(state.rows.map(r=>`${r.trial}:${r.dataset}`))]){const o=document.createElement('option');o.value=trial;o.textContent=trial;$('trial').append(o);}$('evidenceStatus').textContent=`${state.rows.length.toLocaleString()} evaluation rows`;renderRows();}catch(e){$('evidenceStatus').textContent=e.message;}}
+async function loadEvidence() {const generation=state.generation;try {const rows=await readEvidence(fetch,state.recipe,sha256);if(generation!==state.generation)return;state.rows=rows;for(const trial of [...new Set(rows.map(r=>`${r.trial}:${r.dataset}`))]){const o=document.createElement('option');o.value=trial;o.textContent=trial;$('trial').append(o);}$('evidenceStatus').textContent=`${rows.length.toLocaleString()} recorded evaluation rows`;renderRows();}catch(e){if(generation===state.generation)$('evidenceStatus').textContent=e.message;}}
 async function startMicrophone() {
   pause();if(state.microphone){await stopMicrophone();return;}
   if(!navigator.mediaDevices?.getUserMedia)throw new Error('Microphone needs localhost or HTTPS and browser permission.');
@@ -141,4 +143,4 @@ for(const id of ['search','trial','outcome'])$(id).addEventListener('input',()=>
 try {scene=new TensorScene($('scene'),$('layerLabels'),select);$('rendererStatus').textContent=scene.gl?'WebGL · GPU rendering':'3D canvas fallback · WebGL unavailable';}catch(e){$('rendererStatus').textContent='2D probes · WebGL unavailable';}
 window.addEventListener('resize',plotWave);window.addEventListener('pagehide',()=>{if(state.microphone)state.microphone.stream.getTracks().forEach(t=>t.stop());});
 window.vcmTest={state,loadSample,stepLayer,stepChunk,reset,hotSwap,runToEnd:async()=>{let n=0;while(startNextChunk()){while(state.pipeline.current)state.pipeline.stepLayer();if(++n%8===0)await new Promise(r=>setTimeout(r,0));}finalize('push_to_talk_release');return state.final;},renderer:()=>scene?.gl?'webgl':scene?'canvas3d':null,version:1};
-(async()=>{try {const [r,w,g,examples]=await Promise.all([fetch('assets/recipe.json').then(r=>r.json()),fetch('assets/weights.bin').then(r=>r.arrayBuffer()),fetch('assets/catalog.json').then(r=>r.json()),fetch('assets/examples.json').then(r=>r.json())]);state.samples=examples;for(const e of examples){const o=document.createElement('option');o.value=e.file;o.textContent=e.name;$('sample').append(o);}await loadModel(r,w,g);await loadSample('song_by_artist.wav');window.vcmReady=true;}catch(e){error(e.message);$('phase').textContent='Load failed';}loadEvidence();})();
+(async()=>{try {const [r,w,g,examples]=await Promise.all([fetch('assets/recipe.json').then(r=>r.json()),fetch('assets/weights.bin').then(r=>r.arrayBuffer()),fetch('assets/catalog.json').then(r=>r.json()),fetch('assets/examples.json').then(r=>r.json())]);state.samples=examples;for(const e of examples){const o=document.createElement('option');o.value=e.file;o.textContent=e.name;$('sample').append(o);}await loadModel(r,w,g);if(examples.length)await loadSample(examples[0].file);else{$('load').disabled=true;$('verbatim').textContent='Open a WAV to inspect the loaded model.';}window.vcmReady=true;}catch(e){error(e.message);$('phase').textContent='Load failed';}})();

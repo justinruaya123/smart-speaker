@@ -1,0 +1,190 @@
+{
+  "inherited_model_clean_for_new_test": false,
+  "new_manifest_sha256": "7017a509ebd480e9a24e81c38a4f8d26bf4d71047c7b45aa6a71ca8eac10ae52",
+  "new_pcm_n": 3966,
+  "new_revision": "25111444af3adff7588d86ab27c304bb080895cf",
+  "old_manifest_sha256": "461f789f9b98262af2667db01e51d74d1dbe3c36efc28d48fc46568a471ac651",
+  "old_revision": "e3e203b360d5c3205d59f99ad65cd380f9c0f517",
+  "prior_model_results_do_not_validate_updated_revision": true,
+  "prior_test_speakers_in_new_train": [],
+  "prior_train_in_new_test_pcm": [
+    "09b939dc7e8bc07cb05ff3ed53adb3de51a21650614985966a2c0fb22ccb3011",
+    "0e8921e72c9c958b5352c29a1629c502b1c1517b9161c4403bd25d28f460d46d",
+    "0f6ae94b7c2852cf07ccdd4a92f3f73749be6624bb7673ca6e12d39ae16c85a9",
+    "1d97ff5208a8e84b519cb6d597cfa8aae9b2d736409dfbda75b9534b8bc74a7b",
+    "28dd865dd17a4f0530d46b72eb43d85a3a4a00f15e12eeb8a7a0925ccf1e53e5",
+    "41981b08b6d266ac9f108b2422836ac6614eb3d5d3ded607c96e9c832ac46e25",
+    "65b4e93865d16f9f3c1ba13595be4b9ceb5097e95461eb62401a9ebd23e0c33b",
+    "815707bce487c914bcd317e58d8c6639698ddf360332a195fa72ad660b41113a",
+    "85b63f47dcc259b8a2039852464a58fdb95376a582bad00efe9fecb8127dbc31",
+    "865a24e8d4fecd8139ac7f29fd67406b829fec5a84a5052b1642cbdf1ab33223",
+    "90f7b3031556a40518cf23166cf2270ba16c28853f1a990954b08259a7a92807",
+    "b6a55ffe44f67e3a0cfa8ab11541bb9b93302607b40fbdff6f49c37797244929",
+    "ba643ea740d9a845782e866f2cda011d6e4bfe50299755d22c11f08650f9bd93",
+    "c598fc194644597d3bfae77789326684ccaa45aab31580661c60fdc53f543d08",
+    "d675d3844266daf5d364ff49f5ca478573f67916048094cefce407322f28f424",
+    "dde5ffab1cb8934f0532867501fa651015b5b8b1f017ff8898839ee3be897295",
+    "dea730c38eb08571f75b41e51483d3f83b2903743659c930d000a410cc1b19a2",
+    "e14d1e5b7f7355055ab7e3976f859722bb69dde3e950fa27577e266c5e0a5fbd"
+  ],
+  "prior_train_speakers_in_new_test": [
+    "CommonVoice_en/0365b018a15ab96510f1368f4910554f97f6c278320e780c89e4989e9fdef0e557feb655cc9a89282ab0b8effbf5c920cf83193d6e0536e03d2ea84c6dca7559",
+    "CommonVoice_en/1d2d6db1d0b9ff5845f837358d266fb423bad57e04e3aa9c79fab19780fd2fcccf54c9c8249db36d21b84fa1fb7eb6285f8d37b93a9d7d0981ecc6d6bfc4c0eb",
+    "CommonVoice_en/494f0680c219a1d1f0392c8e7beedfe4dcd61234d04952de92fd189dd86293a2a916169bdce50eb161c9ef4491b58cc8de8a98728e9c59b2a3df1c2a2c977075",
+    "CommonVoice_en/4ccf2d412d7e3b434c19d8231b5dbbf490149b2d91b23d8bd0415b87c1c0af4c1683e151a6edf0196f1bd927f47473f3e8a847fe9be821653486cdf0a5e1f630",
+    "CommonVoice_en/60d9ea4cb244009b6c7f75453a8cb9901f13798f9fbd63ed896d25570ad0e69395a2e361176919ae46d94271c9ef2a04c06fa8fd3adb6a282baf0070b8ba7052",
+    "CommonVoice_en/bfb36557cfe7902a625730a71df11fb7ab202363e21d56b153e6b777cd1c452233296e0c7a563f5e73be461a71eafbba1a2223a9af1bb03597c626d4b12b9946",
+    "CommonVoice_en/d15a10146dbd4b3f06dbfed1e029f876f3bd94b201e6faf5bf6187740a87b75d5fc8837a2917163cf82b7b61e5c05101bf836829a75837b55829c27f2adf9de4",
+    "CommonVoice_en/d40f26391ca096085c8929b8465de32478e0e0afe7e8897cddac4d4124601801f799bb09c9348bfa7e6530165eab802daffc710e244d9f115eedfa6365dcd5c4",
+    "CommonVoice_en/f8012cd05bab28bf3dc27d1248b0f6105ccbf8472005ea0b51d445e371e41c9082e2673eebc27bf33c8f58b0a7b35e0bc0c79277a3778a69f1d3a857d5c7f14e",
+    "FluentSpeechCommands/R3mXwwoaX9IoRVKe"
+  ],
+  "removed_pcm_n": 3909,
+  "shared_pcm_n": 77720,
+  "split_movements": {
+    "09b939dc7e8bc07cb05ff3ed53adb3de51a21650614985966a2c0fb22ccb3011": {
+      "new": [
+        "test"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "0e8921e72c9c958b5352c29a1629c502b1c1517b9161c4403bd25d28f460d46d": {
+      "new": [
+        "test"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "0f6ae94b7c2852cf07ccdd4a92f3f73749be6624bb7673ca6e12d39ae16c85a9": {
+      "new": [
+        "test"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "1d97ff5208a8e84b519cb6d597cfa8aae9b2d736409dfbda75b9534b8bc74a7b": {
+      "new": [
+        "test"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "28dd865dd17a4f0530d46b72eb43d85a3a4a00f15e12eeb8a7a0925ccf1e53e5": {
+      "new": [
+        "test"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "41981b08b6d266ac9f108b2422836ac6614eb3d5d3ded607c96e9c832ac46e25": {
+      "new": [
+        "test"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "65b4e93865d16f9f3c1ba13595be4b9ceb5097e95461eb62401a9ebd23e0c33b": {
+      "new": [
+        "test"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "815707bce487c914bcd317e58d8c6639698ddf360332a195fa72ad660b41113a": {
+      "new": [
+        "test"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "85b63f47dcc259b8a2039852464a58fdb95376a582bad00efe9fecb8127dbc31": {
+      "new": [
+        "holdout"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "865a24e8d4fecd8139ac7f29fd67406b829fec5a84a5052b1642cbdf1ab33223": {
+      "new": [
+        "test"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "90f7b3031556a40518cf23166cf2270ba16c28853f1a990954b08259a7a92807": {
+      "new": [
+        "test"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "b6a55ffe44f67e3a0cfa8ab11541bb9b93302607b40fbdff6f49c37797244929": {
+      "new": [
+        "test"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "ba643ea740d9a845782e866f2cda011d6e4bfe50299755d22c11f08650f9bd93": {
+      "new": [
+        "test"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "c598fc194644597d3bfae77789326684ccaa45aab31580661c60fdc53f543d08": {
+      "new": [
+        "holdout"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "d675d3844266daf5d364ff49f5ca478573f67916048094cefce407322f28f424": {
+      "new": [
+        "test"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "dde5ffab1cb8934f0532867501fa651015b5b8b1f017ff8898839ee3be897295": {
+      "new": [
+        "test"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "dea730c38eb08571f75b41e51483d3f83b2903743659c930d000a410cc1b19a2": {
+      "new": [
+        "holdout"
+      ],
+      "old": [
+        "train"
+      ]
+    },
+    "e14d1e5b7f7355055ab7e3976f859722bb69dde3e950fa27577e266c5e0a5fbd": {
+      "new": [
+        "holdout"
+      ],
+      "old": [
+        "train"
+      ]
+    }
+  }
+}

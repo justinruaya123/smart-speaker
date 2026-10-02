@@ -4,3 +4,30 @@ configs/train*.json -text
 reports/semifinal-v1/** -text
 releases/semifinal-v1/** -text
 data/sources/cmudict-LICENSE.txt -text
+
+# Preserve the approved host parallel-evaluation execution and receipt identities.
+scripts/pcv_parallel.py -text
+scripts/pcv_parallel_run.py -text
+scripts/pcv_parallel_verify.py -text
+experiments/pcv-delivery-v1/tests/test_parallel.py -text
+experiments/pcv-delivery-v1/tests/test_parallel_run.py -text
+experiments/pcv-delivery-v1/parallel-execution-20261001.json -text
+experiments/pcv-delivery-v1/verification-parallel-20261001.json -text
+scripts/pcv_atomic_io.py -text
+scripts/pcv_parallel_repair.py -text
+experiments/pcv-delivery-v1/tests/test_atomic_io.py -text
+experiments/pcv-delivery-v1/parallel-io-repair-20261001.json -text
+experiments/pcv-delivery-v1/verification-parallel-io-20261001.json -text
+
+# Preserve corrected Parler generation and its loading/verification evidence.
+scripts/pcv_parler_weights.py -text
+experiments/pcv-synthetic-v3/*.py -text
+experiments/pcv-synthetic-v3/*.json -text
+experiments/pcv-delivery-v1/tests/test_parler_weights.py -text
+experiments/pcv-delivery-v1/tests/test_parler_corpus.py -text
+experiments/pcv-delivery-v1/training-export-diagnosis-20261001.json -text
+experiments/pcv-delivery-v1/verification-parler-v3-20261001.json -text
+experiments/pcv-synthetic-v3/tests/*.py -text
+experiments/pcv-delivery-v1/verification-v3-execution-20261001.json -text
+scripts/pcv_study_context.py -text
+experiments/pcv-delivery-v1/tests/test_study_context.py -text

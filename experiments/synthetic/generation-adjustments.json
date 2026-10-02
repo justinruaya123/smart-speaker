@@ -1,0 +1,8 @@
+{
+  "reason": "Windows WDDM allocator reservation increased despite active allocations near 7 GiB. Release cached workspaces before each batch.",
+  "completed_records_preserved": 416,
+  "model_and_text_recipe_changed": false,
+  "batch32_smoke_records": 32,
+  "remaining_batch_size": 16,
+  "installed_checkpoint_modified": false
+}

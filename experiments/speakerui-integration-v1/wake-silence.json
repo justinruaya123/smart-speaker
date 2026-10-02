@@ -1,0 +1,124 @@
+{
+  "scope": "Constructed synthetic male/female voice checks; no human/live-mic/Pi qualification",
+  "model_sha256": "588f5f44f2b8bca9f68be605bc3a0be2be36159477c6002f21708824503c8421",
+  "policy_enabled": false,
+  "cases": [
+    {
+      "id": "test-gb-m",
+      "gender_requested": "man",
+      "voice": "Mike",
+      "synthetic": true,
+      "text_verified_by_listener": false,
+      "source": "parler/test-gb-m/WAKE-ONLY",
+      "source_sha256": "621725ac9adc3699f6048a6318c068baeea8b9c9997ba53dd7063992f5b3976f",
+      "source_manifest": ".cache\\pcv-synthetic-v2\\wake-parler-manifest.jsonl",
+      "audio": "test-gb-m-silence-wake-silence.wav",
+      "sha256": "a47a12c3d188598841b0df11ed9db6aac72391c3447f13fb3d989fcd9e057844",
+      "leading_silence_seconds": 2,
+      "trailing_silence_seconds": 8,
+      "expected_wake_detected": true,
+      "expected_accepted_commands": 0,
+      "observed": {
+        "commands": 0,
+        "wake_detected": false,
+        "audio_seconds": 11.07975
+      },
+      "wake_passed": false,
+      "no_false_command": true,
+      "events": [
+        {
+          "event": "state",
+          "state": "wake_listening",
+          "session_id": "4557ee132390489aad5ee57dcf94a099",
+          "sequence": 1,
+          "source": "wav",
+          "actions_enabled": false
+        },
+        {
+          "event": "wake_result",
+          "wake_detected": false,
+          "schema_version": 2,
+          "stage": "wake",
+          "accepted": false,
+          "command": null,
+          "reason": "wake_required",
+          "session_id": "4557ee132390489aad5ee57dcf94a099",
+          "sequence": 2,
+          "source": "wav",
+          "actions_enabled": false
+        },
+        {
+          "event": "state",
+          "state": "awaiting_microphone",
+          "session_id": "4557ee132390489aad5ee57dcf94a099",
+          "sequence": 3,
+          "source": "wav",
+          "actions_enabled": false
+        }
+      ]
+    },
+    {
+      "id": "test-in-f",
+      "gender_requested": "woman",
+      "voice": "Laura",
+      "synthetic": true,
+      "text_verified_by_listener": false,
+      "source": "parler/test-in-f/WAKE-ONLY",
+      "source_sha256": "4e22d44d2a9ca48bab505e1712e36b6b560ebfd039b5c9ccbf5568517acd7b3e",
+      "source_manifest": ".cache\\pcv-synthetic-v2\\wake-parler-manifest.jsonl",
+      "audio": "test-in-f-silence-wake-silence.wav",
+      "sha256": "95b6c495012a2ff8551fbeda639483fdf4dfd206952d1b2622dfab5cfd79bdad",
+      "leading_silence_seconds": 2,
+      "trailing_silence_seconds": 8,
+      "expected_wake_detected": true,
+      "expected_accepted_commands": 0,
+      "observed": {
+        "commands": 0,
+        "wake_detected": false,
+        "audio_seconds": 11.1494375
+      },
+      "wake_passed": false,
+      "no_false_command": true,
+      "events": [
+        {
+          "event": "state",
+          "state": "wake_listening",
+          "session_id": "70177a7bd0fe402ba2e1a9792e68769a",
+          "sequence": 1,
+          "source": "wav",
+          "actions_enabled": false
+        },
+        {
+          "event": "wake_result",
+          "wake_detected": false,
+          "schema_version": 2,
+          "stage": "wake",
+          "accepted": false,
+          "command": null,
+          "reason": "wake_required",
+          "session_id": "70177a7bd0fe402ba2e1a9792e68769a",
+          "sequence": 2,
+          "source": "wav",
+          "actions_enabled": false
+        },
+        {
+          "event": "state",
+          "state": "awaiting_microphone",
+          "session_id": "70177a7bd0fe402ba2e1a9792e68769a",
+          "sequence": 3,
+          "source": "wav",
+          "actions_enabled": false
+        }
+      ]
+    }
+  ],
+  "dead_air": {
+    "observed": {
+      "commands": 0,
+      "wake_detected": false,
+      "audio_seconds": 10.0
+    },
+    "passed": true
+  },
+  "passed": false
+}

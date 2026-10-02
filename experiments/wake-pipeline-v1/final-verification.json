@@ -1,0 +1,200 @@
+{
+  "experiment": "wake-pipeline-v1",
+  "completed_utc": "2026-09-19T19:18:11.724991+00:00",
+  "status": "experimental_pipeline_installed_and_packaged; spoken_test_deferred_by_user; Pi_unmeasured",
+  "source_sha256": {
+    "pipeline.py": "3a163a55290fc9f5f519ba10e484d8655415dddb3bae8fdcb08516619b38c749",
+    "train.py": "65cf8da4ce0fc866b863af3dc3417c32890fafbc7eb11a3576d9d1ab10940f16",
+    "publish.py": "71d13a45c4d4b187df374f8035819557a2cc4d6d039720188588eab9e2b203d1",
+    "pipeline.toml": "9c497ba812ee4549428e8ff3ece3178e031ec98982c9e661b1e316f83f62e707",
+    "scripts/modules.json": "360c9ab42c3bb677cc97f8f1eee2e786e6aa67fe1641f43ad74c878ab44eb410",
+    "Architecture.ipynb": "5328d4681fb5e17f06b1a4f2c85ce0a06818bb5b534bcbc4ed4556eb77737aaf",
+    "README.md": "15249efa9ab326a15568da4ee2e1943006d7b94a89e59f1d9d9cde2fde231c9f",
+    "AGENTS.md": "35b5992b2ab75fafd5d3712caa62efab62054a6d8d562a593f43b8e2e1dcdc73",
+    "REQUIREMENTS.md": "4cd7d0c989686dc76d3536b61b8d4730793cc284cfc55f9c3a3410662cd18a4c",
+    "EXPERIMENTS.md": "1216639e9a0768db44745e4754f293740bbc76e0a5e81d0495cd23b1b9e09d63",
+    "scripts/runtime/audio.py": "350ccf96ff6ab9975fc28ff43ef945a6e191f3f4d552242b10042bb36788d78e",
+    "scripts/runtime/activation.py": "9293a4907d107f2f2e6e5c9823f007782dcd227374d287fb7fa467cae1537bc5",
+    "scripts/runtime/capture.py": "511cacbbce99b341a66b688aff3ade5d66ec2db5dcd7471562cb802bb46743c3",
+    "scripts/runtime/config.py": "1892b9c8f8ae01db55fbfc3045eeae36a9e277632730b5f1afe9065369efa6dd",
+    "scripts/runtime/inference.py": "5fe8f8014a4084627d38594c4eb15c3895b083ae63aae48edcd5223ad2bbfb99",
+    "scripts/runtime/launcher.py": "b0c0a2d5cf3d421f0de34ef0f5fdfd086685bbedab6913da5b87570741d7be16",
+    "scripts/runtime/pipeline.py": "81d3eadcb607a67387d8c619397dc01be996cd5e7bf302f87a6bf43a6ff50745",
+    "scripts/runtime/wake_models.py": "6556d7aaf1c893035f1311ef48482da2ba47382c82cd7cd644b618536d676a65",
+    "scripts/test/validation.py": "ab493b8cafaa534d785f2593ace7c88c69832670341e3b8fc99ae367d0bc8961",
+    "scripts/test/wake_pipeline.py": "fd7416e8828189a7eb7bbdf7d3c8fe3739009abc654301e6850bc9bdcb964080",
+    "scripts/test/wake_quantization.py": "afac72a5997f584d67fbd564b4ce6e6cdc3351726d80bb1fabced6185b61c8ef"
+  },
+  "installed_artifact_manifest_sha256": "4b90d6015e270eb74aa699c7f92fb8cbedf4498719a86558946a68d0616bce60",
+  "installed_bundle_sha256": "9627042ee96035937b38ca202cb5a4e8f2aaae8fb49812bac88eb778afcb71ec",
+  "vcm_sha256": "a7fa48af1d8a24a24c08c8a98cf19e303fffdda3d0281fd7f11ea80223fd6eba",
+  "zip_sha256": "1256eacc41079d4a1c5fdf2d500a83e1a370a35b83c01ad9826987e96985d08d",
+  "zip_bytes": 219026295,
+  "archive_audit": {
+    "passed": true,
+    "graphs": [
+      "model/silero-vad.onnx",
+      "model/vcm.fp32.onnx",
+      "model/wake-embedding.onnx",
+      "model/wake-hey-jarvis.onnx",
+      "model/wake-melspectrogram.onnx"
+    ],
+    "model_bytes": 8138665,
+    "entries": 56,
+    "smoke_recordings": 20,
+    "no_transcription_graphs_or_modules": true,
+    "licenses_present": true,
+    "all_inner_entry_hashes_verified": true,
+    "no_pytorch_imports_or_training_checkpoints": true
+  },
+  "runtime_versions": {
+    "onnxruntime": "1.30.0",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "einops": "0.8.2",
+    "sounddevice": "0.5.6"
+  },
+  "environment": {
+    "python": "3.12.13 (main, Jul 23 2026, 14:44:57) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64"
+  },
+  "software_checks": {
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "passed": true,
+    "scope": "State-machine fixtures, resampling continuity and real pretrained silence execution; not spoken wake accuracy."
+  },
+  "pretrained_adapter_parity": {
+    "openwakeword_score_max_abs_error": 0.0,
+    "openwakeword_embedding_max_abs_error": 0.0,
+    "silero_score_max_abs_error": 0.0,
+    "frames": 60,
+    "seed": 17,
+    "reference_sources": {
+      "oww_utils.py": "977e6e77f91ab0340352add859c5ada3803394f376daf4e27df07380e1def2ab",
+      "silero_utils.py": "4d645d4f78d35fdb9f7d79f89bdb24e3e1b56a18fd896b13975a386ecfd55404"
+    },
+    "scope": "Numerical parity with pinned upstream adapters after wake warmup on deterministic random PCM; not acoustic wake accuracy."
+  },
+  "isolated_package_check": {
+    "passed": true,
+    "software": {
+      "config": {
+        "status": "passed",
+        "safe_boolean_expressions": true
+      },
+      "vad": {
+        "status": "passed",
+        "backend": "energy_legacy_regression",
+        "silence": true,
+        "repeated_utterances": 2,
+        "timeout": true,
+        "numeric_microphone": true,
+        "simulated_native_capture_rate": 48000,
+        "simulated_capture_endpoints": 2,
+        "overflow_rejected": true,
+        "live_microphone": false,
+        "noise_recovery": {
+          "noisy_startup": true,
+          "background_only_seconds": 20,
+          "noise_step_recovery": true,
+          "timeouts_before_recovery": 1,
+          "speech_after_recovery": true,
+          "dc_offset_ignored": true,
+          "model_pcm_preserved": true,
+          "exact_silence_ms": 400,
+          "exact_timeout_seconds": 8,
+          "rates_tested": [
+            16000,
+            48000
+          ],
+          "replay_onset_preserved": true
+        },
+        "capture_recalibration": true,
+        "level_diagnostics": true
+      },
+      "vcm": {
+        "status": "passed",
+        "labels": [
+          "UNKNOWN",
+          "POWER_ON",
+          "POWER_OFF",
+          "BRIGHTNESS",
+          "COLOR_SET",
+          "MEDIA_PLAY",
+          "MEDIA_RESUME",
+          "TIME_QUERY",
+          "DATE_QUERY",
+          "VOLUME"
+        ],
+        "silence": "rejected",
+        "parameter_model_loaded": false,
+        "providers": [
+          "CPUExecutionProvider"
+        ]
+      },
+      "pipeline": {
+        "status": "passed",
+        "real_vad_vcm_replay": true,
+        "routing_fixtures": [
+          "custom media has no unapproved reader",
+          "retired custom path cannot reactivate",
+          "finite uncertainty abstains",
+          "UNKNOWN never invokes parameter reader"
+        ],
+        "production_thresholds_modified": false
+      },
+      "retired_model": {
+        "status": "passed",
+        "legacy_backend_rejected": true,
+        "no_automatic_fallback": true
+      },
+      "pretrained_activation": {
+        "status": "passed",
+        "real_onnx_graphs": 4,
+        "silence_seconds": 3,
+        "wake_phrase": "hey jarvis",
+        "live_wake_accuracy_measured": false
+      }
+    },
+    "recordings": 20,
+    "quality_gate_passed": false,
+    "physical_pi_tested": false
+  },
+  "notebook_code_cells_executed": 2,
+  "documentation_link_targets_exist": true,
+  "fit_disabled_guard_passed": true,
+  "baseline_recovery_files_verified": 39,
+  "preserved_historical_files": [
+    "artifacts/stt.fp32.onnx",
+    "artifacts/stt.pt",
+    "artifacts/brightness-validation.json",
+    "artifacts/family-metrics.json",
+    "artifacts/pilot-results.json",
+    "requirements.lock",
+    "scripts/runtime/stt_runtime.py",
+    "scripts/runtime/parameter_backend.py",
+    "scripts/runtime/family_contract.py"
+  ],
+  "current_branch": "main",
+  "staged_paths": [],
+  "commits_created": 0,
+  "datasets_moved": false,
+  "training_performed": false,
+  "live_capture": {
+    "microphone_index": 26,
+    "native_rate": 48000,
+    "blocks": 500,
+    "overflows": 0,
+    "peak": 0,
+    "speech_tested": false,
+    "further_capture_deferred_by_user": true,
+    "audio_saved": false
+  },
+  "physical_pi_tested": false,
+  "quality_gate_passed": false,
+  "custom_playlists_implemented": false,
+  "device_actions_executed": false
+}

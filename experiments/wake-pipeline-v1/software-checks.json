@@ -1,0 +1,7 @@
+{
+  "tests": 14,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "scope": "State-machine fixtures, resampling continuity and real pretrained silence execution; not spoken wake accuracy."
+}

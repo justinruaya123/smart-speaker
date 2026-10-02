@@ -1,0 +1,14 @@
+{
+  "id": "designed-03",
+  "split": "train",
+  "accent_requested": "en-AU",
+  "prompt": "An adult Australian English man, mid pitch, brisk but clear delivery. Speak only the supplied English text. Clean dry recording without music.",
+  "seed": 1703,
+  "accent_verified_by_human": false,
+  "identity_source": "synthetic_voice_design",
+  "text": "Hello, I am ready to help. Please speak clearly and tell me what you would like to do today.",
+  "audio_sha256": "31b35b642a5d59c93ef9f0de8c63cc07647134504d9716aae2ea25132706f5eb",
+  "rate": 24000,
+  "duration": 4.8,
+  "generation_seconds": 9.043180399981793
+}

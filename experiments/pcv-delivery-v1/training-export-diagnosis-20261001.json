@@ -1,0 +1,1325 @@
+{
+  "calibration_occurred": false,
+  "charged_seconds": 22475.140999999938,
+  "codec_diagnosis": {
+    "all_old_audio_defective_proven": false,
+    "all_vcm_failures_attributed_to_codec": false,
+    "bf16_cuda_pilot": {
+      "after": {
+        "changed_before": [],
+        "files": {
+          "model-00001-of-00002.safetensors": "c30d2151a8a9c3343b6998eeec019b46db9d17b84ef234d98ea6723941c2851c",
+          "model-00002-of-00002.safetensors": "413db5baa97486c7447a4060bb2ced9235d1785d51ac981e0880eff2cb044ca5",
+          "model.safetensors.index.json": "f0ef12f324f905b06127a5dbb6f9a73e3ccd7256e3d319d8e2527cc3bcf6f160"
+        },
+        "precision_changed": false,
+        "runtime_dtypes": {
+          "torch.bfloat16": 944
+        },
+        "source_sha256": "013e772def076e219cf0b1076e0aebf4a7d64e45aaa9e25eb8c52dabb33aa781",
+        "tensors_checked": 944,
+        "verified_after": true,
+        "verified_aliases": {
+          "text_encoder.encoder.embed_tokens.weight": "text_encoder.shared.weight"
+        }
+      },
+      "before": {
+        "changed_before": [
+          "audio_encoder.model.decoder.model.0.parametrizations.weight.original0",
+          "audio_encoder.model.decoder.model.0.parametrizations.weight.original1"
+        ],
+        "files": {
+          "model-00001-of-00002.safetensors": "c30d2151a8a9c3343b6998eeec019b46db9d17b84ef234d98ea6723941c2851c",
+          "model-00002-of-00002.safetensors": "413db5baa97486c7447a4060bb2ced9235d1785d51ac981e0880eff2cb044ca5",
+          "model.safetensors.index.json": "f0ef12f324f905b06127a5dbb6f9a73e3ccd7256e3d319d8e2527cc3bcf6f160"
+        },
+        "precision_changed": false,
+        "runtime_dtypes": {
+          "torch.bfloat16": 944
+        },
+        "source_sha256": "013e772def076e219cf0b1076e0aebf4a7d64e45aaa9e25eb8c52dabb33aa781",
+        "tensors_checked": 944,
+        "verified_after": true,
+        "verified_aliases": {
+          "text_encoder.encoder.embed_tokens.weight": "text_encoder.shared.weight"
+        }
+      },
+      "comparison": "same audio codes; only the two diagnosed tensors replaced",
+      "configs": {
+        "config.json": "33388bd5a7f3ceab0d2427c7c03ccf13385b0ab5eecfc1fdba9118dcf2ed6763",
+        "generation_config.json": "cf7fc96793e9e273f48997fe3a529dda99ae808916ba41bbce73eb79ad603a12",
+        "model.safetensors.index.json": "f0ef12f324f905b06127a5dbb6f9a73e3ccd7256e3d319d8e2527cc3bcf6f160",
+        "preprocessor_config.json": "a40e7af494ad239db3a472a3e0a5e1dbdd80319cce865d3f731c23da7f9e241c",
+        "special_tokens_map.json": "7a1985a994c41886db38c719d2a3d2f40606663cc19d7c5d6a85d349320e06d2",
+        "spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+        "tokenizer.json": "4d4b21a8cc7c0407dafd8ac6215269cd05c8e49a521c3580479b567879526160",
+        "tokenizer_config.json": "a7ac580b91d2867dabcac34173420401f61fe08e3d811ab5bd2a934846eed70d"
+      },
+      "device": "cuda",
+      "dtype": "bfloat16",
+      "listener_verified": false,
+      "rows": [
+        {
+          "condition": "unrepaired",
+          "decode_call": 0,
+          "mean_mel": -0.7653019428253174,
+          "native_audio": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-delivery-v1\\export-diagnosis-20261001\\verified-codec\\0-0-unrepaired.wav",
+          "native_sha256": "d3ebfb81a6b86f1f4c725aa0c3d91a7a0a24c402d4652055e20313c42b53fd14",
+          "rms": 0.08433530479669571,
+          "sample": 0,
+          "seconds": 1.4048072562358276,
+          "std_mel": 2.567152261734009
+        },
+        {
+          "condition": "repaired",
+          "decode_call": 0,
+          "mean_mel": -4.4054694175720215,
+          "native_audio": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-delivery-v1\\export-diagnosis-20261001\\verified-codec\\0-0-repaired.wav",
+          "native_sha256": "f72dad4fab4c0677246484e4a9f51fa7592f180403b0cf6743ed54e33032846a",
+          "rms": 0.16080105304718018,
+          "sample": 0,
+          "seconds": 1.4048072562358276,
+          "std_mel": 4.542608261108398
+        },
+        {
+          "condition": "unrepaired",
+          "decode_call": 1,
+          "mean_mel": -0.7800207138061523,
+          "native_audio": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-delivery-v1\\export-diagnosis-20261001\\verified-codec\\1-0-unrepaired.wav",
+          "native_sha256": "93c032dd99152a7c22483232b826d3157fec3f5a8463f2db7bd01792b0d801e6",
+          "rms": 0.09374366700649261,
+          "sample": 0,
+          "seconds": 1.6021768707482993,
+          "std_mel": 2.647711753845215
+        },
+        {
+          "condition": "repaired",
+          "decode_call": 1,
+          "mean_mel": -3.98696231842041,
+          "native_audio": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-delivery-v1\\export-diagnosis-20261001\\verified-codec\\1-0-repaired.wav",
+          "native_sha256": "8afedd221716580f3da9af440debff33f806af8eb13628dabf3ccfcac7b47ca4",
+          "rms": 0.17621047794818878,
+          "sample": 0,
+          "seconds": 1.6021768707482993,
+          "std_mel": 4.5505523681640625
+        },
+        {
+          "condition": "unrepaired",
+          "decode_call": 2,
+          "mean_mel": -0.8351984620094299,
+          "native_audio": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-delivery-v1\\export-diagnosis-20261001\\verified-codec\\2-0-unrepaired.wav",
+          "native_sha256": "3145ebbd5c0f6f63ec65aac0bcb4f8cb28dfb9d3f3ba7b28bfa892b38e1f3d3d",
+          "rms": 0.08821743726730347,
+          "sample": 0,
+          "seconds": 1.7066666666666668,
+          "std_mel": 2.6177213191986084
+        },
+        {
+          "condition": "repaired",
+          "decode_call": 2,
+          "mean_mel": -3.798675060272217,
+          "native_audio": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-delivery-v1\\export-diagnosis-20261001\\verified-codec\\2-0-repaired.wav",
+          "native_sha256": "a2cc2def3846ce85d6af0730060fc8cf442743b7ae9134972778f95122f534e5",
+          "rms": 0.12081362307071686,
+          "sample": 0,
+          "seconds": 1.7066666666666668,
+          "std_mel": 4.229823112487793
+        },
+        {
+          "condition": "unrepaired",
+          "decode_call": 3,
+          "mean_mel": -0.8013163208961487,
+          "native_audio": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-delivery-v1\\export-diagnosis-20261001\\verified-codec\\3-0-unrepaired.wav",
+          "native_sha256": "7973bc8d08bd13410fb752f274394b022928b5887fa990ad9b2bf968731cd00b",
+          "rms": 0.0849277451634407,
+          "sample": 0,
+          "seconds": 2.020136054421769,
+          "std_mel": 2.615908622741699
+        },
+        {
+          "condition": "repaired",
+          "decode_call": 3,
+          "mean_mel": -6.935207843780518,
+          "native_audio": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-delivery-v1\\export-diagnosis-20261001\\verified-codec\\3-0-repaired.wav",
+          "native_sha256": "74b4aa7f6dce3b3f3f392064935b8d422c6f257dd6bd479e1b8efb27556f0c67",
+          "rms": 0.08370539546012878,
+          "sample": 0,
+          "seconds": 2.020136054421769,
+          "std_mel": 5.097372055053711
+        }
+      ],
+      "seed": 2195478871,
+      "sources": {
+        ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\verified_codec_pilot.py": "a8391a4e36fc7f97cdca8f0ff7fcc4c13e280f3a16635b607741fed3358b7808",
+        ".cache\\pcv-synthetic-v1\\parler-site\\parler_tts\\dac_wrapper\\modeling_dac.py": "95fdeb3af4f66b6cb1b2d533cd0c15e0206d7e249b4a721408f84a1f1e3ea72a",
+        ".cache\\pcv-synthetic-v1\\parler-site\\parler_tts\\modeling_parler_tts.py": "5836a0985dd6e019f892207b9e70c61162216bce81e4f98cbb46d44ba6a35c34",
+        "scripts\\pcv_parler_weights.py": "013e772def076e219cf0b1076e0aebf4a7d64e45aaa9e25eb8c52dabb33aa781"
+      },
+      "texts": [
+        "play focus playlist",
+        "could you play focus playlist",
+        "please play the focus playlist",
+        "start focus playlist"
+      ],
+      "torch": "2.13.0+cu130",
+      "transformers": "4.46.1"
+    },
+    "listener_verified": false,
+    "loading_reports_empty": true,
+    "only_differing_checkpoint_keys": [
+      "audio_encoder.model.decoder.model.0.weight_g",
+      "audio_encoder.model.decoder.model.0.weight_v"
+    ],
+    "same_codes_control": "Four training-only generated examples; only two codec tensors differ between paired decodes",
+    "training_audio_roundtrip": {
+      "after": {
+        "correlation": 0.9672934582102292,
+        "output_rms": 0.038727764040231705,
+        "snr_db": 11.912864685058594
+      },
+      "before": {
+        "correlation": -0.01843853270123094,
+        "output_rms": 0.09518967568874359,
+        "snr_db": -8.291245460510254
+      },
+      "differing_weights": {
+        "model.decoder.model.0.parametrizations.weight.original0": 0.49536406993865967,
+        "model.decoder.model.0.parametrizations.weight.original1": 0.2659609317779541
+      },
+      "loading_info": {
+        "error_msgs": [],
+        "mismatched_keys": [],
+        "missing_keys": [],
+        "unexpected_keys": []
+      },
+      "source_sha256": "03d843152fc526b2de21f95dbeb456f7a08b093cc3628a877379714100e60217"
+    },
+    "transcription_used": false,
+    "two_fresh_full_model_loads": true
+  },
+  "completed_epochs": 80,
+  "development_candidates": 20,
+  "development_mistakes": {
+    "count": 2793,
+    "interpretation": "Raw finite-catalog development rankings, not calibrated ONNX acceptance",
+    "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\development-mistakes.jsonl",
+    "sha256": "385fe44dae2b1a123ef579455866fa54d44b88c8b09b4375ce7b832cae3c2f59"
+  },
+  "development_strata": [
+    {
+      "group": [
+        "engine",
+        "qwen"
+      ],
+      "negative_raw_errors": 42,
+      "negative_recordings": 634,
+      "positive_exact": 1597,
+      "positive_recordings": 2134
+    },
+    {
+      "group": [
+        "phase",
+        1
+      ],
+      "negative_raw_errors": 65,
+      "negative_recordings": 458,
+      "positive_exact": 578,
+      "positive_recordings": 1590
+    },
+    {
+      "group": [
+        "use_case",
+        "UC-01"
+      ],
+      "negative_raw_errors": 12,
+      "negative_recordings": 160,
+      "positive_exact": 62,
+      "positive_recordings": 156
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "qwen",
+        "UC-01"
+      ],
+      "negative_raw_errors": 5,
+      "negative_recordings": 29,
+      "positive_exact": 16,
+      "positive_recordings": 31
+    },
+    {
+      "group": [
+        "phase",
+        2
+      ],
+      "negative_raw_errors": 37,
+      "negative_recordings": 850,
+      "positive_exact": 1059,
+      "positive_recordings": 2738
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "qwen",
+        "UC-01"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 49,
+      "positive_exact": 41,
+      "positive_recordings": 44
+    },
+    {
+      "group": [
+        "use_case",
+        "UC-02"
+      ],
+      "negative_raw_errors": 8,
+      "negative_recordings": 124,
+      "positive_exact": 21,
+      "positive_recordings": 42
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "qwen",
+        "UC-02"
+      ],
+      "negative_raw_errors": 2,
+      "negative_recordings": 20,
+      "positive_exact": 4,
+      "positive_recordings": 6
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "qwen",
+        "UC-02"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 40,
+      "positive_exact": 12,
+      "positive_recordings": 12
+    },
+    {
+      "group": [
+        "use_case",
+        "UC-03"
+      ],
+      "negative_raw_errors": 12,
+      "negative_recordings": 136,
+      "positive_exact": 43,
+      "positive_recordings": 78
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "qwen",
+        "UC-03"
+      ],
+      "negative_raw_errors": 3,
+      "negative_recordings": 23,
+      "positive_exact": 10,
+      "positive_recordings": 12
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "qwen",
+        "UC-03"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 43,
+      "positive_exact": 24,
+      "positive_recordings": 24
+    },
+    {
+      "group": [
+        "use_case",
+        "UC-04"
+      ],
+      "negative_raw_errors": 16,
+      "negative_recordings": 124,
+      "positive_exact": 704,
+      "positive_recordings": 1964
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "qwen",
+        "UC-04"
+      ],
+      "negative_raw_errors": 8,
+      "negative_recordings": 21,
+      "positive_exact": 235,
+      "positive_recordings": 328
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "qwen",
+        "UC-04"
+      ],
+      "negative_raw_errors": 1,
+      "negative_recordings": 39,
+      "positive_exact": 468,
+      "positive_recordings": 651
+    },
+    {
+      "group": [
+        "use_case",
+        "UC-05"
+      ],
+      "negative_raw_errors": 5,
+      "negative_recordings": 112,
+      "positive_exact": 144,
+      "positive_recordings": 366
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "qwen",
+        "UC-05"
+      ],
+      "negative_raw_errors": 1,
+      "negative_recordings": 18,
+      "positive_exact": 61,
+      "positive_recordings": 81
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "qwen",
+        "UC-05"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 36,
+      "positive_exact": 83,
+      "positive_recordings": 99
+    },
+    {
+      "group": [
+        "use_case",
+        "UC-06"
+      ],
+      "negative_raw_errors": 5,
+      "negative_recordings": 124,
+      "positive_exact": 55,
+      "positive_recordings": 114
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "qwen",
+        "UC-06"
+      ],
+      "negative_raw_errors": 3,
+      "negative_recordings": 20,
+      "positive_exact": 15,
+      "positive_recordings": 18
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "qwen",
+        "UC-06"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 40,
+      "positive_exact": 35,
+      "positive_recordings": 36
+    },
+    {
+      "group": [
+        "use_case",
+        "UC-07"
+      ],
+      "negative_raw_errors": 6,
+      "negative_recordings": 124,
+      "positive_exact": 56,
+      "positive_recordings": 120
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "qwen",
+        "UC-07"
+      ],
+      "negative_raw_errors": 3,
+      "negative_recordings": 20,
+      "positive_exact": 17,
+      "positive_recordings": 19
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "qwen",
+        "UC-07"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 40,
+      "positive_exact": 36,
+      "positive_recordings": 38
+    },
+    {
+      "group": [
+        "use_case",
+        "UC-08"
+      ],
+      "negative_raw_errors": 10,
+      "negative_recordings": 124,
+      "positive_exact": 254,
+      "positive_recordings": 732
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "qwen",
+        "UC-08"
+      ],
+      "negative_raw_errors": 6,
+      "negative_recordings": 20,
+      "positive_exact": 78,
+      "positive_recordings": 121
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "qwen",
+        "UC-08"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 40,
+      "positive_exact": 174,
+      "positive_recordings": 242
+    },
+    {
+      "group": [
+        "use_case",
+        "UC-09"
+      ],
+      "negative_raw_errors": 17,
+      "negative_recordings": 156,
+      "positive_exact": 224,
+      "positive_recordings": 606
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "qwen",
+        "UC-09"
+      ],
+      "negative_raw_errors": 5,
+      "negative_recordings": 28,
+      "positive_exact": 102,
+      "positive_recordings": 140
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "qwen",
+        "UC-09"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 48,
+      "positive_exact": 116,
+      "positive_recordings": 160
+    },
+    {
+      "group": [
+        "use_case",
+        "UC-10"
+      ],
+      "negative_raw_errors": 11,
+      "negative_recordings": 124,
+      "positive_exact": 74,
+      "positive_recordings": 150
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "qwen",
+        "UC-10"
+      ],
+      "negative_raw_errors": 5,
+      "negative_recordings": 20,
+      "positive_exact": 22,
+      "positive_recordings": 24
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "qwen",
+        "UC-10"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 40,
+      "positive_exact": 48,
+      "positive_recordings": 48
+    },
+    {
+      "group": [
+        "engine",
+        "parler"
+      ],
+      "negative_raw_errors": 50,
+      "negative_recordings": 634,
+      "positive_exact": 7,
+      "positive_recordings": 2134
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "parler",
+        "UC-01"
+      ],
+      "negative_raw_errors": 1,
+      "negative_recordings": 29,
+      "positive_exact": 1,
+      "positive_recordings": 31
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "parler",
+        "UC-01"
+      ],
+      "negative_raw_errors": 5,
+      "negative_recordings": 49,
+      "positive_exact": 0,
+      "positive_recordings": 44
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "parler",
+        "UC-02"
+      ],
+      "negative_raw_errors": 2,
+      "negative_recordings": 20,
+      "positive_exact": 0,
+      "positive_recordings": 6
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "parler",
+        "UC-02"
+      ],
+      "negative_raw_errors": 2,
+      "negative_recordings": 40,
+      "positive_exact": 1,
+      "positive_recordings": 12
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "parler",
+        "UC-03"
+      ],
+      "negative_raw_errors": 4,
+      "negative_recordings": 23,
+      "positive_exact": 1,
+      "positive_recordings": 12
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "parler",
+        "UC-03"
+      ],
+      "negative_raw_errors": 4,
+      "negative_recordings": 43,
+      "positive_exact": 3,
+      "positive_recordings": 24
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "parler",
+        "UC-04"
+      ],
+      "negative_raw_errors": 1,
+      "negative_recordings": 21,
+      "positive_exact": 0,
+      "positive_recordings": 328
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "parler",
+        "UC-04"
+      ],
+      "negative_raw_errors": 3,
+      "negative_recordings": 39,
+      "positive_exact": 0,
+      "positive_recordings": 651
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "parler",
+        "UC-05"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 18,
+      "positive_exact": 0,
+      "positive_recordings": 81
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "parler",
+        "UC-05"
+      ],
+      "negative_raw_errors": 4,
+      "negative_recordings": 36,
+      "positive_exact": 0,
+      "positive_recordings": 99
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "parler",
+        "UC-06"
+      ],
+      "negative_raw_errors": 1,
+      "negative_recordings": 20,
+      "positive_exact": 0,
+      "positive_recordings": 18
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "parler",
+        "UC-06"
+      ],
+      "negative_raw_errors": 1,
+      "negative_recordings": 40,
+      "positive_exact": 0,
+      "positive_recordings": 36
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "parler",
+        "UC-07"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 20,
+      "positive_exact": 0,
+      "positive_recordings": 19
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "parler",
+        "UC-07"
+      ],
+      "negative_raw_errors": 3,
+      "negative_recordings": 40,
+      "positive_exact": 0,
+      "positive_recordings": 38
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "parler",
+        "UC-08"
+      ],
+      "negative_raw_errors": 1,
+      "negative_recordings": 20,
+      "positive_exact": 0,
+      "positive_recordings": 121
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "parler",
+        "UC-08"
+      ],
+      "negative_raw_errors": 1,
+      "negative_recordings": 40,
+      "positive_exact": 0,
+      "positive_recordings": 242
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "parler",
+        "UC-09"
+      ],
+      "negative_raw_errors": 5,
+      "negative_recordings": 28,
+      "positive_exact": 1,
+      "positive_recordings": 140
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "parler",
+        "UC-09"
+      ],
+      "negative_raw_errors": 6,
+      "negative_recordings": 48,
+      "positive_exact": 0,
+      "positive_recordings": 160
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "parler",
+        "UC-10"
+      ],
+      "negative_raw_errors": 3,
+      "negative_recordings": 20,
+      "positive_exact": 0,
+      "positive_recordings": 24
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "parler",
+        "UC-10"
+      ],
+      "negative_raw_errors": 3,
+      "negative_recordings": 40,
+      "positive_exact": 0,
+      "positive_recordings": 48
+    },
+    {
+      "group": [
+        "engine",
+        "dia"
+      ],
+      "negative_raw_errors": 10,
+      "negative_recordings": 40,
+      "positive_exact": 33,
+      "positive_recordings": 60
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "dia",
+        "UC-02"
+      ],
+      "negative_raw_errors": 1,
+      "negative_recordings": 2,
+      "positive_exact": 2,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "dia",
+        "UC-02"
+      ],
+      "negative_raw_errors": 1,
+      "negative_recordings": 2,
+      "positive_exact": 2,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "dia",
+        "UC-03"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 2,
+      "positive_exact": 2,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "dia",
+        "UC-04"
+      ],
+      "negative_raw_errors": 2,
+      "negative_recordings": 2,
+      "positive_exact": 0,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "dia",
+        "UC-03"
+      ],
+      "negative_raw_errors": 1,
+      "negative_recordings": 2,
+      "positive_exact": 3,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "dia",
+        "UC-04"
+      ],
+      "negative_raw_errors": 1,
+      "negative_recordings": 2,
+      "positive_exact": 1,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "dia",
+        "UC-06"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 2,
+      "positive_exact": 3,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "dia",
+        "UC-06"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 2,
+      "positive_exact": 2,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "dia",
+        "UC-07"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 2,
+      "positive_exact": 2,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "dia",
+        "UC-07"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 2,
+      "positive_exact": 1,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "dia",
+        "UC-08"
+      ],
+      "negative_raw_errors": 1,
+      "negative_recordings": 2,
+      "positive_exact": 1,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "dia",
+        "UC-08"
+      ],
+      "negative_raw_errors": 1,
+      "negative_recordings": 2,
+      "positive_exact": 1,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "dia",
+        "UC-10"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 2,
+      "positive_exact": 2,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "dia",
+        "UC-10"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 2,
+      "positive_exact": 2,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "dia",
+        "UC-05"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 2,
+      "positive_exact": 0,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "dia",
+        "UC-05"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 2,
+      "positive_exact": 0,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "dia",
+        "UC-01"
+      ],
+      "negative_raw_errors": 1,
+      "negative_recordings": 2,
+      "positive_exact": 1,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "dia",
+        "UC-01"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 2,
+      "positive_exact": 3,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        1,
+        "dia",
+        "UC-09"
+      ],
+      "negative_raw_errors": 1,
+      "negative_recordings": 2,
+      "positive_exact": 3,
+      "positive_recordings": 3
+    },
+    {
+      "group": [
+        "phase_engine_use_case",
+        2,
+        "dia",
+        "UC-09"
+      ],
+      "negative_raw_errors": 0,
+      "negative_recordings": 2,
+      "positive_exact": 2,
+      "positive_recordings": 3
+    }
+  ],
+  "evidence": [
+    {
+      "path": ".cache\\pcv-synthetic-v2-repair1\\jobs\\parallel-io-repair-run-20261001\\status.json",
+      "sha256": "14f3ee858377d8433a7ec813ae40d6d4957c1ab175266a5067c0213b4b257b84"
+    },
+    {
+      "path": ".cache\\pcv-synthetic-v2-repair1\\jobs\\parallel-io-repair-run-20261001\\export.log",
+      "sha256": "26d3b91e166610d9d4c5c974d126874e2c4387908a1d291a4a2defb07b7eeead"
+    },
+    {
+      "path": ".cache\\pcv-synthetic-v2-repair1\\bundle-uncalibrated\\model.onnx",
+      "sha256": "4a81cf03631431280df85b32588180b7e73bcce20f8595226b8cc34694807d61"
+    },
+    {
+      "path": ".cache\\pcv-synthetic-v2-repair1\\training\\selection.json",
+      "sha256": "2504257c23553bdce81f94232f9939e6824bc16e167faa5d699e1b77307fbe6c"
+    },
+    {
+      "path": ".cache\\pcv-synthetic-v2-repair1\\compute-budget.json",
+      "sha256": "cb6591a908e7a0f2fe6bee5d05d64df6311d310cf1b782ab37d76f24af90bf41"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\codec_loading_probe.py",
+      "sha256": "03d843152fc526b2de21f95dbeb456f7a08b093cc3628a877379714100e60217"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\codec_probe.py",
+      "sha256": "5e4b48731a9a5967a4c22ef061d5ff06392e1fffc823041ba237663be859be2b"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\codec_roundtrip.py",
+      "sha256": "f7f4fdf82c9064015e18bffb866fa2a6ed5e6d2a64e668778124bd54fb220fd7"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\codec_roundtrip2.py",
+      "sha256": "572342107007f15ff37bbdfeea85e4f6d06c69b9e518119b15796020baf8020f"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\development-mistakes.jsonl",
+      "sha256": "385fe44dae2b1a123ef579455866fa54d44b88c8b09b4375ce7b832cae3c2f59"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\development-per-verbatim.json",
+      "sha256": "28da3cfc3720734b3264a7af1b596dec61d4a67625700646c8e1e6ef8d0a9a39"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\development-strata.json",
+      "sha256": "d935c669eb760da1e997aaf15330a8dd96446f032f3fb9c7c39cc112bfbbafac"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\full_loading_audit.py",
+      "sha256": "a995270cb5ec8b5926c471f41296de9821a45b5e9356d610dfdcef7272934899"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\matmul-results.json",
+      "sha256": "7261718cc03e3fe64c62de38cc91cdd03b260b0ad137868bb8ec8963ad2928ea"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\matmul_probe.py",
+      "sha256": "9addfd018924fb85e99b007eb189cb206d7916805e3c49b74e07efcf6d2a1d20"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\parler_fp32_probe.py",
+      "sha256": "297d02caad8181cc070aea92753c49615223b9db9a94f49994d63a77bb8c1a46"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\results.json",
+      "sha256": "3fa29ee11566bb28b4ea9cbedd091a01cd72dbe7aca7ca91013e3bf0f673d5a6"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\row-gemm-results.json",
+      "sha256": "e72aaa6d01565af0d0989ed012d6bc38915b1caee9eb5856303a1e8e019b681d"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\row_gemm_probe.py",
+      "sha256": "3277c77e42a152606c70b7b6bba5d764ea2aef0079574183640c9d70a2aa769f"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\training-audit.json",
+      "sha256": "72586b4e46860b49b9aaa3f6e0b50f53a123e496de1204e1774b8c6ef2c0d60c"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\training_probe.py",
+      "sha256": "b4b7dcb52b2e87ccd584f681979f19d0b90f0e7480a876e288f32a463a44a460"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\verified_codec_pilot.py",
+      "sha256": "a8391a4e36fc7f97cdca8f0ff7fcc4c13e280f3a16635b607741fed3358b7808"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\codec-loading\\results.json",
+      "sha256": "6f0879db73dfe3e7ed858c2f359ae3ac5e234f1a767b130feedbafb9a678172b"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\codec-probe\\results.json",
+      "sha256": "5bd3f15b6fd5aa3e11f29fce80ae6cb6e128e644448c86b9ae1fd35bca428d51"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\codec-roundtrip2\\results.json",
+      "sha256": "c8edf1f3f7a3a4ea9b286170b09989b32ac73bbda320809468b0825a164d2a19"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\full-loading-audit\\results.json",
+      "sha256": "412a612cced78bacdf278112b6d2820947be19aed3f11eddefcd1e3c5904be54"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\parler-fp32-probe\\results.json",
+      "sha256": "a0b7aa93f8c9c7e41638d9741536e07888f373e17f48b6a21c761b7ed3c1710f"
+    },
+    {
+      "path": ".cache\\pcv-delivery-v1\\export-diagnosis-20261001\\verified-codec\\results.json",
+      "sha256": "2249e8c138c14f3ffd5db1001fe8fef1a8af641a03686c3a532689b672a9f20c"
+    }
+  ],
+  "experiment_state": "FAILED_EXPORT_AND_UNQUALIFIED_DEVELOPMENT",
+  "export": {
+    "attempts": "Original optimized/unoptimized CPU ORT, explicit column GEMM and row GEMM probes all fail original reference checks; no candidate promoted",
+    "max_absolute_error": 4.291534423828125e-05,
+    "passed": false,
+    "required_strict_limit": 2e-05
+  },
+  "installed_artifacts": [
+    {
+      "path": "artifacts/brightness-validation.json",
+      "sha256": "196232e45035acbbe6debc4313e94d7feb42646b6cd4bd839af0d5d33bed78be",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/bundle.json",
+      "sha256": "735626cebe6281406df93eb711b43621bfa84ce4880d68775aa730c2a97de3b1",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/export-verification.json",
+      "sha256": "e63937b03ec2b5259536da9a230aad139e84544ac9c9b7c8f540dd9dadc62413",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/family-metrics.json",
+      "sha256": "f8504dd6a1de29edcee9603b8a40d971c490cad419b4c5b839b4fb814ab2335c",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/manifest.json",
+      "sha256": "fb15d77f4ebc16d70e5075efb9c7900d308e784802a5e5cc0e9e3fa7ba31a668",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/openwakeword-LICENSE.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/pilot-results.json",
+      "sha256": "b65ddc0c72039499936b701ff76a99ed9dc4fdd95039c0bac3a0c173be89f9b7",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/pretrained-NOTICE.txt",
+      "sha256": "712f16b4da0a452d47b7779fc3587141c6cdd6850392273627f38cfb522b79be",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/silero-LICENSE.txt",
+      "sha256": "2e63e9a38b6e8fc0c7bc37ce174caca1862870856c6daf5697cfb785e925520b",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/silero-vad.onnx",
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/stt.fp32.onnx",
+      "sha256": "6b86cc10e0ac0532bb093e1b54f73487b0c0349d62929bee4446b9249f371a2d",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/stt.pt",
+      "sha256": "556a0cbaf886dfb03fcd3663fa9f10a109c601fd059eb9aac11cb0e661ea80a4",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/training-config.json",
+      "sha256": "9ff335c82c750bede1657545d8a2a81518b0dada86055c2deff90d6882a9a9b5",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/training-history.json",
+      "sha256": "acb1061afa7f4ef1f7422b3ba3b496eb0d8cb40ccd9a1dcbfd6c746b686a7c4d",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/vcm.fp32.onnx",
+      "sha256": "a7fa48af1d8a24a24c08c8a98cf19e303fffdda3d0281fd7f11ea80223fd6eba",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/vcm.pt",
+      "sha256": "d5fd4977350ba624d9ef1fc5dbfb1621b480cd57ee89ae6c6c70e294bd950c8e",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-embedding.onnx",
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-hey-jarvis.onnx",
+      "sha256": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-melspectrogram.onnx",
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-models.json",
+      "sha256": "dc7b4d09efc65f5f53c2d280d7efbc09bae56eb2dc689ce88d7d6229d7592cb0",
+      "unchanged": true
+    }
+  ],
+  "next_version": "pcv-synthetic-v3: all Parler audio replaced with exact weight verification; Qwen/Dia, definitions, gates preserved",
+  "recorded_utc": "2026-10-01T11:41:53.855986+00:00",
+  "sealed_inference_occurred": false,
+  "version": "pcv-synthetic-v2-repair1-training-export-diagnosis",
+  "winner": {
+    "checkpoint": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-016.pt",
+    "checkpoint_sha256": "fc65e1f9c95158cd53ec9599aac5c1f6932502eba490612293badca2bdc2e91b",
+    "correct": 1637,
+    "critical_negative_errors": 102,
+    "epoch": 16,
+    "loss": 1.338828686940468,
+    "macro_exact": 0.37699156513589505,
+    "observed_phrases": 2134,
+    "observed_use_cases": 10,
+    "phrases_passing": 7,
+    "positive_recordings": 4328,
+    "predictions": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\dev-016.json",
+    "predictions_sha256": "61c4e87c60deefff9d090173960fbdd81cf85efe22a2e64ea2248d0c41732ae4",
+    "required_phrases": 2134,
+    "seed": 53,
+    "worst_use_case": 0.3469945355191257
+  }
+}

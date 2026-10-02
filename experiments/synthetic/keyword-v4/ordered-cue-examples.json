@@ -1,0 +1,327 @@
+[
+  {
+    "source": "human",
+    "id": "smartlights/2623/far",
+    "transcript": "Put the brightness in the shed at fifty.",
+    "reference": {
+      "intent": "BRIGHTNESS",
+      "ready": "READY",
+      "operation": "SET",
+      "amount": "50",
+      "color": "NONE"
+    },
+    "result": {
+      "status": "rejected",
+      "reason": "intent_confidence_gate",
+      "intent": "UNKNOWN",
+      "intent_accepted": false,
+      "confidence": 0.0,
+      "keyword_cues": [
+        {
+          "word": "what",
+          "confidence": 0.8435912132263184,
+          "start_ms": 0.0,
+          "end_ms": 40.0
+        },
+        {
+          "word": "<other>",
+          "confidence": 0.28580132126808167,
+          "start_ms": 4560.0,
+          "end_ms": 4600.0
+        },
+        {
+          "word": "today",
+          "confidence": 0.296309232711792,
+          "start_ms": 4600.0,
+          "end_ms": 4640.0
+        }
+      ],
+      "cue_timing": "CTC emission intervals; not verified word boundaries",
+      "experimental": true,
+      "device_actions_executed": false,
+      "parameter_invoked": false
+    }
+  },
+  {
+    "source": "human",
+    "id": "slurp/audio-1497450299.flac",
+    "transcript": "turn up the lights in here please",
+    "reference": {
+      "intent": "BRIGHTNESS",
+      "ready": "READY",
+      "operation": "INCREASE",
+      "amount": "10",
+      "color": "NONE"
+    },
+    "result": {
+      "status": "rejected",
+      "reason": "intent_confidence_gate",
+      "intent": "UNKNOWN",
+      "intent_accepted": false,
+      "confidence": 0.0,
+      "keyword_cues": [
+        {
+          "word": "<other>",
+          "confidence": 0.5347201824188232,
+          "start_ms": 1560.0,
+          "end_ms": 1600.0
+        },
+        {
+          "word": "fifty",
+          "confidence": 0.18042075634002686,
+          "start_ms": 3160.0,
+          "end_ms": 3200.0
+        },
+        {
+          "word": "six",
+          "confidence": 0.40947791934013367,
+          "start_ms": 3200.0,
+          "end_ms": 3240.0
+        }
+      ],
+      "cue_timing": "CTC emission intervals; not verified word boundaries",
+      "experimental": true,
+      "device_actions_executed": false,
+      "parameter_invoked": false
+    }
+  },
+  {
+    "source": "human",
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/1e625ba0-4530-11e9-b1e4-e5985dca719e.wav",
+    "transcript": "Turn on the lights",
+    "reference": {
+      "intent": "POWER_ON",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "result": {
+      "status": "rejected",
+      "reason": "intent_confidence_gate",
+      "intent": "COLOR_SET",
+      "intent_accepted": false,
+      "confidence": 0.0,
+      "keyword_cues": [
+        {
+          "word": "<other>",
+          "confidence": 0.9103127717971802,
+          "start_ms": 1560.0,
+          "end_ms": 1720.0
+        },
+        {
+          "word": "<other>",
+          "confidence": 0.850409209728241,
+          "start_ms": 2440.0,
+          "end_ms": 2560.0
+        }
+      ],
+      "cue_timing": "CTC emission intervals; not verified word boundaries",
+      "experimental": true,
+      "device_actions_executed": false,
+      "parameter_invoked": false
+    }
+  },
+  {
+    "source": "synthetic",
+    "id": "tts/designed-08/0104",
+    "transcript": "please set the brightness to fifty percent",
+    "reference": {
+      "intent": "BRIGHTNESS",
+      "ready": "READY",
+      "operation": "SET",
+      "amount": "50",
+      "color": "NONE"
+    },
+    "result": {
+      "status": "rejected",
+      "reason": "intent_confidence_gate",
+      "intent": "BRIGHTNESS",
+      "intent_accepted": false,
+      "confidence": 0.0,
+      "keyword_cues": [
+        {
+          "word": "<other>",
+          "confidence": 0.7879449129104614,
+          "start_ms": 880.0,
+          "end_ms": 1000.0
+        },
+        {
+          "word": "brightness",
+          "confidence": 0.9135469198226929,
+          "start_ms": 1760.0,
+          "end_ms": 1840.0
+        },
+        {
+          "word": "to",
+          "confidence": 0.6062913537025452,
+          "start_ms": 2880.0,
+          "end_ms": 2960.0
+        },
+        {
+          "word": "one",
+          "confidence": 0.0973707064986229,
+          "start_ms": 2960.0,
+          "end_ms": 3000.0
+        },
+        {
+          "word": "percent",
+          "confidence": 0.8216826319694519,
+          "start_ms": 3000.0,
+          "end_ms": 3040.0
+        }
+      ],
+      "cue_timing": "CTC emission intervals; not verified word boundaries",
+      "experimental": true,
+      "device_actions_executed": false,
+      "parameter_invoked": false
+    }
+  },
+  {
+    "source": "synthetic",
+    "id": "tts/designed-08/0154",
+    "transcript": "set brightness to one hundred percent",
+    "reference": {
+      "intent": "BRIGHTNESS",
+      "ready": "READY",
+      "operation": "SET",
+      "amount": "100",
+      "color": "NONE"
+    },
+    "result": {
+      "status": "rejected",
+      "reason": "intent_confidence_gate",
+      "intent": "BRIGHTNESS",
+      "intent_accepted": false,
+      "confidence": 0.0,
+      "keyword_cues": [
+        {
+          "word": "set",
+          "confidence": 0.9621181488037109,
+          "start_ms": 480.0,
+          "end_ms": 560.0
+        },
+        {
+          "word": "brightness",
+          "confidence": 0.9449175000190735,
+          "start_ms": 1280.0,
+          "end_ms": 1440.0
+        },
+        {
+          "word": "to",
+          "confidence": 0.6558785438537598,
+          "start_ms": 2640.0,
+          "end_ms": 2720.0
+        },
+        {
+          "word": "five",
+          "confidence": 0.09516729414463043,
+          "start_ms": 2720.0,
+          "end_ms": 2760.0
+        },
+        {
+          "word": "percent",
+          "confidence": 0.8422747254371643,
+          "start_ms": 2760.0,
+          "end_ms": 2800.0
+        }
+      ],
+      "cue_timing": "CTC emission intervals; not verified word boundaries",
+      "experimental": true,
+      "device_actions_executed": false,
+      "parameter_invoked": false
+    }
+  },
+  {
+    "source": "synthetic",
+    "id": "tts/designed-08/0155",
+    "transcript": "brightness up",
+    "reference": {
+      "intent": "BRIGHTNESS",
+      "ready": "READY",
+      "operation": "INCREASE",
+      "amount": "10",
+      "color": "NONE"
+    },
+    "result": {
+      "status": "rejected",
+      "reason": "intent_confidence_gate",
+      "intent": "BRIGHTNESS",
+      "intent_accepted": false,
+      "confidence": 0.0,
+      "keyword_cues": [
+        {
+          "word": "brightness",
+          "confidence": 0.5142449140548706,
+          "start_ms": 1160.0,
+          "end_ms": 1200.0
+        },
+        {
+          "word": "resume",
+          "confidence": 0.284712553024292,
+          "start_ms": 1440.0,
+          "end_ms": 1480.0
+        },
+        {
+          "word": "playback",
+          "confidence": 0.14842601120471954,
+          "start_ms": 1480.0,
+          "end_ms": 1520.0
+        }
+      ],
+      "cue_timing": "CTC emission intervals; not verified word boundaries",
+      "experimental": true,
+      "device_actions_executed": false,
+      "parameter_invoked": false
+    }
+  },
+  {
+    "source": "synthetic",
+    "id": "tts/designed-08/0000",
+    "transcript": "turn on the lights",
+    "reference": {
+      "intent": "POWER_ON",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "result": {
+      "status": "rejected",
+      "reason": "intent_confidence_gate",
+      "intent": "POWER_ON",
+      "intent_accepted": false,
+      "confidence": 0.0,
+      "keyword_cues": [
+        {
+          "word": "turn",
+          "confidence": 0.9708250761032104,
+          "start_ms": 1680.0,
+          "end_ms": 1760.0
+        },
+        {
+          "word": "on",
+          "confidence": 0.8157477378845215,
+          "start_ms": 1760.0,
+          "end_ms": 1840.0
+        },
+        {
+          "word": "<other>",
+          "confidence": 0.9421156644821167,
+          "start_ms": 1840.0,
+          "end_ms": 1880.0
+        },
+        {
+          "word": "lights",
+          "confidence": 0.9162626266479492,
+          "start_ms": 1880.0,
+          "end_ms": 1920.0
+        }
+      ],
+      "cue_timing": "CTC emission intervals; not verified word boundaries",
+      "experimental": true,
+      "device_actions_executed": false,
+      "parameter_invoked": false
+    }
+  }
+]

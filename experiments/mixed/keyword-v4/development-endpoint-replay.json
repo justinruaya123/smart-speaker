@@ -1,0 +1,2831 @@
+[
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/0b952020-4530-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "UNKNOWN",
+      "ready": "REJECT",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "MEDIA_RESUME",
+        "intent_accepted": false,
+        "confidence": 0.8522933721542358,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 0.0,
+        "speech_end_ms": 440.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "UNKNOWN",
+        "intent_accepted": false,
+        "confidence": 0.9986754059791565,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 640.0,
+        "speech_end_ms": 4120.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/2c49f500-452d-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "UNKNOWN",
+      "ready": "REJECT",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "MEDIA_PLAY",
+        "intent_accepted": false,
+        "confidence": 0.47096526622772217,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 280.0,
+        "speech_end_ms": 1960.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "VOLUME",
+        "intent_accepted": false,
+        "confidence": 0.9607422947883606,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2920.0,
+        "speech_end_ms": 3520.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/2f44d6c0-4533-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "UNKNOWN",
+      "ready": "REJECT",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "BRIGHTNESS",
+        "intent_accepted": false,
+        "confidence": 0.9930429458618164,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 440.0,
+        "speech_end_ms": 2320.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/73115a40-452e-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "UNKNOWN",
+      "ready": "REJECT",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "UNKNOWN",
+        "intent_accepted": false,
+        "confidence": 0.9964286684989929,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 360.0,
+        "speech_end_ms": 2200.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "MEDIA_PLAY",
+        "intent_accepted": false,
+        "confidence": 0.719878077507019,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2200.0,
+        "speech_end_ms": 2800.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/9ce036b0-452f-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "UNKNOWN",
+      "ready": "REJECT",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "UNKNOWN",
+        "intent_accepted": false,
+        "confidence": 0.9859639406204224,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 560.0,
+        "speech_end_ms": 2360.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "MEDIA_RESUME",
+        "intent_accepted": false,
+        "confidence": 0.5644317865371704,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2640.0,
+        "speech_end_ms": 3240.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/a0673a90-452f-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "UNKNOWN",
+      "ready": "REJECT",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "UNKNOWN",
+        "intent_accepted": false,
+        "confidence": 0.9987708926200867,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 520.0,
+        "speech_end_ms": 2120.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "UNKNOWN",
+        "intent_accepted": false,
+        "confidence": 0.5910549163818359,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2120.0,
+        "speech_end_ms": 2680.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/1e625ba0-4530-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "POWER_ON",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "BRIGHTNESS",
+        "intent_accepted": false,
+        "confidence": 0.9999171495437622,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 560.0,
+        "speech_end_ms": 2200.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "missing_level_context",
+        "intent": "VOLUME",
+        "intent_accepted": true,
+        "confidence": 0.0,
+        "keyword_cues": [
+          {
+            "word": "two",
+            "confidence": 0.9719455242156982,
+            "start_ms": 2600.0,
+            "end_ms": 2640.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": true,
+        "speech_start_ms": 2200.0,
+        "speech_end_ms": 2640.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/3f7a8630-452d-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "POWER_ON",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "POWER_ON",
+        "intent_accepted": false,
+        "confidence": 0.9967083930969238,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 360.0,
+        "speech_end_ms": 1920.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "MEDIA_PLAY",
+        "intent_accepted": false,
+        "confidence": 0.948998749256134,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2200.0,
+        "speech_end_ms": 2800.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/43239100-452d-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "POWER_ON",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "SET_POWER",
+          "arguments": {
+            "target": {
+              "id": "example.main_lights",
+              "name": "lights",
+              "device_kind": "light"
+            },
+            "on": true
+          }
+        },
+        "intent": "POWER_ON",
+        "intent_accepted": true,
+        "confidence": 0.8313875198364258,
+        "keyword_cues": [
+          {
+            "word": "switch",
+            "confidence": 0.9903565049171448,
+            "start_ms": 520.0,
+            "end_ms": 560.0
+          },
+          {
+            "word": "on",
+            "confidence": 0.9228355884552002,
+            "start_ms": 560.0,
+            "end_ms": 600.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.9999806880950928,
+            "start_ms": 600.0,
+            "end_ms": 640.0
+          },
+          {
+            "word": "lamp",
+            "confidence": 0.670058012008667,
+            "start_ms": 640.0,
+            "end_ms": 680.0
+          },
+          {
+            "word": "on",
+            "confidence": 0.7491845488548279,
+            "start_ms": 2240.0,
+            "end_ms": 2280.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 520.0,
+        "speech_end_ms": 2280.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "MEDIA_PLAY",
+        "intent_accepted": false,
+        "confidence": 0.6377239227294922,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2760.0,
+        "speech_end_ms": 3360.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/46aa94e0-452d-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "POWER_ON",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "SET_POWER",
+          "arguments": {
+            "target": {
+              "id": "example.main_lights",
+              "name": "lights",
+              "device_kind": "light"
+            },
+            "on": true
+          }
+        },
+        "intent": "POWER_ON",
+        "intent_accepted": true,
+        "confidence": 0.9741172194480896,
+        "keyword_cues": [
+          {
+            "word": "turn",
+            "confidence": 0.9999666213989258,
+            "start_ms": 520.0,
+            "end_ms": 600.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.9980055689811707,
+            "start_ms": 600.0,
+            "end_ms": 640.0
+          },
+          {
+            "word": "lamp",
+            "confidence": 0.9358910918235779,
+            "start_ms": 640.0,
+            "end_ms": 680.0
+          },
+          {
+            "word": "on",
+            "confidence": 0.9789764285087585,
+            "start_ms": 2120.0,
+            "end_ms": 2160.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 520.0,
+        "speech_end_ms": 2160.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "missing_play_cue",
+        "intent": "MEDIA_PLAY",
+        "intent_accepted": true,
+        "confidence": 0.0,
+        "keyword_cues": [
+          {
+            "word": "one",
+            "confidence": 0.3052250146865845,
+            "start_ms": 2960.0,
+            "end_ms": 3000.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 2360.0,
+        "speech_end_ms": 3000.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/49a02e30-452d-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "POWER_ON",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "SET_POWER",
+          "arguments": {
+            "target": {
+              "id": "example.main_lights",
+              "name": "lights",
+              "device_kind": "light"
+            },
+            "on": true
+          }
+        },
+        "intent": "POWER_ON",
+        "intent_accepted": true,
+        "confidence": 0.9672179818153381,
+        "keyword_cues": [
+          {
+            "word": "lamp",
+            "confidence": 0.8806484341621399,
+            "start_ms": 560.0,
+            "end_ms": 600.0
+          },
+          {
+            "word": "on",
+            "confidence": 0.967221200466156,
+            "start_ms": 1720.0,
+            "end_ms": 1760.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 520.0,
+        "speech_end_ms": 1760.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "UNKNOWN",
+        "intent_accepted": false,
+        "confidence": 0.9411752820014954,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2040.0,
+        "speech_end_ms": 2640.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/4cbde190-4530-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "POWER_ON",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "SET_POWER",
+          "arguments": {
+            "target": {
+              "id": "example.main_lights",
+              "name": "lights",
+              "device_kind": "light"
+            },
+            "on": true
+          }
+        },
+        "intent": "POWER_ON",
+        "intent_accepted": true,
+        "confidence": 0.9930122494697571,
+        "keyword_cues": [
+          {
+            "word": "turn",
+            "confidence": 0.997901201248169,
+            "start_ms": 520.0,
+            "end_ms": 560.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.9998922348022461,
+            "start_ms": 560.0,
+            "end_ms": 640.0
+          },
+          {
+            "word": "lights",
+            "confidence": 0.9998722076416016,
+            "start_ms": 640.0,
+            "end_ms": 720.0
+          },
+          {
+            "word": "on",
+            "confidence": 0.993040919303894,
+            "start_ms": 2080.0,
+            "end_ms": 2120.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 520.0,
+        "speech_end_ms": 2120.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "MEDIA_RESUME",
+        "intent_accepted": false,
+        "confidence": 0.98838871717453,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2120.0,
+        "speech_end_ms": 2560.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/060b7900-4531-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "POWER_OFF",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "SET_POWER",
+          "arguments": {
+            "target": {
+              "id": "example.main_lights",
+              "name": "lights",
+              "device_kind": "light"
+            },
+            "on": false
+          }
+        },
+        "intent": "POWER_OFF",
+        "intent_accepted": true,
+        "confidence": 0.8194127678871155,
+        "keyword_cues": [
+          {
+            "word": "switch",
+            "confidence": 0.9990130662918091,
+            "start_ms": 480.0,
+            "end_ms": 520.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.9997997879981995,
+            "start_ms": 520.0,
+            "end_ms": 600.0
+          },
+          {
+            "word": "lights",
+            "confidence": 0.9998182654380798,
+            "start_ms": 600.0,
+            "end_ms": 680.0
+          },
+          {
+            "word": "off",
+            "confidence": 0.8194127678871155,
+            "start_ms": 2160.0,
+            "end_ms": 2200.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 480.0,
+        "speech_end_ms": 2200.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "VOLUME",
+        "intent_accepted": false,
+        "confidence": 0.9615796208381653,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2200.0,
+        "speech_end_ms": 2720.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/3ecb5310-4530-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "POWER_OFF",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "SET_POWER",
+          "arguments": {
+            "target": {
+              "id": "example.main_lights",
+              "name": "lights",
+              "device_kind": "light"
+            },
+            "on": false
+          }
+        },
+        "intent": "POWER_OFF",
+        "intent_accepted": true,
+        "confidence": 0.9945715069770813,
+        "keyword_cues": [
+          {
+            "word": "turn",
+            "confidence": 0.9998230338096619,
+            "start_ms": 560.0,
+            "end_ms": 600.0
+          },
+          {
+            "word": "off",
+            "confidence": 0.9946815371513367,
+            "start_ms": 600.0,
+            "end_ms": 640.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.9999063014984131,
+            "start_ms": 640.0,
+            "end_ms": 680.0
+          },
+          {
+            "word": "lights",
+            "confidence": 0.9999258518218994,
+            "start_ms": 680.0,
+            "end_ms": 720.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 560.0,
+        "speech_end_ms": 2520.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/4d353bd0-452d-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "POWER_OFF",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "SET_POWER",
+          "arguments": {
+            "target": {
+              "id": "example.main_lights",
+              "name": "lights",
+              "device_kind": "light"
+            },
+            "on": false
+          }
+        },
+        "intent": "POWER_OFF",
+        "intent_accepted": true,
+        "confidence": 0.9715956449508667,
+        "keyword_cues": [
+          {
+            "word": "turn",
+            "confidence": 0.9996071457862854,
+            "start_ms": 600.0,
+            "end_ms": 640.0
+          },
+          {
+            "word": "off",
+            "confidence": 0.971603512763977,
+            "start_ms": 640.0,
+            "end_ms": 680.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.9996548891067505,
+            "start_ms": 680.0,
+            "end_ms": 720.0
+          },
+          {
+            "word": "lamp",
+            "confidence": 0.9315633773803711,
+            "start_ms": 720.0,
+            "end_ms": 760.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 600.0,
+        "speech_end_ms": 2200.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "VOLUME",
+        "intent_accepted": false,
+        "confidence": 0.6199461817741394,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2760.0,
+        "speech_end_ms": 3360.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/50cc9360-452d-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "POWER_OFF",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "missing_light_context",
+        "intent": "POWER_OFF",
+        "intent_accepted": true,
+        "confidence": 0.0,
+        "keyword_cues": [
+          {
+            "word": "turn",
+            "confidence": 0.9999581575393677,
+            "start_ms": 520.0,
+            "end_ms": 600.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.9991656541824341,
+            "start_ms": 600.0,
+            "end_ms": 640.0
+          },
+          {
+            "word": "off",
+            "confidence": 0.9969019889831543,
+            "start_ms": 2080.0,
+            "end_ms": 2120.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 520.0,
+        "speech_end_ms": 2120.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/53eaea60-452d-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "POWER_OFF",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "SET_POWER",
+          "arguments": {
+            "target": {
+              "id": "example.main_lights",
+              "name": "lights",
+              "device_kind": "light"
+            },
+            "on": false
+          }
+        },
+        "intent": "POWER_OFF",
+        "intent_accepted": true,
+        "confidence": 0.9842681288719177,
+        "keyword_cues": [
+          {
+            "word": "switch",
+            "confidence": 0.9996523857116699,
+            "start_ms": 400.0,
+            "end_ms": 440.0
+          },
+          {
+            "word": "off",
+            "confidence": 0.9842681288719177,
+            "start_ms": 440.0,
+            "end_ms": 480.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.9999392032623291,
+            "start_ms": 480.0,
+            "end_ms": 520.0
+          },
+          {
+            "word": "lamp",
+            "confidence": 0.46306395530700684,
+            "start_ms": 520.0,
+            "end_ms": 560.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 400.0,
+        "speech_end_ms": 2120.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "UNKNOWN",
+        "intent_accepted": false,
+        "confidence": 0.5863946676254272,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2120.0,
+        "speech_end_ms": 2560.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/56dc84b0-4530-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "POWER_OFF",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "SET_POWER",
+          "arguments": {
+            "target": {
+              "id": "example.main_lights",
+              "name": "lights",
+              "device_kind": "light"
+            },
+            "on": false
+          }
+        },
+        "intent": "POWER_OFF",
+        "intent_accepted": true,
+        "confidence": 0.9935651421546936,
+        "keyword_cues": [
+          {
+            "word": "switch",
+            "confidence": 0.9997932314872742,
+            "start_ms": 320.0,
+            "end_ms": 360.0
+          },
+          {
+            "word": "off",
+            "confidence": 0.9935651421546936,
+            "start_ms": 360.0,
+            "end_ms": 400.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.9998148083686829,
+            "start_ms": 400.0,
+            "end_ms": 440.0
+          },
+          {
+            "word": "lights",
+            "confidence": 0.9998875856399536,
+            "start_ms": 440.0,
+            "end_ms": 480.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 320.0,
+        "speech_end_ms": 2040.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "UNKNOWN",
+        "intent_accepted": false,
+        "confidence": 0.9668306112289429,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2120.0,
+        "speech_end_ms": 2720.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497450299.flac",
+    "reference": {
+      "intent": "BRIGHTNESS",
+      "ready": "READY",
+      "operation": "INCREASE",
+      "amount": "10",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "power_cue_conflict",
+        "intent": "POWER_OFF",
+        "intent_accepted": true,
+        "confidence": 0.0,
+        "keyword_cues": [
+          {
+            "word": "turn",
+            "confidence": 0.9653922319412231,
+            "start_ms": 520.0,
+            "end_ms": 560.0
+          },
+          {
+            "word": "on",
+            "confidence": 0.5306577682495117,
+            "start_ms": 560.0,
+            "end_ms": 600.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.9923112988471985,
+            "start_ms": 600.0,
+            "end_ms": 640.0
+          },
+          {
+            "word": "lights",
+            "confidence": 0.9994093179702759,
+            "start_ms": 640.0,
+            "end_ms": 680.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 520.0,
+        "speech_end_ms": 3640.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497451267.flac",
+    "reference": {
+      "intent": "BRIGHTNESS",
+      "ready": "READY",
+      "operation": "DECREASE",
+      "amount": "10",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "UNKNOWN",
+        "intent_accepted": false,
+        "confidence": 0.9870513677597046,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 0.0,
+        "speech_end_ms": 3720.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497451665.flac",
+    "reference": {
+      "intent": "BRIGHTNESS",
+      "ready": "READY",
+      "operation": "SET",
+      "amount": "7",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "POWER_ON",
+        "intent_accepted": false,
+        "confidence": 0.9578862190246582,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 0.0,
+        "speech_end_ms": 4440.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497557532-headset.flac",
+    "reference": {
+      "intent": "BRIGHTNESS",
+      "ready": "READY",
+      "operation": "DECREASE",
+      "amount": "10",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "BRIGHTNESS",
+        "intent_accepted": false,
+        "confidence": 0.9955239295959473,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 520.0,
+        "speech_end_ms": 2480.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497558063-headset.flac",
+    "reference": {
+      "intent": "BRIGHTNESS",
+      "ready": "READY",
+      "operation": "DECREASE",
+      "amount": "10",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "POWER_ON",
+        "intent_accepted": false,
+        "confidence": 0.6359831690788269,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 0.0,
+        "speech_end_ms": 1720.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497867581-headset.flac",
+    "reference": {
+      "intent": "BRIGHTNESS",
+      "ready": "READY",
+      "operation": "SET",
+      "amount": "2",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "BRIGHTNESS",
+        "intent_accepted": false,
+        "confidence": 0.988752543926239,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 0.0,
+        "speech_end_ms": 2320.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497556397-headset.flac",
+    "reference": {
+      "intent": "COLOR_SET",
+      "ready": "REJECT",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "BRIGHTNESS",
+        "intent_accepted": false,
+        "confidence": 0.5665029883384705,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 800.0,
+        "speech_end_ms": 4600.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497557594-headset.flac",
+    "reference": {
+      "intent": "COLOR_SET",
+      "ready": "REJECT",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "BRIGHTNESS",
+        "intent_accepted": false,
+        "confidence": 0.8138312697410583,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 480.0,
+        "speech_end_ms": 4360.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497557886.flac",
+    "reference": {
+      "intent": "COLOR_SET",
+      "ready": "REJECT",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "MEDIA_RESUME",
+        "intent_accepted": false,
+        "confidence": 0.5964418649673462,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 0.0,
+        "speech_end_ms": 4120.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497558503-headset.flac",
+    "reference": {
+      "intent": "COLOR_SET",
+      "ready": "REJECT",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "UNKNOWN",
+        "intent_accepted": false,
+        "confidence": 0.9807688593864441,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 240.0,
+        "speech_end_ms": 2880.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497867313-headset.flac",
+    "reference": {
+      "intent": "COLOR_SET",
+      "ready": "REJECT",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "UNKNOWN",
+        "intent_accepted": false,
+        "confidence": 0.9398137927055359,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 280.0,
+        "speech_end_ms": 4840.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497870146-headset.flac",
+    "reference": {
+      "intent": "COLOR_SET",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "red"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "COLOR_SET",
+        "intent_accepted": false,
+        "confidence": 0.8898977041244507,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 120.0,
+        "speech_end_ms": 2600.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/321802b0-452d-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "MEDIA_PLAY",
+      "ready": "REJECT",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "missing_play_cue",
+        "intent": "MEDIA_PLAY",
+        "intent_accepted": true,
+        "confidence": 0.0,
+        "keyword_cues": [
+          {
+            "word": "three",
+            "confidence": 0.37773898243904114,
+            "start_ms": 1480.0,
+            "end_ms": 1520.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 480.0,
+        "speech_end_ms": 1520.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "UNKNOWN",
+        "intent_accepted": false,
+        "confidence": 0.7387588024139404,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 1600.0,
+        "speech_end_ms": 2200.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/35a59640-452d-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "MEDIA_PLAY",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "UNKNOWN",
+        "intent_accepted": false,
+        "confidence": 0.9771493077278137,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 0.0,
+        "speech_end_ms": 560.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "accepted",
+        "command": {
+          "action": "PLAY",
+          "arguments": {}
+        },
+        "intent": "MEDIA_PLAY",
+        "intent_accepted": true,
+        "confidence": 0.9931917786598206,
+        "keyword_cues": [
+          {
+            "word": "put",
+            "confidence": 0.9994714856147766,
+            "start_ms": 560.0,
+            "end_ms": 600.0
+          },
+          {
+            "word": "on",
+            "confidence": 0.9931923747062683,
+            "start_ms": 600.0,
+            "end_ms": 640.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.9914683103561401,
+            "start_ms": 640.0,
+            "end_ms": 720.0
+          },
+          {
+            "word": "music",
+            "confidence": 0.999953031539917,
+            "start_ms": 2280.0,
+            "end_ms": 2320.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 560.0,
+        "speech_end_ms": 2320.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "missing_play_cue",
+        "intent": "MEDIA_PLAY",
+        "intent_accepted": true,
+        "confidence": 0.0,
+        "keyword_cues": [
+          {
+            "word": "two",
+            "confidence": 0.6249005198478699,
+            "start_ms": 3280.0,
+            "end_ms": 3320.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 2720.0,
+        "speech_end_ms": 3320.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/38e8b350-452d-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "MEDIA_PLAY",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "PLAY",
+          "arguments": {}
+        },
+        "intent": "MEDIA_PLAY",
+        "intent_accepted": true,
+        "confidence": 0.9984015822410583,
+        "keyword_cues": [
+          {
+            "word": "play",
+            "confidence": 0.9984015822410583,
+            "start_ms": 520.0,
+            "end_ms": 600.0
+          },
+          {
+            "word": "music",
+            "confidence": 0.9999759197235107,
+            "start_ms": 2080.0,
+            "end_ms": 2120.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 520.0,
+        "speech_end_ms": 2120.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "MEDIA_PLAY",
+        "intent_accepted": false,
+        "confidence": 0.9830393195152283,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2440.0,
+        "speech_end_ms": 3040.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/3c6cd100-452d-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "MEDIA_PLAY",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "PLAY",
+          "arguments": {}
+        },
+        "intent": "MEDIA_PLAY",
+        "intent_accepted": true,
+        "confidence": 0.0,
+        "keyword_cues": [
+          {
+            "word": "start",
+            "confidence": 0.9860971570014954,
+            "start_ms": 640.0,
+            "end_ms": 680.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.9973107576370239,
+            "start_ms": 680.0,
+            "end_ms": 760.0
+          },
+          {
+            "word": "music",
+            "confidence": 0.9999927282333374,
+            "start_ms": 2240.0,
+            "end_ms": 2280.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 640.0,
+        "speech_end_ms": 2280.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "missing_play_cue",
+        "intent": "MEDIA_PLAY",
+        "intent_accepted": true,
+        "confidence": 0.0,
+        "keyword_cues": [
+          {
+            "word": "two",
+            "confidence": 0.45713329315185547,
+            "start_ms": 3200.0,
+            "end_ms": 3240.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 2640.0,
+        "speech_end_ms": 3240.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/60af9550-452f-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "MEDIA_PLAY",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "PLAY",
+          "arguments": {}
+        },
+        "intent": "MEDIA_PLAY",
+        "intent_accepted": true,
+        "confidence": 0.9922174215316772,
+        "keyword_cues": [
+          {
+            "word": "play",
+            "confidence": 0.9922174215316772,
+            "start_ms": 720.0,
+            "end_ms": 760.0
+          },
+          {
+            "word": "music",
+            "confidence": 0.9994837045669556,
+            "start_ms": 2400.0,
+            "end_ms": 2440.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 680.0,
+        "speech_end_ms": 2440.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/8dd6c480-4530-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "MEDIA_PLAY",
+      "ready": "REJECT",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "MEDIA_PLAY",
+        "intent_accepted": false,
+        "confidence": 0.9802358150482178,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 440.0,
+        "speech_end_ms": 1920.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/46f32f40-4530-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "MEDIA_RESUME",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "RESUME",
+          "arguments": {}
+        },
+        "intent": "MEDIA_RESUME",
+        "intent_accepted": true,
+        "confidence": 0.9175959229469299,
+        "keyword_cues": [
+          {
+            "word": "resume",
+            "confidence": 0.9176058769226074,
+            "start_ms": 2000.0,
+            "end_ms": 2040.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 320.0,
+        "speech_end_ms": 2040.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/63879480-452f-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "MEDIA_RESUME",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "RESUME",
+          "arguments": {}
+        },
+        "intent": "MEDIA_RESUME",
+        "intent_accepted": true,
+        "confidence": 0.9993756413459778,
+        "keyword_cues": [
+          {
+            "word": "resume",
+            "confidence": 0.9993756413459778,
+            "start_ms": 520.0,
+            "end_ms": 600.0
+          },
+          {
+            "word": "music",
+            "confidence": 0.9953067898750305,
+            "start_ms": 2480.0,
+            "end_ms": 2520.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 520.0,
+        "speech_end_ms": 2520.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/b84f31f0-4532-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "MEDIA_RESUME",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "RESUME",
+          "arguments": {}
+        },
+        "intent": "MEDIA_RESUME",
+        "intent_accepted": true,
+        "confidence": 0.9994274377822876,
+        "keyword_cues": [
+          {
+            "word": "resume",
+            "confidence": 0.9994274377822876,
+            "start_ms": 440.0,
+            "end_ms": 520.0
+          },
+          {
+            "word": "music",
+            "confidence": 0.7904226183891296,
+            "start_ms": 2080.0,
+            "end_ms": 2120.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 440.0,
+        "speech_end_ms": 2120.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/da54f830-452c-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "MEDIA_RESUME",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "RESUME",
+          "arguments": {}
+        },
+        "intent": "MEDIA_RESUME",
+        "intent_accepted": true,
+        "confidence": 0.6332628130912781,
+        "keyword_cues": [
+          {
+            "word": "resume",
+            "confidence": 0.6333944797515869,
+            "start_ms": 1440.0,
+            "end_ms": 1480.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 280.0,
+        "speech_end_ms": 1480.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "UNKNOWN",
+        "intent_accepted": false,
+        "confidence": 0.6235415935516357,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 1800.0,
+        "speech_end_ms": 2400.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/73bEEYMKLwtmVwV43/6370ca70-452a-11e9-a843-8db76f4b5e29.wav",
+    "reference": {
+      "intent": "MEDIA_RESUME",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "POWER_ON",
+        "intent_accepted": false,
+        "confidence": 0.9989301562309265,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 0.0,
+        "speech_end_ms": 840.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "accepted",
+        "command": {
+          "action": "RESUME",
+          "arguments": {}
+        },
+        "intent": "MEDIA_RESUME",
+        "intent_accepted": true,
+        "confidence": 0.9862232208251953,
+        "keyword_cues": [
+          {
+            "word": "resume",
+            "confidence": 0.9862240552902222,
+            "start_ms": 840.0,
+            "end_ms": 920.0
+          },
+          {
+            "word": "music",
+            "confidence": 0.9999701976776123,
+            "start_ms": 2080.0,
+            "end_ms": 2120.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 840.0,
+        "speech_end_ms": 2120.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/73bEEYMKLwtmVwV43/6fe21ab0-452b-11e9-a843-8db76f4b5e29.wav",
+    "reference": {
+      "intent": "MEDIA_RESUME",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "MEDIA_RESUME",
+        "intent_accepted": false,
+        "confidence": 0.567564070224762,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 200.0,
+        "speech_end_ms": 1240.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497449685.flac",
+    "reference": {
+      "intent": "TIME_QUERY",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "missing_time_cue",
+        "intent": "TIME_QUERY",
+        "intent_accepted": true,
+        "confidence": 0.0,
+        "keyword_cues": [
+          {
+            "word": "what",
+            "confidence": 0.995743453502655,
+            "start_ms": 720.0,
+            "end_ms": 760.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.9886921644210815,
+            "start_ms": 760.0,
+            "end_ms": 880.0
+          },
+          {
+            "word": "in",
+            "confidence": 0.6034950017929077,
+            "start_ms": 880.0,
+            "end_ms": 920.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 720.0,
+        "speech_end_ms": 3200.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497555638-headset.flac",
+    "reference": {
+      "intent": "TIME_QUERY",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "VOLUME",
+        "intent_accepted": false,
+        "confidence": 0.8591631650924683,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 760.0,
+        "speech_end_ms": 2680.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "BRIGHTNESS",
+        "intent_accepted": false,
+        "confidence": 0.9999362230300903,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 3040.0,
+        "speech_end_ms": 3760.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497556490-headset.flac",
+    "reference": {
+      "intent": "TIME_QUERY",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "VOLUME",
+        "intent_accepted": false,
+        "confidence": 0.6135017275810242,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 480.0,
+        "speech_end_ms": 2200.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "BRIGHTNESS",
+        "intent_accepted": false,
+        "confidence": 0.8448582887649536,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2280.0,
+        "speech_end_ms": 2880.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497868713-headset.flac",
+    "reference": {
+      "intent": "TIME_QUERY",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "missing_time_cue",
+        "intent": "TIME_QUERY",
+        "intent_accepted": true,
+        "confidence": 0.0,
+        "keyword_cues": [
+          {
+            "word": "what",
+            "confidence": 0.6188457012176514,
+            "start_ms": 40.0,
+            "end_ms": 80.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.9965349435806274,
+            "start_ms": 80.0,
+            "end_ms": 160.0
+          },
+          {
+            "word": "down",
+            "confidence": 0.9962994456291199,
+            "start_ms": 1960.0,
+            "end_ms": 2000.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 40.0,
+        "speech_end_ms": 2000.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497869419-headset.flac",
+    "reference": {
+      "intent": "TIME_QUERY",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "missing_time_cue",
+        "intent": "TIME_QUERY",
+        "intent_accepted": true,
+        "confidence": 0.0,
+        "keyword_cues": [
+          {
+            "word": "playing",
+            "confidence": 0.6335378885269165,
+            "start_ms": 1920.0,
+            "end_ms": 1960.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 400.0,
+        "speech_end_ms": 1960.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497880182-headset.flac",
+    "reference": {
+      "intent": "TIME_QUERY",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "VOLUME",
+        "intent_accepted": false,
+        "confidence": 0.7980042695999146,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 160.0,
+        "speech_end_ms": 5120.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497556470-headset.flac",
+    "reference": {
+      "intent": "DATE_QUERY",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "DATE_QUERY",
+        "intent_accepted": false,
+        "confidence": 0.9995214939117432,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 240.0,
+        "speech_end_ms": 2400.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "UNKNOWN",
+        "intent_accepted": false,
+        "confidence": 0.9838553071022034,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2560.0,
+        "speech_end_ms": 3440.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497556544-headset.flac",
+    "reference": {
+      "intent": "DATE_QUERY",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "DATE_QUERY",
+        "intent_accepted": false,
+        "confidence": 0.9948400855064392,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 840.0,
+        "speech_end_ms": 3040.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497557757-headset.flac",
+    "reference": {
+      "intent": "DATE_QUERY",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "DATE_QUERY",
+        "intent_accepted": false,
+        "confidence": 0.5974830985069275,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 120.0,
+        "speech_end_ms": 6080.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497867725-headset.flac",
+    "reference": {
+      "intent": "DATE_QUERY",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "DATE_QUERY",
+        "intent_accepted": false,
+        "confidence": 0.9831569790840149,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 0.0,
+        "speech_end_ms": 2200.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497868977-headset.flac",
+    "reference": {
+      "intent": "DATE_QUERY",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "missing_date_cue",
+        "intent": "DATE_QUERY",
+        "intent_accepted": true,
+        "confidence": 0.0,
+        "keyword_cues": [
+          {
+            "word": "what",
+            "confidence": 0.8052448034286499,
+            "start_ms": 0.0,
+            "end_ms": 40.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.9984180927276611,
+            "start_ms": 40.0,
+            "end_ms": 80.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": false,
+        "speech_start_ms": 0.0,
+        "speech_end_ms": 1920.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "slurp/audio-1497869629-headset.flac",
+    "reference": {
+      "intent": "DATE_QUERY",
+      "ready": "READY",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "DATE_QUERY",
+        "intent_accepted": false,
+        "confidence": 0.6365696787834167,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 120.0,
+        "speech_end_ms": 1880.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/01f180c0-452d-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "VOLUME",
+      "ready": "READY",
+      "operation": "INCREASE",
+      "amount": "10",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "Missing level: say UP, DOWN, or a whole number from 0 to 100",
+        "intent": "VOLUME",
+        "intent_accepted": true,
+        "confidence": 0.0,
+        "keyword_cues": [
+          {
+            "word": "<other>",
+            "confidence": 0.9986875653266907,
+            "start_ms": 440.0,
+            "end_ms": 520.0
+          },
+          {
+            "word": "volume",
+            "confidence": 0.9427053332328796,
+            "start_ms": 2160.0,
+            "end_ms": 2200.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": true,
+        "speech_start_ms": 440.0,
+        "speech_end_ms": 2200.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "VOLUME",
+        "intent_accepted": false,
+        "confidence": 0.984836757183075,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2520.0,
+        "speech_end_ms": 3120.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/27c98080-452e-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "VOLUME",
+      "ready": "READY",
+      "operation": "INCREASE",
+      "amount": "10",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "Missing or unsupported numeric level",
+        "intent": "VOLUME",
+        "intent_accepted": true,
+        "confidence": 0.0,
+        "keyword_cues": [
+          {
+            "word": "<other>",
+            "confidence": 0.9798667430877686,
+            "start_ms": 640.0,
+            "end_ms": 880.0
+          },
+          {
+            "word": "by",
+            "confidence": 0.5112549662590027,
+            "start_ms": 880.0,
+            "end_ms": 920.0
+          },
+          {
+            "word": "volume",
+            "confidence": 0.8180519342422485,
+            "start_ms": 3680.0,
+            "end_ms": 3720.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": true,
+        "speech_start_ms": 640.0,
+        "speech_end_ms": 3720.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "MEDIA_PLAY",
+        "intent_accepted": false,
+        "confidence": 0.5030255317687988,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 3880.0,
+        "speech_end_ms": 4480.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/39a493d0-452e-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "VOLUME",
+      "ready": "READY",
+      "operation": "DECREASE",
+      "amount": "10",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "VOLUME",
+        "intent_accepted": false,
+        "confidence": 0.9995231628417969,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 440.0,
+        "speech_end_ms": 1960.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/3f58d7f0-452e-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "VOLUME",
+      "ready": "REJECT",
+      "operation": "NONE",
+      "amount": "NONE",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "rejected",
+        "reason": "missing_level_context",
+        "intent": "VOLUME",
+        "intent_accepted": true,
+        "confidence": 0.0,
+        "keyword_cues": [
+          {
+            "word": "eleven",
+            "confidence": 0.9685108065605164,
+            "start_ms": 2040.0,
+            "end_ms": 2080.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": true,
+        "speech_start_ms": 720.0,
+        "speech_end_ms": 2080.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/4be0d290-4531-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "VOLUME",
+      "ready": "READY",
+      "operation": "INCREASE",
+      "amount": "10",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "ADJUST_VOLUME",
+          "arguments": {
+            "delta_percentage_points": 10
+          }
+        },
+        "intent": "VOLUME",
+        "intent_accepted": true,
+        "confidence": 0.959161102771759,
+        "keyword_cues": [
+          {
+            "word": "turn",
+            "confidence": 0.9966412782669067,
+            "start_ms": 400.0,
+            "end_ms": 480.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.7117813229560852,
+            "start_ms": 480.0,
+            "end_ms": 520.0
+          },
+          {
+            "word": "volume",
+            "confidence": 0.9815016388893127,
+            "start_ms": 520.0,
+            "end_ms": 560.0
+          },
+          {
+            "word": "up",
+            "confidence": 0.9604628682136536,
+            "start_ms": 2000.0,
+            "end_ms": 2040.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": true,
+        "speech_start_ms": 400.0,
+        "speech_end_ms": 2040.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  },
+  {
+    "id": "fluent/wavs/speakers/4BrX8aDqK2cLZRYl/5a2a13f0-452e-11e9-b1e4-e5985dca719e.wav",
+    "reference": {
+      "intent": "VOLUME",
+      "ready": "READY",
+      "operation": "DECREASE",
+      "amount": "10",
+      "color": "NONE"
+    },
+    "results": [
+      {
+        "status": "accepted",
+        "command": {
+          "action": "ADJUST_VOLUME",
+          "arguments": {
+            "delta_percentage_points": -10
+          }
+        },
+        "intent": "VOLUME",
+        "intent_accepted": true,
+        "confidence": 0.9897984862327576,
+        "keyword_cues": [
+          {
+            "word": "<other>",
+            "confidence": 0.9741004109382629,
+            "start_ms": 360.0,
+            "end_ms": 400.0
+          },
+          {
+            "word": "loud",
+            "confidence": 0.7871066331863403,
+            "start_ms": 400.0,
+            "end_ms": 440.0
+          },
+          {
+            "word": "<other>",
+            "confidence": 0.9313792586326599,
+            "start_ms": 440.0,
+            "end_ms": 520.0
+          },
+          {
+            "word": "volume",
+            "confidence": 0.7369234561920166,
+            "start_ms": 520.0,
+            "end_ms": 560.0
+          },
+          {
+            "word": "down",
+            "confidence": 0.9901236891746521,
+            "start_ms": 2320.0,
+            "end_ms": 2360.0
+          }
+        ],
+        "cue_timing": "CTC emission intervals; not verified word boundaries",
+        "experimental": true,
+        "device_actions_executed": false,
+        "parameter_invoked": true,
+        "speech_start_ms": 360.0,
+        "speech_end_ms": 2360.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      },
+      {
+        "status": "rejected",
+        "reason": "intent_confidence_gate",
+        "intent": "TIME_QUERY",
+        "intent_accepted": false,
+        "confidence": 0.5361162424087524,
+        "keyword_cues": [],
+        "parameter_invoked": false,
+        "keyword_reader_invoked": false,
+        "experimental": true,
+        "device_actions_executed": false,
+        "speech_start_ms": 2680.0,
+        "speech_end_ms": 3280.0,
+        "wake_end_ms": 0.0,
+        "speech_timing": "VAD segment including pre-roll and endpoint silence; not aligned word boundaries"
+      }
+    ]
+  }
+]

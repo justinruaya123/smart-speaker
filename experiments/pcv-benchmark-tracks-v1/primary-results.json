@@ -1,0 +1,1224 @@
+{
+  "experiment": "pcv-benchmark-tracks-v1",
+  "status": "primary_regrouped_secondary_membership_pending",
+  "change": "Dataset tracks replace origin as headline benchmark grouping. No new fitting, inference or policy selection.",
+  "tracks": {
+    "strict_primary": {
+      "source": "airimonda/ai231-me2-voice-commands",
+      "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+      "origins": [
+        "human",
+        "supplied_synthetic"
+      ],
+      "evaluation_split": "published_test",
+      "holdout_role": "separate descriptive replay; not pooled into test",
+      "rows": 4418,
+      "scorable_rows": 4233,
+      "ambiguous_reference_rows": 185,
+      "metrics": {
+        "test": {
+          "candidate": {
+            "overall": {
+              "accepted": 4146,
+              "exact": 3839,
+              "false_accept_rate": 0.6986899563318777,
+              "n": 4233,
+              "negative_errors": 160,
+              "negative_n": 229,
+              "positive_n": 4004,
+              "precision": 0.9259527255185721,
+              "recall": 0.9587912087912088
+            },
+            "per_intent": {
+              "ALARM": {
+                "complete_correct": 399,
+                "complete_precision": 0.9851851851851852,
+                "complete_recall": 0.9876237623762376,
+                "intent_correct": 399,
+                "intent_precision": 0.9851851851851852,
+                "intent_recall": 0.9876237623762376,
+                "predicted_n": 405,
+                "reference_n": 404
+              },
+              "BRIGHTNESS": {
+                "complete_correct": 401,
+                "complete_precision": 0.9391100702576113,
+                "complete_recall": 0.9524940617577197,
+                "intent_correct": 417,
+                "intent_precision": 0.9765807962529274,
+                "intent_recall": 0.9904988123515439,
+                "predicted_n": 427,
+                "reference_n": 421
+              },
+              "CALL": {
+                "complete_correct": 101,
+                "complete_precision": 0.9099099099099099,
+                "complete_recall": 0.9901960784313726,
+                "intent_correct": 102,
+                "intent_precision": 0.918918918918919,
+                "intent_recall": 1.0,
+                "predicted_n": 111,
+                "reference_n": 102
+              },
+              "COLOR": {
+                "complete_correct": 354,
+                "complete_precision": 0.8697788697788698,
+                "complete_recall": 0.9516129032258065,
+                "intent_correct": 365,
+                "intent_precision": 0.8968058968058968,
+                "intent_recall": 0.9811827956989247,
+                "predicted_n": 407,
+                "reference_n": 372
+              },
+              "CREATE_REMINDER": {
+                "complete_correct": 413,
+                "complete_precision": 0.9904076738609112,
+                "complete_recall": 0.9763593380614657,
+                "intent_correct": 413,
+                "intent_precision": 0.9904076738609112,
+                "intent_recall": 0.9763593380614657,
+                "predicted_n": 417,
+                "reference_n": 423
+              },
+              "LIGHT_OFF": {
+                "complete_correct": 101,
+                "complete_precision": 0.7112676056338029,
+                "complete_recall": 0.8859649122807017,
+                "intent_correct": 102,
+                "intent_precision": 0.7183098591549296,
+                "intent_recall": 0.8947368421052632,
+                "predicted_n": 142,
+                "reference_n": 114
+              },
+              "LIGHT_ON": {
+                "complete_correct": 99,
+                "complete_precision": 0.717391304347826,
+                "complete_recall": 0.8761061946902655,
+                "intent_correct": 105,
+                "intent_precision": 0.7608695652173914,
+                "intent_recall": 0.9292035398230089,
+                "predicted_n": 138,
+                "reference_n": 113
+              },
+              "LIST_REMINDERS": {
+                "complete_correct": 112,
+                "complete_precision": 0.9655172413793104,
+                "complete_recall": 0.9333333333333333,
+                "intent_correct": 112,
+                "intent_precision": 0.9655172413793104,
+                "intent_recall": 0.9333333333333333,
+                "predicted_n": 116,
+                "reference_n": 120
+              },
+              "MESSAGE": {
+                "complete_correct": 129,
+                "complete_precision": 0.9555555555555556,
+                "complete_recall": 1.0,
+                "intent_correct": 129,
+                "intent_precision": 0.9555555555555556,
+                "intent_recall": 1.0,
+                "predicted_n": 135,
+                "reference_n": 129
+              },
+              "NEXT": {
+                "complete_correct": 131,
+                "complete_precision": 0.9357142857142857,
+                "complete_recall": 0.9703703703703703,
+                "intent_correct": 131,
+                "intent_precision": 0.9357142857142857,
+                "intent_recall": 0.9703703703703703,
+                "predicted_n": 140,
+                "reference_n": 135
+              },
+              "PAUSE": {
+                "complete_correct": 131,
+                "complete_precision": 0.9703703703703703,
+                "complete_recall": 0.9492753623188406,
+                "intent_correct": 131,
+                "intent_precision": 0.9703703703703703,
+                "intent_recall": 0.9492753623188406,
+                "predicted_n": 135,
+                "reference_n": 138
+              },
+              "PLAY_MUSIC": {
+                "complete_correct": 73,
+                "complete_precision": 0.8295454545454546,
+                "complete_recall": 0.948051948051948,
+                "intent_correct": 73,
+                "intent_precision": 0.8295454545454546,
+                "intent_recall": 0.948051948051948,
+                "predicted_n": 88,
+                "reference_n": 77
+              },
+              "STOP": {
+                "complete_correct": 133,
+                "complete_precision": 0.9432624113475178,
+                "complete_recall": 0.9432624113475178,
+                "intent_correct": 133,
+                "intent_precision": 0.9432624113475178,
+                "intent_recall": 0.9432624113475178,
+                "predicted_n": 141,
+                "reference_n": 141
+              },
+              "TEMPERATURE": {
+                "complete_correct": 413,
+                "complete_precision": 0.9786729857819905,
+                "complete_recall": 0.9763593380614657,
+                "intent_correct": 420,
+                "intent_precision": 0.995260663507109,
+                "intent_recall": 0.9929078014184397,
+                "predicted_n": 422,
+                "reference_n": 423
+              },
+              "TIME": {
+                "complete_correct": 130,
+                "complete_precision": 0.7975460122699386,
+                "complete_recall": 0.9774436090225563,
+                "intent_correct": 130,
+                "intent_precision": 0.7975460122699386,
+                "intent_recall": 0.9774436090225563,
+                "predicted_n": 163,
+                "reference_n": 133
+              },
+              "TIMER": {
+                "complete_correct": 418,
+                "complete_precision": 0.9881796690307328,
+                "complete_recall": 0.9881796690307328,
+                "intent_correct": 420,
+                "intent_precision": 0.9929078014184397,
+                "intent_recall": 0.9929078014184397,
+                "predicted_n": 423,
+                "reference_n": 423
+              },
+              "VOLUME": {
+                "complete_correct": 219,
+                "complete_precision": 0.9087136929460581,
+                "complete_recall": 0.8725099601593626,
+                "intent_correct": 223,
+                "intent_precision": 0.9253112033195021,
+                "intent_recall": 0.8884462151394422,
+                "predicted_n": 241,
+                "reference_n": 251
+              },
+              "WEATHER": {
+                "complete_correct": 82,
+                "complete_precision": 0.8631578947368421,
+                "complete_recall": 0.9647058823529412,
+                "intent_correct": 82,
+                "intent_precision": 0.8631578947368421,
+                "intent_recall": 0.9647058823529412,
+                "predicted_n": 95,
+                "reference_n": 85
+              }
+            }
+          },
+          "policy_candidate": {
+            "overall": {
+              "accepted": 3182,
+              "exact": 3170,
+              "false_accept_rate": 0.004366812227074236,
+              "n": 4233,
+              "negative_errors": 1,
+              "negative_n": 229,
+              "positive_n": 4004,
+              "precision": 0.9962287869264613,
+              "recall": 0.7917082917082917
+            },
+            "per_intent": {
+              "ALARM": {
+                "complete_correct": 342,
+                "complete_precision": 1.0,
+                "complete_recall": 0.8465346534653465,
+                "intent_correct": 342,
+                "intent_precision": 1.0,
+                "intent_recall": 0.8465346534653465,
+                "predicted_n": 342,
+                "reference_n": 404
+              },
+              "BRIGHTNESS": {
+                "complete_correct": 317,
+                "complete_precision": 1.0,
+                "complete_recall": 0.7529691211401425,
+                "intent_correct": 317,
+                "intent_precision": 1.0,
+                "intent_recall": 0.7529691211401425,
+                "predicted_n": 317,
+                "reference_n": 421
+              },
+              "CALL": {
+                "complete_correct": 93,
+                "complete_precision": 1.0,
+                "complete_recall": 0.9117647058823529,
+                "intent_correct": 93,
+                "intent_precision": 1.0,
+                "intent_recall": 0.9117647058823529,
+                "predicted_n": 93,
+                "reference_n": 102
+              },
+              "COLOR": {
+                "complete_correct": 306,
+                "complete_precision": 0.9870967741935484,
+                "complete_recall": 0.8225806451612904,
+                "intent_correct": 310,
+                "intent_precision": 1.0,
+                "intent_recall": 0.8333333333333334,
+                "predicted_n": 310,
+                "reference_n": 372
+              },
+              "CREATE_REMINDER": {
+                "complete_correct": 325,
+                "complete_precision": 1.0,
+                "complete_recall": 0.7683215130023641,
+                "intent_correct": 325,
+                "intent_precision": 1.0,
+                "intent_recall": 0.7683215130023641,
+                "predicted_n": 325,
+                "reference_n": 423
+              },
+              "LIGHT_OFF": {
+                "complete_correct": 78,
+                "complete_precision": 0.975,
+                "complete_recall": 0.6842105263157895,
+                "intent_correct": 78,
+                "intent_precision": 0.975,
+                "intent_recall": 0.6842105263157895,
+                "predicted_n": 80,
+                "reference_n": 114
+              },
+              "LIGHT_ON": {
+                "complete_correct": 83,
+                "complete_precision": 0.9880952380952381,
+                "complete_recall": 0.7345132743362832,
+                "intent_correct": 83,
+                "intent_precision": 0.9880952380952381,
+                "intent_recall": 0.7345132743362832,
+                "predicted_n": 84,
+                "reference_n": 113
+              },
+              "LIST_REMINDERS": {
+                "complete_correct": 92,
+                "complete_precision": 1.0,
+                "complete_recall": 0.7666666666666667,
+                "intent_correct": 92,
+                "intent_precision": 1.0,
+                "intent_recall": 0.7666666666666667,
+                "predicted_n": 92,
+                "reference_n": 120
+              },
+              "MESSAGE": {
+                "complete_correct": 113,
+                "complete_precision": 1.0,
+                "complete_recall": 0.875968992248062,
+                "intent_correct": 113,
+                "intent_precision": 1.0,
+                "intent_recall": 0.875968992248062,
+                "predicted_n": 113,
+                "reference_n": 129
+              },
+              "NEXT": {
+                "complete_correct": 121,
+                "complete_precision": 1.0,
+                "complete_recall": 0.8962962962962963,
+                "intent_correct": 121,
+                "intent_precision": 1.0,
+                "intent_recall": 0.8962962962962963,
+                "predicted_n": 121,
+                "reference_n": 135
+              },
+              "PAUSE": {
+                "complete_correct": 122,
+                "complete_precision": 1.0,
+                "complete_recall": 0.8840579710144928,
+                "intent_correct": 122,
+                "intent_precision": 1.0,
+                "intent_recall": 0.8840579710144928,
+                "predicted_n": 122,
+                "reference_n": 138
+              },
+              "PLAY_MUSIC": {
+                "complete_correct": 65,
+                "complete_precision": 0.9558823529411765,
+                "complete_recall": 0.8441558441558441,
+                "intent_correct": 65,
+                "intent_precision": 0.9558823529411765,
+                "intent_recall": 0.8441558441558441,
+                "predicted_n": 68,
+                "reference_n": 77
+              },
+              "STOP": {
+                "complete_correct": 110,
+                "complete_precision": 0.990990990990991,
+                "complete_recall": 0.7801418439716312,
+                "intent_correct": 110,
+                "intent_precision": 0.990990990990991,
+                "intent_recall": 0.7801418439716312,
+                "predicted_n": 111,
+                "reference_n": 141
+              },
+              "TEMPERATURE": {
+                "complete_correct": 346,
+                "complete_precision": 1.0,
+                "complete_recall": 0.817966903073286,
+                "intent_correct": 346,
+                "intent_precision": 1.0,
+                "intent_recall": 0.817966903073286,
+                "predicted_n": 346,
+                "reference_n": 423
+              },
+              "TIME": {
+                "complete_correct": 98,
+                "complete_precision": 1.0,
+                "complete_recall": 0.7368421052631579,
+                "intent_correct": 98,
+                "intent_precision": 1.0,
+                "intent_recall": 0.7368421052631579,
+                "predicted_n": 98,
+                "reference_n": 133
+              },
+              "TIMER": {
+                "complete_correct": 333,
+                "complete_precision": 1.0,
+                "complete_recall": 0.7872340425531915,
+                "intent_correct": 333,
+                "intent_precision": 1.0,
+                "intent_recall": 0.7872340425531915,
+                "predicted_n": 333,
+                "reference_n": 423
+              },
+              "VOLUME": {
+                "complete_correct": 159,
+                "complete_precision": 0.99375,
+                "complete_recall": 0.6334661354581673,
+                "intent_correct": 160,
+                "intent_precision": 1.0,
+                "intent_recall": 0.6374501992031872,
+                "predicted_n": 160,
+                "reference_n": 251
+              },
+              "WEATHER": {
+                "complete_correct": 67,
+                "complete_precision": 1.0,
+                "complete_recall": 0.788235294117647,
+                "intent_correct": 67,
+                "intent_precision": 1.0,
+                "intent_recall": 0.788235294117647,
+                "predicted_n": 67,
+                "reference_n": 85
+              }
+            }
+          },
+          "accepted_command": {
+            "overall": {
+              "accepted": 0,
+              "exact": 0,
+              "false_accept_rate": 0.0,
+              "n": 4233,
+              "negative_errors": 0,
+              "negative_n": 229,
+              "positive_n": 4004,
+              "precision": null,
+              "recall": 0.0
+            },
+            "per_intent": {
+              "ALARM": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 404
+              },
+              "BRIGHTNESS": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 421
+              },
+              "CALL": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 102
+              },
+              "COLOR": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 372
+              },
+              "CREATE_REMINDER": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 423
+              },
+              "LIGHT_OFF": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 114
+              },
+              "LIGHT_ON": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 113
+              },
+              "LIST_REMINDERS": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 120
+              },
+              "MESSAGE": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 129
+              },
+              "NEXT": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 135
+              },
+              "PAUSE": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 138
+              },
+              "PLAY_MUSIC": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 77
+              },
+              "STOP": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 141
+              },
+              "TEMPERATURE": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 423
+              },
+              "TIME": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 133
+              },
+              "TIMER": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 423
+              },
+              "VOLUME": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 251
+              },
+              "WEATHER": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 85
+              }
+            }
+          }
+        },
+        "holdout": {
+          "candidate": {
+            "overall": {
+              "accepted": 191,
+              "exact": 178,
+              "false_accept_rate": 0.7272727272727273,
+              "n": 194,
+              "negative_errors": 8,
+              "negative_n": 11,
+              "positive_n": 183,
+              "precision": 0.9319371727748691,
+              "recall": 0.9726775956284153
+            },
+            "per_intent": {
+              "ALARM": {
+                "complete_correct": 18,
+                "complete_precision": 1.0,
+                "complete_recall": 1.0,
+                "intent_correct": 18,
+                "intent_precision": 1.0,
+                "intent_recall": 1.0,
+                "predicted_n": 18,
+                "reference_n": 18
+              },
+              "BRIGHTNESS": {
+                "complete_correct": 17,
+                "complete_precision": 0.85,
+                "complete_recall": 0.9444444444444444,
+                "intent_correct": 18,
+                "intent_precision": 0.9,
+                "intent_recall": 1.0,
+                "predicted_n": 20,
+                "reference_n": 18
+              },
+              "CALL": {
+                "complete_correct": 6,
+                "complete_precision": 1.0,
+                "complete_recall": 1.0,
+                "intent_correct": 6,
+                "intent_precision": 1.0,
+                "intent_recall": 1.0,
+                "predicted_n": 6,
+                "reference_n": 6
+              },
+              "COLOR": {
+                "complete_correct": 18,
+                "complete_precision": 0.9473684210526315,
+                "complete_recall": 1.0,
+                "intent_correct": 18,
+                "intent_precision": 0.9473684210526315,
+                "intent_recall": 1.0,
+                "predicted_n": 19,
+                "reference_n": 18
+              },
+              "CREATE_REMINDER": {
+                "complete_correct": 18,
+                "complete_precision": 1.0,
+                "complete_recall": 1.0,
+                "intent_correct": 18,
+                "intent_precision": 1.0,
+                "intent_recall": 1.0,
+                "predicted_n": 18,
+                "reference_n": 18
+              },
+              "LIGHT_OFF": {
+                "complete_correct": 4,
+                "complete_precision": 1.0,
+                "complete_recall": 0.8,
+                "intent_correct": 4,
+                "intent_precision": 1.0,
+                "intent_recall": 0.8,
+                "predicted_n": 4,
+                "reference_n": 5
+              },
+              "LIGHT_ON": {
+                "complete_correct": 6,
+                "complete_precision": 0.8571428571428571,
+                "complete_recall": 1.0,
+                "intent_correct": 6,
+                "intent_precision": 0.8571428571428571,
+                "intent_recall": 1.0,
+                "predicted_n": 7,
+                "reference_n": 6
+              },
+              "LIST_REMINDERS": {
+                "complete_correct": 6,
+                "complete_precision": 1.0,
+                "complete_recall": 1.0,
+                "intent_correct": 6,
+                "intent_precision": 1.0,
+                "intent_recall": 1.0,
+                "predicted_n": 6,
+                "reference_n": 6
+              },
+              "MESSAGE": {
+                "complete_correct": 6,
+                "complete_precision": 1.0,
+                "complete_recall": 1.0,
+                "intent_correct": 6,
+                "intent_precision": 1.0,
+                "intent_recall": 1.0,
+                "predicted_n": 6,
+                "reference_n": 6
+              },
+              "NEXT": {
+                "complete_correct": 6,
+                "complete_precision": 1.0,
+                "complete_recall": 1.0,
+                "intent_correct": 6,
+                "intent_precision": 1.0,
+                "intent_recall": 1.0,
+                "predicted_n": 6,
+                "reference_n": 6
+              },
+              "PAUSE": {
+                "complete_correct": 6,
+                "complete_precision": 0.8571428571428571,
+                "complete_recall": 1.0,
+                "intent_correct": 6,
+                "intent_precision": 0.8571428571428571,
+                "intent_recall": 1.0,
+                "predicted_n": 7,
+                "reference_n": 6
+              },
+              "PLAY_MUSIC": {
+                "complete_correct": 4,
+                "complete_precision": 0.8,
+                "complete_recall": 0.6666666666666666,
+                "intent_correct": 4,
+                "intent_precision": 0.8,
+                "intent_recall": 0.6666666666666666,
+                "predicted_n": 5,
+                "reference_n": 6
+              },
+              "STOP": {
+                "complete_correct": 6,
+                "complete_precision": 0.75,
+                "complete_recall": 1.0,
+                "intent_correct": 6,
+                "intent_precision": 0.75,
+                "intent_recall": 1.0,
+                "predicted_n": 8,
+                "reference_n": 6
+              },
+              "TEMPERATURE": {
+                "complete_correct": 18,
+                "complete_precision": 0.9473684210526315,
+                "complete_recall": 1.0,
+                "intent_correct": 18,
+                "intent_precision": 0.9473684210526315,
+                "intent_recall": 1.0,
+                "predicted_n": 19,
+                "reference_n": 18
+              },
+              "TIME": {
+                "complete_correct": 6,
+                "complete_precision": 0.75,
+                "complete_recall": 1.0,
+                "intent_correct": 6,
+                "intent_precision": 0.75,
+                "intent_recall": 1.0,
+                "predicted_n": 8,
+                "reference_n": 6
+              },
+              "TIMER": {
+                "complete_correct": 18,
+                "complete_precision": 0.9473684210526315,
+                "complete_recall": 1.0,
+                "intent_correct": 18,
+                "intent_precision": 0.9473684210526315,
+                "intent_recall": 1.0,
+                "predicted_n": 19,
+                "reference_n": 18
+              },
+              "VOLUME": {
+                "complete_correct": 9,
+                "complete_precision": 1.0,
+                "complete_recall": 0.9,
+                "intent_correct": 9,
+                "intent_precision": 1.0,
+                "intent_recall": 0.9,
+                "predicted_n": 9,
+                "reference_n": 10
+              },
+              "WEATHER": {
+                "complete_correct": 6,
+                "complete_precision": 1.0,
+                "complete_recall": 1.0,
+                "intent_correct": 6,
+                "intent_precision": 1.0,
+                "intent_recall": 1.0,
+                "predicted_n": 6,
+                "reference_n": 6
+              }
+            }
+          },
+          "policy_candidate": {
+            "overall": {
+              "accepted": 133,
+              "exact": 133,
+              "false_accept_rate": 0.0,
+              "n": 194,
+              "negative_errors": 0,
+              "negative_n": 11,
+              "positive_n": 183,
+              "precision": 1.0,
+              "recall": 0.726775956284153
+            },
+            "per_intent": {
+              "ALARM": {
+                "complete_correct": 12,
+                "complete_precision": 1.0,
+                "complete_recall": 0.6666666666666666,
+                "intent_correct": 12,
+                "intent_precision": 1.0,
+                "intent_recall": 0.6666666666666666,
+                "predicted_n": 12,
+                "reference_n": 18
+              },
+              "BRIGHTNESS": {
+                "complete_correct": 11,
+                "complete_precision": 1.0,
+                "complete_recall": 0.6111111111111112,
+                "intent_correct": 11,
+                "intent_precision": 1.0,
+                "intent_recall": 0.6111111111111112,
+                "predicted_n": 11,
+                "reference_n": 18
+              },
+              "CALL": {
+                "complete_correct": 5,
+                "complete_precision": 1.0,
+                "complete_recall": 0.8333333333333334,
+                "intent_correct": 5,
+                "intent_precision": 1.0,
+                "intent_recall": 0.8333333333333334,
+                "predicted_n": 5,
+                "reference_n": 6
+              },
+              "COLOR": {
+                "complete_correct": 16,
+                "complete_precision": 1.0,
+                "complete_recall": 0.8888888888888888,
+                "intent_correct": 16,
+                "intent_precision": 1.0,
+                "intent_recall": 0.8888888888888888,
+                "predicted_n": 16,
+                "reference_n": 18
+              },
+              "CREATE_REMINDER": {
+                "complete_correct": 10,
+                "complete_precision": 1.0,
+                "complete_recall": 0.5555555555555556,
+                "intent_correct": 10,
+                "intent_precision": 1.0,
+                "intent_recall": 0.5555555555555556,
+                "predicted_n": 10,
+                "reference_n": 18
+              },
+              "LIGHT_OFF": {
+                "complete_correct": 3,
+                "complete_precision": 1.0,
+                "complete_recall": 0.6,
+                "intent_correct": 3,
+                "intent_precision": 1.0,
+                "intent_recall": 0.6,
+                "predicted_n": 3,
+                "reference_n": 5
+              },
+              "LIGHT_ON": {
+                "complete_correct": 4,
+                "complete_precision": 1.0,
+                "complete_recall": 0.6666666666666666,
+                "intent_correct": 4,
+                "intent_precision": 1.0,
+                "intent_recall": 0.6666666666666666,
+                "predicted_n": 4,
+                "reference_n": 6
+              },
+              "LIST_REMINDERS": {
+                "complete_correct": 6,
+                "complete_precision": 1.0,
+                "complete_recall": 1.0,
+                "intent_correct": 6,
+                "intent_precision": 1.0,
+                "intent_recall": 1.0,
+                "predicted_n": 6,
+                "reference_n": 6
+              },
+              "MESSAGE": {
+                "complete_correct": 3,
+                "complete_precision": 1.0,
+                "complete_recall": 0.5,
+                "intent_correct": 3,
+                "intent_precision": 1.0,
+                "intent_recall": 0.5,
+                "predicted_n": 3,
+                "reference_n": 6
+              },
+              "NEXT": {
+                "complete_correct": 6,
+                "complete_precision": 1.0,
+                "complete_recall": 1.0,
+                "intent_correct": 6,
+                "intent_precision": 1.0,
+                "intent_recall": 1.0,
+                "predicted_n": 6,
+                "reference_n": 6
+              },
+              "PAUSE": {
+                "complete_correct": 6,
+                "complete_precision": 1.0,
+                "complete_recall": 1.0,
+                "intent_correct": 6,
+                "intent_precision": 1.0,
+                "intent_recall": 1.0,
+                "predicted_n": 6,
+                "reference_n": 6
+              },
+              "PLAY_MUSIC": {
+                "complete_correct": 3,
+                "complete_precision": 1.0,
+                "complete_recall": 0.5,
+                "intent_correct": 3,
+                "intent_precision": 1.0,
+                "intent_recall": 0.5,
+                "predicted_n": 3,
+                "reference_n": 6
+              },
+              "STOP": {
+                "complete_correct": 6,
+                "complete_precision": 1.0,
+                "complete_recall": 1.0,
+                "intent_correct": 6,
+                "intent_precision": 1.0,
+                "intent_recall": 1.0,
+                "predicted_n": 6,
+                "reference_n": 6
+              },
+              "TEMPERATURE": {
+                "complete_correct": 11,
+                "complete_precision": 1.0,
+                "complete_recall": 0.6111111111111112,
+                "intent_correct": 11,
+                "intent_precision": 1.0,
+                "intent_recall": 0.6111111111111112,
+                "predicted_n": 11,
+                "reference_n": 18
+              },
+              "TIME": {
+                "complete_correct": 4,
+                "complete_precision": 1.0,
+                "complete_recall": 0.6666666666666666,
+                "intent_correct": 4,
+                "intent_precision": 1.0,
+                "intent_recall": 0.6666666666666666,
+                "predicted_n": 4,
+                "reference_n": 6
+              },
+              "TIMER": {
+                "complete_correct": 14,
+                "complete_precision": 1.0,
+                "complete_recall": 0.7777777777777778,
+                "intent_correct": 14,
+                "intent_precision": 1.0,
+                "intent_recall": 0.7777777777777778,
+                "predicted_n": 14,
+                "reference_n": 18
+              },
+              "VOLUME": {
+                "complete_correct": 8,
+                "complete_precision": 1.0,
+                "complete_recall": 0.8,
+                "intent_correct": 8,
+                "intent_precision": 1.0,
+                "intent_recall": 0.8,
+                "predicted_n": 8,
+                "reference_n": 10
+              },
+              "WEATHER": {
+                "complete_correct": 5,
+                "complete_precision": 1.0,
+                "complete_recall": 0.8333333333333334,
+                "intent_correct": 5,
+                "intent_precision": 1.0,
+                "intent_recall": 0.8333333333333334,
+                "predicted_n": 5,
+                "reference_n": 6
+              }
+            }
+          },
+          "accepted_command": {
+            "overall": {
+              "accepted": 0,
+              "exact": 0,
+              "false_accept_rate": 0.0,
+              "n": 194,
+              "negative_errors": 0,
+              "negative_n": 11,
+              "positive_n": 183,
+              "precision": null,
+              "recall": 0.0
+            },
+            "per_intent": {
+              "ALARM": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 18
+              },
+              "BRIGHTNESS": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 18
+              },
+              "CALL": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 6
+              },
+              "COLOR": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 18
+              },
+              "CREATE_REMINDER": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 18
+              },
+              "LIGHT_OFF": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 5
+              },
+              "LIGHT_ON": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 6
+              },
+              "LIST_REMINDERS": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 6
+              },
+              "MESSAGE": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 6
+              },
+              "NEXT": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 6
+              },
+              "PAUSE": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 6
+              },
+              "PLAY_MUSIC": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 6
+              },
+              "STOP": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 6
+              },
+              "TEMPERATURE": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 18
+              },
+              "TIME": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 6
+              },
+              "TIMER": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 18
+              },
+              "VOLUME": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 10
+              },
+              "WEATHER": {
+                "complete_correct": 0,
+                "complete_precision": null,
+                "complete_recall": 0.0,
+                "intent_correct": 0,
+                "intent_precision": null,
+                "intent_recall": 0.0,
+                "predicted_n": 0,
+                "reference_n": 6
+              }
+            }
+          }
+        }
+      },
+      "model_binding": {
+        "catalog_sha256": "45a848160d853833d83d832952e3ba411a1aea92db14e963c7d7409db83f2a1e",
+        "custom_slots_sha256": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5",
+        "model_sha256": "588f5f44f2b8bca9f68be605bc3a0be2be36159477c6002f21708824503c8421",
+        "normalization_sha256": "245fabf47bcb90f873ee0a226cd40660bb3df8f6a03176206b9989d4558bf589",
+        "schema_sha256": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c"
+      },
+      "actual_policy_enabled": false
+    },
+    "primary_plus_supplied_test": {
+      "status": "pending_supplied_test_identity",
+      "headline_pooling": "deduplicate by PCM and retain primary/added-subset metrics alongside any combined score",
+      "training_membership": "unchanged; supplied test not authorized for fitting by inference",
+      "source_or_voice_overlap": "not audited until supplied test identified"
+    }
+  },
+  "overfitting_checks": {
+    "membership": "Audit sample ID, decoded PCM SHA256, speaker and synthesis voice/anchor overlap with training, development and calibration.",
+    "comparison": "Use the same frozen checkpoint/thresholds for primary and added subsets. If adaptation is later intended, compare a new adapted model against the same untouched held-out speakers and report any primary regression.",
+    "exposure": "Primary test has already been evaluated; regrouped scores are not a new blind evaluation. Definitions alone do not supply audio evidence.",
+    "diagnostics": "Retain origin and source breakdowns, per-intent/per-slot exactness, per-phrase denominators and rejection errors without making origin the two headline tracks."
+  },
+  "bindings": {
+    "experiments\\pcv-release-train-v1\\runs\\release-v1\\results.json": "dfe4d156d77904ff9821e37a76e7ace456dcc16c3382068fdf5c33e028bf5157"
+  },
+  "new_training": false,
+  "new_inference": false,
+  "policy_changed": false,
+  "installed_artifacts_changed": false,
+  "existing_package_changed": false
+}

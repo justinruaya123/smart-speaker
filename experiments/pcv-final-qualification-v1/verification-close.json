@@ -1,0 +1,158 @@
+{
+  "bundle_files": {
+    "catalog.json": {
+      "bytes": 522482,
+      "sha256": "8d301ee936100ad5f5c7bfad365c4b1265cdd40147d09b89fb153915ac8d81c5"
+    },
+    "custom-slots.json": {
+      "bytes": 1162,
+      "sha256": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5"
+    },
+    "model.onnx": {
+      "bytes": 1558203,
+      "sha256": "0b2701bacaeff770d0098433e018123b4f6d607e9d8a893e251dbbafca6b3aef"
+    },
+    "normalization.json": {
+      "bytes": 2269,
+      "sha256": "31713f9a50a5e9bab0906af3c64d0f910be6a7c8fc57b94c72bf3bee654673ee"
+    },
+    "output.schema.json": {
+      "bytes": 3958,
+      "sha256": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c"
+    },
+    "policy.json": {
+      "bytes": 1512,
+      "sha256": "68e5540cf876c75d06d848d6601de51d5623088c196447adbedf5f9c0a5aa290"
+    },
+    "recipe.json": {
+      "bytes": 1031,
+      "sha256": "dcd9955636bdebc5144679fbf62ebc035eab3d5029c6975edd4e55f96bae2b90"
+    }
+  },
+  "desktop_timing_concurrent_research_workload": true,
+  "desktop_timing_is_pi_evidence": false,
+  "host_cpu": "Intel Core i9-14900; 24 cores; 32 logical processors",
+  "installation": false,
+  "installed_files_verified_unchanged": 20,
+  "physical_pi": false,
+  "protocol_sha256": "b8f9cd65df340de32abc21667d2698d8ebbee9e2e32e5857666659a441c421ae",
+  "publisher_modified_by_this_task": false,
+  "result_sha256": "2b008ab19bc222bc3bf9ae884db7483e2d7730b88b92880ce7c5c94175be1cdc",
+  "slides_started": false,
+  "source_coverage": [
+    {
+      "human_supported_by_intent": {
+        "ALARM": 114,
+        "BRIGHTNESS": 33,
+        "CALL": 10,
+        "COLOR": 95,
+        "CREATE_REMINDER": 11,
+        "LIGHT_OFF": 74,
+        "LIGHT_ON": 48,
+        "LIST_REMINDERS": 35,
+        "NEXT": 88,
+        "PAUSE": 86,
+        "PLAY_MUSIC": 35,
+        "STOP": 135,
+        "TEMPERATURE": 72,
+        "TIME": 98,
+        "TIMER": 60,
+        "VOLUME": 183,
+        "WEATHER": 38
+      },
+      "manifest_sha256": "60ef443a3f2e48bdbb30fc2848b515952016b799ddfd78fa1e07a6315e4e38f5",
+      "split": "train"
+    },
+    {
+      "human_supported_by_intent": {
+        "ALARM": 9,
+        "BRIGHTNESS": 2,
+        "COLOR": 9,
+        "CREATE_REMINDER": 2,
+        "LIGHT_OFF": 8,
+        "LIGHT_ON": 7,
+        "LIST_REMINDERS": 5,
+        "NEXT": 13,
+        "PAUSE": 20,
+        "PLAY_MUSIC": 8,
+        "STOP": 21,
+        "TEMPERATURE": 20,
+        "TIME": 16,
+        "TIMER": 11,
+        "VOLUME": 21,
+        "WEATHER": 9
+      },
+      "manifest_sha256": "fc7537b2e7b6df360457aba7529397a4f52980ffe541ad96712e6172dfef2ae5",
+      "split": "dev"
+    },
+    {
+      "human_supported_by_intent": {
+        "ALARM": 5,
+        "BRIGHTNESS": 5,
+        "COLOR": 9,
+        "LIGHT_OFF": 12,
+        "LIGHT_ON": 12,
+        "NEXT": 9,
+        "PAUSE": 9,
+        "PLAY_MUSIC": 4,
+        "STOP": 12,
+        "TIME": 11,
+        "TIMER": 2,
+        "VOLUME": 22,
+        "WEATHER": 2
+      },
+      "manifest_sha256": "af184396db9aaf109f1b0f03fb9a35ee7548ea98c44eab8c56c2e5a9b7a3dbce",
+      "split": "calibration"
+    },
+    {
+      "human_supported_by_intent": {
+        "ALARM": 32,
+        "BRIGHTNESS": 23,
+        "CALL": 6,
+        "COLOR": 62,
+        "CREATE_REMINDER": 18,
+        "LIGHT_OFF": 42,
+        "LIGHT_ON": 25,
+        "LIST_REMINDERS": 18,
+        "MESSAGE": 6,
+        "NEXT": 36,
+        "PAUSE": 50,
+        "PLAY_MUSIC": 11,
+        "STOP": 72,
+        "TEMPERATURE": 28,
+        "TIME": 51,
+        "TIMER": 19,
+        "VOLUME": 94,
+        "WEATHER": 16
+      },
+      "manifest_sha256": "f32ff78f177db0e43704393c230af502568cf435e64695a0fe2a19d62446c7b1",
+      "split": "test"
+    },
+    {
+      "human_supported_by_intent": {
+        "ALARM": 8,
+        "BRIGHTNESS": 6,
+        "CALL": 3,
+        "COLOR": 6,
+        "CREATE_REMINDER": 9,
+        "LIGHT_OFF": 3,
+        "LIGHT_ON": 3,
+        "LIST_REMINDERS": 3,
+        "MESSAGE": 3,
+        "NEXT": 3,
+        "PAUSE": 3,
+        "PLAY_MUSIC": 2,
+        "STOP": 2,
+        "TEMPERATURE": 9,
+        "TIME": 3,
+        "TIMER": 9,
+        "VOLUME": 6,
+        "WEATHER": 3
+      },
+      "manifest_sha256": "6f43bf471698f84bbcafc159b066bc70b6e4c945d0e9d7c38699a539a26e23d0",
+      "split": "holdout"
+    }
+  ],
+  "test_log": ".cache/pcv-final-qualification-v1/verification-tests.log",
+  "test_log_sha256": "4679b90b8e502835fd5823b389291cd6b47c636656675bb30a68f82c601300f1"
+}

@@ -1,0 +1,45 @@
+{
+  "annotation_source_sha256": "4143d0618aa61afceec69be956949691792b3ed0f80e1f43e748f328e1420047",
+  "conflicting_labels": [],
+  "duplicate_pcm_groups": {
+    "e14d1e5b7f7355055ab7e3976f859722bb69dde3e950fa27577e266c5e0a5fbd": [
+      "primary_holdout/187",
+      "primary_holdout/188"
+    ]
+  },
+  "labels_independently_listened": false,
+  "manifest_sha256": "1c8cd44c2dd85079c2a172b04eb0e956bf458106b1e5ac83a3466a26355e67a5",
+  "new_pcm_n": 563,
+  "prior_manifest_bindings": {
+    ".cache/pcv-release-train-v1/prepared/calibration.jsonl": "44f7503ffcabc447fdc99d6f811016158aaa8e35eac86a27b9c984d510519cbd",
+    ".cache/pcv-release-train-v1/prepared/dev.jsonl": "026160491c06752ffce0f52dd20566032a61a73638dda88c05e11a950a0750d2",
+    ".cache/pcv-release-train-v1/prepared/holdout.jsonl": "c3c79fbb1e6bc04b9de0752ab854a16bcab6d0c126d2b3883619592cfca956f4",
+    ".cache/pcv-release-train-v1/prepared/test.jsonl": "c05611e30be925aa0930861e95bf88d6c9819cc802d8d7a52872c4bd846baf61",
+    ".cache/pcv-release-train-v1/prepared/train.jsonl": "0f8600bad8a60ff8fd4754fc8a584b424e088c70c48a3262e83a32e527707882"
+  },
+  "prior_pcm_overlap": {
+    "primary_holdout/holdout": 140,
+    "primary_test/test": 4192
+  },
+  "prior_speaker_overlap": {
+    "primary_holdout/holdout": 196,
+    "primary_test/test": 4414
+  },
+  "references": {
+    "primary_holdout/supported": 186,
+    "primary_holdout/unsupported": 16,
+    "primary_test/ambiguous": 101,
+    "primary_test/supported": 4203,
+    "primary_test/unsupported": 139,
+    "synthetic_negatives_test/unsupported": 250
+  },
+  "revision": "6947f13073e57eb6ae67e7e2fc3680700b82aa13",
+  "rows": 4895,
+  "source_script_sha256": "6e65d0a3c72eabd2d7bd9495071fad14562d04a56cbae6d6005e47ef56ed5b0e",
+  "synthetic_voice_lineage_independent": false,
+  "tracks": {
+    "primary_holdout": 202,
+    "primary_test": 4443,
+    "synthetic_negatives_test": 250
+  }
+}

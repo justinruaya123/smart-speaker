@@ -1,0 +1,1361 @@
+[
+  {
+    "policy": {
+      "evidence": 0.0,
+      "intent_model": "shared",
+      "intent_thresholds": {
+        "POWER_ON": 1.1,
+        "POWER_OFF": 1.1,
+        "BRIGHTNESS": 1.1,
+        "COLOR_SET": 1.1,
+        "MEDIA_PLAY": 1.1,
+        "MEDIA_RESUME": 1.1,
+        "TIME_QUERY": 1.1,
+        "DATE_QUERY": 1.1,
+        "VOLUME": 1.1,
+        "UNKNOWN": 1.1
+      },
+      "thresholds": {
+        "POWER_ON": 1.1,
+        "POWER_OFF": 1.1,
+        "COLOR_SET": 1.1,
+        "MEDIA_PLAY": 1.1,
+        "MEDIA_RESUME": 1.1,
+        "TIME_QUERY": 1.1,
+        "DATE_QUERY": 1.1,
+        "BRIGHTNESS/SET": 1.1,
+        "BRIGHTNESS/INCREASE": 1.1,
+        "BRIGHTNESS/DECREASE": 1.1,
+        "VOLUME/SET": 1.1,
+        "VOLUME/INCREASE": 1.1,
+        "VOLUME/DECREASE": 1.1,
+        "UNKNOWN": 1.1
+      }
+    },
+    "intent_gates": {
+      "groups": {
+        "POWER_ON": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "POWER_OFF": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "BRIGHTNESS": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "COLOR_SET": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "MEDIA_PLAY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "MEDIA_RESUME": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "TIME_QUERY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "DATE_QUERY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "VOLUME": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        }
+      },
+      "positive_support": {
+        "POWER_ON": 206,
+        "POWER_OFF": 247,
+        "BRIGHTNESS": 141,
+        "COLOR_SET": 99,
+        "MEDIA_PLAY": 104,
+        "MEDIA_RESUME": 50,
+        "TIME_QUERY": 71,
+        "DATE_QUERY": 85,
+        "VOLUME": 217
+      },
+      "negative_n": 649,
+      "false_accept_budget": 6,
+      "selected_false_accepts": 0,
+      "macro_utility_sum": 0.0
+    },
+    "command_gates": {
+      "groups": {
+        "POWER_ON": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "POWER_OFF": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "COLOR_SET": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "MEDIA_PLAY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "MEDIA_RESUME": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "TIME_QUERY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "DATE_QUERY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "BRIGHTNESS/SET": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "BRIGHTNESS/INCREASE": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "BRIGHTNESS/DECREASE": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "VOLUME/SET": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "VOLUME/INCREASE": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "VOLUME/DECREASE": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        }
+      },
+      "positive_support": {
+        "POWER_ON": 194,
+        "POWER_OFF": 224,
+        "COLOR_SET": 67,
+        "MEDIA_PLAY": 86,
+        "MEDIA_RESUME": 50,
+        "TIME_QUERY": 71,
+        "DATE_QUERY": 85,
+        "BRIGHTNESS/SET": 47,
+        "BRIGHTNESS/INCREASE": 24,
+        "BRIGHTNESS/DECREASE": 53,
+        "VOLUME/SET": 3,
+        "VOLUME/INCREASE": 76,
+        "VOLUME/DECREASE": 80
+      },
+      "negative_n": 809,
+      "false_accept_budget": 8,
+      "selected_false_accepts": 0,
+      "macro_utility_sum": 0.0
+    },
+    "metrics": {
+      "overall": {
+        "n": 1869,
+        "positive_n": 1060,
+        "accepted": 0,
+        "correct_accepted": 0,
+        "precision": null,
+        "exact_recall": 0.0,
+        "negative_n": 809,
+        "false_accepts": 0,
+        "negative_false_accept_rate": 0.0,
+        "family_accuracy": 0.18673087212413056
+      },
+      "per_intent": {
+        "UNKNOWN": {
+          "n": 649,
+          "positive_n": 0,
+          "family_correct": 207,
+          "family_recall": 0.3189522342064715,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": null,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "POWER_ON": {
+          "n": 206,
+          "positive_n": 194,
+          "family_correct": 23,
+          "family_recall": 0.11165048543689321,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "POWER_OFF": {
+          "n": 247,
+          "positive_n": 224,
+          "family_correct": 5,
+          "family_recall": 0.020242914979757085,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "BRIGHTNESS": {
+          "n": 141,
+          "positive_n": 124,
+          "family_correct": 31,
+          "family_recall": 0.2198581560283688,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "COLOR_SET": {
+          "n": 99,
+          "positive_n": 67,
+          "family_correct": 0,
+          "family_recall": 0.0,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "MEDIA_PLAY": {
+          "n": 104,
+          "positive_n": 86,
+          "family_correct": 1,
+          "family_recall": 0.009615384615384616,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "MEDIA_RESUME": {
+          "n": 50,
+          "positive_n": 50,
+          "family_correct": 3,
+          "family_recall": 0.06,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "TIME_QUERY": {
+          "n": 71,
+          "positive_n": 71,
+          "family_correct": 8,
+          "family_recall": 0.11267605633802817,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "DATE_QUERY": {
+          "n": 85,
+          "positive_n": 85,
+          "family_correct": 0,
+          "family_recall": 0.0,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "VOLUME": {
+          "n": 217,
+          "positive_n": 159,
+          "family_correct": 71,
+          "family_recall": 0.3271889400921659,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        }
+      },
+      "operations": {
+        "BRIGHTNESS/SET": {
+          "positive_n": 47,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        },
+        "BRIGHTNESS/INCREASE": {
+          "positive_n": 24,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        },
+        "BRIGHTNESS/DECREASE": {
+          "positive_n": 53,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        },
+        "VOLUME/SET": {
+          "positive_n": 3,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        },
+        "VOLUME/INCREASE": {
+          "positive_n": 76,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        },
+        "VOLUME/DECREASE": {
+          "positive_n": 80,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        }
+      }
+    },
+    "macro_command_recall": 0.0
+  },
+  {
+    "policy": {
+      "evidence": 0.75,
+      "intent_model": "shared",
+      "intent_thresholds": {
+        "POWER_ON": 1.1,
+        "POWER_OFF": 1.1,
+        "BRIGHTNESS": 1.1,
+        "COLOR_SET": 1.1,
+        "MEDIA_PLAY": 1.1,
+        "MEDIA_RESUME": 1.1,
+        "TIME_QUERY": 1.1,
+        "DATE_QUERY": 1.1,
+        "VOLUME": 1.1,
+        "UNKNOWN": 1.1
+      },
+      "thresholds": {
+        "POWER_ON": 1.1,
+        "POWER_OFF": 1.1,
+        "COLOR_SET": 1.1,
+        "MEDIA_PLAY": 1.1,
+        "MEDIA_RESUME": 1.1,
+        "TIME_QUERY": 1.1,
+        "DATE_QUERY": 1.1,
+        "BRIGHTNESS/SET": 1.1,
+        "BRIGHTNESS/INCREASE": 1.1,
+        "BRIGHTNESS/DECREASE": 1.1,
+        "VOLUME/SET": 1.1,
+        "VOLUME/INCREASE": 1.1,
+        "VOLUME/DECREASE": 1.1,
+        "UNKNOWN": 1.1
+      }
+    },
+    "intent_gates": {
+      "groups": {
+        "POWER_ON": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "POWER_OFF": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "BRIGHTNESS": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "COLOR_SET": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "MEDIA_PLAY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "MEDIA_RESUME": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "TIME_QUERY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "DATE_QUERY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "VOLUME": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        }
+      },
+      "positive_support": {
+        "POWER_ON": 206,
+        "POWER_OFF": 247,
+        "BRIGHTNESS": 141,
+        "COLOR_SET": 99,
+        "MEDIA_PLAY": 104,
+        "MEDIA_RESUME": 50,
+        "TIME_QUERY": 71,
+        "DATE_QUERY": 85,
+        "VOLUME": 217
+      },
+      "negative_n": 649,
+      "false_accept_budget": 6,
+      "selected_false_accepts": 0,
+      "macro_utility_sum": 0.0
+    },
+    "command_gates": {
+      "groups": {
+        "POWER_ON": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "POWER_OFF": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "COLOR_SET": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "MEDIA_PLAY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "MEDIA_RESUME": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "TIME_QUERY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "DATE_QUERY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "BRIGHTNESS/SET": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "BRIGHTNESS/INCREASE": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "BRIGHTNESS/DECREASE": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "VOLUME/SET": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "VOLUME/INCREASE": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "VOLUME/DECREASE": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        }
+      },
+      "positive_support": {
+        "POWER_ON": 194,
+        "POWER_OFF": 224,
+        "COLOR_SET": 67,
+        "MEDIA_PLAY": 86,
+        "MEDIA_RESUME": 50,
+        "TIME_QUERY": 71,
+        "DATE_QUERY": 85,
+        "BRIGHTNESS/SET": 47,
+        "BRIGHTNESS/INCREASE": 24,
+        "BRIGHTNESS/DECREASE": 53,
+        "VOLUME/SET": 3,
+        "VOLUME/INCREASE": 76,
+        "VOLUME/DECREASE": 80
+      },
+      "negative_n": 809,
+      "false_accept_budget": 8,
+      "selected_false_accepts": 0,
+      "macro_utility_sum": 0.0
+    },
+    "metrics": {
+      "overall": {
+        "n": 1869,
+        "positive_n": 1060,
+        "accepted": 0,
+        "correct_accepted": 0,
+        "precision": null,
+        "exact_recall": 0.0,
+        "negative_n": 809,
+        "false_accepts": 0,
+        "negative_false_accept_rate": 0.0,
+        "family_accuracy": 0.18405564472980204
+      },
+      "per_intent": {
+        "UNKNOWN": {
+          "n": 649,
+          "positive_n": 0,
+          "family_correct": 199,
+          "family_recall": 0.3066255778120185,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": null,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "POWER_ON": {
+          "n": 206,
+          "positive_n": 194,
+          "family_correct": 25,
+          "family_recall": 0.12135922330097088,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "POWER_OFF": {
+          "n": 247,
+          "positive_n": 224,
+          "family_correct": 6,
+          "family_recall": 0.024291497975708502,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "BRIGHTNESS": {
+          "n": 141,
+          "positive_n": 124,
+          "family_correct": 31,
+          "family_recall": 0.2198581560283688,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "COLOR_SET": {
+          "n": 99,
+          "positive_n": 67,
+          "family_correct": 0,
+          "family_recall": 0.0,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "MEDIA_PLAY": {
+          "n": 104,
+          "positive_n": 86,
+          "family_correct": 1,
+          "family_recall": 0.009615384615384616,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "MEDIA_RESUME": {
+          "n": 50,
+          "positive_n": 50,
+          "family_correct": 3,
+          "family_recall": 0.06,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "TIME_QUERY": {
+          "n": 71,
+          "positive_n": 71,
+          "family_correct": 8,
+          "family_recall": 0.11267605633802817,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "DATE_QUERY": {
+          "n": 85,
+          "positive_n": 85,
+          "family_correct": 0,
+          "family_recall": 0.0,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "VOLUME": {
+          "n": 217,
+          "positive_n": 159,
+          "family_correct": 71,
+          "family_recall": 0.3271889400921659,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        }
+      },
+      "operations": {
+        "BRIGHTNESS/SET": {
+          "positive_n": 47,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        },
+        "BRIGHTNESS/INCREASE": {
+          "positive_n": 24,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        },
+        "BRIGHTNESS/DECREASE": {
+          "positive_n": 53,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        },
+        "VOLUME/SET": {
+          "positive_n": 3,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        },
+        "VOLUME/INCREASE": {
+          "positive_n": 76,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        },
+        "VOLUME/DECREASE": {
+          "positive_n": 80,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        }
+      }
+    },
+    "macro_command_recall": 0.0
+  },
+  {
+    "policy": {
+      "evidence": 1.5,
+      "intent_model": "shared",
+      "intent_thresholds": {
+        "POWER_ON": 1.1,
+        "POWER_OFF": 1.1,
+        "BRIGHTNESS": 1.1,
+        "COLOR_SET": 1.1,
+        "MEDIA_PLAY": 1.1,
+        "MEDIA_RESUME": 1.1,
+        "TIME_QUERY": 1.1,
+        "DATE_QUERY": 1.1,
+        "VOLUME": 1.1,
+        "UNKNOWN": 1.1
+      },
+      "thresholds": {
+        "POWER_ON": 1.1,
+        "POWER_OFF": 1.1,
+        "COLOR_SET": 1.1,
+        "MEDIA_PLAY": 1.1,
+        "MEDIA_RESUME": 1.1,
+        "TIME_QUERY": 1.1,
+        "DATE_QUERY": 1.1,
+        "BRIGHTNESS/SET": 1.1,
+        "BRIGHTNESS/INCREASE": 1.1,
+        "BRIGHTNESS/DECREASE": 1.1,
+        "VOLUME/SET": 1.1,
+        "VOLUME/INCREASE": 1.1,
+        "VOLUME/DECREASE": 1.1,
+        "UNKNOWN": 1.1
+      }
+    },
+    "intent_gates": {
+      "groups": {
+        "POWER_ON": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "POWER_OFF": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "BRIGHTNESS": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "COLOR_SET": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "MEDIA_PLAY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "MEDIA_RESUME": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "TIME_QUERY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "DATE_QUERY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "VOLUME": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        }
+      },
+      "positive_support": {
+        "POWER_ON": 206,
+        "POWER_OFF": 247,
+        "BRIGHTNESS": 141,
+        "COLOR_SET": 99,
+        "MEDIA_PLAY": 104,
+        "MEDIA_RESUME": 50,
+        "TIME_QUERY": 71,
+        "DATE_QUERY": 85,
+        "VOLUME": 217
+      },
+      "negative_n": 649,
+      "false_accept_budget": 6,
+      "selected_false_accepts": 0,
+      "macro_utility_sum": 0.0
+    },
+    "command_gates": {
+      "groups": {
+        "POWER_ON": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "POWER_OFF": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "COLOR_SET": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "MEDIA_PLAY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "MEDIA_RESUME": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "TIME_QUERY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "DATE_QUERY": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "BRIGHTNESS/SET": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "BRIGHTNESS/INCREASE": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "BRIGHTNESS/DECREASE": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "VOLUME/SET": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "VOLUME/INCREASE": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        },
+        "VOLUME/DECREASE": {
+          "threshold": 1.1,
+          "accepted": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "precision": null,
+          "utility": 0.0
+        }
+      },
+      "positive_support": {
+        "POWER_ON": 194,
+        "POWER_OFF": 224,
+        "COLOR_SET": 67,
+        "MEDIA_PLAY": 86,
+        "MEDIA_RESUME": 50,
+        "TIME_QUERY": 71,
+        "DATE_QUERY": 85,
+        "BRIGHTNESS/SET": 47,
+        "BRIGHTNESS/INCREASE": 24,
+        "BRIGHTNESS/DECREASE": 53,
+        "VOLUME/SET": 3,
+        "VOLUME/INCREASE": 76,
+        "VOLUME/DECREASE": 80
+      },
+      "negative_n": 809,
+      "false_accept_budget": 8,
+      "selected_false_accepts": 0,
+      "macro_utility_sum": 0.0
+    },
+    "metrics": {
+      "overall": {
+        "n": 1869,
+        "positive_n": 1060,
+        "accepted": 0,
+        "correct_accepted": 0,
+        "precision": null,
+        "exact_recall": 0.0,
+        "negative_n": 809,
+        "false_accepts": 0,
+        "negative_false_accept_rate": 0.0,
+        "family_accuracy": 0.18459069020866772
+      },
+      "per_intent": {
+        "UNKNOWN": {
+          "n": 649,
+          "positive_n": 0,
+          "family_correct": 197,
+          "family_recall": 0.3035439137134052,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": null,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "POWER_ON": {
+          "n": 206,
+          "positive_n": 194,
+          "family_correct": 28,
+          "family_recall": 0.13592233009708737,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "POWER_OFF": {
+          "n": 247,
+          "positive_n": 224,
+          "family_correct": 6,
+          "family_recall": 0.024291497975708502,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "BRIGHTNESS": {
+          "n": 141,
+          "positive_n": 124,
+          "family_correct": 30,
+          "family_recall": 0.2127659574468085,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "COLOR_SET": {
+          "n": 99,
+          "positive_n": 67,
+          "family_correct": 0,
+          "family_recall": 0.0,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "MEDIA_PLAY": {
+          "n": 104,
+          "positive_n": 86,
+          "family_correct": 1,
+          "family_recall": 0.009615384615384616,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "MEDIA_RESUME": {
+          "n": 50,
+          "positive_n": 50,
+          "family_correct": 3,
+          "family_recall": 0.06,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "TIME_QUERY": {
+          "n": 71,
+          "positive_n": 71,
+          "family_correct": 8,
+          "family_recall": 0.11267605633802817,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "DATE_QUERY": {
+          "n": 85,
+          "positive_n": 85,
+          "family_correct": 0,
+          "family_recall": 0.0,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        },
+        "VOLUME": {
+          "n": 217,
+          "positive_n": 159,
+          "family_correct": 72,
+          "family_recall": 0.3317972350230415,
+          "accepted_intent_recall": 0.0,
+          "accepted_intent_precision": null,
+          "accepted_outputs": 0,
+          "correct_commands": 0,
+          "command_precision": null,
+          "command_recall": 0.0,
+          "negative_false_accepts": 0,
+          "rejection_rate": 1.0
+        }
+      },
+      "operations": {
+        "BRIGHTNESS/SET": {
+          "positive_n": 47,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        },
+        "BRIGHTNESS/INCREASE": {
+          "positive_n": 24,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        },
+        "BRIGHTNESS/DECREASE": {
+          "positive_n": 53,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        },
+        "VOLUME/SET": {
+          "positive_n": 3,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        },
+        "VOLUME/INCREASE": {
+          "positive_n": 76,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        },
+        "VOLUME/DECREASE": {
+          "positive_n": 80,
+          "correct": 0,
+          "recall": 0.0,
+          "accepted_outputs": 0,
+          "precision": null
+        }
+      }
+    },
+    "macro_command_recall": 0.0
+  }
+]

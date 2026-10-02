@@ -1,0 +1,975 @@
+{
+  "examples": 4314,
+  "elapsed_seconds": 82.09349549998296,
+  "quality_gate_passed": false,
+  "target_hardware_measured": false,
+  "vcm": {
+    "intent": {
+      "per_family": {
+        "UNKNOWN": {
+          "support": 1970,
+          "raw_correct": 1668,
+          "abstentions": 1947,
+          "correct_accepted": 0,
+          "false_accepts_on_reference": 23,
+          "raw_recall": 0.8467005076142132,
+          "correct_accepted_recall": 0.0,
+          "accepted_precision": null,
+          "raw_recall_wilson95": [
+            0.8301176674731187,
+            0.8619338617394355
+          ],
+          "correct_accepted_recall_wilson95": [
+            1.0842021724855044e-19,
+            0.001946184078527397
+          ],
+          "accepted_precision_wilson95": null
+        },
+        "POWER_ON": {
+          "support": 572,
+          "raw_correct": 543,
+          "abstentions": 33,
+          "accepted_predictions": 540,
+          "wrong_accepts": 7,
+          "correct_accepted": 533,
+          "false_accepts_on_reference": 6,
+          "raw_recall": 0.9493006993006993,
+          "correct_accepted_recall": 0.9318181818181818,
+          "accepted_precision": 0.987037037037037,
+          "raw_recall_wilson95": [
+            0.9281360295248283,
+            0.9644707672359613
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.908149780960764,
+            0.9497252338248977
+          ],
+          "accepted_precision_wilson95": [
+            0.9734867823067677,
+            0.993706857436361
+          ]
+        },
+        "POWER_OFF": {
+          "support": 629,
+          "raw_correct": 577,
+          "abstentions": 93,
+          "accepted_predictions": 547,
+          "wrong_accepts": 21,
+          "correct_accepted": 526,
+          "false_accepts_on_reference": 10,
+          "raw_recall": 0.9173290937996821,
+          "correct_accepted_recall": 0.8362480127186009,
+          "accepted_precision": 0.9616087751371115,
+          "raw_recall_wilson95": [
+            0.8931912535838638,
+            0.9364004121997631
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.8053036527380121,
+            0.863110203693367
+          ],
+          "accepted_precision_wilson95": [
+            0.9420244851879426,
+            0.974754729436104
+          ]
+        },
+        "BRIGHTNESS": {
+          "support": 150,
+          "raw_correct": 102,
+          "abstentions": 73,
+          "accepted_predictions": 87,
+          "wrong_accepts": 21,
+          "correct_accepted": 66,
+          "false_accepts_on_reference": 11,
+          "raw_recall": 0.68,
+          "correct_accepted_recall": 0.44,
+          "accepted_precision": 0.7586206896551724,
+          "raw_recall_wilson95": [
+            0.6016560026038712,
+            0.7493547094236214
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.3630449619604422,
+            0.519951467363727
+          ],
+          "accepted_precision_wilson95": [
+            0.6590101624669179,
+            0.8363583684240542
+          ]
+        },
+        "COLOR_SET": {
+          "support": 70,
+          "raw_correct": 41,
+          "abstentions": 65,
+          "correct_accepted": 0,
+          "false_accepts_on_reference": 5,
+          "raw_recall": 0.5857142857142857,
+          "correct_accepted_recall": 0.0,
+          "accepted_precision": null,
+          "raw_recall_wilson95": [
+            0.46881211784560456,
+            0.6936982143126353
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.0,
+            0.05202306241026692
+          ],
+          "accepted_precision_wilson95": null
+        },
+        "MEDIA_PLAY": {
+          "support": 485,
+          "raw_correct": 354,
+          "abstentions": 435,
+          "accepted_predictions": 54,
+          "wrong_accepts": 7,
+          "correct_accepted": 47,
+          "false_accepts_on_reference": 3,
+          "raw_recall": 0.7298969072164948,
+          "correct_accepted_recall": 0.09690721649484536,
+          "accepted_precision": 0.8703703703703703,
+          "raw_recall_wilson95": [
+            0.6886884615324647,
+            0.7674921589451364
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.07365965750491466,
+            0.12649001690431366
+          ],
+          "accepted_precision_wilson95": [
+            0.7557826977763024,
+            0.9357627925267374
+          ]
+        },
+        "MEDIA_RESUME": {
+          "support": 52,
+          "raw_correct": 13,
+          "abstentions": 46,
+          "correct_accepted": 0,
+          "false_accepts_on_reference": 6,
+          "raw_recall": 0.25,
+          "correct_accepted_recall": 0.0,
+          "accepted_precision": null,
+          "raw_recall_wilson95": [
+            0.15233153863595772,
+            0.3820645794259735
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.0,
+            0.06879223612386234
+          ],
+          "accepted_precision_wilson95": null
+        },
+        "TIME_QUERY": {
+          "support": 100,
+          "raw_correct": 68,
+          "abstentions": 69,
+          "accepted_predictions": 30,
+          "wrong_accepts": 0,
+          "correct_accepted": 30,
+          "false_accepts_on_reference": 1,
+          "raw_recall": 0.68,
+          "correct_accepted_recall": 0.3,
+          "accepted_precision": 1.0,
+          "raw_recall_wilson95": [
+            0.5833738138954762,
+            0.7633085267500092
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.2189488529493276,
+            0.3958485463334666
+          ],
+          "accepted_precision_wilson95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        "DATE_QUERY": {
+          "support": 103,
+          "raw_correct": 89,
+          "abstentions": 58,
+          "accepted_predictions": 47,
+          "wrong_accepts": 2,
+          "correct_accepted": 45,
+          "false_accepts_on_reference": 0,
+          "raw_recall": 0.8640776699029126,
+          "correct_accepted_recall": 0.4368932038834951,
+          "accepted_precision": 0.9574468085106383,
+          "raw_recall_wilson95": [
+            0.7846989505636784,
+            0.9172757400465291
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.34508430443595695,
+            0.5332400825249405
+          ],
+          "accepted_precision_wilson95": [
+            0.8575147232210055,
+            0.9882517240332106
+          ]
+        },
+        "VOLUME": {
+          "accepted_predictions": 126,
+          "wrong_accepts": 8,
+          "support": 183,
+          "raw_correct": 137,
+          "abstentions": 64,
+          "correct_accepted": 118,
+          "false_accepts_on_reference": 1,
+          "raw_recall": 0.7486338797814208,
+          "correct_accepted_recall": 0.644808743169399,
+          "accepted_precision": 0.9365079365079365,
+          "raw_recall_wilson95": [
+            0.6811109495272237,
+            0.805932989084548
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.5731457591472202,
+            0.7105171941101853
+          ],
+          "accepted_precision_wilson95": [
+            0.8797075709803873,
+            0.9674794600272171
+          ]
+        }
+      },
+      "confusion": {
+        "UNKNOWN": {
+          "UNKNOWN": 1668,
+          "POWER_ON": 11,
+          "POWER_OFF": 40,
+          "BRIGHTNESS": 39,
+          "COLOR_SET": 17,
+          "MEDIA_PLAY": 93,
+          "MEDIA_RESUME": 6,
+          "TIME_QUERY": 26,
+          "DATE_QUERY": 32,
+          "VOLUME": 38
+        },
+        "POWER_ON": {
+          "UNKNOWN": 8,
+          "POWER_ON": 543,
+          "POWER_OFF": 11,
+          "BRIGHTNESS": 4,
+          "COLOR_SET": 1,
+          "MEDIA_PLAY": 3,
+          "MEDIA_RESUME": 0,
+          "TIME_QUERY": 0,
+          "DATE_QUERY": 0,
+          "VOLUME": 2
+        },
+        "POWER_OFF": {
+          "UNKNOWN": 22,
+          "POWER_ON": 8,
+          "POWER_OFF": 577,
+          "BRIGHTNESS": 13,
+          "COLOR_SET": 4,
+          "MEDIA_PLAY": 2,
+          "MEDIA_RESUME": 0,
+          "TIME_QUERY": 0,
+          "DATE_QUERY": 1,
+          "VOLUME": 2
+        },
+        "BRIGHTNESS": {
+          "UNKNOWN": 13,
+          "POWER_ON": 3,
+          "POWER_OFF": 18,
+          "BRIGHTNESS": 102,
+          "COLOR_SET": 6,
+          "MEDIA_PLAY": 3,
+          "MEDIA_RESUME": 0,
+          "TIME_QUERY": 1,
+          "DATE_QUERY": 0,
+          "VOLUME": 4
+        },
+        "COLOR_SET": {
+          "UNKNOWN": 13,
+          "POWER_ON": 2,
+          "POWER_OFF": 2,
+          "BRIGHTNESS": 8,
+          "COLOR_SET": 41,
+          "MEDIA_PLAY": 3,
+          "MEDIA_RESUME": 0,
+          "TIME_QUERY": 1,
+          "DATE_QUERY": 0,
+          "VOLUME": 0
+        },
+        "MEDIA_PLAY": {
+          "UNKNOWN": 110,
+          "POWER_ON": 4,
+          "POWER_OFF": 3,
+          "BRIGHTNESS": 5,
+          "COLOR_SET": 1,
+          "MEDIA_PLAY": 354,
+          "MEDIA_RESUME": 0,
+          "TIME_QUERY": 1,
+          "DATE_QUERY": 3,
+          "VOLUME": 4
+        },
+        "MEDIA_RESUME": {
+          "UNKNOWN": 5,
+          "POWER_ON": 0,
+          "POWER_OFF": 1,
+          "BRIGHTNESS": 0,
+          "COLOR_SET": 0,
+          "MEDIA_PLAY": 33,
+          "MEDIA_RESUME": 13,
+          "TIME_QUERY": 0,
+          "DATE_QUERY": 0,
+          "VOLUME": 0
+        },
+        "TIME_QUERY": {
+          "UNKNOWN": 24,
+          "POWER_ON": 0,
+          "POWER_OFF": 0,
+          "BRIGHTNESS": 1,
+          "COLOR_SET": 0,
+          "MEDIA_PLAY": 0,
+          "MEDIA_RESUME": 0,
+          "TIME_QUERY": 68,
+          "DATE_QUERY": 4,
+          "VOLUME": 3
+        },
+        "DATE_QUERY": {
+          "UNKNOWN": 10,
+          "POWER_ON": 0,
+          "POWER_OFF": 0,
+          "BRIGHTNESS": 0,
+          "COLOR_SET": 0,
+          "MEDIA_PLAY": 3,
+          "MEDIA_RESUME": 0,
+          "TIME_QUERY": 1,
+          "DATE_QUERY": 89,
+          "VOLUME": 0
+        },
+        "VOLUME": {
+          "UNKNOWN": 36,
+          "POWER_ON": 1,
+          "POWER_OFF": 3,
+          "BRIGHTNESS": 1,
+          "COLOR_SET": 0,
+          "MEDIA_PLAY": 4,
+          "MEDIA_RESUME": 1,
+          "TIME_QUERY": 0,
+          "DATE_QUERY": 0,
+          "VOLUME": 137
+        }
+      },
+      "correct_accepted": 1365,
+      "accepted": 1431,
+      "accepted_precision": 0.9538784067085954,
+      "unknown_false_accepts": 23,
+      "unknown_support": 1970,
+      "unknown_false_accept_rate": 0.011675126903553299,
+      "unknown_rate_wilson95": [
+        0.007792292283044026,
+        0.01745870171040101
+      ],
+      "gates": {
+        "low_raw_recall": [
+          "BRIGHTNESS",
+          "COLOR_SET",
+          "MEDIA_PLAY",
+          "MEDIA_RESUME",
+          "TIME_QUERY",
+          "VOLUME"
+        ],
+        "low_accepted_recall": [
+          "BRIGHTNESS",
+          "COLOR_SET",
+          "MEDIA_PLAY",
+          "MEDIA_RESUME",
+          "TIME_QUERY",
+          "DATE_QUERY"
+        ],
+        "additional_low_per_intent_precision": [
+          "BRIGHTNESS",
+          "COLOR_SET",
+          "MEDIA_PLAY",
+          "MEDIA_RESUME",
+          "VOLUME"
+        ],
+        "global_precision_pass": true,
+        "unknown_pass": false,
+        "inherited_pass": false
+      },
+      "uncertainty_note": "Wilson intervals describe recording counts, not independent-speaker or seed uncertainty."
+    },
+    "commands": {
+      "finite_references": 1783,
+      "emitted": 965,
+      "correct_complete": 903,
+      "parameter_calls": 0
+    },
+    "exact_finite_command_recall": 0.5064498037016265,
+    "accepted_command_precision": 0.9357512953367876
+  },
+  "pipeline": {
+    "intent": {
+      "per_family": {
+        "UNKNOWN": {
+          "support": 1970,
+          "raw_correct": 1655,
+          "abstentions": 1936,
+          "correct_accepted": 0,
+          "false_accepts_on_reference": 34,
+          "raw_recall": 0.8401015228426396,
+          "correct_accepted_recall": 0.0,
+          "accepted_precision": null,
+          "raw_recall_wilson95": [
+            0.8232571977605395,
+            0.8556220475870612
+          ],
+          "correct_accepted_recall_wilson95": [
+            1.0842021724855044e-19,
+            0.001946184078527397
+          ],
+          "accepted_precision_wilson95": null
+        },
+        "POWER_ON": {
+          "support": 572,
+          "raw_correct": 542,
+          "abstentions": 30,
+          "accepted_predictions": 539,
+          "wrong_accepts": 6,
+          "correct_accepted": 533,
+          "false_accepts_on_reference": 9,
+          "raw_recall": 0.9475524475524476,
+          "correct_accepted_recall": 0.9318181818181818,
+          "accepted_precision": 0.9888682745825603,
+          "raw_recall_wilson95": [
+            0.9261157063847378,
+            0.9630179121785392
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.908149780960764,
+            0.9497252338248977
+          ],
+          "accepted_precision_wilson95": [
+            0.9759290017166596,
+            0.9948885204838199
+          ]
+        },
+        "POWER_OFF": {
+          "support": 629,
+          "raw_correct": 576,
+          "abstentions": 93,
+          "accepted_predictions": 552,
+          "wrong_accepts": 24,
+          "correct_accepted": 528,
+          "false_accepts_on_reference": 8,
+          "raw_recall": 0.9157392686804452,
+          "correct_accepted_recall": 0.8394276629570747,
+          "accepted_precision": 0.9565217391304348,
+          "raw_recall_wilson95": [
+            0.8914269321535867,
+            0.9350043844270547
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.8086891105357936,
+            0.8660454443015559
+          ],
+          "accepted_precision_wilson95": [
+            0.9361222306969281,
+            0.9706111408463103
+          ]
+        },
+        "BRIGHTNESS": {
+          "support": 150,
+          "raw_correct": 101,
+          "abstentions": 71,
+          "accepted_predictions": 94,
+          "wrong_accepts": 24,
+          "correct_accepted": 70,
+          "false_accepts_on_reference": 9,
+          "raw_recall": 0.6733333333333333,
+          "correct_accepted_recall": 0.4666666666666667,
+          "accepted_precision": 0.7446808510638298,
+          "raw_recall_wilson95": [
+            0.5947685286976767,
+            0.7432417865880567
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.38866050759928206,
+            0.5463375086919231
+          ],
+          "accepted_precision_wilson95": [
+            0.6481418017992592,
+            0.822006543845304
+          ]
+        },
+        "COLOR_SET": {
+          "support": 70,
+          "raw_correct": 39,
+          "abstentions": 67,
+          "correct_accepted": 0,
+          "false_accepts_on_reference": 3,
+          "raw_recall": 0.5571428571428572,
+          "correct_accepted_recall": 0.0,
+          "accepted_precision": null,
+          "raw_recall_wilson95": [
+            0.44083551053188,
+            0.6675047109069467
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.0,
+            0.05202306241026692
+          ],
+          "accepted_precision_wilson95": null
+        },
+        "MEDIA_PLAY": {
+          "support": 485,
+          "raw_correct": 332,
+          "abstentions": 437,
+          "accepted_predictions": 48,
+          "wrong_accepts": 7,
+          "correct_accepted": 41,
+          "false_accepts_on_reference": 7,
+          "raw_recall": 0.6845360824742268,
+          "correct_accepted_recall": 0.08453608247422681,
+          "accepted_precision": 0.8541666666666666,
+          "raw_recall_wilson95": [
+            0.6418661309929125,
+            0.724305757193144
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.06292502192193065,
+            0.11267681640778547
+          ],
+          "accepted_precision_wilson95": [
+            0.7283282347525372,
+            0.9275175067339628
+          ]
+        },
+        "MEDIA_RESUME": {
+          "support": 52,
+          "raw_correct": 13,
+          "abstentions": 46,
+          "correct_accepted": 0,
+          "false_accepts_on_reference": 6,
+          "raw_recall": 0.25,
+          "correct_accepted_recall": 0.0,
+          "accepted_precision": null,
+          "raw_recall_wilson95": [
+            0.15233153863595772,
+            0.3820645794259735
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.0,
+            0.06879223612386234
+          ],
+          "accepted_precision_wilson95": null
+        },
+        "TIME_QUERY": {
+          "support": 100,
+          "raw_correct": 69,
+          "abstentions": 72,
+          "accepted_predictions": 27,
+          "wrong_accepts": 0,
+          "correct_accepted": 27,
+          "false_accepts_on_reference": 1,
+          "raw_recall": 0.69,
+          "correct_accepted_recall": 0.27,
+          "accepted_precision": 1.0,
+          "raw_recall_wilson95": [
+            0.5937394428051057,
+            0.7722030278762395
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.1926958414957634,
+            0.36432116767944994
+          ],
+          "accepted_precision_wilson95": [
+            0.8754449702581328,
+            0.9999999999999998
+          ]
+        },
+        "DATE_QUERY": {
+          "support": 103,
+          "raw_correct": 85,
+          "abstentions": 59,
+          "accepted_predictions": 45,
+          "wrong_accepts": 1,
+          "correct_accepted": 44,
+          "false_accepts_on_reference": 0,
+          "raw_recall": 0.8252427184466019,
+          "correct_accepted_recall": 0.42718446601941745,
+          "accepted_precision": 0.9777777777777777,
+          "raw_recall_wilson95": [
+            0.7405963558470099,
+            0.8865010344314423
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.3359680595227062,
+            0.5236370023552522
+          ],
+          "accepted_precision_wilson95": [
+            0.8843331823158513,
+            0.9960664011171667
+          ]
+        },
+        "VOLUME": {
+          "accepted_predictions": 144,
+          "wrong_accepts": 16,
+          "support": 183,
+          "raw_correct": 142,
+          "abstentions": 54,
+          "correct_accepted": 128,
+          "false_accepts_on_reference": 1,
+          "raw_recall": 0.7759562841530054,
+          "correct_accepted_recall": 0.6994535519125683,
+          "accepted_precision": 0.8888888888888888,
+          "raw_recall_wilson95": [
+            0.7102284290930444,
+            0.8303368214540866
+          ],
+          "correct_accepted_recall_wilson95": [
+            0.6294824436404303,
+            0.7612231334876942
+          ],
+          "accepted_precision_wilson95": [
+            0.8271276693230506,
+            0.9304406128990318
+          ]
+        }
+      },
+      "confusion": {
+        "UNKNOWN": {
+          "UNKNOWN": 1655,
+          "POWER_ON": 15,
+          "POWER_OFF": 45,
+          "BRIGHTNESS": 47,
+          "COLOR_SET": 15,
+          "MEDIA_PLAY": 89,
+          "MEDIA_RESUME": 3,
+          "TIME_QUERY": 22,
+          "DATE_QUERY": 28,
+          "VOLUME": 51
+        },
+        "POWER_ON": {
+          "UNKNOWN": 8,
+          "POWER_ON": 542,
+          "POWER_OFF": 14,
+          "BRIGHTNESS": 3,
+          "COLOR_SET": 2,
+          "MEDIA_PLAY": 0,
+          "MEDIA_RESUME": 0,
+          "TIME_QUERY": 0,
+          "DATE_QUERY": 0,
+          "VOLUME": 3
+        },
+        "POWER_OFF": {
+          "UNKNOWN": 31,
+          "POWER_ON": 7,
+          "POWER_OFF": 576,
+          "BRIGHTNESS": 10,
+          "COLOR_SET": 2,
+          "MEDIA_PLAY": 1,
+          "MEDIA_RESUME": 0,
+          "TIME_QUERY": 0,
+          "DATE_QUERY": 0,
+          "VOLUME": 2
+        },
+        "BRIGHTNESS": {
+          "UNKNOWN": 15,
+          "POWER_ON": 1,
+          "POWER_OFF": 19,
+          "BRIGHTNESS": 101,
+          "COLOR_SET": 8,
+          "MEDIA_PLAY": 2,
+          "MEDIA_RESUME": 0,
+          "TIME_QUERY": 1,
+          "DATE_QUERY": 0,
+          "VOLUME": 3
+        },
+        "COLOR_SET": {
+          "UNKNOWN": 13,
+          "POWER_ON": 3,
+          "POWER_OFF": 2,
+          "BRIGHTNESS": 8,
+          "COLOR_SET": 39,
+          "MEDIA_PLAY": 2,
+          "MEDIA_RESUME": 0,
+          "TIME_QUERY": 1,
+          "DATE_QUERY": 1,
+          "VOLUME": 1
+        },
+        "MEDIA_PLAY": {
+          "UNKNOWN": 131,
+          "POWER_ON": 4,
+          "POWER_OFF": 2,
+          "BRIGHTNESS": 3,
+          "COLOR_SET": 2,
+          "MEDIA_PLAY": 332,
+          "MEDIA_RESUME": 0,
+          "TIME_QUERY": 2,
+          "DATE_QUERY": 3,
+          "VOLUME": 6
+        },
+        "MEDIA_RESUME": {
+          "UNKNOWN": 4,
+          "POWER_ON": 0,
+          "POWER_OFF": 1,
+          "BRIGHTNESS": 0,
+          "COLOR_SET": 0,
+          "MEDIA_PLAY": 34,
+          "MEDIA_RESUME": 13,
+          "TIME_QUERY": 0,
+          "DATE_QUERY": 0,
+          "VOLUME": 0
+        },
+        "TIME_QUERY": {
+          "UNKNOWN": 25,
+          "POWER_ON": 0,
+          "POWER_OFF": 0,
+          "BRIGHTNESS": 1,
+          "COLOR_SET": 0,
+          "MEDIA_PLAY": 0,
+          "MEDIA_RESUME": 0,
+          "TIME_QUERY": 69,
+          "DATE_QUERY": 2,
+          "VOLUME": 3
+        },
+        "DATE_QUERY": {
+          "UNKNOWN": 12,
+          "POWER_ON": 0,
+          "POWER_OFF": 0,
+          "BRIGHTNESS": 1,
+          "COLOR_SET": 0,
+          "MEDIA_PLAY": 3,
+          "MEDIA_RESUME": 1,
+          "TIME_QUERY": 1,
+          "DATE_QUERY": 85,
+          "VOLUME": 0
+        },
+        "VOLUME": {
+          "UNKNOWN": 32,
+          "POWER_ON": 1,
+          "POWER_OFF": 3,
+          "BRIGHTNESS": 1,
+          "COLOR_SET": 0,
+          "MEDIA_PLAY": 3,
+          "MEDIA_RESUME": 1,
+          "TIME_QUERY": 0,
+          "DATE_QUERY": 0,
+          "VOLUME": 142
+        }
+      },
+      "correct_accepted": 1371,
+      "accepted": 1449,
+      "accepted_precision": 0.9461697722567288,
+      "unknown_false_accepts": 34,
+      "unknown_support": 1970,
+      "unknown_false_accept_rate": 0.017258883248730966,
+      "unknown_rate_wilson95": [
+        0.012376709433809882,
+        0.02402006321459576
+      ],
+      "gates": {
+        "low_raw_recall": [
+          "BRIGHTNESS",
+          "COLOR_SET",
+          "MEDIA_PLAY",
+          "MEDIA_RESUME",
+          "TIME_QUERY",
+          "VOLUME"
+        ],
+        "low_accepted_recall": [
+          "BRIGHTNESS",
+          "COLOR_SET",
+          "MEDIA_PLAY",
+          "MEDIA_RESUME",
+          "TIME_QUERY",
+          "DATE_QUERY"
+        ],
+        "additional_low_per_intent_precision": [
+          "BRIGHTNESS",
+          "COLOR_SET",
+          "MEDIA_PLAY",
+          "MEDIA_RESUME",
+          "VOLUME"
+        ],
+        "global_precision_pass": false,
+        "unknown_pass": false,
+        "inherited_pass": false
+      },
+      "uncertainty_note": "Wilson intervals describe recording counts, not independent-speaker or seed uncertainty."
+    },
+    "commands": {
+      "finite_references": 1783,
+      "emitted": 986,
+      "correct_complete": 899,
+      "parameter_calls": 0
+    },
+    "exact_finite_command_recall": 0.504206393718452,
+    "accepted_command_precision": 0.9117647058823529
+  },
+  "vad": {
+    "recordings_with_speech": 4314,
+    "endpoints": 4547,
+    "timeouts": 2,
+    "boundary_accuracy_assessed": false
+  },
+  "quality_gate_criteria": {
+    "per_family_raw_recall": 0.8,
+    "per_family_accepted_recall": 0.6,
+    "global_and_per_family_accepted_precision": 0.95,
+    "maximum_unknown_false_accept_rate": 0.01,
+    "finite_command_recall": 0.6,
+    "finite_command_precision": 0.95,
+    "scope": "selected command paths only; VAD-only does not establish command quality"
+  },
+  "quality_gate_note": "Software quality gates are separate from production readiness. Target-device, live microphone, reviewed-reference and custom-parameter acceptance remain unestablished.",
+  "experiment": "wake-pipeline-v1",
+  "per_family_commands": {
+    "vcm": {
+      "MEDIA_PLAY": {
+        "recordings": 485,
+        "valid_commands": 75,
+        "correct_commands": 0,
+        "accepted_outputs": 0,
+        "false_accepts_on_unknown": 0
+      },
+      "DATE_QUERY": {
+        "recordings": 103,
+        "valid_commands": 103,
+        "correct_commands": 45,
+        "accepted_outputs": 47,
+        "false_accepts_on_unknown": 0
+      },
+      "BRIGHTNESS": {
+        "recordings": 150,
+        "valid_commands": 126,
+        "correct_commands": 38,
+        "accepted_outputs": 47,
+        "false_accepts_on_unknown": 0
+      },
+      "POWER_OFF": {
+        "recordings": 629,
+        "valid_commands": 600,
+        "correct_commands": 325,
+        "accepted_outputs": 338,
+        "false_accepts_on_unknown": 0
+      },
+      "TIME_QUERY": {
+        "recordings": 100,
+        "valid_commands": 100,
+        "correct_commands": 30,
+        "accepted_outputs": 30,
+        "false_accepts_on_unknown": 0
+      },
+      "COLOR_SET": {
+        "recordings": 70,
+        "valid_commands": 32,
+        "correct_commands": 0,
+        "accepted_outputs": 0,
+        "false_accepts_on_unknown": 0
+      },
+      "POWER_ON": {
+        "recordings": 572,
+        "valid_commands": 556,
+        "correct_commands": 398,
+        "accepted_outputs": 429,
+        "false_accepts_on_unknown": 0
+      },
+      "MEDIA_RESUME": {
+        "recordings": 52,
+        "valid_commands": 52,
+        "correct_commands": 0,
+        "accepted_outputs": 0,
+        "false_accepts_on_unknown": 0
+      },
+      "VOLUME": {
+        "recordings": 183,
+        "valid_commands": 139,
+        "correct_commands": 67,
+        "accepted_outputs": 74,
+        "false_accepts_on_unknown": 0
+      },
+      "UNKNOWN": {
+        "recordings": 1970,
+        "valid_commands": 0,
+        "correct_commands": 0,
+        "accepted_outputs": 0,
+        "false_accepts_on_unknown": 8
+      }
+    },
+    "pipeline": {
+      "MEDIA_PLAY": {
+        "recordings": 485,
+        "valid_commands": 75,
+        "correct_commands": 0,
+        "accepted_outputs": 0,
+        "false_accepts_on_unknown": 0
+      },
+      "DATE_QUERY": {
+        "recordings": 103,
+        "valid_commands": 103,
+        "correct_commands": 44,
+        "accepted_outputs": 45,
+        "false_accepts_on_unknown": 0
+      },
+      "BRIGHTNESS": {
+        "recordings": 150,
+        "valid_commands": 126,
+        "correct_commands": 32,
+        "accepted_outputs": 44,
+        "false_accepts_on_unknown": 0
+      },
+      "POWER_OFF": {
+        "recordings": 629,
+        "valid_commands": 600,
+        "correct_commands": 329,
+        "accepted_outputs": 351,
+        "false_accepts_on_unknown": 0
+      },
+      "TIME_QUERY": {
+        "recordings": 100,
+        "valid_commands": 100,
+        "correct_commands": 27,
+        "accepted_outputs": 27,
+        "false_accepts_on_unknown": 0
+      },
+      "COLOR_SET": {
+        "recordings": 70,
+        "valid_commands": 32,
+        "correct_commands": 0,
+        "accepted_outputs": 0,
+        "false_accepts_on_unknown": 0
+      },
+      "POWER_ON": {
+        "recordings": 572,
+        "valid_commands": 556,
+        "correct_commands": 399,
+        "accepted_outputs": 434,
+        "false_accepts_on_unknown": 0
+      },
+      "MEDIA_RESUME": {
+        "recordings": 52,
+        "valid_commands": 52,
+        "correct_commands": 0,
+        "accepted_outputs": 0,
+        "false_accepts_on_unknown": 0
+      },
+      "VOLUME": {
+        "recordings": 183,
+        "valid_commands": 139,
+        "correct_commands": 68,
+        "accepted_outputs": 85,
+        "false_accepts_on_unknown": 0
+      },
+      "UNKNOWN": {
+        "recordings": 1970,
+        "valid_commands": 0,
+        "correct_commands": 0,
+        "accepted_outputs": 0,
+        "false_accepts_on_unknown": 13
+      }
+    }
+  },
+  "scope": "Historical command-only recordings, no wake phrase. Tests Silero endpointing and unchanged VCM; not live wake accuracy.",
+  "vcm_sha256": "a7fa48af1d8a24a24c08c8a98cf19e303fffdda3d0281fd7f11ea80223fd6eba",
+  "config_sha256": "9c497ba812ee4549428e8ff3ece3178e031ec98982c9e661b1e316f83f62e707",
+  "fresh_holdout": false,
+  "live_microphone_tested": false,
+  "physical_pi_tested": false
+}

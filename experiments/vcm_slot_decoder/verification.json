@@ -1,0 +1,55 @@
+{
+  "created_utc": "2026-09-22T08:18:27.061758+00:00",
+  "checks": {
+    "inputs": {
+      "paths": 22,
+      "mismatches": []
+    },
+    "installed_before": {
+      "paths": 20,
+      "mismatches": []
+    },
+    "protected_before": {
+      "paths": 3,
+      "mismatches": []
+    }
+  },
+  "source_syntax_checked": [
+    "experiments/vcm_slot_decoder/run.py",
+    "scripts/models/vcm_slot_decoder.py",
+    "scripts/test/vcm_slot_decoder_eval.py",
+    "scripts/test/vcm_slot_decoder_checks.py",
+    "scripts/test/vcm_slot_decoder_diagnostics.py"
+  ],
+  "behavioral_tests": 8,
+  "behavioral_exit": 0,
+  "behavioral_output": "test_close_or_tied_candidates_reject (vcm_slot_decoder_checks.SlotDecoderChecks.test_close_or_tied_candidates_reject) ... ok\ntest_homophone_alias_collision_rejects (vcm_slot_decoder_checks.SlotDecoderChecks.test_homophone_alias_collision_rejects) ... ok\ntest_missing_meridiem_never_invents_time (vcm_slot_decoder_checks.SlotDecoderChecks.test_missing_meridiem_never_invents_time) ... ok\ntest_no_fake_probability (vcm_slot_decoder_checks.SlotDecoderChecks.test_no_fake_probability) ... ok\ntest_no_intent_rescue (vcm_slot_decoder_checks.SlotDecoderChecks.test_no_intent_rescue) ... ok\ntest_numeric_composition_inventory (vcm_slot_decoder_checks.SlotDecoderChecks.test_numeric_composition_inventory) ... ok\ntest_stale_catalog_invalidates_acceptance (vcm_slot_decoder_checks.SlotDecoderChecks.test_stale_catalog_invalidates_acceptance) ... ok\ntest_unknowns_count_against_calibration (vcm_slot_decoder_checks.SlotDecoderChecks.test_unknowns_count_against_calibration) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.003s\n\nOK\n",
+  "frozen_prepare_exit": 0,
+  "query_smoke_cases": 3,
+  "query_smoke_sha256": "a0ffac7ad154bd2f1f6bd40cb5966717edb03ea210e32b2bf9e721634b0e458c",
+  "receipt_hashes_verified": true,
+  "report_local_links_checked": true,
+  "shipping_source_map_excludes_poc": true,
+  "environment": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "soundfile": "0.14.0",
+    "onnxruntime": "1.30.0",
+    "einops": "0.8.2",
+    "threadpoolctl": "3.7.0",
+    "psutil": "7.2.2"
+  },
+  "python": "3.12.13 (main, Jul 23 2026, 14:44:57) [MSC v.1944 64 bit (AMD64)]",
+  "new_source_hashes": {
+    "experiments/vcm_slot_decoder/run.py": "a95ef38108678b15c9303ba09c8dbde60df04c1be019f67eeaea04f1a943161f",
+    "scripts/models/vcm_slot_decoder.py": "e13239b3a153451c13e0838cca6120e568cb749b21ed888209392fa4e7463b9d",
+    "scripts/test/vcm_slot_decoder_eval.py": "23b14d77351f9f5209e784c8bed11b05abee863e41f56704514259ba189dd4d5",
+    "scripts/test/vcm_slot_decoder_checks.py": "98df20df788b5d6c6eb63df86ff564c6753aedb73c6925386250f399b845e5e6",
+    "scripts/test/vcm_slot_decoder_diagnostics.py": "297e4adb13d9a301e34155f8cf075ad5e2fdea5270df4a1c59083d96223ded68"
+  },
+  "installation_performed": false,
+  "training_performed": false,
+  "commit_performed": false,
+  "pi_tested": false,
+  "live_microphone_tested": false
+}

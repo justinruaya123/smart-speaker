@@ -1,0 +1,14 @@
+{
+  "id": "designed-09",
+  "split": "dev",
+  "accent_requested": "en-PH-requested",
+  "prompt": "An older Filipino man speaking English with a Filipino accent, slightly gravelly medium voice and clear steady delivery. Speak only the supplied English text. Clean dry recording without music.",
+  "seed": 1709,
+  "accent_verified_by_human": false,
+  "identity_source": "synthetic_voice_design",
+  "text": "Hello, I am ready to help. Please speak clearly and tell me what you would like to do today.",
+  "audio_sha256": "e15de4a6abf99407a5cb0e439555428d9b18c45dcb5f5282a1448794a523e990",
+  "rate": 24000,
+  "duration": 6.8,
+  "generation_seconds": 12.409258200030308
+}

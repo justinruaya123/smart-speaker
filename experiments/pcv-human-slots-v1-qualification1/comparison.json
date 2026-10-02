@@ -1,0 +1,124 @@
+{
+  "arms": {
+    "human": {
+      "human_policy_point": {
+        "accepted": 835,
+        "exact": 835,
+        "false_accept_rate": 0.0,
+        "n": 5413,
+        "negative_errors": 0,
+        "negative_n": 3623,
+        "positive_n": 1790,
+        "precision": 1.0,
+        "recall": 0.4664804469273743
+      },
+      "human_raw": {
+        "accepted": 4416,
+        "exact": 1768,
+        "false_accept_rate": 0.7256417333701353,
+        "n": 5413,
+        "negative_errors": 2629,
+        "negative_n": 3623,
+        "positive_n": 1790,
+        "precision": 0.4003623188405797,
+        "recall": 0.9877094972067039
+      },
+      "policy_enabled": false,
+      "sapi_baseline_raw": {
+        "accepted": 92,
+        "exact": 91,
+        "false_accept_rate": null,
+        "n": 93,
+        "negative_errors": 0,
+        "negative_n": 0,
+        "positive_n": 93,
+        "precision": 0.9891304347826086,
+        "recall": 0.978494623655914
+      },
+      "synthetic_policy_point": {
+        "accepted": 23,
+        "exact": 23,
+        "false_accept_rate": 0.0,
+        "n": 5950,
+        "negative_errors": 0,
+        "negative_n": 2236,
+        "positive_n": 3714,
+        "precision": 1.0,
+        "recall": 0.006192784060312331
+      },
+      "synthetic_raw": {
+        "accepted": 3525,
+        "exact": 908,
+        "false_accept_rate": 0.1771019677996422,
+        "n": 5950,
+        "negative_errors": 396,
+        "negative_n": 2236,
+        "positive_n": 3714,
+        "precision": 0.25758865248226953,
+        "recall": 0.24448034464189553
+      }
+    },
+    "mixed": {
+      "human_policy_point": {
+        "accepted": 1160,
+        "exact": 1160,
+        "false_accept_rate": 0.0,
+        "n": 5413,
+        "negative_errors": 0,
+        "negative_n": 3623,
+        "positive_n": 1790,
+        "precision": 1.0,
+        "recall": 0.6480446927374302
+      },
+      "human_raw": {
+        "accepted": 4426,
+        "exact": 1770,
+        "false_accept_rate": 0.7284018768975987,
+        "n": 5413,
+        "negative_errors": 2639,
+        "negative_n": 3623,
+        "positive_n": 1790,
+        "precision": 0.39990962494351556,
+        "recall": 0.9888268156424581
+      },
+      "policy_enabled": false,
+      "sapi_baseline_raw": {
+        "accepted": 93,
+        "exact": 93,
+        "false_accept_rate": null,
+        "n": 93,
+        "negative_errors": 0,
+        "negative_n": 0,
+        "positive_n": 93,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "synthetic_policy_point": {
+        "accepted": 746,
+        "exact": 732,
+        "false_accept_rate": 0.0,
+        "n": 5950,
+        "negative_errors": 0,
+        "negative_n": 2236,
+        "positive_n": 3714,
+        "precision": 0.9812332439678284,
+        "recall": 0.19709208400646203
+      },
+      "synthetic_raw": {
+        "accepted": 3737,
+        "exact": 3409,
+        "false_accept_rate": 0.01520572450805009,
+        "n": 5950,
+        "negative_errors": 34,
+        "negative_n": 2236,
+        "positive_n": 3714,
+        "precision": 0.9122290607439122,
+        "recall": 0.9178782983306408
+      }
+    }
+  },
+  "development_selected_arm": "mixed",
+  "parent_bindings_preserved": true,
+  "qualified": false,
+  "test_used_for_selection": false
+}

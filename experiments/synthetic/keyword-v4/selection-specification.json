@@ -1,0 +1,16 @@
+{
+  "version": "keyword-v4-selection",
+  "data": "human development only",
+  "evidence_candidates": [
+    0.0,
+    0.75,
+    1.5
+  ],
+  "thresholds": "Exact per-intent intent thresholds, then per-family/per-numeric-operation command thresholds. Dynamic programming maximizes summed group recall subject to 95% precision, ten accepts per enabled group and a shared 1% negative false-accept budget.",
+  "candidate_choice": "Highest macro command recall, then overall exact recall. Zero cue bias remains an incumbent option. Test is not used.",
+  "numeric_support": "SET, INCREASE, DECREASE gated separately for each family; a group with fewer than ten supported development accepts abstains.",
+  "intent_candidates": [
+    "shared keyword model"
+  ],
+  "parameter_decoder": "Ordered fixed-word CTC with exact forward scoring of 0-100 grammar and a missing-number competitor. No downstream family change."
+}

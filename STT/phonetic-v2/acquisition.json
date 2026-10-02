@@ -1,0 +1,13 @@
+{
+  "url": "https://openslr.magicdatatech.com/resources/12/train-clean-100.tar.gz",
+  "publisher": "https://www.openslr.org/12/",
+  "checksum_source": "https://www.openslr.org/resources/12/md5sum.txt",
+  "bytes": 6387309499,
+  "md5": "2a93770f6d5c6c964bc36631d331a522",
+  "sha256": "d4ddd1d5a6ab303066f14971d768ee43278a5f2a0aa43dc716b0e64ecbbbf6e2",
+  "files": 29129,
+  "license": "CC-BY-4.0",
+  "seconds": 1090.0779999999795,
+  "pretrained_weights": false,
+  "synthetic_audio": false
+}

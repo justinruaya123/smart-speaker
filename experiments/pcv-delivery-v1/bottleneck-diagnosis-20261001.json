@@ -1,0 +1,193 @@
+{
+  "active_checkpoint": "epoch-020.pt",
+  "catalog_entries": 2768,
+  "checkpoint_sha256": "fc65e1f9c95158cd53ec9599aac5c1f6932502eba490612293badca2bdc2e91b",
+  "concurrent_reference_job_untouched": true,
+  "cpu_catalog_and_ranking_fraction": 0.9854193231673626,
+  "development_timings_from_file_timestamps": [
+    {
+      "development_elapsed_seconds": 2947.405741214752,
+      "epoch": 4
+    },
+    {
+      "development_elapsed_seconds": 1703.5566308498383,
+      "epoch": 8
+    },
+    {
+      "development_elapsed_seconds": 2709.4216537475586,
+      "epoch": 16
+    }
+  ],
+  "diagnostic_only": true,
+  "diagnostic_stage_totals_seconds": {
+    "command_ranking_seconds": 0.04959749999943597,
+    "ctc_catalog_seconds": 2.4013537000000724,
+    "device_to_host_seconds": 0.0006520999995700549,
+    "gpu_forward_seconds": 0.035613199999716016
+  },
+  "findings": [
+    "One CPU core is busy; total usage is divided across 32 logical CPUs.",
+    "Neural inference is CUDA; frame-wise exact CTC catalog search and JSON candidate ranking are CPU/NumPy and executed sequentially per recording.",
+    "No disk reads occurred during the live samples.",
+    "torch.set_num_threads does not parallelize this per-recording NumPy/Python decoder.",
+    "Accuracy-preserving acceleration candidates are independent-recording worker parallelism and a validated batched GPU decoder; neither is installed into this frozen run.",
+    "Canonical command serialization is a smaller ranking overhead that can be cached in a separately validated implementation."
+  ],
+  "frozen_recovery_and_original_sources_verified": true,
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "implementation_changed": false,
+  "live_worker_sample": {
+    "command": [
+      "C:\\Users\\SCL-Jus\\AppData\\Roaming\\uv\\python\\cpython-3.12.13-windows-x86_64-none\\python.exe",
+      "-u",
+      "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\scripts\\pcv_resume.py",
+      "train"
+    ],
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "cpu_core_equivalents": 0.9685824675193931,
+    "overall_cpu_percent": 3.0268202109981037,
+    "pid": 14928,
+    "read_bytes": 0,
+    "sample_seconds": 3.000518899999406,
+    "time_utc": "2026-10-01T08:16:57.710070+00:00",
+    "top_thread_cpu_seconds": [
+      {
+        "cpu_seconds": 2.921875,
+        "thread_id": 27880
+      },
+      {
+        "cpu_seconds": 0.0,
+        "thread_id": 12832
+      },
+      {
+        "cpu_seconds": 0.0,
+        "thread_id": 31448
+      }
+    ],
+    "write_bytes": 37593
+  },
+  "logical_cpus": 32,
+  "not_final_speed_benchmark": true,
+  "physical_cores": 24,
+  "prefix_nodes": 30424,
+  "profile_receipt": {
+    "path": ".cache\\pcv-delivery-v1\\bottleneck-20261001\\profile.txt",
+    "sha256": "b198163afd9c08118ca24ed28d985b47c4fba40446aeb62b5403f1c5a1c0db3a"
+  },
+  "profiler": "cProfile adds overhead; stage timings are diagnostic estimates",
+  "records": [
+    {
+      "command_ranking_seconds": 0.00839799999994284,
+      "ctc_catalog_seconds": 0.15935389999958716,
+      "device_to_host_seconds": 0.00015809999968041666,
+      "duration_seconds": 1.68,
+      "engine": "qwen",
+      "frames": 166,
+      "gpu_forward_seconds": 0.0006088000000090688,
+      "phase": 1,
+      "recording_id": "qwen/dev-au-m/UC01-PL-FOCUS-A",
+      "typed_output_matches_saved_dev": true
+    },
+    {
+      "command_ranking_seconds": 0.008192899999812653,
+      "ctc_catalog_seconds": 0.22151010000015958,
+      "device_to_host_seconds": 8.820000039122533e-05,
+      "duration_seconds": 2.32,
+      "engine": "qwen",
+      "frames": 230,
+      "gpu_forward_seconds": 0.007014700000581797,
+      "phase": 2,
+      "recording_id": "qwen/dev-au-m/UC01-PL-FOCUS-A-N1",
+      "typed_output_matches_saved_dev": true
+    },
+    {
+      "command_ranking_seconds": 0.00817800000004354,
+      "ctc_catalog_seconds": 0.9394388999999137,
+      "device_to_host_seconds": 0.00012239999978191918,
+      "duration_seconds": 10.170375,
+      "engine": "parler",
+      "frames": 1015,
+      "gpu_forward_seconds": 0.0077342000004136935,
+      "phase": 1,
+      "recording_id": "parler/dev-au-m/UC01-PL-FOCUS-A",
+      "typed_output_matches_saved_dev": true
+    },
+    {
+      "command_ranking_seconds": 0.008335999999872001,
+      "ctc_catalog_seconds": 0.3594535000001997,
+      "device_to_host_seconds": 0.00010060000022349413,
+      "duration_seconds": 3.8545625,
+      "engine": "parler",
+      "frames": 383,
+      "gpu_forward_seconds": 0.006677499999568681,
+      "phase": 2,
+      "recording_id": "parler/dev-au-m/UC01-PL-FOCUS-A-N1",
+      "typed_output_matches_saved_dev": true
+    },
+    {
+      "command_ranking_seconds": 0.008458799999971234,
+      "ctc_catalog_seconds": 0.5851600999994844,
+      "device_to_host_seconds": 8.919999982026638e-05,
+      "duration_seconds": 5.8863125,
+      "engine": "dia",
+      "frames": 587,
+      "gpu_forward_seconds": 0.006780699999580975,
+      "phase": 1,
+      "recording_id": "dia/dev-au-m/UC02-DATE-A",
+      "typed_output_matches_saved_dev": true
+    },
+    {
+      "command_ranking_seconds": 0.0080337999997937,
+      "ctc_catalog_seconds": 0.1364372000007279,
+      "device_to_host_seconds": 9.359999967273325e-05,
+      "duration_seconds": 1.4745,
+      "engine": "dia",
+      "frames": 145,
+      "gpu_forward_seconds": 0.006797299999561801,
+      "phase": 2,
+      "recording_id": "dia/dev-au-m/UC02-TIME-A-N1",
+      "typed_output_matches_saved_dev": true
+    }
+  ],
+  "scope": "Six already-scored development recordings: first row per engine and phase; fixed seed53 epoch16 checkpoint",
+  "sealed_test_accessed": false,
+  "source_files": {
+    "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\experiments\\phrase-contract-v1\\pcvcm\\decoder.py": "6c36e737e459c4b7a2b984200ad2896735000bd7ff25b24ac6ac4bd988493922",
+    "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\experiments\\phrase-contract-v1\\pcvcm\\training.py": "7a344c9939bd22c9307df0791d193fb05d18e12acc05445c15a0d2e57832616c"
+  },
+  "three_training_epochs_18_to_20_seconds": 6.986647844314575,
+  "time_utc": "2026-10-01T08:15:29.098861+00:00"
+}

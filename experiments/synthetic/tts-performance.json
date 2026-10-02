@@ -1,0 +1,14 @@
+{
+  "successful_generation_batch_seconds": 2110.917802399199,
+  "after_workspace_cleanup": {
+    "batches": 226,
+    "p50_batch_seconds": 6.425727349997032,
+    "p95_batch_seconds": 15.979482324968558,
+    "peak_active_GiB": 8.313561916351318,
+    "peak_reserved_GiB": 13.708984375
+  },
+  "batch_size": 16,
+  "generated_n": 4032,
+  "speaker_anchors": 12,
+  "device": "RTX 4080 SUPER 16 GB"
+}

@@ -1,0 +1,67 @@
+{
+  "sources": {
+    "FluentSpeechCommands": {
+      "url": "https://huggingface.co/datasets/leo19941227/fluent_speech_commands/resolve/c4cc0e2c898585329319835ed55f47a6ab9e0d92/fluent.tar.gz?download=true",
+      "filename": "fluent.tar.gz",
+      "revision": "c4cc0e2c898585329319835ed55f47a6ab9e0d92",
+      "lfs_sha256": "c9fd67f2efa078daa84daddcad2de937eb96581c140e3131ed8cd06fbae9ba1b",
+      "authority": "https://fluent.ai/fr/fluent-speech-commands-a-dataset-for-spoken-language-understanding-research/",
+      "license": "Fluent Speech Commands Public License; academic research only",
+      "sha256": "c9fd67f2efa078daa84daddcad2de937eb96581c140e3131ed8cd06fbae9ba1b",
+      "bytes": 1552390845,
+      "path": "data/raw/fluent/fluent.tar.gz"
+    },
+    "SLURP-real": {
+      "source": "slurp",
+      "retrieved_utc": "2026-09-15T09:32:53Z",
+      "revision": "8eb16545762be97ace75334109d73824217311f1",
+      "files": [
+        {
+          "path": "data\\raw\\slurp\\train.jsonl",
+          "url": "https://raw.githubusercontent.com/pswietojanski/slurp/8eb16545762be97ace75334109d73824217311f1/dataset/slurp/train.jsonl",
+          "sha256": "4a05a3de6c7f028aff298c4a90196e6a3fecd1938d96fb1c125d6fd10d5e301e",
+          "license": "CC-BY-4.0"
+        },
+        {
+          "path": "data\\raw\\slurp\\devel.jsonl",
+          "url": "https://raw.githubusercontent.com/pswietojanski/slurp/8eb16545762be97ace75334109d73824217311f1/dataset/slurp/devel.jsonl",
+          "sha256": "00d346b183ecc2d160853cd3dc20e8ccd207d9e1809cf6e2c05182076bd0ecc9",
+          "license": "CC-BY-4.0"
+        },
+        {
+          "path": "data\\raw\\slurp\\test.jsonl",
+          "url": "https://raw.githubusercontent.com/pswietojanski/slurp/8eb16545762be97ace75334109d73824217311f1/dataset/slurp/test.jsonl",
+          "sha256": "fe3449af69b42fda7163345482556066c35a80f7e552a6d67e212a0e2f0783cc",
+          "license": "CC-BY-4.0"
+        },
+        {
+          "path": "data\\raw\\slurp\\metadata.json",
+          "url": "https://raw.githubusercontent.com/pswietojanski/slurp/8eb16545762be97ace75334109d73824217311f1/dataset/slurp/metadata.json",
+          "sha256": "be7943d576c0b79b34ae32796e5c9474bd3d4d123bb35e38f73497f4a429fb83",
+          "license": "CC-BY-4.0"
+        }
+      ]
+    },
+    "SnipsSmartLights": {
+      "revision": "d1a41a6e3c09b45bbfdc64220dff7b3176679964",
+      "files": [
+        {
+          "url": "https://huggingface.co/datasets/MWilinski/snips_slu_v1.0/resolve/d1a41a6e3c09b45bbfdc64220dff7b3176679964/data/train-00000-of-00002-8a79c77a8d003471.parquet?download=true",
+          "path": "data/raw/smartlights/train-00000-of-00002-8a79c77a8d003471.parquet",
+          "sha256": "b9707008986cb6fcfd1ce8a49377b9ffe68451225cf3537ed13e56100815a70c",
+          "bytes": 288362399
+        },
+        {
+          "url": "https://huggingface.co/datasets/MWilinski/snips_slu_v1.0/resolve/d1a41a6e3c09b45bbfdc64220dff7b3176679964/data/train-00001-of-00002-30a6f2d916e23e78.parquet?download=true",
+          "path": "data/raw/smartlights/train-00001-of-00002-30a6f2d916e23e78.parquet",
+          "sha256": "a0b7c699367715c4208958689206dc353bf2a2fdfda666908e0b215ea905c7c1",
+          "bytes": 286310583
+        }
+      ],
+      "authority": "https://github.com/sonos/spoken-language-understanding-research-datasets",
+      "license": "Sonos Crowdsourced Data License Terms; academic/research only, no commercial use",
+      "license_note": "Use publisher terms. The mirror card's MIT tag does not override the source speech license."
+    }
+  },
+  "inheritance": "Rows without a license field inherit the source-level publisher metadata here; original frozen row bytes are unchanged."
+}

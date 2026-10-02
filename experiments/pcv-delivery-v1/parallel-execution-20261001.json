@@ -1,0 +1,198 @@
+{
+  "authorization": "User said Do it after diagnosis and recommendation to parallelize independent development recordings",
+  "checkpoint": ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-024.pt",
+  "checkpoint_sha256": "9aafbc8fe08994ac263cd5762f9310d1dd72814a02fa2da10c50939c302c84a7",
+  "epoch": 24,
+  "frozen_study_protocol_sha256": "43f1aeac6b960efbf3b43187fa919db6d8612de974cda661524b2f3cc7505277",
+  "missing_training_loss": "Unavailable interrupted epoch mean loss is null; no optimization repeated",
+  "original_budget_sha256": "ae292fe3f078751711144ea2e58857d51cbe19e60ab3e8ecce942397c9114acb",
+  "original_history_sha256": "66f6962cc698f0b71c7b6602e21757852bfb714a85db2e82f0a488d9e9a5c9c2",
+  "original_lock_sha256": "699c380fb91f57e002b0f36239b316b2ab52d66c2219d5d109bb8e9fed4d0ee4",
+  "original_training_files": {
+    ".cache\\pcv-synthetic-v2-repair1\\training\\baseline-development.json": "5f675171d055bc87e071d785654e9a9ec97e7f97b0bc527821c0798c1db9ae08",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\catalog.json": "9beae4f8072561580db885f35911c0d3c75efc14b44a80660de8a80f619a2656",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\normalization.json": "fb48f3318752e1d7bf49a9e99855a3f1a10c43a09b119a73806205d935021350",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\protocol.json": "cb00ed7e204672c33b28634c811e4ca6c0b7e1a39f4e4e77140f3e00ad5252cd",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\dev-004.json": "badcc5d42504a69fa6a06b227afba0f0789afe5e79c92c1b3aae5660e436ed46",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\dev-008.json": "3dd3229c4d220612e786dba9591597644dddb0923243fdff65ece73020bf2e5e",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\dev-012.json": "b12015cb535935f407c17bacdd91f6d1ef536099a36ac277e174314fc141c809",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\dev-016.json": "61c4e87c60deefff9d090173960fbdd81cf85efe22a2e64ea2248d0c41732ae4",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\dev-020.json": "dc54424c82be3b7bc10fd74cd4223529a16bd329879faa5dc3e375983dc30c10",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-001.pt": "72744637f317708cd1854bfa2d8bfc9345112f10e6bbb80e6f011f67e1e2fb48",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-002.pt": "816aeb0ee017d2346aee71fa1f1b33d96b6836f082ce5476f52f257a624cef07",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-003.pt": "2319dce1bbe7e30ac26c4e33cec0b3caded73a86d16503855a473e3c79a7664a",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-004.pt": "885dfb2f20311101180f73a86662beddb33922f92c25030ed8d189c0c8a8ee4f",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-005.pt": "abf0f162d2353924a2174158b74406a7d6b3effb261c0f78d4deeda393751323",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-006.pt": "e97d72e76d06aefc6a4689c6cb66009b09aca1ae3c288e8fcdcf5778822c6f01",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-007.pt": "bc2021df9db880227c213b999ef672558e7fc09f50c53057ac87b3a44ba03565",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-008.pt": "c491fbca1b781fc01936b482975dda4fb4b6f92e7dc709d5262814704270af61",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-009.pt": "58f4541e68f42570d4bb57d04de355cda92f1907253f8d34a740a7298aa0607f",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-010.pt": "813964e1b054b60a9c9b06eff2669cc03aa87c19017f5894f3a1b17d02819d4b",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-011.pt": "e88df4fd932fa42d9b97944df648eb5448418d99cecc4a95167d2d7ab2179764",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-012.pt": "e558acbb301e95b2239e5cc456d7eb4e2474b20c81cfeb2faff69ad006c464e3",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-013.pt": "2563527e1a3be2ae8d0069f354c710f971df9f82f1936ae76925ff7857dc62fe",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-014.pt": "b2b3352a2cc57d6415234ed390a545474f7600d9c847a935dc30675f62b7489b",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-015.pt": "6eda61893bfe1af9cbf21a5d1a6f525a772c85071314608b5644784fa7d22d5a",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-016.pt": "fc65e1f9c95158cd53ec9599aac5c1f6932502eba490612293badca2bdc2e91b",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-017.pt": "422973adfea1d31af0debd161a4b6f3f32d39fcbd2eb8001404ffebe21230b4b",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-018.pt": "65035848c2d8a282c49f0163fdc203bd160236908025c6bfd8d48a85dcb278a1",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-019.pt": "851cff030ed4d79e41ef361a26f90dc71c46267b9b719d33339efc0145c27992",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-020.pt": "95bc6e32f3a61eab24f0bb39bee01080752e41ed81146a6c67119300fe58eb44",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-021.pt": "4534097d5fa44f1368d9a1f878cd0346f320d4b86af9b6fc59ad686b7c3bb3f9",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-022.pt": "d1dd0df17f86662633f83bc8df8790415a0efba39192a2274bfa3f63dcb7fc01",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-023.pt": "f24901c3ca6dfb772891da56dbe53b5861a77f4ea6891475cb316dd6801d9c7d",
+    ".cache\\pcv-synthetic-v2-repair1\\training\\seed-53\\epoch-024.pt": "9aafbc8fe08994ac263cd5762f9310d1dd72814a02fa2da10c50939c302c84a7"
+  },
+  "pending_development": true,
+  "prepared_freeze_sha256": "dcef945f00bdba4c64abe77f3eb5ee15a0ff333e5d94e42e97f25ec8316b48c2",
+  "prior_recovery_plan_sha256": "525c16959561d68a77d0206d0c196398122f625594480dc6ccef733ea13eac6b",
+  "retained_budget": {
+    "epochs": [
+      {
+        "label": "53/1",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/2",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/3",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/4",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/5",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/6",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/7",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/8",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/9",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/10",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/11",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/12",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/13",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/14",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/15",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/16",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/17",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/18",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/19",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/20",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/21",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/22",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/23",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      },
+      {
+        "label": "53/24",
+        "run": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-synthetic-v2-repair1\\training"
+      }
+    ],
+    "limits": {
+      "epochs": 200,
+      "seconds": 86400
+    },
+    "seconds": 16858.34399999994
+  },
+  "schedule_unchanged": true,
+  "sealed_test_accessed": false,
+  "seed": 53,
+  "selection_unchanged": true,
+  "snapshots": {
+    "budget-before.json": "ae292fe3f078751711144ea2e58857d51cbe19e60ab3e8ecce942397c9114acb",
+    "history-before.json": "66f6962cc698f0b71c7b6602e21757852bfb714a85db2e82f0a488d9e9a5c9c2",
+    "job-before.json": "9ac3ce8916038b7e31c438fd8a824f07ba9b8b0944e1419b80e7a471ddb9f80b"
+  },
+  "sources": {
+    "scripts\\pcv_parallel.py": "c43d6e865a305477abc297f72352c680db60dee6a6bc5024bde0b4bb76bdd7fd",
+    "scripts\\pcv_parallel_run.py": "e531930cfc5bc756f6e4a914e5d5eedac7324be58e7a8a2107af47b8b1ff7010",
+    "scripts\\pcv_resume.py": "6f93adeb5883774ec61c39a716c3df6679b84dd436e1abe5ab17e50cfbbb92dd"
+  },
+  "stopped_processes": [
+    {
+      "command": [
+        "C:\\Users\\SCL-Jus\\AppData\\Roaming\\uv\\python\\cpython-3.12.13-windows-x86_64-none\\python.exe",
+        "-u",
+        "scripts/pcv_resume.py",
+        "orchestrate"
+      ],
+      "created": 1790836085.4067934,
+      "cwd": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker",
+      "pid": 11168,
+      "ppid": 9996
+    },
+    {
+      "command": [
+        "C:\\Users\\SCL-Jus\\AppData\\Roaming\\uv\\python\\cpython-3.12.13-windows-x86_64-none\\python.exe",
+        "-u",
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\scripts\\pcv_resume.py",
+        "train"
+      ],
+      "created": 1790836085.7118504,
+      "cwd": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker",
+      "pid": 14928,
+      "ppid": 15460
+    }
+  ],
+  "time_utc": "2026-10-01T08:42:14.756270+00:00",
+  "validation_sha256": "08ee53f54b2c7e12569fa05f4427792930778652573b8b973a378778a9281c3a",
+  "version": "pcv-parallel-execution-20261001",
+  "workers": 8
+}

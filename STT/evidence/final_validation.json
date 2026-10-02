@@ -1,0 +1,49 @@
+{
+  "trained_checkpoint_batch_parity_max_abs_logit_error": {
+    "scratch_ctc": 1.239776611328125e-05,
+    "numeric_ctc": 3.814697265625e-06
+  },
+  "finite_word_model_on_full_natural_volume_commands": {
+    "n": 4,
+    "valid": 4,
+    "ood": 0,
+    "accepted": 0,
+    "correct_accepted": 0,
+    "raw_exact_value_accuracy": 0.0,
+    "accepted_precision": 0.0,
+    "valid_value_recall": 0.0,
+    "ood_false_accepts": 0,
+    "ood_false_accept_rate": 0.0
+  },
+  "new_music_entity_occurrences_all_request_categories": {
+    "off": {
+      "new_entity_occurrences": 8,
+      "correct": 0
+    },
+    "fixed": {
+      "new_entity_occurrences": 8,
+      "correct": 0
+    },
+    "dynamic": {
+      "new_entity_occurrences": 8,
+      "correct": 0
+    }
+  },
+  "numeric_mswc_words_used": {
+    "eight": 450,
+    "hundred": 450
+  },
+  "frozen_unique_human_audio_across_both_experiments": 29084,
+  "frozen_manifest_hashes": {
+    "manifest.jsonl": "58ce85135bcf68c24f0901fa614548b758e94fca177ec86e00c5299bca8a43fa",
+    "numeric_manifest.jsonl": "de279a02eead9e19a249ef912c473e7cfcc87eb86a8428ef968a16d64e1dfd68"
+  },
+  "environment": {
+    "python": "3.12.13",
+    "torch": "2.13.0+cu130",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "soundfile": "0.14.0",
+    "einops": "0.8.2"
+  }
+}

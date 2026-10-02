@@ -1,0 +1,13 @@
+{
+  "bindings": {
+    "scripts/test/test_pcv_release_prepare.py": "ac6158289dcf4ba48fce0498d56cb82a105c2d593a3b859c8eb726dcbd882992",
+    "scripts/train/pcv_release_prepare.py": "4143d0618aa61afceec69be956949691792b3ed0f80e1f43e748f328e1420047",
+    "scripts/train/pcv_updated_prepare.py": "a5578935c8c485fa2d3f80eaf0d5dea498e1847ce0b793c89f91374a901cc4d8"
+  },
+  "command": ".venv/Scripts/python.exe -m pytest scripts/test/test_pcv_release_prepare.py scripts/test/test_pcv_updated.py -q -p no:cacheprovider --basetemp .cache/pcv-release-train-v1/preparation-tests-green-2 --tb=short",
+  "failed": 0,
+  "passed": 29,
+  "scope": "Synthetic unit fixtures and predefined finite schema; no model or held-out acoustic evaluation",
+  "seconds": 1.25,
+  "status": "passed_before_preparation"
+}

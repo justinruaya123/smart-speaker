@@ -1,0 +1,152 @@
+{
+  "audited_utc": "2026-09-19T07:53:26.630249+00:00",
+  "download_processes": "Stopped after repeated timeout/partial-transfer failures; completed files retained.",
+  "fresh_mlend_files": 1711,
+  "fresh_fsdd_files": 3000,
+  "mswc_completed_decodable_files": 5000,
+  "mswc_completed_word_counts": {
+    "eight": 1000,
+    "hundred": 1000,
+    "play": 1000,
+    "song": 1000,
+    "ten": 1000
+  },
+  "mswc_invalid_files": [],
+  "completed_download_receipts": [
+    {
+      "url": "https://codeload.github.com/Jakobovski/free-spoken-digit-dataset/zip/26eb9aaf76e81b692f806f9140c2d2777410d7a1",
+      "path": "data/raw/fsdd/fsdd.zip",
+      "sha256": "beaca4fb849cad13103b2cffba913b3d7fdb5f15222da4ddd07187b3c38a757a",
+      "bytes": 16628041,
+      "retrieved_utc": "2026-09-19T07:04:51.919556+00:00",
+      "seconds": 147.16,
+      "exists": true,
+      "verified_sha256_now": true
+    },
+    {
+      "url": "https://api.github.com/repos/Jakobovski/free-spoken-digit-dataset/commits/master",
+      "path": "data/raw/fsdd/revision.json",
+      "sha256": "5cc3b32965b322d38c59c6473511eb40ede4841df3e0c05069f212f5faf1767d",
+      "bytes": 6404,
+      "retrieved_utc": "2026-09-19T06:53:50.077880+00:00",
+      "seconds": 1.17,
+      "exists": true,
+      "verified_sha256_now": true
+    },
+    {
+      "url": "https://huggingface.co/datasets/MLCommons/ml_spoken_words/resolve/0bc9df68e92fd6bb54176bf7eb29e2b9e97cb218/data/splits/en/splits.tar.gz?download=true",
+      "path": "data/raw/mswc/splits.tar.gz",
+      "sha256": "11c773dc47fece8993693798414f04475e19d596671e1742a3dd040e66d6cbce",
+      "bytes": 382747534,
+      "retrieved_utc": "2026-09-19T07:01:24.460191+00:00",
+      "seconds": 455.56,
+      "exists": true,
+      "verified_sha256_now": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pswietojanski/slurp/8eb16545762be97ace75334109d73824217311f1/dataset/slurp/devel.jsonl",
+      "path": "data/raw/slurp/devel.jsonl",
+      "sha256": "00d346b183ecc2d160853cd3dc20e8ccd207d9e1809cf6e2c05182076bd0ecc9",
+      "bytes": 2221203,
+      "retrieved_utc": "2026-09-19T06:53:50.634401+00:00",
+      "seconds": 1.72,
+      "exists": true,
+      "verified_sha256_now": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pswietojanski/slurp/8eb16545762be97ace75334109d73824217311f1/dataset/slurp/metadata.json",
+      "path": "data/raw/slurp/metadata.json",
+      "sha256": "be7943d576c0b79b34ae32796e5c9474bd3d4d123bb35e38f73497f4a429fb83",
+      "bytes": 18473896,
+      "retrieved_utc": "2026-09-19T06:54:05.041914+00:00",
+      "seconds": 15.42,
+      "exists": true,
+      "verified_sha256_now": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pswietojanski/slurp/8eb16545762be97ace75334109d73824217311f1/README.md",
+      "path": "data/raw/slurp/SOURCE.md",
+      "sha256": "f337f6486aef10be6f26725dd83d00611d0c3a9e24031cb43a13e0713600118c",
+      "bytes": 7550,
+      "retrieved_utc": "2026-09-19T06:49:24.059430+00:00",
+      "seconds": 0.5,
+      "exists": true,
+      "verified_sha256_now": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pswietojanski/slurp/8eb16545762be97ace75334109d73824217311f1/dataset/slurp/test.jsonl",
+      "path": "data/raw/slurp/test.jsonl",
+      "sha256": "fe3449af69b42fda7163345482556066c35a80f7e552a6d67e212a0e2f0783cc",
+      "bytes": 3267569,
+      "retrieved_utc": "2026-09-19T06:49:27.921377+00:00",
+      "seconds": 4.36,
+      "exists": true,
+      "verified_sha256_now": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pswietojanski/slurp/8eb16545762be97ace75334109d73824217311f1/dataset/slurp/train.jsonl",
+      "path": "data/raw/slurp/train.jsonl",
+      "sha256": "4a05a3de6c7f028aff298c4a90196e6a3fecd1938d96fb1c125d6fd10d5e301e",
+      "bytes": 12745012,
+      "retrieved_utc": "2026-09-19T06:49:31.521940+00:00",
+      "seconds": 7.97,
+      "exists": true,
+      "verified_sha256_now": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ankilab/SpokeN-100/main/README.md",
+      "path": "data/raw/spoken100/SOURCE.md",
+      "sha256": "2b6571ef79911e397d579fe6ca38b9745e5f3f87146f18ec90bdce5669cfd8a6",
+      "bytes": 1456,
+      "retrieved_utc": "2026-09-19T06:53:49.618918+00:00",
+      "seconds": 0.72,
+      "exists": true,
+      "verified_sha256_now": true
+    },
+    {
+      "url": "https://huggingface.co/datasets/qmeeus/slurp/resolve/91b0abfee2e735282967ee00d631d6d5f0fb7ff9/data/train-00002-of-00006-b0ab6761444c7eee.parquet",
+      "path": "data/raw/slurp/mirror/train-00002-of-00006-b0ab6761444c7eee.parquet",
+      "sha256": "b60ef7770dedb53f61d9d1fc83c29d8079e43d8f5262f18b6fa2783fc3269225",
+      "bytes": 455796648,
+      "retrieved_utc": "2026-09-19T07:36:43.462156+00:00",
+      "seconds": 757.22,
+      "exists": true,
+      "verified_sha256_now": true
+    }
+  ],
+  "partial_downloads_not_used": [
+    {
+      "path": "data/raw/slurp/mirror/devel-00000-of-00001-acfd964400397e39.parquet.part",
+      "bytes": 240733152
+    },
+    {
+      "path": "data/raw/slurp/mirror/test-00000-of-00002-252f381b70e1d25d.parquet.part",
+      "bytes": 229044186
+    },
+    {
+      "path": "data/raw/slurp/mirror/test-00001-of-00002-98f9c20d1ab96932.parquet.part",
+      "bytes": 273533282
+    },
+    {
+      "path": "data/raw/slurp/mirror/train-00000-of-00006-6b7ed9dd4c07ecfa.parquet.part",
+      "bytes": 220180961
+    },
+    {
+      "path": "data/raw/slurp/mirror/train-00001-of-00006-7be080cd723e45c5.parquet.part",
+      "bytes": 462524810
+    },
+    {
+      "path": "data/raw/slurp/mirror/train-00003-of-00006-6335e57f85dbf1d6.parquet.part",
+      "bytes": 460224406
+    },
+    {
+      "path": "data/raw/slurp/mirror/train-00004-of-00006-7fe67171d325df43.parquet.part",
+      "bytes": 446069282
+    },
+    {
+      "path": "data/raw/slurp/mirror/train-00005-of-00006-5d297ba98a634b5e.parquet.part",
+      "bytes": 453025456
+    }
+  ],
+  "partial_bytes": 2785335535
+}

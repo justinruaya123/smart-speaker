@@ -1,0 +1,61 @@
+{
+  "source": "human",
+  "epochs_completed": 32,
+  "selected_epoch": 25,
+  "development": {
+    "exact": 0.6131621187800963,
+    "macro_exact": 0.5730750291281423,
+    "per_intent": {
+      "UNKNOWN": {
+        "n": 649,
+        "exact": 0.6517719568567026
+      },
+      "POWER_ON": {
+        "n": 206,
+        "exact": 0.7524271844660194
+      },
+      "POWER_OFF": {
+        "n": 247,
+        "exact": 0.7004048582995951
+      },
+      "BRIGHTNESS": {
+        "n": 141,
+        "exact": 0.2695035460992908
+      },
+      "COLOR_SET": {
+        "n": 99,
+        "exact": 0.1414141414141414
+      },
+      "MEDIA_PLAY": {
+        "n": 104,
+        "exact": 0.9038461538461539
+      },
+      "MEDIA_RESUME": {
+        "n": 50,
+        "exact": 0.62
+      },
+      "TIME_QUERY": {
+        "n": 71,
+        "exact": 0.5633802816901409
+      },
+      "DATE_QUERY": {
+        "n": 85,
+        "exact": 0.5058823529411764
+      },
+      "VOLUME": {
+        "n": 217,
+        "exact": 0.6221198156682027
+      }
+    }
+  },
+  "train_n": 7919,
+  "dev_n": 1869,
+  "random_initialization": true,
+  "test_used_for_selection": false,
+  "parameters": 323685,
+  "checkpoint_sha256": "33ed817f481d0292ab2393553fc2244d740c02feac9c01b908cf49ffbf56cfe0",
+  "onnx_sha256": "9c5068aba7a23de0808fdddcba76114e932214655288ac26ff796519cac1adeb",
+  "onnx_bytes": 1348493,
+  "elapsed_seconds": 108.36106149997795,
+  "native_exit_status": 0
+}

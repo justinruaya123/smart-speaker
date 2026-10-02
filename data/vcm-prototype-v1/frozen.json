@@ -1,0 +1,10 @@
+{
+  "files": {
+    "data/vcm-complete-v1/manifest.jsonl": "0fb678202b9510b4a761c54e9d65b9568375e754a78ae29be70914bb98fb6822",
+    "data/vcm-prototype-v1/overlay.jsonl": "2c315dd3bfd17ef1ff03eb36be2ab08220eee4c94591acabdf6923886eec28c4",
+    "data/vcm-prototype-v1/audit.json": "19a33d38197eb82fe8efab63ba07b1422648f67c0bccb64862b1343f220246b6",
+    "experiments/vcm-prototype-v1/protocol.json": "5fe7d6edec9a75861dd359c908fbb12c90088222a3d5065d5a5837aba86e7384",
+    "scripts/train/prototype_data.py": "b8198bf60ea90fbd31853eef3eab6fea31f03e03e9fdd783f07074e3aabdb898"
+  },
+  "test_selection_permitted": false
+}

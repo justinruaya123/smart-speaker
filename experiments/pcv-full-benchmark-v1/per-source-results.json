@@ -1,0 +1,516 @@
+{
+  "primary_holdout": {
+    "CommonVoice_en": {
+      "accepted": {
+        "source_n": 3,
+        "scored_n": 3,
+        "ambiguous_n": 0,
+        "positive_n": 0,
+        "negative_n": 3,
+        "exact": 0,
+        "emitted": 0,
+        "recall": null,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": 0.0
+      },
+      "candidate": {
+        "source_n": 3,
+        "scored_n": 3,
+        "ambiguous_n": 0,
+        "positive_n": 0,
+        "negative_n": 3,
+        "exact": 0,
+        "emitted": 3,
+        "recall": null,
+        "precision": 0.0,
+        "false_accepts": 3,
+        "false_accept_rate": 1.0
+      }
+    },
+    "FluentSpeechCommands": {
+      "accepted": {
+        "source_n": 9,
+        "scored_n": 9,
+        "ambiguous_n": 0,
+        "positive_n": 2,
+        "negative_n": 7,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": 0.0
+      },
+      "candidate": {
+        "source_n": 9,
+        "scored_n": 9,
+        "ambiguous_n": 0,
+        "positive_n": 2,
+        "negative_n": 7,
+        "exact": 1,
+        "emitted": 7,
+        "recall": 0.5,
+        "precision": 0.14285714285714285,
+        "false_accepts": 5,
+        "false_accept_rate": 0.7142857142857143
+      }
+    },
+    "group_synthetic": {
+      "accepted": {
+        "source_n": 100,
+        "scored_n": 100,
+        "ambiguous_n": 0,
+        "positive_n": 100,
+        "negative_n": 0,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      },
+      "candidate": {
+        "source_n": 100,
+        "scored_n": 100,
+        "ambiguous_n": 0,
+        "positive_n": 100,
+        "negative_n": 0,
+        "exact": 99,
+        "emitted": 100,
+        "recall": 0.99,
+        "precision": 0.99,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      }
+    },
+    "group_synthetic_oos": {
+      "accepted": {
+        "source_n": 6,
+        "scored_n": 6,
+        "ambiguous_n": 0,
+        "positive_n": 0,
+        "negative_n": 6,
+        "exact": 0,
+        "emitted": 0,
+        "recall": null,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": 0.0
+      },
+      "candidate": {
+        "source_n": 6,
+        "scored_n": 6,
+        "ambiguous_n": 0,
+        "positive_n": 0,
+        "negative_n": 6,
+        "exact": 0,
+        "emitted": 4,
+        "recall": null,
+        "precision": 0.0,
+        "false_accepts": 4,
+        "false_accept_rate": 0.6666666666666666
+      }
+    },
+    "real_voice": {
+      "accepted": {
+        "source_n": 84,
+        "scored_n": 84,
+        "ambiguous_n": 0,
+        "positive_n": 84,
+        "negative_n": 0,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      },
+      "candidate": {
+        "source_n": 84,
+        "scored_n": 84,
+        "ambiguous_n": 0,
+        "positive_n": 84,
+        "negative_n": 0,
+        "exact": 82,
+        "emitted": 84,
+        "recall": 0.9761904761904762,
+        "precision": 0.9761904761904762,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      }
+    }
+  },
+  "primary_test": {
+    "CommonVoice_en": {
+      "accepted": {
+        "source_n": 14,
+        "scored_n": 14,
+        "ambiguous_n": 0,
+        "positive_n": 0,
+        "negative_n": 14,
+        "exact": 0,
+        "emitted": 0,
+        "recall": null,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": 0.0
+      },
+      "candidate": {
+        "source_n": 14,
+        "scored_n": 14,
+        "ambiguous_n": 0,
+        "positive_n": 0,
+        "negative_n": 14,
+        "exact": 0,
+        "emitted": 9,
+        "recall": null,
+        "precision": 0.0,
+        "false_accepts": 9,
+        "false_accept_rate": 0.6428571428571429
+      }
+    },
+    "FluentSpeechCommands": {
+      "accepted": {
+        "source_n": 144,
+        "scored_n": 139,
+        "ambiguous_n": 5,
+        "positive_n": 133,
+        "negative_n": 6,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": 0.0
+      },
+      "candidate": {
+        "source_n": 144,
+        "scored_n": 139,
+        "ambiguous_n": 5,
+        "positive_n": 133,
+        "negative_n": 6,
+        "exact": 111,
+        "emitted": 135,
+        "recall": 0.8345864661654135,
+        "precision": 0.8222222222222222,
+        "false_accepts": 4,
+        "false_accept_rate": 0.6666666666666666
+      }
+    },
+    "SLURP": {
+      "accepted": {
+        "source_n": 403,
+        "scored_n": 327,
+        "ambiguous_n": 76,
+        "positive_n": 253,
+        "negative_n": 74,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": 0.0
+      },
+      "candidate": {
+        "source_n": 403,
+        "scored_n": 327,
+        "ambiguous_n": 76,
+        "positive_n": 253,
+        "negative_n": 74,
+        "exact": 213,
+        "emitted": 302,
+        "recall": 0.841897233201581,
+        "precision": 0.7052980132450332,
+        "false_accepts": 50,
+        "false_accept_rate": 0.6756756756756757
+      }
+    },
+    "SNIPS": {
+      "accepted": {
+        "source_n": 61,
+        "scored_n": 41,
+        "ambiguous_n": 20,
+        "positive_n": 25,
+        "negative_n": 16,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": 0.0
+      },
+      "candidate": {
+        "source_n": 61,
+        "scored_n": 41,
+        "ambiguous_n": 20,
+        "positive_n": 25,
+        "negative_n": 16,
+        "exact": 18,
+        "emitted": 36,
+        "recall": 0.72,
+        "precision": 0.5,
+        "false_accepts": 13,
+        "false_accept_rate": 0.8125
+      }
+    },
+    "TimersAndSuch": {
+      "accepted": {
+        "source_n": 2,
+        "scored_n": 2,
+        "ambiguous_n": 0,
+        "positive_n": 2,
+        "negative_n": 0,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      },
+      "candidate": {
+        "source_n": 2,
+        "scored_n": 2,
+        "ambiguous_n": 0,
+        "positive_n": 2,
+        "negative_n": 0,
+        "exact": 2,
+        "emitted": 2,
+        "recall": 1.0,
+        "precision": 1.0,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      }
+    },
+    "group_synthetic": {
+      "accepted": {
+        "source_n": 3590,
+        "scored_n": 3590,
+        "ambiguous_n": 0,
+        "positive_n": 3590,
+        "negative_n": 0,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      },
+      "candidate": {
+        "source_n": 3590,
+        "scored_n": 3590,
+        "ambiguous_n": 0,
+        "positive_n": 3590,
+        "negative_n": 0,
+        "exact": 3556,
+        "emitted": 3588,
+        "recall": 0.9905292479108635,
+        "precision": 0.9910813823857302,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      }
+    },
+    "group_synthetic_oos": {
+      "accepted": {
+        "source_n": 29,
+        "scored_n": 29,
+        "ambiguous_n": 0,
+        "positive_n": 0,
+        "negative_n": 29,
+        "exact": 0,
+        "emitted": 0,
+        "recall": null,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": 0.0
+      },
+      "candidate": {
+        "source_n": 29,
+        "scored_n": 29,
+        "ambiguous_n": 0,
+        "positive_n": 0,
+        "negative_n": 29,
+        "exact": 0,
+        "emitted": 25,
+        "recall": null,
+        "precision": 0.0,
+        "false_accepts": 25,
+        "false_accept_rate": 0.8620689655172413
+      }
+    },
+    "real_voice": {
+      "accepted": {
+        "source_n": 179,
+        "scored_n": 179,
+        "ambiguous_n": 0,
+        "positive_n": 179,
+        "negative_n": 0,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      },
+      "candidate": {
+        "source_n": 179,
+        "scored_n": 179,
+        "ambiguous_n": 0,
+        "positive_n": 179,
+        "negative_n": 0,
+        "exact": 134,
+        "emitted": 170,
+        "recall": 0.7486033519553073,
+        "precision": 0.788235294117647,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      }
+    },
+    "xela_Multi-Sensor": {
+      "accepted": {
+        "source_n": 11,
+        "scored_n": 11,
+        "ambiguous_n": 0,
+        "positive_n": 11,
+        "negative_n": 0,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      },
+      "candidate": {
+        "source_n": 11,
+        "scored_n": 11,
+        "ambiguous_n": 0,
+        "positive_n": 11,
+        "negative_n": 0,
+        "exact": 11,
+        "emitted": 11,
+        "recall": 1.0,
+        "precision": 1.0,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      }
+    },
+    "xela_SET_TEMPERATURE_REAL": {
+      "accepted": {
+        "source_n": 10,
+        "scored_n": 10,
+        "ambiguous_n": 0,
+        "positive_n": 10,
+        "negative_n": 0,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      },
+      "candidate": {
+        "source_n": 10,
+        "scored_n": 10,
+        "ambiguous_n": 0,
+        "positive_n": 10,
+        "negative_n": 0,
+        "exact": 9,
+        "emitted": 10,
+        "recall": 0.9,
+        "precision": 0.9,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      }
+    }
+  },
+  "supplemental_holdout": {
+    "group_synthetic": {
+      "accepted": {
+        "source_n": 261,
+        "scored_n": 261,
+        "ambiguous_n": 0,
+        "positive_n": 261,
+        "negative_n": 0,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      },
+      "candidate": {
+        "source_n": 261,
+        "scored_n": 261,
+        "ambiguous_n": 0,
+        "positive_n": 261,
+        "negative_n": 0,
+        "exact": 250,
+        "emitted": 260,
+        "recall": 0.9578544061302682,
+        "precision": 0.9615384615384616,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      }
+    }
+  },
+  "supplemental_test": {
+    "group_synthetic": {
+      "accepted": {
+        "source_n": 1612,
+        "scored_n": 1612,
+        "ambiguous_n": 0,
+        "positive_n": 1612,
+        "negative_n": 0,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      },
+      "candidate": {
+        "source_n": 1612,
+        "scored_n": 1612,
+        "ambiguous_n": 0,
+        "positive_n": 1612,
+        "negative_n": 0,
+        "exact": 1587,
+        "emitted": 1610,
+        "recall": 0.9844913151364765,
+        "precision": 0.9857142857142858,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      }
+    }
+  },
+  "synthetic_negatives_test": {
+    "synthetic_negative": {
+      "accepted": {
+        "source_n": 250,
+        "scored_n": 250,
+        "ambiguous_n": 0,
+        "positive_n": 0,
+        "negative_n": 250,
+        "exact": 0,
+        "emitted": 0,
+        "recall": null,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": 0.0
+      },
+      "candidate": {
+        "source_n": 250,
+        "scored_n": 250,
+        "ambiguous_n": 0,
+        "positive_n": 0,
+        "negative_n": 250,
+        "exact": 0,
+        "emitted": 225,
+        "recall": null,
+        "precision": 0.0,
+        "false_accepts": 225,
+        "false_accept_rate": 0.9
+      }
+    }
+  }
+}

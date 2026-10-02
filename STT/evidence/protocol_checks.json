@@ -1,0 +1,54 @@
+{
+  "checks_passed": 104,
+  "numeric_text_cases": 101,
+  "batch_single_logit_max_difference": 2.2649765014648438e-06,
+  "batch_single_interior_max_difference": 2.2649765014648438e-06,
+  "text_only_oracle_transcript_control": {
+    "off": {
+      "n": 79,
+      "correct_entities": 42,
+      "wrong_entities": 48,
+      "missed_entities": 54,
+      "precision": 0.4666666666666667,
+      "recall": 0.4375,
+      "new_catalog_entities_correct": 5,
+      "new_catalog_entities_total": 8
+    },
+    "fixed": {
+      "n": 79,
+      "correct_entities": 32,
+      "wrong_entities": 1,
+      "missed_entities": 64,
+      "precision": 0.9696969696969697,
+      "recall": 0.3333333333333333,
+      "new_catalog_entities_correct": 0,
+      "new_catalog_entities_total": 8
+    },
+    "dynamic": {
+      "n": 79,
+      "correct_entities": 37,
+      "wrong_entities": 1,
+      "missed_entities": 59,
+      "precision": 0.9736842105263158,
+      "recall": 0.3854166666666667,
+      "new_catalog_entities_correct": 5,
+      "new_catalog_entities_total": 8
+    }
+  },
+  "catalog_index_build": {
+    "100": {
+      "in_memory_index_build_ms_median": 0.0051000097300857306,
+      "entries": 100
+    },
+    "1000": {
+      "in_memory_index_build_ms_median": 0.0567499955650419,
+      "entries": 1000
+    },
+    "10000": {
+      "in_memory_index_build_ms_median": 0.7254999654833227,
+      "entries": 10000
+    }
+  },
+  "checkpoint_sha256_after_catalog_experiments": "c7e92e93509d0bff804d20505bdb79db197d14187c34f6f4856ca6ca66c4d7c0",
+  "limitations": "Text-only control uses correct reference transcripts and cannot be reported as speech recognition accuracy. Index timing is an in-memory dictionary microbenchmark, not end-to-end decoder latency."
+}

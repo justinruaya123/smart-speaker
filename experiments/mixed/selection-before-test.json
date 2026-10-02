@@ -1,0 +1,472 @@
+{
+  "created_utc": "2026-09-19T15:46:18.159626+00:00",
+  "protocol_sha256": "a2359f052f2542e476ba46278cf0e4cba6f0daca603e82cc17c23d3d49d489fc",
+  "human_manifest_sha256": "532ae4e3e8e4d878463c77ef8f1394f81f7804e3862c6ea132ad65750bace675",
+  "tts_manifest_sha256": "cfcf028553781d779541120efb79cba9a8160efd4bc99199bcdd72ad3a8bd4c8",
+  "models": {
+    "synthetic": "3430877c41db761fe4f36ff6601914967b97ae002dc0475d71cf1b9a593fbece",
+    "human": "9c5068aba7a23de0808fdddcba76114e932214655288ac26ff796519cac1adeb"
+  },
+  "calibration": {
+    "synthetic": {
+      "policy": {
+        "UNKNOWN": {
+          "real_weight": 0.0,
+          "log_odds_bias": 0.0,
+          "intent_threshold": 0.5,
+          "slot_threshold": 0.5,
+          "margin": 0.0
+        },
+        "POWER_ON": {
+          "real_weight": 0.0,
+          "log_odds_bias": 0.9499484049024496,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.8910022511200848,
+          "margin": 0.17920627606560746
+        },
+        "POWER_OFF": {
+          "real_weight": 0.0,
+          "log_odds_bias": -0.903771651126485,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.8830179238693056,
+          "margin": 0.13726086673022467
+        },
+        "BRIGHTNESS": {
+          "real_weight": 0.0,
+          "log_odds_bias": -0.4500243052645161,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.6329791479769811,
+          "margin": 0.09303704468032531,
+          "disabled_operations": [
+            "SET",
+            "INCREASE",
+            "DECREASE"
+          ]
+        },
+        "COLOR_SET": {
+          "real_weight": 0.0,
+          "log_odds_bias": 1.2789765415452992,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.8428589401954906,
+          "margin": 7.132732428133046e-05
+        },
+        "MEDIA_PLAY": {
+          "real_weight": 0.0,
+          "log_odds_bias": -0.9562238831501637,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.27263995982418243,
+          "margin": 0.16851267708095585
+        },
+        "MEDIA_RESUME": {
+          "real_weight": 0.0,
+          "log_odds_bias": -0.43466871315491035,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.8913552125221382,
+          "margin": 0.24536346804117626
+        },
+        "TIME_QUERY": {
+          "real_weight": 0.0,
+          "log_odds_bias": -1.4690543592481915,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.5710057481858144,
+          "margin": 0.24802436643484643
+        },
+        "DATE_QUERY": {
+          "real_weight": 0.0,
+          "log_odds_bias": 1.0492216256718372,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.50269465679962,
+          "margin": 0.2202213456237201
+        },
+        "VOLUME": {
+          "real_weight": 0.0,
+          "log_odds_bias": 0.5223903555032964,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.9437408597843853,
+          "margin": 0.02394119344174111,
+          "disabled_operations": [
+            "SET",
+            "INCREASE",
+            "DECREASE"
+          ]
+        }
+      },
+      "development_gates": {
+        "POWER_ON": {
+          "passed": false,
+          "accepted": 46,
+          "precision": 0.6521739130434783,
+          "negative_far": 0.007416563658838072,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "POWER_OFF": {
+          "passed": false,
+          "accepted": 29,
+          "precision": 0.7931034482758621,
+          "negative_far": 0.004944375772558714,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "BRIGHTNESS": {
+          "passed": false,
+          "accepted": 14,
+          "precision": 0.0,
+          "negative_far": 0.009888751545117428,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "COLOR_SET": {
+          "passed": false,
+          "accepted": 10,
+          "precision": 0.2,
+          "negative_far": 0.002472187886279357,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "MEDIA_PLAY": {
+          "passed": false,
+          "accepted": 14,
+          "precision": 0.9285714285714286,
+          "negative_far": 0.0012360939431396785,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "MEDIA_RESUME": {
+          "passed": false,
+          "accepted": 16,
+          "precision": 0.25,
+          "negative_far": 0.00865265760197775,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "TIME_QUERY": {
+          "passed": false,
+          "accepted": 12,
+          "precision": 0.8333333333333334,
+          "negative_far": 0.002472187886279357,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "DATE_QUERY": {
+          "passed": false,
+          "accepted": 22,
+          "precision": 0.5,
+          "negative_far": 0.003708281829419036,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "VOLUME": {
+          "passed": false,
+          "accepted": 12,
+          "precision": 0.3333333333333333,
+          "negative_far": 0.003708281829419036,
+          "final_accepted": 0,
+          "final_precision": null
+        }
+      },
+      "operation_gates": {
+        "BRIGHTNESS/SET": {
+          "passed": false,
+          "accepted": 0,
+          "precision": 0.0,
+          "available_dev_positives": 47,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "BRIGHTNESS/INCREASE": {
+          "passed": false,
+          "accepted": 0,
+          "precision": 0.0,
+          "available_dev_positives": 24,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "BRIGHTNESS/DECREASE": {
+          "passed": false,
+          "accepted": 0,
+          "precision": 0.0,
+          "available_dev_positives": 53,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "VOLUME/SET": {
+          "passed": false,
+          "accepted": 0,
+          "precision": 0.0,
+          "available_dev_positives": 3,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "VOLUME/INCREASE": {
+          "passed": false,
+          "accepted": 0,
+          "precision": 0.0,
+          "available_dev_positives": 76,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "VOLUME/DECREASE": {
+          "passed": false,
+          "accepted": 0,
+          "precision": 0.0,
+          "available_dev_positives": 80,
+          "final_accepted": 0,
+          "final_precision": null
+        }
+      },
+      "selection_split": "human_dev",
+      "trials": 1800,
+      "global_negative_gate": {
+        "passed": true,
+        "false_accept_rate": 0.0,
+        "threshold_shift": 0.0,
+        "development_only": true
+      },
+      "targets": {
+        "precision": 0.95,
+        "negative_false_accept_rate": 0.01,
+        "minimum_accepts": 10
+      },
+      "test_used": false
+    },
+    "mixed": {
+      "policy": {
+        "UNKNOWN": {
+          "real_weight": 0.5,
+          "log_odds_bias": 0.0,
+          "intent_threshold": 0.5,
+          "slot_threshold": 0.5,
+          "margin": 0.0
+        },
+        "POWER_ON": {
+          "real_weight": 0.9005742319282527,
+          "log_odds_bias": 1.0714387054133423,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.8939937358011273,
+          "margin": 0.15832037137528088
+        },
+        "POWER_OFF": {
+          "real_weight": 0.9577050522592653,
+          "log_odds_bias": -1.4714788424027965,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.8979762625413154,
+          "margin": 0.051654039906318845
+        },
+        "BRIGHTNESS": {
+          "real_weight": 0.6543839890694344,
+          "log_odds_bias": -1.3382854281348129,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.6692236576655604,
+          "margin": 0.010913707467489854,
+          "disabled_operations": [
+            "SET",
+            "INCREASE",
+            "DECREASE"
+          ]
+        },
+        "COLOR_SET": {
+          "real_weight": 0.7457244781302267,
+          "log_odds_bias": -0.3641120293589159,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.6821629461233072,
+          "margin": 0.15111564320321438
+        },
+        "MEDIA_PLAY": {
+          "real_weight": 0.1498348071935201,
+          "log_odds_bias": 0.22472201377820478,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.755557666394787,
+          "margin": 0.15403804734882393
+        },
+        "MEDIA_RESUME": {
+          "real_weight": 0.8816723992813355,
+          "log_odds_bias": 0.8599280508001029,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.9002775026434348,
+          "margin": 0.05996159669122961
+        },
+        "TIME_QUERY": {
+          "real_weight": 0.09997495132786108,
+          "log_odds_bias": 0.8385904238952748,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.6001219102216866,
+          "margin": 0.04932758787182957
+        },
+        "DATE_QUERY": {
+          "real_weight": 0.4660754266421964,
+          "log_odds_bias": -1.4065890632306617,
+          "intent_threshold": 0.5909150258519738,
+          "slot_threshold": 0.6507173947973909,
+          "margin": 0.2298586840824511
+        },
+        "VOLUME": {
+          "real_weight": 0.8232177323418595,
+          "log_odds_bias": -1.4710655812546258,
+          "intent_threshold": 1.1,
+          "slot_threshold": 0.2681473131428189,
+          "margin": 0.065507839655398,
+          "disabled_operations": [
+            "SET",
+            "INCREASE",
+            "DECREASE"
+          ]
+        }
+      },
+      "development_gates": {
+        "POWER_ON": {
+          "passed": false,
+          "accepted": 140,
+          "precision": 0.8785714285714286,
+          "negative_far": 0.004944375772558714,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "POWER_OFF": {
+          "passed": false,
+          "accepted": 159,
+          "precision": 0.9371069182389937,
+          "negative_far": 0.006180469715698393,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "BRIGHTNESS": {
+          "passed": false,
+          "accepted": 15,
+          "precision": 0.6666666666666666,
+          "negative_far": 0.003708281829419036,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "COLOR_SET": {
+          "passed": false,
+          "accepted": 11,
+          "precision": 0.45454545454545453,
+          "negative_far": 0.003708281829419036,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "MEDIA_PLAY": {
+          "passed": false,
+          "accepted": 23,
+          "precision": 0.9130434782608695,
+          "negative_far": 0.002472187886279357,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "MEDIA_RESUME": {
+          "passed": false,
+          "accepted": 21,
+          "precision": 0.8571428571428571,
+          "negative_far": 0.0012360939431396785,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "TIME_QUERY": {
+          "passed": false,
+          "accepted": 15,
+          "precision": 0.8666666666666667,
+          "negative_far": 0.002472187886279357,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "DATE_QUERY": {
+          "passed": true,
+          "accepted": 12,
+          "precision": 1.0,
+          "negative_far": 0.0,
+          "final_accepted": 12,
+          "final_precision": 1.0
+        },
+        "VOLUME": {
+          "passed": false,
+          "accepted": 29,
+          "precision": 0.9310344827586207,
+          "negative_far": 0.0012360939431396785,
+          "final_accepted": 0,
+          "final_precision": null
+        }
+      },
+      "operation_gates": {
+        "BRIGHTNESS/SET": {
+          "passed": false,
+          "accepted": 0,
+          "precision": 0.0,
+          "available_dev_positives": 47,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "BRIGHTNESS/INCREASE": {
+          "passed": false,
+          "accepted": 0,
+          "precision": 0.0,
+          "available_dev_positives": 24,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "BRIGHTNESS/DECREASE": {
+          "passed": false,
+          "accepted": 0,
+          "precision": 0.0,
+          "available_dev_positives": 53,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "VOLUME/SET": {
+          "passed": false,
+          "accepted": 0,
+          "precision": 0.0,
+          "available_dev_positives": 3,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "VOLUME/INCREASE": {
+          "passed": false,
+          "accepted": 0,
+          "precision": 0.0,
+          "available_dev_positives": 76,
+          "final_accepted": 0,
+          "final_precision": null
+        },
+        "VOLUME/DECREASE": {
+          "passed": false,
+          "accepted": 0,
+          "precision": 0.0,
+          "available_dev_positives": 80,
+          "final_accepted": 0,
+          "final_precision": null
+        }
+      },
+      "selection_split": "human_dev",
+      "trials": 1800,
+      "global_negative_gate": {
+        "passed": true,
+        "false_accept_rate": 0.0,
+        "threshold_shift": 0.0,
+        "development_only": true
+      },
+      "targets": {
+        "precision": 0.95,
+        "negative_false_accept_rate": 0.01,
+        "minimum_accepts": 10
+      },
+      "test_used": false
+    }
+  },
+  "test_scored_before_receipt": false,
+  "implementation_sha256": {
+    "scripts\\models\\synthetic_vcm.py": "13f4f7bf47e1d0a7a7573ae7ea3ebc353d7997ae13d6b5ad8b95b076907649d0",
+    "scripts\\train\\synthetic_data.py": "2a832aaa6c957a80c23ce2812a6cc8d5248b49f8d7aebae38cc64d7c9af29e99",
+    "scripts\\train\\synthetic_training.py": "6fdd132fe791867028ec207e5955603874e951df6eb76ed7465cf938d60b7503",
+    "scripts\\train\\synthetic_tts.py": "35a5c9dc3d7bd368a8c39f9f1f02f78965d377e17015083fc9ad3cec1b90eae4",
+    "scripts\\test\\synthetic_eval.py": "41b7b74cdba1821fd27d352ffb633b64610be5142e0634fe96fa49568d68d496"
+  },
+  "selection_specification_sha256": "f2ace09f608f2848bfef6084e181343e7a812574569d0287fc4a6b4d607d48fc",
+  "source_metadata_sha256": "6803e47a82867f1a93b32b2414b862d417761680befbe43ee9e27e6e4bbf78ef",
+  "runtime_source_sha256": {
+    "scripts/runtime/audio.py": "b469e4397b57cf46954e2ff674b2137aab0334d5f441d7b076a6b8743607526a",
+    "scripts/runtime/routing.py": "d6892d22729007972ebf71db25c86245255c0b8d7226871e31ed284636935acc",
+    "scripts/runtime/levels.py": "8d197ccd9322a6e5ee779388bdd86914c649855891fe877920e471ca7154b2eb"
+  },
+  "human_only_control_selection_sha256": "ad07f9755e1de6574dd2ae542e2d577e273b8749ebfbc9ec17cc867833b78c04"
+}

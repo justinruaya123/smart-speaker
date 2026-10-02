@@ -1,0 +1,11 @@
+{
+  "index": ".cache\\pcv-release-train-v1\\teacher-feature-index.jsonl",
+  "new": 2168,
+  "reuse_note": "Only frozen pretrained encoder outputs reused, never prior source-fitted heads or targets.",
+  "reused_by_pcm": 6015,
+  "rows": 8183,
+  "seconds": 89.45612249999976,
+  "sha256": "4da923ad47ce0dc0fb8af0c912805e9061a43d4f15499d96af9da45166a7325d",
+  "source_data_freeze_sha256": "390c1ca93fbf2e8ffa0f685e839f32c0f84f2f3bf147d920ad827f081386646c",
+  "test_inference_accessed": false
+}

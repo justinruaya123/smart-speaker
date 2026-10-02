@@ -1,0 +1,27 @@
+{
+  "sources": [
+    {
+      "source": "FluentSpeechCommands",
+      "n": 5863,
+      "license": "Fluent Speech Commands Public License; academic research only",
+      "source_metadata": "data/sources/fluent.source.json",
+      "rows_with_inherited_license": 2085
+    },
+    {
+      "source": "SLURP-real",
+      "n": 4371,
+      "license": null,
+      "source_metadata": "data/sources/slurp.source.json",
+      "rows_with_inherited_license": 0
+    },
+    {
+      "source": "SnipsSmartLights",
+      "n": 1357,
+      "license": "Sonos Crowdsourced Data License Terms; academic/research only, no commercial use",
+      "source_metadata": "data/sources/smartlights.source.json",
+      "rows_with_inherited_license": 0
+    }
+  ],
+  "tts_model_license": "Apache-2.0",
+  "no_manifest_rows_changed": true
+}

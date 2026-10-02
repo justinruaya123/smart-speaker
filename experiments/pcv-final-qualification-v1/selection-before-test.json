@@ -1,0 +1,176 @@
+{
+  "binding": {
+    "catalog_sha256": "8d301ee936100ad5f5c7bfad365c4b1265cdd40147d09b89fb153915ac8d81c5",
+    "custom_slots_sha256": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5",
+    "model_sha256": "0b2701bacaeff770d0098433e018123b4f6d607e9d8a893e251dbbafca6b3aef",
+    "normalization_sha256": "31713f9a50a5e9bab0906af3c64d0f910be6a7c8fc57b94c72bf3bee654673ee",
+    "schema_sha256": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c"
+  },
+  "calibration_predictions_sha256": "8a3065d8065e8cdb2b3ca7888e334f8b77696a4f494d2955d789240957627b4d",
+  "development_selection_sha256": "aac58198da8933c2892b4c7c3ae52a0ebbc5cb85acbeff64184d5f1067226230",
+  "holdout_manifest": {
+    "path": ".cache\\pcv-updated-voice-v1\\prepared\\holdout.jsonl",
+    "rows": 186,
+    "sha256": "6f43bf471698f84bbcafc159b066bc70b6e4c945d0e9d7c38699a539a26e23d0"
+  },
+  "policy_sha256": "68e5540cf876c75d06d848d6601de51d5623088c196447adbedf5f9c0a5aa290",
+  "prior_parent_test_exposure": "declared repeated benchmark, not a new blind corpus",
+  "test_inference_accessed": false,
+  "test_manifest": {
+    "path": ".cache\\pcv-updated-voice-v1\\prepared\\test.jsonl",
+    "rows": 4371,
+    "sha256": "f32ff78f177db0e43704393c230af502568cf435e64695a0fe2a19d62446c7b1"
+  },
+  "winner": {
+    "compression_fidelity_pass": true,
+    "development": {
+      "human": {
+        "accepted": 203,
+        "exact": 146,
+        "false_accept_rate": 0.5714285714285714,
+        "n": 231,
+        "negative_errors": 36,
+        "negative_n": 63,
+        "positive_n": 168,
+        "precision": 0.7192118226600985,
+        "recall": 0.8690476190476191
+      },
+      "synthetic": {
+        "accepted": 108,
+        "exact": 107,
+        "false_accept_rate": null,
+        "n": 108,
+        "negative_errors": 0,
+        "negative_n": 0,
+        "positive_n": 108,
+        "precision": 0.9907407407407407,
+        "recall": 0.9907407407407407
+      }
+    },
+    "eligible": true,
+    "export": {
+      "accuracy_fidelity": "requires locked development comparison",
+      "files": {
+        "model.fp32.onnx": {
+          "bytes": 3839438,
+          "sha256": "fe579a6c4da7b0d92ad16139b597c2d75bbdeb51f626ff4369f72232ca3af956"
+        },
+        "model.int8.onnx": {
+          "bytes": 1558203,
+          "sha256": "0b2701bacaeff770d0098433e018123b4f6d607e9d8a893e251dbbafca6b3aef"
+        },
+        "model.preprocessed.onnx": {
+          "bytes": 3883465,
+          "sha256": "0c1f52e00b40d14c4861d8da007a27ceb36bd7a9cee75da27abd34532fd84083"
+        }
+      },
+      "fp32": {
+        "errors": [
+          3.814697265625e-06,
+          4.0531158447265625e-06,
+          5.7220458984375e-06,
+          4.291534423828125e-06,
+          5.245208740234375e-06,
+          7.62939453125e-06
+        ],
+        "frame_counts": [
+          1,
+          3,
+          16,
+          37,
+          80,
+          121
+        ],
+        "input_feature_hop_ms": 10,
+        "logits": "raw; finite decoder applies log-softmax once",
+        "max_absolute_error": 7.62939453125e-06,
+        "mode": "single complete-utterance inference after VAD endpoint; no streaming caches",
+        "onnx_bytes": 3839438,
+        "output_heads": [
+          "ctc",
+          "intent",
+          "target"
+        ],
+        "output_hop_ms": 20,
+        "parameters": 935485,
+        "pass": false,
+        "tolerance": 2e-05
+      },
+      "fp32_numerical_parity_pass": true,
+      "int8_bytes": 1558203,
+      "physical_pi": false,
+      "size_pass": true
+    },
+    "fp32_development": {
+      "human": {
+        "accepted": 202,
+        "exact": 146,
+        "false_accept_rate": 0.5555555555555556,
+        "n": 231,
+        "negative_errors": 35,
+        "negative_n": 63,
+        "positive_n": 168,
+        "precision": 0.7227722772277227,
+        "recall": 0.8690476190476191
+      },
+      "synthetic": {
+        "accepted": 108,
+        "exact": 107,
+        "false_accept_rate": null,
+        "n": 108,
+        "negative_errors": 0,
+        "negative_n": 0,
+        "positive_n": 108,
+        "precision": 0.9907407407407407,
+        "recall": 0.9907407407407407
+      }
+    },
+    "graph": ".cache\\pcv-final-qualification-v1\\exports\\context128\\model.int8.onnx",
+    "graph_sha256": "0b2701bacaeff770d0098433e018123b4f6d607e9d8a893e251dbbafca6b3aef",
+    "mode": "endpoint_context",
+    "model_config": {
+      "dropout": 0.1,
+      "feedforward": 256,
+      "heads": 4,
+      "layers": 6,
+      "width": 128
+    },
+    "name": "context128",
+    "selection": {
+      "checkpoint": ".cache\\pcv-updated-context-int8-v1\\mixed\\epoch-012.pt",
+      "checkpoint_sha256": "aaa638fb225976d3dea33bd69dc103e87314c8f49651e1dbebf0bb3ff1e7ea92",
+      "development": {
+        "human": {
+          "accepted": 201,
+          "exact": 146,
+          "false_accept_rate": 0.5396825396825397,
+          "n": 231,
+          "negative_errors": 34,
+          "negative_n": 63,
+          "positive_n": 168,
+          "precision": 0.7263681592039801,
+          "recall": 0.8690476190476191
+        },
+        "synthetic": {
+          "accepted": 108,
+          "exact": 107,
+          "false_accept_rate": null,
+          "n": 108,
+          "negative_errors": 0,
+          "negative_n": 0,
+          "positive_n": 108,
+          "precision": 0.9907407407407407,
+          "recall": 0.9907407407407407
+        }
+      },
+      "epoch": 12,
+      "key": [
+        0.9298941798941799,
+        -34,
+        -12
+      ],
+      "stage": "mixed",
+      "test_inference_accessed": false
+    }
+  }
+}

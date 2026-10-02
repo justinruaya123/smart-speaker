@@ -1,0 +1,21 @@
+{
+  "arm": "mixed_keywords",
+  "training_rows": 18971,
+  "human_rows": 16283,
+  "synthetic_rows": 2688,
+  "development_rows": 5364,
+  "protocol_sha256": "d324adddae8905fe5febd5c54d6165cd3464e915838ed2cd583535f6b4d46047",
+  "data_lock_sha256": "8d45de356a828eac2ac20c0f88221333c4bead67ac397771a4bdc8b930c746a9",
+  "source_checkpoint_sha256": "d5fd4977350ba624d9ef1fc5dbfb1621b480cd57ee89ae6c6c70e294bd950c8e",
+  "source_sha256": "ea0fa8c376a1966e95c903f4b3dff74bf2388441b5b8f25ec847bc14359b3a00",
+  "torch": "2.13.0+cu130",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "seed": 17,
+  "installed": false,
+  "complete": true,
+  "epochs": 24,
+  "selected_epoch": 17,
+  "checkpoint_sha256": "5aebcbeec8ea2ff94c0bf5744bfc7f3ce1294e403cb8876180b35ae0b3158523",
+  "seconds": 98.73304419999477,
+  "test_used": false
+}

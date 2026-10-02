@@ -1,0 +1,28 @@
+{
+  "selected": "E02 frame-attention VCM",
+  "vcm_sha256": "a7fa48af1d8a24a24c08c8a98cf19e303fffdda3d0281fd7f11ea80223fd6eba",
+  "prior_selection": {
+    "selected": "attention",
+    "basis": "single-recording ONNX development selection",
+    "ranking": {
+      "shared": [
+        false,
+        0.16666666666666666,
+        0.556910569105691,
+        0.7183483188769744,
+        0.330150068212824
+      ],
+      "attention": [
+        false,
+        0.18333333333333332,
+        0.5735772357723578,
+        0.7183483188769744,
+        0.3874488403819918
+      ]
+    }
+  },
+  "quality_gate_passed": false,
+  "reason": "User requested strongest existing model as the current artifact; gates remain failed and no physical actions are connected.",
+  "recovery_path": ".cache/wake-pipeline-v1/recovery-before-install",
+  "not_a_fresh_model_evaluation": true
+}

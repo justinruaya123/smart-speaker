@@ -1,0 +1,690 @@
+{
+  "note": "Original TTS labels count 24 implicit relative-step defaults as amount 10 although the utterances speak no number (for example volume up). E13 correctly labels these NONE. The explicit spoken-number test therefore has 444, not the earlier planned 468, recordings; all 101 values remain covered. These 24 are supported relative commands, not numeric recognition evidence.",
+  "count": 24,
+  "rows": [
+    {
+      "id": "tts/designed-10/0155",
+      "transcript": "brightness up",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": "main_lights",
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "INCREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_BRIGHTNESS",
+            "arguments": {
+              "target": {
+                "id": "example.main_lights",
+                "name": "lights",
+                "device_kind": "light"
+              },
+              "delta_percentage_points": 10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-10/0156",
+      "transcript": "brightness down",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": "main_lights",
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "DECREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_BRIGHTNESS",
+            "arguments": {
+              "target": {
+                "id": "example.main_lights",
+                "name": "lights",
+                "device_kind": "light"
+              },
+              "delta_percentage_points": -10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-10/0157",
+      "transcript": "increase the brightness",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": "main_lights",
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "INCREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_BRIGHTNESS",
+            "arguments": {
+              "target": {
+                "id": "example.main_lights",
+                "name": "lights",
+                "device_kind": "light"
+              },
+              "delta_percentage_points": 10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-10/0158",
+      "transcript": "decrease the brightness",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": "main_lights",
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "DECREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_BRIGHTNESS",
+            "arguments": {
+              "target": {
+                "id": "example.main_lights",
+                "name": "lights",
+                "device_kind": "light"
+              },
+              "delta_percentage_points": -10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-10/0159",
+      "transcript": "raise the brightness",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": "main_lights",
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "INCREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_BRIGHTNESS",
+            "arguments": {
+              "target": {
+                "id": "example.main_lights",
+                "name": "lights",
+                "device_kind": "light"
+              },
+              "delta_percentage_points": 10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-10/0160",
+      "transcript": "lower the brightness",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": "main_lights",
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "DECREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_BRIGHTNESS",
+            "arguments": {
+              "target": {
+                "id": "example.main_lights",
+                "name": "lights",
+                "device_kind": "light"
+              },
+              "delta_percentage_points": -10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-10/0280",
+      "transcript": "volume up",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": null,
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "INCREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_VOLUME",
+            "arguments": {
+              "delta_percentage_points": 10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-10/0281",
+      "transcript": "volume down",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": null,
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "DECREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_VOLUME",
+            "arguments": {
+              "delta_percentage_points": -10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-10/0282",
+      "transcript": "increase the volume",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": null,
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "INCREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_VOLUME",
+            "arguments": {
+              "delta_percentage_points": 10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-10/0283",
+      "transcript": "decrease the volume",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": null,
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "DECREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_VOLUME",
+            "arguments": {
+              "delta_percentage_points": -10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-10/0284",
+      "transcript": "raise the volume",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": null,
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "INCREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_VOLUME",
+            "arguments": {
+              "delta_percentage_points": 10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-10/0285",
+      "transcript": "lower the volume",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": null,
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "DECREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_VOLUME",
+            "arguments": {
+              "delta_percentage_points": -10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-11/0155",
+      "transcript": "brightness up",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": "main_lights",
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "INCREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_BRIGHTNESS",
+            "arguments": {
+              "target": {
+                "id": "example.main_lights",
+                "name": "lights",
+                "device_kind": "light"
+              },
+              "delta_percentage_points": 10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-11/0156",
+      "transcript": "brightness down",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": "main_lights",
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "DECREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_BRIGHTNESS",
+            "arguments": {
+              "target": {
+                "id": "example.main_lights",
+                "name": "lights",
+                "device_kind": "light"
+              },
+              "delta_percentage_points": -10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-11/0157",
+      "transcript": "increase the brightness",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": "main_lights",
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "INCREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_BRIGHTNESS",
+            "arguments": {
+              "target": {
+                "id": "example.main_lights",
+                "name": "lights",
+                "device_kind": "light"
+              },
+              "delta_percentage_points": 10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-11/0158",
+      "transcript": "decrease the brightness",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": "main_lights",
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "DECREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_BRIGHTNESS",
+            "arguments": {
+              "target": {
+                "id": "example.main_lights",
+                "name": "lights",
+                "device_kind": "light"
+              },
+              "delta_percentage_points": -10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-11/0159",
+      "transcript": "raise the brightness",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": "main_lights",
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "INCREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_BRIGHTNESS",
+            "arguments": {
+              "target": {
+                "id": "example.main_lights",
+                "name": "lights",
+                "device_kind": "light"
+              },
+              "delta_percentage_points": 10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-11/0160",
+      "transcript": "lower the brightness",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": "main_lights",
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "DECREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_BRIGHTNESS",
+            "arguments": {
+              "target": {
+                "id": "example.main_lights",
+                "name": "lights",
+                "device_kind": "light"
+              },
+              "delta_percentage_points": -10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-11/0280",
+      "transcript": "volume up",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": null,
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "INCREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_VOLUME",
+            "arguments": {
+              "delta_percentage_points": 10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-11/0281",
+      "transcript": "volume down",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": null,
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "DECREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_VOLUME",
+            "arguments": {
+              "delta_percentage_points": -10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-11/0282",
+      "transcript": "increase the volume",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": null,
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "INCREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_VOLUME",
+            "arguments": {
+              "delta_percentage_points": 10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-11/0283",
+      "transcript": "decrease the volume",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": null,
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "DECREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_VOLUME",
+            "arguments": {
+              "delta_percentage_points": -10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-11/0284",
+      "transcript": "raise the volume",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": null,
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "INCREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_VOLUME",
+            "arguments": {
+              "delta_percentage_points": 10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    },
+    {
+      "id": "tts/designed-11/0285",
+      "transcript": "lower the volume",
+      "source_amount": "10",
+      "annotation": {
+        "labels": {
+          "guard": "READY",
+          "target": null,
+          "color": null,
+          "amount": "NONE",
+          "media": null,
+          "operation": "DECREASE",
+          "media_mode": null
+        },
+        "reference": {
+          "status": "accepted",
+          "command": {
+            "action": "ADJUST_VOLUME",
+            "arguments": {
+              "delta_percentage_points": -10
+            }
+          }
+        },
+        "quality": "programmatic_silver"
+      }
+    }
+  ]
+}

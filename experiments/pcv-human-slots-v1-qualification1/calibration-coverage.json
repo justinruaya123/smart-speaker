@@ -1,0 +1,42 @@
+{
+  "added": 415,
+  "added_ids_unique": true,
+  "added_pcm_unique": true,
+  "added_voice_ids": [
+    "qwen/cal-us-f"
+  ],
+  "calibration_freeze_sha256": "ca20402d4fa9eb255e4d2380d6f9979b2feb7ead7fca0ebfef7396db223b0dfd",
+  "independent_listener_verification": false,
+  "negative_n": 4764,
+  "positive_intents": {
+    "ALARM": 57,
+    "BRIGHTNESS": 1085,
+    "CALL": 25,
+    "COLOR": 39,
+    "CREATE_REMINDER": 9,
+    "LIGHT_OFF": 205,
+    "LIGHT_ON": 242,
+    "LIST_REMINDERS": 3,
+    "MESSAGE": 3,
+    "NEXT": 9,
+    "PAUSE": 34,
+    "PLAY_MUSIC": 102,
+    "STOP": 36,
+    "TEMPERATURE": 54,
+    "TIME": 17,
+    "TIMER": 183,
+    "VOLUME": 736,
+    "WEATHER": 12
+  },
+  "positive_n": 2851,
+  "retry_log_exists": false,
+  "rows": 7615,
+  "sources": {
+    "FSC": 1635,
+    "Qwen": 2768,
+    "Qwen-schema-calibration": 415,
+    "SLURP-real": 2597,
+    "Speech Commands v0.02": 200
+  },
+  "waveform_checks_only": true
+}

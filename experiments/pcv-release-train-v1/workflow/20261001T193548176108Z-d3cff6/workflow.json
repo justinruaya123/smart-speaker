@@ -1,0 +1,89 @@
+{
+  "error": "CalledProcessError: Command '['C:\\\\Users\\\\SCL-Jus\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\node\\\\bin\\\\node.exe', 'C:\\\\Users\\\\SCL-Jus\\\\Documents\\\\Grad\\\\smart-speaker\\\\scripts\\\\report\\\\pcv_release_slides.mjs', '--summary', 'C:\\\\Users\\\\SCL-Jus\\\\Documents\\\\Grad\\\\smart-speaker\\\\experiments\\\\pcv-release-train-v1\\\\runs\\\\release-v1\\\\summary.json', '--output', 'C:\\\\Users\\\\SCL-Jus\\\\Documents\\\\Grad\\\\smart-speaker\\\\dist\\\\pcv-release-v1\\\\20261001T193548176108Z-d3cff6', '--name', 'me2-diagnostic']' returned non-zero exit status 1.",
+  "invocation": "20261001T193548176108Z-d3cff6",
+  "physical_pi_measured": false,
+  "qualified": false,
+  "receipt": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\experiments\\pcv-release-train-v1\\workflow\\20261001T193548176108Z-d3cff6\\workflow.json",
+  "release_sha256": "51d9f1dfb3a6316dcb47420694046a9f86002c911b88ff7a3a4530e8956d4961",
+  "run_id": "release-v1",
+  "schema_version": 1,
+  "selection_sha256": "efe92043f3c48fa940d4d4a8e32cbb002fbee52b0a2dc6f27d31d2f8380c28c5",
+  "skip_train": true,
+  "source_receipt": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\experiments\\pcv-source-refresh-v1\\acquisition-complete.json",
+  "source_refresh": "Skipped: preserve the training-bound revision; no current API data rebound",
+  "stages": [
+    {
+      "finished_utc": "2026-10-01T19:35:48.195645+00:00",
+      "name": "verify-frozen-selection",
+      "started_utc": "2026-10-01T19:35:48.177775+00:00",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-release-v1\\workflow\\20261001T193548176108Z-d3cff6\\pytest",
+        "scripts/test/test_pcv_release_data.py",
+        "scripts/test/test_pcv_release_prepare.py",
+        "scripts/test/test_pcv_release_training.py",
+        "scripts/test/test_pcv_release_pooling.py",
+        "scripts/test/test_pcv_release_qualification.py",
+        "scripts/test/test_pcv_final_delivery.py",
+        "scripts/test/test_pcv_release_workflow.py"
+      ],
+      "finished_utc": "2026-10-01T19:35:51.358856+00:00",
+      "log": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-release-v1\\workflow\\20261001T193548176108Z-d3cff6\\software-tests.log",
+      "name": "software-tests",
+      "returncode": 0,
+      "started_utc": "2026-10-01T19:35:48.196645+00:00",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.test.pcv_release_qualification",
+        "--run-id",
+        "release-v1"
+      ],
+      "finished_utc": "2026-10-01T19:35:53.043844+00:00",
+      "log": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-release-v1\\workflow\\20261001T193548176108Z-d3cff6\\qualification-or-locked-replay.log",
+      "name": "qualification-or-locked-replay",
+      "returncode": 0,
+      "started_utc": "2026-10-01T19:35:51.359557+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-01T19:35:53.071818+00:00",
+      "name": "verify-release",
+      "started_utc": "2026-10-01T19:35:53.044882+00:00",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "C:\\Users\\SCL-Jus\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\scripts\\report\\pcv_release_slides.mjs",
+        "--summary",
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\experiments\\pcv-release-train-v1\\runs\\release-v1\\summary.json",
+        "--output",
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\dist\\pcv-release-v1\\20261001T193548176108Z-d3cff6",
+        "--name",
+        "me2-diagnostic"
+      ],
+      "error": "CalledProcessError: Command '['C:\\\\Users\\\\SCL-Jus\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\node\\\\bin\\\\node.exe', 'C:\\\\Users\\\\SCL-Jus\\\\Documents\\\\Grad\\\\smart-speaker\\\\scripts\\\\report\\\\pcv_release_slides.mjs', '--summary', 'C:\\\\Users\\\\SCL-Jus\\\\Documents\\\\Grad\\\\smart-speaker\\\\experiments\\\\pcv-release-train-v1\\\\runs\\\\release-v1\\\\summary.json', '--output', 'C:\\\\Users\\\\SCL-Jus\\\\Documents\\\\Grad\\\\smart-speaker\\\\dist\\\\pcv-release-v1\\\\20261001T193548176108Z-d3cff6', '--name', 'me2-diagnostic']' returned non-zero exit status 1.",
+      "finished_utc": "2026-10-01T19:35:55.899574+00:00",
+      "log": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-release-v1\\workflow\\20261001T193548176108Z-d3cff6\\deck.log",
+      "name": "deck",
+      "returncode": 1,
+      "started_utc": "2026-10-01T19:35:53.086074+00:00",
+      "status": "failed"
+    }
+  ],
+  "status": "failed",
+  "training_mode": "skipped_bound_selection"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "path": "dist/pcv-full-benchmark-v1/smart-speaker-pi-benchmark.zip",
+    "sha256": "1c92f43194117a1d695eae3c70fc3fc6934787c148bf9030cdbc80caedcf09e1",
+    "bytes": 352674311,
+    "files": 6906,
+    "tracks": {
+      "primary_holdout": 202,
+      "primary_test": 4443,
+      "synthetic_negatives_test": 250,
+      "supplemental_holdout": 261,
+      "supplemental_test": 1612
+    },
+    "runtime_matches_extracted_serving_test": true,
+    "all_manifest_hashes_verified": true,
+    "report_links_resolve": true,
+    "accepted_policy_enabled": false,
+    "physical_pi_measured": false
+  },
+  {
+    "path": "dist/pcv-full-benchmark-v1/smart-speaker-standalone-benchmark.zip",
+    "sha256": "7faba806b5901d5ad1a5162cd378498effda95afb3570187739af65a98a4a8d8",
+    "bytes": 352371676,
+    "files": 6857,
+    "tracks": {
+      "primary_holdout": 202,
+      "primary_test": 4443,
+      "synthetic_negatives_test": 250,
+      "supplemental_holdout": 261,
+      "supplemental_test": 1612
+    },
+    "runtime_matches_extracted_serving_test": true,
+    "all_manifest_hashes_verified": true,
+    "report_links_resolve": true,
+    "accepted_policy_enabled": false,
+    "physical_pi_measured": false
+  }
+]

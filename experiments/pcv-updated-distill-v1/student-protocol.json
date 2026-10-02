@@ -1,0 +1,175 @@
+{
+  "augmentation": "none",
+  "bindings": {
+    "experiments/pcv-updated-distill-v1/teacher-selection.json": "e74627f85ff481bfe365e2aef23f9d857b8bfe82858e32249010ee35f44da2db",
+    "experiments/pcv-updated-voice-v1/catalog.json": "1a2fdd91dea9ad9feb53e48eb02ccd4f36aff3822b0c8f5d7356d36e781636cb",
+    "experiments/pcv-updated-voice-v1/data-freeze.json": "68bbb4d6e7b3e759e2d1f1dfef1e4c8adfa3d11a59f660672871acafac53527e",
+    "experiments/phrase-contract-v1/pcvcm/decoder.py": "6c36e737e459c4b7a2b984200ad2896735000bd7ff25b24ac6ac4bd988493922",
+    "scripts/models/pcv_residual.py": "0a727ae308dfc2ad56e9aaa91841bfa0886220ce265593435449bee20545313e",
+    "scripts/pcv_parallel.py": "c43d6e865a305477abc297f72352c680db60dee6a6bc5024bde0b4bb76bdd7fd",
+    "scripts/test/pcv_public_eval.py": "c8b0c57fd8aa5a0ca97e70cc89a6da53f76a47cd8be44cf1fed4cf9597d17b34",
+    "scripts/test/pcv_public_qualification.py": "732003d6cf27b300d11a05dd652d93c9cb8a5ec26fab59d5e244c15125d0d33f",
+    "scripts/test/test_pcv_distill_frames.py": "2fdf474150b2539580fdea8149c124991c035f03752e987829a3f5da72cde7d8",
+    "scripts/test/test_pcv_distillation.py": "82d640904d484483bba3890c556dd223cbdd2a141076301a698016a811ca1f59",
+    "scripts/train/pcv_distillation.py": "bd0b339ea581897f51cf23a5c2bd0308b0972edec7567819af52739f1cb613a6",
+    "scripts/train/pcv_public_training.py": "f78a0649c96c11bd6fb4279f3b09e7e73d61677af535391b07634cd5b560a4be",
+    "scripts/train/pcv_student_distill.py": "ab3f5621d353c8bf18282e1ec2efab4c2eeaa32ebc643b93e51d281dee012b52",
+    "scripts/train/pcv_updated_heads.py": "b49340ec5ab41f812db991d5b4957767ba59a2675cb087ddcc263de40ab1eae1",
+    "scripts/train/pcv_updated_training.py": "e2dca5ddfb4440a6457918feb8faf08e83cb61ec9d8404e82e9dd1f5b2178cb2"
+  },
+  "experiment": "pcv-updated-distill-v1",
+  "external_recordings": false,
+  "frame_alignment": "Same 400-sample receptive-field centres; teacher stride320 versus student160. Zero-order interpolation, valid frames only. Hard CTC remains primary supervision.",
+  "hypothesis": "Finite command competition and audio-head guidance improve the tiny VCM over matched hard-label continuation.",
+  "initial_student": {
+    "checkpoint": ".cache\\pcv-updated-voice-v3\\epoch-024.pt",
+    "checkpoint_sha256": "c7a7a9ac4868c5d424855ccf29b015d1419b34c608af21db03a1c84d862b6482",
+    "development": {
+      "human": {
+        "accepted": 207,
+        "exact": 130,
+        "false_accept_rate": 0.6507936507936508,
+        "n": 231,
+        "negative_errors": 41,
+        "negative_n": 63,
+        "positive_n": 168,
+        "precision": 0.6280193236714976,
+        "recall": 0.7738095238095238
+      },
+      "synthetic": {
+        "accepted": 108,
+        "exact": 105,
+        "false_accept_rate": null,
+        "n": 108,
+        "negative_errors": 0,
+        "negative_n": 0,
+        "positive_n": 108,
+        "precision": 0.9722222222222222,
+        "recall": 0.9722222222222222
+      }
+    },
+    "development_key": [
+      1,
+      0.873015873015873,
+      -41,
+      -24
+    ],
+    "epoch": 24,
+    "parent_data_freeze_sha256": "68bbb4d6e7b3e759e2d1f1dfef1e4c8adfa3d11a59f660672871acafac53527e",
+    "protocol_sha256": "ccf8ee83bb81054013b3136f497e3f7c87b3f251b10340082dc2601bdf3fc6fc",
+    "test_inference_accessed": false,
+    "unique_recordings_seen": 32301
+  },
+  "initialization": "Both arms start from the same HF-only v3 checkpoint; its lineage and the teacher both trained on human recordings before supplied synthetic speech.",
+  "installation_authorized": false,
+  "installed_artifact_hashes": {
+    "artifacts\\brightness-validation.json": "196232e45035acbbe6debc4313e94d7feb42646b6cd4bd839af0d5d33bed78be",
+    "artifacts\\bundle.json": "735626cebe6281406df93eb711b43621bfa84ce4880d68775aa730c2a97de3b1",
+    "artifacts\\export-verification.json": "e63937b03ec2b5259536da9a230aad139e84544ac9c9b7c8f540dd9dadc62413",
+    "artifacts\\family-metrics.json": "f8504dd6a1de29edcee9603b8a40d971c490cad419b4c5b839b4fb814ab2335c",
+    "artifacts\\manifest.json": "fb15d77f4ebc16d70e5075efb9c7900d308e784802a5e5cc0e9e3fa7ba31a668",
+    "artifacts\\openwakeword-LICENSE.txt": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "artifacts\\pilot-results.json": "b65ddc0c72039499936b701ff76a99ed9dc4fdd95039c0bac3a0c173be89f9b7",
+    "artifacts\\pretrained-NOTICE.txt": "712f16b4da0a452d47b7779fc3587141c6cdd6850392273627f38cfb522b79be",
+    "artifacts\\silero-LICENSE.txt": "2e63e9a38b6e8fc0c7bc37ce174caca1862870856c6daf5697cfb785e925520b",
+    "artifacts\\silero-vad.onnx": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+    "artifacts\\stt.fp32.onnx": "6b86cc10e0ac0532bb093e1b54f73487b0c0349d62929bee4446b9249f371a2d",
+    "artifacts\\stt.pt": "556a0cbaf886dfb03fcd3663fa9f10a109c601fd059eb9aac11cb0e661ea80a4",
+    "artifacts\\training-config.json": "9ff335c82c750bede1657545d8a2a81518b0dada86055c2deff90d6882a9a9b5",
+    "artifacts\\training-history.json": "acb1061afa7f4ef1f7422b3ba3b496eb0d8cb40ccd9a1dcbfd6c746b686a7c4d",
+    "artifacts\\vcm.fp32.onnx": "a7fa48af1d8a24a24c08c8a98cf19e303fffdda3d0281fd7f11ea80223fd6eba",
+    "artifacts\\vcm.pt": "d5fd4977350ba624d9ef1fc5dbfb1621b480cd57ee89ae6c6c70e294bd950c8e",
+    "artifacts\\wake-embedding.onnx": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+    "artifacts\\wake-hey-jarvis.onnx": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+    "artifacts\\wake-melspectrogram.onnx": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+    "artifacts\\wake-models.json": "dc7b4d09efc65f5f53c2d280d7efbc09bae56eb2dc689ce88d7d6229d7592cb0"
+  },
+  "model": {
+    "dilations": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "width": 128
+  },
+  "phase": "matched tiny-student distillation",
+  "requirements": [
+    "ME-02",
+    "ME-03",
+    "ME-04",
+    "ME-06",
+    "ME-08"
+  ],
+  "seed": 841,
+  "selection": "Maximize mean human and synthetic raw exact development recall, then fewer human negative errors, then earlier epoch. Arm selection uses the same key; keep parent as another development-only candidate.",
+  "teacher": {
+    "checkpoint": ".cache\\pcv-updated-distill-v1\\mixed\\epoch-004.pt",
+    "checkpoint_sha256": "f56a1030e7c86c28a09ae248aaec9ef42715bef9ee8cea6bd9f74a709d04289f",
+    "development": {
+      "human": {
+        "accepted": 183,
+        "exact": 155,
+        "false_accept_rate": 0.2698412698412698,
+        "n": 231,
+        "negative_errors": 17,
+        "negative_n": 63,
+        "positive_n": 168,
+        "precision": 0.8469945355191257,
+        "recall": 0.9226190476190477
+      },
+      "synthetic": {
+        "accepted": 108,
+        "exact": 108,
+        "false_accept_rate": null,
+        "n": 108,
+        "negative_errors": 0,
+        "negative_n": 0,
+        "positive_n": 108,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    "epoch": 4,
+    "key": [
+      0.9613095238095238,
+      -17,
+      -4
+    ],
+    "stage": "mixed",
+    "test_inference_accessed": false
+  },
+  "teacher_targets": "Training recordings only. Exact finite-catalog scores, one strongest phrase per distinct command; no unconstrained transcript or teacher label replacement.",
+  "test_access": "No test inference in this training phase; parent aggregate test results were already exposed.",
+  "training": {
+    "batch": {
+      "human_negative": 4,
+      "human_positive": 8,
+      "numeral": 4,
+      "synthetic": 16
+    },
+    "batch_size": 32,
+    "candidate_count": 8,
+    "development_every_epochs": 4,
+    "epochs": 32,
+    "frame_weight": 0.2,
+    "gradient_clip": 5.0,
+    "head_temperature": 2.0,
+    "intent_weight": 0.3,
+    "learning_rate": 0.0003,
+    "microbatch_size": 8,
+    "minimum_learning_rate": 2e-05,
+    "semantic_weight": 0.1,
+    "sequence_temperature": 0.03,
+    "sequence_weight": 0.3,
+    "steps_per_epoch": 96,
+    "target_weight": 0.15,
+    "weight_decay": 0.0001
+  }
+}

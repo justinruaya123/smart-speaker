@@ -1,0 +1,11 @@
+{
+  "added": 415,
+  "excluded": [],
+  "generation_protocol_sha256": "8f0be8426f41ba4e8c698fc7750823e3e2e8a7e604481e84c84ec1d7e491f30f",
+  "manifest": ".cache\\pcv-human-slots-v1-qualification1\\calibration.jsonl",
+  "no_test_inference": true,
+  "parent_test_sha256": "3ab34a313f9a3ff784494e3c720fd1a752d5bed52a8dde588561c08ca0af73a8",
+  "rows": 7615,
+  "sha256": "1f9568cf4f3134502253c83ae3a5bc36c2a8fe74dc9ef540395ced63be15254b",
+  "tts_model_identity_sha256": "03de82364e4858e7125dac37ae057233d6760160d80cce67a31837ed7181eab4"
+}

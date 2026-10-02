@@ -1,0 +1,150 @@
+{
+  "rows": 29307,
+  "by_split": {
+    "train": 22807,
+    "enroll": 427,
+    "test": 3148,
+    "dev": 2925
+  },
+  "hours": {
+    "train": 37.062475228410804,
+    "enroll": 0.31128204861111114,
+    "dev": 2.3644025579097376,
+    "test": 2.420494535304863
+  },
+  "sources": {
+    "FSDD": {
+      "train": 2000,
+      "dev": 500,
+      "test": 500
+    },
+    "FluentSpeechCommands": {
+      "train": 2172,
+      "enroll": 273,
+      "test": 350,
+      "dev": 317
+    },
+    "GoogleSpeechCommandsV2": {
+      "train": 2812,
+      "test": 461,
+      "dev": 311
+    },
+    "LibriSpeech": {
+      "train": 28
+    },
+    "LibriSpeech-expanded": {
+      "test": 289,
+      "train": 8839,
+      "dev": 290
+    },
+    "MLEndSpokenNumerals": {
+      "dev": 290,
+      "train": 1124,
+      "test": 294
+    },
+    "MSWC-English": {
+      "dev": 176,
+      "train": 985,
+      "test": 162
+    },
+    "SLURP-real": {
+      "train": 4362,
+      "enroll": 129,
+      "test": 831,
+      "dev": 939
+    },
+    "SnipsSmartLights": {
+      "test": 261,
+      "train": 485,
+      "dev": 102,
+      "enroll": 25
+    }
+  },
+  "numeric_commands": {
+    "train": {
+      "20": 13,
+      "90": 3,
+      "55": 1,
+      "2": 18,
+      "50": 13,
+      "70": 1,
+      "1": 3,
+      "8": 1,
+      "0": 2,
+      "39": 11,
+      "5": 6,
+      "10": 15,
+      "73": 6,
+      "22": 17,
+      "12": 13
+    },
+    "dev": {
+      "55": 1,
+      "40": 2,
+      "80": 1,
+      "7": 1,
+      "90": 2,
+      "2": 2,
+      "20": 5,
+      "5": 4,
+      "22": 5,
+      "73": 3,
+      "39": 3,
+      "50": 4,
+      "10": 2,
+      "12": 3
+    },
+    "test": {
+      "2": 8,
+      "8": 1,
+      "50": 10,
+      "0": 3,
+      "20": 6,
+      "7": 1,
+      "12": 8,
+      "5": 2,
+      "10": 4,
+      "73": 9,
+      "39": 5,
+      "22": 3
+    }
+  },
+  "supplemental_holdout_speakers": {
+    "smartlights/f0f71ab4-dd42-43f7-bd05-7d1950326935": "dev",
+    "smartlights/40b461a0-8c0c-42a6-b51c-99b1a8bff054": "test"
+  },
+  "cross_split_speakers": {},
+  "omitted": {
+    "dictionary_oov": 10826,
+    "reserved_name": 589
+  },
+  "manifest_sha256": "397e69d06061ecb64f8d8db4c783e72d0fb66158e461be6389d21fef24db723c",
+  "legacy_manifest_sha256": "2d3b5b0ab66c7232e634ef845a9ff0ac13f6a14e418f938cc06fa39ecdc33386",
+  "legacy_test_preserved": 2602,
+  "synthetic_audio": 0,
+  "pretrained_weights": false,
+  "librispeech_official_benchmark": false,
+  "reserved_names": [
+    "acdc",
+    "adele",
+    "balcony",
+    "britney spears",
+    "clarity",
+    "david bowie",
+    "elton john",
+    "garage",
+    "girl from impanema",
+    "home",
+    "huey lewis",
+    "jack johnson",
+    "kitchen",
+    "last christmas",
+    "queen",
+    "rush",
+    "tech n 9 ne",
+    "the room",
+    "true love"
+  ],
+  "reserved_name_training_overlap": 0,
+  "catalog_sha256": "d52c82917f0f2be568a63b0051720ee8fb27dea644bfa2a9020fcc8f284b1145"
+}

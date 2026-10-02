@@ -1,0 +1,73 @@
+{
+  "time_utc": "2026-10-01T11:38:28.104372+00:00",
+  "scope": "PCV baseline ONNX software and artificial files",
+  "suites": [
+    {
+      "name": "shared-tests",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "115",
+      "time": "12.577",
+      "timestamp": "2026-10-01T19:32:08.908689+08:00",
+      "hostname": "SCL-Titan",
+      "log": ".cache\\pcv-delivery-v1\\baseline-dummy-20261001\\shared-tests.log"
+    },
+    {
+      "name": "delivery-tests",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "79",
+      "time": "32.062",
+      "timestamp": "2026-10-01T19:32:08.875367+08:00",
+      "hostname": "SCL-Titan",
+      "log": ".cache\\pcv-delivery-v1\\baseline-dummy-20261001\\delivery-tests.log"
+    },
+    {
+      "name": "wake-repair-tests",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "41",
+      "time": "11.906",
+      "timestamp": "2026-10-01T19:34:16.065684+08:00",
+      "hostname": "SCL-Titan",
+      "log": ".cache\\pcv-delivery-v1\\baseline-dummy-20261001\\wake-repair-tests.log"
+    }
+  ],
+  "robustness_checks": 21,
+  "robustness_passed": true,
+  "baseline_onnx_sha256": "871c4a218684d50d132d8458b178e30c53ebff92c82b194bf3adaaa8652b1599",
+  "export_parity_passed": false,
+  "export_parity_error": "Nonzero-cache parity failed: 17, [2.6702880859375e-05, 0.0, 5.960464477539062e-07, 7.152557373046875e-07, 9.5367431640625e-06, 1.33514404296875e-05, 1.52587890625e-05]",
+  "original_files_compared": 141,
+  "changed_original_files": [
+    "experiments/pcv-delivery-v1/tests/test_parler_corpus.py"
+  ],
+  "installed_artifact_hashes_unchanged": true,
+  "dummy_results": ".cache\\pcv-delivery-v1\\baseline-dummy-20261001\\attempt-02\\results.json",
+  "dummy_fixtures": ".cache\\pcv-delivery-v1\\baseline-dummy-20261001\\attempt-02\\fixtures.json",
+  "diagnostic_archive": {
+    "binding": "16ab2e2da558332b0a0e3e0dae7040e465b538e0bef8184ef6099f36a7591b96",
+    "bytes": 43140705,
+    "diagnostic": true,
+    "path": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-delivery-v1\\baseline-dummy-20261001\\attempt-02\\baseline-diagnostic.zip",
+    "physical_pi_measured": false,
+    "sha256": "674c99f2cd2bceaaae168d3b6f85ed436e04cb47839e416bfd131904c21cf59c",
+    "target": {
+      "implementation": "cp",
+      "machine": "aarch64",
+      "minimum_glibc": "2.28",
+      "python": "3.12",
+      "system": "Linux"
+    }
+  },
+  "human_or_synthetic_speech_accuracy_measured": false,
+  "baseline_93_qualified": false,
+  "physical_devices_touched": false,
+  "sealed_test_audio_accessed": false,
+  "acceptance_enabled": false,
+  "initial_probe_error": "Lexicon wrapper supplied instead of words mapping; corrected attempt-02 preserves original output",
+  "warnings": "Legacy ONNX deprecations; artificial impossible-path decoder; existing pytest cache permissions"
+}

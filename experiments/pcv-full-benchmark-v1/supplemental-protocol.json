@@ -1,0 +1,22 @@
+{
+  "annotation_source_sha256": "4143d0618aa61afceec69be956949691792b3ed0f80e1f43e748f328e1420047",
+  "base_manifest_sha256": "1c8cd44c2dd85079c2a172b04eb0e956bf458106b1e5ac83a3466a26355e67a5",
+  "payloads": [
+    {
+      "blobId": "f7a95977e9534744103489befa71e2554bedbb29",
+      "lfs": {
+        "pointerSize": 134,
+        "sha256": "a717d6113c9a5714e05f1daaca8e685e130c10ecc53bb9a493374eff85c9751e",
+        "size": 312090900
+      },
+      "rfilename": "supplemental_synth/train-00000-of-00001.parquet",
+      "size": 312090900
+    }
+  ],
+  "prior_primary_run": "pc-single-core preserved; expanded corpus measured in pc-full-single-core",
+  "revision": "6947f13073e57eb6ae67e7e2fc3680700b82aa13",
+  "selection": "Frozen release-v1, no fitting/calibration/catalog changes",
+  "source_script_sha256": "6be2649af57558d795797210d6216e302e15ba33a083fa67107a2ac0ea95c35a",
+  "split_rule": "Use voice_split test and holdout only; exclude voice_split train; unknown split is fatal",
+  "version": "supplemental-evaluation-v1"
+}

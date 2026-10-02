@@ -1,0 +1,923 @@
+{
+  "date": "2026-10-02",
+  "scope": "publication-v2; no training; no physical actions",
+  "packages": {
+    "run_id": "release-v1",
+    "packages": {
+      "inference": {
+        "file": "smart-speaker-inference.zip",
+        "bytes": 15871892,
+        "sha256": "5f47c7fdc89dc15fc9f0fc1a70e75f2656e20dc93500f2dc7e977839ce10a56d"
+      },
+      "benchmark": {
+        "file": "smart-speaker-benchmark.zip",
+        "bytes": 357988087,
+        "sha256": "3136b65d498788e45f3b36d3620794f1b7162fab616916d3a91322cdee282808"
+      },
+      "full": {
+        "file": "smart-speaker-full.zip",
+        "bytes": 358296927,
+        "sha256": "ad014d219687d90ed0ed8501b093c42739c99c1f0a36d1e615e3cd9a679035c6"
+      }
+    }
+  },
+  "software_checks": {
+    "python_tests": 69,
+    "python_subtests": 3,
+    "javascript_tests": 88,
+    "types_errors": 0,
+    "types_warnings": 0,
+    "build": "passed",
+    "browser": {
+      "passed": true,
+      "checks": [
+        {
+          "viewport": [
+            800,
+            480
+          ],
+          "kind": "browser_resource_snapshot",
+          "metrics": {
+            "resources": 9,
+            "dom": 168,
+            "heap": 4579647
+          },
+          "passed": true
+        },
+        {
+          "viewport": [
+            800,
+            480
+          ],
+          "kind": "real_wav",
+          "output": {
+            "schema_version": 3,
+            "accepted": false,
+            "command": null,
+            "reason": "unqualified_model"
+          },
+          "candidate": {
+            "intent": "TIME",
+            "slots": {}
+          },
+          "passed": true
+        },
+        {
+          "viewport": [
+            1024,
+            600
+          ],
+          "kind": "browser_resource_snapshot",
+          "metrics": {
+            "resources": 8,
+            "dom": 168,
+            "heap": 4550769
+          },
+          "passed": true
+        },
+        {
+          "viewport": [
+            1024,
+            600
+          ],
+          "kind": "real_wav",
+          "output": {
+            "schema_version": 3,
+            "accepted": false,
+            "command": null,
+            "reason": "unqualified_model"
+          },
+          "candidate": {
+            "intent": "TIME",
+            "slots": {}
+          },
+          "passed": true
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "PLAY_MUSIC",
+            "slots": {
+              "artist_id": "artist.bts",
+              "song_id": "song.butter"
+            }
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "WEATHER",
+            "slots": {}
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "TIME",
+            "slots": {}
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "LIGHT_ON",
+            "slots": {
+              "light_id": "light.bathroom"
+            }
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "LIGHT_OFF",
+            "slots": {
+              "light_id": "light.bathroom"
+            }
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "PAUSE",
+            "slots": {}
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "STOP",
+            "slots": {}
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "NEXT",
+            "slots": {}
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "VOLUME",
+            "slots": {
+              "operation": "mute"
+            }
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "CALL",
+            "slots": {
+              "contact_id": "contact.mom"
+            }
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "MESSAGE",
+            "slots": {}
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "LIST_REMINDERS",
+            "slots": {}
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "TIMER",
+            "slots": {
+              "duration_seconds": 60
+            }
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "ALARM",
+            "slots": {
+              "time": "21:00",
+              "timezone": "Asia/Manila"
+            }
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "TEMPERATURE",
+            "slots": {
+              "degrees": 26,
+              "unit": "C"
+            }
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "BRIGHTNESS",
+            "slots": {
+              "light_id": "light.all",
+              "percent": 100
+            }
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "COLOR",
+            "slots": {
+              "color": "green",
+              "light_id": "light.all"
+            }
+          },
+          "passed": true,
+          "acoustic_test": false
+        },
+        {
+          "kind": "typed_contract_fixture",
+          "command": {
+            "intent": "CREATE_REMINDER",
+            "slots": {
+              "task_id": "task.exercise"
+            }
+          },
+          "passed": true,
+          "acoustic_test": false
+        }
+      ],
+      "errors": [],
+      "live_microphone": false,
+      "physical_pi": false
+    }
+  },
+  "archive_checks": {
+    "inference": {
+      "files": 101,
+      "engine_receipt": {
+        "engine": "ncnn",
+        "version": "1.0.20260526",
+        "conversion": "selected FP32 checkpoint; mask-free complete utterance; explicit positional encoding",
+        "checkpoint_sha256": "c471f68f389bb01fa6da1c664d1878a25f0892397200a35a0d664b76b2cb468b",
+        "onnx_sha256": "588f5f44f2b8bca9f68be605bc3a0be2be36159477c6002f21708824503c8421",
+        "files": {
+          "model.ncnn.param": "8e132ac2c91746c12915e06edfdf4b421de37adb225a3298d7ec891a8e4a13ee",
+          "model.ncnn.bin": "a0623cc31f9bd9d6197cdffd28895b132705356d276f32db7e455108d9c0a20c",
+          "position-frequency.json": "6cd56333d7721322da0fa85f9e11f6071eaa0aadbfe3b7e2f1d20887e3def8f0"
+        },
+        "onnx_note": "ONNX reference is the selected INT8 export; ncnn preserves the same checkpoint in FP32.",
+        "repeat_stability": true,
+        "parity": {
+          "reference": "selected PyTorch FP32",
+          "tolerance": 2e-05,
+          "observations": [
+            {
+              "frames": 1,
+              "max_absolute_error": 2.1457672119140625e-06
+            },
+            {
+              "frames": 3,
+              "max_absolute_error": 4.76837158203125e-06
+            },
+            {
+              "frames": 16,
+              "max_absolute_error": 4.76837158203125e-06
+            },
+            {
+              "frames": 37,
+              "max_absolute_error": 6.67572021484375e-06
+            },
+            {
+              "frames": 128,
+              "max_absolute_error": 7.62939453125e-06
+            },
+            {
+              "frames": 231,
+              "max_absolute_error": 1.049041748046875e-05
+            },
+            {
+              "frames": 511,
+              "max_absolute_error": 7.152557373046875e-06
+            },
+            {
+              "frames": 1499,
+              "max_absolute_error": 8.58306884765625e-06
+            }
+          ],
+          "passed": true
+        }
+      },
+      "engine_default_ncnn": true
+    },
+    "benchmark": {
+      "files": 6858,
+      "engine_receipt": {
+        "engine": "ncnn",
+        "version": "1.0.20260526",
+        "conversion": "selected FP32 checkpoint; mask-free complete utterance; explicit positional encoding",
+        "checkpoint_sha256": "c471f68f389bb01fa6da1c664d1878a25f0892397200a35a0d664b76b2cb468b",
+        "onnx_sha256": "588f5f44f2b8bca9f68be605bc3a0be2be36159477c6002f21708824503c8421",
+        "files": {
+          "model.ncnn.param": "8e132ac2c91746c12915e06edfdf4b421de37adb225a3298d7ec891a8e4a13ee",
+          "model.ncnn.bin": "a0623cc31f9bd9d6197cdffd28895b132705356d276f32db7e455108d9c0a20c",
+          "position-frequency.json": "6cd56333d7721322da0fa85f9e11f6071eaa0aadbfe3b7e2f1d20887e3def8f0"
+        },
+        "onnx_note": "ONNX reference is the selected INT8 export; ncnn preserves the same checkpoint in FP32.",
+        "repeat_stability": true,
+        "parity": {
+          "reference": "selected PyTorch FP32",
+          "tolerance": 2e-05,
+          "observations": [
+            {
+              "frames": 1,
+              "max_absolute_error": 2.1457672119140625e-06
+            },
+            {
+              "frames": 3,
+              "max_absolute_error": 4.76837158203125e-06
+            },
+            {
+              "frames": 16,
+              "max_absolute_error": 4.76837158203125e-06
+            },
+            {
+              "frames": 37,
+              "max_absolute_error": 6.67572021484375e-06
+            },
+            {
+              "frames": 128,
+              "max_absolute_error": 7.62939453125e-06
+            },
+            {
+              "frames": 231,
+              "max_absolute_error": 1.049041748046875e-05
+            },
+            {
+              "frames": 511,
+              "max_absolute_error": 7.152557373046875e-06
+            },
+            {
+              "frames": 1499,
+              "max_absolute_error": 8.58306884765625e-06
+            }
+          ],
+          "passed": true
+        }
+      },
+      "engine_default_ncnn": true
+    },
+    "full": {
+      "files": 6907,
+      "engine_receipt": {
+        "engine": "ncnn",
+        "version": "1.0.20260526",
+        "conversion": "selected FP32 checkpoint; mask-free complete utterance; explicit positional encoding",
+        "checkpoint_sha256": "c471f68f389bb01fa6da1c664d1878a25f0892397200a35a0d664b76b2cb468b",
+        "onnx_sha256": "588f5f44f2b8bca9f68be605bc3a0be2be36159477c6002f21708824503c8421",
+        "files": {
+          "model.ncnn.param": "8e132ac2c91746c12915e06edfdf4b421de37adb225a3298d7ec891a8e4a13ee",
+          "model.ncnn.bin": "a0623cc31f9bd9d6197cdffd28895b132705356d276f32db7e455108d9c0a20c",
+          "position-frequency.json": "6cd56333d7721322da0fa85f9e11f6071eaa0aadbfe3b7e2f1d20887e3def8f0"
+        },
+        "onnx_note": "ONNX reference is the selected INT8 export; ncnn preserves the same checkpoint in FP32.",
+        "repeat_stability": true,
+        "parity": {
+          "reference": "selected PyTorch FP32",
+          "tolerance": 2e-05,
+          "observations": [
+            {
+              "frames": 1,
+              "max_absolute_error": 2.1457672119140625e-06
+            },
+            {
+              "frames": 3,
+              "max_absolute_error": 4.76837158203125e-06
+            },
+            {
+              "frames": 16,
+              "max_absolute_error": 4.76837158203125e-06
+            },
+            {
+              "frames": 37,
+              "max_absolute_error": 6.67572021484375e-06
+            },
+            {
+              "frames": 128,
+              "max_absolute_error": 7.62939453125e-06
+            },
+            {
+              "frames": 231,
+              "max_absolute_error": 1.049041748046875e-05
+            },
+            {
+              "frames": 511,
+              "max_absolute_error": 7.152557373046875e-06
+            },
+            {
+              "frames": 1499,
+              "max_absolute_error": 8.58306884765625e-06
+            }
+          ],
+          "passed": true
+        }
+      },
+      "engine_default_ncnn": true
+    },
+    "mutable_config_verified": true,
+    "installed_artifacts_unchanged": 20
+  },
+  "repeat_replay": {
+    "passed": true,
+    "samples": 15,
+    "repeats": 3,
+    "inferences": 90,
+    "exact_repeat_stability": true,
+    "candidate_agreement": 15,
+    "physical_pi": false,
+    "live_microphone": false
+  },
+  "real_audio_fp32_parity": {
+    "passed": true,
+    "reference": "selected PyTorch FP32 checkpoint",
+    "samples": 15,
+    "tolerance": 0.0001,
+    "max_absolute_error": 9.775161743164062e-06,
+    "rows": [
+      {
+        "file": "slurpsmoke-01.wav",
+        "max_absolute_errors": [
+          8.106231689453125e-06,
+          3.4570693969726562e-06,
+          6.556510925292969e-07
+        ]
+      },
+      {
+        "file": "slurpsmoke-02.wav",
+        "max_absolute_errors": [
+          9.775161743164062e-06,
+          3.039836883544922e-06,
+          1.4454126358032227e-06
+        ]
+      },
+      {
+        "file": "slurpsmoke-03.wav",
+        "max_absolute_errors": [
+          9.5367431640625e-06,
+          2.5331974029541016e-06,
+          4.76837158203125e-07
+        ]
+      },
+      {
+        "file": "slurpsmoke-04.wav",
+        "max_absolute_errors": [
+          8.821487426757812e-06,
+          3.0994415283203125e-06,
+          1.3113021850585938e-06
+        ]
+      },
+      {
+        "file": "slurpsmoke-05.wav",
+        "max_absolute_errors": [
+          7.152557373046875e-06,
+          2.1457672119140625e-06,
+          1.9073486328125e-06
+        ]
+      },
+      {
+        "file": "slurpsmoke-06.wav",
+        "max_absolute_errors": [
+          6.67572021484375e-06,
+          4.291534423828125e-06,
+          9.5367431640625e-07
+        ]
+      },
+      {
+        "file": "slurpsmoke-07.wav",
+        "max_absolute_errors": [
+          6.67572021484375e-06,
+          3.5762786865234375e-06,
+          4.76837158203125e-07
+        ]
+      },
+      {
+        "file": "slurpsmoke-08.wav",
+        "max_absolute_errors": [
+          9.5367431640625e-06,
+          6.67572021484375e-06,
+          1.9073486328125e-06
+        ]
+      },
+      {
+        "file": "slurpsmoke-09.wav",
+        "max_absolute_errors": [
+          5.7220458984375e-06,
+          3.0994415283203125e-06,
+          1.1920928955078125e-07
+        ]
+      },
+      {
+        "file": "slurpsmoke-10.wav",
+        "max_absolute_errors": [
+          7.62939453125e-06,
+          1.7285346984863281e-06,
+          9.5367431640625e-07
+        ]
+      },
+      {
+        "file": "slurpsmoke-11.wav",
+        "max_absolute_errors": [
+          7.62939453125e-06,
+          2.384185791015625e-06,
+          4.76837158203125e-07
+        ]
+      },
+      {
+        "file": "slurpsmoke-12.wav",
+        "max_absolute_errors": [
+          7.62939453125e-06,
+          3.5762786865234375e-06,
+          2.384185791015625e-07
+        ]
+      },
+      {
+        "file": "slurpsmoke-13.wav",
+        "max_absolute_errors": [
+          8.58306884765625e-06,
+          2.86102294921875e-06,
+          4.172325134277344e-07
+        ]
+      },
+      {
+        "file": "slurpsmoke-14.wav",
+        "max_absolute_errors": [
+          9.5367431640625e-06,
+          2.384185791015625e-06,
+          6.556510925292969e-07
+        ]
+      },
+      {
+        "file": "slurpsmoke-15.wav",
+        "max_absolute_errors": [
+          8.58306884765625e-06,
+          3.814697265625e-06,
+          7.152557373046875e-07
+        ]
+      }
+    ]
+  },
+  "ncnn_full_replay": {
+    "source_n": 6768,
+    "hardware": {
+      "os": "Windows-11-10.0.26200-SP0",
+      "machine": "AMD64",
+      "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+      "python": "3.12.13",
+      "cpu_count": 32,
+      "device_model": "unavailable",
+      "physical_pi_measured": false
+    },
+    "affinity": {
+      "requested": 0,
+      "previous": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "observed": [
+        0
+      ],
+      "verified": true,
+      "meaning": "One logical processor; no exclusive core reservation or fixed frequency"
+    },
+    "full_corpus_timing": {
+      "frontend_ms": {
+        "n": 6768,
+        "p50": 0.9300499950768426,
+        "p95": 2.0741649954288732,
+        "p99": 2.697598008089699,
+        "mean": 1.0391809395574632,
+        "max": 11.065099999541417
+      },
+      "model_ms": {
+        "n": 6768,
+        "p50": 5.589599997620098,
+        "p95": 15.80802499302079,
+        "p99": 17.826635001547398,
+        "mean": 6.405469089882517,
+        "max": 52.75440000696108
+      },
+      "finite_decoder_ms": {
+        "n": 6768,
+        "p50": 37.91125000861939,
+        "p95": 98.7206899910233,
+        "p99": 109.57659300256636,
+        "mean": 42.24154802021927,
+        "max": 201.83320000069216
+      },
+      "total_ms": {
+        "n": 6768,
+        "p50": 44.484450001618825,
+        "p95": 115.59965500127872,
+        "p99": 129.81696599643328,
+        "mean": 49.686198049659254,
+        "max": 244.10289998922963
+      },
+      "rtf": {
+        "n": 6768,
+        "p50": 0.024933254384801297,
+        "p95": 0.02709772210820563,
+        "p99": 0.03682117021514319,
+        "mean": 0.025093077030277813,
+        "max": 0.08021185184824625
+      }
+    },
+    "peak_rss_mib": {
+      "after_import": 71.8671875,
+      "after_load": 79.85546875,
+      "whole_process": 130.3359375
+    },
+    "engine": "ncnn",
+    "engine_model_sha256": "a0623cc31f9bd9d6197cdffd28895b132705356d276f32db7e455108d9c0a20c",
+    "policy_sha256": "20f4eac9a0f79bcde9c6b7781e3c701fca23aa19d83d8a14ec5ca123e5e7be4a"
+  },
+  "track_metrics": {
+    "primary_holdout": {
+      "accepted": {
+        "source_n": 202,
+        "scored_n": 202,
+        "ambiguous_n": 0,
+        "positive_n": 186,
+        "negative_n": 16,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": 0.0
+      },
+      "candidate": {
+        "source_n": 202,
+        "scored_n": 202,
+        "ambiguous_n": 0,
+        "positive_n": 186,
+        "negative_n": 16,
+        "exact": 182,
+        "emitted": 198,
+        "recall": 0.978494623655914,
+        "precision": 0.9191919191919192,
+        "false_accepts": 12,
+        "false_accept_rate": 0.75
+      }
+    },
+    "primary_test": {
+      "accepted": {
+        "source_n": 4443,
+        "scored_n": 4342,
+        "ambiguous_n": 101,
+        "positive_n": 4203,
+        "negative_n": 139,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": 0.0
+      },
+      "candidate": {
+        "source_n": 4443,
+        "scored_n": 4342,
+        "ambiguous_n": 101,
+        "positive_n": 4203,
+        "negative_n": 139,
+        "exact": 4051,
+        "emitted": 4290,
+        "recall": 0.9638353556983107,
+        "precision": 0.9442890442890443,
+        "false_accepts": 102,
+        "false_accept_rate": 0.7338129496402878
+      }
+    },
+    "supplemental_holdout": {
+      "accepted": {
+        "source_n": 261,
+        "scored_n": 261,
+        "ambiguous_n": 0,
+        "positive_n": 261,
+        "negative_n": 0,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      },
+      "candidate": {
+        "source_n": 261,
+        "scored_n": 261,
+        "ambiguous_n": 0,
+        "positive_n": 261,
+        "negative_n": 0,
+        "exact": 250,
+        "emitted": 260,
+        "recall": 0.9578544061302682,
+        "precision": 0.9615384615384616,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      }
+    },
+    "supplemental_test": {
+      "accepted": {
+        "source_n": 1612,
+        "scored_n": 1612,
+        "ambiguous_n": 0,
+        "positive_n": 1612,
+        "negative_n": 0,
+        "exact": 0,
+        "emitted": 0,
+        "recall": 0.0,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      },
+      "candidate": {
+        "source_n": 1612,
+        "scored_n": 1612,
+        "ambiguous_n": 0,
+        "positive_n": 1612,
+        "negative_n": 0,
+        "exact": 1587,
+        "emitted": 1610,
+        "recall": 0.9844913151364765,
+        "precision": 0.9857142857142858,
+        "false_accepts": 0,
+        "false_accept_rate": null
+      }
+    },
+    "synthetic_negatives_test": {
+      "accepted": {
+        "source_n": 250,
+        "scored_n": 250,
+        "ambiguous_n": 0,
+        "positive_n": 0,
+        "negative_n": 250,
+        "exact": 0,
+        "emitted": 0,
+        "recall": null,
+        "precision": null,
+        "false_accepts": 0,
+        "false_accept_rate": 0.0
+      },
+      "candidate": {
+        "source_n": 250,
+        "scored_n": 250,
+        "ambiguous_n": 0,
+        "positive_n": 0,
+        "negative_n": 250,
+        "exact": 0,
+        "emitted": 225,
+        "recall": null,
+        "precision": 0.0,
+        "false_accepts": 225,
+        "false_accept_rate": 0.9
+      }
+    }
+  },
+  "demo_threshold_replay": {
+    "primary_test": {
+      "source_n": 4443,
+      "scored_n": 4342,
+      "ambiguous_n": 101,
+      "positive_n": 4203,
+      "negative_n": 139,
+      "exact": 3652,
+      "emitted": 3687,
+      "recall": 0.8689031644063764,
+      "precision": 0.9905071874152428,
+      "false_accepts": 10,
+      "false_accept_rate": 0.07194244604316546
+    },
+    "supplemental_test": {
+      "source_n": 1612,
+      "scored_n": 1612,
+      "ambiguous_n": 0,
+      "positive_n": 1612,
+      "negative_n": 0,
+      "exact": 1513,
+      "emitted": 1521,
+      "recall": 0.9385856079404467,
+      "precision": 0.9947403024326101,
+      "false_accepts": 0,
+      "false_accept_rate": null
+    },
+    "synthetic_negatives_test": {
+      "source_n": 250,
+      "scored_n": 250,
+      "ambiguous_n": 0,
+      "positive_n": 0,
+      "negative_n": 250,
+      "exact": 0,
+      "emitted": 13,
+      "recall": null,
+      "precision": 0.0,
+      "false_accepts": 13,
+      "false_accept_rate": 0.052
+    },
+    "supplemental_holdout": {
+      "source_n": 261,
+      "scored_n": 261,
+      "ambiguous_n": 0,
+      "positive_n": 261,
+      "negative_n": 0,
+      "exact": 219,
+      "emitted": 220,
+      "recall": 0.8390804597701149,
+      "precision": 0.9954545454545455,
+      "false_accepts": 0,
+      "false_accept_rate": null
+    },
+    "primary_holdout": {
+      "source_n": 202,
+      "scored_n": 202,
+      "ambiguous_n": 0,
+      "positive_n": 186,
+      "negative_n": 16,
+      "exact": 142,
+      "emitted": 143,
+      "recall": 0.7634408602150538,
+      "precision": 0.993006993006993,
+      "false_accepts": 0,
+      "false_accept_rate": 0.0
+    }
+  },
+  "physical_pi": false,
+  "live_microphone": false,
+  "provider_actions": "mocked only",
+  "installed_artifacts_unchanged": true,
+  "superseded": "Initial publication-v2 and publication-v2-release archives and pre-stability replays are not shipping evidence."
+}

@@ -1,0 +1,317 @@
+[
+  {
+    "category": "Commands",
+    "name": "SLURP real",
+    "url": "https://github.com/pswietojanski/slurp",
+    "relevance": "Human assistant requests with song/artist entities and some volume commands; strongest immediately usable domain match.",
+    "terms": "Audio CC BY-NC 4.0; annotations CC BY 4.0.",
+    "status": "Fresh pinned annotations; existing public audio copied into STT and trained. One fresh audio shard also completed after manifest freeze.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Commands",
+    "name": "SLURP synthetic",
+    "url": "https://github.com/pswietojanski/slurp",
+    "relevance": "TTS counterpart of assistant requests; possible augmentation, unsuitable as a human acceptance test.",
+    "terms": "See publisher terms for the synthetic release.",
+    "status": "Reviewed; not used.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Commands",
+    "name": "Snips/Sonos SmartSpeaker",
+    "url": "https://github.com/sonos/spoken-language-understanding-research-datasets",
+    "relevance": "Music and volume text labels; human audio only for the test set. English/French artist requests use a Spotify popularity list. Particularly useful external music benchmark.",
+    "terms": "Academic/research, noncommercial; access application.",
+    "status": "Reviewed; audio not obtained. No access form submitted.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Commands",
+    "name": "Snips/Sonos SmartLights",
+    "url": "https://github.com/sonos/spoken-language-understanding-research-datasets",
+    "relevance": "Human brightness/color requests; spoken percentages transfer to numeric recognition, but lighting is not volume.",
+    "terms": "Publisher research-only terms; mirror metadata is not a replacement license.",
+    "status": "Existing close-microphone public audio copied and trained.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Commands",
+    "name": "Fluent Speech Commands",
+    "url": "https://fluent.ai/fr/fluent-speech-commands-a-dataset-for-spoken-language-understanding-research/",
+    "relevance": "30,043 utterances, 97 speakers, 31 intents. Useful playback/relative-volume command wording; lacks unrestricted song titles.",
+    "terms": "Academic research license.",
+    "status": "Existing selected public audio copied and trained; inherited repeated rows removed.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Commands",
+    "name": "Meta fair-speech",
+    "url": "https://ai.meta.com/datasets/speech-fairness-dataset/",
+    "relevance": "26,471 assistant utterances from 593 speakers across seven domains including music; useful demographic evaluation.",
+    "terms": "Publisher evaluation/use terms must be followed.",
+    "status": "Reviewed; not acquired or mixed into training.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Commands",
+    "name": "Speech-MASSIVE",
+    "url": "https://huggingface.co/datasets/FBK-MT/Speech-MASSIVE",
+    "relevance": "Human speech plus assistant intents/slots in 12 languages; the listed languages do not include English. Relevant to future multilingual work.",
+    "terms": "CC BY-NC-SA 4.0.",
+    "status": "Reviewed; not acquired.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Text only",
+    "name": "MASSIVE",
+    "url": "https://github.com/alexa/massive",
+    "relevance": "More than one million multilingual text utterances with intents/slots; useful grammar and entity examples, not acoustic training speech. Derived from SLURP.",
+    "terms": "CC BY 4.0; see release terms.",
+    "status": "Reviewed; not acquired.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Text only",
+    "name": "Snips NLU benchmark",
+    "url": "https://github.com/sonos/nlu-benchmark",
+    "relevance": "Text intents including PlayMusic and song/artist slots; useful parser vocabulary. Do not confuse it with human SmartSpeaker recordings.",
+    "terms": "See repository data terms.",
+    "status": "Reviewed; not acquired.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Synthetic",
+    "name": "Audio-Snips / AWS noisy SLU",
+    "url": "https://github.com/aws-samples/aws-lex-noisy-spoken-language-understanding",
+    "relevance": "SNIPS utterances synthesized with Amazon Polly voices; useful controlled augmentation, not independent human speech.",
+    "terms": "Repository lists CC0; verify the specific audio release terms.",
+    "status": "Reviewed; not acquired.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Numbers",
+    "name": "Free Spoken Digit Dataset (FSDD)",
+    "url": "https://github.com/Jakobovski/free-spoken-digit-dataset",
+    "relevance": "3,000 human isolated digits, six speakers, 8 kHz. Small, direct 0–9 baseline; cannot establish 10–100 accuracy.",
+    "terms": "CC BY-SA 4.0.",
+    "status": "Full pinned archive freshly downloaded; all 3,000 recordings used with held-out speakers.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Numbers",
+    "name": "Google Speech Commands v2",
+    "url": "https://www.tensorflow.org/datasets/catalog/speech_commands",
+    "relevance": "Human isolated keyword classification, 35 words including zero–nine. No tens/hundred coverage.",
+    "terms": "CC BY 4.0.",
+    "status": "Archive acquisition queued/attempted; no completed archive used. Existing root keyword data deliberately not counted as a fresh pull.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Words",
+    "name": "Multilingual Spoken Words Corpus (MSWC)",
+    "url": "https://mlcommons.org/datasets/multilingual-spoken-words/",
+    "relevance": "23.4 million word examples across 50 languages; aligned Common Voice crops. Useful numeric words and media vocabulary, but word crops lose natural coarticulation.",
+    "terms": "CC BY 4.0.",
+    "status": "Fresh split metadata plus 5,000 completed selected English clips. Frozen numeric run uses 900 eight/hundred clips.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Numbers",
+    "name": "MLEnd Spoken Numerals",
+    "url": "https://mlenddatasets.github.io/spoken_numerals/",
+    "relevance": "Over 32,000 human numeral recordings with varied speakers/intonations. Selected 29 elementary values cover zero–nineteen, tens, and hundred.",
+    "terms": "Publisher promotes ML use; explicit speech-data license not located in the pinned GitHub snapshot. Python package MIT is not a speech-data license.",
+    "status": "Fresh 1,711 selected WAVs. Two identical files carrying conflicting numeric labels quarantined from evaluation.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Synthetic",
+    "name": "SpokeN-100",
+    "url": "https://github.com/ankilab/SpokeN-100",
+    "relevance": "12,800 artificial numeral recordings from 32 voices/four languages, numbers 0–99. Does not include 100 or independent human voices.",
+    "terms": "Consult dataset/Zenodo release terms.",
+    "status": "Fresh README only; audio not downloaded or used.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Numbers",
+    "name": "Sheffield Numbers Corpus (SNuC)",
+    "url": "https://orda.shef.ac.uk/articles/dataset/SNuC_The_Sheffield_Numbers_Spoken_Language_Corpus/19673772",
+    "relevance": "Human connected alphanumeric sequences, over 13,000 recordings/about 20 hours. Useful sequence decoding; not balanced volume percentages.",
+    "terms": "CC BY-NC 4.0.",
+    "status": "Reviewed; approximately 9.8 GB release not acquired.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Numbers",
+    "name": "TIDIGITS",
+    "url": "https://catalog.ldc.upenn.edu/LDC93S10",
+    "relevance": "Human connected digits from adults/children; useful sequential digit models. Digit strings are different from English cardinal quantities.",
+    "terms": "LDC licensed access.",
+    "status": "Reviewed; not obtained.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Numbers",
+    "name": "CSLU Numbers",
+    "url": "https://catalog.ldc.upenn.edu/LDC2009S01",
+    "relevance": "Telephone numbers, cardinal/ordinal quantities and digit strings. Useful numeric variation with telephone channel mismatch.",
+    "terms": "LDC licensed access.",
+    "status": "Reviewed; not obtained.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Numbers",
+    "name": "Common Voice Single Word",
+    "url": "https://mozilladatacollective.com/datasets/cmkzhp64p00wlno07elrmt20y",
+    "relevance": "Human short words including digits; useful accent variation but insufficient tens/compound-number coverage.",
+    "terms": "CC0 release; current distribution access conditions apply.",
+    "status": "Reviewed; not obtained.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Numbers",
+    "name": "Spiking Heidelberg Digits (SHD)",
+    "url": "https://zenkelab.org/resources/spiking-heidelberg-datasets-shd/",
+    "relevance": "Spoken English/German digits represented for spiking-network tasks. Limited to digits, not 0–100 cardinals.",
+    "terms": "See publisher data terms.",
+    "status": "Reviewed; not selected for this waveform CTC experiment.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "General ASR",
+    "name": "LibriSpeech",
+    "url": "https://www.openslr.org/12/",
+    "relevance": "Approximately 1,000 hours of human English audiobook speech; useful broad acoustic/word training, less representative of music commands.",
+    "terms": "CC BY 4.0.",
+    "status": "Existing selected audio copied; 1,266 recordings pass the duration filter and are used.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "General ASR",
+    "name": "Mini LibriSpeech",
+    "url": "https://www.openslr.org/31/",
+    "relevance": "Small LibriSpeech subset for fast experiments; overlaps its parent corpus and must not be treated as independent evidence.",
+    "terms": "Same source family; see release page.",
+    "status": "Reviewed; not separately acquired.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "General ASR",
+    "name": "Multilingual LibriSpeech (MLS)",
+    "url": "https://www.openslr.org/94/",
+    "relevance": "Large multilingual audiobook speech, including English. Useful for larger scratch acoustic training; substantial storage/compute.",
+    "terms": "CC BY 4.0.",
+    "status": "Reviewed; not acquired.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "General ASR",
+    "name": "Mozilla Common Voice",
+    "url": "https://mozilladatacollective.com/datasets?q=common+voice",
+    "relevance": "Crowdsourced human read speech with accent variation. Shares parent data with MSWC; cross-corpus overlap needs checking.",
+    "terms": "CC0 releases; current distribution account/access conditions apply.",
+    "status": "Reviewed; no new account or gated download.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "General ASR",
+    "name": "GigaSpeech",
+    "url": "https://github.com/SpeechColab/GigaSpeech",
+    "relevance": "10,000-hour English corpus with smaller subsets; broader vocabulary and proper names, domain mismatch remains.",
+    "terms": "Publisher access/license conditions.",
+    "status": "Reviewed; not acquired.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "General ASR",
+    "name": "The People's Speech",
+    "url": "https://github.com/mlcommons/peoples-speech",
+    "relevance": "Large English transcribed speech collection; useful scaling candidate. Alignment quality and source-specific terms require filtering.",
+    "terms": "CC BY / CC BY-SA components; check selected subset.",
+    "status": "Reviewed; not acquired.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "General ASR",
+    "name": "SPGISpeech",
+    "url": "https://huggingface.co/datasets/kensho/spgispeech",
+    "relevance": "5,000 hours of transcribed financial speech; useful numeric normalization and names but different from home commands.",
+    "terms": "Publisher dataset agreement / gated access.",
+    "status": "Reviewed; not obtained and no contact information submitted.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "General ASR",
+    "name": "FLEURS",
+    "url": "https://huggingface.co/datasets/google/fleurs",
+    "relevance": "Multilingual human read-speech benchmark, including English and Filipino. Filipino-language audio is not evidence for Philippine-accented English.",
+    "terms": "CC BY 4.0.",
+    "status": "Reviewed; not acquired.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "General ASR",
+    "name": "VoxPopuli",
+    "url": "https://github.com/facebookresearch/voxpopuli",
+    "relevance": "Large parliamentary speech collection with labeled/unlabeled portions; potential acoustic pretraining, substantial domain mismatch.",
+    "terms": "See publisher source/release terms.",
+    "status": "Reviewed; not acquired.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "General ASR",
+    "name": "VCTK",
+    "url": "https://datashare.ed.ac.uk/items/30e7453c-9ea8-48b4-8e18-f96d0dc62928",
+    "relevance": "Human English read speech from multiple accents/speakers. Useful pronunciation and speaker variation, not song requests.",
+    "terms": "CC BY 4.0 release.",
+    "status": "Reviewed; not acquired.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "General ASR",
+    "name": "LJ Speech",
+    "url": "https://keithito.com/LJ-Speech-Dataset/",
+    "relevance": "13,100 clips from one reader. Public-domain speech for pipeline checks; weak evidence for unseen-speaker command recognition.",
+    "terms": "Public domain as described by publisher.",
+    "status": "Reviewed; not acquired.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "General ASR",
+    "name": "TED-LIUM",
+    "url": "https://www.tensorflow.org/datasets/catalog/tedlium",
+    "relevance": "Human English talks with broad vocabulary/proper names. Useful ASR training, weak match for short commands.",
+    "terms": "CC BY-NC-ND 3.0 as listed for this release.",
+    "status": "Reviewed; not acquired.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Other",
+    "name": "MUSAN",
+    "url": "https://arxiv.org/abs/1510.08484",
+    "relevance": "Music, speech and noise useful for augmentation/negative examples; does not provide the required command transcripts.",
+    "terms": "Check component licenses before use.",
+    "status": "Reviewed; not acquired.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Other",
+    "name": "MLEnd Hums and Whistles",
+    "url": "https://mlenddatasets.github.io/hums_whistles/",
+    "relevance": "Hum/whistle recordings of a small song set; useful for melody identification, a different task from recognizing spoken song names.",
+    "terms": "See publisher dataset terms.",
+    "status": "Reviewed; not acquired.",
+    "reviewed": "2026-09-19"
+  },
+  {
+    "category": "Catalog only",
+    "name": "MusicBrainz metadata",
+    "url": "https://musicbrainz.org/doc/About/Data_License",
+    "relevance": "Song/artist names can supply a hypothetical dynamic vocabulary. Metadata supplies no pronunciation training audio and no Spotify account integration.",
+    "terms": "Core metadata CC0; supplementary data CC BY-NC-SA 3.0.",
+    "status": "Reviewed only; catalog fixtures here use SLURP entities.",
+    "reviewed": "2026-09-19"
+  }
+]

@@ -1,0 +1,30 @@
+<main id="ambient-assistant" class="ambient-assistant" aria-label="Ambient voice assistant landscape prototype">
+  <div class="backdrop" aria-hidden="true"></div>
+  <div class="aura-anchor" aria-hidden="true"><canvas class="livekit-aura"></canvas><span class="aura-fallback" hidden></span></div>
+  <div class="state-edge" aria-hidden="true"></div>
+  <div class="home-layer">
+    <div class="corner-swipe-zone" aria-hidden="true"></div>
+    <button class="wake-target" data-action="wake" aria-label="Wake assistant" aria-pressed="false"><span class="clock-center"><time data-clock>09:41</time><span data-date>Thursday, October 1</span><span class="environment-line"><span class="home-temperature"><strong data-home-temperature>26</strong><sup>${icon:thermometer}</sup><span>C</span></span><span class="environment-divider" aria-hidden="true"></span><span class="home-weather">${icon:cloud-sun}<span>Partly cloudy</span></span></span></span></button>
+    <div class="agent-state" aria-live="polite" data-agent-label></div>
+    <div class="music-peek" hidden><button class="peek-track" data-open="music" aria-label="Open current track"><span class="album-icon" aria-hidden="true"><span class="mini-equalizer"><i></i><i></i><i></i><i></i><i></i></span></span><span class="track-copy"><strong data-peek-song></strong><small data-peek-artist></small></span></button><button class="peek-play" data-action="playpause" aria-label="Pause music">${icon:pause}</button><span class="track-progress"><i></i></span></div>
+    <button class="control-trigger" data-open="control" aria-label="Open control center" aria-expanded="false">${icon:layout-grid}</button>
+    <button class="reminder-trigger" data-action="toggle-reminders" aria-label="Show reminders" aria-expanded="false"><span data-reminder-count>2</span><i data-unread-dot></i></button>
+    <div class="home-reminders" aria-label="Reminder widgets"></div>
+    <div class="time-rail" aria-label="Active timers and alarms"></div>
+    <button class="call-peek" data-action="resume-call" hidden aria-label="Resume active call"><span class="avatar tiny" data-call-avatar>M</span><span data-call-elapsed>00:00</span><span class="call-activity" aria-hidden="true"><i></i><i></i><i></i></span></button>
+    <button class="demo-launch" data-open="demo" aria-label="Open intent and aura state demo">${icon:sliders-horizontal}</button>
+    <button class="intent-receipt" data-open="intent" hidden aria-label="Inspect intent and parameter history"><span data-intent></span><small data-parameters></small></button>
+  </div>
+    <button class="mute-indicator" data-action="mute" aria-label="Mute microphone" aria-pressed="false">${icon:mic}</button>
+  <section class="task-view" aria-label="Task" hidden>
+    <div class="task-heading"><button class="back-button" data-action="back" aria-label="Back" hidden>${icon:arrow-left}</button><h1 data-view-title></h1></div>
+    <button class="close-task" data-action="close" aria-label="Close task">${icon:x}</button>
+    <div class="task-content"></div>
+  </section>
+  <svg class="screen-countdown" viewBox="0 0 800 480" preserveAspectRatio="none" aria-hidden="true" hidden><path d="M400 478 H26 Q2 478 2 454 V26 Q2 2 26 2 H400" pathLength="100"/><path d="M400 478 H774 Q798 478 798 454 V26 Q798 2 774 2 H400" pathLength="100"/></svg>
+  <aside class="toast" aria-live="polite" hidden><button class="toast-main" data-action="toast-open"></button><button class="toast-close" data-action="toast-close" aria-label="Dismiss notification">${icon:x}</button><div class="toast-life"></div></aside>
+  <div class="attention-edge" aria-hidden="true" hidden></div>
+  <section class="alert-surface" role="alertdialog" aria-modal="true" aria-label="Notification" hidden><div class="alert-content"></div></section>
+  <div class="orientation-note" hidden>${icon:rotate-cw}<p>Turn to landscape</p></div>
+  <span class="sr-only" role="status" aria-live="polite" data-announcement></span>
+</main>

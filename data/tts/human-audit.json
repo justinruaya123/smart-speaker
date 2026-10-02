@@ -1,0 +1,51 @@
+{
+  "n": 11591,
+  "excluded": {
+    "augmentation_or_named_entity": 9516,
+    "bounded_background": 5186,
+    "root_calibration": 1627,
+    "open_parameter": 752,
+    "paired_recording": 4290
+  },
+  "quarantined": [],
+  "counts": {
+    "train/POWER_OFF": 793,
+    "train/UNKNOWN": 1642,
+    "train/MEDIA_RESUME": 169,
+    "train/POWER_ON": 653,
+    "train/VOLUME": 3134,
+    "train/MEDIA_PLAY": 303,
+    "test/UNKNOWN": 478,
+    "test/MEDIA_RESUME": 37,
+    "test/POWER_ON": 251,
+    "test/MEDIA_PLAY": 90,
+    "test/POWER_OFF": 287,
+    "dev/VOLUME": 217,
+    "dev/POWER_OFF": 247,
+    "dev/UNKNOWN": 649,
+    "dev/POWER_ON": 206,
+    "dev/MEDIA_PLAY": 104,
+    "dev/MEDIA_RESUME": 50,
+    "test/VOLUME": 180,
+    "train/TIME_QUERY": 129,
+    "train/BRIGHTNESS": 697,
+    "train/DATE_QUERY": 180,
+    "train/COLOR_SET": 219,
+    "test/COLOR_SET": 129,
+    "test/TIME_QUERY": 50,
+    "dev/TIME_QUERY": 71,
+    "dev/BRIGHTNESS": 141,
+    "test/DATE_QUERY": 59,
+    "test/BRIGHTNESS": 242,
+    "dev/COLOR_SET": 99,
+    "dev/DATE_QUERY": 85
+  },
+  "speaker_counts": {
+    "train": 164,
+    "dev": 36,
+    "test": 32
+  },
+  "labels": "Silver references from existing source labels and strict fixed grammar; not human-adjudicated.",
+  "original_recordings_only": true,
+  "manifest_sha256": "532ae4e3e8e4d878463c77ef8f1394f81f7804e3862c6ea132ad65750bace675"
+}

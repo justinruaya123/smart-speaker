@@ -1,0 +1,3444 @@
+{
+  "schema": 1,
+  "entries": [
+    {
+      "id": "artist:3f3bc056ec463024",
+      "role": "artist",
+      "label": "a r rehman",
+      "aliases": [
+        "a r rehman"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:76f8e5e8344a4783",
+      "role": "artist",
+      "label": "acdc",
+      "aliases": [
+        "acdc"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:b79d09652d5dd5c7",
+      "role": "artist",
+      "label": "adele",
+      "aliases": [
+        "adele"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:d0e67856c89fe0c9",
+      "role": "artist",
+      "label": "aerosmith",
+      "aliases": [
+        "aerosmith"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:d22eedd088c7cc24",
+      "role": "artist",
+      "label": "afi",
+      "aliases": [
+        "afi"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:f4f54abf641bbe21",
+      "role": "artist",
+      "label": "akon",
+      "aliases": [
+        "akon"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:7772c37900868b7f",
+      "role": "artist",
+      "label": "amit trivedi",
+      "aliases": [
+        "amit trivedi"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:097358d9f87954b1",
+      "role": "artist",
+      "label": "anirudh",
+      "aliases": [
+        "anirudh"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:1f0d9e954ea0cd8f",
+      "role": "artist",
+      "label": "ar rahman",
+      "aliases": [
+        "ar rahman"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:2c244edb7fd1826c",
+      "role": "artist",
+      "label": "aretha franklin s",
+      "aliases": [
+        "aretha franklin s"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:02517d9efd42c3cf",
+      "role": "artist",
+      "label": "arijit s",
+      "aliases": [
+        "arijit s"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:33476aa5b297be05",
+      "role": "artist",
+      "label": "arijit singh",
+      "aliases": [
+        "arijit singh"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:5a0921574ccac16e",
+      "role": "artist",
+      "label": "atif aslam",
+      "aliases": [
+        "atif aslam"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:33405a7052cbc43e",
+      "role": "artist",
+      "label": "avenged sevenfold",
+      "aliases": [
+        "avenged sevenfold"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:88d99213b53d00cd",
+      "role": "artist",
+      "label": "bach",
+      "aliases": [
+        "bach"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:39f24a52efae148c",
+      "role": "artist",
+      "label": "bad religion",
+      "aliases": [
+        "bad religion"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:5fef43ad524c62a1",
+      "role": "artist",
+      "label": "barenaked ladies",
+      "aliases": [
+        "barenaked ladies"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:6f6270ff4cbbb448",
+      "role": "artist",
+      "label": "beatles",
+      "aliases": [
+        "beatles"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:07319bd9c5caa582",
+      "role": "artist",
+      "label": "beethoven",
+      "aliases": [
+        "beethoven"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:f55e751d12daa786",
+      "role": "artist",
+      "label": "billy joel",
+      "aliases": [
+        "billy joel"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:9155e64ee886b0b7",
+      "role": "artist",
+      "label": "bjork",
+      "aliases": [
+        "bjork"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:52dfe10506ca45a1",
+      "role": "artist",
+      "label": "blackeyed pees",
+      "aliases": [
+        "blackeyed pees"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:f14deb7a528b7eb3",
+      "role": "artist",
+      "label": "blake shelton",
+      "aliases": [
+        "blake shelton"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:092e7cff86bed8c1",
+      "role": "artist",
+      "label": "bob dylan",
+      "aliases": [
+        "bob dylan"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:1eb6a3738fd15c7f",
+      "role": "artist",
+      "label": "bone thugs",
+      "aliases": [
+        "bone thugs"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:7477cd4e86d01b60",
+      "role": "artist",
+      "label": "bowie",
+      "aliases": [
+        "bowie"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:552e3e82ba9617a6",
+      "role": "artist",
+      "label": "boy band",
+      "aliases": [
+        "boy band"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:e352c838a1ca841f",
+      "role": "artist",
+      "label": "britney spears",
+      "aliases": [
+        "britney spears"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:95a73199abb75b11",
+      "role": "artist",
+      "label": "bruno mars",
+      "aliases": [
+        "bruno mars"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:bb25684b4fc67219",
+      "role": "artist",
+      "label": "busdriver",
+      "aliases": [
+        "busdriver"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:3896b356f01e3adf",
+      "role": "artist",
+      "label": "cat stevens",
+      "aliases": [
+        "cat stevens"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:0fb3fdf42a1056e1",
+      "role": "artist",
+      "label": "celine dion",
+      "aliases": [
+        "celine dion"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:a251dd4fa9935ea3",
+      "role": "artist",
+      "label": "cherry bomb",
+      "aliases": [
+        "cherry bomb"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:887c7f88c057f0e2",
+      "role": "artist",
+      "label": "chopin",
+      "aliases": [
+        "chopin"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:2aba5c05b0d3471c",
+      "role": "artist",
+      "label": "coldplay",
+      "aliases": [
+        "coldplay"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:728e47eb05f1f562",
+      "role": "artist",
+      "label": "crystal lewis s",
+      "aliases": [
+        "crystal lewis s"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:5e3182530fae47fc",
+      "role": "artist",
+      "label": "daft punk",
+      "aliases": [
+        "daft punk"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:55d901d64d923b32",
+      "role": "artist",
+      "label": "david bowie",
+      "aliases": [
+        "david bowie"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:baa74a2ccc2ef13e",
+      "role": "artist",
+      "label": "david guetta",
+      "aliases": [
+        "david guetta"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:8d16745bad36f482",
+      "role": "artist",
+      "label": "disturbed",
+      "aliases": [
+        "disturbed"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:af3422c6afb68910",
+      "role": "artist",
+      "label": "ella fitzgerald",
+      "aliases": [
+        "ella fitzgerald"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:948b93f795100f9e",
+      "role": "artist",
+      "label": "ella fitzgerals",
+      "aliases": [
+        "ella fitzgerals"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:f897fcb3077b2bb4",
+      "role": "artist",
+      "label": "elton john",
+      "aliases": [
+        "elton john"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:3832b63c09d5387e",
+      "role": "artist",
+      "label": "elvis presley",
+      "aliases": [
+        "elvis presley"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:ebfa6dca498f64f1",
+      "role": "artist",
+      "label": "eminem",
+      "aliases": [
+        "eminem"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:c33d15073a831dea",
+      "role": "artist",
+      "label": "enrique iglesias",
+      "aliases": [
+        "enrique iglesias"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:62c2040e09c91ffe",
+      "role": "artist",
+      "label": "enya",
+      "aliases": [
+        "enya"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:3f53497ddff4b515",
+      "role": "artist",
+      "label": "frank sinatra",
+      "aliases": [
+        "frank sinatra"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:f897198c03424d2a",
+      "role": "artist",
+      "label": "frubs",
+      "aliases": [
+        "frubs"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:2086f57e23b20363",
+      "role": "artist",
+      "label": "gaga",
+      "aliases": [
+        "gaga"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:253e3e0b7209a349",
+      "role": "artist",
+      "label": "george michael",
+      "aliases": [
+        "george michael"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:2451b8431e81dfe5",
+      "role": "artist",
+      "label": "george strait",
+      "aliases": [
+        "george strait"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:6ae3ff2fce9333d0",
+      "role": "artist",
+      "label": "hopsin",
+      "aliases": [
+        "hopsin"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:c1cb891402e05fe2",
+      "role": "artist",
+      "label": "huey lewis",
+      "aliases": [
+        "huey lewis"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:ef08ffab3dafd758",
+      "role": "artist",
+      "label": "indie",
+      "aliases": [
+        "indie"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:161c208234a4fbf8",
+      "role": "artist",
+      "label": "iron maiden",
+      "aliases": [
+        "iron maiden"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:37e00aabbe98ea19",
+      "role": "artist",
+      "label": "jack johnson",
+      "aliases": [
+        "jack johnson"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:549f01473643bce2",
+      "role": "artist",
+      "label": "jars of clay",
+      "aliases": [
+        "jars of clay"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:c91900c000e0157f",
+      "role": "artist",
+      "label": "jennifer s",
+      "aliases": [
+        "jennifer s"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:d21305e1c955f046",
+      "role": "artist",
+      "label": "jimi hendri",
+      "aliases": [
+        "jimi hendri"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:2766ab9d97acad23",
+      "role": "artist",
+      "label": "joe prsaise",
+      "aliases": [
+        "joe prsaise"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:5c1ae82da2690bab",
+      "role": "artist",
+      "label": "johnny cash",
+      "aliases": [
+        "johnny cash"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:cb1ad58a179a3e38",
+      "role": "artist",
+      "label": "joy division",
+      "aliases": [
+        "joy division"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:2e55cdacbfcf1e3e",
+      "role": "artist",
+      "label": "justin bibber",
+      "aliases": [
+        "justin bibber"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:2091d6f40b1b9a55",
+      "role": "artist",
+      "label": "justin bieber",
+      "aliases": [
+        "justin bieber"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:4f35468ebe469522",
+      "role": "artist",
+      "label": "justin bieber s",
+      "aliases": [
+        "justin bieber s"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:6a4e69fcfa28f466",
+      "role": "artist",
+      "label": "k pop",
+      "aliases": [
+        "k pop"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:ca96eba45937a5a0",
+      "role": "artist",
+      "label": "kanye west",
+      "aliases": [
+        "kanye west"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:ae1851c10312ac8f",
+      "role": "artist",
+      "label": "kari jobe",
+      "aliases": [
+        "kari jobe"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:e22ba2c1a674df57",
+      "role": "artist",
+      "label": "kate perry",
+      "aliases": [
+        "kate perry"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:c716ad3572f6af69",
+      "role": "artist",
+      "label": "katy perry",
+      "aliases": [
+        "katy perry"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:9132c63d6cbc8d7e",
+      "role": "artist",
+      "label": "kenny rogers",
+      "aliases": [
+        "kenny rogers"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:333712f949f22278",
+      "role": "artist",
+      "label": "kfi",
+      "aliases": [
+        "kfi"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:7ff0b63350b48f4a",
+      "role": "artist",
+      "label": "kirk franklin",
+      "aliases": [
+        "kirk franklin"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:5f2d8895c6b19774",
+      "role": "artist",
+      "label": "korn",
+      "aliases": [
+        "korn"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:7406c03334d4de1e",
+      "role": "artist",
+      "label": "lady gaga",
+      "aliases": [
+        "lady gaga"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:35d98d8127847d9d",
+      "role": "artist",
+      "label": "led zeppelin",
+      "aliases": [
+        "led zeppelin"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:842adab22accb4ef",
+      "role": "artist",
+      "label": "london grammar",
+      "aliases": [
+        "london grammar"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:ca730cbc97c266da",
+      "role": "artist",
+      "label": "madonna",
+      "aliases": [
+        "madonna"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:1f79efabe14a5813",
+      "role": "artist",
+      "label": "madonnas",
+      "aliases": [
+        "madonnas"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:c147351bad05c317",
+      "role": "artist",
+      "label": "malika",
+      "aliases": [
+        "malika"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:7d8f4d3605b0caa6",
+      "role": "artist",
+      "label": "maroon five",
+      "aliases": [
+        "maroon five"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:e180dfffe5183d1a",
+      "role": "artist",
+      "label": "marvin gaye",
+      "aliases": [
+        "marvin gaye"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:a15fe2e2579c1bad",
+      "role": "artist",
+      "label": "metallica",
+      "aliases": [
+        "metallica"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:b2093f1826117bc3",
+      "role": "artist",
+      "label": "mf doom",
+      "aliases": [
+        "mf doom"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:cbb4c23419be0b58",
+      "role": "artist",
+      "label": "mgk",
+      "aliases": [
+        "mgk"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:c4999f2e67ce9b4c",
+      "role": "artist",
+      "label": "michael buble",
+      "aliases": [
+        "michael buble"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:95827d321f9aa45a",
+      "role": "artist",
+      "label": "michael jackson",
+      "aliases": [
+        "michael jackson"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:46bfe07f94a357b8",
+      "role": "artist",
+      "label": "mike eden",
+      "aliases": [
+        "mike eden"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:57cc2a2ea290d17c",
+      "role": "artist",
+      "label": "mura masa",
+      "aliases": [
+        "mura masa"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:b58993d2c01348ee",
+      "role": "artist",
+      "label": "nine inch nails",
+      "aliases": [
+        "nine inch nails"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:a33f7dcb10ab400a",
+      "role": "artist",
+      "label": "o zaalima",
+      "aliases": [
+        "o zaalima"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:29da5b4ea24ea301",
+      "role": "artist",
+      "label": "passion pit",
+      "aliases": [
+        "passion pit"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:bb2d6c41951bcb92",
+      "role": "artist",
+      "label": "pink",
+      "aliases": [
+        "pink"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:03eac83aaebb564b",
+      "role": "artist",
+      "label": "pink floyd",
+      "aliases": [
+        "pink floyd"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:6769f235ff3a8223",
+      "role": "artist",
+      "label": "prince",
+      "aliases": [
+        "prince"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:9701893941dc16ff",
+      "role": "artist",
+      "label": "que",
+      "aliases": [
+        "que"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:ec08e28c75a45549",
+      "role": "artist",
+      "label": "queen",
+      "aliases": [
+        "queen"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:39b766fcd3c93c06",
+      "role": "artist",
+      "label": "queen s",
+      "aliases": [
+        "queen s"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:280dd3a671b1ddd7",
+      "role": "artist",
+      "label": "radio head",
+      "aliases": [
+        "radio head"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:5c6b8b5405f45411",
+      "role": "artist",
+      "label": "rehman s",
+      "aliases": [
+        "rehman s"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:43f6206fb8a6b5e0",
+      "role": "artist",
+      "label": "rihana",
+      "aliases": [
+        "rihana"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:328bdd66c72a57d1",
+      "role": "artist",
+      "label": "rihanna",
+      "aliases": [
+        "rihanna"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:639d32d1001011bf",
+      "role": "artist",
+      "label": "rock star",
+      "aliases": [
+        "rock star"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:2b8e5f531256622e",
+      "role": "artist",
+      "label": "royksopp",
+      "aliases": [
+        "royksopp"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:38f50a06408a4aaa",
+      "role": "artist",
+      "label": "rush",
+      "aliases": [
+        "rush"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:ddc9117fa8222508",
+      "role": "artist",
+      "label": "schubert",
+      "aliases": [
+        "schubert"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:de1302fa55684954",
+      "role": "artist",
+      "label": "senelena gomez",
+      "aliases": [
+        "senelena gomez"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:ff3b8e77d2f71be3",
+      "role": "artist",
+      "label": "serge gainsbourg",
+      "aliases": [
+        "serge gainsbourg"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:352db3b4239cee15",
+      "role": "artist",
+      "label": "shakira",
+      "aliases": [
+        "shakira"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:c7379bc49f7d1ad5",
+      "role": "artist",
+      "label": "sia",
+      "aliases": [
+        "sia"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:6af7d6f73177e985",
+      "role": "artist",
+      "label": "slayer",
+      "aliases": [
+        "slayer"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:aa41c0a4dedabefa",
+      "role": "artist",
+      "label": "spectre",
+      "aliases": [
+        "spectre"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:6107a64d9d685165",
+      "role": "artist",
+      "label": "sufi",
+      "aliases": [
+        "sufi"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:a7ed6a634d949217",
+      "role": "artist",
+      "label": "taylor swift",
+      "aliases": [
+        "taylor swift"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:d54234c38195bbad",
+      "role": "artist",
+      "label": "taylor swift s",
+      "aliases": [
+        "taylor swift s"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:2f24a17ef4e5b13f",
+      "role": "artist",
+      "label": "taylor swiftm",
+      "aliases": [
+        "taylor swiftm"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:62749c52bb1e30b4",
+      "role": "artist",
+      "label": "tech n 9 ne",
+      "aliases": [
+        "tech n 9 ne"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:43b19ba2e8945112",
+      "role": "artist",
+      "label": "the beatles",
+      "aliases": [
+        "the beatles"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:c13f965f3c118005",
+      "role": "artist",
+      "label": "the broods",
+      "aliases": [
+        "the broods"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:785fabac5fea1c18",
+      "role": "artist",
+      "label": "third day",
+      "aliases": [
+        "third day"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:1642be06cdfa8955",
+      "role": "artist",
+      "label": "third eye blind",
+      "aliases": [
+        "third eye blind"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:fa9d54402e369453",
+      "role": "artist",
+      "label": "tobymac",
+      "aliases": [
+        "tobymac"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:dd04afac1bebb050",
+      "role": "artist",
+      "label": "tool",
+      "aliases": [
+        "tool"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:7ee091e260f75e65",
+      "role": "artist",
+      "label": "tupac",
+      "aliases": [
+        "tupac"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:026a4430eb6a6d25",
+      "role": "artist",
+      "label": "twenty one pilots",
+      "aliases": [
+        "twenty one pilots"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "artist:65a956f12c7c9271",
+      "role": "artist",
+      "label": "zedd",
+      "aliases": [
+        "zedd"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:46bbc59227c285f2",
+      "role": "device",
+      "label": "balcony",
+      "aliases": [
+        "balcony"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:c518a6ebfea42d13",
+      "role": "device",
+      "label": "bathroom",
+      "aliases": [
+        "bathroom"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:18a17c23fb8b4bda",
+      "role": "device",
+      "label": "bathrooms",
+      "aliases": [
+        "bathrooms"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:61c9721a8b925464",
+      "role": "device",
+      "label": "bed room",
+      "aliases": [
+        "bed room"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:5b6a2eba967f1953",
+      "role": "device",
+      "label": "bed room two",
+      "aliases": [
+        "bed room two"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:8365e7719acaf4a7",
+      "role": "device",
+      "label": "bedroom",
+      "aliases": [
+        "bedroom"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:34998ca8e40b3961",
+      "role": "device",
+      "label": "bedrooms",
+      "aliases": [
+        "bedrooms"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:85d442c0ae500854",
+      "role": "device",
+      "label": "carpet",
+      "aliases": [
+        "carpet"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:97b262455e57fa38",
+      "role": "device",
+      "label": "carpets",
+      "aliases": [
+        "carpets"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:f4808ed71b584e5c",
+      "role": "device",
+      "label": "corner",
+      "aliases": [
+        "corner"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:609f96e5a6e8af57",
+      "role": "device",
+      "label": "den",
+      "aliases": [
+        "den"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:df55e4df1c0bd281",
+      "role": "device",
+      "label": "flat",
+      "aliases": [
+        "flat"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:dc2b01b19b72b20f",
+      "role": "device",
+      "label": "front porch",
+      "aliases": [
+        "front porch"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:46a8e6d90891791a",
+      "role": "device",
+      "label": "front room",
+      "aliases": [
+        "front room"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:52b79833efcff956",
+      "role": "device",
+      "label": "furniture",
+      "aliases": [
+        "furniture"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:b11530ccf517d43e",
+      "role": "device",
+      "label": "game room",
+      "aliases": [
+        "game room"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:06f5765633f3371b",
+      "role": "device",
+      "label": "garage",
+      "aliases": [
+        "garage"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:2bc3d6457b5bfeca",
+      "role": "device",
+      "label": "garden",
+      "aliases": [
+        "garden"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:bb660fd5410af12a",
+      "role": "device",
+      "label": "guest room",
+      "aliases": [
+        "guest room"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:9a883ff1f56a410e",
+      "role": "device",
+      "label": "hall",
+      "aliases": [
+        "hall"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:ded8ed6a48251489",
+      "role": "device",
+      "label": "hallway",
+      "aliases": [
+        "hallway"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:9509a71b99f0d006",
+      "role": "device",
+      "label": "here",
+      "aliases": [
+        "here"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:58695d278ec15833",
+      "role": "device",
+      "label": "home",
+      "aliases": [
+        "home"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:78f4d79e3e4d4a0e",
+      "role": "device",
+      "label": "house",
+      "aliases": [
+        "house"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:7a84fa3219a281d1",
+      "role": "device",
+      "label": "kids bedroom",
+      "aliases": [
+        "kids bedroom"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:c0a860da2d895fdf",
+      "role": "device",
+      "label": "kitchen",
+      "aliases": [
+        "kitchen"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:eb36f13a93c26b50",
+      "role": "device",
+      "label": "living room",
+      "aliases": [
+        "living room"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:0f2512622d156e18",
+      "role": "device",
+      "label": "living room s",
+      "aliases": [
+        "living room s"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:a9fe5d9fe2d12114",
+      "role": "device",
+      "label": "lobby",
+      "aliases": [
+        "lobby"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:a8ba4a377e5dbbb2",
+      "role": "device",
+      "label": "master s bedroom",
+      "aliases": [
+        "master s bedroom"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:f008682bd9bb26fb",
+      "role": "device",
+      "label": "media room",
+      "aliases": [
+        "media room"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:96b4d28bd13adcef",
+      "role": "device",
+      "label": "my room",
+      "aliases": [
+        "my room"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:3b34f04da97931d8",
+      "role": "device",
+      "label": "office",
+      "aliases": [
+        "office"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:067e23f9fa4ff28d",
+      "role": "device",
+      "label": "outside the house",
+      "aliases": [
+        "outside the house"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:6f6c6b43ebc3b4c0",
+      "role": "device",
+      "label": "patio",
+      "aliases": [
+        "patio"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:2d6f61dc0dbe3286",
+      "role": "device",
+      "label": "porch",
+      "aliases": [
+        "porch"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:e4f5b5dca363074d",
+      "role": "device",
+      "label": "room",
+      "aliases": [
+        "room"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:0f8392b8b754aa9f",
+      "role": "device",
+      "label": "shed",
+      "aliases": [
+        "shed"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:7f4eebfe70487be0",
+      "role": "device",
+      "label": "the room",
+      "aliases": [
+        "the room"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:31ef717d5cfdd437",
+      "role": "device",
+      "label": "this room",
+      "aliases": [
+        "this room"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "device:f0835fb9b5470401",
+      "role": "device",
+      "label": "whole house",
+      "aliases": [
+        "whole house"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:98089e6d36f78e97",
+      "role": "number",
+      "label": "0",
+      "aliases": [
+        "0"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:391552c099c101b1",
+      "role": "number",
+      "label": "1",
+      "aliases": [
+        "1"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:536549599ec6c3b8",
+      "role": "number",
+      "label": "10",
+      "aliases": [
+        "10"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:d77ccb69e3f915ed",
+      "role": "number",
+      "label": "100",
+      "aliases": [
+        "100"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:f326bd84707ed765",
+      "role": "number",
+      "label": "11",
+      "aliases": [
+        "11"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:f9cacf3cb91a12e0",
+      "role": "number",
+      "label": "12",
+      "aliases": [
+        "12"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:e23f8f39182c8212",
+      "role": "number",
+      "label": "13",
+      "aliases": [
+        "13"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:789d9e7dc67f9866",
+      "role": "number",
+      "label": "14",
+      "aliases": [
+        "14"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:47cea6234e51694a",
+      "role": "number",
+      "label": "15",
+      "aliases": [
+        "15"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:17eed2c0e7c9788d",
+      "role": "number",
+      "label": "16",
+      "aliases": [
+        "16"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:e4bb04eec661be0b",
+      "role": "number",
+      "label": "17",
+      "aliases": [
+        "17"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:0234a350f4d56ae4",
+      "role": "number",
+      "label": "18",
+      "aliases": [
+        "18"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:49f65dc5d4333e3e",
+      "role": "number",
+      "label": "19",
+      "aliases": [
+        "19"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:cc11310c456c3690",
+      "role": "number",
+      "label": "2",
+      "aliases": [
+        "2"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:046419ca5ecebeb3",
+      "role": "number",
+      "label": "20",
+      "aliases": [
+        "20"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:6f8f349216adc47c",
+      "role": "number",
+      "label": "21",
+      "aliases": [
+        "21"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:b16781f85251cf7a",
+      "role": "number",
+      "label": "22",
+      "aliases": [
+        "22"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:8be13c81ac497232",
+      "role": "number",
+      "label": "23",
+      "aliases": [
+        "23"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:9df59c3d4c39c130",
+      "role": "number",
+      "label": "24",
+      "aliases": [
+        "24"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:21cee27a52b79f89",
+      "role": "number",
+      "label": "25",
+      "aliases": [
+        "25"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:21f101951d583e2d",
+      "role": "number",
+      "label": "26",
+      "aliases": [
+        "26"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:a04908f573e7a1c9",
+      "role": "number",
+      "label": "27",
+      "aliases": [
+        "27"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:5defc92d11f38e34",
+      "role": "number",
+      "label": "28",
+      "aliases": [
+        "28"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:06998a9f7c3bd272",
+      "role": "number",
+      "label": "29",
+      "aliases": [
+        "29"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:a4aab3f1f08004e9",
+      "role": "number",
+      "label": "3",
+      "aliases": [
+        "3"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:f20e4586c63ba3b2",
+      "role": "number",
+      "label": "30",
+      "aliases": [
+        "30"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:227e4918add1d796",
+      "role": "number",
+      "label": "31",
+      "aliases": [
+        "31"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:ca30de1c42bd3e0f",
+      "role": "number",
+      "label": "32",
+      "aliases": [
+        "32"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:6b889fc1b5d505a0",
+      "role": "number",
+      "label": "33",
+      "aliases": [
+        "33"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:772b814564dc9523",
+      "role": "number",
+      "label": "34",
+      "aliases": [
+        "34"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:4bf17f4cd842cc18",
+      "role": "number",
+      "label": "35",
+      "aliases": [
+        "35"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:06024be3089840dc",
+      "role": "number",
+      "label": "36",
+      "aliases": [
+        "36"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:8a0a5cc048b623e4",
+      "role": "number",
+      "label": "37",
+      "aliases": [
+        "37"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:30f1bada5c16158b",
+      "role": "number",
+      "label": "38",
+      "aliases": [
+        "38"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:1f8c1cafb24e0497",
+      "role": "number",
+      "label": "39",
+      "aliases": [
+        "39"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:2bf175f9655e7bb7",
+      "role": "number",
+      "label": "4",
+      "aliases": [
+        "4"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:d06074cc1e1fef69",
+      "role": "number",
+      "label": "40",
+      "aliases": [
+        "40"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:d41be9ad11f483bd",
+      "role": "number",
+      "label": "41",
+      "aliases": [
+        "41"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:8334c554c7276f59",
+      "role": "number",
+      "label": "42",
+      "aliases": [
+        "42"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:c393fd8dc1b914b0",
+      "role": "number",
+      "label": "43",
+      "aliases": [
+        "43"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:4ed39c44a26d6cc4",
+      "role": "number",
+      "label": "44",
+      "aliases": [
+        "44"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:2eecac45827ede37",
+      "role": "number",
+      "label": "45",
+      "aliases": [
+        "45"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:d509ce63dfefa7da",
+      "role": "number",
+      "label": "46",
+      "aliases": [
+        "46"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:4bdfa55c6a2df534",
+      "role": "number",
+      "label": "47",
+      "aliases": [
+        "47"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:a23718b18c82a003",
+      "role": "number",
+      "label": "48",
+      "aliases": [
+        "48"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:d9013b3ac73b75f4",
+      "role": "number",
+      "label": "49",
+      "aliases": [
+        "49"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:d10a4bc9e0c1fa4e",
+      "role": "number",
+      "label": "5",
+      "aliases": [
+        "5"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:4ec621b227e30e8a",
+      "role": "number",
+      "label": "50",
+      "aliases": [
+        "50"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:d8193a30972ab6da",
+      "role": "number",
+      "label": "51",
+      "aliases": [
+        "51"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:ddc0ed4c28f12534",
+      "role": "number",
+      "label": "52",
+      "aliases": [
+        "52"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:94d16fa9d29e8ce2",
+      "role": "number",
+      "label": "53",
+      "aliases": [
+        "53"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:6ce1ced1ac1f56f8",
+      "role": "number",
+      "label": "54",
+      "aliases": [
+        "54"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:c7e05c3805ca65af",
+      "role": "number",
+      "label": "55",
+      "aliases": [
+        "55"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:79f649bcd303918c",
+      "role": "number",
+      "label": "56",
+      "aliases": [
+        "56"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:9486972fa2f5c604",
+      "role": "number",
+      "label": "57",
+      "aliases": [
+        "57"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:8018d4e214f77121",
+      "role": "number",
+      "label": "58",
+      "aliases": [
+        "58"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:609d253d02bb7f75",
+      "role": "number",
+      "label": "59",
+      "aliases": [
+        "59"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:92e9e7e5922d26e1",
+      "role": "number",
+      "label": "6",
+      "aliases": [
+        "6"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:68fec0473e988a1e",
+      "role": "number",
+      "label": "60",
+      "aliases": [
+        "60"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:6d344e2afcdf5d58",
+      "role": "number",
+      "label": "61",
+      "aliases": [
+        "61"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:c8d8f2e29fb181ff",
+      "role": "number",
+      "label": "62",
+      "aliases": [
+        "62"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:506b63d9bd8dda24",
+      "role": "number",
+      "label": "63",
+      "aliases": [
+        "63"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:bbfe62b956805288",
+      "role": "number",
+      "label": "64",
+      "aliases": [
+        "64"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:ade516f85ff9f88e",
+      "role": "number",
+      "label": "65",
+      "aliases": [
+        "65"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:895b57228a87762d",
+      "role": "number",
+      "label": "66",
+      "aliases": [
+        "66"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:d3742a15e9210157",
+      "role": "number",
+      "label": "67",
+      "aliases": [
+        "67"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:c82332fe58033201",
+      "role": "number",
+      "label": "68",
+      "aliases": [
+        "68"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:7de802e82b22ab2e",
+      "role": "number",
+      "label": "69",
+      "aliases": [
+        "69"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:266aa5886067fbbc",
+      "role": "number",
+      "label": "7",
+      "aliases": [
+        "7"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:12b8c0944c94778c",
+      "role": "number",
+      "label": "70",
+      "aliases": [
+        "70"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:4e4894af3d7d6017",
+      "role": "number",
+      "label": "71",
+      "aliases": [
+        "71"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:a5009944cc0deb74",
+      "role": "number",
+      "label": "72",
+      "aliases": [
+        "72"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:200baec47c61ff56",
+      "role": "number",
+      "label": "73",
+      "aliases": [
+        "73"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:15fb47d9f8467073",
+      "role": "number",
+      "label": "74",
+      "aliases": [
+        "74"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:6bdea40ac8424f8b",
+      "role": "number",
+      "label": "75",
+      "aliases": [
+        "75"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:1191917a48bb1c95",
+      "role": "number",
+      "label": "76",
+      "aliases": [
+        "76"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:af37a2e6dfb5c301",
+      "role": "number",
+      "label": "77",
+      "aliases": [
+        "77"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:fda986670fb6a192",
+      "role": "number",
+      "label": "78",
+      "aliases": [
+        "78"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:bb628f904b3ffb39",
+      "role": "number",
+      "label": "79",
+      "aliases": [
+        "79"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:ade1a1c2a61af0f2",
+      "role": "number",
+      "label": "8",
+      "aliases": [
+        "8"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:9728ac83eb879c0a",
+      "role": "number",
+      "label": "80",
+      "aliases": [
+        "80"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:3a1ed30a0a052eac",
+      "role": "number",
+      "label": "81",
+      "aliases": [
+        "81"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:7df2c0defdd4d9aa",
+      "role": "number",
+      "label": "82",
+      "aliases": [
+        "82"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:bf6851affc08517f",
+      "role": "number",
+      "label": "83",
+      "aliases": [
+        "83"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:aa1973b691760aac",
+      "role": "number",
+      "label": "84",
+      "aliases": [
+        "84"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:dfff24769b1b892e",
+      "role": "number",
+      "label": "85",
+      "aliases": [
+        "85"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:8c2f0f8d830c2513",
+      "role": "number",
+      "label": "86",
+      "aliases": [
+        "86"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:4d231049a895fe6c",
+      "role": "number",
+      "label": "87",
+      "aliases": [
+        "87"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:340fcdaaf07c1fb0",
+      "role": "number",
+      "label": "88",
+      "aliases": [
+        "88"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:7a7cf17d69de528c",
+      "role": "number",
+      "label": "89",
+      "aliases": [
+        "89"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:986b79d4b69dffb1",
+      "role": "number",
+      "label": "9",
+      "aliases": [
+        "9"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:c05204d076c56077",
+      "role": "number",
+      "label": "90",
+      "aliases": [
+        "90"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:821c1b8a5eee4146",
+      "role": "number",
+      "label": "91",
+      "aliases": [
+        "91"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:43cfd037f0296b59",
+      "role": "number",
+      "label": "92",
+      "aliases": [
+        "92"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:c39a14a37b4ef8bd",
+      "role": "number",
+      "label": "93",
+      "aliases": [
+        "93"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:4c499ccd2dc21ac5",
+      "role": "number",
+      "label": "94",
+      "aliases": [
+        "94"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:05d16921ba94439e",
+      "role": "number",
+      "label": "95",
+      "aliases": [
+        "95"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:c063de344945456b",
+      "role": "number",
+      "label": "96",
+      "aliases": [
+        "96"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:c5e5f9ef81358a46",
+      "role": "number",
+      "label": "97",
+      "aliases": [
+        "97"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:13b718d3b9fac107",
+      "role": "number",
+      "label": "98",
+      "aliases": [
+        "98"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "number:72acffdb54719c27",
+      "role": "number",
+      "label": "99",
+      "aliases": [
+        "99"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:e30d6df583cb4c57",
+      "role": "song",
+      "label": "all the small things",
+      "aliases": [
+        "all the small things"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:0d5c85833a4f7fad",
+      "role": "song",
+      "label": "atmosphere",
+      "aliases": [
+        "atmosphere"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:bd3268c7cb611bbb",
+      "role": "song",
+      "label": "back in black",
+      "aliases": [
+        "back in black"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:7f3a8fca9ceb50a5",
+      "role": "song",
+      "label": "badra bahar",
+      "aliases": [
+        "badra bahar"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:7ee49b1effdbb039",
+      "role": "song",
+      "label": "bag of hammers",
+      "aliases": [
+        "bag of hammers"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:0bc2938b0d8003b9",
+      "role": "song",
+      "label": "barcelona",
+      "aliases": [
+        "barcelona"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:6cc7e4f79f670d56",
+      "role": "song",
+      "label": "be warned",
+      "aliases": [
+        "be warned"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:0bbb377cc622a380",
+      "role": "song",
+      "label": "beauty of the cross",
+      "aliases": [
+        "beauty of the cross"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:a967a288e4390631",
+      "role": "song",
+      "label": "billie jean",
+      "aliases": [
+        "billie jean"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:883d110cb494edf4",
+      "role": "song",
+      "label": "bohemian raphsody",
+      "aliases": [
+        "bohemian raphsody"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:830f8704c82b98b9",
+      "role": "song",
+      "label": "born to run",
+      "aliases": [
+        "born to run"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:2bfa1e226bba2678",
+      "role": "song",
+      "label": "cannibal queen",
+      "aliases": [
+        "cannibal queen"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:2d42b6bd5fae9a14",
+      "role": "song",
+      "label": "chhana mereya",
+      "aliases": [
+        "chhana mereya"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:5aa6924346b295e6",
+      "role": "song",
+      "label": "clarity",
+      "aliases": [
+        "clarity"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:6a1001a7545d7c3d",
+      "role": "song",
+      "label": "closer",
+      "aliases": [
+        "closer"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:764809772bf03dbe",
+      "role": "song",
+      "label": "do re mi",
+      "aliases": [
+        "do re mi"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:9fd85379fe9b0d35",
+      "role": "song",
+      "label": "doggie style",
+      "aliases": [
+        "doggie style"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:ce98f6e78b28526f",
+      "role": "song",
+      "label": "dynamite",
+      "aliases": [
+        "dynamite"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:1f5454da3d9dc356",
+      "role": "song",
+      "label": "earth song",
+      "aliases": [
+        "earth song"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:b2ad6944bccdd7f2",
+      "role": "song",
+      "label": "electric slide",
+      "aliases": [
+        "electric slide"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:25cf4c6c357bb01e",
+      "role": "song",
+      "label": "firefly",
+      "aliases": [
+        "firefly"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:bdafe88af502fc8b",
+      "role": "song",
+      "label": "firework",
+      "aliases": [
+        "firework"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:ad0de7a1cf4ea307",
+      "role": "song",
+      "label": "footloose",
+      "aliases": [
+        "footloose"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:658c423982c42484",
+      "role": "song",
+      "label": "forty six and two",
+      "aliases": [
+        "forty six and two"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:e69443fda1e293fc",
+      "role": "song",
+      "label": "games",
+      "aliases": [
+        "games"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:19248f6ee288c23a",
+      "role": "song",
+      "label": "get happy",
+      "aliases": [
+        "get happy"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:f34e3e3299a3d121",
+      "role": "song",
+      "label": "girl from impanema",
+      "aliases": [
+        "girl from impanema"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:b5ea0982d3610401",
+      "role": "song",
+      "label": "gold digger",
+      "aliases": [
+        "gold digger"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:9126d8f30dcbd818",
+      "role": "song",
+      "label": "green day",
+      "aliases": [
+        "green day"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:205863aaaeb24ce7",
+      "role": "song",
+      "label": "happy",
+      "aliases": [
+        "happy"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:79aa1081d9057bb6",
+      "role": "song",
+      "label": "happy birthday",
+      "aliases": [
+        "happy birthday"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:1ededb270a1333ab",
+      "role": "song",
+      "label": "heathens",
+      "aliases": [
+        "heathens"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:305304f853bd8401",
+      "role": "song",
+      "label": "help",
+      "aliases": [
+        "help"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:3a8ce942805b564b",
+      "role": "song",
+      "label": "hotel california",
+      "aliases": [
+        "hotel california"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:ca4a732dd1517dec",
+      "role": "song",
+      "label": "hula hoop",
+      "aliases": [
+        "hula hoop"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:5ae4474c0d19ab25",
+      "role": "song",
+      "label": "human nature",
+      "aliases": [
+        "human nature"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:97c61c98fde9be75",
+      "role": "song",
+      "label": "hungry eyes",
+      "aliases": [
+        "hungry eyes"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:5c48f8ce7a139de6",
+      "role": "song",
+      "label": "hurt",
+      "aliases": [
+        "hurt"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:a658eff7c301b55c",
+      "role": "song",
+      "label": "i ca n't feel my face",
+      "aliases": [
+        "i ca n't feel my face"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:4099f46ad50ce425",
+      "role": "song",
+      "label": "i did n't hear",
+      "aliases": [
+        "i did n't hear"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:a0ec8b71870c988e",
+      "role": "song",
+      "label": "i got you babe by sonny and cher",
+      "aliases": [
+        "i got you babe by sonny and cher"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:e0644213563d9ad8",
+      "role": "song",
+      "label": "i just wanna dance with you",
+      "aliases": [
+        "i just wanna dance with you"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:6e1fe0558b9f096e",
+      "role": "song",
+      "label": "i love you",
+      "aliases": [
+        "i love you"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:6987dc645ab0dc31",
+      "role": "song",
+      "label": "i really like you",
+      "aliases": [
+        "i really like you"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:e7ba4296782aff4e",
+      "role": "song",
+      "label": "i walk the line",
+      "aliases": [
+        "i walk the line"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:7dbeb8ea67721eb9",
+      "role": "song",
+      "label": "i want you",
+      "aliases": [
+        "i want you"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:763dfcd1f3777f98",
+      "role": "song",
+      "label": "imagine dragons",
+      "aliases": [
+        "imagine dragons"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:3a61845cdf128b50",
+      "role": "song",
+      "label": "immediately",
+      "aliases": [
+        "immediately"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:6b82c1095dca20ce",
+      "role": "song",
+      "label": "irene",
+      "aliases": [
+        "irene"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:01f7453d243f3eb1",
+      "role": "song",
+      "label": "jaiho",
+      "aliases": [
+        "jaiho"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:9e441adee9955e8a",
+      "role": "song",
+      "label": "jingle bells",
+      "aliases": [
+        "jingle bells"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:64af85d69ab201a5",
+      "role": "song",
+      "label": "joy to the world",
+      "aliases": [
+        "joy to the world"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:bb3134b9e6b6e6f5",
+      "role": "song",
+      "label": "jumper",
+      "aliases": [
+        "jumper"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:1ab5251bf77ad321",
+      "role": "song",
+      "label": "kiss from a rose",
+      "aliases": [
+        "kiss from a rose"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:3b8ec90d35587137",
+      "role": "song",
+      "label": "lady",
+      "aliases": [
+        "lady"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:c70660f82115dd24",
+      "role": "song",
+      "label": "last christmas",
+      "aliases": [
+        "last christmas"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:8a6b976440d476d1",
+      "role": "song",
+      "label": "last song",
+      "aliases": [
+        "last song"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:11f09e956438ef1f",
+      "role": "song",
+      "label": "let it burn",
+      "aliases": [
+        "let it burn"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:ab0352579bcfa51d",
+      "role": "song",
+      "label": "leviathan",
+      "aliases": [
+        "leviathan"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:65ba4a21a95edaed",
+      "role": "song",
+      "label": "like a virgin",
+      "aliases": [
+        "like a virgin"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:bfb29a35dfa1a702",
+      "role": "song",
+      "label": "limelight",
+      "aliases": [
+        "limelight"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:96fa5228627bef6a",
+      "role": "song",
+      "label": "love",
+      "aliases": [
+        "love"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:ded238105abfdaec",
+      "role": "song",
+      "label": "love me",
+      "aliases": [
+        "love me"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:1c79c67e24b52118",
+      "role": "song",
+      "label": "lupe",
+      "aliases": [
+        "lupe"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:c5a754939c6149a7",
+      "role": "song",
+      "label": "magic",
+      "aliases": [
+        "magic"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:d58e69deb60c0ab7",
+      "role": "song",
+      "label": "major tom",
+      "aliases": [
+        "major tom"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:63c8c7ae0631f13d",
+      "role": "song",
+      "label": "mocking bird",
+      "aliases": [
+        "mocking bird"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:8dacec06486809a8",
+      "role": "song",
+      "label": "motown",
+      "aliases": [
+        "motown"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:a57a263b2f4b23d7",
+      "role": "song",
+      "label": "moves like jagger",
+      "aliases": [
+        "moves like jagger"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:ee6010be39476b43",
+      "role": "song",
+      "label": "nakumukka",
+      "aliases": [
+        "nakumukka"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:f9ec1460458f0914",
+      "role": "song",
+      "label": "nightmare",
+      "aliases": [
+        "nightmare"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:a348d667a37eea63",
+      "role": "song",
+      "label": "nobody knows",
+      "aliases": [
+        "nobody knows"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:09481a6928c877f8",
+      "role": "song",
+      "label": "notorious thugs",
+      "aliases": [
+        "notorious thugs"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:cc54d6e8e88cbb62",
+      "role": "song",
+      "label": "one love",
+      "aliases": [
+        "one love"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:9d3ecb27e098199a",
+      "role": "song",
+      "label": "one more cup of coffee",
+      "aliases": [
+        "one more cup of coffee"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:b5c1ff4a7c9bc818",
+      "role": "song",
+      "label": "one thousand nine hundred and ninety nine",
+      "aliases": [
+        "one thousand nine hundred and ninety nine"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:639e9872519929ae",
+      "role": "song",
+      "label": "over the rainbow",
+      "aliases": [
+        "over the rainbow"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:fe09464f1b433786",
+      "role": "song",
+      "label": "play that funky music",
+      "aliases": [
+        "play that funky music"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:5f730bc7d9745ca9",
+      "role": "song",
+      "label": "poker face",
+      "aliases": [
+        "poker face"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:9b5387281002ffb8",
+      "role": "song",
+      "label": "recent cover",
+      "aliases": [
+        "recent cover"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:989c26f41a559827",
+      "role": "song",
+      "label": "rein in blood",
+      "aliases": [
+        "rein in blood"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:383870cfac152c3c",
+      "role": "song",
+      "label": "ride",
+      "aliases": [
+        "ride"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:6efc2fa8146cfce9",
+      "role": "song",
+      "label": "running to the sea",
+      "aliases": [
+        "running to the sea"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:a5b5504bfcc80e25",
+      "role": "song",
+      "label": "save the last dance",
+      "aliases": [
+        "save the last dance"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:cef3dcb6243adde6",
+      "role": "song",
+      "label": "shake it off",
+      "aliases": [
+        "shake it off"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:dad6ac3d2bfa41ea",
+      "role": "song",
+      "label": "shape of you",
+      "aliases": [
+        "shape of you"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:3d7c18bde6eba6aa",
+      "role": "song",
+      "label": "shinedown",
+      "aliases": [
+        "shinedown"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:f2d422942b0e56b3",
+      "role": "song",
+      "label": "six hundred and sixty six the number of the beast",
+      "aliases": [
+        "six hundred and sixty six the number of the beast"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:8e232582521bacbe",
+      "role": "song",
+      "label": "skyfall",
+      "aliases": [
+        "skyfall"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:58281e3c3278c7ad",
+      "role": "song",
+      "label": "sleepyhead",
+      "aliases": [
+        "sleepyhead"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:94fff9a2d852b77a",
+      "role": "song",
+      "label": "smile",
+      "aliases": [
+        "smile"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:e640ca0cea7f6182",
+      "role": "song",
+      "label": "some blues",
+      "aliases": [
+        "some blues"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:89b6baca4b55689f",
+      "role": "song",
+      "label": "song",
+      "aliases": [
+        "song"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:4f0e1d1645d89d6a",
+      "role": "song",
+      "label": "sorry",
+      "aliases": [
+        "sorry"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:c23ccfb18187152f",
+      "role": "song",
+      "label": "surfin usa",
+      "aliases": [
+        "surfin usa"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:1929f61bbc837ba9",
+      "role": "song",
+      "label": "sword art opening",
+      "aliases": [
+        "sword art opening"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:f010d78158bedc9b",
+      "role": "song",
+      "label": "thinking out loud",
+      "aliases": [
+        "thinking out loud"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:ebf32d5c0d7f1de9",
+      "role": "song",
+      "label": "thirteen",
+      "aliases": [
+        "thirteen"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:41a039163cdb3f7b",
+      "role": "song",
+      "label": "titanic movie",
+      "aliases": [
+        "titanic movie"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:509829f5c344d263",
+      "role": "song",
+      "label": "track eight",
+      "aliases": [
+        "track eight"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:afb02b4248d0df9e",
+      "role": "song",
+      "label": "true love",
+      "aliases": [
+        "true love"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:2c497b9c7f0059ca",
+      "role": "song",
+      "label": "two thousand one hundred and twelve",
+      "aliases": [
+        "two thousand one hundred and twelve"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:af9300e7a26faad4",
+      "role": "song",
+      "label": "uptown girl",
+      "aliases": [
+        "uptown girl"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:8029a463c882a1b4",
+      "role": "song",
+      "label": "we will rock you",
+      "aliases": [
+        "we will rock you"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:7f07876b343fe700",
+      "role": "song",
+      "label": "weekend",
+      "aliases": [
+        "weekend"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:ec28970caa6bbf1f",
+      "role": "song",
+      "label": "what if",
+      "aliases": [
+        "what if"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:a07773616002b38e",
+      "role": "song",
+      "label": "why do you sing",
+      "aliases": [
+        "why do you sing"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:4a07fe7a85f31c51",
+      "role": "song",
+      "label": "yesterday",
+      "aliases": [
+        "yesterday"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "song:e44bd56da6c3eb63",
+      "role": "song",
+      "label": "you are my sunshine",
+      "aliases": [
+        "you are my sunshine"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "word:20993a5e6cd8c07f",
+      "role": "word",
+      "label": "brightness",
+      "aliases": [
+        "brightness"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "word:de3ab95e50ad3796",
+      "role": "word",
+      "label": "down",
+      "aliases": [
+        "down"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "word:927f113e4d1abc30",
+      "role": "word",
+      "label": "percent",
+      "aliases": [
+        "percent"
+      ],
+      "pronunciations": []
+    },
+    {
+      "id": "word:5cc8d1cb43ae1748",
+      "role": "word",
+      "label": "up",
+      "aliases": [
+        "up"
+      ],
+      "pronunciations": []
+    }
+  ],
+  "version": "17a168ff4f7331300ca4a6b11d95f624874109d4dca14f38d3c0e6ec86f4e746"
+}

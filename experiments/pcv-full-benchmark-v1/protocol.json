@@ -1,0 +1,52 @@
+{
+  "annotation_policy": "Frozen release-v1 metadata annotation; no prediction-driven corrections",
+  "evidence": "Previously exposed test repeated on current snapshot; not a new blind test",
+  "experiment": "pcv-full-benchmark-v1",
+  "external_benchmark_commit": "17d2dfe98f7dad4da3b5368082ecb47d2a4acd05",
+  "ignore_gate_passed": true,
+  "model_release": "experiments/pcv-release-train-v1/runs/release-v1/release.json",
+  "payloads": [
+    {
+      "blobId": "517d9b0452e79517c0176cfba8873c3a36cbe9cd",
+      "lfs": {
+        "pointerSize": 133,
+        "sha256": "c36227c81eee4eac63de62cee94631ee9e73952ccf8e16c27912eb049508eb6e",
+        "size": 15363388
+      },
+      "rfilename": "data/holdout-00000-of-00001.parquet",
+      "size": 15363388
+    },
+    {
+      "blobId": "5eea28a19f8991766d5b9a309ade72d94bac12cd",
+      "lfs": {
+        "pointerSize": 134,
+        "sha256": "40e9b66b4e12bc5b012bfa2dc7367602740ac394467e48d4924364c46f912f32",
+        "size": 272526000
+      },
+      "rfilename": "data/test-00000-of-00001.parquet",
+      "size": 272526000
+    },
+    {
+      "blobId": "7c320ce6b7efaa23ccad6626c75e537a986c21f5",
+      "lfs": {
+        "pointerSize": 133,
+        "sha256": "b861abd530bbf5e15e6a9f61caca8a029a2867e33c9397317ac5e8f01b74b9f4",
+        "size": 17411607
+      },
+      "rfilename": "synthetic_negatives/test-00000-of-00001.parquet",
+      "size": 17411607
+    }
+  ],
+  "prior_training_revision": "25111444af3adff7588d86ab27c304bb080895cf",
+  "release_sha256": "51d9f1dfb3a6316dcb47420694046a9f86002c911b88ff7a3a4530e8956d4961",
+  "repository": "airimonda/ai231-me2-voice-commands",
+  "requirements": [
+    "ME-03",
+    "ME-04",
+    "ME-06",
+    "ME-07",
+    "ME-08"
+  ],
+  "revision": "6947f13073e57eb6ae67e7e2fc3680700b82aa13",
+  "selection": "Existing development-selected release-v1; no fitting or threshold selection"
+}

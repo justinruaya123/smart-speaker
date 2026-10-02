@@ -1,0 +1,46 @@
+{
+  "original_human_rows": 32962,
+  "payload_bytes_hashed": 2078860602,
+  "source_splits": {
+    "train": 18434,
+    "dev": 5364,
+    "calibration": 4850,
+    "test": 4314
+  },
+  "changed_rows": 455,
+  "changes_by_split_and_reason": {
+    "train:bed_room_target_alias": 53,
+    "train:qualified_query_has_no_supported_arguments": 68,
+    "train:unsupported_location_is_not_main_lights": 170,
+    "dev:qualified_query_has_no_supported_arguments": 53,
+    "dev:unsupported_location_is_not_main_lights": 7,
+    "dev:bed_room_target_alias": 6,
+    "dev:plain_local_query_semantics": 1,
+    "calibration:qualified_query_has_no_supported_arguments": 35,
+    "calibration:bed_room_target_alias": 2,
+    "calibration:unsupported_location_is_not_main_lights": 4,
+    "test:qualified_query_has_no_supported_arguments": 31,
+    "test:unsupported_location_is_not_main_lights": 17,
+    "test:bed_room_target_alias": 6,
+    "test:plain_local_query_semantics": 2
+  },
+  "custom_enrollment_pairs": [
+    "slurp/16838",
+    "slurp/16996",
+    "slurp/17061",
+    "slurp/2505",
+    "slurp/2576",
+    "slurp/28942",
+    "slurp/36756",
+    "slurp/37817",
+    "slurp/49910",
+    "slurp/50270",
+    "slurp/50496",
+    "slurp/821"
+  ],
+  "speaker_and_hash_train_eval_overlap": 0,
+  "original_payloads_or_labels_modified": false,
+  "annotation_quality": "programmatic semantic overlay; NOT human audio adjudication",
+  "historical_test_previously_examined": true,
+  "readability_evidence": "E13 unchanged-content audio audit"
+}

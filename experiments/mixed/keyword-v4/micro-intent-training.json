@@ -1,0 +1,27 @@
+{
+  "selected_epoch": 11,
+  "development": {
+    "epoch": 11,
+    "loss": 0.4331537879969891,
+    "macro_family": 0.5465677710404934,
+    "ready_accuracy": 0.6104868913857678,
+    "per_intent": {
+      "UNKNOWN": 0.38366718027734975,
+      "POWER_ON": 0.6699029126213593,
+      "POWER_OFF": 0.5546558704453441,
+      "BRIGHTNESS": 0.6808510638297872,
+      "COLOR_SET": 0.1414141414141414,
+      "MEDIA_PLAY": 0.5192307692307693,
+      "MEDIA_RESUME": 0.58,
+      "TIME_QUERY": 0.6197183098591549,
+      "DATE_QUERY": 0.6941176470588235,
+      "VOLUME": 0.6221198156682027
+    },
+    "seconds": 255.92893679998815
+  },
+  "parameters": 91338,
+  "model_sha256": "caefa743b0ea7e33b31f6d8a550484122f7c40fe4fdae3aede9a6c98ee38240b",
+  "onnx_bytes": 389243,
+  "epochs": 40,
+  "seconds": 675.5768985999748
+}

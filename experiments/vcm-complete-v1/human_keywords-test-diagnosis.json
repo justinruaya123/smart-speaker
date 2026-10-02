@@ -1,0 +1,12 @@
+{
+  "arm": "human_keywords",
+  "scope": "post-test failure attribution, not model selection",
+  "denominator": 1783,
+  "mutually_exclusive_cascade": {
+    "correct": 1219,
+    "raw_family_error": 206,
+    "family_policy_rejection": 192,
+    "raw_argument_or_guard_error": 98,
+    "finite_value_or_joint_policy_rejection": 68
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "catalog": true,
+  "manifests": {
+    "calibration": true,
+    "dev": true,
+    "test": true,
+    "train": true
+  },
+  "normalization": true
+}

@@ -1,0 +1,29 @@
+{
+  "onnx_max_abs_error": 1.049041748046875e-05,
+  "variable_length_batch_and_padding_parity": true,
+  "absolute_parser_cases": 404,
+  "parser_cases_are_not_spoken_accuracy": true,
+  "finite_numeric_ctc_subthreshold_and_missing_number_cases": true,
+  "reader_not_invoked_after_intent_rejection": true,
+  "ordered_conflicting_cues_rejected": true,
+  "human_speakers_and_hashes_disjoint": true,
+  "auxiliary_train_excludes_human_dev_test": true,
+  "audio_hashes_verified": 35687,
+  "installed_and_previous_results_unchanged": true,
+  "cpu_timing": {
+    "n": 60,
+    "p50_ms": 2.7045999886468053,
+    "p95_ms": 4.290254964143968,
+    "session_load_ms": 19.52749997144565,
+    "threads": 2,
+    "includes": "frontend, chosen intent head, accepted-intent keyword reader, finite numeric graph and typed validation",
+    "excludes": "disk, speech duration, VAD and 400 ms endpoint waiting",
+    "same_preloaded_development_pcm": true
+  },
+  "endpoint_replay": {
+    "n": 60,
+    "partition": "development",
+    "full_historical_test_not_replayed": true,
+    "wake_detector_tested": false
+  }
+}

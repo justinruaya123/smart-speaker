@@ -1,0 +1,42 @@
+{
+  "acceptance_accuracy_measured": false,
+  "active_stage": "train",
+  "active_substage": "baseline development evaluation before first optimization epoch",
+  "baseline_selection_sha256": "5f635fc4fb91bcf379a56c867c4eab8cbb7906587b77c3fa65930bca0b0476be",
+  "baseline_sha256": "298cb2a3cedb9b47fa2dd8b3b451ee42f3ccafbb0dbc447036b67b324c37c289",
+  "compute_budget_snapshot": {
+    "epochs": [],
+    "limits": {
+      "epochs": 200,
+      "seconds": 86400
+    },
+    "seconds": 1571.875
+  },
+  "exit_code": 0,
+  "final_commit_made": false,
+  "freeze_sha256": "dcef945f00bdba4c64abe77f3eb5ee15a0ff333e5d94e42e97f25ec8316b48c2",
+  "installed_artifact_hashes_verified": 20,
+  "observation_basis": "training protocol exists; no baseline-development.json or epoch history yet; active process and compute budget advance",
+  "prepared_metadata_hashes": {
+    "catalog.json": "9beae4f8072561580db885f35911c0d3c75efc14b44a80660de8a80f619a2656",
+    "dev.jsonl": "43c363938ffe3d2bb8fdc3fb1f625b531ff17eaaecc1b04f2cf8998b1ea61673",
+    "global-audit.json": "782862336238997949f8e7045d5a06bbdaa9247fe59668d797e50d6712be77f0",
+    "normalization.json": "fb48f3318752e1d7bf49a9e99855a3f1a10c43a09b119a73806205d935021350",
+    "train.jsonl": "0f1913ee5ad4cc3488af076f7e465e4cdecf2ddd8b59ffc5b553ece63fe48340"
+  },
+  "prepared_recordings": {
+    "dev": 5636,
+    "train": 11272
+  },
+  "protocol_sha256": "43f1aeac6b960efbf3b43187fa919db6d8612de974cda661524b2f3cc7505277",
+  "sealed_command_test_complete": false,
+  "sealed_wake_test_complete": false,
+  "seconds": 611.3255336284637,
+  "source_hashes_verified": 63,
+  "stage": "prepare",
+  "stage_log": ".cache\\pcv-synthetic-v2-repair1\\jobs\\repair-run-20261001\\train.log",
+  "status": "SUCCEEDED",
+  "test_audio_used_for_preparation": false,
+  "time_utc": "2026-10-01T02:16:58.137443+00:00",
+  "training_initialization": "continuation_of_project_trained_semifinal"
+}

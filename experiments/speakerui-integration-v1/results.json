@@ -1,0 +1,132 @@
+{
+  "id": "speakerui-integration-v1",
+  "date": "2026-10-02",
+  "status": "software integration passed; acoustic wake checks failed; model remains unqualified",
+  "protocol": "protocol.json",
+  "model_binding": {
+    "catalog_sha256": "45a848160d853833d83d832952e3ba411a1aea92db14e963c7d7409db83f2a1e",
+    "custom_slots_sha256": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5",
+    "model_sha256": "588f5f44f2b8bca9f68be605bc3a0be2be36159477c6002f21708824503c8421",
+    "normalization_sha256": "245fabf47bcb90f873ee0a226cd40660bb3df8f6a03176206b9989d4558bf589",
+    "schema_sha256": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c"
+  },
+  "packages": {
+    "standalone": {
+      "path": "dist/speaker/integration-v2/smart-speaker-standalone.zip",
+      "sha256": "96235bc5962ad64b2b8ab2bfd46258d01ba752d4d715b7bab4f09becf5267297",
+      "bytes": 8627983
+    },
+    "pi": {
+      "path": "dist/speaker/integration-v2/smart-speaker-pi.zip",
+      "sha256": "3ab1a3c55cbed2d39466af79b028f59d31bf99a68d9724788adce2fa54a55994",
+      "bytes": 8930556
+    }
+  },
+  "receipts": {
+    "wav-parity.json": {
+      "source": ".cache/speakerui-tests/gateway-parity-final.json",
+      "sha256": "d0cf329b6e19fc104f571089f554b44e1dce8634f9d52645f591e49f33cbbab3"
+    },
+    "browser.json": {
+      "source": ".cache/speakerui-tests/browser-final/results.json",
+      "sha256": "8beda1d9386c2b4e4a58efa546c78483dc809b25db57f5a608abe9fd4f1ece81"
+    },
+    "model-update.json": {
+      "source": ".cache/speakerui-tests/hotswap-results.json",
+      "sha256": "4eabb364ab80fe7f31148834f0541aad68422dcb01eeb4a6c5d9806fd1ee6eda"
+    },
+    "wake-silence.json": {
+      "source": ".cache/speakerui-tests/wake-final/results.json",
+      "sha256": "1adab70f6a93c232575a0fe86a9aeb02a12063f78043ce653a3f227377ab3cfe"
+    },
+    "benchmark.json": {
+      "source": ".runtime/packages/3ab1a3c55cbed2d39466af79b028f59d31bf99a68d9724788adce2fa54a55994/results/20261001T213451-799776Z/metrics.json",
+      "sha256": "1748de12c50db7332cde8a0236f068c2b5fbbd880be5d06bd3846e07c7e94688"
+    }
+  },
+  "software": {
+    "python": {
+      "passed": 55,
+      "subtests_passed": 3,
+      "command": ".venv/Scripts/python.exe -m pytest -q -p no:cacheprovider --basetemp .cache/speakerui-tests/regression-complete scripts/test/test_speaker_start.py scripts/test/test_speaker_worker.py scripts/test/test_pcv_final_delivery.py scripts/test/test_pcv_release_workflow.py scripts/test/test_pcv_release_qualification.py --tb=short"
+    },
+    "frontend": {
+      "passed": 84,
+      "failed": 0,
+      "type_errors": 0,
+      "type_warnings": 0,
+      "production_build_passed": true,
+      "publish_command": ".venv/Scripts/python.exe start.py --no-setup --skip-train --benchmarks skip --output dist/speaker/integration-v2",
+      "log": ".cache/speakerui-tests/publish-final.log",
+      "log_sha256": "53405289e04dcabaf7abc13250912d21ca0a69bd253a302c9b3841e2c17083a0"
+    },
+    "fresh_export_setup": {
+      "platform": "Windows x64",
+      "uv_locked_environment": true,
+      "target_local_node_npm_pnpm": true,
+      "compiled_site_served": true,
+      "training_framework_imported": false
+    },
+    "wav_parity": {
+      "correct": 15,
+      "total": 15,
+      "meaning": "CLI, real HTTP/WebSocket runtime and frontend adapter outputs agree, including diagnostic candidate and authoritative rejection; not 15 acoustically correct commands"
+    },
+    "browser": {
+      "real_wav_layout_checks": 2,
+      "typed_intent_fixtures": 18,
+      "failed": 0,
+      "viewports": [
+        [
+          800,
+          480
+        ],
+        [
+          1024,
+          600
+        ]
+      ],
+      "fixture_acoustic_evidence": false
+    },
+    "update": {
+      "restart_passed": true,
+      "same_model_update": true,
+      "ui_and_private_config_unchanged_files": 44,
+      "corrupt_candidate_rejected": true,
+      "previous_model_restarted": true
+    }
+  },
+  "acoustic": {
+    "human_smoke_positives": 13,
+    "human_smoke_negatives": 2,
+    "diagnostic_exact_commands": 10,
+    "diagnostic_negative_errors": 2,
+    "accepted_positive_commands": 0,
+    "policy_enabled": false,
+    "wake": {
+      "male_synthetic_detected": 0,
+      "male_synthetic_n": 1,
+      "female_synthetic_detected": 0,
+      "female_synthetic_n": 1,
+      "leading_silence_seconds": 2,
+      "trailing_silence_seconds": 8,
+      "pure_dead_air_seconds": 10,
+      "dead_air_wake_events": 0,
+      "dead_air_commands": 0,
+      "suite_exit_code": 1,
+      "project_trained_wake": false
+    }
+  },
+  "actions_enabled": false,
+  "installed_artifacts_changed": false,
+  "committed": false,
+  "pushed": false,
+  "limits": [
+    "No physical Raspberry Pi or live microphone measurement.",
+    "macOS/Linux bootstrap paths implemented but not executed on those operating systems.",
+    "Existing research training workflow requires CUDA and bound research caches; clean-room portable training is not established.",
+    "The pretrained wake head missed both constructed positive clips; no threshold tuning or new wake training was performed.",
+    "Typed fixtures prove frontend contract adaptation, not all 18 acoustic intent detections or complete phrase coverage.",
+    "Update test reused the selected model; no new model qualification is implied."
+  ]
+}

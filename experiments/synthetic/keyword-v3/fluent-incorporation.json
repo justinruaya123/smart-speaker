@@ -1,0 +1,32 @@
+{
+  "requested_url": "https://www.kaggle.com/datasets/tommyngx/fluent-speech-corpus",
+  "version": 1,
+  "download_api": "https://www.kaggle.com/api/v1/datasets/download/tommyngx/fluent-speech-corpus?datasetVersionNumber=1",
+  "bytes": 1548762021,
+  "sha256": "1f0de5928db4d53b4a4fd5810974a5f79bcfe8417fb59bea1dae821373d717e9",
+  "seconds": 215.65643260005163,
+  "credentials_used": false,
+  "publisher_splits": {
+    "train": {
+      "n": 23132,
+      "speakers": 77
+    },
+    "valid": {
+      "n": 3118,
+      "speakers": 10
+    },
+    "test": {
+      "n": 3793,
+      "speakers": 10
+    }
+  },
+  "overlapping_audio_hashes_matched": 64,
+  "counts": {
+    "excluded_nontrain_or_held_speaker": 29807,
+    "new_audio_files": 92,
+    "additional_intent_training": 146,
+    "already_present_or_duplicate": 90
+  },
+  "incorporation": "Original local FSC plus additional Kaggle publisher-train utterances with held speakers and hashes excluded. Location/name words are filler; no new semantic classes or test corpus.",
+  "test_speakers_used_for_training": false
+}

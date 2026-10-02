@@ -1,0 +1,14 @@
+{
+  "audio_native_features_verified": 415,
+  "complete": true,
+  "cross_split_pcm_overlap": 0,
+  "cross_split_speaker_overlap": 0,
+  "missing": [],
+  "no_acoustic_inference": true,
+  "per_engine": {
+    "qwen": 415
+  },
+  "planned": 415,
+  "present": 415,
+  "within_test_pcm_duplicates": 0
+}

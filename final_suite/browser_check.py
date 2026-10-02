@@ -43,7 +43,7 @@ def check() -> dict:
         };}''', assets)
         bundle = (ROOT / 'visualizer/kernel_base64.mjs').read_text().replace(
             'export default', 'const embeddedKernel =') + '\n'
-        for name in ['core.mjs', 'scene.mjs', 'app.mjs']:
+        for name in ['core.mjs', 'scene.mjs', 'evidence.mjs', 'app.mjs']:
             source = (ROOT / 'visualizer' / name).read_text()
             source = re.sub(r'^import .*?;\n', '', source, flags=re.MULTILINE)
             source = re.sub(r'\bexport (?=(?:async )?(?:function|class|const))', '', source)

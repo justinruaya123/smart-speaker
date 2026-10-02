@@ -1,0 +1,80 @@
+{
+  "acquisition_sha256": "994798b431f9d376f70fc74f2e4758a2d5fa630d384200131f5481578955cb0a",
+  "annotation_version": "pcv-release-train-v1-annotation-1",
+  "bindings": {
+    ".cache\\pcv-release-train-v1\\prepared\\normalization.json": "245fabf47bcb90f873ee0a226cd40660bb3df8f6a03176206b9989d4558bf589",
+    ".cache\\pcv-source-refresh-v1\\audited-rows.jsonl": "7017a509ebd480e9a24e81c38a4f8d26bf4d71047c7b45aa6a71ca8eac10ae52",
+    "data\\raw\\cmudict\\cmudict.dict": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+    "experiments\\pcv-b1-three-engine-v1\\prompts.json": "9133e51e56a1a9227180706e3b2c5bdcaa2daf36e9abf7b386e299c9b3723b0f",
+    "experiments\\pcv-release-train-v1\\annotation-approval.json": "33d1345c85f31eb1aaea223d791b61322abd7c593146aca008120788fff89c54",
+    "experiments\\pcv-release-train-v1\\annotation-exclusions.json": "c2f43260341bfa026837e4304d3bab3c5fcfd7f84a434d5ef1f3837626800be1",
+    "experiments\\pcv-release-train-v1\\baseline.json": "76fdef1eed53d1f3fd1d810cf3f62af0ab2738b14edd5763cef249884441533c",
+    "experiments\\pcv-release-train-v1\\catalog.json": "45a848160d853833d83d832952e3ba411a1aea92db14e963c7d7409db83f2a1e",
+    "experiments\\pcv-release-train-v1\\coverage.json": "48bad225971d026d2e73eed6fbde6f11800bd56cbb67249b8778877989751d12",
+    "experiments\\pcv-release-train-v1\\custom-slots.json": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5",
+    "experiments\\pcv-release-train-v1\\data-audit.json": "2f28fa71729a8b25a1c785c16012319f41af0468183d0e67078a82bc4c906b05",
+    "experiments\\pcv-release-train-v1\\preparation-protocol.json": "98d675be2735582f69e73aaef6ed322dff64087dab2277c6d7869e33502cbe84",
+    "experiments\\pcv-release-train-v1\\preparation-verification.json": "7413b2a8436d1c8c70440a85772c92e52fff4f130c082425236c8174fdd4cc04",
+    "experiments\\pcv-release-train-v1\\training-label-review.json": "e1c0fba7d11b87983aa0499669ec2f10c3949e3fdf9304c4c32484f69490a80d",
+    "experiments\\pcv-source-refresh-v1\\acquisition-complete.json": "994798b431f9d376f70fc74f2e4758a2d5fa630d384200131f5481578955cb0a",
+    "experiments\\pcv-synthetic-v2\\lexicon.json": "ea132cbd2bdcf3d66063d164674c64e071f4b551506995bd862ba5a35f38ba53",
+    "scripts\\runtime\\pcv_schema.py": "603ec943eae1e7330dd2eb82f05bbd7c206382ecf13c0fb8f8801a7ecd0e134c",
+    "scripts\\test\\test_pcv_release_prepare.py": "ac6158289dcf4ba48fce0498d56cb82a105c2d593a3b859c8eb726dcbd882992",
+    "scripts\\train\\pcv_public_data.py": "70bc37800c491f4c6b6cc8edf4292e0ab0aef745703e83df15997abd330f81f5",
+    "scripts\\train\\pcv_release_prepare.py": "4143d0618aa61afceec69be956949691792b3ed0f80e1f43e748f328e1420047",
+    "scripts\\train\\pcv_updated_prepare.py": "a5578935c8c485fa2d3f80eaf0d5dea498e1847ce0b793c89f91374a901cc4d8",
+    "vcm\\frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+  },
+  "frontend": {
+    "bins": 40,
+    "centered": false,
+    "fft": 512,
+    "floor": 1e-08,
+    "high_hz": 7600,
+    "hop": 160,
+    "low_hz": 20,
+    "sample_rate": 16000,
+    "version": 1,
+    "window": 400
+  },
+  "manifests": {
+    "calibration": {
+      "path": ".cache\\pcv-release-train-v1\\prepared\\calibration.jsonl",
+      "rows": 10594,
+      "sha256": "44f7503ffcabc447fdc99d6f811016158aaa8e35eac86a27b9c984d510519cbd"
+    },
+    "dev": {
+      "path": ".cache\\pcv-release-train-v1\\prepared\\dev.jsonl",
+      "rows": 8797,
+      "sha256": "026160491c06752ffce0f52dd20566032a61a73638dda88c05e11a950a0750d2"
+    },
+    "holdout": {
+      "path": ".cache\\pcv-release-train-v1\\prepared\\holdout.jsonl",
+      "rows": 196,
+      "sha256": "c3c79fbb1e6bc04b9de0752ab854a16bcab6d0c126d2b3883619592cfca956f4"
+    },
+    "test": {
+      "path": ".cache\\pcv-release-train-v1\\prepared\\test.jsonl",
+      "rows": 4418,
+      "sha256": "c05611e30be925aa0930861e95bf88d6c9819cc802d8d7a52872c4bd846baf61"
+    },
+    "train": {
+      "path": ".cache\\pcv-release-train-v1\\prepared\\train.jsonl",
+      "rows": 56681,
+      "sha256": "0f8600bad8a60ff8fd4754fc8a584b424e088c70c48a3262e83a32e527707882"
+    }
+  },
+  "raw_feature_reuse_bindings": {
+    ".cache\\pcv-updated-voice-v1\\prepared\\calibration.jsonl": "af184396db9aaf109f1b0f03fb9a35ee7548ea98c44eab8c56c2e5a9b7a3dbce",
+    ".cache\\pcv-updated-voice-v1\\prepared\\dev.jsonl": "fc7537b2e7b6df360457aba7529397a4f52980ffe541ad96712e6172dfef2ae5",
+    ".cache\\pcv-updated-voice-v1\\prepared\\holdout.jsonl": "6f43bf471698f84bbcafc159b066bc70b6e4c945d0e9d7c38699a539a26e23d0",
+    ".cache\\pcv-updated-voice-v1\\prepared\\normalization.json": "31713f9a50a5e9bab0906af3c64d0f910be6a7c8fc57b94c72bf3bee654673ee",
+    ".cache\\pcv-updated-voice-v1\\prepared\\test.jsonl": "f32ff78f177db0e43704393c230af502568cf435e64695a0fe2a19d62446c7b1",
+    ".cache\\pcv-updated-voice-v1\\prepared\\train.jsonl": "60ef443a3f2e48bdbb30fc2848b515952016b799ddfd78fa1e07a6315e4e38f5",
+    "experiments\\pcv-updated-voice-v1\\data-freeze.json": "68bbb4d6e7b3e759e2d1f1dfef1e4c8adfa3d11a59f660672871acafac53527e",
+    "experiments\\pcv-updated-voice-v1\\training-protocol.json": "157655e97029fbd4708241144f01dedd74c1a15496ef631eb9c4e2e073c99be2"
+  },
+  "source_revision": "25111444af3adff7588d86ab27c304bb080895cf",
+  "source_sha256": "7017a509ebd480e9a24e81c38a4f8d26bf4d71047c7b45aa6a71ca8eac10ae52",
+  "test_inference_accessed": false
+}

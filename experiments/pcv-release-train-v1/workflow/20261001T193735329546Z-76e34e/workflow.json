@@ -1,0 +1,146 @@
+{
+  "deck": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\dist\\pcv-release-v1\\20261001T193735329546Z-76e34e\\me2-diagnostic.pptx",
+  "deck_sha256": "6952942bb3d5c3e7b3521a5aa491c89ea5fe3f10b902279c846dfce065de5179",
+  "invocation": "20261001T193735329546Z-76e34e",
+  "package": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\dist\\pcv-release-v1\\20261001T193735329546Z-76e34e\\pcv-diagnostic.zip",
+  "package_sha256": "511d293c98004c7244bf36adea426d0de6b7b25a3de59e9fac410a8e9ffc0bfb",
+  "pdf": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\dist\\pcv-release-v1\\20261001T193735329546Z-76e34e\\me2-diagnostic.pdf",
+  "pdf_sha256": "eb5352524d014509b1a9d63c7446a6451589b4708c00f49d2430cc186c3b7bb7",
+  "physical_pi_measured": false,
+  "qualified": false,
+  "receipt": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\experiments\\pcv-release-train-v1\\workflow\\20261001T193735329546Z-76e34e\\workflow.json",
+  "release_sha256": "51d9f1dfb3a6316dcb47420694046a9f86002c911b88ff7a3a4530e8956d4961",
+  "replay_directory": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-release-v1\\workflow\\20261001T193735329546Z-76e34e\\replay",
+  "reproduction": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\experiments\\pcv-release-train-v1\\workflow\\20261001T193735329546Z-76e34e\\reproduction.json",
+  "run_id": "release-v1",
+  "schema_version": 1,
+  "selection_sha256": "efe92043f3c48fa940d4d4a8e32cbb002fbee52b0a2dc6f27d31d2f8380c28c5",
+  "skip_train": true,
+  "source_receipt": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\experiments\\pcv-source-refresh-v1\\acquisition-complete.json",
+  "source_refresh": "Skipped: preserve the training-bound revision; no current API data rebound",
+  "stages": [
+    {
+      "finished_utc": "2026-10-01T19:37:35.348716+00:00",
+      "name": "verify-frozen-selection",
+      "started_utc": "2026-10-01T19:37:35.331054+00:00",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-release-v1\\workflow\\20261001T193735329546Z-76e34e\\pytest",
+        "scripts/test/test_pcv_release_data.py",
+        "scripts/test/test_pcv_release_prepare.py",
+        "scripts/test/test_pcv_release_training.py",
+        "scripts/test/test_pcv_release_pooling.py",
+        "scripts/test/test_pcv_release_qualification.py",
+        "scripts/test/test_pcv_final_delivery.py",
+        "scripts/test/test_pcv_release_workflow.py"
+      ],
+      "finished_utc": "2026-10-01T19:37:38.604865+00:00",
+      "log": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-release-v1\\workflow\\20261001T193735329546Z-76e34e\\software-tests.log",
+      "name": "software-tests",
+      "returncode": 0,
+      "started_utc": "2026-10-01T19:37:35.349752+00:00",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.test.pcv_release_qualification",
+        "--run-id",
+        "release-v1"
+      ],
+      "finished_utc": "2026-10-01T19:37:40.275306+00:00",
+      "log": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-release-v1\\workflow\\20261001T193735329546Z-76e34e\\qualification-or-locked-replay.log",
+      "name": "qualification-or-locked-replay",
+      "returncode": 0,
+      "started_utc": "2026-10-01T19:37:38.604865+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-01T19:37:40.304960+00:00",
+      "name": "verify-release",
+      "started_utc": "2026-10-01T19:37:40.276524+00:00",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "C:\\Users\\SCL-Jus\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\scripts\\report\\pcv_release_slides.mjs",
+        "--summary",
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\experiments\\pcv-release-train-v1\\runs\\release-v1\\summary.json",
+        "--output",
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\dist\\pcv-release-v1\\20261001T193735329546Z-76e34e",
+        "--name",
+        "me2-diagnostic"
+      ],
+      "finished_utc": "2026-10-01T19:37:45.231988+00:00",
+      "log": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-release-v1\\workflow\\20261001T193735329546Z-76e34e\\deck.log",
+      "name": "deck",
+      "returncode": 0,
+      "started_utc": "2026-10-01T19:37:40.307124+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-01T19:37:45.346940+00:00",
+      "name": "verify-prepackage-bindings",
+      "started_utc": "2026-10-01T19:37:45.318051+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-01T19:37:47.852983+00:00",
+      "name": "package",
+      "started_utc": "2026-10-01T19:37:45.348076+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-01T19:37:48.211343+00:00",
+      "name": "package-integrity",
+      "started_utc": "2026-10-01T19:37:47.852983+00:00",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-release-v1\\workflow\\20261001T193735329546Z-76e34e\\package-smoke\\pi_test.py",
+        "--verify-only"
+      ],
+      "finished_utc": "2026-10-01T19:37:48.617617+00:00",
+      "log": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-release-v1\\workflow\\20261001T193735329546Z-76e34e\\packaged-verify.log",
+      "name": "packaged-verify",
+      "returncode": 0,
+      "started_utc": "2026-10-01T19:37:48.211866+00:00",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-release-v1\\workflow\\20261001T193735329546Z-76e34e\\package-smoke\\pi_test.py",
+        "--output",
+        "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-release-v1\\workflow\\20261001T193735329546Z-76e34e\\replay"
+      ],
+      "finished_utc": "2026-10-01T19:37:49.677697+00:00",
+      "log": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\pcv-release-v1\\workflow\\20261001T193735329546Z-76e34e\\packaged-smoke-replay.log",
+      "name": "packaged-smoke-replay",
+      "returncode": 0,
+      "started_utc": "2026-10-01T19:37:48.618121+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-01T19:37:49.705955+00:00",
+      "name": "verify-final-bindings",
+      "started_utc": "2026-10-01T19:37:49.679203+00:00",
+      "status": "passed"
+    }
+  ],
+  "status": "diagnostic_complete",
+  "training_mode": "skipped_bound_selection"
+}

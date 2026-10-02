@@ -1,0 +1,975 @@
+{
+  "commands": [
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "entity_id": "media.main",
+        "intent": "MEDIA_PLAY",
+        "track_id": "track.bts_butter"
+      },
+      "expected_detected_intent": "MEDIA_PLAY",
+      "expected_keyword_cues": [
+        "play",
+        "butter"
+      ],
+      "expected_parameters": {
+        "entity_id": "media.main",
+        "track_id": "track.bts_butter"
+      },
+      "id": "V2-UC01-SONG-01-TITLE",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "V2-UC01-SONG-01-TITLE",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; play butter",
+      "text": "play butter",
+      "use_case": "UC-01"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "entity_id": "media.main",
+        "intent": "MEDIA_PLAY",
+        "track_id": "track.bts_dynamite"
+      },
+      "expected_detected_intent": "MEDIA_PLAY",
+      "expected_keyword_cues": [
+        "play",
+        "dynamite",
+        "by",
+        "bts"
+      ],
+      "expected_parameters": {
+        "entity_id": "media.main",
+        "track_id": "track.bts_dynamite"
+      },
+      "id": "V2-UC01-SONG-00-ARTIST",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "V2-UC01-SONG-00-ARTIST",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; play dynamite by BTS",
+      "text": "play dynamite by BTS",
+      "use_case": "UC-01"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "entity_id": "media.main",
+        "intent": "MEDIA_PLAY",
+        "track_id": "track.bts_stay"
+      },
+      "expected_detected_intent": "MEDIA_PLAY",
+      "expected_keyword_cues": [
+        "play",
+        "stay",
+        "by",
+        "bts"
+      ],
+      "expected_parameters": {
+        "entity_id": "media.main",
+        "track_id": "track.bts_stay"
+      },
+      "id": "V2-UC01-SONG-02-ARTIST",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "V2-UC01-SONG-02-ARTIST",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; play stay by BTS",
+      "text": "play stay by BTS",
+      "use_case": "UC-01"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "entity_id": "media.main",
+        "intent": "MEDIA_PLAY",
+        "track_id": "track.blackpink_stay"
+      },
+      "expected_detected_intent": "MEDIA_PLAY",
+      "expected_keyword_cues": [
+        "play",
+        "stay",
+        "by",
+        "blackpink"
+      ],
+      "expected_parameters": {
+        "entity_id": "media.main",
+        "track_id": "track.blackpink_stay"
+      },
+      "id": "V2-UC01-SONG-03-ARTIST",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "V2-UC01-SONG-03-ARTIST",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; play stay by Blackpink",
+      "text": "play stay by Blackpink",
+      "use_case": "UC-01"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "intent": "TIME_QUERY",
+        "timezone": "Asia/Manila"
+      },
+      "expected_detected_intent": "TIME_QUERY",
+      "expected_keyword_cues": [
+        "what",
+        "time",
+        "is",
+        "it"
+      ],
+      "expected_parameters": {
+        "timezone": "Asia/Manila"
+      },
+      "id": "UC02-TIME-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC02-TIME-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; what time is it",
+      "text": "what time is it",
+      "use_case": "UC-02"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "intent": "DATE_QUERY",
+        "timezone": "Asia/Manila"
+      },
+      "expected_detected_intent": "DATE_QUERY",
+      "expected_keyword_cues": [
+        "what",
+        "is",
+        "the",
+        "date"
+      ],
+      "expected_parameters": {
+        "timezone": "Asia/Manila"
+      },
+      "id": "UC02-DATE-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC02-DATE-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; what is the date",
+      "text": "what is the date",
+      "use_case": "UC-02"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "intent": "WEATHER_QUERY",
+        "location_id": "location.home",
+        "period": "today"
+      },
+      "expected_detected_intent": "WEATHER_QUERY",
+      "expected_keyword_cues": [
+        "what",
+        "is",
+        "the",
+        "weather",
+        "today"
+      ],
+      "expected_parameters": {
+        "location_id": "location.home",
+        "period": "today"
+      },
+      "id": "UC02-WEATHER-B",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC02-WEATHER-B",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; what is the weather today",
+      "text": "what is the weather today",
+      "use_case": "UC-02"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "entity_id": "light.kitchen",
+        "intent": "POWER_ON"
+      },
+      "expected_detected_intent": "POWER_ON",
+      "expected_keyword_cues": [
+        "turn",
+        "on",
+        "kitchen",
+        "lamp"
+      ],
+      "expected_parameters": {
+        "entity_id": "light.kitchen"
+      },
+      "id": "UC03-ON-K-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC03-ON-K-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; turn on kitchen lamp",
+      "text": "turn on kitchen lamp",
+      "use_case": "UC-03"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "entity_id": "light.kitchen",
+        "intent": "POWER_OFF"
+      },
+      "expected_detected_intent": "POWER_OFF",
+      "expected_keyword_cues": [
+        "turn",
+        "off",
+        "kitchen",
+        "lamp"
+      ],
+      "expected_parameters": {
+        "entity_id": "light.kitchen"
+      },
+      "id": "UC03-OFF-K-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC03-OFF-K-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; turn off kitchen lamp",
+      "text": "turn off kitchen lamp",
+      "use_case": "UC-03"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "entity_id": "light.bedroom",
+        "intent": "POWER_ON"
+      },
+      "expected_detected_intent": "POWER_ON",
+      "expected_keyword_cues": [
+        "turn",
+        "on",
+        "bedroom",
+        "lamp"
+      ],
+      "expected_parameters": {
+        "entity_id": "light.bedroom"
+      },
+      "id": "UC03-ON-B-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC03-ON-B-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; turn on bedroom lamp",
+      "text": "turn on bedroom lamp",
+      "use_case": "UC-03"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "entity_id": "light.kitchen",
+        "intent": "BRIGHTNESS",
+        "value": 0
+      },
+      "expected_detected_intent": "BRIGHTNESS",
+      "expected_keyword_cues": [
+        "set",
+        "kitchen",
+        "lamp",
+        "to",
+        "zero",
+        "percent"
+      ],
+      "expected_parameters": {
+        "entity_id": "light.kitchen",
+        "value": 0
+      },
+      "id": "UC04-BRI-K-000-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC04-BRI-K-000-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; set kitchen lamp to zero percent",
+      "text": "set kitchen lamp to zero percent",
+      "use_case": "UC-04"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "entity_id": "light.kitchen",
+        "intent": "BRIGHTNESS",
+        "value": 100
+      },
+      "expected_detected_intent": "BRIGHTNESS",
+      "expected_keyword_cues": [
+        "set",
+        "kitchen",
+        "lamp",
+        "to",
+        "one",
+        "hundred",
+        "percent"
+      ],
+      "expected_parameters": {
+        "entity_id": "light.kitchen",
+        "value": 100
+      },
+      "id": "UC04-BRI-K-100-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC04-BRI-K-100-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; set kitchen lamp to one hundred percent",
+      "text": "set kitchen lamp to one hundred percent",
+      "use_case": "UC-04"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "entity_id": "light.kitchen",
+        "intent": "BRIGHTNESS",
+        "value": 37
+      },
+      "expected_detected_intent": "BRIGHTNESS",
+      "expected_keyword_cues": [
+        "set",
+        "kitchen",
+        "lamp",
+        "to",
+        "thirty",
+        "seven",
+        "percent"
+      ],
+      "expected_parameters": {
+        "entity_id": "light.kitchen",
+        "value": 37
+      },
+      "id": "UC04-BRI-K-037-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC04-BRI-K-037-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; set kitchen lamp to thirty seven percent",
+      "text": "set kitchen lamp to thirty seven percent",
+      "use_case": "UC-04"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "color": "cyan",
+        "entity_id": "light.kitchen",
+        "intent": "COLOR_SET"
+      },
+      "expected_detected_intent": "COLOR_SET",
+      "expected_keyword_cues": [
+        "set",
+        "kitchen",
+        "lamp",
+        "to",
+        "cyan"
+      ],
+      "expected_parameters": {
+        "color": "cyan",
+        "entity_id": "light.kitchen"
+      },
+      "id": "UC04-REJ-16",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC04-REJ-16",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; set kitchen lamp to cyan",
+      "supersedes_reference_sha256": "4472b2321b22e01fd723e1c58ff53d1e3728da8b2b14539f0404335cb66d935c",
+      "text": "set kitchen lamp to cyan",
+      "use_case": "UC-04"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "color": "red",
+        "entity_id": "light.kitchen",
+        "intent": "COLOR_SET"
+      },
+      "expected_detected_intent": "COLOR_SET",
+      "expected_keyword_cues": [
+        "set",
+        "kitchen",
+        "lamp",
+        "to",
+        "red"
+      ],
+      "expected_parameters": {
+        "color": "red",
+        "entity_id": "light.kitchen"
+      },
+      "id": "UC04-COLOR-K-RED",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC04-COLOR-K-RED",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; set kitchen lamp to red",
+      "text": "set kitchen lamp to red",
+      "use_case": "UC-04"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "duration_seconds": 60,
+        "intent": "TIMER_SET",
+        "timer_id": "timer.primary"
+      },
+      "expected_detected_intent": "TIMER_SET",
+      "expected_keyword_cues": [
+        "set",
+        "a",
+        "timer",
+        "for",
+        "one",
+        "minute"
+      ],
+      "expected_parameters": {
+        "duration_seconds": 60,
+        "timer_id": "timer.primary"
+      },
+      "id": "UC05-SET-0060-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC05-SET-0060-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; set a timer for one minute",
+      "text": "set a timer for one minute",
+      "use_case": "UC-05"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "duration_seconds": 300,
+        "intent": "TIMER_SET",
+        "timer_id": "timer.primary"
+      },
+      "expected_detected_intent": "TIMER_SET",
+      "expected_keyword_cues": [
+        "set",
+        "a",
+        "timer",
+        "for",
+        "five",
+        "minutes"
+      ],
+      "expected_parameters": {
+        "duration_seconds": 300,
+        "timer_id": "timer.primary"
+      },
+      "id": "UC05-SET-0300-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC05-SET-0300-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; set a timer for five minutes",
+      "text": "set a timer for five minutes",
+      "use_case": "UC-05"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "duration_seconds": 7200,
+        "intent": "TIMER_SET",
+        "timer_id": "timer.primary"
+      },
+      "expected_detected_intent": "TIMER_SET",
+      "expected_keyword_cues": [
+        "set",
+        "a",
+        "timer",
+        "for",
+        "two",
+        "hours"
+      ],
+      "expected_parameters": {
+        "duration_seconds": 7200,
+        "timer_id": "timer.primary"
+      },
+      "id": "UC05-REJ-15",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC05-REJ-15",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; set a timer for two hours",
+      "supersedes_reference_sha256": "662fccc880d775a4ffca46401495d0611c807d118a9fdce1725e84397b659d01",
+      "text": "set a timer for two hours",
+      "use_case": "UC-05"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "alarm_id": "alarm.primary",
+        "intent": "ALARM_SET",
+        "repeat": "once",
+        "time_local": "06:30",
+        "timezone": "Asia/Manila"
+      },
+      "expected_detected_intent": "ALARM_SET",
+      "expected_keyword_cues": [
+        "set",
+        "an",
+        "alarm",
+        "for",
+        "six",
+        "thirty",
+        "a",
+        "m"
+      ],
+      "expected_parameters": {
+        "alarm_id": "alarm.primary",
+        "repeat": "once",
+        "time_local": "06:30",
+        "timezone": "Asia/Manila"
+      },
+      "id": "UC06-SET-0630-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC06-SET-0630-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; set an alarm for six thirty a m",
+      "text": "set an alarm for six thirty a m",
+      "use_case": "UC-06"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "alarm_id": "alarm.primary",
+        "intent": "ALARM_SET",
+        "repeat": "once",
+        "time_local": "18:00",
+        "timezone": "Asia/Manila"
+      },
+      "expected_detected_intent": "ALARM_SET",
+      "expected_keyword_cues": [
+        "set",
+        "an",
+        "alarm",
+        "for",
+        "six",
+        "p",
+        "m"
+      ],
+      "expected_parameters": {
+        "alarm_id": "alarm.primary",
+        "repeat": "once",
+        "time_local": "18:00",
+        "timezone": "Asia/Manila"
+      },
+      "id": "UC06-SET-1800-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC06-SET-1800-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; set an alarm for six p m",
+      "text": "set an alarm for six p m",
+      "use_case": "UC-06"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "alarm_id": "alarm.primary",
+        "intent": "ALARM_CANCEL"
+      },
+      "expected_detected_intent": "ALARM_CANCEL",
+      "expected_keyword_cues": [
+        "cancel",
+        "alarm"
+      ],
+      "expected_parameters": {
+        "alarm_id": "alarm.primary"
+      },
+      "id": "UC06-CANCEL-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC06-CANCEL-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; cancel alarm",
+      "text": "cancel alarm",
+      "use_case": "UC-06"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "celsius": 21,
+        "entity_id": "climate.home",
+        "intent": "TEMPERATURE_SET"
+      },
+      "expected_detected_intent": "TEMPERATURE_SET",
+      "expected_keyword_cues": [
+        "set",
+        "thermostat",
+        "to",
+        "twenty",
+        "one",
+        "degrees",
+        "celsius"
+      ],
+      "expected_parameters": {
+        "celsius": 21,
+        "entity_id": "climate.home"
+      },
+      "id": "UC07-ABS-21",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC07-ABS-21",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; set thermostat to twenty one degrees celsius",
+      "text": "set thermostat to twenty one degrees celsius",
+      "use_case": "UC-07"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "delta_celsius": 2,
+        "entity_id": "climate.home",
+        "intent": "TEMPERATURE_DELTA"
+      },
+      "expected_detected_intent": "TEMPERATURE_DELTA",
+      "expected_keyword_cues": [
+        "increase",
+        "thermostat",
+        "by",
+        "two",
+        "degrees",
+        "celsius"
+      ],
+      "expected_parameters": {
+        "delta_celsius": 2,
+        "entity_id": "climate.home"
+      },
+      "id": "UC07-DELTA-P2",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC07-DELTA-P2",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; increase thermostat by two degrees celsius",
+      "text": "increase thermostat by two degrees celsius",
+      "use_case": "UC-07"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "delta_celsius": -1,
+        "entity_id": "climate.home",
+        "intent": "TEMPERATURE_DELTA"
+      },
+      "expected_detected_intent": "TEMPERATURE_DELTA",
+      "expected_keyword_cues": [
+        "decrease",
+        "thermostat",
+        "by",
+        "one",
+        "degree",
+        "celsius"
+      ],
+      "expected_parameters": {
+        "delta_celsius": -1,
+        "entity_id": "climate.home"
+      },
+      "id": "UC07-DELTA-M1",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC07-DELTA-M1",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; decrease thermostat by one degree celsius",
+      "text": "decrease thermostat by one degree celsius",
+      "use_case": "UC-07"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "entity_id": "media.main",
+        "intent": "MEDIA_PAUSE"
+      },
+      "expected_detected_intent": "MEDIA_PAUSE",
+      "expected_keyword_cues": [
+        "pause",
+        "music"
+      ],
+      "expected_parameters": {
+        "entity_id": "media.main"
+      },
+      "id": "UC08-PAUSE-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC08-PAUSE-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; pause music",
+      "text": "pause music",
+      "use_case": "UC-08"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "entity_id": "media.main",
+        "intent": "MEDIA_RESUME"
+      },
+      "expected_detected_intent": "MEDIA_RESUME",
+      "expected_keyword_cues": [
+        "resume",
+        "music"
+      ],
+      "expected_parameters": {
+        "entity_id": "media.main"
+      },
+      "id": "UC08-RESUME-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC08-RESUME-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; resume music",
+      "text": "resume music",
+      "use_case": "UC-08"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "entity_id": "media.main",
+        "intent": "MEDIA_NEXT"
+      },
+      "expected_detected_intent": "MEDIA_NEXT",
+      "expected_keyword_cues": [
+        "next",
+        "track"
+      ],
+      "expected_parameters": {
+        "entity_id": "media.main"
+      },
+      "id": "UC08-NEXT-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC08-NEXT-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; next track",
+      "text": "next track",
+      "use_case": "UC-08"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "entity_id": "media.main",
+        "intent": "VOLUME_ABSOLUTE",
+        "value": 0
+      },
+      "expected_detected_intent": "VOLUME_ABSOLUTE",
+      "expected_keyword_cues": [
+        "set",
+        "volume",
+        "to",
+        "zero",
+        "percent"
+      ],
+      "expected_parameters": {
+        "entity_id": "media.main",
+        "value": 0
+      },
+      "id": "UC08-VOL-ABS-000-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC08-VOL-ABS-000-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; set volume to zero percent",
+      "text": "set volume to zero percent",
+      "use_case": "UC-08"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "entity_id": "media.main",
+        "intent": "VOLUME_ABSOLUTE",
+        "value": 100
+      },
+      "expected_detected_intent": "VOLUME_ABSOLUTE",
+      "expected_keyword_cues": [
+        "set",
+        "volume",
+        "to",
+        "one",
+        "hundred",
+        "percent"
+      ],
+      "expected_parameters": {
+        "entity_id": "media.main",
+        "value": 100
+      },
+      "id": "UC08-VOL-ABS-100-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC08-VOL-ABS-100-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; set volume to one hundred percent",
+      "text": "set volume to one hundred percent",
+      "use_case": "UC-08"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "delay_seconds": 60,
+        "intent": "REMINDER_SET",
+        "reminder_id": "reminder.timer"
+      },
+      "expected_detected_intent": "REMINDER_SET",
+      "expected_keyword_cues": [
+        "set",
+        "a",
+        "reminder",
+        "for",
+        "one",
+        "minute"
+      ],
+      "expected_parameters": {
+        "delay_seconds": 60,
+        "reminder_id": "reminder.timer"
+      },
+      "id": "V2-UC09-REM-MINUTE-01",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "V2-UC09-REM-MINUTE-01",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; set a reminder for one minute",
+      "text": "set a reminder for one minute",
+      "use_case": "UC-09"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "delay_seconds": 7200,
+        "intent": "REMINDER_SET",
+        "reminder_id": "reminder.timer"
+      },
+      "expected_detected_intent": "REMINDER_SET",
+      "expected_keyword_cues": [
+        "set",
+        "a",
+        "reminder",
+        "for",
+        "two",
+        "hours"
+      ],
+      "expected_parameters": {
+        "delay_seconds": 7200,
+        "reminder_id": "reminder.timer"
+      },
+      "id": "V2-UC09-REM-HOURS-02",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "V2-UC09-REM-HOURS-02",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; set a reminder for two hours",
+      "text": "set a reminder for two hours",
+      "use_case": "UC-09"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "intent": "REMINDER_SET",
+        "reminder_id": "reminder.timer",
+        "time_local": "12:00",
+        "timezone": "Asia/Manila"
+      },
+      "expected_detected_intent": "REMINDER_SET",
+      "expected_keyword_cues": [
+        "set",
+        "a",
+        "reminder",
+        "at",
+        "twelve",
+        "p",
+        "m"
+      ],
+      "expected_parameters": {
+        "reminder_id": "reminder.timer",
+        "time_local": "12:00",
+        "timezone": "Asia/Manila"
+      },
+      "id": "V2-UC09-CLOCK-1200",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "V2-UC09-CLOCK-1200",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; set a reminder at twelve p m",
+      "text": "set a reminder at twelve p m",
+      "use_case": "UC-09"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "contact_id": "contact.alex_kim",
+        "intent": "CALL_START"
+      },
+      "expected_detected_intent": "CALL_START",
+      "expected_keyword_cues": [
+        "call",
+        "alex",
+        "kim"
+      ],
+      "expected_parameters": {
+        "contact_id": "contact.alex_kim"
+      },
+      "id": "UC10-CALL-ALEX-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC10-CALL-ALEX-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; call alex kim",
+      "text": "call alex kim",
+      "use_case": "UC-10"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "contact_id": "contact.jamie_cruz",
+        "intent": "CALL_START"
+      },
+      "expected_detected_intent": "CALL_START",
+      "expected_keyword_cues": [
+        "call",
+        "jamie",
+        "cruz"
+      ],
+      "expected_parameters": {
+        "contact_id": "contact.jamie_cruz"
+      },
+      "id": "UC10-CALL-JAMIE-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC10-CALL-JAMIE-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; call jamie cruz",
+      "text": "call jamie cruz",
+      "use_case": "UC-10"
+    },
+    {
+      "critical_zero_accept": false,
+      "expected_command": {
+        "contact_id": "contact.alex_kim",
+        "intent": "MESSAGE_SEND",
+        "message_id": "message.on_my_way"
+      },
+      "expected_detected_intent": "MESSAGE_SEND",
+      "expected_keyword_cues": [
+        "message",
+        "alex",
+        "kim",
+        "i",
+        "am",
+        "on",
+        "my",
+        "way"
+      ],
+      "expected_parameters": {
+        "contact_id": "contact.alex_kim",
+        "message_id": "message.on_my_way"
+      },
+      "id": "UC10-MSG-ALEX-WAY-A",
+      "keyword_cues_are_reference_only": true,
+      "parent_id": "UC10-MSG-ALEX-WAY-A",
+      "phase": 1,
+      "reference_class": "supported_positive",
+      "spoken_sequence": "Hey Jarvis; pause until ready; message alex kim i am on my way",
+      "text": "message alex kim i am on my way",
+      "use_case": "UC-10"
+    }
+  ],
+  "model_outputs": "Intent plus exact typed parameters; keyword cues are an explanation, not a transcription output",
+  "selection": "Fixed before v2 fitting/test, by user use-case/parameter coverage; no observed success selection",
+  "version": "pcv-delivery-v1"
+}

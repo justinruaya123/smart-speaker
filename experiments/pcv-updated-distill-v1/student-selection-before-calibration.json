@@ -1,0 +1,79 @@
+{
+  "arms": {
+    "distilled": {
+      "arm": "distilled",
+      "checkpoint": ".cache\\pcv-updated-distill-v1\\student-distilled\\epoch-016.pt",
+      "checkpoint_sha256": "baf795eecba9fbf1f432bba4beb239a7630a33588e14d47710df1fff79bb672a",
+      "development": {
+        "human": {
+          "accepted": 210,
+          "exact": 126,
+          "false_accept_rate": 0.6984126984126984,
+          "n": 231,
+          "negative_errors": 44,
+          "negative_n": 63,
+          "positive_n": 168,
+          "precision": 0.6,
+          "recall": 0.75
+        },
+        "synthetic": {
+          "accepted": 108,
+          "exact": 106,
+          "false_accept_rate": null,
+          "n": 108,
+          "negative_errors": 0,
+          "negative_n": 0,
+          "positive_n": 108,
+          "precision": 0.9814814814814815,
+          "recall": 0.9814814814814815
+        }
+      },
+      "epoch": 16,
+      "key": [
+        0.8657407407407407,
+        -44,
+        -16
+      ],
+      "test_inference_accessed": false
+    },
+    "hard": {
+      "arm": "hard",
+      "checkpoint": ".cache\\pcv-updated-distill-v1\\student-hard\\epoch-008.pt",
+      "checkpoint_sha256": "c5ea93a236488a7d3f3524abfc061575f4bd0ae9a051ad6a64054acb43d2f2aa",
+      "development": {
+        "human": {
+          "accepted": 209,
+          "exact": 130,
+          "false_accept_rate": 0.6825396825396826,
+          "n": 231,
+          "negative_errors": 43,
+          "negative_n": 63,
+          "positive_n": 168,
+          "precision": 0.6220095693779905,
+          "recall": 0.7738095238095238
+        },
+        "synthetic": {
+          "accepted": 108,
+          "exact": 105,
+          "false_accept_rate": null,
+          "n": 108,
+          "negative_errors": 0,
+          "negative_n": 0,
+          "positive_n": 108,
+          "precision": 0.9722222222222222,
+          "recall": 0.9722222222222222
+        }
+      },
+      "epoch": 8,
+      "key": [
+        0.873015873015873,
+        -43,
+        -8
+      ],
+      "test_inference_accessed": false
+    }
+  },
+  "protocol_sha256": "deaba08f6da051932f3fd768f7bec6df100b406f7ada547c9db903d7a2bab85d",
+  "test_inference_accessed": false,
+  "winner": "hard"
+}

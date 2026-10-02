@@ -1,0 +1,75 @@
+{
+  "status": "development-only candidate; not final tested",
+  "native_training_exit_code": 0,
+  "reason_for_followup": "Weak keyword sequence generalization on human development; user then requested expanded Fluent corpus and Speech-to-Intent-Micro study.",
+  "model": "Small 1D CNN with fixed-word CTC",
+  "selected": {
+    "selected_epoch": 41,
+    "development": {
+      "score": 0.6154769489191994,
+      "macro_family": 0.7354095497705048,
+      "macro_exact": 0.49554434806789394,
+      "keyword_sequence_exact": 0.1760299625468165,
+      "per_intent": {
+        "UNKNOWN": {
+          "n": 649,
+          "family": 0.8058551617873652,
+          "exact": 0.9784283513097073
+        },
+        "POWER_ON": {
+          "n": 206,
+          "family": 0.8640776699029126,
+          "exact": 0.5145631067961165
+        },
+        "POWER_OFF": {
+          "n": 247,
+          "family": 0.7854251012145749,
+          "exact": 0.5748987854251012
+        },
+        "BRIGHTNESS": {
+          "n": 141,
+          "family": 0.6099290780141844,
+          "exact": 0.2978723404255319
+        },
+        "COLOR_SET": {
+          "n": 99,
+          "family": 0.41414141414141414,
+          "exact": 0.31313131313131315
+        },
+        "MEDIA_PLAY": {
+          "n": 104,
+          "family": 0.875,
+          "exact": 0.7019230769230769
+        },
+        "MEDIA_RESUME": {
+          "n": 50,
+          "family": 0.8,
+          "exact": 0.2
+        },
+        "TIME_QUERY": {
+          "n": 71,
+          "family": 0.676056338028169,
+          "exact": 0.2676056338028169
+        },
+        "DATE_QUERY": {
+          "n": 85,
+          "family": 0.6941176470588235,
+          "exact": 0.49411764705882355
+        },
+        "VOLUME": {
+          "n": 217,
+          "family": 0.8294930875576036,
+          "exact": 0.6129032258064516
+        }
+      }
+    },
+    "width": 160,
+    "parameters": 385931,
+    "onnx_bytes": 1571622,
+    "model_sha256": "cf1b08e93232c780d7acf4fc5fb858c4f25a3b15357ad852dc8c54a67fff7cc7",
+    "checkpoint_sha256": "935a22ed1ab5e193054d48fd3a398e14993a8ac918c5f8f0cfd7c36e3a623f20",
+    "random_initialization": true,
+    "test_used": false
+  },
+  "source_snapshot_sha256": "1c920a69c685f6ecf820e5082e4738d646ca8731f3c6d7c7a1e9b9409c23748c"
+}

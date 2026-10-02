@@ -1,0 +1,42 @@
+{
+  "acquisition_sha256": "c8f674e70571bc7caa2da2baa7978710915e6a11aa92726e43313adbe7bc6f50",
+  "bindings": {
+    ".cache\\pcv-updated-voice-v1\\prepared\\normalization.json": "31713f9a50a5e9bab0906af3c64d0f910be6a7c8fc57b94c72bf3bee654673ee",
+    "experiments\\pcv-updated-voice-v1\\audio-audit.json": "d85afd07eb4f3d2781eff5dcd2fd1291ca6b2f5070fec8a8fcf9feffcc1c4b4b",
+    "experiments\\pcv-updated-voice-v1\\baseline.json": "76fdef1eed53d1f3fd1d810cf3f62af0ab2738b14edd5763cef249884441533c",
+    "experiments\\pcv-updated-voice-v1\\catalog.json": "1a2fdd91dea9ad9feb53e48eb02ccd4f36aff3822b0c8f5d7356d36e781636cb",
+    "experiments\\pcv-updated-voice-v1\\custom-slots.json": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5",
+    "experiments\\pcv-updated-voice-v1\\data-audit.json": "efbf10dec21e23b6374fa9067ac283dc71c5f534fc3f8b0805b0f4244e30dce3",
+    "scripts\\test\\test_pcv_updated.py": "4577580f261c676be77e711216323387b7290e18f69a8fbbd8afca3fe10fbaf0",
+    "scripts\\train\\pcv_updated_prepare.py": "a5578935c8c485fa2d3f80eaf0d5dea498e1847ce0b793c89f91374a901cc4d8"
+  },
+  "manifests": {
+    "calibration": {
+      "path": ".cache\\pcv-updated-voice-v1\\prepared\\calibration.jsonl",
+      "rows": 10588,
+      "sha256": "af184396db9aaf109f1b0f03fb9a35ee7548ea98c44eab8c56c2e5a9b7a3dbce"
+    },
+    "dev": {
+      "path": ".cache\\pcv-updated-voice-v1\\prepared\\dev.jsonl",
+      "rows": 8810,
+      "sha256": "fc7537b2e7b6df360457aba7529397a4f52980ffe541ad96712e6172dfef2ae5"
+    },
+    "holdout": {
+      "path": ".cache\\pcv-updated-voice-v1\\prepared\\holdout.jsonl",
+      "rows": 186,
+      "sha256": "6f43bf471698f84bbcafc159b066bc70b6e4c945d0e9d7c38699a539a26e23d0"
+    },
+    "test": {
+      "path": ".cache\\pcv-updated-voice-v1\\prepared\\test.jsonl",
+      "rows": 4371,
+      "sha256": "f32ff78f177db0e43704393c230af502568cf435e64695a0fe2a19d62446c7b1"
+    },
+    "train": {
+      "path": ".cache\\pcv-updated-voice-v1\\prepared\\train.jsonl",
+      "rows": 56556,
+      "sha256": "60ef443a3f2e48bdbb30fc2848b515952016b799ddfd78fa1e07a6315e4e38f5"
+    }
+  },
+  "source_revision": "e3e203b360d5c3205d59f99ad65cd380f9c0f517",
+  "test_inference_accessed": false
+}

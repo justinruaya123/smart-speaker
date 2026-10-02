@@ -1,0 +1,137 @@
+{
+  "ctc_length_preflight": {
+    "ctc_infeasible": [],
+    "engine_counts": {
+      "dia": 24,
+      "parler": 2578,
+      "qwen": 2328
+    },
+    "snapshot_recordings": 4930,
+    "training_or_test_inference": false
+  },
+  "final_commit_made": false,
+  "final_onnx_acceptance_measured": false,
+  "head": "896dd19d629e7db8cbce1b612ac66832570f02a6",
+  "installed_artifacts": [
+    {
+      "path": "artifacts/brightness-validation.json",
+      "sha256": "196232e45035acbbe6debc4313e94d7feb42646b6cd4bd839af0d5d33bed78be",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/bundle.json",
+      "sha256": "735626cebe6281406df93eb711b43621bfa84ce4880d68775aa730c2a97de3b1",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/export-verification.json",
+      "sha256": "e63937b03ec2b5259536da9a230aad139e84544ac9c9b7c8f540dd9dadc62413",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/family-metrics.json",
+      "sha256": "f8504dd6a1de29edcee9603b8a40d971c490cad419b4c5b839b4fb814ab2335c",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/manifest.json",
+      "sha256": "fb15d77f4ebc16d70e5075efb9c7900d308e784802a5e5cc0e9e3fa7ba31a668",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/openwakeword-LICENSE.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/pilot-results.json",
+      "sha256": "b65ddc0c72039499936b701ff76a99ed9dc4fdd95039c0bac3a0c173be89f9b7",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/pretrained-NOTICE.txt",
+      "sha256": "712f16b4da0a452d47b7779fc3587141c6cdd6850392273627f38cfb522b79be",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/silero-LICENSE.txt",
+      "sha256": "2e63e9a38b6e8fc0c7bc37ce174caca1862870856c6daf5697cfb785e925520b",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/silero-vad.onnx",
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/stt.fp32.onnx",
+      "sha256": "6b86cc10e0ac0532bb093e1b54f73487b0c0349d62929bee4446b9249f371a2d",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/stt.pt",
+      "sha256": "556a0cbaf886dfb03fcd3663fa9f10a109c601fd059eb9aac11cb0e661ea80a4",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/training-config.json",
+      "sha256": "9ff335c82c750bede1657545d8a2a81518b0dada86055c2deff90d6882a9a9b5",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/training-history.json",
+      "sha256": "acb1061afa7f4ef1f7422b3ba3b496eb0d8cb40ccd9a1dcbfd6c746b686a7c4d",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/vcm.fp32.onnx",
+      "sha256": "a7fa48af1d8a24a24c08c8a98cf19e303fffdda3d0281fd7f11ea80223fd6eba",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/vcm.pt",
+      "sha256": "d5fd4977350ba624d9ef1fc5dbfb1621b480cd57ee89ae6c6c70e294bd950c8e",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-embedding.onnx",
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-hey-jarvis.onnx",
+      "sha256": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-melspectrogram.onnx",
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/wake-models.json",
+      "sha256": "dc7b4d09efc65f5f53c2d280d7efbc09bae56eb2dc689ce88d7d6229d7592cb0",
+      "unchanged": true
+    }
+  ],
+  "installed_artifacts_unchanged": true,
+  "new_integration_tests": {
+    "path": "experiments/pcv-synthetic-v1/tests/test_stage_integration.py",
+    "scope": "Artificial fixtures only: real CPU ONNX export, streaming replay, waveform parity, failed calibration, sealed test reservation, report generation; CUDA continuation mechanics with two 40-epoch runs on artificial features. No speech model improvement or acceptance evidence.",
+    "sha256": "d8bc30d499a1937d29e0e275079ff25d8e2481c972aff6dd15f3b310610df2af"
+  },
+  "production_ready": false,
+  "running_source_hashes_unchanged": true,
+  "software_tests": {
+    "command": ".venv/Scripts/python.exe -m pytest experiments/pcv-synthetic-v1/tests experiments/phrase-contract-v1/tests -q",
+    "failed": 0,
+    "log": ".cache\\pcv-synthetic-v1\\continuation-all-tests-20260930.log",
+    "log_sha256": "b4c2de7ab71e4af43d994d2f1cd306102c44371872a09317a2c5adcd6bff9f3e",
+    "passed": 115,
+    "seconds": 19.33,
+    "warnings": 7
+  },
+  "speech_training_complete": false,
+  "status": "SOFTWARE_VERIFIED_SYNTHESIS_IN_PROGRESS",
+  "time_utc": "2026-09-30T13:15:21.817826+00:00"
+}

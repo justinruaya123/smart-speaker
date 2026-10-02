@@ -1,0 +1,40 @@
+{
+  "selected_arm": "v3_pooled",
+  "development_ranks": {
+    "v3_original": [
+      false,
+      0.5435684647302904,
+      0.0,
+      0.9538834951456311
+    ],
+    "v3_calibration": [
+      true,
+      0.49377593360995853,
+      0.0,
+      0.9545454545454546
+    ],
+    "v3_pooled": [
+      true,
+      0.5048409405255878,
+      0.0,
+      0.958005249343832
+    ]
+  },
+  "files": {
+    "experiments/vcm-complete-v3/protocol.json": "14778d78ee302bbf5db1b76efe5ef93c4c71cf2eab98ed22eebc521a67067708",
+    "scripts/test/complete_calibration.py": "72222e3e5d5fded29ff6021d3d325e9c1c741e1d8788dc7c51c9751ce613c965",
+    "data/vcm-complete-v1/frozen.json": "8d45de356a828eac2ac20c0f88221333c4bead67ac397771a4bdc8b930c746a9",
+    "scripts/test/complete_commands.py": "7721013d5bc63b335004c595745f564509782c1e3c4135687e1001f8c7faaa61",
+    ".cache/vcm-complete-v1/v3_original/bundle.json": "ac78894d36f2bdc605ff31554aec84357f86a3df2ac8d56ad22c2dcd228d4e20",
+    ".cache/vcm-complete-v1/v3_original/vcm.fp32.onnx": "31f07cffbd1b73b3c7a02902589196763b0e81792c024294afdc4d6e24611154",
+    ".cache/vcm-complete-v1/v3_calibration/bundle.json": "c632f5de20abcd25c4f386795dfc8f9ad5d4488af5fe8a24f452404f237b8803",
+    ".cache/vcm-complete-v1/v3_calibration/vcm.fp32.onnx": "31f07cffbd1b73b3c7a02902589196763b0e81792c024294afdc4d6e24611154",
+    ".cache/vcm-complete-v1/v3_pooled/bundle.json": "fbec6f8bf0926b9e3e977020a51a9414fef173540b99f5077c52a1522e635767",
+    ".cache/vcm-complete-v1/v3_pooled/vcm.fp32.onnx": "31f07cffbd1b73b3c7a02902589196763b0e81792c024294afdc4d6e24611154"
+  },
+  "created_unix": 1789849912.4383714,
+  "test_used_to_select": false,
+  "historical_test_already_examined": true,
+  "encoder_fitting": false,
+  "new_numeric_head_evidence": false
+}

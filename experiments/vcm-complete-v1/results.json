@@ -1,0 +1,316 @@
+{
+  "selected_arm": "v2_masked",
+  "selection_sha256": "2627b5ea032f5e00da042a8b3b9dc1e40ecad6d3f8590fb9eb8613085cb6d8e4",
+  "fixed": {
+    "installed_baseline": {
+      "direct": {
+        "recordings": 4314,
+        "finite_references": 1783,
+        "correct_complete": 903,
+        "emitted": 965,
+        "raw_family_correct": 3592,
+        "accepted_family_correct": 1365,
+        "raw_command_correct": 1321,
+        "unknown_recordings": 1970,
+        "unknown_family_false_accepts": 23,
+        "unknown_command_false_accepts": 8,
+        "parameter_calls": 0,
+        "complete_recall": 0.5064498037016265,
+        "complete_precision": 0.9357512953367876,
+        "unknown_family_false_accept_rate": 0.011675126903553299
+      },
+      "silero": {
+        "recordings": 4314,
+        "finite_references": 1783,
+        "correct_complete": 899,
+        "emitted": 986,
+        "accepted_family_correct": 1371,
+        "unknown_recordings": 1970,
+        "unknown_family_false_accepts": 35,
+        "unknown_command_false_accepts": 13,
+        "parameter_calls": 0,
+        "complete_recall": 0.504206393718452,
+        "complete_precision": 0.9117647058823529,
+        "unknown_family_false_accept_rate": 0.017766497461928935
+      }
+    },
+    "v2_masked": {
+      "direct": {
+        "recordings": 4314,
+        "finite_references": 1783,
+        "correct_complete": 1087,
+        "emitted": 1133,
+        "raw_family_correct": 3656,
+        "accepted_family_correct": 1528,
+        "raw_command_correct": 1410,
+        "unknown_recordings": 1970,
+        "unknown_family_false_accepts": 27,
+        "unknown_command_false_accepts": 5,
+        "parameter_calls": 0,
+        "complete_recall": 0.60964666292765,
+        "complete_precision": 0.9593998234774934,
+        "unknown_family_false_accept_rate": 0.013705583756345178
+      },
+      "silero": {
+        "recordings": 4314,
+        "finite_references": 1783,
+        "correct_complete": 1081,
+        "emitted": 1142,
+        "accepted_family_correct": 1526,
+        "unknown_recordings": 1970,
+        "unknown_family_false_accepts": 34,
+        "unknown_command_false_accepts": 7,
+        "parameter_calls": 0,
+        "complete_recall": 0.6062815479528884,
+        "complete_precision": 0.946584938704028,
+        "unknown_family_false_accept_rate": 0.017258883248730966
+      }
+    },
+    "human_keywords": {
+      "direct": {
+        "recordings": 4314,
+        "finite_references": 1783,
+        "correct_complete": 1219,
+        "emitted": 1284,
+        "raw_family_correct": 3635,
+        "accepted_family_correct": 1508,
+        "raw_command_correct": 1408,
+        "unknown_recordings": 1970,
+        "unknown_family_false_accepts": 23,
+        "unknown_command_false_accepts": 10,
+        "parameter_calls": 0,
+        "complete_recall": 0.683679192372406,
+        "complete_precision": 0.9493769470404985,
+        "unknown_family_false_accept_rate": 0.011675126903553299
+      },
+      "silero": {
+        "recordings": 4314,
+        "finite_references": 1783,
+        "correct_complete": 1184,
+        "emitted": 1276,
+        "accepted_family_correct": 1480,
+        "unknown_recordings": 1970,
+        "unknown_family_false_accepts": 32,
+        "unknown_command_false_accepts": 10,
+        "parameter_calls": 0,
+        "complete_recall": 0.6640493550196298,
+        "complete_precision": 0.9278996865203761,
+        "unknown_family_false_accept_rate": 0.016243654822335026
+      }
+    }
+  },
+  "custom": {
+    "arm": "v2_masked",
+    "catalog_entries": 4,
+    "playlist_entries": 1,
+    "enrollments_per_entry": 3,
+    "conditional": {
+      "queries": 392,
+      "known": 16,
+      "unknown": 376,
+      "playlist_queries": 8,
+      "raw_top1_correct": 11,
+      "accepted": 0,
+      "correct": 0,
+      "unknown_false_accepts": 0,
+      "playlist_correct": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "unknown_false_accept_rate": 0.0,
+      "conditional_on_gold_custom_family": true
+    },
+    "complete": {
+      "queries": 392,
+      "known": 16,
+      "unknown": 376,
+      "playlist_queries": 8,
+      "raw_top1_correct": 11,
+      "accepted": 0,
+      "correct": 0,
+      "unknown_false_accepts": 0,
+      "playlist_correct": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "unknown_false_accept_rate": 0.0,
+      "conditional_on_gold_custom_family": false
+    },
+    "policy": {
+      "score": 1.1,
+      "margin": 1.1,
+      "custom_probability": 1.1
+    },
+    "scope": "Small original-human media proxy catalog; new household playlists not recorded or certified."
+  },
+  "numbers": {
+    "installed_baseline": {
+      "qwen_stress_bare": {
+        "examples": 202,
+        "raw_amount_correct": 2,
+        "raw_family_correct": 130,
+        "finite_references": 0,
+        "correct_complete": 0,
+        "emitted": 2,
+        "expected_abstention": 202,
+        "correct_abstention": 200
+      },
+      "qwen_stress_distractor": {
+        "examples": 202,
+        "raw_amount_correct": 2,
+        "raw_family_correct": 188,
+        "finite_references": 0,
+        "correct_complete": 0,
+        "emitted": 0,
+        "expected_abstention": 202,
+        "correct_abstention": 202
+      },
+      "synthetic_connected_commands": {
+        "examples": 444,
+        "raw_amount_correct": 7,
+        "raw_family_correct": 309,
+        "finite_references": 444,
+        "correct_complete": 1,
+        "emitted": 10,
+        "expected_abstention": 0,
+        "correct_abstention": 0
+      },
+      "human_connected_commands": {
+        "examples": 11,
+        "raw_amount_correct": 0,
+        "raw_family_correct": 7,
+        "finite_references": 11,
+        "correct_complete": 0,
+        "emitted": 0,
+        "expected_abstention": 0,
+        "correct_abstention": 0
+      }
+    },
+    "v2_masked": {
+      "qwen_stress_bare": {
+        "examples": 202,
+        "raw_amount_correct": 1,
+        "raw_family_correct": 133,
+        "finite_references": 0,
+        "correct_complete": 0,
+        "emitted": 1,
+        "expected_abstention": 202,
+        "correct_abstention": 201
+      },
+      "qwen_stress_distractor": {
+        "examples": 202,
+        "raw_amount_correct": 1,
+        "raw_family_correct": 185,
+        "finite_references": 0,
+        "correct_complete": 0,
+        "emitted": 0,
+        "expected_abstention": 202,
+        "correct_abstention": 202
+      },
+      "synthetic_connected_commands": {
+        "examples": 444,
+        "raw_amount_correct": 6,
+        "raw_family_correct": 406,
+        "finite_references": 444,
+        "correct_complete": 0,
+        "emitted": 0,
+        "expected_abstention": 0,
+        "correct_abstention": 0
+      },
+      "human_connected_commands": {
+        "examples": 11,
+        "raw_amount_correct": 0,
+        "raw_family_correct": 7,
+        "finite_references": 11,
+        "correct_complete": 0,
+        "emitted": 0,
+        "expected_abstention": 0,
+        "correct_abstention": 0
+      }
+    },
+    "human_keywords": {
+      "qwen_stress_bare": {
+        "examples": 202,
+        "raw_amount_correct": 4,
+        "raw_family_correct": 120,
+        "finite_references": 0,
+        "correct_complete": 0,
+        "emitted": 4,
+        "expected_abstention": 202,
+        "correct_abstention": 198
+      },
+      "qwen_stress_distractor": {
+        "examples": 202,
+        "raw_amount_correct": 2,
+        "raw_family_correct": 175,
+        "finite_references": 0,
+        "correct_complete": 0,
+        "emitted": 0,
+        "expected_abstention": 202,
+        "correct_abstention": 202
+      },
+      "synthetic_connected_commands": {
+        "examples": 444,
+        "raw_amount_correct": 9,
+        "raw_family_correct": 397,
+        "finite_references": 444,
+        "correct_complete": 1,
+        "emitted": 4,
+        "expected_abstention": 0,
+        "correct_abstention": 0
+      },
+      "human_connected_commands": {
+        "examples": 11,
+        "raw_amount_correct": 1,
+        "raw_family_correct": 5,
+        "finite_references": 11,
+        "correct_complete": 0,
+        "emitted": 0,
+        "expected_abstention": 0,
+        "correct_abstention": 0
+      }
+    },
+    "mixed_keywords": {
+      "qwen_stress_bare": {
+        "examples": 202,
+        "raw_amount_correct": 24,
+        "raw_family_correct": 63,
+        "finite_references": 0,
+        "correct_complete": 0,
+        "emitted": 6,
+        "expected_abstention": 202,
+        "correct_abstention": 196
+      },
+      "qwen_stress_distractor": {
+        "examples": 202,
+        "raw_amount_correct": 2,
+        "raw_family_correct": 164,
+        "finite_references": 0,
+        "correct_complete": 0,
+        "emitted": 0,
+        "expected_abstention": 202,
+        "correct_abstention": 202
+      },
+      "synthetic_connected_commands": {
+        "examples": 444,
+        "raw_amount_correct": 397,
+        "raw_family_correct": 444,
+        "finite_references": 444,
+        "correct_complete": 0,
+        "emitted": 0,
+        "expected_abstention": 0,
+        "correct_abstention": 0
+      },
+      "human_connected_commands": {
+        "examples": 11,
+        "raw_amount_correct": 0,
+        "raw_family_correct": 6,
+        "finite_references": 11,
+        "correct_complete": 0,
+        "emitted": 0,
+        "expected_abstention": 0,
+        "correct_abstention": 0
+      }
+    }
+  },
+  "installed": false,
+  "unchanged_installed_graph": true
+}

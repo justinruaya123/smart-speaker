@@ -1,0 +1,87 @@
+{
+  "experiment": "E18 / vcm-prototype-v1",
+  "owner": "current user-authorized next-phase task",
+  "created_utc": "2026-09-20T09:45:54.972016+00:00",
+  "requirement_ids": [
+    "ME-01",
+    "ME-02",
+    "ME-03",
+    "ME-04",
+    "ME-05",
+    "ME-06",
+    "ME-07",
+    "ME-08",
+    "UC-01",
+    "UC-02",
+    "UC-03",
+    "UC-04",
+    "UC-08"
+  ],
+  "scope": "Improve the existing finite-command prototype and reproducible Pi packaging. Missing UC-05/06/07/09/10 remain explicit open requirements; no silent scope reduction.",
+  "hypothesis": "At unchanged model capacity, source-balanced continuation and model-independent semantic label repair improve natural-command coverage versus matched uniform sampling.",
+  "architecture": "Unchanged single 160-channel depthwise temporal CNN, five dilated residual blocks, mean/max pooling, existing attention finite heads; 579963 checkpoint parameters. No ASR/STT, phonetic or text decoder, large teacher, ensemble or synthetic expansion.",
+  "initial_checkpoint": ".cache/vcm-complete-v1/human_keywords/vcm.pt",
+  "initial_bundle": ".cache/vcm-complete-v1/human_keywords/bundle.json",
+  "inputs": {
+    "data/vcm-complete-v1/manifest.jsonl": "0fb678202b9510b4a761c54e9d65b9568375e754a78ae29be70914bb98fb6822",
+    "data/vcm-complete-v1/frozen.json": "8d45de356a828eac2ac20c0f88221333c4bead67ac397771a4bdc8b930c746a9",
+    "data/vcm-complete-v1/audio-audit.jsonl": "083e057968cddf804cdba5023967ce4251afc7f5d8380f50e96c8169d5874118",
+    ".cache/vcm-complete-v1/human_keywords/vcm.pt": "c1ef274924831407aba56dd8bde6574c610303125040bad7a3b4f6007b6c1152",
+    ".cache/vcm-complete-v1/human_keywords/bundle.json": "f2b6c4d1bd14beead8baddf531b9eafd167bb3910a3de8a6fb1d9f29e0e20ad3",
+    ".cache/vcm-complete-v1/human_keywords/keyword-training-only.pt": "dd6f1c060778803efe8d22221c74ffa6f82e81b1497f6ea2a8ceffdec29f3b8e",
+    "experiments/vcm-complete-v1/custom-catalog-v3.json": "0b6fcfce8785702ffe614601d9ec67ee76d4d1e2f635283e7725b045dbab5e8a"
+  },
+  "arms": {
+    "uniform": {
+      "source_balanced": false
+    },
+    "source_balanced": {
+      "source_balanced": true
+    }
+  },
+  "training": {
+    "seed": 17,
+    "epochs": 24,
+    "minimum_epochs": 12,
+    "patience": 8,
+    "batch_size": 64,
+    "encoder_lr": 0.0001,
+    "heads_lr": 0.0003,
+    "weight_decay": 0.01,
+    "per_family_draws": 700,
+    "slot_draws": 1600,
+    "keyword_loss_weight": 0.2,
+    "feature_or_audio_augmentation": false
+  },
+  "validation": "Existing development selection speakers select checkpoint/arm. Existing development policy_fit plus reserved calibration speakers fit thresholds; enrollment pairs excluded. Same min20 accepts and 95% finite precision, color99%, UNKNOWN family <=1%.",
+  "tests": "Lock before evaluating chosen E18 arm and frozen E13 human_keywords control on both unchanged historical and revised semantic-overlay test references, direct and Silero. Historical test already examined; no fresh-human-generalization claim. Numeric stress and custom enrollment separate.",
+  "quality_gates": {
+    "complete_recall_min": 0.7,
+    "emitted_precision_min": 0.95,
+    "unknown_family_false_accept_max": 0.01,
+    "per_family_regressions_reported": true,
+    "test_cannot_select_arm": true
+  },
+  "resource_targets": {
+    "device": "Raspberry Pi 4, 2 GB RAM, 64-bit Raspberry Pi OS",
+    "threads": 2,
+    "runtime_peak_rss_budget_mib": 512,
+    "model_only_p95_budget_ms": 100,
+    "purpose": "Proposed prototype budgets, not assignment-supplied limits; physical measurement required",
+    "hardware_validated": false
+  },
+  "outputs": {
+    "metadata": "data/vcm-prototype-v1; experiments/vcm-prototype-v1",
+    "payloads": ".cache/vcm-prototype-v1; dist/smart-speaker-vcm-prototype-v1.zip",
+    "source": "scripts/train/prototype*.py; scripts/test/prototype*.py; scripts/*_prototype.py; publish.py; scripts/runtime/benchmark.py; scripts/runtime/launcher.py; scripts/modules.json"
+  },
+  "preservation": "No original manifest/audio/installed bundle modification, no live microphone or physical actions, no git commit. Old scripts and locks preserved.",
+  "ignore_gate": "Existing committed .gitignore protects cache/dist/weights/audio and exposes source/protocol/audit metadata.",
+  "evidence_limitations": [
+    "Semantic overlay remains programmatic silver; human listening not performed",
+    "Same historical speakers/utterances are not a fresh blind test",
+    "Custom catalog is a small public-data proxy, not user household playlists",
+    "Pi real-time/RAM/live-wake quality remain unmeasured"
+  ],
+  "source_revision": "794d88e297361ff503c85fcf5050fcc3e1fa049a"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "designed-02",
+  "split": "train",
+  "accent_requested": "en-GB",
+  "prompt": "An adult British English woman, light husky voice, clear relaxed conversational delivery. Speak only the supplied English text. Clean dry recording without music.",
+  "seed": 1702,
+  "accent_verified_by_human": false,
+  "identity_source": "synthetic_voice_design",
+  "text": "Hello, I am ready to help. Please speak clearly and tell me what you would like to do today.",
+  "audio_sha256": "65583fc0fed6d5120b2668962076d5b0955d5bfcb4842eaf0e94cd75324b1ec2",
+  "rate": 24000,
+  "duration": 6.4,
+  "generation_seconds": 10.388007799978368
+}

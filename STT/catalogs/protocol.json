@@ -1,0 +1,10 @@
+{
+  "provenance": "Simulated user-supplied catalog: training entities plus deterministic half of unseen dev/test entity names.",
+  "restriction": "Entity names only, not audio or full reference sentences. Optimistic oracle catalog membership simulation, not a real playlist evaluation.",
+  "fixed_entries": 209,
+  "dynamic_entries": 227,
+  "added_entries": 18,
+  "acoustic_retraining": false,
+  "spotify_integration": false,
+  "filepath_integration": false
+}

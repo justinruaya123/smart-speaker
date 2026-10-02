@@ -1,0 +1,26 @@
+{
+  "limitations": [
+    "One matched continuation pair, not multiple independent seeds",
+    "Human held-out positives cover only eight intents",
+    "Synthetic voices are not independent human speakers"
+  ],
+  "outcomes": {
+    "human": {
+      "both_correct": 1762,
+      "both_wrong": 14,
+      "mixed_corrects": 8,
+      "mixed_regresses": 6
+    },
+    "synthetic": {
+      "both_correct": 905,
+      "both_wrong": 302,
+      "mixed_corrects": 2504,
+      "mixed_regresses": 3
+    }
+  },
+  "predictions": {
+    "human": "dfbf10ed5269027d518fbfe66dd8c43a4bff959161dfab581df420940b0159ec",
+    "mixed": "d8b0b3c66653a844114ef4d559194aca6c1c4ec90f185582a77eb4bd2f0bbb98"
+  },
+  "scope": "Same positive recording IDs, exact typed command before policy"
+}
