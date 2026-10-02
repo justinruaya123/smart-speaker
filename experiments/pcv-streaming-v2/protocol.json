@@ -1,0 +1,125 @@
+{
+  "version": "pcv-streaming-v2",
+  "status": "architecture_locked_untrained",
+  "base_commit": "ebc3279f4928111bb2f8d1d1a86506ad270eba5d",
+  "branch": "codex/pcv-streaming-v2",
+  "architecture": "Causal-Slot-TCN-96-v2",
+  "data": {
+    "primary": "airimonda/ai231-me2-voice-commands",
+    "known_revision": "6947f13073e57eb6ae67e7e2fc3680700b82aa13",
+    "latest_verified": false,
+    "optional": "martinnavs/ai231-fil-supplemental-data",
+    "optional_enabled": false,
+    "external_acoustic_corpora": false,
+    "all_pretrained_weights": false,
+    "published_synthetic_allowed": true,
+    "tts_model_invoked": false,
+    "local_enrollment": "separate approved user-provided data; never silently fitting/test crossover"
+  },
+  "exports": {
+    "benchmark": {
+      "semantic_classes": 33,
+      "percent_classes": 102,
+      "base_phrases": 93,
+      "base_semantics": 31,
+      "additional_volume_values": 101,
+      "owner_mode": "official_spliced_explicit",
+      "extra_values_in_official_score": false
+    },
+    "demo": {
+      "same_checkpoint": true,
+      "scope": "baseline plus known light/music identities and percentages",
+      "owner_mode": "same_speaker",
+      "automatic_qualification_bypass": false
+    }
+  },
+  "model": {
+    "width": 96,
+    "kernel": 5,
+    "dilations": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "future_frames": 0,
+    "frame_hop_ms": 10,
+    "step_frames": 4,
+    "pool_queries": 5,
+    "state_count": 14,
+    "speaker_tower_width": 32,
+    "speaker_dilations": [
+      1,
+      2,
+      4
+    ],
+    "speaker_embedding": 64,
+    "entity_embedding": 64,
+    "asr_stt_outputs": false,
+    "phone_inventory": false,
+    "parameters": 115825,
+    "parameter_bytes_fp32": 463300,
+    "state_bytes_fp32": 103592
+  },
+  "runtime_targets_not_measurements": {
+    "pi": "Raspberry Pi 4, 4GB, arm64",
+    "chunk_p95_ms": 10,
+    "chunk_p99_less_than_ms": 40,
+    "ordinary_speech_end_ui_p95_ms": 400,
+    "ambiguous_end_ui_p95_ms": 700,
+    "worker_rss_mib": 256,
+    "whole_assistant_mib": 1024,
+    "soak_minutes": 30
+  },
+  "quality_targets_not_results": {
+    "human_accepted_recall": 0.95,
+    "per_intent_and_supported_cohort_recall": 0.9,
+    "accepted_precision": 0.99,
+    "unknown_far": 0.01,
+    "perfect_demo": "100% exact first-attempt acceptance on predeclared finite verbatim matrix; no universal guarantee",
+    "speaker_false_accept": "separate different-owner denominator, not pooled with noise"
+  },
+  "training": {
+    "seeds": [
+      1102,
+      2203,
+      3304
+    ],
+    "optimizer": "AdamW",
+    "learning_rate": 0.0008,
+    "weight_decay": 0.001,
+    "minimum_learning_rate": 2e-05,
+    "clip": 5,
+    "batch": 32,
+    "steps_per_epoch": 96,
+    "max_epochs": 80,
+    "human_foundation_epochs": 24,
+    "development_interval_epochs": 4,
+    "early_stop_evaluations": 8,
+    "selection": "human macro exact recall under rejection constraints; development only"
+  },
+  "pending": [
+    "original audio acquisition and audit",
+    "all acoustic training",
+    "enrollment waveform/query localization",
+    "wake detector",
+    "speaker-window aggregator and overlap detection",
+    "ONNX export/runtime parity",
+    "production worker/UI adapter",
+    "Pi measurement",
+    "two qualified artifacts"
+  ],
+  "sources": [
+    "https://arxiv.org/abs/2005.06720",
+    "https://arxiv.org/abs/1706.03818",
+    "https://arxiv.org/abs/1806.03621",
+    "https://google.github.io/speaker-id/publications/PersonalVAD/",
+    "https://arxiv.org/abs/2009.04323",
+    "https://arxiv.org/abs/1810.10884",
+    "https://arxiv.org/abs/1710.10467",
+    "https://arxiv.org/abs/1904.08779",
+    "https://onnxruntime.ai/docs/performance/tune-performance/threading.html"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "architecture": "Causal-Slot-TCN-96-v2",
+  "test_command": "-m pytest -q scripts/test/test_pcv_streaming_v2.py scripts/test/test_pcv_enrollment_owner_v2.py",
+  "exit_code": 0,
+  "targeted_tests_passed": 182,
+  "test_failures": 0,
+  "warnings": 6,
+  "warning_kind": "PyTorch JIT trace deprecation warnings; dynamic final-fragment probes passed; no ONNX inference performed",
+  "scope": "source, numerical and fabricated-embedding policies; includes 101 integer-volume cases",
+  "source_bindings": {
+    "scripts/models/pcv_streaming_v2.py": {
+      "sha256": "7b6a57036d32c3ed260f66671011659286b8ecd189ddeba1437495056d3eada6",
+      "git_blob": "549e87be5e31435ced3c05b243b873d3f1a1be94",
+      "bytes": 9699
+    },
+    "scripts/test/test_pcv_streaming_v2.py": {
+      "sha256": "9c4dd5e8c37f149373b116db9af9abbc1cc147349497ad61e3b9eaad48730c20",
+      "git_blob": "e0e6c4f0e9a55af804169f178e4d629aec16ef6a",
+      "bytes": 11591
+    },
+    "scripts/test/pcv_streaming_preflight_v2.py": {
+      "sha256": "1c9eba528574fa9bd9995caeb9d111dce85ad4b20aef20dfc536a139c597e4b3",
+      "git_blob": "b696ca5692e3709d829e640b282844456ed05885",
+      "bytes": 4691
+    },
+    "scripts/test/test_pcv_enrollment_owner_v2.py": {
+      "sha256": "4b94c3537570a7f57a38127d6a9f010ad3c3ad2369758b19c301b89bf56d2b26",
+      "git_blob": "a3ce9662a1dad3c07f1768e485960397fb4f0b60",
+      "bytes": 11052
+    },
+    "scripts/runtime/pcv_streaming_contract_v2.py": {
+      "sha256": "575e8c38a699386b76107474ed709546a59c7dd352f88ff7689bf0c9595a656c",
+      "git_blob": "0ffeaffa7ce382b9baeb36b80433db084ebd319d",
+      "bytes": 7266
+    },
+    "scripts/runtime/pcv_enrollment_owner_v2.py": {
+      "sha256": "378f281b3df661ee9ba1f64719befd5bdc66a175966dbb2b0aacfca9c3672523",
+      "git_blob": "c9c452d964ae5b0c7dbf2e275448c00d557f6398",
+      "bytes": 8006
+    },
+    "docs/HANDOFF-pcv-streaming-v2.md": {
+      "sha256": "596a9ec44ed97e03c72e2eb550ea99ae3c34442427b251d328b5cd830b5abba4",
+      "git_blob": "0d03acb2450235a482fe34865628d5ce17e9b530",
+      "bytes": 30143
+    },
+    "docs/EXPERIMENT-pcv-streaming-v2.md": {
+      "sha256": "72d91a62af5e70f41024bc06a6e5115b8c03add1dcde20e20b7a7cb1face05c0",
+      "git_blob": "6d60ecec74c80c627566f1b01e5fd522c210734d",
+      "bytes": 7361
+    },
+    "experiments/pcv-streaming-v2/protocol.json": {
+      "sha256": "3f9963b6f373f4641c14d09db230e89d5cfeef3eb603b34da88b94b85b8956a9",
+      "git_blob": "799e9435e3118eba64531b4e869de90686be03a6",
+      "bytes": 3739
+    },
+    "experiments/pcv-streaming-v2/preflight-results.json": {
+      "sha256": "25d6b4d5fde686c36fb7240a0c624d26b0d2c86e3f4425f97eea188c372fd2ba",
+      "git_blob": "6d7b02ac4e912ebd6962deb231f57ef50f2bcbe6",
+      "bytes": 2600
+    },
+    "experiments/pcv-streaming-v2/operation-count.json": {
+      "sha256": "7d18a206e03950752e3c6981c6d6d52877a8b2586ae7ffdd6830a85ec2443f7e",
+      "git_blob": "d8e993943ceeaa2dff1a730e9e03434a8f114af7",
+      "bytes": 1208
+    }
+  },
+  "reused_reference_blobs": {
+    "vcm/frontend.py": "e5995669b2808321f28665d0b8c7853afced0b75",
+    "scripts/models/pcv_strict_candidates.py": "fde0ce23fea00a0433ebefae5b2ea26ea85f725f"
+  },
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "speech_accuracy_measured": false,
+  "pi_measured": false,
+  "onnx_measured": false,
+  "pretrained_weights_used": false,
+  "real_enrollment_tested": false,
+  "speaker_recognition_tested": false,
+  "installed_artifact_changed": false,
+  "network_download_attempts": "HF, PyPI and raw GitHub DNS resolution failed; HF web cards unavailable",
+  "red_test_counts": [
+    161,
+    7
+  ]
+}

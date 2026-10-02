@@ -1,0 +1,18 @@
+........................................................................ [ 39%]
+........................................................................ [ 79%]
+......................................                                   [100%]
+=============================== warnings summary ===============================
+scripts/test/test_pcv_streaming_v2.py::test_torch_trace_warm_state_and_final_fragment[benchmark]
+scripts/test/test_pcv_streaming_v2.py::test_torch_trace_warm_state_and_final_fragment[demo]
+  /opt/pyvenv/lib/python3.13/site-packages/torch/jit/_trace.py:1000: DeprecationWarning: `torch.jit.trace` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+scripts/test/test_pcv_streaming_v2.py::test_torch_trace_warm_state_and_final_fragment[benchmark]
+scripts/test/test_pcv_streaming_v2.py::test_torch_trace_warm_state_and_final_fragment[benchmark]
+scripts/test/test_pcv_streaming_v2.py::test_torch_trace_warm_state_and_final_fragment[demo]
+scripts/test/test_pcv_streaming_v2.py::test_torch_trace_warm_state_and_final_fragment[demo]
+  /opt/pyvenv/lib/python3.13/site-packages/torch/jit/_trace.py:1139: DeprecationWarning: `torch.jit.trace_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+182 passed, 6 warnings in 2.89s

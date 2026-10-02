@@ -1,0 +1,137 @@
+{
+  "status": "untrained_tensor_preflight_not_recognition",
+  "architecture": "Causal-Slot-TCN-96-v2",
+  "python": "3.13.5",
+  "torch": "2.10.0+cpu",
+  "machine": "x86_64",
+  "affinity": [
+    0
+  ],
+  "threads": 1,
+  "parameters": 115825,
+  "speaker_parameters": 12480,
+  "weight_bytes_fp32": 463300,
+  "state_bytes_fp32": 103592,
+  "state_shapes": [
+    [
+      1,
+      40,
+      4
+    ],
+    [
+      1,
+      96,
+      4
+    ],
+    [
+      1,
+      96,
+      8
+    ],
+    [
+      1,
+      96,
+      16
+    ],
+    [
+      1,
+      96,
+      32
+    ],
+    [
+      1,
+      96,
+      64
+    ],
+    [
+      1,
+      96,
+      128
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      5,
+      96
+    ],
+    [
+      1,
+      40,
+      4
+    ],
+    [
+      1,
+      32,
+      4
+    ],
+    [
+      1,
+      32,
+      8
+    ],
+    [
+      1,
+      32,
+      16
+    ]
+  ],
+  "physical_pi_measured": false,
+  "waveform_accuracy_measured": false,
+  "onnx_available": false,
+  "onnxruntime_available": false,
+  "latency_scope": "resident model only; excludes features, decoder, capture, endpointer, IPC, UI, file loading",
+  "timings": {
+    "benchmark/pytorch_eager": {
+      "n": 1000,
+      "p50_ms": 1.440164,
+      "p95_ms": 1.9066464999999995,
+      "p99_ms": 2.3692812799999996,
+      "max_ms": 3.949913,
+      "chunk_audio_ms": 40,
+      "p95_compute_to_chunk_ratio": 0.047666162499999984,
+      "peak_rss_before_kib_linux": 279760,
+      "peak_rss_after_kib_linux": 279888
+    },
+    "benchmark/torchscript_frozen": {
+      "n": 1000,
+      "p50_ms": 0.5797105,
+      "p95_ms": 0.8431065499999997,
+      "p99_ms": 1.00639075,
+      "max_ms": 2.076105,
+      "chunk_audio_ms": 40,
+      "p95_compute_to_chunk_ratio": 0.021077663749999993,
+      "peak_rss_before_kib_linux": 280784,
+      "peak_rss_after_kib_linux": 280784
+    },
+    "demo/pytorch_eager": {
+      "n": 1000,
+      "p50_ms": 1.377109,
+      "p95_ms": 1.7791335,
+      "p99_ms": 2.0730520399999994,
+      "max_ms": 3.796341,
+      "chunk_audio_ms": 40,
+      "p95_compute_to_chunk_ratio": 0.0444783375,
+      "peak_rss_before_kib_linux": 294992,
+      "peak_rss_after_kib_linux": 294992
+    },
+    "demo/torchscript_frozen": {
+      "n": 1000,
+      "p50_ms": 0.848155,
+      "p95_ms": 1.1107745,
+      "p99_ms": 1.30345268,
+      "max_ms": 1.568738,
+      "chunk_audio_ms": 40,
+      "p95_compute_to_chunk_ratio": 0.0277693625,
+      "peak_rss_before_kib_linux": 296272,
+      "peak_rss_after_kib_linux": 296272
+    }
+  },
+  "peak_rss_scope": "training-capable PyTorch process, NOT Pi runtime RSS"
+}
