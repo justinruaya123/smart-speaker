@@ -1,0 +1,12 @@
+{
+  "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m pytest -q scripts/test/test_pcv_strict_final.py",
+  "passed": 37,
+  "failed": 0,
+  "skipped": 0,
+  "seconds": 1.05,
+  "scope": "new targeted source/numerical tests only; not the complete repository suite",
+  "model_training": false,
+  "speech_replay": false,
+  "onnx_runtime_measured": false,
+  "physical_pi_measured": false
+}

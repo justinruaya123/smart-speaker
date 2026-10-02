@@ -1,0 +1,35 @@
+{
+  "experiment": "pcv-strict-final-v1",
+  "base_commit": "7d8296c96e19e1e65fc3f0cd1b82d2391df33dbc",
+  "evidence_class": "Numerical source tests and untrained PyTorch CPU cost probes; NO fresh speech accuracy or ONNX/Pi timing.",
+  "environment": {"platform": "Linux-6.18.44-x86_64-with-glibc2.41", "python": "3.13.5", "torch": "2.10.0+cpu", "numpy": "2.3.5", "cpu_affinity": [0], "torch_threads": 1, "onnx_available": false, "onnxruntime_available": false},
+  "source_blob_hashes": {"decoder": "02641b4a6f3342a09b2f0eaa6f6940054dd7c47c", "context": "a85bc5e3e9f70ba3a4ef513217adefc7bfa5eead", "pool": "db42705b880f1fb81be267d3fa1ac361bb2ceedd"},
+  "schema": {"phrases": 93, "intents": 19, "semantics": 31},
+  "acoustic_model_cost": [
+    {"name": "pooled_context_192", "feature_frames": 100, "parameters": 2066831, "median_ms": 6.529005, "p95_ms": 8.055620150000001, "repeats": 20},
+    {"name": "pooled_context_192", "feature_frames": 200, "parameters": 2066831, "median_ms": 9.7123755, "p95_ms": 9.9418279, "repeats": 20},
+    {"name": "pooled_context_192", "feature_frames": 400, "parameters": 2066831, "median_ms": 18.3374035, "p95_ms": 19.3831954, "repeats": 20},
+    {"name": "pooled_context_192", "feature_frames": 800, "parameters": 2066831, "median_ms": 50.4771825, "p95_ms": 59.06618700000001, "repeats": 20},
+    {"name": "pooled_context_80", "feature_frames": 100, "parameters": 377423, "median_ms": 2.870784, "p95_ms": 3.3761392000000017, "repeats": 20},
+    {"name": "pooled_context_80", "feature_frames": 200, "parameters": 377423, "median_ms": 4.2653305, "p95_ms": 5.156633600000001, "repeats": 20},
+    {"name": "pooled_context_80", "feature_frames": 400, "parameters": 377423, "median_ms": 8.157598499999999, "p95_ms": 10.276634400000004, "repeats": 20},
+    {"name": "pooled_context_80", "feature_frames": 800, "parameters": 377423, "median_ms": 28.7105095, "p95_ms": 39.4291666, "repeats": 20},
+    {"name": "strict_ds_tcn_96", "feature_frames": 100, "parameters": 97319, "median_ms": 1.1089855, "p95_ms": 1.4487983000000002, "repeats": 20},
+    {"name": "strict_ds_tcn_96", "feature_frames": 200, "parameters": 97319, "median_ms": 1.450059, "p95_ms": 3.5949801000000003, "repeats": 20},
+    {"name": "strict_ds_tcn_96", "feature_frames": 400, "parameters": 97319, "median_ms": 1.7725745000000002, "p95_ms": 2.1946389, "repeats": 20},
+    {"name": "strict_ds_tcn_96", "feature_frames": 800, "parameters": 97319, "median_ms": 2.706632, "p95_ms": 3.3254894500000023, "repeats": 20},
+    {"name": "strict_crnn_96", "feature_frames": 100, "parameters": 119783, "median_ms": 2.2256575, "p95_ms": 2.50420715, "repeats": 20},
+    {"name": "strict_crnn_96", "feature_frames": 200, "parameters": 119783, "median_ms": 4.264138000000001, "p95_ms": 4.687376250000001, "repeats": 20},
+    {"name": "strict_crnn_96", "feature_frames": 400, "parameters": 119783, "median_ms": 8.4397775, "p95_ms": 9.307375, "repeats": 20},
+    {"name": "strict_crnn_96", "feature_frames": 800, "parameters": 119783, "median_ms": 16.4256005, "p95_ms": 17.809066350000002, "repeats": 20}
+  ],
+  "decoder_cost": [
+    {"entries": 1031, "trie_nodes": 22954, "frames": 100, "max_score_error_vs_full": 0.0, "median_ms": 118.341197, "p95_ms": 136.1547262},
+    {"entries": 415, "trie_nodes": 9265, "frames": 100, "max_score_error_vs_full": 0.0, "median_ms": 46.39428, "p95_ms": 50.934958},
+    {"entries": 93, "trie_nodes": 2148, "frames": 100, "max_score_error_vs_full": 0.0, "median_ms": 11.02097, "p95_ms": 11.5410933}
+  ],
+  "decoder_topology": "Seeded random phone paths: mechanism/cost fixture, NOT the release catalog.",
+  "score_duration_probe": {"original_frames": 10, "with_blank_tail_frames": 110, "original_score": -2.5765802951634815, "with_blank_tail_score": -0.2342346453533296},
+  "negative_evidence": {"upper95_zero_of_250": 0.011911419714980637, "upper95_zero_of_299": 0.00996914679289927, "upper95_eight_of_250": 0.05699654926405676},
+  "exclusions": ["No trained checkpoint was mounted", "No fresh HF audio download", "No waveform replay", "No training", "No ONNX Runtime available", "No physical Raspberry Pi"]
+}
