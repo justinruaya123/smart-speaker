@@ -1,0 +1,73 @@
+{
+  "base_commit": "7d8296c96e19e1e65fc3f0cd1b82d2391df33dbc",
+  "candidate_exported": false,
+  "compileall_passed": true,
+  "date": "2026-10-13",
+  "evidence_scope": "source-only isolated host; not complete research checkout",
+  "experiment": "speaker-demo-v1",
+  "focused_tests": {
+    "command": "python -m pytest -q scripts/test/test_speaker_demo_v1.py",
+    "failed": 0,
+    "passed": 41,
+    "seconds": 5.02
+  },
+  "full_repository_tests_run": false,
+  "human_acoustic_replay_run": false,
+  "human_acoustic_training_run": false,
+  "installed_weights_modified": false,
+  "limitations": [
+    "Initial combined test/stress invocation timed out at 45 seconds; separate one-thread runs completed. Cause not isolated.",
+    "Original project .venv, payloads, ncnn and ONNX Runtime unavailable on this host.",
+    "Numerical fixture loss reduction and policy pass counts establish software behavior, not acoustic recognition or biometric security."
+  ],
+  "live_microphone_integration_implemented": false,
+  "ncnn_candidate_parity_measured": false,
+  "physical_device_actions": 0,
+  "python_line_length_max": 79,
+  "registration": "append-only EXPERIMENTS.md patch supplied; application and source-map registration pending",
+  "review": "inline review; no independent reviewer available",
+  "shipping_runtime_modified": false,
+  "source_sha256": {
+    "docs/EXPERIMENT-speaker-demo-v1.md": "d84a0eba28c4382fe89c8f169875c944126a2cf5e15acfe44269824e96af8ba3",
+    "docs/HANDOFF-speaker-demo-v1.md": "a96e83b0ee6a43040e481a99969508918a4d7ba40d51876d010c2ef74cb908ec",
+    "docs/PLAN-speaker-demo-v1.md": "94e4380eb65cd5e3263ee150e27ba5afb944f0118ed63f3c7f78acfe9785049b",
+    "experiments/speaker-demo-v1/protocol.json": "62f8807495c9d672a903f217f008e392b693325f794c03d1ce487fa0f98c9c87",
+    "experiments/speaker-demo-v1/register.patch": "a86d39ddd61a022ead2e3413a062bef2fe1fd4e693408f5e904f104986c4e806",
+    "experiments/speaker-demo-v1/run_grid.py": "0101150b00bb00213f900aecdc565787ced4eb27418b877fe43ede9c21784e76",
+    "scripts/models/speaker_demo.py": "647599902205e7204b161ed967c31e0212944657df6cd18cc1b0a24210514bf4",
+    "scripts/runtime/speaker_session.py": "9aa7fcb7b88919ebf657265acc32e1f1ab3aadfa9df8c4632b65a0a2de73bde9",
+    "scripts/test/speaker_demo_stress.py": "b17d5ac3877a250def9e187899c390542aad87e4753f0a987e7d2df32c2074b1",
+    "scripts/test/speaker_demo_suite.py": "4f6ff8ded5db2b9ed5f933a09dd2d9c8ecdd1eff1234175815837ccb6b6e52e2",
+    "scripts/test/test_speaker_demo_v1.py": "999e1f1ad6191ca218ec1e251d866d90c1660e3f468604e949b4b1a19b54d1b6",
+    "scripts/train/speaker_demo_train.py": "f583e79a6a5693a4581ebd97a9e4d3a574057f190d6c09a87fd24fdf42516b0d"
+  },
+  "speaker_backend_implemented": false,
+  "stress": {
+    "candidate_11_class_width64_parameters": 22027,
+    "deployed_acceptance_improved": "not measured",
+    "evidence_type": "numerical_and_software_only",
+    "human_audio_evaluated": 0,
+    "manifest_fixture_recordings": 1200,
+    "missing_prediction_denominator_preserved": 12000,
+    "model_smoke_final_cross_entropy": 8.066454938671086e-06,
+    "model_smoke_initial_cross_entropy": 1.4149603843688965,
+    "model_smoke_steps": 80,
+    "numpy": "2.3.5",
+    "physical_pi": false,
+    "planned_fixture_trials": 12000,
+    "policy_cases": {
+      "insufficient_speech": 1666,
+      "matching_vectors": 1667,
+      "overlap": 1667,
+      "owner_expired": 1667,
+      "session_mismatch": 1666,
+      "speaker_mismatch": 1667
+    },
+    "policy_failures": 0,
+    "policy_trials": 10000,
+    "python": "3.13.5",
+    "speaker_accuracy_established": false,
+    "torch": "2.10.0+cpu"
+  },
+  "style_linter_run": false
+}

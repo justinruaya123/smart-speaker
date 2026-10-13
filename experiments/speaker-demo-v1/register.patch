@@ -1,0 +1,19 @@
+--- a/EXPERIMENTS.md
++++ b/EXPERIMENTS.md
+@@ -1,2 +1,16 @@
+ # Experiment directory and findings
+ 
++## Speaker demo v1 — 2026-10-13
++
++Status: software verified; acoustic training, speaker backend, export and live
++validation pending. Base: `7d8296c96e19e1e65fc3f0cd1b82d2391df33dbc`.
++The new study tests class/speaker-balanced and contrastive fixed-demo training,
++a separate one-command wake-owner policy, and action-free ncnn replay. It does
++not change installed models, thresholds or shipping capture behavior.
++Local evidence: 41 focused tests, 10,000 numerical ownership checks, a 12,000-trial
++fixture accounting check and an optimization smoke; no measured human accuracy gain.
++See [protocol](experiments/speaker-demo-v1/protocol.json),
++[verification](experiments/speaker-demo-v1/verification.json),
++[report](docs/EXPERIMENT-speaker-demo-v1.md) and
++[execution handoff](docs/HANDOFF-speaker-demo-v1.md).
++
