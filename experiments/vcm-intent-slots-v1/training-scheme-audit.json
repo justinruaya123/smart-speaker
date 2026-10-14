@@ -1,0 +1,79 @@
+{
+  "status": "current_progress_reconciled",
+  "user_steering": "External handoff hypotheses only; preserve active jobs/bindings; complete matched comparison before interventions",
+  "original_comparison": {
+    "status": "blocked_not_fitted",
+    "arms": [
+      "uniform",
+      "balanced"
+    ],
+    "seeds": [
+      53,
+      71,
+      89
+    ],
+    "planned_updates_per_arm": 2880,
+    "planned_presentations_per_arm": 184320,
+    "current_train_rows": 1895,
+    "planned_presentations_over_current_rows": 97.2664907651715,
+    "current_fitting_updates": 0,
+    "interpretation": "Replacement sampling: 30 optimizer-check epochs are not 30 unique corpus passes. This fixed ceiling would present about97 times the current small corpus; overtraining cannot be claimed absent learning curves and fitting is blocked. Preserve matched protocol; do not launch or weaken coverage to obtain scores. Select development checkpoint, retain earlier checkpoints/failed runs, calibrate separately, and lock before fresh scoring."
+  },
+  "missing_intents": {
+    "train": [
+      "MESSAGE"
+    ],
+    "dev": [
+      "CALL",
+      "MESSAGE"
+    ],
+    "calibration": [
+      "CALL",
+      "MESSAGE",
+      "LIST_REMINDERS",
+      "TEMPERATURE",
+      "CREATE_REMINDER"
+    ],
+    "test": [],
+    "holdout": []
+  },
+  "missing_supervision": [
+    "Reviewed role-state/presence labels and request grammar/validity examples",
+    "Reviewed acoustic role spans",
+    "Three or more original independent entity enrollment examples per selected nondefault entity and bound catalog competition policy",
+    "Disjoint full-scope calibration with both correct and incorrect outcomes per scored field",
+    "Genuine wake/command owner pairs, independent identity/overlap/coverage evidence",
+    "Fresh blind human full-command holdout and physical Raspberry Pi hardware"
+  ],
+  "acquisition_findings": "Current primary has no new holdout IDs or supported human training MESSAGE; SNIPS pinned files401; Drive family-only reuse, augmentation and reserved speech; MLEnd category-only",
+  "completed_separate_probe": "Bounded numeral aux240 updates was completed before latest steering, not incorporated into either baseline arm/default runtime",
+  "human_absolute_volume_set_examples_preserved": {
+    "train": {
+      "55": 2,
+      "90": 1,
+      "70": 1,
+      "20": 1,
+      "10": 2
+    },
+    "dev": {},
+    "calibration": {},
+    "test": {
+      "50": 1,
+      "70": 1,
+      "20": 2,
+      "10": 2
+    },
+    "holdout": {}
+  },
+  "filipino_supplement_kind": "synthetic",
+  "gender_inference_from_audio": false,
+  "pruning_policy": "Exclusions fixed before fitting and retained; never remove hard valid values/targets after examining test errors. One source original per person/numeral cap is limited to the completed separate component; parent views unchanged. Multi-microphone groups stay together in any future version.",
+  "pending_interventions": "experiments/vcm-intent-slots-v1/pending-interventions.json",
+  "active_jobs_interrupted": false,
+  "manifests_configs_checkpoints_evaluation_bindings_changed": false,
+  "parent_grammar_verbatims_catalog_and_typed_outputs_changed": false,
+  "intent_threshold": 0.95,
+  "every_supplied_slot_threshold": 0.9,
+  "final_application_scoring": true,
+  "qualification": false
+}

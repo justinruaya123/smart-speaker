@@ -47,6 +47,26 @@ archive reuses parent evaluation speech inside its training directories; its
 existing splits are ineligible for this frozen comparison. Execution receipts
 and exact exclusions will be appended to the same experiment report.
 
+Completed bounded numeral component: 240 updates, dev-selected checkpoint 4,
+449/696 (64.51%) raw numeral-category test accuracy across 24 held people; no
+intent/presence/validity/entity/identity supervision or useful complete-slot
+transfer established. Full-model FP32 PyTorch/ONNX/ncnn parity passes (maximum
+tensor error 5.722e-6). Separate historical application replay rejects every
+supported command: human 0/636 test, 0/83 holdout; synthetic 0/3,368 and 0/100;
+two test capture faults per engine. Both stored replay sets were rechecked with
+the exact pinned benchmark parser after discovering that the earlier cache
+differed; original evidence is preserved. 184 focused tests pass; broad 656 pass,
+20 fail, 13 skip, 13 errors (same 33 failures/errors). The main uniform/balanced
+53/71/89 comparison remains blocked with zero fitting updates. Recording-condition
+augmentation, VTLP and whole-command contrastive learning are separate pending
+studies after that comparison; external handoff material is hypothesis-only.
+Installed/default state and parent views are unchanged. See
+[component](experiments/vcm-intent-slots-v1/numeral-auxiliary-results.json),
+[command regression](experiments/vcm-intent-slots-v1/numeral-command-regression.json),
+[sources](experiments/vcm-intent-slots-v1/additional-sources.json),
+[training audit](experiments/vcm-intent-slots-v1/training-scheme-audit.json) and
+[pending studies](experiments/vcm-intent-slots-v1/pending-interventions.json).
+
 Evidence snapshot: 2026-09-20. E01-E11 initially summarized existing reports and saved evaluations. E12 records the subsequently authorized implementation, fresh execution of historical regression audio, and development-only quantization comparison. Other agents may still be writing results. Missing evidence means unverified, not zero or success. Source reports remain in place; follow the links for verbose tests, per-value tables, recipes and predictions.
 
 Read [REQUIREMENTS.md](REQUIREMENTS.md) for what we are building and [AGENTS.md](AGENTS.md) for how to work. The proposed [organization/archive skill contract](AGENTS.md#0-active-work-hold-and-future-maintenance-skill) must consult this directory before consolidating or archiving a study. That project-specific skill is not installed. This summary alone does not authorize changes. The later user request explicitly authorized E12 installation and pipeline implementation; the repository maintenance hold remains.

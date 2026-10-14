@@ -1,0 +1,55 @@
+{
+  "status": "pending_not_executed",
+  "user_steering": "Complete the original uniform versus complete-command/person-balanced human-only comparison before incorporating interventions; external VCM handoffs are hypotheses only.",
+  "prerequisite_comparison": {
+    "protocol": "experiments/vcm-intent-slots-v1/protocol.json",
+    "arms": ["uniform", "balanced"],
+    "seeds": [53, 71, 89],
+    "balance_unit": "complete typed command, then person, then recording",
+    "current_status": "blocked_not_fitted: audited full-scope human supervision/enrollment/calibration still missing",
+    "architecture": "approved IntentSlotsVCM; all OptionB and personal-demo outputs/catalogs retained",
+    "initialization": "random; completed isolated numeral probe is not a baseline initializer or completed comparison arm"
+  },
+  "experiments": [
+    {
+      "experiment_id": "vcm-recording-conditions-v1",
+      "status": "pending_not_executed",
+      "hypothesis": "Conservative recording-condition perturbations may improve microphone/channel robustness after the matched baseline comparison is complete.",
+      "candidate_conditions": ["bounded gain", "physically justified background noise", "recording-condition reverberation"],
+      "bounds": "not approved or selected; freeze a separate protocol before execution",
+      "data_rules": "Train-only derived recordings with original-human provenance; keep every parent speaker/utterance/microphone group together. No TTS, verbatim changes, new slot labels or catalog narrowing.",
+      "baseline_changed": false
+    },
+    {
+      "experiment_id": "vcm-vtlp-v1",
+      "status": "pending_not_executed",
+      "hypothesis": "Train-only vocal-tract-length perturbation may improve speaker robustness after the matched baseline comparison is complete.",
+      "warp_bounds_and_frontend_version": "not selected; requires its own frozen protocol, source/feature bindings and comparison",
+      "data_rules": "Preserve exact phrases, typed values/targets, provenance and speaker separation; do not infer gender from pitch or select gender-specific models.",
+      "baseline_changed": false
+    },
+    {
+      "experiment_id": "vcm-whole-command-contrastive-v1",
+      "status": "pending_not_executed",
+      "hypothesis": "A separate whole-command objective may help complete typed-command discrimination; no acoustic claim is established.",
+      "positive_definition": "Complete typed intent AND every supplied slot value/target plus reviewed provenance/grammar; sharing only an intent is insufficient.",
+      "distinct_from_entity_metric": "Approved entity metric learning remains role/entity-specific and cross-person. It is not whole-command contrastive training.",
+      "baseline_changed": false
+    }
+  ],
+  "fixed_contracts": {
+    "intent_threshold": 0.95,
+    "every_supplied_slot_threshold": 0.9,
+    "final_application_scoring": true,
+    "full_selected_catalog_and_existing_typed_schema": true,
+    "filipino_supplement": "synthetic only; not human training or demographic evidence",
+    "valid_absolute_volume_examples": "preserve; no deletion based on narrow benchmark serialization",
+    "runtime_phoneme_or_prototype_fusion": false,
+    "modeled_pi_timings_as_results": false,
+    "installation_allowed": false,
+    "provider_actions_allowed": false
+  },
+  "external_vcm_handoff": "hypothesis material only; no archive manifests/configurations/checkpoints adopted",
+  "active_jobs_or_bindings_modified": false,
+  "missing_supervision": "remains missing; no fabricated labels or relaxed prerequisites"
+}

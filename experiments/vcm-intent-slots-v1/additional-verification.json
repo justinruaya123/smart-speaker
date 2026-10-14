@@ -1,0 +1,198 @@
+{
+  "focused": {
+    "passed": 184,
+    "warnings": 24,
+    "seconds": 31.52,
+    "log": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/focused-additional-01.log",
+      "sha256": "18bd82412422e2f8d24a16c1beafd8b175984f767753af6eabd76bd8ddfb3397",
+      "bytes": 4595
+    }
+  },
+  "broad": {
+    "passed": 656,
+    "failed": 20,
+    "skipped": 13,
+    "errors": 13,
+    "warnings": 62,
+    "seconds": 73.33,
+    "failures": [
+      "FAILED experiments/pcv-delivery-v1/tests/test_report.py::test_declared_demo_preserves_all_phrase_denominators_and_audio_links",
+      "FAILED experiments/pcv-delivery-v1/tests/test_report.py::test_all_reject_demo_fails_and_lists_verbatim_parsed_intent",
+      "FAILED experiments/pcv-delivery-v1/tests/test_study_context.py::test_host_tools_bind_the_candidate_study_and_restore_it[pcv-synthetic-v2]",
+      "FAILED experiments/pcv-delivery-v1/tests/test_study_context.py::test_host_tools_bind_the_candidate_study_and_restore_it[pcv-synthetic-v2-repair1]",
+      "FAILED experiments/pcv-synthetic-v2/tests/test_version_context.py::test_v2_executes_shared_export_to_report_with_artificial_waveforms",
+      "FAILED experiments/pcv-synthetic-v2/tests/test_wake_gate.py::test_real_local_wake_models_load_and_silence_never_arms_command",
+      "FAILED experiments/pcv-synthetic-v2-repair1/tests/test_repair.py::test_child_executes_shared_export_parity_calibration_report_with_artificial_audio",
+      "FAILED experiments/phrase-contract-v1/tests/test_packaging.py::test_runtime_zip_is_deterministic_complete_and_detects_tampering",
+      "FAILED scripts/test/test_pcv_final_catalog.py::test_final_catalog_covers_every_approved_phrase_and_keeps_parent",
+      "FAILED scripts/test/test_pcv_qualification.py::test_registry_retains_legacy_ids_without_relabeling_and_reads_file",
+      "FAILED scripts/test/test_pcv_release_prepare.py::test_exact_overrides_preserve_typed_target_across_splits",
+      "FAILED scripts/test/test_pcv_release_prepare.py::test_uncertain_transcript_is_not_negative_ground_truth",
+      "FAILED scripts/test/test_pcv_release_prepare.py::test_unsupported_or_conflated_requests_never_promoted[make the attic light red-COLOR]",
+      "FAILED scripts/test/test_pcv_release_prepare.py::test_unsupported_or_conflated_requests_never_promoted[call Jane-CALL]",
+      "FAILED scripts/test/test_pcv_release_prepare.py::test_unsupported_or_conflated_requests_never_promoted[play Queen-PLAY_MUSIC]",
+      "FAILED scripts/test/test_pcv_release_prepare.py::test_unsupported_or_conflated_requests_never_promoted[turn volume down by twenty percent-VOLUME_DOWN]",
+      "FAILED scripts/test/test_pcv_release_prepare.py::test_unsupported_or_conflated_requests_never_promoted[set an alarm tomorrow at six a m-ALARM]",
+      "FAILED scripts/test/test_pcv_release_prepare.py::test_unsupported_or_conflated_requests_never_promoted[please switch to the green light-COLOR]",
+      "FAILED scripts/test/test_pcv_release_prepare.py::test_unsupported_or_conflated_requests_never_promoted[play it louder-VOLUME_UP]",
+      "FAILED scripts/test/test_speaker_publication.py::test_profile_inventory_no_ui_or_benchmark_leaks",
+      "ERROR experiments/pcv-delivery-v1/tests/test_package.py",
+      "ERROR experiments/pcv-delivery-v1/tests/test_parler_weights.py",
+      "ERROR experiments/pcv-delivery-v1/tests/test_portable_parity.py",
+      "ERROR experiments/pcv-delivery-v1/tests/test_server.py",
+      "ERROR experiments/pcv-delivery-v1/tests/test_simulator.py",
+      "ERROR scripts/test_prototype.py",
+      "ERROR tests/test_pretrained_contract.py",
+      "ERROR experiments/pcv-delivery-v1/tests/test_bundle.py::test_bundle_loads_cpu_only_without_study_or_corpus_and_cannot_accept",
+      "ERROR experiments/pcv-delivery-v1/tests/test_bundle.py::test_catalog_mutation_and_stale_policy_fail_closed",
+      "ERROR experiments/pcv-delivery-v1/tests/test_bundle.py::test_renaming_diagnostic_as_validated_does_not_bypass_measured_evidence",
+      "ERROR experiments/pcv-delivery-v1/tests/test_bundle.py::test_wake_substitution_cannot_inherit_passing_evidence",
+      "ERROR experiments/pcv-delivery-v1/tests/test_bundle.py::test_policy_substitution_cannot_inherit_passing_evidence",
+      "ERROR experiments/pcv-delivery-v1/tests/test_bundle.py::test_enabled_reload_rejects_a_bundle_measured_with_other_runtime"
+    ],
+    "same_failure_set_as_previous": true,
+    "log": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/full-suite-additional-01.log",
+      "sha256": "c50b8e146f9b5ac2415aff046be1709ac7fff9c74f4c148d28b2bd4c0b52f992",
+      "bytes": 73210
+    }
+  },
+  "tdd": {
+    "numeral-tdd-red.log": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-tdd-red.log",
+      "sha256": "dea70bf0c9b322bbf046f3d13123543697165cdb09d95512804772d41a87b4b6",
+      "bytes": 15689
+    },
+    "numeral-runner-tdd-red.log": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-runner-tdd-red.log",
+      "sha256": "ae64d3e6cc362d583b7ab3b7b7ccba59dce5f62a39e56bb75ede230b8dc44a2f",
+      "bytes": 3498
+    },
+    "numeral-cli-tdd-red.log": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-cli-tdd-red.log",
+      "sha256": "36f52ebd66301c03c9ee56a3349e1b350a6bd625180c899993ac7f1549a845fc",
+      "bytes": 5141
+    },
+    "numeral-review-tdd-red.log": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-review-tdd-red.log",
+      "sha256": "81f18cf03551c100bec86425a9fb7a96e31a740fb5b370a6e008d0ec39f34ab3",
+      "bytes": 18707
+    },
+    "numeral-review-tdd-green.log": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-review-tdd-green.log",
+      "sha256": "572f0b3797dc4cda7c048a31b2d12c0086b52d29466db093d08bf842d20fd8e1",
+      "bytes": 100
+    }
+  },
+  "independent_review": {
+    "initial_important_findings": 2,
+    "resolved": 2,
+    "initial_tests_passed": 10,
+    "fix_tests_passed": 2
+  },
+  "preparation_01": "Preserved and not fitted after review/source gate changes; prepared-02 binds corrected source",
+  "qualification": false,
+  "qualification_gate_checks": {
+    "fresh_evaluate": {
+      "exit_code": 2,
+      "log": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-qualification-gate-01.log",
+        "sha256": "adf79251832e0642de51771a3d4b20dd1690e1c793779cf34dd5e643ebc85d80",
+        "bytes": 170
+      },
+      "reason": "Fresh evaluation requires selection-before-test"
+    },
+    "full_lock": {
+      "exit_code": 2,
+      "log": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-qualification-gate-02.log",
+        "sha256": "8869bfcf718c7add853e57e734e98223676401b34a25112d36a7d19a56a11b7f",
+        "bytes": 157
+      },
+      "reason": "Fresh runtime needs frozen calibration"
+    },
+    "owner_replay": {
+      "exit_code": 2,
+      "log": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-qualification-gate-03.log",
+        "sha256": "fc7ba5ee077627009d1da830f94399160f4b4ab65fbbdbd52004953c08028af7",
+        "bytes": 217
+      },
+      "reason": "Missing genuine human wake/command pairs, calibration and separate validated owner backend"
+    }
+  },
+  "offline_analysis_failures_preserved": {
+    "pinned-benchmark-postprocess-01.log": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-01.log",
+      "sha256": "8e42412eda169eaeb7730662babfb72ae9b46271075e2509278b135bb59e7da9",
+      "bytes": 322
+    },
+    "pinned-benchmark-postprocess-02.log": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-02.log",
+      "sha256": "e53636861825ddcc85eb992616f7ab6ae44426659e3a9c3f9388578353f2f49c",
+      "bytes": 415
+    },
+    "pinned-benchmark-postprocess-03.log": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-03.log",
+      "sha256": "be005a2a74063daccb72d8bec1532017838140ed1dfff8799861959e3f327167",
+      "bytes": 317
+    }
+  },
+  "pinned_benchmark_final_verified": {
+    "log": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-04.log",
+      "sha256": "f05947cb7a92a687096809fc21b668c675b8b25132889e917154d70d6e89e26b",
+      "bytes": 2944
+    },
+    "receipt": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-03/benchmark.json",
+      "sha256": "cc81aceebba2b448d9fcb6e71c4a0cc82d9ea423f922ed1f7dfc24f6a7a8719e",
+      "bytes": 22504
+    }
+  },
+  "feature_and_source_bindings_verified": true,
+  "numeral_component_commands": [
+    [
+      "-m",
+      "scripts.train.vcm_intent_slots_numeral",
+      "prepare",
+      "--inputs",
+      "experiments/vcm-intent-slots-v1/local-inputs.json",
+      "--auxiliary",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/auxiliary.jsonl",
+      "--attributes",
+      ".cache/vcm-intent-slots-v1/mlend-source-check/audio-attributes.response",
+      "--normalization",
+      ".cache/vcm-intent-slots-v1/software-export-03/bundle/normalization.json",
+      "--protocol",
+      "experiments/vcm-intent-slots-v1/numeral-auxiliary-protocol.json",
+      "--output",
+      ".cache/vcm-intent-slots-v1/numeral-aux-v1-prepared-02"
+    ],
+    [
+      "-m",
+      "scripts.train.vcm_intent_slots_numeral",
+      "fit",
+      "--prepared",
+      ".cache/vcm-intent-slots-v1/numeral-aux-v1-prepared-02",
+      "--output",
+      ".cache/vcm-intent-slots-v1/numeral-aux-v1-fit-01"
+    ],
+    [
+      "-m",
+      "scripts.train.vcm_intent_slots_numeral",
+      "score",
+      "--run",
+      ".cache/vcm-intent-slots-v1/numeral-aux-v1-fit-01",
+      "--output",
+      ".cache/vcm-intent-slots-v1/numeral-aux-v1-test-01"
+    ]
+  ],
+  "interpreter": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python",
+  "fit_environment": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  }
+}

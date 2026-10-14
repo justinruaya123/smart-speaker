@@ -1,0 +1,2725 @@
+{
+  "experiment": "vcm-intent-slots-v1",
+  "candidate": "unqualified_numeral_component_only",
+  "qualification": false,
+  "actions_enabled": false,
+  "evaluation_role": "previously examined parent test/holdout regression",
+  "inputs_sha256": "e0a8961df728bc168b3556ea424be74294b64b6e22d415c562fbfe46f50573b1",
+  "identity": {
+    "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-identity.json",
+    "sha256": "c776fff290e02edf1bdf3dc594a0c088738d1a47330188bd39fa5d4e04cf8475",
+    "bytes": 1283
+  },
+  "commands": {
+    "results": [
+      {
+        "engine": "pytorch",
+        "split": "test",
+        "returncode": 0,
+        "argv": [
+          "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python",
+          "scripts/vcm_intent_slots.py",
+          "evaluate",
+          "--bundle",
+          ".cache/vcm-intent-slots-v1/numeral-aux-v1-export-01/bundle",
+          "--engine",
+          "pytorch",
+          "--split",
+          "test",
+          "--regression",
+          "--run-id",
+          "numeral-regression-test-pytorch-01"
+        ]
+      },
+      {
+        "engine": "pytorch",
+        "split": "holdout",
+        "returncode": 0,
+        "argv": [
+          "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python",
+          "scripts/vcm_intent_slots.py",
+          "evaluate",
+          "--bundle",
+          ".cache/vcm-intent-slots-v1/numeral-aux-v1-export-01/bundle",
+          "--engine",
+          "pytorch",
+          "--split",
+          "holdout",
+          "--regression",
+          "--run-id",
+          "numeral-regression-holdout-pytorch-01"
+        ]
+      },
+      {
+        "engine": "onnxruntime",
+        "split": "test",
+        "returncode": 0,
+        "argv": [
+          "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python",
+          "scripts/vcm_intent_slots.py",
+          "evaluate",
+          "--bundle",
+          ".cache/vcm-intent-slots-v1/numeral-aux-v1-export-01/bundle",
+          "--engine",
+          "onnxruntime",
+          "--split",
+          "test",
+          "--regression",
+          "--run-id",
+          "numeral-regression-test-onnxruntime-01"
+        ]
+      },
+      {
+        "engine": "onnxruntime",
+        "split": "holdout",
+        "returncode": 0,
+        "argv": [
+          "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python",
+          "scripts/vcm_intent_slots.py",
+          "evaluate",
+          "--bundle",
+          ".cache/vcm-intent-slots-v1/numeral-aux-v1-export-01/bundle",
+          "--engine",
+          "onnxruntime",
+          "--split",
+          "holdout",
+          "--regression",
+          "--run-id",
+          "numeral-regression-holdout-onnxruntime-01"
+        ]
+      },
+      {
+        "engine": "ncnn",
+        "split": "test",
+        "returncode": 0,
+        "argv": [
+          "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python",
+          "scripts/vcm_intent_slots.py",
+          "evaluate",
+          "--bundle",
+          ".cache/vcm-intent-slots-v1/numeral-aux-v1-export-01/bundle",
+          "--engine",
+          "ncnn",
+          "--split",
+          "test",
+          "--regression",
+          "--run-id",
+          "numeral-regression-test-ncnn-01"
+        ]
+      },
+      {
+        "engine": "ncnn",
+        "split": "holdout",
+        "returncode": 0,
+        "argv": [
+          "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python",
+          "scripts/vcm_intent_slots.py",
+          "evaluate",
+          "--bundle",
+          ".cache/vcm-intent-slots-v1/numeral-aux-v1-export-01/bundle",
+          "--engine",
+          "ncnn",
+          "--split",
+          "holdout",
+          "--regression",
+          "--run-id",
+          "numeral-regression-holdout-ncnn-01"
+        ]
+      }
+    ],
+    "elapsed_seconds": 442.93431357480586
+  },
+  "environment": {
+    "interpreter": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python",
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "threads": 1,
+    "physical_pi": false
+  },
+  "splits": {
+    "test": {
+      "engines": {
+        "pytorch": {
+          "all": {
+            "trials": 4418,
+            "supported_n": 4004,
+            "negative_n": 229,
+            "ambiguous_n": 185,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 229,
+            "faults": 2,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": 0.0,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                1020,
+                0
+              ],
+              "operation": [
+                251,
+                0
+              ],
+              "percent": [
+                427,
+                0
+              ],
+              "contact_id": [
+                102,
+                0
+              ],
+              "duration_seconds": [
+                423,
+                0
+              ],
+              "time": [
+                404,
+                0
+              ],
+              "timezone": [
+                404,
+                0
+              ],
+              "degrees": [
+                423,
+                0
+              ],
+              "unit": [
+                423,
+                0
+              ],
+              "color": [
+                372,
+                0
+              ],
+              "task_id": [
+                423,
+                0
+              ]
+            }
+          },
+          "host_timing": {
+            "measured_n": 4416,
+            "rtf_n": 4416,
+            "p50_ms": 18.766604363918304,
+            "p95_ms": 26.468986878171563,
+            "p50_rtf": 0.010451801133057109,
+            "p95_rtf": 0.021023843165379287,
+            "physical_pi_evidence": false
+          },
+          "timing_limits": {
+            "first_total_ms": 3476.541521959007,
+            "maximum_total_ms": 3476.541521959007,
+            "cold_initialization_observations_retained": true,
+            "startup_limits": "Host process/thread-one timings include first frontend initialization; exclude WAV load/capture and endpoint wait. Short concurrent gate-check processes ran during initial PyTorch replay; this is not an isolated latency qualification."
+          },
+          "runtime": {
+            "engine": "pytorch",
+            "checkpoint_status": "unqualified_numeral_component_only",
+            "checkpoint_sha256": "c2b1c9dde215a51a42d9d489c9f7b72c5ed3cbfb4f00c3846bbc045085c5535c",
+            "calibration_id": null,
+            "actions_enabled": false
+          },
+          "metrics": {
+            "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-test-pytorch-01/metrics.json",
+            "sha256": "de172ee42f8a09898974dcd55a1f30c740db749708f13a6cc7b3ff2e44cd0de3",
+            "bytes": 102610
+          },
+          "predictions": {
+            "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-test-pytorch-01/predictions.jsonl",
+            "sha256": "fdffa1824f22345b3cd8a8820f118e9124e3eb82ef1e8286a0033c0f4ed1f43f",
+            "bytes": 2662100
+          },
+          "evaluation_role": "historical_regression",
+          "qualification": false
+        },
+        "onnxruntime": {
+          "all": {
+            "trials": 4418,
+            "supported_n": 4004,
+            "negative_n": 229,
+            "ambiguous_n": 185,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 229,
+            "faults": 2,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": 0.0,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                1020,
+                0
+              ],
+              "operation": [
+                251,
+                0
+              ],
+              "percent": [
+                427,
+                0
+              ],
+              "contact_id": [
+                102,
+                0
+              ],
+              "duration_seconds": [
+                423,
+                0
+              ],
+              "time": [
+                404,
+                0
+              ],
+              "timezone": [
+                404,
+                0
+              ],
+              "degrees": [
+                423,
+                0
+              ],
+              "unit": [
+                423,
+                0
+              ],
+              "color": [
+                372,
+                0
+              ],
+              "task_id": [
+                423,
+                0
+              ]
+            }
+          },
+          "host_timing": {
+            "measured_n": 4416,
+            "rtf_n": 4416,
+            "p50_ms": 16.56415592879057,
+            "p95_ms": 22.349830949679017,
+            "p50_rtf": 0.009385534628693546,
+            "p95_rtf": 0.01815163397245259,
+            "physical_pi_evidence": false
+          },
+          "timing_limits": {
+            "first_total_ms": 30.38667142391205,
+            "maximum_total_ms": 34.769159741699696,
+            "cold_initialization_observations_retained": true,
+            "startup_limits": "Host process/thread-one timings include first frontend initialization; exclude WAV load/capture and endpoint wait. Short concurrent gate-check processes ran during initial PyTorch replay; this is not an isolated latency qualification."
+          },
+          "runtime": {
+            "engine": "onnxruntime",
+            "checkpoint_status": "unqualified_numeral_component_only",
+            "checkpoint_sha256": "c2b1c9dde215a51a42d9d489c9f7b72c5ed3cbfb4f00c3846bbc045085c5535c",
+            "calibration_id": null,
+            "actions_enabled": false
+          },
+          "metrics": {
+            "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-test-onnxruntime-01/metrics.json",
+            "sha256": "a01025149876e2265d26336c826dfc3b4b818ff2d42fee2e43efe643449782f7",
+            "bytes": 102612
+          },
+          "predictions": {
+            "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-test-onnxruntime-01/predictions.jsonl",
+            "sha256": "835b33705fc3775be39e44ecc508a26d64ea8f8837274f5e607c3de5d7859fa4",
+            "bytes": 2664619
+          },
+          "evaluation_role": "historical_regression",
+          "qualification": false
+        },
+        "ncnn": {
+          "all": {
+            "trials": 4418,
+            "supported_n": 4004,
+            "negative_n": 229,
+            "ambiguous_n": 185,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 229,
+            "faults": 2,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": 0.0,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                1020,
+                0
+              ],
+              "operation": [
+                251,
+                0
+              ],
+              "percent": [
+                427,
+                0
+              ],
+              "contact_id": [
+                102,
+                0
+              ],
+              "duration_seconds": [
+                423,
+                0
+              ],
+              "time": [
+                404,
+                0
+              ],
+              "timezone": [
+                404,
+                0
+              ],
+              "degrees": [
+                423,
+                0
+              ],
+              "unit": [
+                423,
+                0
+              ],
+              "color": [
+                372,
+                0
+              ],
+              "task_id": [
+                423,
+                0
+              ]
+            }
+          },
+          "host_timing": {
+            "measured_n": 4416,
+            "rtf_n": 4416,
+            "p50_ms": 17.733576707541943,
+            "p95_ms": 25.490026688203216,
+            "p50_rtf": 0.009836435706545953,
+            "p95_rtf": 0.018603929709986044,
+            "physical_pi_evidence": false
+          },
+          "timing_limits": {
+            "first_total_ms": 63.31573612987995,
+            "maximum_total_ms": 63.31573612987995,
+            "cold_initialization_observations_retained": true,
+            "startup_limits": "Host process/thread-one timings include first frontend initialization; exclude WAV load/capture and endpoint wait. Short concurrent gate-check processes ran during initial PyTorch replay; this is not an isolated latency qualification."
+          },
+          "runtime": {
+            "engine": "ncnn",
+            "checkpoint_status": "unqualified_numeral_component_only",
+            "checkpoint_sha256": "c2b1c9dde215a51a42d9d489c9f7b72c5ed3cbfb4f00c3846bbc045085c5535c",
+            "calibration_id": null,
+            "actions_enabled": false
+          },
+          "metrics": {
+            "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-test-ncnn-01/metrics.json",
+            "sha256": "3f6393bac2b5340ed8368dd65f5ecae7b40040e61d625c0077e1572486bfd7b4",
+            "bytes": 102607
+          },
+          "predictions": {
+            "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-test-ncnn-01/predictions.jsonl",
+            "sha256": "9993c50963c4076d5776b8387e6831d33597f47b34d05f03242cd542eb15a483",
+            "bytes": 2663480
+          },
+          "evaluation_role": "historical_regression",
+          "qualification": false
+        }
+      },
+      "full_application_parity": {
+        "onnxruntime": {
+          "outcomes": 4418,
+          "final_decision_mismatches": 0,
+          "max_intent_confidence_error": 5.273071914113636e-07,
+          "diagnostic_tolerance": 2e-05
+        },
+        "ncnn": {
+          "outcomes": 4418,
+          "final_decision_mismatches": 0,
+          "max_intent_confidence_error": 2.9013326291460473e-07,
+          "diagnostic_tolerance": 2e-05
+        }
+      },
+      "population_metrics": {
+        "all": {
+          "trials": 4418,
+          "supported_n": 4004,
+          "negative_n": 229,
+          "ambiguous_n": 185,
+          "accepted_n": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "correct_rejections": 229,
+          "faults": 2,
+          "missing": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_accept_rate": 0.0,
+          "slot_denominators_and_correct_accepted": {
+            "light_id": [
+              1020,
+              0
+            ],
+            "operation": [
+              251,
+              0
+            ],
+            "percent": [
+              427,
+              0
+            ],
+            "contact_id": [
+              102,
+              0
+            ],
+            "duration_seconds": [
+              423,
+              0
+            ],
+            "time": [
+              404,
+              0
+            ],
+            "timezone": [
+              404,
+              0
+            ],
+            "degrees": [
+              423,
+              0
+            ],
+            "unit": [
+              423,
+              0
+            ],
+            "color": [
+              372,
+              0
+            ],
+            "task_id": [
+              423,
+              0
+            ]
+          }
+        },
+        "tracks": {
+          "human/optionb": {
+            "trials": 609,
+            "supported_n": 609,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                144,
+                0
+              ],
+              "operation": [
+                107,
+                0
+              ],
+              "contact_id": [
+                6,
+                0
+              ],
+              "duration_seconds": [
+                19,
+                0
+              ],
+              "time": [
+                32,
+                0
+              ],
+              "timezone": [
+                32,
+                0
+              ],
+              "degrees": [
+                28,
+                0
+              ],
+              "unit": [
+                28,
+                0
+              ],
+              "percent": [
+                23,
+                0
+              ],
+              "color": [
+                63,
+                0
+              ],
+              "task_id": [
+                18,
+                0
+              ]
+            }
+          },
+          "human/negative": {
+            "trials": 229,
+            "supported_n": 0,
+            "negative_n": 229,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 229,
+            "faults": 0,
+            "missing": 0,
+            "recall": null,
+            "precision": null,
+            "false_accept_rate": 0.0,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "synthetic/optionb": {
+            "trials": 3368,
+            "supported_n": 3368,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                855,
+                0
+              ],
+              "operation": [
+                138,
+                0
+              ],
+              "contact_id": [
+                96,
+                0
+              ],
+              "duration_seconds": [
+                404,
+                0
+              ],
+              "time": [
+                372,
+                0
+              ],
+              "timezone": [
+                372,
+                0
+              ],
+              "degrees": [
+                395,
+                0
+              ],
+              "unit": [
+                395,
+                0
+              ],
+              "percent": [
+                398,
+                0
+              ],
+              "color": [
+                305,
+                0
+              ],
+              "task_id": [
+                405,
+                0
+              ]
+            }
+          },
+          "human/ambiguous": {
+            "trials": 185,
+            "supported_n": 0,
+            "negative_n": 0,
+            "ambiguous_n": 185,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 2,
+            "missing": 0,
+            "recall": null,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "human/extension": {
+            "trials": 27,
+            "supported_n": 27,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                21,
+                0
+              ],
+              "operation": [
+                6,
+                0
+              ],
+              "percent": [
+                6,
+                0
+              ],
+              "color": [
+                4,
+                0
+              ]
+            }
+          }
+        },
+        "kinds": {
+          "human": {
+            "trials": 1050,
+            "supported_n": 636,
+            "negative_n": 229,
+            "ambiguous_n": 185,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 229,
+            "faults": 2,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": 0.0,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                165,
+                0
+              ],
+              "operation": [
+                113,
+                0
+              ],
+              "percent": [
+                29,
+                0
+              ],
+              "contact_id": [
+                6,
+                0
+              ],
+              "duration_seconds": [
+                19,
+                0
+              ],
+              "time": [
+                32,
+                0
+              ],
+              "timezone": [
+                32,
+                0
+              ],
+              "degrees": [
+                28,
+                0
+              ],
+              "unit": [
+                28,
+                0
+              ],
+              "color": [
+                67,
+                0
+              ],
+              "task_id": [
+                18,
+                0
+              ]
+            }
+          },
+          "synthetic": {
+            "trials": 3368,
+            "supported_n": 3368,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                855,
+                0
+              ],
+              "operation": [
+                138,
+                0
+              ],
+              "contact_id": [
+                96,
+                0
+              ],
+              "duration_seconds": [
+                404,
+                0
+              ],
+              "time": [
+                372,
+                0
+              ],
+              "timezone": [
+                372,
+                0
+              ],
+              "degrees": [
+                395,
+                0
+              ],
+              "unit": [
+                395,
+                0
+              ],
+              "percent": [
+                398,
+                0
+              ],
+              "color": [
+                305,
+                0
+              ],
+              "task_id": [
+                405,
+                0
+              ]
+            }
+          }
+        },
+        "intents": {
+          "PLAY_MUSIC": {
+            "trials": 77,
+            "supported_n": 77,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "OOV": {
+            "trials": 414,
+            "supported_n": 0,
+            "negative_n": 229,
+            "ambiguous_n": 185,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 229,
+            "faults": 2,
+            "missing": 0,
+            "recall": null,
+            "precision": null,
+            "false_accept_rate": 0.0,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "WEATHER": {
+            "trials": 85,
+            "supported_n": 85,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "TIME": {
+            "trials": 133,
+            "supported_n": 133,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "LIGHT_ON": {
+            "trials": 113,
+            "supported_n": 113,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                113,
+                0
+              ]
+            }
+          },
+          "LIGHT_OFF": {
+            "trials": 114,
+            "supported_n": 114,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                114,
+                0
+              ]
+            }
+          },
+          "PAUSE": {
+            "trials": 138,
+            "supported_n": 138,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "STOP": {
+            "trials": 141,
+            "supported_n": 141,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "NEXT": {
+            "trials": 135,
+            "supported_n": 135,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "VOLUME": {
+            "trials": 251,
+            "supported_n": 251,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "operation": [
+                251,
+                0
+              ],
+              "percent": [
+                6,
+                0
+              ]
+            }
+          },
+          "CALL": {
+            "trials": 102,
+            "supported_n": 102,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "contact_id": [
+                102,
+                0
+              ]
+            }
+          },
+          "MESSAGE": {
+            "trials": 129,
+            "supported_n": 129,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "LIST_REMINDERS": {
+            "trials": 120,
+            "supported_n": 120,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "TIMER": {
+            "trials": 423,
+            "supported_n": 423,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "duration_seconds": [
+                423,
+                0
+              ]
+            }
+          },
+          "ALARM": {
+            "trials": 404,
+            "supported_n": 404,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "time": [
+                404,
+                0
+              ],
+              "timezone": [
+                404,
+                0
+              ]
+            }
+          },
+          "TEMPERATURE": {
+            "trials": 423,
+            "supported_n": 423,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "degrees": [
+                423,
+                0
+              ],
+              "unit": [
+                423,
+                0
+              ]
+            }
+          },
+          "BRIGHTNESS": {
+            "trials": 421,
+            "supported_n": 421,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                421,
+                0
+              ],
+              "percent": [
+                421,
+                0
+              ]
+            }
+          },
+          "COLOR": {
+            "trials": 372,
+            "supported_n": 372,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "color": [
+                372,
+                0
+              ],
+              "light_id": [
+                372,
+                0
+              ]
+            }
+          },
+          "CREATE_REMINDER": {
+            "trials": 423,
+            "supported_n": 423,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "task_id": [
+                423,
+                0
+              ]
+            }
+          }
+        },
+        "macro_person_recall": 0.0,
+        "worst_person_recall": 0.0,
+        "macro_person_population": "human declared IDs only",
+        "people_cluster_recall_interval": [
+          0.0,
+          0.0
+        ],
+        "qualification": false
+      }
+    },
+    "holdout": {
+      "engines": {
+        "pytorch": {
+          "all": {
+            "trials": 196,
+            "supported_n": 183,
+            "negative_n": 11,
+            "ambiguous_n": 2,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 11,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": 0.0,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                47,
+                0
+              ],
+              "operation": [
+                10,
+                0
+              ],
+              "contact_id": [
+                6,
+                0
+              ],
+              "duration_seconds": [
+                18,
+                0
+              ],
+              "time": [
+                18,
+                0
+              ],
+              "timezone": [
+                18,
+                0
+              ],
+              "degrees": [
+                18,
+                0
+              ],
+              "unit": [
+                18,
+                0
+              ],
+              "percent": [
+                18,
+                0
+              ],
+              "color": [
+                18,
+                0
+              ],
+              "task_id": [
+                18,
+                0
+              ]
+            }
+          },
+          "host_timing": {
+            "measured_n": 196,
+            "rtf_n": 196,
+            "p50_ms": 22.314151283353567,
+            "p95_ms": 33.39918656274676,
+            "p50_rtf": 0.008020679422928403,
+            "p95_rtf": 0.01899168947567196,
+            "physical_pi_evidence": false
+          },
+          "timing_limits": {
+            "first_total_ms": 2744.631535373628,
+            "maximum_total_ms": 2744.631535373628,
+            "cold_initialization_observations_retained": true,
+            "startup_limits": "Host process/thread-one timings include first frontend initialization; exclude WAV load/capture and endpoint wait. Short concurrent gate-check processes ran during initial PyTorch replay; this is not an isolated latency qualification."
+          },
+          "runtime": {
+            "engine": "pytorch",
+            "checkpoint_status": "unqualified_numeral_component_only",
+            "checkpoint_sha256": "c2b1c9dde215a51a42d9d489c9f7b72c5ed3cbfb4f00c3846bbc045085c5535c",
+            "calibration_id": null,
+            "actions_enabled": false
+          },
+          "metrics": {
+            "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-holdout-pytorch-01/metrics.json",
+            "sha256": "e910ea746eb44d5a53098de44f432590fe5f97b776e168366faf0ead1e497b18",
+            "bytes": 21490
+          },
+          "predictions": {
+            "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-holdout-pytorch-01/predictions.jsonl",
+            "sha256": "2b50f0690bdc050d04924785c12a4017e14081e9d8b488c437e5fb2c8d20839e",
+            "bytes": 118605
+          },
+          "evaluation_role": "historical_regression",
+          "qualification": false
+        },
+        "onnxruntime": {
+          "all": {
+            "trials": 196,
+            "supported_n": 183,
+            "negative_n": 11,
+            "ambiguous_n": 2,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 11,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": 0.0,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                47,
+                0
+              ],
+              "operation": [
+                10,
+                0
+              ],
+              "contact_id": [
+                6,
+                0
+              ],
+              "duration_seconds": [
+                18,
+                0
+              ],
+              "time": [
+                18,
+                0
+              ],
+              "timezone": [
+                18,
+                0
+              ],
+              "degrees": [
+                18,
+                0
+              ],
+              "unit": [
+                18,
+                0
+              ],
+              "percent": [
+                18,
+                0
+              ],
+              "color": [
+                18,
+                0
+              ],
+              "task_id": [
+                18,
+                0
+              ]
+            }
+          },
+          "host_timing": {
+            "measured_n": 196,
+            "rtf_n": 196,
+            "p50_ms": 20.506495144218206,
+            "p95_ms": 29.346325201913714,
+            "p50_rtf": 0.007155637242293749,
+            "p95_rtf": 0.01999183704017424,
+            "physical_pi_evidence": false
+          },
+          "timing_limits": {
+            "first_total_ms": 36.68531868606806,
+            "maximum_total_ms": 41.08527861535549,
+            "cold_initialization_observations_retained": true,
+            "startup_limits": "Host process/thread-one timings include first frontend initialization; exclude WAV load/capture and endpoint wait. Short concurrent gate-check processes ran during initial PyTorch replay; this is not an isolated latency qualification."
+          },
+          "runtime": {
+            "engine": "onnxruntime",
+            "checkpoint_status": "unqualified_numeral_component_only",
+            "checkpoint_sha256": "c2b1c9dde215a51a42d9d489c9f7b72c5ed3cbfb4f00c3846bbc045085c5535c",
+            "calibration_id": null,
+            "actions_enabled": false
+          },
+          "metrics": {
+            "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-holdout-onnxruntime-01/metrics.json",
+            "sha256": "3189174d1c3df9a4cf8f6cd7f39b95026dfa220633a813c278ff6aa3b3f27c7c",
+            "bytes": 21495
+          },
+          "predictions": {
+            "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-holdout-onnxruntime-01/predictions.jsonl",
+            "sha256": "b217de4e2b0392a261c0cd7e47af47cd563929757c0e1f4de02afe555c0181e4",
+            "bytes": 118725
+          },
+          "evaluation_role": "historical_regression",
+          "qualification": false
+        },
+        "ncnn": {
+          "all": {
+            "trials": 196,
+            "supported_n": 183,
+            "negative_n": 11,
+            "ambiguous_n": 2,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 11,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": 0.0,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                47,
+                0
+              ],
+              "operation": [
+                10,
+                0
+              ],
+              "contact_id": [
+                6,
+                0
+              ],
+              "duration_seconds": [
+                18,
+                0
+              ],
+              "time": [
+                18,
+                0
+              ],
+              "timezone": [
+                18,
+                0
+              ],
+              "degrees": [
+                18,
+                0
+              ],
+              "unit": [
+                18,
+                0
+              ],
+              "percent": [
+                18,
+                0
+              ],
+              "color": [
+                18,
+                0
+              ],
+              "task_id": [
+                18,
+                0
+              ]
+            }
+          },
+          "host_timing": {
+            "measured_n": 196,
+            "rtf_n": 196,
+            "p50_ms": 22.769054863601923,
+            "p95_ms": 33.301373245194554,
+            "p50_rtf": 0.00811947376666243,
+            "p95_rtf": 0.017686797464120843,
+            "physical_pi_evidence": false
+          },
+          "timing_limits": {
+            "first_total_ms": 35.88606137782335,
+            "maximum_total_ms": 35.88606137782335,
+            "cold_initialization_observations_retained": true,
+            "startup_limits": "Host process/thread-one timings include first frontend initialization; exclude WAV load/capture and endpoint wait. Short concurrent gate-check processes ran during initial PyTorch replay; this is not an isolated latency qualification."
+          },
+          "runtime": {
+            "engine": "ncnn",
+            "checkpoint_status": "unqualified_numeral_component_only",
+            "checkpoint_sha256": "c2b1c9dde215a51a42d9d489c9f7b72c5ed3cbfb4f00c3846bbc045085c5535c",
+            "calibration_id": null,
+            "actions_enabled": false
+          },
+          "metrics": {
+            "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-holdout-ncnn-01/metrics.json",
+            "sha256": "59764483b85cedffaf7da7b8bf391867f450207f8f4a7a900b3571f332c22f54",
+            "bytes": 21488
+          },
+          "predictions": {
+            "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-holdout-ncnn-01/predictions.jsonl",
+            "sha256": "874a61894cb40d4a19e4e1d3c2302f9c7044855ec6b1cfc3bd21aa6adaa61b84",
+            "bytes": 118619
+          },
+          "evaluation_role": "historical_regression",
+          "qualification": false
+        }
+      },
+      "full_application_parity": {
+        "onnxruntime": {
+          "outcomes": 196,
+          "final_decision_mismatches": 0,
+          "max_intent_confidence_error": 3.9542439567163967e-07,
+          "diagnostic_tolerance": 2e-05
+        },
+        "ncnn": {
+          "outcomes": 196,
+          "final_decision_mismatches": 0,
+          "max_intent_confidence_error": 2.6245357820364745e-07,
+          "diagnostic_tolerance": 2e-05
+        }
+      },
+      "population_metrics": {
+        "all": {
+          "trials": 196,
+          "supported_n": 183,
+          "negative_n": 11,
+          "ambiguous_n": 2,
+          "accepted_n": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "correct_rejections": 11,
+          "faults": 0,
+          "missing": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_accept_rate": 0.0,
+          "slot_denominators_and_correct_accepted": {
+            "light_id": [
+              47,
+              0
+            ],
+            "operation": [
+              10,
+              0
+            ],
+            "contact_id": [
+              6,
+              0
+            ],
+            "duration_seconds": [
+              18,
+              0
+            ],
+            "time": [
+              18,
+              0
+            ],
+            "timezone": [
+              18,
+              0
+            ],
+            "degrees": [
+              18,
+              0
+            ],
+            "unit": [
+              18,
+              0
+            ],
+            "percent": [
+              18,
+              0
+            ],
+            "color": [
+              18,
+              0
+            ],
+            "task_id": [
+              18,
+              0
+            ]
+          }
+        },
+        "tracks": {
+          "human/optionb": {
+            "trials": 80,
+            "supported_n": 80,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                14,
+                0
+              ],
+              "operation": [
+                4,
+                0
+              ],
+              "contact_id": [
+                3,
+                0
+              ],
+              "duration_seconds": [
+                9,
+                0
+              ],
+              "time": [
+                8,
+                0
+              ],
+              "timezone": [
+                8,
+                0
+              ],
+              "degrees": [
+                9,
+                0
+              ],
+              "unit": [
+                9,
+                0
+              ],
+              "percent": [
+                6,
+                0
+              ],
+              "color": [
+                6,
+                0
+              ],
+              "task_id": [
+                9,
+                0
+              ]
+            }
+          },
+          "synthetic/optionb": {
+            "trials": 100,
+            "supported_n": 100,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                30,
+                0
+              ],
+              "operation": [
+                6,
+                0
+              ],
+              "contact_id": [
+                3,
+                0
+              ],
+              "duration_seconds": [
+                9,
+                0
+              ],
+              "time": [
+                10,
+                0
+              ],
+              "timezone": [
+                10,
+                0
+              ],
+              "degrees": [
+                9,
+                0
+              ],
+              "unit": [
+                9,
+                0
+              ],
+              "percent": [
+                12,
+                0
+              ],
+              "color": [
+                12,
+                0
+              ],
+              "task_id": [
+                9,
+                0
+              ]
+            }
+          },
+          "human/extension": {
+            "trials": 3,
+            "supported_n": 3,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                3,
+                0
+              ]
+            }
+          },
+          "human/negative": {
+            "trials": 11,
+            "supported_n": 0,
+            "negative_n": 11,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 11,
+            "faults": 0,
+            "missing": 0,
+            "recall": null,
+            "precision": null,
+            "false_accept_rate": 0.0,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "human/ambiguous": {
+            "trials": 2,
+            "supported_n": 0,
+            "negative_n": 0,
+            "ambiguous_n": 2,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": null,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          }
+        },
+        "kinds": {
+          "human": {
+            "trials": 96,
+            "supported_n": 83,
+            "negative_n": 11,
+            "ambiguous_n": 2,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 11,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": 0.0,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                17,
+                0
+              ],
+              "operation": [
+                4,
+                0
+              ],
+              "contact_id": [
+                3,
+                0
+              ],
+              "duration_seconds": [
+                9,
+                0
+              ],
+              "time": [
+                8,
+                0
+              ],
+              "timezone": [
+                8,
+                0
+              ],
+              "degrees": [
+                9,
+                0
+              ],
+              "unit": [
+                9,
+                0
+              ],
+              "percent": [
+                6,
+                0
+              ],
+              "color": [
+                6,
+                0
+              ],
+              "task_id": [
+                9,
+                0
+              ]
+            }
+          },
+          "synthetic": {
+            "trials": 100,
+            "supported_n": 100,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                30,
+                0
+              ],
+              "operation": [
+                6,
+                0
+              ],
+              "contact_id": [
+                3,
+                0
+              ],
+              "duration_seconds": [
+                9,
+                0
+              ],
+              "time": [
+                10,
+                0
+              ],
+              "timezone": [
+                10,
+                0
+              ],
+              "degrees": [
+                9,
+                0
+              ],
+              "unit": [
+                9,
+                0
+              ],
+              "percent": [
+                12,
+                0
+              ],
+              "color": [
+                12,
+                0
+              ],
+              "task_id": [
+                9,
+                0
+              ]
+            }
+          }
+        },
+        "intents": {
+          "PLAY_MUSIC": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "WEATHER": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "TIME": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "LIGHT_ON": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                6,
+                0
+              ]
+            }
+          },
+          "OOV": {
+            "trials": 13,
+            "supported_n": 0,
+            "negative_n": 11,
+            "ambiguous_n": 2,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 11,
+            "faults": 0,
+            "missing": 0,
+            "recall": null,
+            "precision": null,
+            "false_accept_rate": 0.0,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "LIGHT_OFF": {
+            "trials": 5,
+            "supported_n": 5,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                5,
+                0
+              ]
+            }
+          },
+          "PAUSE": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "STOP": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "NEXT": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "VOLUME": {
+            "trials": 10,
+            "supported_n": 10,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "operation": [
+                10,
+                0
+              ]
+            }
+          },
+          "CALL": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "contact_id": [
+                6,
+                0
+              ]
+            }
+          },
+          "MESSAGE": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "LIST_REMINDERS": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {}
+          },
+          "TIMER": {
+            "trials": 18,
+            "supported_n": 18,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "duration_seconds": [
+                18,
+                0
+              ]
+            }
+          },
+          "ALARM": {
+            "trials": 18,
+            "supported_n": 18,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "time": [
+                18,
+                0
+              ],
+              "timezone": [
+                18,
+                0
+              ]
+            }
+          },
+          "TEMPERATURE": {
+            "trials": 18,
+            "supported_n": 18,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "degrees": [
+                18,
+                0
+              ],
+              "unit": [
+                18,
+                0
+              ]
+            }
+          },
+          "BRIGHTNESS": {
+            "trials": 18,
+            "supported_n": 18,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "light_id": [
+                18,
+                0
+              ],
+              "percent": [
+                18,
+                0
+              ]
+            }
+          },
+          "COLOR": {
+            "trials": 18,
+            "supported_n": 18,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "color": [
+                18,
+                0
+              ],
+              "light_id": [
+                18,
+                0
+              ]
+            }
+          },
+          "CREATE_REMINDER": {
+            "trials": 18,
+            "supported_n": 18,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null,
+            "slot_denominators_and_correct_accepted": {
+              "task_id": [
+                18,
+                0
+              ]
+            }
+          }
+        },
+        "macro_person_recall": 0.0,
+        "worst_person_recall": 0.0,
+        "macro_person_population": "human declared IDs only",
+        "people_cluster_recall_interval": [
+          0.0,
+          0.0
+        ],
+        "qualification": false
+      }
+    }
+  },
+  "canonical_benchmark": {
+    "pinned_parser": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/official-benchmark-pinned/pi.py",
+      "sha256": "772a73dffa5810645182d2a6a9c16a828bb25d4a84f2d9cb3bbf60993d76545f",
+      "bytes": 28799,
+      "revision": "ab39857cf73dd067d068fed388c321ab160dc191",
+      "url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/pi.py",
+      "verified_against_pinned_github_content": true,
+      "earlier_cache_path": "/tmp/vcm-benchmark-main/vcmbench/pi.py",
+      "earlier_cache_sha256": "6344740e3061c79015bc742028d860b5c57bbf0b203921afb93d4b8e93a83f70",
+      "earlier_cache_matched_pin": false,
+      "correction": "Original raw replay/prediction receipts preserved; postprocess both historical and numeral regressions with the exact pinned parser and record new receipts. No active runtime/manifest/evaluation bindings changed."
+    },
+    "raw_postprocessing_receipt": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-03/benchmark.json",
+      "sha256": "cc81aceebba2b448d9fcb6e71c4a0cc82d9ea423f922ed1f7dfc24f6a7a8719e",
+      "bytes": 22504
+    },
+    "old_cached_parser_claim_corrected": true,
+    "historical_rechecked_with_actual_pin": {
+      "test": {
+        "engines": {
+          "pytorch": {
+            "trials": 4418,
+            "parser_commands": 4416,
+            "faults_separate": 2,
+            "serialization_mismatches": 0,
+            "parser_mismatches": 0,
+            "accepted": 0,
+            "supported_reject_failures": 4004,
+            "predictions": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/historical-test-pytorch-followup-01/predictions.jsonl",
+              "sha256": "1ade079e36876fee4633ce21aa3d7df3411969a534ee7a61cb7901edd8244897"
+            },
+            "metrics": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/historical-test-pytorch-followup-01/metrics.json",
+              "sha256": "a475d92d1ff2b2c9e49dcf3fa77de1fdcf91b291e818a57f6356e3685861479a"
+            },
+            "benchmark": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-03/historical-test-pytorch.jsonl",
+              "sha256": "14dc05f08b5488bcae460a66108e3dfbddcde056e3d2030665abe66380ff67da"
+            },
+            "host_timing": {
+              "measured_n": 4416,
+              "rtf_n": 4416,
+              "p50_ms": 17.143051140010357,
+              "p95_ms": 20.112695870921016,
+              "p50_rtf": 0.00920079673974997,
+              "p95_rtf": 0.016864295512213245,
+              "physical_pi_evidence": false
+            }
+          },
+          "onnxruntime": {
+            "trials": 4418,
+            "parser_commands": 4416,
+            "faults_separate": 2,
+            "serialization_mismatches": 0,
+            "parser_mismatches": 0,
+            "accepted": 0,
+            "supported_reject_failures": 4004,
+            "predictions": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/historical-test-onnxruntime-followup-01/predictions.jsonl",
+              "sha256": "f6f8ec9bd47094f1f0d015311bbc43da20e0e5807eecdecf077a8264503bf992"
+            },
+            "metrics": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/historical-test-onnxruntime-followup-01/metrics.json",
+              "sha256": "c9c461ed432642edafc8bf05fc0924cc7541972bcd114730878cca0cd351d172"
+            },
+            "benchmark": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-03/historical-test-onnxruntime.jsonl",
+              "sha256": "ea02bb4ca0a5e7110a5982f1c37c4d7b94e51d54fed26d171795ed3eec96d1d4"
+            },
+            "host_timing": {
+              "measured_n": 4416,
+              "rtf_n": 4416,
+              "p50_ms": 15.010118950158358,
+              "p95_ms": 17.52018230035901,
+              "p50_rtf": 0.008049195849446099,
+              "p95_rtf": 0.014842150721315903,
+              "physical_pi_evidence": false
+            }
+          },
+          "ncnn": {
+            "trials": 4418,
+            "parser_commands": 4416,
+            "faults_separate": 2,
+            "serialization_mismatches": 0,
+            "parser_mismatches": 0,
+            "accepted": 0,
+            "supported_reject_failures": 4004,
+            "predictions": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/historical-test-ncnn-followup-01/predictions.jsonl",
+              "sha256": "e85fd9ae5a5ea6a05a9f7a5b4935ed57ab9dabd83230510b12d473cbe003167d"
+            },
+            "metrics": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/historical-test-ncnn-followup-01/metrics.json",
+              "sha256": "fbd67f4b44afcf8d22ecef574e8304c55de13a68cb53519d193fcbf996cec97a"
+            },
+            "benchmark": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-03/historical-test-ncnn.jsonl",
+              "sha256": "32419712d72fb8f0822633edc1b8ebde517f24c4ee3e8673a65c88779a7dff3d"
+            },
+            "host_timing": {
+              "measured_n": 4416,
+              "rtf_n": 4416,
+              "p50_ms": 16.049618367105722,
+              "p95_ms": 20.390698919072747,
+              "p50_rtf": 0.008565872710692198,
+              "p95_rtf": 0.015446838409873926,
+              "physical_pi_evidence": false
+            }
+          }
+        },
+        "application_parity": {
+          "onnxruntime": {
+            "outcomes": 4418,
+            "final_decision_mismatches": 0,
+            "max_intent_confidence_error": 1.3899811926454397e-07,
+            "diagnostic_tolerance": 2e-05
+          },
+          "ncnn": {
+            "outcomes": 4418,
+            "final_decision_mismatches": 0,
+            "max_intent_confidence_error": 8.118499827958203e-08,
+            "diagnostic_tolerance": 2e-05
+          }
+        }
+      },
+      "holdout": {
+        "engines": {
+          "pytorch": {
+            "trials": 196,
+            "parser_commands": 196,
+            "faults_separate": 0,
+            "serialization_mismatches": 0,
+            "parser_mismatches": 0,
+            "accepted": 0,
+            "supported_reject_failures": 183,
+            "predictions": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/historical-holdout-pytorch-followup-01/predictions.jsonl",
+              "sha256": "76b0962943deee299641d8fa2330153fc27d249a3c3e5c38346eccdcf963c081"
+            },
+            "metrics": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/historical-holdout-pytorch-followup-01/metrics.json",
+              "sha256": "7ac2cc69a59dbcafc8b45152b09c2ebb2960d9feff7d2b0b3abd061939f98719"
+            },
+            "benchmark": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-03/historical-holdout-pytorch.jsonl",
+              "sha256": "ba84928029158204c89ba2f5789af944a4c50f38be8648f043c74b260b677c8d"
+            },
+            "host_timing": {
+              "measured_n": 196,
+              "rtf_n": 196,
+              "p50_ms": 19.24959383904934,
+              "p95_ms": 23.98551837541163,
+              "p50_rtf": 0.007712908189682046,
+              "p95_rtf": 0.017517002929440317,
+              "physical_pi_evidence": false
+            }
+          },
+          "onnxruntime": {
+            "trials": 196,
+            "parser_commands": 196,
+            "faults_separate": 0,
+            "serialization_mismatches": 0,
+            "parser_mismatches": 0,
+            "accepted": 0,
+            "supported_reject_failures": 183,
+            "predictions": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/historical-holdout-onnxruntime-followup-01/predictions.jsonl",
+              "sha256": "d775063055f4ce8e5800d86c647e6b0b5e14bdea1ef7aa4edd9bb3d6570835bf"
+            },
+            "metrics": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/historical-holdout-onnxruntime-followup-01/metrics.json",
+              "sha256": "2cb955dceb2af2a1b5cbd8afd76b1fc38fff82bec9c9ce7fb835810c5b72d6e5"
+            },
+            "benchmark": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-03/historical-holdout-onnxruntime.jsonl",
+              "sha256": "8f2d4d1c195f5452d6cd06478275995624c2200bd2155e42be1b3cb4ba2bd96a"
+            },
+            "host_timing": {
+              "measured_n": 196,
+              "rtf_n": 196,
+              "p50_ms": 15.643220860511065,
+              "p95_ms": 20.442733308300376,
+              "p50_rtf": 0.006194377517085949,
+              "p95_rtf": 0.014255099635267136,
+              "physical_pi_evidence": false
+            }
+          },
+          "ncnn": {
+            "trials": 196,
+            "parser_commands": 196,
+            "faults_separate": 0,
+            "serialization_mismatches": 0,
+            "parser_mismatches": 0,
+            "accepted": 0,
+            "supported_reject_failures": 183,
+            "predictions": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/historical-holdout-ncnn-followup-01/predictions.jsonl",
+              "sha256": "da6764c1bc709ace128fa4c990e59815210b0e264e7d4a72a5409b8af2e3edbf"
+            },
+            "metrics": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/historical-holdout-ncnn-followup-01/metrics.json",
+              "sha256": "7a4462a2903a1e8c37bbe73d3507b97a7b1ad6edd97cf1650b3122556fc3eb57"
+            },
+            "benchmark": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-03/historical-holdout-ncnn.jsonl",
+              "sha256": "d7d9f034d88aa238f5f0b00b83ca5e9f2cc626c8bc19d68d001963564985b5cc"
+            },
+            "host_timing": {
+              "measured_n": 196,
+              "rtf_n": 196,
+              "p50_ms": 17.937906552106142,
+              "p95_ms": 25.0154051464051,
+              "p50_rtf": 0.00711595308757383,
+              "p95_rtf": 0.014895320470843996,
+              "physical_pi_evidence": false
+            }
+          }
+        },
+        "application_parity": {
+          "onnxruntime": {
+            "outcomes": 196,
+            "final_decision_mismatches": 0,
+            "max_intent_confidence_error": 7.087502415514813e-08,
+            "diagnostic_tolerance": 2e-05
+          },
+          "ncnn": {
+            "outcomes": 196,
+            "final_decision_mismatches": 0,
+            "max_intent_confidence_error": 7.494457099355145e-08,
+            "diagnostic_tolerance": 2e-05
+          }
+        }
+      }
+    },
+    "numeral_rechecked_with_actual_pin": {
+      "test": {
+        "engines": {
+          "pytorch": {
+            "trials": 4418,
+            "parser_commands": 4416,
+            "faults_separate": 2,
+            "serialization_mismatches": 0,
+            "parser_mismatches": 0,
+            "accepted": 0,
+            "supported_reject_failures": 4004,
+            "predictions": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-test-pytorch-01/predictions.jsonl",
+              "sha256": "fdffa1824f22345b3cd8a8820f118e9124e3eb82ef1e8286a0033c0f4ed1f43f"
+            },
+            "metrics": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-test-pytorch-01/metrics.json",
+              "sha256": "de172ee42f8a09898974dcd55a1f30c740db749708f13a6cc7b3ff2e44cd0de3"
+            },
+            "benchmark": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-03/numeral-test-pytorch.jsonl",
+              "sha256": "6ce664a564cc031a3833ae39a874f25ee467e25750f1ec3f472b9f7d245050a6"
+            },
+            "host_timing": {
+              "measured_n": 4416,
+              "rtf_n": 4416,
+              "p50_ms": 18.766604363918304,
+              "p95_ms": 26.468986878171563,
+              "p50_rtf": 0.010451801133057109,
+              "p95_rtf": 0.021023843165379287,
+              "physical_pi_evidence": false
+            }
+          },
+          "onnxruntime": {
+            "trials": 4418,
+            "parser_commands": 4416,
+            "faults_separate": 2,
+            "serialization_mismatches": 0,
+            "parser_mismatches": 0,
+            "accepted": 0,
+            "supported_reject_failures": 4004,
+            "predictions": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-test-onnxruntime-01/predictions.jsonl",
+              "sha256": "835b33705fc3775be39e44ecc508a26d64ea8f8837274f5e607c3de5d7859fa4"
+            },
+            "metrics": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-test-onnxruntime-01/metrics.json",
+              "sha256": "a01025149876e2265d26336c826dfc3b4b818ff2d42fee2e43efe643449782f7"
+            },
+            "benchmark": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-03/numeral-test-onnxruntime.jsonl",
+              "sha256": "87c0e28bbbda72cc4736009b43b8d9e8d1bde1c6f7393da44cead7d5d7c53592"
+            },
+            "host_timing": {
+              "measured_n": 4416,
+              "rtf_n": 4416,
+              "p50_ms": 16.56415592879057,
+              "p95_ms": 22.349830949679017,
+              "p50_rtf": 0.009385534628693546,
+              "p95_rtf": 0.01815163397245259,
+              "physical_pi_evidence": false
+            }
+          },
+          "ncnn": {
+            "trials": 4418,
+            "parser_commands": 4416,
+            "faults_separate": 2,
+            "serialization_mismatches": 0,
+            "parser_mismatches": 0,
+            "accepted": 0,
+            "supported_reject_failures": 4004,
+            "predictions": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-test-ncnn-01/predictions.jsonl",
+              "sha256": "9993c50963c4076d5776b8387e6831d33597f47b34d05f03242cd542eb15a483"
+            },
+            "metrics": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-test-ncnn-01/metrics.json",
+              "sha256": "3f6393bac2b5340ed8368dd65f5ecae7b40040e61d625c0077e1572486bfd7b4"
+            },
+            "benchmark": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-03/numeral-test-ncnn.jsonl",
+              "sha256": "1187904a5cb3e73e37999410499438bff375baf2301eb7d10167b56f8c3c141e"
+            },
+            "host_timing": {
+              "measured_n": 4416,
+              "rtf_n": 4416,
+              "p50_ms": 17.733576707541943,
+              "p95_ms": 25.490026688203216,
+              "p50_rtf": 0.009836435706545953,
+              "p95_rtf": 0.018603929709986044,
+              "physical_pi_evidence": false
+            }
+          }
+        },
+        "application_parity": {
+          "onnxruntime": {
+            "outcomes": 4418,
+            "final_decision_mismatches": 0,
+            "max_intent_confidence_error": 5.273071914113636e-07,
+            "diagnostic_tolerance": 2e-05
+          },
+          "ncnn": {
+            "outcomes": 4418,
+            "final_decision_mismatches": 0,
+            "max_intent_confidence_error": 2.9013326291460473e-07,
+            "diagnostic_tolerance": 2e-05
+          }
+        }
+      },
+      "holdout": {
+        "engines": {
+          "pytorch": {
+            "trials": 196,
+            "parser_commands": 196,
+            "faults_separate": 0,
+            "serialization_mismatches": 0,
+            "parser_mismatches": 0,
+            "accepted": 0,
+            "supported_reject_failures": 183,
+            "predictions": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-holdout-pytorch-01/predictions.jsonl",
+              "sha256": "2b50f0690bdc050d04924785c12a4017e14081e9d8b488c437e5fb2c8d20839e"
+            },
+            "metrics": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-holdout-pytorch-01/metrics.json",
+              "sha256": "e910ea746eb44d5a53098de44f432590fe5f97b776e168366faf0ead1e497b18"
+            },
+            "benchmark": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-03/numeral-holdout-pytorch.jsonl",
+              "sha256": "dc5512d738e215198fdd448f0285735b1001d3d80bfb1f383615685aa745000e"
+            },
+            "host_timing": {
+              "measured_n": 196,
+              "rtf_n": 196,
+              "p50_ms": 22.314151283353567,
+              "p95_ms": 33.39918656274676,
+              "p50_rtf": 0.008020679422928403,
+              "p95_rtf": 0.01899168947567196,
+              "physical_pi_evidence": false
+            }
+          },
+          "onnxruntime": {
+            "trials": 196,
+            "parser_commands": 196,
+            "faults_separate": 0,
+            "serialization_mismatches": 0,
+            "parser_mismatches": 0,
+            "accepted": 0,
+            "supported_reject_failures": 183,
+            "predictions": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-holdout-onnxruntime-01/predictions.jsonl",
+              "sha256": "b217de4e2b0392a261c0cd7e47af47cd563929757c0e1f4de02afe555c0181e4"
+            },
+            "metrics": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-holdout-onnxruntime-01/metrics.json",
+              "sha256": "3189174d1c3df9a4cf8f6cd7f39b95026dfa220633a813c278ff6aa3b3f27c7c"
+            },
+            "benchmark": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-03/numeral-holdout-onnxruntime.jsonl",
+              "sha256": "a2ab717de931833d8ed5cc4fad11eedcad47c04cb61bae5e323f9d0bda3c1076"
+            },
+            "host_timing": {
+              "measured_n": 196,
+              "rtf_n": 196,
+              "p50_ms": 20.506495144218206,
+              "p95_ms": 29.346325201913714,
+              "p50_rtf": 0.007155637242293749,
+              "p95_rtf": 0.01999183704017424,
+              "physical_pi_evidence": false
+            }
+          },
+          "ncnn": {
+            "trials": 196,
+            "parser_commands": 196,
+            "faults_separate": 0,
+            "serialization_mismatches": 0,
+            "parser_mismatches": 0,
+            "accepted": 0,
+            "supported_reject_failures": 183,
+            "predictions": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-holdout-ncnn-01/predictions.jsonl",
+              "sha256": "874a61894cb40d4a19e4e1d3c2302f9c7044855ec6b1cfc3bd21aa6adaa61b84"
+            },
+            "metrics": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/numeral-regression-holdout-ncnn-01/metrics.json",
+              "sha256": "59764483b85cedffaf7da7b8bf391867f450207f8f4a7a900b3571f332c22f54"
+            },
+            "benchmark": {
+              "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/pinned-benchmark-postprocess-03/numeral-holdout-ncnn.jsonl",
+              "sha256": "d21b8b683e769fb00154251c33dea9993307042d332b182ef2e6542b856c5f24"
+            },
+            "host_timing": {
+              "measured_n": 196,
+              "rtf_n": 196,
+              "p50_ms": 22.769054863601923,
+              "p95_ms": 33.301373245194554,
+              "p50_rtf": 0.00811947376666243,
+              "p95_rtf": 0.017686797464120843,
+              "physical_pi_evidence": false
+            }
+          }
+        },
+        "application_parity": {
+          "onnxruntime": {
+            "outcomes": 196,
+            "final_decision_mismatches": 0,
+            "max_intent_confidence_error": 3.9542439567163967e-07,
+            "diagnostic_tolerance": 2e-05
+          },
+          "ncnn": {
+            "outcomes": 196,
+            "final_decision_mismatches": 0,
+            "max_intent_confidence_error": 2.6245357820364745e-07,
+            "diagnostic_tolerance": 2e-05
+          }
+        }
+      }
+    },
+    "derived_fault_event_note": "Capture faults occur before final_application or benchmark output; serialize a separate capture_fault event offline and never count it as a successful OOV reject."
+  },
+  "ownership_track": {
+    "status": "blocked_not_scored",
+    "missing": "Genuine human wake/command pairs, duration-stratified calibration and independent validated identity/overlap/coverage backend",
+    "overlap_policy": "reject",
+    "content_embeddings_used_as_identity": false
+  }
+}

@@ -382,3 +382,175 @@ scoring held people. Raw category accuracy supplies no evidence for intent .95,
 slot confidence .90, presence, complete-command acceptance, entity memory,
 ownership or Pi qualification. No fitted weights or audio will be committed or
 installed. Actual execution and additional-source findings follow below.
+
+### Completed component and limits
+
+The frozen component retained 4,377 original-human recordings: train 3,043/105
+declared people, development 638/22 and test 696/24. Every partition covers all
+29 observed categories; declared person/file/PCM/pair overlaps are zero. Exclusions
+are 3,036 out-of-head recordings, seven overlong recordings and 24,609 repeated
+takes. One overlong recording is also outside 0–100, so larger categories total
+3,037 overall. All selected WAV/PCM hashes were verified. The original CSV lists
+625 filenames absent from this local view, including 514 with bored intonation;
+exact names are cached and their absence is not independently explained.
+
+The run stopped at its **240-update ceiling**, after 15,360 presentations of 3,022
+unique training recordings, maximum 16 presentations each. Development improved
+at every scheduled check, so patience did not trigger. Checkpoint 4 was selected
+and fully bound before component test. No test result extended the budget,
+changed a partition or removed a class.
+
+| Updates | Train category accuracy | Development category accuracy | Development NLL |
+| --- | ---: | ---: | ---: |
+| 60 | 23.40% | 21.47% | 2.679 |
+| 120 | 49.92% | 43.89% | 1.638 |
+| 180 | 63.98% | 59.72% | 1.145 |
+| 240 | 70.98% | 63.01% | 1.033 |
+
+Locked component test: **449/696 correct (64.51%)** raw 101-way numeral-category
+accuracy across 24 held people, versus **6/696 (0.86%)** initially. Macro-person
+accuracy is 64.51%, person-bootstrap interval 59.91–69.40% (1,000 resamples,
+seed 53); worst-person accuracy is 41.38%. Categories 18/70 each score 3/24 and
+16 scores 4/24; these failures remain recorded. Seventy-two head values have no
+component supervision. Gender is unknown for all 151 component people. Coarse
+publisher accent tags include one Filipino-tagged training person and none in
+dev/test, so Filipino generalization is unsupported.
+
+A post-selection development-only transfer diagnostic contains just one complete
+brightness recording/person labeled 20. The initial raw head predicts 3, selected
+head 11; both are wrong. Useful slot transfer is not established. Intent, presence,
+validity, other slots, entity metric/span losses and identity all have **zero
+observed supervision** in this probe. Independent review found two preparation
+gaps (omitted parent partitions and unenforced original CSV pin); both were
+reproduced and fixed before fitting. Earlier preparation is preserved and was not
+fitted. [Component receipt](../experiments/vcm-intent-slots-v1/numeral-auxiliary-results.json)
+binds data, source, corrected preparation, selection lock and weights. No fitted
+weights or audio are committed or installed.
+
+### Export, application regression and benchmark correction
+
+The selected component exported to FP32 PyTorch/ONNX/ncnn with the complete
+280,818-parameter model, all heads and selected catalog. ONNX is 1,148,441 bytes.
+Parity passes on 48 tensor/decision probes and 30 original-PCM engine outcomes;
+maximum absolute tensor error is 5.722046e-6. Two overlong development recordings
+remain faults on each alternative engine. Threshold fixtures preserve intent .95
+and every supplied slot .90; these are numerical evidence only.
+
+All 4,418 historical test and 196 historical holdout recordings ran sequentially
+on all three engines, with actions disabled and explicit regression status:
+**13,842 outcomes, zero accepted complete commands**. Human supported recall is
+**0/636 test** (609 OptionB, 27 extensions) and **0/83 holdout** (80 OptionB, three
+extensions). Synthetic supported recall is **0/3,368** and **0/100**, separately
+reported. Accepted precision is undefined. The 229/11 negative rejections remain
+distinct from 185/two ambiguous references and two test faults per engine.
+Every supported reject is a failure; full decision/fault parity has zero mismatches.
+
+Test p50/p95 host milliseconds: PyTorch 18.77/26.47, ONNX Runtime 16.56/22.35,
+ncnn 17.73/25.49. Cold initialization is retained; short concurrent gate processes
+ran during initial PyTorch replay, so this is not an isolated latency qualification.
+These one-thread measurements exclude WAV loading, capture and endpoint wait.
+No physical or modeled Pi result is claimed. Fresh evaluation, full selection-lock
+and owner-replay commands each exit 2 for missing selection-before-test, frozen
+full-command calibration, and genuine owner pairs/backend, respectively.
+
+**Provenance correction:** the earlier cached `vcmbench/pi.py`/`LineParser` did
+not match recorded revision `ab39857cf73dd067d068fed388c321ab160dc191`. Both stored
+historical and numeric-only replay sets were reprocessed with the exact pinned
+source, SHA-256 `772a73dffa5810645182d2a6a9c16a828bb25d4a84f2d9cb3bbf60993d76545f`.
+Every engine/candidate yields 4,416 test and 196 holdout parser command events,
+two separate test faults and zero serializer/parser mismatches. Original raw
+receipts remain unchanged. Counts are now verified against the actual pin;
+active runtime, manifests and evaluation bindings were not modified.
+[Application/benchmark receipt](../experiments/vcm-intent-slots-v1/numeral-command-regression.json)
+contains the correction, separate populations, real timings and executed argv.
+
+### Source and training-scheme reconciliation
+
+The supplied [SNIPS mirror](https://huggingface.co/datasets/MWilinski/snips_slu_v1.0)
+already contributes 446 frozen human recordings/38 declared IDs, including twelve
+supported brightness references of 20 and three colors. Live API, pinned shards
+and viewer API return HTTP 401. Public publisher READMEs require form/email access;
+no request was submitted. Cached worker fields do not qualify a pinned gender
+sidecar. No new labels/demographics were recovered and no playlist fields were added.
+
+The supplied [Drive archive](https://drive.google.com/file/d/1miLmuozdojOylqD0xlfOwXAdNsbGYwfN/view)
+is `VCM.zip`, 3,036,444,950 bytes. Bounded ranges recovered its directory, 71
+CRC-verified metadata members and six WAV samples; full archive SHA is unverified.
+MASTER has 36,622 rows; BALANCED 15,268, including 1,467 augmentations, 480 synthetic
+rows and 632 ambient clips. Neither supplies typed slots, role states, spans,
+enrollment or demographics. Old UNKNOWN labels refer to a different 16-class
+ontology and are not adopted as current negatives. External handoff material is
+hypothesis-only; no source views or weights were incorporated. Six sampled WAV
+hashes verify actual reserved evaluation/calibration bytes in its TRAIN directories.
+The metadata intersections are:
+
+| Drive TRAIN view | Frozen dev hashes | Calibration | Test | Holdout |
+| --- | ---: | ---: | ---: | ---: |
+| MASTER | 35 | 6 | 95 | 12 |
+| BALANCED | 41 | 16 | 178 | 7 |
+
+Reserved declared-speaker intersections cover 76 IDs and 10,885 MASTER/5,426
+BALANCED training rows; exclusions are previews, not executed changes. Its 956
+BALANCED Multi-Sensor recordings are 239 utterances with four microphones each.
+Future data requires group/person separation, reserved-speaker/PCM exclusions and
+reviewed current labels. No pitch or ID-prefix gender inference is performed.
+[Source audit](../experiments/vcm-intent-slots-v1/additional-sources.json) binds
+missing inputs and receipts; the integration owner independently verified 119
+saved-download hashes, 71 metadata members, six sample hashes and five parent views.
+
+The **uniform versus complete-command/person-balanced human-only comparison
+remains blocked, not completed**. Six prescribed seed/arm attempts retain their
+blocked receipts and zero fitting updates. Train lacks MESSAGE; dev lacks CALL/
+MESSAGE; calibration lacks CALL/MESSAGE/LIST_REMINDERS/TEMPERATURE/CREATE_REMINDER.
+Additional missing typed cases are in [coverage.json](../experiments/vcm-intent-slots-v1/coverage.json).
+Reviewed role-state/grammar/span labels, complete entity enrollment and full-field
+calibration remain missing. Exact shipping weights/crop references, fresh blind
+human command holdout, genuine ownership evidence and physical Pi hardware remain
+unavailable. The completed numeral probe predates the latest baseline-first
+steering and is not incorporated as an initializer, arm or default model.
+
+The matched replacement-sampling ceiling is 2,880 updates/184,320 presentations
+per arm, approximately 97 presentations per original at the current 1,895-row
+train size. This is not 30 unique corpus passes; absent learning curves do not
+establish resistance to overtraining. Preserve the matched recipe and do not
+weaken readiness to obtain a run. Select development weights, retain earlier
+checkpoints/failures, calibrate separately and lock before fresh scoring.
+All seven human absolute-volume train examples and six test examples remain.
+[Training audit](../experiments/vcm-intent-slots-v1/training-scheme-audit.json)
+reconciles blockers. [Pending studies](../experiments/vcm-intent-slots-v1/pending-interventions.json)
+record conservative recording-condition augmentation, VTLP and whole-command
+contrastive learning separately after the baseline comparison. None is active.
+Whole-command positives preserve every typed value/target; sharing an intent is
+insufficient. Approved role/entity metric learning stays distinct. The Filipino
+supplement remains synthetic; no runtime phoneme/prototype fusion, new pretrained
+identity exception or modeled Pi evidence is introduced. Active jobs and their
+manifests/configurations/checkpoints/evaluation bindings were preserved.
+
+Verification: **184 focused/relevant tests pass**, with 24 exporter warnings.
+The broad suite reports **656 passed, 20 failed, 13 skipped, 13 errors**, the same
+33 named failing/error cases as previously. [Verification receipt](../experiments/vcm-intent-slots-v1/additional-verification.json)
+records red/green evidence, review and failure names. Installed/default files,
+frozen views and other agents' dirty/staged work remain unchanged;
+`training.update_artifacts=false` and provider actions remain disabled.
+
+Executed fitting/scoring/export/parity entry points used the root `.venv`:
+
+```sh
+PY=/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python
+OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 \
+  $PY -m scripts.train.vcm_intent_slots_numeral fit \
+  --prepared .cache/vcm-intent-slots-v1/numeral-aux-v1-prepared-02 \
+  --output .cache/vcm-intent-slots-v1/numeral-aux-v1-fit-01
+$PY -m scripts.train.vcm_intent_slots_numeral score \
+  --run .cache/vcm-intent-slots-v1/numeral-aux-v1-fit-01 \
+  --output .cache/vcm-intent-slots-v1/numeral-aux-v1-test-01
+$PY scripts/vcm_intent_slots.py export \
+  --checkpoint .cache/vcm-intent-slots-v1/numeral-aux-v1-fit-01/checkpoint-04.pt \
+  --run-id numeral-aux-v1-export-01
+$PY scripts/vcm_intent_slots.py parity \
+  --bundle .cache/vcm-intent-slots-v1/numeral-aux-v1-export-01/bundle \
+  --run-id numeral-aux-v1-parity-01
+```
+
+Receipts contain the full prepare/fit/score/replay argv and hashes. These commands
+describe completed work; new interventions remain pending the baseline comparison.

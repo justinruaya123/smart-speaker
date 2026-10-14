@@ -368,3 +368,27 @@ holdout people. Read the [follow-up findings](EXPERIMENT-vcm-intent-slots-v1.md#
 [historical evaluation](../experiments/vcm-intent-slots-v1/historical-evaluation.json),
 [speaker diversity](../experiments/vcm-intent-slots-v1/speaker-diversity.json) and
 [upstream audit](../experiments/vcm-intent-slots-v1/upstream-availability.json).
+
+Additional follow-up: 184 focused tests pass. A separate bounded MLEnd category
+probe completed 240 updates and a locked speaker-disjoint component test:
+449/696 (64.51%) across 24 people. It supplies no complete-command or ownership
+qualification and is not incorporated into the baseline comparison. FP32
+PyTorch/ONNX/ncnn export and final-decision parity pass; complete historical
+test/holdout application replay still rejects every supported command. Original
+and numeric-only stored benchmark outputs were reverified with the exact pinned
+parser after correcting earlier cached-parser provenance; old receipts remain.
+
+The original six uniform/balanced seed/arm runs remain blocked by the recorded
+human coverage, role/grammar/span labels, entity enrollment and full calibration.
+SNIPS pinned access returns 401; Drive TRAIN reuses reserved speech and supplies
+family labels only. Treat its handoff as hypothesis material. No active job,
+manifest/config/checkpoint/evaluation binding was changed or interrupted.
+Conservative recording-condition augmentation, VTLP and whole-command contrastive
+learning remain separate pending studies after the matched comparison. Keep
+entity metric learning distinct, complete typed values/targets intact, Filipino
+supplement synthetic, valid absolute-volume examples preserved and Pi/owner
+claims unqualified. See [current report](EXPERIMENT-vcm-intent-slots-v1.md#additional-sources-and-bounded-numeral-component--2026-10-15),
+[training audit](../experiments/vcm-intent-slots-v1/training-scheme-audit.json),
+[component results](../experiments/vcm-intent-slots-v1/numeral-auxiliary-results.json),
+[application regression](../experiments/vcm-intent-slots-v1/numeral-command-regression.json)
+and [pending interventions](../experiments/vcm-intent-slots-v1/pending-interventions.json).

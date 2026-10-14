@@ -1,0 +1,837 @@
+{
+  "audit_verification": {
+    "drive_range_download_bytes": 13109478,
+    "drive_range_request_count": 23,
+    "frozen_view_bindings_verified": 5,
+    "full_drive_payload_downloaded": false,
+    "hashed_saved_download_files_verified": 119,
+    "independently_reverified_by_integration_owner": true,
+    "metadata_members_verified": 71,
+    "sample_audio_members_verified": 6,
+    "snips_pinned_payload_verified": false,
+    "status": "passed"
+  },
+  "drive": {
+    "anonymous_view_access": true,
+    "balanced": {
+      "all_original_source_paths_in_master_train": true,
+      "augmentation_types": {
+        "": 13801,
+        "gain": 410,
+        "noise": 425,
+        "pitch": 36,
+        "shift": 380,
+        "speed": 216
+      },
+      "declared_hash_duplicates": {
+        "excess_rows": 2,
+        "groups": 2
+      },
+      "declared_source_qualified_ids_including_synthetic_and_noise_groups": 298,
+      "declared_source_qualified_speaker_cross_split_groups": 0,
+      "frozen_human_exact_source_qualified_speaker_overlap": {
+        "ids": 175,
+        "matrix_drive_split_then_frozen_split": {
+          "train/calibration": 8,
+          "train/dev": 20,
+          "train/holdout": 1,
+          "train/test": 47,
+          "train/train": 99
+        },
+        "scope": "Exact original_dataset/speaker strings only. Different source names are not guessed aliases."
+      },
+      "frozen_human_metadata_hash_overlap": {
+        "frozen_sources": {
+          "FluentSpeechCommands": 202,
+          "SLURP": 260,
+          "TimersAndSuch": 24,
+          "xela_Multi-Sensor": 13,
+          "xela_SET_TEMPERATURE_REAL": 57
+        },
+        "matrix_drive_split_then_frozen_split": {
+          "train/calibration": 16,
+          "train/dev": 41,
+          "train/holdout": 7,
+          "train/test": 178,
+          "train/train": 314
+        },
+        "rows": 556,
+        "scope": "Intersection of supplied SHA-256 strings in CRC-verified metadata. Whole payloads have not been verified; separate sample payload receipt confirms only sampled members.",
+        "unique_sha256": 556
+      },
+      "frozen_reserved_exclusion_preview": {
+        "applied": false,
+        "exact_reserved_source_qualified_ids": 76,
+        "identity_limits": "Cross-source aliases remain unresolved; matched hash rows are additional exclusions and do not establish a complete source alias map.",
+        "raw_receipt": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/additional-source-audit/drive-frozen-exclusions-raw.json",
+        "training_metadata_hash_rows_matching_reserved_frozen_views": 242,
+        "training_rows_with_exact_reserved_source_qualified_ids": 5426
+      },
+      "label_counts": {
+        "LIGHT_DIM": 522,
+        "LIGHT_OFF": 1200,
+        "LIGHT_ON": 1200,
+        "MEDIA_NEXT": 956,
+        "MEDIA_PAUSE": 484,
+        "MEDIA_STOP": 574,
+        "PLAY_MUSIC": 600,
+        "SET_ALARM": 1000,
+        "SET_TEMPERATURE": 600,
+        "SET_TIMER": 600,
+        "SILENCE": 632,
+        "TIME": 600,
+        "UNKNOWN": 2500,
+        "VOLUME_DOWN": 1200,
+        "VOLUME_UP": 1200,
+        "WEATHER": 1400
+      },
+      "manifest_filepaths_in_zip_directory": 15268,
+      "multi_sensor": {
+        "microphone_recordings_per_group": 4,
+        "recordings": 956,
+        "supplied_group_ids": 239
+      },
+      "original_human_rows_after_one_sensor_per_group_before_reserved_identity_hash_and_label_exclusions": 12152,
+      "original_or_augmented": {
+        "augmented": 1467,
+        "original": 13801
+      },
+      "rows": 15268,
+      "rows_from_original_human_speech_without_acoustic_augmentation": 12869,
+      "source_counts": {
+        "FluentSpeechCommands": 6458,
+        "GSC_background_noise": 632,
+        "Multi-Sensor": 956,
+        "SET_TEMPERATURE_REAL": 120,
+        "SET_TEMPERATURE_SYNTHETIC": 480,
+        "SLURP": 5749,
+        "TimersAndSuch": 873
+      },
+      "source_type_counts": {
+        "GSC_background_noise": 632,
+        "Multi-Sensor": 956,
+        "real": 13200,
+        "synthetic": 480
+      },
+      "supplied_demographic_fields": [],
+      "supplied_typed_slot_fields": [],
+      "unique_original_source_paths": 13801
+    },
+    "created_utc": "2026-10-14T16:49:23.793242+00:00",
+    "directory": {
+      "entries": 51970,
+      "file_extensions": {
+        ".csv": 46,
+        ".flac": 18428,
+        ".log": 2,
+        ".txt": 23,
+        ".wav": 33462
+      },
+      "uncompressed_bytes": 3802751093
+    },
+    "file_id": "1miLmuozdojOylqD0xlfOwXAdNsbGYwfN",
+    "filename": "VCM.zip",
+    "full_archive_downloaded": false,
+    "full_archive_sha256": null,
+    "master": {
+      "declared_hash_duplicates": {
+        "excess_rows": 1,
+        "groups": 1
+      },
+      "declared_source_qualified_ids_including_synthetic_and_noise_groups": 395,
+      "declared_source_qualified_speaker_cross_split_groups": 0,
+      "frozen_human_exact_source_qualified_speaker_overlap": {
+        "ids": 246,
+        "matrix_drive_split_then_frozen_split": {
+          "test/calibration": 2,
+          "test/dev": 7,
+          "test/test": 9,
+          "test/train": 15,
+          "train/calibration": 8,
+          "train/dev": 20,
+          "train/holdout": 1,
+          "train/test": 47,
+          "train/train": 99,
+          "val/calibration": 6,
+          "val/dev": 2,
+          "val/test": 7,
+          "val/train": 23
+        },
+        "scope": "Exact original_dataset/speaker strings only. Different source names are not guessed aliases."
+      },
+      "frozen_human_metadata_hash_overlap": {
+        "frozen_sources": {
+          "FluentSpeechCommands": 355,
+          "TimersAndSuch": 6,
+          "xela_Multi-Sensor": 15,
+          "xela_SET_TEMPERATURE_REAL": 70
+        },
+        "matrix_drive_split_then_frozen_split": {
+          "test/calibration": 3,
+          "test/dev": 8,
+          "test/test": 23,
+          "test/train": 10,
+          "train/calibration": 6,
+          "train/dev": 35,
+          "train/holdout": 12,
+          "train/test": 95,
+          "train/train": 163,
+          "val/calibration": 55,
+          "val/dev": 1,
+          "val/test": 26,
+          "val/train": 9
+        },
+        "rows": 446,
+        "scope": "Intersection of supplied SHA-256 strings in CRC-verified metadata. Whole payloads have not been verified; separate sample payload receipt confirms only sampled members.",
+        "unique_sha256": 446
+      },
+      "frozen_reserved_exclusion_preview": {
+        "applied": false,
+        "exact_reserved_source_qualified_ids": 76,
+        "identity_limits": "Cross-source aliases remain unresolved; matched hash rows are additional exclusions and do not establish a complete source alias map.",
+        "raw_receipt": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/additional-source-audit/drive-frozen-exclusions-raw.json",
+        "training_metadata_hash_rows_matching_reserved_frozen_views": 148,
+        "training_rows_with_exact_reserved_source_qualified_ids": 10885
+      },
+      "label_counts": {
+        "LIGHT_DIM": 366,
+        "LIGHT_OFF": 3236,
+        "LIGHT_ON": 4135,
+        "MEDIA_NEXT": 1192,
+        "MEDIA_PAUSE": 315,
+        "MEDIA_STOP": 371,
+        "PLAY_MUSIC": 654,
+        "SET_ALARM": 1446,
+        "SET_TEMPERATURE": 400,
+        "SET_TIMER": 717,
+        "SILENCE": 1206,
+        "TIME": 456,
+        "UNKNOWN": 13951,
+        "VOLUME_DOWN": 2604,
+        "VOLUME_UP": 3010,
+        "WEATHER": 2563
+      },
+      "manifest_filepaths_in_zip_directory": 36622,
+      "multi_sensor": {
+        "explicit_original_utterance_groups": 298,
+        "group_split_overlaps": 0,
+        "microphone_recordings_per_group": 4,
+        "recordings": 1192
+      },
+      "rows": 36622,
+      "source_counts": {
+        "FluentSpeechCommands": 14325,
+        "GSC_background_noise": 1206,
+        "Multi-Sensor": 1192,
+        "SET_TEMPERATURE_REAL": 100,
+        "SET_TEMPERATURE_SYNTHETIC": 300,
+        "SLURP": 18428,
+        "TimersAndSuch": 1071
+      },
+      "source_qualified_real_speech_ids": 361,
+      "source_type_counts": {
+        "GSC_background_noise": 1206,
+        "Multi-Sensor": 1192,
+        "real": 33924,
+        "synthetic": 300
+      },
+      "splits": {
+        "test": 4758,
+        "train": 27130,
+        "val": 4734
+      },
+      "supplied_demographic_fields": [],
+      "supplied_typed_slot_fields": [],
+      "transcript_unique_by_label": {
+        "LIGHT_DIM": 39,
+        "LIGHT_OFF": 26,
+        "LIGHT_ON": 33,
+        "MEDIA_NEXT": 1,
+        "MEDIA_PAUSE": 3,
+        "MEDIA_STOP": 3,
+        "PLAY_MUSIC": 5,
+        "SET_ALARM": 412,
+        "SET_TEMPERATURE": 215,
+        "SET_TIMER": 535,
+        "SILENCE": 1,
+        "TIME": 40,
+        "UNKNOWN": 3661,
+        "VOLUME_DOWN": 21,
+        "VOLUME_UP": 24,
+        "WEATHER": 592
+      }
+    },
+    "metadata_extraction": {
+      "crc32_verified": true,
+      "files": 71,
+      "receipt": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/additional-source-audit/drive-metadata-extraction-receipt.json",
+      "receipt_sha256": "7ca5dd0cea5f97af7ba791387e858d6ab7ab009196b2041a9207c2a8286e4ccb"
+    },
+    "mime_type": "application/x-zip-compressed",
+    "pinned_publisher_release": null,
+    "proposed_minimum_reuse_rules_not_executed": [
+      "Preserve the frozen version and qualify a new source/version only after consent/license and audio integrity review.",
+      "Use original real-speech rows only; exclude synthetic and acoustic derivatives from this human-only training arm; identify ambient negatives separately.",
+      "Exclude any declared reserved speaker and all verified PCM/hash duplicates or conflicts across frozen training/dev/calibration/evaluation/enrollment views, using exact provenance rather than guessed aliases.",
+      "Collapse microphone pairs to the declared single-recording policy before a deterministic speaker-disjoint split; freeze splits before fitting.",
+      "Supply reviewed existing-intent typed slots/role states/validity labels and acoustic spans/enrollment evidence where required; do not turn transcript keywords into positive slot labels.",
+      "Measure real development learning/validation curves and select checkpoints with the declared macro-person rule; dataset size/balancing reports alone do not demonstrate resistance to overtraining."
+    ],
+    "publisher_licenses": {
+      "source_report": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/additional-source-audit/drive-metadata/VCM/VCM_MASTER/reports/dataset_sources_and_licenses.txt",
+      "source_report_sha256": "45942d9ec510e2d14cde1c62a7848b38d9e4ae76d95ea6c477f3bc58ea20b171",
+      "status": "archive report contains source attribution/pointers; full source licenses/consent are absent from the ZIP directory and remain unverified by this audit"
+    },
+    "range_access_verified": true,
+    "reported_archive_bytes": 3036444950,
+    "requested_url": "https://drive.google.com/file/d/1miLmuozdojOylqD0xlfOwXAdNsbGYwfN/view?usp=sharing",
+    "sample_payload_verification": {
+      "files_verified": 6,
+      "receipt": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/additional-source-audit/drive-overlap-sample-verification.json",
+      "receipt_sha256": "cc68269771da21afadbfd7145d109b85b1fa100ba7944023d48f5c265329d9d6"
+    },
+    "scheme_concerns": [
+      "VCM_BALANCED is a train-only subset of the older master, not a fresh independent corpus or holdout.",
+      "MASTER and BALANCED share sources and many exact claimed hashes with frozen HUMAN views; frozen evaluation/calibration data must be excluded from any new training source by speaker and PCM identity.",
+      "Source-specific speaker splits within MASTER are disjoint by literal declared IDs, but they are independent of the frozen study splits; the cross-study intersections are reported.",
+      "MASTER source real is not an independent proof of consent/person identity; synthetic voices and noise groups must not count as people.",
+      "BALANCED has 1467 pitch/speed/noise/gain/shift derivatives and 480 synthetic rows; these violate this study's original-human/no-augmentation arm.",
+      "Ambient SILENCE clips are a separately identified non-speech rejection track, not human demographic samples.",
+      "Multi-Sensor has four microphone recordings per explicit metadata utterance group; use one microphone recording per paired utterance and keep pairs/speakers together.",
+      "Supplied reports flag retained exact duplicates, one synthetic gain derivative identical to its balanced original, and one near-silent LIGHT_OFF original; none is silently removed.",
+      "Speaker ID prefixes are not demographic metadata; no gender/age/native-language sidecar is created from them.",
+      "The 16-class ontology lacks COLOR, CALL, MESSAGE, reminder classes and absolute volume/brightness slots; it does not qualify the 19-intent model or complete selected catalog.",
+      "MASTER UNKNOWN is relative to its older 16-class ontology. It must be reviewed against the current 19-intent/catalog definition before any row is adopted as OOV; missing intent/slot metadata cannot establish a current negative reference."
+    ],
+    "slot_evidence": {
+      "acoustic_spans": "not supplied",
+      "balanced_fields": [
+        "id",
+        "filepath",
+        "class",
+        "speaker_id",
+        "source_dataset",
+        "source_type",
+        "original_or_augmented",
+        "augmentation_type",
+        "original_source",
+        "original_id",
+        "group_id"
+      ],
+      "enrollment_sessions": "not supplied",
+      "family_label_only": true,
+      "master_fields": [
+        "filepath",
+        "label",
+        "speaker",
+        "source",
+        "split",
+        "transcript",
+        "original_dataset",
+        "original_id",
+        "original_filepath"
+      ],
+      "notes": [
+        "Master transcripts are supplied textual annotations; they do not establish reviewed finite typed references.",
+        "No SNIPS rows or light-color class is present.",
+        "LIGHT_DIM is a separate coarse relative-brightness family and cannot fill the pinned BRIGHTNESS/percent role without reviewed annotations.",
+        "Timer/alarm/temperature transcripts may support future annotation, but there are no supplied numeric/time/unit/target slot columns."
+      ],
+      "request_validity_states": "not supplied",
+      "role_states": "not supplied",
+      "typed_slot_fields": []
+    },
+    "version": 1,
+    "version_status": "Captured live Google file ID/size/directory/partial byte hashes; no immutable publisher release or full archive SHA-256 is established."
+  },
+  "experiment": "vcm-intent-slots-v1",
+  "followup": "additional_sources_and_training_scheme",
+  "frozen_protocols_changed": false,
+  "installed_artifacts_changed": false,
+  "mlend": {
+    "fitted_weight_distribution": false,
+    "kaggle_metadata": {
+      "bytes": 9236,
+      "content_type": "application/json",
+      "currentVersionNumber": 3,
+      "keys": [
+        "subtitleNullable",
+        "creatorNameNullable",
+        "totalBytesNullable",
+        "licenseNameNullable",
+        "descriptionNullable",
+        "ownerNameNullable",
+        "ownerRefNullable",
+        "titleNullable",
+        "currentVersionNumberNullable",
+        "usabilityRatingNullable",
+        "thumbnailImageUrlNullable",
+        "id",
+        "ref",
+        "subtitle",
+        "hasSubtitle",
+        "creatorName",
+        "hasCreatorName",
+        "creatorUrl",
+        "hasCreatorUrl",
+        "totalBytes",
+        "hasTotalBytes",
+        "url",
+        "hasUrl",
+        "lastUpdated",
+        "downloadCount",
+        "isPrivate",
+        "isFeatured",
+        "licenseName",
+        "hasLicenseName",
+        "description",
+        "hasDescription",
+        "ownerName",
+        "hasOwnerName",
+        "ownerRef",
+        "hasOwnerRef",
+        "kernelCount",
+        "title",
+        "hasTitle",
+        "topicCount",
+        "viewCount",
+        "voteCount",
+        "currentVersionNumber",
+        "hasCurrentVersionNumber",
+        "usabilityRating",
+        "hasUsabilityRating",
+        "tags",
+        "files",
+        "versions",
+        "thumbnailImageUrl",
+        "hasThumbnailImageUrl"
+      ],
+      "lastUpdated": "2022-05-17T10:35:21.5Z",
+      "licenseName": "Unknown",
+      "name": "metadata",
+      "sha256": "a95e5a553b3c9b9f4096efc15b7b812968294eabe3286724dab6c2d084dc92f9",
+      "subtitle": "A dataset for intonation and diverse English speech recognition",
+      "title": "MLEnd Spoken Numerals",
+      "url": "https://www.kaggle.com/api/v1/datasets/view/jesusrequena/mlend-spoken-numerals"
+    },
+    "original_attributes": {
+      "bytes": 660520,
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/mlend-source-check/audio-attributes.response",
+      "sha256": "24a922bbaae9c99b39bf1a95c4773bda87a1ab998783bb6c17ce7f14e0ec80f2"
+    },
+    "original_csv_coverage": {
+      "exact_metadata_matches": 32029,
+      "local_declared_speakers": 151,
+      "local_rows": 32029,
+      "missing_by_category": {
+        "0": 19,
+        "1": 19,
+        "10": 43,
+        "100": 6,
+        "1000": 5,
+        "1000000": 8,
+        "1000000000": 4,
+        "11": 33,
+        "12": 34,
+        "13": 34,
+        "14": 34,
+        "15": 35,
+        "16": 43,
+        "17": 38,
+        "18": 42,
+        "19": 40,
+        "2": 14,
+        "20": 5,
+        "3": 16,
+        "30": 5,
+        "4": 19,
+        "40": 3,
+        "5": 16,
+        "50": 5,
+        "6": 20,
+        "60": 7,
+        "7": 20,
+        "70": 6,
+        "8": 19,
+        "80": 6,
+        "9": 22,
+        "90": 5
+      },
+      "missing_by_intonation": {
+        "bored": 514,
+        "excited": 48,
+        "neutral": 22,
+        "question": 41
+      },
+      "missing_original_filenames_from_local_view": 625,
+      "missing_reason": "Not present in this frozen local auxiliary view; reason not independently established",
+      "original_csv_declared_speakers": 151,
+      "original_csv_rows": 32654,
+      "raw_missing": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/mlend-source-check/not-in-local-view.json",
+        "sha256": "ee7f43cf9849aebe2ef90859537b3ff2fbe1acc6afaf57e211c2a0a280999733"
+      }
+    },
+    "overlong_originals": [
+      {
+        "audio": "data/audio/ai231-pool-v1/d9/d9dfbb4e6c6a845e7332110b722db7aa603ef77538ceca97dac4e4c4beabd5d6.wav",
+        "audio_flags": [],
+        "channels": 1,
+        "id": "airimonda/ai231-me2-voice-commands/primary/numerals-00003-of-00006/009209",
+        "numeric_category": "1000000000",
+        "qa_eligible": true,
+        "sample_rate": 16000,
+        "samples": 180452
+      },
+      {
+        "audio": "data/audio/ai231-pool-v1/07/077eca3bc71aa8378fde5e68e47f551d9e88687a60a1f2ce0132483d7fbf8353.wav",
+        "audio_flags": [],
+        "channels": 1,
+        "id": "airimonda/ai231-me2-voice-commands/primary/numerals-00004-of-00006/002271",
+        "numeric_category": "0",
+        "qa_eligible": true,
+        "sample_rate": 16000,
+        "samples": 172013
+      },
+      {
+        "audio": "data/audio/ai231-pool-v1/5e/5e47e515cff0b3d207426d4968a89e712b198222dd4440a5f3eff1f80297ec62.wav",
+        "audio_flags": [],
+        "channels": 1,
+        "id": "airimonda/ai231-me2-voice-commands/primary/numerals-00004-of-00006/010218",
+        "numeric_category": "0",
+        "qa_eligible": true,
+        "sample_rate": 16000,
+        "samples": 162168
+      },
+      {
+        "audio": "data/audio/ai231-pool-v1/d6/d60ac5f17f78598261dfb38b9ffc12727247d1fda7fec7013eb84472cdc0ed5d.wav",
+        "audio_flags": [],
+        "channels": 1,
+        "id": "airimonda/ai231-me2-voice-commands/primary/numerals-00005-of-00006/002339",
+        "numeric_category": "10",
+        "qa_eligible": true,
+        "sample_rate": 16000,
+        "samples": 178515
+      },
+      {
+        "audio": "data/audio/ai231-pool-v1/37/37f604f8e5cb9684392ca8b6fe342d74b6d30b978fbde0c59f8390f580fa4e39.wav",
+        "audio_flags": [],
+        "channels": 1,
+        "id": "airimonda/ai231-me2-voice-commands/primary/numerals-00005-of-00006/004194",
+        "numeric_category": "20",
+        "qa_eligible": true,
+        "sample_rate": 16000,
+        "samples": 167184
+      },
+      {
+        "audio": "data/audio/ai231-pool-v1/51/51240c62de9a0abfa50a023015bc407e432dc0e82a8252a4a6c9cb879895e779.wav",
+        "audio_flags": [],
+        "channels": 1,
+        "id": "airimonda/ai231-me2-voice-commands/primary/numerals-00005-of-00006/004682",
+        "numeric_category": "10",
+        "qa_eligible": true,
+        "sample_rate": 16000,
+        "samples": 165326
+      },
+      {
+        "audio": "data/audio/ai231-pool-v1/b7/b7a07580c1d5b7aedf763a49c85c0df6f40a46f43a38a0573aa8306cbdace0b8.wav",
+        "audio_flags": [],
+        "channels": 1,
+        "id": "airimonda/ai231-me2-voice-commands/primary/numerals-00005-of-00006/007772",
+        "numeric_category": "20",
+        "qa_eligible": true,
+        "sample_rate": 16000,
+        "samples": 164212
+      }
+    ],
+    "research_scope": "Original human numeric CATEGORY component only; no command labels inferred",
+    "speaker_gender": "Unknown without a qualified supplied join; no gender inferred from sound or name"
+  },
+  "provider_actions_enabled": false,
+  "qualification": false,
+  "snips": {
+    "cached_viewer_only": {
+      "age_note": "Values differ within the same supplied worker UUID. Recording/session dates are unavailable; do not assume a metadata error or select an age.",
+      "distinct_age_variant_ids": 2,
+      "distinct_worker_ids": 26,
+      "eligible_for_demographic_sidecar": false,
+      "frozen_ids_with_literal_worker_id_in_cached_examples": 21,
+      "observed_rows_with_worker_dictionary": 95,
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/additional-source-audit/hf-web-cached-evidence.txt",
+      "pinned_provenance_verified": false,
+      "sha256": "0eeedb8981567ce5affb82e17562735cac55c13f98b1497c1222a643a8f985fa",
+      "worker_age_variant_pairs": [
+        [
+          32,
+          33
+        ],
+        [
+          45,
+          46
+        ]
+      ]
+    },
+    "created_utc": "2026-10-14T16:49:23.793242+00:00",
+    "dataset": "MWilinski/snips_slu_v1.0",
+    "expected_pinned_files": [
+      {
+        "bytes": 288362399,
+        "path": "data/raw/smartlights/train-00000-of-00002-8a79c77a8d003471.parquet",
+        "sha256": "b9707008986cb6fcfd1ce8a49377b9ffe68451225cf3537ed13e56100815a70c",
+        "url": "https://huggingface.co/datasets/MWilinski/snips_slu_v1.0/resolve/d1a41a6e3c09b45bbfdc64220dff7b3176679964/data/train-00000-of-00002-8a79c77a8d003471.parquet?download=true"
+      },
+      {
+        "bytes": 286310583,
+        "path": "data/raw/smartlights/train-00001-of-00002-30a6f2d916e23e78.parquet",
+        "sha256": "a0b7c699367715c4208958689206dc353bf2a2fdfda666908e0b215ea905c7c1",
+        "url": "https://huggingface.co/datasets/MWilinski/snips_slu_v1.0/resolve/d1a41a6e3c09b45bbfdc64220dff7b3176679964/data/train-00001-of-00002-30a6f2d916e23e78.parquet?download=true"
+      }
+    ],
+    "frozen_snips": {
+      "declared_source_qualified_speaker_ids": 38,
+      "filename_mapping_note": "Domain/distance below are literal supplied source filename fields, not independent waveform review.",
+      "independent_human_identity_verification": false,
+      "publisher_command_labels": {
+        "BRIGHTNESS": 31,
+        "COLOR": 216,
+        "LIGHT_OFF": 42,
+        "LIGHT_ON": 85,
+        "OUT_OF_SCOPE": 21,
+        "PLAY_MUSIC": 47,
+        "VOLUME_DOWN": 4
+      },
+      "reference_status": {
+        "ambiguous": 29,
+        "supported": 211,
+        "unsupported": 206
+      },
+      "rows": 446,
+      "source_distance_from_supplied_filename": {
+        "smart-lights/close": 199,
+        "smart-lights/far": 200,
+        "smart-speaker/close": 23,
+        "smart-speaker/far": 24
+      },
+      "splits": {
+        "calibration": {
+          "declared_ids": 3,
+          "reference_status": {
+            "supported": 10,
+            "unsupported": 42
+          },
+          "rows": 52,
+          "typed_intent_counts": {
+            "BRIGHTNESS": 2,
+            "COLOR": 8
+          }
+        },
+        "dev": {
+          "declared_ids": 3,
+          "reference_status": {
+            "supported": 19,
+            "unsupported": 10
+          },
+          "rows": 29,
+          "typed_intent_counts": {
+            "COLOR": 15,
+            "LIGHT_ON": 4
+          }
+        },
+        "holdout": {
+          "declared_ids": 0,
+          "reference_status": {},
+          "rows": 0,
+          "typed_intent_counts": {}
+        },
+        "test": {
+          "declared_ids": 11,
+          "reference_status": {
+            "ambiguous": 29,
+            "supported": 27,
+            "unsupported": 51
+          },
+          "rows": 107,
+          "typed_intent_counts": {
+            "BRIGHTNESS": 2,
+            "COLOR": 17,
+            "LIGHT_ON": 8
+          }
+        },
+        "train": {
+          "declared_ids": 21,
+          "reference_status": {
+            "supported": 155,
+            "unsupported": 103
+          },
+          "rows": 258,
+          "typed_intent_counts": {
+            "BRIGHTNESS": 8,
+            "COLOR": 87,
+            "LIGHT_OFF": 25,
+            "LIGHT_ON": 35
+          }
+        }
+      },
+      "typed_intent_counts": {
+        "BRIGHTNESS": 12,
+        "COLOR": 127,
+        "LIGHT_OFF": 25,
+        "LIGHT_ON": 47
+      },
+      "typed_slot_fields_from_existing_canonical_references": {
+        "BRIGHTNESS.light_id=\"light.all\"": 12,
+        "BRIGHTNESS.percent=20": 12,
+        "COLOR.color=\"blue\"": 42,
+        "COLOR.color=\"green\"": 40,
+        "COLOR.color=\"red\"": 45,
+        "COLOR.light_id=\"light.all\"": 105,
+        "COLOR.light_id=\"light.bathroom\"": 7,
+        "COLOR.light_id=\"light.bedroom\"": 8,
+        "COLOR.light_id=\"light.kitchen\"": 7,
+        "LIGHT_OFF.light_id=\"light.all\"": 20,
+        "LIGHT_OFF.light_id=\"light.bathroom\"": 1,
+        "LIGHT_OFF.light_id=\"light.bedroom\"": 4,
+        "LIGHT_ON.light_id=\"light.all\"": 37,
+        "LIGHT_ON.light_id=\"light.bathroom\"": 2,
+        "LIGHT_ON.light_id=\"light.bedroom\"": 4,
+        "LIGHT_ON.light_id=\"light.kitchen\"": 4
+      }
+    },
+    "live_access": {
+      "api_current": 401,
+      "api_pinned": 401,
+      "reason": "Unavailable without authentication; private/gated/not found cannot be distinguished from these responses.",
+      "shard_resolve_probe": 401,
+      "viewer_info_parquet_rows": 401
+    },
+    "live_revision": null,
+    "live_revision_status": "Cannot verify live repository revision from HTTP 401 responses; cached web page is not pinned/live revision evidence.",
+    "pinned_revision": "d1a41a6e3c09b45bbfdc64220dff7b3176679964",
+    "pinned_shards_downloaded": 0,
+    "pinned_shards_hash_verified": 0,
+    "pinned_source_receipt": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/data/sources/smartlights.source.json",
+      "sha256": "a57e2915c04c44811224fbea4f99bda61b8295716e9245bdc179f16e0b95d2d7"
+    },
+    "publisher_authority": "https://github.com/sonos/spoken-language-understanding-research-datasets",
+    "publisher_current_access": "Access-request form https://forms.gle/JtmFYM7xK1SaMfZYA; no public archive/metadata URLs in current README.",
+    "publisher_handler_metadata_contract": [
+      "SmartLights: config.json -> dataset JSON + speech_corpus/metadata.json (text/filename).",
+      "SmartSpeaker: metadata.json + training_dataset.json + test_dataset.json.",
+      "Labels are source text chunks with entity/slot annotations, not acoustic role states or spans."
+    ],
+    "publisher_historical_access": "Inspected 2018/2019 README revisions use affiliation email requests or the same form; no explicit archive/metadata URLs. No email or form submitted.",
+    "publisher_published_ontology_not_downloaded_annotations": {
+      "SmartLights": {
+        "DecreaseBrightness": [
+          "room"
+        ],
+        "IncreaseBrightness": [
+          "room"
+        ],
+        "SetLightBrightness": [
+          "room",
+          "brightness"
+        ],
+        "SetLightColor": [
+          "room",
+          "color"
+        ],
+        "SwitchLightOff": [
+          "room"
+        ],
+        "SwitchLightOn": [
+          "room"
+        ]
+      },
+      "SmartSpeaker_English_train_ontology": {
+        "GetInfos": [
+          "music_item"
+        ],
+        "NextSong": [],
+        "PlayMusic": [
+          "song_name",
+          "artist_name",
+          "album_name",
+          "playlist_mode",
+          "playlist_name"
+        ],
+        "PreviousSong": [],
+        "ResumeMusic": [],
+        "SpeakerInterrupt": [],
+        "VolumeDown": [
+          "volume_level_absolute"
+        ],
+        "VolumeSet": [
+          "volume_level_absolute",
+          "volume_level_percent"
+        ],
+        "VolumeUp": [
+          "volume_level_absolute"
+        ]
+      },
+      "scope_limits": [
+        "SmartSpeaker recordings are test-only artist requests, not audio for the complete training ontology.",
+        "Publisher playlist fields are outside the pinned VCM slot schema; they are not added or counted as supported slots.",
+        "No new typed brightness/color/room values recovered without original annotations.",
+        "Far recordings are loudspeaker replays captured by a microphone array at 2 m, not independent speakers or separate original utterances."
+      ]
+    },
+    "publisher_revision": "a5cf2f1a5752e7380adce355ab574adfb1adc2eb",
+    "publisher_terms": "Sonos Crowdsourced Data License Terms; academic/research only, no commercial use. Mirror MIT tag does not override publisher speech terms.",
+    "requested_url": "https://huggingface.co/datasets/MWilinski/snips_slu_v1.0",
+    "version": 1
+  },
+  "source_receipts": {
+    "audit-summary.json": {
+      "bytes": 1559,
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/additional-source-audit/audit-summary.json",
+      "sha256": "3b8a440db3d9d10140168db77e63c4e0722834b46050351702d9261351779d94"
+    },
+    "drive-archive-probe.json": {
+      "bytes": 2834,
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/additional-source-audit/drive-archive-probe.json",
+      "sha256": "a52f2a3656aa82c6f3df8ec124a5eccc0ec1101898710e17b24c41f79ee25920"
+    },
+    "drive-audit.json": {
+      "bytes": 13794,
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/additional-source-audit/drive-audit.json",
+      "sha256": "f6801b426bf27a3615bd8bc36a683764ef30a565306545284d16a7461a1d233c"
+    },
+    "drive-frozen-exclusions-raw.json": {
+      "bytes": 251771,
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/additional-source-audit/drive-frozen-exclusions-raw.json",
+      "sha256": "375fd048a180d24a29c471875fb3f33042b9495928304bce7ed8ef2b9991e868"
+    },
+    "drive-frozen-hash-overlap-raw.json": {
+      "bytes": 387922,
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/additional-source-audit/drive-frozen-hash-overlap-raw.json",
+      "sha256": "13eec4013eeed230fff498f295925685b24ced410c9dcbf2b6f0888b931a043a"
+    },
+    "drive-metadata-extraction-receipt.json": {
+      "bytes": 35663,
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/additional-source-audit/drive-metadata-extraction-receipt.json",
+      "sha256": "7ca5dd0cea5f97af7ba791387e858d6ab7ab009196b2041a9207c2a8286e4ccb"
+    },
+    "drive-overlap-sample-verification.json": {
+      "bytes": 20882,
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/additional-source-audit/drive-overlap-sample-verification.json",
+      "sha256": "cc68269771da21afadbfd7145d109b85b1fa100ba7944023d48f5c265329d9d6"
+    },
+    "root_source_verification": {
+      "bytes": 3752,
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/additional-source-audit/source-audit-verification-root.json",
+      "sha256": "7b20ca1cb10b318ba6b64d4c64b8264c0b11af3b322ee78d3fc26de90839a45e"
+    },
+    "snips-audit.json": {
+      "bytes": 7884,
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/additional-source-audit/snips-audit.json",
+      "sha256": "11a58fcb4d43c1c8be146d5c0205ee1074fac5e8739c911614fb0b6274582633"
+    },
+    "source-audit-verification.json": {
+      "bytes": 3878,
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1/.cache/vcm-intent-slots-v1/additional-source-audit/source-audit-verification.json",
+      "sha256": "d0a7124305ad5543003b3bbdccb984f9ec4201bb62afcbbc5c09d190ac630072"
+    }
+  }
+}
