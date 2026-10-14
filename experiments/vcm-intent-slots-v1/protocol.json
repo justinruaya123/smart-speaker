@@ -1,0 +1,202 @@
+{
+  "experiment_id": "vcm-intent-slots-v1",
+  "status": "design_recorded_execution_pending",
+  "baseline_commit": "5d872e3a249e5876aaa8130b76f6e3b31622355f",
+  "base_branch": "codex/speaker-demo-v1",
+  "work_branch": "codex/vcm-intent-slots-v1",
+  "spec": "docs/SPEC-vcm-intent-slots-v1.md",
+  "handoff": "docs/HANDOFF-vcm-intent-slots-v1.md",
+  "registry_patch": "experiments/vcm-intent-slots-v1/register.patch",
+  "requirement_ids": [
+    "ME-01",
+    "ME-02",
+    "ME-03",
+    "ME-04",
+    "ME-05",
+    "ME-06",
+    "ME-07",
+    "ME-08"
+  ],
+  "use_case_ids": [
+    "UC-01",
+    "UC-02",
+    "UC-03",
+    "UC-04",
+    "UC-05",
+    "UC-06",
+    "UC-07",
+    "UC-08",
+    "UC-09",
+    "UC-10"
+  ],
+  "scope": "One shared model for OptionB and every preserved personal-demo extension; no silent schema expansion.",
+  "source_handoff_sha256": "c8fdc47c9bfa5ce45113315cf492688a434ebd11b8d06011edba36f3b4f54e40",
+  "application": {
+    "mode": "demo",
+    "intent_threshold": 0.95,
+    "slot_threshold": 0.9,
+    "every_supplied_slot_gated": true
+  },
+  "primary_engine": "ncnn",
+  "architecture": {
+    "class": "IntentSlotsVCM",
+    "initialization": "random",
+    "inference_mode": "complete_utterance",
+    "frontend": "vcm.frontend.SPEC",
+    "feature_bins": 40,
+    "stem": {
+      "width": 128,
+      "kernel": 5,
+      "stride": 2,
+      "padding": 2
+    },
+    "blocks": 8,
+    "width": 128,
+    "kernel": 5,
+    "dilations": [
+      1,
+      2,
+      4,
+      8,
+      1,
+      2,
+      4,
+      8
+    ],
+    "block": "depthwise_conv -> per_frame_channel_layernorm -> relu -> pointwise_conv -> dropout -> residual",
+    "dropout": 0.1,
+    "padding": "symmetric_with_valid_length_masking",
+    "intent_outputs": 19,
+    "intent_order": [
+      "OOV",
+      "PLAY_MUSIC",
+      "WEATHER",
+      "TIME",
+      "LIGHT_ON",
+      "LIGHT_OFF",
+      "PAUSE",
+      "STOP",
+      "NEXT",
+      "VOLUME",
+      "CALL",
+      "MESSAGE",
+      "LIST_REMINDERS",
+      "TIMER",
+      "ALARM",
+      "TEMPERATURE",
+      "BRIGHTNESS",
+      "COLOR",
+      "CREATE_REMINDER"
+    ],
+    "attention_dim": 64,
+    "entity_embedding_dim": 64,
+    "role_states": [
+      "absent",
+      "present",
+      "conflicting",
+      "unsupported"
+    ],
+    "request_validity_states": [
+      "valid",
+      "missing",
+      "conflicting",
+      "unsupported"
+    ],
+    "slot_inventory_source": "frozen existing typed schema plus complete selected catalog",
+    "runtime_transcription": false,
+    "runtime_ctc_fallback": false,
+    "playlist_schema_status": "deferred versioned extension; absent in pinned schema"
+  },
+  "training": {
+    "human_only": true,
+    "new_synthesis": false,
+    "augmentation": "none in first matched comparison",
+    "normalization_fit_split": "train",
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "gradient_norm_limit": 1.0,
+    "batch_size": 64,
+    "epochs": 30,
+    "steps_per_epoch": 96,
+    "seeds": [
+      53,
+      71,
+      89
+    ],
+    "arms": [
+      "uniform",
+      "balanced"
+    ],
+    "balance_unit": "complete_command_then_person_then_recording",
+    "supervised_loss_weight": 1.0,
+    "entity_metric_weight": 0.1,
+    "reviewed_span_weight": 0.1,
+    "whole_command_contrastive_weight": 0.0,
+    "auxiliary_ctc_weight": 0.0,
+    "selection": "human-dev macro-person accepted exact-command recall; fewer false accepts; micro recall; earlier epoch",
+    "score_calibration": "separate calibration partition after checkpoint selection; frozen before test",
+    "update_artifacts": false
+  },
+  "enrollment": {
+    "examples_per_entity_start": [
+      3,
+      5
+    ],
+    "score": "max cosine over examples per entity",
+    "absolute_rejection_required": true,
+    "duplicate_inflation_allowed": false,
+    "encoder_catalog_binding_required": true,
+    "calibration_status": "pending real data"
+  },
+  "source_revisions_from_supplied_handoff_not_newly_downloaded": {
+    "primary": "25111444af3adff7588d86ab27c304bb080895cf",
+    "supplemental": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+    "benchmark": "ab39857cf73dd067d068fed388c321ab160dc191"
+  },
+  "local_execution_bindings": {
+    "status": "preflight_required",
+    "data_manifest": null,
+    "catalog": null,
+    "normalization": null,
+    "shipping_bundle": null,
+    "slot_schema": null,
+    "calibration": null,
+    "fresh_human_holdout": null,
+    "owner_pairs": null,
+    "physical_pi_resource_limits": null
+  },
+  "owner": {
+    "separate_content_identity_embeddings": true,
+    "one_wake_one_command": true,
+    "reference_adaptation": false,
+    "missing_backend": "reject_in_owner_enabled_track",
+    "overlap": "reject_not_extract",
+    "threshold": null,
+    "threshold_status": "duration_stratified_human_calibration_required",
+    "new_pretrained_weights_authorized": false
+  },
+  "evaluation_tracks": [
+    "optionb_command_only",
+    "personal_superset_command_only",
+    "official_owner_enabled_mismatched_pairs_retained",
+    "original_paired_human_owner_sessions"
+  ],
+  "pilot_targets_not_measured": {
+    "human_accepted_exact_recall": 0.95,
+    "accepted_precision": 0.99,
+    "worst_person_recall_with_adequate_coverage": 0.9,
+    "wrong_speaker_false_accept_rate": 0.01,
+    "genuine_retention": 0.95
+  },
+  "installation_allowed": false,
+  "provider_actions_allowed": false,
+  "observed_acoustic_results": null,
+  "evidence_boundaries": [
+    "Documentation and protocol only; no new model implementation or acoustic result.",
+    "Historical source observations do not establish current executor payload availability.",
+    "Metadata/software/adapter fixtures are not speech accuracy.",
+    "Desktop timing is not physical Pi qualification.",
+    "Existing wake/VAD exceptions do not authorize new pretrained speaker weights."
+  ]
+}
