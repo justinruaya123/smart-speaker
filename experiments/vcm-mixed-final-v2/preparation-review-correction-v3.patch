@@ -1,0 +1,194 @@
+diff --git a/scripts/test/test_vcm_intent_slots_mixed_corpus.py b/scripts/test/test_vcm_intent_slots_mixed_corpus.py
+index c438cd6..c8c92a7 100644
+--- a/scripts/test/test_vcm_intent_slots_mixed_corpus.py
++++ b/scripts/test/test_vcm_intent_slots_mixed_corpus.py
+@@ -99,3 +99,40 @@ def test_generated_manifest_cannot_drop_or_relabel_locked_records(tmp_path):
+     write(values)
+     with pytest.raises(ValueError,match='frozen plan'):
+         verify_generation(manifest,protocol)
++
++
++def test_bathroom_replacement_is_a_frozen_group_not_a_retried_take():
++    from scripts.train.vcm_intent_slots_mixed_corpus import replacement_plan
++    from scripts.train.vcm_intent_slots_mixed_data import annotate_reference
++    protocol, contract = inputs()
++    original=ROOT/'.cache/vcm-mixed-final-v2/generation-plan.json'
++    values=replacement_plan(original,protocol,contract)
++    assert len(values)==3
++    assert {r['voice_id'] for r in values}==set(protocol['voices']['enrollment'])
++    assert {r['transcript'] for r in values}=={'turn on bathroom light'}
++    assert all(r['entity_id']=='light.bathroom' and r['split']=='enrollment' for r in values)
++    assert all(annotate_reference(r,contract)['role_labels']['light']=='present' for r in values)
++    old=json.loads(original.read_text())
++    assert not {r['id'] for r in values} & {r['id'] for r in old}
++
++
++def test_bathroom_replacement_refuses_changed_parent(tmp_path):
++    from scripts.train.vcm_intent_slots_mixed_corpus import replacement_plan
++    protocol, contract=inputs()
++    parent=tmp_path/'other.json';parent.write_text('[]')
++    with pytest.raises(ValueError,match='original generation plan'):
++        replacement_plan(parent,protocol,contract)
++
++
++def test_replacement_receipt_binds_the_complete_original_manifest(tmp_path,monkeypatch):
++    from scripts.train import vcm_intent_slots_mixed_corpus as module
++    from scripts.train.vcm_intent_slots_data import sha
++    parent=tmp_path/'manifest.json';parent.write_text('[{"status":"generation_fault"}]')
++    receipt=tmp_path/'experiments/vcm-mixed-final-v2/preparation-correction-v2.json'
++    receipt.parent.mkdir(parents=True);receipt.write_text(json.dumps({'original_generation_manifest_sha256':sha(parent)}))
++    monkeypatch.setattr(module,'ROOT',tmp_path)
++    _,binding=module.replacement_receipt(parent)
++    assert binding=={'path':str(receipt),'sha256':sha(receipt)}
++    parent.write_text('[]')
++    with pytest.raises(ValueError,match='original generation manifest'):
++        module.replacement_receipt(parent)
+diff --git a/scripts/train/vcm_intent_slots_mixed_corpus.py b/scripts/train/vcm_intent_slots_mixed_corpus.py
+index d85ff64..ee6cbc6 100644
+--- a/scripts/train/vcm_intent_slots_mixed_corpus.py
++++ b/scripts/train/vcm_intent_slots_mixed_corpus.py
+@@ -93,7 +93,30 @@ def correction_plan(original_path, protocol, contract):
+     return new
+ 
+ 
+-def generate(plan_path, protocol_path, assets, output, provider='cuda', correction_of=None):
++def replacement_plan(original_path, protocol, contract):
++    """One pre-fit, versioned replacement group; preserve all original takes."""
++    from final.tts_sanity import merge_cases
++    receipt=json.loads((ROOT/'experiments/vcm-mixed-final-v2/preparation-correction-v2.json').read_text())
++    if sha(original_path)!=receipt['original_generation_plan_sha256']:
++        raise ValueError('Changed original generation plan')
++    if (receipt['training_started'] is not False or receipt['VCM_test_results_accessed'] is not False
++            or receipt['entity']!='light.bathroom' or receipt['reference']!='turn on bathroom light'):
++        raise ValueError('Unapproved pre-fit replacement group')
++    complete=make_plan(protocol,contract)
++    case=next(r for r in merge_cases(contract) if r['spoken_text']==receipt['reference'])
++    selected=[r for r in complete if r['split']=='enrollment' and r.get('entity_id')==receipt['entity']]
++    old=json.loads(Path(original_path).read_text())
++    old_ids=sorted(r['id'] for r in old if r['split']=='enrollment' and r.get('entity_id')==receipt['entity'])
++    if old_ids!=receipt['excluded_original_ids'] or len(selected)!=3:
++        raise ValueError('Replacement scope differs from frozen original enrollment group')
++    for row in selected:
++        identity=hashlib.sha256(canonical([STUDY,'enrollment',row['voice_id'],case['spoken_text'],'light']).encode()).hexdigest()
++        row.update(id=STUDY+'/'+identity,recording_group=identity,pair_id=identity,
++                   transcript=case['spoken_text'],command=case['command'],reference_case=case['case_id'])
++    return selected
++
++
++def generate(plan_path, protocol_path, assets, output, provider='cuda', correction_of=None, correction_version=1):
+     import importlib.metadata
+     import soundfile as sf
+     import onnxruntime as ort
+@@ -102,7 +125,8 @@ def generate(plan_path, protocol_path, assets, output, provider='cuda', correcti
+     protocol = json.loads(Path(protocol_path).read_text())
+     plan = json.loads(Path(plan_path).read_text())
+     contract = json.loads((ROOT/'.cache/vcm-mixed-final-v2/slot-contract.json').read_text())
+-    expected = (correction_plan(correction_of, protocol, contract) if correction_of
++    builder=correction_plan if correction_version==1 else replacement_plan
++    expected = (builder(correction_of, protocol, contract) if correction_of
+                 else make_plan(protocol, contract))
+     if canonical(plan) != canonical(expected):
+         raise ValueError('Changed or incomplete fitting generation plan')
+@@ -145,7 +169,8 @@ def generate(plan_path, protocol_path, assets, output, provider='cuda', correcti
+               'final_tts_data_used': False, 'generator': protocol['generator'],
+               'source_sha256': sha(__file__),
+               'pcm_conversion_source_sha256': sha(ROOT/'final/tts_sanity.py'),
+-              'correction_of': str(correction_of) if correction_of else None})
++              'correction_of': str(correction_of) if correction_of else None,
++              'correction_version': correction_version if correction_of else None})
+     completed = []
+     with (output/'generation.jsonl').open('x', encoding='utf8') as log:
+         for n, item in enumerate(plan):
+@@ -210,6 +235,14 @@ def verify_generation(manifest_path, protocol_path):
+     return manifest
+ 
+ 
++def replacement_receipt(original_manifest):
++    path=ROOT/'experiments/vcm-mixed-final-v2/preparation-correction-v2.json'
++    receipt=json.loads(path.read_text())
++    if sha(original_manifest)!=receipt['original_generation_manifest_sha256']:
++        raise ValueError('Changed original generation manifest for enrollment replacement')
++    return receipt,{'path':str(path),'sha256':sha(path)}
++
++
+ def prepare(protocol_path, generated, output, correction_generated=None):
+     from scripts.train.vcm_intent_slots_mixed_data import annotate_reference, audit_views
+     protocol = json.loads(Path(protocol_path).read_text())
+@@ -218,7 +251,10 @@ def prepare(protocol_path, generated, output, correction_generated=None):
+     for binding in base['views'].values():
+         if sha(binding['path']) != binding['sha256']:
+             raise ValueError('Changed original frozen human/regression view')
+-    generated_paths = [Path(generated)] + ([Path(correction_generated)] if correction_generated else [])
++    corrections=([correction_generated] if isinstance(correction_generated,(str,Path)) else correction_generated) or []
++    generated_paths = [Path(generated)] + [Path(p) for p in corrections]
++    correction_receipts=[]
++    v1=ROOT/'experiments/vcm-mixed-final-v2/preparation-correction-v1.json'
+     generated = [r for path in generated_paths for r in verify_generation(path, protocol_path)]
+     if len({r['id'] for r in generated}) != len(generated):
+         raise ValueError('Repeated original/correction generation identity')
+@@ -226,7 +262,24 @@ def prepare(protocol_path, generated, output, correction_generated=None):
+     default_enrollment = [r for r in annotated if r['split']=='enrollment'
+                           and r['role_labels'].get(r['entity_role']) != 'present']
+     bad_ids = {r['id'] for r in default_enrollment}
+-    good = [r for r in annotated if r['id'] not in bad_ids]
++    replaced_ids=set()
++    for path in generated_paths[1:]:
++        identity=json.loads((path.parent/'run-identity.json').read_text())
++        if identity.get('correction_version')==2:
++            receipt,binding=replacement_receipt(generated_paths[0])
++            expected=replacement_plan(identity['correction_of'],protocol,contract)
++            plan=json.loads(Path(identity['plan']['path']).read_text())
++            if canonical(expected)!=canonical(plan):
++                raise ValueError('Changed frozen replacement plan')
++            replaced_ids.update(receipt['excluded_original_ids'])
++            correction_receipts.append(binding)
++        elif identity.get('correction_of'):
++            expected=correction_plan(identity['correction_of'],protocol,contract)
++            plan=json.loads(Path(identity['plan']['path']).read_text())
++            if canonical(expected)!=canonical(plan):
++                raise ValueError('Changed original named-contact correction plan')
++            correction_receipts.append({'path':str(v1),'sha256':sha(v1)})
++    good = [r for r in annotated if r['id'] not in bad_ids|replaced_ids]
+     wanted = catalog_ids(contract); wanted['light'].discard('light.all')
+     enrolled = Counter((r['entity_role'],r['entity_id']) for r in good if r['split']=='enrollment')
+     if any(enrolled[(role,entity)] != 3 for role,names in wanted.items() for entity in names):
+@@ -264,12 +317,14 @@ def prepare(protocol_path, generated, output, correction_generated=None):
+                            'sha256': sha(ROOT/'.cache/vcm-mixed-final-v2/slot-contract.json')},
+               'generation_faults_retained': [r['id'] for r in generated if r['status'] != 'generated'],
+               'default_only_enrollment_excluded_retained': sorted(bad_ids),
++              'replacement_enrollment_excluded_retained':sorted(replaced_ids),
++              'preparation_corrections':correction_receipts,
+               'generation_bindings': [{'path': str(path.resolve()), 'sha256': sha(path),
+                                        'receipt_sha256': sha(path.parent/'generation-receipt.json'),
+                                        'identity_sha256': sha(path.parent/'run-identity.json')} for path in generated_paths],
+               'preparation_correction': {'path': str(ROOT/'experiments/vcm-mixed-final-v2/preparation-correction-v1.json'),
+                                         'sha256': sha(ROOT/'experiments/vcm-mixed-final-v2/preparation-correction-v1.json')},
+-              'exclusion_rule': 'technical waveform failures only, before fitting; no VCM results',
++              'exclusion_rule': 'All technical waveform failures, three absent-role defaults and the complete versioned bathroom enrollment group; before fitting and independent of VCM results',
+               'acoustic_listening_verified': False}
+     inputs['fresh_audit'] = {'path': str(fresh_audit), 'sha256': sha(fresh_audit)}
+     write_new(output/'inputs.json', inputs)
+@@ -287,18 +342,20 @@ def main():
+     parser.add_argument('--output', type=Path, required=True)
+     parser.add_argument('--generated', type=Path)
+     parser.add_argument('--correction-of', type=Path)
+-    parser.add_argument('--correction-generated', type=Path)
++    parser.add_argument('--correction-version',type=int,choices=[1,2],default=1)
++    parser.add_argument('--correction-generated', type=Path,action='append')
+     parser.add_argument('--provider', choices=['cuda', 'cpu'], default='cuda')
+     args = parser.parse_args()
+     if args.command == 'plan':
+         protocol = json.loads(args.protocol.read_text())
+         contract = json.loads((ROOT/'.cache/vcm-mixed-final-v2/slot-contract.json').read_text())
+-        value = (correction_plan(args.correction_of, protocol, contract) if args.correction_of
++        builder=correction_plan if args.correction_version==1 else replacement_plan
++        value = (builder(args.correction_of, protocol, contract) if args.correction_of
+                  else make_plan(protocol, contract))
+         write_new(args.output, value)
+         print(json.dumps({'plan_sha256': sha(args.output), 'counts': dict(Counter(r['split'] for r in value))}))
+     elif args.command == 'generate':
+-        generate(args.plan, args.protocol, args.assets, args.output, args.provider, args.correction_of)
++        generate(args.plan, args.protocol, args.assets, args.output, args.provider, args.correction_of,args.correction_version)
+     else:
+         print(json.dumps(prepare(args.protocol, args.generated, args.output, args.correction_generated)))
+ 

@@ -1,0 +1,32 @@
+{
+  "experiment_id": "vcm-mixed-final-v2",
+  "version": "preparation-correction-v2",
+  "stage": "technical generation review before fitting; no VCM results",
+  "original_generation_plan_sha256": "571b82533842d8a4cab64359f714a50fb656d8f99eb248a9347e24fcc56c59af",
+  "original_generation_manifest_sha256": "d77c30216e0a5bffb3c508b98ad72f77735d5487ed40e58d8b5ead195c929395",
+  "reason": "One original bathroom-light enrollment take failed the unchanged non-clipping native-audio guard",
+  "entity": "light.bathroom",
+  "reference": "turn on bathroom light",
+  "reference_selection": "Next preserved form ordered by length then exact text; all three voices replaced as a group",
+  "excluded_original_ids": [
+    "vcm-mixed-final-v2/3f0094f7c4fe66ed945013a058bcd45d4778d27c317d7b0ffa72f6b0885908aa",
+    "vcm-mixed-final-v2/896f1be059047146f4b3cd633b55bb5e71f3dbf3e22317ed5376498953ce4c13",
+    "vcm-mixed-final-v2/94e89db861cfc442a5aaa9320c289d64dd79838376186da9d4dc4e0354a7bb75"
+  ],
+  "failed_original_ids": [
+    "vcm-mixed-final-v2/3f0094f7c4fe66ed945013a058bcd45d4778d27c317d7b0ffa72f6b0885908aa"
+  ],
+  "original_takes": "All native bytes, WAVs and failures retained unchanged; no retry of any first take",
+  "voices": [
+    "bf_alice",
+    "bf_lily",
+    "bm_fable"
+  ],
+  "training_started": false,
+  "VCM_test_results_accessed": false,
+  "final_TTS_changed": false,
+  "thresholds_unchanged": {
+    "intent": 0.95,
+    "slot": 0.9
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "training_started": false,
+  "final_TTS_source_changed": false,
+  "reviewed_corrections": [
+    {
+      "path": "experiments/vcm-mixed-final-v2/preparation-review-correction-v3.patch",
+      "sha256": "c050a96ae2337f37a036731169b62fc990c802b265c02248551511690bb7f110"
+    },
+    {
+      "path": "experiments/vcm-mixed-final-v2/feature-loading-correction-v1.patch",
+      "sha256": "a57a4d039de98140cda302ebf2329898f3bef8b77376d875b8954dd25b2b69ba"
+    }
+  ],
+  "superseded_preparation": {
+    "path": ".cache/vcm-mixed-final-v2/prepared-01/inputs.json",
+    "sha256": "91318dffcd7797784568ba309b15d1d68e1800b6e1db0641c78aa5019d06a7cf",
+    "reason": "Missing explicit correction-v2 receipt and original generation manifest bindings; do not train from this preparation"
+  },
+  "selected_preparation": {
+    "path": ".cache/vcm-mixed-final-v2/prepared-02/inputs.json",
+    "sha256": "238f0348014b56791c56b37a3a7e896795682fe61bb39bbb967139eefe453da4"
+  },
+  "verification": {
+    "path": ".cache/vcm-mixed-final-v2/tooling/feature-cache-green.log",
+    "sha256": "2b8e73a9570a77ef0ce3ebd26f84c8f53cd8c431a495649f5861d40c5128446f",
+    "passed": 48,
+    "scope": "pure corpus planning, data loading tensor equality, recipe/targets and mocked postfit tests; no neural inference"
+  },
+  "review": "Independent agent reviewed complete group replacement, parent/correction hashes and exact-arithmetic RAM feature loading; no important issues after correction",
+  "old_first_takes_and_failures_retained": true
+}

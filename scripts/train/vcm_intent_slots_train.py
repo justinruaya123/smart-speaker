@@ -161,8 +161,8 @@ def tensor_prediction(out, index=0):
             for k, value in out.items() if k not in ("role_frame_logits", "encoded_lengths")}
 
 
-def feature_batch(data, receipt, normalization, device):
-    xs = [(np.load(receipt[row["id"]]["path"]) -
+def feature_batch(data, receipt, normalization, device, feature_cache=None):
+    xs = [((feature_cache[row["id"]] if feature_cache is not None else np.load(receipt[row["id"]]["path"])) -
            np.asarray(normalization["mean"])[:, None]) /
           np.asarray(normalization["std"])[:, None] for row in data]
     length = torch.tensor([x.shape[1] for x in xs], device=device)
@@ -172,12 +172,12 @@ def feature_batch(data, receipt, normalization, device):
     return torch.tensor(padded, device=device), length
 
 
-def development_score(model, data, receipt, normalization, contract, memory=None, policy=None):
+def development_score(model, data, receipt, normalization, contract, memory=None, policy=None, feature_cache=None):
     model.eval()
     predictions = []
     with torch.no_grad():
         for row in data:
-            x, lengths = feature_batch([row], receipt, normalization, next(model.parameters()).device)
+            x, lengths = feature_batch([row], receipt, normalization, next(model.parameters()).device,feature_cache)
             pred = prediction_from_tensors(tensor_prediction(model(x, lengths)), contract, memory, policy)
             predictions.append({"id": row["id"], "application": decide(pred, contract, contract, policy or {})})
     metrics = summarize_trials(data, predictions)

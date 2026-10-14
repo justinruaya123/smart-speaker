@@ -1,0 +1,88 @@
+{
+  "plan_sha256": "339be5e31c5825efb97ee49e94574dcf09f025c857fdeba4fd4f3f0df10c5707",
+  "manifest_sha256": "2846c1db1b617db3c4967a1496a2a5f28dd37ae33dd2c8e959f4d73a9ea2d6cd",
+  "case_references": 26010,
+  "unique_audio": 18666,
+  "optionb_references": 1674,
+  "per_voice": {
+    "af_heart": {
+      "references": 4335,
+      "supported": 3456,
+      "negative": 879,
+      "generation_fault_references": 2
+    },
+    "af_bella": {
+      "references": 4335,
+      "supported": 3456,
+      "negative": 879,
+      "generation_fault_references": 3
+    },
+    "af_nicole": {
+      "references": 4335,
+      "supported": 3456,
+      "generation_fault_references": 53,
+      "negative": 879
+    },
+    "am_fenrir": {
+      "references": 4335,
+      "supported": 3456,
+      "generation_fault_references": 1780,
+      "negative": 879
+    },
+    "am_michael": {
+      "references": 4335,
+      "supported": 3456,
+      "generation_fault_references": 17,
+      "negative": 879
+    },
+    "am_puck": {
+      "references": 4335,
+      "supported": 3456,
+      "generation_fault_references": 1225,
+      "negative": 879
+    }
+  },
+  "per_speed": {
+    "0.9": {
+      "references": 8670,
+      "supported": 6912,
+      "generation_fault_references": 833,
+      "negative": 1758
+    },
+    "1.0": {
+      "references": 8670,
+      "supported": 6912,
+      "generation_fault_references": 1083,
+      "negative": 1758
+    },
+    "1.1": {
+      "references": 8670,
+      "supported": 6912,
+      "generation_fault_references": 1164,
+      "negative": 1758
+    }
+  },
+  "per_track": {
+    "optionb": {
+      "references": 1674,
+      "supported": 1674,
+      "generation_fault_references": 142
+    },
+    "personal_extensions": {
+      "references": 5778,
+      "supported": 5526,
+      "generation_fault_references": 934,
+      "negative": 252
+    },
+    "selected_catalog": {
+      "references": 18558,
+      "supported": 13536,
+      "generation_fault_references": 2004,
+      "negative": 5022
+    }
+  },
+  "VCM_results_accessed": false,
+  "inference_metrics": null,
+  "listening_review_completed": false,
+  "generation_fault_counts_are_not_recognition_errors": true
+}

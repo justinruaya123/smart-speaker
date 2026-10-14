@@ -141,7 +141,11 @@ def package(bundle, card, output, *, root=ROOT, extra=()):
     protocol = "experiments/vcm-intent-slots-v1/protocol.json"
     if (root / protocol).is_file():
         entries[protocol] = source_bytes(root, protocol)
-    entries["README-Pi.md"] = README.encode("utf-8")
+    ncnn_available=(recipe.get('engine_status',{}).get('ncnn')=='exported_unverified'
+                    and {'network.ncnn.param','network.ncnn.bin'}<=set(files))
+    engine='ncnn' if ncnn_available else 'onnxruntime'
+    entries["README-Pi.md"] = README.replace('--engine ncnn --threads 1',
+                                             '--engine '+engine+' --threads 1').encode("utf-8")
     for name, path in extra_files(extra, root):
         safe_name(name)
         if name == "MANIFEST.json" or name in entries:

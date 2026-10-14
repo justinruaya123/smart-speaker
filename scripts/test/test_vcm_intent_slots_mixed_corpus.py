@@ -99,3 +99,40 @@ def test_generated_manifest_cannot_drop_or_relabel_locked_records(tmp_path):
     write(values)
     with pytest.raises(ValueError,match='frozen plan'):
         verify_generation(manifest,protocol)
+
+
+def test_bathroom_replacement_is_a_frozen_group_not_a_retried_take():
+    from scripts.train.vcm_intent_slots_mixed_corpus import replacement_plan
+    from scripts.train.vcm_intent_slots_mixed_data import annotate_reference
+    protocol, contract = inputs()
+    original=ROOT/'.cache/vcm-mixed-final-v2/generation-plan.json'
+    values=replacement_plan(original,protocol,contract)
+    assert len(values)==3
+    assert {r['voice_id'] for r in values}==set(protocol['voices']['enrollment'])
+    assert {r['transcript'] for r in values}=={'turn on bathroom light'}
+    assert all(r['entity_id']=='light.bathroom' and r['split']=='enrollment' for r in values)
+    assert all(annotate_reference(r,contract)['role_labels']['light']=='present' for r in values)
+    old=json.loads(original.read_text())
+    assert not {r['id'] for r in values} & {r['id'] for r in old}
+
+
+def test_bathroom_replacement_refuses_changed_parent(tmp_path):
+    from scripts.train.vcm_intent_slots_mixed_corpus import replacement_plan
+    protocol, contract=inputs()
+    parent=tmp_path/'other.json';parent.write_text('[]')
+    with pytest.raises(ValueError,match='original generation plan'):
+        replacement_plan(parent,protocol,contract)
+
+
+def test_replacement_receipt_binds_the_complete_original_manifest(tmp_path,monkeypatch):
+    from scripts.train import vcm_intent_slots_mixed_corpus as module
+    from scripts.train.vcm_intent_slots_data import sha
+    parent=tmp_path/'manifest.json';parent.write_text('[{"status":"generation_fault"}]')
+    receipt=tmp_path/'experiments/vcm-mixed-final-v2/preparation-correction-v2.json'
+    receipt.parent.mkdir(parents=True);receipt.write_text(json.dumps({'original_generation_manifest_sha256':sha(parent)}))
+    monkeypatch.setattr(module,'ROOT',tmp_path)
+    _,binding=module.replacement_receipt(parent)
+    assert binding=={'path':str(receipt),'sha256':sha(receipt)}
+    parent.write_text('[]')
+    with pytest.raises(ValueError,match='original generation manifest'):
+        module.replacement_receipt(parent)

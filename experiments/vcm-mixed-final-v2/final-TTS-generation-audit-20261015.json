@@ -1,0 +1,66 @@
+{
+  "stage": "blind technical integrity only; no acoustic listening and no VCM outcomes",
+  "manifest_sha256": "2846c1db1b617db3c4967a1496a2a5f28dd37ae33dd2c8e959f4d73a9ea2d6cd",
+  "plan_sha256": "339be5e31c5825efb97ee49e94574dcf09f025c857fdeba4fd4f3f0df10c5707",
+  "audit_source_sha256": "12aa88f74725436b57b8af9ad034cda8f4136db265a0956963a9abc43892de64",
+  "attempted": 18666,
+  "generated": 16649,
+  "generation_faults": 2017,
+  "checked_file_hashes": 89296,
+  "per_voice": {
+    "af_heart": {
+      "generated": 3109,
+      "attempted": 3111,
+      "generation_fault": 2
+    },
+    "af_bella": {
+      "generated": 3108,
+      "attempted": 3111,
+      "generation_fault": 3
+    },
+    "af_nicole": {
+      "generated": 3064,
+      "attempted": 3111,
+      "generation_fault": 47
+    },
+    "am_fenrir": {
+      "generated": 1933,
+      "attempted": 3111,
+      "generation_fault": 1178
+    },
+    "am_michael": {
+      "generated": 3098,
+      "attempted": 3111,
+      "generation_fault": 13
+    },
+    "am_puck": {
+      "generated": 2337,
+      "attempted": 3111,
+      "generation_fault": 774
+    }
+  },
+  "fault_types": {
+    "Invalid, clipped or silent native TTS audio": 1938,
+    "TTS audio violates unchanged VCM capture contract": 79
+  },
+  "fault_verbatims": {
+    "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/final-tts-02/technical-faults-rechecked.json",
+    "sha256": "21649c34124772bee2687c613d648cd04fa0ec0ffbcb9048c85d684873606a2a"
+  },
+  "all_planned_grid_members_present": true,
+  "source_changed_during_generation": false,
+  "manifest_PCM_hash_scheme": "SHA256 of decoded little-endian float32 samples, matching frozen final/tts_sanity.py; no shape/rate prefix",
+  "independent_listening_performed": false,
+  "VCM_results_accessed": false,
+  "audio_interface_limitation": "Audio input is not supported by this assistant interface; no heard_exact assertion is made",
+  "supplemental_qualified_lock": null,
+  "TTS_accuracy": null,
+  "every_slot_correctness": null,
+  "gate_status": "failed_generation_QA_and_blocked_independent_listening",
+  "fit_selection_calibration_enrollment_use": false,
+  "takes_regenerated": false,
+  "preserved_audit_source": {
+    "path": ".cache/vcm-mixed-final-v2/tooling/audit-final-tts-source.py",
+    "sha256": "12aa88f74725436b57b8af9ad034cda8f4136db265a0956963a9abc43892de64"
+  }
+}

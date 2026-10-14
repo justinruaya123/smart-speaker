@@ -1,0 +1,140 @@
+diff --git a/scripts/test/test_vcm_intent_slots_mixed_train.py b/scripts/test/test_vcm_intent_slots_mixed_train.py
+index 3a6c450..b0f65b8 100644
+--- a/scripts/test/test_vcm_intent_slots_mixed_train.py
++++ b/scripts/test/test_vcm_intent_slots_mixed_train.py
+@@ -63,3 +63,25 @@ def test_training_requires_complete_named_enrollment_and_separation():
+         require_enrollment({'enrollment':enrollment[:-1],'train':[]},p,c)
+     with pytest.raises(ValueError,match='overlapping'):
+         require_enrollment({'enrollment':enrollment,'train':[enrollment[0]]},p,c)
++
++
++def test_cached_training_features_are_exactly_identical_to_disk_batches(tmp_path):
++    import numpy as np
++    import torch
++    from scripts.train.vcm_intent_slots_train import feature_batch
++    from scripts.train.vcm_intent_slots_mixed_train import load_feature_cache
++    from scripts.train.vcm_intent_slots_data import sha
++    data=[{'id':'short'},{'id':'long'}];receipt={}
++    for row,frames in zip(data,[3,11]):
++        path=tmp_path/(row['id']+'.npy')
++        np.save(path,np.random.default_rng(frames).normal(size=(40,frames)).astype(np.float32))
++        receipt[row['id']]={'path':str(path),'sha256':sha(path),'frames':frames}
++    norm={'mean':np.linspace(-1,1,40).tolist(),'std':np.linspace(.1,3,40).tolist()}
++    before,length=feature_batch(data,receipt,norm,'cpu')
++    cache=load_feature_cache(receipt)
++    after,other=feature_batch(data,receipt,norm,'cpu',feature_cache=cache)
++    assert torch.equal(before,after) and torch.equal(length,other)
++    assert all(not v.flags.writeable for v in cache.values())
++    receipt['short']['sha256']='0'*64
++    with pytest.raises(ValueError,match='feature hash'):
++        load_feature_cache(receipt)
+diff --git a/scripts/train/vcm_intent_slots_mixed_train.py b/scripts/train/vcm_intent_slots_mixed_train.py
+index 66485a2..6d24524 100644
+--- a/scripts/train/vcm_intent_slots_mixed_train.py
++++ b/scripts/train/vcm_intent_slots_mixed_train.py
+@@ -56,6 +56,19 @@ def state_hash(model):
+     return h.hexdigest()
+ 
+ 
++def load_feature_cache(receipt):
++    """Load verified raw features once; normalization and batch arithmetic stay identical."""
++    cache={}
++    for identifier,binding in receipt.items():
++        if sha(binding['path'])!=binding['sha256']:
++            raise ValueError('Changed feature hash before training')
++        x=np.load(binding['path'],allow_pickle=False)
++        if x.shape!=(40,binding['frames']) or x.dtype!=np.float32 or not np.isfinite(x).all():
++            raise ValueError('Invalid raw training/development feature array')
++        x.setflags(write=False);cache[identifier]=x
++    return cache
++
++
+ def choose_candidate(results):
+     # The fixed arm/seed iteration order is the last fallback after metric/epoch ties.
+     return max(results,key=lambda r:(*r['development_key'],-r['epoch']))
+@@ -109,7 +122,7 @@ def memory_for_model(model, enrollment, protocol, contract, norm, audio_root, bi
+                    'status':'predeclared_raw_development_only','contract_hash':contract['contract_hash']}
+ 
+ 
+-def fit(protocol, inputs, contract, output, *, arm, seed, receipt, normalization):
++def fit(protocol, inputs, contract, output, *, arm, seed, receipt, normalization,feature_cache=None):
+     validate_training(protocol,arm,seed,'cuda')
+     validate_protocol(protocol,contract)
+     if not torch.cuda.is_available() or torch.cuda.device_count()!=1:
+@@ -136,6 +149,7 @@ def fit(protocol, inputs, contract, output, *, arm, seed, receipt, normalization
+               'cuda_runtime':torch.version.cuda,'protocol':protocol,'inputs':inputs,
+               'model_source_sha256':sha(ROOT/'scripts/models/vcm_intent_slots.py'),
+               'training_source_sha256':sha(__file__),'parameters':model.parameter_counts(),
++              'feature_cache':'verified raw host arrays' if feature_cache is not None else 'disk reads',
+               'selection':'original human development only','final_tts_accessed':False})
+     best_key,selected=None,None
+     counts_total,mass=defaultdict(int),defaultdict(int)
+@@ -148,7 +162,7 @@ def fit(protocol, inputs, contract, output, *, arm, seed, receipt, normalization
+         for offset in range(0,len(indices),64):
+             batch=[data['train'][i] for i in indices[offset:offset+64]]
+             from scripts.train.vcm_intent_slots_train import feature_batch
+-            x,lengths=feature_batch(batch,receipt,normalization,'cuda')
++            x,lengths=feature_batch(batch,receipt,normalization,'cuda',feature_cache)
+             optimizer.zero_grad(set_to_none=True)
+             loss,counts=joint_loss(model(x,lengths),targets(batch,contract,'cuda'))
+             if not torch.isfinite(loss):
+@@ -164,8 +178,8 @@ def fit(protocol, inputs, contract, output, *, arm, seed, receipt, normalization
+         if not np.isfinite(delta) or delta<=0:
+             raise ValueError('No finite actual parameter updates; failed run retained')
+         memory,policy=memory_for_model(model,data['enrollment'],protocol,contract,normalization,inputs['audio_root'])
+-        key,metrics=development_score(model,human_dev,receipt,normalization,contract,memory,policy)
+-        _,synthetic_metrics=development_score(model,synthetic_dev,receipt,normalization,contract,memory,policy)
++        key,metrics=development_score(model,human_dev,receipt,normalization,contract,memory,policy,feature_cache)
++        _,synthetic_metrics=development_score(model,synthetic_dev,receipt,normalization,contract,memory,policy,feature_cache)
+         record={'epoch':epoch+1,'optimizer_updates':96,'cumulative_updates':(epoch+1)*96,
+                 'loss':total_loss/96,'gradient_norm_min':min(gradients),'gradient_norm_max':max(gradients),
+                 'finite_losses_and_gradients':True,'actual_parameter_delta_l2':delta,
+@@ -214,11 +228,17 @@ def main():
+     require_enrollment({s:rows(b['path']) for s,b in inputs['views'].items()},protocol,contract)
+     receipt,norm=prepare_features(rows(inputs['views']['train']['path'])+rows(inputs['views']['dev']['path']),
+                                   inputs['audio_root'],a.output/'features',protocol=protocol,contract=contract)
++    cache=load_feature_cache(receipt)
++    write_new(a.output/'feature-loading-receipt.json',{'feature_receipt_sha256':sha(a.output/'features/features.json'),
++              'normalization_sha256':sha(a.output/'features/normalization.json'),'arrays':len(cache),
++              'bytes':sum(x.nbytes for x in cache.values()),'raw_feature_hashes_verified':True,
++              'normalization_and_batch_arithmetic':'unchanged from default disk feature_batch',
++              'final_TTS_or_evaluation_features_loaded':False})
+     results=[]
+     for arm in ('uniform','balanced'):
+         for seed in (53,71,89):
+             results.append(fit(protocol,inputs,contract,a.output/f'{arm}-{seed}',arm=arm,seed=seed,
+-                               receipt=receipt,normalization=norm))
++                               receipt=receipt,normalization=norm,feature_cache=cache))
+     winner=choose_candidate(results)
+     write_new(a.output/'grid.json',results)
+     write_new(a.output/'selection-before-calibration.json',
+diff --git a/scripts/train/vcm_intent_slots_train.py b/scripts/train/vcm_intent_slots_train.py
+index e1e8a8d..2f4205d 100644
+--- a/scripts/train/vcm_intent_slots_train.py
++++ b/scripts/train/vcm_intent_slots_train.py
+@@ -161,8 +161,8 @@ def tensor_prediction(out, index=0):
+             for k, value in out.items() if k not in ("role_frame_logits", "encoded_lengths")}
+ 
+ 
+-def feature_batch(data, receipt, normalization, device):
+-    xs = [(np.load(receipt[row["id"]]["path"]) -
++def feature_batch(data, receipt, normalization, device, feature_cache=None):
++    xs = [((feature_cache[row["id"]] if feature_cache is not None else np.load(receipt[row["id"]]["path"])) -
+            np.asarray(normalization["mean"])[:, None]) /
+           np.asarray(normalization["std"])[:, None] for row in data]
+     length = torch.tensor([x.shape[1] for x in xs], device=device)
+@@ -172,12 +172,12 @@ def feature_batch(data, receipt, normalization, device):
+     return torch.tensor(padded, device=device), length
+ 
+ 
+-def development_score(model, data, receipt, normalization, contract, memory=None, policy=None):
++def development_score(model, data, receipt, normalization, contract, memory=None, policy=None, feature_cache=None):
+     model.eval()
+     predictions = []
+     with torch.no_grad():
+         for row in data:
+-            x, lengths = feature_batch([row], receipt, normalization, next(model.parameters()).device)
++            x, lengths = feature_batch([row], receipt, normalization, next(model.parameters()).device,feature_cache)
+             pred = prediction_from_tensors(tensor_prediction(model(x, lengths)), contract, memory, policy)
+             predictions.append({"id": row["id"], "application": decide(pred, contract, contract, policy or {})})
+     metrics = summarize_trials(data, predictions)

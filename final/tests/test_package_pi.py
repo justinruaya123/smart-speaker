@@ -107,6 +107,23 @@ def test_packages_every_bundle_byte_and_required_imports_without_model_loading(i
     assert result["physical_pi_measured"] is False
 
 
+def test_onnx_only_bundle_recommends_its_existing_available_engine(inputs,tmp_path):
+    root,bundle,card,_=inputs
+    recipe=json.loads((bundle/'recipe.json').read_text())
+    recipe['engine_status']['ncnn']='blocked: CPU inference hold'
+    for name in ('network.ncnn.param','network.ncnn.bin'):
+        recipe['files'].pop(name)
+        (bundle/name).unlink()
+    put(bundle,'recipe.json',recipe)
+    baseline=json.loads(card.read_text());baseline['bindings']['recipe_sha256']=sha(bundle/'recipe.json')
+    put(root,'final/card.json',baseline)
+    module().package(bundle,card,tmp_path/'onnx.zip',root=root)
+    with zipfile.ZipFile(tmp_path/'onnx.zip') as archive:
+        readme=archive.read('README-Pi.md').decode()
+        assert '--engine onnxruntime --threads 1' in readme
+        assert '--engine ncnn --threads 1' not in readme
+
+
 def test_identical_inputs_produce_identical_zip_bytes(inputs, tmp_path):
     root, bundle, card, _ = inputs
     builder = module()

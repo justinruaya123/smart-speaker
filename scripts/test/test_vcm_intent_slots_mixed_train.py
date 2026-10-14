@@ -63,3 +63,25 @@ def test_training_requires_complete_named_enrollment_and_separation():
         require_enrollment({'enrollment':enrollment[:-1],'train':[]},p,c)
     with pytest.raises(ValueError,match='overlapping'):
         require_enrollment({'enrollment':enrollment,'train':[enrollment[0]]},p,c)
+
+
+def test_cached_training_features_are_exactly_identical_to_disk_batches(tmp_path):
+    import numpy as np
+    import torch
+    from scripts.train.vcm_intent_slots_train import feature_batch
+    from scripts.train.vcm_intent_slots_mixed_train import load_feature_cache
+    from scripts.train.vcm_intent_slots_data import sha
+    data=[{'id':'short'},{'id':'long'}];receipt={}
+    for row,frames in zip(data,[3,11]):
+        path=tmp_path/(row['id']+'.npy')
+        np.save(path,np.random.default_rng(frames).normal(size=(40,frames)).astype(np.float32))
+        receipt[row['id']]={'path':str(path),'sha256':sha(path),'frames':frames}
+    norm={'mean':np.linspace(-1,1,40).tolist(),'std':np.linspace(.1,3,40).tolist()}
+    before,length=feature_batch(data,receipt,norm,'cpu')
+    cache=load_feature_cache(receipt)
+    after,other=feature_batch(data,receipt,norm,'cpu',feature_cache=cache)
+    assert torch.equal(before,after) and torch.equal(length,other)
+    assert all(not v.flags.writeable for v in cache.values())
+    receipt['short']['sha256']='0'*64
+    with pytest.raises(ValueError,match='feature hash'):
+        load_feature_cache(receipt)
