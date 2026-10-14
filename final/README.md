@@ -193,7 +193,7 @@ integration commit, finish the actual accuracy gates, and update the card. Then
 execute only this user-authorized package deletion in the integration worktree:
 
 ```bash
-git rm -- final/staging/finalization.tar.xz
+git rm -- final/vcm-finalization-package.zip
 # Commit the removal and a durable cleanup receipt with the integration commit,
 # preserved evidence paths/hashes, tests and accuracy-result identities.
 ```
@@ -215,3 +215,41 @@ package. No `rm -rf`, `git clean`, history rewriting or blanket cache cleanup.
 - https://github.com/airimonda/vcm-benchmark/blob/ab39857cf73dd067d068fed388c321ab160dc191/README.md
 
 Inspected 2026-10-15. Source quality descriptions are not a local listening result.
+
+## Continuation update — 2026-10-15
+
+The supplied `vcm-finalization-package.zip` was verified at SHA-256
+`1f11a6188cbaa27bb4199e7aca728a3a502a7d387c1306ac5c47283f1187e491`.
+Its 13 members exactly match the staged tar transport. The ZIP is preserved at
+`final/vcm-finalization-package.zip`; this is the only package authorized for
+conditional deletion by the current user request. Retain it while accuracy gates
+are blocked. The separate `final-directory.patch` was not supplied in this ZIP;
+these `/final` additions were recovered from the authenticated configured origin.
+
+The user clarified that no A100 run exists yet and authorized a new run on one
+unused GPU. Every GPU on the inspected host currently has another compute
+process; GPU 0 at 0% utilization is occupied. The root Torch build is CPU-only.
+The 6,975 existing bound WAV/PCM identities pass, but required human intents,
+reviewed slot supervision, enrollment and fresh independent people remain missing.
+No training or candidate selection/calibration has occurred in this continuation.
+
+The service patch was applied byte-for-byte, then two IPC defects were reproduced
+and corrected in a separately preserved v2 patch. After the original service
+patch, apply the v2 correction with `git apply --unidiff-zero` against
+`experiments/vcm-intent-slots-v1/service-ipc-correction-v2.patch`.
+The correction preserves valid requests under queue pressure and safely rejects
+invalid request IDs. It changes no model, grammar, reference, catalog or threshold.
+The experiment report and continuation receipt contain the exact tests and hashes.
+
+The current user requires af_heart, af_bella, af_nicole, am_fenrir, am_michael and
+am_puck at each of 0.9, 1.0 and 1.1 speed. The original v1 protocol/runner below
+uses two different voices and only 1.0 speed, and binds mirrored ONNX assets rather
+than an upstream snapshot revision. It is not the requested final grid. Keep it
+as preserved prior tooling; the supplied directory patch, upstream snapshot pin,
+correct grid, independent listening, supplemental lock and selected-candidate
+ncnn replay remain unresolved. The two originally pinned mirror assets have been downloaded and hash-verified
+in ignored cache without dependency installation. The complete upstream snapshot
+revision is still unspecified. No final TTS waveform or result is claimed.
+
+Selected-candidate human/TTS metrics and editable/PDF cards remain unpopulated;
+Pi evidence remains deferred. Do not fill them from the software fixture smoke.

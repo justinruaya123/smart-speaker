@@ -1,0 +1,409 @@
+{
+  "date": "2026-10-15",
+  "client_timezone": "Asia/Manila",
+  "gpu_inspected_at": "2026-10-15T03:44:21+08:00",
+  "status": "blocked_not_accuracy_ready",
+  "parent_experiment": "vcm-intent-slots-v1",
+  "origin": "https://github.com/justinruaya123/smart-speaker",
+  "origin_branch": "codex/vcm-intent-slots-v1",
+  "authenticated_origin_parent": "1f352d6a4fb4d6cb05c51d866495abb351d2d61c",
+  "service_integration_commit": "54b7ac90c475551205982ebeeaa6d69e4c0f3478",
+  "service_integration_tree": "95fb23e08286d968ec033b71f6e57b3e4119a534",
+  "publication_method": "Authenticated connected GitHub Git-data API to the configured origin; force=false and expected-head check",
+  "unrelated_local_integration_branch_preserved": {
+    "branch": "codex/vcm-intent-slots-v1",
+    "sha": "3d99ef37b663fceefae8636573b743043b6bbac8"
+  },
+  "scope": "Resident software integration and available-input re-audit; no trained-candidate accuracy measurements",
+  "package": {
+    "path": "final/vcm-finalization-package.zip",
+    "bytes": 40106,
+    "sha256": "1f11a6188cbaa27bb4199e7aca728a3a502a7d387c1306ac5c47283f1187e491",
+    "member_count": 13,
+    "member_hashes_verified": 12,
+    "staged_tar_member_bytes_equal": true,
+    "preserved": true,
+    "deletion_performed": false,
+    "cleanup_gate": "Blocked until finalization and evidence preservation complete; delete only this named ZIP afterward"
+  },
+  "directory_patch": {
+    "supplied_file_present": false,
+    "zip_contains": "service-readiness.patch; no final-directory.patch",
+    "origin_final_additions_verified": true,
+    "origin_final_blobs": 7
+  },
+  "software": {
+    "source_sha256": {
+      "scripts/runtime/speaker_worker.py": "e3b7e7766f87bbe07bd6de242569d8318434feed218eb3929938fa872df079f5",
+      "scripts/test/test_speaker_worker_resident.py": "3501dd2609ca78fd9c447ae98365d3eb0c1769080c78678958c63e926874ccfa",
+      "scripts/test/test_vcm_resident_smoke.py": "aec752cb335497179b02b43e033e8a95b9e73807d38fcc9acd93094e813dc17d",
+      "scripts/test/vcm_resident_smoke.py": "b485200b18be86ce536491414601e278b9d3d79a40110acd39cbc0fb4920337b"
+    },
+    "initial_source_bytes_matched_supplied_package": true,
+    "correction_version": "service-ipc-correction-v2",
+    "correction_path": "experiments/vcm-intent-slots-v1/service-ipc-correction-v2.patch",
+    "correction_sha256": "65dc3ca3da7d9707d4c43275d28be9e084d2dd0fe014958333fb7b9066b46480",
+    "patch_roundtrip_verified": true,
+    "initial_resident_tests": {
+      "failed": 24,
+      "passed": 9
+    },
+    "final_focused_tests": {
+      "passed": 264,
+      "failed": 0,
+      "warnings": 24
+    },
+    "independent_review": {
+      "original_important": 2,
+      "critical": 0,
+      "remaining_important": 0,
+      "remaining_minor": 0,
+      "followup_passed": 55
+    },
+    "preserved_review_failures": [
+      {
+        "case": "test_slow_inference_preserves_all_queued_wav_requests",
+        "red": "9/10 WAV calls; one failed regression",
+        "green": "10/10 calls and ordered replies"
+      },
+      {
+        "case": "test_invalid_request_id_rejects_and_next_wav_still_runs",
+        "red": "3 invalid/nonfinite ID cases terminate service",
+        "green": "All 3 reject safely and process next WAV"
+      }
+    ],
+    "full_repository_check": {
+      "exit_code": 2,
+      "status": "collection_failed",
+      "errors": [
+        "experiments/pcv-delivery-v1/tests/test_parler_weights.py: missing safetensors",
+        "experiments/pcv-synthetic-v1/tests/test_catalog.py: duplicate test_catalog import name",
+        "scripts/test_prototype.py: train.register_sources unavailable"
+      ]
+    },
+    "speakerui_check": {
+      "exit_code": 1,
+      "status": "setup_blocked",
+      "failed_file_launches": 15,
+      "executed_assertions": 0,
+      "reason": "tsx missing; Node 18.19.1 below package requirement >=24.13.0"
+    },
+    "compilation": "passed",
+    "whitespace": "passed",
+    "software_fixture_resident_ncnn": {
+      "status": "passed_service_smoke",
+      "commands": 3,
+      "accepted": 0,
+      "rejected": 3,
+      "session_loads": 1,
+      "engine": "ncnn",
+      "checkpoint_sha256": "58369c6aca6a76c1a736e7a616870c693d84aec46c4dfced9b9039bf73aaacae",
+      "contract_hash": "ff0a789114327f031599b198bfdcb74523eafb4c3075588ab8c313c9fecc6ac8",
+      "acoustic_qualification": false,
+      "physical_pi_qualification": false,
+      "owner_qualification": false,
+      "actions_enabled": false,
+      "session_wall_seconds": 0.7199862385168672,
+      "timing_scope": "Host process startup, WAV IPC, inference and shutdown",
+      "events_sha256": "32c3ec27360aca555232692445d9a318761937a05e968c337d09341cafdcfa90",
+      "accuracy_measured": false
+    },
+    "selected_candidate_resident_ncnn": null
+  },
+  "data": {
+    "available_bound_recordings": 6975,
+    "file_and_decoded_PCM_hashes": "verified",
+    "split_counts": {
+      "train": {
+        "rows": 1895,
+        "human": 1895,
+        "synthetic": 0,
+        "ambiguous": 0
+      },
+      "dev": {
+        "rows": 256,
+        "human": 256,
+        "synthetic": 0,
+        "ambiguous": 0
+      },
+      "calibration": {
+        "rows": 210,
+        "human": 210,
+        "synthetic": 0,
+        "ambiguous": 0
+      },
+      "test": {
+        "rows": 4418,
+        "human": 1050,
+        "synthetic": 3368,
+        "ambiguous": 185
+      },
+      "holdout": {
+        "rows": 196,
+        "human": 96,
+        "synthetic": 100,
+        "ambiguous": 2
+      }
+    },
+    "declared_id_file_PCM_pair_separation": "passed",
+    "physical_person_alias_and_recording_group_review": "unverified",
+    "missing_intents": {
+      "train": [
+        "MESSAGE"
+      ],
+      "dev": [
+        "CALL",
+        "MESSAGE"
+      ],
+      "calibration": [
+        "CALL",
+        "MESSAGE",
+        "LIST_REMINDERS",
+        "TEMPERATURE",
+        "CREATE_REMINDER"
+      ],
+      "test": [],
+      "holdout": []
+    },
+    "missing_role_state_roles": [
+      "alarm_hour",
+      "alarm_meridiem",
+      "alarm_minute",
+      "artist",
+      "brightness_percent",
+      "color",
+      "contact",
+      "light",
+      "song",
+      "task",
+      "temperature_degrees",
+      "timer_amount",
+      "timer_unit",
+      "volume_operation",
+      "volume_percent"
+    ],
+    "missing_supervision": {
+      "reviewed_role_spans": 6975,
+      "role_states": 6975,
+      "ownership_pairs": "not supplied by command-only views"
+    },
+    "fit_ready": false,
+    "normalization": {
+      "status": "verified_existing_train_only_normalization",
+      "feature_files_verified": {
+        "train": 1895,
+        "dev": 256
+      },
+      "training_frames": 553467,
+      "feature_receipt_sha256": "6b6424782979fed7ac3a7057edb1f7f40d44c9b862c81507811bf5239bcef936",
+      "normalization_sha256": "c42133430081be6be8bd42bfaff35f24e530ce3b1c329feeee86125894ebc402",
+      "frontend_sha256": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a",
+      "max_mean_absolute_error": 0.0,
+      "max_std_absolute_error": 0.0,
+      "calibration_or_evaluation_statistics_used": false,
+      "selected_candidate_verified": false
+    },
+    "independent_entity_enrollment": "missing",
+    "fresh_unseen_human_suite": "missing; existing test/holdout are exposed regression data"
+  },
+  "training": {
+    "user_clarification": "No existing run; choose one unused GPU for a new run",
+    "node": "ai-n002.hpc.coe.upd.edu.ph",
+    "inspected_A100_GPUs": 8,
+    "GPUs_without_compute_process": [],
+    "GPU0_utilization_percent": 0,
+    "GPU0_other_compute_pid": 1981426,
+    "GPU0_compute_memory_MiB": 1628,
+    "scheduler": "squeue/sinfo could not contact Slurm controller",
+    "root_torch": "2.10.0+cpu",
+    "root_cuda_build": null,
+    "started": false,
+    "GPU_selected": null,
+    "optimizer_updates": 0,
+    "finite_losses_gradients_learning_curves": null,
+    "development_selected_checkpoint": null,
+    "final_entity_memory": null,
+    "final_calibration": null,
+    "selected_candidate_parity": null
+  },
+  "tts": {
+    "required_voices": [
+      "af_heart",
+      "af_bella",
+      "af_nicole",
+      "am_fenrir",
+      "am_michael",
+      "am_puck"
+    ],
+    "required_speeds": [
+      0.9,
+      1.0,
+      1.1
+    ],
+    "minimum_OptionB_case_references": 1674,
+    "original_assets": {
+      "status": "downloaded_hash_verified_mirror_assets",
+      "repository": "fastrtc/kokoro-onnx",
+      "revision": "8d07950c9b6c87ce6809e9bba7bd494336217c2a",
+      "upstream_model": "hexgrad/Kokoro-82M",
+      "upstream_version": "1.0",
+      "protocol_sha256": "4355349e35182bad30ed71523bec62a8897eec08868a8e254348e1c94c6605a2",
+      "files": {
+        "kokoro-v1.0.onnx": {
+          "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-final-readiness-v1/kokoro-assets-8d07950/kokoro-v1.0.onnx",
+          "sha256": "7d5df8ecf7d4b1878015a32686053fd0eebe2bc377234608764cc0ef3636a6c5",
+          "bytes": 325532387
+        },
+        "voices-v1.0.bin": {
+          "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-final-readiness-v1/kokoro-assets-8d07950/voices-v1.0.bin",
+          "sha256": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d",
+          "bytes": 28214398
+        }
+      },
+      "download_tool": "Python standard-library urllib; no dependency installation",
+      "upstream_snapshot_revision": null,
+      "complete_upstream_snapshot_claimed": false,
+      "waveforms_generated": 0,
+      "VCM_inference_performed": false,
+      "training_use": false
+    },
+    "all_required_voice_packs_present": true,
+    "original_protocol_grid_matches_request": false,
+    "complete_upstream_snapshot_pin": null,
+    "kokoro_onnx_installed": false,
+    "generated_waveforms": 0,
+    "independent_listening": null,
+    "supplemental_lock": null,
+    "final_ncnn_replay": null,
+    "training_selection_calibration_enrollment_use": false,
+    "per_voice": {
+      "af_heart": {
+        "generated_waveforms": 0,
+        "complete_command_accuracy": null,
+        "every_slot_correctness": null,
+        "negative_counts": null,
+        "fault_counts": null
+      },
+      "af_bella": {
+        "generated_waveforms": 0,
+        "complete_command_accuracy": null,
+        "every_slot_correctness": null,
+        "negative_counts": null,
+        "fault_counts": null
+      },
+      "af_nicole": {
+        "generated_waveforms": 0,
+        "complete_command_accuracy": null,
+        "every_slot_correctness": null,
+        "negative_counts": null,
+        "fault_counts": null
+      },
+      "am_fenrir": {
+        "generated_waveforms": 0,
+        "complete_command_accuracy": null,
+        "every_slot_correctness": null,
+        "negative_counts": null,
+        "fault_counts": null
+      },
+      "am_michael": {
+        "generated_waveforms": 0,
+        "complete_command_accuracy": null,
+        "every_slot_correctness": null,
+        "negative_counts": null,
+        "fault_counts": null
+      },
+      "am_puck": {
+        "generated_waveforms": 0,
+        "complete_command_accuracy": null,
+        "every_slot_correctness": null,
+        "negative_counts": null,
+        "fault_counts": null
+      }
+    }
+  },
+  "human_accuracy": {
+    "selected_candidate_complete_command_accuracy": null,
+    "every_slot_correctness": null,
+    "negative_counts": null,
+    "fault_counts": null,
+    "fresh_unseen_human_accuracy": null,
+    "regression_accuracy": null
+  },
+  "card": {
+    "actual_selected_candidate_receipts": null,
+    "card_json_populated": false,
+    "editable_PDF_cards_populated": false,
+    "markdown_pending_status_updated": true
+  },
+  "physical_pi": "deferred by user",
+  "preservation": {
+    "main_dirty_and_staged_state_unchanged": true,
+    "original_branch_heads_unchanged": true,
+    "installed_artifacts_environment_config_unchanged": true,
+    "protected_source_hashes": {
+      "scripts/models/vcm_intent_slots.py": "88af9beb945ef23683fcfc226d44d7d00d39295b1a3bffd73ba62e68985d355d",
+      "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a",
+      "scripts/runtime/vcm_intent_slots_contract.py": "9af903bceb98e8d297c35f96baf8887a2c6972a697a7b3651117ac5500363e25",
+      "scripts/runtime/pcv_schema.py": "603ec943eae1e7330dd2eb82f05bbd7c206382ecf13c0fb8f8801a7ecd0e134c",
+      "scripts/runtime/vcm_intent_slots_decode.py": "98c41044d81ae34a6115e6ca570a642711eacc7db2e612ec534319fa96cf1765",
+      "scripts/train/vcm_intent_slots_train.py": "32ddb10a975b845f430613e4414b57ebc0b617a39c4f5286ac31b8ee053e530f",
+      "experiments/vcm-intent-slots-v1/protocol.json": "8a7822021539ecbd0020f1235327bdfa029ff7f610a13355e3482233c76220a5",
+      "experiments/pcv-release-train-v1/catalog.json": "45a848160d853833d83d832952e3ba411a1aea92db14e963c7d7409db83f2a1e",
+      "pipeline.toml": "6ce3417cb1e779093c5413d94b50c2e071d7cd623a83a0e584fc17b396a737a9",
+      "requirements.lock": "49b36c847131665d40078620c3149905656d85df71d4f2edb228002249c8d18a"
+    },
+    "main_preserved_hashes": {
+      "pipeline.toml": "6ce3417cb1e779093c5413d94b50c2e071d7cd623a83a0e584fc17b396a737a9",
+      "requirements.lock": "49b36c847131665d40078620c3149905656d85df71d4f2edb228002249c8d18a",
+      "scripts/modules.json": "ad4614d8f5c06ae0619bcef38c7d43fc4b060722fc1eddcadd60e784d9d29774",
+      "EXPERIMENTS.md": "e94f893e0f1505755cb5ea83d3302146d22788c26192960164dc45c946beaa81",
+      "REQUIREMENTS.md": "5d46f9d2d38a77ac457bdad341e6b7e7800b125a49065f90307aa029c025804a",
+      "artifacts/brightness-validation.json": "615f6b266124d89ee58de054874a4c752fd736bf0cb12449abdfca95e4f0c34c",
+      "artifacts/bundle.json": "e1f9519400058b9fc5ebadcbb68f520a61faed93ff50eb528e530748e369ec85",
+      "artifacts/export-verification.json": "a83385ef8d234a61b7997909911d72d86e533bf2b87d5b80c3013dcabe39169e",
+      "artifacts/family-metrics.json": "a1bc4c392ece85d0afdf1ddae24e0e4461537865941f6f385cd8e9103b0f48e7",
+      "artifacts/manifest.json": "8c1745c07dbb5a47299c09e0eac460fdfacc174d052c06cdacbcaa8e5446c128",
+      "artifacts/openwakeword-LICENSE.txt": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "artifacts/pilot-results.json": "a5c8b6653fa7fceb8d621bf5774052b3f1fa5a194ec88f7ae4459462865938c2",
+      "artifacts/pretrained-NOTICE.txt": "16f146f382cd504803fb425b1bcfe1680b23a58eabfa03ab310c37e0353de8a5",
+      "artifacts/silero-LICENSE.txt": "2e63e9a38b6e8fc0c7bc37ce174caca1862870856c6daf5697cfb785e925520b",
+      "artifacts/training-config.json": "c087d451e3a58638978b6ab9550311a2c59e414ffab664db9799bbbbedd60a81",
+      "artifacts/training-history.json": "9d30fd81efc7b0cd5408d68038d255fa9f50b4880182d361b14deaec1b19868c",
+      "artifacts/wake-models.json": "9bc153473704dd425961ac0d4cc2f3b5607a8a35601a0bb5d687082651788c9e"
+    },
+    "provider_actions_dispatched": false,
+    "healthy_jobs_restarted_or_changed": false,
+    "environment_dependencies_installed": false
+  },
+  "raw_receipts": {
+    "logs": {
+      ".cache/vcm-final-readiness-v1/package-import-20261015-01/resident-before-patch.log": "ba804bdfb7e768679f0cfaf5893faf94cfc195612cf6ed143414ba9d25cd9b56",
+      ".cache/vcm-final-readiness-v1/package-import-20261015-01/focused-after-patch.log": "b27318feb7262dcdf940c242bab187634105dc625cb0131c6ff10d6e75c86173",
+      ".cache/vcm-final-readiness-v1/package-import-20261015-01/backpressure-red.log": "38e93cc671f0d04009e647e081c65adcf3566956266d6b0cabf2d9eb61cd7975",
+      ".cache/vcm-final-readiness-v1/package-import-20261015-01/backpressure-green.log": "73ab25e5a09c8277c54b97bb33c5b1bc964033e409a0798d74ea5db724db749b",
+      ".cache/vcm-final-readiness-v1/package-import-20261015-01/request-id-red.log": "3c7502dd732b33d38e84c7808ddbc188300c3514b9fa79a8aa5a1ef7f8f9d1c7",
+      ".cache/vcm-final-readiness-v1/package-import-20261015-01/request-id-green.log": "f3cf71dccb7a621f56841c650ccf4b13e6d03fc8b67506e77bbfbce55ddae13c",
+      ".cache/vcm-final-readiness-v1/package-import-20261015-01/focused-final-v2.log": "e5220259f96cc1696e1b31bc1e509b8b5f5d0199586b83d44d88e2917798287e",
+      ".cache/vcm-final-readiness-v1/package-import-20261015-01/full-repository-final-v2.log": "2a207329111ac955f6126c80b0e9943608f4ce5eb6770276ee3e344807fde9e1",
+      ".cache/vcm-final-readiness-v1/package-import-20261015-01/speakerui-test.log": "0b9f0bfbb82d43ef7563303a0c31265c62929532982b545490857872ad5683f5",
+      ".cache/vcm-final-readiness-v1/package-import-20261015-01/kokoro-pinned-assets-fetch.log": "fb7170b50ae7d7cb951fb9deb8894d1aeb82a029412ae7b5d451818033e6da2d",
+      ".cache/vcm-final-readiness-v1/package-import-20261015-01/kokoro-assets-direct-fetch.log": "07c0dfc4e55405d8a4033f3bcdac0d799def10ff54355ea05d4e557a49a3b3d6"
+    },
+    "audio_audit": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-final-readiness-v1/continuation-20261015-01/local-data-audit.json",
+      "sha256": "89e75359bf13be78abf7a004ccc1c2118cc73364c65be1faf0c41d92decb991a"
+    },
+    "GPU_status": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-final-readiness-v1/continuation-20261015-01/gpu-status-20261015-034421.txt",
+      "sha256": "105b3be8a67bccd594446cde6ee2edb09b0f417c7d249d534603cab87bcbbfe9"
+    },
+    "normalization": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-final-readiness-v1/continuation-20261015-01/normalization-recheck.json",
+      "sha256": "3f1480a40e14d66aca17ee4e1304b8ffd160f0c02c16a08734f1216fb8f27fe6"
+    },
+    "ncnn_events": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-final-readiness-v1/software-fixture-resident-20261015-v2/events.jsonl",
+      "sha256": "32c3ec27360aca555232692445d9a318761937a05e968c337d09341cafdcfa90"
+    }
+  }
+}

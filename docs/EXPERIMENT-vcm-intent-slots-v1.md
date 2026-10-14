@@ -554,3 +554,82 @@ $PY scripts/vcm_intent_slots.py parity \
 
 Receipts contain the full prepare/fit/score/replay argv and hashes. These commands
 describe completed work; new interventions remain pending the baseline comparison.
+
+## Finalization continuation — 2026-10-15
+
+The user clarified that no A100 run exists and authorized choosing one unused GPU
+for a new run. Finalization remains **blocked, with Pi deferred**. No training,
+checkpoint selection, score calibration, entity enrollment or final speech scoring
+occurred. The selected-candidate human/TTS metrics and editable/PDF cards remain
+unpopulated; no historical result is presented as current-candidate accuracy.
+
+The isolated worktree was reconstructed from the authenticated configured origin
+at `1f352d6a4fb4d6cb05c51d866495abb351d2d61c`, verifying its exact tree, seven
+`/final` blobs and eighteen missing original commit objects. Its parent tree
+matches the unrelated local integration tree, but those commit histories differ.
+That local branch and the main checkout's dirty/staged state were preserved.
+Publication uses the authenticated GitHub Git-data connection to the configured
+origin, with `force=false` and the expected current head; ordinary HTTPS Git has
+no credentials. No credentials or remote configuration were changed.
+
+The supplied ZIP SHA-256 is
+`1f11a6188cbaa27bb4199e7aca728a3a502a7d387c1306ac5c47283f1187e491`.
+All thirteen member byte sequences match the staged tar transport, and its twelve
+member hashes pass. It contains `service-readiness.patch`, not the separately
+requested `final-directory.patch`. The four source/test files were initially
+integrated byte-for-byte. Independent review then reproduced two IPC defects:
+one dropped request under queue pressure (9/10 calls), and three invalid-ID cases
+that terminated the service before the next WAV. The preserved
+[v2 correction](../experiments/vcm-intent-slots-v1/service-ipc-correction-v2.patch)
+adds backpressure and safe ID rejection without changing acoustic inference.
+Its roundtrip reproduces all four current source files. Red logs remain in cache,
+and the committed regressions preserve the failures' triggers.
+
+The service integration is published as
+`54b7ac90c475551205982ebeeaa6d69e4c0f3478` (tree
+`95fb23e08286d968ec033b71f6e57b3e4119a534`). **264 focused tests pass**, with the
+same 24 exporter warnings. Independent follow-up review reports 55 focused passes
+and no remaining findings in the two corrections. Compilation and whitespace
+checks pass. A real resident ncnn process handles three repeated original WAV
+requests using one model load, with actions disabled and matching authoritative
+decisions. Its checkpoint is the explicitly **untrained software fixture**
+`58369c6aca6a76c1a736e7a616870c693d84aec46c4dfced9b9039bf73aaacae`.
+This is service execution evidence, not accuracy or a selected-candidate smoke.
+
+The complete Python test command still fails collection on exactly three cases:
+missing `safetensors` in `experiments/pcv-delivery-v1/tests/test_parler_weights.py`,
+the duplicate `test_catalog` import in the synthetic-v1 suite, and unavailable
+`train.register_sources` in `scripts/test_prototype.py`. SpeakerUI's `npm test`
+fails all fifteen test-file launches before assertions because `tsx` is missing;
+the available Node 18.19.1 also falls below the declared >=24.13.0 requirement.
+These failures are preserved rather than represented as a full-suite pass.
+
+| Gate | Current evidence and status |
+| --- | --- |
+| Available data/PCM integrity | 6,975 bound recordings reverified; source references and exclusions unchanged. |
+| Train-only normalization | 1,895 train and 256 dev feature hashes/PCM bindings pass. Statistics exactly recompute from 553,467 train frames; no calibration/test statistics enter them. |
+| Person/alias/recording separation | Declared IDs, file/PCM hashes and pair IDs separate; physical identities, aliases, near duplicates and independent listening remain unverified. |
+| Reviewed supervision | Train lacks MESSAGE; dev lacks CALL/MESSAGE; calibration lacks CALL, MESSAGE, LIST_REMINDERS, TEMPERATURE and CREATE_REMINDER. All fifteen role-state inventories and reviewed spans remain absent; full entity enrollment/policy is missing. |
+| One unused A100 | At 03:44:21 Asia/Manila, all eight GPUs on ai-n002 have compute processes. GPU 0 is at 0% utilization but has PID 1981426 holding 1,628 MiB. No GPU selected or job launched. Slurm controller queries fail. |
+| CUDA training environment | Root Torch is 2.10.0+cpu with no CUDA build. No environment or dependency installation changed. |
+| Actual fitting/selection/calibration | Zero new full-command updates; no measured losses, gradients, learning curves, selected checkpoint, exact-bound enrollment, final calibration or candidate parity. |
+| Original benchmark and fresh humans | Selected candidate absent. Existing exposed views remain regression data; no fresh unseen-human suite has been supplied. |
+| Supplemental TTS | Original mirror weights/voice assets download and match both pinned hashes. All six requested packs are present. Upstream snapshot revision, requested 0.9/1.0/1.1 grid, generator tooling, blind listening and supplemental lock remain unresolved; zero final waveforms generated or scored. |
+| Final cards | No actual selected-candidate receipts; metrics, card.json and editable/PDF results remain unpopulated. Markdown status reflects the user-confirmed absence of a run. |
+| Physical Pi | Deferred by the user; no simulated hardware result. |
+| ZIP cleanup | `final/vcm-finalization-package.zip` retained at its verified original hash. Delete only that ZIP after finalization and evidence preservation pass. |
+
+The downloaded mirror assets are `kokoro-v1.0.onnx` (325,532,387 bytes,
+SHA-256 `7d5df8ecf7d4b1878015a32686053fd0eebe2bc377234608764cc0ef3636a6c5`)
+and `voices-v1.0.bin` (28,214,398 bytes,
+SHA-256 `bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d`)
+at `fastrtc/kokoro-onnx@8d07950c9b6c87ce6809e9bba7bd494336217c2a`.
+This does not claim acquisition of a complete pinned upstream hexgrad snapshot.
+No generated TTS entered fitting, selection, calibration or enrollment.
+
+The settled architecture, verbatims, grammar, catalog, typed outputs and
+0.95 intent/0.90 supplied-slot thresholds remain unchanged. Installed artifacts,
+providers, old failures and other users' GPU processes were preserved. The
+[continuation receipt](../experiments/vcm-intent-slots-v1/finalization-continuation-20261015.json)
+contains source/receipt hashes, separate unmeasured human and per-voice TTS fields,
+exact failed gates, available-input normalization evidence and retained raw logs.

@@ -67,6 +67,28 @@ Installed/default state and parent views are unchanged. See
 [training audit](experiments/vcm-intent-slots-v1/training-scheme-audit.json) and
 [pending studies](experiments/vcm-intent-slots-v1/pending-interventions.json).
 
+2026-10-15 finalization continuation: the supplied service ZIP matches its
+recorded hash and all 13 staged transport members. The resident service and a
+versioned correction for dropped queued requests and invalid request IDs are
+published as `54b7ac90c475551205982ebeeaa6d69e4c0f3478` through the authenticated
+configured origin, without force-pushing the unrelated local integration branch.
+264 focused tests pass; the broad suite retains three collection errors and
+SpeakerUI's 15 file launches fail before assertions because tsx is absent and
+Node is too old. Real resident ncnn execution passes three WAV requests on an
+explicitly untrained software fixture; this is not candidate accuracy.
+All 6,975 existing WAV/PCM bindings and 2,151 cached feature bindings reverify;
+normalization exactly recomputes from 553,467 training frames only. The user
+confirms no A100 job exists. A new single-GPU run is authorized, but all eight
+inspected GPUs are occupied, root Torch is CPU-only, and full intent/slot/entity
+supervision remains incomplete. The two pinned Kokoro mirror assets are
+downloaded and hash-verified, with all six requested voice packs present. The
+separate directory patch, upstream snapshot pin, three-speed grid, generator,
+independent listening and selected-candidate human/TTS evaluation remain missing.
+Final accuracy/card fields remain unmeasured, Pi stays deferred, and the supplied
+ZIP is retained until the cleanup preconditions pass. See the
+[continuation receipt](experiments/vcm-intent-slots-v1/finalization-continuation-20261015.json)
+and [current findings](docs/EXPERIMENT-vcm-intent-slots-v1.md#finalization-continuation--2026-10-15).
+
 Evidence snapshot: 2026-09-20. E01-E11 initially summarized existing reports and saved evaluations. E12 records the subsequently authorized implementation, fresh execution of historical regression audio, and development-only quantization comparison. Other agents may still be writing results. Missing evidence means unverified, not zero or success. Source reports remain in place; follow the links for verbose tests, per-value tables, recipes and predictions.
 
 Read [REQUIREMENTS.md](REQUIREMENTS.md) for what we are building and [AGENTS.md](AGENTS.md) for how to work. The proposed [organization/archive skill contract](AGENTS.md#0-active-work-hold-and-future-maintenance-skill) must consult this directory before consolidating or archiving a study. That project-specific skill is not installed. This summary alone does not authorize changes. The later user request explicitly authorized E12 installation and pipeline implementation; the repository maintenance hold remains.

@@ -38,7 +38,7 @@ are not available to this audit. No passing final-training result is asserted.
 
 | Item | Filled value |
 |---|---|
-| Cluster | A100 training is user-reported; live node, scheduler/job ID and allocation not inspected here |
+| Cluster | User confirms no existing run; a new run on one unused GPU is authorized. Launch is blocked by occupied GPUs, CPU-only Torch and incomplete reviewed supervision. |
 | GPUs / wall clock | Not verified; populate from the actual job receipt |
 | Objective | Masked intent/role/value/request-validity classification plus eligible entity metric and reviewed-span localization losses; no runtime transcription or CTC fallback |
 | Optimizer recipe | AdamW; learning rate 0.001; weight decay 0.0001; gradient clipping 1; batch 64 |
@@ -56,9 +56,9 @@ are not available to this audit. No passing final-training result is asserted.
 | Fresh unseen-human accepted exact-command recall | Not measured; preserve pilot goal >=95%, with denominators and per-person results |
 | Accepted precision / negative false-accept rate | Not measured; precision is undefined if nothing is accepted, not 100% |
 | Per-intent / supplied-slot correctness | Not measured for final A100 checkpoint; all advertised scope must remain counted |
-| Added six-voice synthetic sanity | Protocol and runnable harness committed; model download/generation/scoring not executed successfully in this session |
-| TTS composition | Female presets af_heart, af_bella, bf_emma; male presets am_fenrir, am_michael, bm_george; two American and one British preset per group |
-| TTS coverage and local pass criterion | >=558 OptionB voice/phrase trials plus all preserved extensions/catalog cases; every positive accepted exactly, every specified negative correct, no missing outputs/faults; independent QA for every WAV |
+| Added six-voice synthetic sanity | Original mirrored assets downloaded and hash-verified; upstream snapshot pin and requested grid remain unresolved. No waveform generation, listening or scoring has occurred. |
+| TTS composition | Required: af_heart, af_bella, af_nicole, am_fenrir, am_michael, am_puck at 0.9/1.0/1.1. Preserved v1 tooling differs; the requested grid is not yet generated or scored. |
+| TTS coverage and local pass criterion | Required grid: at least 1,674 OptionB case references (93 x 6 x 3), plus all preserved extensions/catalog cases. Actual counts and independently reviewed WAVs are pending; no accuracy claim. |
 | Final-model engine parity | Pending real selected-model PyTorch/ORT/ncnn comparison; fixture parity is not sufficient |
 | Genuine same-speaker ownership | Not measured; separate acoustic backend/pairs required; command-WAV TTS does not test ownership |
 
@@ -77,7 +77,7 @@ candidate result cells above.
 Keyword/wake accuracy, physical false-wake rate, p50/p95 latency, RTF, cold load,
 peak RSS, CPU, microphone/endpoint path, temperature, throttling and network-disabled
 physical operation are all **deferred by the user**. No desktop or synthetic timing
-will be inserted as a Pi result. Training is on A100; the Pi is an inference and
+will be inserted as a Pi result. Training is planned on one unused A100; the Pi is an inference and
 validation target, not the training target.
 
 ## To be submitted / reviewer checks
