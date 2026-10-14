@@ -432,8 +432,8 @@ weights or audio are committed or installed.
 The selected component exported to FP32 PyTorch/ONNX/ncnn with the complete
 280,818-parameter model, all heads and selected catalog. ONNX is 1,148,441 bytes.
 Parity passes on 48 tensor/decision probes and 30 original-PCM engine outcomes;
-maximum absolute tensor error is 5.722046e-6. Two overlong development recordings
-remain faults on each alternative engine. Threshold fixtures preserve intent .95
+maximum absolute tensor error is 5.722046e-6. One overlong development recording
+produces two fault outcomes, one per alternative engine. Threshold fixtures preserve intent .95
 and every supplied slot .90; these are numerical evidence only.
 
 All 4,418 historical test and 196 historical holdout recordings ran sequentially
