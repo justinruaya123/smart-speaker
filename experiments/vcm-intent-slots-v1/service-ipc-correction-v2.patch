@@ -1,0 +1,75 @@
+diff --git a/scripts/runtime/speaker_worker.py b/scripts/runtime/speaker_worker.py
+index 175e6d3..7c5eae5 100644
+--- a/scripts/runtime/speaker_worker.py
++++ b/scripts/runtime/speaker_worker.py
+@@ -188,0 +189,3 @@ def validate_candidate_control(command: dict) -> None:
++    identifier = command.get('id')
++    if identifier is not None and type(identifier) not in (str, int):
++        raise ValueError('Experimental request ID must be a string or integer')
+@@ -253 +256,4 @@ def main():
+-                incoming.put(item,timeout=1)
++                if args.experimental_intent_slots:
++                    incoming.put(item)
++                else:
++                    incoming.put(item, timeout=1)
+@@ -272,0 +279,2 @@ def main():
++                if request is not None and type(request) not in (str, int):
++                    request = None
+diff --git a/scripts/test/test_speaker_worker_resident.py b/scripts/test/test_speaker_worker_resident.py
+index e07a6a1..e75aff0 100644
+--- a/scripts/test/test_speaker_worker_resident.py
++++ b/scripts/test/test_speaker_worker_resident.py
+@@ -378,0 +379,53 @@ def test_reader_fault_does_not_inherit_active_wav_request(
++
++
++def test_slow_inference_preserves_all_queued_wav_requests(
++    worker, monkeypatch, capsys, settings,
++):
++    import time
++
++    original = Candidate.recognize
++
++    def delayed_first(self, pcm):
++        if not self.calls:
++            time.sleep(1.4)
++        return original(self, pcm)
++
++    monkeypatch.setattr(Candidate, "recognize", delayed_first)
++    identifiers = [str(index) for index in range(10)]
++    instances, events = run_resident(
++        worker, monkeypatch, capsys, settings,
++        [*[wav_request(identifier) for identifier in identifiers],
++         {"op": "status", "id": "status"}, {"op": "shutdown"}],
++    )
++    assert len(instances[0].calls) == len(identifiers)
++    commands = [event for event in events if event.get("event") == "command"]
++    assert [event["request_id"] for event in commands] == identifiers
++    replies = [event for event in events if event.get("event") == "reply"]
++    assert [event["id"] for event in replies] == [*identifiers, "status"]
++    assert all(event["ok"] is True for event in replies)
++    assert not any(event.get("event") == "error" for event in events)
++
++
++@pytest.mark.parametrize("identifier", ["1e400", "NaN", '["nested",NaN]'])
++def test_invalid_request_id_rejects_and_next_wav_still_runs(
++    worker, monkeypatch, capsys, settings, identifier,
++):
++    requests = [
++        '{"op":"status","id":' + identifier + '}',
++        wav_request("next"), {"op": "shutdown"},
++    ]
++    try:
++        instances, events = run_resident(
++            worker, monkeypatch, capsys, settings, requests,
++        )
++    except ValueError as error:
++        pytest.fail("Invalid request ID terminated the service: " + str(error))
++    assert len(instances[0].calls) == 1
++    replies = [event for event in events if event.get("event") == "reply"]
++    assert len(replies) == 2
++    assert replies[0]["ok"] is False
++    assert replies[0]["id"] is None
++    assert replies[1]["ok"] is True
++    assert replies[1]["id"] == "next"
++    commands = [event for event in events if event.get("event") == "command"]
++    assert [event["request_id"] for event in commands] == ["next"]

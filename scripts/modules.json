@@ -598,5 +598,9 @@
   "vcm-intent-slots-v1.vcm_intent_slots_numeral": {
     "path": "train/vcm_intent_slots_numeral.py",
     "runtime": false
+  },
+  "vcm-final-readiness-v1.vcm_resident_smoke": {
+    "path": "test/vcm_resident_smoke.py",
+    "runtime": false
   }
 }

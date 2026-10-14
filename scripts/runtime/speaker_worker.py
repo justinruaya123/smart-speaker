@@ -37,9 +37,14 @@ class AudioService:
         self.state='awaiting_microphone';self.stream=None;self.gate=None;self.offset=0;self.source='microphone'
         self.last_signal=time.monotonic();self.warned_silent=False
         self.settings=settings
+        self.request_id = None
 
     def emit(self,value):
         self.sequence+=1
+        if getattr(self.runtime, 'action_free', False):
+            value = {**value, 'owner_enforced': False, 'command_only': True}
+            if self.request_id is not None:
+                value['request_id'] = self.request_id
         if value.get('event')=='command' and self.settings and not getattr(self.runtime, 'action_free', False):
             from scripts.runtime.speaker_confidence import application_decision
             value={**value,'application':application_decision(value,self.settings['inference'])}
@@ -53,7 +58,16 @@ class AudioService:
         self.set_state('processing')
         return self.runtime.recognize(pcm)
 
+    def require_live_backend(self):
+        """A candidate replay service does not establish wake/owner support."""
+        if getattr(self.runtime, 'action_free', False):
+            raise ValueError(
+                'Experimental service is command-only; wake/owner/live '
+                'microphone qualification requires a separate backend'
+            )
+
     def new_gate(self):
+        self.require_live_backend()
         # A thin proxy adds actual processing state without changing the frozen recognizer.
         service=self
         class Observed:
@@ -72,7 +86,12 @@ class AudioService:
             if event.get('reason'):self.set_state('wake_listening' if self.stream else 'awaiting_microphone',reason=event['reason'])
 
     def wav(self,data,*,wake=False):
+        if wake:
+            self.require_live_backend()
         pcm=decode_wav(data,wake=wake)
+        if (getattr(self.runtime, 'action_free', False)
+                and not 400 <= len(pcm) <= 128000):
+            raise ValueError('Candidate command requires 25 ms..8 s of PCM')
         self.stop(announce=False);self.source='wav';commands=0;wake_detected=False
         try:
             if wake:
@@ -97,6 +116,7 @@ class AudioService:
             raise RuntimeError('Microphone discovery failed. On Pi OS run start.py --system-packages --list-mics; check that the input is connected to this host. '+str(error)[:200]) from error
 
     def listen(self,index):
+        self.require_live_backend()
         if type(index) is not int or index<0:raise ValueError('Choose a listed microphone index')
         import sounddevice as sd
         devices=self.devices()
@@ -129,14 +149,72 @@ class AudioService:
         if announce:self.set_state('muted')
 
 
+def runtime_status(runtime, settings: dict, threads: int,
+                   measured_load_ms: float) -> dict:
+    """Expose actual bundle identity without treating loaded as qualified."""
+    status = {
+        'engine': runtime.engine, 'loaded': True, 'nativeSession': True,
+        'application_config': dict(settings['inference']),
+        'ui': dict(settings['ui']), 'threads': threads,
+    }
+    if not getattr(runtime, 'action_free', False):
+        return {
+            **status,
+            'model_sha256': runtime.recipe['binding']['model_sha256'],
+            'policy_enabled': runtime.policy['enabled'],
+            'session_load_ms': runtime.load_ms,
+        }
+    thresholds = runtime.contract['thresholds']
+    status['application_config'].update({
+        'engine': runtime.engine, 'threads': threads,
+        'intent_threshold': thresholds['intent'],
+        'slot_threshold': thresholds['slot'],
+    })
+    return {
+        **status,
+        'model_sha256': runtime.recipe['checkpoint_source_sha256'],
+        'contract_hash': runtime.contract['contract_hash'],
+        'checkpoint_status': runtime.recipe.get('checkpoint_status'),
+        'calibration_id': runtime.policy.get('calibration_id'),
+        'policy_enabled': runtime.policy.get('require_calibration') is True,
+        'session_load_ms': measured_load_ms,
+        'command_only': True, 'owner_enforced': False,
+        'qualification_verified': False,
+        'inference_mode': 'complete_utterance',
+    }
+
+
+def validate_candidate_control(command: dict) -> None:
+    """Allow only action-free controls; expected labels are never inputs."""
+    identifier = command.get('id')
+    if identifier is not None and type(identifier) not in (str, int):
+        raise ValueError('Experimental request ID must be a string or integer')
+    operation = command.get('op')
+    fields = {'op', 'id'}
+    if operation == 'wav':
+        fields.update({'data', 'wake'})
+        if command.get('wake', False) is not False:
+            raise ValueError('Experimental service is command-only')
+    elif operation not in ('status', 'mute', 'shutdown'):
+        raise ValueError('Experimental service is command-only')
+    if set(command) - fields:
+        raise ValueError('Unexpected experimental control fields')
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--bundle',type=Path,required=True)
     p.add_argument('--threads',type=int,default=1);p.add_argument('--diagnostic',action='store_true')
     p.add_argument('--engine',choices=['ncnn','onnxruntime'])
-    p.add_argument('--experimental-intent-slots', action='store_true',
-                   help='Explicit action-free experimental WAV replay; preserves defaults')
+    p.add_argument(
+        '--experimental-intent-slots', action='store_true',
+        help='Action-free WAV replay or resident JSONL test service',
+    )
     p.add_argument('--wav',type=Path);p.add_argument('--wake',action='store_true');p.add_argument('--list-mics',action='store_true')
     args=p.parse_args()
+    if not 1 <= args.threads <= 8:
+        p.error('--threads must be 1..8')
+    if args.experimental_intent_slots and (args.wake or args.list_mics):
+        p.error('Experimental service is command-only; no wake/microphone mode')
     benchmark_log = None
     if os.environ.get('PCV_BENCHMARK_LOG'):
         from scripts.runtime.pcv_benchmark_adapter import BenchmarkLog
@@ -148,9 +226,8 @@ def main():
     settings,_=resolve_config(Path(os.environ.get('SMART_SPEAKER_ROOT',Path.cwd())),overrides={'engine':args.engine})
     if args.list_mics:
         emit({'event':'devices','devices':AudioService(None,emit).devices()});return
+    loading_started = time.perf_counter()
     if args.experimental_intent_slots:
-        if args.wake or args.wav is None:
-            raise ValueError('Experimental worker requires a command WAV; wake/owner evidence uses separate replay')
         from scripts.runtime.vcm_intent_slots_runtime import IntentSlotsRuntime
         runtime = IntentSlotsRuntime(args.bundle, settings['inference']['engine'], args.threads)
         if benchmark_log is not None:
@@ -158,14 +235,16 @@ def main():
                                          decision='final_application', custom=runtime.contract['custom'])
     else:
         runtime=Runtime(args.bundle,diagnostic=args.diagnostic,threads=args.threads,engine=settings['inference']['engine'])
+    measured_load_ms = (time.perf_counter() - loading_started) * 1000
     service=AudioService(runtime,emit,settings)
     if args.list_mics:emit({'event':'devices','devices':service.devices()});return
     if args.wav:emit({'event':'done',**service.wav(args.wav.read_bytes(),wake=args.wake)});return
-    service.emit({'event':'ready','engine':runtime.engine,'loaded':True,'nativeSession':True,'state':service.state,
-                  'application_config':settings['inference'],'ui':settings['ui'],
-                  'model_sha256':runtime.recipe['binding']['model_sha256'],'policy_enabled':runtime.policy['enabled'],
-                  'threads':args.threads,'session_load_ms':runtime.load_ms})
+    service.emit({
+        'event': 'ready', 'state': service.state,
+        **runtime_status(runtime, settings, args.threads, measured_load_ms),
+    })
     incoming=queue.Queue(maxsize=8)
+    protocol_fault = object()
     def reader():
         while True:
             line=sys.stdin.readline(6*1024*1024)
@@ -174,8 +253,15 @@ def main():
                 if not line.endswith('\n'):raise ValueError('Control message too large')
                 item=json.loads(line)
                 if not isinstance(item,dict):raise ValueError('Expected control object')
-                incoming.put(item,timeout=1)
-            except Exception as error:emit({'event':'error','message':str(error)})
+                if args.experimental_intent_slots:
+                    incoming.put(item)
+                else:
+                    incoming.put(item, timeout=1)
+            except Exception as error:
+                if args.experimental_intent_slots:
+                    incoming.put((protocol_fault, str(error)))
+                else:
+                    emit({'event': 'error', 'message': str(error)})
     threading.Thread(target=reader,daemon=True).start()
     try:
         while True:
@@ -185,11 +271,26 @@ def main():
                     try:service.tick()
                     except Exception as error:service.stop(announce=False);service.set_state('capture_error',message=str(error))
                 continue
+            if isinstance(command, tuple) and command[0] is protocol_fault:
+                service.emit({'event': 'error', 'message': command[1]})
+                continue
             request=command.get('id')
+            if args.experimental_intent_slots:
+                if request is not None and type(request) not in (str, int):
+                    request = None
+                service.request_id = request
             try:
+                if args.experimental_intent_slots:
+                    validate_candidate_control(command)
                 op=command.get('op')
                 if op=='shutdown':break
-                if op=='devices':result={'devices':service.devices()}
+                if op == 'status':
+                    result = {
+                        'state': service.state,
+                        **runtime_status(runtime, settings, args.threads,
+                                         measured_load_ms),
+                    }
+                elif op=='devices':result={'devices':service.devices()}
                 elif op=='listen':result={'microphone':service.listen(command.get('device'))}
                 elif op=='mute':service.stop();result={}
                 elif op=='wav':result=service.wav(base64.b64decode(command['data'],validate=True),wake=command.get('wake') is True)
@@ -198,6 +299,8 @@ def main():
             except Exception as error:
                 service.set_state('capture_error' if command.get('op')=='listen' else 'runtime_error',message=str(error))
                 service.emit({'event':'reply','id':request,'ok':False,'message':str(error)})
+            finally:
+                service.request_id = None
     finally:service.stop(announce=False)
 
 
