@@ -23,6 +23,22 @@ def fit_score_calibration(observations, binding, output):
         raise ValueError("Incomplete calibration binding")
     if set(r["intent_label"] for r in observations) != set(range(19)):
         raise ValueError("Missing human calibration intent classes; no qualification")
+    fitted = _fit_numeric_scores(observations)
+    policy = {"contract_hash": binding["contract_hash"], "binding": binding,
+              "intent_temperature": fitted["intent_temperature"], "slot_calibrators": fitted["slot_calibrators"],
+              "entities": binding.get("entities", {}),
+              "missing_slot_calibration": fitted["missing_slot_calibration"], "require_calibration": True,
+              "thresholds": {"intent": .95, "slot": .90},
+              "calibration_people": sorted({r["speaker_id"] for r in observations}),
+              "status": "frozen_partial_calibration" if fitted["missing_slot_calibration"] else "frozen_scores_unqualified",
+              "qualification": False}
+    policy["calibration_id"] = digest(policy)
+    write_new(Path(output)/"calibration.json", policy)
+    return policy
+
+
+def _fit_numeric_scores(observations):
+    """Identical temperature/logistic fitting after the caller validates provenance."""
     logits = np.asarray([r["intent_logits"] for r in observations], float)
     truth = np.asarray([r["intent_label"] for r in observations])
 
@@ -62,17 +78,8 @@ def fit_score_calibration(observations, binding, output):
                             "n": len(group), "positive_n": int(y.sum()),
                             "brier": float(np.mean((probability-y)**2)),
                             "feature_order": "role/value/request constituent scores; no probability product"}
-    policy = {"contract_hash": binding["contract_hash"], "binding": binding,
-              "intent_temperature": temperature, "slot_calibrators": calibrators,
-              "entities": binding.get("entities", {}),
-              "missing_slot_calibration": missing, "require_calibration": True,
-              "thresholds": {"intent": .95, "slot": .90},
-              "calibration_people": sorted({r["speaker_id"] for r in observations}),
-              "status": "frozen_partial_calibration" if missing else "frozen_scores_unqualified",
-              "qualification": False}
-    policy["calibration_id"] = digest(policy)
-    write_new(Path(output)/"calibration.json", policy)
-    return policy
+    return {"intent_temperature": temperature, "slot_calibrators": calibrators,
+            "missing_slot_calibration": missing}
 
 
 def collect_calibration(rows, runtime, audio_root):

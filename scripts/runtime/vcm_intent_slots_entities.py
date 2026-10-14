@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import math
+import re
 import numpy as np
 
 from scripts.runtime.vcm_intent_slots_contract import digest
@@ -24,7 +25,7 @@ def catalog_ids(catalog):
     return result
 
 
-def enroll_examples(examples, encoder_binding, catalog):
+def enroll_examples(examples, encoder_binding, catalog, *, provenance_policy=None):
     for name in ("encoder", "frontend", "normalization"):
         value = encoder_binding.get(name)
         if not isinstance(value, str) or len(value) != 64:
@@ -39,7 +40,24 @@ def enroll_examples(examples, encoder_binding, catalog):
             if not ex.get(field):
                 raise ValueError("Missing enrollment provenance: " + field)
         if ex.get("kind") != "human":
-            raise ValueError("Enrollment requires original human recordings")
+            if provenance_policy is None:
+                raise ValueError("Enrollment requires original human recordings")
+            permitted = {"bf_alice", "bf_lily", "bm_fable"}
+            voice = ex.get("voice_id")
+            if (provenance_policy.get("study") != "vcm-mixed-final-v2"
+                    or provenance_policy.get("source") != "hexgrad/Kokoro-82M"
+                    or not re.fullmatch(r"[0-9a-f]{40}", provenance_policy.get("source_revision", ""))
+                    or set(provenance_policy.get("voice_ids", [])) != permitted
+                    or ex.get("kind") != "synthetic" or ex.get("split") != "enrollment"
+                    or voice not in permitted or ex.get("speaker_id") != "Kokoro-82M/" + str(voice)
+                    or ex.get("source") != provenance_policy["source"]
+                    or ex.get("source_revision") != provenance_policy["source_revision"]
+                    or not ex.get("pair_id")
+                    or not ex.get("recording_group", ex.get("recording_group_id"))
+                    or ex.get("supervision_status") != "reference_derived_silver"
+                    or any(not re.fullmatch(r"[0-9a-f]{64}", ex.get(k, ""))
+                           for k in ("sha256", "pcm_sha256"))):
+                raise ValueError("Missing explicit v2 synthetic enrollment provenance")
         vector = _vector(ex["embedding"])
         key = (role, ex["pcm_sha256"])
         if key in seen:
@@ -50,6 +68,8 @@ def enroll_examples(examples, encoder_binding, catalog):
         retained.append({**ex, "embedding": vector.tolist()})
     memory = {"version": 1, "encoder_binding": dict(encoder_binding),
               "catalog_hash": catalog["catalog_hash"], "examples": retained}
+    if provenance_policy is not None:
+        memory["provenance_policy"] = dict(provenance_policy)
     memory["memory_id"] = digest(memory)
     return memory
 

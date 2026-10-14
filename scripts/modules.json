@@ -602,5 +602,25 @@
   "vcm-final-readiness-v1.vcm_resident_smoke": {
     "path": "test/vcm_resident_smoke.py",
     "runtime": false
+  },
+  "vcm-mixed-final-v2.mixed_data": {
+    "path": "train/vcm_intent_slots_mixed_data.py",
+    "runtime": false
+  },
+  "vcm-mixed-final-v2.mixed_corpus": {
+    "path": "train/vcm_intent_slots_mixed_corpus.py",
+    "runtime": false
+  },
+  "vcm-mixed-final-v2.mixed_training": {
+    "path": "train/vcm_intent_slots_mixed_train.py",
+    "runtime": false
+  },
+  "vcm-mixed-final-v2.mixed_calibration": {
+    "path": "train/vcm_intent_slots_mixed_calibration.py",
+    "runtime": false
+  },
+  "vcm-mixed-final-v2.fresh_human": {
+    "path": "test/vcm_intent_slots_fresh.py",
+    "runtime": false
   }
 }

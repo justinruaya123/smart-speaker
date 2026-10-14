@@ -1,0 +1,127 @@
+--- a/scripts/train/vcm_intent_slots_mixed_corpus.py
++++ b/scripts/train/vcm_intent_slots_mixed_corpus.py
+@@ -27,0 +28 @@
++    from scripts.train.vcm_intent_slots_mixed_data import annotate_reference
+@@ -46 +47,3 @@
+-                        if (r['command'] or {}).get('slots', {}).get(role+'_id') == entity]
++                        if (r['command'] or {}).get('slots', {}).get(role+'_id') == entity
++                        and annotate_reference({'transcript': r['spoken_text'], 'command': r['command']},
++                                               contract)['role_labels'].get(role) == 'present']
+@@ -77 +80,17 @@
+-def generate(plan_path, protocol_path, assets, output, provider='cuda'):
++def correction_plan(original_path, protocol, contract):
++    correction = json.loads((ROOT/'experiments/vcm-mixed-final-v2/preparation-correction-v1.json').read_text())
++    if sha(original_path) != correction['original_generation_plan_sha256']:
++        raise ValueError('Changed original generation plan')
++    old = json.loads(Path(original_path).read_text())
++    old_ids = {r['id'] for r in old}
++    complete = make_plan(protocol, contract)
++    new = [r for r in complete if r['id'] not in old_ids]
++    new_ids = {r['id'] for r in complete}
++    removed = [r for r in old if r['id'] not in new_ids]
++    if (len(new) != 3 or len(removed) != 3 or any(
++            r.get('entity_id') != 'contact.home' or r['split'] != 'enrollment' for r in new+removed)):
++        raise ValueError('Unexpected enrollment correction scope')
++    return new
++
++
++def generate(plan_path, protocol_path, assets, output, provider='cuda', correction_of=None):
+@@ -86 +105,3 @@
+-    if canonical(plan) != canonical(make_plan(protocol, contract)):
++    expected = (correction_plan(correction_of, protocol, contract) if correction_of
++                else make_plan(protocol, contract))
++    if canonical(plan) != canonical(expected):
+@@ -124 +145,4 @@
+-              'final_tts_data_used': False, 'generator': protocol['generator']})
++              'final_tts_data_used': False, 'generator': protocol['generator'],
++              'source_sha256': sha(__file__),
++              'pcm_conversion_source_sha256': sha(ROOT/'final/tts_sanity.py'),
++              'correction_of': str(correction_of) if correction_of else None})
+@@ -161 +185,29 @@
+-def prepare(protocol_path, generated, output):
++def verify_generation(manifest_path, protocol_path):
++    manifest_path = Path(manifest_path)
++    identity = json.loads((manifest_path.parent/'run-identity.json').read_text())
++    receipt = json.loads((manifest_path.parent/'generation-receipt.json').read_text())
++    plan_binding = identity['plan']
++    if (sha(plan_binding['path']) != plan_binding['sha256']
++            or sha(protocol_path) != identity['protocol']['sha256']
++            or sha(manifest_path) != receipt['manifest_sha256']):
++        raise ValueError('Changed generation plan, protocol or manifest binding')
++    plan = json.loads(Path(plan_binding['path']).read_text())
++    manifest = json.loads(manifest_path.read_text())
++    index = {r['id']: r for r in manifest}
++    if (len(index) != len(manifest) or len(plan) != receipt['planned']
++            or len(plan) != len(manifest) or set(index) != {r['id'] for r in plan}
++            or dict(Counter(r['status'] for r in manifest)) != receipt['status_counts']):
++        raise ValueError('Incomplete or duplicate generated corpus')
++    for row in plan:
++        actual = index[row['id']]
++        if any(canonical(actual.get(k)) != canonical(v) for k,v in row.items()):
++            raise ValueError('Generated record differs from frozen plan')
++        if actual['status'] not in ('generated', 'generation_fault'):
++            raise ValueError('Unknown generation status')
++        for field, hash_field in [('native_audio','native_sha256'), ('native_wav','native_wav_sha256')]:
++            if actual.get(field) and sha(actual[field]) != actual[hash_field]:
++                raise ValueError('Changed preserved native generation')
++    return manifest
++
++
++def prepare(protocol_path, generated, output, correction_generated=None):
+@@ -165,0 +218,16 @@
++    for binding in base['views'].values():
++        if sha(binding['path']) != binding['sha256']:
++            raise ValueError('Changed original frozen human/regression view')
++    generated_paths = [Path(generated)] + ([Path(correction_generated)] if correction_generated else [])
++    generated = [r for path in generated_paths for r in verify_generation(path, protocol_path)]
++    if len({r['id'] for r in generated}) != len(generated):
++        raise ValueError('Repeated original/correction generation identity')
++    annotated = [annotate_reference(r, contract) for r in generated if r['status'] == 'generated']
++    default_enrollment = [r for r in annotated if r['split']=='enrollment'
++                          and r['role_labels'].get(r['entity_role']) != 'present']
++    bad_ids = {r['id'] for r in default_enrollment}
++    good = [r for r in annotated if r['id'] not in bad_ids]
++    wanted = catalog_ids(contract); wanted['light'].discard('light.all')
++    enrolled = Counter((r['entity_role'],r['entity_id']) for r in good if r['split']=='enrollment')
++    if any(enrolled[(role,entity)] != 3 for role,names in wanted.items() for entity in names):
++        raise ValueError('Missing three named-present enrollment recordings per entity')
+@@ -168,2 +235,0 @@
+-    generated = json.loads(Path(generated).read_text())
+-    good = [annotate_reference(r, contract) for r in generated if r['status'] == 'generated']
+@@ -178,0 +245,14 @@
++    for split in ('test', 'holdout'):
++        views[split] = base['views'][split]
++    fresh = ROOT/'.cache/vcm-mixed-final-v2/fresh-human-01/fresh-human.jsonl'
++    if not fresh.is_file():
++        raise ValueError('Missing independently frozen fresh-person evaluation manifest')
++    fresh_audit = fresh.parent/'audit.json'
++    fresh_receipt = json.loads(fresh_audit.read_text())
++    if (fresh_receipt['manifest']['sha256'] != sha(fresh)
++            or fresh_receipt['contract_hash'] != contract['contract_hash']
++            or fresh_receipt['VCM_results_accessed'] is not False
++            or fresh_receipt['source']['sha256'] != protocol['evaluation']['fresh_human_source']['tar_sha256']
++            or fresh_receipt['source']['revision'] != protocol['evaluation']['fresh_human_source']['revision']):
++        raise ValueError('Changed frozen fresh-person source/reference/manifest binding')
++    views['fresh_human'] = {'path': str(fresh), 'sha256': fresh_receipt['manifest']['sha256']}
+@@ -185,0 +266,6 @@
++              'default_only_enrollment_excluded_retained': sorted(bad_ids),
++              'generation_bindings': [{'path': str(path.resolve()), 'sha256': sha(path),
++                                       'receipt_sha256': sha(path.parent/'generation-receipt.json'),
++                                       'identity_sha256': sha(path.parent/'run-identity.json')} for path in generated_paths],
++              'preparation_correction': {'path': str(ROOT/'experiments/vcm-mixed-final-v2/preparation-correction-v1.json'),
++                                        'sha256': sha(ROOT/'experiments/vcm-mixed-final-v2/preparation-correction-v1.json')},
+@@ -187,0 +274 @@
++    inputs['fresh_audit'] = {'path': str(fresh_audit), 'sha256': sha(fresh_audit)}
+@@ -201,0 +289,2 @@
++    parser.add_argument('--correction-of', type=Path)
++    parser.add_argument('--correction-generated', type=Path)
+@@ -207 +296,2 @@
+-        value = make_plan(protocol, contract)
++        value = (correction_plan(args.correction_of, protocol, contract) if args.correction_of
++                 else make_plan(protocol, contract))
+@@ -211 +301 @@
+-        generate(args.plan, args.protocol, args.assets, args.output, args.provider)
++        generate(args.plan, args.protocol, args.assets, args.output, args.provider, args.correction_of)
+@@ -213 +303 @@
+-        print(json.dumps(prepare(args.protocol, args.generated, args.output)))
++        print(json.dumps(prepare(args.protocol, args.generated, args.output, args.correction_generated)))

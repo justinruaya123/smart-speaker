@@ -1,0 +1,154 @@
+{
+  "experiment_id": "vcm-mixed-final-v2",
+  "version": 2,
+  "authorization": "2026-10-15 user authorizes separately versioned synthetic fitting and tests, one low-usage GPU, unchanged mandatory benchmark defaults, physical Pi deferred",
+  "baseline_commit": "a2dab523ae06fe83022907260edc9c1af15c1927",
+  "parent_protocol": "experiments/vcm-intent-slots-v1/protocol.json",
+  "requirement_ids": [
+    "ME-01",
+    "ME-02",
+    "ME-03",
+    "ME-04",
+    "ME-05",
+    "ME-06",
+    "ME-07",
+    "ME-08"
+  ],
+  "use_case_ids": [
+    "UC-01",
+    "UC-02",
+    "UC-03",
+    "UC-04",
+    "UC-05",
+    "UC-06",
+    "UC-07",
+    "UC-08",
+    "UC-09",
+    "UC-10"
+  ],
+  "hypothesis": "Separately synthesized command recordings improve the unchanged complete-command model while human accuracy and all missed preserved forms remain separately visible.",
+  "architecture": "Unchanged IntentSlotsVCM, random initialization, 280818 parameters, 40-bin complete-utterance frontend, 128-channel stem and eight masked residual temporal blocks, existing finite heads and five 64-dimensional entity projections",
+  "contract_hash": "ff0a789114327f031599b198bfdcb74523eafb4c3075588ab8c313c9fecc6ac8",
+  "catalog_hash": "94100ff0dcfcd1d0d965ac23320b75a990559073e22a96a810e87ec338ef07d4",
+  "thresholds": {
+    "intent": 0.95,
+    "slot": 0.9
+  },
+  "source": {
+    "repository": "hexgrad/Kokoro-82M",
+    "revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+    "license": "Apache-2.0"
+  },
+  "generator": {
+    "package": "kokoro-onnx",
+    "version": "0.5.0",
+    "repository": "fastrtc/kokoro-onnx",
+    "revision": "8d07950c9b6c87ce6809e9bba7bd494336217c2a",
+    "files": {
+      "kokoro-v1.0.onnx": "7d5df8ecf7d4b1878015a32686053fd0eebe2bc377234608764cc0ef3636a6c5",
+      "voices-v1.0.bin": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d"
+    },
+    "speed": 1.0,
+    "seed": 53,
+    "trim": false,
+    "native_audio_preserved_before_validation": true,
+    "regeneration_allowed": false
+  },
+  "voices": {
+    "train": [
+      "af_sarah",
+      "am_adam"
+    ],
+    "dev": [
+      "af_sky"
+    ],
+    "calibration": [
+      "am_echo"
+    ],
+    "enrollment": [
+      "bf_alice",
+      "bf_lily",
+      "bm_fable"
+    ]
+  },
+  "final_tts_fit_allowed": false,
+  "final_tts_voices": [
+    "af_heart",
+    "af_bella",
+    "af_nicole",
+    "am_fenrir",
+    "am_michael",
+    "am_puck"
+  ],
+  "training": {
+    "human_only": false,
+    "new_synthesis": true,
+    "normalization_fit_split": "train",
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "gradient_norm_limit": 1.0,
+    "batch_size": 64,
+    "epochs": 30,
+    "steps_per_epoch": 96,
+    "seeds": [
+      53,
+      71,
+      89
+    ],
+    "arms": [
+      "uniform",
+      "balanced"
+    ],
+    "balance_unit": "complete_command_then_declared_person_or_synthetic_voice_then_recording",
+    "whole_command_contrastive_weight": 0.0,
+    "auxiliary_ctc_weight": 0.0,
+    "entity_metric_weight": 0.1,
+    "reviewed_span_weight": 0.1,
+    "unreviewed_spans": "masked; zero acoustic span supervision is reported as a failed qualification gate",
+    "reference_labels": "Existing human labels plus exact contract-derived silver synthetic role/value labels; no claim of independently listened synthetic supervision",
+    "selection": "Human development macro-person accepted exact recall; fewer accepted errors; human micro recall; earlier epoch. Synthetic development reported separately and never substitutes for human selection.",
+    "update_artifacts": false,
+    "device": "cuda",
+    "visible_gpu_count": 1
+  },
+  "enrollment": {
+    "kind": "synthetic",
+    "examples_per_named_entity": 3,
+    "query_voice_disjoint": true,
+    "final_selected_checkpoint_reencoding_required": true,
+    "development_policy": {
+      "absolute": 0.5,
+      "margin": 0.02
+    }
+  },
+  "calibration": {
+    "partition": "separate human and synthetic calibration",
+    "selection_before_calibration": true,
+    "threshold_lowering_allowed": false,
+    "all_19_intents_required": true,
+    "uncalibrated_slots_reject": true
+  },
+  "evaluation": {
+    "original_and_holdout": "Previously exposed regression, references and accounting unchanged",
+    "fresh_human": "All available unused-person Fluent recordings, exact preserved text references only; unmatched references reported untested",
+    "fresh_human_source": {
+      "repository": "leo19941227/fluent_speech_commands",
+      "revision": "c4cc0e2c898585329319835ed55f47a6ab9e0d92",
+      "tar_sha256": "c9fd67f2efa078daa84daddcad2de937eb96581c140e3131ed8cd06fbae9ba1b"
+    },
+    "mandatory_benchmark": {
+      "repository": "airimonda/vcm-benchmark",
+      "revision": "ab39857cf73dd067d068fed388c321ab160dc191",
+      "defaults_unchanged": true,
+      "parser_sha256": "772a73dffa5810645182d2a6a9c16a828bb25d4a84f2d9cb3bbf60993d76545f"
+    },
+    "final_tts": "Separate final/tts-protocol-v2.json; every preserved supported/negative/catalog form x six voices x three speeds, independently listened and locked before any VCM outcomes; never fitting, selection, calibration or enrollment",
+    "pi": "deferred physical benchmark; transfer ZIP includes frozen semi-final card and deterministic derived-card updater"
+  },
+  "source_identity_limits": "Dataset-qualified declared human IDs and distinct preset pack IDs; cross-source physical-person aliasing and TTS training ancestry not independently established",
+  "excluded_synthetic": "Existing unknown generator lineage and fil50 reference clones excluded from fitting to avoid unresolved voice ancestry and train-only rights",
+  "installation_allowed": false,
+  "provider_actions_allowed": false,
+  "status": "frozen_before_generation_and_fitting"
+}

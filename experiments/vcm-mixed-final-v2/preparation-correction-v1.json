@@ -1,0 +1,27 @@
+{
+  "experiment_id": "vcm-mixed-final-v2",
+  "version": "preparation-correction-v1",
+  "stage": "independent metadata/code review before fitting and before any VCM test results",
+  "original_generation_plan_sha256": "571b82533842d8a4cab64359f714a50fb656d8f99eb248a9347e24fcc56c59af",
+  "original_generator_source_sha256": "2fb8de0d00160fb5ca0d5b9da82e25e5a3c682bf60b68cc1314179d6159e1dfa",
+  "source_capture": "The unchanged generator source was copied and hashed while the healthy process was running, before these preparation edits. Its original run identity omitted this source hash; that omission is retained as a provenance limitation.",
+  "findings": [
+    "The shortest contact.home reference was bare Call, whose role is absent; it must not become named home enrollment.",
+    "Preparation omitted original view-hash verification and cross-reserved evaluation auditing.",
+    "Preparation did not bind the complete generated manifest back to the frozen plan and generation receipt."
+  ],
+  "correction": {
+    "entity": "contact.home",
+    "exclude_original": "All three default-only bare Call enrollment recordings; preserve their original native/WAV bytes and generation records",
+    "additional_recordings": 3,
+    "voices": ["bf_alice", "bf_lily", "bm_fable"],
+    "reference": "Existing preserved named call home form, with present contact role",
+    "regeneration_basis": "Metadata semantics, independent of model outcomes; separate versioned correction directory",
+    "other_original_recordings": "Retained with original hashes and references"
+  },
+  "training_started": false,
+  "VCM_test_results_accessed": false,
+  "thresholds_unchanged": {"intent": 0.95, "slot": 0.90},
+  "architecture_catalog_verbatims_grammar_unchanged": true,
+  "healthy_original_generation_restarted": false
+}

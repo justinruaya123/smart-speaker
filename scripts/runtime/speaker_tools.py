@@ -72,7 +72,9 @@ def node_tools(root):
     npm=directory/('node_modules/npm/bin/npm-cli.js' if system=='win' else 'lib/node_modules/npm/bin/npm-cli.js')
     pnpm_root=tools/f'pnpm-{PNPM_VERSION}'
     pnpm=pnpm_root/'node_modules/pnpm/bin/pnpm.mjs'
-    env=os.environ.copy();env['PATH']=str(binary.parent)+os.pathsep+env.get('PATH','')
+    env=os.environ.copy()
+    # Nested package scripts invoke `pnpm` by name; expose the pinned local CLI.
+    env['PATH']=os.pathsep.join((str(binary.parent),str(pnpm_root/'node_modules/.bin'),env.get('PATH','')))
     if not pnpm.exists():run([binary,npm,'install','--prefix',pnpm_root,'--no-audit','--no-fund',f'pnpm@{PNPM_VERSION}'],env=env)
     return binary,pnpm,env
 
