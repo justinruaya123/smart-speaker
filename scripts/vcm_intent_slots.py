@@ -34,6 +34,13 @@ def input_bindings(path):
     catalog = inputs["catalog"]
     if sha(ROOT/catalog["path"]) != catalog["sha256"]:
         raise ValueError("Selected catalog changed")
+    metadata = inputs.get("speaker_metadata")
+    if metadata:
+        if sha(metadata["path"]) != metadata["sha256"]:
+            raise ValueError("Speaker metadata binding mismatch")
+        source = metadata["source_metadata"]
+        if sha(source["path"]) != source["sha256"]:
+            raise ValueError("Original speaker metadata binding mismatch")
     return inputs
 
 
@@ -92,9 +99,13 @@ def run(args):
                            audio_root=inputs["audio_root"] if args.check_audio else None)
     if args.command == "diversity":
         from scripts.test.vcm_intent_slots_diversity import audit_diversity
-        result = audit_diversity({s: rows(v["path"]) for s, v in inputs["views"].items()})
+        binding = inputs.get("speaker_metadata")
+        metadata = json.loads(Path(binding["path"]).read_text()) if binding else None
+        result = audit_diversity({s: rows(v["path"]) for s, v in inputs["views"].items()},
+                                 speaker_metadata=metadata)
         result["bindings"] = {"views": inputs["views"], "inputs_sha256": sha(args.inputs),
-                              "source_receipts": inputs["source_receipts"]}
+                              "source_receipts": inputs["source_receipts"],
+                              "speaker_metadata": binding}
         write_new(output/"diversity.json", result)
         return result
     if args.command == "train":

@@ -5,6 +5,7 @@ from collections import Counter, defaultdict
 
 
 ATTRIBUTES = ("gender", "sex", "age_range", "native_language", "language",
+              "first_language", "work_school_language", "self_reported_fluency",
               "accent_group", "recording_device")
 UNKNOWN = {"", "unknown", "unspecified", "not provided", "n/a", "none"}
 
@@ -56,12 +57,19 @@ def _group(rows, kind):
     return result
 
 
-def audit_diversity(views):
+def audit_diversity(views, *, speaker_metadata=None):
+    speaker_metadata = speaker_metadata or {}
+    for person, attributes in speaker_metadata.items():
+        if (not known_identity(person) or "/" not in person or not isinstance(attributes, dict)
+                or set(attributes) - set(ATTRIBUTES)
+                or any(type(v) not in (str, int) for v in attributes.values())):
+            raise ValueError("Invalid source-qualified speaker metadata")
     identifiers = set()
     memberships = {name: defaultdict(set) for name in
                    ("human_speaker_id", "synthetic_voice_id", "pair_id", "pcm_sha256")}
     populations = {"human": [], "synthetic": []}
     splits = {}
+    matched_ids, matched_recordings = set(), 0
     for split, rows in views.items():
         groups = {"human": [], "synthetic": []}
         for row in rows:
@@ -73,6 +81,15 @@ def audit_diversity(views):
             kind = row.get("kind")
             if kind not in groups:
                 raise ValueError("Unknown recording population")
+            person = row.get("speaker_id")
+            if kind == "human" and person in speaker_metadata:
+                attributes = speaker_metadata[person]
+                original = row.get("speaker_metadata", {})
+                if any(name in original and original[name] != value for name, value in attributes.items()):
+                    raise ValueError("Supplied metadata would overwrite existing speaker metadata")
+                row = {**row, "speaker_metadata": {**original, **attributes}}
+                matched_ids.add(person)
+                matched_recordings += 1
             groups[kind].append(row)
             populations[kind].append(row)
             if known_identity(row.get("speaker_id")):
@@ -87,6 +104,9 @@ def audit_diversity(views):
     return {"version": 1, "scope": "metadata-only audit of supplied frozen views",
             "identity_scope": "declared source-qualified IDs; cross-source aliases unresolved",
             "independent_human_identities_verified": False,
+            "metadata_join": {"matched_human_recordings": matched_recordings,
+                              "matched_human_ids": len(matched_ids),
+                              "unmatched_metadata_ids": len(set(speaker_metadata) - matched_ids)},
             "splits": splits, "total_human": _group(populations["human"], "human"),
             "total_synthetic": _group(populations["synthetic"], "synthetic"),
             "cross_split_groups": overlap, "declared_split_disjoint": not any(overlap.values()),

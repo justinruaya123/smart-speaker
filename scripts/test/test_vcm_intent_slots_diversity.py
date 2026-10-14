@@ -86,3 +86,24 @@ def test_metadata_audit_is_pure_and_never_reads_audio():
     before = copy.deepcopy(views)
     audit_diversity(views)
     assert views == before
+
+
+def test_supplied_metadata_joins_only_exact_source_qualified_human_ids():
+    views = {"train": [row("a", "corpus/7"), row("b", "another/7"),
+                       row("s", "corpus/7", kind="synthetic")]}
+    before = copy.deepcopy(views)
+    metadata = {"corpus/7": {"gender": "female", "age_range": "26-35"}}
+    result = audit_diversity(views, speaker_metadata=metadata)
+    assert result["total_human"]["demographics"]["gender"]["people"] == {"female": 1, "unknown": 1}
+    assert result["metadata_join"] == {"matched_human_recordings": 1, "matched_human_ids": 1,
+                                      "unmatched_metadata_ids": 0}
+    assert views == before
+    assert "demographics" not in result["total_synthetic"]
+
+
+def test_metadata_join_rejects_unqualified_ids_unknown_fields_and_overwrites():
+    views = {"train": [row("a", "corpus/7", speaker_metadata={"gender": "male"})]}
+    for metadata in [{"7": {"gender": "female"}}, {"corpus/7": {"pitch": "low"}},
+                     {"corpus/7": {"gender": "female"}}]:
+        with pytest.raises(ValueError):
+            audit_diversity(views, speaker_metadata=metadata)
