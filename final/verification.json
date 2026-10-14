@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-15",
+  "stage": "accuracy_first_software_staging",
+  "repository": "justinruaya123/smart-speaker",
+  "branch": "codex/vcm-intent-slots-v1",
+  "parent_commit": "5be3a7f5f5ac38ba6c4fcc14d7fd99de478b0bbd",
+  "parent_tree": "9790da77dc1cf0dd14cbb72791f777710cec90c8",
+  "source_scope": "Only repository-root final/ added; original service patch staged, not applied to active branch or job",
+  "archive": {
+    "path": "final/staging/finalization.tar.xz",
+    "sha256": "7c7a1d40d94579298d570a6d6c59a1e742e2748cedc3e5a89f75d281206a1b80",
+    "bytes": 25676,
+    "git_blob": "c747205e41a14f3d8f4455bac77d77eae7af63c0",
+    "original_members": 13,
+    "original_zip_sha256": "1f11a6188cbaa27bb4199e7aca728a3a502a7d387c1306ac5c47283f1187e491",
+    "all_original_member_bytes_preserved": true
+  },
+  "tests": {
+    "command": "python -m pytest -q -p no:cacheprovider final/tests /mnt/data/package_source/source/scripts/test",
+    "exit_code": 0,
+    "passed": 76,
+    "prior_package_tests": 49,
+    "new_tests": 27,
+    "stdout": "76 passed in 0.98s",
+    "scope": "Local numerical, resampling, protocol/accounting and worker fixtures with recognizer doubles; no acoustic inference",
+    "regressions_observed_red_before_fix": [
+      "per-intent/per-case accounting absent",
+      "malformed accepted slot structure"
+    ],
+    "full_repository_suite_run": false
+  },
+  "compilation": {
+    "exit_code": 0,
+    "files": [
+      "final/tts_sanity.py",
+      "final/tests/test_tts_sanity.py"
+    ]
+  },
+  "style": {
+    "new_python_lines_over_79": 0,
+    "external_pep8_linter_available": false
+  },
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "gpu_training_used": false
+  },
+  "measured": {
+    "tts_model_downloaded": false,
+    "tts_audio_generated": 0,
+    "actual_vcm_inference": false,
+    "actual_ncnn_replay": false,
+    "current_A100_job_inspected": false,
+    "training_quality_established": false,
+    "final_accuracy_established": false,
+    "physical_pi_tested": false,
+    "provider_actions_dispatched": false
+  },
+  "blocked": {
+    "model_fetch": "Container requests failed DNS; download tool also failed. Exact revision and two asset hashes researched; cluster fetch command supplied.",
+    "training": "No live A100 process, selected checkpoint or current logs accessible to this audit",
+    "TTS": "Generator dependencies/model absent; no listening, generation or performance claim",
+    "Pi": "Explicitly deferred by user"
+  },
+  "cleanup": {
+    "authorized_delete_after_success": [
+      "final/staging/finalization.tar.xz"
+    ],
+    "preconditions": [
+      "Canonical service source/tests integrated",
+      "Audit/verification preserved in experiment records",
+      "Accuracy gates actually passed",
+      "Card updated",
+      "Durable cleanup receipt committed"
+    ],
+    "retain_on_block_or_failure": true
+  },
+  "files": {
+    "final/MODEL_CARD.md": {
+      "sha256": "7e72975d40138a935d19339bd8f3b6ddf890f556580c599c764f80141bec5438",
+      "git_blob": "ae9fe7bfb3855edf41c240a3b2ab0ac12b3dab3f"
+    },
+    "final/README.md": {
+      "sha256": "a56685b2d502febcf0c1d3aeee69c1abc63ef79854ef4c11e26092db9f6197cb",
+      "git_blob": "92a16b65b306b5ad2ee308571fce236f65cf4949"
+    },
+    "final/staging/finalization.tar.xz": {
+      "sha256": "7c7a1d40d94579298d570a6d6c59a1e742e2748cedc3e5a89f75d281206a1b80",
+      "git_blob": "c747205e41a14f3d8f4455bac77d77eae7af63c0"
+    },
+    "final/tests/test_tts_sanity.py": {
+      "sha256": "9edf2eff424f2be0016ffa6e3dfa12e808da698ab83fe4cacddae0f651eb7962",
+      "git_blob": "4290490a73a0086d249b4ca5d4d03d38bcd4b45e"
+    },
+    "final/tts-protocol.json": {
+      "sha256": "4355349e35182bad30ed71523bec62a8897eec08868a8e254348e1c94c6605a2",
+      "git_blob": "3b26c3d920340bc4cb13be5e0615373902f09ddc"
+    },
+    "final/tts_sanity.py": {
+      "sha256": "c332415c3c7c03b82b55931756326813ebaa1ebc3dca416021462753b93832a0",
+      "git_blob": "50534c7eed5e5bb8db5c01655f1de159656c3341"
+    }
+  }
+}
