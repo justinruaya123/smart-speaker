@@ -642,6 +642,23 @@ def _evaluation_section(path, context, postfit, data, evidence):
     return results, all_records, receipt
 
 
+def waveform_section(item, context, exported, records, first_pass_path, evidence):
+    if item is None:
+        return None
+    from scripts.test import vcm_mixed_wave_parity_cuda as wave
+    verified = wave.verify_waveform_receipt(item, selected=context["selected"],
+        recipe_sha256=exported["recipe_sha256"], contract_hash=context["contract"]["contract_hash"],
+        first_pass_receipt=benchmark.binding(first_pass_path),
+        expected_ids={name: [row["id"] for row in rows] for name, rows in records.items()})
+    for binding in verified["files"].values():
+        evidence.capture(binding)
+    summary = wave.compact_summary(verified)
+    summary["receipt"] = evidence.capture(item)
+    summary["placement_evidence"] = {name: evidence.capture(binding)
+                                      for name, binding in summary["placement_evidence"].items()}
+    return summary
+
+
 def qualification_gates(*, preparation, calibration, tts, export, training=None):
     def gate(status, reason, **actual):
         return {"status": status, "reason": reason, **actual}
@@ -651,6 +668,7 @@ def qualification_gates(*, preparation, calibration, tts, export, training=None)
     missing_intents = preparation.get("missing_intents", {}).get("fresh_human", [])
     missing_slots = calibration.get("missing_slot_calibration", [])
     zero_heads = training.get("zero_supervision_value_heads", []) if training else None
+    wave = export.get("waveform_parity")
     gates = {
         "completed_grid_and_development_selection": gate("passed", "All six completed candidates and human-development selection verified"),
         "train_only_normalization": gate("passed", "Exact serialized training-only normalization is shared by checkpoint, calibration and bundle"),
@@ -663,7 +681,7 @@ def qualification_gates(*, preparation, calibration, tts, export, training=None)
         "fresh_human_scope": gate("failed" if missing_intents else "passed", "Fresh human recordings must cover the complete intent contract", missing_intents=deepcopy(missing_intents)),
         "held_offline_replay": gate("passed", "Complete CUDA command-audio replay with original regression and fresh cohorts separately accounted"),
         "cuda_pytorch_onnx_numeric_parity": gate("passed" if export.get("cuda_parity_passed") else "blocked", "Actual fixed-feature CUDA numeric and final-decision parity; waveform parity is separate"),
-        "waveform_cross_engine_parity": gate("blocked", "CUDA exporter records fixed numeric features; complete PCM-to-command cross-engine parity is unmeasured"),
+        "cuda_pytorch_onnx_waveform_parity": gate("blocked" if wave is None else "passed" if wave.get("parity_passed") is True else "failed", "Complete PCM-to-command PyTorch CUDA / ONNX Runtime CUDA agreement; repeated trials are regression and preserved capture faults are separate from label accuracy", counts=deepcopy(wave.get("total")) if wave else None),
         "ncnn_parity": gate("blocked", "CPU-only inference hold remains unanswered; no selected ncnn replay receipt", export_status=export.get("ncnn_status")),
         "resident_service": gate("blocked", "CPU-only inference hold remains unanswered; actual resident service is unmeasured"),
         "owner_paired_recordings": gate("blocked", "No completed selected-candidate paired owner recording receipt"),
@@ -797,7 +815,7 @@ def assemble(training, inputs, postfit, evaluation, bundle, data_receipt, output
     wrapper = evidence.json(data_receipt)
     if wrapper.get("format") != "vcm-final-data-receipt-v1" or not REQUIRED_DATA <= set(wrapper.get("files", {})):
         raise ValueError("Missing explicitly bound final data receipt wrapper")
-    data = {name: evidence.json(item) for name, item in wrapper["files"].items()}
+    data = {name: evidence.json(item) for name, item in wrapper["files"].items() if name != "waveform_parity"}
     for item in wrapper.get("artifacts", []):
         evidence.capture(item)
     views = {name: evidence.jsonl(item) for name, item in context["inputs"]["views"].items()}
@@ -828,6 +846,11 @@ def assemble(training, inputs, postfit, evaluation, bundle, data_receipt, output
         raise ValueError("Final TTS generation faults require a preserved verbatim artifact")
     tts["generation_fault_verbatims"] = evidence.capture(fault_binding)
     benchmarks, records, replay_receipt = _evaluation_section(evaluation, context, fitted, data, evidence)
+    first_pass_path = Path(evaluation).resolve()
+    if first_pass_path.is_dir():
+        first_pass_path /= "benchmark-receipt.json"
+    exported["waveform_parity"] = waveform_section(wrapper["files"].get("waveform_parity"), context,
+                                                   exported, records, first_pass_path, evidence)
     benchmarks["final_tts"] = tts
     normalization = context["normalization"]
     if (normalization.get("fit_split") != "train" or normalization.get("frames", 0) <= 0

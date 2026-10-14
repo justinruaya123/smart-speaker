@@ -300,6 +300,51 @@ def test_untrained_value_head_remains_a_failed_gate():
     assert gates["accuracy_ready"] is False
 
 
+def test_waveform_gate_is_separate_from_ncnn_resident_and_label_accuracy():
+    audit, accounting = tts_receipts()
+    gates = card.qualification_gates(preparation={}, calibration={},
+        tts=card.tts_summary(audit, accounting),
+        export={"waveform_parity": {"parity_passed": True, "total": {"written_rows": 4922,
+                 "matching_capture_faults": 2, "head_max_errors": {name: 1e-6 for name in card.HEADS}}}},
+        training={"zero_supervision_value_heads": []})
+    assert gates["cuda_pytorch_onnx_waveform_parity"]["status"] == "passed"
+    assert gates["ncnn_parity"]["status"] == "blocked"
+    assert gates["resident_service"]["status"] == "blocked"
+    assert gates["accuracy_ready"] is False
+
+
+def test_missing_or_failed_waveform_receipt_cannot_become_a_pass():
+    audit, accounting = tts_receipts()
+    for wave, expected in ((None, "blocked"), ({"parity_passed": False, "total": {}}, "failed")):
+        gates = card.qualification_gates(preparation={}, calibration={},
+            tts=card.tts_summary(audit, accounting), export={"waveform_parity": wave})
+        assert gates["cuda_pytorch_onnx_waveform_parity"]["status"] == expected
+
+
+def test_waveform_card_bridge_preserves_every_artifact_and_exact_first_pass(tmp_path, monkeypatch):
+    from scripts.test import vcm_mixed_wave_parity_cuda as wave
+    receipt = write_json(tmp_path / "wave.json", {"software_only": "receipt"})
+    original = write_json(tmp_path / "benchmark-receipt.json", {"software_only": "original first pass"})
+    artifact = write_json(tmp_path / "preserved.json", {"software_only": "raw evidence"})
+    selected = {"checkpoint_sha256": "a" * 64}
+    records = {"fresh_human106": [{"id": "original-id"}]}
+    called = {}
+    def verify(binding, **kwargs):
+        called.update(kwargs)
+        assert binding == receipt
+        return {"files": {"raw": artifact}, "parity_passed": False}
+    monkeypatch.setattr(wave, "verify_waveform_receipt", verify)
+    monkeypatch.setattr(wave, "compact_summary", lambda _: {"parity_passed": False, "placement_evidence": {}})
+    evidence = card.Evidence()
+    result = card.waveform_section(receipt, {"selected": selected, "contract": {"contract_hash": "c" * 64}},
+        {"recipe_sha256": "b" * 64}, records, original["path"], evidence)
+    assert called == {"selected": selected, "recipe_sha256": "b" * 64, "contract_hash": "c" * 64,
+                      "first_pass_receipt": original, "expected_ids": {"fresh_human106": ["original-id"]}}
+    assert result["parity_passed"] is False and result["receipt"]["sha256"] == receipt["sha256"]
+    assert str(Path(artifact["path"]).resolve()) in evidence.sources
+    assert card.waveform_section(None, {}, {}, {}, "unused", evidence) is None
+
+
 @pytest.fixture
 def official_outputs_fixture(tmp_path):
     source = card.ROOT / ".cache/vcm-mixed-final-v2/official-benchmark" / benchmark.OFFICIAL_REVISION
