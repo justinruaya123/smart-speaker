@@ -111,7 +111,9 @@ def run(args):
         if args.checkpoint is None:
             raise ValueError("Missing selected checkpoint; use --checkpoint")
         from scripts.train.vcm_intent_slots_export import export_candidate
-        return export_candidate(args.checkpoint, contract, output/"bundle", engines=args.engines)
+        return export_candidate(args.checkpoint, contract, output/"bundle", engines=args.engines,
+                                calibration=args.calibration, memory=args.memory,
+                                entity_policy=args.entity_policy)
     if args.command in ("evaluate", "calibrate", "parity", "owner-replay", "lock"):
         if args.bundle is None:
             raise ValueError("Missing explicit experimental bundle; use --bundle")
@@ -143,6 +145,8 @@ def run(args):
             binding = {"contract_hash": contract["contract_hash"],
                        "checkpoint": runtime.recipe["checkpoint_source_sha256"],
                        "normalization": runtime.recipe["files"]["normalization.json"],
+                       "frontend": runtime.recipe["source_bindings"]["vcm/frontend.py"],
+                       "entities": runtime.policy.get("entities", {}),
                        "manifest": inputs["views"]["calibration"]["sha256"]}
             return fit_score_calibration(observations, binding, output)
         if args.command == "evaluate":
@@ -176,6 +180,9 @@ def main():
     parser.add_argument("--seeds", type=int, nargs="+", default=[53, 71, 89])
     parser.add_argument("--device", choices=["cpu", "cuda"], default="cpu")
     parser.add_argument("--checkpoint", type=Path)
+    parser.add_argument("--calibration", type=Path)
+    parser.add_argument("--memory", type=Path)
+    parser.add_argument("--entity-policy", type=Path)
     parser.add_argument("--bundle", type=Path)
     parser.add_argument("--engine", choices=["onnxruntime", "ncnn"], default="ncnn")
     parser.add_argument("--engines", nargs="+", choices=["onnxruntime", "ncnn"], default=["onnxruntime", "ncnn"])

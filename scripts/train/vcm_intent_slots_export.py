@@ -42,7 +42,8 @@ class OrderedHeads(nn.Module):
         )
 
 
-def export_candidate(checkpoint, contract, output_dir, *, engines=None):
+def export_candidate(checkpoint, contract, output_dir, *, engines=None,
+                     calibration=None, memory=None, entity_policy=None):
     verify_contract(contract)
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=False)
@@ -70,8 +71,20 @@ def export_candidate(checkpoint, contract, output_dir, *, engines=None):
     write_new(output_dir/"contract.json", contract)
     write_new(output_dir/"catalog.json", {"entries": contract["catalog_entries"], "custom": contract["custom"]})
     write_new(output_dir/"normalization.json", data["normalization"])
-    write_new(output_dir/"policy.json", data.get("policy", {"require_calibration": False,
-              "contract_hash": contract["contract_hash"], "status": "uncalibrated_unqualified"}))
+    policy = json.loads(Path(calibration).read_text()) if calibration is not None else data.get(
+        "policy", {"require_calibration": False, "contract_hash": contract["contract_hash"],
+                   "status": "uncalibrated_unqualified"})
+    memory = json.loads(Path(memory).read_text()) if memory is not None else data.get("memory")
+    if entity_policy is not None:
+        if policy.get("require_calibration"):
+            raise ValueError("Frozen calibration already binds its entity policies; recalibrate after changing retrieval")
+        policy["entities"] = json.loads(Path(entity_policy).read_text())
+    root = Path(__file__).resolve().parents[2]
+    from scripts.runtime.vcm_intent_slots_bindings import verify_evidence_bindings
+    verify_evidence_bindings(contract, policy, memory, encoder=sha(checkpoint),
+                             frontend=sha(root/"vcm/frontend.py"),
+                             normalization=sha(output_dir/"normalization.json"))
+    write_new(output_dir/"policy.json", policy)
     shutil.copyfile(checkpoint, output_dir/"reference.pt")
     names = ["intent", "role_states", "validity", "values", "entities"]
     torch.onnx.export(wrapper, torch.zeros(1, 40, 128), str(output_dir/"model.onnx"),
@@ -94,12 +107,12 @@ def export_candidate(checkpoint, contract, output_dir, *, engines=None):
              "reference.pt", "model.onnx"]
     if status.get("ncnn") == "exported_unverified":
         files += ["network.ncnn.param", "network.ncnn.bin"]
-    memory = data.get("memory")
     if memory is not None:
         write_new(output_dir/"entities.json", memory)
         files.append("entities.json")
-    root = Path(__file__).resolve().parents[2]
     sources = ["vcm/frontend.py", "scripts/runtime/pcv_schema.py",
+               "scripts/models/vcm_intent_slots.py",
+               "scripts/runtime/vcm_intent_slots_bindings.py",
                "scripts/runtime/vcm_intent_slots_contract.py",
                "scripts/runtime/vcm_intent_slots_entities.py",
                "scripts/runtime/vcm_intent_slots_decode.py",
@@ -111,7 +124,7 @@ def export_candidate(checkpoint, contract, output_dir, *, engines=None):
         "files": {n: sha(output_dir/n) for n in files},
         "source_bindings": {n: sha(root/n) for n in sources},
         "engine_status": status, "rewrite_parity": rewrite_errors,
-        "checkpoint_source_sha256": sha(checkpoint),
+        "checkpoint_source_sha256": sha(checkpoint), "encoder_id": sha(checkpoint),
         "checkpoint_status": data.get("status", "unqualified_candidate"),
         "parameters": model.parameter_counts(),
         "graph_bytes": (output_dir/"model.onnx").stat().st_size,

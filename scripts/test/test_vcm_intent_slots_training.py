@@ -110,3 +110,42 @@ def test_unrelated_lock_cannot_authorize_fresh_runtime(tmp_path):
         policy = {"require_calibration": False}
     with pytest.raises(ValueError, match="calibration|runtime"):
         verify_evaluation_context({"files": {}}, Runtime(), tmp_path/"manifest")
+
+
+def test_full_scope_role_and_enrollment_prerequisites_fail_clearly():
+    from scripts.train.vcm_intent_slots_train import require_full_scope_inputs
+    with pytest.raises(ValueError, match="role|enrollment"):
+        require_full_scope_inputs([row()], [], {}, contract())
+
+
+def test_named_calibration_collection_uses_bound_retrieval_policy(tmp_path, monkeypatch):
+    from scripts.train import vcm_intent_slots_calibration as calibration
+    from scripts.runtime.vcm_intent_slots_entities import enroll_examples
+    from scripts.test.test_vcm_intent_slots_decode import entity_example
+    c = contract()
+    binding = {"encoder": "a"*64, "frontend": "b"*64, "normalization": "c"*64}
+    memory = enroll_examples([entity_example()], binding, c)
+    matcher = {"absolute": .8, "margin": .1, "encoder_binding": binding,
+               "catalog_hash": c["catalog_hash"], "catalog_sizes": [1]}
+    class Runtime:
+        contract = c
+        catalog = c
+        mean = [0.]*40
+        std = [1.]*40
+        policy = {"entities": {"song": matcher}}
+        def infer_features(self, x):
+            intents = np.zeros(19)
+            intents[c["intent_order"].index("PLAY_MUSIC")] = 12
+            states = np.tile([12., 0., 0., 0.], (len(c["roles"]), 1))
+            states[c["roles"].index("song")] = [0, 12, 0, 0]
+            return {"intent_logits": intents, "role_state_logits": states,
+                    "request_validity_logits": np.asarray([12., 0., 0., 0.]),
+                    "value_logits": {r: np.zeros(len(v)) for r,v in c["finite_values"].items()},
+                    "entity_embeddings": np.tile(np.eye(1,64,0)[0], (5,1))}
+    runtime = Runtime()
+    runtime.memory = memory
+    monkeypatch.setattr(calibration, "read_audio", lambda r, root: np.zeros(400, np.float32))
+    r = row()
+    r.update(split="calibration", command={"intent": "PLAY_MUSIC", "slots": {"song_id": "song.dynamite"}})
+    observations = calibration.collect_calibration([r], runtime, tmp_path)
+    assert observations[0]["slots"]["song_id"]["correct"] == 1

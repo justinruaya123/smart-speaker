@@ -22,8 +22,14 @@ def replay_owner(pairs, runtime, audio_root, output):
     module, factory = binding["factory"].split(":")
     backend = getattr(importlib.import_module(module), factory)(binding)
     policy = SpeakerPolicy(**pairs["policy"])
+    receipt = pairs.get("calibration_receipt")
+    if not receipt or receipt.get("status") != "human_calibration_frozen":
+        raise ValueError("Missing immutable human ownership calibration receipt")
+    if any(v == runtime.recipe.get("encoder_id") for v in binding["files"].values()):
+        raise ValueError("Command-content encoder cannot serve as owner identity")
     owner = OwnerApplication(backend, policy, binding["model_id"], pairs["calibration_id"],
-                             command_encoder_id=runtime.recipe.get("encoder_id"))
+                             command_encoder_id=runtime.recipe["encoder_id"],
+                             calibration_receipt=receipt)
     command_trials, owner_trials, command_predictions, owner_predictions = [], [], [], []
     for trial in pairs["trials"]:
         if trial["track"] not in ("official_owner_enabled_mismatched_pairs_retained",
@@ -34,20 +40,26 @@ def replay_owner(pairs, runtime, audio_root, output):
             raise ValueError("Original human wake/command pairs required")
         if not trial.get("verified_identity_labels") or not trial.get("verified_wake_span"):
             raise ValueError("Verified pair labels and accepted wake span required")
-        wake, command = read_audio(wake_row, Path(audio_root)), read_audio(command_row, Path(audio_root))
-        start, end = trial["wake_span"]
-        if not 0 <= start < end <= len(wake):
-            raise ValueError("Invalid accepted wake span")
-        app = runtime.recognize(command)["final_application"]
-        arm = owner.arm(wake[start:end], trial["id"], now=0, sequence=1, start_sample=start)
-        final = owner.finish(app, command, trial["id"], now=trial["command_elapsed_seconds"],
-                             sequence=2, start_sample=trial["command_start_sample"])
         command_trials.append({**command_row, "id": trial["id"], "tier": trial["track"]})
         owner_trials.append({**command_row, "id": trial["id"], "tier": trial["track"],
                              "command": command_row["command"] if trial["same_person"] else None})
-        command_predictions.append({"id": trial["id"], "final_application": app})
-        owner_predictions.append({"id": trial["id"], "final_application": final,
-                                  "arm": arm})
+        try:
+            wake, command = read_audio(wake_row, Path(audio_root)), read_audio(command_row, Path(audio_root))
+            start, end = trial["wake_span"]
+            if not 0 <= start < end <= len(wake):
+                raise ValueError("Invalid accepted wake span")
+            app = runtime.recognize(command)["final_application"]
+            arm = owner.arm(wake[start:end], trial["id"], now=0, sequence=1, start_sample=start)
+            final = owner.finish(app, command, trial["id"], now=trial["command_elapsed_seconds"],
+                                 sequence=2, start_sample=trial["command_start_sample"])
+            command_predictions.append({"id": trial["id"], "final_application": app})
+            owner_predictions.append({"id": trial["id"], "final_application": final, "arm": arm})
+        except Exception as error:
+            owner.session.reset()
+            owner.active = None
+            fault = {"id": trial["id"], "fault": type(error).__name__+": "+str(error)}
+            command_predictions.append(fault)
+            owner_predictions.append(fault)
     result = {"command_only": summarize_trials(command_trials, command_predictions),
               "owner_aware": summarize_trials(owner_trials, owner_predictions),
               "overlap": "reject, never extract",

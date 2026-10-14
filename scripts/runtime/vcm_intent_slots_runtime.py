@@ -37,6 +37,12 @@ class IntentSlotsRuntime:
                 "intent", "role_states", "validity", "values", "entities"]:
             raise ValueError("Wrong experimental head layout")
         required = {"contract.json", "catalog.json", "normalization.json", "policy.json", "model.onnx"}
+        if engine == "pytorch":
+            required.add("reference.pt")
+        if engine == "ncnn":
+            required.update(("network.ncnn.param", "network.ncnn.bin"))
+        if (self.root/"entities.json").exists():
+            required.add("entities.json")
         if not required <= set(recipe.get("files", {})):
             raise ValueError("Missing bundle bindings")
         for name, expected in recipe["files"].items():
@@ -56,6 +62,13 @@ class IntentSlotsRuntime:
         self.catalog = json.loads((self.root/"catalog.json").read_text())
         self.policy = json.loads((self.root/"policy.json").read_text())
         self.memory = json.loads((self.root/"entities.json").read_text()) if (self.root/"entities.json").exists() else None
+        from scripts.runtime.vcm_intent_slots_bindings import verify_evidence_bindings
+        if recipe.get("encoder_id") != recipe["checkpoint_source_sha256"]:
+            raise ValueError("Missing actual command encoder identity")
+        verify_evidence_bindings(self.contract, self.policy, self.memory,
+                                 encoder=recipe["encoder_id"],
+                                 frontend=recipe["source_bindings"]["vcm/frontend.py"],
+                                 normalization=recipe["files"]["normalization.json"])
         norm = json.loads((self.root/"normalization.json").read_text())
         self.mean, self.std = np.asarray(norm["mean"], np.float32), np.asarray(norm["std"], np.float32)
         if (norm.get("fit_split") != "train" or self.mean.shape != (40,) or self.std.shape != (40,)
@@ -115,6 +128,8 @@ class IntentSlotsRuntime:
         sizes = [19, len(self.contract["roles"])*4, 4,
                  max(v[1] for v in self.contract["value_offsets"].values()), 5*64]
         arrays = []
+        if len(outputs) != 5:
+            raise ValueError("Corrupt experimental output count")
         for value, size in zip(outputs, sizes):
             if np.asarray(value).size != size or not np.isfinite(value).all():
                 raise ValueError("Corrupt/nonfinite experimental graph output")

@@ -11,6 +11,8 @@ import torch
 
 from scripts.models.vcm_intent_slots import IntentSlotsVCM, joint_loss
 from scripts.runtime.pcv_schema import canonical
+from scripts.runtime.vcm_intent_slots_contract import digest
+from scripts.runtime.vcm_intent_slots_entities import catalog_ids, enroll_examples
 from scripts.runtime.vcm_intent_slots_decode import decide, prediction_from_tensors
 from scripts.test.vcm_intent_slots_eval import summarize_trials
 from scripts.train.vcm_intent_slots_data import (
@@ -21,6 +23,69 @@ RECIPE = {"human_only": True, "update_artifacts": False, "optimizer": "AdamW",
           "learning_rate": .001, "weight_decay": .0001, "gradient_norm_limit": 1.,
           "batch_size": 64, "epochs": 30, "steps_per_epoch": 96,
           "whole_command_contrastive_weight": 0., "auxiliary_ctc_weight": 0.}
+
+
+def require_full_scope_inputs(train, dev, inputs, contract):
+    supervised = {role for row in train for role in row.get("role_labels", {})}
+    if set(contract["roles"]) - supervised:
+        raise ValueError("Missing reviewed role-state supervision: " +
+                         ",".join(sorted(set(contract["roles"]) - supervised)))
+    binding = inputs.get("enrollment_examples")
+    thresholds = inputs.get("development_entity_policy")
+    if not binding or not thresholds:
+        raise ValueError("Missing full-scope enrollment and predeclared development entity policy")
+    if sha(binding["path"]) != binding["sha256"]:
+        raise ValueError("Enrollment source binding mismatch")
+    enrollment = rows(binding["path"])
+    allowed = catalog_ids(contract)
+    allowed["light"].discard("light.all")
+    coverage = defaultdict(set)
+    query_people = {r["speaker_id"] for r in dev}
+    query_pcm = {r["pcm_sha256"] for r in train+dev}
+    for ex in enrollment:
+        if (ex.get("kind") != "human" or ex.get("split") != "enrollment"
+                or ex["speaker_id"] in query_people or ex["pcm_sha256"] in query_pcm
+                or ex["entity_id"] not in allowed.get(ex["entity_role"], set())):
+            raise ValueError("Ineligible or overlapping human enrollment")
+        coverage[(ex["entity_role"], ex["entity_id"])].add(ex["pcm_sha256"])
+    missing = [entity for role, ids in allowed.items() for entity in ids
+               if len(coverage[(role, entity)]) < 3]
+    if missing or set(thresholds) != set(contract["entity_roles"]):
+        raise ValueError("Missing enrollment/role policy coverage: "+",".join(missing))
+    return enrollment, thresholds
+
+
+def development_memory(model, enrollment, thresholds, contract, normalization, audio_root):
+    """Re-encode original enrollment against each checkpoint under raw dev policy."""
+    import hashlib
+    from scripts.test.speaker_demo_suite import read_audio
+    from vcm.frontend import features
+    model.eval()
+    h = hashlib.sha256()
+    for name, tensor in model.state_dict().items():
+        h.update(name.encode())
+        h.update(tensor.detach().cpu().numpy().tobytes())
+    binding = {"encoder": h.hexdigest(), "frontend": sha(Path(__file__).resolve().parents[2]/"vcm/frontend.py"),
+               "normalization": digest(normalization)}
+    examples = []
+    with torch.no_grad():
+        for row in enrollment:
+            x = features(read_audio(row, Path(audio_root)), normalization["mean"], normalization["std"])
+            if x.shape[1] == 0:
+                raise ValueError("No valid enrollment acoustic frames")
+            out = model(torch.tensor(x[None], device=next(model.parameters()).device),
+                        torch.tensor([x.shape[1]], device=next(model.parameters()).device))
+            role = row["entity_role"]
+            vector = out["entity_embeddings"][0, contract["entity_roles"].index(role)].cpu().numpy()
+            examples.append({**row, "role": role, "embedding": vector.tolist()})
+    memory = enroll_examples(examples, binding, contract)
+    policies = {}
+    for role in contract["entity_roles"]:
+        count = len({ex["entity_id"] for ex in memory["examples"] if ex["role"] == role})
+        policies[role] = {**thresholds[role], "encoder_binding": binding,
+                          "catalog_hash": contract["catalog_hash"], "catalog_sizes": [count]}
+    return memory, {"entities": policies, "require_calibration": False,
+                    "status": "predeclared_raw_development_only"}
 
 
 def validate_training_protocol(protocol, arm, seed):
@@ -136,6 +201,7 @@ def fit_run(protocol, inputs, contract, output, *, arm, seed, device="cpu"):
     train, dev = rows(inputs["views"]["train"]["path"]), rows(inputs["views"]["dev"]["path"])
     for row in train+dev:
         eligible(row)
+    enrollment, entity_thresholds = require_full_scope_inputs(train, dev, inputs, contract)
     torch.manual_seed(seed)
     np.random.seed(seed)
     random.seed(seed)
@@ -168,7 +234,9 @@ def fit_run(protocol, inputs, contract, output, *, arm, seed, device="cpu"):
             epoch_loss += float(loss.detach())
             for k, v in counts.items():
                 total_counts[k] += v
-        key, metrics = development_score(model, dev, receipt, normalization, contract)
+        memory, dev_policy = development_memory(model, enrollment, entity_thresholds,
+                                               contract, normalization, inputs["audio_root"])
+        key, metrics = development_score(model, dev, receipt, normalization, contract, memory, dev_policy)
         record = {"epoch": epoch+1, "updates": 96, "loss": epoch_loss/96,
                   "selection_key": key, "development": metrics}
         history.append(record)

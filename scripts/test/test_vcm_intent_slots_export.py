@@ -6,6 +6,9 @@ import torch
 from scripts.models.vcm_intent_slots import IntentSlotsVCM
 from scripts.test.test_vcm_intent_slots_contract import contract
 from scripts.train.vcm_intent_slots_export import OrderedHeads, export_candidate
+from scripts.runtime.vcm_intent_slots_contract import digest
+from scripts.train.vcm_intent_slots_data import sha
+from pathlib import Path
 from scripts.runtime.vcm_intent_slots_runtime import IntentSlotsRuntime, validate_pcm
 
 
@@ -87,3 +90,48 @@ def test_actual_exported_engines_near_threshold_decisions(tmp_path, kind, score,
               for engine in ("pytorch", "onnxruntime", "ncnn")]
     assert all(e["final_application"]["accepted"] is accepted for e in events)
     assert all(e["final_application"]["command"] == events[0]["final_application"]["command"] for e in events)
+
+
+def test_explicit_calibration_attachment_and_stale_semantics(tmp_path):
+    c = contract()
+    model = IntentSlotsVCM(c)
+    checkpoint = tmp_path/"selected.pt"
+    normalization = {"mean": [0.]*40, "std": [1.]*40, "fit_split": "train"}
+    torch.save({"weights": model.state_dict(), "contract": c, "normalization": normalization,
+                "status": "unqualified_candidate"}, checkpoint)
+    norm_path = tmp_path/"norm.json"
+    norm_path.write_text(json.dumps(normalization, indent=2)+"\n")
+    policy = {"contract_hash": c["contract_hash"], "require_calibration": True,
+              "binding": {"checkpoint": sha(checkpoint), "normalization": sha(norm_path),
+                          "frontend": sha(Path("vcm/frontend.py")),
+                          "manifest": "a"*64, "contract_hash": c["contract_hash"]},
+              "intent_temperature": 1., "slot_calibrators": {},
+              "thresholds": {"intent": .95, "slot": .9}}
+    policy["calibration_id"] = digest(policy)
+    calibration = tmp_path/"calibration.json"
+    calibration.write_text(json.dumps(policy))
+    bundle = tmp_path/"bundle"
+    export_candidate(checkpoint, c, bundle, engines=["onnxruntime"], calibration=calibration)
+    runtime = IntentSlotsRuntime(bundle, "onnxruntime", 1)
+    assert runtime.policy["calibration_id"] == policy["calibration_id"]
+    assert runtime.recipe["encoder_id"] == sha(checkpoint)
+    policy["binding"]["checkpoint"] = "0"*64
+    policy["calibration_id"] = digest({k:v for k,v in policy.items() if k != "calibration_id"})
+    calibration.write_text(json.dumps(policy))
+    with pytest.raises(ValueError, match="calibration|checkpoint"):
+        export_candidate(checkpoint, c, tmp_path/"wrong", engines=["onnxruntime"], calibration=calibration)
+
+
+def test_wrong_memory_encoder_binding_rejected(tmp_path):
+    from scripts.runtime.vcm_intent_slots_entities import enroll_examples
+    from scripts.test.test_vcm_intent_slots_decode import entity_example
+    c = contract()
+    model = IntentSlotsVCM(c)
+    cp = tmp_path/"cp.pt"
+    torch.save({"weights": model.state_dict(), "contract": c,
+                "normalization": {"mean": [0.]*40, "std": [1.]*40, "fit_split": "train"}}, cp)
+    memory = enroll_examples([entity_example()], {"encoder": "0"*64, "frontend": "a"*64, "normalization": "b"*64}, c)
+    path = tmp_path/"memory.json"
+    path.write_text(json.dumps(memory))
+    with pytest.raises(ValueError, match="encoder|memory"):
+        export_candidate(cp, c, tmp_path/"wrong", engines=["onnxruntime"], memory=path)

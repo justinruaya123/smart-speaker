@@ -9,6 +9,7 @@ from pathlib import Path
 import numpy as np
 
 from scripts.runtime.pcv_schema import INTENTS, baseline_cases, canonical, validate_command
+from scripts.runtime.vcm_intent_slots_contract import FINITE, ENTITY_ROLES
 from scripts.test.speaker_demo_suite import read_audio
 from vcm.frontend import features
 
@@ -107,9 +108,12 @@ def audit_views(view_paths, source_receipts, output_dir, *, audio_root=None):
         report["missing_intents"][split] = [i for i in ["OOV", *INTENTS] if not intents[i]]
         report["missing_optionb_commands"][split] = [
             cmd for key, cmd in baseline.items() if not commands[key]]
-    report["fit_ready"] = all(
+    report["intent_coverage_ready"] = all(
         s in report["splits"] and not report["missing_intents"][s]
         for s in ("train", "dev"))
+    supervised_roles = {role for r in partitions.get("train", []) for role in r.get("role_labels", {})}
+    report["missing_role_state_roles"] = sorted(set([*FINITE, "timer_amount", *ENTITY_ROLES]) - supervised_roles)
+    report["fit_ready"] = report["intent_coverage_ready"] and not report["missing_role_state_roles"]
     report["qualification_ready"] = report["fit_ready"] and (
         "calibration" in report["splits"] and not report["missing_intents"]["calibration"])
     report["missing_supervision"] = {

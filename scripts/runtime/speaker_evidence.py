@@ -1,7 +1,7 @@
 """Exact PCM/session evidence binding around the independent owner policy."""
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 import hashlib
 import math
 import re
@@ -46,10 +46,17 @@ class OwnerApplication:
     The backend must independently establish identity, overlap and coverage.
     This wrapper cannot establish those facts from a command embedding.
     """
-    def __init__(self, backend, policy, model_id, calibration_id, *, command_encoder_id=None):
+    def __init__(self, backend, policy, model_id, calibration_id, *, command_encoder_id=None,
+                 calibration_receipt=None):
         if (model_id == command_encoder_id or not re.fullmatch("[a-f0-9]{64}", model_id)
                 or not re.fullmatch("[a-f0-9]{64}", calibration_id)):
             raise ValueError("Separate calibrated owner identity required")
+        from scripts.runtime.vcm_intent_slots_contract import digest
+        if (not calibration_receipt or calibration_id != digest(calibration_receipt)
+                or calibration_receipt.get("model_id") != model_id
+                or calibration_receipt.get("policy") != asdict(policy)):
+            raise ValueError("Owner policy/calibration receipt binding mismatch")
+        self.calibration_receipt = calibration_receipt
         self.backend, self.model_id, self.calibration_id = backend, model_id, calibration_id
         self.session = SpeakerSession(policy)
         self.active = None

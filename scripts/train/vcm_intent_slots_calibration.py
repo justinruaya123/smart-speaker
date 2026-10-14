@@ -19,7 +19,7 @@ def fit_score_calibration(observations, binding, output):
     if not observations or any(r.get("split") != "calibration" or r.get("kind") != "human"
                                for r in observations):
         raise ValueError("Only separate human calibration observations may fit scores")
-    if not all(binding.get(k) for k in ("contract_hash", "checkpoint", "normalization", "manifest")):
+    if not all(binding.get(k) for k in ("contract_hash", "checkpoint", "normalization", "manifest", "frontend")):
         raise ValueError("Incomplete calibration binding")
     if set(r["intent_label"] for r in observations) != set(range(19)):
         raise ValueError("Missing human calibration intent classes; no qualification")
@@ -64,6 +64,7 @@ def fit_score_calibration(observations, binding, output):
                             "feature_order": "role/value/request constituent scores; no probability product"}
     policy = {"contract_hash": binding["contract_hash"], "binding": binding,
               "intent_temperature": temperature, "slot_calibrators": calibrators,
+              "entities": binding.get("entities", {}),
               "missing_slot_calibration": missing, "require_calibration": True,
               "thresholds": {"intent": .95, "slot": .90},
               "calibration_people": sorted({r["speaker_id"] for r in observations}),
@@ -83,7 +84,8 @@ def collect_calibration(rows, runtime, audio_root):
         pcm = read_audio(row, Path(audio_root))
         from vcm.frontend import features
         tensors = runtime.infer_features(features(pcm, runtime.mean, runtime.std))
-        prediction = prediction_from_tensors(tensors, runtime.contract, runtime.memory, {})
+        prediction = prediction_from_tensors(tensors, runtime.contract, runtime.memory,
+                                             {"entities": runtime.policy.get("entities", {})})
         proposal = propose(prediction, runtime.contract, runtime.catalog)
         candidate = proposal.get("candidate", {})
         expected = row.get("command") or {}
