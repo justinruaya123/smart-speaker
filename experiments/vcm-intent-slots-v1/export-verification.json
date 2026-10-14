@@ -1,0 +1,34 @@
+{
+  "engines": [
+    "onnxruntime",
+    "ncnn"
+  ],
+  "pytorch_reference": true,
+  "passed": true,
+  "tensor_decision_probes": 48,
+  "real_dev_recordings": 15,
+  "real_pcm_outcomes": 30,
+  "overlong_fault_outcomes": 2,
+  "max_absolute_error": 1.430511474609375e-06,
+  "threshold_export_fixture_cases": 4,
+  "checkpoint_status": "software_export_fixture_not_trained",
+  "onnx_bytes": 1141847,
+  "ncnn_param_bytes": 11083,
+  "ncnn_weight_bytes": 1123500,
+  "raw_receipt": ".cache/vcm-intent-slots-v1/parity-03/parity.json",
+  "raw_sha256": "27f3e5422449771fd00d4d0f9dfc90a8e83eb75e8c77f2696d6acaa27a32002c",
+  "qualification": false,
+  "evidence": "Software export with untrained random/controlled weights; real PCM frontend decisions parity, not acoustic quality. No installed model changed.",
+  "graph_bindings": {
+    "contract.json": "5a7bccebfa4f416338c7daf24b0b34678c11a6fbca71c8d7a00c701d48c9d359",
+    "catalog.json": "444e08bfe32c00ba3e1ab31e82c0892e320fe015f3d8e2908eef4218a083ef02",
+    "normalization.json": "c42133430081be6be8bd42bfaff35f24e530ce3b1c329feeee86125894ebc402",
+    "policy.json": "388b95dfc9b75cd5f37c3ec7564e55d0d804301ccbfb07a9b03b290aaee113b6",
+    "reference.pt": "58369c6aca6a76c1a736e7a616870c693d84aec46c4dfced9b9039bf73aaacae",
+    "model.onnx": "94541915de3ce05638d6bbafc48a7f31c517e9c3c39f1a8c33150234f10f21b8",
+    "network.ncnn.param": "503346faa01a016c82475e64b61bb0432fe1c1e0d594a59bfb16d2574225c2b6",
+    "network.ncnn.bin": "bd215494ebea73a55ae91acccda8c8d550a7e34b3c8cc15d4b5266010e18846c"
+  },
+  "encoder_id": "58369c6aca6a76c1a736e7a616870c693d84aec46c4dfced9b9039bf73aaacae",
+  "normalization": "Actual train-only human statistics; checkpoint remains random and untrained"
+}

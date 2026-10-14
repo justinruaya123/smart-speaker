@@ -1,0 +1,15 @@
+{
+  "total_original_recordings_read": 6975,
+  "partitions": {
+    "train": 1895,
+    "dev": 256,
+    "calibration": 210,
+    "test": 4418,
+    "holdout": 196
+  },
+  "file_and_decoded_pcm_hashes_verified": true,
+  "near_duplicate_and_voice_aliases": "unverified; declared split identities only",
+  "raw_receipt_sha256": "8e47c74c0eb536cc720731d43290ea78130f3d4e6de4e4357d539e150899f392",
+  "purpose": "Integrity audit only; no test scoring or training",
+  "independent_label_listening": "not performed"
+}

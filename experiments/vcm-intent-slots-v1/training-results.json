@@ -1,0 +1,51 @@
+{
+  "uniform": [
+    {
+      "arm": "uniform",
+      "seed": 53,
+      "status": "blocked_not_fitted",
+      "reason": "Missing human training/development coverage; full scope cannot be narrowed"
+    },
+    {
+      "arm": "uniform",
+      "seed": 71,
+      "status": "blocked_not_fitted",
+      "reason": "Missing human training/development coverage; full scope cannot be narrowed"
+    },
+    {
+      "arm": "uniform",
+      "seed": 89,
+      "status": "blocked_not_fitted",
+      "reason": "Missing human training/development coverage; full scope cannot be narrowed"
+    }
+  ],
+  "balanced": [
+    {
+      "arm": "balanced",
+      "seed": 53,
+      "status": "blocked_not_fitted",
+      "reason": "Missing human training/development coverage; full scope cannot be narrowed"
+    },
+    {
+      "arm": "balanced",
+      "seed": 71,
+      "status": "blocked_not_fitted",
+      "reason": "Missing human training/development coverage; full scope cannot be narrowed"
+    },
+    {
+      "arm": "balanced",
+      "seed": 89,
+      "status": "blocked_not_fitted",
+      "reason": "Missing human training/development coverage; full scope cannot be narrowed"
+    }
+  ],
+  "model_fitting_runs": 0,
+  "optimizer_updates_real_audio": 0,
+  "actual_human_metrics": null,
+  "actual_synthetic_metrics": null,
+  "optionb_acoustic_outcomes": null,
+  "personal_superset_acoustic_outcomes": null,
+  "owner_aware_acoustic_outcomes": null,
+  "numerical_fixture_optimization": "6-step loss decrease regression test; not an acoustic run",
+  "status": "human_scope_coverage_gates_failed"
+}

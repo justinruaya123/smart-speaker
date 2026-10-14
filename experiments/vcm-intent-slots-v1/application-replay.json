@@ -1,0 +1,31 @@
+{
+  "command": [
+    "/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python",
+    "-m",
+    "scripts.runtime.speaker_worker",
+    "--experimental-intent-slots",
+    "--bundle",
+    ".cache/vcm-intent-slots-v1/software-export-03/bundle",
+    "--engine",
+    "ncnn",
+    "--wav",
+    "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/data/audio/ai231-pool-v1/09/0956ba3eb54b606fa123598cf0aebec76e8e813018fce6e6909f093e44f24e50.wav"
+  ],
+  "exit_code": 0,
+  "real_development_recording": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/000004",
+  "audio_sha256": "0956ba3eb54b606fa123598cf0aebec76e8e813018fce6e6909f093e44f24e50",
+  "pcm_sha256": "0da9dd4d1e49b85a73b23bcb6caecf228d94c78eac1e675939bdef030985e5a9",
+  "server_events": 4,
+  "command_events": 1,
+  "all_actions_disabled": true,
+  "authoritative_decision": "final_application",
+  "benchmark_log": ".cache/vcm-intent-slots-v1/worker-replay-01/benchmark.jsonl",
+  "checkpoint_status": "software_export_fixture_not_trained",
+  "evidence": "Actual action-free AudioService WAV path and ncnn decision serialization; not acoustic accuracy",
+  "timing": {
+    "frontend_ms": 15.468788333237171,
+    "model_ms": 3.6494946107268333,
+    "decision_ms": 14.520608820021152,
+    "total_ms": 33.63889176398516
+  }
+}

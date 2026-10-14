@@ -1,0 +1,24 @@
+{
+  "files_checked": 14,
+  "files": {
+    "artifacts/brightness-validation.json": "615f6b266124d89ee58de054874a4c752fd736bf0cb12449abdfca95e4f0c34c",
+    "artifacts/bundle.json": "e1f9519400058b9fc5ebadcbb68f520a61faed93ff50eb528e530748e369ec85",
+    "artifacts/export-verification.json": "a83385ef8d234a61b7997909911d72d86e533bf2b87d5b80c3013dcabe39169e",
+    "artifacts/family-metrics.json": "a1bc4c392ece85d0afdf1ddae24e0e4461537865941f6f385cd8e9103b0f48e7",
+    "artifacts/manifest.json": "8c1745c07dbb5a47299c09e0eac460fdfacc174d052c06cdacbcaa8e5446c128",
+    "artifacts/openwakeword-LICENSE.txt": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "artifacts/pilot-results.json": "a5c8b6653fa7fceb8d621bf5774052b3f1fa5a194ec88f7ae4459462865938c2",
+    "artifacts/pretrained-NOTICE.txt": "16f146f382cd504803fb425b1bcfe1680b23a58eabfa03ab310c37e0353de8a5",
+    "artifacts/silero-LICENSE.txt": "2e63e9a38b6e8fc0c7bc37ce174caca1862870856c6daf5697cfb785e925520b",
+    "artifacts/training-config.json": "c087d451e3a58638978b6ab9550311a2c59e414ffab664db9799bbbbedd60a81",
+    "artifacts/training-history.json": "9d30fd81efc7b0cd5408d68038d255fa9f50b4880182d361b14deaec1b19868c",
+    "artifacts/wake-models.json": "9bc153473704dd425961ac0d4cc2f3b5607a8a35601a0bb5d687082651788c9e",
+    "pipeline.toml": "6ce3417cb1e779093c5413d94b50c2e071d7cd623a83a0e584fc17b396a737a9",
+    "requirements.lock": "49b36c847131665d40078620c3149905656d85df71d4f2edb228002249c8d18a"
+  },
+  "changes": [],
+  "main_status_unchanged": true,
+  "main_staged_unchanged": true,
+  "default_runtime_unchanged": true,
+  "root_environment_change": "User explicitly approved pinned pnnx/ncnn export tools; installed experimental model payloads remain unchanged"
+}

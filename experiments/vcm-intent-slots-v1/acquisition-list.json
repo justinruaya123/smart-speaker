@@ -1,0 +1,324 @@
+{
+  "missing_human_optionb_commands": {
+    "train": [
+      {
+        "intent": "MESSAGE",
+        "slots": {}
+      },
+      {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      },
+      {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      },
+      {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      },
+      {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      },
+      {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      }
+    ],
+    "dev": [
+      {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      },
+      {
+        "intent": "MESSAGE",
+        "slots": {}
+      },
+      {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      },
+      {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      },
+      {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      },
+      {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      },
+      {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      },
+      {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      }
+    ],
+    "calibration": [
+      {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      },
+      {
+        "intent": "MESSAGE",
+        "slots": {}
+      },
+      {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      },
+      {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      },
+      {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      },
+      {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      },
+      {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      },
+      {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      },
+      {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      },
+      {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      },
+      {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      },
+      {
+        "intent": "COLOR",
+        "slots": {
+          "light_id": "light.all",
+          "color": "blue"
+        }
+      },
+      {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      },
+      {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      },
+      {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      }
+    ]
+  },
+  "required_role_states": [
+    "brightness_percent",
+    "volume_operation",
+    "volume_percent",
+    "timer_unit",
+    "alarm_hour",
+    "alarm_minute",
+    "alarm_meridiem",
+    "temperature_degrees",
+    "color",
+    "timer_amount",
+    "light",
+    "song",
+    "artist",
+    "contact",
+    "task"
+  ],
+  "role_supervision_status": "No reviewed role-state labels supplied; obtain absent/present/conflicting/unsupported labels without guessing",
+  "grammar_labels": "Reviewed connected timer amount/unit and alarm hour/minute/meridiem labels; canonical duration/time alone does not identify spoken constituent grammar",
+  "reviewed_spans": "Subset of original connected numeric/name training recordings; unknown spans remain masked",
+  "entities": {
+    "light": [
+      {
+        "entity_id": "light.bathroom",
+        "original_enrollment_examples_required": [
+          3,
+          5
+        ],
+        "query_people_disjoint": true
+      },
+      {
+        "entity_id": "light.bedroom",
+        "original_enrollment_examples_required": [
+          3,
+          5
+        ],
+        "query_people_disjoint": true
+      },
+      {
+        "entity_id": "light.kitchen",
+        "original_enrollment_examples_required": [
+          3,
+          5
+        ],
+        "query_people_disjoint": true
+      }
+    ],
+    "song": [
+      {
+        "entity_id": "song.butter",
+        "original_enrollment_examples_required": [
+          3,
+          5
+        ],
+        "query_people_disjoint": true
+      },
+      {
+        "entity_id": "song.dynamite",
+        "original_enrollment_examples_required": [
+          3,
+          5
+        ],
+        "query_people_disjoint": true
+      }
+    ],
+    "artist": [
+      {
+        "entity_id": "artist.bts",
+        "original_enrollment_examples_required": [
+          3,
+          5
+        ],
+        "query_people_disjoint": true
+      }
+    ],
+    "contact": [
+      {
+        "entity_id": "contact.home",
+        "original_enrollment_examples_required": [
+          3,
+          5
+        ],
+        "query_people_disjoint": true
+      },
+      {
+        "entity_id": "contact.mom",
+        "original_enrollment_examples_required": [
+          3,
+          5
+        ],
+        "query_people_disjoint": true
+      }
+    ],
+    "task": [
+      {
+        "entity_id": "task.drink_water",
+        "original_enrollment_examples_required": [
+          3,
+          5
+        ],
+        "query_people_disjoint": true
+      },
+      {
+        "entity_id": "task.exercise",
+        "original_enrollment_examples_required": [
+          3,
+          5
+        ],
+        "query_people_disjoint": true
+      },
+      {
+        "entity_id": "task.study",
+        "original_enrollment_examples_required": [
+          3,
+          5
+        ],
+        "query_people_disjoint": true
+      }
+    ]
+  },
+  "ownership": "Original same-person wake/command and impostor/handovers/overlap; disjoint calibration people, voiced-duration strata, verified accepted-wake spans and command coverage",
+  "fresh_human_evaluation": "Independent people and labels; old test/holdout remain regression",
+  "physical_pi": "Named RPi4/5, microphone, frozen numerical resource limits, latency/RSS/CPU/temperature/throttling/network-disabled receipts",
+  "baseline_recovery": "baseline-recovery.json"
+}

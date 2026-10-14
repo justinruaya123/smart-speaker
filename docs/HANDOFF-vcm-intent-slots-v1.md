@@ -341,3 +341,19 @@ must identify and freeze them before affected work proceeds. The old shipping
 baseline may remain unavailable while implementation and new-model software tests
 continue. Fresh tests require a selection lock; owner replay requires genuine
 session evidence. No command may dispatch actions or install a model.
+
+## Execution progress — 2026-10-14
+
+Tasks 1–8 have their feasible software implementation, tests and compact receipts.
+The command model, entity memory, typed decisions, guarded training/calibration,
+export/runtime, final-decision adapter and separate owner evidence contracts exist.
+One independent review's five Important issues were fixed with regressions.
+Final focused/relevant tests: 154 passed. Real model fitting: zero; six seed/arm
+runs failed prerequisites. Shipping reference/crop attribution, calibrated acoustic
+evaluation, genuine ownership and physical Pi remain blocked by the listed inputs.
+
+The design protocol is preserved; execution state is recorded separately.
+Read [execution findings](EXPERIMENT-vcm-intent-slots-v1.md),
+[verification](../experiments/vcm-intent-slots-v1/verification.json),
+[execution protocol](../experiments/vcm-intent-slots-v1/execution-protocol.json),
+and [missing inputs](../experiments/vcm-intent-slots-v1/acquisition-list.json).

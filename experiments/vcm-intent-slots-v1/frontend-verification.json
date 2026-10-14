@@ -1,0 +1,21 @@
+{
+  "recordings": 2151,
+  "train_recordings": 1895,
+  "dev_recordings": 256,
+  "normalization_fit_split": "train",
+  "training_frames": 553467,
+  "normalization_sha256": "c42133430081be6be8bd42bfaff35f24e530ce3b1c329feeee86125894ebc402",
+  "feature_receipt_sha256": "6b6424782979fed7ac3a7057edb1f7f40d44c9b862c81507811bf5239bcef936",
+  "view_bindings": {
+    "train": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/human/train.jsonl",
+      "sha256": "77ef84aa57260e4af9942fd3ee495b377bba4df295ba434d41ffa2cad495774e"
+    },
+    "dev": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/human/dev.jsonl",
+      "sha256": "9ce783bfc24086a12ed0e66bae348f903b438eea87f8788b1ec0c3529e3e485a"
+    }
+  },
+  "frontend_sha256": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a",
+  "evidence": "Original human PCM hash verification and 40-bin frontend/statistics only; no model fitted; calibration/test not used."
+}

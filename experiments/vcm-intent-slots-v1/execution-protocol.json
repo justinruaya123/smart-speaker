@@ -1,0 +1,51 @@
+{
+  "experiment_id": "vcm-intent-slots-v1",
+  "design_commit": "ede9d3caa036876cb112907b8d85e239b799c618",
+  "design_protocol_sha256": "8a7822021539ecbd0020f1235327bdfa029ff7f610a13355e3482233c76220a5",
+  "status": "implementation_verified_acoustic_training_coverage_blocked",
+  "local_inputs_sha256": "e0a8961df728bc168b3556ea424be74294b64b6e22d415c562fbfe46f50573b1",
+  "selected_catalog_entries": 1031,
+  "generated_case_definitions": 414,
+  "normalization_receipt": "frontend-verification.json",
+  "source_and_environment": {
+    "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:16:10) [GCC 11.2.0]",
+    "interpreter": "/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python",
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "versions": {
+      "torch": "2.10.0+cpu",
+      "onnx": "1.20.1",
+      "onnxruntime": "1.23.2",
+      "ncnn": "1.0.20260526",
+      "pnnx": "20260526",
+      "numpy": "2.3.5",
+      "soundfile": "0.13.1"
+    },
+    "cuda_available": false
+  },
+  "training": {
+    "update_artifacts": false,
+    "arms": [
+      "uniform",
+      "balanced"
+    ],
+    "seeds": [
+      53,
+      71,
+      89
+    ],
+    "executed_model_fitting_runs": 0,
+    "reason": "Human intent/role-state/enrollment prerequisites incomplete"
+  },
+  "application": {
+    "intent_threshold": 0.95,
+    "every_supplied_slot_threshold": 0.9,
+    "provider_actions_enabled": false
+  },
+  "installation_allowed": false,
+  "baseline_recovery": "baseline-recovery.json",
+  "acquisition_list": "acquisition-list.json",
+  "fresh_test_selection_lock": null,
+  "calibration_fitted_real_audio": false,
+  "owner_identity_backend": "not available/trained",
+  "physical_pi": "not available or measured"
+}

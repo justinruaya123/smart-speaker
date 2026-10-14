@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-14",
+  "focused_new_tests_passed": 94,
+  "relevant_existing_tests_passed": 60,
+  "combined_tests_passed": 154,
+  "failed": 0,
+  "exporter_deprecation_warnings": 24,
+  "full_suite_collection": {
+    "passed": false,
+    "tests_collected_before_interrupt": 665,
+    "errors": [
+      "experiments/pcv-delivery-v1/tests/test_parler_weights.py: missing safetensors",
+      "experiments/pcv-synthetic-v1/tests/test_catalog.py: existing test_catalog import-name collision",
+      "scripts/test_prototype.py: existing incompatible train.register_sources import"
+    ]
+  },
+  "static_checks": [
+    "compileall passed",
+    "git diff --check passed"
+  ],
+  "pep8_checker": "pycodestyle/ruff unavailable; no full PEP8 pass claimed",
+  "independent_review": {
+    "important_findings": 5,
+    "critical": 0,
+    "all_important_fixed_with_regressions": true,
+    "deferred_minor": []
+  },
+  "commands": {
+    "tests": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 /home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python -m pytest -q -p no:cacheprovider scripts/test/test_vcm_intent_slots_*.py scripts/test/test_speaker_demo_v1.py scripts/test/test_pcv_full_benchmark.py scripts/test/test_speaker_worker.py",
+    "audit": "python scripts/vcm_intent_slots.py audit --run-id audio-audit-01 --check-audio",
+    "features": "prepare_features on 1895 train + 256 dev, normalization from train only",
+    "train_uniform": "python scripts/vcm_intent_slots.py train --arm uniform --seeds 53 71 89 --run-id uniform-01: exit 2, no fitting",
+    "train_balanced": "python scripts/vcm_intent_slots.py train --arm balanced --seeds 53 71 89 --run-id balanced-01: exit 2, no fitting",
+    "diagnose": "python scripts/vcm_intent_slots.py diagnose --run-id baseline-attribution-01: exit 2, exact baseline/crops missing",
+    "parity": "python scripts/vcm_intent_slots.py parity --bundle .cache/vcm-intent-slots-v1/software-export-03/bundle --engines onnxruntime ncnn --run-id parity-03: exit 0",
+    "collection": "python -m pytest --collect-only -q: exit 2, 3 unrelated errors"
+  },
+  "evidence_boundaries": [
+    "No trained new command model or acoustic qualification",
+    "No fabricated real human/synthetic metrics",
+    "No physical Pi or acoustic ownership evidence",
+    "No installed model, default runtime or provider operation"
+  ]
+}

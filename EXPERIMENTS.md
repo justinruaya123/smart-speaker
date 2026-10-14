@@ -2,14 +2,21 @@
 
 ## VCM intent and slots v1 — 2026-10-14
 
-Status: selected target architecture and execution handoff; implementation,
-training, calibration, export and physical qualification are pending.
+Status: experimental implementation and software export verified; real acoustic
+training, calibration, ownership and physical qualification remain blocked.
 Base: `5d872e3a249e5876aaa8130b76f6e3b31622355f`.
 One shared width-128 temporal CNN provides intent, typed-slot and acoustic-entity
 heads for OptionB and the preserved personal superset. A separate one-command
 wake-owner gate rejects unverified/overlapping speech; extraction is not claimed.
 The deployed model, 0.95/0.90 gates, providers and historical evidence are unchanged.
 No measured acoustic improvement is asserted. Local inputs must be reverified.
+Execution: 280,818 parameters; 154 new/relevant tests pass; pinned parser 93/93
+output fixtures; three-engine software parity max 1.431e-6, including threshold
+exports and real development PCM. All six human uniform/balanced seed runs stop
+before fitting because intent/role/enrollment coverage is incomplete. Exact shipping
+payload/crop attribution, fresh human/owner pairs and Pi evidence are missing.
+See [execution findings](docs/EXPERIMENT-vcm-intent-slots-v1.md) and
+[compact verification](experiments/vcm-intent-slots-v1/verification.json).
 See [specification](docs/SPEC-vcm-intent-slots-v1.md),
 [execution handoff](docs/HANDOFF-vcm-intent-slots-v1.md) and
 [design protocol](experiments/vcm-intent-slots-v1/protocol.json).
