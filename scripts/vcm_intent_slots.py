@@ -90,6 +90,13 @@ def run(args):
         return audit_views({s:v["path"] for s,v in inputs["views"].items()},
                            {"views":inputs["views"]}, output,
                            audio_root=inputs["audio_root"] if args.check_audio else None)
+    if args.command == "diversity":
+        from scripts.test.vcm_intent_slots_diversity import audit_diversity
+        result = audit_diversity({s: rows(v["path"]) for s, v in inputs["views"].items()})
+        result["bindings"] = {"views": inputs["views"], "inputs_sha256": sha(args.inputs),
+                              "source_receipts": inputs["source_receipts"]}
+        write_new(output/"diversity.json", result)
+        return result
     if args.command == "train":
         from scripts.train.vcm_intent_slots_train import fit_run
         results = []
@@ -172,7 +179,7 @@ def run(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("command", choices=["preflight", "audit", "diagnose", "train", "calibrate",
-                                          "evaluate", "export", "parity", "owner-replay", "summarize", "lock"])
+                                          "evaluate", "export", "parity", "owner-replay", "summarize", "lock", "diversity"])
     parser.add_argument("--protocol", type=Path, default=ROOT/"experiments/vcm-intent-slots-v1/protocol.json")
     parser.add_argument("--inputs", type=Path, default=ROOT/"experiments/vcm-intent-slots-v1/local-inputs.json")
     parser.add_argument("--run-id", default="run-01")
@@ -184,7 +191,7 @@ def main():
     parser.add_argument("--memory", type=Path)
     parser.add_argument("--entity-policy", type=Path)
     parser.add_argument("--bundle", type=Path)
-    parser.add_argument("--engine", choices=["onnxruntime", "ncnn"], default="ncnn")
+    parser.add_argument("--engine", choices=["pytorch", "onnxruntime", "ncnn"], default="ncnn")
     parser.add_argument("--engines", nargs="+", choices=["onnxruntime", "ncnn"], default=["onnxruntime", "ncnn"])
     parser.add_argument("--split", choices=["dev", "calibration", "test", "holdout"], default="dev")
     parser.add_argument("--selection", type=Path)

@@ -590,5 +590,9 @@
   "vcm-intent-slots-v1.vcm_intent_slots_bindings": {
     "path": "runtime/vcm_intent_slots_bindings.py",
     "runtime": false
+  },
+  "vcm-intent-slots-v1.vcm_intent_slots_diversity": {
+    "path": "test/vcm_intent_slots_diversity.py",
+    "runtime": false
   }
 }

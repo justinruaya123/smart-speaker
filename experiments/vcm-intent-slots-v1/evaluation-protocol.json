@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "experiment_id": "vcm-intent-slots-v1",
+  "followup": "tests-historical-regression-diversity-20261014",
+  "design_commit": "ede9d3caa036876cb112907b8d85e239b799c618",
+  "source_parent_local_commit": "f706cf822326254da346493014a40e7e57250d91",
+  "source_parent_published_commit": "a74ae5c79bce564f600909d568e82a08ec2cb74c",
+  "design_protocol_sha256": "8a7822021539ecbd0020f1235327bdfa029ff7f610a13355e3482233c76220a5",
+  "inputs_sha256": "e0a8961df728bc168b3556ea424be74294b64b6e22d415c562fbfe46f50573b1",
+  "views": {
+    "train": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/human/train.jsonl",
+      "sha256": "77ef84aa57260e4af9942fd3ee495b377bba4df295ba434d41ffa2cad495774e"
+    },
+    "dev": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/human/dev.jsonl",
+      "sha256": "9ce783bfc24086a12ed0e66bae348f903b438eea87f8788b1ec0c3529e3e485a"
+    },
+    "calibration": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/human/calibration.jsonl",
+      "sha256": "af7858186f401f0c016cd930dd057c08c1e4d8552d7dc4179e489ca3e0c48253"
+    },
+    "test": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/evaluation/test.jsonl",
+      "sha256": "a4fdcedfc86efebb36414114887abdc4ee51eba102b0247740aef18d1ad15abc"
+    },
+    "holdout": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/evaluation/holdout.jsonl",
+      "sha256": "a51e720b97f7b31e3e2f025c21bf679006ad444fd2d363916d9a11aa0f488b5b"
+    }
+  },
+  "catalog_entries": 1031,
+  "evaluation_role": "historical_regression_software_execution_only",
+  "checkpoint_status": "software_export_fixture_not_trained",
+  "checkpoint_sha256": "58369c6aca6a76c1a736e7a616870c693d84aec46c4dfced9b9039bf73aaacae",
+  "bundle_recipe_sha256": "2cff1821367d3e2f06a94e895fd8cc3e4a71bb52b9a369647d361c4fd92acbf1",
+  "calibration_status": "not_fitted_no_calibration_claim",
+  "selection_lock": null,
+  "qualification": false,
+  "test_scoring_permission": "Explicit --regression only; previously examined test and holdout. Fresh evaluation remains blocked.",
+  "training_or_tuning_from_evaluation": false,
+  "engines": [
+    "pytorch",
+    "onnxruntime",
+    "ncnn"
+  ],
+  "threads": 1,
+  "tracks": {
+    "command_only": "actual experimental server-side final_application; owner disabled for entire track",
+    "official_owner_enabled": "blocked: no genuine wake/command pairs or validated independent backend",
+    "original_same_person": "blocked: no genuine wake/command pairs, impostors, handovers or overlap labels"
+  },
+  "metrics": {
+    "typed_command": "accepted exact complete command; supported rejects, missing outputs and faults remain failures",
+    "benchmark": "canonical adapter records checked with pinned official LineParser; faults kept separate",
+    "partitions": [
+      "human",
+      "synthetic"
+    ],
+    "tiers": "OptionB typed-output membership, extensions and negatives; does not establish 93-phrase acoustic coverage",
+    "human_people": "source-qualified declared IDs only; synthetic voices excluded from person aggregates and human intervals",
+    "cluster_interval": {
+      "kind": "human",
+      "repetitions": 1000,
+      "seed": 53,
+      "quantiles": [
+        0.025,
+        0.975
+      ]
+    },
+    "timing": "observed host latency/RTF; no physical Pi or resource-gate qualification"
+  },
+  "diversity_policy": "Person-disjoint first. Supplied gender/age/language/accent/device metadata only; missing stays unknown; no gender inference or frozen split changes.",
+  "application_thresholds": {
+    "intent": 0.95,
+    "each_supplied_slot": 0.9
+  },
+  "training_update_artifacts": false,
+  "provider_actions_enabled": false,
+  "default_runtime_changed": false
+}

@@ -2,13 +2,16 @@
 from __future__ import annotations
 
 from collections import defaultdict
+from functools import lru_cache
 import json
+import math
 from pathlib import Path
 
 import numpy as np
 
 from scripts.runtime.pcv_schema import canonical
 from scripts.train.vcm_intent_slots_data import sha, write_new
+from scripts.test.vcm_intent_slots_diversity import known_identity
 
 LOCK_KEYS = {"protocol", "manifest", "checkpoint", "contract", "catalog",
              "normalization", "calibration", "frontend", "runtime"}
@@ -97,48 +100,122 @@ def _metrics(pairs):
     return m
 
 
-def summarize_trials(trials, predictions):
+def _pairs(trials, predictions):
+    identifiers = [t["id"] for t in trials]
+    if len(set(identifiers)) != len(identifiers):
+        raise ValueError("Duplicate trial ID")
     index = {}
     for p in predictions:
         if p["id"] in index:
             raise ValueError("Duplicate trial prediction")
         index[p["id"]] = p
-    if set(index) - {t["id"] for t in trials}:
+    if set(index) - set(identifiers):
         raise ValueError("Unexpected trial predictions")
-    pairs = [(t, index.get(t["id"])) for t in trials]
-    tracks, people, intents = defaultdict(list), defaultdict(list), defaultdict(list)
+    return [(t, index.get(t["id"])) for t in trials]
+
+
+@lru_cache(maxsize=1)
+def _optionb_outputs():
+    from scripts.runtime.pcv_schema import baseline_cases
+    return {canonical(c["command"]) for c in baseline_cases() if c["command"] is not None}
+
+
+def trial_tier(trial):
+    if trial.get("tier"):
+        return trial["tier"]
+    if trial.get("reference_status") == "ambiguous":
+        return "ambiguous"
+    command = trial.get("command")
+    if command is None:
+        return "negative"
+    return "optionb" if canonical(command) in _optionb_outputs() else "extension"
+
+
+def _host_timing(pairs):
+    milliseconds, rtf = [], []
+    for trial, prediction in pairs:
+        if not prediction or prediction.get("fault"):
+            continue
+        value = prediction.get("timing", {}).get("total_ms")
+        if type(value) not in (float, int) or not math.isfinite(value) or value < 0:
+            continue
+        milliseconds.append(value)
+        duration = trial.get("decoded_duration_seconds")
+        if duration is None and trial.get("sample_rate"):
+            duration = trial.get("samples", 0)/trial["sample_rate"]
+        if type(duration) in (float, int) and math.isfinite(duration) and duration > 0:
+            rtf.append(value/(duration*1000))
+    def quantile(values, q):
+        return float(np.quantile(values, q)) if values else None
+    return {"measured_n": len(milliseconds), "rtf_n": len(rtf),
+            "p50_ms": quantile(milliseconds, .5), "p95_ms": quantile(milliseconds, .95),
+            "p50_rtf": quantile(rtf, .5), "p95_rtf": quantile(rtf, .95),
+            "physical_pi_evidence": False}
+
+
+def summarize_trials(trials, predictions):
+    pairs = _pairs(trials, predictions)
+    tracks, people, intents, kinds = (defaultdict(list) for _ in range(4))
     for pair in pairs:
         t = pair[0]
-        tracks[t["kind"]+"/"+t.get("tier", "unmapped")].append(pair)
-        people[t.get("speaker_id", "unknown")].append(pair)
+        tracks[t["kind"]+"/"+trial_tier(t)].append(pair)
+        if known_identity(t.get("speaker_id")):
+            people[(t["kind"], t["speaker_id"])].append(pair)
+        kinds[t["kind"]].append(pair)
         intents[(t.get("command") or {}).get("intent", "OOV")].append(pair)
     person_metrics = {k: _metrics(v) for k, v in people.items()}
-    recalls = [v["recall"] for v in person_metrics.values() if v["recall"] is not None]
+    summaries = {}
+    for kind, group in kinds.items():
+        metrics = [v for (k, _), v in person_metrics.items() if k == kind]
+        recalls = [v["recall"] for v in metrics if v["recall"] is not None]
+        summaries[kind] = {
+            "declared_ids": len(metrics), "supported_ids": len(recalls),
+            "unidentified_trials": sum(not known_identity(t.get("speaker_id")) for t, _ in group),
+            "macro_recall": float(np.mean(recalls)) if recalls else None,
+            "worst_recall": min(recalls) if recalls else None,
+            "identity_scope": "declared human IDs" if kind == "human" else "synthetic voice IDs; not human people"}
+    human = summaries.get("human", {})
     return {"all": _metrics(pairs), "tracks": {k: _metrics(v) for k, v in tracks.items()},
-            "people": person_metrics, "intents": {k: _metrics(v) for k, v in intents.items()},
-            "macro_person_recall": float(np.mean(recalls)) if recalls else None,
-            "worst_person_recall": min(recalls) if recalls else None,
+            "people": {kind+"/"+person: v for (kind, person), v in person_metrics.items()},
+            "kinds": {k: _metrics(v) for k, v in kinds.items()}, "person_summary": summaries,
+            "intents": {k: _metrics(v) for k, v in intents.items()},
+            "macro_person_recall": human.get("macro_recall"),
+            "worst_person_recall": human.get("worst_recall"),
+            "macro_person_population": "human declared IDs only",
+            "tier_definition": "Supplied tier or typed-output membership in OptionB; not 93-phrase acoustic coverage.",
+            "host_timing": _host_timing(pairs),
             "uncertainty": "People are the resampling unit; repeated sessions/pairs are dependent.",
             "evidence": "actual replay only if predictions came from a bound runtime"}
 
 
-def cluster_interval(trials, predictions, seed=53, repetitions=1000):
-    people = sorted({t["speaker_id"] for t in trials})
-    index = {p["id"]: p for p in predictions}
+def cluster_interval(trials, predictions, seed=53, repetitions=1000, *, kind="human"):
+    groups = defaultdict(list)
+    for trial, prediction in _pairs(trials, predictions):
+        if trial["kind"] == kind and known_identity(trial.get("speaker_id")):
+            groups[trial["speaker_id"]].append((trial, prediction))
+    if not groups:
+        return None
+    # Aggregate once; repeated recordings retain their within-person dependence.
+    counts = []
+    for person in sorted(groups):
+        metric = _metrics(groups[person])
+        counts.append([metric["correct"], metric["supported_n"]])
+    counts = np.asarray(counts, dtype=np.int64)
     values = []
     rng = np.random.default_rng(seed)
     for _ in range(repetitions):
-        pairs = [(t, index.get(t["id"])) for person in rng.choice(people, len(people))
-                 for t in trials if t["speaker_id"] == person]
-        recall = _metrics(pairs)["recall"]
-        if recall is not None:
-            values.append(recall)
+        correct, supported = counts[rng.choice(len(counts), len(counts))].sum(axis=0)
+        if supported:
+            values.append(correct/supported)
     return np.quantile(values, [.025, .975]).tolist() if values else None
 
 
 def replay(rows, runtime, audio_root, output, *, split, selection=None, regression=False,
            manifest=None, protocol=None):
     from scripts.test.speaker_demo_suite import read_audio
+    if any(row["split"] != split for row in rows):
+        raise ValueError("Replay partition mismatch")
+    _pairs(rows, [])
     if split in ("test", "holdout") and not regression:
         if selection is None:
             raise ValueError("Fresh evaluation requires selection-before-test")
@@ -151,8 +228,6 @@ def replay(rows, runtime, audio_root, output, *, split, selection=None, regressi
     predictions = []
     with (output/"predictions.jsonl").open("x") as stream:
         for row in rows:
-            if row["split"] != split:
-                raise ValueError("Replay partition mismatch")
             try:
                 event = runtime.recognize(read_audio(row, Path(audio_root)), 16000)
                 p = {"id": row["id"], "final_application": event["final_application"],
@@ -167,5 +242,11 @@ def replay(rows, runtime, audio_root, output, *, split, selection=None, regressi
     metrics = summarize_trials(rows, predictions)
     metrics["people_cluster_recall_interval"] = cluster_interval(rows, predictions)
     metrics["evaluation_role"] = "historical_regression" if regression else split
+    metrics["runtime"] = {"engine": runtime.engine,
+                          "checkpoint_status": runtime.recipe.get("checkpoint_status"),
+                          "checkpoint_sha256": runtime.recipe["checkpoint_source_sha256"],
+                          "calibration_id": runtime.policy.get("calibration_id"),
+                          "actions_enabled": False}
+    metrics["qualification"] = False
     write_new(output/"metrics.json", metrics)
     return metrics
