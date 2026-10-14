@@ -69,18 +69,27 @@ def verify_parity(bundle, output, *, recordings=(), audio_root=".", engines=("on
         boundary_cases.append({"kind": "slot", "input_score": value,
                                "accepted": actual["accepted"], "expected": value >= .90})
     final_pcm = []
+    def recognize_or_fault(runtime, pcm):
+        start = time.perf_counter()
+        try:
+            return runtime.recognize(pcm)
+        except ValueError as error:
+            return {"final_application": {"accepted": False, "command": None, "reason": "capture_fault"},
+                    "fault": str(error), "timing": {"total_ms": (time.perf_counter()-start)*1000}}
     for row, pcm in pcm_cases:
-        expected = reference.recognize(pcm)
+        expected = recognize_or_fault(reference, pcm)
         for engine, runtime in runtimes.items():
-            actual = runtime.recognize(pcm)
+            actual = recognize_or_fault(runtime, pcm)
             same = canonical(actual["final_application"]["command"]) == canonical(expected["final_application"]["command"])
             final_pcm.append({"id": row["id"], "sha256": row["sha256"],
                               "pcm_sha256": row["pcm_sha256"], "engine": engine,
                               "accepted_equal": actual["final_application"]["accepted"] == expected["final_application"]["accepted"],
-                              "typed_command_equal": same, "timing": actual["timing"]})
+                              "typed_command_equal": same,
+                              "fault_agreement": actual.get("fault") == expected.get("fault"),
+                              "fault": actual.get("fault"), "timing": actual["timing"]})
     passed = all(r["max_error"] <= 2e-5 and r["typed_decision_agreement"] and r["repeat_stable"]
                  for r in observations) and all(r["accepted"] == r["expected"] for r in boundary_cases)
-    passed = passed and all(r["accepted_equal"] and r["typed_command_equal"] for r in final_pcm)
+    passed = passed and all(r["accepted_equal"] and r["typed_command_equal"] and r["fault_agreement"] for r in final_pcm)
     result = {"passed": passed, "engines": list(engines), "observations": observations,
               "numerical_threshold_cases": boundary_cases, "real_pcm_pipeline": final_pcm,
               "elapsed_seconds": time.perf_counter()-started,
