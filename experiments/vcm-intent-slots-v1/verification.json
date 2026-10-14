@@ -7,12 +7,13 @@
   "exporter_deprecation_warnings": 24,
   "full_suite_collection": {
     "passed": false,
-    "tests_collected_before_interrupt": 665,
+    "tests_collected_before_interrupt": 677,
     "errors": [
       "experiments/pcv-delivery-v1/tests/test_parler_weights.py: missing safetensors",
       "experiments/pcv-synthetic-v1/tests/test_catalog.py: existing test_catalog import-name collision",
       "scripts/test_prototype.py: existing incompatible train.register_sources import"
-    ]
+    ],
+    "latest_log": ".cache/vcm-intent-slots-v1/full-collection-final.log"
   },
   "static_checks": [
     "compileall passed",
