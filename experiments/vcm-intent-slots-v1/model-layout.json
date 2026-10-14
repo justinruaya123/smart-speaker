@@ -1,0 +1,88 @@
+{
+  "parameter_counts": {
+    "queries": 1024,
+    "stem": 25728,
+    "blocks": 140288,
+    "keys": 8256,
+    "intent": 2451,
+    "validity": 516,
+    "states": 7740,
+    "values": 53535,
+    "entities": 41280,
+    "total": 280818
+  },
+  "contract_hash": "ff0a789114327f031599b198bfdcb74523eafb4c3075588ab8c313c9fecc6ac8",
+  "frontend": {
+    "sample_rate": 16000,
+    "window": 400,
+    "hop": 160,
+    "fft": 512,
+    "bins": 40,
+    "low_hz": 20,
+    "high_hz": 7600,
+    "floor": 1e-08,
+    "centered": false,
+    "version": 1
+  },
+  "evidence": "random-initialized architecture only; no training or accuracy",
+  "intent_outputs": 19,
+  "roles": [
+    "brightness_percent",
+    "volume_operation",
+    "volume_percent",
+    "timer_unit",
+    "alarm_hour",
+    "alarm_minute",
+    "alarm_meridiem",
+    "temperature_degrees",
+    "color",
+    "timer_amount",
+    "light",
+    "song",
+    "artist",
+    "contact",
+    "task"
+  ],
+  "value_offsets": {
+    "brightness_percent": [
+      0,
+      101
+    ],
+    "volume_operation": [
+      101,
+      105
+    ],
+    "volume_percent": [
+      105,
+      206
+    ],
+    "timer_unit": [
+      206,
+      209
+    ],
+    "alarm_hour": [
+      209,
+      221
+    ],
+    "alarm_minute": [
+      221,
+      281
+    ],
+    "alarm_meridiem": [
+      281,
+      283
+    ],
+    "temperature_degrees": [
+      283,
+      394
+    ],
+    "color": [
+      394,
+      406
+    ],
+    "timer_amount": [
+      406,
+      415
+    ]
+  }
+}
