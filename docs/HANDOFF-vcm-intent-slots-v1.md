@@ -357,3 +357,14 @@ Read [execution findings](EXPERIMENT-vcm-intent-slots-v1.md),
 [verification](../experiments/vcm-intent-slots-v1/verification.json),
 [execution protocol](../experiments/vcm-intent-slots-v1/execution-protocol.json),
 and [missing inputs](../experiments/vcm-intent-slots-v1/acquisition-list.json).
+
+Follow-up — 2026-10-15: 172 focused/relevant tests pass. Every historical test
+and holdout recording ran on PyTorch/ONNX Runtime/ncnn with final-decision parity;
+the checkpoint remains untrained, and fresh qualification is still blocked.
+Supplied Fluent metadata now documents 87/337 declared human IDs; unknown stays
+unknown. Upstream primary changes were audited separately and did not supply the
+missing supported human MESSAGE training, reviewed roles/enrollment or fresh
+holdout people. Read the [follow-up findings](EXPERIMENT-vcm-intent-slots-v1.md#tests-benchmark-and-speaker-diversity-follow-up--2026-10-15),
+[historical evaluation](../experiments/vcm-intent-slots-v1/historical-evaluation.json),
+[speaker diversity](../experiments/vcm-intent-slots-v1/speaker-diversity.json) and
+[upstream audit](../experiments/vcm-intent-slots-v1/upstream-availability.json).

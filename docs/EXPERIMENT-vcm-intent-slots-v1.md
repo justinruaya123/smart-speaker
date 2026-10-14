@@ -164,3 +164,183 @@ and [preservation](../experiments/vcm-intent-slots-v1/preservation-verification.
 Fourteen installed/configuration/lock hashes and the main checkout's dirty/staged
 state are unchanged. After initial automatic review rejection, the user explicitly
 approved the pinned pnnx/ncnn tools in the existing environment; no model was installed.
+
+## Tests, benchmark and speaker diversity follow-up — 2026-10-15
+
+The user requested completion of tests, holdout/benchmark execution and speaker
+diversity documentation, then directed an upstream repository check. The
+[follow-up protocol](../experiments/vcm-intent-slots-v1/evaluation-protocol.json)
+was written before historical scoring. No fitting, calibration, selection or
+threshold change followed exposure. The original design, prepared views and
+installed artifacts remain unchanged.
+
+### Executed evaluation and remaining qualification
+
+All **4,614 previously examined recordings** ran through the actual experimental
+server-side `final_application` decision on PyTorch, ONNX Runtime and ncnn:
+13,842 engine outcomes. Each replay checks the original WAV and decoded PCM
+hashes. Actions are disabled and ownership is disabled for the whole named
+command-only track. `software-export-03` is explicitly random/untrained, bound
+to checkpoint `58369c6a…`; these outcomes establish execution and accounting,
+not the quality of a trained candidate.
+
+| Historical partition | Kind | OptionB supported | Extension supported | Negative | Ambiguous | Accepted exact | Faults |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Test | Human | 609 | 27 | 229 | 185 | 0 | 2 |
+| Test | Synthetic | 3,368 | 0 | 0 | 0 | 0 | 0 |
+| Holdout | Human | 80 | 3 | 11 | 2 | 0 | 0 |
+| Holdout | Synthetic | 100 | 0 | 0 | 0 | 0 | 0 |
+
+Metrics are identical across engines. Every supported rejection is a failure:
+test human accepted recall is 0/636 and synthetic 0/3,368; holdout human 0/83
+and synthetic 0/100. Accepted precision is undefined because no command was
+accepted. The 240 unambiguous negative trials reject correctly; the
+187 ambiguous references remain separate. The two faults are inside the 185
+ambiguous test rows: original durations 8.640 and 9.375 seconds exceed the
+unchanged eight-second capture limit. They are never successful OOV rejections.
+OptionB membership here means typed-output membership, not coverage of all
+93 spoken phrase definitions. Per-intent and supplied-slot denominators are in
+the [evaluation receipt](../experiments/vcm-intent-slots-v1/historical-evaluation.json).
+
+The canonical adapter's actual records pass the pinned official `LineParser`:
+4,416 test and 196 holdout command records per engine, plus two separately kept
+fault records. There are zero serializer/parser mismatches and zero semantic
+final-decision or fault disagreements across all 4,614 inputs. Floating-point
+diagnostic scores differ by at most 1.390e-7; they are not asserted byte-identical.
+The earlier threshold, short/tail/padding and head-tensor parity evidence remains
+in [export verification](../experiments/vcm-intent-slots-v1/export-verification.json).
+
+Observed one-thread host test p50/p95 application latency is 17.14/20.11 ms for
+PyTorch, 15.01/17.52 ms for ONNX Runtime and 16.05/20.39 ms for ncnn. The ncnn
+test p95 RTF is 0.01545. This measures frontend, model and decision on the current
+Linux x86_64 host; it excludes WAV loading and does not measure microphone
+capture, endpoint waiting, Pi RSS/CPU, thermal state or physical ownership.
+
+Fresh test and holdout commands without a selection lock still exit 2. Creating
+a lock from this fixture exits 2 because frozen real calibration is absent.
+Owner replay exits 2 because genuine pairs and an independently validated
+identity/overlap/coverage backend are absent. All six prescribed human-only
+uniform/balanced 53/71/89 arms remain stopped before fitting. The 95% accepted
+human recall target fails for the untrained export; precision, genuine retention,
+wrong-speaker acceptance and Pi qualification remain unmeasured. No synthetic,
+capacity, quantization or extraction intervention was merged into this arm.
+
+### Speaker composition and supplied demographic metadata
+
+The frozen views contain **3,507 human recordings and 337 declared source-qualified
+IDs**. Declared speaker, pair and PCM cross-split groups are zero. Cross-source
+aliases, near duplicates and physical identity remain unverified. The 31 synthetic
+voice IDs in evaluation do not count as human people; clone ancestry is unresolved.
+
+The prepared views carry no gender/sex field. The registered Fluent Speech
+Commands archive was recovered at its pinned revision; its entire
+1,552,390,845-byte payload matches SHA-256 `c9fd67f2…`. The extracted supplied
+demographic CSV matches `a7d6df25…`. It has 101 records, of which **87 IDs and
+459 recordings** join the frozen views by exact `FluentSpeechCommands/speakerId`;
+14 records do not join. No archive audio was extracted into a fitting/evaluation
+view. Only aggregate metadata is committed.
+
+| Split | Human recordings | Declared IDs | Supplied female IDs | Supplied male IDs | Gender unknown IDs | Synthetic recordings / voice IDs |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Train | 1,895 | 182 | 20 | 22 | 140 | 0 / 0 |
+| Development | 256 | 36 | 3 | 7 | 26 | 0 / 0 |
+| Calibration | 210 | 24 | 6 | 1 | 17 | 0 / 0 |
+| Historical test | 1,050 | 92 | 14 | 13 | 65 | 3,368 / 29 |
+| Historical holdout | 96 | 3 | 1 | 0 | 2 | 100 / 2 |
+| Total | 3,507 | 337 | 44 | 43 | 250 | 3,468 / 31 |
+
+Supplied gender covers 25.8% of declared human IDs and 13.1% of recordings.
+The known subset has 273 female-labeled recordings and 186 male-labeled
+recordings; nearly equal person counts do not establish equal recording or
+command coverage. Age ranges are supplied for the same 87 IDs: 66 aged 22–40,
+19 aged 41–65 and two aged 65+. First language, work/school language and
+self-reported fluency are kept as distinct source fields. No native language,
+utterance language, sex or recording device is inferred. Missing metadata stays
+unknown, and demographic fields never route recognition or establish identity.
+The original FSC paper describes participant-provided demographics and
+person-disjoint splits. [Lugosch et al., sections 3.2–3.3](https://arxiv.org/pdf/1904.03670).
+
+Publisher accent labels also reveal sparse cells: 818 recordings come from ten
+`Filipino (group)` IDs, while the 210-recording calibration view has no such
+group-labelled recording. Forty-one IDs have no known accent label. These are
+publisher categories, not listening-verified accents or independent identities.
+Holdout human evidence consists of only three declared IDs, with gender known
+for one. No population-wide or gender-specific accuracy claim is justified.
+Exact distributions and provenance are in
+[speaker-diversity.json](../experiments/vcm-intent-slots-v1/speaker-diversity.json).
+
+Keep **each person in one split first**. For a later newly versioned collection,
+use voluntarily supplied demographics to balance representation within splits
+alongside command/value, accent, duration and recording conditions; retain an
+unknown stratum. Report errors and sample counts by person and supplied group.
+Splitting only into male/female categories cannot prevent person leakage or
+verify wake ownership. The current evidence does not establish gender imbalance
+as the cause of failures. Documenting subgroup definitions and how labels were
+obtained follows [Datasheets for Datasets, composition and collection questions](https://arxiv.org/html/1803.09010v8).
+
+### Upstream availability audit
+
+The latest primary revision, `bfca0bbebfe17e00d6a685d1da573615d29ecdce`, changes
+all four command shards. Each was downloaded and checked against its published
+LFS size/SHA separately from the frozen inputs. Metadata counts are 10,733 train
+(2,359 human), 4,443 test (824 human) and 202 holdout (96 human). All seven
+publisher-labelled human training MESSAGE rows remain unsupported under the
+unchanged exact reference rules: they request email/Facebook operations or
+dictated content beyond the compose-only schema. The new revision supplies no
+reviewed role-state, connected grammar or acoustic-span columns, enrollment or
+wake-owner pairs. Its three holdout human IDs all occur in the previously examined
+views; no fresh people were found. Updated test/holdout MESSAGE examples cannot
+be moved into training. This is an availability preview, not new independent
+label verification or scoring. [Pinned checked source](https://huggingface.co/datasets/airimonda/ai231-me2-voice-commands/tree/bfca0bbebfe17e00d6a685d1da573615d29ecdce).
+
+The supplemental repository remains at `230c8b8…` and remains synthetic cloned
+speech. The linked `airimonda/vcm-me2` models declare a 64-mel frontend, 20 command
+outputs, six three-value slot heads and threshold 0.4. Their interface and policy
+do not implement the approved role architecture or complete personal scope.
+No upstream model was installed or substituted. Authenticated GitHub inspection
+finds no release assets in this smart-speaker repository; the exact shipping
+baseline and crop labels remain missing.
+[Checked upstream model interface](https://github.com/airimonda/vcm-me2/blob/ccf56db497c362a6b2334faa114a6e3c8c3719a9/models/vcm_conformer_M.json).
+See [upstream-availability.json](../experiments/vcm-intent-slots-v1/upstream-availability.json)
+for revisions, hashes, sources and limits.
+
+### Tests and reproducible commands
+
+Final focused/relevant verification is **172 passed, 24 exporter deprecation
+warnings**: 112 experiment tests and 60 existing related tests. Reporting changes
+were tested red-to-green, including synthetic/human person separation, duplicate
+IDs, cluster resampling, faults/missing outcomes, timing, supplied metadata joins
+and prohibited overwrites. Independent reviews reproduced 26 then 28 reporting/
+training tests and verified the source CSV/sidecar values; neither found a blocking
+finding. The broad historical suite remains failing: 626 passed, 20 failed,
+13 skipped, 13 errors. A separate `scripts/test tests` run reports 387 passed,
+12 failed and six skipped. Missing old artifacts/dependencies, sibling import
+assumptions, a frozen parent CRLF identity mismatch and absent UI/dictionary
+outputs are recorded; no historical integrity gate was weakened to obtain a pass.
+
+```sh
+PY=/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python
+OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 \
+  $PY -m pytest -q -p no:cacheprovider scripts/test/test_vcm_intent_slots_*.py \
+  scripts/test/test_speaker_demo_v1.py scripts/test/test_pcv_full_benchmark.py \
+  scripts/test/test_speaker_worker.py
+$PY scripts/vcm_intent_slots.py diversity --run-id diversity-new
+# The optional audit-inputs.json binds the recovered CSV and exact-ID sidecar.
+$PY scripts/vcm_intent_slots.py diversity \
+  --inputs .cache/vcm-intent-slots-v1/upstream-fluent-demographics/audit-inputs.json \
+  --run-id diversity-with-supplied-metadata-new
+OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 \
+  $PY scripts/vcm_intent_slots.py evaluate \
+  --bundle .cache/vcm-intent-slots-v1/software-export-03/bundle \
+  --engine ncnn --split holdout --regression --run-id historical-holdout-new
+```
+
+Repeat the last command explicitly for `test`/`holdout` and
+`pytorch`/`onnxruntime`/`ncnn` using unique run IDs. Exact executed argv and real
+receipts are in [historical-evaluation.json](../experiments/vcm-intent-slots-v1/historical-evaluation.json).
+Test logs, red/green evidence and gate exit codes are bound in
+[followup-verification.json](../experiments/vcm-intent-slots-v1/followup-verification.json).
+Fourteen protected installed/configuration/lock hashes, all five view hashes,
+and the main dirty/staged state remain unchanged;
+[followup-preservation.json](../experiments/vcm-intent-slots-v1/followup-preservation.json)
+records no environment installation or physical device operation in this follow-up.

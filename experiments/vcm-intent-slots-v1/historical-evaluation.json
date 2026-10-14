@@ -1,0 +1,2021 @@
+{
+  "version": 1,
+  "created_utc": "2026-10-14T16:16:03.403437+00:00",
+  "source_commit": "d8678ba58aa7b32bbd91f0268602ac6968b1e509",
+  "protocol_sha256": "e79f4b825c68bd2240ab3d311fe0191ebcf3fe59d85abcc2ddaf2a0961570f72",
+  "inputs_sha256": "e0a8961df728bc168b3556ea424be74294b64b6e22d415c562fbfe46f50573b1",
+  "checkpoint_status": "software_export_fixture_not_trained",
+  "checkpoint_sha256": "58369c6aca6a76c1a736e7a616870c693d84aec46c4dfced9b9039bf73aaacae",
+  "qualification": false,
+  "calibration_fitted": false,
+  "selection_lock": null,
+  "evaluation_role": "historical_regression_software_execution_only",
+  "actions_enabled": false,
+  "owner_gate": "explicitly disabled for entire command-only track",
+  "tracks_not_executed": {
+    "official_owner_enabled": "Missing genuine wake/command pairs and independent validated identity/overlap/coverage backend",
+    "original_same_person": "Missing genuine same-person, impostor, handover and overlap sessions",
+    "fresh_human": "No frozen trained/calibrated selection or independent fresh holdout"
+  },
+  "views": {
+    "test": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/evaluation/test.jsonl",
+      "sha256": "a4fdcedfc86efebb36414114887abdc4ee51eba102b0247740aef18d1ad15abc"
+    },
+    "holdout": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/evaluation/holdout.jsonl",
+      "sha256": "a51e720b97f7b31e3e2f025c21bf679006ad444fd2d363916d9a11aa0f488b5b"
+    }
+  },
+  "application_thresholds": {
+    "intent": 0.95,
+    "every_supplied_slot": 0.9
+  },
+  "catalog_entries": 1031,
+  "tier_definition": "OptionB typed-output membership; not a claim of all 93 phrase recordings",
+  "splits": {
+    "test": {
+      "decision_metrics_shared_by_all_engines": {
+        "all": {
+          "trials": 4418,
+          "supported_n": 4004,
+          "negative_n": 229,
+          "ambiguous_n": 185,
+          "accepted_n": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "correct_rejections": 229,
+          "faults": 2,
+          "missing": 0,
+          "slot_counts": {
+            "light_id": [
+              1020,
+              0
+            ],
+            "operation": [
+              251,
+              0
+            ],
+            "percent": [
+              427,
+              0
+            ],
+            "contact_id": [
+              102,
+              0
+            ],
+            "duration_seconds": [
+              423,
+              0
+            ],
+            "time": [
+              404,
+              0
+            ],
+            "timezone": [
+              404,
+              0
+            ],
+            "degrees": [
+              423,
+              0
+            ],
+            "unit": [
+              423,
+              0
+            ],
+            "color": [
+              372,
+              0
+            ],
+            "task_id": [
+              423,
+              0
+            ]
+          },
+          "recall": 0.0,
+          "precision": null,
+          "false_accept_rate": 0.0
+        },
+        "kinds": {
+          "human": {
+            "trials": 1050,
+            "supported_n": 636,
+            "negative_n": 229,
+            "ambiguous_n": 185,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 229,
+            "faults": 2,
+            "missing": 0,
+            "slot_counts": {
+              "light_id": [
+                165,
+                0
+              ],
+              "operation": [
+                113,
+                0
+              ],
+              "percent": [
+                29,
+                0
+              ],
+              "contact_id": [
+                6,
+                0
+              ],
+              "duration_seconds": [
+                19,
+                0
+              ],
+              "time": [
+                32,
+                0
+              ],
+              "timezone": [
+                32,
+                0
+              ],
+              "degrees": [
+                28,
+                0
+              ],
+              "unit": [
+                28,
+                0
+              ],
+              "color": [
+                67,
+                0
+              ],
+              "task_id": [
+                18,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": 0.0
+          },
+          "synthetic": {
+            "trials": 3368,
+            "supported_n": 3368,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "light_id": [
+                855,
+                0
+              ],
+              "operation": [
+                138,
+                0
+              ],
+              "contact_id": [
+                96,
+                0
+              ],
+              "duration_seconds": [
+                404,
+                0
+              ],
+              "time": [
+                372,
+                0
+              ],
+              "timezone": [
+                372,
+                0
+              ],
+              "degrees": [
+                395,
+                0
+              ],
+              "unit": [
+                395,
+                0
+              ],
+              "percent": [
+                398,
+                0
+              ],
+              "color": [
+                305,
+                0
+              ],
+              "task_id": [
+                405,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          }
+        },
+        "tracks": {
+          "human/optionb": {
+            "trials": 609,
+            "supported_n": 609,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "light_id": [
+                144,
+                0
+              ],
+              "operation": [
+                107,
+                0
+              ],
+              "contact_id": [
+                6,
+                0
+              ],
+              "duration_seconds": [
+                19,
+                0
+              ],
+              "time": [
+                32,
+                0
+              ],
+              "timezone": [
+                32,
+                0
+              ],
+              "degrees": [
+                28,
+                0
+              ],
+              "unit": [
+                28,
+                0
+              ],
+              "percent": [
+                23,
+                0
+              ],
+              "color": [
+                63,
+                0
+              ],
+              "task_id": [
+                18,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "human/negative": {
+            "trials": 229,
+            "supported_n": 0,
+            "negative_n": 229,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 229,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": null,
+            "precision": null,
+            "false_accept_rate": 0.0
+          },
+          "synthetic/optionb": {
+            "trials": 3368,
+            "supported_n": 3368,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "light_id": [
+                855,
+                0
+              ],
+              "operation": [
+                138,
+                0
+              ],
+              "contact_id": [
+                96,
+                0
+              ],
+              "duration_seconds": [
+                404,
+                0
+              ],
+              "time": [
+                372,
+                0
+              ],
+              "timezone": [
+                372,
+                0
+              ],
+              "degrees": [
+                395,
+                0
+              ],
+              "unit": [
+                395,
+                0
+              ],
+              "percent": [
+                398,
+                0
+              ],
+              "color": [
+                305,
+                0
+              ],
+              "task_id": [
+                405,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "human/ambiguous": {
+            "trials": 185,
+            "supported_n": 0,
+            "negative_n": 0,
+            "ambiguous_n": 185,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 2,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": null,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "human/extension": {
+            "trials": 27,
+            "supported_n": 27,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "light_id": [
+                21,
+                0
+              ],
+              "operation": [
+                6,
+                0
+              ],
+              "percent": [
+                6,
+                0
+              ],
+              "color": [
+                4,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          }
+        },
+        "intents": {
+          "PLAY_MUSIC": {
+            "trials": 77,
+            "supported_n": 77,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "OOV": {
+            "trials": 414,
+            "supported_n": 0,
+            "negative_n": 229,
+            "ambiguous_n": 185,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 229,
+            "faults": 2,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": null,
+            "precision": null,
+            "false_accept_rate": 0.0
+          },
+          "WEATHER": {
+            "trials": 85,
+            "supported_n": 85,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "TIME": {
+            "trials": 133,
+            "supported_n": 133,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "LIGHT_ON": {
+            "trials": 113,
+            "supported_n": 113,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "light_id": [
+                113,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "LIGHT_OFF": {
+            "trials": 114,
+            "supported_n": 114,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "light_id": [
+                114,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "PAUSE": {
+            "trials": 138,
+            "supported_n": 138,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "STOP": {
+            "trials": 141,
+            "supported_n": 141,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "NEXT": {
+            "trials": 135,
+            "supported_n": 135,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "VOLUME": {
+            "trials": 251,
+            "supported_n": 251,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "operation": [
+                251,
+                0
+              ],
+              "percent": [
+                6,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "CALL": {
+            "trials": 102,
+            "supported_n": 102,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "contact_id": [
+                102,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "MESSAGE": {
+            "trials": 129,
+            "supported_n": 129,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "LIST_REMINDERS": {
+            "trials": 120,
+            "supported_n": 120,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "TIMER": {
+            "trials": 423,
+            "supported_n": 423,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "duration_seconds": [
+                423,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "ALARM": {
+            "trials": 404,
+            "supported_n": 404,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "time": [
+                404,
+                0
+              ],
+              "timezone": [
+                404,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "TEMPERATURE": {
+            "trials": 423,
+            "supported_n": 423,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "degrees": [
+                423,
+                0
+              ],
+              "unit": [
+                423,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "BRIGHTNESS": {
+            "trials": 421,
+            "supported_n": 421,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "light_id": [
+                421,
+                0
+              ],
+              "percent": [
+                421,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "COLOR": {
+            "trials": 372,
+            "supported_n": 372,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "color": [
+                372,
+                0
+              ],
+              "light_id": [
+                372,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "CREATE_REMINDER": {
+            "trials": 423,
+            "supported_n": 423,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "task_id": [
+                423,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          }
+        },
+        "person_summary": {
+          "human": {
+            "declared_ids": 92,
+            "supported_ids": 74,
+            "unidentified_trials": 0,
+            "macro_recall": 0.0,
+            "worst_recall": 0.0,
+            "identity_scope": "declared human IDs"
+          },
+          "synthetic": {
+            "declared_ids": 29,
+            "supported_ids": 29,
+            "unidentified_trials": 0,
+            "macro_recall": 0.0,
+            "worst_recall": 0.0,
+            "identity_scope": "synthetic voice IDs; not human people"
+          }
+        },
+        "macro_person_recall": 0.0,
+        "worst_person_recall": 0.0,
+        "people_cluster_recall_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "engines": {
+        "pytorch": {
+          "host_timing": {
+            "measured_n": 4416,
+            "rtf_n": 4416,
+            "p50_ms": 17.143051140010357,
+            "p95_ms": 20.112695870921016,
+            "p50_rtf": 0.00920079673974997,
+            "p95_rtf": 0.016864295512213245,
+            "physical_pi_evidence": false
+          },
+          "runtime": {
+            "engine": "pytorch",
+            "checkpoint_status": "software_export_fixture_not_trained",
+            "checkpoint_sha256": "58369c6aca6a76c1a736e7a616870c693d84aec46c4dfced9b9039bf73aaacae",
+            "calibration_id": null,
+            "actions_enabled": false
+          },
+          "metrics_path": ".cache/vcm-intent-slots-v1/historical-test-pytorch-followup-01/metrics.json",
+          "metrics_sha256": "a475d92d1ff2b2c9e49dcf3fa77de1fdcf91b291e818a57f6356e3685861479a",
+          "predictions_path": ".cache/vcm-intent-slots-v1/historical-test-pytorch-followup-01/predictions.jsonl",
+          "predictions_sha256": "1ade079e36876fee4633ce21aa3d7df3411969a534ee7a61cb7901edd8244897",
+          "log_path": ".cache/vcm-intent-slots-v1/historical-test-pytorch-followup-01.log",
+          "log_sha256": "5841b669d302ee188124ab87344b3885ef19dc726d98d8e9a3f20d4ecaae6d75"
+        },
+        "onnxruntime": {
+          "host_timing": {
+            "measured_n": 4416,
+            "rtf_n": 4416,
+            "p50_ms": 15.010118950158358,
+            "p95_ms": 17.52018230035901,
+            "p50_rtf": 0.008049195849446099,
+            "p95_rtf": 0.014842150721315903,
+            "physical_pi_evidence": false
+          },
+          "runtime": {
+            "engine": "onnxruntime",
+            "checkpoint_status": "software_export_fixture_not_trained",
+            "checkpoint_sha256": "58369c6aca6a76c1a736e7a616870c693d84aec46c4dfced9b9039bf73aaacae",
+            "calibration_id": null,
+            "actions_enabled": false
+          },
+          "metrics_path": ".cache/vcm-intent-slots-v1/historical-test-onnxruntime-followup-01/metrics.json",
+          "metrics_sha256": "c9c461ed432642edafc8bf05fc0924cc7541972bcd114730878cca0cd351d172",
+          "predictions_path": ".cache/vcm-intent-slots-v1/historical-test-onnxruntime-followup-01/predictions.jsonl",
+          "predictions_sha256": "f6f8ec9bd47094f1f0d015311bbc43da20e0e5807eecdecf077a8264503bf992",
+          "log_path": ".cache/vcm-intent-slots-v1/historical-test-onnxruntime-followup-01.log",
+          "log_sha256": "3df96cc19b72e52c6705515f845e5eefd9fe558ecb0c390b76c4c9286bdc45f2"
+        },
+        "ncnn": {
+          "host_timing": {
+            "measured_n": 4416,
+            "rtf_n": 4416,
+            "p50_ms": 16.049618367105722,
+            "p95_ms": 20.390698919072747,
+            "p50_rtf": 0.008565872710692198,
+            "p95_rtf": 0.015446838409873926,
+            "physical_pi_evidence": false
+          },
+          "runtime": {
+            "engine": "ncnn",
+            "checkpoint_status": "software_export_fixture_not_trained",
+            "checkpoint_sha256": "58369c6aca6a76c1a736e7a616870c693d84aec46c4dfced9b9039bf73aaacae",
+            "calibration_id": null,
+            "actions_enabled": false
+          },
+          "metrics_path": ".cache/vcm-intent-slots-v1/historical-test-ncnn-followup-01/metrics.json",
+          "metrics_sha256": "fbd67f4b44afcf8d22ecef574e8304c55de13a68cb53519d193fcbf996cec97a",
+          "predictions_path": ".cache/vcm-intent-slots-v1/historical-test-ncnn-followup-01/predictions.jsonl",
+          "predictions_sha256": "e85fd9ae5a5ea6a05a9f7a5b4935ed57ab9dabd83230510b12d473cbe003167d",
+          "log_path": ".cache/vcm-intent-slots-v1/historical-test-ncnn-followup-01.log",
+          "log_sha256": "6c7ed024fcab8e8cc8b40adaa580f5204f07de1f3085637e67b9dd7f11e06160"
+        }
+      },
+      "faults": [
+        {
+          "id": "airimonda/ai231-me2-voice-commands/primary/test-00000-of-00001/000192",
+          "error": "ValueError: Requires finite mono 16 kHz PCM, 25 ms..8 s, amplitude <=1",
+          "duration_seconds": 8.64,
+          "reference_status": "ambiguous"
+        },
+        {
+          "id": "airimonda/ai231-me2-voice-commands/primary/test-00000-of-00001/001378",
+          "error": "ValueError: Requires finite mono 16 kHz PCM, 25 ms..8 s, amplitude <=1",
+          "duration_seconds": 9.375,
+          "reference_status": "ambiguous"
+        }
+      ]
+    },
+    "holdout": {
+      "decision_metrics_shared_by_all_engines": {
+        "all": {
+          "trials": 196,
+          "supported_n": 183,
+          "negative_n": 11,
+          "ambiguous_n": 2,
+          "accepted_n": 0,
+          "correct": 0,
+          "false_accepts": 0,
+          "correct_rejections": 11,
+          "faults": 0,
+          "missing": 0,
+          "slot_counts": {
+            "light_id": [
+              47,
+              0
+            ],
+            "operation": [
+              10,
+              0
+            ],
+            "contact_id": [
+              6,
+              0
+            ],
+            "duration_seconds": [
+              18,
+              0
+            ],
+            "time": [
+              18,
+              0
+            ],
+            "timezone": [
+              18,
+              0
+            ],
+            "degrees": [
+              18,
+              0
+            ],
+            "unit": [
+              18,
+              0
+            ],
+            "percent": [
+              18,
+              0
+            ],
+            "color": [
+              18,
+              0
+            ],
+            "task_id": [
+              18,
+              0
+            ]
+          },
+          "recall": 0.0,
+          "precision": null,
+          "false_accept_rate": 0.0
+        },
+        "kinds": {
+          "human": {
+            "trials": 96,
+            "supported_n": 83,
+            "negative_n": 11,
+            "ambiguous_n": 2,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 11,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "light_id": [
+                17,
+                0
+              ],
+              "operation": [
+                4,
+                0
+              ],
+              "contact_id": [
+                3,
+                0
+              ],
+              "duration_seconds": [
+                9,
+                0
+              ],
+              "time": [
+                8,
+                0
+              ],
+              "timezone": [
+                8,
+                0
+              ],
+              "degrees": [
+                9,
+                0
+              ],
+              "unit": [
+                9,
+                0
+              ],
+              "percent": [
+                6,
+                0
+              ],
+              "color": [
+                6,
+                0
+              ],
+              "task_id": [
+                9,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": 0.0
+          },
+          "synthetic": {
+            "trials": 100,
+            "supported_n": 100,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "light_id": [
+                30,
+                0
+              ],
+              "operation": [
+                6,
+                0
+              ],
+              "contact_id": [
+                3,
+                0
+              ],
+              "duration_seconds": [
+                9,
+                0
+              ],
+              "time": [
+                10,
+                0
+              ],
+              "timezone": [
+                10,
+                0
+              ],
+              "degrees": [
+                9,
+                0
+              ],
+              "unit": [
+                9,
+                0
+              ],
+              "percent": [
+                12,
+                0
+              ],
+              "color": [
+                12,
+                0
+              ],
+              "task_id": [
+                9,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          }
+        },
+        "tracks": {
+          "human/optionb": {
+            "trials": 80,
+            "supported_n": 80,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "light_id": [
+                14,
+                0
+              ],
+              "operation": [
+                4,
+                0
+              ],
+              "contact_id": [
+                3,
+                0
+              ],
+              "duration_seconds": [
+                9,
+                0
+              ],
+              "time": [
+                8,
+                0
+              ],
+              "timezone": [
+                8,
+                0
+              ],
+              "degrees": [
+                9,
+                0
+              ],
+              "unit": [
+                9,
+                0
+              ],
+              "percent": [
+                6,
+                0
+              ],
+              "color": [
+                6,
+                0
+              ],
+              "task_id": [
+                9,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "synthetic/optionb": {
+            "trials": 100,
+            "supported_n": 100,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "light_id": [
+                30,
+                0
+              ],
+              "operation": [
+                6,
+                0
+              ],
+              "contact_id": [
+                3,
+                0
+              ],
+              "duration_seconds": [
+                9,
+                0
+              ],
+              "time": [
+                10,
+                0
+              ],
+              "timezone": [
+                10,
+                0
+              ],
+              "degrees": [
+                9,
+                0
+              ],
+              "unit": [
+                9,
+                0
+              ],
+              "percent": [
+                12,
+                0
+              ],
+              "color": [
+                12,
+                0
+              ],
+              "task_id": [
+                9,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "human/extension": {
+            "trials": 3,
+            "supported_n": 3,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "light_id": [
+                3,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "human/negative": {
+            "trials": 11,
+            "supported_n": 0,
+            "negative_n": 11,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 11,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": null,
+            "precision": null,
+            "false_accept_rate": 0.0
+          },
+          "human/ambiguous": {
+            "trials": 2,
+            "supported_n": 0,
+            "negative_n": 0,
+            "ambiguous_n": 2,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": null,
+            "precision": null,
+            "false_accept_rate": null
+          }
+        },
+        "intents": {
+          "PLAY_MUSIC": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "WEATHER": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "TIME": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "LIGHT_ON": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "light_id": [
+                6,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "OOV": {
+            "trials": 13,
+            "supported_n": 0,
+            "negative_n": 11,
+            "ambiguous_n": 2,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 11,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": null,
+            "precision": null,
+            "false_accept_rate": 0.0
+          },
+          "LIGHT_OFF": {
+            "trials": 5,
+            "supported_n": 5,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "light_id": [
+                5,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "PAUSE": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "STOP": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "NEXT": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "VOLUME": {
+            "trials": 10,
+            "supported_n": 10,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "operation": [
+                10,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "CALL": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "contact_id": [
+                6,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "MESSAGE": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "LIST_REMINDERS": {
+            "trials": 6,
+            "supported_n": 6,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {},
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "TIMER": {
+            "trials": 18,
+            "supported_n": 18,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "duration_seconds": [
+                18,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "ALARM": {
+            "trials": 18,
+            "supported_n": 18,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "time": [
+                18,
+                0
+              ],
+              "timezone": [
+                18,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "TEMPERATURE": {
+            "trials": 18,
+            "supported_n": 18,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "degrees": [
+                18,
+                0
+              ],
+              "unit": [
+                18,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "BRIGHTNESS": {
+            "trials": 18,
+            "supported_n": 18,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "light_id": [
+                18,
+                0
+              ],
+              "percent": [
+                18,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "COLOR": {
+            "trials": 18,
+            "supported_n": 18,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "color": [
+                18,
+                0
+              ],
+              "light_id": [
+                18,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          },
+          "CREATE_REMINDER": {
+            "trials": 18,
+            "supported_n": 18,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "accepted_n": 0,
+            "correct": 0,
+            "false_accepts": 0,
+            "correct_rejections": 0,
+            "faults": 0,
+            "missing": 0,
+            "slot_counts": {
+              "task_id": [
+                18,
+                0
+              ]
+            },
+            "recall": 0.0,
+            "precision": null,
+            "false_accept_rate": null
+          }
+        },
+        "person_summary": {
+          "human": {
+            "declared_ids": 3,
+            "supported_ids": 2,
+            "unidentified_trials": 0,
+            "macro_recall": 0.0,
+            "worst_recall": 0.0,
+            "identity_scope": "declared human IDs"
+          },
+          "synthetic": {
+            "declared_ids": 2,
+            "supported_ids": 2,
+            "unidentified_trials": 0,
+            "macro_recall": 0.0,
+            "worst_recall": 0.0,
+            "identity_scope": "synthetic voice IDs; not human people"
+          }
+        },
+        "macro_person_recall": 0.0,
+        "worst_person_recall": 0.0,
+        "people_cluster_recall_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "engines": {
+        "pytorch": {
+          "host_timing": {
+            "measured_n": 196,
+            "rtf_n": 196,
+            "p50_ms": 19.24959383904934,
+            "p95_ms": 23.98551837541163,
+            "p50_rtf": 0.007712908189682046,
+            "p95_rtf": 0.017517002929440317,
+            "physical_pi_evidence": false
+          },
+          "runtime": {
+            "engine": "pytorch",
+            "checkpoint_status": "software_export_fixture_not_trained",
+            "checkpoint_sha256": "58369c6aca6a76c1a736e7a616870c693d84aec46c4dfced9b9039bf73aaacae",
+            "calibration_id": null,
+            "actions_enabled": false
+          },
+          "metrics_path": ".cache/vcm-intent-slots-v1/historical-holdout-pytorch-followup-01/metrics.json",
+          "metrics_sha256": "7ac2cc69a59dbcafc8b45152b09c2ebb2960d9feff7d2b0b3abd061939f98719",
+          "predictions_path": ".cache/vcm-intent-slots-v1/historical-holdout-pytorch-followup-01/predictions.jsonl",
+          "predictions_sha256": "76b0962943deee299641d8fa2330153fc27d249a3c3e5c38346eccdcf963c081",
+          "log_path": ".cache/vcm-intent-slots-v1/historical-holdout-pytorch-followup-01.log",
+          "log_sha256": "3a86225dbef63c3647407b99746b040e83527ecdff398d3185a2d8b5cf600ef4"
+        },
+        "onnxruntime": {
+          "host_timing": {
+            "measured_n": 196,
+            "rtf_n": 196,
+            "p50_ms": 15.643220860511065,
+            "p95_ms": 20.442733308300376,
+            "p50_rtf": 0.006194377517085949,
+            "p95_rtf": 0.014255099635267136,
+            "physical_pi_evidence": false
+          },
+          "runtime": {
+            "engine": "onnxruntime",
+            "checkpoint_status": "software_export_fixture_not_trained",
+            "checkpoint_sha256": "58369c6aca6a76c1a736e7a616870c693d84aec46c4dfced9b9039bf73aaacae",
+            "calibration_id": null,
+            "actions_enabled": false
+          },
+          "metrics_path": ".cache/vcm-intent-slots-v1/historical-holdout-onnxruntime-followup-01/metrics.json",
+          "metrics_sha256": "2cb955dceb2af2a1b5cbd8afd76b1fc38fff82bec9c9ce7fb835810c5b72d6e5",
+          "predictions_path": ".cache/vcm-intent-slots-v1/historical-holdout-onnxruntime-followup-01/predictions.jsonl",
+          "predictions_sha256": "d775063055f4ce8e5800d86c647e6b0b5e14bdea1ef7aa4edd9bb3d6570835bf",
+          "log_path": ".cache/vcm-intent-slots-v1/historical-holdout-onnxruntime-followup-01.log",
+          "log_sha256": "602ea3124faaf33c5581a991c80e572378eb77385aeeaeb2c6ddb25e6971b1a7"
+        },
+        "ncnn": {
+          "host_timing": {
+            "measured_n": 196,
+            "rtf_n": 196,
+            "p50_ms": 17.937906552106142,
+            "p95_ms": 25.0154051464051,
+            "p50_rtf": 0.00711595308757383,
+            "p95_rtf": 0.014895320470843996,
+            "physical_pi_evidence": false
+          },
+          "runtime": {
+            "engine": "ncnn",
+            "checkpoint_status": "software_export_fixture_not_trained",
+            "checkpoint_sha256": "58369c6aca6a76c1a736e7a616870c693d84aec46c4dfced9b9039bf73aaacae",
+            "calibration_id": null,
+            "actions_enabled": false
+          },
+          "metrics_path": ".cache/vcm-intent-slots-v1/historical-holdout-ncnn-followup-01/metrics.json",
+          "metrics_sha256": "7a4462a2903a1e8c37bbe73d3507b97a7b1ad6edd97cf1650b3122556fc3eb57",
+          "predictions_path": ".cache/vcm-intent-slots-v1/historical-holdout-ncnn-followup-01/predictions.jsonl",
+          "predictions_sha256": "da6764c1bc709ace128fa4c990e59815210b0e264e7d4a72a5409b8af2e3edbf",
+          "log_path": ".cache/vcm-intent-slots-v1/historical-holdout-ncnn-followup-01.log",
+          "log_sha256": "cbfaf4b513e812fcb46f402b9d5652e67925d1e048cf848e555c8c9889d1c440"
+        }
+      },
+      "faults": []
+    }
+  },
+  "commands": [
+    {
+      "argv": [
+        "scripts/vcm_intent_slots.py",
+        "evaluate",
+        "--bundle",
+        ".cache/vcm-intent-slots-v1/software-export-03/bundle",
+        "--engine",
+        "pytorch",
+        "--split",
+        "test",
+        "--regression",
+        "--run-id",
+        "historical-test-pytorch-followup-01"
+      ],
+      "exit_code": 0,
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      }
+    },
+    {
+      "argv": [
+        "scripts/vcm_intent_slots.py",
+        "evaluate",
+        "--bundle",
+        ".cache/vcm-intent-slots-v1/software-export-03/bundle",
+        "--engine",
+        "onnxruntime",
+        "--split",
+        "test",
+        "--regression",
+        "--run-id",
+        "historical-test-onnxruntime-followup-01"
+      ],
+      "exit_code": 0,
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      }
+    },
+    {
+      "argv": [
+        "scripts/vcm_intent_slots.py",
+        "evaluate",
+        "--bundle",
+        ".cache/vcm-intent-slots-v1/software-export-03/bundle",
+        "--engine",
+        "ncnn",
+        "--split",
+        "test",
+        "--regression",
+        "--run-id",
+        "historical-test-ncnn-followup-01"
+      ],
+      "exit_code": 0,
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      }
+    },
+    {
+      "argv": [
+        "scripts/vcm_intent_slots.py",
+        "evaluate",
+        "--bundle",
+        ".cache/vcm-intent-slots-v1/software-export-03/bundle",
+        "--engine",
+        "pytorch",
+        "--split",
+        "holdout",
+        "--regression",
+        "--run-id",
+        "historical-holdout-pytorch-followup-01"
+      ],
+      "exit_code": 0,
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      }
+    },
+    {
+      "argv": [
+        "scripts/vcm_intent_slots.py",
+        "evaluate",
+        "--bundle",
+        ".cache/vcm-intent-slots-v1/software-export-03/bundle",
+        "--engine",
+        "onnxruntime",
+        "--split",
+        "holdout",
+        "--regression",
+        "--run-id",
+        "historical-holdout-onnxruntime-followup-01"
+      ],
+      "exit_code": 0,
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      }
+    },
+    {
+      "argv": [
+        "scripts/vcm_intent_slots.py",
+        "evaluate",
+        "--bundle",
+        ".cache/vcm-intent-slots-v1/software-export-03/bundle",
+        "--engine",
+        "ncnn",
+        "--split",
+        "holdout",
+        "--regression",
+        "--run-id",
+        "historical-holdout-ncnn-followup-01"
+      ],
+      "exit_code": 0,
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "environment": {
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "interpreter": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python",
+    "threads": 1
+  },
+  "benchmark": {
+    "checkpoint_status": "software_export_fixture_not_trained",
+    "qualification": false,
+    "benchmark_revision": "ab39857cf73dd067d068fed388c321ab160dc191",
+    "scope": "Historical command-only regression using actual final_application; no wake/owner or Pi claims",
+    "splits": {
+      "test": {
+        "pytorch": {
+          "trials": 4418,
+          "parser_commands": 4416,
+          "faults": 2,
+          "missing": 0,
+          "serialization_mismatch": 0,
+          "parser_mismatch": 0,
+          "supported_n": 4004,
+          "accepted_correct": 0,
+          "supported_rejects": 4004,
+          "correct_negative_rejects": 229,
+          "benchmark_jsonl_sha256": "9365c25cd2073228127479d635838837b420a9426b85411508d84a3b75af9bd6",
+          "ambiguous_nonfault_n": 183,
+          "ambiguous_total_n": 185,
+          "negative_n": 229,
+          "faults_are_successful_rejects": false
+        },
+        "onnxruntime": {
+          "trials": 4418,
+          "parser_commands": 4416,
+          "faults": 2,
+          "missing": 0,
+          "serialization_mismatch": 0,
+          "parser_mismatch": 0,
+          "supported_n": 4004,
+          "accepted_correct": 0,
+          "supported_rejects": 4004,
+          "correct_negative_rejects": 229,
+          "benchmark_jsonl_sha256": "91d16f5a75768dd57a18495e0a3ed68e4f2f70e3df00ea475043636308a3ce48",
+          "ambiguous_nonfault_n": 183,
+          "ambiguous_total_n": 185,
+          "negative_n": 229,
+          "faults_are_successful_rejects": false
+        },
+        "ncnn": {
+          "trials": 4418,
+          "parser_commands": 4416,
+          "faults": 2,
+          "missing": 0,
+          "serialization_mismatch": 0,
+          "parser_mismatch": 0,
+          "supported_n": 4004,
+          "accepted_correct": 0,
+          "supported_rejects": 4004,
+          "correct_negative_rejects": 229,
+          "benchmark_jsonl_sha256": "471fb8bbd6c90eff36c8293c8592de8b13c798d4c5ffe193f70509f6dda075f1",
+          "ambiguous_nonfault_n": 183,
+          "ambiguous_total_n": 185,
+          "negative_n": 229,
+          "faults_are_successful_rejects": false
+        },
+        "full_corpus_application_parity": {
+          "onnxruntime": {
+            "outcomes": 4418,
+            "final_decision_mismatches": 0,
+            "max_intent_confidence_error": 1.3899811926454397e-07,
+            "diagnostic_tolerance": 2e-05
+          },
+          "ncnn": {
+            "outcomes": 4418,
+            "final_decision_mismatches": 0,
+            "max_intent_confidence_error": 8.118499827958203e-08,
+            "diagnostic_tolerance": 2e-05
+          }
+        }
+      },
+      "holdout": {
+        "pytorch": {
+          "trials": 196,
+          "parser_commands": 196,
+          "faults": 0,
+          "missing": 0,
+          "serialization_mismatch": 0,
+          "parser_mismatch": 0,
+          "supported_n": 183,
+          "accepted_correct": 0,
+          "supported_rejects": 183,
+          "correct_negative_rejects": 11,
+          "benchmark_jsonl_sha256": "ba84928029158204c89ba2f5789af944a4c50f38be8648f043c74b260b677c8d",
+          "ambiguous_nonfault_n": 2,
+          "ambiguous_total_n": 2,
+          "negative_n": 11,
+          "faults_are_successful_rejects": false
+        },
+        "onnxruntime": {
+          "trials": 196,
+          "parser_commands": 196,
+          "faults": 0,
+          "missing": 0,
+          "serialization_mismatch": 0,
+          "parser_mismatch": 0,
+          "supported_n": 183,
+          "accepted_correct": 0,
+          "supported_rejects": 183,
+          "correct_negative_rejects": 11,
+          "benchmark_jsonl_sha256": "8f2d4d1c195f5452d6cd06478275995624c2200bd2155e42be1b3cb4ba2bd96a",
+          "ambiguous_nonfault_n": 2,
+          "ambiguous_total_n": 2,
+          "negative_n": 11,
+          "faults_are_successful_rejects": false
+        },
+        "ncnn": {
+          "trials": 196,
+          "parser_commands": 196,
+          "faults": 0,
+          "missing": 0,
+          "serialization_mismatch": 0,
+          "parser_mismatch": 0,
+          "supported_n": 183,
+          "accepted_correct": 0,
+          "supported_rejects": 183,
+          "correct_negative_rejects": 11,
+          "benchmark_jsonl_sha256": "d7d9f034d88aa238f5f0b00b83ca5e9f2cc626c8bc19d68d001963564985b5cc",
+          "ambiguous_nonfault_n": 2,
+          "ambiguous_total_n": 2,
+          "negative_n": 11,
+          "faults_are_successful_rejects": false
+        },
+        "full_corpus_application_parity": {
+          "onnxruntime": {
+            "outcomes": 196,
+            "final_decision_mismatches": 0,
+            "max_intent_confidence_error": 7.087502415514813e-08,
+            "diagnostic_tolerance": 2e-05
+          },
+          "ncnn": {
+            "outcomes": 196,
+            "final_decision_mismatches": 0,
+            "max_intent_confidence_error": 7.494457099355145e-08,
+            "diagnostic_tolerance": 2e-05
+          }
+        }
+      }
+    }
+  },
+  "desktop_timing_is_pi_evidence": false,
+  "slot_counts_order": [
+    "reference_n",
+    "correct_accepted_n"
+  ]
+}

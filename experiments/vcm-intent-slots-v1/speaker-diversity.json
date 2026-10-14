@@ -1,0 +1,619 @@
+{
+  "version": 1,
+  "created_utc": "2026-10-14T16:16:03.403437+00:00",
+  "source_commit": "d8678ba58aa7b32bbd91f0268602ac6968b1e509",
+  "scope": "metadata-only audit of supplied frozen views",
+  "identity_scope": "declared source-qualified IDs; cross-source aliases unresolved",
+  "independent_human_identities_verified": false,
+  "views": {
+    "train": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/human/train.jsonl",
+      "sha256": "77ef84aa57260e4af9942fd3ee495b377bba4df295ba434d41ffa2cad495774e"
+    },
+    "dev": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/human/dev.jsonl",
+      "sha256": "9ce783bfc24086a12ed0e66bae348f903b438eea87f8788b1ec0c3529e3e485a"
+    },
+    "calibration": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/human/calibration.jsonl",
+      "sha256": "af7858186f401f0c016cd930dd057c08c1e4d8552d7dc4179e489ca3e0c48253"
+    },
+    "test": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/evaluation/test.jsonl",
+      "sha256": "a4fdcedfc86efebb36414114887abdc4ee51eba102b0247740aef18d1ad15abc"
+    },
+    "holdout": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/evaluation/holdout.jsonl",
+      "sha256": "a51e720b97f7b31e3e2f025c21bf679006ad444fd2d363916d9a11aa0f488b5b"
+    }
+  },
+  "raw_view_gender": "No gender/sex field in prepared views",
+  "supplied_metadata": {
+    "sha256": "a7d6df25de929dd46a929473b80ba33b8a94f4789dbc394cd995002e755a21e5",
+    "archive_sha256": "c9fd67f2efa078daa84daddcad2de937eb96581c140e3131ed8cd06fbae9ba1b",
+    "archive_verified": true,
+    "dataset_revision": "c4cc0e2c898585329319835ed55f47a6ab9e0d92",
+    "dataset": "leo19941227/fluent_speech_commands",
+    "mapping": "Exact source-qualified FluentSpeechCommands/speakerId only. gender and ageRange retained literally. First-language and work/school-language fields remain separate from native/utterance language.",
+    "collection": "Voluntary participant demographic data described by the included readme; no voice inference."
+  },
+  "supplied_csv_rows": 101,
+  "metadata_join": {
+    "matched_human_recordings": 459,
+    "matched_human_ids": 87,
+    "unmatched_metadata_ids": 14
+  },
+  "total_human": {
+    "recordings": 3507,
+    "declared_speaker_ids": 337,
+    "unidentified_recordings": 0,
+    "reference_status": {
+      "ambiguous": 187,
+      "supported": 2456,
+      "unsupported": 864
+    },
+    "sources": {
+      "CommonVoice_en": {
+        "recordings": 53,
+        "declared_ids": 29
+      },
+      "FluentSpeechCommands": {
+        "recordings": 459,
+        "declared_ids": 87
+      },
+      "SLURP": {
+        "recordings": 1683,
+        "declared_ids": 132
+      },
+      "SNIPS": {
+        "recordings": 446,
+        "declared_ids": 38
+      },
+      "TimersAndSuch": {
+        "recordings": 33,
+        "declared_ids": 31
+      },
+      "real_voice": {
+        "recordings": 748,
+        "declared_ids": 5
+      },
+      "xela_Multi-Sensor": {
+        "recordings": 15,
+        "declared_ids": 10
+      },
+      "xela_SET_TEMPERATURE_REAL": {
+        "recordings": 70,
+        "declared_ids": 5
+      }
+    },
+    "demographics": {
+      "gender": {
+        "people": {
+          "female": 44,
+          "male": 43,
+          "unknown": 250
+        },
+        "recordings": {
+          "female": 273,
+          "male": 186,
+          "unknown": 3048
+        },
+        "known_people": 87,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      },
+      "sex": {
+        "people": {
+          "unknown": 337
+        },
+        "recordings": {
+          "unknown": 3507
+        },
+        "known_people": 0,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      },
+      "age_range": {
+        "people": {
+          "22-40": 66,
+          "41-65": 19,
+          "65+": 2,
+          "unknown": 250
+        },
+        "recordings": {
+          "22-40": 364,
+          "41-65": 88,
+          "65+": 7,
+          "unknown": 3048
+        },
+        "known_people": 87,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      },
+      "native_language": {
+        "people": {
+          "unknown": 337
+        },
+        "recordings": {
+          "unknown": 3507
+        },
+        "known_people": 0,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      },
+      "language": {
+        "people": {
+          "unknown": 337
+        },
+        "recordings": {
+          "unknown": 3507
+        },
+        "known_people": 0,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      },
+      "first_language": {
+        "people": {
+          "English (United States)": 84,
+          "French (Canada)": 1,
+          "Spanish (Venezuela)": 1,
+          "Telugu": 1,
+          "unknown": 250
+        },
+        "recordings": {
+          "English (United States)": 379,
+          "French (Canada)": 5,
+          "Spanish (Venezuela)": 52,
+          "Telugu": 23,
+          "unknown": 3048
+        },
+        "known_people": 87,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      },
+      "work_school_language": {
+        "people": {
+          "English (Australia)": 1,
+          "English (Canada)": 1,
+          "English (United States)": 84,
+          "Spanish (Venezuela)": 1,
+          "unknown": 250
+        },
+        "recordings": {
+          "English (Australia)": 2,
+          "English (Canada)": 5,
+          "English (United States)": 400,
+          "Spanish (Venezuela)": 52,
+          "unknown": 3048
+        },
+        "known_people": 87,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      },
+      "self_reported_fluency": {
+        "people": {
+          "advanced": 4,
+          "basic": 1,
+          "native": 82,
+          "unknown": 250
+        },
+        "recordings": {
+          "advanced": 84,
+          "basic": 2,
+          "native": 373,
+          "unknown": 3048
+        },
+        "known_people": 87,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      },
+      "accent_group": {
+        "people": {
+          "Filipino (group)": 10,
+          "Filipino (open-source)": 26,
+          "Native English": 150,
+          "Other / non-native": 99,
+          "Other Asian English": 11,
+          "unknown": 41
+        },
+        "recordings": {
+          "Filipino (group)": 818,
+          "Filipino (open-source)": 50,
+          "Native English": 766,
+          "Other / non-native": 1596,
+          "Other Asian English": 229,
+          "unknown": 48
+        },
+        "known_people": 296,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      },
+      "recording_device": {
+        "people": {
+          "unknown": 337
+        },
+        "recordings": {
+          "unknown": 3507
+        },
+        "known_people": 0,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      }
+    }
+  },
+  "total_synthetic": {
+    "recordings": 3468,
+    "declared_voice_ids": 31,
+    "unidentified_recordings": 0,
+    "reference_status": {
+      "supported": 3468
+    },
+    "sources": {
+      "group_synthetic": {
+        "recordings": 3468,
+        "declared_ids": 31
+      }
+    }
+  },
+  "splits": {
+    "train": {
+      "human_recordings": 1895,
+      "declared_human_ids": 182,
+      "synthetic_recordings": 0,
+      "declared_synthetic_voice_ids": 0,
+      "human_sources": {
+        "CommonVoice_en": {
+          "recordings": 23,
+          "declared_ids": 13
+        },
+        "FluentSpeechCommands": {
+          "recordings": 180,
+          "declared_ids": 42
+        },
+        "SLURP": {
+          "recordings": 929,
+          "declared_ids": 76
+        },
+        "SNIPS": {
+          "recordings": 258,
+          "declared_ids": 21
+        },
+        "TimersAndSuch": {
+          "recordings": 23,
+          "declared_ids": 22
+        },
+        "real_voice": {
+          "recordings": 438,
+          "declared_ids": 2
+        },
+        "xela_Multi-Sensor": {
+          "recordings": 4,
+          "declared_ids": 4
+        },
+        "xela_SET_TEMPERATURE_REAL": {
+          "recordings": 40,
+          "declared_ids": 2
+        }
+      },
+      "gender": {
+        "people": {
+          "female": 20,
+          "male": 22,
+          "unknown": 140
+        },
+        "recordings": {
+          "female": 89,
+          "male": 91,
+          "unknown": 1715
+        },
+        "known_people": 42,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      },
+      "accent_group": {
+        "people": {
+          "Filipino (group)": 4,
+          "Filipino (open-source)": 11,
+          "Native English": 80,
+          "Other / non-native": 54,
+          "Other Asian English": 7,
+          "unknown": 26
+        },
+        "recordings": {
+          "Filipino (group)": 478,
+          "Filipino (open-source)": 21,
+          "Native English": 384,
+          "Other / non-native": 809,
+          "Other Asian English": 176,
+          "unknown": 27
+        },
+        "known_people": 156,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      }
+    },
+    "dev": {
+      "human_recordings": 256,
+      "declared_human_ids": 36,
+      "synthetic_recordings": 0,
+      "declared_synthetic_voice_ids": 0,
+      "human_sources": {
+        "CommonVoice_en": {
+          "recordings": 3,
+          "declared_ids": 2
+        },
+        "FluentSpeechCommands": {
+          "recordings": 32,
+          "declared_ids": 10
+        },
+        "SLURP": {
+          "recordings": 108,
+          "declared_ids": 13
+        },
+        "SNIPS": {
+          "recordings": 29,
+          "declared_ids": 3
+        },
+        "TimersAndSuch": {
+          "recordings": 6,
+          "declared_ids": 6
+        },
+        "real_voice": {
+          "recordings": 58,
+          "declared_ids": 1
+        },
+        "xela_SET_TEMPERATURE_REAL": {
+          "recordings": 20,
+          "declared_ids": 1
+        }
+      },
+      "gender": {
+        "people": {
+          "female": 3,
+          "male": 7,
+          "unknown": 26
+        },
+        "recordings": {
+          "female": 11,
+          "male": 21,
+          "unknown": 224
+        },
+        "known_people": 10,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      },
+      "accent_group": {
+        "people": {
+          "Filipino (group)": 2,
+          "Filipino (open-source)": 1,
+          "Native English": 17,
+          "Other / non-native": 9,
+          "Other Asian English": 1,
+          "unknown": 6
+        },
+        "recordings": {
+          "Filipino (group)": 78,
+          "Filipino (open-source)": 2,
+          "Native English": 72,
+          "Other / non-native": 97,
+          "Other Asian English": 1,
+          "unknown": 6
+        },
+        "known_people": 30,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      }
+    },
+    "calibration": {
+      "human_recordings": 210,
+      "declared_human_ids": 24,
+      "synthetic_recordings": 0,
+      "declared_synthetic_voice_ids": 0,
+      "human_sources": {
+        "CommonVoice_en": {
+          "recordings": 10,
+          "declared_ids": 5
+        },
+        "FluentSpeechCommands": {
+          "recordings": 74,
+          "declared_ids": 7
+        },
+        "SLURP": {
+          "recordings": 72,
+          "declared_ids": 7
+        },
+        "SNIPS": {
+          "recordings": 52,
+          "declared_ids": 3
+        },
+        "TimersAndSuch": {
+          "recordings": 2,
+          "declared_ids": 2
+        }
+      },
+      "gender": {
+        "people": {
+          "female": 6,
+          "male": 1,
+          "unknown": 17
+        },
+        "recordings": {
+          "female": 69,
+          "male": 5,
+          "unknown": 136
+        },
+        "known_people": 7,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      },
+      "accent_group": {
+        "people": {
+          "Filipino (open-source)": 5,
+          "Native English": 8,
+          "Other / non-native": 7,
+          "Other Asian English": 2,
+          "unknown": 2
+        },
+        "recordings": {
+          "Filipino (open-source)": 10,
+          "Native English": 36,
+          "Other / non-native": 130,
+          "Other Asian English": 32,
+          "unknown": 2
+        },
+        "known_people": 22,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      }
+    },
+    "test": {
+      "human_recordings": 1050,
+      "declared_human_ids": 92,
+      "synthetic_recordings": 3368,
+      "declared_synthetic_voice_ids": 29,
+      "human_sources": {
+        "CommonVoice_en": {
+          "recordings": 14,
+          "declared_ids": 8
+        },
+        "FluentSpeechCommands": {
+          "recordings": 153,
+          "declared_ids": 27
+        },
+        "SLURP": {
+          "recordings": 574,
+          "declared_ids": 36
+        },
+        "SNIPS": {
+          "recordings": 107,
+          "declared_ids": 11
+        },
+        "TimersAndSuch": {
+          "recordings": 2,
+          "declared_ids": 1
+        },
+        "real_voice": {
+          "recordings": 179,
+          "declared_ids": 1
+        },
+        "xela_Multi-Sensor": {
+          "recordings": 11,
+          "declared_ids": 6
+        },
+        "xela_SET_TEMPERATURE_REAL": {
+          "recordings": 10,
+          "declared_ids": 2
+        }
+      },
+      "gender": {
+        "people": {
+          "female": 14,
+          "male": 13,
+          "unknown": 65
+        },
+        "recordings": {
+          "female": 84,
+          "male": 69,
+          "unknown": 897
+        },
+        "known_people": 27,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      },
+      "accent_group": {
+        "people": {
+          "Filipino (group)": 3,
+          "Filipino (open-source)": 8,
+          "Native English": 44,
+          "Other / non-native": 29,
+          "Other Asian English": 1,
+          "unknown": 7
+        },
+        "recordings": {
+          "Filipino (group)": 189,
+          "Filipino (open-source)": 14,
+          "Native English": 254,
+          "Other / non-native": 560,
+          "Other Asian English": 20,
+          "unknown": 13
+        },
+        "known_people": 85,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      }
+    },
+    "holdout": {
+      "human_recordings": 96,
+      "declared_human_ids": 3,
+      "synthetic_recordings": 100,
+      "declared_synthetic_voice_ids": 2,
+      "human_sources": {
+        "CommonVoice_en": {
+          "recordings": 3,
+          "declared_ids": 1
+        },
+        "FluentSpeechCommands": {
+          "recordings": 20,
+          "declared_ids": 1
+        },
+        "real_voice": {
+          "recordings": 73,
+          "declared_ids": 1
+        }
+      },
+      "gender": {
+        "people": {
+          "female": 1,
+          "unknown": 2
+        },
+        "recordings": {
+          "female": 20,
+          "unknown": 76
+        },
+        "known_people": 1,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      },
+      "accent_group": {
+        "people": {
+          "Filipino (group)": 1,
+          "Filipino (open-source)": 1,
+          "Native English": 1
+        },
+        "recordings": {
+          "Filipino (group)": 73,
+          "Filipino (open-source)": 3,
+          "Native English": 20
+        },
+        "known_people": 3,
+        "conflicting_people": 0,
+        "provenance": "supplied publisher/speaker metadata; collection method unverified"
+      }
+    }
+  },
+  "cross_split_groups": {
+    "human_speaker_id": 0,
+    "synthetic_voice_id": 0,
+    "pair_id": 0,
+    "pcm_sha256": 0
+  },
+  "declared_split_disjoint": true,
+  "split_policy": "Person-disjoint first; balance supplied demographics within each split in a new version only.",
+  "limits": [
+    "No voice-derived gender, age, identity or accent inference.",
+    "Synthetic voice/clone IDs are not independent human people.",
+    "Missing metadata stays unknown; source labels are not verified identity or demographics.",
+    "No listening, near-duplicate or cross-source alias validation performed by this metadata audit.",
+    "No audio scoring or frozen split changes performed by this metadata audit."
+  ],
+  "raw_audit": {
+    "path": ".cache/vcm-intent-slots-v1/diversity-with-supplied-metadata-01/diversity.json",
+    "sha256": "a869fd2f374d2190c5de9f386ede487dc4ab7ae6e86d1d0fdcc445374f47e9b7"
+  },
+  "archive_binding": {
+    "sha256": "c9fd67f2efa078daa84daddcad2de937eb96581c140e3131ed8cd06fbae9ba1b",
+    "bytes": 1552390845,
+    "verified": true
+  },
+  "demographic_accuracy_claim": null
+}

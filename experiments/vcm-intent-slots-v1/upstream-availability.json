@@ -1,0 +1,432 @@
+{
+  "version": 1,
+  "created_utc": "2026-10-14T16:16:03.403437+00:00",
+  "purpose": "User-requested upstream availability audit; no fitting, new acoustic scoring or frozen view replacement",
+  "primary": {
+    "repository": "airimonda/ai231-me2-voice-commands",
+    "pinned_revision": "25111444af3adff7588d86ab27c304bb080895cf",
+    "checked_revision": "bfca0bbebfe17e00d6a685d1da573615d29ecdce",
+    "changed_core_payloads": [
+      {
+        "path": ".cache/vcm-intent-slots-v1/upstream-current-primary/data/holdout-00000-of-00001.parquet",
+        "remote_path": "data/holdout-00000-of-00001.parquet",
+        "url": "https://huggingface.co/datasets/airimonda/ai231-me2-voice-commands/resolve/bfca0bbebfe17e00d6a685d1da573615d29ecdce/data/holdout-00000-of-00001.parquet?download=true",
+        "revision": "bfca0bbebfe17e00d6a685d1da573615d29ecdce",
+        "sha256": "c36227c81eee4eac63de62cee94631ee9e73952ccf8e16c27912eb049508eb6e",
+        "bytes": 15363388,
+        "seconds": 2.3252066476270556,
+        "verified": true
+      },
+      {
+        "path": ".cache/vcm-intent-slots-v1/upstream-current-primary/data/test-00000-of-00001.parquet",
+        "remote_path": "data/test-00000-of-00001.parquet",
+        "url": "https://huggingface.co/datasets/airimonda/ai231-me2-voice-commands/resolve/bfca0bbebfe17e00d6a685d1da573615d29ecdce/data/test-00000-of-00001.parquet?download=true",
+        "revision": "bfca0bbebfe17e00d6a685d1da573615d29ecdce",
+        "sha256": "40e9b66b4e12bc5b012bfa2dc7367602740ac394467e48d4924364c46f912f32",
+        "bytes": 272526000,
+        "seconds": 18.14759227540344,
+        "verified": true
+      },
+      {
+        "path": ".cache/vcm-intent-slots-v1/upstream-current-primary/data/train-00000-of-00002.parquet",
+        "remote_path": "data/train-00000-of-00002.parquet",
+        "url": "https://huggingface.co/datasets/airimonda/ai231-me2-voice-commands/resolve/bfca0bbebfe17e00d6a685d1da573615d29ecdce/data/train-00000-of-00002.parquet?download=true",
+        "revision": "bfca0bbebfe17e00d6a685d1da573615d29ecdce",
+        "sha256": "f4b0717e95dc1a7fa5566be6a20212c04b554c7f69de8815646b36606a30bd83",
+        "bytes": 295319324,
+        "seconds": 28.364739819429815,
+        "verified": true
+      },
+      {
+        "path": ".cache/vcm-intent-slots-v1/upstream-current-primary/data/train-00001-of-00002.parquet",
+        "remote_path": "data/train-00001-of-00002.parquet",
+        "url": "https://huggingface.co/datasets/airimonda/ai231-me2-voice-commands/resolve/bfca0bbebfe17e00d6a685d1da573615d29ecdce/data/train-00001-of-00002.parquet?download=true",
+        "revision": "bfca0bbebfe17e00d6a685d1da573615d29ecdce",
+        "sha256": "5011a4ff41c99b32acf07b3e5ea23ba36b5c03bf286b0731a0f85b5b4d9b5669",
+        "bytes": 391176249,
+        "seconds": 25.52347717434168,
+        "verified": true
+      }
+    ],
+    "metadata_audit": {
+      "revision": "bfca0bbebfe17e00d6a685d1da573615d29ecdce",
+      "splits": {
+        "train": {
+          "rows": 10733,
+          "human_rows": 2359,
+          "synthetic_rows": 8374,
+          "declared_human_ids": 238,
+          "human_command_metadata": {
+            "PLAY_MUSIC": 82,
+            "WEATHER": 62,
+            "TIME": 129,
+            "LIGHT_ON": 94,
+            "LIGHT_OFF": 109,
+            "PAUSE": 135,
+            "STOP": 168,
+            "NEXT": 110,
+            "VOLUME_UP": 159,
+            "VOLUME_DOWN": 155,
+            "CALL": 22,
+            "MESSAGE": 7,
+            "LIST_REMINDERS": 46,
+            "TIMER": 79,
+            "ALARM": 203,
+            "TEMPERATURE": 115,
+            "BRIGHTNESS": 95,
+            "COLOR": 356,
+            "CREATE_REMINDER": 32,
+            "OUT_OF_SCOPE": 201
+          },
+          "human_sources": {
+            "real_voice": 620,
+            "FluentSpeechCommands": 256,
+            "SLURP": 1010,
+            "SNIPS": 331,
+            "xela_Multi-Sensor": 4,
+            "TimersAndSuch": 31,
+            "xela_SET_TEMPERATURE_REAL": 60,
+            "SpeechCommands_v2": 11,
+            "CommonVoice_en": 36
+          },
+          "human_gender_fields": []
+        },
+        "test": {
+          "rows": 4443,
+          "human_rows": 824,
+          "synthetic_rows": 3619,
+          "declared_human_ids": 86,
+          "human_command_metadata": {
+            "PLAY_MUSIC": 21,
+            "WEATHER": 26,
+            "TIME": 50,
+            "LIGHT_ON": 24,
+            "LIGHT_OFF": 48,
+            "PAUSE": 50,
+            "STOP": 72,
+            "NEXT": 40,
+            "VOLUME_UP": 69,
+            "VOLUME_DOWN": 62,
+            "CALL": 16,
+            "MESSAGE": 12,
+            "LIST_REMINDERS": 28,
+            "TIMER": 19,
+            "ALARM": 51,
+            "TEMPERATURE": 28,
+            "BRIGHTNESS": 25,
+            "COLOR": 118,
+            "CREATE_REMINDER": 18,
+            "OUT_OF_SCOPE": 47
+          },
+          "human_sources": {
+            "real_voice": 179,
+            "SLURP": 403,
+            "FluentSpeechCommands": 144,
+            "SNIPS": 61,
+            "xela_Multi-Sensor": 11,
+            "TimersAndSuch": 2,
+            "xela_SET_TEMPERATURE_REAL": 10,
+            "CommonVoice_en": 14
+          },
+          "human_gender_fields": []
+        },
+        "holdout": {
+          "rows": 202,
+          "human_rows": 96,
+          "synthetic_rows": 106,
+          "declared_human_ids": 3,
+          "human_command_metadata": {
+            "PLAY_MUSIC": 3,
+            "WEATHER": 3,
+            "TIME": 3,
+            "LIGHT_ON": 3,
+            "LIGHT_OFF": 3,
+            "PAUSE": 3,
+            "STOP": 3,
+            "NEXT": 3,
+            "VOLUME_UP": 3,
+            "VOLUME_DOWN": 3,
+            "CALL": 3,
+            "MESSAGE": 3,
+            "LIST_REMINDERS": 3,
+            "TIMER": 9,
+            "ALARM": 8,
+            "TEMPERATURE": 9,
+            "BRIGHTNESS": 6,
+            "COLOR": 6,
+            "CREATE_REMINDER": 9,
+            "OUT_OF_SCOPE": 10
+          },
+          "human_sources": {
+            "real_voice": 84,
+            "FluentSpeechCommands": 9,
+            "CommonVoice_en": 3
+          },
+          "human_gender_fields": []
+        }
+      },
+      "metadata_columns": [
+        "accent_group",
+        "bucket",
+        "command",
+        "duration_s",
+        "file",
+        "is_synthetic",
+        "note",
+        "numerals",
+        "out_of_scope",
+        "slot_value",
+        "source",
+        "speaker_id",
+        "transcript",
+        "transcript_source",
+        "variation",
+        "variation_match",
+        "whisper_check",
+        "whisper_transcript"
+      ],
+      "human_ids_cross_split_groups": 0,
+      "holdout_ids_not_in_any_old_view": 0,
+      "holdout_fresh_status": "not blind; checked for source/identity changes only, no candidate scoring",
+      "scope": "metadata availability audit; published command names are not reviewed typed references or role labels"
+    },
+    "reference_preview": {
+      "scope": "Metadata availability preview using the existing exact text rules; no new independent label/listening review, no acoustic scoring or fitting",
+      "policy_origin_sha256": "e1c0fba7d11b87983aa0499669ec2f10c3949e3fdf9304c4c32484f69490a80d",
+      "splits": {
+        "train": {
+          "human_rows": 2359,
+          "typed_reference_preview": {
+            "PLAY_MUSIC": 54,
+            "unsupported": 379,
+            "ambiguous": 304,
+            "WEATHER": 54,
+            "TIME": 125,
+            "LIGHT_ON": 76,
+            "LIGHT_OFF": 95,
+            "PAUSE": 118,
+            "STOP": 168,
+            "NEXT": 110,
+            "VOLUME": 279,
+            "CALL": 9,
+            "LIST_REMINDERS": 42,
+            "TIMER": 73,
+            "ALARM": 133,
+            "TEMPERATURE": 92,
+            "BRIGHTNESS": 45,
+            "COLOR": 190,
+            "CREATE_REMINDER": 13
+          },
+          "MESSAGE_publisher_rows": 7,
+          "MESSAGE_supported_preview": 0
+        },
+        "test": {
+          "human_rows": 824,
+          "typed_reference_preview": {
+            "PLAY_MUSIC": 8,
+            "unsupported": 110,
+            "WEATHER": 16,
+            "ambiguous": 101,
+            "TIME": 49,
+            "LIGHT_ON": 21,
+            "LIGHT_OFF": 37,
+            "PAUSE": 50,
+            "STOP": 72,
+            "NEXT": 36,
+            "VOLUME": 107,
+            "CALL": 6,
+            "MESSAGE": 6,
+            "LIST_REMINDERS": 18,
+            "TIMER": 19,
+            "ALARM": 32,
+            "TEMPERATURE": 28,
+            "BRIGHTNESS": 23,
+            "COLOR": 67,
+            "CREATE_REMINDER": 18
+          },
+          "MESSAGE_publisher_rows": 12,
+          "MESSAGE_supported_preview": 6
+        },
+        "holdout": {
+          "human_rows": 96,
+          "typed_reference_preview": {
+            "PLAY_MUSIC": 3,
+            "WEATHER": 3,
+            "TIME": 3,
+            "LIGHT_ON": 3,
+            "LIGHT_OFF": 3,
+            "PAUSE": 3,
+            "STOP": 3,
+            "NEXT": 3,
+            "VOLUME": 6,
+            "CALL": 3,
+            "MESSAGE": 3,
+            "LIST_REMINDERS": 3,
+            "TIMER": 9,
+            "ALARM": 8,
+            "TEMPERATURE": 9,
+            "BRIGHTNESS": 6,
+            "COLOR": 6,
+            "CREATE_REMINDER": 9,
+            "unsupported": 10
+          },
+          "MESSAGE_publisher_rows": 3,
+          "MESSAGE_supported_preview": 3
+        }
+      },
+      "read_only_mapper_bindings": {
+        "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/scripts/train/speaker_dataset_install.py": "87f4fb4939d7903f4b14cc895708c660a488d05b6d8662f9cc7c0fcaa6c4d1e9",
+        "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/scripts/train/pcv_release_prepare.py": "4143d0618aa61afceec69be956949691792b3ed0f80e1f43e748f328e1420047",
+        "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/experiments/pcv-release-train-v1/training-label-review.json": "70d40fe5f66b38141c6b745ca3c6eaf24eb87f2d7a56ad8df3762f99a25c32f8"
+      },
+      "policy_recovery": "Exact historical CRLF hash recovered in memory by the existing local preparation helper; files remain untouched."
+    },
+    "training_gate": "No supported human MESSAGE training examples under unchanged exact reference rules; do not use test/holdout MESSAGE for fitting",
+    "missing_annotation_columns": [
+      "reviewed role states",
+      "connected timer/alarm constituent labels",
+      "reviewed acoustic spans",
+      "entity enrollment",
+      "wake-owner pairs"
+    ],
+    "views_changed": false,
+    "trained_or_scored_new_revision": false
+  },
+  "supplemental": {
+    "name": "supplemental-info",
+    "url": "https://huggingface.co/api/datasets/martinnavs/ai231-fil-supplemental-data",
+    "http": 200,
+    "bytes": 2189,
+    "sha256": "dc0f12088ec10dd0ac7229fe40b27f1a2b4cb61f8a2bb0d6944744d092b77d89",
+    "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+    "last_modified": "2026-10-03T06:05:12.000Z",
+    "files": [
+      ".gitattributes",
+      "README.md",
+      "data/train-00000-of-00004.parquet",
+      "data/train-00001-of-00004.parquet",
+      "data/train-00002-of-00004.parquet",
+      "data/train-00003-of-00004.parquet",
+      "gap_fill/train-00000-of-00001.parquet",
+      "numeral_wordings/train-00000-of-00001.parquet"
+    ]
+  },
+  "linked_github": {
+    "repository": "airimonda/vcm-me2",
+    "checked_commit": "ccf56db497c362a6b2334faa114a6e3c8c3719a9",
+    "models_found": "Separate Conformer and DS-CNN single/ensemble command models; no checkpoint for this role-head architecture",
+    "role_labels_enrollment_owner_pairs": "Not supplied in inspected file inventory/source cards",
+    "release_assets": [],
+    "shipping_baseline_substituted": false,
+    "verified_model_interface": {
+      "format": "vcm-onnx-v1",
+      "arch": "conformer",
+      "outputs": {
+        "cmd_logits": [
+          "batch",
+          20
+        ],
+        "slot_logits": [
+          "batch",
+          6,
+          3
+        ]
+      },
+      "frontend": {
+        "n_fft": 400,
+        "hop": 160,
+        "n_mels": 64,
+        "log_eps": 1e-06,
+        "norm": "per-utterance mean/std",
+        "included_in_graph": true
+      },
+      "tau": 0.4
+    },
+    "metadata_sources": [
+      {
+        "path": ".cache/vcm-intent-slots-v1/upstream-followup-02/vcm_conformer_M.json",
+        "sha256": "4d14ab1e0bed90e21c3f0fd4aaa405504f4501a678aeff5e89e1148d63a4d2bc",
+        "url": "https://github.com/airimonda/vcm-me2/blob/ccf56db497c362a6b2334faa114a6e3c8c3719a9/models/vcm_conformer_M.json"
+      },
+      {
+        "path": ".cache/vcm-intent-slots-v1/upstream-followup-02/ds_cnn_M_ens3.json",
+        "sha256": "ae7181c107ea9dbfd2d1087efa458514d8dda43744acf4aa3276e4e7c4f6caae",
+        "url": "https://github.com/airimonda/vcm-me2/blob/ccf56db497c362a6b2334faa114a6e3c8c3719a9/models/ds_cnn_M_ens3.json"
+      },
+      {
+        "path": ".cache/vcm-intent-slots-v1/upstream-followup-02/model_card.md",
+        "sha256": "62e38423bb0427602a3558685ca2ab5f2351649b4cedde7b9d478385f2a0690a",
+        "url": "https://github.com/airimonda/vcm-me2/blob/ccf56db497c362a6b2334faa114a6e3c8c3719a9/docs/model_card.md"
+      }
+    ]
+  },
+  "smart_speaker_releases": {
+    "repository": "justinruaya123/smart-speaker",
+    "authenticated_github_app_GET": "https://api.github.com/repos/justinruaya123/smart-speaker/releases",
+    "releases": [],
+    "unauthenticated_probe": "HTTP404; authenticated connector verified []"
+  },
+  "Fluent_demographics": {
+    "url": "https://huggingface.co/datasets/leo19941227/fluent_speech_commands/resolve/c4cc0e2c898585329319835ed55f47a6ab9e0d92/fluent.tar.gz?download=true&full=1",
+    "revision": "c4cc0e2c898585329319835ed55f47a6ab9e0d92",
+    "purpose": "Extract supplied speaker demographics only; no new audio training/evaluation view",
+    "archive_sha256": "c9fd67f2efa078daa84daddcad2de937eb96581c140e3131ed8cd06fbae9ba1b",
+    "archive_bytes": 1552390845,
+    "archive_verified": true,
+    "seconds": 105.90047316253185,
+    "members": [
+      {
+        "name": "fluent_speech_commands_dataset/readme.md",
+        "path": ".cache/vcm-intent-slots-v1/upstream-fluent-demographics/readme.md",
+        "bytes": 2314,
+        "sha256": "478a919c3adba0e67fd06ab6b98d8b6d86d69360d86129f8c98958b142e44e27"
+      },
+      {
+        "name": "fluent_speech_commands_dataset/data/speaker_demographics.csv",
+        "path": ".cache/vcm-intent-slots-v1/upstream-fluent-demographics/speaker_demographics.csv",
+        "bytes": 8560,
+        "sha256": "a7d6df25de929dd46a929473b80ba33b8a94f4789dbc394cd995002e755a21e5"
+      }
+    ],
+    "supplied_metadata_csv_sha256": "a7d6df25de929dd46a929473b80ba33b8a94f4789dbc394cd995002e755a21e5",
+    "joins": {
+      "matched_human_recordings": 459,
+      "matched_human_ids": 87,
+      "unmatched_metadata_ids": 14
+    },
+    "audio_added_to_any_view": false
+  },
+  "SLURP": {
+    "repository": "pswietojanski/slurp",
+    "revision": "8eb16545762be97ace75334109d73824217311f1",
+    "metadata_sha256": "be7943d576c0b79b34ae32796e5c9474bd3d4d123bb35e38f73497f4a429fb83",
+    "gender_join": "No independent gender/age field supplied in inspected metadata; no inference from speaker-ID prefixes"
+  },
+  "SNIPS": {
+    "repository": "sonos/spoken-language-understanding-research-datasets",
+    "gender_join": "No standalone speaker demographics found in inspected repository inventory"
+  },
+  "baseline": "Exact shipping weights/archive absent; distinct upstream models not substituted",
+  "raw_receipts": [
+    {
+      "path": ".cache/vcm-intent-slots-v1/upstream-followup-01/receipts.json",
+      "sha256": "6f706218385d225e938d55d6d4220c45c60de610d05090a6ec9c5292eb6d44d6"
+    },
+    {
+      "path": ".cache/vcm-intent-slots-v1/upstream-followup-02/receipts.json",
+      "sha256": "2b20e7bdec3c2ff95e126231a2cd062921b620d5ea783bef72997c6be751002f"
+    },
+    {
+      "path": ".cache/vcm-intent-slots-v1/upstream-current-primary/metadata-audit.json",
+      "sha256": "282eda68305660a61b2ed1153b6f9219106d0b5d038215d9f5b3b9d3724bdb4e"
+    },
+    {
+      "path": ".cache/vcm-intent-slots-v1/upstream-current-primary/reference-preview.json",
+      "sha256": "b66bd62a07fff317449dd0a3120b10b6b78b5d7d4630dea37010a2dd21d6dd79"
+    },
+    {
+      "path": ".cache/vcm-intent-slots-v1/upstream-fluent-demographics/full-receipt.json",
+      "sha256": "a878ce83d3b6294122ef9e2219945c1494ac805f7e74a2938634194502a656a7"
+    }
+  ]
+}

@@ -21,6 +21,21 @@ See [specification](docs/SPEC-vcm-intent-slots-v1.md),
 [execution handoff](docs/HANDOFF-vcm-intent-slots-v1.md) and
 [design protocol](experiments/vcm-intent-slots-v1/protocol.json).
 
+2026-10-15 follow-up: 172 focused/relevant tests pass. Explicit historical
+regression replay covers all 4,418 test and 196 holdout recordings on PyTorch,
+ONNX Runtime and ncnn, with zero final-decision disagreements. The checkpoint
+remains random/untrained: all supported requests reject; two overlong ambiguous
+test clips are faults. Fresh qualification stays blocked. The updated HF primary
+revision was downloaded and audited separately; it supplies no supported human
+MESSAGE training examples under the unchanged reference rules and no new holdout
+people. Verified supplied Fluent demographics join 87 of 337 declared IDs:
+female 44, male 43, unknown 250; no voice-derived demographic labels or split
+changes. See [follow-up findings](docs/EXPERIMENT-vcm-intent-slots-v1.md#tests-benchmark-and-speaker-diversity-follow-up--2026-10-15),
+[evaluation](experiments/vcm-intent-slots-v1/historical-evaluation.json),
+[diversity](experiments/vcm-intent-slots-v1/speaker-diversity.json),
+[upstream audit](experiments/vcm-intent-slots-v1/upstream-availability.json) and
+[test results](experiments/vcm-intent-slots-v1/followup-verification.json).
+
 Evidence snapshot: 2026-09-20. E01-E11 initially summarized existing reports and saved evaluations. E12 records the subsequently authorized implementation, fresh execution of historical regression audio, and development-only quantization comparison. Other agents may still be writing results. Missing evidence means unverified, not zero or success. Source reports remain in place; follow the links for verbose tests, per-value tables, recipes and predictions.
 
 Read [REQUIREMENTS.md](REQUIREMENTS.md) for what we are building and [AGENTS.md](AGENTS.md) for how to work. The proposed [organization/archive skill contract](AGENTS.md#0-active-work-hold-and-future-maintenance-skill) must consult this directory before consolidating or archiving a study. That project-specific skill is not installed. This summary alone does not authorize changes. The later user request explicitly authorized E12 installation and pipeline implementation; the repository maintenance hold remains.

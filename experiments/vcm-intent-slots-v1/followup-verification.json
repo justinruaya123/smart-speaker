@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "created_utc": "2026-10-14T16:16:03.403437+00:00",
+  "source_commit": "d8678ba58aa7b32bbd91f0268602ac6968b1e509",
+  "focused": {
+    "passed": 172,
+    "failed": 0,
+    "warnings": 24,
+    "new_experiment_tests": 112,
+    "existing_related_tests": 60,
+    "command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 $PY -m pytest -q -p no:cacheprovider scripts/test/test_vcm_intent_slots_*.py scripts/test/test_speaker_demo_v1.py scripts/test/test_pcv_full_benchmark.py scripts/test/test_speaker_worker.py"
+  },
+  "broad_initial": {
+    "passed": 626,
+    "failed": 20,
+    "skipped": 13,
+    "errors": 13,
+    "warnings": 62,
+    "command": "$PY -m pytest -q -p no:cacheprovider --import-mode=importlib --continue-on-collection-errors",
+    "passed_all": false,
+    "errors_include": "7 collection errors and 6 fixture-setup errors"
+  },
+  "main_tests_separate_process": {
+    "passed": 387,
+    "failed": 12,
+    "skipped": 6,
+    "warnings": 37,
+    "command": "$PY -m pytest -q -p no:cacheprovider scripts/test tests",
+    "passed_all": false
+  },
+  "inherited_broad_failures": [
+    "Missing safetensors dependency",
+    "Existing sibling imports incompatible with importlib collection mode",
+    "Missing artifacts/wake-melspectrogram.onnx, wake-embedding.onnx, wake-hey-jarvis.onnx and silero-vad.onnx at historical test paths",
+    "Missing data/raw/cmudict/cmudict.dict",
+    "Missing SpeakerUI/dist and dist-server publication outputs",
+    "Historical pcv-release-train-v1/training-label-review.json CRLF identity mismatch in strict parent loader; no frozen hash relaxed",
+    "Historical scripts/test_prototype.py CLI imports absent train.register_sources",
+    "Additional existing historical report/packaging/study-context failures retained in raw logs"
+  ],
+  "TDD": {
+    "initial_evaluation_reporting_red": "6 failed, 1 passed",
+    "metadata_module_initial_red": "ModuleNotFoundError before implementation",
+    "supplied_join_red": "2 failed, 9 passed",
+    "reporting_final_green": "28 passed"
+  },
+  "independent_review": {
+    "first_reporting_review": "No Critical/Important/Minor; independently 26 passed",
+    "supplied_metadata_review": "No Critical/Important; independently 28 passed; source CSV/sidecar equality verified"
+  },
+  "qualification_gates": [
+    {
+      "run": "qualification-gate-followup-01",
+      "command": "evaluate",
+      "status": "blocked",
+      "reason": "Fresh evaluation requires selection-before-test",
+      "actions_enabled": false,
+      "installed_artifacts_changed": false,
+      "exit_code": 2
+    },
+    {
+      "run": "qualification-gate-followup-02",
+      "command": "evaluate",
+      "status": "blocked",
+      "reason": "Fresh evaluation requires selection-before-test",
+      "actions_enabled": false,
+      "installed_artifacts_changed": false,
+      "exit_code": 2
+    },
+    {
+      "run": "qualification-gate-followup-03",
+      "command": "lock",
+      "status": "blocked",
+      "reason": "Fresh runtime needs frozen calibration",
+      "actions_enabled": false,
+      "installed_artifacts_changed": false,
+      "exit_code": 2
+    },
+    {
+      "run": "qualification-gate-followup-04",
+      "command": "owner-replay",
+      "status": "blocked",
+      "reason": "Missing genuine human wake/command pairs, calibration and separate validated owner backend",
+      "actions_enabled": false,
+      "installed_artifacts_changed": false,
+      "exit_code": 2
+    }
+  ],
+  "raw_logs": {
+    "reporting-red.log": {
+      "path": ".cache/vcm-intent-slots-v1/reporting-red.log",
+      "sha256": "475c496db3ef4b254ac6a08cf32649101f1c08590f26c1bd290d544f210c2aeb"
+    },
+    "evaluation-red.log": {
+      "path": ".cache/vcm-intent-slots-v1/evaluation-red.log",
+      "sha256": "2f6c371b6b4a2401d52cbac0914dba5d2d43d2b840b394d1a5ffc81f9e2c0673"
+    },
+    "demographic-join-red.log": {
+      "path": ".cache/vcm-intent-slots-v1/demographic-join-red.log",
+      "sha256": "58ad6212268c366026eeceabd1f14b616475442baf2baed1535721f0f8a68f98"
+    },
+    "focused-followup-02.log": {
+      "path": ".cache/vcm-intent-slots-v1/focused-followup-02.log",
+      "sha256": "7d862840672a86c0cab286016e96e0ee6b0fe91c27ce47cc937ce654490a0859"
+    },
+    "full-suite-followup-01.log": {
+      "path": ".cache/vcm-intent-slots-v1/full-suite-followup-01.log",
+      "sha256": "3f40b77cbf1bd08836764363971c0607e1ec567f1ae418982d713f75822bc70b"
+    },
+    "main-tests-followup-01.log": {
+      "path": ".cache/vcm-intent-slots-v1/main-tests-followup-01.log",
+      "sha256": "f71c5a6242ad02934b8b81d737d463fdd95725f7f42a9c22d4cca26f08d8653e"
+    }
+  },
+  "real_optimizer_updates": 0,
+  "real_calibration_fits": 0,
+  "fresh_candidate_test_scoring": false,
+  "physical_pi_measured": false
+}

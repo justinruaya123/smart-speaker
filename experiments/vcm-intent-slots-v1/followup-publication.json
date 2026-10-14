@@ -1,0 +1,22 @@
+{
+  "branch": "codex/vcm-intent-slots-v1",
+  "publication_method": "Authenticated GitHub Git-data API; fast-forward ref update with expected SHA. Local/remote commits have different metadata; corresponding trees match exactly.",
+  "commits": [
+    {
+      "kind": "reporting_and_evaluation_protocol",
+      "local": "27572a34188cbf206f310f4ee728b748541b7fa8",
+      "published": "519971b2434712e645d863db3d44ccc150c1c198",
+      "shared_tree": "89a0e079feb11eedc98535018c8118c611096b0c"
+    },
+    {
+      "kind": "verified_supplied_metadata_join",
+      "local": "d8678ba58aa7b32bbd91f0268602ac6968b1e509",
+      "published": "b8df49483af13f5c3815c35a734d10147e8f548e",
+      "shared_tree": "42e5d3f8adc469e8d7756106b5e320f7e5fcd6d6"
+    }
+  ],
+  "prior_published_head": "a74ae5c79bce564f600909d568e82a08ec2cb74c",
+  "training_update_artifacts": false,
+  "provider_actions_enabled": false,
+  "evidence_publication": "This subsequent source-only receipt/documentation commit adds real compact receipts; no audio, weights, demographics per individual, raw predictions or caches are published."
+}
