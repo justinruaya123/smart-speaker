@@ -36,6 +36,17 @@ changes. See [follow-up findings](docs/EXPERIMENT-vcm-intent-slots-v1.md#tests-b
 [upstream audit](experiments/vcm-intent-slots-v1/upstream-availability.json) and
 [test results](experiments/vcm-intent-slots-v1/followup-verification.json).
 
+2026-10-15 additional-source follow-up: the user authorized a separate bounded
+MLEnd numeric-category component experiment. Its [frozen subprotocol](experiments/vcm-intent-slots-v1/numeral-auxiliary-protocol.json)
+keeps the approved complete backbone and 101-value numeric head, uses original
+human category annotations only, reserves all parent-view identities, caps takes
+before fitting and selects/stops using development only, at most 240 updates.
+This auxiliary loss supplies no intent, presence, validity, entity or ownership
+labels and does not replace the blocked six full-command arms. The supplied Drive
+archive reuses parent evaluation speech inside its training directories; its
+existing splits are ineligible for this frozen comparison. Execution receipts
+and exact exclusions will be appended to the same experiment report.
+
 Evidence snapshot: 2026-09-20. E01-E11 initially summarized existing reports and saved evaluations. E12 records the subsequently authorized implementation, fresh execution of historical regression audio, and development-only quantization comparison. Other agents may still be writing results. Missing evidence means unverified, not zero or success. Source reports remain in place; follow the links for verbose tests, per-value tables, recipes and predictions.
 
 Read [REQUIREMENTS.md](REQUIREMENTS.md) for what we are building and [AGENTS.md](AGENTS.md) for how to work. The proposed [organization/archive skill contract](AGENTS.md#0-active-work-hold-and-future-maintenance-skill) must consult this directory before consolidating or archiving a study. That project-specific skill is not installed. This summary alone does not authorize changes. The later user request explicitly authorized E12 installation and pipeline implementation; the repository maintenance hold remains.

@@ -344,3 +344,41 @@ Fourteen protected installed/configuration/lock hashes, all five view hashes,
 and the main dirty/staged state remain unchanged;
 [followup-preservation.json](../experiments/vcm-intent-slots-v1/followup-preservation.json)
 records no environment installation or physical device operation in this follow-up.
+
+## Additional sources and bounded numeral component — 2026-10-15
+
+The user supplied MLEnd, the SNIPS mirror and a Drive archive and requested a
+training-scheme audit that avoids overtraining. This is a separate auxiliary
+component experiment under [numeral-auxiliary-protocol.json](../experiments/vcm-intent-slots-v1/numeral-auxiliary-protocol.json),
+registered before fitting. The original full-command protocol and six coverage
+gates remain intact. The hypothesis is limited to speaker-disjoint raw numeral
+category classification using the approved complete backbone and numeric head.
+
+All 32,029 existing human MLEnd rows match the original Kaggle filename, speaker
+and category metadata. These are category annotations, not reviewed transcripts.
+There are 29 observed categories in 0–100 and 3,037 larger numeral recordings.
+The full 101-value head remains unchanged; larger categories are excluded rather
+than clamped. The original [publisher description](https://mlenddatasets.github.io/spoken_numerals/)
+describes four intonations and a varied language/nationality population. Local
+declared IDs number 151; its advertised demographic totals are not a measured
+description of this local subset. Gender remains unknown without a verified
+metadata join. The source's [speaker-independent benchmark](https://mlend.readthedocs.io/en/latest/api.html#mlend-spoken-numerals-load)
+also separates people; this component adds a distinct development partition.
+
+Before fitting, exclude every parent-view person/file/PCM/pair overlap, quarantine
+conflicting labels and exact duplicate identities, and retain one take per
+speaker/category using a deterministic rule fixed before model outcomes. Split
+declared people 70/15/15, preserve all original files/views, verify each selected
+original WAV and record intonation/metadata coverage. Use the already frozen
+human-train normalization. Only numeric-category cross entropy is observed:
+all other heads are frozen, inactive query rows do not decay, and no isolated
+numeral is relabeled as a complete brightness command.
+
+The ceiling is four development checks of 60 updates, batch 64, seed 53, with
+patience two. Select macro-person raw category accuracy, then lower NLL on a tie;
+the initial random checkpoint is eligible. Record train/development gaps and
+sampling exposures. Freeze a component-specific complete selection lock before
+scoring held people. Raw category accuracy supplies no evidence for intent .95,
+slot confidence .90, presence, complete-command acceptance, entity memory,
+ownership or Pi qualification. No fitted weights or audio will be committed or
+installed. Actual execution and additional-source findings follow below.
