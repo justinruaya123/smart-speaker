@@ -1,0 +1,13 @@
+{
+  "benchmark_revision": "ab39857cf73dd067d068fed388c321ab160dc191",
+  "correct_output_fixtures": 93,
+  "total": 93,
+  "evidence": "Stipulated typed outputs and timing; serializer compatibility only, not speech accuracy",
+  "decision": "final_application",
+  "source_bindings": {
+    "vcmbench/pi.py": "772a73dffa5810645182d2a6a9c16a828bb25d4a84f2d9cb3bbf60993d76545f",
+    "vcmbench/schema.py": "cb7cefcd893a2443b9a9b9e9b2756efa27d273f4f0086b94491ca3b304e7a006",
+    "vcmbench/slots.py": "7fc483ad851699d09e948ed942a36141012f474333e2ce521e705acce7fa30ef",
+    "vcmbench/variations.csv": "6004b3b2b58137058c705b5769b0d094e05a5cff6ddcbed6de548b4a0105fcda"
+  }
+}

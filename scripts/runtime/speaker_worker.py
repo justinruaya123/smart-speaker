@@ -40,11 +40,11 @@ class AudioService:
 
     def emit(self,value):
         self.sequence+=1
-        if value.get('event')=='command' and self.settings:
+        if value.get('event')=='command' and self.settings and not getattr(self.runtime, 'action_free', False):
             from scripts.runtime.speaker_confidence import application_decision
             value={**value,'application':application_decision(value,self.settings['inference'])}
         self.deliver({**value,'session_id':self.session,'sequence':self.sequence,'source':self.source,
-                      'actions_enabled':bool(self.settings and self.settings['actions']['enabled'] and self.source=='microphone')})
+                      'actions_enabled':bool(not getattr(self.runtime, 'action_free', False) and self.settings and self.settings['actions']['enabled'] and self.source=='microphone')})
 
     def set_state(self,state,**extra):
         self.state=state;self.emit({'event':'state','state':state,**extra})
@@ -133,6 +133,8 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--bundle',type=Path,required=True)
     p.add_argument('--threads',type=int,default=1);p.add_argument('--diagnostic',action='store_true')
     p.add_argument('--engine',choices=['ncnn','onnxruntime'])
+    p.add_argument('--experimental-intent-slots', action='store_true',
+                   help='Explicit action-free experimental WAV replay; preserves defaults')
     p.add_argument('--wav',type=Path);p.add_argument('--wake',action='store_true');p.add_argument('--list-mics',action='store_true')
     args=p.parse_args()
     benchmark_log = None
@@ -146,7 +148,16 @@ def main():
     settings,_=resolve_config(Path(os.environ.get('SMART_SPEAKER_ROOT',Path.cwd())),overrides={'engine':args.engine})
     if args.list_mics:
         emit({'event':'devices','devices':AudioService(None,emit).devices()});return
-    runtime=Runtime(args.bundle,diagnostic=args.diagnostic,threads=args.threads,engine=settings['inference']['engine'])
+    if args.experimental_intent_slots:
+        if args.wake or args.wav is None:
+            raise ValueError('Experimental worker requires a command WAV; wake/owner evidence uses separate replay')
+        from scripts.runtime.vcm_intent_slots_runtime import IntentSlotsRuntime
+        runtime = IntentSlotsRuntime(args.bundle, settings['inference']['engine'], args.threads)
+        if benchmark_log is not None:
+            benchmark_log = BenchmarkLog(os.environ['PCV_BENCHMARK_LOG'],
+                                         decision='final_application', custom=runtime.contract['custom'])
+    else:
+        runtime=Runtime(args.bundle,diagnostic=args.diagnostic,threads=args.threads,engine=settings['inference']['engine'])
     service=AudioService(runtime,emit,settings)
     if args.list_mics:emit({'event':'devices','devices':service.devices()});return
     if args.wav:emit({'event':'done',**service.wav(args.wav.read_bytes(),wake=args.wake)});return

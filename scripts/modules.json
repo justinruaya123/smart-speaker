@@ -526,5 +526,65 @@
   "pcv.speaker_wake_replay": {
     "path": "test/speaker_wake_replay.py",
     "runtime": false
+  },
+  "vcm-intent-slots-v1.vcm_intent_slots": {
+    "path": "models/vcm_intent_slots.py",
+    "runtime": false
+  },
+  "vcm-intent-slots-v1.vcm_intent_slots_data": {
+    "path": "train/vcm_intent_slots_data.py",
+    "runtime": false
+  },
+  "vcm-intent-slots-v1.vcm_intent_slots_train": {
+    "path": "train/vcm_intent_slots_train.py",
+    "runtime": false
+  },
+  "vcm-intent-slots-v1.vcm_intent_slots_calibration": {
+    "path": "train/vcm_intent_slots_calibration.py",
+    "runtime": false
+  },
+  "vcm-intent-slots-v1.vcm_intent_slots_export": {
+    "path": "train/vcm_intent_slots_export.py",
+    "runtime": false
+  },
+  "vcm-intent-slots-v1.vcm_intent_slots_contract": {
+    "path": "runtime/vcm_intent_slots_contract.py",
+    "runtime": false
+  },
+  "vcm-intent-slots-v1.vcm_intent_slots_entities": {
+    "path": "runtime/vcm_intent_slots_entities.py",
+    "runtime": false
+  },
+  "vcm-intent-slots-v1.vcm_intent_slots_decode": {
+    "path": "runtime/vcm_intent_slots_decode.py",
+    "runtime": false
+  },
+  "vcm-intent-slots-v1.vcm_intent_slots_runtime": {
+    "path": "runtime/vcm_intent_slots_runtime.py",
+    "runtime": false
+  },
+  "vcm-intent-slots-v1.speaker_evidence": {
+    "path": "runtime/speaker_evidence.py",
+    "runtime": false
+  },
+  "vcm-intent-slots-v1.vcm_intent_slots_eval": {
+    "path": "test/vcm_intent_slots_eval.py",
+    "runtime": false
+  },
+  "vcm-intent-slots-v1.vcm_intent_slots_parity": {
+    "path": "test/vcm_intent_slots_parity.py",
+    "runtime": false
+  },
+  "vcm-intent-slots-v1.vcm_intent_slots_diagnose": {
+    "path": "test/vcm_intent_slots_diagnose.py",
+    "runtime": false
+  },
+  "vcm-intent-slots-v1.vcm_intent_slots_owner_replay": {
+    "path": "test/vcm_intent_slots_owner_replay.py",
+    "runtime": false
+  },
+  "vcm-intent-slots-v1.cli": {
+    "path": "vcm_intent_slots.py",
+    "runtime": false
   }
 }

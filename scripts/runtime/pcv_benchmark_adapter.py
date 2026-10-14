@@ -8,7 +8,7 @@ import sys
 from scripts.runtime.pcv_schema import DEFAULT_CUSTOM, validate_command
 
 
-def class_prediction(command):
+def class_prediction(command, *, custom=None):
     if command is None:
         return 'OUT_OF_SCOPE', ''
     validate_command(command)
@@ -22,17 +22,23 @@ def class_prediction(command):
     if intent == 'BRIGHTNESS':return intent, str(slots['percent'])
     if intent == 'COLOR':return intent, slots['color']
     if intent == 'CREATE_REMINDER':
-        task = next((r['name'] for r in DEFAULT_CUSTOM['tasks'] if r['id'] == slots['task_id']), None)
+        task = next((r['name'] for r in (custom if custom is not None else DEFAULT_CUSTOM)['tasks'] if r['id'] == slots['task_id']), None)
         return intent, task or slots['task_id']
     return intent, ''
 
 
-def log_record(event):
-    result = event.get('output', {})
+def log_record(event, *, decision='output', custom=None):
+    if decision not in ('output', 'application', 'final_application'):
+        raise ValueError('Unknown authoritative decision')
+    if decision != 'output' and decision not in event:
+        raise ValueError('Missing declared application decision')
+    result = event.get(decision, {})
+    if result.get('reason') == 'capture_fault':
+        return {'event': 'capture_fault', 'reason': 'capture_fault'}
     accepted = result.get('accepted') is True
     command = result.get('command') if accepted else None
     if accepted and command is None:raise ValueError('Accepted output has no command')
-    intent, slot = class_prediction(command)
+    intent, slot = class_prediction(command, custom=custom)
     infer = event.get('timing', {}).get('total_ms')
     duration = event.get('audio_seconds')
     if any(type(v) not in (int, float) or not math.isfinite(v) or v < 0 for v in (infer, duration)):
@@ -42,13 +48,17 @@ def log_record(event):
 
 class BenchmarkLog:
     """Opt-in serving log, independent of UI diagnostics and transport messages."""
-    def __init__(self, path):
+    def __init__(self, path, *, decision='output', custom=None):
         self.path = Path(path)
+        self.decision = decision
+        self.custom = custom
         self.path.parent.mkdir(parents=True, exist_ok=True)
 
     def __call__(self, event):
-        if event.get('event') == 'command' and event.get('timing'):
-            record = log_record(event)
+        if event.get(self.decision, {}).get('reason') == 'capture_fault':
+            record = {'event': 'capture_fault', 'reason': 'capture_fault'}
+        elif event.get('event') == 'command' and event.get('timing'):
+            record = log_record(event, decision=self.decision, custom=self.custom)
         elif event.get('status') == 'detected':
             record = {'event':'wake'}
         else:
