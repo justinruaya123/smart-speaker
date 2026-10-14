@@ -13,11 +13,12 @@ def probability(value):
     return type(value) in (int, float) and math.isfinite(value) and 0 <= value <= 1
 
 
-def calibrated_slot(constituents, name, policy):
+def calibrated_slot(constituents, name, policy, provenance=""):
     """Frozen logistic score, or an explicitly uncalibrated conservative score."""
     if not constituents or not all(probability(float(v)) for v in constituents):
         raise ValueError("Invalid constituent score")
-    calibration = policy.get("slot_calibrators", {}).get(name)
+    key = name + "/" + provenance + "/" + str(len(constituents))
+    calibration = policy.get("slot_calibrators", {}).get(key)
     if calibration:
         weights = calibration["weights"]
         if len(weights) != len(constituents):
@@ -32,7 +33,7 @@ def calibrated_slot(constituents, name, policy):
     return float(min(constituents))
 
 
-def decide(prediction, contract, catalog, policy):
+def _decision(prediction, contract, catalog, policy, *, diagnostic=False):
     verify_contract(contract)
     result = {"mode": "experimental", "accepted": False, "command": None,
               "reason": None, "slot_evidence": {}, "intent_threshold": .95,
@@ -53,10 +54,10 @@ def decide(prediction, contract, catalog, policy):
     confidence = prediction.get("intent_confidence")
     if intent == "OOV":
         return reject("OOV")
-    if intent not in contract["intent_order"][1:] or not probability(confidence) or confidence < .95:
+    if intent not in contract["intent_order"][1:] or not probability(confidence) or (confidence < .95 and not diagnostic):
         return reject("intent_confidence")
     validity = prediction.get("validity", {})
-    if validity.get("state") != "valid" or not probability(validity.get("confidence")) or validity["confidence"] < .90:
+    if validity.get("state") != "valid" or not probability(validity.get("confidence")) or (validity["confidence"] < .90 and not diagnostic):
         return reject("request_validity")
     roles = prediction.get("roles", {})
     if set(roles) != set(contract["roles"]):
@@ -65,7 +66,7 @@ def decide(prediction, contract, catalog, policy):
     for role, record in roles.items():
         if record.get("state") not in ("absent", "present") or not probability(record.get("confidence")):
             return reject("conflicting_or_unsupported_role")
-        if record["confidence"] < .90 or (role not in applicable and record["state"] != "absent"):
+        if (record["confidence"] < .90 and not diagnostic) or (role not in applicable and record["state"] != "absent"):
             return reject("extra_or_uncertain_role")
     slots = {}
 
@@ -85,11 +86,11 @@ def decide(prediction, contract, catalog, policy):
         return value, [roles[role]["confidence"], score, validity["confidence"]]
 
     def put(field, value, scores, provenance):
-        score = calibrated_slot(scores, field, policy)
+        score = calibrated_slot(scores, field, policy, provenance)
         result["slot_evidence"][field] = {
             "confidence": score, "constituent_scores": scores,
             "provenance": provenance, "score_status": result["score_status"]}
-        if score < .90:
+        if score < .90 and not diagnostic:
             raise ValueError("Slot confidence")
         slots[field] = value
 
@@ -152,7 +153,19 @@ def decide(prediction, contract, catalog, policy):
         validate_command(command)
     except (ValueError, TypeError, KeyError, OverflowError):
         return reject("invalid_argument_or_slot_confidence")
+    if diagnostic:
+        return {**result, "accepted": False, "command": None,
+                "candidate": command, "reason": "diagnostic_only"}
     return {**result, "accepted": True, "command": command}
+
+
+def decide(prediction, contract, catalog, policy):
+    return _decision(prediction, contract, catalog, policy)
+
+
+def propose(prediction, contract, catalog):
+    """Calibration diagnostics can never serialize as an accepted command."""
+    return _decision(prediction, contract, catalog, {}, diagnostic=True)
 
 
 def prediction_from_tensors(tensors, contract, memory=None, policy=None):
