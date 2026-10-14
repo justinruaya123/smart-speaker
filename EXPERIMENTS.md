@@ -1,5 +1,19 @@
 # Experiment directory and findings
 
+## VCM intent and slots v1 — 2026-10-14
+
+Status: selected target architecture and execution handoff; implementation,
+training, calibration, export and physical qualification are pending.
+Base: `5d872e3a249e5876aaa8130b76f6e3b31622355f`.
+One shared width-128 temporal CNN provides intent, typed-slot and acoustic-entity
+heads for OptionB and the preserved personal superset. A separate one-command
+wake-owner gate rejects unverified/overlapping speech; extraction is not claimed.
+The deployed model, 0.95/0.90 gates, providers and historical evidence are unchanged.
+No measured acoustic improvement is asserted. Local inputs must be reverified.
+See [specification](docs/SPEC-vcm-intent-slots-v1.md),
+[execution handoff](docs/HANDOFF-vcm-intent-slots-v1.md) and
+[design protocol](experiments/vcm-intent-slots-v1/protocol.json).
+
 Evidence snapshot: 2026-09-20. E01-E11 initially summarized existing reports and saved evaluations. E12 records the subsequently authorized implementation, fresh execution of historical regression audio, and development-only quantization comparison. Other agents may still be writing results. Missing evidence means unverified, not zero or success. Source reports remain in place; follow the links for verbose tests, per-value tables, recipes and predictions.
 
 Read [REQUIREMENTS.md](REQUIREMENTS.md) for what we are building and [AGENTS.md](AGENTS.md) for how to work. The proposed [organization/archive skill contract](AGENTS.md#0-active-work-hold-and-future-maintenance-skill) must consult this directory before consolidating or archiving a study. That project-specific skill is not installed. This summary alone does not authorize changes. The later user request explicitly authorized E12 installation and pipeline implementation; the repository maintenance hold remains.

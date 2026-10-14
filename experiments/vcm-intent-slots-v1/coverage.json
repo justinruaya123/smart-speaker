@@ -1,0 +1,389 @@
+{
+  "missing_intents": {
+    "train": [
+      "MESSAGE"
+    ],
+    "dev": [
+      "CALL",
+      "MESSAGE"
+    ],
+    "calibration": [
+      "CALL",
+      "MESSAGE",
+      "LIST_REMINDERS",
+      "TEMPERATURE",
+      "CREATE_REMINDER"
+    ],
+    "test": [],
+    "holdout": []
+  },
+  "missing_optionb_commands": {
+    "train": [
+      {
+        "intent": "MESSAGE",
+        "slots": {}
+      },
+      {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      },
+      {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      },
+      {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      },
+      {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      },
+      {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      }
+    ],
+    "dev": [
+      {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      },
+      {
+        "intent": "MESSAGE",
+        "slots": {}
+      },
+      {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      },
+      {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      },
+      {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      },
+      {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      },
+      {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      },
+      {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      }
+    ],
+    "calibration": [
+      {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      },
+      {
+        "intent": "MESSAGE",
+        "slots": {}
+      },
+      {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      },
+      {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      },
+      {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      },
+      {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      },
+      {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      },
+      {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      },
+      {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      },
+      {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      },
+      {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      },
+      {
+        "intent": "COLOR",
+        "slots": {
+          "light_id": "light.all",
+          "color": "blue"
+        }
+      },
+      {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      },
+      {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      },
+      {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      }
+    ],
+    "test": [],
+    "holdout": []
+  },
+  "bindings": {
+    "train": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/human/train.jsonl",
+      "sha256": "77ef84aa57260e4af9942fd3ee495b377bba4df295ba434d41ffa2cad495774e"
+    },
+    "dev": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/human/dev.jsonl",
+      "sha256": "9ce783bfc24086a12ed0e66bae348f903b438eea87f8788b1ec0c3529e3e485a"
+    },
+    "calibration": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/human/calibration.jsonl",
+      "sha256": "af7858186f401f0c016cd930dd057c08c1e4d8552d7dc4179e489ca3e0c48253"
+    },
+    "test": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/evaluation/test.jsonl",
+      "sha256": "a4fdcedfc86efebb36414114887abdc4ee51eba102b0247740aef18d1ad15abc"
+    },
+    "holdout": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/evaluation/holdout.jsonl",
+      "sha256": "a51e720b97f7b31e3e2f025c21bf679006ad444fd2d363916d9a11aa0f488b5b"
+    }
+  },
+  "fit_ready": false,
+  "qualification_ready": false,
+  "missing_supervision": {
+    "reviewed_role_spans": 6975,
+    "role_states": 6975,
+    "ownership_pairs": "not supplied by command-only views"
+  },
+  "identity_limits": "Declared IDs only; voice aliases, near duplicates and independent listening unverified",
+  "splits": {
+    "train": {
+      "rows": 1895,
+      "ambiguous": 0,
+      "intents": {
+        "PLAY_MUSIC": 42,
+        "OOV": 473,
+        "WEATHER": 47,
+        "TIME": 98,
+        "LIGHT_ON": 78,
+        "LIGHT_OFF": 92,
+        "PAUSE": 93,
+        "STOP": 135,
+        "NEXT": 89,
+        "VOLUME": 238,
+        "CALL": 10,
+        "LIST_REMINDERS": 37,
+        "TIMER": 60,
+        "ALARM": 117,
+        "TEMPERATURE": 72,
+        "BRIGHTNESS": 40,
+        "COLOR": 163,
+        "CREATE_REMINDER": 11
+      },
+      "human": 1895,
+      "synthetic": 0,
+      "people_count": 182,
+      "optionb_outputs_covered": 25
+    },
+    "dev": {
+      "rows": 256,
+      "ambiguous": 0,
+      "intents": {
+        "PLAY_MUSIC": 8,
+        "OOV": 63,
+        "WEATHER": 10,
+        "TIME": 16,
+        "LIGHT_ON": 7,
+        "LIGHT_OFF": 11,
+        "PAUSE": 16,
+        "STOP": 20,
+        "NEXT": 13,
+        "VOLUME": 27,
+        "LIST_REMINDERS": 5,
+        "TIMER": 11,
+        "ALARM": 9,
+        "TEMPERATURE": 20,
+        "BRIGHTNESS": 1,
+        "COLOR": 17,
+        "CREATE_REMINDER": 2
+      },
+      "human": 256,
+      "synthetic": 0,
+      "people_count": 36,
+      "optionb_outputs_covered": 22
+    },
+    "calibration": {
+      "rows": 210,
+      "ambiguous": 0,
+      "intents": {
+        "PLAY_MUSIC": 4,
+        "OOV": 88,
+        "WEATHER": 2,
+        "TIME": 11,
+        "LIGHT_ON": 17,
+        "LIGHT_OFF": 14,
+        "PAUSE": 9,
+        "STOP": 13,
+        "NEXT": 8,
+        "VOLUME": 21,
+        "TIMER": 2,
+        "ALARM": 7,
+        "BRIGHTNESS": 4,
+        "COLOR": 10
+      },
+      "human": 210,
+      "synthetic": 0,
+      "people_count": 24,
+      "optionb_outputs_covered": 15
+    },
+    "test": {
+      "rows": 4418,
+      "ambiguous": 185,
+      "intents": {
+        "PLAY_MUSIC": 77,
+        "OOV": 229,
+        "WEATHER": 85,
+        "TIME": 133,
+        "LIGHT_ON": 113,
+        "LIGHT_OFF": 114,
+        "PAUSE": 138,
+        "STOP": 141,
+        "NEXT": 135,
+        "VOLUME": 251,
+        "CALL": 102,
+        "MESSAGE": 129,
+        "LIST_REMINDERS": 120,
+        "TIMER": 423,
+        "ALARM": 404,
+        "TEMPERATURE": 423,
+        "BRIGHTNESS": 421,
+        "COLOR": 372,
+        "CREATE_REMINDER": 423
+      },
+      "human": 1050,
+      "synthetic": 3368,
+      "people_count": 118,
+      "optionb_outputs_covered": 31
+    },
+    "holdout": {
+      "rows": 196,
+      "ambiguous": 2,
+      "intents": {
+        "PLAY_MUSIC": 6,
+        "WEATHER": 6,
+        "TIME": 6,
+        "LIGHT_ON": 6,
+        "OOV": 11,
+        "LIGHT_OFF": 5,
+        "PAUSE": 6,
+        "STOP": 6,
+        "NEXT": 6,
+        "VOLUME": 10,
+        "CALL": 6,
+        "MESSAGE": 6,
+        "LIST_REMINDERS": 6,
+        "TIMER": 18,
+        "ALARM": 18,
+        "TEMPERATURE": 18,
+        "BRIGHTNESS": 18,
+        "COLOR": 18,
+        "CREATE_REMINDER": 18
+      },
+      "human": 96,
+      "synthetic": 100,
+      "people_count": 5,
+      "optionb_outputs_covered": 31
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "audio_root": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker",
+  "views": {
+    "train": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/human/train.jsonl",
+      "sha256": "77ef84aa57260e4af9942fd3ee495b377bba4df295ba434d41ffa2cad495774e"
+    },
+    "dev": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/human/dev.jsonl",
+      "sha256": "9ce783bfc24086a12ed0e66bae348f903b438eea87f8788b1ec0c3529e3e485a"
+    },
+    "calibration": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/human/calibration.jsonl",
+      "sha256": "af7858186f401f0c016cd930dd057c08c1e4d8552d7dc4179e489ca3e0c48253"
+    },
+    "test": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/evaluation/test.jsonl",
+      "sha256": "a4fdcedfc86efebb36414114887abdc4ee51eba102b0247740aef18d1ad15abc"
+    },
+    "holdout": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-dataset-v1/verified/views/evaluation/holdout.jsonl",
+      "sha256": "a51e720b97f7b31e3e2f025c21bf679006ad444fd2d363916d9a11aa0f488b5b"
+    }
+  },
+  "preparation_receipt": {
+    "path": "/home/justin.jose.ruaya/ME2/smart-speaker/experiments/speaker-demo-v2-data/data-audit.json",
+    "sha256": "7e5164df17c24aaecea8d58991cd9c1da03d46010f584c519223dd0684457c8f"
+  },
+  "source_receipts": {
+    "/home/justin.jose.ruaya/ME2/smart-speaker/data/sources/ai231-primary.source.json": "c493d87e763fbb1d87ee7f9137e2ea371775416f6ee3ec61ec1eae5b196a8757",
+    "/home/justin.jose.ruaya/ME2/smart-speaker/data/sources/fil-supplemental.source.json": "41bc968e3e90d299c1aca11bdfe1345a2b6fec60676d9c6c75f2276da0788a23"
+  },
+  "catalog": {
+    "path": "experiments/pcv-release-train-v1/catalog.json",
+    "sha256": "45a848160d853833d83d832952e3ba411a1aea92db14e963c7d7409db83f2a1e"
+  },
+  "contract": {
+    "path": ".cache/vcm-intent-slots-v1/slot-contract.json",
+    "sha256": "5a7bccebfa4f416338c7daf24b0b34678c11a6fbca71c8d7a00c701d48c9d359",
+    "contract_hash": "ff0a789114327f031599b198bfdcb74523eafb4c3075588ab8c313c9fecc6ac8",
+    "entries": 1031,
+    "case_definitions": 414
+  },
+  "limits": [
+    "human coverage incomplete",
+    "source aliases unresolved",
+    "no reviewed role states/spans or entity enrollment",
+    "no fresh blind human holdout",
+    "shipping payload missing",
+    "no ownership calibration pairs",
+    "no Pi or approved numerical resource limits"
+  ]
+}
