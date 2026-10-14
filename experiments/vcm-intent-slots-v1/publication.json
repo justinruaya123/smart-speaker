@@ -1,0 +1,82 @@
+{
+  "repository": "https://github.com/justinruaya123/smart-speaker",
+  "branch": "codex/vcm-intent-slots-v1",
+  "design_commit": "ede9d3caa036876cb112907b8d85e239b799c618",
+  "method": "Connected GitHub app Git Data publication; fast-forward updates with expected-head leases, no force",
+  "reason": "Git HTTPS had no credentials; GitHub app assigns its own commit metadata",
+  "published_reviewed_head": "d0629a5cb1ac89b15008f4bdaf3aa4e3bc050d02",
+  "published_tree_sha256_note": "Git trees use Git SHA-1 object identity; every remote tree equals its tested local tree",
+  "published_tree": "c1864b771e85ecced7b4b6fd89b4c86fa4ebb654",
+  "commits": [
+    {
+      "local_sha": "c3e024b2c52a736c8a679f932329c5589b5e430a",
+      "remote_sha": "5174059eb676940090d45a2c3f101973ef025e38",
+      "tree_sha": "381579b114c16a60c2fa5641cb6c641e77e17c8d",
+      "message": "feat(vcm): freeze full intent-slot contract and audit human inputs"
+    },
+    {
+      "local_sha": "72f4a67a8397527dfca0c6f197bf743525cd90c3",
+      "remote_sha": "34755665b6c660e1307d242632990cac314e0ee8",
+      "tree_sha": "58dac8c0f72b88ce473c2911437e5b793b4f09e4",
+      "message": "feat(vcm): implement masked temporal intent and typed-role model"
+    },
+    {
+      "local_sha": "31770664120d1f2404aa153715642faa724f3239",
+      "remote_sha": "3e8d271e1ed43eb65b1a807e3329df5d4015d261",
+      "tree_sha": "830cf4c27ea7298f17ac14db57916e1539bec780",
+      "message": "feat(vcm): add open-set entities and provenance-aware typed decisions"
+    },
+    {
+      "local_sha": "5af0b34477684d0f294f4248f228e6bea7b4c1cc",
+      "remote_sha": "330cf3f21548ab89094d53d2d2df211108e824a9",
+      "tree_sha": "002e7ca61d9458de0352c3912b10461d66f837bf",
+      "message": "feat(vcm): add guarded training calibration and action-free evaluation pipeline"
+    },
+    {
+      "local_sha": "07996dbcb3556563fe6ebcebf7bd03049f005d97",
+      "remote_sha": "4efa73a138b510c1f3620e1671b6170b8c008f19",
+      "tree_sha": "814eeb1b132400e65cba64a746ef54031ef21a28",
+      "message": "feat(vcm): export distinct FP32 bundles with three-engine decision parity"
+    },
+    {
+      "local_sha": "aeaccdb8ff3c1ba53d52c872f5efc28856162e65",
+      "remote_sha": "a83ac06849e95083124be1d7ceca0860b2161232",
+      "tree_sha": "35a4e2f5e1198394384839de4a5d595553db674b",
+      "message": "feat(vcm): log explicit final application decisions without provider actions"
+    },
+    {
+      "local_sha": "1d3a175f436dbb60575f078c99d11cedd91411d9",
+      "remote_sha": "d1df1fac4315e1d3e93a2246c564bf82e9fc655b",
+      "tree_sha": "04eb80486da6e2f28478b56bf1fe9de0497ba225",
+      "message": "feat(vcm): bind independent wake ownership to PCM spans and sessions"
+    },
+    {
+      "local_sha": "29c4587fa86c56c0680ba891d50fbeaa7541ff8d",
+      "remote_sha": "e8e5c181ff84aac042e5b276106ea7aa1a936f15",
+      "tree_sha": "1807d5bb0ab7273c096eea746889cc46b8a3c776",
+      "message": "fix(vcm): bind calibration ownership and enrollment to actual candidate inputs"
+    },
+    {
+      "local_sha": "815a70300648bb5e9cdb58a7db0134a0747c864b",
+      "remote_sha": "d0629a5cb1ac89b15008f4bdaf3aa4e3bc050d02",
+      "tree_sha": "c1864b771e85ecced7b4b6fd89b4c86fa4ebb654",
+      "message": "docs(vcm): record real verification blocked training and exact missing inputs"
+    }
+  ],
+  "physical_pi": "not measured",
+  "model_installation": false,
+  "provider_actions": false,
+  "source_workspace": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-intent-slots-v1",
+  "payloads": "Weights, ONNX/ncnn exports, audio, features, raw predictions and logs stay ignored in .cache",
+  "latest_tests": {
+    "combined_passed": 154,
+    "focused_new": 94,
+    "relevant_existing": 60,
+    "warnings": 24
+  },
+  "latest_collection": {
+    "collected": 677,
+    "errors": 3,
+    "log": ".cache/vcm-intent-slots-v1/full-collection-final.log"
+  }
+}
