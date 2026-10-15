@@ -99,6 +99,46 @@ def test_pi_pass_preserves_blocked_non_pi_status(inputs, tmp_path):
     assert result["pi"]["status"] == "passed"
 
 
+@pytest.mark.parametrize("change", ["passed", "failed_gate", "fault", "missing"])
+def test_blocked_headline_reflects_pi_receipt_with_immutable_non_pi_findings(inputs, tmp_path, change):
+    baseline, receipt_path, card, receipt = inputs
+    card["gates"]["accuracy_ready"] = False
+    card["gates"]["acoustic_review"] = {"status": "blocked", "reviewed_spans": 0}
+    card["failed_gates"] = ["acoustic review: blocked", "fresh human intent scope: failed"]
+    card["qualification"] = False
+    card["status"] = "blocked / Pi-deferred"
+    if change == "failed_gate":
+        receipt["gates"]["accuracy"] = False
+    elif change == "fault":
+        receipt["metrics"]["faults"] = 1
+    elif change == "missing":
+        receipt["metrics"]["missing"] = 1
+    write(baseline, card)
+    write(receipt_path, receipt)
+    baseline_bytes, receipt_bytes = baseline.read_bytes(), receipt_path.read_bytes()
+    updater = module()
+    result = updater.finalize(baseline, receipt_path, tmp_path / "results")
+    expected = "blocked / Pi-passed" if change == "passed" else "blocked / Pi-failed"
+    assert result["status"] == expected
+    assert result["pi"]["status"] == ("passed" if change == "passed" else "failed")
+    non_pi = lambda value: {key: child for key, child in value.items() if key not in ("pi", "status")}
+    assert json.dumps(non_pi(result), sort_keys=True) == json.dumps(non_pi(card), sort_keys=True)
+    assert result["gates"]["accuracy_ready"] is False and result["qualification"] is False
+    assert result["failed_gates"] == card["failed_gates"]
+    assert result["benchmarks"]["human"]["missed_verbatim"] == ["call home"]
+    assert result["pi"]["results"] == receipt
+    assert result["pi"]["baseline"]["sha256"] == hashlib.sha256(baseline_bytes).hexdigest()
+    assert result["pi"]["receipt"]["sha256"] == hashlib.sha256(receipt_bytes).hexdigest()
+    assert baseline.read_bytes() == baseline_bytes and receipt_path.read_bytes() == receipt_bytes
+    output_paths = [tmp_path / "results" / name for name in ("card.json", "MODEL_CARD.md")]
+    derived_bytes = [path.read_bytes() for path in output_paths]
+    assert "Status: " + expected in derived_bytes[1].decode()
+    assert "call home" in derived_bytes[1].decode()
+    updater.finalize(baseline, receipt_path, tmp_path / "results")
+    assert [path.read_bytes() for path in output_paths] == derived_bytes
+    assert baseline.read_bytes() == baseline_bytes and receipt_path.read_bytes() == receipt_bytes
+
+
 @pytest.mark.parametrize("field", ["checkpoint_sha256", "recipe_sha256", "contract_hash"])
 def test_mixed_candidate_receipt_is_rejected(inputs, tmp_path, field):
     baseline, receipt_path, _, receipt = inputs

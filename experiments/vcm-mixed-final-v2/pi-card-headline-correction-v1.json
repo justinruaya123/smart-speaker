@@ -1,0 +1,140 @@
+{
+  "Pi_ZIP_issued": false,
+  "change": "For baseline status blocked / Pi-deferred with non-Pi accuracy gates still blocked, show blocked / Pi-passed or blocked / Pi-failed from the existing validated receipt outcome. Preserve every non-Pi finding, failed gate and verbatim. Other baseline statuses and the existing accuracy-ready branch stay unchanged.",
+  "existing_receipt_or_source_lock_changes": false,
+  "experiment_id": "vcm-mixed-final-v2",
+  "files": {
+    "final/pi_finalize.py": {
+      "after": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/final/pi_finalize.py",
+        "sha256": "1d80de7652d53ec84f066a5214d25afeca1bd8df8113f813160099f5b0dbf72d"
+      },
+      "before_sha256": "412dde9a76e1476005e6c78f9ee585f4fb92a12679fc5f295219688066ccc560"
+    },
+    "final/tests/test_pi_finalize.py": {
+      "after": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/final/tests/test_pi_finalize.py",
+        "sha256": "328199bbe3dbce45d01cec24acd2845467e2862cdf7ee228931490cb52f8f65c"
+      },
+      "before_sha256": "d7da340617cb3838c07ee8f2998d6610b9a6f73e45d1a2c041fd974251593157"
+    }
+  },
+  "final_tts_VCM_scoring_performed": false,
+  "final_tts_audio_accessed": false,
+  "immutable_scope_audit": {
+    "active_wave_parity_lock": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/wave-parity-01/parity-lock.json",
+      "sha256": "b6a1a18c3d07f04d40d8305d9b9b3ecd0cb98d7c18e5fd661863c108ac37d7a6"
+    },
+    "selected_bundle_file_hashes_match_recipe": true,
+    "selected_runtime_source_hashes_match_recipe": true,
+    "updater_in_wave_bindings": false,
+    "verified_python_source_count": 32,
+    "verified_python_sources": {
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/official-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/official-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/dataset.py": "17d74702d4b9230965c96fbf7dd9a5b717fea47cc3374adfc48e9c2225dd6ba1",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/official-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/metrics.py": "518ef4bc0646f93ad936d84ff2982bdd56691783e6892799e0728eff4e9410f6",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/official-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/pi.py": "772a73dffa5810645182d2a6a9c16a828bb25d4a84f2d9cb3bbf60993d76545f",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/official-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/schema.py": "cb7cefcd893a2443b9a9b9e9b2756efa27d273f4f0086b94491ca3b304e7a006",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/official-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/slots.py": "7fc483ad851699d09e948ed942a36141012f474333e2ce521e705acce7fa30ef",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/final/assemble_card.py": "8f1ea8363ba139d70f32c1a3e5453f071863ac875ee2cb782db837ce6d1e4367",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/models/vcm_intent_slots.py": "88af9beb945ef23683fcfc226d44d7d00d39295b1a3bffd73ba62e68985d355d",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/pcv_benchmark_adapter.py": "ca983deb5a6a96e51bdde975061b5d50f0853e075931e6c2c2bda6aab07c7432",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/pcv_schema.py": "603ec943eae1e7330dd2eb82f05bbd7c206382ecf13c0fb8f8801a7ecd0e134c",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/vcm_intent_slots_bindings.py": "40265c95c7846f72dce8cb1f73ea4c310601e0b99efbee9d007ebfd09603dfdc",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/vcm_intent_slots_contract.py": "9af903bceb98e8d297c35f96baf8887a2c6972a697a7b3651117ac5500363e25",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/vcm_intent_slots_decode.py": "98c41044d81ae34a6115e6ca570a642711eacc7db2e612ec534319fa96cf1765",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/vcm_intent_slots_entities.py": "1e6def9031448a4ad968c3a8f3a1614d806fccbab20e3efed543c4d5e4872713",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/vcm_intent_slots_runtime.py": "91573b930de136dd1f5e5e5e76ed568c751a8e20d37f10fe0d5d7378db36f2d2",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/speaker_demo_suite.py": "4f6ff8ded5db2b9ed5f933a09dd2d9c8ecdd1eff1234175815837ccb6b6e52e2",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_default_benchmark_data.py": "e707f0a274d15fae9679d13f6945f03d344308c0f3ce754aab6f66be2a587ac7",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_intent_slots_diversity.py": "b0b75aded77eca4218d8db69c16d6312551dbc5d65e4391d8a1672ff6845d206",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_intent_slots_eval.py": "92d737ba101ef23d774d6494ee5dc12d7bd67ec9a44e9c45668d6eb2256f1380",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_mixed_benchmark.py": "7c4efb6b72afeb3bfdc2a205b0b6b950c56c8f81db0761a28749a7172e17e5ff",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_mixed_export_cuda.py": "d1bdeebfdc841827b4976feefabc3c19fdea2e56add10d7c2d682929a0445a79",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_mixed_finalize.py": "c157457609efb9325ed3ea273e7bcb9ffc3b295e7b10b68ad3bafd412bbe477e",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_mixed_wave_parity_cuda.py": "cd96cf4957c04c4ef2e9b79ae3bf606ae4ae463d0f547cb3c25de39003773632",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_calibration.py": "2e4672e0e8ca679db57ac5093dbb5b959f039aef71c51eacc54710c666bc25a2",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_data.py": "ea32253163f92918603c3a940f871ca037e98bc35fa38e349b9a739e5afc2d3f",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_export.py": "a9e4d6909131d6293d812d5992d20716fd260e10dd456747d2b038fa643921db",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_mixed_calibration.py": "a7845b6ab1cd092ba10ef0de6b80e8484201c3bf5016e524c28e3579017bb4f9",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_mixed_data.py": "a68ceeea7dbec2ccbca875007a25142583d3611997be2027bf4e6655e036fe92",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_mixed_train.py": "12e6ab83f7d15bd72e118a3462b8b5e38d19547479a62e62f5d66f4401c40610",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_train.py": "671cfecea12aa08358d6d2e31b436b71e1baba4a6bd9fea2e588c79291c02f40",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/vcm/catalog.py": "d7d8c2a4cb0a026e30c83e206213f165c7418c20d97ad9e29ce2dae43a518906",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+    },
+    "wave_bound_audio": 4922,
+    "wave_locked_files": 623
+  },
+  "independent_review": {
+    "active_wave_lock_and_bound_source_hashes_rechecked_unchanged": true,
+    "finding": "No Important/Critical finding",
+    "neural_inference_or_physical_measurements_performed": false,
+    "non_Pi_findings_and_baseline_receipt_bytes_preserved": true,
+    "prior_source_and_test_reconstruction_verified": true,
+    "pure_test_log": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/tooling/pi-card-headline-independent-review-01.log",
+      "sha256": "79c2c15672c83c3d58b39bcf12b511130e7510d6b098abacffdf13975f2c1beb"
+    },
+    "pure_test_seconds": 0.56,
+    "pure_tests_passed": 34,
+    "reviewer": "/root/mixed_data_audit",
+    "selected_recipe_files_and_runtime_source_hashes_rechecked_unchanged": true,
+    "status": "clear"
+  },
+  "model_runtime_architecture_or_threshold_changes": false,
+  "neural_inference_performed": false,
+  "patch": {
+    "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/experiments/vcm-mixed-final-v2/pi-card-headline-correction-v1.patch",
+    "sha256": "95f986a07e200baced7afbb170bf261722815d216f529aba2ddc9ab144885c22"
+  },
+  "physical_pi_measured": false,
+  "prior_source_recovery": "Reverse the bound patch against its bound corrected source and tests to reconstruct the exact prior bytes",
+  "qualification": false,
+  "reason": "A supplied physical Pi receipt changed pi.status but left the known blocked baseline headline saying Pi-deferred",
+  "recorded_utc": "2026-10-15T00:42:15.834253+00:00",
+  "reverse_patch_check": {
+    "command": "git apply --reverse --check experiments/vcm-mixed-final-v2/pi-card-headline-correction-v1.patch",
+    "exit_code": 0,
+    "working_tree_mutation": false
+  },
+  "selected_candidate_bindings": {
+    "checkpoint_sha256": "bcfc0b85d5e61238e9f93008af78e98df00c8d7c838e2d6c4df10834b6c6b976",
+    "contract_hash": "ff0a789114327f031599b198bfdcb74523eafb4c3075588ab8c313c9fecc6ac8",
+    "recipe_sha256": "40f2d027e81393ca10edc8200f2a4c6631425c21b807206c63ec9cc6e546218b"
+  },
+  "stage": "Pi handoff updater presentation after selected-candidate GPU evaluation; physical Pi remains deferred",
+  "status": "pure_software_verified_presentation_only",
+  "tests": {
+    "assertions": [
+      "All non-Pi fields except the composite status headline preserve their JSON semantics",
+      "All non-Pi failed gates and missed verbatims remain unchanged",
+      "Frozen baseline and supplied receipt bytes remain unchanged",
+      "Repeated identical input paths/bytes produce identical derived JSON and Markdown bytes",
+      "Failed measured gates, faults and missing trials remain failed"
+    ],
+    "green": {
+      "binding": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/tooling/pi-card-headline-green-01.log",
+        "sha256": "942692e9a927d3a51881b0263373f6e0da31458a9d60ad76b8ae26db40ec4dc2"
+      },
+      "command": "python -B -m pytest -q -p no:cacheprovider --import-mode=importlib --tb=short final/tests/test_pi_finalize.py",
+      "exit_code": 0,
+      "passed": 34,
+      "seconds": 0.53
+    },
+    "red": {
+      "binding": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/tooling/pi-card-headline-red-01.log",
+        "sha256": "5a0394e2b627b67eb35a958d69448ddd3e96f4ebb99043649fa8b3d4ca006171"
+      },
+      "command": "python -B -m pytest -q -p no:cacheprovider --import-mode=importlib --tb=short final/tests/test_pi_finalize.py -k blocked_headline",
+      "deselected": 30,
+      "exit_code": 1,
+      "failed": 4
+    },
+    "scope": "Pure stdlib software receipts in pytest temporary directories; no actual physical or neural measurements"
+  },
+  "version": "pi-card-headline-correction-v1"
+}

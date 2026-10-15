@@ -116,6 +116,8 @@ def finalize(baseline_path, receipt_path, output_dir=Path("results")):
     }
     if isinstance(card.get("gates"), dict) and card["gates"].get("accuracy_ready") is True:
         result["status"] = "accuracy-ready / Pi-validated" if passed else "accuracy-ready / Pi-failed"
+    elif card.get("status") == "blocked / Pi-deferred":
+        result["status"] = "blocked / Pi-passed" if passed else "blocked / Pi-failed"
     json_bytes = (json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + "\n").encode("utf-8")
     markdown_bytes = render_markdown(result).encode("utf-8")
     output_dir.mkdir(parents=True, exist_ok=True)
