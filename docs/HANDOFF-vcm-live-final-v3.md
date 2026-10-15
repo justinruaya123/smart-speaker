@@ -38,7 +38,7 @@ Sources: [failure review](HANDOFF-vcm-mixed-final-v2-error-review.md), [numeric 
 | `Send my message` was accepted as `WEATHER` | Count wrong accepts on supported speech, not only false accepts on negatives. |
 | Alarm-minute loss denominator is zero | Any retained learned minute path needs actual training targets. A legal whole-hour default does not prove spoken-minute recognition. |
 
-The synthetic holdout score remains 19/3,368 exact accepted commands. Passing export parity or generating a package does not change recognition accuracy.
+The original synthetic test score remains 19/3,368 exact accepted commands. Passing export parity or generating a package does not change recognition accuracy.
 
 ## 3. Task A — freeze the target and create the smallest useful tests
 
