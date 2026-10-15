@@ -53,6 +53,25 @@ def test_postfit_verification_binds_the_completed_selected_candidate(postfit):
     assert context["checkpoint_sha256"] == postfit["grid"][-1]["checkpoint_sha256"]
 
 
+def test_valid_relative_selected_checkpoint_binds_the_same_exact_file(prepared, monkeypatch):
+    checkpoint = Path(prepared["grid"][-1]["checkpoint"])
+    prepared["grid"][-1]["checkpoint"] = "training/balanced-89/checkpoint-30.pt"
+    dump(checkpoint.parent / "selection-before-calibration.json", prepared["grid"][-1])
+    dump(prepared["training"] / "grid.json", prepared["grid"])
+    dump(prepared["training"] / "selection-before-calibration.json", prepared["selection"])
+    monkeypatch.chdir(prepared["tmp_path"])
+    calibration_fixture(prepared)
+    module = mocked_gpu_pipeline(prepared, monkeypatch)
+    directory = prepared["tmp_path"] / "postfit"
+    module.run(prepared["training"], prepared["inputs_path"], directory)
+
+    context = exporter().verify_postfit(directory)
+
+    assert context["training_context"]["selected"]["checkpoint"] == "training/balanced-89/checkpoint-30.pt"
+    assert Path(context["receipt"]["files"]["checkpoint"]["path"]) == checkpoint
+    assert context["checkpoint_sha256"] == file_sha(checkpoint)
+
+
 @pytest.mark.parametrize("damage", ["checkpoint", "threshold", "manifest", "memory",
                                      "grid", "gpu", "coverage", "source", "normalization"])
 def test_stale_or_partial_postfit_evidence_cannot_be_exported(postfit, damage):

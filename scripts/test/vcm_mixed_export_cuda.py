@@ -102,7 +102,7 @@ def verify_postfit(postfit):
         raise ValueError("Post-fit file/grid receipts omit or rebind the actual completed candidate")
     if (training["selected"] != receipt["selected"]
             or receipt.get("training_evidence_bindings") != training["evidence_bindings"]
-            or Path(files["checkpoint"]["path"]).resolve() != Path(training["selected"]["checkpoint"])
+            or Path(files["checkpoint"]["path"]).resolve() != Path(training["selected"]["checkpoint"]).resolve()
             or files["checkpoint"]["sha256"] != training["selected"]["checkpoint_sha256"]
             or files["normalization"]["sha256"] != sha(training["normalization_path"])):
         raise ValueError("Post-fit candidate or exact normalization differs from verified complete training")

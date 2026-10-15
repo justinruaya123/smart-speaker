@@ -1,0 +1,210 @@
+{
+  "experiment_id": "vcm-mixed-final-v2",
+  "version": "export-path-correction-v1",
+  "recorded_utc": "2026-10-15T00:21:45.510657+00:00",
+  "stage": "technical export input verification after completed fitting and post-fit calibration",
+  "status": "software_verified_actual_cuda_export_pending_root_review",
+  "qualification": false,
+  "reason": "Frozen selected checkpoint uses a relative path; the previous guard resolved only the bound-file side, incorrectly rejecting the same exact file",
+  "change": "Resolve both selected-checkpoint path representations before comparison; preserve all existing file SHA, normalization, source and training-evidence checks",
+  "prior_published_helper_sha256": "eb7570e13d940e2e4d2962d2feb0ab976b55ef53d7fa6a13343518fcbb36fdf3",
+  "prior_tests_sha256": "8066ba0bed368844acf9edda2a288b58b2e8020429d435e64183566f2ca6c5a0",
+  "prior_source_recovery": "Apply the bound patch in reverse to the bound corrected files to reconstruct the prior published helper and tests exactly",
+  "failed_attempt": {
+    "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/tooling/export-cuda-01.log",
+    "sha256": "b027d022cc16f24eab4cd54c995db11cf920511a799fd0778581f99d73c8e55a"
+  },
+  "failed_attempt_reason": "Post-fit candidate or exact normalization differs from verified complete training",
+  "selected_candidate": {
+    "arm": "uniform",
+    "seed": 89,
+    "epoch": 28,
+    "checkpoint": ".cache/vcm-mixed-final-v2/training-01/uniform-89/checkpoint-28.pt",
+    "checkpoint_sha256": "bcfc0b85d5e61238e9f93008af78e98df00c8d7c838e2d6c4df10834b6c6b976"
+  },
+  "frozen_input_bindings": {
+    "postfit_receipt": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/postfit-01/postfit-receipt.json",
+      "sha256": "e272e82190fea94472e653e29eca78dcc0cf3483aff4f973f3bf9a6ee329bfcf"
+    },
+    "checkpoint": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/training-01/uniform-89/checkpoint-28.pt",
+      "sha256": "bcfc0b85d5e61238e9f93008af78e98df00c8d7c838e2d6c4df10834b6c6b976"
+    },
+    "normalization": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/postfit-01/normalization.json",
+      "sha256": "de23b32523497da48a79ab02a827abd9665bbdcdc853769d2f57d7d922bd2aa8"
+    },
+    "grid": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/training-01/grid.json",
+      "sha256": "73d711f5e983754ad533e98d441de1d9004ed32c86bc47f60684542f342aa79f"
+    },
+    "selection": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/training-01/selection-before-calibration.json",
+      "sha256": "21c5318e020c3d88c8509f8ef3aad746ca37ccdb5335274e2bf5855d4c7ea904"
+    },
+    "inputs": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/prepared-02/inputs.json",
+      "sha256": "238f0348014b56791c56b37a3a7e896795682fe61bb39bbb967139eefe453da4"
+    },
+    "protocol": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/experiments/vcm-mixed-final-v2/protocol.json",
+      "sha256": "622dee306d5e99a512575c73f8890b95eb954e379ccda80b8adec7505eb19b9e"
+    },
+    "contract": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/slot-contract.json",
+      "sha256": "5a7bccebfa4f416338c7daf24b0b34678c11a6fbca71c8d7a00c701d48c9d359"
+    },
+    "entities": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/postfit-01/entities.json",
+      "sha256": "d66f5d0237e7a5cad9332aec9fb537828ea622642ee79eb541a501aaef5971fa"
+    },
+    "raw_entity_policy": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/postfit-01/raw-entity-policy.json",
+      "sha256": "48ae1ea566ebab59e92f9236d8f59cd21e61f5e22317b15a2492c9f5bb2ae8be"
+    },
+    "calibration": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/postfit-01/calibration/calibration.json",
+      "sha256": "c9623c2612ddeada08863af8d10ae69004b0b6dd29a7588e252fa27383df43b7"
+    },
+    "observations": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/postfit-01/observations.json",
+      "sha256": "13ab0d0671f8e2fdc619cde5aac81b59a96d7e91d2ff581e787e1a35d62d3ed1"
+    }
+  },
+  "postfit_source_bindings_preserved": {
+    "scripts/test/vcm_mixed_finalize.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_mixed_finalize.py",
+      "sha256": "c157457609efb9325ed3ea273e7bcb9ffc3b295e7b10b68ad3bafd412bbe477e"
+    },
+    "scripts/train/vcm_intent_slots_mixed_train.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_mixed_train.py",
+      "sha256": "12e6ab83f7d15bd72e118a3462b8b5e38d19547479a62e62f5d66f4401c40610"
+    },
+    "scripts/train/vcm_intent_slots_mixed_data.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_mixed_data.py",
+      "sha256": "a68ceeea7dbec2ccbca875007a25142583d3611997be2027bf4e6655e036fe92"
+    },
+    "scripts/train/vcm_intent_slots_mixed_calibration.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_mixed_calibration.py",
+      "sha256": "a7845b6ab1cd092ba10ef0de6b80e8484201c3bf5016e524c28e3579017bb4f9"
+    },
+    "scripts/train/vcm_intent_slots_calibration.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_calibration.py",
+      "sha256": "2e4672e0e8ca679db57ac5093dbb5b959f039aef71c51eacc54710c666bc25a2"
+    },
+    "scripts/train/vcm_intent_slots_train.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_train.py",
+      "sha256": "671cfecea12aa08358d6d2e31b436b71e1baba4a6bd9fea2e588c79291c02f40"
+    },
+    "scripts/train/vcm_intent_slots_data.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_data.py",
+      "sha256": "ea32253163f92918603c3a940f871ca037e98bc35fa38e349b9a739e5afc2d3f"
+    },
+    "scripts/train/vcm_intent_slots_export.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_export.py",
+      "sha256": "a9e4d6909131d6293d812d5992d20716fd260e10dd456747d2b038fa643921db"
+    },
+    "scripts/models/vcm_intent_slots.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/models/vcm_intent_slots.py",
+      "sha256": "88af9beb945ef23683fcfc226d44d7d00d39295b1a3bffd73ba62e68985d355d"
+    },
+    "scripts/runtime/pcv_schema.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/pcv_schema.py",
+      "sha256": "603ec943eae1e7330dd2eb82f05bbd7c206382ecf13c0fb8f8801a7ecd0e134c"
+    },
+    "scripts/runtime/vcm_intent_slots_contract.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/vcm_intent_slots_contract.py",
+      "sha256": "9af903bceb98e8d297c35f96baf8887a2c6972a697a7b3651117ac5500363e25"
+    },
+    "scripts/runtime/vcm_intent_slots_entities.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/vcm_intent_slots_entities.py",
+      "sha256": "1e6def9031448a4ad968c3a8f3a1614d806fccbab20e3efed543c4d5e4872713"
+    },
+    "scripts/runtime/vcm_intent_slots_decode.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/vcm_intent_slots_decode.py",
+      "sha256": "98c41044d81ae34a6115e6ca570a642711eacc7db2e612ec534319fa96cf1765"
+    },
+    "scripts/runtime/vcm_intent_slots_bindings.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/vcm_intent_slots_bindings.py",
+      "sha256": "40265c95c7846f72dce8cb1f73ea4c310601e0b99efbee9d007ebfd09603dfdc"
+    },
+    "scripts/test/speaker_demo_suite.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/speaker_demo_suite.py",
+      "sha256": "4f6ff8ded5db2b9ed5f933a09dd2d9c8ecdd1eff1234175815837ccb6b6e52e2"
+    },
+    "vcm/catalog.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/vcm/catalog.py",
+      "sha256": "d7d8c2a4cb0a026e30c83e206213f165c7418c20d97ad9e29ce2dae43a518906"
+    },
+    "vcm/frontend.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/vcm/frontend.py",
+      "sha256": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+    }
+  },
+  "correction_files": {
+    "patch": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/experiments/vcm-mixed-final-v2/export-path-correction-v1.patch",
+      "sha256": "7647ba5d0f187ded12b8f5c2604ce86efe8aca6576c5dc8870c363d4e3606d71"
+    },
+    "helper": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_mixed_export_cuda.py",
+      "sha256": "d1bdeebfdc841827b4976feefabc3c19fdea2e56add10d7c2d682929a0445a79"
+    },
+    "tests": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/test_vcm_mixed_export_cuda.py",
+      "sha256": "83673aae15fb76b4e49db028fc0b8a0cec9224c8dbf50e5a4f97eab660d3e341"
+    }
+  },
+  "verification": {
+    "red": {
+      "command": "/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python -m pytest -q scripts/test/test_vcm_mixed_export_cuda.py::test_valid_relative_selected_checkpoint_binds_the_same_exact_file --tb=short",
+      "exit_code": 1,
+      "result": "1 failed at the same verify_postfit candidate/normalization guard as the native attempt"
+    },
+    "green": {
+      "command": "/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python -m pytest -q scripts/test/test_vcm_mixed_export_cuda.py::test_valid_relative_selected_checkpoint_binds_the_same_exact_file --tb=short",
+      "exit_code": 0,
+      "result": "1 passed in 4.69s"
+    },
+    "pure_mock_suite": {
+      "command": "/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python -m pytest -q scripts/test/test_vcm_mixed_export_cuda.py scripts/test/test_vcm_mixed_finalize.py --tb=short",
+      "exit_code": 0,
+      "result": "111 passed in 17.31s"
+    },
+    "actual_postfit_guard": {
+      "operation": "verify_postfit(.cache/vcm-mixed-final-v2/postfit-01); file SHA/JSON validation only",
+      "exit_code": 0,
+      "checkpoint_sha256": "bcfc0b85d5e61238e9f93008af78e98df00c8d7c838e2d6c4df10834b6c6b976",
+      "normalization_sha256": "de23b32523497da48a79ab02a827abd9665bbdcdc853769d2f57d7d922bd2aa8"
+    },
+    "compile": {
+      "command": "/home/justin.jose.ruaya/ME2/smart-speaker/.venv/bin/python -m py_compile scripts/test/vcm_mixed_export_cuda.py scripts/test/test_vcm_mixed_export_cuda.py",
+      "exit_code": 0
+    },
+    "scoped_diff_check": {
+      "command": "git diff --check -- scripts/test/vcm_mixed_export_cuda.py scripts/test/test_vcm_mixed_export_cuda.py",
+      "exit_code": 0
+    }
+  },
+  "correction_execution": {
+    "model_loaded": false,
+    "ORT_session_created": false,
+    "CPU_neural_inference_performed": false,
+    "CUDA_neural_inference_performed": false,
+    "final_TTS_accessed": false,
+    "evaluation_views_read": false,
+    "export_performed": false
+  },
+  "unchanged": {
+    "fitting_sources_and_weights": true,
+    "selection_and_candidate": true,
+    "postfit_calibration_entities_and_normalization": true,
+    "architecture_runtime_and_data": true,
+    "thresholds": {
+      "intent": 0.95,
+      "slot": 0.9
+    }
+  },
+  "next_step": "Independent review, then root may rerun actual CUDA export to a new bundle-cuda02 directory"
+}

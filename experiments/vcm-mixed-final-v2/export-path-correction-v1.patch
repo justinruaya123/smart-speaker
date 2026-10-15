@@ -1,0 +1,39 @@
+--- a/scripts/test/vcm_mixed_export_cuda.py
++++ b/scripts/test/vcm_mixed_export_cuda.py
+@@ -102,7 +102,7 @@
+         raise ValueError("Post-fit file/grid receipts omit or rebind the actual completed candidate")
+     if (training["selected"] != receipt["selected"]
+             or receipt.get("training_evidence_bindings") != training["evidence_bindings"]
+-            or Path(files["checkpoint"]["path"]).resolve() != Path(training["selected"]["checkpoint"])
++            or Path(files["checkpoint"]["path"]).resolve() != Path(training["selected"]["checkpoint"]).resolve()
+             or files["checkpoint"]["sha256"] != training["selected"]["checkpoint_sha256"]
+             or files["normalization"]["sha256"] != sha(training["normalization_path"])):
+         raise ValueError("Post-fit candidate or exact normalization differs from verified complete training")
+--- a/scripts/test/test_vcm_mixed_export_cuda.py
++++ b/scripts/test/test_vcm_mixed_export_cuda.py
+@@ -51,6 +51,25 @@
+     assert context["training_context"]["selected"] == postfit["grid"][-1]
+     assert context["normalization_sha256"] == file_sha(postfit["postfit"] / "normalization.json")
+     assert context["checkpoint_sha256"] == postfit["grid"][-1]["checkpoint_sha256"]
++
++
++def test_valid_relative_selected_checkpoint_binds_the_same_exact_file(prepared, monkeypatch):
++    checkpoint = Path(prepared["grid"][-1]["checkpoint"])
++    prepared["grid"][-1]["checkpoint"] = "training/balanced-89/checkpoint-30.pt"
++    dump(checkpoint.parent / "selection-before-calibration.json", prepared["grid"][-1])
++    dump(prepared["training"] / "grid.json", prepared["grid"])
++    dump(prepared["training"] / "selection-before-calibration.json", prepared["selection"])
++    monkeypatch.chdir(prepared["tmp_path"])
++    calibration_fixture(prepared)
++    module = mocked_gpu_pipeline(prepared, monkeypatch)
++    directory = prepared["tmp_path"] / "postfit"
++    module.run(prepared["training"], prepared["inputs_path"], directory)
++
++    context = exporter().verify_postfit(directory)
++
++    assert context["training_context"]["selected"]["checkpoint"] == "training/balanced-89/checkpoint-30.pt"
++    assert Path(context["receipt"]["files"]["checkpoint"]["path"]) == checkpoint
++    assert context["checkpoint_sha256"] == file_sha(checkpoint)
+ 
+ 
+ @pytest.mark.parametrize("damage", ["checkpoint", "threshold", "manifest", "memory",
