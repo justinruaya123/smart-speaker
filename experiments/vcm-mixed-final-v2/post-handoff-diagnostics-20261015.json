@@ -1,0 +1,4980 @@
+{
+  "analysis_method": "Read existing frozen manifests and trial predictions; recompute counters and analytic bounds. No new neural inference, training, calibration fitting, or benchmark execution.",
+  "analytic_computation": {
+    "FP32_weight_bytes": 1123272,
+    "MAC_scope": "Single clip; Conv/Linear/query scores/attention pooling only. Excludes FFT, activations, normalization, softmax, bias additions, entity memory and decoder.",
+    "ONNX_graph_bytes": 1148441,
+    "T_formula": "1+floor((N-400)/160)",
+    "examples": [
+      {
+        "audio_seconds": 1,
+        "dense_mel_projection_MACs": 1007440,
+        "encoded_frames": 49,
+        "mel_frames": 98,
+        "neural_MACs": 8584448
+      },
+      {
+        "audio_seconds": 2,
+        "dense_mel_projection_MACs": 2035440,
+        "encoded_frames": 99,
+        "mel_frames": 198,
+        "neural_MACs": 17237248
+      },
+      {
+        "audio_seconds": 3,
+        "dense_mel_projection_MACs": 3063440,
+        "encoded_frames": 149,
+        "mel_frames": 298,
+        "neural_MACs": 25890048
+      }
+    ],
+    "neural_MAC_formula": "173056*ceil(T/2)+104704"
+  },
+  "architecture": {
+    "ASR": false,
+    "CTC": false,
+    "KV_cache": false,
+    "causal_model": false,
+    "depthwise_kernel": 5,
+    "dilations": [
+      1,
+      2,
+      4,
+      8,
+      1,
+      2,
+      4,
+      8
+    ],
+    "entity_embedding_dimensions": 64,
+    "entity_roles": [
+      "light",
+      "song",
+      "artist",
+      "contact",
+      "task"
+    ],
+    "family": "IntentSlotsVCM complete-utterance temporal CNN",
+    "finite_value_heads": {
+      "alarm_hour": 12,
+      "alarm_meridiem": 2,
+      "alarm_minute": 60,
+      "brightness_percent": 101,
+      "color": 12,
+      "temperature_degrees": 111,
+      "timer_amount": 9,
+      "timer_unit": 3,
+      "volume_operation": 4,
+      "volume_percent": 101
+    },
+    "frontend": {
+      "bins": 40,
+      "centered": false,
+      "fft": 512,
+      "floor": 1e-08,
+      "high_hz": 7600,
+      "hop": 160,
+      "low_hz": 20,
+      "sample_rate": 16000,
+      "version": 1,
+      "window": 400
+    },
+    "intents": 19,
+    "new_hardware_limit": false,
+    "parameters": {
+      "blocks": 140288,
+      "entities": 41280,
+      "intent": 2451,
+      "keys": 8256,
+      "queries": 1024,
+      "states": 7740,
+      "stem": 25728,
+      "total": 280818,
+      "validity": 516,
+      "values": 53535
+    },
+    "residual_blocks": 8,
+    "role_states": [
+      "absent",
+      "present",
+      "conflicting",
+      "unsupported"
+    ],
+    "roles": [
+      "brightness_percent",
+      "volume_operation",
+      "volume_percent",
+      "timer_unit",
+      "alarm_hour",
+      "alarm_minute",
+      "alarm_meridiem",
+      "temperature_degrees",
+      "color",
+      "timer_amount",
+      "light",
+      "song",
+      "artist",
+      "contact",
+      "task"
+    ],
+    "semantic_queries": 16,
+    "stem_channels": 128,
+    "stem_kernel": 5,
+    "stem_stride": 2,
+    "typed_outputs": true,
+    "validity_states": [
+      "valid",
+      "missing",
+      "conflicting",
+      "unsupported"
+    ]
+  },
+  "baseline_commit": "6aee6bbe8075141c13ab2ddbb06ef3f985615c90",
+  "calibrator_bound_method": "For x_j in [0,1], c(x)=sigmoid(b+sum(w_j*x_j)) <= sigmoid(b+sum(max(0,w_j))). Exhaustive corners verify the linear upper bound; feature correlations can only lower the reachable maximum.",
+  "changes_performed": {
+    "benchmark_references": false,
+    "frozen_reports_and_package": false,
+    "new_analysis_receipt_and_review_brief": true,
+    "runtime": false,
+    "thresholds": false,
+    "weights": false
+  },
+  "date": "2026-10-15",
+  "experiment": "vcm-mixed-final-v2",
+  "format": "vcm-post-handoff-diagnostic-review-v1",
+  "frozen_benchmarks": {
+    "fresh_human106": {
+      "all": {
+        "accepted_n": 0,
+        "ambiguous_n": 0,
+        "complete_command_accuracy": 0.0,
+        "complete_command_correct": 0,
+        "correct": 0,
+        "correct_rejections": 13,
+        "every_slot": {
+          "light_id": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 42
+          },
+          "operation": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 40
+          }
+        },
+        "false_accept_rate": 0.0,
+        "false_accepts": 0,
+        "faults": 0,
+        "joint_supplied_slots": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "extra_slot_commands": 0,
+          "n": 93,
+          "with_supplied_slots_accuracy": 0.0,
+          "with_supplied_slots_correct": 0,
+          "with_supplied_slots_n": 82
+        },
+        "missing": 0,
+        "negative_n": 13,
+        "precision": null,
+        "recall": 0.0,
+        "slot_counts": {
+          "light_id": {
+            "correct_accepted": 0,
+            "n": 42
+          },
+          "operation": {
+            "correct_accepted": 0,
+            "n": 40
+          }
+        },
+        "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+        "strict_accuracy": 0.12264150943396226,
+        "supported_n": 93,
+        "trials": 106
+      },
+      "fresh": true,
+      "host_timing": {
+        "measured_n": 106,
+        "p50_ms": 44.47718197479844,
+        "p50_rtf": 0.02132875033566961,
+        "p95_ms": 48.96082589402795,
+        "p95_rtf": 0.04507350103212663,
+        "physical_pi_evidence": false,
+        "rtf_n": 106
+      },
+      "intents": {
+        "LIGHT_OFF": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 17
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 17,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 17
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 17
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 17,
+          "trials": 17
+        },
+        "LIGHT_ON": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 25
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 25,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 25
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 25
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 25,
+          "trials": 25
+        },
+        "OOV": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": null,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 13,
+          "every_slot": {},
+          "false_accept_rate": 0.0,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": null,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 0,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 13,
+          "precision": null,
+          "recall": null,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 1.0,
+          "supported_n": 0,
+          "trials": 13
+        },
+        "PAUSE": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 3,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 3,
+          "trials": 3
+        },
+        "PLAY_MUSIC": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 4,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 4,
+          "trials": 4
+        },
+        "STOP": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 4,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 4,
+          "trials": 4
+        },
+        "VOLUME": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "operation": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 40
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 40,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 40
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "operation": {
+              "correct_accepted": 0,
+              "n": 40
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 40,
+          "trials": 40
+        }
+      },
+      "kinds": {
+        "human": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 13,
+          "every_slot": {
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 42
+            },
+            "operation": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 40
+            }
+          },
+          "false_accept_rate": 0.0,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 93,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 82
+          },
+          "missing": 0,
+          "negative_n": 13,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 42
+            },
+            "operation": {
+              "correct_accepted": 0,
+              "n": 40
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.12264150943396226,
+          "supported_n": 93,
+          "trials": 106
+        }
+      },
+      "regression": false
+    },
+    "mandatory_defaults202": {
+      "all": {
+        "accepted_n": 5,
+        "ambiguous_n": 0,
+        "complete_command_accuracy": 0.026881720430107527,
+        "complete_command_correct": 5,
+        "correct": 5,
+        "correct_rejections": 16,
+        "every_slot": {
+          "color": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 18
+          },
+          "contact_id": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 6
+          },
+          "degrees": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 18
+          },
+          "duration_seconds": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 18
+          },
+          "light_id": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 48
+          },
+          "operation": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 12
+          },
+          "percent": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 18
+          },
+          "task_id": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 18
+          },
+          "time": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 18
+          },
+          "timezone": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 18
+          },
+          "unit": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 18
+          }
+        },
+        "false_accept_rate": 0.0,
+        "false_accepts": 0,
+        "faults": 0,
+        "joint_supplied_slots": {
+          "accuracy": 0.026881720430107527,
+          "correct": 5,
+          "extra_slot_commands": 0,
+          "n": 186,
+          "with_supplied_slots_accuracy": 0.0,
+          "with_supplied_slots_correct": 0,
+          "with_supplied_slots_n": 138
+        },
+        "missing": 0,
+        "negative_n": 16,
+        "precision": 1.0,
+        "recall": 0.026881720430107527,
+        "slot_counts": {
+          "color": {
+            "correct_accepted": 0,
+            "n": 18
+          },
+          "contact_id": {
+            "correct_accepted": 0,
+            "n": 6
+          },
+          "degrees": {
+            "correct_accepted": 0,
+            "n": 18
+          },
+          "duration_seconds": {
+            "correct_accepted": 0,
+            "n": 18
+          },
+          "light_id": {
+            "correct_accepted": 0,
+            "n": 48
+          },
+          "operation": {
+            "correct_accepted": 0,
+            "n": 12
+          },
+          "percent": {
+            "correct_accepted": 0,
+            "n": 18
+          },
+          "task_id": {
+            "correct_accepted": 0,
+            "n": 18
+          },
+          "time": {
+            "correct_accepted": 0,
+            "n": 18
+          },
+          "timezone": {
+            "correct_accepted": 0,
+            "n": 18
+          },
+          "unit": {
+            "correct_accepted": 0,
+            "n": 18
+          }
+        },
+        "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+        "strict_accuracy": 0.10396039603960396,
+        "supported_n": 186,
+        "trials": 202
+      },
+      "fresh": false,
+      "host_timing": {
+        "measured_n": 202,
+        "p50_ms": 44.32256845757365,
+        "p50_rtf": 0.016491864088150655,
+        "p95_ms": 46.31650107912719,
+        "p95_rtf": 0.04401652491068726,
+        "physical_pi_evidence": false,
+        "rtf_n": 202
+      },
+      "intents": {
+        "ALARM": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "time": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            },
+            "timezone": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 18,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 18
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "time": {
+              "correct_accepted": 0,
+              "n": 18
+            },
+            "timezone": {
+              "correct_accepted": 0,
+              "n": 18
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 18,
+          "trials": 18
+        },
+        "BRIGHTNESS": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            },
+            "percent": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 18,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 18
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 18
+            },
+            "percent": {
+              "correct_accepted": 0,
+              "n": 18
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 18,
+          "trials": 18
+        },
+        "CALL": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "contact_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 6
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 6
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "contact_id": {
+              "correct_accepted": 0,
+              "n": 6
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "COLOR": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "color": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            },
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 18,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 18
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "color": {
+              "correct_accepted": 0,
+              "n": 18
+            },
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 18
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 18,
+          "trials": 18
+        },
+        "CREATE_REMINDER": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "task_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 18,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 18
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "task_id": {
+              "correct_accepted": 0,
+              "n": 18
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 18,
+          "trials": 18
+        },
+        "LIGHT_OFF": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 6
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 6
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 6
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "LIGHT_ON": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 6
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 6
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 6
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "LIST_REMINDERS": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "MESSAGE": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "NEXT": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "OOV": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": null,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 16,
+          "every_slot": {},
+          "false_accept_rate": 0.0,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": null,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 0,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 16,
+          "precision": null,
+          "recall": null,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 1.0,
+          "supported_n": 0,
+          "trials": 16
+        },
+        "PAUSE": {
+          "accepted_n": 1,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.16666666666666666,
+          "complete_command_correct": 1,
+          "correct": 1,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.16666666666666666,
+            "correct": 1,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.16666666666666666,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "PLAY_MUSIC": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "STOP": {
+          "accepted_n": 1,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.16666666666666666,
+          "complete_command_correct": 1,
+          "correct": 1,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.16666666666666666,
+            "correct": 1,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.16666666666666666,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "TEMPERATURE": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "degrees": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            },
+            "unit": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 18,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 18
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "degrees": {
+              "correct_accepted": 0,
+              "n": 18
+            },
+            "unit": {
+              "correct_accepted": 0,
+              "n": 18
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 18,
+          "trials": 18
+        },
+        "TIME": {
+          "accepted_n": 2,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.3333333333333333,
+          "complete_command_correct": 2,
+          "correct": 2,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.3333333333333333,
+            "correct": 2,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.3333333333333333,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "TIMER": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "duration_seconds": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 18,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 18
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "duration_seconds": {
+              "correct_accepted": 0,
+              "n": 18
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 18,
+          "trials": 18
+        },
+        "VOLUME": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "operation": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 12
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 12,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 12
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "operation": {
+              "correct_accepted": 0,
+              "n": 12
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 12,
+          "trials": 12
+        },
+        "WEATHER": {
+          "accepted_n": 1,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.16666666666666666,
+          "complete_command_correct": 1,
+          "correct": 1,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.16666666666666666,
+            "correct": 1,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.16666666666666666,
+          "supported_n": 6,
+          "trials": 6
+        }
+      },
+      "kinds": {
+        "human": {
+          "accepted_n": 2,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.023255813953488372,
+          "complete_command_correct": 2,
+          "correct": 2,
+          "correct_rejections": 10,
+          "every_slot": {
+            "color": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 6
+            },
+            "contact_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 3
+            },
+            "degrees": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 9
+            },
+            "duration_seconds": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 9
+            },
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            },
+            "operation": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 6
+            },
+            "percent": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 6
+            },
+            "task_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 9
+            },
+            "time": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 8
+            },
+            "timezone": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 8
+            },
+            "unit": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 9
+            }
+          },
+          "false_accept_rate": 0.0,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.023255813953488372,
+            "correct": 2,
+            "extra_slot_commands": 0,
+            "n": 86,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 62
+          },
+          "missing": 0,
+          "negative_n": 10,
+          "precision": 1.0,
+          "recall": 0.023255813953488372,
+          "slot_counts": {
+            "color": {
+              "correct_accepted": 0,
+              "n": 6
+            },
+            "contact_id": {
+              "correct_accepted": 0,
+              "n": 3
+            },
+            "degrees": {
+              "correct_accepted": 0,
+              "n": 9
+            },
+            "duration_seconds": {
+              "correct_accepted": 0,
+              "n": 9
+            },
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 18
+            },
+            "operation": {
+              "correct_accepted": 0,
+              "n": 6
+            },
+            "percent": {
+              "correct_accepted": 0,
+              "n": 6
+            },
+            "task_id": {
+              "correct_accepted": 0,
+              "n": 9
+            },
+            "time": {
+              "correct_accepted": 0,
+              "n": 8
+            },
+            "timezone": {
+              "correct_accepted": 0,
+              "n": 8
+            },
+            "unit": {
+              "correct_accepted": 0,
+              "n": 9
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.125,
+          "supported_n": 86,
+          "trials": 96
+        },
+        "synthetic": {
+          "accepted_n": 3,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.03,
+          "complete_command_correct": 3,
+          "correct": 3,
+          "correct_rejections": 6,
+          "every_slot": {
+            "color": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 12
+            },
+            "contact_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 3
+            },
+            "degrees": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 9
+            },
+            "duration_seconds": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 9
+            },
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 30
+            },
+            "operation": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 6
+            },
+            "percent": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 12
+            },
+            "task_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 9
+            },
+            "time": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 10
+            },
+            "timezone": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 10
+            },
+            "unit": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 9
+            }
+          },
+          "false_accept_rate": 0.0,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.03,
+            "correct": 3,
+            "extra_slot_commands": 0,
+            "n": 100,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 76
+          },
+          "missing": 0,
+          "negative_n": 6,
+          "precision": 1.0,
+          "recall": 0.03,
+          "slot_counts": {
+            "color": {
+              "correct_accepted": 0,
+              "n": 12
+            },
+            "contact_id": {
+              "correct_accepted": 0,
+              "n": 3
+            },
+            "degrees": {
+              "correct_accepted": 0,
+              "n": 9
+            },
+            "duration_seconds": {
+              "correct_accepted": 0,
+              "n": 9
+            },
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 30
+            },
+            "operation": {
+              "correct_accepted": 0,
+              "n": 6
+            },
+            "percent": {
+              "correct_accepted": 0,
+              "n": 12
+            },
+            "task_id": {
+              "correct_accepted": 0,
+              "n": 9
+            },
+            "time": {
+              "correct_accepted": 0,
+              "n": 10
+            },
+            "timezone": {
+              "correct_accepted": 0,
+              "n": 10
+            },
+            "unit": {
+              "correct_accepted": 0,
+              "n": 9
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.08490566037735849,
+          "supported_n": 100,
+          "trials": 106
+        }
+      },
+      "regression": true
+    },
+    "original_holdout196": {
+      "all": {
+        "accepted_n": 8,
+        "ambiguous_n": 2,
+        "complete_command_accuracy": 0.04371584699453552,
+        "complete_command_correct": 8,
+        "correct": 8,
+        "correct_rejections": 11,
+        "every_slot": {
+          "color": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 18
+          },
+          "contact_id": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 6
+          },
+          "degrees": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 18
+          },
+          "duration_seconds": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 18
+          },
+          "light_id": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 47
+          },
+          "operation": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 10
+          },
+          "percent": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 18
+          },
+          "task_id": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 18
+          },
+          "time": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 18
+          },
+          "timezone": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 18
+          },
+          "unit": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 18
+          }
+        },
+        "false_accept_rate": 0.0,
+        "false_accepts": 0,
+        "faults": 0,
+        "joint_supplied_slots": {
+          "accuracy": 0.04371584699453552,
+          "correct": 8,
+          "extra_slot_commands": 0,
+          "n": 183,
+          "with_supplied_slots_accuracy": 0.0,
+          "with_supplied_slots_correct": 0,
+          "with_supplied_slots_n": 135
+        },
+        "missing": 0,
+        "negative_n": 11,
+        "precision": 1.0,
+        "recall": 0.04371584699453552,
+        "slot_counts": {
+          "color": {
+            "correct_accepted": 0,
+            "n": 18
+          },
+          "contact_id": {
+            "correct_accepted": 0,
+            "n": 6
+          },
+          "degrees": {
+            "correct_accepted": 0,
+            "n": 18
+          },
+          "duration_seconds": {
+            "correct_accepted": 0,
+            "n": 18
+          },
+          "light_id": {
+            "correct_accepted": 0,
+            "n": 47
+          },
+          "operation": {
+            "correct_accepted": 0,
+            "n": 10
+          },
+          "percent": {
+            "correct_accepted": 0,
+            "n": 18
+          },
+          "task_id": {
+            "correct_accepted": 0,
+            "n": 18
+          },
+          "time": {
+            "correct_accepted": 0,
+            "n": 18
+          },
+          "timezone": {
+            "correct_accepted": 0,
+            "n": 18
+          },
+          "unit": {
+            "correct_accepted": 0,
+            "n": 18
+          }
+        },
+        "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+        "strict_accuracy": 0.0979381443298969,
+        "supported_n": 183,
+        "trials": 196
+      },
+      "fresh": false,
+      "host_timing": {
+        "measured_n": 196,
+        "p50_ms": 44.04544224962592,
+        "p50_rtf": 0.017629578048307407,
+        "p95_ms": 46.295404667034745,
+        "p95_rtf": 0.04418222590026503,
+        "physical_pi_evidence": false,
+        "rtf_n": 196
+      },
+      "intents": {
+        "ALARM": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "time": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            },
+            "timezone": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 18,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 18
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "time": {
+              "correct_accepted": 0,
+              "n": 18
+            },
+            "timezone": {
+              "correct_accepted": 0,
+              "n": 18
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 18,
+          "trials": 18
+        },
+        "BRIGHTNESS": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            },
+            "percent": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 18,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 18
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 18
+            },
+            "percent": {
+              "correct_accepted": 0,
+              "n": 18
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 18,
+          "trials": 18
+        },
+        "CALL": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "contact_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 6
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 6
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "contact_id": {
+              "correct_accepted": 0,
+              "n": 6
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "COLOR": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "color": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            },
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 18,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 18
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "color": {
+              "correct_accepted": 0,
+              "n": 18
+            },
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 18
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 18,
+          "trials": 18
+        },
+        "CREATE_REMINDER": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "task_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 18,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 18
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "task_id": {
+              "correct_accepted": 0,
+              "n": 18
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 18,
+          "trials": 18
+        },
+        "LIGHT_OFF": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 5
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 5,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 5
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 5
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 5,
+          "trials": 5
+        },
+        "LIGHT_ON": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 6
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 6
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 6
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "LIST_REMINDERS": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "MESSAGE": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "NEXT": {
+          "accepted_n": 1,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.16666666666666666,
+          "complete_command_correct": 1,
+          "correct": 1,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.16666666666666666,
+            "correct": 1,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.16666666666666666,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "OOV": {
+          "accepted_n": 0,
+          "ambiguous_n": 2,
+          "complete_command_accuracy": null,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 11,
+          "every_slot": {},
+          "false_accept_rate": 0.0,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": null,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 0,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 11,
+          "precision": null,
+          "recall": null,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 1.0,
+          "supported_n": 0,
+          "trials": 13
+        },
+        "PAUSE": {
+          "accepted_n": 2,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.3333333333333333,
+          "complete_command_correct": 2,
+          "correct": 2,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.3333333333333333,
+            "correct": 2,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.3333333333333333,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "PLAY_MUSIC": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "STOP": {
+          "accepted_n": 2,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.3333333333333333,
+          "complete_command_correct": 2,
+          "correct": 2,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.3333333333333333,
+            "correct": 2,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.3333333333333333,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "TEMPERATURE": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "degrees": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            },
+            "unit": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 18,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 18
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "degrees": {
+              "correct_accepted": 0,
+              "n": 18
+            },
+            "unit": {
+              "correct_accepted": 0,
+              "n": 18
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 18,
+          "trials": 18
+        },
+        "TIME": {
+          "accepted_n": 2,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.3333333333333333,
+          "complete_command_correct": 2,
+          "correct": 2,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.3333333333333333,
+            "correct": 2,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.3333333333333333,
+          "supported_n": 6,
+          "trials": 6
+        },
+        "TIMER": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "duration_seconds": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 18,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 18
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "duration_seconds": {
+              "correct_accepted": 0,
+              "n": 18
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 18,
+          "trials": 18
+        },
+        "VOLUME": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "operation": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 10
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 10,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 10
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "operation": {
+              "correct_accepted": 0,
+              "n": 10
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 10,
+          "trials": 10
+        },
+        "WEATHER": {
+          "accepted_n": 1,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.16666666666666666,
+          "complete_command_correct": 1,
+          "correct": 1,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.16666666666666666,
+            "correct": 1,
+            "extra_slot_commands": 0,
+            "n": 6,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.16666666666666666,
+          "supported_n": 6,
+          "trials": 6
+        }
+      },
+      "kinds": {
+        "human": {
+          "accepted_n": 5,
+          "ambiguous_n": 2,
+          "complete_command_accuracy": 0.060240963855421686,
+          "complete_command_correct": 5,
+          "correct": 5,
+          "correct_rejections": 11,
+          "every_slot": {
+            "color": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 6
+            },
+            "contact_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 3
+            },
+            "degrees": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 9
+            },
+            "duration_seconds": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 9
+            },
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 17
+            },
+            "operation": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 4
+            },
+            "percent": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 6
+            },
+            "task_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 9
+            },
+            "time": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 8
+            },
+            "timezone": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 8
+            },
+            "unit": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 9
+            }
+          },
+          "false_accept_rate": 0.0,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.060240963855421686,
+            "correct": 5,
+            "extra_slot_commands": 0,
+            "n": 83,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 59
+          },
+          "missing": 0,
+          "negative_n": 11,
+          "precision": 1.0,
+          "recall": 0.060240963855421686,
+          "slot_counts": {
+            "color": {
+              "correct_accepted": 0,
+              "n": 6
+            },
+            "contact_id": {
+              "correct_accepted": 0,
+              "n": 3
+            },
+            "degrees": {
+              "correct_accepted": 0,
+              "n": 9
+            },
+            "duration_seconds": {
+              "correct_accepted": 0,
+              "n": 9
+            },
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 17
+            },
+            "operation": {
+              "correct_accepted": 0,
+              "n": 4
+            },
+            "percent": {
+              "correct_accepted": 0,
+              "n": 6
+            },
+            "task_id": {
+              "correct_accepted": 0,
+              "n": 9
+            },
+            "time": {
+              "correct_accepted": 0,
+              "n": 8
+            },
+            "timezone": {
+              "correct_accepted": 0,
+              "n": 8
+            },
+            "unit": {
+              "correct_accepted": 0,
+              "n": 9
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.1702127659574468,
+          "supported_n": 83,
+          "trials": 96
+        },
+        "synthetic": {
+          "accepted_n": 3,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.03,
+          "complete_command_correct": 3,
+          "correct": 3,
+          "correct_rejections": 0,
+          "every_slot": {
+            "color": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 12
+            },
+            "contact_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 3
+            },
+            "degrees": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 9
+            },
+            "duration_seconds": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 9
+            },
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 30
+            },
+            "operation": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 6
+            },
+            "percent": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 12
+            },
+            "task_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 9
+            },
+            "time": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 10
+            },
+            "timezone": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 10
+            },
+            "unit": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 9
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.03,
+            "correct": 3,
+            "extra_slot_commands": 0,
+            "n": 100,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 76
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 1.0,
+          "recall": 0.03,
+          "slot_counts": {
+            "color": {
+              "correct_accepted": 0,
+              "n": 12
+            },
+            "contact_id": {
+              "correct_accepted": 0,
+              "n": 3
+            },
+            "degrees": {
+              "correct_accepted": 0,
+              "n": 9
+            },
+            "duration_seconds": {
+              "correct_accepted": 0,
+              "n": 9
+            },
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 30
+            },
+            "operation": {
+              "correct_accepted": 0,
+              "n": 6
+            },
+            "percent": {
+              "correct_accepted": 0,
+              "n": 12
+            },
+            "task_id": {
+              "correct_accepted": 0,
+              "n": 9
+            },
+            "time": {
+              "correct_accepted": 0,
+              "n": 10
+            },
+            "timezone": {
+              "correct_accepted": 0,
+              "n": 10
+            },
+            "unit": {
+              "correct_accepted": 0,
+              "n": 9
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.03,
+          "supported_n": 100,
+          "trials": 100
+        }
+      },
+      "regression": true
+    },
+    "original_test4418": {
+      "all": {
+        "accepted_n": 45,
+        "ambiguous_n": 185,
+        "complete_command_accuracy": 0.01098901098901099,
+        "complete_command_correct": 44,
+        "correct": 44,
+        "correct_rejections": 229,
+        "every_slot": {
+          "color": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 372
+          },
+          "contact_id": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 102
+          },
+          "degrees": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 423
+          },
+          "duration_seconds": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 423
+          },
+          "light_id": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 1020
+          },
+          "operation": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 251
+          },
+          "percent": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 427
+          },
+          "task_id": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 423
+          },
+          "time": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 404
+          },
+          "timezone": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 404
+          },
+          "unit": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 423
+          }
+        },
+        "false_accept_rate": 0.0,
+        "false_accepts": 0,
+        "faults": 2,
+        "joint_supplied_slots": {
+          "accuracy": 0.01098901098901099,
+          "correct": 44,
+          "extra_slot_commands": 0,
+          "n": 4004,
+          "with_supplied_slots_accuracy": 0.0,
+          "with_supplied_slots_correct": 0,
+          "with_supplied_slots_n": 3046
+        },
+        "missing": 0,
+        "negative_n": 229,
+        "precision": 0.9777777777777777,
+        "recall": 0.01098901098901099,
+        "slot_counts": {
+          "color": {
+            "correct_accepted": 0,
+            "n": 372
+          },
+          "contact_id": {
+            "correct_accepted": 0,
+            "n": 102
+          },
+          "degrees": {
+            "correct_accepted": 0,
+            "n": 423
+          },
+          "duration_seconds": {
+            "correct_accepted": 0,
+            "n": 423
+          },
+          "light_id": {
+            "correct_accepted": 0,
+            "n": 1020
+          },
+          "operation": {
+            "correct_accepted": 0,
+            "n": 251
+          },
+          "percent": {
+            "correct_accepted": 0,
+            "n": 427
+          },
+          "task_id": {
+            "correct_accepted": 0,
+            "n": 423
+          },
+          "time": {
+            "correct_accepted": 0,
+            "n": 404
+          },
+          "timezone": {
+            "correct_accepted": 0,
+            "n": 404
+          },
+          "unit": {
+            "correct_accepted": 0,
+            "n": 423
+          }
+        },
+        "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+        "strict_accuracy": 0.06449326718639263,
+        "supported_n": 4004,
+        "trials": 4418
+      },
+      "fresh": false,
+      "host_timing": {
+        "measured_n": 4416,
+        "p50_ms": 43.466868344694376,
+        "p50_rtf": 0.0231709175615337,
+        "p95_ms": 46.319650253281,
+        "p95_rtf": 0.04489492405274493,
+        "physical_pi_evidence": false,
+        "rtf_n": 4416
+      },
+      "intents": {
+        "ALARM": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "time": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 404
+            },
+            "timezone": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 404
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 404,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 404
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "time": {
+              "correct_accepted": 0,
+              "n": 404
+            },
+            "timezone": {
+              "correct_accepted": 0,
+              "n": 404
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 404,
+          "trials": 404
+        },
+        "BRIGHTNESS": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 421
+            },
+            "percent": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 421
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 421,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 421
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 421
+            },
+            "percent": {
+              "correct_accepted": 0,
+              "n": 421
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 421,
+          "trials": 421
+        },
+        "CALL": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "contact_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 102
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 102,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 102
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "contact_id": {
+              "correct_accepted": 0,
+              "n": 102
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 102,
+          "trials": 102
+        },
+        "COLOR": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "color": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 372
+            },
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 372
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 372,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 372
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "color": {
+              "correct_accepted": 0,
+              "n": 372
+            },
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 372
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 372,
+          "trials": 372
+        },
+        "CREATE_REMINDER": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "task_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 423
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 423,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 423
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "task_id": {
+              "correct_accepted": 0,
+              "n": 423
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 423,
+          "trials": 423
+        },
+        "LIGHT_OFF": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 114
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 114,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 114
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 114
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 114,
+          "trials": 114
+        },
+        "LIGHT_ON": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 113
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 113,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 113
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 113
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 113,
+          "trials": 113
+        },
+        "LIST_REMINDERS": {
+          "accepted_n": 4,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.03333333333333333,
+          "complete_command_correct": 4,
+          "correct": 4,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.03333333333333333,
+            "correct": 4,
+            "extra_slot_commands": 0,
+            "n": 120,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 1.0,
+          "recall": 0.03333333333333333,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.03333333333333333,
+          "supported_n": 120,
+          "trials": 120
+        },
+        "MESSAGE": {
+          "accepted_n": 1,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 129,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 129,
+          "trials": 129
+        },
+        "NEXT": {
+          "accepted_n": 4,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.02962962962962963,
+          "complete_command_correct": 4,
+          "correct": 4,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.02962962962962963,
+            "correct": 4,
+            "extra_slot_commands": 0,
+            "n": 135,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 1.0,
+          "recall": 0.02962962962962963,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.02962962962962963,
+          "supported_n": 135,
+          "trials": 135
+        },
+        "OOV": {
+          "accepted_n": 0,
+          "ambiguous_n": 185,
+          "complete_command_accuracy": null,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 229,
+          "every_slot": {},
+          "false_accept_rate": 0.0,
+          "false_accepts": 0,
+          "faults": 2,
+          "joint_supplied_slots": {
+            "accuracy": null,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 0,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 229,
+          "precision": null,
+          "recall": null,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 1.0,
+          "supported_n": 0,
+          "trials": 414
+        },
+        "PAUSE": {
+          "accepted_n": 2,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.014492753623188406,
+          "complete_command_correct": 2,
+          "correct": 2,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.014492753623188406,
+            "correct": 2,
+            "extra_slot_commands": 0,
+            "n": 138,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 1.0,
+          "recall": 0.014492753623188406,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.014492753623188406,
+          "supported_n": 138,
+          "trials": 138
+        },
+        "PLAY_MUSIC": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 77,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 77,
+          "trials": 77
+        },
+        "STOP": {
+          "accepted_n": 17,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.12056737588652482,
+          "complete_command_correct": 17,
+          "correct": 17,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.12056737588652482,
+            "correct": 17,
+            "extra_slot_commands": 0,
+            "n": 141,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 1.0,
+          "recall": 0.12056737588652482,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.12056737588652482,
+          "supported_n": 141,
+          "trials": 141
+        },
+        "TEMPERATURE": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "degrees": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 423
+            },
+            "unit": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 423
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 423,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 423
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "degrees": {
+              "correct_accepted": 0,
+              "n": 423
+            },
+            "unit": {
+              "correct_accepted": 0,
+              "n": 423
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 423,
+          "trials": 423
+        },
+        "TIME": {
+          "accepted_n": 6,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.045112781954887216,
+          "complete_command_correct": 6,
+          "correct": 6,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.045112781954887216,
+            "correct": 6,
+            "extra_slot_commands": 0,
+            "n": 133,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 1.0,
+          "recall": 0.045112781954887216,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.045112781954887216,
+          "supported_n": 133,
+          "trials": 133
+        },
+        "TIMER": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "duration_seconds": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 423
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 423,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 423
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "duration_seconds": {
+              "correct_accepted": 0,
+              "n": 423
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 423,
+          "trials": 423
+        },
+        "VOLUME": {
+          "accepted_n": 0,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0,
+          "complete_command_correct": 0,
+          "correct": 0,
+          "correct_rejections": 0,
+          "every_slot": {
+            "operation": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 251
+            },
+            "percent": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 6
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "extra_slot_commands": 0,
+            "n": 251,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 251
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": null,
+          "recall": 0.0,
+          "slot_counts": {
+            "operation": {
+              "correct_accepted": 0,
+              "n": 251
+            },
+            "percent": {
+              "correct_accepted": 0,
+              "n": 6
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0,
+          "supported_n": 251,
+          "trials": 251
+        },
+        "WEATHER": {
+          "accepted_n": 11,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.12941176470588237,
+          "complete_command_correct": 11,
+          "correct": 11,
+          "correct_rejections": 0,
+          "every_slot": {},
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.12941176470588237,
+            "correct": 11,
+            "extra_slot_commands": 0,
+            "n": 85,
+            "with_supplied_slots_accuracy": null,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 0
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 1.0,
+          "recall": 0.12941176470588237,
+          "slot_counts": {},
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.12941176470588237,
+          "supported_n": 85,
+          "trials": 85
+        }
+      },
+      "kinds": {
+        "human": {
+          "accepted_n": 25,
+          "ambiguous_n": 185,
+          "complete_command_accuracy": 0.03930817610062893,
+          "complete_command_correct": 25,
+          "correct": 25,
+          "correct_rejections": 229,
+          "every_slot": {
+            "color": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 67
+            },
+            "contact_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 6
+            },
+            "degrees": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 28
+            },
+            "duration_seconds": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 19
+            },
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 165
+            },
+            "operation": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 113
+            },
+            "percent": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 29
+            },
+            "task_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 18
+            },
+            "time": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 32
+            },
+            "timezone": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 32
+            },
+            "unit": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 28
+            }
+          },
+          "false_accept_rate": 0.0,
+          "false_accepts": 0,
+          "faults": 2,
+          "joint_supplied_slots": {
+            "accuracy": 0.03930817610062893,
+            "correct": 25,
+            "extra_slot_commands": 0,
+            "n": 636,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 381
+          },
+          "missing": 0,
+          "negative_n": 229,
+          "precision": 1.0,
+          "recall": 0.03930817610062893,
+          "slot_counts": {
+            "color": {
+              "correct_accepted": 0,
+              "n": 67
+            },
+            "contact_id": {
+              "correct_accepted": 0,
+              "n": 6
+            },
+            "degrees": {
+              "correct_accepted": 0,
+              "n": 28
+            },
+            "duration_seconds": {
+              "correct_accepted": 0,
+              "n": 19
+            },
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 165
+            },
+            "operation": {
+              "correct_accepted": 0,
+              "n": 113
+            },
+            "percent": {
+              "correct_accepted": 0,
+              "n": 29
+            },
+            "task_id": {
+              "correct_accepted": 0,
+              "n": 18
+            },
+            "time": {
+              "correct_accepted": 0,
+              "n": 32
+            },
+            "timezone": {
+              "correct_accepted": 0,
+              "n": 32
+            },
+            "unit": {
+              "correct_accepted": 0,
+              "n": 28
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.29364161849710985,
+          "supported_n": 636,
+          "trials": 1050
+        },
+        "synthetic": {
+          "accepted_n": 20,
+          "ambiguous_n": 0,
+          "complete_command_accuracy": 0.0056413301662707836,
+          "complete_command_correct": 19,
+          "correct": 19,
+          "correct_rejections": 0,
+          "every_slot": {
+            "color": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 305
+            },
+            "contact_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 96
+            },
+            "degrees": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 395
+            },
+            "duration_seconds": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 404
+            },
+            "light_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 855
+            },
+            "operation": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 138
+            },
+            "percent": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 398
+            },
+            "task_id": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 405
+            },
+            "time": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 372
+            },
+            "timezone": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 372
+            },
+            "unit": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "n": 395
+            }
+          },
+          "false_accept_rate": null,
+          "false_accepts": 0,
+          "faults": 0,
+          "joint_supplied_slots": {
+            "accuracy": 0.0056413301662707836,
+            "correct": 19,
+            "extra_slot_commands": 0,
+            "n": 3368,
+            "with_supplied_slots_accuracy": 0.0,
+            "with_supplied_slots_correct": 0,
+            "with_supplied_slots_n": 2665
+          },
+          "missing": 0,
+          "negative_n": 0,
+          "precision": 0.95,
+          "recall": 0.0056413301662707836,
+          "slot_counts": {
+            "color": {
+              "correct_accepted": 0,
+              "n": 305
+            },
+            "contact_id": {
+              "correct_accepted": 0,
+              "n": 96
+            },
+            "degrees": {
+              "correct_accepted": 0,
+              "n": 395
+            },
+            "duration_seconds": {
+              "correct_accepted": 0,
+              "n": 404
+            },
+            "light_id": {
+              "correct_accepted": 0,
+              "n": 855
+            },
+            "operation": {
+              "correct_accepted": 0,
+              "n": 138
+            },
+            "percent": {
+              "correct_accepted": 0,
+              "n": 398
+            },
+            "task_id": {
+              "correct_accepted": 0,
+              "n": 405
+            },
+            "time": {
+              "correct_accepted": 0,
+              "n": 372
+            },
+            "timezone": {
+              "correct_accepted": 0,
+              "n": 372
+            },
+            "unit": {
+              "correct_accepted": 0,
+              "n": 395
+            }
+          },
+          "slot_counts_scope": "Historical field accounting; every_slot requires typed equality and correct intent",
+          "strict_accuracy": 0.0056413301662707836,
+          "supported_n": 3368,
+          "trials": 3368
+        }
+      },
+      "regression": true
+    }
+  },
+  "frozen_package": {
+    "bytes": 86039578,
+    "member_count": 495,
+    "packaged_policy_paths": [
+      "final/evidence/48ae1ea566ebab59e92f9236d8f59cd21e61f5e22317b15a2492c9f5bb2ae8be/raw-entity-policy.json",
+      "final/evidence/c9623c2612ddeada08863af8d10ae69004b0b6dd29a7588e252fa27383df43b7/policy.json",
+      "models/selected/policy.json"
+    ],
+    "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/final/vcm-pi-handoff-20261015-01.zip",
+    "sha256": "7e86166167560cce4724d2a569e614a6bb2ddaaa7803d452871ceb10e9351dd5"
+  },
+  "missing_observed_slot_calibration_groups": [
+    "contact_id/acoustic_enrollment/3",
+    "timezone/schema_constant/1"
+  ],
+  "require_calibration": true,
+  "saved_prediction_diagnostics": {
+    "fresh_human106": {
+      "first_decision_reasons": {
+        "all": {
+          "OOV": 13,
+          "intent_confidence": 72,
+          "invalid_argument_or_slot_confidence": 8
+        },
+        "human": {
+          "OOV": 13,
+          "intent_confidence": 72,
+          "invalid_argument_or_slot_confidence": 8
+        }
+      },
+      "groups": {
+        "all": {
+          "all_15_role_states_absent_or_present_and_probability_at_least_090": 63,
+          "correct_intent_probability_at_least_095": 8,
+          "final_accepted": 0,
+          "final_accepted_exact": 0,
+          "intent_argmax_reference_agreement": 43,
+          "intent_probability_at_least_095": 9,
+          "saved_diagnostic_candidate_exact": 29,
+          "supported": 93,
+          "validity_state_valid_and_probability_at_least_090": 86
+        },
+        "human": {
+          "all_15_role_states_absent_or_present_and_probability_at_least_090": 63,
+          "correct_intent_probability_at_least_095": 8,
+          "final_accepted": 0,
+          "final_accepted_exact": 0,
+          "intent_argmax_reference_agreement": 43,
+          "intent_probability_at_least_095": 9,
+          "saved_diagnostic_candidate_exact": 29,
+          "supported": 93,
+          "validity_state_valid_and_probability_at_least_090": 86
+        }
+      },
+      "raw_finite_reference_agreement": {
+        "all": {
+          "volume_operation": {
+            "references": 40,
+            "value_argmax_reference_agreement": 22
+          }
+        },
+        "human": {
+          "volume_operation": {
+            "references": 40,
+            "value_argmax_reference_agreement": 22
+          }
+        }
+      },
+      "source": {
+        "bytes": 615598,
+        "path": ".cache/vcm-mixed-final-v2/evaluation-01/fresh_human106/trial-results.jsonl",
+        "sha256": "97e7417ef5d278132f86a4beb6feb8a8a00a6755b7d60c720c656ff4e90fd5ce"
+      },
+      "wrong_accepted_commands": []
+    },
+    "mandatory_defaults202": {
+      "first_decision_reasons": {
+        "all": {
+          "OOV": 40,
+          "accepted": 5,
+          "extra_or_uncertain_role": 7,
+          "intent_confidence": 129,
+          "invalid_argument_or_slot_confidence": 5
+        },
+        "human": {
+          "OOV": 20,
+          "accepted": 2,
+          "extra_or_uncertain_role": 2,
+          "intent_confidence": 60,
+          "invalid_argument_or_slot_confidence": 2
+        },
+        "synthetic": {
+          "OOV": 20,
+          "accepted": 3,
+          "extra_or_uncertain_role": 5,
+          "intent_confidence": 69,
+          "invalid_argument_or_slot_confidence": 3
+        }
+      },
+      "groups": {
+        "all": {
+          "all_15_role_states_absent_or_present_and_probability_at_least_090": 102,
+          "correct_intent_probability_at_least_095": 17,
+          "final_accepted": 5,
+          "final_accepted_exact": 5,
+          "intent_argmax_reference_agreement": 79,
+          "intent_probability_at_least_095": 17,
+          "saved_diagnostic_candidate_exact": 45,
+          "supported": 186,
+          "validity_state_valid_and_probability_at_least_090": 162
+        },
+        "human": {
+          "all_15_role_states_absent_or_present_and_probability_at_least_090": 49,
+          "correct_intent_probability_at_least_095": 6,
+          "final_accepted": 2,
+          "final_accepted_exact": 2,
+          "intent_argmax_reference_agreement": 35,
+          "intent_probability_at_least_095": 6,
+          "saved_diagnostic_candidate_exact": 21,
+          "supported": 86,
+          "validity_state_valid_and_probability_at_least_090": 75
+        },
+        "synthetic": {
+          "all_15_role_states_absent_or_present_and_probability_at_least_090": 53,
+          "correct_intent_probability_at_least_095": 11,
+          "final_accepted": 3,
+          "final_accepted_exact": 3,
+          "intent_argmax_reference_agreement": 44,
+          "intent_probability_at_least_095": 11,
+          "saved_diagnostic_candidate_exact": 24,
+          "supported": 100,
+          "validity_state_valid_and_probability_at_least_090": 87
+        }
+      },
+      "raw_finite_reference_agreement": {
+        "all": {
+          "brightness_percent": {
+            "references": 18,
+            "value_argmax_reference_agreement": 7
+          },
+          "color": {
+            "references": 18,
+            "value_argmax_reference_agreement": 13
+          },
+          "temperature_degrees": {
+            "references": 18,
+            "value_argmax_reference_agreement": 12
+          },
+          "volume_operation": {
+            "references": 12,
+            "value_argmax_reference_agreement": 11
+          }
+        },
+        "human": {
+          "brightness_percent": {
+            "references": 6,
+            "value_argmax_reference_agreement": 2
+          },
+          "color": {
+            "references": 6,
+            "value_argmax_reference_agreement": 5
+          },
+          "temperature_degrees": {
+            "references": 9,
+            "value_argmax_reference_agreement": 7
+          },
+          "volume_operation": {
+            "references": 6,
+            "value_argmax_reference_agreement": 6
+          }
+        },
+        "synthetic": {
+          "brightness_percent": {
+            "references": 12,
+            "value_argmax_reference_agreement": 5
+          },
+          "color": {
+            "references": 12,
+            "value_argmax_reference_agreement": 8
+          },
+          "temperature_degrees": {
+            "references": 9,
+            "value_argmax_reference_agreement": 5
+          },
+          "volume_operation": {
+            "references": 6,
+            "value_argmax_reference_agreement": 5
+          }
+        }
+      },
+      "source": {
+        "bytes": 1382052,
+        "path": ".cache/vcm-mixed-final-v2/evaluation-01/mandatory_defaults202/trial-results.jsonl",
+        "sha256": "17f5dfc3ec9a63006cdf907bec00e65fe5e62a836728d6f88373d4bf093a2474"
+      },
+      "wrong_accepted_commands": []
+    },
+    "original_holdout196": {
+      "first_decision_reasons": {
+        "all": {
+          "OOV": 39,
+          "accepted": 8,
+          "extra_or_uncertain_role": 7,
+          "intent_confidence": 126,
+          "invalid_argument_or_slot_confidence": 3
+        },
+        "human": {
+          "OOV": 19,
+          "accepted": 5,
+          "extra_or_uncertain_role": 2,
+          "intent_confidence": 57
+        },
+        "synthetic": {
+          "OOV": 20,
+          "accepted": 3,
+          "extra_or_uncertain_role": 5,
+          "intent_confidence": 69,
+          "invalid_argument_or_slot_confidence": 3
+        }
+      },
+      "groups": {
+        "all": {
+          "all_15_role_states_absent_or_present_and_probability_at_least_090": 100,
+          "correct_intent_probability_at_least_095": 18,
+          "final_accepted": 8,
+          "final_accepted_exact": 8,
+          "intent_argmax_reference_agreement": 77,
+          "intent_probability_at_least_095": 19,
+          "saved_diagnostic_candidate_exact": 44,
+          "supported": 183,
+          "validity_state_valid_and_probability_at_least_090": 160
+        },
+        "human": {
+          "all_15_role_states_absent_or_present_and_probability_at_least_090": 47,
+          "correct_intent_probability_at_least_095": 7,
+          "final_accepted": 5,
+          "final_accepted_exact": 5,
+          "intent_argmax_reference_agreement": 33,
+          "intent_probability_at_least_095": 8,
+          "saved_diagnostic_candidate_exact": 20,
+          "supported": 83,
+          "validity_state_valid_and_probability_at_least_090": 73
+        },
+        "synthetic": {
+          "all_15_role_states_absent_or_present_and_probability_at_least_090": 53,
+          "correct_intent_probability_at_least_095": 11,
+          "final_accepted": 3,
+          "final_accepted_exact": 3,
+          "intent_argmax_reference_agreement": 44,
+          "intent_probability_at_least_095": 11,
+          "saved_diagnostic_candidate_exact": 24,
+          "supported": 100,
+          "validity_state_valid_and_probability_at_least_090": 87
+        }
+      },
+      "raw_finite_reference_agreement": {
+        "all": {
+          "brightness_percent": {
+            "references": 18,
+            "value_argmax_reference_agreement": 6
+          },
+          "color": {
+            "references": 18,
+            "value_argmax_reference_agreement": 13
+          },
+          "temperature_degrees": {
+            "references": 18,
+            "value_argmax_reference_agreement": 12
+          },
+          "volume_operation": {
+            "references": 10,
+            "value_argmax_reference_agreement": 8
+          }
+        },
+        "human": {
+          "brightness_percent": {
+            "references": 6,
+            "value_argmax_reference_agreement": 1
+          },
+          "color": {
+            "references": 6,
+            "value_argmax_reference_agreement": 5
+          },
+          "temperature_degrees": {
+            "references": 9,
+            "value_argmax_reference_agreement": 7
+          },
+          "volume_operation": {
+            "references": 4,
+            "value_argmax_reference_agreement": 3
+          }
+        },
+        "synthetic": {
+          "brightness_percent": {
+            "references": 12,
+            "value_argmax_reference_agreement": 5
+          },
+          "color": {
+            "references": 12,
+            "value_argmax_reference_agreement": 8
+          },
+          "temperature_degrees": {
+            "references": 9,
+            "value_argmax_reference_agreement": 5
+          },
+          "volume_operation": {
+            "references": 6,
+            "value_argmax_reference_agreement": 5
+          }
+        }
+      },
+      "source": {
+        "bytes": 1225924,
+        "path": ".cache/vcm-mixed-final-v2/evaluation-01/original_holdout196/trial-results.jsonl",
+        "sha256": "0c82f9e8342462083cfac68bc6dcbe7ce123323dad660458e09cedb05cc3183e"
+      },
+      "wrong_accepted_commands": []
+    },
+    "original_test4418": {
+      "first_decision_reasons": {
+        "all": {
+          "OOV": 1277,
+          "accepted": 45,
+          "extra_or_uncertain_role": 70,
+          "intent_confidence": 2523,
+          "invalid_argument_or_slot_confidence": 88,
+          "request_validity": 1
+        },
+        "human": {
+          "OOV": 79,
+          "accepted": 25,
+          "extra_or_uncertain_role": 29,
+          "intent_confidence": 481,
+          "invalid_argument_or_slot_confidence": 22
+        },
+        "synthetic": {
+          "OOV": 1198,
+          "accepted": 20,
+          "extra_or_uncertain_role": 41,
+          "intent_confidence": 2042,
+          "invalid_argument_or_slot_confidence": 66,
+          "request_validity": 1
+        }
+      },
+      "groups": {
+        "all": {
+          "all_15_role_states_absent_or_present_and_probability_at_least_090": 1965,
+          "correct_intent_probability_at_least_095": 197,
+          "final_accepted": 45,
+          "final_accepted_exact": 44,
+          "intent_argmax_reference_agreement": 1430,
+          "intent_probability_at_least_095": 250,
+          "saved_diagnostic_candidate_exact": 670,
+          "supported": 4004,
+          "validity_state_valid_and_probability_at_least_090": 3266
+        },
+        "human": {
+          "all_15_role_states_absent_or_present_and_probability_at_least_090": 391,
+          "correct_intent_probability_at_least_095": 75,
+          "final_accepted": 25,
+          "final_accepted_exact": 25,
+          "intent_argmax_reference_agreement": 352,
+          "intent_probability_at_least_095": 78,
+          "saved_diagnostic_candidate_exact": 198,
+          "supported": 636,
+          "validity_state_valid_and_probability_at_least_090": 623
+        },
+        "synthetic": {
+          "all_15_role_states_absent_or_present_and_probability_at_least_090": 1574,
+          "correct_intent_probability_at_least_095": 122,
+          "final_accepted": 20,
+          "final_accepted_exact": 19,
+          "intent_argmax_reference_agreement": 1078,
+          "intent_probability_at_least_095": 172,
+          "saved_diagnostic_candidate_exact": 472,
+          "supported": 3368,
+          "validity_state_valid_and_probability_at_least_090": 2643
+        }
+      },
+      "raw_finite_reference_agreement": {
+        "all": {
+          "brightness_percent": {
+            "references": 421,
+            "value_argmax_reference_agreement": 147
+          },
+          "color": {
+            "references": 372,
+            "value_argmax_reference_agreement": 319
+          },
+          "temperature_degrees": {
+            "references": 423,
+            "value_argmax_reference_agreement": 255
+          },
+          "volume_operation": {
+            "references": 251,
+            "value_argmax_reference_agreement": 183
+          },
+          "volume_percent": {
+            "references": 6,
+            "value_argmax_reference_agreement": 2
+          }
+        },
+        "human": {
+          "brightness_percent": {
+            "references": 23,
+            "value_argmax_reference_agreement": 7
+          },
+          "color": {
+            "references": 67,
+            "value_argmax_reference_agreement": 47
+          },
+          "temperature_degrees": {
+            "references": 28,
+            "value_argmax_reference_agreement": 16
+          },
+          "volume_operation": {
+            "references": 113,
+            "value_argmax_reference_agreement": 81
+          },
+          "volume_percent": {
+            "references": 6,
+            "value_argmax_reference_agreement": 2
+          }
+        },
+        "synthetic": {
+          "brightness_percent": {
+            "references": 398,
+            "value_argmax_reference_agreement": 140
+          },
+          "color": {
+            "references": 305,
+            "value_argmax_reference_agreement": 272
+          },
+          "temperature_degrees": {
+            "references": 395,
+            "value_argmax_reference_agreement": 239
+          },
+          "volume_operation": {
+            "references": 138,
+            "value_argmax_reference_agreement": 102
+          }
+        }
+      },
+      "source": {
+        "bytes": 27257640,
+        "path": ".cache/vcm-mixed-final-v2/evaluation-01/original_test4418/trial-results.jsonl",
+        "sha256": "b4279937ec0ee0210fe0fe6f791539d7e41b22fb469212dc0cc7d4606394bb8f"
+      },
+      "wrong_accepted_commands": [
+        {
+          "accepted": true,
+          "actual": {
+            "intent": "WEATHER",
+            "slots": {}
+          },
+          "expected": {
+            "intent": "MESSAGE",
+            "slots": {}
+          },
+          "id": "airimonda/ai231-me2-voice-commands/primary/test-00000-of-00001/001659",
+          "intent_confidence": 0.9615731914557104,
+          "verbatim": "Send my message"
+        }
+      ]
+    }
+  },
+  "selected_candidate": {
+    "arm": "uniform",
+    "checkpoint": ".cache/vcm-mixed-final-v2/training-01/uniform-89/checkpoint-28.pt",
+    "checkpoint_sha256": "bcfc0b85d5e61238e9f93008af78e98df00c8d7c838e2d6c4df10834b6c6b976",
+    "development_key": [
+      0.2865503602756892,
+      -5,
+      0.2849740932642487
+    ],
+    "epoch": 28,
+    "final_state_sha256": "ac03a7a1f408df441c179277542f278a19ae8184f8db5a161d0f015c8cc0ecc4",
+    "final_tts_accessed": false,
+    "initial_state_sha256": "270f4164ea6d5cb3f6f5ff010d182d3621b956ce050334b7787ba2dc43e83272",
+    "optimizer_updates": 2880,
+    "sampling_mass": {
+      "human": 92018,
+      "synthetic": 92302
+    },
+    "seconds": 1285.0630577774718,
+    "seed": 89,
+    "status": "mixed_silver_unqualified_candidate",
+    "supervision_denominators": {
+      "alarm_hour": 2864,
+      "alarm_meridiem": 2864,
+      "alarm_minute": 0,
+      "brightness_percent": 18029,
+      "color": 15852,
+      "entity_pairs": 8102,
+      "intents": 184320,
+      "observed_values": 83813,
+      "reviewed_spans": 0,
+      "role_states": 1003873,
+      "temperature_degrees": 4947,
+      "timer_amount": 1618,
+      "timer_unit": 1618,
+      "validity": 161210,
+      "volume_operation": 27231,
+      "volume_percent": 8790
+    },
+    "test_accessed": false
+  },
+  "slot_calibrator_bounds": [
+    {
+      "bias": -1.3259300189371208,
+      "calibration_n": 147,
+      "can_possibly_pass": false,
+      "corner_checks": 8,
+      "name": "operation/acoustic_finite_role/3",
+      "positive_n": 32,
+      "required_probability": 0.9,
+      "upper_logit": -0.712484419297457,
+      "upper_probability": 0.3290501069323336,
+      "weights": [
+        -0.5451542275745808,
+        0.610007366878963,
+        0.0034382327607008524
+      ]
+    },
+    {
+      "bias": 0.7349887783234589,
+      "calibration_n": 242,
+      "can_possibly_pass": false,
+      "corner_checks": 4,
+      "name": "light_id/qualified_generic_request/2",
+      "positive_n": 156,
+      "required_probability": 0.9,
+      "upper_logit": 0.7349887783234589,
+      "upper_probability": 0.6758990695157461,
+      "weights": [
+        -0.1254104288263482,
+        -0.025367869529634445
+      ]
+    },
+    {
+      "bias": -6.175244192241988,
+      "calibration_n": 103,
+      "can_possibly_pass": false,
+      "corner_checks": 8,
+      "name": "light_id/acoustic_enrollment/3",
+      "positive_n": 21,
+      "required_probability": 0.9,
+      "upper_logit": -0.8741195232968746,
+      "upper_probability": 0.2943978384927747,
+      "weights": [
+        5.022264161759572,
+        0.27594104912294437,
+        0.00291945806259729
+      ]
+    },
+    {
+      "bias": -14.073055328268659,
+      "calibration_n": 4,
+      "can_possibly_pass": false,
+      "corner_checks": 256,
+      "name": "time/recognized_clock_with_whole_hour_rule/8",
+      "positive_n": 2,
+      "required_probability": 0.9,
+      "upper_logit": 0.6921236538967168,
+      "upper_probability": 0.6664391775100508,
+      "weights": [
+        7.15968284255332,
+        3.0852359437775316,
+        -0.00030057286369524795,
+        0.0012462959317663305,
+        -0.00029536547262056824,
+        4.519013899902757,
+        -0.1973505436510218,
+        -0.00029946973968033534
+      ]
+    },
+    {
+      "bias": -4.3813254425657835,
+      "calibration_n": 67,
+      "can_possibly_pass": false,
+      "corner_checks": 8,
+      "name": "color/acoustic_finite_role/3",
+      "positive_n": 45,
+      "required_probability": 0.9,
+      "upper_logit": 0.9128327611368405,
+      "upper_probability": 0.7135794833630246,
+      "weights": [
+        1.9828426044780263,
+        3.3037448130048235,
+        0.007570786219774021
+      ]
+    },
+    {
+      "bias": -6.530532019596475,
+      "calibration_n": 124,
+      "can_possibly_pass": false,
+      "corner_checks": 8,
+      "name": "percent/acoustic_finite_role/3",
+      "positive_n": 30,
+      "required_probability": 0.9,
+      "upper_logit": -0.4941803209534186,
+      "upper_probability": 0.3789092864933976,
+      "weights": [
+        1.2413697972203965,
+        4.794981901422659,
+        -0.01678078277319601
+      ]
+    }
+  ],
+  "source_bindings": [
+    {
+      "bytes": 3066356,
+      "path": "final/card.json",
+      "sha256": "cb598243b82492f45114b4837236c0bd47c958e2af4743ca71af0d91c9b9734b"
+    },
+    {
+      "bytes": 22462,
+      "path": ".cache/vcm-mixed-final-v2/prepared-02/inputs.json",
+      "sha256": "238f0348014b56791c56b37a3a7e896795682fe61bb39bbb967139eefe453da4"
+    },
+    {
+      "bytes": 10503,
+      "path": ".cache/vcm-mixed-final-v2/bundle-cuda-02/policy.json",
+      "sha256": "c9623c2612ddeada08863af8d10ae69004b0b6dd29a7588e252fa27383df43b7"
+    },
+    {
+      "bytes": 7247,
+      "path": "scripts/models/vcm_intent_slots.py",
+      "sha256": "88af9beb945ef23683fcfc226d44d7d00d39295b1a3bffd73ba62e68985d355d"
+    },
+    {
+      "bytes": 2206,
+      "path": "vcm/frontend.py",
+      "sha256": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+    },
+    {
+      "bytes": 10165,
+      "path": "scripts/runtime/vcm_intent_slots_decode.py",
+      "sha256": "98c41044d81ae34a6115e6ca570a642711eacc7db2e612ec534319fa96cf1765"
+    },
+    {
+      "bytes": 13872,
+      "path": "scripts/train/vcm_intent_slots_train.py",
+      "sha256": "671cfecea12aa08358d6d2e31b436b71e1baba4a6bd9fea2e588c79291c02f40"
+    },
+    {
+      "bytes": 14820,
+      "path": "scripts/train/vcm_intent_slots_mixed_train.py",
+      "sha256": "12e6ab83f7d15bd72e118a3462b8b5e38d19547479a62e62f5d66f4401c40610"
+    },
+    {
+      "bytes": 6113,
+      "path": "scripts/train/vcm_intent_slots_mixed_calibration.py",
+      "sha256": "a7845b6ab1cd092ba10ef0de6b80e8484201c3bf5016e524c28e3579017bb4f9"
+    },
+    {
+      "bytes": 5735,
+      "path": "experiments/vcm-mixed-final-v2/protocol.json",
+      "sha256": "622dee306d5e99a512575c73f8890b95eb954e379ccda80b8adec7505eb19b9e"
+    }
+  ],
+  "stage_counter_scope": "Counts are independently computed conditions on supported references, not a sequential funnel. Saved diagnostic candidates are never accepted production outputs or replacement benchmark scores.",
+  "status": "failed_candidate_preserved_for_independent_research_review",
+  "timezone": "Asia/Manila",
+  "training_grid": [
+    {
+      "arm": "uniform",
+      "checkpoint": ".cache/vcm-mixed-final-v2/training-01/uniform-53/checkpoint-30.pt",
+      "checkpoint_sha256": "f75a2fe42ffdeb7d874ac0f751ed182c2d96d250fd931982c34203d59652cbd9",
+      "development_key": [
+        0.14816126855600537,
+        -12,
+        0.13989637305699482
+      ],
+      "epoch": 30,
+      "final_state_sha256": "5fe89b487149bc05e4f0847c8d61303d149a3012de9b23ba007d9384047be42f",
+      "final_tts_accessed": false,
+      "initial_state_sha256": "f5b6dfa89470116b9fe076b9884ab387cd5e2fd87eb11ff26d345d63aac69c3b",
+      "optimizer_updates": 2880,
+      "sampling_mass": {
+        "human": 92227,
+        "synthetic": 92093
+      },
+      "seconds": 1297.0401915609837,
+      "seed": 53,
+      "status": "mixed_silver_unqualified_candidate",
+      "supervision_denominators": {
+        "alarm_hour": 2791,
+        "alarm_meridiem": 2791,
+        "alarm_minute": 0,
+        "brightness_percent": 18033,
+        "color": 15885,
+        "entity_pairs": 8334,
+        "intents": 184320,
+        "observed_values": 83207,
+        "reviewed_spans": 0,
+        "role_states": 996486,
+        "temperature_degrees": 4909,
+        "timer_amount": 1697,
+        "timer_unit": 1697,
+        "validity": 161261,
+        "volume_operation": 26873,
+        "volume_percent": 8531
+      },
+      "test_accessed": false
+    },
+    {
+      "arm": "uniform",
+      "checkpoint": ".cache/vcm-mixed-final-v2/training-01/uniform-71/checkpoint-28.pt",
+      "checkpoint_sha256": "b2eb003c919421c0f9e748431393e5887e1fd764b50fb057cc95463e7377db28",
+      "development_key": [
+        0.1871041787160208,
+        -12,
+        0.18652849740932642
+      ],
+      "epoch": 28,
+      "final_state_sha256": "2ba1b0603f0a9930dfda3748f59b3024846187c818e683309cca98feb83eeaee",
+      "final_tts_accessed": false,
+      "initial_state_sha256": "61eb6892731e1a59815d7b00b2e517f5846d39dd4e2796a7ead7c7613c4ff19e",
+      "optimizer_updates": 2880,
+      "sampling_mass": {
+        "human": 91936,
+        "synthetic": 92384
+      },
+      "seconds": 1292.4930201051757,
+      "seed": 71,
+      "status": "mixed_silver_unqualified_candidate",
+      "supervision_denominators": {
+        "alarm_hour": 2768,
+        "alarm_meridiem": 2768,
+        "alarm_minute": 0,
+        "brightness_percent": 18407,
+        "color": 15861,
+        "entity_pairs": 8692,
+        "intents": 184320,
+        "observed_values": 84247,
+        "reviewed_spans": 0,
+        "role_states": 1005303,
+        "temperature_degrees": 4989,
+        "timer_amount": 1661,
+        "timer_unit": 1661,
+        "validity": 161748,
+        "volume_operation": 27428,
+        "volume_percent": 8704
+      },
+      "test_accessed": false
+    },
+    {
+      "arm": "uniform",
+      "checkpoint": ".cache/vcm-mixed-final-v2/training-01/uniform-89/checkpoint-28.pt",
+      "checkpoint_sha256": "bcfc0b85d5e61238e9f93008af78e98df00c8d7c838e2d6c4df10834b6c6b976",
+      "development_key": [
+        0.2865503602756892,
+        -5,
+        0.2849740932642487
+      ],
+      "epoch": 28,
+      "final_state_sha256": "ac03a7a1f408df441c179277542f278a19ae8184f8db5a161d0f015c8cc0ecc4",
+      "final_tts_accessed": false,
+      "initial_state_sha256": "270f4164ea6d5cb3f6f5ff010d182d3621b956ce050334b7787ba2dc43e83272",
+      "optimizer_updates": 2880,
+      "sampling_mass": {
+        "human": 92018,
+        "synthetic": 92302
+      },
+      "seconds": 1285.0630577774718,
+      "seed": 89,
+      "status": "mixed_silver_unqualified_candidate",
+      "supervision_denominators": {
+        "alarm_hour": 2864,
+        "alarm_meridiem": 2864,
+        "alarm_minute": 0,
+        "brightness_percent": 18029,
+        "color": 15852,
+        "entity_pairs": 8102,
+        "intents": 184320,
+        "observed_values": 83813,
+        "reviewed_spans": 0,
+        "role_states": 1003873,
+        "temperature_degrees": 4947,
+        "timer_amount": 1618,
+        "timer_unit": 1618,
+        "validity": 161210,
+        "volume_operation": 27231,
+        "volume_percent": 8790
+      },
+      "test_accessed": false
+    },
+    {
+      "arm": "balanced",
+      "checkpoint": ".cache/vcm-mixed-final-v2/training-01/balanced-53/checkpoint-26.pt",
+      "checkpoint_sha256": "37b554c87e5ee54f2719df0c0f166ae2cd1c0d8167a73a7c02d98c87dbc6cb39",
+      "development_key": [
+        0.029130819838056682,
+        0,
+        0.025906735751295335
+      ],
+      "epoch": 26,
+      "final_state_sha256": "9213eb90a2a159a4d4e1fa00d9e8d7dcebc3818af40d1976db82ee22f8d5c1a1",
+      "final_tts_accessed": false,
+      "initial_state_sha256": "f5b6dfa89470116b9fe076b9884ab387cd5e2fd87eb11ff26d345d63aac69c3b",
+      "optimizer_updates": 2880,
+      "sampling_mass": {
+        "human": 24180,
+        "synthetic": 160140
+      },
+      "seconds": 1312.9570323461667,
+      "seed": 53,
+      "status": "mixed_silver_unqualified_candidate",
+      "supervision_denominators": {
+        "alarm_hour": 1270,
+        "alarm_meridiem": 1270,
+        "alarm_minute": 0,
+        "brightness_percent": 76733,
+        "color": 6847,
+        "entity_pairs": 9578,
+        "intents": 184320,
+        "observed_values": 234382,
+        "reviewed_spans": 0,
+        "role_states": 2401627,
+        "temperature_degrees": 5514,
+        "timer_amount": 2116,
+        "timer_unit": 2116,
+        "validity": 183684,
+        "volume_operation": 70304,
+        "volume_percent": 68212
+      },
+      "test_accessed": false
+    },
+    {
+      "arm": "balanced",
+      "checkpoint": ".cache/vcm-mixed-final-v2/training-01/balanced-71/checkpoint-24.pt",
+      "checkpoint_sha256": "96efaa69565e33ee4f9da11f3683cbdbe2f2ba9925ba7c4d916785afa19ac258",
+      "development_key": [
+        0.05729166666666666,
+        -3,
+        0.04145077720207254
+      ],
+      "epoch": 24,
+      "final_state_sha256": "a973da01d5b19283db045dfd5f943647fcbd19cddc011d1c73ba2b3731dc8585",
+      "final_tts_accessed": false,
+      "initial_state_sha256": "61eb6892731e1a59815d7b00b2e517f5846d39dd4e2796a7ead7c7613c4ff19e",
+      "optimizer_updates": 2880,
+      "sampling_mass": {
+        "human": 24398,
+        "synthetic": 159922
+      },
+      "seconds": 1303.8005930576473,
+      "seed": 71,
+      "status": "mixed_silver_unqualified_candidate",
+      "supervision_denominators": {
+        "alarm_hour": 1258,
+        "alarm_meridiem": 1258,
+        "alarm_minute": 0,
+        "brightness_percent": 76003,
+        "color": 6755,
+        "entity_pairs": 9310,
+        "intents": 184320,
+        "observed_values": 234491,
+        "reviewed_spans": 0,
+        "role_states": 2398280,
+        "temperature_degrees": 5478,
+        "timer_amount": 2126,
+        "timer_unit": 2126,
+        "validity": 183599,
+        "volume_operation": 70737,
+        "volume_percent": 68750
+      },
+      "test_accessed": false
+    },
+    {
+      "arm": "balanced",
+      "checkpoint": ".cache/vcm-mixed-final-v2/training-01/balanced-89/checkpoint-24.pt",
+      "checkpoint_sha256": "da5c0a2f8b18acd7faa5be356b62d9e12457a2ed68c0e0f0a8426274a6390d4d",
+      "development_key": [
+        0.07083333333333333,
+        -1,
+        0.04145077720207254
+      ],
+      "epoch": 24,
+      "final_state_sha256": "7272647c5b0547e10dcbeb3f468048726c7697169a1af867ebadaa92ce6e03a4",
+      "final_tts_accessed": false,
+      "initial_state_sha256": "270f4164ea6d5cb3f6f5ff010d182d3621b956ce050334b7787ba2dc43e83272",
+      "optimizer_updates": 2880,
+      "sampling_mass": {
+        "human": 24124,
+        "synthetic": 160196
+      },
+      "seconds": 1303.9252615375444,
+      "seed": 89,
+      "status": "mixed_silver_unqualified_candidate",
+      "supervision_denominators": {
+        "alarm_hour": 1221,
+        "alarm_meridiem": 1221,
+        "alarm_minute": 0,
+        "brightness_percent": 76270,
+        "color": 6796,
+        "entity_pairs": 9688,
+        "intents": 184320,
+        "observed_values": 234495,
+        "reviewed_spans": 0,
+        "role_states": 2402419,
+        "temperature_degrees": 5378,
+        "timer_amount": 2161,
+        "timer_unit": 2161,
+        "validity": 183686,
+        "volume_operation": 70672,
+        "volume_percent": 68615
+      },
+      "test_accessed": false
+    }
+  ],
+  "training_protocol": {
+    "arms": [
+      "uniform",
+      "balanced"
+    ],
+    "auxiliary_ctc_weight": 0.0,
+    "balance_unit": "complete_command_then_declared_person_or_synthetic_voice_then_recording",
+    "batch_size": 64,
+    "device": "cuda",
+    "entity_metric_weight": 0.1,
+    "epochs": 30,
+    "gradient_norm_limit": 1.0,
+    "human_only": false,
+    "learning_rate": 0.001,
+    "new_synthesis": true,
+    "normalization_fit_split": "train",
+    "optimizer": "AdamW",
+    "reference_labels": "Existing human labels plus exact contract-derived silver synthetic role/value labels; no claim of independently listened synthetic supervision",
+    "reviewed_span_weight": 0.1,
+    "seeds": [
+      53,
+      71,
+      89
+    ],
+    "selection": "Human development macro-person accepted exact recall; fewer accepted errors; human micro recall; earlier epoch. Synthetic development reported separately and never substitutes for human selection.",
+    "steps_per_epoch": 96,
+    "unreviewed_spans": "masked; zero acoustic span supervision is reported as a failed qualification gate",
+    "update_artifacts": false,
+    "visible_gpu_count": 1,
+    "weight_decay": 0.0001,
+    "whole_command_contrastive_weight": 0.0
+  },
+  "training_supervision": {
+    "calibration": {
+      "kinds": {
+        "human": {
+          "declared_speaker_or_voice_ids": 24,
+          "finite_targets_including_reference_derived_values": {
+            "brightness_percent": 4,
+            "color": 10,
+            "volume_operation": 21
+          },
+          "observed_entity_targets_after_training_mask": 0,
+          "present_role_labels": 0,
+          "reviewed_spans": 0,
+          "role_label_entries": 0,
+          "role_labeled_rows": 0,
+          "rows": 210
+        },
+        "synthetic": {
+          "declared_speaker_or_voice_ids": 1,
+          "finite_targets_including_reference_derived_values": {
+            "alarm_hour": 29,
+            "alarm_meridiem": 29,
+            "brightness_percent": 184,
+            "color": 84,
+            "temperature_degrees": 27,
+            "timer_amount": 18,
+            "timer_unit": 18,
+            "volume_operation": 184,
+            "volume_percent": 106
+          },
+          "observed_entity_targets_after_training_mask": 156,
+          "present_role_labels": 835,
+          "reviewed_spans": 0,
+          "role_label_entries": 11360,
+          "role_labeled_rows": 758,
+          "rows": 1037
+        }
+      },
+      "source": {
+        "bytes": 2839316,
+        "path": ".cache/vcm-mixed-final-v2/prepared-02/calibration.jsonl",
+        "sha256": "9bcf24ff227fb04f6fd8d3fa51faf5da21b5114ec33bab69f139713e5efd8e6a"
+      }
+    },
+    "dev": {
+      "kinds": {
+        "human": {
+          "declared_speaker_or_voice_ids": 36,
+          "finite_targets_including_reference_derived_values": {
+            "brightness_percent": 1,
+            "color": 17,
+            "temperature_degrees": 20,
+            "volume_operation": 27
+          },
+          "observed_entity_targets_after_training_mask": 0,
+          "present_role_labels": 0,
+          "reviewed_spans": 0,
+          "role_label_entries": 0,
+          "role_labeled_rows": 0,
+          "rows": 256
+        },
+        "synthetic": {
+          "declared_speaker_or_voice_ids": 1,
+          "finite_targets_including_reference_derived_values": {
+            "alarm_hour": 29,
+            "alarm_meridiem": 29,
+            "brightness_percent": 184,
+            "color": 84,
+            "temperature_degrees": 27,
+            "timer_amount": 18,
+            "timer_unit": 18,
+            "volume_operation": 184,
+            "volume_percent": 106
+          },
+          "observed_entity_targets_after_training_mask": 156,
+          "present_role_labels": 835,
+          "reviewed_spans": 0,
+          "role_label_entries": 11360,
+          "role_labeled_rows": 758,
+          "rows": 1037
+        }
+      },
+      "source": {
+        "bytes": 2907825,
+        "path": ".cache/vcm-mixed-final-v2/prepared-02/dev.jsonl",
+        "sha256": "5dbffda67da7dfefe45da16b0c7b4facd6db6e4211c09d1348e0153e6552a2b0"
+      }
+    },
+    "train": {
+      "kinds": {
+        "human": {
+          "declared_speaker_or_voice_ids": 182,
+          "finite_targets_including_reference_derived_values": {
+            "brightness_percent": 40,
+            "color": 163,
+            "temperature_degrees": 72,
+            "volume_operation": 238,
+            "volume_percent": 7
+          },
+          "observed_entity_targets_after_training_mask": 0,
+          "present_role_labels": 0,
+          "reviewed_spans": 0,
+          "role_label_entries": 0,
+          "role_labeled_rows": 0,
+          "rows": 1895
+        },
+        "synthetic": {
+          "declared_speaker_or_voice_ids": 2,
+          "finite_targets_including_reference_derived_values": {
+            "alarm_hour": 57,
+            "alarm_meridiem": 57,
+            "brightness_percent": 335,
+            "color": 163,
+            "temperature_degrees": 31,
+            "timer_amount": 34,
+            "timer_unit": 34,
+            "volume_operation": 319,
+            "volume_percent": 172
+          },
+          "observed_entity_targets_after_training_mask": 295,
+          "present_role_labels": 1497,
+          "reviewed_spans": 0,
+          "role_label_entries": 20590,
+          "role_labeled_rows": 1374,
+          "rows": 1896
+        }
+      },
+      "source": {
+        "bytes": 7897122,
+        "path": ".cache/vcm-mixed-final-v2/prepared-02/train.jsonl",
+        "sha256": "4b26c3065cd9f6aa38a3151b1c50d2d56b6fe4928755434cf30cdb06feb89f4c"
+      }
+    }
+  },
+  "unresolved": [
+    "Relative causal contributions need controlled training/development ablations.",
+    "The calibrators reflect the observed calibration data; these bounds do not establish a coding bug in logistic regression or justify forcing confidence upward.",
+    "Declared speaker/hash separation does not establish resolved physical cross-source aliases.",
+    "Fresh human recordings do not cover all 18 supported intent classes.",
+    "Independent listening, selected ncnn/resident-service replay and physical Pi qualification remain incomplete."
+  ],
+  "user_requirement": "Recognize previously unseen human speakers without adding the user voice to fitting, development selection, calibration, or speaker adaptation; preserve benchmark references."
+}

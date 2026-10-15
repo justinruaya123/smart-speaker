@@ -12,6 +12,10 @@ The experimental Pi ZIP contains the exact selected ONNX model, calibration/enro
 
 See [comprehensive report](docs/EXPERIMENT-vcm-mixed-final-v2.md), [scope and failures](final/FINALIZATION_NOTES.md), [model card](final/MODEL_CARD.md), and [every missed verbatim](final/missed-verbatims.csv).
 
+Post-handoff review, 2026-10-15: the user requires recognition of unseen human speakers without adding their own voice to fitting, checkpoint selection, calibration or speaker adaptation. The candidate remains failed. Static analysis of the exact frozen policy proves that all six fitted slot calibrators have probability upper bounds below the required 0.90, so commands requiring those scores cannot pass. All 1,895 human training rows lack explicit role-state labels; the mixed trainer consequently masks their entity targets, while explicit role supervision comes from synthetic recordings using two training voice IDs. Human intent and some finite-value targets are still supervised. On saved fresh-human predictions, intent argmax matches 43/93 supported references and the final policy accepts 0/93. Relative causal contributions require independent research and controlled development ablations.
+
+[Research handoff, architecture/equations and diagnostic interpretation](docs/HANDOFF-vcm-mixed-final-v2-error-review.md) and [numeric diagnostic receipt with source hashes](experiments/vcm-mixed-final-v2/post-handoff-diagnostics-20261015.json) preserve these additional findings against baseline commit `6aee6bb`. Existing weights, benchmark references, thresholds, frozen reports and the Pi ZIP retain their original identities. No new training or neural replay was performed for this review.
+
 ## VCM intent and slots v1 — 2026-10-14
 
 Status: experimental implementation and software export verified; real acoustic
