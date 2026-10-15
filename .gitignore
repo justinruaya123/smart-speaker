@@ -4,6 +4,10 @@
 /.cache/
 /dist/
 /.worktrees/
+# Generated Pi handoff and content-addressed local evidence remain local artifacts.
+/final/vcm-pi-handoff-*.zip
+/final/evidence
+/final/cards/card.source.json
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
