@@ -633,3 +633,16 @@ providers, old failures and other users' GPU processes were preserved. The
 [continuation receipt](../experiments/vcm-intent-slots-v1/finalization-continuation-20261015.json)
 contains source/receipt hashes, separate unmeasured human and per-voice TTS fields,
 exact failed gates, available-input normalization evidence and retained raw logs.
+
+
+## VCM mixed final v2 — selected-candidate finalization, 2026-10-15
+
+Status: **blocked / Pi-deferred**. The separately authorized mixed human/synthetic study completed all six 30-epoch, 2,880-update arms on one A100; development selected uniform seed 89, epoch 28. The settled 280,818-parameter temporal CNN, grammar/catalog/typed outputs and 0.95/0.90 gates remain unchanged.
+
+Frozen calibrated results: fresh human 0/93 exact supported commands; original human test 25/636; original human holdout 5/83; current mandatory defaults 5/186 overall (human 2/86, synthetic 3/100). Every supplied-slot score is zero. Original-test retains two overlong ambiguous capture faults and one accepted wrong positive; negatives have zero false accepts. All 4,922 original/fresh trials and the complete CUDA waveform parity replay are preserved with correct fresh/regression accounting.
+
+The complete final six-voice/three-speed Kokoro grid attempted 18,666 unique takes: 16,649 valid WAVs and 2,017 generation faults. Final-TTS recognition remains unmeasured because independent listening/qualified supplemental lock and ncnn are blocked. Zero alarm-minute supervision, absent acoustic review, incomplete fresh intent scope, missing calibration cells, physical alias verification, paired owner recordings and selected resident/ncnn evidence remain visible.
+
+The experimental Pi ZIP contains the exact selected ONNX model, calibration/enrollment, semi-final JSON/Markdown/editable/PDF cards, portable evidence, unmodified pinned current202 benchmark/default cache and deterministic Pi updater. Physical Pi remains deferred. Superseded own-worktree Markdown/closed residuals were selectively archived; the original supplied ZIP is retained because its conditional deletion gates failed.
+
+See [comprehensive report](EXPERIMENT-vcm-mixed-final-v2.md), [scope and failures](../final/FINALIZATION_NOTES.md), [model card](../final/MODEL_CARD.md), and [every missed verbatim](../final/missed-verbatims.csv).

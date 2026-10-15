@@ -1,0 +1,107 @@
+{
+  "archive": [
+    {
+      "archive": "archive/vcm-finalization-20261015/README.before-mixed-final-v2.md",
+      "bytes": 15002,
+      "original": "final/README.md",
+      "reason": "Superseded by actual selected-candidate receipts; historical verification bytes preserved",
+      "sha256": "9f89eb52a777522bd55170816bdbfab1927873ae439b52b8e06f93403e3b0ae6"
+    },
+    {
+      "archive": "archive/vcm-finalization-20261015/MODEL_CARD.before-mixed-final-v2.md",
+      "bytes": 8819,
+      "original": "final/MODEL_CARD.md",
+      "reason": "Superseded by actual selected-candidate receipts; historical verification bytes preserved",
+      "sha256": "a350212576e942ca001bb0c8fc240b5931076c3ef70a127bbe00521488edd98b"
+    }
+  ],
+  "assembly_receipt_sha256": "548f6623220184afc047acde5849a688363d864e5436c204c6e4dce5bd4411da",
+  "failed_gates": [
+    "slot_calibration_coverage: failed — Missing cells retain rejection behavior",
+    "reviewed_acoustic_supervision: failed — Independent listening and reviewed acoustic spans are required",
+    "value_head_supervision: failed — Actual finite-value loss denominators must be nonzero",
+    "physical_person_alias_verification: blocked — Declared-source identity, recording-group and file/PCM separation is checked; physical cross-source alias equivalence remains unverified",
+    "fresh_human_scope: failed — Fresh human recordings must cover the complete intent contract",
+    "ncnn_parity: blocked — CPU-only inference hold remains unanswered; no selected ncnn replay receipt",
+    "resident_service: blocked — CPU-only inference hold remains unanswered; actual resident service is unmeasured",
+    "owner_paired_recordings: blocked — No completed selected-candidate paired owner recording receipt",
+    "final_tts_generation_qa: failed — Generation failures retained separately from recognition errors",
+    "final_tts_listening_and_lock: blocked — Independent pre-result listening and supplemental lock are incomplete",
+    "final_tts_replay: blocked — Final six-voice ncnn replay has not run; all recognition metrics remain unmeasured"
+  ],
+  "format": "vcm-final-selective-archive-cleanup-v1",
+  "ignored_residual_archive": [
+    {
+      "archive": ".cache/vcm-mixed-final-v2/archive/package-import-20261015-01",
+      "compatibility_symlink": "../vcm-mixed-final-v2/archive/package-import-20261015-01",
+      "files": {
+        "README.md": "1df6446e71c2ddc79021e77534532cb6109b3a728431f111b716d0d66233dfdd",
+        "SHA256SUMS.txt": "8d1fb8f68e5e3793329daad6b550c4b6dcf8f91e58c6ec2ee3f4e3f70a652783",
+        "VCM_FINALIZATION.md": "dc27f4b4340903c62055d93b14f328bd9a6463c44182cafb9a3e4c844c5ed406",
+        "backpressure-green.log": "73ab25e5a09c8277c54b97bb33c5b1bc964033e409a0798d74ea5db724db749b",
+        "backpressure-red.log": "38e93cc671f0d04009e647e081c65adcf3566956266d6b0cabf2d9eb61cd7975",
+        "final-test-contract.json": "eab1ae7e857e93444d343558640fb6c539945fee82ada003e47bf2b582fbfab9",
+        "focused-after-correction-v2.log": "79bed16bb84e3736a43ceb54853567ab2221db38aed4cc8088a215fc9f0702a4",
+        "focused-after-patch.log": "b27318feb7262dcdf940c242bab187634105dc625cb0131c6ff10d6e75c86173",
+        "focused-final-v2.log": "e5220259f96cc1696e1b31bc1e509b8b5f5d0199586b83d44d88e2917798287e",
+        "full-repository-after-patch.log": "45fba2dba49a5bf35af913cb4baec6a734faa333909801894b08993a9449962d",
+        "full-repository-final-v2.log": "2a207329111ac955f6126c80b0e9943608f4ce5eb6770276ee3e344807fde9e1",
+        "kokoro-assets-direct-fetch.log": "07c0dfc4e55405d8a4033f3bcdac0d799def10ff54355ea05d4e557a49a3b3d6",
+        "kokoro-pinned-assets-fetch.log": "fb7170b50ae7d7cb951fb9deb8894d1aeb82a029412ae7b5d451818033e6da2d",
+        "patch-roundtrip-tests.txt": "83d312ea3721b9c2574411d822ed07d6bb6c2a327c41c77bbfb785b5c8044226",
+        "request-id-green.log": "f3cf71dccb7a621f56841c650ccf4b13e6d03fc8b67506e77bbfbce55ddae13c",
+        "request-id-red.log": "3c7502dd732b33d38e84c7808ddbc188300c3514b9fa79a8aa5a1ef7f8f9d1c7",
+        "resident-before-patch.log": "ba804bdfb7e768679f0cfaf5893faf94cfc195612cf6ed143414ba9d25cd9b56",
+        "service-readiness.patch": "38d51358ba6cad088ca2ce459cb9b1e9a5f99715962f571956f1c25f912da22e",
+        "smoke-cli-help.txt": "b5bb1b5c73a1278d89fca7731be710874800abd6f18bb35800e88a2ba99be244",
+        "source/scripts/runtime/speaker_worker.py": "5d57459a903bf55d05053aece9e7e88bad8bccac4a111dcbcdf64cc87e6ce1be",
+        "source/scripts/test/test_speaker_worker_resident.py": "a77e4f07fac35f4daa6abe2d6833ea481ffa8be0a5bda7f2b785c6756ac9be04",
+        "source/scripts/test/test_vcm_resident_smoke.py": "aec752cb335497179b02b43e033e8a95b9e73807d38fcc9acd93094e813dc17d",
+        "source/scripts/test/vcm_resident_smoke.py": "b485200b18be86ce536491414601e278b9d3d79a40110acd39cbc0fb4920337b",
+        "sources.json": "9f3ce9caa94b78645c2c68f7eb1b59b6d6f36bd9221889b1e8001e0a75ce7215",
+        "speakerui-test.log": "0b9f0bfbb82d43ef7563303a0c31265c62929532982b545490857872ad5683f5",
+        "verification.json": "9470ab64041e512536cf87d2ae64a32b47c0275b92da49d668923157e8c405d4"
+      },
+      "original": ".cache/vcm-final-readiness-v1/package-import-20261015-01",
+      "reason": "Closed package-import and obsolete software-fixture residuals; unchanged hash access preserved"
+    },
+    {
+      "archive": ".cache/vcm-mixed-final-v2/archive/software-fixture-resident-20261015-01",
+      "compatibility_symlink": "../vcm-mixed-final-v2/archive/software-fixture-resident-20261015-01",
+      "files": {
+        "events.jsonl": "d0893b780793e02f299d50c1276a9f4d06c653d072d6fde7a2a9928873c8d4cb",
+        "result.json": "0ccaee7b116e7be58711dbf2708b9831f6e49364deb910387b3858e8ce389ec9",
+        "run-identity.json": "a403e1568e8aa81ecf51c1d349dde54ceaecf1c9fafc56ee399a6496775b186f",
+        "stderr.txt": "793591b26555a04516448e49bfe3c0e4353da16bc129c821ca8446b91ab9173c"
+      },
+      "original": ".cache/vcm-final-readiness-v1/software-fixture-resident-20261015-01",
+      "reason": "Closed package-import and obsolete software-fixture residuals; unchanged hash access preserved"
+    },
+    {
+      "archive": ".cache/vcm-mixed-final-v2/archive/software-fixture-resident-20261015-v2",
+      "compatibility_symlink": "../vcm-mixed-final-v2/archive/software-fixture-resident-20261015-v2",
+      "files": {
+        "events.jsonl": "32c3ec27360aca555232692445d9a318761937a05e968c337d09341cafdcfa90",
+        "result.json": "478f65d948a9a1aa615d3b42460e620bd54db6f72508e0eea61e8c563c25ee44",
+        "run-identity.json": "a403e1568e8aa81ecf51c1d349dde54ceaecf1c9fafc56ee399a6496775b186f",
+        "stderr.txt": "89074ed8a092b55b2a8d460612b3ab5e155c2e5f3186b68a430ea4842942b560"
+      },
+      "original": ".cache/vcm-final-readiness-v1/software-fixture-resident-20261015-v2",
+      "reason": "Closed package-import and obsolete software-fixture residuals; unchanged hash access preserved"
+    }
+  ],
+  "model_card_sha256": "cb598243b82492f45114b4837236c0bd47c958e2af4743ca71af0d91c9b9734b",
+  "recorded_at": "2026-10-15T01:20:04.923096+00:00",
+  "selected_checkpoint_sha256": "bcfc0b85d5e61238e9f93008af78e98df00c8d7c838e2d6c4df10834b6c6b976",
+  "source_audio_checkpoints_failed_trials_and_raw_logs_retained": true,
+  "supplied_package": {
+    "archived_instruction": "archive/vcm-finalization-20261015/README.before-mixed-final-v2.md",
+    "bytes": 40106,
+    "cleanup_status": "deferred_failed_or_blocked_accuracy_gates",
+    "deleted": false,
+    "path": "final/vcm-finalization-package.zip",
+    "reason": "Original final/README.md requires completed actual accuracy gates before this deletion; selected candidate remains blocked",
+    "sha256": "1f11a6188cbaa27bb4199e7aca728a3a502a7d387c1306ac5c47283f1187e491"
+  },
+  "unrelated_worktrees_changed": false
+}

@@ -1,0 +1,14 @@
+{
+  "artifacts": {
+    "MODEL_CARD.html": "46563f37978dee12093072c79cd1b5253f01b1c747d7e46c5323987ee7a7d747",
+    "MODEL_CARD.md": "b5714ddaba2f07962bad4df309b63ddcdc9a91be8e86fd2985df71deb00d8cac",
+    "MODEL_CARD.pdf": "70ba2588dbe822d47621eab948a005b93199a76a5944cd783af19af92d3ace76",
+    "MODEL_CARD.pptx": "1f4ab567b9eb12157ba23902a36f9330a040f078df273373c3be147bc7d6f1f6",
+    "card.source.json": "cb598243b82492f45114b4837236c0bd47c958e2af4743ca71af0d91c9b9734b"
+  },
+  "complete_fields_preserved": true,
+  "format": "vcm-card-rendering-v1",
+  "metrics_source": "supplied JSON only; no benchmark outcomes computed",
+  "renderer_sha256": "bc5d3de6efd7b1227803ca2893ae79a34e8a4c6ef638e939036921836aac9dbc",
+  "source_card_sha256": "cb598243b82492f45114b4837236c0bd47c958e2af4743ca71af0d91c9b9734b"
+}

@@ -1,0 +1,46 @@
+{
+  "allowed_for_final_VCM_scoring": false,
+  "allowed_for_training_selection_calibration_enrollment": false,
+  "attempted_unique_takes": 18666,
+  "files": {
+    "blind_technical_review": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/final-tts-02/blind-integrity-receipt.json",
+      "sha256": "834384731e203e52b3589a76c1caa428907b867e50ba9f0b9d8ffc9f8efa82f6"
+    },
+    "fault_verbatims": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/final-tts-02/technical-faults-rechecked.json",
+      "sha256": "21649c34124772bee2687c613d648cd04fa0ec0ffbcb9048c85d684873606a2a"
+    },
+    "generation_journal": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/final-tts-02/generation.jsonl",
+      "sha256": "d0fcbe14dccf49e3091fbc662063f69adc982b66801403f399c94d8734794c6b"
+    },
+    "manifest": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/final-tts-02/manifest.json",
+      "sha256": "2846c1db1b617db3c4967a1496a2a5f28dd37ae33dd2c8e959f4d73a9ea2d6cd"
+    },
+    "plan": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/final-tts-plan-02.json",
+      "sha256": "339be5e31c5825efb97ee49e94574dcf09f025c857fdeba4fd4f3f0df10c5707"
+    },
+    "pre_generation_source_lock": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/final-tts-source-lock-02.json",
+      "sha256": "0dd169da02a31790a4667ee543afd6b0ee8766ba47a16023d671c66c6bad5b1a"
+    },
+    "review_template": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/final-tts-02/review-template.json",
+      "sha256": "7817e155223fcd2420d80389b8c45daa731dedcfe2e28441ae77cde46f1e8129"
+    }
+  },
+  "final_TTS_VCM_results_accessed": false,
+  "format": "vcm-final-tts-technical-quarantine-lock-v1",
+  "generation_faults": 2017,
+  "independent_listening_completed": false,
+  "recorded_at": "2026-10-15T00:35:07.149296+00:00",
+  "required_next_gate": "Independent acoustic review of every preserved take with failures retained, followed by the existing qualified supplemental lock. The technical seal cannot substitute for that gate.",
+  "review_limitation": "Audio input is not supported by this assistant interface; no heard_exact assertion is made",
+  "status": "sealed_technical_evidence_not_qualified_for_inference",
+  "supplemental_qualified_lock": false,
+  "takes_regenerated": 0,
+  "valid_mono_16k_takes": 16649
+}

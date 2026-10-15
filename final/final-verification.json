@@ -1,0 +1,80 @@
+{
+  "CPU_node_count": 0,
+  "CUDA_node_count": 141,
+  "Pi_ZIP": {
+    "bytes": 86039578,
+    "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/final/vcm-pi-handoff-20261015-01.zip",
+    "physical_Pi_measured": false,
+    "sha256": "7e86166167560cce4724d2a569e614a6bb2ddaaa7803d452871ceb10e9351dd5",
+    "verified_member_count": 495
+  },
+  "actual_GPU_inference_only": true,
+  "actual_first_pass_rows": 4922,
+  "actual_waveform_comparisons": 4920,
+  "archive_cleanup": {
+    "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/archive/vcm-finalization-20261015/archive-manifest.json",
+    "sha256": "cb6b1106cb2bfd4aff1d978a0fd32fcc0c73d1c8d64afe2196a0be2ecb1feb86"
+  },
+  "bindings": {
+    "checkpoint_sha256": "bcfc0b85d5e61238e9f93008af78e98df00c8d7c838e2d6c4df10834b6c6b976",
+    "contract_hash": "ff0a789114327f031599b198bfdcb74523eafb4c3075588ab8c313c9fecc6ac8",
+    "recipe_sha256": "40f2d027e81393ca10edc8200f2a4c6631425c21b807206c63ec9cc6e546218b"
+  },
+  "card": {
+    "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/final/card.json",
+    "sha256": "cb598243b82492f45114b4837236c0bd47c958e2af4743ca71af0d91c9b9734b"
+  },
+  "failed_gates": [
+    "slot_calibration_coverage: failed — Missing cells retain rejection behavior",
+    "reviewed_acoustic_supervision: failed — Independent listening and reviewed acoustic spans are required",
+    "value_head_supervision: failed — Actual finite-value loss denominators must be nonzero",
+    "physical_person_alias_verification: blocked — Declared-source identity, recording-group and file/PCM separation is checked; physical cross-source alias equivalence remains unverified",
+    "fresh_human_scope: failed — Fresh human recordings must cover the complete intent contract",
+    "ncnn_parity: blocked — CPU-only inference hold remains unanswered; no selected ncnn replay receipt",
+    "resident_service: blocked — CPU-only inference hold remains unanswered; actual resident service is unmeasured",
+    "owner_paired_recordings: blocked — No completed selected-candidate paired owner recording receipt",
+    "final_tts_generation_qa: failed — Generation failures retained separately from recognition errors",
+    "final_tts_listening_and_lock: blocked — Independent pre-result listening and supplemental lock are incomplete",
+    "final_tts_replay: blocked — Final six-voice ncnn replay has not run; all recognition metrics remain unmeasured"
+  ],
+  "final_TTS_inference_performed": false,
+  "format": "vcm-final-artifact-verification-v1",
+  "independent_evidence_review": {
+    "missed_trial_references": 4411,
+    "missed_verbatim_groups": 312,
+    "quantitative_or_provenance_findings": "none Important/Critical",
+    "raw_and_preserved_hashes_verified": 390
+  },
+  "matching_capture_faults": 2,
+  "max_waveform_head_error": 1.1444091796875e-05,
+  "original_supplied_ZIP": {
+    "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/final/vcm-finalization-package.zip",
+    "sha256": "1f11a6188cbaa27bb4199e7aca728a3a502a7d387c1306ac5c47283f1187e491"
+  },
+  "original_supplied_ZIP_deleted": false,
+  "original_supplied_ZIP_deletion_gate": "deferred_failed_or_blocked_accuracy_gates",
+  "physical_Pi_fields": {
+    "CPU": null,
+    "RSS": null,
+    "RTF": null,
+    "hardware": null,
+    "latency": null,
+    "power": null,
+    "results": null,
+    "status": "deferred",
+    "thermal": null,
+    "wake": null
+  },
+  "post_test_verification_correction": {
+    "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/experiments/vcm-mixed-final-v2/assembly-postfit-path-correction-v1.json",
+    "sha256": "c57e1095fd40d2a7311756ed09b7b77864d5bf90751930f0910054ea04ee21ed"
+  },
+  "selected_ncnn_and_CPU_resident_inference_performed": false,
+  "source_calibration_enrollment_reference_threshold_changes_after_test": false,
+  "status": "blocked / Pi-deferred",
+  "tests": {
+    "focused_pure": 317,
+    "overlap_between_these_two_filesets": false,
+    "versioned_assembly_adapter_pure": 16
+  }
+}

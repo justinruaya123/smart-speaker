@@ -1,0 +1,329 @@
+{
+  "format": "vcm-actual-learning-curves-v1",
+  "selected": {
+    "status": "mixed_silver_unqualified_candidate",
+    "arm": "uniform",
+    "seed": 89,
+    "epoch": 28,
+    "checkpoint": ".cache/vcm-mixed-final-v2/training-01/uniform-89/checkpoint-28.pt",
+    "checkpoint_sha256": "bcfc0b85d5e61238e9f93008af78e98df00c8d7c838e2d6c4df10834b6c6b976",
+    "development_key": [
+      0.2865503602756892,
+      -5,
+      0.2849740932642487
+    ],
+    "optimizer_updates": 2880,
+    "sampling_mass": {
+      "synthetic": 92302,
+      "human": 92018
+    },
+    "supervision_denominators": {
+      "intents": 184320,
+      "role_states": 1003873,
+      "validity": 161210,
+      "brightness_percent": 18029,
+      "volume_operation": 27231,
+      "volume_percent": 8790,
+      "timer_unit": 1618,
+      "alarm_hour": 2864,
+      "alarm_minute": 0,
+      "alarm_meridiem": 2864,
+      "temperature_degrees": 4947,
+      "color": 15852,
+      "timer_amount": 1618,
+      "observed_values": 83813,
+      "entity_pairs": 8102,
+      "reviewed_spans": 0
+    },
+    "initial_state_sha256": "270f4164ea6d5cb3f6f5ff010d182d3621b956ce050334b7787ba2dc43e83272",
+    "final_state_sha256": "ac03a7a1f408df441c179277542f278a19ae8184f8db5a161d0f015c8cc0ecc4",
+    "seconds": 1285.0630577774718,
+    "test_accessed": false,
+    "final_tts_accessed": false
+  },
+  "grid": [
+    {
+      "status": "mixed_silver_unqualified_candidate",
+      "arm": "uniform",
+      "seed": 53,
+      "epoch": 30,
+      "checkpoint": ".cache/vcm-mixed-final-v2/training-01/uniform-53/checkpoint-30.pt",
+      "checkpoint_sha256": "f75a2fe42ffdeb7d874ac0f751ed182c2d96d250fd931982c34203d59652cbd9",
+      "development_key": [
+        0.14816126855600537,
+        -12,
+        0.13989637305699482
+      ],
+      "optimizer_updates": 2880,
+      "sampling_mass": {
+        "synthetic": 92093,
+        "human": 92227
+      },
+      "supervision_denominators": {
+        "intents": 184320,
+        "role_states": 996486,
+        "validity": 161261,
+        "brightness_percent": 18033,
+        "volume_operation": 26873,
+        "volume_percent": 8531,
+        "timer_unit": 1697,
+        "alarm_hour": 2791,
+        "alarm_minute": 0,
+        "alarm_meridiem": 2791,
+        "temperature_degrees": 4909,
+        "color": 15885,
+        "timer_amount": 1697,
+        "observed_values": 83207,
+        "entity_pairs": 8334,
+        "reviewed_spans": 0
+      },
+      "initial_state_sha256": "f5b6dfa89470116b9fe076b9884ab387cd5e2fd87eb11ff26d345d63aac69c3b",
+      "final_state_sha256": "5fe89b487149bc05e4f0847c8d61303d149a3012de9b23ba007d9384047be42f",
+      "seconds": 1297.0401915609837,
+      "test_accessed": false,
+      "final_tts_accessed": false
+    },
+    {
+      "status": "mixed_silver_unqualified_candidate",
+      "arm": "uniform",
+      "seed": 71,
+      "epoch": 28,
+      "checkpoint": ".cache/vcm-mixed-final-v2/training-01/uniform-71/checkpoint-28.pt",
+      "checkpoint_sha256": "b2eb003c919421c0f9e748431393e5887e1fd764b50fb057cc95463e7377db28",
+      "development_key": [
+        0.1871041787160208,
+        -12,
+        0.18652849740932642
+      ],
+      "optimizer_updates": 2880,
+      "sampling_mass": {
+        "synthetic": 92384,
+        "human": 91936
+      },
+      "supervision_denominators": {
+        "intents": 184320,
+        "role_states": 1005303,
+        "validity": 161748,
+        "brightness_percent": 18407,
+        "volume_operation": 27428,
+        "volume_percent": 8704,
+        "timer_unit": 1661,
+        "alarm_hour": 2768,
+        "alarm_minute": 0,
+        "alarm_meridiem": 2768,
+        "temperature_degrees": 4989,
+        "color": 15861,
+        "timer_amount": 1661,
+        "observed_values": 84247,
+        "entity_pairs": 8692,
+        "reviewed_spans": 0
+      },
+      "initial_state_sha256": "61eb6892731e1a59815d7b00b2e517f5846d39dd4e2796a7ead7c7613c4ff19e",
+      "final_state_sha256": "2ba1b0603f0a9930dfda3748f59b3024846187c818e683309cca98feb83eeaee",
+      "seconds": 1292.4930201051757,
+      "test_accessed": false,
+      "final_tts_accessed": false
+    },
+    {
+      "status": "mixed_silver_unqualified_candidate",
+      "arm": "uniform",
+      "seed": 89,
+      "epoch": 28,
+      "checkpoint": ".cache/vcm-mixed-final-v2/training-01/uniform-89/checkpoint-28.pt",
+      "checkpoint_sha256": "bcfc0b85d5e61238e9f93008af78e98df00c8d7c838e2d6c4df10834b6c6b976",
+      "development_key": [
+        0.2865503602756892,
+        -5,
+        0.2849740932642487
+      ],
+      "optimizer_updates": 2880,
+      "sampling_mass": {
+        "synthetic": 92302,
+        "human": 92018
+      },
+      "supervision_denominators": {
+        "intents": 184320,
+        "role_states": 1003873,
+        "validity": 161210,
+        "brightness_percent": 18029,
+        "volume_operation": 27231,
+        "volume_percent": 8790,
+        "timer_unit": 1618,
+        "alarm_hour": 2864,
+        "alarm_minute": 0,
+        "alarm_meridiem": 2864,
+        "temperature_degrees": 4947,
+        "color": 15852,
+        "timer_amount": 1618,
+        "observed_values": 83813,
+        "entity_pairs": 8102,
+        "reviewed_spans": 0
+      },
+      "initial_state_sha256": "270f4164ea6d5cb3f6f5ff010d182d3621b956ce050334b7787ba2dc43e83272",
+      "final_state_sha256": "ac03a7a1f408df441c179277542f278a19ae8184f8db5a161d0f015c8cc0ecc4",
+      "seconds": 1285.0630577774718,
+      "test_accessed": false,
+      "final_tts_accessed": false
+    },
+    {
+      "status": "mixed_silver_unqualified_candidate",
+      "arm": "balanced",
+      "seed": 53,
+      "epoch": 26,
+      "checkpoint": ".cache/vcm-mixed-final-v2/training-01/balanced-53/checkpoint-26.pt",
+      "checkpoint_sha256": "37b554c87e5ee54f2719df0c0f166ae2cd1c0d8167a73a7c02d98c87dbc6cb39",
+      "development_key": [
+        0.029130819838056682,
+        0,
+        0.025906735751295335
+      ],
+      "optimizer_updates": 2880,
+      "sampling_mass": {
+        "synthetic": 160140,
+        "human": 24180
+      },
+      "supervision_denominators": {
+        "intents": 184320,
+        "role_states": 2401627,
+        "validity": 183684,
+        "brightness_percent": 76733,
+        "volume_operation": 70304,
+        "volume_percent": 68212,
+        "timer_unit": 2116,
+        "alarm_hour": 1270,
+        "alarm_minute": 0,
+        "alarm_meridiem": 1270,
+        "temperature_degrees": 5514,
+        "color": 6847,
+        "timer_amount": 2116,
+        "observed_values": 234382,
+        "entity_pairs": 9578,
+        "reviewed_spans": 0
+      },
+      "initial_state_sha256": "f5b6dfa89470116b9fe076b9884ab387cd5e2fd87eb11ff26d345d63aac69c3b",
+      "final_state_sha256": "9213eb90a2a159a4d4e1fa00d9e8d7dcebc3818af40d1976db82ee22f8d5c1a1",
+      "seconds": 1312.9570323461667,
+      "test_accessed": false,
+      "final_tts_accessed": false
+    },
+    {
+      "status": "mixed_silver_unqualified_candidate",
+      "arm": "balanced",
+      "seed": 71,
+      "epoch": 24,
+      "checkpoint": ".cache/vcm-mixed-final-v2/training-01/balanced-71/checkpoint-24.pt",
+      "checkpoint_sha256": "96efaa69565e33ee4f9da11f3683cbdbe2f2ba9925ba7c4d916785afa19ac258",
+      "development_key": [
+        0.05729166666666666,
+        -3,
+        0.04145077720207254
+      ],
+      "optimizer_updates": 2880,
+      "sampling_mass": {
+        "synthetic": 159922,
+        "human": 24398
+      },
+      "supervision_denominators": {
+        "intents": 184320,
+        "role_states": 2398280,
+        "validity": 183599,
+        "brightness_percent": 76003,
+        "volume_operation": 70737,
+        "volume_percent": 68750,
+        "timer_unit": 2126,
+        "alarm_hour": 1258,
+        "alarm_minute": 0,
+        "alarm_meridiem": 1258,
+        "temperature_degrees": 5478,
+        "color": 6755,
+        "timer_amount": 2126,
+        "observed_values": 234491,
+        "entity_pairs": 9310,
+        "reviewed_spans": 0
+      },
+      "initial_state_sha256": "61eb6892731e1a59815d7b00b2e517f5846d39dd4e2796a7ead7c7613c4ff19e",
+      "final_state_sha256": "a973da01d5b19283db045dfd5f943647fcbd19cddc011d1c73ba2b3731dc8585",
+      "seconds": 1303.8005930576473,
+      "test_accessed": false,
+      "final_tts_accessed": false
+    },
+    {
+      "status": "mixed_silver_unqualified_candidate",
+      "arm": "balanced",
+      "seed": 89,
+      "epoch": 24,
+      "checkpoint": ".cache/vcm-mixed-final-v2/training-01/balanced-89/checkpoint-24.pt",
+      "checkpoint_sha256": "da5c0a2f8b18acd7faa5be356b62d9e12457a2ed68c0e0f0a8426274a6390d4d",
+      "development_key": [
+        0.07083333333333333,
+        -1,
+        0.04145077720207254
+      ],
+      "optimizer_updates": 2880,
+      "sampling_mass": {
+        "synthetic": 160196,
+        "human": 24124
+      },
+      "supervision_denominators": {
+        "intents": 184320,
+        "role_states": 2402419,
+        "validity": 183686,
+        "brightness_percent": 76270,
+        "volume_operation": 70672,
+        "volume_percent": 68615,
+        "timer_unit": 2161,
+        "alarm_hour": 1221,
+        "alarm_minute": 0,
+        "alarm_meridiem": 1221,
+        "temperature_degrees": 5378,
+        "color": 6796,
+        "timer_amount": 2161,
+        "observed_values": 234495,
+        "entity_pairs": 9688,
+        "reviewed_spans": 0
+      },
+      "initial_state_sha256": "270f4164ea6d5cb3f6f5ff010d182d3621b956ce050334b7787ba2dc43e83272",
+      "final_state_sha256": "7272647c5b0547e10dcbeb3f468048726c7697169a1af867ebadaa92ce6e03a4",
+      "seconds": 1303.9252615375444,
+      "test_accessed": false,
+      "final_tts_accessed": false
+    }
+  ],
+  "histories": {
+    "uniform-53": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/training-01/uniform-53/history.json",
+      "sha256": "6af25decdf9004fc0a64f037617f2c517a6b66eb5e5805825a1928ef38072817"
+    },
+    "uniform-71": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/training-01/uniform-71/history.json",
+      "sha256": "c0741b1046fe57776eaf9d85067f2f4e10c7f87599dd00ceef3dbe560faebcf6"
+    },
+    "uniform-89": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/training-01/uniform-89/history.json",
+      "sha256": "d3ce9946cf6dcc4cacde6780ec52b1ef2ca22f6fea1962dd36e6098845f2c536"
+    },
+    "balanced-53": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/training-01/balanced-53/history.json",
+      "sha256": "e0f4ed9a2c9a852f76c03ca8e7b77384a8cd79849e9d47ad048fe45925bbef5c"
+    },
+    "balanced-71": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/training-01/balanced-71/history.json",
+      "sha256": "5e9d9724ddcfb44aa005cf63efce250530103ce3fd2ba2f2ae60b6a92736a4d0"
+    },
+    "balanced-89": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/training-01/balanced-89/history.json",
+      "sha256": "88b27a4aad964f3500c136053826448bf1d0e64d8e2138c34c91104f2d8f3fc7"
+    }
+  },
+  "files": {
+    "plot-source.py": "ee82b8f94c27159c89839b009487ad0e55805e241b05a930fed82a81d4a24dcd",
+    "training-curves.pdf": "a1438761ec09dad683a978c792a16fd80afad86587d502486368e63688c9e410",
+    "training-curves.png": "20b2bf1f690a087a52a8c431262c126abf5cd54331bc9287722e018ee727c4a0",
+    "training-curves.svg": "0a27de0667ab025cea59edbdad113a9d89306579082c357d389ce4b14648e05d"
+  },
+  "inference_performed": false,
+  "calibration_fitted": false,
+  "test_results_used": false,
+  "actual_updates": 17280,
+  "fixed_human_development_only_selection": true
+}

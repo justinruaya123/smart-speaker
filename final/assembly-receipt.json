@@ -1,0 +1,18 @@
+{
+  "bindings": {
+    "checkpoint_sha256": "bcfc0b85d5e61238e9f93008af78e98df00c8d7c838e2d6c4df10834b6c6b976",
+    "contract_hash": "ff0a789114327f031599b198bfdcb74523eafb4c3075588ab8c313c9fecc6ac8",
+    "recipe_sha256": "40f2d027e81393ca10edc8200f2a4c6631425c21b807206c63ec9cc6e546218b"
+  },
+  "files": {
+    "EXPERIMENT_REPORT.md": "4f0b45acd1ebd60d473dba1248476493e8f54f17c1578e71d01bf79bfe88d575",
+    "MODEL_CARD.md": "af93f20e3a89f05468dcebc9b2f3ac9a9d2ce7c09902aeb35492804df09bb739",
+    "card.json": "cb598243b82492f45114b4837236c0bd47c958e2af4743ca71af0d91c9b9734b",
+    "evidence-manifest.json": "6083f2ebfad7007e02727f609f99f0f08d7c47da89e4d8fa21e803898168afc0",
+    "missed-verbatims.csv": "9c1dc3fec99ce63eb06875e09f8e6b4c11f710bc6873859532d5cb4cdd22406d"
+  },
+  "format": "vcm-final-card-assembly-v1",
+  "inference_performed": false,
+  "source_mutation": false,
+  "status": "blocked / Pi-deferred"
+}

@@ -1,0 +1,198 @@
+{
+  "actual_adapter_assembly_performed": false,
+  "actual_input_bindings": {
+    "completed_NN_wave_receipt": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/wave-parity-01/wave-parity-receipt.json",
+      "sha256": "10e821e691ecbc2bb1929fdebfbe54d46f05a3545f2a5b4f9705c61436e2844c"
+    },
+    "first_pass_receipt": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/evaluation-01/benchmark-receipt.json",
+      "sha256": "a1a23af130a81a7a3fd24106fd5c6ed9a5d1dffce431f53049cf6a25da6e75b4"
+    },
+    "first_pass_selection_lock": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/evaluation-01/selection-before-test.json",
+      "sha256": "cd33c57457999d4e20dcedfa7b3dbf01a276a3b8fb5593b0d4a2c559f6ed7324"
+    },
+    "frozen_wave_lock": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/wave-parity-01/parity-lock.json",
+      "sha256": "b6a1a18c3d07f04d40d8305d9b9b3ecd0cb98d7c18e5fd661863c108ac37d7a6"
+    },
+    "inputs": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/prepared-02/inputs.json",
+      "sha256": "238f0348014b56791c56b37a3a7e896795682fe61bb39bbb967139eefe453da4"
+    },
+    "postfit_receipt": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/postfit-01/postfit-receipt.json",
+      "sha256": "e272e82190fea94472e653e29eca78dcc0cf3483aff4f973f3bf9a6ee329bfcf"
+    },
+    "selected_recipe": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/bundle-cuda-02/recipe.json",
+      "sha256": "40f2d027e81393ca10edc8200f2a4c6631425c21b807206c63ec9cc6e546218b"
+    }
+  },
+  "benchmark_reference_or_fresh_accounting_changes": false,
+  "change": "New assembly entrypoint scopes only existing exact-named receipt-file-to-resolved-parent compatibility. It delegates to the captured original strict verifier unchanged, passes ordinary directories unchanged, rejects other file names and restores the verifier in finally. Frozen source files and scientific receipts stay byte-identical.",
+  "experiment_id": "vcm-mixed-final-v2",
+  "failed_actual_assembly": {
+    "binding": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/tooling/assembly-01.log",
+      "sha256": "115c768eb592bffa99433f9efa9c7e481098792614422e9a4220659b33ebcde2"
+    },
+    "exception": "NotADirectoryError",
+    "output_directory_created": false,
+    "path_shape": "postfit-01/postfit-receipt.json/postfit-receipt.json"
+  },
+  "final_TTS_scoring_performed": false,
+  "frozen_original_sources": {
+    "final/assemble_card.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/final/assemble_card.py",
+      "sha256": "8f1ea8363ba139d70f32c1a3e5453f071863ac875ee2cb782db837ce6d1e4367"
+    },
+    "final/render_card.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/final/render_card.py",
+      "sha256": "bc5d3de6efd7b1227803ca2893ae79a34e8a4c6ef638e939036921836aac9dbc"
+    },
+    "scripts/test/vcm_mixed_benchmark.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_mixed_benchmark.py",
+      "sha256": "7c4efb6b72afeb3bfdc2a205b0b6b950c56c8f81db0761a28749a7172e17e5ff"
+    },
+    "scripts/test/vcm_mixed_wave_parity_cuda.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_mixed_wave_parity_cuda.py",
+      "sha256": "cd96cf4957c04c4ef2e9b79ae3bf606ae4ae463d0f547cb3c25de39003773632"
+    }
+  },
+  "frozen_source_or_receipt_changes": false,
+  "immutable_scope_audit": {
+    "new_adapter_in_prior_NN_source_bindings": false,
+    "selected_recipe_files_and_runtime_sources_unchanged": true,
+    "verified_python_source_count": 32,
+    "verified_python_sources": {
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/official-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/official-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/dataset.py": "17d74702d4b9230965c96fbf7dd9a5b717fea47cc3374adfc48e9c2225dd6ba1",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/official-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/metrics.py": "518ef4bc0646f93ad936d84ff2982bdd56691783e6892799e0728eff4e9410f6",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/official-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/pi.py": "772a73dffa5810645182d2a6a9c16a828bb25d4a84f2d9cb3bbf60993d76545f",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/official-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/schema.py": "cb7cefcd893a2443b9a9b9e9b2756efa27d273f4f0086b94491ca3b304e7a006",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/official-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/slots.py": "7fc483ad851699d09e948ed942a36141012f474333e2ce521e705acce7fa30ef",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/final/assemble_card.py": "8f1ea8363ba139d70f32c1a3e5453f071863ac875ee2cb782db837ce6d1e4367",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/models/vcm_intent_slots.py": "88af9beb945ef23683fcfc226d44d7d00d39295b1a3bffd73ba62e68985d355d",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/pcv_benchmark_adapter.py": "ca983deb5a6a96e51bdde975061b5d50f0853e075931e6c2c2bda6aab07c7432",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/pcv_schema.py": "603ec943eae1e7330dd2eb82f05bbd7c206382ecf13c0fb8f8801a7ecd0e134c",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/vcm_intent_slots_bindings.py": "40265c95c7846f72dce8cb1f73ea4c310601e0b99efbee9d007ebfd09603dfdc",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/vcm_intent_slots_contract.py": "9af903bceb98e8d297c35f96baf8887a2c6972a697a7b3651117ac5500363e25",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/vcm_intent_slots_decode.py": "98c41044d81ae34a6115e6ca570a642711eacc7db2e612ec534319fa96cf1765",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/vcm_intent_slots_entities.py": "1e6def9031448a4ad968c3a8f3a1614d806fccbab20e3efed543c4d5e4872713",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/runtime/vcm_intent_slots_runtime.py": "91573b930de136dd1f5e5e5e76ed568c751a8e20d37f10fe0d5d7378db36f2d2",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/speaker_demo_suite.py": "4f6ff8ded5db2b9ed5f933a09dd2d9c8ecdd1eff1234175815837ccb6b6e52e2",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_default_benchmark_data.py": "e707f0a274d15fae9679d13f6945f03d344308c0f3ce754aab6f66be2a587ac7",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_intent_slots_diversity.py": "b0b75aded77eca4218d8db69c16d6312551dbc5d65e4391d8a1672ff6845d206",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_intent_slots_eval.py": "92d737ba101ef23d774d6494ee5dc12d7bd67ec9a44e9c45668d6eb2256f1380",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_mixed_benchmark.py": "7c4efb6b72afeb3bfdc2a205b0b6b950c56c8f81db0761a28749a7172e17e5ff",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_mixed_export_cuda.py": "d1bdeebfdc841827b4976feefabc3c19fdea2e56add10d7c2d682929a0445a79",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_mixed_finalize.py": "c157457609efb9325ed3ea273e7bcb9ffc3b295e7b10b68ad3bafd412bbe477e",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/test/vcm_mixed_wave_parity_cuda.py": "cd96cf4957c04c4ef2e9b79ae3bf606ae4ae463d0f547cb3c25de39003773632",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_calibration.py": "2e4672e0e8ca679db57ac5093dbb5b959f039aef71c51eacc54710c666bc25a2",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_data.py": "ea32253163f92918603c3a940f871ca037e98bc35fa38e349b9a739e5afc2d3f",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_export.py": "a9e4d6909131d6293d812d5992d20716fd260e10dd456747d2b038fa643921db",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_mixed_calibration.py": "a7845b6ab1cd092ba10ef0de6b80e8484201c3bf5016e524c28e3579017bb4f9",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_mixed_data.py": "a68ceeea7dbec2ccbca875007a25142583d3611997be2027bf4e6655e036fe92",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_mixed_train.py": "12e6ab83f7d15bd72e118a3462b8b5e38d19547479a62e62f5d66f4401c40610",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/scripts/train/vcm_intent_slots_train.py": "671cfecea12aa08358d6d2e31b436b71e1baba4a6bd9fea2e588c79291c02f40",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/vcm/catalog.py": "d7d8c2a4cb0a026e30c83e206213f165c7418c20d97ad9e29ce2dae43a518906",
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+    },
+    "wave_receipt_and_lock_unchanged": true
+  },
+  "independent_review": {
+    "actual_assembly_or_neural_session_or_model_execution_performed": false,
+    "bound_artifacts_checked": 21,
+    "finding": "No Important/Critical finding",
+    "frozen_sources_selected_recipe_runtime_and_completed_NN_wave_artifacts_unchanged": true,
+    "original_strict_checks_and_finally_restoration_verified": true,
+    "patch_exactly_reconstructs_new_adapter_and_tests": true,
+    "pure_test_log": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/tooling/assembly-postfit-path-independent-review-01.log",
+      "sha256": "785f085b303d607be547dc50a2bc688226e5962059519517cdd27a875e9ab10b"
+    },
+    "pure_test_seconds": 1.04,
+    "pure_tests_passed": 16,
+    "reviewer": "/root/mixed_data_audit",
+    "status": "clear"
+  },
+  "neural_inference_or_GPU_session_created": false,
+  "patch": {
+    "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/experiments/vcm-mixed-final-v2/assembly-postfit-path-correction-v1.patch",
+    "sha256": "29f0bbad1011b280b52302c083f3c3030c82a491707ebebd9fa1bdfc70754473"
+  },
+  "patch_recovery": "Reverse the bound additions to remove this compatibility adapter and its tests; no prior frozen source file is patched",
+  "physical_pi_measured": false,
+  "qualification": false,
+  "reason": "Frozen waveform consumer forwards its bound postfit-receipt.json file to the original directory-only verifier, which appends postfit-receipt.json a second time",
+  "recorded_utc": "2026-10-15T01:06:49.481610+00:00",
+  "reverse_patch_check": {
+    "command": "git apply --reverse --check experiments/vcm-mixed-final-v2/assembly-postfit-path-correction-v1.patch",
+    "exit_code": 0,
+    "working_tree_mutation": false
+  },
+  "root_execution_command": "python -B -m final.assemble_card_postfit_path_v1 --training TRAINING_DIR --inputs INPUTS_JSON --postfit POSTFIT_DIR --evaluation EVALUATION_DIR --bundle BUNDLE_DIR --data-receipt NEW_BOUND_WRAPPER --output NEW_OUTPUT_DIR",
+  "selected_candidate_bindings": {
+    "checkpoint_sha256": "bcfc0b85d5e61238e9f93008af78e98df00c8d7c838e2d6c4df10834b6c6b976",
+    "contract_hash": "ff0a789114327f031599b198bfdcb74523eafb4c3075588ab8c313c9fecc6ac8",
+    "recipe_sha256": "40f2d027e81393ca10edc8200f2a4c6631425c21b807206c63ec9cc6e546218b"
+  },
+  "source_files": {
+    "final/assemble_card_postfit_path_v1.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/final/assemble_card_postfit_path_v1.py",
+      "sha256": "3694774323fbb777b227564a56952a0143b611a3bfa6ad3a7e673856ea0be280"
+    },
+    "final/tests/test_assemble_card_postfit_path_v1.py": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/final/tests/test_assemble_card_postfit_path_v1.py",
+      "sha256": "d65e74ad824ae02db17ac8fe6022f64d4ae90414cfc6300f8a4616071a836d35"
+    }
+  },
+  "stage": "Pure assembly evidence validation after completed and frozen NN waveform parity",
+  "status": "pure_software_verified_assembly_adapter",
+  "tests": {
+    "command": "python -B -m pytest -q -p no:cacheprovider --import-mode=importlib --tb=short final/tests/test_assemble_card_postfit_path_v1.py",
+    "green": {
+      "binding": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/tooling/assembly-postfit-path-green-01.log",
+        "sha256": "13bb3a985a2b162c674d879286c5b7a1504c315a323b3c0e8bed77ce61a131e8"
+      },
+      "exit_code": 0,
+      "passed": 16,
+      "seconds": 0.99
+    },
+    "red": {
+      "binding": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/tooling/assembly-postfit-path-red-01.log",
+        "sha256": "8a6f1e6a322ed6e87543ec35cccbcef11f4cfc7dc127f509c34ab5a80cbc08c0"
+      },
+      "exit_code": 1,
+      "failed": 15,
+      "original_directory_only_bug_reproduced": true,
+      "passed": 1,
+      "seconds": 17.98
+    },
+    "scope": "Filesystem/API tests and original strict rejection checks; temporary software-only receipts; original assembly main mocked except help; no real card assembly or neural execution"
+  },
+  "training_calibration_enrollment_or_threshold_changes": false,
+  "version": "assembly-postfit-path-correction-v1",
+  "wave_operator_placement_bindings": {
+    "optimized_graph": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/wave-parity-01/ort/onnx-cuda-optimized.onnx",
+      "sha256": "7d57866056f809582e0cdbe279efaa09ab397c629417b2684991934c10d17f1b"
+    },
+    "original_graph": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/bundle-cuda-02/model.onnx",
+      "sha256": "959e3d3aef5f5dfb608ea36b26ce51507d97df2af904a5b848e17538d422d758"
+    },
+    "profile": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/wave-parity-01/ort/onnx-cuda-profile_2026-10-15_08-34-00.json",
+      "sha256": "2ad74ef43ebb3d855de4e3b5650550cffa495b21634dceaca0ec1d9d3806ef47"
+    },
+    "report": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/vcm-a100-finalization-20261015/.cache/vcm-mixed-final-v2/wave-parity-01/ort/ort-node-placement.json",
+      "sha256": "925e62689e826cb8b866d51e23131c3e05475715596398463ea7d4569927435c"
+    }
+  }
+}
