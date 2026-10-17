@@ -1,0 +1,27 @@
+{
+  "onnx_sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+  "rewrite_errors": [
+    0.0,
+    2.384185791015625e-06,
+    1.0728836059570312e-06,
+    1.9073486328125e-06
+  ],
+  "files": {
+    "model.ncnn.param": "e7289f35da2cf35147d3b8833a4915b8e3a0520cc99573ebfffae07ec6da7998",
+    "model.ncnn.bin": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133",
+    "position-frequency.json": "2cf4b7057c69f59eff846bf80903eb98f9ed17da9edd3ba0efb6f1940fa97605"
+  },
+  "parity": {
+    "passed": true,
+    "max_absolute_error": 5.0067901611328125e-06,
+    "errors": [
+      1.9073486328125e-06,
+      2.6226043701171875e-06,
+      2.1457672119140625e-06,
+      5.0067901611328125e-06,
+      3.337860107421875e-06,
+      2.0265579223632812e-06
+    ],
+    "tolerance": 2e-05
+  }
+}

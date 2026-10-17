@@ -1,0 +1,809 @@
+{
+  "schema_version": 1,
+  "experiment": "iris-release-v1",
+  "evidence_kind": "exact_numeric_training_history_snapshot",
+  "description": "Exact epoch records from six completed fits; only numeric training/development history is retained, with original-file hashes. Original cache files are provenance, not regeneration dependencies.",
+  "initialization": "Continuation from verified project V2 initializers; these are not random-init fits.",
+  "objective_definitions": {
+    "ce": "Cross-entropy with label smoothing 0.02",
+    "supcon": "Cross-entropy + 0.1 cross-speaker supervised contrastive loss; temperature 0.1"
+  },
+  "accepted_selection_columns": [
+    "human_macro_speaker_correct_acceptance",
+    "human_correct_accepts",
+    "synthetic_correct_accepts"
+  ],
+  "test_used_for_selection": false,
+  "source_receipts": [
+    {
+      "path": "experiments/iris-release-v1/training-execution.json",
+      "sha256": "eec6aba9139bfa02f8bcaf42201579bd6e1802d6068767a5afb87c7da3c27bb8",
+      "bytes": 5946
+    },
+    {
+      "path": "experiments/iris-release-v1/development-selection.json",
+      "sha256": "89b2c852cddc906de48a3b3c84c44d4447d591296f1d5b117fb8489f79a3fe03",
+      "bytes": 3745
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "compact-ce-s53",
+      "model": "compact",
+      "arm": "ce",
+      "seed": 53,
+      "original_history": {
+        "path": ".cache/iris-release-v1/diversity/runs/compact-ce-s53/history.json",
+        "sha256": "cd2f979cb269a550faf117e6177f880541985c7419b43893923ed7de814272f9",
+        "bytes": 1768
+      },
+      "checkpoint_sha256": "34f5daf2ef8949e4c3459d91a992493e485e6c0c4a831efbe35462a8d2f650c6",
+      "source_revision": "1d3e6458e1030649f7aad7da6b8ce16e5a14d1ef",
+      "selected_epoch": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 0.45767783156285685,
+          "paired_anchor_fraction": 0.7311197916666666,
+          "accepted_selection": [
+            0.31175414497782916,
+            74,
+            1087
+          ],
+          "seconds": 17.43962436169386
+        },
+        {
+          "epoch": 2,
+          "loss": 0.4178787191243221,
+          "paired_anchor_fraction": 0.724609375,
+          "accepted_selection": [
+            0.27568063789280894,
+            72,
+            1145
+          ],
+          "seconds": 36.19474495295435
+        },
+        {
+          "epoch": 3,
+          "loss": 0.38263295687890303,
+          "paired_anchor_fraction": 0.74609375,
+          "accepted_selection": [
+            0.23909789497782918,
+            68,
+            1132
+          ],
+          "seconds": 53.11714620376006
+        },
+        {
+          "epoch": 4,
+          "loss": 0.37448778306134045,
+          "paired_anchor_fraction": 0.7259114583333334,
+          "accepted_selection": [
+            0.2536432728455754,
+            70,
+            1157
+          ],
+          "seconds": 66.75236437097192
+        },
+        {
+          "epoch": 5,
+          "loss": 0.35997115455878276,
+          "paired_anchor_fraction": 0.7526041666666666,
+          "accepted_selection": [
+            0.27376915847310584,
+            74,
+            1173
+          ],
+          "seconds": 80.45780861470848
+        },
+        {
+          "epoch": 6,
+          "loss": 0.3477827607033153,
+          "paired_anchor_fraction": 0.7272135416666666,
+          "accepted_selection": [
+            0.297994234384037,
+            73,
+            1171
+          ],
+          "seconds": 94.04815914062783
+        },
+        {
+          "epoch": 7,
+          "loss": 0.35055817388153326,
+          "paired_anchor_fraction": 0.716796875,
+          "accepted_selection": [
+            0.29249912642182374,
+            75,
+            1204
+          ],
+          "seconds": 107.40086566563696
+        },
+        {
+          "epoch": 8,
+          "loss": 0.3305728033883497,
+          "paired_anchor_fraction": 0.7174479166666666,
+          "accepted_selection": [
+            0.28042190813572393,
+            77,
+            1196
+          ],
+          "seconds": 120.7699683806859
+        }
+      ]
+    },
+    {
+      "run_id": "compact-ce-s67",
+      "model": "compact",
+      "arm": "ce",
+      "seed": 67,
+      "original_history": {
+        "path": ".cache/iris-release-v1/diversity/runs/compact-ce-s67/history.json",
+        "sha256": "2419e81951bd77b638c27f17d0a32d18ffbc33543765f28d43f9f3afd97715db",
+        "bytes": 1990
+      },
+      "checkpoint_sha256": "9742dd7a5a1ac167efe405d5df2f362c15ebd4642b8031d4802c53eaf3c1d42d",
+      "source_revision": "ffea3be055388db3d8c91b115dc057c13a1fb4c4",
+      "selected_epoch": 3,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 0.439279275170217,
+          "paired_anchor_fraction": 0.7141927083333334,
+          "accepted_selection": [
+            0.3262794907942934,
+            80,
+            1116
+          ],
+          "seconds": 16.473782357294112
+        },
+        {
+          "epoch": 2,
+          "loss": 0.4212943483920147,
+          "paired_anchor_fraction": 0.7213541666666666,
+          "accepted_selection": [
+            0.2854362468671679,
+            78,
+            1145
+          ],
+          "seconds": 30.754408276174217
+        },
+        {
+          "epoch": 3,
+          "loss": 0.38668687152676284,
+          "paired_anchor_fraction": 0.751953125,
+          "accepted_selection": [
+            0.35604711899942165,
+            81,
+            1133
+          ],
+          "seconds": 44.75145753705874
+        },
+        {
+          "epoch": 4,
+          "loss": 0.382071176233391,
+          "paired_anchor_fraction": 0.724609375,
+          "accepted_selection": [
+            0.28547631096973203,
+            74,
+            1152
+          ],
+          "seconds": 58.16972272237763
+        },
+        {
+          "epoch": 5,
+          "loss": 0.3548213689743231,
+          "paired_anchor_fraction": 0.6985677083333334,
+          "accepted_selection": [
+            0.2760791702814729,
+            77,
+            1150
+          ],
+          "seconds": 71.63189302617684
+        },
+        {
+          "epoch": 6,
+          "loss": 0.35163825676621246,
+          "paired_anchor_fraction": 0.71484375,
+          "accepted_selection": [
+            0.2871147219009061,
+            75,
+            1191
+          ],
+          "seconds": 85.10582409519702
+        },
+        {
+          "epoch": 7,
+          "loss": 0.33138743221449357,
+          "paired_anchor_fraction": 0.7330729166666666,
+          "accepted_selection": [
+            0.30540609335839597,
+            83,
+            1193
+          ],
+          "seconds": 98.44502261793241
+        },
+        {
+          "epoch": 8,
+          "loss": 0.32364070136100054,
+          "paired_anchor_fraction": 0.7135416666666666,
+          "accepted_selection": [
+            0.3096921992481203,
+            85,
+            1206
+          ],
+          "seconds": 112.00274952314794
+        },
+        {
+          "epoch": 9,
+          "loss": 0.32506322930566967,
+          "paired_anchor_fraction": 0.7252604166666666,
+          "accepted_selection": [
+            0.31379018459610564,
+            82,
+            1218
+          ],
+          "seconds": 125.72109054215252
+        }
+      ]
+    },
+    {
+      "run_id": "compact-supcon-s53",
+      "model": "compact",
+      "arm": "supcon",
+      "seed": 53,
+      "original_history": {
+        "path": ".cache/iris-release-v1/diversity/runs/compact-supcon-s53/history.json",
+        "sha256": "3f168596a373ff6662b612cc323b2dc493e78b2941cadd640190ad657f6d2580",
+        "bytes": 1765
+      },
+      "checkpoint_sha256": "7057b368334f830b5abbaaa43f7aacff1d7590fd8740cc40f7c6eb0d86b68a37",
+      "source_revision": "1d3e6458e1030649f7aad7da6b8ce16e5a14d1ef",
+      "selected_epoch": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 0.4755039467321088,
+          "paired_anchor_fraction": 0.7311197916666666,
+          "accepted_selection": [
+            0.31636151677270097,
+            74,
+            1084
+          ],
+          "seconds": 16.141777276061475
+        },
+        {
+          "epoch": 2,
+          "loss": 0.4362302925437689,
+          "paired_anchor_fraction": 0.724609375,
+          "accepted_selection": [
+            0.2892223045594756,
+            72,
+            1147
+          ],
+          "seconds": 29.83103809179738
+        },
+        {
+          "epoch": 3,
+          "loss": 0.39878772334971774,
+          "paired_anchor_fraction": 0.74609375,
+          "accepted_selection": [
+            0.249955266772701,
+            67,
+            1126
+          ],
+          "seconds": 43.040034655015916
+        },
+        {
+          "epoch": 4,
+          "loss": 0.39073285507038236,
+          "paired_anchor_fraction": 0.7259114583333334,
+          "accepted_selection": [
+            0.25528800968768073,
+            71,
+            1162
+          ],
+          "seconds": 56.38449029996991
+        },
+        {
+          "epoch": 5,
+          "loss": 0.37632293448162574,
+          "paired_anchor_fraction": 0.7526041666666666,
+          "accepted_selection": [
+            0.28418582513977253,
+            75,
+            1173
+          ],
+          "seconds": 69.54582966072485
+        },
+        {
+          "epoch": 6,
+          "loss": 0.3617574255525445,
+          "paired_anchor_fraction": 0.7272135416666666,
+          "accepted_selection": [
+            0.2967923113071139,
+            71,
+            1165
+          ],
+          "seconds": 82.64968206174672
+        },
+        {
+          "epoch": 7,
+          "loss": 0.36591151329533506,
+          "paired_anchor_fraction": 0.716796875,
+          "accepted_selection": [
+            0.291016754626952,
+            75,
+            1201
+          ],
+          "seconds": 95.76510420581326
+        },
+        {
+          "epoch": 8,
+          "loss": 0.345883883186616,
+          "paired_anchor_fraction": 0.7174479166666666,
+          "accepted_selection": [
+            0.28763344659726237,
+            77,
+            1192
+          ],
+          "seconds": 108.98750479379669
+        }
+      ]
+    },
+    {
+      "run_id": "compact-supcon-s67",
+      "model": "compact",
+      "arm": "supcon",
+      "seed": 67,
+      "original_history": {
+        "path": ".cache/iris-release-v1/diversity/runs/compact-supcon-s67/history.json",
+        "sha256": "da3309c875c214811eeb63ecab077693aced9df90506f57cc77a05bc09606c86",
+        "bytes": 1990
+      },
+      "checkpoint_sha256": "2607428712aace41d5b894176cb8d305438d95fe16c27965d55c266d36e8630b",
+      "source_revision": "ffea3be055388db3d8c91b115dc057c13a1fb4c4",
+      "selected_epoch": 3,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 0.4598344072389106,
+          "paired_anchor_fraction": 0.7141927083333334,
+          "accepted_selection": [
+            0.30700865746096007,
+            77,
+            1121
+          ],
+          "seconds": 15.964677191805094
+        },
+        {
+          "epoch": 2,
+          "loss": 0.4416976324670638,
+          "paired_anchor_fraction": 0.7213541666666666,
+          "accepted_selection": [
+            0.2869186186620397,
+            78,
+            1141
+          ],
+          "seconds": 29.44687922904268
+        },
+        {
+          "epoch": 3,
+          "loss": 0.4043216048351799,
+          "paired_anchor_fraction": 0.751953125,
+          "accepted_selection": [
+            0.3561272472045498,
+            83,
+            1131
+          ],
+          "seconds": 42.67726324079558
+        },
+        {
+          "epoch": 4,
+          "loss": 0.39955618950383115,
+          "paired_anchor_fraction": 0.724609375,
+          "accepted_selection": [
+            0.2918865673799884,
+            77,
+            1160
+          ],
+          "seconds": 55.939692177809775
+        },
+        {
+          "epoch": 5,
+          "loss": 0.36781465040985495,
+          "paired_anchor_fraction": 0.6985677083333334,
+          "accepted_selection": [
+            0.27321669558511663,
+            76,
+            1145
+          ],
+          "seconds": 69.48381004994735
+        },
+        {
+          "epoch": 6,
+          "loss": 0.36588603161120165,
+          "paired_anchor_fraction": 0.71484375,
+          "accepted_selection": [
+            0.2949272219009061,
+            76,
+            1192
+          ],
+          "seconds": 83.38860803795978
+        },
+        {
+          "epoch": 7,
+          "loss": 0.34501078569640714,
+          "paired_anchor_fraction": 0.7330729166666666,
+          "accepted_selection": [
+            0.28978109335839597,
+            82,
+            1195
+          ],
+          "seconds": 97.04649039078504
+        },
+        {
+          "epoch": 8,
+          "loss": 0.33594242269949365,
+          "paired_anchor_fraction": 0.7135416666666666,
+          "accepted_selection": [
+            0.3173043787352998,
+            87,
+            1207
+          ],
+          "seconds": 111.32891651801765
+        },
+        {
+          "epoch": 9,
+          "loss": 0.339286887474979,
+          "paired_anchor_fraction": 0.7252604166666666,
+          "accepted_selection": [
+            0.31379018459610564,
+            82,
+            1222
+          ],
+          "seconds": 124.7474961290136
+        }
+      ]
+    },
+    {
+      "run_id": "full-ce-s53",
+      "model": "full",
+      "arm": "ce",
+      "seed": 53,
+      "original_history": {
+        "path": ".cache/iris-release-v1/diversity/runs/full-ce-s53/history.json",
+        "sha256": "ac5ba136496757fed2731d3633385f622187b5b2fa8f16aa5ba05321d872a2f2",
+        "bytes": 2656
+      },
+      "checkpoint_sha256": "0aae2669a7dcd622d3846118206d8d3ce99e816dfc89f14c51d51d6f53b8c02c",
+      "source_revision": "1d3e6458e1030649f7aad7da6b8ce16e5a14d1ef",
+      "selected_epoch": 6,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 0.37389392615295947,
+          "paired_anchor_fraction": 0.7311197916666666,
+          "accepted_selection": [
+            0.2542458911702333,
+            76,
+            1167
+          ],
+          "seconds": 15.646847588010132
+        },
+        {
+          "epoch": 2,
+          "loss": 0.326374361019892,
+          "paired_anchor_fraction": 0.724609375,
+          "accepted_selection": [
+            0.2338074754193175,
+            72,
+            1205
+          ],
+          "seconds": 28.741433777380735
+        },
+        {
+          "epoch": 3,
+          "loss": 0.29944217779363197,
+          "paired_anchor_fraction": 0.74609375,
+          "accepted_selection": [
+            0.2377781894640447,
+            75,
+            1226
+          ],
+          "seconds": 41.89117389917374
+        },
+        {
+          "epoch": 4,
+          "loss": 0.2949975261387105,
+          "paired_anchor_fraction": 0.7259114583333334,
+          "accepted_selection": [
+            0.21459252096587622,
+            67,
+            1182
+          ],
+          "seconds": 54.963569718413055
+        },
+        {
+          "epoch": 5,
+          "loss": 0.2785066608339548,
+          "paired_anchor_fraction": 0.7526041666666666,
+          "accepted_selection": [
+            0.27030798149219204,
+            77,
+            1226
+          ],
+          "seconds": 68.29020561696962
+        },
+        {
+          "epoch": 6,
+          "loss": 0.2670356811334689,
+          "paired_anchor_fraction": 0.7272135416666666,
+          "accepted_selection": [
+            0.28067750506072875,
+            77,
+            1228
+          ],
+          "seconds": 81.68469724711031
+        },
+        {
+          "epoch": 7,
+          "loss": 0.26515658184265095,
+          "paired_anchor_fraction": 0.716796875,
+          "accepted_selection": [
+            0.24113498891459417,
+            69,
+            1222
+          ],
+          "seconds": 98.21577867725864
+        },
+        {
+          "epoch": 8,
+          "loss": 0.2620213439222425,
+          "paired_anchor_fraction": 0.7174479166666666,
+          "accepted_selection": [
+            0.23615333405629457,
+            73,
+            1245
+          ],
+          "seconds": 111.83208486111835
+        },
+        {
+          "epoch": 9,
+          "loss": 0.25653182816070813,
+          "paired_anchor_fraction": 0.724609375,
+          "accepted_selection": [
+            0.24044230166763061,
+            74,
+            1267
+          ],
+          "seconds": 124.83433218998834
+        },
+        {
+          "epoch": 10,
+          "loss": 0.2555238476488739,
+          "paired_anchor_fraction": 0.7291666666666666,
+          "accepted_selection": [
+            0.24553044269327162,
+            75,
+            1271
+          ],
+          "seconds": 138.029420113191
+        },
+        {
+          "epoch": 11,
+          "loss": 0.2528944982914254,
+          "paired_anchor_fraction": 0.7174479166666666,
+          "accepted_selection": [
+            0.2626307354925776,
+            77,
+            1259
+          ],
+          "seconds": 151.02171875722706
+        },
+        {
+          "epoch": 12,
+          "loss": 0.24911608706073216,
+          "paired_anchor_fraction": 0.6966145833333334,
+          "accepted_selection": [
+            0.2570639338731444,
+            78,
+            1265
+          ],
+          "seconds": 164.018187567126
+        }
+      ]
+    },
+    {
+      "run_id": "full-supcon-s53",
+      "model": "full",
+      "arm": "supcon",
+      "seed": 53,
+      "original_history": {
+        "path": ".cache/iris-release-v1/diversity/runs/full-supcon-s53/history.json",
+        "sha256": "10335a9272e7b2d4015568c816b01e8b712ce5e4eef7ec350d9a1ddffec19d84",
+        "bytes": 3544
+      },
+      "checkpoint_sha256": "1cc9add87619f116562ea86b83661de410309541ecb5f0a03fe4222c48aaf659",
+      "source_revision": "671c629cc12eef3d5d080ce5ca276de70e975e7a",
+      "selected_epoch": 14,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 0.3844460429002841,
+          "paired_anchor_fraction": 0.7311197916666666,
+          "accepted_selection": [
+            0.2542458911702333,
+            76,
+            1163
+          ],
+          "seconds": 16.212153085973114
+        },
+        {
+          "epoch": 2,
+          "loss": 0.33664904336910695,
+          "paired_anchor_fraction": 0.724609375,
+          "accepted_selection": [
+            0.24277897267206477,
+            75,
+            1205
+          ],
+          "seconds": 29.52337575610727
+        },
+        {
+          "epoch": 3,
+          "loss": 0.3088555291760713,
+          "paired_anchor_fraction": 0.74609375,
+          "accepted_selection": [
+            0.2338719394640447,
+            74,
+            1218
+          ],
+          "seconds": 43.07323510805145
+        },
+        {
+          "epoch": 4,
+          "loss": 0.3048204162235682,
+          "paired_anchor_fraction": 0.7259114583333334,
+          "accepted_selection": [
+            0.21965776821862346,
+            69,
+            1183
+          ],
+          "seconds": 56.462258636020124
+        },
+        {
+          "epoch": 5,
+          "loss": 0.2881952243624255,
+          "paired_anchor_fraction": 0.7526041666666666,
+          "accepted_selection": [
+            0.27030798149219204,
+            77,
+            1220
+          ],
+          "seconds": 69.79977501323447
+        },
+        {
+          "epoch": 6,
+          "loss": 0.2761123247910291,
+          "paired_anchor_fraction": 0.7272135416666666,
+          "accepted_selection": [
+            0.26549531882591093,
+            75,
+            1228
+          ],
+          "seconds": 83.11724735517055
+        },
+        {
+          "epoch": 7,
+          "loss": 0.2747307282406837,
+          "paired_anchor_fraction": 0.716796875,
+          "accepted_selection": [
+            0.24444027737613264,
+            69,
+            1220
+          ],
+          "seconds": 96.36282708495855
+        },
+        {
+          "epoch": 8,
+          "loss": 0.27195968793239444,
+          "paired_anchor_fraction": 0.7174479166666666,
+          "accepted_selection": [
+            0.24180237251783304,
+            73,
+            1246
+          ],
+          "seconds": 109.668149064295
+        },
+        {
+          "epoch": 9,
+          "loss": 0.2646425827794398,
+          "paired_anchor_fraction": 0.724609375,
+          "accepted_selection": [
+            0.24869339815885866,
+            74,
+            1267
+          ],
+          "seconds": 122.75764870317653
+        },
+        {
+          "epoch": 10,
+          "loss": 0.26476049997533363,
+          "paired_anchor_fraction": 0.7291666666666666,
+          "accepted_selection": [
+            0.2577871963562753,
+            78,
+            1266
+          ],
+          "seconds": 135.76973364595324
+        },
+        {
+          "epoch": 11,
+          "loss": 0.260096318864574,
+          "paired_anchor_fraction": 0.7174479166666666,
+          "accepted_selection": [
+            0.2710012712068633,
+            79,
+            1261
+          ],
+          "seconds": 148.77116436930373
+        },
+        {
+          "epoch": 12,
+          "loss": 0.25710128286542994,
+          "paired_anchor_fraction": 0.6966145833333334,
+          "accepted_selection": [
+            0.2622722672064777,
+            79,
+            1268
+          ],
+          "seconds": 161.91035867715254
+        },
+        {
+          "epoch": 13,
+          "loss": 0.256743956473656,
+          "paired_anchor_fraction": 0.6985677083333334,
+          "accepted_selection": [
+            0.26048444428378636,
+            79,
+            1271
+          ],
+          "seconds": 174.91334360232577
+        },
+        {
+          "epoch": 14,
+          "loss": 0.2539859159927194,
+          "paired_anchor_fraction": 0.73046875,
+          "accepted_selection": [
+            0.28009793112589165,
+            83,
+            1271
+          ],
+          "seconds": 187.9152673180215
+        },
+        {
+          "epoch": 15,
+          "loss": 0.2548967571541046,
+          "paired_anchor_fraction": 0.7115885416666666,
+          "accepted_selection": [
+            0.2615282195874301,
+            79,
+            1271
+          ],
+          "seconds": 200.98531080409884
+        },
+        {
+          "epoch": 16,
+          "loss": 0.25859919434878975,
+          "paired_anchor_fraction": 0.7141927083333334,
+          "accepted_selection": [
+            0.2660354311258916,
+            81,
+            1270
+          ],
+          "seconds": 213.9635280710645
+        }
+      ]
+    }
+  ]
+}

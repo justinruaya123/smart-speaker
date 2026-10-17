@@ -1,0 +1,23 @@
+{
+  "checked_utc": "2026-10-17T04:53:46.927393+00:00",
+  "github": {
+    "canonical_branch": "main",
+    "private": true,
+    "repository": "justinruaya123/smart-speaker",
+    "visibility_changed": false
+  },
+  "huggingface_dataset": {
+    "private": false,
+    "repo_id": "justinruaya123/ai231-smart-speaker",
+    "visibility_changed": false
+  },
+  "huggingface_model": {
+    "anonymous_http_status": 401,
+    "authenticated_read": "passed",
+    "private": true,
+    "repo_id": "justinruaya123/ai231-smart-speaker",
+    "revision": "d26a0434e7b17ba45e67af004d2f44317805c9a9"
+  },
+  "schema_version": 1,
+  "source_transport": "GitHub connector authorized; native HTTPS clone currently lacks credentials on this host. Test uses an API-verified commit and a clean native Git clone of identical Git objects; no training/model/audio caches copied."
+}

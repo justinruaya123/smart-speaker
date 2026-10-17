@@ -26,6 +26,16 @@ Measured findings:
 
 Replay caches now require complete ordered IDs and hashes for data, model, policy and scorer inputs. An independent review reproduced truncated-cache reuse before the fix. Metadata serialization and evaluation-cache fixes occurred after fitting, before held-out scoring; [the source compatibility receipt](experiments/iris-release-v1/reproduction-prefit-compatibility.json) proves the fitting and selection logic stayed equivalent. Original source locks, failed attempts and optimizer/RNG states remain preserved.
 
+## Iris reproduction v1
+
+Status: fresh-clone engineering verification in progress. GitHub main owns the executable recipe, selected inference bundle and benchmark plots. Hugging Face model publication is private; dataset and GitHub visibility are preserved. This addresses ME-01/02/03/04/06/07/08 with no scientific protocol change.
+
+The measurable hypothesis is that `python reproduce.py` installs pinned dependencies, downloads permitted immutable inputs, performs six actual VCM continuation fits without restoring completed VCM fit caches, runs locked acoustic/export/software checks and compares the selected inference artifact with the Git-owned reference. Each run uses an isolated ignored source/data workspace; the checkout and historical evidence remain unchanged. Wake and owner checkpoints are verified companions, and the complete historical initializer chain is not claimed replayed.
+
+- [Protocol](experiments/iris-reproduction-v1/protocol.json), [Git/upstream recipe source bindings](experiments/iris-reproduction-v1/recipe-sources.json), [run report](docs/EXPERIMENT-iris-reproduction-v1.md).
+- [Shipped inference hashes](artifacts/iris/integrity.json), [benchmark plot data](docs/assets/iris-benchmark-data.json), [six fit histories](docs/assets/iris-training-histories.json).
+- Physical Pi, original human wake-pair and live microphone gates remain unmeasured.
+
 ## Preserved historical findings
 
 The complete prior experiment directory, detailed protocols, split audits, source code and raw compact evidence are available at [the immutable research snapshot](https://github.com/justinruaya123/smart-speaker/blob/ae1f1d7c67616e4efbae4619ac75620495e6073a/EXPERIMENTS.md). No legacy test population, frozen protocol or report was rewritten. Selected reusable implementation and current reproduction inputs remain in main; obsolete experiments live on the archive branch.

@@ -372,10 +372,12 @@ def test_final_publication_references_verified_input_capsule_without_reupload(tm
     plan = build_publication_plan(root=tmp_path, workflow=workflow)
     assert not any(x['local_path'] == str(files['inputs'].relative_to(tmp_path)) for x in plan['files'])
     assert any(x['path_in_repo'] == 'reproduction/publication-inputs.json' for x in plan['files'])
-    assert any(x['path_in_repo'] == 'reproduction/source/' + str(proof.relative_to(tmp_path)) for x in plan['files'])
     destinations = {x['path_in_repo'] for x in plan['files']}
-    assert 'reproduction/source/experiments/iris-release-v1/reproduction-inputs.json' in destinations
-    assert 'reproduction/source/experiments/iris-release-v1/reproduction-release.json' in destinations
+    assert not any('reproduction/source/' in name for name in destinations)
+    assert 'reproduction/reproduction-inputs.json' in destinations
+    assert 'reproduction/reproduction-release.json' in destinations
+    assert plan['model_visibility'] == 'private'
+    assert plan['source_visibility'] == 'preserve_existing'
 
 
 def test_reconstruction_inventory_contains_all_application_source_reads(tmp_path, monkeypatch):
@@ -428,9 +430,9 @@ def test_standard_publication_closes_card_linked_late_evidence(tmp_path, availab
     plan = build_publication_plan(root=tmp_path, workflow=workflow,
         extra_files=[file_item(tmp_path, evidence, 'evidence/ui-final-integration.json')])
     destinations = {item['path_in_repo']: item for item in plan['files']}
-    for destination in ('evidence/ui-final-integration.json', 'reproduction/source/' + name):
-        assert destinations[destination]['sha256'] == sha(evidence)
-        assert sum(item['path_in_repo'] == destination for item in plan['files']) == 1
+    assert destinations['evidence/ui-final-integration.json']['sha256'] == sha(evidence)
+    assert sum(item['path_in_repo'] == 'evidence/ui-final-integration.json' for item in plan['files']) == 1
+    assert not any('reproduction/source/' in destination for destination in destinations)
 
 
 def test_input_capsule_reuses_verified_immutable_preupload_and_pins_new_files(tmp_path, monkeypatch):
@@ -597,9 +599,9 @@ def test_publication_reads_back_exact_commit_and_retains_dataset_visibility(tmp_
         def whoami(self):
             return {'name': 'fixture-user'}
         def create_repo(self, **kwargs):
-            assert kwargs['repo_type'] == 'model' and kwargs['private'] is False
+            assert kwargs['repo_type'] == 'model' and kwargs['private'] is True
         def repo_info(self, **kwargs):
-            return SimpleNamespace(sha='a' * 40, private=kwargs['repo_type'] == 'dataset')
+            return SimpleNamespace(sha='a' * 40, private=True)
         def auth_check(self, **kwargs):
             pass
         def create_commit(self, **kwargs):
@@ -613,7 +615,7 @@ def test_publication_reads_back_exact_commit_and_retains_dataset_visibility(tmp_
     result = publish_plan(root=tmp_path, plan=plan, api=Hub(), downloader=fetch)
     assert result['status'] == 'published_and_verified'
     assert [(r['repo_type'], r['private'], r['verified']) for r in result['repositories']] == [
-        ('dataset', True, True), ('model', False, True)]
+        ('dataset', True, True), ('model', True, True)]
     assert 'token' not in json.dumps(result)
 
 
@@ -627,7 +629,7 @@ def test_remote_readback_mismatch_never_claims_publication_complete(tmp_path):
     class Hub:
         def whoami(self): return {'name': 'fixture-user'}
         def create_repo(self, **kwargs): pass
-        def repo_info(self, **kwargs): return SimpleNamespace(sha='a' * 40, private=False)
+        def repo_info(self, **kwargs): return SimpleNamespace(sha='a' * 40, private=True)
         def auth_check(self, **kwargs): pass
         def create_commit(self, **kwargs): return SimpleNamespace(oid='b' * 40)
     with pytest.raises(ValueError, match='remote.*identity'):

@@ -4,7 +4,7 @@ This package supplies local finite-command recognition, an experimental wake-spe
 
 ## Obtain and verify
 
-Use Raspberry Pi OS 64-bit on an RPi4/5, Python 3.11–3.13, a USB microphone and speakers. Download the Pi ZIP and SHA-256 receipt from [the model repository](https://huggingface.co/justinruaya123/ai231-smart-speaker). Check `sha256sum iris-pi.zip` against the published receipt. Extract to a new directory; preserve your private configuration/state separately from software upgrades. Recognition graphs, source and UI assets are covered by `MANIFEST.json`.
+Use Raspberry Pi OS 64-bit on an RPi4/5, Python 3.11–3.13, a USB microphone and speakers. Authenticate with your authorized Hugging Face account, then download the Pi ZIP and SHA-256 receipt from [the private model repository](https://huggingface.co/justinruaya123/ai231-smart-speaker). Check `sha256sum iris-pi.zip` against the published receipt. Extract to a new directory; preserve your private configuration/state separately from software upgrades. Recognition graphs, source and UI assets are covered by `MANIFEST.json`.
 
 ```bash
 unzip iris-pi.zip -d iris

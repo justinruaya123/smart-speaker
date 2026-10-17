@@ -14,6 +14,29 @@ import zipfile
 
 NODE_VERSION = '24.13.0'
 PNPM_VERSION = '12.5.1'
+UV_VERSION = '0.12.5'
+# Official PyPI wheel URLs and SHA-256 from https://pypi.org/pypi/uv/0.12.5/json.
+# Keep these beside the packaged bootstrap; no shell installer or pip is needed.
+UV_WHEELS = {
+    ('Linux', 'x64'): (
+        'https://files.pythonhosted.org/packages/93/22/dacc9a0bc8604187a1ba954a3aef8329e4104eb0af772d2c3c634893bd9b/uv-0.12.5-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl',
+        '3e195ccf1ed60c8bb24a6447ce306441a4181d54b602407e09bc56e963911c15'),
+    ('Linux', 'arm64'): (
+        'https://files.pythonhosted.org/packages/7d/13/07585043c10e648820bf826474dac46864ce6691da5dc52fee43c5c7523a/uv-0.12.5-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.musllinux_1_1_aarch64.whl',
+        '2d65b7b3bc3fd28678f62aa7fb5d90f106ad9782c1354af60b6cecdf9ea9ecd9'),
+    ('Darwin', 'x64'): (
+        'https://files.pythonhosted.org/packages/bd/ec/d76387b388fa21620088b89b9c67f2596a707add585104e0cb5e8abf55f2/uv-0.12.5-py3-none-macosx_10_12_x86_64.whl',
+        '1a06c8bc4d43b5f6c1e3f2ae3d0f6455b07515f762516f95e52e6c0cbccedf15'),
+    ('Darwin', 'arm64'): (
+        'https://files.pythonhosted.org/packages/6d/bc/81ab953b7261ae6be40874b1f283a10873871e02eb353d354614dd8da96b/uv-0.12.5-py3-none-macosx_11_0_arm64.whl',
+        'd87156bc174d94fae890bb7a261e2867140abb9fe1e9de81a5295e582fb9d0f5'),
+    ('Windows', 'x64'): (
+        'https://files.pythonhosted.org/packages/ce/f6/a9af9311c7f5640ca2bfcfdedb7aca37fa6d1d9f5c981fb50c5be02b7477/uv-0.12.5-py3-none-win_amd64.whl',
+        '455c3e57602e2141e66e2f0bf685898c9c5e5a70377d14c9a71554a3baf3ddbf'),
+    ('Windows', 'arm64'): (
+        'https://files.pythonhosted.org/packages/bc/fb/e1266399f755f97a0783de379f2fed6dae0a2a240db32fe5a2eb976fec8a/uv-0.12.5-py3-none-win_arm64.whl',
+        'bea86f27a027e0e3af908db4bdd4f1ceef3ca2bd47673b5ccca7f550e325b1b4'),
+}
 
 
 def run(command, **kwargs):
@@ -22,27 +45,44 @@ def run(command, **kwargs):
 
 
 def find_uv(root):
-    """Use installed uv, or bootstrap the official pinned tool beside the release."""
+    """Use installed uv, or extract its checksum-pinned PyPI wheel locally."""
     available = shutil.which('uv')
     if available:
         return available
     root = Path(root)
     directory = root / '.runtime' / 'tools' / 'uv'
-    executable = directory / ('uv.exe' if os.name == 'nt' else 'uv')
+    system = platform.system()
+    binary = 'uv.exe' if system == 'Windows' else 'uv'
+    executable = directory / binary
     if executable.is_file():
         return str(executable)
-    suffix = 'ps1' if os.name == 'nt' else 'sh'
-    environment = os.environ.copy()
-    environment['UV_UNMANAGED_INSTALL'] = str(directory)
-    environment['UV_NO_MODIFY_PATH'] = '1'
-    print('Installing uv 0.12.5 locally (first setup only)...', flush=True)
-    with tempfile.TemporaryDirectory(prefix='uv-bootstrap-', dir=root) as temporary:
-        installer = Path(temporary) / ('install.' + suffix)
-        urllib.request.urlretrieve('https://astral.sh/uv/0.12.5/install.' + suffix, installer)
-        command = (['powershell.exe', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', str(installer)]
-                   if os.name == 'nt' else ['sh', str(installer)])
-        subprocess.run(command, check=True, env=environment, cwd=root)
-    if not executable.is_file():
+    arch = {'amd64': 'x64', 'x86_64': 'x64', 'aarch64': 'arm64', 'arm64': 'arm64'}.get(platform.machine().lower())
+    if (system, arch) not in UV_WHEELS:
+        raise RuntimeError('Supported hosts: Windows, macOS, Linux; x64/ARM64 (Pi requires 64-bit OS)')
+    url, expected = UV_WHEELS[(system, arch)]
+    print('Installing uv ' + UV_VERSION + ' locally from its pinned PyPI wheel (first setup only)...', flush=True)
+    directory.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix='uv-bootstrap-', dir=directory) as temporary:
+        archive = Path(temporary) / 'uv.whl'
+        with urllib.request.urlopen(url, timeout=90) as response, archive.open('wb') as stream:
+            shutil.copyfileobj(response, stream)
+        if hashlib.sha256(archive.read_bytes()).hexdigest() != expected:
+            raise RuntimeError('uv wheel checksum mismatch')
+        member = 'uv-' + UV_VERSION + '.data/scripts/' + binary
+        staged = Path(temporary) / binary
+        with zipfile.ZipFile(archive) as wheel:
+            if wheel.namelist().count(member) != 1 or wheel.getinfo(member).is_dir():
+                raise RuntimeError('uv wheel does not contain the expected binary: ' + member)
+            with wheel.open(member) as source, staged.open('xb') as stream:
+                shutil.copyfileobj(source, stream)
+        if not staged.stat().st_size:
+            raise RuntimeError('uv wheel contains an empty binary')
+        staged.chmod(0o755)
+        # Preserve a local tool another setup process finished during download.
+        if executable.is_file():
+            return str(executable)
+        os.replace(staged, executable)
+    if not executable.is_file() or not os.access(executable, os.X_OK):
         raise RuntimeError('uv installation did not produce ' + str(executable))
     return str(executable)
 

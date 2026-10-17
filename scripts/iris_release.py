@@ -17,6 +17,7 @@ import re
 import shutil
 import subprocess
 import sys
+import time
 import uuid
 import zipfile
 
@@ -30,7 +31,8 @@ DEFAULT_TESTS = tuple('scripts/test/' + name + '.py' for name in (
     'test_iris_models', 'test_iris_wake_models', 'test_iris_archive',
     'test_iris_configuration', 'test_iris_session', 'test_iris_worker',
     'test_iris_wake_release', 'test_iris_pi_benchmark', 'test_iris_diversity',
-    'test_iris_owner', 'test_iris_resources', 'test_iris_metrics', 'test_iris_release'))
+    'test_iris_owner', 'test_iris_resources', 'test_iris_metrics', 'test_iris_release',
+    'test_iris_reproduce', 'test_iris_publish_privacy', 'test_iris_bootstrap'))
 SHA256 = re.compile(r'[0-9a-f]{64}')
 
 
@@ -531,6 +533,7 @@ def ensure_source_environment(root=ROOT, *, device='cpu', runner=subprocess.run)
     python = root / ('.venv/Scripts/python.exe' if os.name == 'nt' else '.venv/bin/python')
     if python.is_file():
         return python
+    began = time.perf_counter()
     from scripts.runtime.speaker_tools import find_uv
     environment = read(root / HERE / 'reproduction-environment.json')
     profile = 'cuda' if str(device).startswith('cuda') else 'cpu'
@@ -554,9 +557,13 @@ def ensure_source_environment(root=ROOT, *, device='cpu', runner=subprocess.run)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text('\n'.join(pins) + '\n', encoding='utf-8')
     runner([str(uv), 'pip', 'install', '--python', str(python), '--no-deps', '-r', str(path)], cwd=root, check=True)
+    plots = root / 'experiments/iris-reproduction-v1/plot-requirements.txt'
+    if plots.is_file():
+        runner([str(uv), 'pip', 'install', '--python', str(python), '--no-deps', '-r', str(plots)], cwd=root, check=True)
     save(root / CACHE / 'environment/bootstrap.json', {'profile': profile,
          'environment_receipt_sha256': sha(root / HERE / 'reproduction-environment.json'),
          'runtime_lock_sha256': sha(root / 'requirements.lock'), 'training_requirements_sha256': sha(path),
+         'elapsed_seconds': time.perf_counter() - began,
          'python': name_under(root, python), 'existing_environment_modified': False,
          'wheel_hash_lock': 'portable runtime only; research versions are pinned in recorded environment metadata'})
     return python
@@ -1146,7 +1153,8 @@ def run_workflow(*, root=ROOT, skip_train=False, publish=False, from_scratch=Fal
 
     def fit_diversity(model, arm, seed):
         name = 'diversity-' + model + '-' + arm + '-' + str(seed)
-        if (root / CACHE / 'diversity/runs' / (model + '-' + arm + '-s' + str(seed)) / 'selection.json').is_file():
+        if (not read(input_receipt).get('force_vcm_fitting') and
+                (root / CACHE / 'diversity/runs' / (model + '-' + arm + '-s' + str(seed)) / 'selection.json').is_file()):
             return stage(name, action=lambda: verify_completed_diversity(root, input_receipt, model, arm, seed))
         return stage(name, module('diversity', 'train', '--model', model, '--arm', arm,
                                  '--seed', seed, '--device', device))
@@ -1339,6 +1347,10 @@ def main(argv=None):
     parser.add_argument('--run-id')
     parser.add_argument('--device', choices=('cpu', 'cuda'), default='cpu')
     args = parser.parse_args(argv)
+    recipe_sources = ROOT / 'experiments/iris-reproduction-v1/recipe-sources.json'
+    if recipe_sources.is_file() and not args.fit_from_scratch:
+        from scripts.iris_reproduce import hydrate_recipe_sources
+        hydrate_recipe_sources(ROOT, read(recipe_sources), download=not args.no_download)
     if args.fit_from_scratch:
         if not args.run_id:
             parser.error('--fit-from-scratch needs --run-id')

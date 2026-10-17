@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "experiment": "iris-reproduction-v1",
+  "purpose": "Fresh GitHub clone continuation training, DGX host benchmark and reconstruction of the selected finite-command inference delivery",
+  "requirements": ["ME-01", "ME-02", "ME-03", "ME-04", "ME-06", "ME-07", "ME-08"],
+  "base_inputs": "experiments/iris-release-v1/reproduction-inputs.json",
+  "base_inputs_sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945",
+  "recipe_sources": "experiments/iris-reproduction-v1/recipe-sources.json",
+  "scientific_protocol": "experiments/iris-release-v1/protocol.json",
+  "scientific_changes": false,
+  "training": "Six matched VCM continuation fits, own pinned initializers, two widths and two objectives at seed 53, both objectives at development-selected width at seed 67. Downloaded completed VCM fits and their evaluation caches are excluded. Wake and owner completed project fits remain verified companions.",
+  "selection": "Unchanged development-only selection and calibration; test may veto promotion to the predeclared baseline, never retune thresholds.",
+  "isolation": "Tracked Git sources copied into a unique ignored run workspace. One bootstrapped environment per clone. No source-machine model or data cache links. Frozen historical results remain in the source clone and are backed up before regenerating the named derived files in the run workspace.",
+  "derived_files": [
+    "experiments/iris-release-v1/width-selection-before-repeat.json",
+    "experiments/iris-release-v1/development-selection.json",
+    "experiments/iris-release-v1/selection-before-test.json",
+    "experiments/iris-release-v1/release-choice.json",
+    "experiments/iris-release-v1/recognition-results.json",
+    "experiments/iris-release-v1/reproduction-release.json",
+    "experiments/iris-release-v1/decision-parity.json",
+    "experiments/iris-release-v1/pipeline-resources.json",
+    "experiments/iris-release-v1/software-verification.json"
+  ],
+  "reference_vcm_onnx_sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+  "exactness": "Compare the selected ONNX and complete deployment bundle with the Git-owned reference. A retained frozen baseline is reported as retained, not freshly reconstructed from random initialization. Training floating-point results need not be bit-identical across devices.",
+  "device_policy": "One device only; CPU default. Select one available CUDA device with CUDA_VISIBLE_DEVICES and --device cuda. Never interrupt other users' jobs.",
+  "unmeasured": ["physical Pi latency/RAM/thermals", "fresh original-human wake-to-command pairs", "live microphone qualification", "full historical initializer training chain replay"]
+}

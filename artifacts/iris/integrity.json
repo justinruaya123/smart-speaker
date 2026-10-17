@@ -1,0 +1,77 @@
+{
+  "files": {
+    "bundle.json": {
+      "bytes": 671,
+      "sha256": "d7671bb393f7a81b4a354e6922b8a469c76a57aec8264ba3ff030fbba1adaa03"
+    },
+    "catalog.json": {
+      "bytes": 114053,
+      "sha256": "f169f8b80be8a844de4fca1cfbe7ead9841d4165ec8ad748b0af9010c6c5e8b1"
+    },
+    "model.onnx": {
+      "bytes": 3973147,
+      "sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a"
+    },
+    "ncnn/engine.json": {
+      "bytes": 811,
+      "sha256": "d4180c8657a9db0ae87f1384dbb43cf3caa6d8e54d8ec76f625a2e365a670f51"
+    },
+    "ncnn/model.ncnn.bin": {
+      "bytes": 3879960,
+      "sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133"
+    },
+    "ncnn/model.ncnn.param": {
+      "bytes": 8904,
+      "sha256": "e7289f35da2cf35147d3b8833a4915b8e3a0520cc99573ebfffae07ec6da7998"
+    },
+    "ncnn/position-frequency.json": {
+      "bytes": 1515,
+      "sha256": "2cf4b7057c69f59eff846bf80903eb98f9ed17da9edd3ba0efb6f1940fa97605"
+    },
+    "normalization.json": {
+      "bytes": 148035,
+      "sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262"
+    },
+    "owner/owner.json": {
+      "bytes": 4640,
+      "sha256": "e2d531627fabf90453762cf17eb082b3f52f8922aa830e37a9202144b91fb310"
+    },
+    "owner/owner.onnx": {
+      "bytes": 542023,
+      "sha256": "84e860f814e248e793567b2f1c8fe83d24d82b9d58f5379e4da69eb7b78d0a3f"
+    },
+    "policy.json": {
+      "bytes": 31127,
+      "sha256": "77de4929939d618b84238f1c95e449eb8a3697c636c23a7861e72c0b52c5b13e"
+    },
+    "wake/iris.json": {
+      "bytes": 152922,
+      "sha256": "12d21a9460a2ac37582d28c0f31cb90f670b8bbc423f5c3bca664bb02d3d0922"
+    },
+    "wake/iris.ncnn.bin": {
+      "bytes": 323904,
+      "sha256": "f5608815519830107220939124abf65222dec6f159ed36ead1f50d124392da98"
+    },
+    "wake/iris.ncnn.param": {
+      "bytes": 2713,
+      "sha256": "43ce9accd880119cba8737365ef799280d22985dd69bc7d7940339ea5f88c067"
+    },
+    "wake/iris.onnx": {
+      "bytes": 330103,
+      "sha256": "22fc8b0c6a3c80e1d1686d321a6251957085216efaca1752eb22067064a4ea57"
+    },
+    "wake/silero-vad.onnx": {
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f"
+    },
+    "wake/wake-models.json": {
+      "bytes": 294,
+      "sha256": "9a401c24260ebca14179005feaaf2cd66d2d6b05e26f3342fd13736a8f672091"
+    }
+  },
+  "original_human_wake_pairs_measured": false,
+  "physical_pi_measured": false,
+  "schema_version": 1,
+  "selected": "vcm-mvp-hey-iris-v3 compact; V2 project weights and frozen V3 policy",
+  "source_archive_sha256": "028add978ee74ee7a7b7bad1e4f0df73364438a2d24d4a2ad74e4bbf7eda687f"
+}

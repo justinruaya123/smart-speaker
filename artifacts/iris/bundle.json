@@ -1,0 +1,15 @@
+{
+  "format": "mvp-static-v1",
+  "parameters": 969928,
+  "files": {
+    "model.onnx": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+    "catalog.json": "f169f8b80be8a844de4fca1cfbe7ead9841d4165ec8ad748b0af9010c6c5e8b1",
+    "normalization.json": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+    "policy.json": "77de4929939d618b84238f1c95e449eb8a3697c636c23a7861e72c0b52c5b13e"
+  },
+  "inference_mode": "complete_utterance",
+  "profile": "benchmark-compatible",
+  "qualified": false,
+  "checkpoint_sha256": "32407d9540367bd84f4052c06dc4e5db73a79aef602614766cecfa4e74fe965e",
+  "calibration_experiment": "vcm-mvp-hey-iris-v3"
+}

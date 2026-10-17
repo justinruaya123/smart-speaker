@@ -1,4 +1,24 @@
 {
+  "iris.archive_io": {
+    "path": "archive_io.py",
+    "runtime": false
+  },
+  "iris.iris_publish": {
+    "path": "iris_publish.py",
+    "runtime": false
+  },
+  "iris.iris_release": {
+    "path": "iris_release.py",
+    "runtime": false
+  },
+  "iris.iris_report": {
+    "path": "iris_report.py",
+    "runtime": false
+  },
+  "iris.iris_reproduce": {
+    "path": "iris_reproduce.py",
+    "runtime": false
+  },
   "iris.models.iris_owner": {
     "path": "models/iris_owner.py",
     "runtime": false
@@ -13,6 +33,14 @@
   },
   "iris.models.speaker_demo": {
     "path": "models/speaker_demo.py",
+    "runtime": false
+  },
+  "iris.mvp_delivery": {
+    "path": "mvp_delivery.py",
+    "runtime": false
+  },
+  "iris.plot_benchmarks": {
+    "path": "plot_benchmarks.py",
     "runtime": false
   },
   "iris.runtime.audio": {
@@ -75,36 +103,32 @@
     "path": "runtime/wake_models.py",
     "runtime": true
   },
-  "iris.train.iris_diversity": {
-    "path": "train/iris_diversity.py",
-    "runtime": false
-  },
-  "iris.train.iris_export": {
-    "path": "train/iris_export.py",
-    "runtime": false
-  },
-  "iris.train.iris_owner": {
-    "path": "train/iris_owner.py",
-    "runtime": false
-  },
-  "iris.train.iris_wake": {
-    "path": "train/iris_wake.py",
-    "runtime": false
-  },
-  "iris.train.iris_wake_helpers": {
-    "path": "train/iris_wake_helpers.py",
+  "iris.speaker_publish": {
+    "path": "speaker_publish.py",
     "runtime": false
   },
   "iris.test.iris_benchmark": {
     "path": "test/iris_benchmark.py",
     "runtime": false
   },
+  "iris.test.iris_decision_parity": {
+    "path": "test/iris_decision_parity.py",
+    "runtime": false
+  },
   "iris.test.iris_metrics": {
     "path": "test/iris_metrics.py",
     "runtime": false
   },
+  "iris.test.iris_resources": {
+    "path": "test/iris_resources.py",
+    "runtime": false
+  },
   "iris.test.test_iris_archive": {
     "path": "test/test_iris_archive.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_bootstrap": {
+    "path": "test/test_iris_bootstrap.py",
     "runtime": false
   },
   "iris.test.test_iris_configuration": {
@@ -113,6 +137,10 @@
   },
   "iris.test.test_iris_diversity": {
     "path": "test/test_iris_diversity.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_metrics": {
+    "path": "test/test_iris_metrics.py",
     "runtime": false
   },
   "iris.test.test_iris_models": {
@@ -127,8 +155,24 @@
     "path": "test/test_iris_pi_benchmark.py",
     "runtime": false
   },
+  "iris.test.test_iris_plots": {
+    "path": "test/test_iris_plots.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_publish_privacy": {
+    "path": "test/test_iris_publish_privacy.py",
+    "runtime": false
+  },
   "iris.test.test_iris_release": {
     "path": "test/test_iris_release.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_reproduce": {
+    "path": "test/test_iris_reproduce.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_resources": {
+    "path": "test/test_iris_resources.py",
     "runtime": false
   },
   "iris.test.test_iris_session": {
@@ -147,44 +191,24 @@
     "path": "test/test_iris_worker.py",
     "runtime": false
   },
-  "iris.iris_release": {
-    "path": "iris_release.py",
+  "iris.train.iris_diversity": {
+    "path": "train/iris_diversity.py",
     "runtime": false
   },
-  "iris.iris_publish": {
-    "path": "iris_publish.py",
+  "iris.train.iris_export": {
+    "path": "train/iris_export.py",
     "runtime": false
   },
-  "iris.archive_io": {
-    "path": "archive_io.py",
+  "iris.train.iris_owner": {
+    "path": "train/iris_owner.py",
     "runtime": false
   },
-  "iris.mvp_delivery": {
-    "path": "mvp_delivery.py",
+  "iris.train.iris_wake": {
+    "path": "train/iris_wake.py",
     "runtime": false
   },
-  "iris.speaker_publish": {
-    "path": "speaker_publish.py",
-    "runtime": false
-  },
-  "iris.test.iris_resources": {
-    "path": "test/iris_resources.py",
-    "runtime": false
-  },
-  "iris.test.test_iris_resources": {
-    "path": "test/test_iris_resources.py",
-    "runtime": false
-  },
-  "iris.iris_report": {
-    "path": "iris_report.py",
-    "runtime": false
-  },
-  "iris.test.iris_decision_parity": {
-    "path": "test/iris_decision_parity.py",
-    "runtime": false
-  },
-  "iris.test.test_iris_metrics": {
-    "path": "test/test_iris_metrics.py",
+  "iris.train.iris_wake_helpers": {
+    "path": "train/iris_wake_helpers.py",
     "runtime": false
   }
 }

@@ -2,7 +2,8 @@
 
 Authentication uses huggingface_hub's local token store. Tokens and private
 settings are never copied into a staging tree or publication receipt. The source
-GitHub repository's visibility is outside this publisher and remains private.
+recipe lives on GitHub main; this publisher never changes GitHub visibility.
+Model publication requires a private repository and preserves dataset visibility.
 """
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
@@ -20,11 +21,16 @@ from scripts.iris_release import (ROOT, HERE, CACHE, read, save, sha, relative_p
 
 MODEL_REPO = 'justinruaya123/ai231-smart-speaker'
 DATASET_REPO = MODEL_REPO
+SOURCE_REPO = 'https://github.com/justinruaya123/smart-speaker'
+ROOT_SOURCE_FILES = {'AGENTS.md', 'REQUIREMENTS.md', 'EXPERIMENTS.md', 'README.md', 'MODEL_CARD.md',
+                     'train.py', 'reproduce.py', 'publish.py', 'start.py', 'pipeline.toml', 'requirements.lock'}
 AUDIO_SUFFIXES = {'.wav', '.flac', '.mp3', '.ogg', '.opus', '.m4a'}
 
 
 def validate_publication(root, plan):
     """Finish every local identity/access check before creating a remote repo."""
+    if plan.get('model_visibility', 'private') != 'private':
+        raise ValueError('Model publication requires model_visibility="private"')
     if plan.get('schema_version') != 1 or plan.get('verification', {}).get('passed') is not True:
         raise ValueError('Publication requires a passed software/package verification receipt')
     files = plan.get('files')
@@ -37,6 +43,8 @@ def validate_publication(root, plan):
         relative_path(root, destination)
         pure = PurePosixPath(destination)
         local = PurePosixPath(item['local_path'])
+        if ('reproduction', 'source') in zip(pure.parts, pure.parts[1:]):
+            raise ValueError('New source mirrors are prohibited; publish the recipe on GitHub main: ' + destination)
         if (local.name == '.env' or (local.name.startswith('.env.') and local.name != '.env.example')
                 or '.git' in local.parts or local.name in ('token', 'stored_tokens', 'credentials')):
             raise ValueError('Private settings cannot be published under another name: ' + item['local_path'])
@@ -74,7 +82,7 @@ def file_item(root, path, destination, repo_type='model', repo_id=None, **extra)
 
 
 def card_linked_files(root, cards):
-    """Declare exact local evidence/source links without a frozen-proof cycle."""
+    """Declare exact local evidence links without uploading a source mirror."""
     prefix = 'https://huggingface.co/' + MODEL_REPO + '/blob/main/'
     files = []
     for card in cards:
@@ -87,30 +95,32 @@ def card_linked_files(root, cards):
                 if PurePosixPath(filename).name != filename:
                     raise ValueError('Card-linked evidence must name a declared flat receipt: ' + destination)
                 name = HERE + '/' + filename
-                destinations = [destination, 'reproduction/source/' + name]
-            elif destination.startswith('reproduction/source/'):
-                name = destination.removeprefix('reproduction/source/')
-                destinations = [destination]
             else:
                 continue
             path = relative_path(root, name)
             if not path.is_file():
-                raise ValueError('Card-linked publication evidence/source is missing: ' + name)
-            for target in destinations:
-                files.append(file_item(root, path, target))
+                raise ValueError('Card-linked publication evidence is missing: ' + name)
+            files.append(file_item(root, path, destination))
     return files
 
 
 def published_links(markdown):
-    """Resolve repository evidence/source links from the public card location."""
+    """Keep model evidence on Hugging Face and source/documentation on GitHub main."""
     base = 'https://huggingface.co/' + MODEL_REPO + '/blob/main/'
+    source = SOURCE_REPO + '/blob/main/'
+    old_tree = 'https://huggingface.co/' + MODEL_REPO + '/tree/main/reproduction/source'
     def target(match):
         original = match.group(1)
         path = original.removeprefix('../').removeprefix('./')
+        if path.startswith(base + 'reproduction/source/'):
+            return '](' + source + path.removeprefix(base + 'reproduction/source/') + ')'
+        if path == old_tree or path.startswith(old_tree + '/'):
+            return '](' + SOURCE_REPO + '/tree/main' + path.removeprefix(old_tree) + ')'
         if path.startswith('experiments/iris-release-v1/'):
             path = 'evidence/' + path.split('/')[-1]
-        elif path.startswith(('docs/', 'data/sources/', 'scripts/')):
-            path = 'reproduction/source/' + path
+        elif (path.startswith(('docs/', 'data/sources/', 'scripts/', 'SpeakerUI/'))
+              or path.split('#', 1)[0].split('?', 1)[0] in ROOT_SOURCE_FILES):
+            return '](' + source + path + ')'
         else:
             return match.group(0)
         return '](' + base + path + ')'
@@ -169,7 +179,8 @@ preserved in the bound evidence instead of being replaced by a pooled score.
         + 'Release binding: `reproduction/reproduction-release.json`. Training command: '
         + '`python train.py`; verify/rebuild: `python train.py --skip-train`; '
         + 'publish verified outputs: `python train.py --skip-train --publish`.\n\n'
-        + 'Pinned initializers, source closure, input manifests and exact access requirements '
+        + '[Source recipe on GitHub main](' + SOURCE_REPO + '/tree/main). '
+        + 'Pinned initializers, source identity, input manifests and exact access requirements '
         + 'are listed in `reproduction/reproduction-inputs.json`. Missing restricted inputs '
         + 'must be obtained from their lawful source; no replacement corpus is silently substituted.\n', encoding='utf-8')
     authoritative_card = Path(root) / 'MODEL_CARD.md'
@@ -282,11 +293,9 @@ def build_publication_plan(*, root=ROOT, workflow, extra_files=None):
              file_item(root, dataset_card, 'README.md', 'dataset'),
              file_item(root, notices, 'NOTICES.md'),
              file_item(root, notices, 'iris-release-v1/NOTICES.md', 'dataset'),
-             file_item(root, release_path, 'reproduction/reproduction-release.json'),
-             file_item(root, release_path, 'reproduction/source/' + workflow['release'])]
+             file_item(root, release_path, 'reproduction/reproduction-release.json')]
     input_path = relative_path(root, release['input_receipt'])
     files.extend([file_item(root, input_path, 'reproduction/reproduction-inputs.json'),
-                  file_item(root, input_path, 'reproduction/source/' + release['input_receipt']),
                   file_item(root, input_path, 'iris-release-v1/reproduction-inputs.json', 'dataset')])
     for role, prefix in (('bundle', 'vcm'), ('wake_folder', 'wake'), ('owner_folder', 'owner'), ('vad_folder', 'vad')):
         folder = PurePosixPath(release[role])
@@ -296,9 +305,7 @@ def build_publication_plan(*, root=ROOT, workflow, extra_files=None):
                 files.append(file_item(root, relative_path(root, name), prefix + '/' + pure.relative_to(folder).as_posix()))
     for name in release.get('evaluation_receipts', []):
         files.append(file_item(root, relative_path(root, name), 'evidence/' + Path(name).name))
-    # Source files are an explicit frozen closure, not a recursive repository upload.
-    for name in sorted(release['source_bindings']):
-        files.append(file_item(root, relative_path(root, name), 'reproduction/source/' + name))
+    # Source bindings remain in the release receipt; GitHub main owns the recipe.
     # Late native/package/fresh checks bind the finished release, so they stay
     # outside its frozen component hashes and enter this verified upload plan.
     files.extend(card_linked_files(root, (model_card, dataset_card)))
@@ -346,7 +353,8 @@ def build_publication_plan(*, root=ROOT, workflow, extra_files=None):
     plan = {'schema_version': 1, 'experiment': 'iris-release-v1', 'run_id': token,
             'verification': {'passed': True, 'bindings': {workflow['release']: workflow['release_sha256'],
                                                         workflow['package']['path']: workflow['package']['sha256']}},
-            'source_visibility': 'private', 'model_visibility': 'public',
+            'source_repository': SOURCE_REPO, 'source_ref': 'main',
+            'source_visibility': 'preserve_existing', 'model_visibility': 'private',
             'dataset_visibility': 'preserve_existing', 'files': files}
     validate_publication(root, plan)
     plan_path = root / HERE / ('publication-plan-' + token + '.json')
@@ -370,7 +378,9 @@ def publish_plan(*, root=ROOT, plan, api=None, downloader=None, max_files_per_co
     if receipt_path.exists():
         raise FileExistsError('Preserve existing publication receipt: ' + str(receipt_path))
     record = {'schema_version': 1, 'status': 'running', 'created_utc': datetime.now(timezone.utc).isoformat(),
-              'source_visibility': 'private', 'repositories': [], 'receipt': name_under(root, receipt_path)}
+              'source_repository': SOURCE_REPO, 'source_ref': 'main',
+              'source_visibility': 'preserve_existing', 'model_visibility': 'private',
+              'repositories': [], 'receipt': name_under(root, receipt_path)}
     save(receipt_path, record)
     grouped = defaultdict(list)
     for item in plan['files']:
@@ -381,11 +391,13 @@ def publish_plan(*, root=ROOT, plan, api=None, downloader=None, max_files_per_co
         record['account'] = identity.get('name')
         for (repo_type, repo_id), items in sorted(grouped.items()):
             if repo_type == 'model':
-                api.create_repo(repo_id=repo_id, repo_type='model', private=False, exist_ok=True)
+                api.create_repo(repo_id=repo_id, repo_type='model', private=True, exist_ok=True)
             info = api.repo_info(repo_id=repo_id, repo_type=repo_type)
-            if repo_type == 'model' and info.private:
-                api.update_repo_settings(repo_id=repo_id, repo_type='model', private=False)
+            if repo_type == 'model' and info.private is not True:
+                api.update_repo_settings(repo_id=repo_id, repo_type='model', private=True)
                 info = api.repo_info(repo_id=repo_id, repo_type=repo_type)
+                if info.private is not True:
+                    raise ValueError('Model repository must be private before publication')
             api.auth_check(repo_id=repo_id, repo_type=repo_type)
             staged = root / CACHE / 'publication' / token / (repo_type + '-immutable-' + uuid.uuid4().hex[:8])
             operations = []
@@ -401,6 +413,8 @@ def publish_plan(*, root=ROOT, plan, api=None, downloader=None, max_files_per_co
                 operations.append(CommitOperationAdd(path_in_repo=item['path_in_repo'], path_or_fileobj=destination))
             revision = info.sha
             for start in range(0, len(operations), max_files_per_commit):
+                if repo_type == 'model' and api.repo_info(repo_id=repo_id, repo_type=repo_type).private is not True:
+                    raise ValueError('Model repository must be private before committing files')
                 commit = api.create_commit(repo_id=repo_id, repo_type=repo_type,
                                            operations=operations[start:start + max_files_per_commit],
                                            commit_message='Publish verified Iris release and reproduction evidence',
@@ -419,9 +433,9 @@ def publish_plan(*, root=ROOT, plan, api=None, downloader=None, max_files_per_co
             with ThreadPoolExecutor(max_workers=6) as pool:
                 published['files'] = list(pool.map(verify_remote, items))
             remote = api.repo_info(repo_id=repo_id, repo_type=repo_type, revision=revision)
-            if repo_type == 'model' and remote.private:
-                raise ValueError('Published model repository is not public')
             published['private'] = bool(remote.private)
+            if repo_type == 'model' and remote.private is not True:
+                raise ValueError('Published model repository is not private')
             published['verified'] = True
             save(receipt_path, record)
         record['status'] = 'published_and_verified'
@@ -491,7 +505,9 @@ def publish_reproduction_inputs(*, root=ROOT, input_receipt=None, verified_recei
     files.append(file_item(root, copy, 'reproduction/reproduction-inputs-before-pinning.json'))
     plan = {'schema_version': 1, 'run_id': token,
             'verification': {'passed': True, 'scope': 'immutable reproduction input identity and source/provenance audit; no model qualification'},
-            'files': files, 'source_visibility': 'private', 'dataset_visibility': 'preserve_existing'}
+            'files': files, 'source_repository': SOURCE_REPO, 'source_ref': 'main',
+            'source_visibility': 'preserve_existing', 'model_visibility': 'private',
+            'dataset_visibility': 'preserve_existing'}
     validate_publication(root, plan)
     plan_path = root / HERE / ('publication-inputs-plan-' + token + '.json')
     save(plan_path, plan)

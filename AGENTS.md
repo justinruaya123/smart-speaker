@@ -26,6 +26,8 @@ Tentative previews use the same VCM at most twice per second, with only the late
 ## Supported workflow and verification
 
 ```bash
+python reproduce.py                  # isolated actual continuation fits from a clean clone
+python reproduce.py --device cuda    # one explicitly selected available GPU
 python train.py
 python train.py --skip-train
 python train.py --skip-train --publish

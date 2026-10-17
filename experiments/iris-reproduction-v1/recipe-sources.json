@@ -1,0 +1,317 @@
+{
+  "experiment": "iris-reproduction-v1",
+  "files": [
+    {
+      "bytes": 864,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/.github/workflows/tests.yml",
+      "license": "unknown",
+      "role": "official-benchmark-workflow",
+      "sha256": "b535b2bb152164660daa0712e5d5572cbc4f50b7766e7166643afb8e4d8c7f13",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": ".github/workflows/tests.yml",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/.github/workflows/tests.yml",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 20692,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/README.md",
+      "license": "unknown",
+      "role": "official-benchmark-upstream-documentation",
+      "sha256": "5242baa27a11aa30b18c44b3ecd7c87c4157417f625477169af91212e4ffa0fa",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "README.md",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/README.md",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 64742,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/benchmark.py",
+      "license": "unknown",
+      "role": "official-benchmark-entrypoint-source",
+      "sha256": "0b42ddda6a15f6f169417d878ea21ede198df5a18cda37b0dd63ec0453bd520c",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "benchmark.py",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/benchmark.py",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 29737,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/pi_agent.py",
+      "license": "unknown",
+      "role": "official-benchmark-entrypoint-source",
+      "sha256": "039492f4fbda6e211d3be278d0b0079b2778fe560ea497d5406ad93cc54177fb",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "pi_agent.py",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/pi_agent.py",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 264,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/requirements.txt",
+      "license": "unknown",
+      "role": "official-benchmark-dependency-requirements",
+      "sha256": "91c05d62abf673f69f3fe3e55a3e2468c0fc8db75996db704107c47937caf785",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "requirements.txt",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/requirements.txt",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 28787,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/tests/test_core.py",
+      "license": "unknown",
+      "role": "official-benchmark-test-source",
+      "sha256": "5da4abc24e0e6d9d296416dba8c07bdb3f97fd9892ea111dc391a530d230993e",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "tests/test_core.py",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/tests/test_core.py",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 5931,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/tests/test_flops.py",
+      "license": "unknown",
+      "role": "official-benchmark-test-source",
+      "sha256": "599836fd1da8777b7f32ba4ca9cae0f3c630fd5c60fd5ed9d2f23514c4306b85",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "tests/test_flops.py",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/tests/test_flops.py",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 9319,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/tests/test_pi_agent.py",
+      "license": "unknown",
+      "role": "official-benchmark-test-source",
+      "sha256": "a08a61692adf75b5c3b7fd577805c9e2bdd320a35866dddb9941e708774363c8",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "tests/test_pi_agent.py",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/tests/test_pi_agent.py",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 8319,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/tests/test_slots.py",
+      "license": "unknown",
+      "role": "official-benchmark-test-source",
+      "sha256": "be9f854f6b746b0ce22feaa661695021a022b249d428038867fb0c6ca8926e83",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "tests/test_slots.py",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/tests/test_slots.py",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 0,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/vcmbench/__init__.py",
+      "license": "unknown",
+      "role": "official-benchmark-library-source",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "vcmbench/__init__.py",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/__init__.py",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 8609,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/vcmbench/audio.py",
+      "license": "unknown",
+      "role": "official-benchmark-library-source",
+      "sha256": "13eae82c351b3c553b35f18ec8bf4d463ef1f50672e3e860e5f21650f1aa4200",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "vcmbench/audio.py",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/audio.py",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 3764,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/vcmbench/dataset.py",
+      "license": "unknown",
+      "role": "official-benchmark-library-source",
+      "sha256": "17d74702d4b9230965c96fbf7dd9a5b717fea47cc3374adfc48e9c2225dd6ba1",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "vcmbench/dataset.py",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/dataset.py",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 10749,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/vcmbench/flops.py",
+      "license": "unknown",
+      "role": "official-benchmark-library-source",
+      "sha256": "a883ffd4742901ff677b63a3652a773c4153c52918cea175dd4da31bfbf02f61",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "vcmbench/flops.py",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/flops.py",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 8085,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/vcmbench/metrics.py",
+      "license": "unknown",
+      "role": "official-benchmark-library-source",
+      "sha256": "518ef4bc0646f93ad936d84ff2982bdd56691783e6892799e0728eff4e9410f6",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "vcmbench/metrics.py",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/metrics.py",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 28799,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/vcmbench/pi.py",
+      "license": "unknown",
+      "role": "official-benchmark-library-source",
+      "sha256": "772a73dffa5810645182d2a6a9c16a828bb25d4a84f2d9cb3bbf60993d76545f",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "vcmbench/pi.py",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/pi.py",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 24529,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/vcmbench/report.py",
+      "license": "unknown",
+      "role": "official-benchmark-library-source",
+      "sha256": "2a485f61c2092abbf6d3ed4228148d3ac27ff8b63cea39a32dfa6605c2cdf2e0",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "vcmbench/report.py",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/report.py",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 10197,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/vcmbench/schema.py",
+      "license": "unknown",
+      "role": "official-benchmark-library-source",
+      "sha256": "cb7cefcd893a2443b9a9b9e9b2756efa27d273f4f0086b94491ca3b304e7a006",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "vcmbench/schema.py",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/schema.py",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 17062,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/vcmbench/slots.py",
+      "license": "unknown",
+      "role": "official-benchmark-library-source",
+      "sha256": "7fc483ad851699d09e948ed942a36141012f474333e2ce521e705acce7fa30ef",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "vcmbench/slots.py",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/slots.py",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 3433,
+      "input_path": ".cache/iris-release-v1/inputs/official-benchmark/vcmbench/variations.csv",
+      "license": "unknown",
+      "role": "official-benchmark-frozen-schema",
+      "sha256": "6004b3b2b58137058c705b5769b0d094e05a5cff6ddcbed6de548b4a0105fcda",
+      "source_kind": "upstream_github",
+      "upstream": {
+        "path": "vcmbench/variations.csv",
+        "raw_url": "https://raw.githubusercontent.com/airimonda/vcm-benchmark/ab39857cf73dd067d068fed388c321ab160dc191/vcmbench/variations.csv",
+        "repo_url": "https://github.com/airimonda/vcm-benchmark",
+        "revision": "ab39857cf73dd067d068fed388c321ab160dc191"
+      }
+    },
+    {
+      "bytes": 38742,
+      "input_path": ".cache/iris-release-v1/inputs/provenance/diversity-prefit-trainer.py",
+      "role": "project-prefit-source-snapshot",
+      "sha256": "1507f5680ba9c09ca6de02750bf9cb3b5f781a2113b17cf5e8368d5cfbc97be7",
+      "source_kind": "git",
+      "source_path": "experiments/iris-reproduction-v1/provenance/diversity-prefit-trainer.py"
+    },
+    {
+      "bytes": 63607,
+      "input_path": ".cache/iris-release-v1/inputs/provenance/owner-prefit-driver.py",
+      "role": "project-prefit-source-snapshot",
+      "sha256": "509cf295c2971979f89ecaa42e5170eef906b3d2f6a9f5ea28916362bbc9bd10",
+      "source_kind": "git",
+      "source_path": "experiments/iris-reproduction-v1/provenance/owner-prefit-driver.py"
+    }
+  ],
+  "input_receipt": {
+    "path": "experiments/iris-release-v1/reproduction-inputs.json",
+    "sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945"
+  },
+  "official_benchmark": {
+    "access": "Fetch exact pinned upstream GitHub bytes and verify each SHA-256 and byte count before hydrating input_path; no Hugging Face source-code dependency.",
+    "license": "unknown",
+    "license_notice_paths_in_pinned_tree": [],
+    "preservation": "The original upstream README, dependency list, workflow, schema and tests are included as immutable upstream references; do not rewrite their bytes.",
+    "redistributed_in_git": false,
+    "repo_url": "https://github.com/airimonda/vcm-benchmark",
+    "revision": "ab39857cf73dd067d068fed388c321ab160dc191",
+    "revision_evidence": "experiments/iris-release-v1/protocol.json"
+  },
+  "schema_version": 1,
+  "scope": {
+    "excluded_nonrecipe_input": ".cache/iris-release-v1/inputs/provenance/dataset-card-before-release.md",
+    "excluded_nonrecipe_reason": "Historical dataset metadata, not executable recipe source; retained at its existing receipt path.",
+    "payloads_vendored": false,
+    "project_prefit_snapshots": 2,
+    "upstream_benchmark_files": 19
+  },
+  "verification": {
+    "frozen_receipt_file_byte_counts_match": 21,
+    "frozen_receipt_file_sha256_matches": 21,
+    "no_audio_parquet_weights_private_state_or_bytecode_added": true,
+    "pinned_upstream_github_byte_counts_match": 19,
+    "pinned_upstream_github_sha256_matches": 19,
+    "project_snapshot_sha256_matches": 2
+  }
+}
