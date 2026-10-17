@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "reason": "Unit fixture inherited a run-specific IRIS_REPRODUCTION_INPUTS path while writing its own default manifest. Explicitly scope each fixture to its own default/custom manifest.",
+  "source": "scripts/test/test_iris_release.py",
+  "before_sha256": "2b64ce9f660f7e5294817091d9999e477964d27406fcdb027d6d7c22af238fbb",
+  "after_sha256": "64d7edcfc614e10f6629f7c9fb918efd57150a2d8ec635017498b58ab55c071e",
+  "changes_fitting_or_acoustic_evaluation": false,
+  "failure": {
+    "run_id": "dgx-selected-20261017",
+    "source_commit": "0692fb02750a9537198d7396da3bf701f8cc649c",
+    "outer_receipt_sha256": "4f8fbf3b26828bef911d9fe4bf035d697f7399be25c8907ac762ae3833eb2ea9",
+    "python_tests_log_sha256": "3cc5316ab5d220a316bd13b25e9c56d23107352f20bc4e9092f5a13a1aa42eef",
+    "failed_tests": 1,
+    "passed_tests": 215,
+    "stage": "python-tests",
+    "prior_acoustic_parity_resource_ui_stages_passed": true
+  },
+  "verification": {
+    "inherited_environment": {
+      "IRIS_REPRODUCTION_INPUTS": ".cache/iris-release-v1/reproduction-github-inputs.json"
+    },
+    "focused_before": "1 failed",
+    "focused_after": "2 passed",
+    "full_python_passed": 222,
+    "warnings": 17,
+    "full_seconds": 62.46,
+    "full_log_sha256": "24ded811c7c3f410c90d133c06400def2c12062949093699c03a219c875de70b"
+  },
+  "active_fit_components_unchanged": {
+    "scripts/train/iris_diversity.py": "0bc25c969f141d522ac928bdbc369de4a44522b144671b9c67ccf3b6d3f3e00c",
+    "scripts/models/mvp_static.py": "2e9e284621a41a29766c35d99d399e6ffa6bb238418aeeb4ad27e6a3f25c6ff8",
+    "scripts/models/speaker_demo.py": "57a827ba38fcce088a213894433ba9d8b7b7944b335c2116859919a79f49cb7e",
+    "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a",
+    "scripts/runtime/mvp_static.py": "8011085d87772102e2f4f7fa35ff4f71c58b32e4bc111da5370a124ac840f263"
+  },
+  "active_frozen_inputs_unchanged": {
+    "experiments/iris-release-v1/protocol.json": "26851f20cc919812ff555eaf2b02ba4c0908338a148f2371176886a786a2f47a",
+    "experiments/iris-release-v1/voices.json": "b3fb665c57ad5a4ea08272aa79b5b0ebd60ba9544210ae597c48141a66f0818d",
+    "experiments/iris-release-v1/generation-plan.json": "1f767e35d75d7ba5a8b9ecd4f5332233d402377a41a6ac1275ad12de74a33599",
+    "experiments/iris-release-v1/catalog.json": "8c1e1e1c4c144b926f37e97fdd020626e88ce0f7be6b4f42d20576df52313fd1",
+    ".cache/iris-release-v1/diversity/data-audit.json": "ef73e38c90dcaf20432a227a0908d340c96b7a717a6ed988fbb649ded8f3fa63",
+    ".cache/iris-release-v1/reproduction-github-inputs.json": "14fb13754a9bb3c7f41c60e358fa38cbea97e0197bd27a1a37bff0b97a53bf15"
+  },
+  "active_run_test_source_patch": {
+    "run_id": "dgx-cpu-http-20261017",
+    "source_checkout_unchanged": true,
+    "only_later_pytest_fixture_changed": true,
+    "trained_weights_or_optimizer_modified_by_patch": false
+  }
+}

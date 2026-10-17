@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "utc": "2026-10-17T07:18:10.662915+00:00",
+  "passed": true,
+  "package": {
+    "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1/dist/iris-release-v1/iris-github-final/iris-pi.zip",
+    "sha256": "efbb3cc9df013a39ecc051329204f6d6c5b9d6db29ae2faac73a9198fbc7442d",
+    "bytes": 14140040,
+    "manifest_sha256": "54f17f66a7853beb5ed6721c2ac59cccdc50c031dfbf7cc468a8e53a64d72db0",
+    "files_verified_before_and_after": 215
+  },
+  "approved_bundle_comparison": {
+    "bundle.json": {
+      "expected_sha256": "d7671bb393f7a81b4a354e6922b8a469c76a57aec8264ba3ff030fbba1adaa03",
+      "actual_sha256": "d7671bb393f7a81b4a354e6922b8a469c76a57aec8264ba3ff030fbba1adaa03",
+      "matches": true
+    },
+    "catalog.json": {
+      "expected_sha256": "f169f8b80be8a844de4fca1cfbe7ead9841d4165ec8ad748b0af9010c6c5e8b1",
+      "actual_sha256": "f169f8b80be8a844de4fca1cfbe7ead9841d4165ec8ad748b0af9010c6c5e8b1",
+      "matches": true
+    },
+    "model.onnx": {
+      "expected_sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "actual_sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "matches": true
+    },
+    "ncnn/engine.json": {
+      "expected_sha256": "d4180c8657a9db0ae87f1384dbb43cf3caa6d8e54d8ec76f625a2e365a670f51",
+      "actual_sha256": "d4180c8657a9db0ae87f1384dbb43cf3caa6d8e54d8ec76f625a2e365a670f51",
+      "matches": true
+    },
+    "ncnn/model.ncnn.bin": {
+      "expected_sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133",
+      "actual_sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133",
+      "matches": true
+    },
+    "ncnn/model.ncnn.param": {
+      "expected_sha256": "e7289f35da2cf35147d3b8833a4915b8e3a0520cc99573ebfffae07ec6da7998",
+      "actual_sha256": "e7289f35da2cf35147d3b8833a4915b8e3a0520cc99573ebfffae07ec6da7998",
+      "matches": true
+    },
+    "ncnn/position-frequency.json": {
+      "expected_sha256": "2cf4b7057c69f59eff846bf80903eb98f9ed17da9edd3ba0efb6f1940fa97605",
+      "actual_sha256": "2cf4b7057c69f59eff846bf80903eb98f9ed17da9edd3ba0efb6f1940fa97605",
+      "matches": true
+    },
+    "normalization.json": {
+      "expected_sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+      "actual_sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+      "matches": true
+    },
+    "owner/owner.json": {
+      "expected_sha256": "e2d531627fabf90453762cf17eb082b3f52f8922aa830e37a9202144b91fb310",
+      "actual_sha256": "e2d531627fabf90453762cf17eb082b3f52f8922aa830e37a9202144b91fb310",
+      "matches": true
+    },
+    "owner/owner.onnx": {
+      "expected_sha256": "84e860f814e248e793567b2f1c8fe83d24d82b9d58f5379e4da69eb7b78d0a3f",
+      "actual_sha256": "84e860f814e248e793567b2f1c8fe83d24d82b9d58f5379e4da69eb7b78d0a3f",
+      "matches": true
+    },
+    "policy.json": {
+      "expected_sha256": "77de4929939d618b84238f1c95e449eb8a3697c636c23a7861e72c0b52c5b13e",
+      "actual_sha256": "77de4929939d618b84238f1c95e449eb8a3697c636c23a7861e72c0b52c5b13e",
+      "matches": true
+    },
+    "wake/iris.json": {
+      "expected_sha256": "12d21a9460a2ac37582d28c0f31cb90f670b8bbc423f5c3bca664bb02d3d0922",
+      "actual_sha256": "12d21a9460a2ac37582d28c0f31cb90f670b8bbc423f5c3bca664bb02d3d0922",
+      "matches": true
+    },
+    "wake/iris.ncnn.bin": {
+      "expected_sha256": "f5608815519830107220939124abf65222dec6f159ed36ead1f50d124392da98",
+      "actual_sha256": "f5608815519830107220939124abf65222dec6f159ed36ead1f50d124392da98",
+      "matches": true
+    },
+    "wake/iris.ncnn.param": {
+      "expected_sha256": "43ce9accd880119cba8737365ef799280d22985dd69bc7d7940339ea5f88c067",
+      "actual_sha256": "43ce9accd880119cba8737365ef799280d22985dd69bc7d7940339ea5f88c067",
+      "matches": true
+    },
+    "wake/iris.onnx": {
+      "expected_sha256": "22fc8b0c6a3c80e1d1686d321a6251957085216efaca1752eb22067064a4ea57",
+      "actual_sha256": "22fc8b0c6a3c80e1d1686d321a6251957085216efaca1752eb22067064a4ea57",
+      "matches": true
+    },
+    "wake/silero-vad.onnx": {
+      "expected_sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "actual_sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "matches": true
+    },
+    "wake/wake-models.json": {
+      "expected_sha256": "9a401c24260ebca14179005feaaf2cd66d2d6b05e26f3342fd13736a8f672091",
+      "actual_sha256": "9a401c24260ebca14179005feaaf2cd66d2d6b05e26f3342fd13736a8f672091",
+      "matches": true
+    }
+  },
+  "engines": {
+    "ncnn": {
+      "accepted": {
+        "reference_n": 88,
+        "scored_n": 88,
+        "unavailable_n": 0,
+        "positive_n": 36,
+        "negative_n": 52,
+        "exact_positive_n": 31,
+        "emitted_n": 33,
+        "negative_abstention_n": 51,
+        "false_accept_n": 1,
+        "complete_command_recall": 0.8611111111111112,
+        "precision": 0.9393939393939394,
+        "false_accept_rate": 0.019230769230769232
+      },
+      "raw": {
+        "reference_n": 88,
+        "scored_n": 88,
+        "unavailable_n": 0,
+        "positive_n": 36,
+        "negative_n": 52,
+        "exact_positive_n": 33,
+        "emitted_n": 42,
+        "negative_abstention_n": 46,
+        "false_accept_n": 6,
+        "complete_command_recall": 0.9166666666666666,
+        "precision": 0.7857142857142857,
+        "false_accept_rate": 0.11538461538461539
+      },
+      "source_n": 88,
+      "observation_n": 264,
+      "latency_ms": {
+        "end_to_end": {
+          "n": 264,
+          "p50": 5.97901176661253,
+          "p95": 11.77190924063325,
+          "mean": 6.905824150607893
+        },
+        "frontend": {
+          "n": 264,
+          "p50": 1.1041825637221336,
+          "p95": 1.7381760757416487,
+          "mean": 1.2890772230810288
+        },
+        "after_frontend": {
+          "n": 264,
+          "p50": 4.914069082587957,
+          "p95": 9.944406524300575,
+          "mean": 5.616746927526864
+        }
+      },
+      "session_load_ms": 127.07187980413437,
+      "peak_process_rss_mib": 54.11328125,
+      "model_sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "engine_model_sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133",
+      "threads": 1,
+      "frontend_thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1"
+      },
+      "physical_pi_measured": false,
+      "software_versions": {
+        "numpy": "2.3.5",
+        "soundfile": "0.13.1",
+        "ncnn": "1.0.20260526"
+      },
+      "metrics_sha256": "24f8b56c195d311b10306597e37c44c8908cfd3c2ca4a4f7a324111c85c7f5af",
+      "trials_sha256": "c3193779c80bbb396bd24783a16258f3eb5dbcff9ed163b9faa35be509cdfc0e",
+      "network": {
+        "network_attempts": [],
+        "audit_installed_before_runtime_import": true,
+        "runtime_modules": {
+          "scripts": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-reproduction-v1/offline-final/install/scripts/__init__.py",
+          "scripts.runtime": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-reproduction-v1/offline-final/install/scripts/runtime/__init__.py",
+          "scripts.runtime.iris_pi_benchmark": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-reproduction-v1/offline-final/install/scripts/runtime/iris_pi_benchmark.py",
+          "scripts.runtime.speaker_package": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-reproduction-v1/offline-final/install/scripts/runtime/speaker_package.py",
+          "scripts.runtime.pcv_schema": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-reproduction-v1/offline-final/install/scripts/runtime/pcv_schema.py",
+          "scripts.runtime.mvp_static": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-reproduction-v1/offline-final/install/scripts/runtime/mvp_static.py"
+        }
+      }
+    },
+    "onnxruntime": {
+      "accepted": {
+        "reference_n": 88,
+        "scored_n": 88,
+        "unavailable_n": 0,
+        "positive_n": 36,
+        "negative_n": 52,
+        "exact_positive_n": 31,
+        "emitted_n": 33,
+        "negative_abstention_n": 51,
+        "false_accept_n": 1,
+        "complete_command_recall": 0.8611111111111112,
+        "precision": 0.9393939393939394,
+        "false_accept_rate": 0.019230769230769232
+      },
+      "raw": {
+        "reference_n": 88,
+        "scored_n": 88,
+        "unavailable_n": 0,
+        "positive_n": 36,
+        "negative_n": 52,
+        "exact_positive_n": 33,
+        "emitted_n": 42,
+        "negative_abstention_n": 46,
+        "false_accept_n": 6,
+        "complete_command_recall": 0.9166666666666666,
+        "precision": 0.7857142857142857,
+        "false_accept_rate": 0.11538461538461539
+      },
+      "source_n": 88,
+      "observation_n": 264,
+      "latency_ms": {
+        "end_to_end": {
+          "n": 264,
+          "p50": 4.971962887793779,
+          "p95": 8.51636459119618,
+          "mean": 5.501599005197711
+        },
+        "frontend": {
+          "n": 264,
+          "p50": 1.1588665656745434,
+          "p95": 1.6543012578040361,
+          "mean": 1.2696493297081552
+        },
+        "after_frontend": {
+          "n": 264,
+          "p50": 3.8166791200637817,
+          "p95": 6.763355107977986,
+          "mean": 4.231949675489556
+        }
+      },
+      "session_load_ms": 247.26299103349447,
+      "peak_process_rss_mib": 75.10546875,
+      "model_sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "engine_model_sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "threads": 1,
+      "frontend_thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1"
+      },
+      "physical_pi_measured": false,
+      "software_versions": {
+        "numpy": "2.3.5",
+        "soundfile": "0.13.1",
+        "onnxruntime": "1.23.2"
+      },
+      "metrics_sha256": "4b0901190064935fa1759872caed7f5647a88ac78286bd3ace17773649e24be6",
+      "trials_sha256": "20d87b2d8f1d077f68fc30fc4637c6c8ed85c48926cc117a30cbe92faa8bf4f3",
+      "network": {
+        "network_attempts": [],
+        "audit_installed_before_runtime_import": true,
+        "runtime_modules": {
+          "scripts": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-reproduction-v1/offline-final/install/scripts/__init__.py",
+          "scripts.runtime": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-reproduction-v1/offline-final/install/scripts/runtime/__init__.py",
+          "scripts.runtime.iris_pi_benchmark": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-reproduction-v1/offline-final/install/scripts/runtime/iris_pi_benchmark.py",
+          "scripts.runtime.speaker_package": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-reproduction-v1/offline-final/install/scripts/runtime/speaker_package.py",
+          "scripts.runtime.pcv_schema": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-reproduction-v1/offline-final/install/scripts/runtime/pcv_schema.py",
+          "scripts.runtime.mvp_static": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-reproduction-v1/offline-final/install/scripts/runtime/mvp_static.py"
+        }
+      }
+    }
+  },
+  "comparison": {
+    "identical": true,
+    "raw_and_typed_decision_pairs": 264
+  },
+  "population": {
+    "manifest": "samples/commands.jsonl",
+    "sha256": "b2e0e6099e71a2707b6b7417940ab8a5bc9350c16e6ebc810236a6a1d553d6f8",
+    "source_n": 88,
+    "repeats": 3
+  },
+  "execution": {
+    "interpreter": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1/.venv/bin/python",
+    "extracted_package_modules_only": true,
+    "actions_enabled": false,
+    "wake_tested": false,
+    "owner_gating_enabled": false,
+    "physical_microphone_measured": false,
+    "scope": "Command-only packaged diagnostic replay"
+  },
+  "audit_source_sha256": "55789e6308d05d8772e76a3f559d06e05e242e78e4cf7579710cf768a046811b"
+}

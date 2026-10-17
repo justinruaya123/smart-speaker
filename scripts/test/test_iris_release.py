@@ -551,13 +551,16 @@ def test_unpinned_remote_input_revision_is_rejected_before_download(tmp_path):
         prepare_inputs(tmp_path, files['receipt'], downloader=lambda **_: pytest.fail('unexpected download'))
 
 
-def test_audio_map_resolves_original_immutable_row_and_checks_hash(tmp_path):
+@pytest.mark.parametrize('manifest_name', [
+    'experiments/iris-release-v1/reproduction-inputs.json', '.cache/test-inputs.json'])
+def test_audio_map_resolves_original_immutable_row_and_checks_hash(tmp_path, monkeypatch, manifest_name):
     from scripts.iris_release import resolve_audio
     files = fixture(tmp_path)
     audio = put(tmp_path, '.cache/iris-release-v1/inputs/audio/pinned.wav', 'original whole recording')
     receipt = json.loads(files['receipt'].read_text())
     receipt['audio_map'] = {'old/run/recording.wav': {'path': str(audio.relative_to(tmp_path)), 'sha256': sha(audio)}}
-    files['receipt'].write_text(json.dumps(receipt))
+    put(tmp_path, manifest_name, receipt)
+    monkeypatch.setenv('IRIS_REPRODUCTION_INPUTS', manifest_name)
     row = {'audio': 'old/run/recording.wav', 'sha256': sha(audio)}
     assert resolve_audio(row, root=tmp_path) == audio
     audio.write_text('changed')

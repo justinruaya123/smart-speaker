@@ -361,7 +361,7 @@
     "scripts/test/test_iris_pi_benchmark.py": "953909ec718e9d21dbaacf89ff83eb41544eb56f4c85200880382fa79fc90fdf",
     "scripts/test/test_iris_plots.py": "22cdda94e667caaf179ae6432839396e89fc5c4c002bf3627a0fa149f8b663ff",
     "scripts/test/test_iris_publish_privacy.py": "07ad3fcaa90352ac5ab5039877e583e7f1bfb91797d93b4a0fe3da2391df6788",
-    "scripts/test/test_iris_release.py": "2b64ce9f660f7e5294817091d9999e477964d27406fcdb027d6d7c22af238fbb",
+    "scripts/test/test_iris_release.py": "64d7edcfc614e10f6629f7c9fb918efd57150a2d8ec635017498b58ab55c071e",
     "scripts/test/test_iris_reproduce.py": "4ba0095d8798b5fa37b3d6244948ef3ef6dce96dbdf3fb5a27523d186c056cb3",
     "scripts/test/test_iris_resources.py": "0276377dfb31173fe43d1f774e8609247f181aa1ee8fc5533dacf8a969178820",
     "scripts/test/test_iris_session.py": "f16e9c711d04fa1d49db6d8d4e5e2cbd04edec51a2e2788749b6dd70a33a2098",
@@ -757,7 +757,7 @@
     "scripts/test/test_iris_pi_benchmark.py": "953909ec718e9d21dbaacf89ff83eb41544eb56f4c85200880382fa79fc90fdf",
     "scripts/test/test_iris_plots.py": "22cdda94e667caaf179ae6432839396e89fc5c4c002bf3627a0fa149f8b663ff",
     "scripts/test/test_iris_publish_privacy.py": "07ad3fcaa90352ac5ab5039877e583e7f1bfb91797d93b4a0fe3da2391df6788",
-    "scripts/test/test_iris_release.py": "2b64ce9f660f7e5294817091d9999e477964d27406fcdb027d6d7c22af238fbb",
+    "scripts/test/test_iris_release.py": "64d7edcfc614e10f6629f7c9fb918efd57150a2d8ec635017498b58ab55c071e",
     "scripts/test/test_iris_reproduce.py": "4ba0095d8798b5fa37b3d6244948ef3ef6dce96dbdf3fb5a27523d186c056cb3",
     "scripts/test/test_iris_resources.py": "0276377dfb31173fe43d1f774e8609247f181aa1ee8fc5533dacf8a969178820",
     "scripts/test/test_iris_session.py": "f16e9c711d04fa1d49db6d8d4e5e2cbd04edec51a2e2788749b6dd70a33a2098",
@@ -776,9 +776,9 @@
     "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
   },
   "source_version": {
-    "commit": "c63a452683d4ec1fe1c62719fa88c5d6c3132845",
-    "source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "tree": "c9d0fbf3d4c26e51abdb9bc2fa790ccf6f070ec0"
+    "commit": "c93112a7230dd539247306b4066b88e7be6b493a",
+    "source_diff_sha256": "bcd0467587d8abf797534f58fcb5d321e766cca174a16ae3d752e0088b49070b",
+    "tree": "4af0d31c82bd9aa3e3ade5e9d3322c8a9b7fadf3"
   },
   "study_kind": "continued",
   "vad_folder": ".cache/iris-release-v1/inputs/vad",
