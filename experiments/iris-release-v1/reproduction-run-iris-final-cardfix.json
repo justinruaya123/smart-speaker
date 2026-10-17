@@ -1,0 +1,112 @@
+{
+  "experiment": "iris-release-v1",
+  "inputs": {
+    "data_requirements": [
+      {
+        "license": "Research and education only; source-dependent terms including Fluent academic research only and student recording consent for sharing.",
+        "receipt": "data/sources/ai231-primary.source.json",
+        "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+        "source": "airimonda/ai231-me2-voice-commands",
+        "status": "Pinned upstream access required on a fresh clone; recordings are not republished here"
+      },
+      {
+        "license": "Research and education only; reference recording consent/license and CosyVoice2 weights license unverified; no redistribution or commercial use.",
+        "receipt": "data/sources/fil-supplemental.source.json",
+        "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+        "source": "martinnavs/ai231-fil-supplemental-data",
+        "status": "Pinned upstream access required on a fresh clone; recordings are not republished here"
+      }
+    ],
+    "receipt": "experiments/iris-release-v1/reproduction-inputs.json",
+    "receipt_sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945",
+    "restored": [],
+    "restored_audio": 0,
+    "verified_audio": 34659,
+    "verified_files": 4634
+  },
+  "live_microphone_measured": false,
+  "metadata_equivalence": {
+    "path": "experiments/iris-release-v1/reproduction-card-metadata-equivalence.json",
+    "sha256": "300b03dc1448de6631bcdb445a6d820c40c33c76096a5fef97a4825726220062"
+  },
+  "package": {
+    "actions_enabled": true,
+    "bytes": 14116950,
+    "files": 213,
+    "model_sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+    "parameters": 969928,
+    "path": "dist/iris-release-v1/iris-final-cardfix/iris-pi.zip",
+    "profile": "owner-protected",
+    "qualified": false,
+    "sha256": "028add978ee74ee7a7b7bad1e4f0df73364438a2d24d4a2ad74e4bbf7eda687f"
+  },
+  "package_verification": {
+    "bytes": 14116950,
+    "members": 214,
+    "passed": true,
+    "sha256": "028add978ee74ee7a7b7bad1e4f0df73364438a2d24d4a2ad74e4bbf7eda687f"
+  },
+  "physical_pi_measured": false,
+  "receipt": "experiments/iris-release-v1/reproduction-run-iris-final-cardfix.json",
+  "release": "experiments/iris-release-v1/reproduction-release.json",
+  "release_sha256": "14a4aefa20f11790dab5b33f158e43c3f3a800f9c0009bbafce22e755101b0d9",
+  "run_id": "iris-final-cardfix",
+  "schema_version": 1,
+  "software_verification": {
+    "additional_focused_metadata_tests_passed": 4,
+    "checks": [
+      "python-tests",
+      "ui-install",
+      "ui-test",
+      "ui-check",
+      "ui-build"
+    ],
+    "inherited_from": {
+      "path": "experiments/iris-release-v1/reproduction-run-iris-final-sourcefix.json",
+      "sha256": "0645b5c4ea45ade79caa73a8b14f412cdaff5bbe5722405c37b61fe03e8fe662"
+    },
+    "live_microphone_measured": false,
+    "passed": true,
+    "physical_pi_measured": false,
+    "schema_version": 1,
+    "test_modules": [
+      "scripts/test/test_iris_models.py",
+      "scripts/test/test_iris_wake_models.py",
+      "scripts/test/test_iris_archive.py",
+      "scripts/test/test_iris_configuration.py",
+      "scripts/test/test_iris_session.py",
+      "scripts/test/test_iris_worker.py",
+      "scripts/test/test_iris_wake_release.py",
+      "scripts/test/test_iris_pi_benchmark.py",
+      "scripts/test/test_iris_diversity.py",
+      "scripts/test/test_iris_owner.py",
+      "scripts/test/test_iris_resources.py",
+      "scripts/test/test_iris_metrics.py",
+      "scripts/test/test_iris_release.py"
+    ]
+  },
+  "stages": [
+    {
+      "name": "verify_metadata_only_source_delta",
+      "status": "passed"
+    },
+    {
+      "name": "server_card_validation",
+      "status": "passed"
+    },
+    {
+      "name": "freeze_source_bindings",
+      "status": "passed"
+    },
+    {
+      "name": "package",
+      "status": "passed"
+    },
+    {
+      "name": "verify_package_byte_equivalence",
+      "status": "passed"
+    }
+  ],
+  "status": "complete",
+  "training_mode": "verified_publication_metadata_rebind"
+}

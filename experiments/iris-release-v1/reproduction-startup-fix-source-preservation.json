@@ -1,0 +1,14 @@
+{
+  "every_file_verified_against_original_source_bindings": true,
+  "model_weights_or_payloads_changed": false,
+  "original_release": {
+    "path": ".cache/iris-release-v1/pre-startup-fix/reproduction-release.json",
+    "sha256": "46d630f3dc5eb5b34a88bb1fbdbbfc4df172a06df4562c47e95829eb045f7958"
+  },
+  "schema_version": 1,
+  "source_copy": "Exact original frozen source previously copied into independent fresh target; preserved before synchronizing corrected source.",
+  "source_files": 309,
+  "source_manifest_sha256": "ff6007ffed6e2e2f6519bf9dbeadd770e798ac49252834e49ec82f90f726013a",
+  "source_recovery_root": ".cache/iris-release-v1/pre-startup-fix/source",
+  "status": "verified_preserved_startup_fix_source"
+}

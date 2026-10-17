@@ -1,0 +1,191 @@
+{
+  "bundle": ".cache/iris-release-v1/owner/export",
+  "component": "owner",
+  "desktop_cpu": {
+    "excludes": [
+      "frontend",
+      "disk I/O",
+      "utterance duration",
+      "wake/VAD",
+      "continuity windows"
+    ],
+    "not_physical_pi": true,
+    "observations": 12,
+    "onnx_only_p50_ms": 2.3864980321377516,
+    "onnx_only_p95_ms": 6.490715476684266,
+    "session_load_ms": 13.52403312921524,
+    "threads": 1
+  },
+  "experiment_id": "iris-release-v1",
+  "installed_artifacts_changed": false,
+  "metadata_sha256": "e2d531627fabf90453762cf17eb082b3f52f8922aa830e37a9202144b91fb310",
+  "model": {
+    "bytes": 542023,
+    "embedding_dimensions": 128,
+    "path": "owner.onnx",
+    "runtime_parameters": 129985,
+    "selected_epoch": 18,
+    "sha256": "84e860f814e248e793567b2f1c8fe83d24d82b9d58f5379e4da69eb7b78d0a3f",
+    "training_parameters": 174273
+  },
+  "ncnn": "not exported; CPU ONNX is authoritative",
+  "parity_passed": true,
+  "parity_tolerance": 2e-05,
+  "portable_onnx": true,
+  "real_pcm_parity": [
+    {
+      "audio_sha256": "693a4e34ea6af78b581e2fd76581c6bd71c29d7dd739640fe98f17f294891f98",
+      "maximum_absolute_errors": [
+        1.043081283569336e-07,
+        1.1920928955078125e-07
+      ],
+      "samples": 64000
+    },
+    {
+      "audio_sha256": "5e21ff651fda873d45c2879eda2b7efa52158a62a3e14c4237c8c0a25452b0d4",
+      "maximum_absolute_errors": [
+        1.341104507446289e-07,
+        2.9802322387695312e-08
+      ],
+      "samples": 64000
+    },
+    {
+      "audio_sha256": "6745071a550c96368f3bacdd0071b7823e8bff175aa2bdfe27de7c3cf905f438",
+      "maximum_absolute_errors": [
+        1.043081283569336e-07,
+        0.0
+      ],
+      "samples": 57600
+    },
+    {
+      "audio_sha256": "c25408b6a0891298eceaaa5890105878b7a132d0102d9dc527fd0287a0c32cdb",
+      "maximum_absolute_errors": [
+        8.940696716308594e-08,
+        1.4901161193847656e-08
+      ],
+      "samples": 64000
+    },
+    {
+      "audio_sha256": "3581f8b6b3ccda7c276f20a0e8e6c4844b2aacc4e59c7afb8880b7afd65d6574",
+      "maximum_absolute_errors": [
+        8.195638656616211e-08,
+        5.960464477539063e-08
+      ],
+      "samples": 64000
+    },
+    {
+      "audio_sha256": "3650706d8769dd48ae486d30810d8f896d0678ecd49b48f0f4c749234f0a5522",
+      "maximum_absolute_errors": [
+        8.940696716308594e-08,
+        2.682209014892578e-07
+      ],
+      "samples": 64000
+    },
+    {
+      "audio_sha256": "235bd874dca21566d0c3c2a0cc724daa78d7b08cc9b9f73029b532af0f039fee",
+      "maximum_absolute_errors": [
+        9.872019290924072e-08,
+        5.21540641784668e-08
+      ],
+      "samples": 64000
+    },
+    {
+      "audio_sha256": "96b80c2920db233f8f0af2aa7ba75290c84be7b34c792973164fdd1e06698dad",
+      "maximum_absolute_errors": [
+        7.450580596923828e-08,
+        5.122274160385132e-09
+      ],
+      "samples": 64000
+    },
+    {
+      "audio_sha256": "aab2f5aac468ed7f148db93978898aab3034e0a9d30a925ca0f3fc9cc6029932",
+      "maximum_absolute_errors": [
+        9.685754776000977e-08,
+        3.91155481338501e-08
+      ],
+      "samples": 64000
+    },
+    {
+      "audio_sha256": "b10a3c588dc8db13b0f33100761a2b0b1b87710350445533df6a36a210e0682a",
+      "maximum_absolute_errors": [
+        8.195638656616211e-08,
+        1.4901161193847656e-08
+      ],
+      "samples": 64000
+    },
+    {
+      "audio_sha256": "5413460cef1e76d4eab0184d2c517fdc63257dd92f6f05fcb8b874b1543cab76",
+      "maximum_absolute_errors": [
+        8.195638656616211e-08,
+        2.9802322387695312e-08
+      ],
+      "samples": 64000
+    },
+    {
+      "audio_sha256": "a68b804aca5478b0372610285ef7136fdaf792be3fa14ea09fb13e66c2f5a84c",
+      "maximum_absolute_errors": [
+        1.043081283569336e-07,
+        2.0489096641540527e-08
+      ],
+      "samples": 64000
+    }
+  ],
+  "runtime_policy_proxies": {
+    "original_human_short_speech_proxy": {
+      "evidence": "actual PCM -> shared frontend -> trained CPU ONNX -> coverage windows -> SpeakerSession",
+      "fresh_human_wake_qualified": false,
+      "impostor_FAR": {
+        "denominator": 80,
+        "errors": 0,
+        "rate": 0.0
+      },
+      "overlap_FAR": {
+        "denominator": 80,
+        "errors": 1,
+        "rate": 0.0125
+      },
+      "rejection_reasons": {
+        "insufficient_speech": 143,
+        "overlap": 67,
+        "speaker_mismatch": 91
+      },
+      "same_speaker_FRR": {
+        "denominator": 80,
+        "errors": 62,
+        "rate": 0.775
+      },
+      "switch_FAR": {
+        "denominator": 80,
+        "errors": 0,
+        "rate": 0.0
+      }
+    },
+    "synthetic_wake_command_proxy": {
+      "evidence": "actual PCM -> shared frontend -> trained CPU ONNX -> coverage windows -> SpeakerSession",
+      "fresh_human_wake_qualified": false,
+      "impostor_FAR": {
+        "denominator": 2,
+        "errors": 0,
+        "rate": 0.0
+      },
+      "overlap_FAR": {
+        "denominator": 2,
+        "errors": 0,
+        "rate": 0.0
+      },
+      "rejection_reasons": {
+        "insufficient_speech": 8
+      },
+      "same_speaker_FRR": {
+        "denominator": 2,
+        "errors": 2,
+        "rate": 1.0
+      },
+      "switch_FAR": {
+        "denominator": 2,
+        "errors": 0,
+        "rate": 0.0
+      }
+    }
+  }
+}

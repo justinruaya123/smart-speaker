@@ -1,0 +1,26 @@
+{
+  "amendment": "Portable single-GPU selection, boundary stop/resume, portable reservation loading and conservative full-PCM continuity coverage added after data freeze, before fitting; acoustic data/model/frontend/loss/selection unchanged.",
+  "component": "owner",
+  "development_inference_device": "separate CPU mirror; GPU used only for optimizer batches; optimizer parameter identities preserved",
+  "device_selection": {
+    "cuda_visible_devices": "5",
+    "logical_gpu": 0,
+    "requested_device": "cuda"
+  },
+  "experiment_id": "iris-release-v1",
+  "implementation_before_fitting": {
+    "fingerprint": "1e0ad09fcda73876248f868c9750c63017d61ecdf7af6f62eadb9d6dbdc8e5f9",
+    "path": "experiments/iris-release-v1/owner-implementation-before-fitting-1e0ad09fcda73876.json",
+    "sha256": "e492f14831b6e54e7b6ed5b5ebaea6be5bb658679656905b61a5e38bd3071797"
+  },
+  "manifest_sha256": "d22c1bf537a4f66f9eb4f2b33de7ac7c43fbff4c5f75387d228d7b47d184a884",
+  "max_cuda_memory_fraction": 0.12,
+  "protocol_sha256": "174daed6764e00c4026e6a3be88231823b98967f22bec5ab393a05f686181c0a",
+  "resume": "atomic model/optimizer/scheduler/RNG/epoch/next-step checkpoint; binding verification; no partial selection",
+  "source_files": {
+    "scripts/models/iris_owner.py": "6d0a4a3be1ea77c55236ffbe3d6e34affd9ad60156ab200c8b30e1f476c50bbc",
+    "scripts/runtime/iris_owner.py": "af1838c143813a82671d0d1a9e5007cb449502a3fa9d44cba2d92e62fe24c474",
+    "scripts/train/iris_owner.py": "6e9d52362e5e35a93e688d94286453080350c2260b20432ca0766cb71f68bc6f"
+  },
+  "stop_flag": ".cache/iris-release-v1/owner/stop-requested"
+}

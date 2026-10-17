@@ -1,0 +1,21 @@
+{
+  "experiment": "iris-release-v1",
+  "width": "compact",
+  "promoted": false,
+  "guards": {
+    "personal_population_unchanged": true,
+    "personal_30_of_36": true,
+    "human_correct_not_below_baseline": true,
+    "human_unknown_not_above_baseline": false,
+    "official_population_unchanged": true,
+    "official_exact_not_below_baseline": true
+  },
+  "selected": "vcm-mvp-hey-iris-v3",
+  "source": ".cache/iris-release-v1/inputs/fallback-bundles/compact",
+  "bundle": ".cache/iris-release-v1/diversity/release-export",
+  "bundle_sha256": "d7671bb393f7a81b4a354e6922b8a469c76a57aec8264ba3ff030fbba1adaa03",
+  "candidate_bundle_sha256": "b80312ca48802bde1d68e0e18cedf07360d4d8d27361835aa30158df86241466",
+  "selection_before_test_sha256": "006e795f976010ee070f853b6355339884e4e733e60d44757037a1d7094eb861",
+  "threshold_retuned_after_test": false,
+  "strict_qualification_passed": false
+}

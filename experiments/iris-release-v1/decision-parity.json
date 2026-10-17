@@ -1,0 +1,47 @@
+{
+  "experiment": "iris-release-v1",
+  "evidence": "actual selected-model original PCM CPU replay",
+  "passed": true,
+  "bindings": {
+    "scripts/test/iris_decision_parity.py": "32b002c750711efaae34b9c3d3b306ad1f1a76c662589f38a8b1306c9ebb9673",
+    "scripts/models/mvp_static.py": "2e9e284621a41a29766c35d99d399e6ffa6bb238418aeeb4ad27e6a3f25c6ff8",
+    "scripts/runtime/mvp_static.py": "8011085d87772102e2f4f7fa35ff4f71c58b32e4bc111da5370a124ac840f263",
+    "scripts/runtime/pcv_schema.py": "41023e876b6b36d3ee303bfe8f4641030cea6e32371f07c5d960b575cc8bf20f",
+    "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a",
+    "experiments/iris-release-v1/release-choice.json": "eb65f0e586a1a93e6c941ee743e5b1c1005b97221cd6ebbe8eeb3b23b5bd6163",
+    "experiments/iris-release-v1/development-selection.json": "89b2c852cddc906de48a3b3c84c44d4447d591296f1d5b117fb8489f79a3fe03",
+    ".cache/iris-release-v1/inputs/compact-initializer.pt": "32407d9540367bd84f4052c06dc4e5db73a79aef602614766cecfa4e74fe965e",
+    ".cache/iris-release-v1/diversity/release-export/bundle.json": "d7671bb393f7a81b4a354e6922b8a469c76a57aec8264ba3ff030fbba1adaa03",
+    ".cache/iris-release-v1/diversity/release-export/model.onnx": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+    ".cache/iris-release-v1/diversity/release-export/catalog.json": "f169f8b80be8a844de4fca1cfbe7ead9841d4165ec8ad748b0af9010c6c5e8b1",
+    ".cache/iris-release-v1/diversity/release-export/normalization.json": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+    ".cache/iris-release-v1/diversity/release-export/policy.json": "77de4929939d618b84238f1c95e449eb8a3697c636c23a7861e72c0b52c5b13e",
+    ".cache/iris-release-v1/diversity/release-export/ncnn/engine.json": "d4180c8657a9db0ae87f1384dbb43cf3caa6d8e54d8ec76f625a2e365a670f51",
+    ".cache/iris-release-v1/diversity/release-export/ncnn/model.ncnn.param": "e7289f35da2cf35147d3b8833a4915b8e3a0520cc99573ebfffae07ec6da7998",
+    ".cache/iris-release-v1/diversity/release-export/ncnn/model.ncnn.bin": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133",
+    ".cache/iris-release-v1/diversity/release-export/ncnn/position-frequency.json": "2cf4b7057c69f59eff846bf80903eb98f9ed17da9edd3ba0efb6f1940fa97605",
+    ".cache/iris-release-v1/diversity/views/holdout.jsonl": "c1ce15b6c401b425eee079834d4bc9d2b1baa2994d97e09e9ff31533400cad1b",
+    ".cache/iris-release-v1/diversity/views/personal-test.jsonl": "c1be08c9d1a78eb99b6efcce2f95efa3528209bbbbb09a15238400cb82efa3a9",
+    ".cache/iris-release-v1/diversity/views/voice-test.jsonl": "94d4b0a0bf282f571aea3bbe6098813bc5400c77607eb69dacb53300cd2224de"
+  },
+  "cohorts": {
+    "holdout": 196,
+    "personal-test": 88,
+    "voice-test": 564
+  },
+  "recordings": 848,
+  "engine_comparisons": 1696,
+  "raw_argmax_and_accepted_output_equal": true,
+  "max_absolute_logit_error": {
+    "onnxruntime": 6.9141387939453125e-06,
+    "ncnn": 5.9604644775390625e-06
+  },
+  "differences": [],
+  "seconds": 46.304534025955945,
+  "torch_version": "2.10.0+cu128",
+  "threads": 1,
+  "actions_executed": false,
+  "physical_pi_measured": false,
+  "thresholds_changed": false,
+  "weight_selection_changed": false
+}

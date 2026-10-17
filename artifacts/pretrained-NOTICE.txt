@@ -1,4 +1,0 @@
-openWakeWord runtime feature adapter follows v0.6.0; copyright 2022 David Scripka, Apache-2.0. See openwakeword-LICENSE.txt.
-Pretrained openWakeWord models: CC BY-NC-SA 4.0; https://github.com/dscripka/openWakeWord/tree/v0.6.0#license and https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
-Silero VAD v5.1 model and state/context adapter: copyright Silero Team, MIT. See silero-LICENSE.txt.
-The wake embedding frontend is pretrained; the user explicitly authorized pretrained wake/VAD. VCM command weights retain their original training provenance.

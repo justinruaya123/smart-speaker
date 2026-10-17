@@ -1,0 +1,66 @@
+{
+  "experiment": "iris-release-v1",
+  "inputs": {
+    "data_requirements": [
+      {
+        "license": "Research and education only; source-dependent terms including Fluent academic research only and student recording consent for sharing.",
+        "receipt": "data/sources/ai231-primary.source.json",
+        "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+        "source": "airimonda/ai231-me2-voice-commands",
+        "status": "Pinned upstream access required on a fresh clone; recordings are not republished here"
+      },
+      {
+        "license": "Research and education only; reference recording consent/license and CosyVoice2 weights license unverified; no redistribution or commercial use.",
+        "receipt": "data/sources/fil-supplemental.source.json",
+        "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+        "source": "martinnavs/ai231-fil-supplemental-data",
+        "status": "Pinned upstream access required on a fresh clone; recordings are not republished here"
+      }
+    ],
+    "receipt": "experiments/iris-release-v1/reproduction-inputs.json",
+    "receipt_sha256": "5cf5147b0f0cb94d82d3af814bf6684cfb39c5235fab42488f0fd096ec94f4e8",
+    "restored": [],
+    "restored_audio": 0,
+    "verified_audio": 31275,
+    "verified_files": 1084
+  },
+  "live_microphone_measured": false,
+  "physical_pi_measured": false,
+  "receipt": "experiments/iris-release-v1/reproduction-run-input-snapshot-probe.json",
+  "run_id": "input-snapshot-probe",
+  "schema_version": 1,
+  "stages": [
+    {
+      "finished_utc": "2026-10-17T00:40:13.482576+00:00",
+      "name": "preflight-inputs",
+      "result": {
+        "data_requirements": [
+          {
+            "license": "Research and education only; source-dependent terms including Fluent academic research only and student recording consent for sharing.",
+            "receipt": "data/sources/ai231-primary.source.json",
+            "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+            "source": "airimonda/ai231-me2-voice-commands",
+            "status": "Pinned upstream access required on a fresh clone; recordings are not republished here"
+          },
+          {
+            "license": "Research and education only; reference recording consent/license and CosyVoice2 weights license unverified; no redistribution or commercial use.",
+            "receipt": "data/sources/fil-supplemental.source.json",
+            "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+            "source": "martinnavs/ai231-fil-supplemental-data",
+            "status": "Pinned upstream access required on a fresh clone; recordings are not republished here"
+          }
+        ],
+        "receipt": "experiments/iris-release-v1/reproduction-inputs.json",
+        "receipt_sha256": "5cf5147b0f0cb94d82d3af814bf6684cfb39c5235fab42488f0fd096ec94f4e8",
+        "restored": [],
+        "restored_audio": 0,
+        "verified_audio": 31275,
+        "verified_files": 1084
+      },
+      "started_utc": "2026-10-17T00:37:52.883377+00:00",
+      "status": "passed"
+    }
+  ],
+  "status": "preflight_complete",
+  "training_mode": "pinned_continuation"
+}

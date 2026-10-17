@@ -1,0 +1,3825 @@
+{
+  "dataset_visibility": "preserve_existing",
+  "experiment": "iris-release-v1",
+  "files": [
+    {
+      "bytes": 14116950,
+      "local_path": "dist/iris-release-v1/iris-final-cardfix/iris-pi.zip",
+      "path_in_repo": "releases/iris-pi.zip",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "028add978ee74ee7a7b7bad1e4f0df73364438a2d24d4a2ad74e4bbf7eda687f"
+    },
+    {
+      "bytes": 13951,
+      "local_path": ".cache/iris-release-v1/publication/iris-final-cardfix/model-README.md",
+      "path_in_repo": "README.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f5ac2f466a25edd8d8b15c1f837e9196ea26d33ea6217def5519df62e6480cc2"
+    },
+    {
+      "bytes": 25358,
+      "local_path": ".cache/iris-release-v1/publication/iris-final-cardfix/dataset-README.md",
+      "path_in_repo": "README.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "dataset",
+      "sha256": "6f45987f177bd6f92bf42f9be6b9ffc49ce0b58416133bd3d9fee7f32f647ee2"
+    },
+    {
+      "bytes": 578,
+      "local_path": ".cache/iris-release-v1/publication/iris-final-cardfix/NOTICES.md",
+      "path_in_repo": "NOTICES.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "23762611122fe39fdc5dd306e76fe2505cef61eebb8640e5ab5612bdbdcd53eb"
+    },
+    {
+      "bytes": 578,
+      "local_path": ".cache/iris-release-v1/publication/iris-final-cardfix/NOTICES.md",
+      "path_in_repo": "iris-release-v1/NOTICES.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "dataset",
+      "sha256": "23762611122fe39fdc5dd306e76fe2505cef61eebb8640e5ab5612bdbdcd53eb"
+    },
+    {
+      "bytes": 78837,
+      "local_path": "experiments/iris-release-v1/reproduction-release.json",
+      "path_in_repo": "reproduction/reproduction-release.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "14a4aefa20f11790dab5b33f158e43c3f3a800f9c0009bbafce22e755101b0d9"
+    },
+    {
+      "bytes": 78837,
+      "local_path": "experiments/iris-release-v1/reproduction-release.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/reproduction-release.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "14a4aefa20f11790dab5b33f158e43c3f3a800f9c0009bbafce22e755101b0d9"
+    },
+    {
+      "bytes": 5375554,
+      "local_path": "experiments/iris-release-v1/reproduction-inputs.json",
+      "path_in_repo": "reproduction/reproduction-inputs.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945"
+    },
+    {
+      "bytes": 5375554,
+      "local_path": "experiments/iris-release-v1/reproduction-inputs.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/reproduction-inputs.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945"
+    },
+    {
+      "bytes": 5375554,
+      "local_path": "experiments/iris-release-v1/reproduction-inputs.json",
+      "path_in_repo": "iris-release-v1/reproduction-inputs.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "dataset",
+      "sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945"
+    },
+    {
+      "bytes": 671,
+      "local_path": ".cache/iris-release-v1/diversity/release-export/bundle.json",
+      "path_in_repo": "vcm/bundle.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "d7671bb393f7a81b4a354e6922b8a469c76a57aec8264ba3ff030fbba1adaa03"
+    },
+    {
+      "bytes": 114053,
+      "local_path": ".cache/iris-release-v1/diversity/release-export/catalog.json",
+      "path_in_repo": "vcm/catalog.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f169f8b80be8a844de4fca1cfbe7ead9841d4165ec8ad748b0af9010c6c5e8b1"
+    },
+    {
+      "bytes": 3973147,
+      "local_path": ".cache/iris-release-v1/diversity/release-export/model.onnx",
+      "path_in_repo": "vcm/model.onnx",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a"
+    },
+    {
+      "bytes": 811,
+      "local_path": ".cache/iris-release-v1/diversity/release-export/ncnn/engine.json",
+      "path_in_repo": "vcm/ncnn/engine.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "d4180c8657a9db0ae87f1384dbb43cf3caa6d8e54d8ec76f625a2e365a670f51"
+    },
+    {
+      "bytes": 3879960,
+      "local_path": ".cache/iris-release-v1/diversity/release-export/ncnn/model.ncnn.bin",
+      "path_in_repo": "vcm/ncnn/model.ncnn.bin",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133"
+    },
+    {
+      "bytes": 8904,
+      "local_path": ".cache/iris-release-v1/diversity/release-export/ncnn/model.ncnn.param",
+      "path_in_repo": "vcm/ncnn/model.ncnn.param",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "e7289f35da2cf35147d3b8833a4915b8e3a0520cc99573ebfffae07ec6da7998"
+    },
+    {
+      "bytes": 1515,
+      "local_path": ".cache/iris-release-v1/diversity/release-export/ncnn/position-frequency.json",
+      "path_in_repo": "vcm/ncnn/position-frequency.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "2cf4b7057c69f59eff846bf80903eb98f9ed17da9edd3ba0efb6f1940fa97605"
+    },
+    {
+      "bytes": 148035,
+      "local_path": ".cache/iris-release-v1/diversity/release-export/normalization.json",
+      "path_in_repo": "vcm/normalization.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262"
+    },
+    {
+      "bytes": 31127,
+      "local_path": ".cache/iris-release-v1/diversity/release-export/policy.json",
+      "path_in_repo": "vcm/policy.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "77de4929939d618b84238f1c95e449eb8a3697c636c23a7861e72c0b52c5b13e"
+    },
+    {
+      "bytes": 152922,
+      "local_path": ".cache/iris-release-v1/wake/export/iris.json",
+      "path_in_repo": "wake/iris.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "12d21a9460a2ac37582d28c0f31cb90f670b8bbc423f5c3bca664bb02d3d0922"
+    },
+    {
+      "bytes": 323904,
+      "local_path": ".cache/iris-release-v1/wake/export/iris.ncnn.bin",
+      "path_in_repo": "wake/iris.ncnn.bin",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f5608815519830107220939124abf65222dec6f159ed36ead1f50d124392da98"
+    },
+    {
+      "bytes": 2713,
+      "local_path": ".cache/iris-release-v1/wake/export/iris.ncnn.param",
+      "path_in_repo": "wake/iris.ncnn.param",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "43ce9accd880119cba8737365ef799280d22985dd69bc7d7940339ea5f88c067"
+    },
+    {
+      "bytes": 330103,
+      "local_path": ".cache/iris-release-v1/wake/export/iris.onnx",
+      "path_in_repo": "wake/iris.onnx",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "22fc8b0c6a3c80e1d1686d321a6251957085216efaca1752eb22067064a4ea57"
+    },
+    {
+      "bytes": 4640,
+      "local_path": ".cache/iris-release-v1/owner/export/owner.json",
+      "path_in_repo": "owner/owner.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "e2d531627fabf90453762cf17eb082b3f52f8922aa830e37a9202144b91fb310"
+    },
+    {
+      "bytes": 542023,
+      "local_path": ".cache/iris-release-v1/owner/export/owner.onnx",
+      "path_in_repo": "owner/owner.onnx",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "84e860f814e248e793567b2f1c8fe83d24d82b9d58f5379e4da69eb7b78d0a3f"
+    },
+    {
+      "bytes": 2327524,
+      "local_path": ".cache/iris-release-v1/inputs/vad/silero-vad.onnx",
+      "path_in_repo": "vad/silero-vad.onnx",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f"
+    },
+    {
+      "bytes": 381,
+      "local_path": ".cache/iris-release-v1/inputs/vad/wake-models.json",
+      "path_in_repo": "vad/wake-models.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9784dd9b5836cbaaf6a6fdb7912ae2baedde17e538befe2fe3d8c2b7c4b7dd6a"
+    },
+    {
+      "bytes": 2065,
+      "local_path": "experiments/iris-release-v1/selection-before-test.json",
+      "path_in_repo": "evidence/selection-before-test.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "006e795f976010ee070f853b6355339884e4e733e60d44757037a1d7094eb861"
+    },
+    {
+      "bytes": 4589,
+      "local_path": "experiments/iris-release-v1/protocol.json",
+      "path_in_repo": "evidence/protocol.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "26851f20cc919812ff555eaf2b02ba4c0908338a148f2371176886a786a2f47a"
+    },
+    {
+      "bytes": 563,
+      "local_path": "experiments/iris-release-v1/wake-results.json",
+      "path_in_repo": "evidence/wake-results.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "1199d7c5b28e9dc3f1583b8db3824aabac1d21356f05361f36e5c11100bb9ba7"
+    },
+    {
+      "bytes": 3783,
+      "local_path": "experiments/iris-release-v1/owner-results.json",
+      "path_in_repo": "evidence/owner-results.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4a6a9ae62d887a6498eeba862f7b325de4ee6abaaf0e65da22a69808c5147f11"
+    },
+    {
+      "bytes": 5235,
+      "local_path": "experiments/iris-release-v1/owner-export.json",
+      "path_in_repo": "evidence/owner-export.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "7c494f8e3e15e91e8db533375d21b616dd5b1f844096e002e36368fee6aff7c9"
+    },
+    {
+      "bytes": 654,
+      "local_path": "experiments/iris-release-v1/wake-selection-before-test.json",
+      "path_in_repo": "evidence/wake-selection-before-test.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "fb006eead2891578e6a66ed8cecd163d61ac5262a5eb96cdbb9666f622537907"
+    },
+    {
+      "bytes": 2022,
+      "local_path": "experiments/iris-release-v1/wake-protocol.json",
+      "path_in_repo": "evidence/wake-protocol.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6ed8ece2336ddabb858fe8839e6429b977a4d43e2e34f3dc896505f9675d0e5c"
+    },
+    {
+      "bytes": 6449,
+      "local_path": "experiments/iris-release-v1/owner-protocol.json",
+      "path_in_repo": "evidence/owner-protocol.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "174daed6764e00c4026e6a3be88231823b98967f22bec5ab393a05f686181c0a"
+    },
+    {
+      "bytes": 2954,
+      "local_path": "experiments/iris-release-v1/owner-base-view-equivalence.json",
+      "path_in_repo": "evidence/owner-base-view-equivalence.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a5a97d7d660b837e5eff3beb3733d620adf159ded2d4de71ebca99cad72ca5b5"
+    },
+    {
+      "bytes": 1604,
+      "local_path": "experiments/iris-release-v1/owner-execution.json",
+      "path_in_repo": "evidence/owner-execution.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "468f1947652d60b5b35b63497b2715ab62e11d01d51d1955d61fe175e4c9247a"
+    },
+    {
+      "bytes": 4001,
+      "local_path": "experiments/iris-release-v1/owner-selection-before-test.json",
+      "path_in_repo": "evidence/owner-selection-before-test.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "aee3f2d780d56552b3865a11e580598c86d6f5e7cbf8f6a0190668420c70c74c"
+    },
+    {
+      "bytes": 955,
+      "local_path": "experiments/iris-release-v1/owner-graph-before-test.json",
+      "path_in_repo": "evidence/owner-graph-before-test.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5e42385e0411b788c4165103077b40227d858f8ea0af4e5795631b61c813c9f1"
+    },
+    {
+      "bytes": 3148,
+      "local_path": "experiments/iris-release-v1/owner-runtime-checks.json",
+      "path_in_repo": "evidence/owner-runtime-checks.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "241d991387ce1d33b01aa2daac6a2764d99bf6560ba838eac43866eaeeecf2be"
+    },
+    {
+      "bytes": 17785,
+      "local_path": "experiments/iris-release-v1/owner-wake-duration-diagnostic.json",
+      "path_in_repo": "evidence/owner-wake-duration-diagnostic.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "dafd7d152393acbf167b0eb458bed83066113736ac6600ac91cf960192429f5d"
+    },
+    {
+      "bytes": 794,
+      "local_path": "experiments/iris-release-v1/software-verification.json",
+      "path_in_repo": "evidence/software-verification.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "1f19718ed929ae6fa20615d7f786f61ddbf056c2bcb7b0052267911f676d5dbe"
+    },
+    {
+      "bytes": 78779,
+      "local_path": "experiments/iris-release-v1/pipeline-resources.json",
+      "path_in_repo": "evidence/pipeline-resources.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "781470a7f1472c96aac129690830017f6f5d1a7d789b728cd3bab271a464fe3a"
+    },
+    {
+      "bytes": 745010,
+      "local_path": "experiments/iris-release-v1/recognition-results.json",
+      "path_in_repo": "evidence/recognition-results.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4ddbdb79bccdd1e88465f4aaeabe8d7da2fa90c8e4b9772217da9cafd7fdd7e8"
+    },
+    {
+      "bytes": 893,
+      "local_path": "experiments/iris-release-v1/release-choice.json",
+      "path_in_repo": "evidence/release-choice.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "eb65f0e586a1a93e6c941ee743e5b1c1005b97221cd6ebbe8eeb3b23b5bd6163"
+    },
+    {
+      "bytes": 2208,
+      "local_path": "experiments/iris-release-v1/width-selection-before-repeat.json",
+      "path_in_repo": "evidence/width-selection-before-repeat.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "bd1213acdb91b52e2b6989551d3ea06e6fc09dc841951fd3a2ec6a67e4d4a98d"
+    },
+    {
+      "bytes": 3228,
+      "local_path": "experiments/iris-release-v1/decision-parity.json",
+      "path_in_repo": "evidence/decision-parity.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4b8a6a01bd51fc9d3bdcaebe4b1319d107995bfc243014dcc0e1fe364e0f20a9"
+    },
+    {
+      "bytes": 13702,
+      "local_path": "MODEL_CARD.md",
+      "path_in_repo": "reproduction/source/MODEL_CARD.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "bd1b4e65e3c07196aaf4ab3948e488e2355ff9317b085c95ec530b1b276dee2f"
+    },
+    {
+      "bytes": 3258,
+      "local_path": "SpeakerUI/.env.example",
+      "path_in_repo": "reproduction/source/SpeakerUI/.env.example",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "e490907fb6ffd1a9e03e72828a5510748e07474f7e6d6cd06ed25bb3b6989b61"
+    },
+    {
+      "bytes": 2459,
+      "local_path": "SpeakerUI/AGENTS.md",
+      "path_in_repo": "reproduction/source/SpeakerUI/AGENTS.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6e7bbd7f13dc1ce351ca3d5a2e63751abc57863b930325aa4b022f78b32e7733"
+    },
+    {
+      "bytes": 6084,
+      "local_path": "SpeakerUI/README.md",
+      "path_in_repo": "reproduction/source/SpeakerUI/README.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "2b30000384034919ef95350fa94d8d1c01d357bd2ff8c55a44eb89546eb45099"
+    },
+    {
+      "bytes": 384,
+      "local_path": "SpeakerUI/UPSTREAM.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/UPSTREAM.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4a546211fb7e9e8f99e136bfd6aa9a2ec0848e636f3c935d5bd3322a825e6c78"
+    },
+    {
+      "bytes": 355,
+      "local_path": "SpeakerUI/components.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/components.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "eafc787ff3a3f3224bfa05d6e74d697876e69dfa589541a9a714a8bd0a581d49"
+    },
+    {
+      "bytes": 8013,
+      "local_path": "SpeakerUI/docs/architecture.md",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/architecture.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "470a6ce9cd824df9fa9e7972f4e68fd237a326b319582d5e9e375f25629292a4"
+    },
+    {
+      "bytes": 8015,
+      "local_path": "SpeakerUI/docs/design/ambient.md",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/design/ambient.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "793f4901c1501475af6a33307ccdd825eb66caf190f5a7e40aeb814ff48bc568"
+    },
+    {
+      "bytes": 2904,
+      "local_path": "SpeakerUI/docs/onnx-sanity.md",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/onnx-sanity.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f50bb8bd1472175376efb9778f6ed946914d30a95b4f158c2f702127318775b6"
+    },
+    {
+      "bytes": 4972,
+      "local_path": "SpeakerUI/docs/superpowers/plans/2026-10-01-ambient-implementation.md",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/superpowers/plans/2026-10-01-ambient-implementation.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "ab18fe87ed270678aedf7de1e28cf692b3d1ad47099b1e82905f2be48f5018b8"
+    },
+    {
+      "bytes": 5901,
+      "local_path": "SpeakerUI/docs/testing/ambient/README.md",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/README.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "07e9dd82bba973cb663b2ef920449064e16ddf83f35fb54e84e32b0b8005138c"
+    },
+    {
+      "bytes": 942,
+      "local_path": "SpeakerUI/docs/testing/ambient/alerts.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/alerts.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "33c0db1da068851ae9b2ada05eabca4c268691c6a54ecf06970662f98e3d31ce"
+    },
+    {
+      "bytes": 4907,
+      "local_path": "SpeakerUI/docs/testing/ambient/parity.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/parity.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f929e1639be2109845e0762376a7df705877ed96530d3adc4c36c36de13ba7c9"
+    },
+    {
+      "bytes": 71998,
+      "local_path": "SpeakerUI/docs/testing/ambient/prototype-alarm.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/prototype-alarm.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "262d61929301d62777fa9434cfa37df96cfb8854e00533b2a91bbc7857abe9b8"
+    },
+    {
+      "bytes": 947,
+      "local_path": "SpeakerUI/docs/testing/ambient/prototype-alerts.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/prototype-alerts.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "b8938761cb9830742c80a5702470db179f61af71e8ce9f466013ad7ba3151790"
+    },
+    {
+      "bytes": 57945,
+      "local_path": "SpeakerUI/docs/testing/ambient/prototype-call.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/prototype-call.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "1fca525bc65293a4b4c3f10593b48172f814fe1315e558d53ca319775048eb0f"
+    },
+    {
+      "bytes": 165131,
+      "local_path": "SpeakerUI/docs/testing/ambient/prototype-climate.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/prototype-climate.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a11456ac518b23a0aa6c504feb166e6224333e8c3d276662185c553975b02782"
+    },
+    {
+      "bytes": 61841,
+      "local_path": "SpeakerUI/docs/testing/ambient/prototype-contacts.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/prototype-contacts.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6ebe57f1684c8f6444f4a218fbe62e77f22bf57ae0b8afc03cc9344cd87d0847"
+    },
+    {
+      "bytes": 122840,
+      "local_path": "SpeakerUI/docs/testing/ambient/prototype-controls.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/prototype-controls.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f08385de9d174cd742bd8c216d56fa6c5da434572a4459a861d71dcdb28f8df5"
+    },
+    {
+      "bytes": 157336,
+      "local_path": "SpeakerUI/docs/testing/ambient/prototype-home.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/prototype-home.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f4660492b48004f26e2afc4099366abaa7769a2a9eb2ad80351a993338d870f6"
+    },
+    {
+      "bytes": 2247,
+      "local_path": "SpeakerUI/docs/testing/ambient/prototype-interactions.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/prototype-interactions.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "503fc8c3fa75cd50b59b4487b6393b4357b51069857e39b3364912b0374b82f6"
+    },
+    {
+      "bytes": 143189,
+      "local_path": "SpeakerUI/docs/testing/ambient/prototype-lights.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/prototype-lights.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c2e171ea7683127106b207741119a36ec625dfb132ee19137dd5b152a8dc8b60"
+    },
+    {
+      "bytes": 93373,
+      "local_path": "SpeakerUI/docs/testing/ambient/prototype-music.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/prototype-music.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c02915b263ce39cbe66a5db1fdb9a9e1b84ac293ff6e46fd018c332c2ec99e7a"
+    },
+    {
+      "bytes": 66879,
+      "local_path": "SpeakerUI/docs/testing/ambient/prototype-reminder.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/prototype-reminder.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "3634892b9444972bf9aab9e1c1569141ba2bebb4e7a4d18ab6088c586105b7ec"
+    },
+    {
+      "bytes": 43827,
+      "local_path": "SpeakerUI/docs/testing/ambient/prototype-timer.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/prototype-timer.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "ecf34ad854595eb63cff23578215ec9c5b9ab36d412d09f066c474ccdb895dc0"
+    },
+    {
+      "bytes": 78563,
+      "local_path": "SpeakerUI/docs/testing/ambient/r6-alarm.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/r6-alarm.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "b625efe7db6cdb74ad88312c9080bc34e4ae883bd3772a12db98adccae4874cb"
+    },
+    {
+      "bytes": 48017,
+      "local_path": "SpeakerUI/docs/testing/ambient/r6-alert.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/r6-alert.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "921beb519b4fead400a97df30007ba71f7ddd02f07afb447ef5ef974c98f31aa"
+    },
+    {
+      "bytes": 168532,
+      "local_path": "SpeakerUI/docs/testing/ambient/r6-climate.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/r6-climate.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "11d0264ffa5617c39458bd82f71dcbaa5464dfafc5f8c45e199d579fdbc51158"
+    },
+    {
+      "bytes": 137892,
+      "local_path": "SpeakerUI/docs/testing/ambient/r6-control-1024.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/r6-control-1024.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "559ce61cb3db6655d4837928d242752d280fa3c99f91d62076a432bf90f7d4e0"
+    },
+    {
+      "bytes": 223548,
+      "local_path": "SpeakerUI/docs/testing/ambient/r6-home-1024.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/r6-home-1024.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "de80b9b2068c68d7f9c7b7dbcdd2a8927131227a1a319e63c17ef7cea758a26b"
+    },
+    {
+      "bytes": 154679,
+      "local_path": "SpeakerUI/docs/testing/ambient/r6-home.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/r6-home.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "dd8d7a340e10bf1ef31d6d4e07cd912a14049f3521541533ac0c0ff807c83b22"
+    },
+    {
+      "bytes": 203571,
+      "local_path": "SpeakerUI/docs/testing/ambient/r6-listening.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/r6-listening.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4e7f95e7e3ad9cdf2c0aeabd3347ff4382776f0a350471ac02defc7d6bf955ea"
+    },
+    {
+      "bytes": 192262,
+      "local_path": "SpeakerUI/docs/testing/ambient/r6-music.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/r6-music.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4ec357554ee4c3b954469d00b96db5be30de71508a61cb158a68c9d6aadb00a8"
+    },
+    {
+      "bytes": 186045,
+      "local_path": "SpeakerUI/docs/testing/ambient/r6-swipe.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/r6-swipe.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "190760f1ac8c91fb5d113e34f4704d83b86997e47693d7db950e3908e7cfeb8d"
+    },
+    {
+      "bytes": 9599,
+      "local_path": "SpeakerUI/docs/testing/ambient/resources.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/resources.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "155bf6838f71cb5fe67b533785cecce9091e9fd03fee71506de59efcc56000a5"
+    },
+    {
+      "bytes": 2247,
+      "local_path": "SpeakerUI/docs/testing/ambient/revision-6-checks.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/revision-6-checks.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "503fc8c3fa75cd50b59b4487b6393b4357b51069857e39b3364912b0374b82f6"
+    },
+    {
+      "bytes": 990,
+      "local_path": "SpeakerUI/docs/testing/ambient/startup.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/startup.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "7e6f6ed093ded059aa7e4562b5b5f2b369fb441fd70bb0df2c884ccb5bb8cf49"
+    },
+    {
+      "bytes": 71998,
+      "local_path": "SpeakerUI/docs/testing/ambient/svelte-alarm.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/svelte-alarm.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "262d61929301d62777fa9434cfa37df96cfb8854e00533b2a91bbc7857abe9b8"
+    },
+    {
+      "bytes": 57539,
+      "local_path": "SpeakerUI/docs/testing/ambient/svelte-call.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/svelte-call.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a43cd419f703c66ed8c818c843e3bfeec594ff0c22aff22429b0262f67f4fc47"
+    },
+    {
+      "bytes": 165131,
+      "local_path": "SpeakerUI/docs/testing/ambient/svelte-climate.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/svelte-climate.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a11456ac518b23a0aa6c504feb166e6224333e8c3d276662185c553975b02782"
+    },
+    {
+      "bytes": 61841,
+      "local_path": "SpeakerUI/docs/testing/ambient/svelte-contacts.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/svelte-contacts.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6ebe57f1684c8f6444f4a218fbe62e77f22bf57ae0b8afc03cc9344cd87d0847"
+    },
+    {
+      "bytes": 122840,
+      "local_path": "SpeakerUI/docs/testing/ambient/svelte-controls.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/svelte-controls.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f08385de9d174cd742bd8c216d56fa6c5da434572a4459a861d71dcdb28f8df5"
+    },
+    {
+      "bytes": 157336,
+      "local_path": "SpeakerUI/docs/testing/ambient/svelte-home.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/svelte-home.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f4660492b48004f26e2afc4099366abaa7769a2a9eb2ad80351a993338d870f6"
+    },
+    {
+      "bytes": 143256,
+      "local_path": "SpeakerUI/docs/testing/ambient/svelte-lights.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/svelte-lights.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "3ea348c536558f1acd78cd615477ac656865943722c5f75fe6cbdb1a0ae37dc1"
+    },
+    {
+      "bytes": 93373,
+      "local_path": "SpeakerUI/docs/testing/ambient/svelte-music.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/svelte-music.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c02915b263ce39cbe66a5db1fdb9a9e1b84ac293ff6e46fd018c332c2ec99e7a"
+    },
+    {
+      "bytes": 66879,
+      "local_path": "SpeakerUI/docs/testing/ambient/svelte-reminder.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/svelte-reminder.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "3634892b9444972bf9aab9e1c1569141ba2bebb4e7a4d18ab6088c586105b7ec"
+    },
+    {
+      "bytes": 43827,
+      "local_path": "SpeakerUI/docs/testing/ambient/svelte-timer.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/ambient/svelte-timer.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "ecf34ad854595eb63cff23578215ec9c5b9ab36d412d09f066c474ccdb895dc0"
+    },
+    {
+      "bytes": 2071,
+      "local_path": "SpeakerUI/docs/testing/artwork/README.md",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/README.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "411fbb30d5252fcf5571fe928f4370bda3ac51aee54c384cf66d032978615c00"
+    },
+    {
+      "bytes": 3691,
+      "local_path": "SpeakerUI/docs/testing/artwork/checks.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/checks.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5706f7ec79a9959e650fdb2013cb1b089117002226df48d6faa67c70f7db5e4b"
+    },
+    {
+      "bytes": 168372,
+      "local_path": "SpeakerUI/docs/testing/artwork/live-home-800.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/live-home-800.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5bac6f52ec2792cb5c20a3d109defc003e4b49119c832796e497918a1fa61061"
+    },
+    {
+      "bytes": 180760,
+      "local_path": "SpeakerUI/docs/testing/artwork/live-lights-1024.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/live-lights-1024.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6c64546f5d3682de0e13ac25817b549ba85b0b069b3204fdf4b06158b0ad0fb0"
+    },
+    {
+      "bytes": 96769,
+      "local_path": "SpeakerUI/docs/testing/artwork/live-lights-800.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/live-lights-800.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c5bf61974372c65b948e28cca34dedb53da9b8f6e552d4d5d952388551483f43"
+    },
+    {
+      "bytes": 92717,
+      "local_path": "SpeakerUI/docs/testing/artwork/live-music-1024.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/live-music-1024.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8a1338ea18a6b6d380d56377dccf8c5452f04d2ed9c890e43c3e7b4406da6cf9"
+    },
+    {
+      "bytes": 73631,
+      "local_path": "SpeakerUI/docs/testing/artwork/live-music-800.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/live-music-800.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "d6ba41c4a1d920c1f371737fcee365e1202ae08c120c7e4e8e5cb4d82e8766ce"
+    },
+    {
+      "bytes": 78930,
+      "local_path": "SpeakerUI/docs/testing/artwork/regression/r6-alarm.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/regression/r6-alarm.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "58e690d76236955adadb4b3e877c4024adab5588ebc5d97cb77db8cbe78c3aac"
+    },
+    {
+      "bytes": 48380,
+      "local_path": "SpeakerUI/docs/testing/artwork/regression/r6-alert.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/regression/r6-alert.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "349c42374cf920640833ed27077cca9dbab386e875982c993e53954ed1705d0f"
+    },
+    {
+      "bytes": 180568,
+      "local_path": "SpeakerUI/docs/testing/artwork/regression/r6-climate.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/regression/r6-climate.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "0eb5c30bc9904f247e5ebc2c1a132c4c76f0c185cc84ef82d8387c550e454912"
+    },
+    {
+      "bytes": 138097,
+      "local_path": "SpeakerUI/docs/testing/artwork/regression/r6-control-1024.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/regression/r6-control-1024.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f71e25a985d6237208651a9411b3a377b3954819e2738ba099127f6335a9eceb"
+    },
+    {
+      "bytes": 223364,
+      "local_path": "SpeakerUI/docs/testing/artwork/regression/r6-home-1024.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/regression/r6-home-1024.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "92d2c9a66c7c7753b542077626712db7c2c21fa5d8ea8dc2f1ff8a82f52431ff"
+    },
+    {
+      "bytes": 154828,
+      "local_path": "SpeakerUI/docs/testing/artwork/regression/r6-home.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/regression/r6-home.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f99cdbcdf0528bbec3ae9b96d1dd0edfcb55ace20a06b6108bc4850ea4f01ba5"
+    },
+    {
+      "bytes": 172799,
+      "local_path": "SpeakerUI/docs/testing/artwork/regression/r6-listening.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/regression/r6-listening.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "ad66ee7b89b639816ef5b45e0477ff98e82d01fb74f043357c53e3ee8ec76fe6"
+    },
+    {
+      "bytes": 184655,
+      "local_path": "SpeakerUI/docs/testing/artwork/regression/r6-music.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/regression/r6-music.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "d42088b02a1a8c2c24b2522458e22f9b16eb515f3202c8dbe4eab198f39dee02"
+    },
+    {
+      "bytes": 186449,
+      "local_path": "SpeakerUI/docs/testing/artwork/regression/r6-swipe.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/regression/r6-swipe.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "64c5d2912ea666b8bfef477bc7070f544b26e28dc8ee0bf780b4e65d252e377a"
+    },
+    {
+      "bytes": 2247,
+      "local_path": "SpeakerUI/docs/testing/artwork/regression/revision-6-checks.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/regression/revision-6-checks.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "503fc8c3fa75cd50b59b4487b6393b4357b51069857e39b3364912b0374b82f6"
+    },
+    {
+      "bytes": 115920,
+      "local_path": "SpeakerUI/docs/testing/artwork/spotify-connect.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/artwork/spotify-connect.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f4522b03e495c9c3ab2e6dbdb3fb02f302f1b73912709a80dd284711d7aea7c3"
+    },
+    {
+      "bytes": 4710,
+      "local_path": "SpeakerUI/docs/testing/camera/README.md",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/README.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "04690bbf3b5cc6cd5c088628f48aa508d781c1e7710cf933795961f2991dc4f2"
+    },
+    {
+      "bytes": 37805,
+      "local_path": "SpeakerUI/docs/testing/camera/camera-centered-800.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/camera-centered-800.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "df89df4526726fc5f754f4199e589d393bb6263cabd17e6861a3fea1a0156e0d"
+    },
+    {
+      "bytes": 24799,
+      "local_path": "SpeakerUI/docs/testing/camera/camera-error-800.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/camera-error-800.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "d7c49648e36b7d51c340475160fa575b3d13af6a2b27487b216ef83c09822682"
+    },
+    {
+      "bytes": 48601,
+      "local_path": "SpeakerUI/docs/testing/camera/camera-expanded-1024.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/camera-expanded-1024.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "ba65e83da1763cf4950cec87fd133eecd754a1226c673cb44fbbd4a766a7be15"
+    },
+    {
+      "bytes": 37805,
+      "local_path": "SpeakerUI/docs/testing/camera/camera-expanded-800.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/camera-expanded-800.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "7ce4478b52db046972dade2f4c409fd82e3581bed3c3af461f633e7cd2d12138"
+    },
+    {
+      "bytes": 157907,
+      "local_path": "SpeakerUI/docs/testing/camera/camera-floating-800.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/camera-floating-800.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c6728056b5d6b01bda1e8cd72b80c1dada8ecf4859e1636cfa107121ff6cff9e"
+    },
+    {
+      "bytes": 129949,
+      "local_path": "SpeakerUI/docs/testing/camera/camera-floating-music-1024.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/camera-floating-music-1024.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "bff4e3e9e63bae0cb419bcf748759c5c14bd18fa22014fe0e452ea39d99daf02"
+    },
+    {
+      "bytes": 106787,
+      "local_path": "SpeakerUI/docs/testing/camera/camera-floating-music-800.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/camera-floating-music-800.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "cacd71c4fb96c80c4e1321d7164a3004958639389fa70965d2739e4345c08a35"
+    },
+    {
+      "bytes": 55293,
+      "local_path": "SpeakerUI/docs/testing/camera/camera-preview-800.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/camera-preview-800.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "879f1537d5f5e500cfa42b8be1e9be8b14d04d2de002a632b7f3b3deb6ab46cc"
+    },
+    {
+      "bytes": 1749,
+      "local_path": "SpeakerUI/docs/testing/camera/checks.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/checks.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5f8c18701403823ff17e42502fd83f05cb1459c4c99d4a3b5f7500a160591b8d"
+    },
+    {
+      "bytes": 78428,
+      "local_path": "SpeakerUI/docs/testing/camera/regression/r6-alarm.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/regression/r6-alarm.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "ab796737c2a6e282b3835982868a7d2922e262e12af6aa6147128655c793c0a7"
+    },
+    {
+      "bytes": 48242,
+      "local_path": "SpeakerUI/docs/testing/camera/regression/r6-alert.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/regression/r6-alert.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8af8683f79a3486622018859e835f415e4aefa71a1cef23788589cecefaa4f83"
+    },
+    {
+      "bytes": 177777,
+      "local_path": "SpeakerUI/docs/testing/camera/regression/r6-climate.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/regression/r6-climate.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "1cfcdc2cb61cdd827ecd0694ab902bcb14241ff8d8f5d751e0376b36398cb03c"
+    },
+    {
+      "bytes": 138137,
+      "local_path": "SpeakerUI/docs/testing/camera/regression/r6-control-1024.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/regression/r6-control-1024.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9a16912cf9d3b183ffd07892698ca202a9fe0905645da4a15c4e0b5a8dd635e3"
+    },
+    {
+      "bytes": 224698,
+      "local_path": "SpeakerUI/docs/testing/camera/regression/r6-home-1024.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/regression/r6-home-1024.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "1d820d0a1d2f81ff21f9559c81eb8481f5e885c03922dcc5e28a30af7536bfaa"
+    },
+    {
+      "bytes": 155046,
+      "local_path": "SpeakerUI/docs/testing/camera/regression/r6-home.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/regression/r6-home.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "17e9b1c11d4862d9fa05734ff8ea1b06720325bb04b70952b8f12720c48dd2d8"
+    },
+    {
+      "bytes": 189590,
+      "local_path": "SpeakerUI/docs/testing/camera/regression/r6-listening.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/regression/r6-listening.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "51f8d185b3276293fac9bd5f9645d7a0bdd915b708ffbad50cc4bd7acfa6e807"
+    },
+    {
+      "bytes": 184267,
+      "local_path": "SpeakerUI/docs/testing/camera/regression/r6-music.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/regression/r6-music.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "e808f656fcf14d641cbd6fce240806a81b1cd819e4386850ff87c9028b78ec9d"
+    },
+    {
+      "bytes": 186321,
+      "local_path": "SpeakerUI/docs/testing/camera/regression/r6-swipe.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/regression/r6-swipe.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c776f0f0fbd16b8ae379fd1c27a6c1d4ffd75004179eb3ee9c1860d3bf483fe2"
+    },
+    {
+      "bytes": 2247,
+      "local_path": "SpeakerUI/docs/testing/camera/regression/revision-6-checks.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/camera/regression/revision-6-checks.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "503fc8c3fa75cd50b59b4487b6393b4357b51069857e39b3364912b0374b82f6"
+    },
+    {
+      "bytes": 78512,
+      "local_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-alarm.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/playback-camera-regression/r6-alarm.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "758a11fe130f126796887ad4cea0b5fd92043da394378e6640e1292731b073ae"
+    },
+    {
+      "bytes": 48627,
+      "local_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-alert.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/playback-camera-regression/r6-alert.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "fe2f2d49308dd9bb7a6753d130094b4088599a4e6b898f9aeb47c9ddcf8bc7c1"
+    },
+    {
+      "bytes": 180318,
+      "local_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-climate.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/playback-camera-regression/r6-climate.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "2c34fa708c92117cd955c8e88f4f71d81bc88055f68b162f54b392dc0f5160aa"
+    },
+    {
+      "bytes": 138015,
+      "local_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-control-1024.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/playback-camera-regression/r6-control-1024.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9bfb042608cabe65af5815b79f62de008c54b946df34a306da499b6decb66efd"
+    },
+    {
+      "bytes": 223548,
+      "local_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-home-1024.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/playback-camera-regression/r6-home-1024.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "de80b9b2068c68d7f9c7b7dbcdd2a8927131227a1a319e63c17ef7cea758a26b"
+    },
+    {
+      "bytes": 154094,
+      "local_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-home.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/playback-camera-regression/r6-home.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "763e91d25730e06bd17b62d9818d7b2ade7f3a83a289fb3fc39f199e33c4dd3c"
+    },
+    {
+      "bytes": 189529,
+      "local_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-listening.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/playback-camera-regression/r6-listening.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "29e420f326a5a36d60421c953f599c7c3d963fef264d647b73cc40160431bb97"
+    },
+    {
+      "bytes": 182959,
+      "local_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-music.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/playback-camera-regression/r6-music.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "b75aabd06bd3e500b03eb7504004a7b717a6fd3c89ddfb06634f9b2baff2b3a5"
+    },
+    {
+      "bytes": 185152,
+      "local_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-swipe.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/playback-camera-regression/r6-swipe.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4e03cc7187dfe6fd344ad0ee8049e744f525dc9650ef5bea112becee25f1cc7c"
+    },
+    {
+      "bytes": 2247,
+      "local_path": "SpeakerUI/docs/testing/playback-camera-regression/revision-6-checks.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/playback-camera-regression/revision-6-checks.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "503fc8c3fa75cd50b59b4487b6393b4357b51069857e39b3364912b0374b82f6"
+    },
+    {
+      "bytes": 4305,
+      "local_path": "SpeakerUI/docs/testing/providers/README.md",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/README.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "e6c8147c485cea8a8c677f4e0a415c968ed128240692ad04075aa9aaafc472e4"
+    },
+    {
+      "bytes": 3245,
+      "local_path": "SpeakerUI/docs/testing/providers/checks.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/checks.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "d9beea0493088b26d5c131eea0453b2fa1b89f3353ac653f06f91fcbfcfea37e"
+    },
+    {
+      "bytes": 167900,
+      "local_path": "SpeakerUI/docs/testing/providers/live-home-800.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/live-home-800.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "584a63b73951b1d649378c91d3f56d13a1fd7a326fa31f2c8ea1773607a8a580"
+    },
+    {
+      "bytes": 180717,
+      "local_path": "SpeakerUI/docs/testing/providers/live-lights-1024.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/live-lights-1024.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "7fe25c18dd221775ee66d96825cc85fb56b458f2ec95e36ef390aa164c9e3c84"
+    },
+    {
+      "bytes": 96854,
+      "local_path": "SpeakerUI/docs/testing/providers/live-lights-800.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/live-lights-800.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "e54cdcead7e0f959bd5447d28879778cf59576806ebef2027ed7ab98486b4ac6"
+    },
+    {
+      "bytes": 117401,
+      "local_path": "SpeakerUI/docs/testing/providers/live-music-1024.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/live-music-1024.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "ce512f4b048573db6b36d84780b5cf1eeca676eb3c1237f5ae5d8661c8a113a1"
+    },
+    {
+      "bytes": 98449,
+      "local_path": "SpeakerUI/docs/testing/providers/live-music-800.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/live-music-800.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "d0156e566f09f4da169292633800fa1eda2d4656aac66b675834282a87faf3a8"
+    },
+    {
+      "bytes": 78585,
+      "local_path": "SpeakerUI/docs/testing/providers/regression/r6-alarm.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/regression/r6-alarm.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8a318a9f42c6e8e0c0415831b67e32448aeb8d1c0f8920c44a90776b3bd3c00d"
+    },
+    {
+      "bytes": 48430,
+      "local_path": "SpeakerUI/docs/testing/providers/regression/r6-alert.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/regression/r6-alert.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "37bbaaf24c1ab898d366ed4667f580315752504db4c56f85d5982be6cc565d3c"
+    },
+    {
+      "bytes": 177223,
+      "local_path": "SpeakerUI/docs/testing/providers/regression/r6-climate.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/regression/r6-climate.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a9235f7a11a6fd8a842282a48e98b3b58386872ad2fd95b8eceda5854833e573"
+    },
+    {
+      "bytes": 138069,
+      "local_path": "SpeakerUI/docs/testing/providers/regression/r6-control-1024.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/regression/r6-control-1024.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "96ef0dd2a8f82f6c8e4a4ee6bae8ee82d2706b89d325f5694756f0c31445f54a"
+    },
+    {
+      "bytes": 223495,
+      "local_path": "SpeakerUI/docs/testing/providers/regression/r6-home-1024.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/regression/r6-home-1024.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6f0254f3e5dfb4cbfcd4834f6505b00327be196f56ea42cf079ec6658cdff24c"
+    },
+    {
+      "bytes": 155356,
+      "local_path": "SpeakerUI/docs/testing/providers/regression/r6-home.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/regression/r6-home.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8e8feeaebc80c56d80ff06ad32e58c589650ef9eb61f260c19e968550425037b"
+    },
+    {
+      "bytes": 198857,
+      "local_path": "SpeakerUI/docs/testing/providers/regression/r6-listening.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/regression/r6-listening.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "273917c93ed8ef6c33c866a2a62b04ed2d92fc75311e694e0ec642d6dced0686"
+    },
+    {
+      "bytes": 188467,
+      "local_path": "SpeakerUI/docs/testing/providers/regression/r6-music.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/regression/r6-music.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "11e8dc1e8a90d7ab7bb5230e29ef10013278a6ece46650920fdf55cf7adeb98c"
+    },
+    {
+      "bytes": 186946,
+      "local_path": "SpeakerUI/docs/testing/providers/regression/r6-swipe.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/regression/r6-swipe.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "45bdfa2b949e372a92d7268281f61330178f74760d343baa7210c1751e04cf54"
+    },
+    {
+      "bytes": 2247,
+      "local_path": "SpeakerUI/docs/testing/providers/regression/revision-6-checks.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/regression/revision-6-checks.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "503fc8c3fa75cd50b59b4487b6393b4357b51069857e39b3364912b0374b82f6"
+    },
+    {
+      "bytes": 10449,
+      "local_path": "SpeakerUI/docs/testing/providers/resources.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/resources.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "d48472b1d9a6992d0bcf11c984c059863775e48ceb4cf71f5e7486b6e43bfdba"
+    },
+    {
+      "bytes": 116002,
+      "local_path": "SpeakerUI/docs/testing/providers/spotify-connect.png",
+      "path_in_repo": "reproduction/source/SpeakerUI/docs/testing/providers/spotify-connect.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "83446e105b0745942035e055bcbd4311ac4004c869941b9c068240a42ddf365c"
+    },
+    {
+      "bytes": 271,
+      "local_path": "SpeakerUI/index.html",
+      "path_in_repo": "reproduction/source/SpeakerUI/index.html",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "b1a9c53551f00ab22701eebd1be9777a8f280afa9fc61c4b4dae9d38f8774a04"
+    },
+    {
+      "bytes": 12088,
+      "local_path": "SpeakerUI/mockups/ambient-v6/00-brand-and-behavior.html",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/00-brand-and-behavior.html",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "3149d06c08aa6687b43f41dae01f3471ed9500da93d2ba85378241581db623a6"
+    },
+    {
+      "bytes": 187400,
+      "local_path": "SpeakerUI/mockups/ambient-v6/04-ambient.html",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/04-ambient.html",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "2cf3a5465c54d7c72002a7e21c44c068a0ca52dddc719f5828ab7dc5cca9149b"
+    },
+    {
+      "bytes": 187560,
+      "local_path": "SpeakerUI/mockups/ambient-v6/05-thermostat.html",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/05-thermostat.html",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c807c72b1fc1fb181cb1cf78ec9dd5b138f5800645dcbb5eae730055210d8ed7"
+    },
+    {
+      "bytes": 12519,
+      "local_path": "SpeakerUI/mockups/ambient-v6/README.md",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/README.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "86235b072c13fe39f39571cf60d59fb7a8a8a7014a3964e283e35340109cd8af"
+    },
+    {
+      "bytes": 1236,
+      "local_path": "SpeakerUI/mockups/ambient-v6/licenses/AURA-NOTICE.txt",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/licenses/AURA-NOTICE.txt",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "da422fd6a87d323e005ba0fc9364d0443fc0b1b76f8f3c5360cdab702f18f88d"
+    },
+    {
+      "bytes": 11357,
+      "local_path": "SpeakerUI/mockups/ambient-v6/licenses/LIVEKIT-APACHE-2.0.txt",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/licenses/LIVEKIT-APACHE-2.0.txt",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "bytes": 3208,
+      "local_path": "SpeakerUI/mockups/ambient-v6/licenses/LUCIDE.txt",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/licenses/LUCIDE.txt",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57"
+    },
+    {
+      "bytes": 1234,
+      "local_path": "SpeakerUI/mockups/ambient-v6/source/LiveKitAura.svelte",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/source/LiveKitAura.svelte",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "ae52f777379f856dc4898c9620d97ee00d3d4150c59b851ef40e5ffbb35446b6"
+    },
+    {
+      "bytes": 5745,
+      "local_path": "SpeakerUI/mockups/ambient-v6/source/alarm-wheels.js",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/source/alarm-wheels.js",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5c7535d01c527b7415781df5a0eb2afd4d05134714c2e1073b088563ff1a63a9"
+    },
+    {
+      "bytes": 68225,
+      "local_path": "SpeakerUI/mockups/ambient-v6/source/app.js",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/source/app.js",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "33c961b42da4341ae04d7d96fc7f240a15b62a799f5cb37c65d143ac4aed8ff6"
+    },
+    {
+      "bytes": 6072,
+      "local_path": "SpeakerUI/mockups/ambient-v6/source/aura-renderer.js",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/source/aura-renderer.js",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5e114dfddf0f22a75dc74078cba862fe103d45ff59e996fdf5f51c4997482a28"
+    },
+    {
+      "bytes": 3712,
+      "local_path": "SpeakerUI/mockups/ambient-v6/source/device-contracts.js",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/source/device-contracts.js",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "26f7ce1bb6d8d61e09e83a2f9d99679d5fdb3af9511b1bec2065d76cdf095b3a"
+    },
+    {
+      "bytes": 17490,
+      "local_path": "SpeakerUI/mockups/ambient-v6/source/icons.js",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/source/icons.js",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "762e29157b395e0c5940a74108ae0930177347ed35d659a8d313f2b42952417c"
+    },
+    {
+      "bytes": 5107,
+      "local_path": "SpeakerUI/mockups/ambient-v6/source/livekit-aura-shader.js",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/source/livekit-aura-shader.js",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9cb9fbdd4192e3f9139e3621002ba820bd690ed2fb67f6bfa60622a266572180"
+    },
+    {
+      "bytes": 77376,
+      "local_path": "SpeakerUI/mockups/ambient-v6/source/screen.css",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/source/screen.css",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8a08ef7be37c1bdb8caf455a50c78a64ead6102989abd070d4946e2e18f37654"
+    },
+    {
+      "bytes": 3952,
+      "local_path": "SpeakerUI/mockups/ambient-v6/source/screen.html",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/source/screen.html",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "69a42bd8c2e4795aa381685f677a9b591bcb9638de46130caeb824c401e733e1"
+    },
+    {
+      "bytes": 4014,
+      "local_path": "SpeakerUI/mockups/ambient-v6/source/upstream-aura-states.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/mockups/ambient-v6/source/upstream-aura-states.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "664e87be6523b6600bd67d7d747a454430bdefc56214f29d61b233f8ab809061"
+    },
+    {
+      "bytes": 1642,
+      "local_path": "SpeakerUI/package.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/package.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6e612d95fac6bb63c9d0328113520136123cac314c73da795abe08cb1e924ad8"
+    },
+    {
+      "bytes": 73375,
+      "local_path": "SpeakerUI/pnpm-lock.yaml",
+      "path_in_repo": "reproduction/source/SpeakerUI/pnpm-lock.yaml",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "034cb8c0fb0dabd4fd711f7109437af91a06b074e1bc79ba5b4065846c36b2fb"
+    },
+    {
+      "bytes": 29,
+      "local_path": "SpeakerUI/pnpm-workspace.yaml",
+      "path_in_repo": "reproduction/source/SpeakerUI/pnpm-workspace.yaml",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "ac02d96368617c760f093cfe61fdec64b6244007ab3553e0d6621f706f54a353"
+    },
+    {
+      "bytes": 1239,
+      "local_path": "SpeakerUI/public/audio-worklet.js",
+      "path_in_repo": "reproduction/source/SpeakerUI/public/audio-worklet.js",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5ad497f7e50b8de741a678eaa2f71c475deda904f6c61c6f7b597008bf258fbf"
+    },
+    {
+      "bytes": 982,
+      "local_path": "SpeakerUI/public/pcm-framer.js",
+      "path_in_repo": "reproduction/source/SpeakerUI/public/pcm-framer.js",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9c771578a4922217a6519193c12fd2f45be67e70d0009781724023e4b0238803"
+    },
+    {
+      "bytes": 16854,
+      "local_path": "SpeakerUI/scripts/browser-runtime-check.mjs",
+      "path_in_repo": "reproduction/source/SpeakerUI/scripts/browser-runtime-check.mjs",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "d364899dc84aae036a08e2333df23d6cb0a58398eb010189aa4ef87850d7c758"
+    },
+    {
+      "bytes": 765,
+      "local_path": "SpeakerUI/scripts/build.mjs",
+      "path_in_repo": "reproduction/source/SpeakerUI/scripts/build.mjs",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "0cdf01508eb4b6f9d45a8ffeb99ca092cef2c6cc4a60c91a349eb2dc75956262"
+    },
+    {
+      "bytes": 660,
+      "local_path": "SpeakerUI/scripts/check-svelte.mjs",
+      "path_in_repo": "reproduction/source/SpeakerUI/scripts/check-svelte.mjs",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c70694d4279bf9c982267013569a3c10a9049a9ff554c36fdb4cfc2d3a5d074f"
+    },
+    {
+      "bytes": 681,
+      "local_path": "SpeakerUI/scripts/compress.mjs",
+      "path_in_repo": "reproduction/source/SpeakerUI/scripts/compress.mjs",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c9d608fda552a45ca0ab4623fb08d097e0b0af801ecf8c3ed84a10f1729bf755"
+    },
+    {
+      "bytes": 4808,
+      "local_path": "SpeakerUI/scripts/frontend.mjs",
+      "path_in_repo": "reproduction/source/SpeakerUI/scripts/frontend.mjs",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "20261b0584ccff1d35796918fd4cb0d0dfd95e7b194e6c9f9b222e477cdb316b"
+    },
+    {
+      "bytes": 8008,
+      "local_path": "SpeakerUI/scripts/iris-browser-check.mjs",
+      "path_in_repo": "reproduction/source/SpeakerUI/scripts/iris-browser-check.mjs",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8506f695560f01af2577bdf1abfe02e1274a0765b7cf9c06bf285c5cde1e0ea0"
+    },
+    {
+      "bytes": 765,
+      "local_path": "SpeakerUI/scripts/kiosk.mjs",
+      "path_in_repo": "reproduction/source/SpeakerUI/scripts/kiosk.mjs",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "e29c2555f446921c1588bbe1e0be81bda2e692e7d847d217557041a0392eb855"
+    },
+    {
+      "bytes": 731,
+      "local_path": "SpeakerUI/scripts/setup.mjs",
+      "path_in_repo": "reproduction/source/SpeakerUI/scripts/setup.mjs",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "dc99c82aa82dedf8b427ba13db968a639edce524a3f59f77ca0e1fa34b106270"
+    },
+    {
+      "bytes": 965,
+      "local_path": "SpeakerUI/scripts/start.mjs",
+      "path_in_repo": "reproduction/source/SpeakerUI/scripts/start.mjs",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "eb69f2c483bcf177f1c3102a16b8a20c84e359f3c7fd61ee289ccf826c7d2f94"
+    },
+    {
+      "bytes": 24150,
+      "local_path": "SpeakerUI/server/app.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/app.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6389b054047e203326fc559c237596545baa6098edc69e46125b664a2e23728b"
+    },
+    {
+      "bytes": 4936,
+      "local_path": "SpeakerUI/server/config.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/config.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "b81651dfe1546a79e2a2e1a2f736cadc28613f97d5ea2000f8dababb440073dc"
+    },
+    {
+      "bytes": 7289,
+      "local_path": "SpeakerUI/server/config.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/config.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9f4d5124380fe025618251d851dd03467315ef67a5d96be60a5679d7ad5cbd7b"
+    },
+    {
+      "bytes": 15169,
+      "local_path": "SpeakerUI/server/gateway/app.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/gateway/app.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "44effe2ee895d556995e44f63052ca90fa35b6ff41af0126afe29aa97e2c6c7f"
+    },
+    {
+      "bytes": 2295,
+      "local_path": "SpeakerUI/server/inference/action-store.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/inference/action-store.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "be1f5af6cf5c17f7bc8a5b8d6f0f893215403899e325e54408a492616e4b14b4"
+    },
+    {
+      "bytes": 6967,
+      "local_path": "SpeakerUI/server/inference/action-store.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/inference/action-store.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8cec2e3ec3df73b81f3a7b7f0adc54e0f3ddea0dd664ffbb2418e42f67cc9f4c"
+    },
+    {
+      "bytes": 1375,
+      "local_path": "SpeakerUI/server/inference/adapter.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/inference/adapter.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9635ecf614357ea1fa33a2ac9929bd78d27529b9fd5fd323452f5ab31be20e97"
+    },
+    {
+      "bytes": 1107,
+      "local_path": "SpeakerUI/server/inference/dummy-runtime.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/inference/dummy-runtime.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5c377f53848877b1deedbf991b2e9acb6c00bbabfdbf5c9949b9c726b88cc8e6"
+    },
+    {
+      "bytes": 2198,
+      "local_path": "SpeakerUI/server/inference/dummy-runtime.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/inference/dummy-runtime.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "feaf3a9f054a285e783bf17cdb885aced0e1779bab6f2768c1e973e17a8a385c"
+    },
+    {
+      "bytes": 2620,
+      "local_path": "SpeakerUI/server/inference/policy.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/inference/policy.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "848cc7ea0f472571d2e069010029aa06a1b292ced6a865491805cbd6962133f9"
+    },
+    {
+      "bytes": 3652,
+      "local_path": "SpeakerUI/server/inference/policy.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/inference/policy.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "02ec65d33dee45eef8b2cdb24a7197c7080d815d3328e22364b62940317340fe"
+    },
+    {
+      "bytes": 3214,
+      "local_path": "SpeakerUI/server/inference/python-runtime.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/inference/python-runtime.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c5b03d5bb5448b5ec73a2c1f82efab74d856a64375909334ceaac4d72c6b90a4"
+    },
+    {
+      "bytes": 4512,
+      "local_path": "SpeakerUI/server/inference/python-runtime.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/inference/python-runtime.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "206bdd510f629eadcada768e4f96ae818a9cb904518dfbbe79c234b676b7b41f"
+    },
+    {
+      "bytes": 8442,
+      "local_path": "SpeakerUI/server/inference/runtime-actions.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/inference/runtime-actions.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "ca658475dcefce8f953a540009a01528aec8c9cfbebdad05f6a45c35612303d4"
+    },
+    {
+      "bytes": 10640,
+      "local_path": "SpeakerUI/server/inference/runtime-actions.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/inference/runtime-actions.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "369a66876c1bb74e97ea77ef44a2bf84fa58e44ae3fd10d3be494a30679fc751"
+    },
+    {
+      "bytes": 7206,
+      "local_path": "SpeakerUI/server/inference/session.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/inference/session.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "625b179a728363eb857d3f303bc2e55301df33f89d86b0e54ea3194e7e83c09b"
+    },
+    {
+      "bytes": 1315,
+      "local_path": "SpeakerUI/server/integrations/commands.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/integrations/commands.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "3514fab5732e0177900daa0641edc92e243cce885d2a112604c45b9c860c4ad2"
+    },
+    {
+      "bytes": 2783,
+      "local_path": "SpeakerUI/server/integrations/commands.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/integrations/commands.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "bccbd2af8d43d9e86373cb33c90d9718234c4b721ae19c9af6b9a6b34f8e1c66"
+    },
+    {
+      "bytes": 754,
+      "local_path": "SpeakerUI/server/integrations/fixtures.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/integrations/fixtures.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "3b7ece0cb844b6d91d176d5e976317180f84879d655c5164e43a39758d990bfd"
+    },
+    {
+      "bytes": 10201,
+      "local_path": "SpeakerUI/server/integrations/home-assistant.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/integrations/home-assistant.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4ea5456ca7b8f8aa7248b27ac9aba13f214455a2c50029d1e597b80fb789c3df"
+    },
+    {
+      "bytes": 15999,
+      "local_path": "SpeakerUI/server/integrations/home-assistant.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/integrations/home-assistant.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "35e3003595fe196ca029fb063317aa87cb4a46b7fc6011846df67113a87ce1f4"
+    },
+    {
+      "bytes": 551,
+      "local_path": "SpeakerUI/server/integrations/http.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/integrations/http.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5e98cfb5958279a904750277858d3f2a3cc43dff35a35075511268d531e38b90"
+    },
+    {
+      "bytes": 1097,
+      "local_path": "SpeakerUI/server/integrations/http.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/integrations/http.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "307f2a2bfdfaac019941cbac125f909dbd237c890ed051fc311b0c14d793d9ab"
+    },
+    {
+      "bytes": 11698,
+      "local_path": "SpeakerUI/server/integrations/spotify.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/integrations/spotify.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4e27fb7eeeff73b7b30830bc544acfde67c12ac18623aade69e2207c28ece5f0"
+    },
+    {
+      "bytes": 12117,
+      "local_path": "SpeakerUI/server/integrations/spotify.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/integrations/spotify.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "0b0ad38fb6e0ff2db542ff2fe7e0b7a2aa951b81406dce4d898047b72f58c2cb"
+    },
+    {
+      "bytes": 5113,
+      "local_path": "SpeakerUI/server/integrations/state.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/integrations/state.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "21ca2a3037f6decc0e0f2c7a5556b4a84f0bb8c3d033ee67586252ac1a350931"
+    },
+    {
+      "bytes": 5302,
+      "local_path": "SpeakerUI/server/integrations/state.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/integrations/state.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "ca301cf5d4f485571702d22b4cca7c8b07939a5770d5d04f56d329c495636071"
+    },
+    {
+      "bytes": 822,
+      "local_path": "SpeakerUI/server/main.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/main.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "2ae91ac16ecbf913aeca16dde6faf289a4a9c8c0735692da6ed525b3a63aa5c5"
+    },
+    {
+      "bytes": 1803,
+      "local_path": "SpeakerUI/server/media/local.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/media/local.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "bece8ea2b90a4ad6ba4eb7c61812cf1ce87a79545248816a776c1222362b88f2"
+    },
+    {
+      "bytes": 3721,
+      "local_path": "SpeakerUI/server/media/local.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/media/local.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c3ed041479a568d6f843c14cc61305de1f0d91e855a8d8163a77dce6b4bb49b7"
+    },
+    {
+      "bytes": 872,
+      "local_path": "SpeakerUI/server/media/search.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/server/media/search.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a8208a28c3bd3d5d772d2fc0352466e757dd67fa27e35afcbebff16a8c4dd1f9"
+    },
+    {
+      "bytes": 2718,
+      "local_path": "SpeakerUI/shared/canonical-command.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/shared/canonical-command.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "16e901d9a8203cce50d3d74869472e01c84fd2754f20cb4086c8830d8755f44d"
+    },
+    {
+      "bytes": 3124,
+      "local_path": "SpeakerUI/shared/protocol.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/shared/protocol.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "439b194d39454ffc57ef9fe4c2ddd544814bd3848e485c65b1f091daf3325dbf"
+    },
+    {
+      "bytes": 339,
+      "local_path": "SpeakerUI/src/App.svelte",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/App.svelte",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6baf49685f024466fecbf54cfd7ca009dbee36a583769ab7c2185ba02416e398"
+    },
+    {
+      "bytes": 30033,
+      "local_path": "SpeakerUI/src/ambient/Iris.svelte",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/ambient/Iris.svelte",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9ef85c2affe34c79de381b8c323d997761af3f81c20a59fd65263217ccf2a25a"
+    },
+    {
+      "bytes": 216,
+      "local_path": "SpeakerUI/src/ambient/components/Icon.svelte",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/ambient/components/Icon.svelte",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "7409587780381281bf69ebf337ea67a51eb64897f40dbbe412c71676c4a72550"
+    },
+    {
+      "bytes": 4197,
+      "local_path": "SpeakerUI/src/ambient/components/RuntimeDebug.svelte",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/ambient/components/RuntimeDebug.svelte",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "d522641e27ac6fbc14622e456759414c389b72eacf9f27039581b172eb13e6cc"
+    },
+    {
+      "bytes": 17773,
+      "local_path": "SpeakerUI/src/ambient/icons.js",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/ambient/icons.js",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c058582611d1c6fc96dbc00a074b142a2e72c3f8c34fab887acf89228024a258"
+    },
+    {
+      "bytes": 1881,
+      "local_path": "SpeakerUI/src/ambient/local-player.js",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/ambient/local-player.js",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "94d5af3a3b84f0b29b652129707f3e6521f4cae1891956474a702004c00e636f"
+    },
+    {
+      "bytes": 2019,
+      "local_path": "SpeakerUI/src/ambient/local-player.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/ambient/local-player.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5440f126e041851c81aa5124b7f5af43c63343c4ea5c2f61542f99430b80a74b"
+    },
+    {
+      "bytes": 7182,
+      "local_path": "SpeakerUI/src/ambient/runtime-events.js",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/ambient/runtime-events.js",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a09c38ab0268f39f94a05bcc299760cf3001fa76da703e1ef0791bf8cbeb3b88"
+    },
+    {
+      "bytes": 6478,
+      "local_path": "SpeakerUI/src/ambient/runtime-events.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/ambient/runtime-events.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "cc511fd5f8a7bb7161937a180f3d203e81b806d0aa507ae90f61235696b9eabf"
+    },
+    {
+      "bytes": 2028,
+      "local_path": "SpeakerUI/src/app.css",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/app.css",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "229e513ee4636d75340ecb17ee1e1b03ce6f3a3747177ef1d42bfcb2524d5f44"
+    },
+    {
+      "bytes": 2399,
+      "local_path": "SpeakerUI/src/audio/capture.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/audio/capture.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a2a7209c89d4f413accfa340071ad994706b7ee25819c61449fcfded63e718ad"
+    },
+    {
+      "bytes": 3723,
+      "local_path": "SpeakerUI/src/audio/capture.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/audio/capture.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5012c1966ac2f8c2801c2c69a8856181457b0c6d33bcb8b9972cd64be0951291"
+    },
+    {
+      "bytes": 662,
+      "local_path": "SpeakerUI/src/audio/pcm.test.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/audio/pcm.test.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "1087265be66c01b216e278a22294ebe7cf7211d2d823b318b2b417b08397f655"
+    },
+    {
+      "bytes": 10354,
+      "local_path": "SpeakerUI/src/diagnostics/Diagnostics.svelte",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/diagnostics/Diagnostics.svelte",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "1af9add21560594a6de5ae0e406ebe97af641a69baf889e73db5da2fed5cc3c7"
+    },
+    {
+      "bytes": 166,
+      "local_path": "SpeakerUI/src/lib/utils.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/lib/utils.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "0c97f5ec0478867d5369a4369f811e1b779c7f2548f671ef252f1503a6392d9d"
+    },
+    {
+      "bytes": 209,
+      "local_path": "SpeakerUI/src/main.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/main.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "dd76f0d995437e5831be225fd76e988b04b28be979d52eeba74576bbb3affad1"
+    },
+    {
+      "bytes": 104,
+      "local_path": "SpeakerUI/src/shell.css",
+      "path_in_repo": "reproduction/source/SpeakerUI/src/shell.css",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "e875f4888a38e5e9d842c3055b8b5dcbe86e973878ed2cf0ac60f7f2e617b625"
+    },
+    {
+      "bytes": 112,
+      "local_path": "SpeakerUI/svelte.config.js",
+      "path_in_repo": "reproduction/source/SpeakerUI/svelte.config.js",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "3c328d509de22605aa7d1bcfd4a34941b99c2ecaea7026dde935785d8b6661e4"
+    },
+    {
+      "bytes": 559,
+      "local_path": "SpeakerUI/tsconfig.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/tsconfig.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "683658125f838374c5ae748cff8b73fcba9fbf4a349584b2c6a53ec23ad5ed71"
+    },
+    {
+      "bytes": 390,
+      "local_path": "SpeakerUI/tsconfig.server.json",
+      "path_in_repo": "reproduction/source/SpeakerUI/tsconfig.server.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "d8119f10f283cf614d6fce8d8c25729952a7d9465cd4f95e00f85fde6ccb0bb3"
+    },
+    {
+      "bytes": 629,
+      "local_path": "SpeakerUI/vite.config.ts",
+      "path_in_repo": "reproduction/source/SpeakerUI/vite.config.ts",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "b42ebebdd52fb0f66464192e4aca041f0396c57d8cfc4405eaeba18db0f0b1b2"
+    },
+    {
+      "bytes": 1075,
+      "local_path": "artifacts/silero-LICENSE.txt",
+      "path_in_repo": "reproduction/source/artifacts/silero-LICENSE.txt",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "2e63e9a38b6e8fc0c7bc37ce174caca1862870856c6daf5697cfb785e925520b"
+    },
+    {
+      "bytes": 381,
+      "local_path": "artifacts/wake-models.json",
+      "path_in_repo": "reproduction/source/artifacts/wake-models.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9784dd9b5836cbaaf6a6fdb7912ae2baedde17e538befe2fe3d8c2b7c4b7dd6a"
+    },
+    {
+      "bytes": 189,
+      "local_path": "benchmark.py",
+      "path_in_repo": "reproduction/source/benchmark.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "ba086fc12638dbf209b17e7d9b495e2f7f065ba2a68ebcfbe9f35746403b339a"
+    },
+    {
+      "bytes": 1420,
+      "local_path": "config.example.toml",
+      "path_in_repo": "reproduction/source/config.example.toml",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8c09b3919ac44f9779420a11484aa203c0acc7244091929afbbd7f5d563f281d"
+    },
+    {
+      "bytes": 4512,
+      "local_path": "data/sources/ai231-primary.source.json",
+      "path_in_repo": "reproduction/source/data/sources/ai231-primary.source.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c493d87e763fbb1d87ee7f9137e2ea371775416f6ee3ec61ec1eae5b196a8757"
+    },
+    {
+      "bytes": 3444,
+      "local_path": "data/sources/fil-supplemental.source.json",
+      "path_in_repo": "reproduction/source/data/sources/fil-supplemental.source.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "41bc968e3e90d299c1aca11bdfe1345a2b6fec60676d9c6c75f2276da0788a23"
+    },
+    {
+      "bytes": 1151,
+      "local_path": "data/sources/librispeech.source.json",
+      "path_in_repo": "reproduction/source/data/sources/librispeech.source.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f9891785f12dbbf1bf88e735259c170088a98571e9b3acf21ae1bce99f1b81b0"
+    },
+    {
+      "bytes": 10839,
+      "local_path": "data/sources/qwen-synthetic-completion.source.json",
+      "path_in_repo": "reproduction/source/data/sources/qwen-synthetic-completion.source.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "cd3753dad2a43fcfa277e73908222994a56a9767883f8747954dc531ecfb33ac"
+    },
+    {
+      "bytes": 7494,
+      "local_path": "docs/DATASETS.md",
+      "path_in_repo": "reproduction/source/docs/DATASETS.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "42f708b8c2a61b730756a0eadbf0eb6cdb55c16d66571391fe8315bb54e437c2"
+    },
+    {
+      "bytes": 21863,
+      "local_path": "docs/EXPERIMENT-iris-release-v1.md",
+      "path_in_repo": "reproduction/source/docs/EXPERIMENT-iris-release-v1.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "7a6e10e887f5daeb3d3a4788baded03d381b3e18818b325c35026f944cd63bb4"
+    },
+    {
+      "bytes": 9719,
+      "local_path": "docs/HANDOFF-iris-rpi-v1.md",
+      "path_in_repo": "reproduction/source/docs/HANDOFF-iris-rpi-v1.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "77ee4e49bce3eacc47f9a26be00c9c8689f508c7e2904d3571cefe3dc12516b1"
+    },
+    {
+      "bytes": 114072,
+      "local_path": "experiments/iris-release-v1/catalog.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/catalog.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8c1e1e1c4c144b926f37e97fdd020626e88ce0f7be6b4f42d20576df52313fd1"
+    },
+    {
+      "bytes": 3228,
+      "local_path": "experiments/iris-release-v1/decision-parity.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/decision-parity.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4b8a6a01bd51fc9d3bdcaebe4b1319d107995bfc243014dcc0e1fe364e0f20a9"
+    },
+    {
+      "bytes": 3745,
+      "local_path": "experiments/iris-release-v1/development-selection.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/development-selection.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "89b2c852cddc906de48a3b3c84c44d4447d591296f1d5b117fb8489f79a3fe03"
+    },
+    {
+      "bytes": 316,
+      "local_path": "experiments/iris-release-v1/generation-complete.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/generation-complete.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "2574e74b85be8c39c336915d06038743da5d344cb564351df5913ff393801a8b"
+    },
+    {
+      "bytes": 1715919,
+      "local_path": "experiments/iris-release-v1/generation-plan.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/generation-plan.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "1f767e35d75d7ba5a8b9ecd4f5332233d402377a41a6ac1275ad12de74a33599"
+    },
+    {
+      "bytes": 2954,
+      "local_path": "experiments/iris-release-v1/owner-base-view-equivalence.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/owner-base-view-equivalence.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a5a97d7d660b837e5eff3beb3733d620adf159ded2d4de71ebca99cad72ca5b5"
+    },
+    {
+      "bytes": 1604,
+      "local_path": "experiments/iris-release-v1/owner-execution.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/owner-execution.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "468f1947652d60b5b35b63497b2715ab62e11d01d51d1955d61fe175e4c9247a"
+    },
+    {
+      "bytes": 5235,
+      "local_path": "experiments/iris-release-v1/owner-export.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/owner-export.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "7c494f8e3e15e91e8db533375d21b616dd5b1f844096e002e36368fee6aff7c9"
+    },
+    {
+      "bytes": 836,
+      "local_path": "experiments/iris-release-v1/owner-feature-audit.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/owner-feature-audit.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "360e944195113dceae206b03a49dabde5df0c450bd57f5b604670a045bcbd065"
+    },
+    {
+      "bytes": 955,
+      "local_path": "experiments/iris-release-v1/owner-graph-before-test.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/owner-graph-before-test.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5e42385e0411b788c4165103077b40227d858f8ea0af4e5795631b61c813c9f1"
+    },
+    {
+      "bytes": 3994,
+      "local_path": "experiments/iris-release-v1/owner-implementation-before-fitting-099dbe6ab45b2d07.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/owner-implementation-before-fitting-099dbe6ab45b2d07.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "bd7463a7bfdf40202dc377d6c819dee89c3daa268adb6a91a7a458b18c681236"
+    },
+    {
+      "bytes": 3994,
+      "local_path": "experiments/iris-release-v1/owner-implementation-before-fitting-1e0ad09fcda73876.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/owner-implementation-before-fitting-1e0ad09fcda73876.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "e492f14831b6e54e7b6ed5b5ebaea6be5bb658679656905b61a5e38bd3071797"
+    },
+    {
+      "bytes": 1109,
+      "local_path": "experiments/iris-release-v1/owner-portability-check.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/owner-portability-check.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6cac8738983941bd4e971fea273ab64612203f89608dbde59a49052b0d3ac89d"
+    },
+    {
+      "bytes": 6449,
+      "local_path": "experiments/iris-release-v1/owner-protocol.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/owner-protocol.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "174daed6764e00c4026e6a3be88231823b98967f22bec5ab393a05f686181c0a"
+    },
+    {
+      "bytes": 42227,
+      "local_path": "experiments/iris-release-v1/owner-reservations.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/owner-reservations.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "1b7208fbb66173d72c29f6e79312386b352e7e4f6c2e64b8569b9a1c7fe52897"
+    },
+    {
+      "bytes": 3783,
+      "local_path": "experiments/iris-release-v1/owner-results.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/owner-results.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4a6a9ae62d887a6498eeba862f7b325de4ee6abaaf0e65da22a69808c5147f11"
+    },
+    {
+      "bytes": 3148,
+      "local_path": "experiments/iris-release-v1/owner-runtime-checks.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/owner-runtime-checks.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "241d991387ce1d33b01aa2daac6a2764d99bf6560ba838eac43866eaeeecf2be"
+    },
+    {
+      "bytes": 4001,
+      "local_path": "experiments/iris-release-v1/owner-selection-before-test.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/owner-selection-before-test.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "aee3f2d780d56552b3865a11e580598c86d6f5e7cbf8f6a0190668420c70c74c"
+    },
+    {
+      "bytes": 17785,
+      "local_path": "experiments/iris-release-v1/owner-wake-duration-diagnostic.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/owner-wake-duration-diagnostic.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "dafd7d152393acbf167b0eb458bed83066113736ac6600ac91cf960192429f5d"
+    },
+    {
+      "bytes": 78779,
+      "local_path": "experiments/iris-release-v1/pipeline-resources.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/pipeline-resources.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "781470a7f1472c96aac129690830017f6f5d1a7d789b728cd3bab271a464fe3a"
+    },
+    {
+      "bytes": 4589,
+      "local_path": "experiments/iris-release-v1/protocol.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/protocol.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "26851f20cc919812ff555eaf2b02ba4c0908338a148f2371176886a786a2f47a"
+    },
+    {
+      "bytes": 1224904,
+      "local_path": "experiments/iris-release-v1/publication-hf-inputs-20261017T021222200569Z.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/publication-hf-inputs-20261017T021222200569Z.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "3d130f44d8d8b7ccc1c24924ed6a25c545e7b7e0392fc8d217cce48049da1f1c"
+    },
+    {
+      "bytes": 1207376,
+      "local_path": "experiments/iris-release-v1/publication-hf-preupload-inputs-20261017T013213809982Z.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/publication-hf-preupload-inputs-20261017T013213809982Z.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "dad3f3461d31253604d072fb77ed50e0ad01d02a0af8c9657dd77f1792c2432d"
+    },
+    {
+      "bytes": 745010,
+      "local_path": "experiments/iris-release-v1/recognition-results.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/recognition-results.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4ddbdb79bccdd1e88465f4aaeabe8d7da2fa90c8e4b9772217da9cafd7fdd7e8"
+    },
+    {
+      "bytes": 893,
+      "local_path": "experiments/iris-release-v1/release-choice.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/release-choice.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "eb65f0e586a1a93e6c941ee743e5b1c1005b97221cd6ebbe8eeb3b23b5bd6163"
+    },
+    {
+      "bytes": 7198,
+      "local_path": "experiments/iris-release-v1/reproduction-completed-stage-verification.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/reproduction-completed-stage-verification.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a23d8201ab53aeb7feeb9b909d934aab77c9579d3c8faa53cb88d830e6b23bc6"
+    },
+    {
+      "bytes": 11193,
+      "local_path": "experiments/iris-release-v1/reproduction-environment.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/reproduction-environment.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "50d0326a6fc0e959c0f96e4c1ac5818466a7b22b0092a427d87bdef002203612"
+    },
+    {
+      "bytes": 5270,
+      "local_path": "experiments/iris-release-v1/reproduction-prefit-compatibility.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/reproduction-prefit-compatibility.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8ffa71b12bc1edfb300de90c1f78fed0798f2435d22ae0217109e3a6d79a2286"
+    },
+    {
+      "bytes": 2637,
+      "local_path": "experiments/iris-release-v1/reproduction-source-access.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/reproduction-source-access.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "998759f1c7956ff83fbf6601f1ec0cb2b1a5563e6989919eccf30a56c775cb29"
+    },
+    {
+      "bytes": 983,
+      "local_path": "experiments/iris-release-v1/reproduction-source-closure-fix.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/reproduction-source-closure-fix.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "b65240b86e1ee6eee86a3865bdba496c02d3208244445b509e6752f9cb150296"
+    },
+    {
+      "bytes": 1818,
+      "local_path": "experiments/iris-release-v1/reproduction-source-inventory-rebind.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/reproduction-source-inventory-rebind.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9d312158c35538e520fc8063bd9ad2812781dff6ea2fb93ff2272e26317fd6a9"
+    },
+    {
+      "bytes": 2065,
+      "local_path": "experiments/iris-release-v1/selection-before-test.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/selection-before-test.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "006e795f976010ee070f853b6355339884e4e733e60d44757037a1d7094eb861"
+    },
+    {
+      "bytes": 794,
+      "local_path": "experiments/iris-release-v1/software-verification.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/software-verification.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "1f19718ed929ae6fa20615d7f786f61ddbf056c2bcb7b0052267911f676d5dbe"
+    },
+    {
+      "bytes": 10304,
+      "local_path": "experiments/iris-release-v1/voices.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/voices.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "b3fb665c57ad5a4ea08272aa79b5b0ebd60ba9544210ae597c48141a66f0818d"
+    },
+    {
+      "bytes": 2055,
+      "local_path": "experiments/iris-release-v1/wake-calibration.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/wake-calibration.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f1f3a565590c3f9424d79e4681468b5cd5cc5d5bbcc93e3a08d6748181e21df8"
+    },
+    {
+      "bytes": 2022,
+      "local_path": "experiments/iris-release-v1/wake-protocol.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/wake-protocol.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6ed8ece2336ddabb858fe8839e6429b977a4d43e2e34f3dc896505f9675d0e5c"
+    },
+    {
+      "bytes": 563,
+      "local_path": "experiments/iris-release-v1/wake-results.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/wake-results.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "1199d7c5b28e9dc3f1583b8db3824aabac1d21356f05361f36e5c11100bb9ba7"
+    },
+    {
+      "bytes": 654,
+      "local_path": "experiments/iris-release-v1/wake-selection-before-test.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/wake-selection-before-test.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "fb006eead2891578e6a66ed8cecd163d61ac5262a5eb96cdbb9666f622537907"
+    },
+    {
+      "bytes": 2208,
+      "local_path": "experiments/iris-release-v1/width-selection-before-repeat.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/width-selection-before-repeat.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "bd1213acdb91b52e2b6989551d3ea06e6fc09dc841951fd3a2ec6a67e4d4a98d"
+    },
+    {
+      "bytes": 610,
+      "local_path": "pipeline.toml",
+      "path_in_repo": "reproduction/source/pipeline.toml",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "deacde78362380534d71f57221b15826e72535d828fce36e274bf686f673e97a"
+    },
+    {
+      "bytes": 234,
+      "local_path": "publish.py",
+      "path_in_repo": "reproduction/source/publish.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4d67d6e2185baf52dfb0963642c77ed7c54b312b4974429d3d7c1f0bc5db6193"
+    },
+    {
+      "bytes": 34917,
+      "local_path": "requirements.lock",
+      "path_in_repo": "reproduction/source/requirements.lock",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "49b36c847131665d40078620c3149905656d85df71d4f2edb228002249c8d18a"
+    },
+    {
+      "bytes": 59,
+      "local_path": "scripts/__init__.py",
+      "path_in_repo": "reproduction/source/scripts/__init__.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "eb94d12c1a5b6eade8e78e64f141e17b4cf5f0995d7c45190f5bce75818a0990"
+    },
+    {
+      "bytes": 1261,
+      "local_path": "scripts/archive_io.py",
+      "path_in_repo": "reproduction/source/scripts/archive_io.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8de4cb5eb356d2122e75f903295d748779d1e032f4810b2a5390268a3b57b913"
+    },
+    {
+      "bytes": 31082,
+      "local_path": "scripts/iris_publish.py",
+      "path_in_repo": "reproduction/source/scripts/iris_publish.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f9875276e95fa6ebdf90c1f42ad26a50b6832e7d2bfcd807e8ea489a518e2e6f"
+    },
+    {
+      "bytes": 77740,
+      "local_path": "scripts/iris_release.py",
+      "path_in_repo": "reproduction/source/scripts/iris_release.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "af5f2ec37eda67f6d5da772611e94a21c6d96c2498f3e4607af33b530c439467"
+    },
+    {
+      "bytes": 23023,
+      "local_path": "scripts/iris_report.py",
+      "path_in_repo": "reproduction/source/scripts/iris_report.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8df1fd04efdf8090c76f6b28c56afaffcef6b3c2422ca821b63e9b3bf76aad5d"
+    },
+    {
+      "bytes": 3857,
+      "local_path": "scripts/models/iris_owner.py",
+      "path_in_repo": "reproduction/source/scripts/models/iris_owner.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6d0a4a3be1ea77c55236ffbe3d6e34affd9ad60156ab200c8b30e1f476c50bbc"
+    },
+    {
+      "bytes": 4141,
+      "local_path": "scripts/models/mvp_static.py",
+      "path_in_repo": "reproduction/source/scripts/models/mvp_static.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "2e9e284621a41a29766c35d99d399e6ffa6bb238418aeeb4ad27e6a3f25c6ff8"
+    },
+    {
+      "bytes": 865,
+      "local_path": "scripts/models/mvp_wake.py",
+      "path_in_repo": "reproduction/source/scripts/models/mvp_wake.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "57372639b362da85301aafb1bd4f5e8c1dfce3a512009e7f70f444459a02dccd"
+    },
+    {
+      "bytes": 3039,
+      "local_path": "scripts/models/speaker_demo.py",
+      "path_in_repo": "reproduction/source/scripts/models/speaker_demo.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "57a827ba38fcce088a213894433ba9d8b7b7944b335c2116859919a79f49cb7e"
+    },
+    {
+      "bytes": 11120,
+      "local_path": "scripts/mvp_delivery.py",
+      "path_in_repo": "reproduction/source/scripts/mvp_delivery.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6c5e7a2335c9cf28c03138577290d6506ae08f70eaefeabd244f58667788d110"
+    },
+    {
+      "bytes": 35,
+      "local_path": "scripts/runtime/__init__.py",
+      "path_in_repo": "reproduction/source/scripts/runtime/__init__.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "d4c03dc0251ebdebbe93a07beab5380fc096431883632863db12576b46f0da8c"
+    },
+    {
+      "bytes": 5734,
+      "local_path": "scripts/runtime/audio.py",
+      "path_in_repo": "reproduction/source/scripts/runtime/audio.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a1af89d6a022ccc2ba09b5b794a2b9ff63d314d3a9d04f8a2037042694b3f3dd"
+    },
+    {
+      "bytes": 1420,
+      "local_path": "scripts/runtime/config.example.toml",
+      "path_in_repo": "reproduction/source/scripts/runtime/config.example.toml",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8c09b3919ac44f9779420a11484aa203c0acc7244091929afbbd7f5d563f281d"
+    },
+    {
+      "bytes": 7442,
+      "local_path": "scripts/runtime/iris_owner.py",
+      "path_in_repo": "reproduction/source/scripts/runtime/iris_owner.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "af1838c143813a82671d0d1a9e5007cb449502a3fa9d44cba2d92e62fe24c474"
+    },
+    {
+      "bytes": 24465,
+      "local_path": "scripts/runtime/iris_pi_benchmark.py",
+      "path_in_repo": "reproduction/source/scripts/runtime/iris_pi_benchmark.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "e8378716360068d5c206917565e257055e7982183f75cd5a63b1a57c3624be20"
+    },
+    {
+      "bytes": 14123,
+      "local_path": "scripts/runtime/mvp_static.py",
+      "path_in_repo": "reproduction/source/scripts/runtime/mvp_static.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8011085d87772102e2f4f7fa35ff4f71c58b32e4bc111da5370a124ac840f263"
+    },
+    {
+      "bytes": 6022,
+      "local_path": "scripts/runtime/mvp_wake.py",
+      "path_in_repo": "reproduction/source/scripts/runtime/mvp_wake.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "234013fc78aa1ab1f30854e38bd3b5eb73651a8100df2db9bde1c91c45ccaca9"
+    },
+    {
+      "bytes": 6427,
+      "local_path": "scripts/runtime/ncnn-LICENSE.txt",
+      "path_in_repo": "reproduction/source/scripts/runtime/ncnn-LICENSE.txt",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "7c974bac98848df46be1af5bdaa3c3c9c01f6082a90f55caeb7f60c6208aa255"
+    },
+    {
+      "bytes": 3150,
+      "local_path": "scripts/runtime/pcv_benchmark_adapter.py",
+      "path_in_repo": "reproduction/source/scripts/runtime/pcv_benchmark_adapter.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "418611b51d1d2675b6290c85ed4c0b1c9fe39e3ea3f9fe6565bbb277b2b9938f"
+    },
+    {
+      "bytes": 11034,
+      "local_path": "scripts/runtime/pcv_schema.py",
+      "path_in_repo": "reproduction/source/scripts/runtime/pcv_schema.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "41023e876b6b36d3ee303bfe8f4641030cea6e32371f07c5d960b575cc8bf20f"
+    },
+    {
+      "bytes": 579,
+      "local_path": "scripts/runtime/pyproject.toml",
+      "path_in_repo": "reproduction/source/scripts/runtime/pyproject.toml",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "bf7fd31f052f96c30bce539a7bbe3502fbe69d706828f20ea36fa54ce8c0d6dc"
+    },
+    {
+      "bytes": 452,
+      "local_path": "scripts/runtime/speaker.env.example",
+      "path_in_repo": "reproduction/source/scripts/runtime/speaker.env.example",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6cba129f8a725430a51ee96e74c85ae94ceead14499e9b46e31744f59b8cc9c2"
+    },
+    {
+      "bytes": 7777,
+      "local_path": "scripts/runtime/speaker_config.py",
+      "path_in_repo": "reproduction/source/scripts/runtime/speaker_config.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "3f5ca6bfabdde486bd136d1c983d28a8fef91b41e756957e3403d12c5a92343f"
+    },
+    {
+      "bytes": 4741,
+      "local_path": "scripts/runtime/speaker_package.py",
+      "path_in_repo": "reproduction/source/scripts/runtime/speaker_package.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "01cdae8f289fa26f6a406fdacb57c7de9f66f555de5c8ddeea557100884ec204"
+    },
+    {
+      "bytes": 7464,
+      "local_path": "scripts/runtime/speaker_session.py",
+      "path_in_repo": "reproduction/source/scripts/runtime/speaker_session.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9aa7fcb7b88919ebf657265acc32e1f1ab3aadfa9df8c4632b65a0a2de73bde9"
+    },
+    {
+      "bytes": 15027,
+      "local_path": "scripts/runtime/speaker_start.py",
+      "path_in_repo": "reproduction/source/scripts/runtime/speaker_start.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "bcfcf2cb34c1cff6745ec4860967b0353a51aa193ba87e77d89a2a660ecc2d8f"
+    },
+    {
+      "bytes": 5663,
+      "local_path": "scripts/runtime/speaker_tools.py",
+      "path_in_repo": "reproduction/source/scripts/runtime/speaker_tools.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "2e70ab4067e7b18ca4b9282aeaf758486d5cacb1e8fdd8ad84ff74f8e0f22ef5"
+    },
+    {
+      "bytes": 16319,
+      "local_path": "scripts/runtime/speaker_worker.py",
+      "path_in_repo": "reproduction/source/scripts/runtime/speaker_worker.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "3ab8f0c98607c2e8b45d8939a11787f0ba449c5c2315daba2d58171997efb939"
+    },
+    {
+      "bytes": 124634,
+      "local_path": "scripts/runtime/uv.lock",
+      "path_in_repo": "reproduction/source/scripts/runtime/uv.lock",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8c0a9d98063b4f858018e3fd2875632f98b7fb9be5c91ec7736fdb4620686399"
+    },
+    {
+      "bytes": 5287,
+      "local_path": "scripts/runtime/wake_gate.py",
+      "path_in_repo": "reproduction/source/scripts/runtime/wake_gate.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "37830138a7f10c1dc7a3edc9e574e2b1d43245b7990907c3123c9dbd31325489"
+    },
+    {
+      "bytes": 4214,
+      "local_path": "scripts/runtime/wake_models.py",
+      "path_in_repo": "reproduction/source/scripts/runtime/wake_models.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "d07b9b42b37f82111efa1174c83f02387ed752f7f2da3a18ce18c37901d00eb3"
+    },
+    {
+      "bytes": 3201,
+      "local_path": "scripts/speaker_publish.py",
+      "path_in_repo": "reproduction/source/scripts/speaker_publish.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "791542a57d6b2c52b1a20c0aa8bfd48ac56830b82ce0c77ab7c4160c762c6b5f"
+    },
+    {
+      "bytes": 59,
+      "local_path": "scripts/test/__init__.py",
+      "path_in_repo": "reproduction/source/scripts/test/__init__.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "eb94d12c1a5b6eade8e78e64f141e17b4cf5f0995d7c45190f5bce75818a0990"
+    },
+    {
+      "bytes": 6101,
+      "local_path": "scripts/test/iris_benchmark.py",
+      "path_in_repo": "reproduction/source/scripts/test/iris_benchmark.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c41a5a4904e2565b999708c5c055dd0c43f8f640738c85c1812db5a7a40973df"
+    },
+    {
+      "bytes": 5952,
+      "local_path": "scripts/test/iris_decision_parity.py",
+      "path_in_repo": "reproduction/source/scripts/test/iris_decision_parity.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "32b002c750711efaae34b9c3d3b306ad1f1a76c662589f38a8b1306c9ebb9673"
+    },
+    {
+      "bytes": 8361,
+      "local_path": "scripts/test/iris_metrics.py",
+      "path_in_repo": "reproduction/source/scripts/test/iris_metrics.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "cce9a3f2a6213cb1b6b9649297d2c84e1d278d58772000d2d1769c3e4b5ebed9"
+    },
+    {
+      "bytes": 24549,
+      "local_path": "scripts/test/iris_resources.py",
+      "path_in_repo": "reproduction/source/scripts/test/iris_resources.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "3fc87718c83774c85846e7f07b6b32eaab9ea2c6c87e809121b8894e48610785"
+    },
+    {
+      "bytes": 839,
+      "local_path": "scripts/test/test_iris_archive.py",
+      "path_in_repo": "reproduction/source/scripts/test/test_iris_archive.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5be69f9416d2024cda04e449d5e17f12fbec36d40cda0c9f1bdd834ba297a8a3"
+    },
+    {
+      "bytes": 4593,
+      "local_path": "scripts/test/test_iris_configuration.py",
+      "path_in_repo": "reproduction/source/scripts/test/test_iris_configuration.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "2b7662a4a68e5db19da20acacb9986bd14fe4ca959cb8235bfed58583e14dd5c"
+    },
+    {
+      "bytes": 6975,
+      "local_path": "scripts/test/test_iris_diversity.py",
+      "path_in_repo": "reproduction/source/scripts/test/test_iris_diversity.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4ff858b41f36ff00df21aa66a36452129251ecded36ffb210ee01dedeeeeda1f"
+    },
+    {
+      "bytes": 4710,
+      "local_path": "scripts/test/test_iris_metrics.py",
+      "path_in_repo": "reproduction/source/scripts/test/test_iris_metrics.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "96da2685922cf26a5ae9307840c841e90e0ce69ccd61eb387a8c15e0060e4240"
+    },
+    {
+      "bytes": 13650,
+      "local_path": "scripts/test/test_iris_models.py",
+      "path_in_repo": "reproduction/source/scripts/test/test_iris_models.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "b2de3292cb6928a5d3118400c0711f85675fb34479a5cc2c8178d9d46ec37aee"
+    },
+    {
+      "bytes": 12337,
+      "local_path": "scripts/test/test_iris_owner.py",
+      "path_in_repo": "reproduction/source/scripts/test/test_iris_owner.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "217f6ad670a3243a39dbae64b7b823af3ea8df9dfb25b759a7d2625b8bb7ebbe"
+    },
+    {
+      "bytes": 9406,
+      "local_path": "scripts/test/test_iris_pi_benchmark.py",
+      "path_in_repo": "reproduction/source/scripts/test/test_iris_pi_benchmark.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "953909ec718e9d21dbaacf89ff83eb41544eb56f4c85200880382fa79fc90fdf"
+    },
+    {
+      "bytes": 53420,
+      "local_path": "scripts/test/test_iris_release.py",
+      "path_in_repo": "reproduction/source/scripts/test/test_iris_release.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4dcff924781e46da5bcc89bd4caf48eb749893ac55732679655182ce10b0ef7d"
+    },
+    {
+      "bytes": 12147,
+      "local_path": "scripts/test/test_iris_resources.py",
+      "path_in_repo": "reproduction/source/scripts/test/test_iris_resources.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "0276377dfb31173fe43d1f774e8609247f181aa1ee8fc5533dacf8a969178820"
+    },
+    {
+      "bytes": 5836,
+      "local_path": "scripts/test/test_iris_session.py",
+      "path_in_repo": "reproduction/source/scripts/test/test_iris_session.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f16e9c711d04fa1d49db6d8d4e5e2cbd04edec51a2e2788749b6dd70a33a2098"
+    },
+    {
+      "bytes": 1870,
+      "local_path": "scripts/test/test_iris_wake_models.py",
+      "path_in_repo": "reproduction/source/scripts/test/test_iris_wake_models.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "127e40e1bd05adb12f9b756e7b47c256a1c22cdf017ad1f4c5f80e1534123dd0"
+    },
+    {
+      "bytes": 2736,
+      "local_path": "scripts/test/test_iris_wake_release.py",
+      "path_in_repo": "reproduction/source/scripts/test/test_iris_wake_release.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "7aa8b9529b44bb39b5697f05e372918de7e01ba40377102dbf7bb55ef40080c4"
+    },
+    {
+      "bytes": 7118,
+      "local_path": "scripts/test/test_iris_worker.py",
+      "path_in_repo": "reproduction/source/scripts/test/test_iris_worker.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "0f1e774309fe3331851ab59ad0949a6889d5c637aeb4e0462e2f0d1396b08bd9"
+    },
+    {
+      "bytes": 59,
+      "local_path": "scripts/train/__init__.py",
+      "path_in_repo": "reproduction/source/scripts/train/__init__.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "eb94d12c1a5b6eade8e78e64f141e17b4cf5f0995d7c45190f5bce75818a0990"
+    },
+    {
+      "bytes": 38509,
+      "local_path": "scripts/train/iris_diversity.py",
+      "path_in_repo": "reproduction/source/scripts/train/iris_diversity.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "0bc25c969f141d522ac928bdbc369de4a44522b144671b9c67ccf3b6d3f3e00c"
+    },
+    {
+      "bytes": 5239,
+      "local_path": "scripts/train/iris_export.py",
+      "path_in_repo": "reproduction/source/scripts/train/iris_export.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "bcfb6b32a8297eb09017fbc8033067ff48a345175b562899bfcf8ee6f4f6dcf8"
+    },
+    {
+      "bytes": 77703,
+      "local_path": "scripts/train/iris_owner.py",
+      "path_in_repo": "reproduction/source/scripts/train/iris_owner.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6e9d52362e5e35a93e688d94286453080350c2260b20432ca0766cb71f68bc6f"
+    },
+    {
+      "bytes": 12687,
+      "local_path": "scripts/train/iris_wake.py",
+      "path_in_repo": "reproduction/source/scripts/train/iris_wake.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "d410de634e6e10deddeeb0dc9e7240b7049b5649463e3efb6a1a89ea9a79bb47"
+    },
+    {
+      "bytes": 6095,
+      "local_path": "scripts/train/iris_wake_helpers.py",
+      "path_in_repo": "reproduction/source/scripts/train/iris_wake_helpers.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "10cf4a75f746085a376cc74c9eabda2aed8bbc79c250c679678b7f4cfab8948a"
+    },
+    {
+      "bytes": 407,
+      "local_path": "start.py",
+      "path_in_repo": "reproduction/source/start.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "864641ea126c1c51243ed7663f84aa6f2885a88db0aa2f7c2bd81285829d66d8"
+    },
+    {
+      "bytes": 859,
+      "local_path": "train.py",
+      "path_in_repo": "reproduction/source/train.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "17ef1f84add6694e96d05ad268f2d2be0983e720f0ab931cb2559d1db9c6820b"
+    },
+    {
+      "bytes": 90,
+      "local_path": "vcm/__init__.py",
+      "path_in_repo": "reproduction/source/vcm/__init__.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8e7184c3193018c242dc2479c890e104a192611e7adb32d0afea8e4593c3d7f0"
+    },
+    {
+      "bytes": 2206,
+      "local_path": "vcm/frontend.py",
+      "path_in_repo": "reproduction/source/vcm/frontend.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+    },
+    {
+      "bytes": 5946,
+      "local_path": "experiments/iris-release-v1/training-execution.json",
+      "path_in_repo": "evidence/training-execution.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "eec6aba9139bfa02f8bcaf42201579bd6e1802d6068767a5afb87c7da3c27bb8"
+    },
+    {
+      "bytes": 5946,
+      "local_path": "experiments/iris-release-v1/training-execution.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/training-execution.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "eec6aba9139bfa02f8bcaf42201579bd6e1802d6068767a5afb87c7da3c27bb8"
+    },
+    {
+      "bytes": 5270,
+      "local_path": "experiments/iris-release-v1/reproduction-prefit-compatibility.json",
+      "path_in_repo": "evidence/reproduction-prefit-compatibility.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8ffa71b12bc1edfb300de90c1f78fed0798f2435d22ae0217109e3a6d79a2286"
+    },
+    {
+      "bytes": 89847,
+      "local_path": "experiments/iris-release-v1/ui-final-integration.json",
+      "path_in_repo": "evidence/ui-final-integration.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "536dfc58a6f5390e80385081a1026502cb02ff72822ccce42255331c4b858902"
+    },
+    {
+      "bytes": 89847,
+      "local_path": "experiments/iris-release-v1/ui-final-integration.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/ui-final-integration.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "536dfc58a6f5390e80385081a1026502cb02ff72822ccce42255331c4b858902"
+    },
+    {
+      "bytes": 5340,
+      "local_path": "experiments/iris-release-v1/package-replay.json",
+      "path_in_repo": "evidence/package-replay.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "725abbee682a6ec50b3e2823eec03620f8e3b35530c7efa521c8c7234e183a07"
+    },
+    {
+      "bytes": 5340,
+      "local_path": "experiments/iris-release-v1/package-replay.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/package-replay.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "725abbee682a6ec50b3e2823eec03620f8e3b35530c7efa521c8c7234e183a07"
+    },
+    {
+      "bytes": 26423,
+      "local_path": "experiments/iris-release-v1/reproduction-fresh-clone-check.json",
+      "path_in_repo": "evidence/reproduction-fresh-clone-check.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "1089b54ff760616a7f64ccc47d2b36de5c1294d69334359a7c6e5cd4c763149b"
+    },
+    {
+      "bytes": 26423,
+      "local_path": "experiments/iris-release-v1/reproduction-fresh-clone-check.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/reproduction-fresh-clone-check.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "1089b54ff760616a7f64ccc47d2b36de5c1294d69334359a7c6e5cd4c763149b"
+    },
+    {
+      "bytes": 18309,
+      "local_path": "experiments/iris-release-v1/reproduction-owner-fresh-preparation.json",
+      "path_in_repo": "evidence/reproduction-owner-fresh-preparation.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "38845e893692c02cd9111f5293344555a86dc448977edcf0f9a8b2dea200eb92"
+    },
+    {
+      "bytes": 18309,
+      "local_path": "experiments/iris-release-v1/reproduction-owner-fresh-preparation.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/reproduction-owner-fresh-preparation.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "38845e893692c02cd9111f5293344555a86dc448977edcf0f9a8b2dea200eb92"
+    },
+    {
+      "bytes": 5375554,
+      "local_path": "experiments/iris-release-v1/reproduction-inputs.json",
+      "path_in_repo": "evidence/reproduction-inputs.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945"
+    },
+    {
+      "bytes": 10304,
+      "local_path": "experiments/iris-release-v1/voices.json",
+      "path_in_repo": "evidence/voices.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "b3fb665c57ad5a4ea08272aa79b5b0ebd60ba9544210ae597c48141a66f0818d"
+    },
+    {
+      "bytes": 316,
+      "local_path": "experiments/iris-release-v1/generation-complete.json",
+      "path_in_repo": "evidence/generation-complete.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "2574e74b85be8c39c336915d06038743da5d344cb564351df5913ff393801a8b"
+    },
+    {
+      "bytes": 1161,
+      "local_path": "experiments/iris-release-v1/audio-audit-before-fitting.json",
+      "path_in_repo": "evidence/audio-audit-before-fitting.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "81335c1d16b97935638c7e8be05e047b4f3db0cf86b18b338574e75bdb8bd8f0"
+    },
+    {
+      "bytes": 1161,
+      "local_path": "experiments/iris-release-v1/audio-audit-before-fitting.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/audio-audit-before-fitting.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "81335c1d16b97935638c7e8be05e047b4f3db0cf86b18b338574e75bdb8bd8f0"
+    },
+    {
+      "bytes": 4436,
+      "local_path": "experiments/iris-release-v1/data-audit.json",
+      "path_in_repo": "evidence/data-audit.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "ef73e38c90dcaf20432a227a0908d340c96b7a717a6ed988fbb649ded8f3fa63"
+    },
+    {
+      "bytes": 4436,
+      "local_path": "experiments/iris-release-v1/data-audit.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/data-audit.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "ef73e38c90dcaf20432a227a0908d340c96b7a717a6ed988fbb649ded8f3fa63"
+    },
+    {
+      "bytes": 1043,
+      "local_path": "experiments/iris-release-v1/owner-dataset-audit.json",
+      "path_in_repo": "evidence/owner-dataset-audit.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "711c5235ded035041a089e6bb9f6830f2fe7414e918014d724f99cb3912004a6"
+    },
+    {
+      "bytes": 1043,
+      "local_path": "experiments/iris-release-v1/owner-dataset-audit.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/owner-dataset-audit.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "711c5235ded035041a089e6bb9f6830f2fe7414e918014d724f99cb3912004a6"
+    },
+    {
+      "bytes": 573,
+      "local_path": "experiments/iris-release-v1/owner-readability-audit.json",
+      "path_in_repo": "evidence/owner-readability-audit.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "900d23b803ce2aeb0dc4b163053b5189643851b1257994d94c7eaaa8e0c9314b"
+    },
+    {
+      "bytes": 573,
+      "local_path": "experiments/iris-release-v1/owner-readability-audit.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/owner-readability-audit.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "900d23b803ce2aeb0dc4b163053b5189643851b1257994d94c7eaaa8e0c9314b"
+    },
+    {
+      "bytes": 42227,
+      "local_path": "experiments/iris-release-v1/owner-reservations.json",
+      "path_in_repo": "evidence/owner-reservations.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "1b7208fbb66173d72c29f6e79312386b352e7e4f6c2e64b8569b9a1c7fe52897"
+    },
+    {
+      "bytes": 1224904,
+      "local_path": "experiments/iris-release-v1/publication-hf-inputs-20261017T021222200569Z.json",
+      "path_in_repo": "reproduction/publication-inputs.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "3d130f44d8d8b7ccc1c24924ed6a25c545e7b7e0392fc8d217cce48049da1f1c"
+    },
+    {
+      "bytes": 1193,
+      "local_path": "experiments/iris-release-v1/archive-verification.json",
+      "path_in_repo": "evidence/archive-verification.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "e564460f4878ab40cd39360d20c8c6912ead101e9b86566e652f51d9e633b74b"
+    },
+    {
+      "bytes": 1080,
+      "local_path": "experiments/iris-release-v1/publication-hf-iris-final-sourcefix.json",
+      "path_in_repo": "evidence/publication-hf-iris-final-sourcefix.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "d132313faa6b52b7b39e5c816f835301a48d23422f1464e823df49d417bd066c"
+    },
+    {
+      "bytes": 40556,
+      "local_path": "experiments/iris-release-v1/reproduction-card-metadata-equivalence.json",
+      "path_in_repo": "evidence/reproduction-card-metadata-equivalence.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "300b03dc1448de6631bcdb445a6d820c40c33c76096a5fef97a4825726220062"
+    },
+    {
+      "bytes": 102001,
+      "local_path": "experiments/iris-release-v1/reproduction-card-schema-preservation.json",
+      "path_in_repo": "evidence/reproduction-card-schema-preservation.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5e11e946145703e0e034618515876d18c0874e209a31d076ea046e0bc1050aef"
+    },
+    {
+      "bytes": 1710,
+      "local_path": "experiments/iris-release-v1/reproduction-card-schema-validation.json",
+      "path_in_repo": "evidence/reproduction-card-schema-validation.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "e5d66ce882a1dd01a07dfdd5a091af6de071839e595aef82bc75bdabf63290ab"
+    },
+    {
+      "bytes": 7198,
+      "local_path": "experiments/iris-release-v1/reproduction-completed-stage-verification.json",
+      "path_in_repo": "evidence/reproduction-completed-stage-verification.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a23d8201ab53aeb7feeb9b909d934aab77c9579d3c8faa53cb88d830e6b23bc6"
+    },
+    {
+      "bytes": 933,
+      "local_path": "experiments/iris-release-v1/reproduction-fresh-input-prefetch-authenticated.json",
+      "path_in_repo": "evidence/reproduction-fresh-input-prefetch-authenticated.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "bc4107b9e6af680adbf7ad208ef89706bbb7c89e75145cee90154c547b5a312a"
+    },
+    {
+      "bytes": 711,
+      "local_path": "experiments/iris-release-v1/reproduction-fresh-input-prefetch-http.json",
+      "path_in_repo": "evidence/reproduction-fresh-input-prefetch-http.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9ef6a61e8b48d55f3cad4222f23c963c92350230626cd4da0e9e8f2689b9ac2e"
+    },
+    {
+      "bytes": 910,
+      "local_path": "experiments/iris-release-v1/reproduction-fresh-input-prefetch.json",
+      "path_in_repo": "evidence/reproduction-fresh-input-prefetch.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "371f108f714de46ab2c872fe0de13e1c167c715c9c1099118c122df6f02ac13f"
+    },
+    {
+      "bytes": 2323,
+      "local_path": "experiments/iris-release-v1/reproduction-fresh-source-closure-rebind.json",
+      "path_in_repo": "evidence/reproduction-fresh-source-closure-rebind.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "bcc63ca9669149a168f39c885c8f8efdbd570e439b6ea238e24ba273bf368c7a"
+    },
+    {
+      "bytes": 2172,
+      "local_path": "experiments/iris-release-v1/reproduction-fresh-source-ordering-rebind.json",
+      "path_in_repo": "evidence/reproduction-fresh-source-ordering-rebind.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "206396f9736bc641cb6c221f46dc3f0208d3c9eaca60d37fb007ff1ad4dd1464"
+    },
+    {
+      "bytes": 5375462,
+      "local_path": "experiments/iris-release-v1/reproduction-inputs-before-source-closure-fix.json",
+      "path_in_repo": "evidence/reproduction-inputs-before-source-closure-fix.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "3cbd4a0f36777218bed5944d1529f80b03479a2382861be7891129c46284888d"
+    },
+    {
+      "bytes": 5375358,
+      "local_path": "experiments/iris-release-v1/reproduction-inputs-before-startup-fix.json",
+      "path_in_repo": "evidence/reproduction-inputs-before-startup-fix.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "b5e04d7bf33b8b10b94e9e732cfaf2ae0c91eb590387f094ef2e81671274c518"
+    },
+    {
+      "bytes": 99395,
+      "local_path": "experiments/iris-release-v1/reproduction-ordering-fix-preservation.json",
+      "path_in_repo": "evidence/reproduction-ordering-fix-preservation.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6e949dbc8246557a1bb172ca2f007b1f3a408ff2d877b3e7a970b79ac3e3dc2b"
+    },
+    {
+      "bytes": 4074,
+      "local_path": "experiments/iris-release-v1/reproduction-run-iris-final-cardfix.json",
+      "path_in_repo": "evidence/reproduction-run-iris-final-cardfix.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6c9fecc91374cc4e7f91eec1ce59e782a057e3bc699f5c7cbc6d5f232af48074"
+    },
+    {
+      "bytes": 381436,
+      "local_path": "experiments/iris-release-v1/reproduction-run-iris-final-configfix.json",
+      "path_in_repo": "evidence/reproduction-run-iris-final-configfix.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c84b74062ce42e38177c8ffa603bffde0e8891ca733ed3b573a98216519c4f50"
+    },
+    {
+      "bytes": 381408,
+      "local_path": "experiments/iris-release-v1/reproduction-run-iris-final-orderfix.json",
+      "path_in_repo": "evidence/reproduction-run-iris-final-orderfix.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "021b4957868560dde012c90cda926f1e52261c0a707089a5f580ef9f300c2ec1"
+    },
+    {
+      "bytes": 374318,
+      "local_path": "experiments/iris-release-v1/reproduction-run-iris-final-prepublication.json",
+      "path_in_repo": "evidence/reproduction-run-iris-final-prepublication.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "15d87c3d9bfb679cb7ba596fc5c02db4b5a60d645db6081a37506e957257dd0b"
+    },
+    {
+      "bytes": 383348,
+      "local_path": "experiments/iris-release-v1/reproduction-run-iris-final-sourcefix.json",
+      "path_in_repo": "evidence/reproduction-run-iris-final-sourcefix.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "0645b5c4ea45ade79caa73a8b14f412cdaff5bbe5722405c37b61fe03e8fe662"
+    },
+    {
+      "bytes": 983,
+      "local_path": "experiments/iris-release-v1/reproduction-source-closure-fix.json",
+      "path_in_repo": "evidence/reproduction-source-closure-fix.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "b65240b86e1ee6eee86a3865bdba496c02d3208244445b509e6752f9cb150296"
+    },
+    {
+      "bytes": 99975,
+      "local_path": "experiments/iris-release-v1/reproduction-source-closure-preservation.json",
+      "path_in_repo": "evidence/reproduction-source-closure-preservation.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "e3b1beb51ed2b115927b5524f9cea03540bb944aa41058e7a288166b481d33ef"
+    },
+    {
+      "bytes": 4386,
+      "local_path": "experiments/iris-release-v1/reproduction-source-closure-validation.json",
+      "path_in_repo": "evidence/reproduction-source-closure-validation.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "13fd43664fa51029d7edc7ad88514ff61c643e5f0eaf8cb4cc85189afab4317b"
+    },
+    {
+      "bytes": 1818,
+      "local_path": "experiments/iris-release-v1/reproduction-source-inventory-rebind.json",
+      "path_in_repo": "evidence/reproduction-source-inventory-rebind.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9d312158c35538e520fc8063bd9ad2812781dff6ea2fb93ff2272e26317fd6a9"
+    },
+    {
+      "bytes": 3745,
+      "local_path": "experiments/iris-release-v1/reproduction-stage-order-fix.json",
+      "path_in_repo": "evidence/reproduction-stage-order-fix.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "26615677e7e6dba1725259c07b230223f4a00cc1caf443c42416c4c2f495858a"
+    },
+    {
+      "bytes": 1493,
+      "local_path": "experiments/iris-release-v1/reproduction-startup-fix-preservation.json",
+      "path_in_repo": "evidence/reproduction-startup-fix-preservation.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "8343e7cf6130b17ceff1d56b2e2e3f38af23cd345a2271505c74f5960c924c25"
+    },
+    {
+      "bytes": 720,
+      "local_path": "experiments/iris-release-v1/reproduction-startup-fix-source-preservation.json",
+      "path_in_repo": "evidence/reproduction-startup-fix-source-preservation.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "61367e95394a17b32edcd2492c67a2e32f287346da180c8fe85afb15a1779098"
+    },
+    {
+      "bytes": 1710,
+      "local_path": "experiments/iris-release-v1/reproduction-card-schema-validation.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/reproduction-card-schema-validation.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "e5d66ce882a1dd01a07dfdd5a091af6de071839e595aef82bc75bdabf63290ab"
+    },
+    {
+      "bytes": 102001,
+      "local_path": "experiments/iris-release-v1/reproduction-card-schema-preservation.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/reproduction-card-schema-preservation.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5e11e946145703e0e034618515876d18c0874e209a31d076ea046e0bc1050aef"
+    },
+    {
+      "bytes": 40556,
+      "local_path": "experiments/iris-release-v1/reproduction-card-metadata-equivalence.json",
+      "path_in_repo": "reproduction/source/experiments/iris-release-v1/reproduction-card-metadata-equivalence.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "300b03dc1448de6631bcdb445a6d820c40c33c76096a5fef97a4825726220062"
+    },
+    {
+      "bytes": 1044,
+      "local_path": ".cache/iris-release-v1/card-schema-validation/original-http400.log",
+      "path_in_repo": "evidence/card-schema/original-http400.log",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "db0633b1e65dcd9780939826841a61b6aa345712018917c31e059c2d20883109"
+    },
+    {
+      "bytes": 13883,
+      "local_path": ".cache/iris-release-v1/pre-card-schema-fix/.cache/iris-release-v1/publication/iris-final-sourcefix/model-README.md",
+      "path_in_repo": "evidence/card-schema/original-model-card.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "94c2364158dc1d90ecfb5c111ccb50e46c255b1e818e2d0c8c38abec22307557"
+    },
+    {
+      "bytes": 13951,
+      "local_path": ".cache/iris-release-v1/card-schema-validation/actual/model-README.md",
+      "path_in_repo": "evidence/card-schema/validated-model-card.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f5ac2f466a25edd8d8b15c1f837e9196ea26d33ea6217def5519df62e6480cc2"
+    },
+    {
+      "bytes": 25358,
+      "local_path": ".cache/iris-release-v1/card-schema-validation/actual/dataset-README.md",
+      "path_in_repo": "evidence/card-schema/validated-dataset-card.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "6f45987f177bd6f92bf42f9be6b9ffc49ce0b58416133bd3d9fee7f32f647ee2"
+    },
+    {
+      "bytes": 1497,
+      "local_path": ".cache/iris-release-v1/card-schema-validation/fallback/dataset-README.md",
+      "path_in_repo": "evidence/card-schema/validated-fallback-dataset-card.md",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "d0b0dd6bbb70476dd949f4691b00940e9088459e614929141063a955cca4b25a"
+    },
+    {
+      "bytes": 1559,
+      "local_path": ".cache/iris-release-v1/card-schema-red.log",
+      "path_in_repo": "evidence/card-schema/unit-red.log",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "b80188b1838089bf802a45d18d3d5254f64342eab5bae070a4337ff68e43bc81"
+    },
+    {
+      "bytes": 113,
+      "local_path": ".cache/iris-release-v1/card-schema-green.log",
+      "path_in_repo": "evidence/card-schema/unit-green.log",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "095bec75792fbda610a59b26dd6c99e0d9f7bbc5e27ae8784d385ce2d258f8ad"
+    },
+    {
+      "bytes": 7988,
+      "local_path": ".cache/iris-release-v1/rebind_card_schema.py",
+      "path_in_repo": "evidence/card-schema/rebind-card-schema.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "0bb06a5aceb121917e015ee650b6352218facb79b76ed729eab510e64749cf70"
+    },
+    {
+      "bytes": 46160,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/home-1024x600.png",
+      "path_in_repo": "evidence/ui-checks/browser/home-1024x600.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "ed59d96a2a0f6ce000b13c27e629fba02be421c72839050818021734f73524c6"
+    },
+    {
+      "bytes": 41564,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/home-390x844.png",
+      "path_in_repo": "evidence/ui-checks/browser/home-390x844.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "b0a7e2b9b12941979beba9cb9682e0dc0ce25187db3e0a2ce3ed83658a78ec92"
+    },
+    {
+      "bytes": 42320,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/home-800x480.png",
+      "path_in_repo": "evidence/ui-checks/browser/home-800x480.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "0ac7739b2f4078b49270636c41955b8cfff5485417476b3c8cd7f449aad136c2"
+    },
+    {
+      "bytes": 2557,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/preview-adapter-results.json",
+      "path_in_repo": "evidence/ui-checks/browser/preview-adapter-results.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "2603e39a91bc91cb3a8f53a6460e9d56190f967f15981bde71b0d63d7dfbab71"
+    },
+    {
+      "bytes": 33619,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/preview-results.json",
+      "path_in_repo": "evidence/ui-checks/browser/preview-results.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a86df980e2af0176e2d422928fa0ede156cc25392d4694c2ef97eae6789fc57c"
+    },
+    {
+      "bytes": 96186,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/results.json",
+      "path_in_repo": "evidence/ui-checks/browser/results.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "dd6544324db1ce6845ca40ee64e024aeea9204b4f1dc0e924f431abb34839a6e"
+    },
+    {
+      "bytes": 55518,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/wav-1024x600.png",
+      "path_in_repo": "evidence/ui-checks/browser/wav-1024x600.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "99ecd07007f2cf9fe971e7e8879617bd9a6bdd58831098eb53a49e392fdf53a7"
+    },
+    {
+      "bytes": 70766,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/wav-390x844.png",
+      "path_in_repo": "evidence/ui-checks/browser/wav-390x844.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a0ac2a41fc7c5163a8f0be9ff3ec6b4db2a8ed3cc7357bd7ffb36a6d7cb9891a"
+    },
+    {
+      "bytes": 47325,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/wav-800x480.png",
+      "path_in_repo": "evidence/ui-checks/browser/wav-800x480.png",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "0716d3f4c0eb1257f106776635f01fcfd116c76c70dd048e3c6017059d2ade8e"
+    },
+    {
+      "bytes": 54383,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/websocket-events.json",
+      "path_in_repo": "evidence/ui-checks/browser/websocket-events.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "289dd8c9d4e8eec8f1f8abca3508ec40b675508196efbab9eac83e6a81884889"
+    },
+    {
+      "bytes": 350,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/gateway.log",
+      "path_in_repo": "evidence/ui-checks/gateway.log",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "e5acb1f30c9f4bcf0a4b70e479ab71e49eb6d13c07810a3ff9dfc50dddf2db8b"
+    },
+    {
+      "bytes": 17039,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/harness/browser-runtime-check-owner.mjs",
+      "path_in_repo": "evidence/ui-checks/harness/browser-runtime-check-owner.mjs",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a96cf9dc74f39ecb6d092313a8ca1f1ae92effb4a728ce6710c5350ffebd350c"
+    },
+    {
+      "bytes": 8491,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/harness/compose-final-proof.py",
+      "path_in_repo": "evidence/ui-checks/harness/compose-final-proof.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "36bf6620e2f61be7c868737e02dfe2d2e00a9754d79df72602edd002712ad1c2"
+    },
+    {
+      "bytes": 3199,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/harness/launch-final-defaults.py",
+      "path_in_repo": "evidence/ui-checks/harness/launch-final-defaults.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "cfe36910ee84d28aaa5c6c759bacbf7a659857e1a342a46537a194f462cd7a01"
+    },
+    {
+      "bytes": 2579,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/harness/owner-profile.patch",
+      "path_in_repo": "evidence/ui-checks/harness/owner-profile.patch",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "80539df9432396836e2bac212eb0c602c528948f876926bd3265f47644173c6f"
+    },
+    {
+      "bytes": 2810,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/harness/preview-adapter-check.mjs",
+      "path_in_repo": "evidence/ui-checks/harness/preview-adapter-check.mjs",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "7dae467af95b15d5b2c3828f8f0e12b74dbdf8e50b90e487cb3d01db757440fc"
+    },
+    {
+      "bytes": 8897,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/harness/preview-probe.py",
+      "path_in_repo": "evidence/ui-checks/harness/preview-probe.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "3ce7867e05c3af80688fc74a039d762c0e3010061c4114f11446538c67f6a8d1"
+    },
+    {
+      "bytes": 3196,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/initialized-defaults.json",
+      "path_in_repo": "evidence/ui-checks/initialized-defaults.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "3e57a3eea4c676a2f609ea1c9e6a31e328c96cedfde775f5068c59e072ef7b9b"
+    },
+    {
+      "bytes": 61,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/process.json",
+      "path_in_repo": "evidence/ui-checks/process.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "12709c8540d0d4c9b35cfdaeb3a08daf88b624cef05fdba822ea7b66906ebd91"
+    },
+    {
+      "bytes": 1091,
+      "local_path": ".cache/iris-release-v1/ui/final-package-48ae0ee4/recording-reference.json",
+      "path_in_repo": "evidence/ui-checks/recording-reference.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5071279f50bcf7270a2674dcd5e5cdc9f5a97c8f759274a13fbd9d96363aaf79"
+    },
+    {
+      "bytes": 5990,
+      "local_path": ".cache/iris-release-v1/publication/iris-final-cardfix/ui-checks-inventory.json",
+      "path_in_repo": "evidence/ui-checks/inventory.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "db29474d20f4e77bd83456101c9a40fdafe669dea2696f47737fc0e896df7069"
+    },
+    {
+      "bytes": 5278,
+      "local_path": ".cache/iris-release-v1/extracted_offline_check.py",
+      "path_in_repo": "evidence/package-replay-check.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "ee751cac1427340d4c306ad7981e7faae0bfa08c6b7928ec22b772b7c0567a3f"
+    },
+    {
+      "bytes": 1601,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/fresh-owner-download.json",
+      "path_in_repo": "evidence/owner-fresh/fresh-owner-download.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "be7ec1b275472ceab7d5dc9884f1104db15dfcf8f639537be49a28df7e18d42e"
+    },
+    {
+      "bytes": 1132,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/preparation.json",
+      "path_in_repo": "evidence/owner-fresh/preparation.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f73fbcbc33b3e7588a73ea27dcd8c404bdcd9d7ba687b690e1ec55e0f9a25048"
+    },
+    {
+      "bytes": 362,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/audio-hydration.json",
+      "path_in_repo": "evidence/owner-fresh/audio-hydration.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "10cb6114395fa468174ca995dc7d375bff6177f15f97de684d5b3f8fae7fb0a1"
+    },
+    {
+      "bytes": 3994,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/owner-implementation-before-fitting-ad11c2f8b96b5647.json",
+      "path_in_repo": "evidence/owner-fresh/owner-implementation-before-fitting-ad11c2f8b96b5647.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5989a506d484124cea9d1e02ff64222561d8d6161f1315c1e6e5c645973d1627"
+    },
+    {
+      "bytes": 267,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/implementation-before-fitting.json",
+      "path_in_repo": "evidence/owner-fresh/implementation-before-fitting.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "77dea8b04d5b3efefee8071763cedd5db62e1645c50c8a4a9616dc47a7c9b7e7"
+    },
+    {
+      "bytes": 1372,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/fresh-target-corpus-audit.json",
+      "path_in_repo": "evidence/owner-fresh/fresh-target-corpus-audit.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "813a9978f47762adf703b980c3a14cff653064bb2529d54ea2ad8b5e98a4007e"
+    },
+    {
+      "bytes": 1344,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/state-actions.json",
+      "path_in_repo": "evidence/owner-fresh/state-actions.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c2bf711cb7f0a2cdec49031f748186917ab3af738a73cd5e8afaf9ad08771653"
+    },
+    {
+      "bytes": 1676,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/state-restoration.json",
+      "path_in_repo": "evidence/owner-fresh/state-restoration.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "dffece4be10252f4452c1dfb13b649a3ee33942e7455939832bc07cb9f0c48e3"
+    },
+    {
+      "bytes": 16578,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/fresh_preparation_check.py",
+      "path_in_repo": "evidence/owner-fresh/fresh_preparation_check.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "a92a1616252a9668a051ed891e41ffb51ad03e0137149159bf0c919416c5e226"
+    },
+    {
+      "bytes": 12517,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/fresh_preparation_finalize.py",
+      "path_in_repo": "evidence/owner-fresh/fresh_preparation_finalize.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "caaa0fb75c19ebd6cb26dbfbbf92b80405d7d8a8fe7238d76c443258babfc08a"
+    },
+    {
+      "bytes": 3937,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/fresh-target-audit-completed.py",
+      "path_in_repo": "evidence/owner-fresh/fresh-target-audit-completed.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "93ad9a65830b4d81d9243d55a609885e0d945fc41f92a29d49abc2538f4970ef"
+    },
+    {
+      "bytes": 590,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/fresh-target-audit-execution.json",
+      "path_in_repo": "evidence/owner-fresh/fresh-target-audit-execution.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "63c33866c572995861f0190a196dcf1f879889b7caa4793561f3f893d3b5c66c"
+    },
+    {
+      "bytes": 426,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/fresh-preparation-orchestrator.log",
+      "path_in_repo": "evidence/owner-fresh/fresh-preparation-orchestrator.log",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "7e148d6ad60d825dfefc606baa3a5e360d334ccef234f6f4f2192b6358f20c7b"
+    },
+    {
+      "bytes": 1181,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/fresh-target-audit.log",
+      "path_in_repo": "evidence/owner-fresh/fresh-target-audit.log",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c8e609f00b2b9038a43d4f3982406593b76a4a086314fcd45f60c2676232b1ff"
+    },
+    {
+      "bytes": 315,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/fresh-target-preparation.log",
+      "path_in_repo": "evidence/owner-fresh/fresh-target-preparation.log",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "89d03958bb62fa58a9338ac5f9be43b9714111795ea827cee7dd573a72952a01"
+    },
+    {
+      "bytes": 1254,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/fresh-target-audit-completed.log",
+      "path_in_repo": "evidence/owner-fresh/fresh-target-audit-completed.log",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5b591a9bf2bb0db364d5672d82bdcf6102efafbf52d1f04fc05b74cf5d87812d"
+    },
+    {
+      "bytes": 7626,
+      "local_path": ".cache/iris-release-v1/publication/owner-fresh/inventory.json",
+      "path_in_repo": "evidence/owner-fresh/inventory.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "b64c38a3efc1e4f82ff80451f20db14d7ce364644e6a1b7ce5d2a7d98d5b54bb"
+    },
+    {
+      "bytes": 83716,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/experiments/iris-release-v1/reproduction-run-fresh-20261017T021454164731Z.json",
+      "path_in_repo": "evidence/reproduction-run-fresh-20261017T021454164731Z.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "cb0707363ddfb30423c363e57281bbee497ae76f8536646989a73369a0754b68"
+    },
+    {
+      "bytes": 83892,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/experiments/iris-release-v1/reproduction-run-fresh-http-retry.json",
+      "path_in_repo": "evidence/reproduction-run-fresh-http-retry.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "e8c02c1a30c7167b680e9bd07cd261ebd53599215026a94f949d1f47e4392d0c"
+    },
+    {
+      "bytes": 1126532,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/experiments/iris-release-v1/reproduction-run-fresh-configfix.json",
+      "path_in_repo": "evidence/reproduction-run-fresh-configfix.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "748c4c1cafe6764ef2f8be81bfefc864bd0988ee466ce6c3479d08d12e98e004"
+    },
+    {
+      "bytes": 260620,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/experiments/iris-release-v1/reproduction-run-fresh-orderfix.json",
+      "path_in_repo": "evidence/reproduction-run-fresh-orderfix.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "2c02a8a8fb1327e208fa41c109b52ac3f115cc4e7404b31a7718ceb7c399864e"
+    },
+    {
+      "bytes": 455382,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/experiments/iris-release-v1/reproduction-run-fresh-sourcefix.json",
+      "path_in_repo": "evidence/reproduction-run-fresh-sourcefix.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9e18fe74bb10d211919cab590ca338a5336441d04f631edbd52e23906e9c2604"
+    },
+    {
+      "bytes": 3227,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/workflow/fresh-sourcefix/decision-parity.json",
+      "path_in_repo": "evidence/fresh-decision-parity.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "847b5a407fe0f26f92288df42f48ca7d02231c5b953d974520acf7beab494353"
+    },
+    {
+      "bytes": 78900,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/workflow/fresh-sourcefix/pipeline-resources.json",
+      "path_in_repo": "evidence/fresh-pipeline-resources.json",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "5bd75592a7a41bb934918214695c72ea3f5ac308397a6a9d618d219c759a6529"
+    },
+    {
+      "bytes": 5679,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/workflow/fresh-sourcefix/python-tests.log",
+      "path_in_repo": "evidence/fresh-checks/python-tests.log",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "aa93c513997bcca9c6832f3795b7210cb3d3c7e9bb8fc517b1dbc4ca7801c45b"
+    },
+    {
+      "bytes": 145,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/workflow/fresh-sourcefix/ui-install.log",
+      "path_in_repo": "evidence/fresh-checks/ui-install.log",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9df0e8093486e1d4f6738e45b0644352cef61cf73b9add1c61c10e9d798d77c5"
+    },
+    {
+      "bytes": 9378,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/workflow/fresh-sourcefix/ui-test.log",
+      "path_in_repo": "evidence/fresh-checks/ui-test.log",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c33dad6003af0d96bd0105b325e0569bfae612717b42592c6a064a164c6816b5"
+    },
+    {
+      "bytes": 335,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/workflow/fresh-sourcefix/ui-check.log",
+      "path_in_repo": "evidence/fresh-checks/ui-check.log",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "9039a1f669e1749771f169e9a8e99b4c5d3dc5a63deb0c8b2edfc4de4f03f1d2"
+    },
+    {
+      "bytes": 960,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/workflow/fresh-sourcefix/ui-build.log",
+      "path_in_repo": "evidence/fresh-checks/ui-build.log",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c339020fcb84caf0663148daa887133643e7152b9289e764bde60b1868b751b3"
+    },
+    {
+      "bytes": 4402,
+      "local_path": ".cache/iris-release-v1/fresh_clone_check.py",
+      "path_in_repo": "evidence/fresh-checks/fresh_clone_check.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "67da2fc5057535d15dbe2adff524685d792093f0327380bcec55eacf588ea131"
+    },
+    {
+      "bytes": 5942,
+      "local_path": ".cache/iris-release-v1/fresh_orderfix_check.py",
+      "path_in_repo": "evidence/fresh-checks/fresh_orderfix_check.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "c3a7717c3ffc148bf934d25995ee96c8ced56e8e86b501f58cc1996867c5d12d"
+    },
+    {
+      "bytes": 6374,
+      "local_path": ".cache/iris-release-v1/fresh_sourcefix_check.py",
+      "path_in_repo": "evidence/fresh-checks/fresh_sourcefix_check.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "18955e8fc517f73c4d27e6cbdd28f137e6a3d933aee55c310200ff1232ffded2"
+    },
+    {
+      "bytes": 6809,
+      "local_path": ".cache/iris-release-v1/finalize_fresh_check.py",
+      "path_in_repo": "evidence/fresh-checks/finalize_fresh_check.py",
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "sha256": "f582ad0fe2e380a6fb6ea259186daf9230155726b4fcd48e7d9a4273fdfa9c88"
+    }
+  ],
+  "model_visibility": "public",
+  "run_id": "iris-final-cardfix",
+  "schema_version": 1,
+  "source_visibility": "private",
+  "verification": {
+    "bindings": {
+      "dist/iris-release-v1/iris-final-cardfix/iris-pi.zip": "028add978ee74ee7a7b7bad1e4f0df73364438a2d24d4a2ad74e4bbf7eda687f",
+      "experiments/iris-release-v1/reproduction-release.json": "14a4aefa20f11790dab5b33f158e43c3f3a800f9c0009bbafce22e755101b0d9"
+    },
+    "passed": true
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "experiment": "iris-release-v1",
+  "baseline": "vcm-mvp-hey-iris-v3",
+  "requirements": [
+    "ME-01",
+    "ME-02",
+    "ME-03",
+    "ME-04",
+    "ME-05",
+    "ME-06",
+    "ME-07",
+    "ME-08",
+    "UC-01",
+    "UC-02",
+    "UC-03",
+    "UC-04",
+    "UC-05",
+    "UC-06",
+    "UC-07",
+    "UC-08",
+    "UC-09",
+    "UC-10"
+  ],
+  "hypothesis": "Speaker-balanced whole commands and cross-speaker command invariance improve accepted exact commands on held-out voices within fixed development error limits",
+  "input_bindings": {
+    ".cache/iris-release-v1/inputs/base-views/train.jsonl": "e5a428b4ad25e5a6bac2cfcfa8817680df266397dd20d26b04b42f7193702ad7",
+    ".cache/iris-release-v1/inputs/base-views/dev.jsonl": "6b47beb8aade5bf86da67d08b78a03949dc03956754cd705c1cc82f3d9018c8b",
+    ".cache/iris-release-v1/inputs/base-views/calibration.jsonl": "143bb64061e3bf0e4d453960cb6d0765490a183fa4de1f5982dfcf0ba092fed9",
+    ".cache/iris-release-v1/inputs/base-views/test.jsonl": "3461a214a3566ed1d466f752de2c93b136570e461148bf497e983a9bda0a2c2d",
+    ".cache/iris-release-v1/inputs/base-views/holdout.jsonl": "c1ce15b6c401b425eee079834d4bc9d2b1baa2994d97e09e9ff31533400cad1b",
+    ".cache/iris-release-v1/inputs/base-views/personal-test.jsonl": "c1be08c9d1a78eb99b6efcce2f95efa3528209bbbbb09a15238400cb82efa3a9",
+    ".cache/iris-release-v1/inputs/compact-initializer.pt": "32407d9540367bd84f4052c06dc4e5db73a79aef602614766cecfa4e74fe965e",
+    ".cache/iris-release-v1/inputs/full-initializer.pt": "4721c60525f90f9a501ea3328b5e82bde48e0634a83a7c0a6c7003b12cfe998f",
+    ".cache/iris-release-v1/inputs/catalog-parent.json": "f169f8b80be8a844de4fca1cfbe7ead9841d4165ec8ad748b0af9010c6c5e8b1",
+    ".cache/iris-release-v1/inputs/normalization.json": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262"
+  },
+  "catalog_classes": 328,
+  "generation_plan_sha256": "1f767e35d75d7ba5a8b9ecd4f5332233d402377a41a6ac1275ad12de74a33599",
+  "voices_sha256": "b3fb665c57ad5a4ea08272aa79b5b0ebd60ba9544210ae597c48141a66f0818d",
+  "generation": {
+    "batch": 4,
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "max_new_tokens": 224,
+    "cuda_memory_fraction": 0.35
+  },
+  "training": {
+    "epochs": 16,
+    "steps_per_epoch": 96,
+    "min_epochs": 8,
+    "patience": 6,
+    "batch": 32,
+    "microbatch": 8,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.001,
+    "smoothing": 0.02,
+    "clip": 5.0,
+    "seeds": [
+      53,
+      67
+    ],
+    "primary_seed": 53,
+    "contrastive_weight": 0.1,
+    "contrastive_temperature": 0.1,
+    "source_balance": "16 human + 16 synthetic per optimizer update",
+    "unknown_sampling_probability": 0.2,
+    "priority_probability": 0.8,
+    "gain_db": [
+      -6,
+      6
+    ],
+    "masks": {
+      "frequency_bins": [
+        0,
+        4
+      ],
+      "frequency_probability": 0.5,
+      "time_frames_max": 10,
+      "time_fraction_max": 0.05,
+      "time_probability": 0.5
+    }
+  },
+  "loss_citation": "https://proceedings.neurips.cc/paper/2020/hash/d89a66c7c80a29b1bdbab0f2a1a94af8-Abstract.html",
+  "masking_citation": "https://www.isca-archive.org/interspeech_2019/park19e_interspeech.html",
+  "demo_risk": {
+    "human": 0.03,
+    "synthetic": 0.01
+  },
+  "initialization": "continuation of our own V2 encoder and direct head, no external acoustic initializer",
+  "selection": "dev accepted macro human-speaker exact recall, human correct count, synthetic correct count, cost; thresholds fit development/calibration only",
+  "run_budget": "compact/full x CE/SupCon seed53, then chosen width x CE/SupCon seed67",
+  "promotion": {
+    "personal_correct_min": 30,
+    "personal_positive_n": 36,
+    "human_correct_not_below_baseline": true,
+    "human_unknown_not_above_baseline": true,
+    "official_exact_not_below_baseline": true
+  },
+  "benchmark_rows": 196,
+  "benchmark_commit": "ab39857cf73dd067d068fed388c321ab160dc191",
+  "test_used_for_selection": false,
+  "original_human_personal_positive_n": 0,
+  "original_human_wake_positive_n": 0,
+  "physical_pi_measured": false,
+  "no_asr": true,
+  "no_llm_in_runtime": true,
+  "source_snapshot_commit": "600be8a561d436c70d1e02f92aa44f9b693bef3f",
+  "code_before_fitting": {
+    "scripts/train/iris_diversity.py": "864cb5c364031357cdb6d772472f420dda131a1e8a8de062306d0c3c7100fbb1",
+    "scripts/models/mvp_static.py": "33d82a32c72515b857d514215e9416538bad1975e80e11a35c7113eaf7bcf694",
+    "scripts/models/speaker_demo.py": "647599902205e7204b161ed967c31e0212944657df6cd18cc1b0a24210514bf4",
+    "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+  }
+}

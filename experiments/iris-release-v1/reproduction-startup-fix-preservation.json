@@ -1,0 +1,33 @@
+{
+  "files": [
+    {
+      "bytes": 77901,
+      "original": "experiments/iris-release-v1/reproduction-release.json",
+      "preserved": ".cache/iris-release-v1/pre-startup-fix/reproduction-release.json",
+      "sha256": "46d630f3dc5eb5b34a88bb1fbdbbfc4df172a06df4562c47e95829eb045f7958"
+    },
+    {
+      "bytes": 3145,
+      "original": "experiments/iris-release-v1/reproduction-run-iris-final.json",
+      "preserved": ".cache/iris-release-v1/pre-startup-fix/reproduction-run-iris-final.json",
+      "sha256": "789242962574a72c4d21de1d9d1849cc625e80b459d7bf194c10dcb078a6281e"
+    },
+    {
+      "bytes": 14115880,
+      "original": "dist/iris-release-v1/iris-final/iris-pi.zip",
+      "preserved": ".cache/iris-release-v1/pre-startup-fix/iris-pi.zip",
+      "sha256": "ef8ca83857db5849ecc0092f58cd00038bc5fc121410ac51e0500ed9339ed092"
+    },
+    {
+      "bytes": 5375358,
+      "original": "experiments/iris-release-v1/reproduction-inputs-before-startup-fix.json",
+      "preserved": ".cache/iris-release-v1/pre-startup-fix/reproduction-inputs.json",
+      "sha256": "b5e04d7bf33b8b10b94e9e732cfaf2ae0c91eb590387f094ef2e81671274c518"
+    }
+  ],
+  "model_weights_or_data_changed": false,
+  "physical_pi_measured": false,
+  "reason": "Untouched generated media_player binding rejected disabled-HA startup; original release, workflow, package and input receipt kept byte-for-byte before source-only repair.",
+  "schema_version": 1,
+  "status": "preserved_before_startup_configuration_fix"
+}

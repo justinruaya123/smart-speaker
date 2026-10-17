@@ -12,10 +12,17 @@ export class PythonRuntime extends EventEmitter {
   private closed = false;
   private health: RuntimeEvent = { engine: 'onnx-cpu', loaded: false, state: 'starting' };
   private snapshot: RuntimeEvent | undefined;
-  constructor(options: { python: string; root: string; bundle: string; threads: number }) {
+  constructor(options: { python: string; root: string; bundle: string; threads: number; profile?: string }) {
     super();
-    this.child = spawn(options.python, ['-u', '-m', 'scripts.runtime.speaker_worker', '--bundle', options.bundle, '--diagnostic', '--threads', String(options.threads)],
-      { cwd: options.root, stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true });
+    const environment = { ...process.env };
+    // Set defaults before Python imports NumPy/SciPy. Engine thread options do
+    // not limit the frontend's independent BLAS/OpenMP pools. Expert overrides
+    // remain explicit; blank values mean use the configured runtime thread count.
+    for (const key of ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','VECLIB_MAXIMUM_THREADS','NUMEXPR_NUM_THREADS']) {
+      if (!environment[key]?.trim()) environment[key] = String(options.threads);
+    }
+    this.child = spawn(options.python, ['-u', '-m', 'scripts.runtime.speaker_worker', '--bundle', options.bundle, '--diagnostic', '--threads', String(options.threads), '--profile', options.profile || 'owner-protected'],
+      { cwd: options.root, env: environment, stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true });
     const lines = createInterface({ input: this.child.stdout });
     lines.on('line', line => {
       if (line.length > 1_000_000) { this.fail('Runtime event too large'); return; }
@@ -49,9 +56,10 @@ export class PythonRuntime extends EventEmitter {
     });
   }
   private fail(message: string) {
-    this.health = { ...this.health, loaded: false, state: 'runtime_error' };
+    this.health = { ...this.health, loaded: false, state: 'runtime_error', actions_enabled:false };
+    this.snapshot = { ...this.health, event:'ready' };
     for (const request of this.pending.values()) { clearTimeout(request.timer); request.reject(new Error(message)); }
-    this.pending.clear(); this.emit('event', { event: 'error', message, actions_enabled: false });
+    this.pending.clear(); this.emit('event', { event: 'error', message, fatal:true, state:'runtime_error', loaded:false, actions_enabled: false });
   }
   async close() {
     if (this.closed) return;

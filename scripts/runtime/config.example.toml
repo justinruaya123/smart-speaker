@@ -1,23 +1,22 @@
-# Editable installation settings. Restart start.py after changing these values.
-# Environment / root .env overrides these values; explicit CLI options win.
+# Iris installation settings. Restart start.py after changes.
+# CLI > environment > private .env > config.toml > defaults.
 [inference]
-engine = "ncnn" # Or "onnxruntime"; no automatic engine fallback.
-mode = "demo" # Live microphone execution; "qualified" follows frozen policy.
-intent_threshold = 0.95
-slot_threshold = 0.90 # Every supplied slot must pass independently.
+engine = "ncnn" # Explicit alternative: onnxruntime. No automatic fallback.
+mode = "demo" # Experimental empirical policy; not human/Pi qualification.
+profile = "owner-protected"
 threads = 1
 
 [audio]
-microphone = -1 # -1 waits for explicit selection in Debug > Inference.
+microphone = -1 # Choose an input listed by --list-mics or the UI.
 
 [server]
 host = "127.0.0.1"
 port = 3000
-origin = "" # Derived from host/port when empty.
+origin = ""
 
 [ui]
-debug = true
-readout = true
+debug = false
+readout = false
 
 [actions]
 enabled = true
@@ -29,16 +28,26 @@ output = "results"
 [providers]
 ha_enabled = false
 ha_url = ""
-ha_entity_ids = "" # Comma-separated allowed provider entity IDs.
-spotify_enabled = false
-spotify_redirect_uri = ""
-spotify_device_id = ""
+ha_entity_ids = "" # Explicit allowlist: every bound entity must appear here.
 local_media_dir = "media"
-data_dir = "data"
+data_dir = "state"
+timezone = "Asia/Manila"
 
 [bindings.lights]
-# "light.kitchen" = "light.your_kitchen_entity"
-# "light.all" = "light.your_explicit_group_entity"
-
+# "light.ceiling" = "light.your_ceiling"
+# "light.all" = ["light.your_ceiling", "light.your_kitchen"]
 [bindings.songs]
-# "song.dynamite" = "spotify:track:YOUR_TRACK_ID"
+# "song.enemy" = "media-source://media_source/local/enemy.mp3"
+[bindings.climate]
+# default = "climate.your_room"
+[bindings.weather]
+# default = "weather.home"
+[bindings.media_player]
+# Leave media unconfigured until you select a provider and its required binding.
+# provider = "home_assistant" # Explicit alternatives: local, spotify.
+# entity_id = "media_player.your_speaker"
+[bindings.contacts]
+# "contact.home" = "script.call_home"
+# "contact.mom" = "script.call_mom"
+[bindings.messages]
+# default = "script.send_preset_message"

@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "experiment": "iris-release-v1",
+  "utc": "2026-10-17T01:06:52.656Z",
+  "passed": true,
+  "evidence_kind": "compiled_iris_resident_worker_recorded_wav",
+  "measurement_host": "desktop_host",
+  "host": {
+    "platform": "linux",
+    "arch": "x64",
+    "node": "v24.13.0"
+  },
+  "purpose": "Verify a permitted original WAV reaches the resident Python worker, server WebSocket, compiled Iris final readout and replay-only execution receipt. This is not acoustic qualification.",
+  "runtime": {
+    "engine": "onnxruntime",
+    "loaded": true,
+    "nativeSession": true,
+    "profile": "benchmark-compatible",
+    "threads": 1,
+    "owner_gating_enabled": false,
+    "ownership_experimental": false,
+    "model_sha256": "53e285a078526237ee80fbcb0d92f18aeabdd1b18ce26f84961b32fda377b4d0",
+    "session_id": "8510f60758a746329fc74fb3e4aa2986",
+    "session_load_ms": 201.14270923659205,
+    "actions_enabled": false
+  },
+  "reference": {
+    "id": "iris1/5b6936c05d99ad0f1c57",
+    "original_audio": ".cache/vcm-mvp-hey-iris-v1/wake-v1/audio/test-ph/5b6936c05d99ad0f1c57.wav",
+    "sha256": "7ba842efbcbd92a72a66d9a7d3c335b35b72fb043fe29d195b2d0a14773d2b9e",
+    "expected": {
+      "intent": "LIGHT_OFF",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "source": "Qwen3-original-designed-iris-v1",
+    "role": "command",
+    "kind": "synthetic",
+    "synthetic": true,
+    "listener_verified": false,
+    "manifest_sha256": "c1be08c9d1a78eb99b6efcce2f95efa3528209bbbbb09a15238400cb82efa3a9",
+    "resolver": "scripts.iris_release.resolve_audio",
+    "bundle_sha256": "ec33a7493af5059bc8122620cf5ccea937504b2777745f2d33472c552d9b7cae"
+  },
+  "pinned_bundle": ".cache/iris-release-v1/inputs/fallback-bundles/full",
+  "source_manifest": ".cache/iris-release-v1/inputs/base-views/personal-test.jsonl",
+  "checks": [
+    {
+      "viewport": [
+        800,
+        480
+      ],
+      "passed": true,
+      "session_id": "8510f60758a746329fc74fb3e4aa2986",
+      "utterance_id": "a55822daf102404fb0091606a48023a9",
+      "sequence": 25,
+      "source": "wav",
+      "output": {
+        "schema_version": 3,
+        "accepted": false,
+        "command": null,
+        "reason": "OOV"
+      },
+      "application": {
+        "mode": "demo",
+        "schema_version": 3,
+        "accepted": false,
+        "command": null,
+        "reason": "OOV"
+      },
+      "raw_candidate": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.ceiling"
+        }
+      },
+      "raw_score": 0.5747257767037822,
+      "raw_command_exact": false,
+      "accepted_command_exact": false,
+      "execution_status": "preview",
+      "execution_detail": "Recorded WAVs and fixtures do not execute actions.",
+      "displayed_phase": "Rejected",
+      "displayed_receipt": "Replay preview\n\nRecorded WAVs and fixtures do not execute actions.",
+      "actual_runtime_ws_matches_dom": true,
+      "actual_action_ws_matches_receipt": true,
+      "observed_browser_wall_ms": 66.040209,
+      "timing_scope": "Observed desktop browser upload-to-final-and-receipt wall time, includes network and rendering; not model timing or Pi latency."
+    },
+    {
+      "viewport": [
+        1024,
+        600
+      ],
+      "passed": true,
+      "session_id": "8510f60758a746329fc74fb3e4aa2986",
+      "utterance_id": "868582eff76a49a182fc8f60a9e005f6",
+      "sequence": 31,
+      "source": "wav",
+      "output": {
+        "schema_version": 3,
+        "accepted": false,
+        "command": null,
+        "reason": "OOV"
+      },
+      "application": {
+        "mode": "demo",
+        "schema_version": 3,
+        "accepted": false,
+        "command": null,
+        "reason": "OOV"
+      },
+      "raw_candidate": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.ceiling"
+        }
+      },
+      "raw_score": 0.5747257767037822,
+      "raw_command_exact": false,
+      "accepted_command_exact": false,
+      "execution_status": "preview",
+      "execution_detail": "Recorded WAVs and fixtures do not execute actions.",
+      "displayed_phase": "Rejected",
+      "displayed_receipt": "Replay preview\n\nRecorded WAVs and fixtures do not execute actions.",
+      "actual_runtime_ws_matches_dom": true,
+      "actual_action_ws_matches_receipt": true,
+      "observed_browser_wall_ms": 57.21262999999999,
+      "timing_scope": "Observed desktop browser upload-to-final-and-receipt wall time, includes network and rendering; not model timing or Pi latency."
+    }
+  ],
+  "resident_worker_reused": true,
+  "actual_wav_replays": 2,
+  "typed_fixtures": 0,
+  "action_state_unchanged": true,
+  "action_revision_before": 0,
+  "action_revision_after": 0,
+  "persisted_jobs": 0,
+  "persisted_action_receipts": 0,
+  "browser_mutations": [
+    {
+      "viewport": [
+        800,
+        480
+      ],
+      "method": "POST",
+      "path": "/api/runtime/wav",
+      "query": "?wake=false"
+    },
+    {
+      "viewport": [
+        1024,
+        600
+      ],
+      "method": "POST",
+      "path": "/api/runtime/wav",
+      "query": "?wake=false"
+    }
+  ],
+  "external_browser_requests": [],
+  "server_actions_configured": true,
+  "effective_actions_enabled": false,
+  "providers": {
+    "home_assistant": "disabled",
+    "spotify": "disabled",
+    "local_media": "unconfigured"
+  },
+  "actions_executed": false,
+  "live_microphone": false,
+  "wake_tested": false,
+  "owner_check_tested": false,
+  "physical_pi": false,
+  "acoustic_quality_approved": false,
+  "limitation": "The frozen first positive personal-test recording is synthetic, listener-unverified and was rejected OOV; raw candidate LIGHT_ON disagrees with reference LIGHT_OFF. No thresholds, weights, PCM or reference were changed. The route and faithful rejection display pass; command recognition does not pass on this example.",
+  "command": {
+    "cwd": "SpeakerUI",
+    "program": "../.runtime/tools/node-v24.13.0-linux-x64/bin/node",
+    "args": [
+      "scripts/browser-runtime-check.mjs",
+      "http://127.0.0.1:39241",
+      "..",
+      "../.cache/iris-release-v1/ui/resident-baseline",
+      "--recording",
+      "../.cache/iris-release-v1/ui/resident-baseline/recording-reference.json",
+      "--real-only"
+    ],
+    "environment": {
+      "INFERENCE_MODE": "onnx",
+      "INFERENCE_ENGINE": "onnxruntime",
+      "EXECUTION_MODE": "demo",
+      "RECOGNITION_PROFILE": "benchmark-compatible",
+      "ACTIONS_ENABLED": "true",
+      "HA_ENABLED": "false",
+      "SPOTIFY_ENABLED": "false",
+      "SMART_SPEAKER_BINDINGS": "{}",
+      "SMART_SPEAKER_THREADS": "1",
+      "PLAYWRIGHT_BROWSERS_PATH": "/tmp/iris-playwright-browsers"
+    }
+  },
+  "artifacts": {
+    ".cache/iris-release-v1/ui/resident-baseline/results.json": {
+      "sha256": "c7e61d43c82bf675bca0aa186a6f24382b2b39634d16feb841d50847e6b3a729",
+      "bytes": 34436
+    },
+    ".cache/iris-release-v1/ui/resident-baseline/websocket-events.json": {
+      "sha256": "29904ac23db9ad88e4d61a95892abb1173152f0e03c7fc73f151107971e846ad",
+      "bytes": 35800
+    },
+    ".cache/iris-release-v1/ui/resident-baseline/recording-reference.json": {
+      "sha256": "26e72b1e16579bd6a932eebfd5a89bd546785f185e362823efad9313f15d7d5e",
+      "bytes": 1238
+    },
+    ".cache/iris-release-v1/ui/resident-baseline/wav-800x480.png": {
+      "sha256": "b13659771a3115920739d9132e6331952741f6ceb080083ffb0b02b82c1ed154",
+      "bytes": 48000
+    },
+    ".cache/iris-release-v1/ui/resident-baseline/home-800x480.png": {
+      "sha256": "233566c93a1c29aca12bb17beb9c38aff7145552cfa65539dbe436b65b0b36db",
+      "bytes": 42503
+    },
+    ".cache/iris-release-v1/ui/resident-baseline/wav-1024x600.png": {
+      "sha256": "4a948b1308b92515b029c94abe7029578b005b15c2abf84f813c7a19362723f5",
+      "bytes": 56277
+    },
+    ".cache/iris-release-v1/ui/resident-baseline/home-1024x600.png": {
+      "sha256": "1ba586ac71ae638c5415cb2bea70d0f6840b142d12401e31be89996b30056503",
+      "bytes": 46437
+    },
+    "SpeakerUI/scripts/browser-runtime-check.mjs": {
+      "sha256": "782ee2926012d42538fc994ebb61cadcc1c0fee46b983a4d0f819aaf44fba89b",
+      "bytes": 11347
+    },
+    "SpeakerUI/dist-server/server/main.js": {
+      "sha256": "8c7467d349025ecfd9dfd39fc3e059b83bca173e3ee25a74a83a3374d0779d2d",
+      "bytes": 835
+    },
+    "SpeakerUI/dist/index.html": {
+      "sha256": "d853fc31c491a46f9807ce7c736976e480a4d77e641292c0fec4988d1f9246e2",
+      "bytes": 371
+    },
+    "scripts/runtime/speaker_worker.py": {
+      "sha256": "3ab8f0c98607c2e8b45d8939a11787f0ba449c5c2315daba2d58171997efb939",
+      "bytes": 16319
+    }
+  }
+}

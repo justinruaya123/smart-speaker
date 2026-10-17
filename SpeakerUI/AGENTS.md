@@ -1,13 +1,13 @@
-# Ambient / SpeakerUI
+# Iris / SpeakerUI
 
-- Do not overengineer. Preserve unrelated working changes and the audio diagnostic workflow.
-- The approved product identity and interaction contract are in `docs/design/ambient.md`.
-- `mockups/ambient-v6/04-ambient.html` is the retained visual reference. Match its geometry, typography, colors, animation and touch behavior before introducing new design choices. Document intentional deviations and verify the compiled screen against it.
-- Target an 800 × 480 landscape, 7-inch Raspberry Pi 4 touch display first; also verify 1024 × 600. No topbar or sidebar. Dark Ambient palette, sparse text, separate glass controls, centered live aura and clock.
-- Implement the SPA in Svelte 5, using component-owned reactive state. Keep native gesture/canvas lifetimes explicit and cleaned up. Avoid new animation, icon, state or component libraries when the platform or existing code suffices.
-- Keep every approved animation. Bake fixed icons, shapes and CSS motion at build time; the LiveKit-derived aura stays live. Pause hidden rendering and honor reduced motion. Do not call a desktop browser measurement a Pi benchmark.
-- All inference remains explicitly dummy/simulated until a real ONNX contract and model are supplied. No ASR is implied. Keep credentials server-side, never in VITE variables, generated assets, fixtures or logs.
-- Changes to Home Assistant/Spotify configuration do not authorize live device actions. Preserve disabled-by-default integrations and existing inference safety boundaries.
-- Verify pointer drag, flick velocity, gesture cancellation and event ownership. Only the swiped reminder is completed. Reminder reordering belongs exclusively to its handle and must never open controls.
-- Preserve the diagnostic page and existing backend tests. Run type checks, offline tests, optimized build, 800 × 480 browser interaction/layout checks and resource measurements for a substantial UI change.
-- Do not commit, stage, deploy, or discard existing work unless explicitly requested.
+Read the root [operating contract](../AGENTS.md), [requirements](../REQUIREMENTS.md), [operator runbook](../docs/HANDOFF-iris-rpi-v1.md) and [release evidence](../docs/EXPERIMENT-iris-release-v1.md). Current explicit user authorization governs implementation and actions.
+
+- `src/App.svelte` mounts `ambient/Iris.svelte`. Show microphone state, tentative intent/slots, final acceptance/rejection and truthful execution receipts. Preserve the use-case panels and responsive 800×480, 1024×600 and mobile layouts.
+- Recognition uses the resident local CPU worker and direct finite VCM, wake/VAD and experimental owner voice checks. No transcription, LLM, cloud recognition or automatic model/provider fallback.
+- Tentative results are previews. Recorded WAVs, fixtures and benchmark profiles never execute actions. Voice dispatch requires an accepted final microphone command and passed owner check; explicit touch requests use the same canonical dispatcher. Recognizer/deployment disablement overrides server action enablement.
+- Keep canonical command IDs/types aligned with `scripts/runtime/pcv_schema.py` in the parent repository. Missing bindings return `not_configured`. Keep credentials, action deduplication and the atomic timer/alarm/reminder store on the server. Unknown provider outcomes are never retried automatically.
+- Keep the useful Iris `RuntimeDebug.svelte` and history view. The separate `?diagnostics` page is explicitly mock audio transport; its manually selected media controls use configured providers. Never label a mock as a native session.
+- Use the root Python environment and shared Node runtime/dependencies. Worker numeric-library thread defaults match configured threads before Python imports; document and record explicit overrides in comparable measurements.
+- Verify `npm test`, `npm run check`, `npm run build` and the relevant compiled-browser checks. Separate contract fixtures, recorded-WAV integration, host resource measurements, live microphone tests and physical Pi evidence.
+- Preserve third-party notices and frozen evidence. Historical Ambient aura/simulator/design/QA files are superseded; their immutable recovery is indexed by the root [archive manifest](../experiments/iris-release-v1/archive-manifest.json). Do not restore them to the production import/build closure.
+- Follow the parent repository's ownership boundaries. Do not stage, commit, publish, archive or delete unrelated files.

@@ -1,0 +1,151 @@
+{
+  "architecture": {
+    "overlap_head": true,
+    "pooling": "masked_mean_std",
+    "pretrained_identity_model": false,
+    "random_initialization": true,
+    "speaker_embedding": 128,
+    "temporal_depthwise_dilations": [
+      1,
+      2,
+      4,
+      8,
+      1,
+      2
+    ],
+    "width": 64
+  },
+  "baseline": "no independent owner backend; command embeddings forbidden for identity",
+  "calibration": {
+    "kind": "short_utterance_proxy+synthetic_wake_proxy",
+    "overlap_threshold": "lowest development threshold at <=5% clean false overlap, then maximize mixed recall",
+    "speaker_threshold": "lowest development threshold at <=5% FAR, then minimize FRR",
+    "target_clean_overlap_FPR": 0.05,
+    "target_impostor_FAR": 0.05
+  },
+  "component": "independent-owner",
+  "data": {
+    "constructed_overlap": "distinct speakers, same split only; -4..4dB SNR; RMS normalized .035; original singles preserved",
+    "fallback_speaker_split": "sha256-first32bits(phonetic-v2-libri/libri/<speaker>), .8/.9",
+    "historical_manifests_missing": true,
+    "historical_reservations": [],
+    "libri_max_hours": 30.0,
+    "libri_per_speaker_cap": 24,
+    "libri_selection": "first eligible audio members per speaker in hash-verified archive order; no text members read",
+    "manifest_sha256": "d22c1bf537a4f66f9eb4f2b33de7ac7c43fbff4c5f75387d228d7b47d184a884",
+    "source": {
+      "acquisition": "one archive; prefix resumed across publisher mirrors; disjoint HTTP ranges; final full SHA-256 verified",
+      "bytes": 6387309499,
+      "license": "CC-BY-4.0",
+      "local_path": ".cache/iris-release-v1/owner/downloads/train-clean-100.tar.gz",
+      "mirror": "https://huggingface.co/datasets/k2-fsa/LibriSpeech/resolve/2dd4206a992cd7a475e1ce2e82b708b014319152/train-clean-100.tar.gz",
+      "mirror_revision": "2dd4206a992cd7a475e1ce2e82b708b014319152",
+      "path": "data\\raw\\librispeech\\train-clean-100.tar.gz",
+      "publisher_md5": "2a93770f6d5c6c964bc36631d331a522",
+      "receipt_sha256": "f9891785f12dbbf1bf88e735259c170088a98571e9b3acf21ae1bce99f1b81b0",
+      "sha256": "d4ddd1d5a6ab303066f14971d768ee43278a5f2a0aa43dc716b0e64ecbbbf6e2",
+      "url": "https://openslr.magicdatatech.com/resources/12/train-clean-100.tar.gz"
+    },
+    "switch_proxy": "two different same-split 1.2s utterances in sequence; actual coverage-checked windows; marked constructed",
+    "synthetic_proxy_manifest_sha256": "eeb42b0310582bf75dac05ee5600f7335dbfc4b038ddabbc8e04bdd07acd7a88",
+    "synthetic_proxy_use": "existing held-out voices for wake-to-command development calibration/test only; never identity fitting or normalization; no text consumed",
+    "vcm_view_receipts": [
+      {
+        "path": ".cache/vcm-mvp-hey-iris-v2/views/train.jsonl",
+        "sha256": "88f4d52cdb3758e9d9751ba77d5902d4e212a3d86f03ceea33ece1fa800ba8d5"
+      },
+      {
+        "path": ".cache/vcm-mvp-hey-iris-v2/views/dev.jsonl",
+        "sha256": "e8b01b9fdb954879070dc0b4487cc7d1f456c7fc7562d1a938489f0bf14112cb"
+      },
+      {
+        "path": ".cache/vcm-mvp-hey-iris-v2/views/calibration.jsonl",
+        "sha256": "b677030b1214d005688feee1fec5f04c2d41cfa31913f83975a5864b05a82187"
+      },
+      {
+        "path": ".cache/vcm-mvp-hey-iris-v2/views/test.jsonl",
+        "sha256": "c39e36fdc98e83ecfebf4ff9a5c7c1d58f079267cfbdf3ce7c64d03ce91ab76f"
+      },
+      {
+        "path": ".cache/vcm-mvp-hey-iris-v2/views/personal-test.jsonl",
+        "sha256": "3f752adb010ca17f1f909ffe428515b07e97064f60f54636e7c58d5eb1a80a9a"
+      }
+    ]
+  },
+  "environment": {
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "python": "3.13.9"
+  },
+  "experiment_id": "iris-release-v1",
+  "fit": {
+    "batch_speakers": 12,
+    "crop_seconds": [
+      0.8,
+      3.0
+    ],
+    "epochs": 20,
+    "loss": "cosine_speaker_CE + .20 supervised_contrastive + .50 overlap_BCE",
+    "optimizer": "AdamW lr=.0015 weight_decay=.001; cosine schedule; clip_grad_norm=5",
+    "steps_per_epoch": 160,
+    "utterances_per_speaker": 3
+  },
+  "frontend": {
+    "convention": "htk_peak_triangles_power_natural_log",
+    "fft": 512,
+    "fmax": 7600.0,
+    "fmin": 60.0,
+    "hop": 160,
+    "log_floor": 1e-08,
+    "mel_bins": 40,
+    "sample_rate": 16000,
+    "window": 400
+  },
+  "hypothesis": "A random-init small speaker encoder can separate short same-speaker/impostor proxies and constructed overlap without command embeddings or transcripts.",
+  "ignore_gate": "committed /.cache and /data/audio match positive examples; owner source/compact JSON remain visible; no new rules needed",
+  "installed_preserved": {
+    "artifacts/bundle.json": "e1f9519400058b9fc5ebadcbb68f520a61faed93ff50eb528e530748e369ec85",
+    "artifacts/manifest.json": "8c1745c07dbb5a47299c09e0eac460fdfacc174d052c06cdacbcaa8e5446c128"
+  },
+  "normalization": "global_training_frames_only",
+  "pcm_normalization": {
+    "floor": 1e-06,
+    "kind": "utterance_rms",
+    "target": 0.035
+  },
+  "policy": {
+    "min_command_seconds": 0.4,
+    "min_reference_seconds": 0.8,
+    "min_window_seconds": 0.25,
+    "require_windows": true,
+    "timeout_seconds": 8.0
+  },
+  "requirements": [
+    "ME-01",
+    "ME-02",
+    "ME-03",
+    "ME-04",
+    "ME-06",
+    "ME-07",
+    "ME-08"
+  ],
+  "seed": 20261017,
+  "selection": "lowest development balanced same/impostor error plus overlap balanced error; no test feature extraction before lock",
+  "source_files": {
+    "pipeline.toml": "6ce3417cb1e779093c5413d94b50c2e071d7cd623a83a0e584fc17b396a737a9",
+    "requirements.lock": "49b36c847131665d40078620c3149905656d85df71d4f2edb228002249c8d18a",
+    "scripts/models/iris_owner.py": "6d0a4a3be1ea77c55236ffbe3d6e34affd9ad60156ab200c8b30e1f476c50bbc",
+    "scripts/runtime/audio.py": "a1af89d6a022ccc2ba09b5b794a2b9ff63d314d3a9d04f8a2037042694b3f3dd",
+    "scripts/runtime/iris_owner.py": "876475971e3912d103d811296d9a27b6eec41d4f2652afc45f0c9dd4129512d6",
+    "scripts/runtime/speaker_session.py": "9aa7fcb7b88919ebf657265acc32e1f1ab3aadfa9df8c4632b65a0a2de73bde9",
+    "scripts/train/iris_owner.py": "681f67f31323a683d796818e3fa540d12f3f39226266568133d6341224762a4f"
+  },
+  "source_revision": "600be8a561d436c70d1e02f92aa44f9b693bef3f",
+  "status": "experimental; proxy-only calibration; not human wake-qualified",
+  "unsupported": [
+    "fresh original-human wake-command pairing",
+    "real overlap mixtures",
+    "physical Raspberry Pi",
+    "live microphone",
+    "biometric identification"
+  ]
+}

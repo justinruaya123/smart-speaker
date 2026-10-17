@@ -1,0 +1,533 @@
+{
+  "all": {
+    "arm_accepted": 1,
+    "arm_rate": 0.03125,
+    "detected_voiced_seconds_min_median_max": [
+      0.545,
+      0.68,
+      0.805
+    ],
+    "duration_sufficient": 1,
+    "duration_sufficient_rate": 0.03125,
+    "references": 32,
+    "rejection_reasons": {
+      "insufficient_speech": 31
+    }
+  },
+  "calibration_kind": "short_utterance_proxy+synthetic_wake_proxy",
+  "component": "owner",
+  "embedding_logs_written": false,
+  "evidence": "Full unmodified held-out synthetic wake PCM -> trained CPU ONNX -> SpeakerSession.arm; simulated clock only",
+  "experiment_id": "iris-release-v1",
+  "experimental": true,
+  "frozen_owner_test_sha256": "4a6a9ae62d887a6498eeba862f7b325de4ee6abaaf0e65da22a69808c5147f11",
+  "frozen_owner_test_unchanged": true,
+  "generated_manifest_sha256": "59ef286523444f61ec6cb07303349e3397bce0c6b967517a9ddb3100491625c1",
+  "graph_sha256": "84e860f814e248e793567b2f1c8fe83d24d82b9d58f5379e4da69eb7b78d0a3f",
+  "limitations": [
+    "Four designed TTS voices are not four verified human identities",
+    "Full standalone wake clips are not wake-detector capture windows or live microphone recordings",
+    "No wake-command pairing, fresh human wake qualification, or physical Pi measurement",
+    "Duration is the frozen energy-mask proxy, not a human speech annotation"
+  ],
+  "metadata_sha256": "e2d531627fabf90453762cf17eb082b3f52f8922aa830e37a9202144b91fb310",
+  "observations": [
+    {
+      "arm_accepted": false,
+      "audio_sha256": "0371a590941dea549800c2ba56de655cc824176a22b88abf8d5d56160a2d2840",
+      "clipped": false,
+      "detected_voiced_seconds": 0.615,
+      "full_clip_seconds": 1.68,
+      "id": "iris-release/244ad6f7a6397eb15912",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 26880,
+      "voice_id": "iris-release-voice-20"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "dce3f800107bc2d8491906a83520b0ad792143246741ee28186990775031ec37",
+      "clipped": false,
+      "detected_voiced_seconds": 0.695,
+      "full_clip_seconds": 1.36,
+      "id": "iris-release/1de24efe39e943e1d76a",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 21760,
+      "voice_id": "iris-release-voice-20"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "9dc9063863276bf730a9ca489246f6840149e4438582448b026b71c1c96f27ec",
+      "clipped": false,
+      "detected_voiced_seconds": 0.655,
+      "full_clip_seconds": 1.04,
+      "id": "iris-release/08964b2f1fc085690cb3",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 16640,
+      "voice_id": "iris-release-voice-20"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "b1374d5d7bffb379b1400ba95a284ebc2d9f57707c7831527ca73412baf25f40",
+      "clipped": false,
+      "detected_voiced_seconds": 0.675,
+      "full_clip_seconds": 1.28,
+      "id": "iris-release/89ab90a60f692e829da9",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 20480,
+      "voice_id": "iris-release-voice-20"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "fc8ddca6517e03421d2e9dc7cad8a941099437b1d804028e23ef87055c7f01ac",
+      "clipped": false,
+      "detected_voiced_seconds": 0.65,
+      "full_clip_seconds": 1.28,
+      "id": "iris-release/e9a509d8778c9274bc6d",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 20480,
+      "voice_id": "iris-release-voice-20"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "9c703b214a6de5326f1be3a0402b662c66c87a3e5c12577b107ea59f0e1ed27d",
+      "clipped": false,
+      "detected_voiced_seconds": 0.635,
+      "full_clip_seconds": 1.12,
+      "id": "iris-release/fb397105c08bdec38b8f",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 17920,
+      "voice_id": "iris-release-voice-20"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "10fbf7751f0a8f73608f17f0d2bcc734465694adde41b292d3799c91ecf37057",
+      "clipped": false,
+      "detected_voiced_seconds": 0.775,
+      "full_clip_seconds": 1.44,
+      "id": "iris-release/3f20f6e747d3cb6c68a4",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 23040,
+      "voice_id": "iris-release-voice-20"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "6d13ae703ea43f8bfe2eaf1724f2d96fc1e395c55475c54bc91446711ef6cdc4",
+      "clipped": false,
+      "detected_voiced_seconds": 0.625,
+      "full_clip_seconds": 1.76,
+      "id": "iris-release/c60f75b39949b419cd48",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 28160,
+      "voice_id": "iris-release-voice-20"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "f78da2bc1a27ef5e7e64b6706c19c9ed73f0ca10f7197a8391791eb872ee5c50",
+      "clipped": false,
+      "detected_voiced_seconds": 0.625,
+      "full_clip_seconds": 1.28,
+      "id": "iris-release/8398b32e679593d018f9",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 20480,
+      "voice_id": "iris-release-voice-21"
+    },
+    {
+      "arm_accepted": true,
+      "audio_sha256": "5f4172fd85db1b9d716e3f65dbad1b0b2cf0c25319616d52f807fcb64cd9ca79",
+      "clipped": false,
+      "detected_voiced_seconds": 0.805,
+      "full_clip_seconds": 1.2,
+      "id": "iris-release/2fd0db40926c7c64ba3f",
+      "meets_reference_duration": true,
+      "overlap": false,
+      "reason": null,
+      "samples": 19200,
+      "voice_id": "iris-release-voice-21"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "f211b8575405603f2014400a353aedeae1a529c2b4516b0064ccb9d80900231d",
+      "clipped": false,
+      "detected_voiced_seconds": 0.73,
+      "full_clip_seconds": 1.2,
+      "id": "iris-release/4501015470b3ea303c5b",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 19200,
+      "voice_id": "iris-release-voice-21"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "1f5daeeddf6d97ad795956a43ae215033d063857e4f2367fc2b722b5748f3bd7",
+      "clipped": false,
+      "detected_voiced_seconds": 0.715,
+      "full_clip_seconds": 1.12,
+      "id": "iris-release/a9511781902756c180a2",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 17920,
+      "voice_id": "iris-release-voice-21"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "0c951ee2641bee172adc27472308835f8ffb747c02ae2ca5fb73d91a3618df7e",
+      "clipped": false,
+      "detected_voiced_seconds": 0.69,
+      "full_clip_seconds": 1.44,
+      "id": "iris-release/2ddd7ba6fde0a5a0b606",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 23040,
+      "voice_id": "iris-release-voice-21"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "4f7276a53a08bd57b09eba8fd859d0349c4b752cf624018bd6509314df9d1071",
+      "clipped": false,
+      "detected_voiced_seconds": 0.75,
+      "full_clip_seconds": 1.2,
+      "id": "iris-release/b65f27f3777c3e56f01b",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 19200,
+      "voice_id": "iris-release-voice-21"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "b6b9c8de3de150aa84d58c6f1cb411f5aaf1e70c5c4ee0d475cbd6cd6545933b",
+      "clipped": false,
+      "detected_voiced_seconds": 0.66,
+      "full_clip_seconds": 1.28,
+      "id": "iris-release/1cf49c901851112413e6",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 20480,
+      "voice_id": "iris-release-voice-21"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "847bafddf3bd1271bb242c335525d93ac013fb595be6c9fe51857f3a48362a4c",
+      "clipped": false,
+      "detected_voiced_seconds": 0.75,
+      "full_clip_seconds": 1.52,
+      "id": "iris-release/6453b4b7b12940de0e54",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 24320,
+      "voice_id": "iris-release-voice-21"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "a2136f744987e582a9fb3aa65eb70fdaf701f5f50c7aa007bfdf5a4e70ae0224",
+      "clipped": false,
+      "detected_voiced_seconds": 0.595,
+      "full_clip_seconds": 1.36,
+      "id": "iris-release/f7bb9547f0f5999c0bbd",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 21760,
+      "voice_id": "iris-release-voice-22"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "46b0d1f4fc0d91d1e8c8e0f814717a435cfe136edfa357f1a8e75a26982f99e7",
+      "clipped": false,
+      "detected_voiced_seconds": 0.695,
+      "full_clip_seconds": 1.28,
+      "id": "iris-release/fd29e78cc5ef8eb1ac9a",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 20480,
+      "voice_id": "iris-release-voice-22"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "ca1a999edb5bb2de61fdbb504d3bc8c3667a1eb12c0254190c663cffa7c69970",
+      "clipped": false,
+      "detected_voiced_seconds": 0.675,
+      "full_clip_seconds": 1.44,
+      "id": "iris-release/2297aeb80fa31883c9b9",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 23040,
+      "voice_id": "iris-release-voice-22"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "a879797a5844264eca2166aa66ec15e77958ce802ab72dfe64f1be1b80844ccd",
+      "clipped": false,
+      "detected_voiced_seconds": 0.655,
+      "full_clip_seconds": 1.2,
+      "id": "iris-release/5f02b3abc5bdd25eed8a",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 19200,
+      "voice_id": "iris-release-voice-22"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "494f3003da0d03352a99828c5a6de191a099167dd50bff9000554ada26c1c72a",
+      "clipped": false,
+      "detected_voiced_seconds": 0.685,
+      "full_clip_seconds": 1.2,
+      "id": "iris-release/dfe6ad0efc5f504a13a4",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 19200,
+      "voice_id": "iris-release-voice-22"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "6e99dd213aa5eaf1810018d0556ba277152da3e7e29d12e7528661d8dbca9c60",
+      "clipped": false,
+      "detected_voiced_seconds": 0.615,
+      "full_clip_seconds": 1.36,
+      "id": "iris-release/8ee952698b8a330cea68",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 21760,
+      "voice_id": "iris-release-voice-22"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "e03558fd0e6873c6c7642a4c7d98e3af20391763f94467fcfacb66a82814d604",
+      "clipped": false,
+      "detected_voiced_seconds": 0.765,
+      "full_clip_seconds": 1.36,
+      "id": "iris-release/f80f968fd037135a3931",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 21760,
+      "voice_id": "iris-release-voice-22"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "24cca73929ca6f1e23507448d16652f24609b55d16dae3c0c53ac6979243ef44",
+      "clipped": false,
+      "detected_voiced_seconds": 0.695,
+      "full_clip_seconds": 1.36,
+      "id": "iris-release/a54f3e6c2cc778242e5b",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 21760,
+      "voice_id": "iris-release-voice-22"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "d40c3b28492e6cd25e43830ff51fa247d33d2d4cb346ec3ae40995add0093b98",
+      "clipped": false,
+      "detected_voiced_seconds": 0.545,
+      "full_clip_seconds": 0.88,
+      "id": "iris-release/fd99af17e346c5e37c08",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 14080,
+      "voice_id": "iris-release-voice-23"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "76c115f750afdc1b65569a0c5a23fa2f4cb65505009739de961a47181466eecc",
+      "clipped": false,
+      "detected_voiced_seconds": 0.685,
+      "full_clip_seconds": 0.96,
+      "id": "iris-release/baa52877607e257f2211",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 15360,
+      "voice_id": "iris-release-voice-23"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "cfd6d2ab205d89715a99a1a382571a2e906dd307e6793700b65efbb62d04f2d3",
+      "clipped": false,
+      "detected_voiced_seconds": 0.685,
+      "full_clip_seconds": 0.88,
+      "id": "iris-release/c0d18c5adf85f06d5a84",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 14080,
+      "voice_id": "iris-release-voice-23"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "217aa2515a03cbbd817a15c7caaf5ed8406e88a448c853c2fb8e92c959ec76b7",
+      "clipped": false,
+      "detected_voiced_seconds": 0.725,
+      "full_clip_seconds": 1.04,
+      "id": "iris-release/d03b0e92e601eb27f1d1",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 16640,
+      "voice_id": "iris-release-voice-23"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "05e8b532eea6daefe7e4174e03705c2058509ed9fb5ab6321f49a2bed1ec2ddf",
+      "clipped": false,
+      "detected_voiced_seconds": 0.61,
+      "full_clip_seconds": 1.2,
+      "id": "iris-release/09ffd60087c3bd97f23a",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 19200,
+      "voice_id": "iris-release-voice-23"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "0dcad8ab6c2be2115a4886e7b19e99ef47b7aa471e218565a884268e036c6df5",
+      "clipped": false,
+      "detected_voiced_seconds": 0.59,
+      "full_clip_seconds": 0.88,
+      "id": "iris-release/cdee3fd407312279987a",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 14080,
+      "voice_id": "iris-release-voice-23"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "cd8812bf3593542e40f4bf720f77ffd8a99d146dd4c436c9b2981f9efc1cf0a2",
+      "clipped": false,
+      "detected_voiced_seconds": 0.755,
+      "full_clip_seconds": 1.04,
+      "id": "iris-release/71e17529e6160c514e25",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 16640,
+      "voice_id": "iris-release-voice-23"
+    },
+    {
+      "arm_accepted": false,
+      "audio_sha256": "188c3e49b9ae73dcf29e7139740b5628068551908f498cac2fcd541b8d60adbd",
+      "clipped": false,
+      "detected_voiced_seconds": 0.585,
+      "full_clip_seconds": 0.8,
+      "id": "iris-release/ac6fcd9c2532cd8f6feb",
+      "meets_reference_duration": false,
+      "overlap": false,
+      "reason": "insufficient_speech",
+      "samples": 12800,
+      "voice_id": "iris-release-voice-23"
+    }
+  ],
+  "overlap_threshold": 0.6400450766086578,
+  "per_synthetic_voice": {
+    "iris-release-voice-20": {
+      "arm_accepted": 0,
+      "arm_rate": 0.0,
+      "detected_voiced_seconds_min_median_max": [
+        0.615,
+        0.6525000000000001,
+        0.775
+      ],
+      "duration_sufficient": 0,
+      "duration_sufficient_rate": 0.0,
+      "references": 8,
+      "rejection_reasons": {
+        "insufficient_speech": 8
+      }
+    },
+    "iris-release-voice-21": {
+      "arm_accepted": 1,
+      "arm_rate": 0.125,
+      "detected_voiced_seconds_min_median_max": [
+        0.625,
+        0.7224999999999999,
+        0.805
+      ],
+      "duration_sufficient": 1,
+      "duration_sufficient_rate": 0.125,
+      "references": 8,
+      "rejection_reasons": {
+        "insufficient_speech": 7
+      }
+    },
+    "iris-release-voice-22": {
+      "arm_accepted": 0,
+      "arm_rate": 0.0,
+      "detected_voiced_seconds_min_median_max": [
+        0.595,
+        0.68,
+        0.765
+      ],
+      "duration_sufficient": 0,
+      "duration_sufficient_rate": 0.0,
+      "references": 8,
+      "rejection_reasons": {
+        "insufficient_speech": 8
+      }
+    },
+    "iris-release-voice-23": {
+      "arm_accepted": 0,
+      "arm_rate": 0.0,
+      "detected_voiced_seconds_min_median_max": [
+        0.545,
+        0.6475,
+        0.755
+      ],
+      "duration_sufficient": 0,
+      "duration_sufficient_rate": 0.0,
+      "references": 8,
+      "rejection_reasons": {
+        "insufficient_speech": 8
+      }
+    }
+  },
+  "policy": {
+    "min_command_seconds": 0.4,
+    "min_reference_seconds": 0.8,
+    "min_window_seconds": 0.25,
+    "require_windows": true,
+    "threshold": 0.4445243924856186,
+    "timeout_seconds": 8.0
+  },
+  "selection": {
+    "role": "wake",
+    "split": "voice-test",
+    "wake_positive": true
+  },
+  "selection_sha256": "aee3f2d780d56552b3865a11e580598c86d6f5e7cbf8f6a0190668420c70c74c",
+  "selection_unchanged": true,
+  "status": "post_test_diagnostic_only",
+  "test_tuning": false,
+  "used_for_fitting_or_calibration": false
+}

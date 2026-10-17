@@ -1,0 +1,23 @@
+{
+  "existing_verified_audio_reused": true,
+  "experiment_id": "iris-release-v1",
+  "fitting_started": false,
+  "freshclone_network_acquisition_not_tested": true,
+  "gpu_used": false,
+  "installed_artifacts_present": false,
+  "legacy_views_present": false,
+  "manifest_preparation_normalization_preserved_byte_for_byte": {
+    "manifest.jsonl": "d22c1bf537a4f66f9eb4f2b33de7ac7c43fbff4c5f75387d228d7b47d184a884",
+    "normalization.json": "8ec1dfdf362c44c682575640177d8b0c8567986988cd5ceb9d515c9be58c04ce",
+    "preparation.json": "f73fbcbc33b3e7588a73ea27dcd8c404bdcd9d7ba687b690e1ec55e0f9a25048",
+    "synthetic-proxies.jsonl": "eeb42b0310582bf75dac05ee5600f7335dbfc4b038ddabbc8e04bdd07acd7a88"
+  },
+  "network_download_in_this_probe": false,
+  "owner_portable_prepare_passed": true,
+  "prepared_recordings": 9429,
+  "shared_audio_pool_reused": true,
+  "unit_checks": {
+    "includes": "pinned view preference; reserialization identity proof; no artifacts needed; changed-protocol rejection; verified missing-Libri hydration; no overwrite of changed payload; checkpoint restoration",
+    "passed": 12
+  }
+}

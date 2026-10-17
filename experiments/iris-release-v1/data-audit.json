@@ -1,0 +1,186 @@
+{
+  "protocol_sha256": "26851f20cc919812ff555eaf2b02ba4c0908338a148f2371176886a786a2f47a",
+  "split_counts": {
+    "train": 25431,
+    "dev": 1903,
+    "calibration": 2059,
+    "test": 4418,
+    "holdout": 196,
+    "personal-test": 88,
+    "voice-test": 564
+  },
+  "source_counts": {
+    "train": {
+      "airimonda/ai231-me2-voice-commands": 7871,
+      "martinnavs/ai231-fil-supplemental-data": 15444,
+      "Qwen3-designed-completion-v1": 184,
+      "Qwen3-original-designed-iris-v1": 240,
+      "Qwen3-original-designed-iris-release-v1": 1692
+    },
+    "dev": {
+      "airimonda/ai231-me2-voice-commands": 1067,
+      "Qwen3-designed-completion-v1": 184,
+      "Qwen3-original-designed-iris-v1": 88,
+      "Qwen3-original-designed-iris-release-v1": 564
+    },
+    "calibration": {
+      "airimonda/ai231-me2-voice-commands": 1223,
+      "Qwen3-designed-completion-v1": 184,
+      "Qwen3-original-designed-iris-v1": 88,
+      "Qwen3-original-designed-iris-release-v1": 564
+    },
+    "test": {
+      "airimonda/ai231-me2-voice-commands": 4418
+    },
+    "holdout": {
+      "airimonda/ai231-me2-voice-commands": 196
+    },
+    "personal-test": {
+      "Qwen3-original-designed-iris-v1": 88
+    },
+    "voice-test": {
+      "Qwen3-original-designed-iris-release-v1": 564
+    }
+  },
+  "cross_split_overlap": {
+    "train/dev": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "train/calibration": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "train/test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "train/holdout": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "train/personal-test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "train/voice-test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "dev/calibration": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "dev/test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "dev/holdout": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "dev/personal-test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "dev/voice-test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "calibration/test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "calibration/holdout": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "calibration/personal-test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "calibration/voice-test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "test/holdout": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "test/personal-test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "test/voice-test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "holdout/personal-test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "holdout/voice-test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "personal-test/voice-test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    }
+  },
+  "views": {
+    "train": "5476fceb6f1297cf454e649081b80fb7bd05e83eba1d81d791d1534195a8204b",
+    "dev": "2d50045f59fa10932a9bb6213a3ee4014c9ed6d4adc01b8f2a91f0859bf80fb1",
+    "calibration": "3ecaa89cdb85f5324a53241b7d62a5e891906cacd9cc8cd01fac9dd15912c2ae",
+    "test": "3461a214a3566ed1d466f752de2c93b136570e461148bf497e983a9bda0a2c2d",
+    "holdout": "c1ce15b6c401b425eee079834d4bc9d2b1baa2994d97e09e9ff31533400cad1b",
+    "personal-test": "c1be08c9d1a78eb99b6efcce2f95efa3528209bbbbb09a15238400cb82efa3a9",
+    "voice-test": "94d4b0a0bf282f571aea3bbe6098813bc5400c77607eb69dacb53300cd2224de"
+  },
+  "original_human_personal_positive_n": 0,
+  "independent_listening": false,
+  "original_benchmark_unchanged": true,
+  "catalog_sha256": "8c1e1e1c4c144b926f37e97fdd020626e88ce0f7be6b4f42d20576df52313fd1"
+}

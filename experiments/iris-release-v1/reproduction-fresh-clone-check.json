@@ -1,0 +1,563 @@
+{
+  "attempts": [
+    {
+      "failed_stage": "preflight-inputs",
+      "failure": "Anonymous Xet per-file read-token endpoint HTTP429; no identity failure or model execution.",
+      "finished_utc": "2026-10-17T02:17:19.165563+00:00",
+      "receipt": "experiments/iris-release-v1/reproduction-run-fresh-20261017T021454164731Z.json",
+      "receipt_sha256": "cb0707363ddfb30423c363e57281bbee497ae76f8536646989a73369a0754b68",
+      "seconds": 139.503691,
+      "started_utc": "2026-10-17T02:14:59.661872+00:00",
+      "status": "failed"
+    },
+    {
+      "failure": "Anonymous standard-HTTP resolver IP quota HTTP429; no file identity or model failure.",
+      "finished_utc": "2026-10-17T02:20:38.806333+00:00",
+      "receipt": "experiments/iris-release-v1/reproduction-run-fresh-http-retry.json",
+      "receipt_sha256": "e8c02c1a30c7167b680e9bd07cd261ebd53599215026a94f949d1f47e4392d0c",
+      "seconds": 32.983057,
+      "started_utc": "2026-10-17T02:20:05.823276+00:00",
+      "status": "failed",
+      "transport": "HF_HUB_DISABLE_XET=1 standard HTTP, anonymous"
+    },
+    {
+      "failed_stage": "python-tests",
+      "failure": "166 Python tests passed; package inventory required compiled UI before its later build stage.",
+      "finished_utc": "2026-10-17T02:55:25.273280+00:00",
+      "receipt": "experiments/iris-release-v1/reproduction-run-fresh-configfix.json",
+      "receipt_sha256": "748c4c1cafe6764ef2f8be81bfefc864bd0988ee466ce6c3479d08d12e98e004",
+      "seconds": 1006.156298,
+      "started_utc": "2026-10-17T02:38:39.116982+00:00",
+      "status": "failed",
+      "transport": "Anonymous copied driver consumes independently downloaded pinned target-cache files; authenticated network prefetch completed without credential copying."
+    },
+    {
+      "exit_code": 1,
+      "failed_stage": "python-tests",
+      "failure": "Root benchmark.py absent from source inventory after successful independent cold UI build; 166 Python tests passed.",
+      "finished_utc": "2026-10-17T03:17:02.182270+00:00",
+      "receipt": "experiments/iris-release-v1/reproduction-run-fresh-orderfix.json",
+      "receipt_sha256": "2c02a8a8fb1327e208fa41c109b52ac3f115cc4e7404b31a7718ceb7c399864e",
+      "seconds": 324.52082,
+      "started_utc": "2026-10-17T03:11:37.661450+00:00",
+      "status": "failed",
+      "transport": "Tokenless copied driver; independently downloaded target-local HF cache; empty target-local Node dependency stores."
+    },
+    {
+      "exit_code": 0,
+      "finished_utc": "2026-10-17T03:38:57.890995+00:00",
+      "receipt": "experiments/iris-release-v1/reproduction-run-fresh-sourcefix.json",
+      "receipt_sha256": "9e18fe74bb10d211919cab590ca338a5336441d04f631edbd52e23906e9c2604",
+      "seconds": 303.590424,
+      "started_utc": "2026-10-17T03:33:54.300571+00:00",
+      "status": "complete",
+      "transport": "Tokenless copied driver; independently downloaded target-local HF cache; target-local Node dependency stores independently downloaded by the preceding preserved attempt."
+    }
+  ],
+  "attested_utc": "2026-10-17T03:39:46.278759+00:00",
+  "cache_initially_empty": true,
+  "completed_utc": "2026-10-17T03:38:57.890995+00:00",
+  "cpu_thread_environment": 1,
+  "cuda_visible_devices": "",
+  "elapsed_since_initial_setup_seconds": 5043.726264,
+  "executed_source_checkout": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final",
+  "external_symlinks": [
+    ".venv"
+  ],
+  "final_retry_environment": {
+    "COREPACK_HOME": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/corepack",
+    "CUDA_VISIBLE_DEVICES": "",
+    "HF_HOME": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/huggingface",
+    "HF_HUB_CACHE": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/huggingface/hub",
+    "HF_HUB_DISABLE_IMPLICIT_TOKEN": "1",
+    "HF_HUB_DISABLE_PROGRESS_BARS": "1",
+    "HF_HUB_DISABLE_XET": "1",
+    "HF_TOKEN_PATH": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/huggingface/token",
+    "HUGGINGFACE_HUB_CACHE": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/huggingface/hub",
+    "MKL_NUM_THREADS": "1",
+    "NPM_CONFIG_CACHE": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/npm",
+    "NPM_CONFIG_USERCONFIG": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/npm-userconfig",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PNPM_HOME": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/pnpm-home",
+    "UV_CACHE_DIR": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/uv",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "XDG_CACHE_HOME": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/xdg-cache",
+    "XDG_CONFIG_HOME": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/xdg-config",
+    "XDG_DATA_HOME": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/xdg-data",
+    "npm_config_cache": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/npm",
+    "npm_config_store_dir": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/pnpm-store"
+  },
+  "fresh_package": {
+    "actions_enabled": true,
+    "bytes": 14154394,
+    "files": 215,
+    "model_sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+    "parameters": 969928,
+    "path": "dist/iris-release-v1/fresh-sourcefix/iris-pi.zip",
+    "profile": "owner-protected",
+    "qualified": false,
+    "sha256": "66ac8c42787c3cbde1cfa767ca23dd3093e48dd656ec85accab25b3868fc920f"
+  },
+  "full_random_study_executed": false,
+  "hf_cache_initially_empty": true,
+  "hf_implicit_token_disabled": true,
+  "initial_anonymous_public_access_verified": true,
+  "input_receipt_sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945",
+  "inputs": {
+    "data_requirements": [
+      {
+        "license": "Research and education only; source-dependent terms including Fluent academic research only and student recording consent for sharing.",
+        "receipt": "data/sources/ai231-primary.source.json",
+        "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+        "source": "airimonda/ai231-me2-voice-commands",
+        "status": "Pinned upstream access required on a fresh clone; recordings are not republished here"
+      },
+      {
+        "license": "Research and education only; reference recording consent/license and CosyVoice2 weights license unverified; no redistribution or commercial use.",
+        "receipt": "data/sources/fil-supplemental.source.json",
+        "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+        "source": "martinnavs/ai231-fil-supplemental-data",
+        "status": "Pinned upstream access required on a fresh clone; recordings are not republished here"
+      }
+    ],
+    "receipt": "experiments/iris-release-v1/reproduction-inputs.json",
+    "receipt_sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945",
+    "restored_audio": 0,
+    "verified_audio": 34659,
+    "verified_files": 4634
+  },
+  "live_microphone_measured": false,
+  "network_prefetch": {
+    "receipt": "experiments/iris-release-v1/reproduction-fresh-input-prefetch.json",
+    "scope": "Same initially empty target HF cache; file locks, exact pinned SHA checks; interrupted for HTTP transport retry."
+  },
+  "network_prefetch_authenticated": {
+    "receipt": "experiments/iris-release-v1/reproduction-fresh-input-prefetch-authenticated.json",
+    "receipt_sha256": "bc4107b9e6af680adbf7ad208ef89706bbb7c89e75145cee90154c547b5a312a",
+    "scope": "Authorized Hub login only for public pinned network transfers, explicit target-local cache_dir; no token copied or saved in fresh target.",
+    "status": "verified"
+  },
+  "node_cache_attestation": {
+    "actual_store_path": ".cache/pnpm-home/store/v11",
+    "checked_utc": "2026-10-17T03:17:06.472677+00:00",
+    "command": [
+      ".runtime/tools/node-v24.13.0-linux-x64/bin/node",
+      ".runtime/tools/pnpm-12.5.1/node_modules/pnpm/bin/pnpm.mjs",
+      "store",
+      "path"
+    ],
+    "environment": {
+      "COREPACK_HOME": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/corepack",
+      "NPM_CONFIG_CACHE": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/npm",
+      "NPM_CONFIG_USERCONFIG": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/npm-userconfig",
+      "PNPM_HOME": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/pnpm-home",
+      "XDG_CACHE_HOME": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/xdg-cache",
+      "XDG_CONFIG_HOME": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/xdg-config",
+      "XDG_DATA_HOME": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/xdg-data",
+      "npm_config_cache": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/npm",
+      "npm_config_store_dir": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/pnpm-store"
+    },
+    "final_retry_checked_utc": "2026-10-17T03:39:26.899357+00:00",
+    "final_retry_store_inside_target": true,
+    "final_retry_store_path": ".cache/pnpm-home/store/v11",
+    "node_version": "v24.13.0",
+    "pnpm_version": "12.5.1",
+    "store_inside_target": true,
+    "toolchain_paths": {
+      "node": ".runtime/tools/node-v24.13.0-linux-x64/bin/node",
+      "pnpm": ".runtime/tools/pnpm-12.5.1/node_modules/pnpm/bin/pnpm.mjs"
+    }
+  },
+  "node_cache_paths_initially_absent": [
+    ".runtime/tools",
+    "SpeakerUI/node_modules",
+    "SpeakerUI/dist",
+    "SpeakerUI/dist-server",
+    ".cache/npm",
+    ".cache/pnpm-store",
+    ".cache/xdg-data",
+    ".cache/pnpm-home",
+    ".cache/corepack"
+  ],
+  "node_cache_reused_from_prior_independent_attempt": true,
+  "ordering_fix": {
+    "proof": "experiments/iris-release-v1/reproduction-stage-order-fix.json",
+    "proof_sha256": "26615677e7e6dba1725259c07b230223f4a00cc1caf443c42416c4c2f495858a",
+    "status": "Verified in completed final retry: UI install/test/check/build precede all Python package tests."
+  },
+  "owner_fresh_preparation": {
+    "receipt": "experiments/iris-release-v1/reproduction-owner-fresh-preparation.json",
+    "sha256": "38845e893692c02cd9111f5293344555a86dc448977edcf0f9a8b2dea200eb92"
+  },
+  "package_verification": {
+    "bytes": 14154394,
+    "members": 216,
+    "passed": true,
+    "sha256": "66ac8c42787c3cbde1cfa767ca23dd3093e48dd656ec85accab25b3868fc920f"
+  },
+  "physical_pi_measured": false,
+  "published_evidence": [
+    {
+      "bytes": 83716,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/experiments/iris-release-v1/reproduction-run-fresh-20261017T021454164731Z.json",
+      "path_in_repo": "evidence/reproduction-run-fresh-20261017T021454164731Z.json",
+      "role": "preserved_workflow_attempt",
+      "sha256": "cb0707363ddfb30423c363e57281bbee497ae76f8536646989a73369a0754b68"
+    },
+    {
+      "bytes": 83892,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/experiments/iris-release-v1/reproduction-run-fresh-http-retry.json",
+      "path_in_repo": "evidence/reproduction-run-fresh-http-retry.json",
+      "role": "preserved_workflow_attempt",
+      "sha256": "e8c02c1a30c7167b680e9bd07cd261ebd53599215026a94f949d1f47e4392d0c"
+    },
+    {
+      "bytes": 1126532,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/experiments/iris-release-v1/reproduction-run-fresh-configfix.json",
+      "path_in_repo": "evidence/reproduction-run-fresh-configfix.json",
+      "role": "preserved_workflow_attempt",
+      "sha256": "748c4c1cafe6764ef2f8be81bfefc864bd0988ee466ce6c3479d08d12e98e004"
+    },
+    {
+      "bytes": 260620,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/experiments/iris-release-v1/reproduction-run-fresh-orderfix.json",
+      "path_in_repo": "evidence/reproduction-run-fresh-orderfix.json",
+      "role": "preserved_workflow_attempt",
+      "sha256": "2c02a8a8fb1327e208fa41c109b52ac3f115cc4e7404b31a7718ceb7c399864e"
+    },
+    {
+      "bytes": 455382,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/experiments/iris-release-v1/reproduction-run-fresh-sourcefix.json",
+      "path_in_repo": "evidence/reproduction-run-fresh-sourcefix.json",
+      "role": "preserved_workflow_attempt",
+      "sha256": "9e18fe74bb10d211919cab590ca338a5336441d04f631edbd52e23906e9c2604"
+    },
+    {
+      "bytes": 3227,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/workflow/fresh-sourcefix/decision-parity.json",
+      "path_in_repo": "evidence/fresh-decision-parity.json",
+      "role": "actual_current_host_decision_parity",
+      "sha256": "847b5a407fe0f26f92288df42f48ca7d02231c5b953d974520acf7beab494353"
+    },
+    {
+      "bytes": 78900,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/workflow/fresh-sourcefix/pipeline-resources.json",
+      "path_in_repo": "evidence/fresh-pipeline-resources.json",
+      "role": "actual_current_host_resource_measurement",
+      "sha256": "5bd75592a7a41bb934918214695c72ea3f5ac308397a6a9d618d219c759a6529"
+    },
+    {
+      "bytes": 5679,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/workflow/fresh-sourcefix/python-tests.log",
+      "path_in_repo": "evidence/fresh-checks/python-tests.log",
+      "role": "fresh_software_check",
+      "sha256": "aa93c513997bcca9c6832f3795b7210cb3d3c7e9bb8fc517b1dbc4ca7801c45b"
+    },
+    {
+      "bytes": 145,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/workflow/fresh-sourcefix/ui-install.log",
+      "path_in_repo": "evidence/fresh-checks/ui-install.log",
+      "role": "fresh_software_check",
+      "sha256": "9df0e8093486e1d4f6738e45b0644352cef61cf73b9add1c61c10e9d798d77c5"
+    },
+    {
+      "bytes": 9378,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/workflow/fresh-sourcefix/ui-test.log",
+      "path_in_repo": "evidence/fresh-checks/ui-test.log",
+      "role": "fresh_software_check",
+      "sha256": "c33dad6003af0d96bd0105b325e0569bfae612717b42592c6a064a164c6816b5"
+    },
+    {
+      "bytes": 335,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/workflow/fresh-sourcefix/ui-check.log",
+      "path_in_repo": "evidence/fresh-checks/ui-check.log",
+      "role": "fresh_software_check",
+      "sha256": "9039a1f669e1749771f169e9a8e99b4c5d3dc5a63deb0c8b2edfc4de4f03f1d2"
+    },
+    {
+      "bytes": 960,
+      "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/workflow/fresh-sourcefix/ui-build.log",
+      "path_in_repo": "evidence/fresh-checks/ui-build.log",
+      "role": "fresh_software_check",
+      "sha256": "c339020fcb84caf0663148daa887133643e7152b9289e764bde60b1868b751b3"
+    },
+    {
+      "bytes": 4402,
+      "local_path": ".cache/iris-release-v1/fresh_clone_check.py",
+      "path_in_repo": "evidence/fresh-checks/fresh_clone_check.py",
+      "role": "reconstruction_check_helper",
+      "sha256": "67da2fc5057535d15dbe2adff524685d792093f0327380bcec55eacf588ea131"
+    },
+    {
+      "bytes": 5942,
+      "local_path": ".cache/iris-release-v1/fresh_orderfix_check.py",
+      "path_in_repo": "evidence/fresh-checks/fresh_orderfix_check.py",
+      "role": "reconstruction_check_helper",
+      "sha256": "c3a7717c3ffc148bf934d25995ee96c8ced56e8e86b501f58cc1996867c5d12d"
+    },
+    {
+      "bytes": 6374,
+      "local_path": ".cache/iris-release-v1/fresh_sourcefix_check.py",
+      "path_in_repo": "evidence/fresh-checks/fresh_sourcefix_check.py",
+      "role": "reconstruction_check_helper",
+      "sha256": "18955e8fc517f73c4d27e6cbdd28f137e6a3d933aee55c310200ff1232ffded2"
+    },
+    {
+      "bytes": 6809,
+      "local_path": ".cache/iris-release-v1/finalize_fresh_check.py",
+      "path_in_repo": "evidence/fresh-checks/finalize_fresh_check.py",
+      "role": "reconstruction_check_helper",
+      "sha256": "f582ad0fe2e380a6fb6ea259186daf9230155726b4fcd48e7d9a4273fdfa9c88"
+    }
+  ],
+  "release_sha256": "bb0ad537e1d285d200b8121bb639453d40f7666537837f29ba0caa3ec2874475",
+  "schema_version": 1,
+  "scope": "Executed the copied frozen source on CPU against independently acquired public pinned inputs and project checkpoints in one initially empty target. The existing root Python environment is the sole shared environment; this is verified completed-fit reconstruction, not a new full random study or physical-device qualification.",
+  "setup_progress": [
+    {
+      "human_audio_files": 23949,
+      "parquet_shards": 6,
+      "stage": "preflight-inputs",
+      "utc": "2026-10-17T02:46:54.192837+00:00"
+    },
+    {
+      "human_audio_files": 30219,
+      "parquet_shards": 10,
+      "stage": "diversity-evaluate",
+      "utc": "2026-10-17T02:48:51.524516+00:00"
+    }
+  ],
+  "shared_audio_or_training_cache_aliases": false,
+  "shared_hf_cache_aliases": false,
+  "shared_root_interpreter": true,
+  "software_checks": {
+    "python-tests": {
+      "measured_seconds": 65.38,
+      "passed": 170,
+      "seconds": 75.90134,
+      "status": "passed",
+      "warnings": 17
+    },
+    "ui-build": {
+      "seconds": 39.887145,
+      "status": "passed"
+    },
+    "ui-check": {
+      "seconds": 19.976615,
+      "status": "passed"
+    },
+    "ui-install": {
+      "seconds": 3.555635,
+      "status": "passed"
+    },
+    "ui-test": {
+      "seconds": 6.143359,
+      "status": "passed"
+    },
+    "ui-toolchain": {
+      "seconds": 0.029429,
+      "status": "passed"
+    }
+  },
+  "source_closure_rebind": {
+    "receipt": "experiments/iris-release-v1/reproduction-fresh-source-closure-rebind.json",
+    "sha256": "bcc63ca9669149a168f39c885c8f8efdbd570e439b6ea238e24ba273bf368c7a"
+  },
+  "source_files_copied": 315,
+  "source_ordering_rebind": {
+    "receipt": "experiments/iris-release-v1/reproduction-fresh-source-ordering-rebind.json",
+    "sha256": "206396f9736bc641cb6c221f46dc3f0208d3c9eaca60d37fb007ff1ad4dd1464"
+  },
+  "source_rebind": {
+    "all_input_asset_and_pin_fields_identical": true,
+    "bootstrap_input_receipt_sha256": "b5e04d7bf33b8b10b94e9e732cfaf2ae0c91eb590387f094ef2e81671274c518",
+    "changed_or_added_copied_sources": [
+      "MODEL_CARD.md",
+      "SpeakerUI/server/config.test.ts",
+      "config.example.toml",
+      "docs/EXPERIMENT-iris-release-v1.md",
+      "experiments/iris-release-v1/reproduction-inputs.json",
+      "experiments/iris-release-v1/reproduction-release.json",
+      "experiments/iris-release-v1/reproduction-source-inventory-rebind.json",
+      "scripts/iris_report.py",
+      "scripts/mvp_delivery.py",
+      "scripts/runtime/config.example.toml",
+      "scripts/test/test_iris_diversity.py"
+    ],
+    "current_input_receipt_sha256": "3cbd4a0f36777218bed5944d1529f80b03479a2382861be7891129c46284888d",
+    "current_release_sha256": "004acaaa9102eeeda2f1e48e16c2c935002f3950aeed520ac342ffe68a8f3b46",
+    "previous_release_sha256": "46d630f3dc5eb5b34a88bb1fbdbbfc4df172a06df4562c47e95829eb045f7958",
+    "proof": "experiments/iris-release-v1/reproduction-source-inventory-rebind.json",
+    "reason": "Corrected untouched generated configuration after two network-only preflight failures; no independent model evaluation had begun."
+  },
+  "stage_timeline": [
+    {
+      "finished_utc": "2026-10-17T03:33:55.271697+00:00",
+      "name": "verify-present-lineage",
+      "seconds": 0.971126,
+      "started_utc": "2026-10-17T03:33:54.300571+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:34:39.820577+00:00",
+      "name": "preflight-inputs",
+      "seconds": 44.534608,
+      "started_utc": "2026-10-17T03:33:55.285969+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:34:41.373637+00:00",
+      "name": "verify-selected-lineage",
+      "seconds": 1.531177,
+      "started_utc": "2026-10-17T03:34:39.842460+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:34:49.515889+00:00",
+      "name": "diversity-evaluate",
+      "seconds": 8.109663,
+      "started_utc": "2026-10-17T03:34:41.406226+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:34:51.651155+00:00",
+      "name": "wake-evaluate",
+      "seconds": 2.114636,
+      "started_utc": "2026-10-17T03:34:49.536519+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:35:13.631215+00:00",
+      "name": "owner-evaluate",
+      "seconds": 21.95959,
+      "started_utc": "2026-10-17T03:34:51.671625+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:36:01.462571+00:00",
+      "name": "decision-parity",
+      "seconds": 47.797284,
+      "started_utc": "2026-10-17T03:35:13.665287+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:36:15.045350+00:00",
+      "name": "pipeline-resources",
+      "seconds": 13.535664,
+      "started_utc": "2026-10-17T03:36:01.509686+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:36:15.632420+00:00",
+      "name": "report-acoustic-evidence",
+      "seconds": 0.561022,
+      "started_utc": "2026-10-17T03:36:15.071398+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:36:17.176807+00:00",
+      "name": "verify-exported-lineage",
+      "seconds": 1.523455,
+      "started_utc": "2026-10-17T03:36:15.653352+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:36:17.399834+00:00",
+      "name": "ui-toolchain",
+      "seconds": 0.029429,
+      "started_utc": "2026-10-17T03:36:17.370405+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:36:20.977398+00:00",
+      "name": "ui-install",
+      "seconds": 3.555635,
+      "started_utc": "2026-10-17T03:36:17.421763+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:36:27.146580+00:00",
+      "name": "ui-test",
+      "seconds": 6.143359,
+      "started_utc": "2026-10-17T03:36:21.003221+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:36:47.146987+00:00",
+      "name": "ui-check",
+      "seconds": 19.976615,
+      "started_utc": "2026-10-17T03:36:27.170372+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:37:27.073661+00:00",
+      "name": "ui-build",
+      "seconds": 39.887145,
+      "started_utc": "2026-10-17T03:36:47.186516+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:38:43.028950+00:00",
+      "name": "python-tests",
+      "seconds": 75.90134,
+      "started_utc": "2026-10-17T03:37:27.127610+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:38:44.433157+00:00",
+      "name": "verify-after-build",
+      "seconds": 1.29523,
+      "started_utc": "2026-10-17T03:38:43.137927+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:38:45.007118+00:00",
+      "name": "report-final-evidence",
+      "seconds": 0.542718,
+      "started_utc": "2026-10-17T03:38:44.464400+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:38:45.524962+00:00",
+      "name": "verify-after-report",
+      "seconds": 0.486838,
+      "started_utc": "2026-10-17T03:38:45.038124+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:38:46.698988+00:00",
+      "name": "verify-final-lineage",
+      "seconds": 1.139726,
+      "started_utc": "2026-10-17T03:38:45.559262+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:38:57.588119+00:00",
+      "name": "package",
+      "seconds": 10.088656,
+      "started_utc": "2026-10-17T03:38:47.499463+00:00",
+      "status": "passed"
+    },
+    {
+      "finished_utc": "2026-10-17T03:38:57.890995+00:00",
+      "name": "verify-package",
+      "seconds": 0.253605,
+      "started_utc": "2026-10-17T03:38:57.637390+00:00",
+      "status": "passed"
+    }
+  ],
+  "started_utc": "2026-10-17T02:14:54.164731+00:00",
+  "status": "complete",
+  "target": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final",
+  "timing_scope": "Includes all preserved failed attempts, independent network transfers, source corrections and retries. Overlapping transfer/setup intervals are not added together; no pure service-wait duration is inferred.",
+  "token_copied_or_saved": false,
+  "unapproved_external_symlinks": [],
+  "workflow": {
+    "local_path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/experiments/iris-release-v1/reproduction-run-fresh-sourcefix.json",
+    "receipt": "experiments/iris-release-v1/reproduction-run-fresh-sourcefix.json",
+    "sha256": "9e18fe74bb10d211919cab590ca338a5336441d04f631edbd52e23906e9c2604",
+    "stages": 22
+  }
+}

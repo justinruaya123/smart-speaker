@@ -1,6 +1,0 @@
-{
-  "minimum_speech_ms": 300,
-  "trailing_silence_ms": 700,
-  "maximum_ms": 12000,
-  "rms_threshold": 0.005623413251903491
-}

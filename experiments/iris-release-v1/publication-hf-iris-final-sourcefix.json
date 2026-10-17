@@ -1,0 +1,35 @@
+{
+  "account": "justinruaya123",
+  "created_utc": "2026-10-17T03:40:33.160106+00:00",
+  "error_type": "ValueError",
+  "receipt": "experiments/iris-release-v1/publication-hf-iris-final-sourcefix.json",
+  "repositories": [
+    {
+      "files": [
+        {
+          "bytes": 25358,
+          "path": "README.md",
+          "sha256": "6f45987f177bd6f92bf42f9be6b9ffc49ce0b58416133bd3d9fee7f32f647ee2"
+        },
+        {
+          "bytes": 578,
+          "path": "iris-release-v1/NOTICES.md",
+          "sha256": "23762611122fe39fdc5dd306e76fe2505cef61eebb8640e5ab5612bdbdcd53eb"
+        },
+        {
+          "bytes": 5375554,
+          "path": "iris-release-v1/reproduction-inputs.json",
+          "sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945"
+        }
+      ],
+      "private": false,
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "dataset",
+      "revision": "69f96eca7f1dee08e456fb2fe73f164a67ff29b9",
+      "verified": true
+    }
+  ],
+  "schema_version": 1,
+  "source_visibility": "private",
+  "status": "failed"
+}

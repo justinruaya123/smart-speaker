@@ -1,8 +1,0 @@
-{
-  "path": ".cache\\pcv-release-train-v1\\runs\\release-v1\\targets.jsonl",
-  "rows": 7850,
-  "sha256": "4c6c68a98f911c9e87d7d9d78e7ec31af4d2742aa5da367c61aa5d5e334dd623",
-  "student_protocol_sha256": "0d264974480f48a881c30e03c62633acec12d5e29567613c4b8feb8bb7e0b6ca",
-  "teacher_checkpoint_sha256": "864299e4c9912eb3831acfdd8272176e6ce54ef667e75b61af117542799da5be",
-  "test_inference_accessed": false
-}

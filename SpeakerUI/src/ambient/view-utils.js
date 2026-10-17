@@ -1,2 +1,0 @@
-export function lightStyle(light,colors){const level=light.on?(light.brightness??100)/100:0;return `--light-color:${light.colorCss||colors[light.color]||'#eff7ef'};--light-level:${level};--light-glow:${2+level*22}px;--light-opacity:${.3+level*.7};--light-percent:${level*100}%`;}
-export function relativeTime(deadline,now){const minutes=Math.max(0,Math.ceil((deadline-now)/60000));return `In ${Math.floor(minutes/60)}h ${minutes%60}m`;}

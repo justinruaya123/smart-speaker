@@ -1,8 +1,0 @@
-{
-  "all_parent_bindings_verified": true,
-  "audio_feature_hashes_verified": 18978,
-  "calibration_freeze_sha256": "ca20402d4fa9eb255e4d2380d6f9979b2feb7ead7fca0ebfef7396db223b0dfd",
-  "qualification_protocol_sha256": "8f0be8426f41ba4e8c698fc7750823e3e2e8a7e604481e84c84ec1d7e491f30f",
-  "selection_sha256": "63299626f7b2c81d564c1292d81a80877cfba713d606acb0a7adb383431fe218",
-  "test_inference_accessed": false
-}

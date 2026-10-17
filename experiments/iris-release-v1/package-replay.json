@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "utc": "2026-10-17T03:48:59.742762+00:00",
+  "passed": true,
+  "experiment": "iris-release-v1",
+  "package": {
+    "path": "dist/iris-release-v1/iris-final-cardfix/iris-pi.zip",
+    "bytes": 14116950,
+    "sha256": "028add978ee74ee7a7b7bad1e4f0df73364438a2d24d4a2ad74e4bbf7eda687f",
+    "manifest_sha256": "9487a8f87cad8cb6a465fdcdcaadb2cf72b0bd658cb7da22884f894c11e142fe",
+    "files_verified_before_and_after": 213
+  },
+  "release_receipt_sha256": "14a4aefa20f11790dab5b33f158e43c3f3a800f9c0009bbafce22e755101b0d9",
+  "execution": {
+    "extracted_package_modules_only": true,
+    "shared_root_interpreter": true,
+    "source_model_audio_cache_aliases": false,
+    "network_denial": "Python audit hook installed before runtime import denies socket.connect/connect_ex/sendto/getaddrinfo; zero attempts observed",
+    "actions_enabled": false,
+    "microphone_measured": false,
+    "physical_pi_measured": false,
+    "owner_gating_enabled": false,
+    "wake_tested": false,
+    "scope": "Offline command-only bounded original-designed synthetic diagnostic replay; three repeats per recording, first pass only accuracy denominators."
+  },
+  "comparison": {
+    "raw_and_typed_decision_pairs": 264,
+    "identical": true
+  },
+  "engines": {
+    "ncnn": {
+      "metrics_sha256": "b95ac1b22d9c7959ed9d0bb8de2e43c9fabf983623474e5f91651f04a28bf883",
+      "trials_sha256": "7d9c7090cdf68f1d13ce4368d3c3e86b7320d2189b210b0e5fc215f6a5929ce1",
+      "accepted": {
+        "reference_n": 88,
+        "scored_n": 88,
+        "unavailable_n": 0,
+        "positive_n": 36,
+        "negative_n": 52,
+        "exact_positive_n": 31,
+        "emitted_n": 33,
+        "negative_abstention_n": 51,
+        "false_accept_n": 1,
+        "complete_command_recall": 0.8611111111111112,
+        "precision": 0.9393939393939394,
+        "false_accept_rate": 0.019230769230769232
+      },
+      "raw": {
+        "reference_n": 88,
+        "scored_n": 88,
+        "unavailable_n": 0,
+        "positive_n": 36,
+        "negative_n": 52,
+        "exact_positive_n": 33,
+        "emitted_n": 42,
+        "negative_abstention_n": 46,
+        "false_accept_n": 6,
+        "complete_command_recall": 0.9166666666666666,
+        "precision": 0.7857142857142857,
+        "false_accept_rate": 0.11538461538461539
+      },
+      "observations": 264,
+      "source_n": 88,
+      "latency_ms": {
+        "n": 264,
+        "p50": 5.729199619963765,
+        "p95": 10.196120385080576,
+        "mean": 6.994873934397192
+      },
+      "session_load_ms": 287.7761390991509,
+      "peak_rss_mib": 54.06640625,
+      "engine_model_sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133",
+      "threads": 1,
+      "frontend_thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1"
+      },
+      "network_denial": {
+        "network_calls": [],
+        "network_deny_audit_installed": true,
+        "runtime_module": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/iris-final-cardfix/install/scripts/runtime/iris_pi_benchmark.py"
+      }
+    },
+    "onnxruntime": {
+      "metrics_sha256": "b725f1e2596d5ea615da8b1a4a7fdfc08a4aa4dfa9b5a03ef571e344d242b2c3",
+      "trials_sha256": "5c9d2b319945228ac662adde0cd86aea1d5644e8ace9a9ef68dc9490a3c12da8",
+      "accepted": {
+        "reference_n": 88,
+        "scored_n": 88,
+        "unavailable_n": 0,
+        "positive_n": 36,
+        "negative_n": 52,
+        "exact_positive_n": 31,
+        "emitted_n": 33,
+        "negative_abstention_n": 51,
+        "false_accept_n": 1,
+        "complete_command_recall": 0.8611111111111112,
+        "precision": 0.9393939393939394,
+        "false_accept_rate": 0.019230769230769232
+      },
+      "raw": {
+        "reference_n": 88,
+        "scored_n": 88,
+        "unavailable_n": 0,
+        "positive_n": 36,
+        "negative_n": 52,
+        "exact_positive_n": 33,
+        "emitted_n": 42,
+        "negative_abstention_n": 46,
+        "false_accept_n": 6,
+        "complete_command_recall": 0.9166666666666666,
+        "precision": 0.7857142857142857,
+        "false_accept_rate": 0.11538461538461539
+      },
+      "observations": 264,
+      "source_n": 88,
+      "latency_ms": {
+        "n": 264,
+        "p50": 4.5999265275895596,
+        "p95": 8.085245219990611,
+        "mean": 5.1673989227944706
+      },
+      "session_load_ms": 294.7342866100371,
+      "peak_rss_mib": 74.8828125,
+      "engine_model_sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "threads": 1,
+      "frontend_thread_environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1"
+      },
+      "network_denial": {
+        "network_calls": [],
+        "network_deny_audit_installed": true,
+        "runtime_module": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/iris-final-cardfix/install/scripts/runtime/iris_pi_benchmark.py"
+      }
+    }
+  },
+  "helper_sha256": "ee751cac1427340d4c306ad7981e7faae0bfa08c6b7928ec22b772b7c0567a3f",
+  "raw_output_cache": ".cache/iris-release-v1/iris-final-cardfix"
+}

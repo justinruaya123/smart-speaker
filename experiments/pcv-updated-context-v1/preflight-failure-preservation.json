@@ -1,6 +1,0 @@
-{
-  "failure": "Export wrapper began in training mode; legacy exporter restores that mode recursively, enabling dropout in the subsequent PyTorch parity reference. Checking the graph against eval mode removes the mismatch.",
-  "sha256": "7c674c9f09bc3aafef5f79c1404b13933e0707100185453474beb317bc7d56f9",
-  "source_copy": ".cache\\pcv-updated-context-v1\\preflight-failed-source.py",
-  "training_started": false
-}

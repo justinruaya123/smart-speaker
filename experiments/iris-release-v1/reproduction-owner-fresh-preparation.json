@@ -1,0 +1,346 @@
+{
+  "actual_prepare": {
+    "argv": [
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1/.venv/bin/python",
+      "-u",
+      "-m",
+      "scripts.train.iris_owner",
+      "prepare",
+      "--root",
+      ".",
+      "--cache",
+      ".cache/iris-release-v1/owner"
+    ],
+    "copied_module_source_sha256": "6e9d52362e5e35a93e688d94286453080350c2260b20432ca0766cb71f68bc6f",
+    "cwd": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final",
+    "driver_completed_cache_bypass_used": false,
+    "exit_code": 0,
+    "hydration": {
+      "frozen_manifest_sha256": "d22c1bf537a4f66f9eb4f2b33de7ac7c43fbff4c5f75387d228d7b47d184a884",
+      "frozen_proxy_manifest_sha256": "eeb42b0310582bf75dac05ee5600f7335dbfc4b038ddabbc8e04bdd07acd7a88",
+      "libri_files_restored": 6024,
+      "libri_files_verified": 6024,
+      "manifest_bytes_changed": false,
+      "original_human_rows": 9429,
+      "synthetic_proxy_rows": 192
+    },
+    "log": ".cache/iris-release-v1/owner/fresh-target-preparation.log",
+    "log_sha256": "89d03958bb62fa58a9338ac5f9be43b9714111795ea827cee7dd573a72952a01",
+    "seconds_from_filesystem_journal_markers": 144.98297667503357,
+    "timing_kind": "Approximate wall time from checkpoint-recovery journal to successful CLI output; exact timer lost when optional audit-helper report lookup failed"
+  },
+  "all_existing_published_owner_snapshots_match_frozen_originals": {
+    "experiments/iris-release-v1/owner-base-view-equivalence.json": "a5a97d7d660b837e5eff3beb3733d620adf159ded2d4de71ebca99cad72ca5b5",
+    "experiments/iris-release-v1/owner-execution.json": "468f1947652d60b5b35b63497b2715ab62e11d01d51d1955d61fe175e4c9247a",
+    "experiments/iris-release-v1/owner-export.json": "7c494f8e3e15e91e8db533375d21b616dd5b1f844096e002e36368fee6aff7c9",
+    "experiments/iris-release-v1/owner-feature-audit.json": "360e944195113dceae206b03a49dabde5df0c450bd57f5b604670a045bcbd065",
+    "experiments/iris-release-v1/owner-graph-before-test.json": "5e42385e0411b788c4165103077b40227d858f8ea0af4e5795631b61c813c9f1",
+    "experiments/iris-release-v1/owner-implementation-before-fitting-099dbe6ab45b2d07.json": "bd7463a7bfdf40202dc377d6c819dee89c3daa268adb6a91a7a458b18c681236",
+    "experiments/iris-release-v1/owner-implementation-before-fitting-1e0ad09fcda73876.json": "e492f14831b6e54e7b6ed5b5ebaea6be5bb658679656905b61a5e38bd3071797",
+    "experiments/iris-release-v1/owner-portability-check.json": "6cac8738983941bd4e971fea273ab64612203f89608dbde59a49052b0d3ac89d",
+    "experiments/iris-release-v1/owner-protocol.json": "174daed6764e00c4026e6a3be88231823b98967f22bec5ab393a05f686181c0a",
+    "experiments/iris-release-v1/owner-reservations.json": "1b7208fbb66173d72c29f6e79312386b352e7e4f6c2e64b8569b9a1c7fe52897",
+    "experiments/iris-release-v1/owner-results.json": "4a6a9ae62d887a6498eeba862f7b325de4ee6abaaf0e65da22a69808c5147f11",
+    "experiments/iris-release-v1/owner-runtime-checks.json": "241d991387ce1d33b01aa2daac6a2764d99bf6560ba838eac43866eaeeecf2be",
+    "experiments/iris-release-v1/owner-selection-before-test.json": "aee3f2d780d56552b3865a11e580598c86d6f5e7cbf8f6a0190668420c70c74c",
+    "experiments/iris-release-v1/owner-wake-duration-diagnostic.json": "dafd7d152393acbf167b0eb458bed83066113736ac6600ac91cf960192429f5d"
+  },
+  "archive": {
+    "archive_distinct_inode_from_original_run": true,
+    "archive_initially_absent": true,
+    "archive_root_initially_absent": true,
+    "bytes": 6387309499,
+    "download_proof": ".cache/iris-release-v1/fresh-owner-download.json",
+    "download_proof_sha256": "be7ec1b275472ceab7d5dc9884f1104db15dfcf8f639537be49a28df7e18d42e",
+    "full_sha256_verified_by_actual_copied_prepare_before_extraction": true,
+    "independent_network_download_completed_before_preparation": true,
+    "initial_audio_directory_absent": true,
+    "license": "CC-BY-4.0",
+    "mirror_revision": "2dd4206a992cd7a475e1ce2e82b708b014319152",
+    "mirror_url": "https://huggingface.co/datasets/k2-fsa/LibriSpeech/resolve/2dd4206a992cd7a475e1ce2e82b708b014319152/train-clean-100.tar.gz",
+    "path": ".cache/iris-release-v1/owner/downloads/train-clean-100.tar.gz",
+    "publisher_url": "https://openslr.magicdatatech.com/resources/12/train-clean-100.tar.gz",
+    "second_download_performed": false,
+    "sha256": "d4ddd1d5a6ab303066f14971d768ee43278a5f2a0aa43dc716b0e64ecbbbf6e2",
+    "shared_original_libri_reused": false,
+    "source_receipt_sha256": "f9891785f12dbbf1bf88e735259c170088a98571e9b3acf21ae1bce99f1b81b0",
+    "transfer_completed_utc": "2026-10-17T02:27:01.491835+00:00",
+    "transfer_started_utc": "2026-10-17T02:25:22.489696+00:00"
+  },
+  "artifacts": [
+    {
+      "bytes": 1601,
+      "path": ".cache/iris-release-v1/fresh-owner-download.json",
+      "publish_compact_extra": true,
+      "role": "independent_network_archive_download_proof",
+      "sha256": "be7ec1b275472ceab7d5dc9884f1104db15dfcf8f639537be49a28df7e18d42e"
+    },
+    {
+      "bytes": 1132,
+      "path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/owner/preparation.json",
+      "publish_compact_extra": true,
+      "role": "actual_frozen_preparation_receipt",
+      "sha256": "f73fbcbc33b3e7588a73ea27dcd8c404bdcd9d7ba687b690e1ec55e0f9a25048"
+    },
+    {
+      "bytes": 362,
+      "path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/owner/audio-hydration.json",
+      "publish_compact_extra": true,
+      "role": "actual_fresh_audio_hydration_receipt",
+      "sha256": "10cb6114395fa468174ca995dc7d375bff6177f15f97de684d5b3f8fae7fb0a1"
+    },
+    {
+      "bytes": 3994,
+      "path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/experiments/iris-release-v1/owner-implementation-before-fitting-ad11c2f8b96b5647.json",
+      "publish_compact_extra": true,
+      "role": "data_preparation_only_implementation_lock",
+      "sha256": "5989a506d484124cea9d1e02ff64222561d8d6161f1315c1e6e5c645973d1627"
+    },
+    {
+      "bytes": 267,
+      "path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/owner/implementation-before-fitting.json",
+      "publish_compact_extra": true,
+      "role": "data_preparation_implementation_pointer",
+      "sha256": "77dea8b04d5b3efefee8071763cedd5db62e1645c50c8a4a9616dc47a7c9b7e7"
+    },
+    {
+      "bytes": 1372,
+      "path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/owner/fresh-target-corpus-audit.json",
+      "publish_compact_extra": true,
+      "role": "fresh_decode_hash_split_audit",
+      "sha256": "813a9978f47762adf703b980c3a14cff653064bb2529d54ea2ad8b5e98a4007e"
+    },
+    {
+      "bytes": 1344,
+      "path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/owner/fresh-preparation-recovery-20261017T025951925978Z/state-actions.json",
+      "publish_compact_extra": true,
+      "role": "checkpoint_recovery_journal",
+      "sha256": "c2bf711cb7f0a2cdec49031f748186917ab3af738a73cd5e8afaf9ad08771653"
+    },
+    {
+      "bytes": 1676,
+      "path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/owner/fresh-preparation-recovery-20261017T025951925978Z/state-restoration.json",
+      "publish_compact_extra": true,
+      "role": "checkpoint_restoration_receipt",
+      "sha256": "dffece4be10252f4452c1dfb13b649a3ee33942e7455939832bc07cb9f0c48e3"
+    },
+    {
+      "bytes": 16578,
+      "path": ".cache/iris-release-v1/owner/fresh_preparation_check.py",
+      "publish_compact_extra": true,
+      "role": "initial_preparation_orchestrator_helper",
+      "sha256": "a92a1616252a9668a051ed891e41ffb51ad03e0137149159bf0c919416c5e226"
+    },
+    {
+      "bytes": 12517,
+      "path": ".cache/iris-release-v1/owner/fresh_preparation_finalize.py",
+      "publish_compact_extra": true,
+      "role": "restoration_and_proof_helper",
+      "sha256": "caaa0fb75c19ebd6cb26dbfbbf92b80405d7d8a8fe7238d76c443258babfc08a"
+    },
+    {
+      "bytes": 3937,
+      "path": ".cache/iris-release-v1/owner/fresh-target-audit-completed.py",
+      "publish_compact_extra": true,
+      "role": "actual_successful_audit_helper",
+      "sha256": "93ad9a65830b4d81d9243d55a609885e0d945fc41f92a29d49abc2538f4970ef"
+    },
+    {
+      "bytes": 590,
+      "path": ".cache/iris-release-v1/owner/fresh-target-audit-execution.json",
+      "publish_compact_extra": true,
+      "role": "successful_audit_execution",
+      "sha256": "63c33866c572995861f0190a196dcf1f879889b7caa4793561f3f893d3b5c66c"
+    },
+    {
+      "bytes": 426,
+      "path": ".cache/iris-release-v1/owner/fresh-preparation-orchestrator.log",
+      "publish_compact_extra": true,
+      "role": "preserved_initial_optional_report_audit_failure",
+      "sha256": "7e148d6ad60d825dfefc606baa3a5e360d334ccef234f6f4f2192b6358f20c7b"
+    },
+    {
+      "bytes": 1181,
+      "path": ".cache/iris-release-v1/owner/fresh-target-audit.log",
+      "publish_compact_extra": true,
+      "role": "preserved_missing_optional_report_diagnostic",
+      "sha256": "c8e609f00b2b9038a43d4f3982406593b76a4a086314fcd45f60c2676232b1ff"
+    },
+    {
+      "bytes": 315,
+      "path": ".cache/iris-release-v1/owner/fresh-target-preparation.log",
+      "publish_compact_extra": true,
+      "role": "actual_successful_copied_prepare_output",
+      "sha256": "89d03958bb62fa58a9338ac5f9be43b9714111795ea827cee7dd573a72952a01"
+    },
+    {
+      "bytes": 1254,
+      "path": ".cache/iris-release-v1/owner/fresh-target-audit-completed.log",
+      "publish_compact_extra": true,
+      "role": "actual_successful_copied_audit_output",
+      "sha256": "5b591a9bf2bb0db364d5672d82bdcf6102efafbf52d1f04fc05b74cf5d87812d"
+    },
+    {
+      "bytes": 2998678,
+      "path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/owner/fresh-target-readability.jsonl",
+      "publish_compact_extra": false,
+      "role": "9621_per_recording_readability_hash_rows",
+      "sha256": "fcd280dd769c4e01b95452010ec68be4aab58b17b4236331d06159ffc477faad"
+    }
+  ],
+  "audit": {
+    "all_579_frozen_speaker_reservations_match": true,
+    "all_9621_readable_finite_mono_16k": true,
+    "all_audio_resolves_inside_real_fresh_target": true,
+    "all_payload_sha256_verified": true,
+    "by_source": {
+      "LibriSpeech-train-clean-100": 6024,
+      "VCM-original-human": 3405
+    },
+    "by_split": {
+      "calibration": 210,
+      "dev": 640,
+      "test": 1578,
+      "train": 7001
+    },
+    "conflicting_speaker_label_hash_groups": 0,
+    "cross_split_hash_overlap": 0,
+    "cross_split_speaker_overlap": 0,
+    "duplicate_recording_hash_groups": 0,
+    "historical_reservation_limit": "Missing old manifests prevent independent audit of their identity lists; the identical historical fallback rule is retained.",
+    "hours": {
+      "calibration": 0.1805225,
+      "dev": 1.5568976562499999,
+      "test": 2.785777065972222,
+      "train": 19.740955711805558
+    },
+    "human_recordings": 9429,
+    "readability_rows_path": ".cache/iris-release-v1/owner/fresh-target-readability.jsonl",
+    "readability_rows_sha256": "fcd280dd769c4e01b95452010ec68be4aab58b17b4236331d06159ffc477faad",
+    "reserved_calibration_ids_in_train": 0,
+    "reserved_calibration_ids_preserved": 210,
+    "seconds": 35.33959783706814,
+    "separate_synthetic_proxy_recordings": 192,
+    "speakers_by_split": {
+      "calibration": 24,
+      "dev": 52,
+      "test": 114,
+      "train": 389
+    },
+    "transcripts_used": false,
+    "workers": 4
+  },
+  "audit_execution": {
+    "argv": [
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1/.venv/bin/python",
+      "-u",
+      "-c",
+      "<exact source in audit_source>"
+    ],
+    "audit_source": ".cache/iris-release-v1/owner/fresh-target-audit-completed.py",
+    "audit_source_sha256": "93ad9a65830b4d81d9243d55a609885e0d945fc41f92a29d49abc2538f4970ef",
+    "completed_utc": "2026-10-17T03:05:55.117048+00:00",
+    "cwd": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final",
+    "exit_code": 0,
+    "seconds": 46.51474091503769,
+    "started_utc": "2026-10-17T03:05:08.602307+00:00"
+  },
+  "completed_utc": "2026-10-17T03:07:09.671022+00:00",
+  "component": "owner",
+  "copied_skip_before_preparation": {
+    "failed_at": "python-tests",
+    "failure": "Package inventory test required UI dist before build stage",
+    "final_corrected_skip_complete_claimed": false,
+    "handoff_reason": "Parent and tools explicitly released inactive target after failed run; corrected skip retry follows state restoration",
+    "log": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/iris-release-v1/workflow/fresh-configfix/python-tests.log",
+    "log_sha256": "72ec5137d2eae40532d9e683e92f5bfd19fed4a09e3aaf40a297b45929fb068a",
+    "path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/experiments/iris-release-v1/reproduction-run-fresh-configfix.json",
+    "python_failed": 1,
+    "python_passed": 166,
+    "sha256": "748c4c1cafe6764ef2f8be81bfefc864bd0988ee466ce6c3479d08d12e98e004",
+    "status": "failed"
+  },
+  "copied_sources_unchanged": {
+    "data/sources/librispeech.source.json": "f9891785f12dbbf1bf88e735259c170088a98571e9b3acf21ae1bce99f1b81b0",
+    "experiments/iris-release-v1/reproduction-inputs.json": "3cbd4a0f36777218bed5944d1529f80b03479a2382861be7891129c46284888d",
+    "pipeline.toml": "deacde78362380534d71f57221b15826e72535d828fce36e274bf686f673e97a",
+    "requirements.lock": "49b36c847131665d40078620c3149905656d85df71d4f2edb228002249c8d18a",
+    "scripts/iris_release.py": "ed6274d3ad336f29862608b7e1131de4e82b9119e0e4d6b0bc558b253c68b52c",
+    "scripts/models/iris_owner.py": "6d0a4a3be1ea77c55236ffbe3d6e34affd9ad60156ab200c8b30e1f476c50bbc",
+    "scripts/runtime/audio.py": "a1af89d6a022ccc2ba09b5b794a2b9ff63d314d3a9d04f8a2037042694b3f3dd",
+    "scripts/runtime/iris_owner.py": "af1838c143813a82671d0d1a9e5007cb449502a3fa9d44cba2d92e62fe24c474",
+    "scripts/runtime/speaker_session.py": "9aa7fcb7b88919ebf657265acc32e1f1ab3aadfa9df8c4632b65a0a2de73bde9",
+    "scripts/test/test_iris_owner.py": "217f6ad670a3243a39dbae64b7b823af3ea8df9dfb25b759a7d2625b8bb7ebbe",
+    "scripts/train/iris_owner.py": "6e9d52362e5e35a93e688d94286453080350c2260b20432ca0766cb71f68bc6f"
+  },
+  "data_preparation_only_implementation": {
+    "fingerprint": "ad11c2f8b96b5647e9b4346c7559337880ad8cbcd74f56d16899d6c441f362f4",
+    "path": "experiments/iris-release-v1/owner-implementation-before-fitting-ad11c2f8b96b5647.json",
+    "sha256": "5989a506d484124cea9d1e02ff64222561d8d6161f1315c1e6e5c645973d1627"
+  },
+  "execution": {
+    "audit_workers": 4,
+    "cpu_thread_env_limit": 1,
+    "cuda_visible_devices": "",
+    "fit_performed": false,
+    "gpu_used": false,
+    "new_environment_created": false,
+    "no_extra_source_archive_download": true,
+    "shared_root_venv": true,
+    "transcripts_used": false
+  },
+  "experiment_id": "iris-release-v1",
+  "fresh_target": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final",
+  "frozen_cache_metadata_unchanged": {
+    "manifest.jsonl": "d22c1bf537a4f66f9eb4f2b33de7ac7c43fbff4c5f75387d228d7b47d184a884",
+    "normalization.json": "8ec1dfdf362c44c682575640177d8b0c8567986988cd5ceb9d515c9be58c04ce",
+    "preparation.json": "f73fbcbc33b3e7588a73ea27dcd8c404bdcd9d7ba687b690e1ec55e0f9a25048",
+    "synthetic-proxies.jsonl": "eeb42b0310582bf75dac05ee5600f7335dbfc4b038ddabbc8e04bdd07acd7a88"
+  },
+  "limitations": [
+    "Frozen selected manifest and normalization preserved; no manifest reselection or normalization refit",
+    "Final corrected copied skip retry remains separate and pending at owner handoff",
+    "Human wake-command qualification, real simultaneous overlap and physical Pi remain unmeasured"
+  ],
+  "local_audit_retry": {
+    "correction": "Only cache audit helper changed to identical frozen preparation.json golden counts; no model/data/source edits",
+    "first_attempt": "Optional owner-dataset-audit.json absent in copied source; helper stopped before decoding",
+    "successful_retry_exit_code": 0
+  },
+  "schema_version": 1,
+  "scope": "True fresh selected-corpus preparation from pinned network archive, without fitting",
+  "seconds_including_preserved_local_audit_helper_retry": 437.745044,
+  "source_scope": "Copied failed-run source remains unchanged; workflow-order-only correction occurs outside target and is not used by owner preparation",
+  "started_utc": "2026-10-17T02:59:51.925978+00:00",
+  "state_restoration": {
+    "all_restored_fit_state_hashes_match_original_published_copies": true,
+    "new_data_preparation_pointer_retained": true,
+    "original_pointer_sha256": null,
+    "original_pointer_was_absent": true,
+    "restored_state": [
+      {
+        "path": ".cache/iris-release-v1/owner/selected.pt",
+        "reason": "Temporarily remove restored completed-fit state so actual frozen-data preparation hydrates fresh Libri audio; no new fitting",
+        "recovery_path": ".cache/iris-release-v1/owner/fresh-preparation-recovery-20261017T025951925978Z/selected.pt",
+        "restored_after_preparation": true,
+        "sha256": "05e998279a2018d126368dc568ae7adb48c6fee4c9eade5c9979015c2d59edc0"
+      },
+      {
+        "path": ".cache/iris-release-v1/owner/resume.pt",
+        "reason": "Temporarily remove restored completed-fit state so actual frozen-data preparation hydrates fresh Libri audio; no new fitting",
+        "recovery_path": ".cache/iris-release-v1/owner/fresh-preparation-recovery-20261017T025951925978Z/resume.pt",
+        "restored_after_preparation": true,
+        "sha256": "cc2510ae7b05ffb3b867cce1e63111edbd498a606e359d4bcb12df89f6a7f1ca"
+      },
+      {
+        "path": ".cache/iris-release-v1/owner/selection-before-test.json",
+        "reason": "Temporarily remove restored completed-fit state so actual frozen-data preparation hydrates fresh Libri audio; no new fitting",
+        "recovery_path": ".cache/iris-release-v1/owner/fresh-preparation-recovery-20261017T025951925978Z/selection-before-test.json",
+        "restored_after_preparation": true,
+        "sha256": "aee3f2d780d56552b3865a11e580598c86d6f5e7cbf8f6a0190668420c70c74c"
+      }
+    ],
+    "restored_utc": "2026-10-17T03:07:09.580897+00:00"
+  },
+  "status": "passed"
+}

@@ -1,0 +1,20 @@
+{
+  "checkpoint_sha256": "05e998279a2018d126368dc568ae7adb48c6fee4c9eade5c9979015c2d59edc0",
+  "component": "owner",
+  "cuda_visible_devices": "",
+  "experiment_id": "iris-release-v1",
+  "export_input": "random software shape fixture only; no test recordings or outcomes",
+  "graph_bytes": 542023,
+  "graph_path": ".cache/iris-release-v1/owner/export-pretest/owner.onnx",
+  "graph_sha256": "84e860f814e248e793567b2f1c8fe83d24d82b9d58f5379e4da69eb7b78d0a3f",
+  "normalization_sha256": "8ec1dfdf362c44c682575640177d8b0c8567986988cd5ceb9d515c9be58c04ce",
+  "policy": {
+    "calibration_kind": "short_utterance_proxy+synthetic_wake_proxy",
+    "experimental": true,
+    "overlap_threshold": 0.6400450766086578,
+    "threshold": 0.4445243924856186
+  },
+  "protocol_sha256": "174daed6764e00c4026e6a3be88231823b98967f22bec5ab393a05f686181c0a",
+  "selection_sha256": "aee3f2d780d56552b3865a11e580598c86d6f5e7cbf8f6a0190668420c70c74c",
+  "test_evaluated": false
+}

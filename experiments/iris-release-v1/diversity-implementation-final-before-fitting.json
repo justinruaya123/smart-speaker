@@ -1,0 +1,23 @@
+{
+  "experiment": "iris-release-v1",
+  "protocol_sha256": "26851f20cc919812ff555eaf2b02ba4c0908338a148f2371176886a786a2f47a",
+  "classification": "Final pre-fitting code lock; canonical factoring, portable data resolution, role-level scoring and completed-stage integrity checks. Frozen data/splits/frontend/architectures/losses/schedules/selection unchanged.",
+  "source_files": {
+    "scripts/train/iris_diversity.py": "88f25295e8e125b77759bbdb48832f59aeedd658ee5fb89bcae45a5d355c31e9",
+    "scripts/models/mvp_static.py": "2e9e284621a41a29766c35d99d399e6ffa6bb238418aeeb4ad27e6a3f25c6ff8",
+    "scripts/models/speaker_demo.py": "57a827ba38fcce088a213894433ba9d8b7b7944b335c2116859919a79f49cb7e",
+    "scripts/train/iris_export.py": "bcfb6b32a8297eb09017fbc8033067ff48a345175b562899bfcf8ee6f4f6dcf8",
+    "scripts/test/iris_metrics.py": "00f8bf517d767f8758c971ae32441d4f058a5b4965aa734537de61540bd4b802",
+    "scripts/test/iris_benchmark.py": "59fb5eedf1f04a2ee9b687bf1292a2b2dc4bbaae166cea9eb75454b589494781",
+    "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a",
+    "scripts/runtime/mvp_static.py": "8011085d87772102e2f4f7fa35ff4f71c58b32e4bc111da5370a124ac840f263",
+    "scripts/train/iris_wake.py": "9bc4be43aa706f2f5d70c8a44a68791f6cb657b37813d4bfac1c96ffa8ddbf01",
+    "scripts/train/iris_wake_helpers.py": "10cf4a75f746085a376cc74c9eabda2aed8bbc79c250c679678b7f4cfab8948a",
+    "scripts/models/mvp_wake.py": "57372639b362da85301aafb1bd4f5e8c1dfce3a512009e7f70f444459a02dccd"
+  },
+  "verification": "134 Python tests passed before final provenance-only additions; focused recheck follows",
+  "previous_implementation_receipt": "diversity-implementation-before-fitting.json",
+  "encoder_parity_receipt": "encoder-cleanup-parity.json",
+  "fitting_started": false,
+  "test_used_for_selection": false
+}

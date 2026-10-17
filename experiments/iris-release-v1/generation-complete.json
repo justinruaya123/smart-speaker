@@ -1,0 +1,9 @@
+{
+  "rows": 3384,
+  "manifest_sha256": "59ef286523444f61ec6cb07303349e3397bce0c6b967517a9ddb3100491625c1",
+  "protocol_sha256": "26851f20cc919812ff555eaf2b02ba4c0908338a148f2371176886a786a2f47a",
+  "voice_n": 24,
+  "original_human_n": 0,
+  "independent_listening": false,
+  "generation_seconds": 3319.233558332082
+}

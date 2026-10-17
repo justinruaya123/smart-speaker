@@ -1,0 +1,38 @@
+{
+  "cards": [
+    {
+      "card": "model",
+      "hub_server_yaml_validation": "passed",
+      "path": ".cache/iris-release-v1/card-schema-validation/actual/model-README.md",
+      "sha256": "f5ac2f466a25edd8d8b15c1f837e9196ea26d33ea6217def5519df62e6480cc2"
+    },
+    {
+      "card": "dataset",
+      "hub_server_yaml_validation": "passed",
+      "path": ".cache/iris-release-v1/card-schema-validation/actual/dataset-README.md",
+      "sha256": "6f45987f177bd6f92bf42f9be6b9ffc49ce0b58416133bd3d9fee7f32f647ee2"
+    },
+    {
+      "card": "dataset_fallback",
+      "hub_server_yaml_validation": "passed",
+      "path": ".cache/iris-release-v1/card-schema-validation/fallback/dataset-README.md",
+      "sha256": "d0b0dd6bbb70476dd949f4691b00940e9088459e614929141063a955cca4b25a"
+    }
+  ],
+  "original_model_card": {
+    "path": ".cache/iris-release-v1/pre-card-schema-fix/.cache/iris-release-v1/publication/iris-final-sourcefix/model-README.md",
+    "raw_error": ".cache/iris-release-v1/card-schema-validation/original-http400.log",
+    "raw_error_sha256": "db0633b1e65dcd9780939826841a61b6aa345712018917c31e059c2d20883109",
+    "server_rejection": {
+      "message": "- Error: \"license_link\" must be a valid uri with a scheme matching the https pattern",
+      "type": "ValueError"
+    },
+    "sha256": "94c2364158dc1d90ecfb5c111ccb50e46c255b1e818e2d0c8c38abec22307557"
+  },
+  "preserved_dataset_yaml_unchanged": true,
+  "publisher_sha256": "f9875276e95fa6ebdf90c1f42ad26a50b6832e7d2bfcd807e8ea489a518e2e6f",
+  "schema_fix": "Use absolute HTTPS custom license URLs; no scientific text or asset change.",
+  "schema_version": 1,
+  "status": "passed",
+  "validated_utc": "2026-10-17T03:44:41.043532+00:00"
+}

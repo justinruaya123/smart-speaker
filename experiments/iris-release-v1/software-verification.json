@@ -1,0 +1,28 @@
+{
+  "checks": [
+    "python-tests",
+    "ui-install",
+    "ui-test",
+    "ui-check",
+    "ui-build"
+  ],
+  "live_microphone_measured": false,
+  "passed": true,
+  "physical_pi_measured": false,
+  "schema_version": 1,
+  "test_modules": [
+    "scripts/test/test_iris_models.py",
+    "scripts/test/test_iris_wake_models.py",
+    "scripts/test/test_iris_archive.py",
+    "scripts/test/test_iris_configuration.py",
+    "scripts/test/test_iris_session.py",
+    "scripts/test/test_iris_worker.py",
+    "scripts/test/test_iris_wake_release.py",
+    "scripts/test/test_iris_pi_benchmark.py",
+    "scripts/test/test_iris_diversity.py",
+    "scripts/test/test_iris_owner.py",
+    "scripts/test/test_iris_resources.py",
+    "scripts/test/test_iris_metrics.py",
+    "scripts/test/test_iris_release.py"
+  ]
+}

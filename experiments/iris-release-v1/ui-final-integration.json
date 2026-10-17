@@ -1,0 +1,2516 @@
+{
+  "schema_version": 1,
+  "experiment": "iris-release-v1",
+  "utc": "2026-10-17T03:36:08.053494+00:00",
+  "passed": true,
+  "evidence_kind": "final_zip_compiled_iris_resident_worker_recorded_wav",
+  "measurement_host": "desktop_host",
+  "host": {
+    "platform": "linux",
+    "arch": "x64",
+    "node": "v24.13.0"
+  },
+  "package": {
+    "path": "dist/iris-release-v1/iris-final-sourcefix/iris-pi.zip",
+    "sha256": "48ae0ee4e67d026fba1c260bd0213edc3a4578d774794dae61778507d0976184",
+    "bytes": 14116945,
+    "manifest_sha256": "93ff264df5e88ba2babb6840c2185b4e47372d817e2c21f71edd36d001db4e38",
+    "manifest_verified_before_and_after": true,
+    "release_receipt": "experiments/iris-release-v1/reproduction-release.json",
+    "release_receipt_sha256": "bb0ad537e1d285d200b8121bb639453d40f7666537837f29ba0caa3ec2874475"
+  },
+  "model_bindings": {
+    "models/default/bundle.json": {
+      "sha256": "d7671bb393f7a81b4a354e6922b8a469c76a57aec8264ba3ff030fbba1adaa03",
+      "bytes": 671
+    },
+    "models/default/catalog.json": {
+      "sha256": "f169f8b80be8a844de4fca1cfbe7ead9841d4165ec8ad748b0af9010c6c5e8b1",
+      "bytes": 114053
+    },
+    "models/default/model.onnx": {
+      "sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "bytes": 3973147
+    },
+    "models/default/ncnn/engine.json": {
+      "sha256": "d4180c8657a9db0ae87f1384dbb43cf3caa6d8e54d8ec76f625a2e365a670f51",
+      "bytes": 811
+    },
+    "models/default/ncnn/model.ncnn.bin": {
+      "sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133",
+      "bytes": 3879960
+    },
+    "models/default/ncnn/model.ncnn.param": {
+      "sha256": "e7289f35da2cf35147d3b8833a4915b8e3a0520cc99573ebfffae07ec6da7998",
+      "bytes": 8904
+    },
+    "models/default/ncnn/position-frequency.json": {
+      "sha256": "2cf4b7057c69f59eff846bf80903eb98f9ed17da9edd3ba0efb6f1940fa97605",
+      "bytes": 1515
+    },
+    "models/default/normalization.json": {
+      "sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+      "bytes": 148035
+    },
+    "models/default/owner/owner.json": {
+      "sha256": "e2d531627fabf90453762cf17eb082b3f52f8922aa830e37a9202144b91fb310",
+      "bytes": 4640
+    },
+    "models/default/owner/owner.onnx": {
+      "sha256": "84e860f814e248e793567b2f1c8fe83d24d82b9d58f5379e4da69eb7b78d0a3f",
+      "bytes": 542023
+    },
+    "models/default/policy.json": {
+      "sha256": "77de4929939d618b84238f1c95e449eb8a3697c636c23a7861e72c0b52c5b13e",
+      "bytes": 31127
+    },
+    "models/default/wake/iris.json": {
+      "sha256": "12d21a9460a2ac37582d28c0f31cb90f670b8bbc423f5c3bca664bb02d3d0922",
+      "bytes": 152922
+    },
+    "models/default/wake/iris.ncnn.bin": {
+      "sha256": "f5608815519830107220939124abf65222dec6f159ed36ead1f50d124392da98",
+      "bytes": 323904
+    },
+    "models/default/wake/iris.ncnn.param": {
+      "sha256": "43ce9accd880119cba8737365ef799280d22985dd69bc7d7940339ea5f88c067",
+      "bytes": 2713
+    },
+    "models/default/wake/iris.onnx": {
+      "sha256": "22fc8b0c6a3c80e1d1686d321a6251957085216efaca1752eb22067064a4ea57",
+      "bytes": 330103
+    },
+    "models/default/wake/silero-vad.onnx": {
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "bytes": 2327524
+    },
+    "models/default/wake/wake-models.json": {
+      "sha256": "9a401c24260ebca14179005feaaf2cd66d2d6b05e26f3342fd13736a8f672091",
+      "bytes": 294
+    }
+  },
+  "component_resources": {
+    "path": "experiments/iris-release-v1/pipeline-resources.json",
+    "sha256": "781470a7f1472c96aac129690830017f6f5d1a7d789b728cd3bab271a464fe3a",
+    "scope": "Separate actual component compute/preview/wake/owner/VAD evidence. Memory overlaps the worker process; do not add RSS totals."
+  },
+  "initial_health": {
+    "status": "ok",
+    "inference": "onnx",
+    "instance": "iris-final-d",
+    "runtime": {
+      "event": "ready",
+      "engine": "ncnn",
+      "loaded": true,
+      "nativeSession": true,
+      "state": "awaiting_microphone",
+      "profile": "owner-protected",
+      "owner_gating_enabled": true,
+      "ownership_experimental": true,
+      "application_config": {
+        "mode": "demo",
+        "engine": "ncnn",
+        "intent_threshold": 0.95,
+        "slot_threshold": 0.9,
+        "threads": 1,
+        "profile": "owner-protected"
+      },
+      "ui": {
+        "debug": false,
+        "readout": false
+      },
+      "model_sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "wake_phrase": "hey iris",
+      "policy_enabled": true,
+      "threads": 1,
+      "session_load_ms": 739.1980048269033,
+      "session_id": "464371d3248a4f64b69b7b037c290192",
+      "sequence": 1,
+      "source": "microphone",
+      "actions_enabled": true
+    },
+    "actionsEnabled": true,
+    "audio": {
+      "sampleRate": 16000,
+      "channels": 1,
+      "frameSamples": 320,
+      "frameBytes": 640,
+      "maxQueuedBytes": 32000,
+      "maxDurationMs": 15000,
+      "maxBytes": 480000
+    },
+    "homeAssistant": "disabled",
+    "spotify": "disabled",
+    "localMedia": {
+      "status": "folder_missing",
+      "count": 0
+    }
+  },
+  "final_health": {
+    "status": "ok",
+    "inference": "onnx",
+    "instance": "iris-final-d",
+    "runtime": {
+      "event": "ready",
+      "engine": "ncnn",
+      "loaded": true,
+      "nativeSession": true,
+      "state": "awaiting_microphone",
+      "profile": "owner-protected",
+      "owner_gating_enabled": true,
+      "ownership_experimental": true,
+      "application_config": {
+        "mode": "demo",
+        "engine": "ncnn",
+        "intent_threshold": 0.95,
+        "slot_threshold": 0.9,
+        "threads": 1,
+        "profile": "owner-protected"
+      },
+      "ui": {
+        "debug": false,
+        "readout": false
+      },
+      "model_sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "wake_phrase": "hey iris",
+      "policy_enabled": true,
+      "threads": 1,
+      "session_load_ms": 739.1980048269033,
+      "session_id": "464371d3248a4f64b69b7b037c290192",
+      "sequence": 1,
+      "source": "microphone",
+      "actions_enabled": true
+    },
+    "actionsEnabled": true,
+    "audio": {
+      "sampleRate": 16000,
+      "channels": 1,
+      "frameSamples": 320,
+      "frameBytes": 640,
+      "maxQueuedBytes": 32000,
+      "maxDurationMs": 15000,
+      "maxBytes": 480000
+    },
+    "homeAssistant": "disabled",
+    "spotify": "disabled",
+    "localMedia": {
+      "status": "folder_missing",
+      "count": 0
+    }
+  },
+  "reference": {
+    "id": "iris1/5b6936c05d99ad0f1c57",
+    "audio": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1/.cache/iris-release-v1/ui/final-package-48ae0ee4/installation/samples/audio/9a556b25a7ee023bbc21b06a.wav",
+    "sha256": "7ba842efbcbd92a72a66d9a7d3c335b35b72fb043fe29d195b2d0a14773d2b9e",
+    "expected": {
+      "intent": "LIGHT_OFF",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "synthetic": true,
+    "source": "Qwen3-original-designed-iris-v1",
+    "original_packaged_audio": "audio/9a556b25a7ee023bbc21b06a.wav",
+    "manifest": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1/.cache/iris-release-v1/ui/final-package-48ae0ee4/installation/samples/commands.jsonl",
+    "manifest_sha256": "b2e0e6099e71a2707b6b7417940ab8a5bc9350c16e6ebc810236a6a1d553d6f8",
+    "bundle": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1/.cache/iris-release-v1/ui/final-package-48ae0ee4/installation/models/default",
+    "bundle_sha256": "d7671bb393f7a81b4a354e6922b8a469c76a57aec8264ba3ff030fbba1adaa03"
+  },
+  "reference_selection": "First positive row in packaged samples/commands.jsonl, unchanged from prior baseline integration; synthetic and listener-unverified. No selection by observed model outcome.",
+  "measurements": [
+    {
+      "viewport": [
+        800,
+        480
+      ],
+      "session_id": "464371d3248a4f64b69b7b037c290192",
+      "utterance_id": "500ae77e89ec47b3b51bc9b9c7b7677d",
+      "sequence": 5,
+      "source": "wav",
+      "profile": "benchmark-compatible",
+      "owner_gating_enabled": false,
+      "actions_enabled": false,
+      "output": {
+        "schema_version": 3,
+        "accepted": false,
+        "command": null,
+        "reason": "OOV"
+      },
+      "application": {
+        "mode": "demo",
+        "schema_version": 3,
+        "accepted": false,
+        "command": null,
+        "reason": "OOV"
+      },
+      "raw_candidate": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.ceiling"
+        }
+      },
+      "raw_score": 0.43395937937517104,
+      "raw_exact": true,
+      "accepted_exact": false,
+      "execution": {
+        "id": "464371d3248a4f64b69b7b037c290192:500ae77e89ec47b3b51bc9b9c7b7677d",
+        "status": "preview",
+        "detail": "Recorded WAVs and fixtures do not execute actions.",
+        "utterance_id": "500ae77e89ec47b3b51bc9b9c7b7677d"
+      },
+      "displayed_phase": "Rejected",
+      "displayed_receipt": "Replay preview\n\nRecorded WAVs and fixtures do not execute actions.",
+      "actual_runtime_ws_matches_dom": true,
+      "actual_action_ws_matches_receipt": true,
+      "path_timing_ms": {
+        "upload_to_http_reply": 301.17978300000004,
+        "upload_to_runtime_final_ws": 291.92792199999985,
+        "upload_to_execution_receipt_ws": 297.16952900000024,
+        "upload_to_rendered_receipt": 325.0936810000003
+      },
+      "worker_reported_vcm_compute_ms": 204.32475302368402
+    },
+    {
+      "viewport": [
+        1024,
+        600
+      ],
+      "session_id": "464371d3248a4f64b69b7b037c290192",
+      "utterance_id": "c49d1f3ba55c4d37b5d747e0c6292ba7",
+      "sequence": 11,
+      "source": "wav",
+      "profile": "benchmark-compatible",
+      "owner_gating_enabled": false,
+      "actions_enabled": false,
+      "output": {
+        "schema_version": 3,
+        "accepted": false,
+        "command": null,
+        "reason": "OOV"
+      },
+      "application": {
+        "mode": "demo",
+        "schema_version": 3,
+        "accepted": false,
+        "command": null,
+        "reason": "OOV"
+      },
+      "raw_candidate": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.ceiling"
+        }
+      },
+      "raw_score": 0.43395937937517104,
+      "raw_exact": true,
+      "accepted_exact": false,
+      "execution": {
+        "id": "464371d3248a4f64b69b7b037c290192:c49d1f3ba55c4d37b5d747e0c6292ba7",
+        "status": "preview",
+        "detail": "Recorded WAVs and fixtures do not execute actions.",
+        "utterance_id": "c49d1f3ba55c4d37b5d747e0c6292ba7"
+      },
+      "displayed_phase": "Rejected",
+      "displayed_receipt": "Replay preview\n\nRecorded WAVs and fixtures do not execute actions.",
+      "actual_runtime_ws_matches_dom": true,
+      "actual_action_ws_matches_receipt": true,
+      "path_timing_ms": {
+        "upload_to_http_reply": 42.132588999999825,
+        "upload_to_runtime_final_ws": 36.704659999999876,
+        "upload_to_execution_receipt_ws": 36.71729399999958,
+        "upload_to_rendered_receipt": 62.769790999999714
+      },
+      "worker_reported_vcm_compute_ms": 11.816608253866434
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "session_id": "464371d3248a4f64b69b7b037c290192",
+      "utterance_id": "a76c82a754774276b5267c61b41e163c",
+      "sequence": 17,
+      "source": "wav",
+      "profile": "benchmark-compatible",
+      "owner_gating_enabled": false,
+      "actions_enabled": false,
+      "output": {
+        "schema_version": 3,
+        "accepted": false,
+        "command": null,
+        "reason": "OOV"
+      },
+      "application": {
+        "mode": "demo",
+        "schema_version": 3,
+        "accepted": false,
+        "command": null,
+        "reason": "OOV"
+      },
+      "raw_candidate": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.ceiling"
+        }
+      },
+      "raw_score": 0.43395937937517104,
+      "raw_exact": true,
+      "accepted_exact": false,
+      "execution": {
+        "id": "464371d3248a4f64b69b7b037c290192:a76c82a754774276b5267c61b41e163c",
+        "status": "preview",
+        "detail": "Recorded WAVs and fixtures do not execute actions.",
+        "utterance_id": "a76c82a754774276b5267c61b41e163c"
+      },
+      "displayed_phase": "Rejected",
+      "displayed_receipt": "Replay preview\n\nRecorded WAVs and fixtures do not execute actions.",
+      "actual_runtime_ws_matches_dom": true,
+      "actual_action_ws_matches_receipt": true,
+      "path_timing_ms": {
+        "upload_to_http_reply": 41.56933299999946,
+        "upload_to_runtime_final_ws": 36.60245699999996,
+        "upload_to_execution_receipt_ws": 36.62093199999981,
+        "upload_to_rendered_receipt": 60.60756599999968
+      },
+      "worker_reported_vcm_compute_ms": 11.208806652575731
+    }
+  ],
+  "browser_resource_snapshots": [
+    {
+      "viewport": [
+        800,
+        480
+      ],
+      "kind": "browser_resource_snapshot",
+      "metrics": {
+        "dom_elements": 78,
+        "assets": [
+          {
+            "path": "/",
+            "transfer_bytes": 671,
+            "encoded_bytes": 371,
+            "decoded_bytes": 371,
+            "duration_ms": 66.59999990463257
+          },
+          {
+            "path": "/assets/index-BZMRjEJK.js",
+            "transfer_bytes": 97900,
+            "encoded_bytes": 97600,
+            "decoded_bytes": 97600,
+            "duration_ms": 17.100000381469727
+          },
+          {
+            "path": "/assets/index-CGVxmaFV.css",
+            "transfer_bytes": 8994,
+            "encoded_bytes": 8694,
+            "decoded_bytes": 8694,
+            "duration_ms": 15.199999809265137
+          },
+          {
+            "path": "/api/health",
+            "transfer_bytes": 1275,
+            "encoded_bytes": 975,
+            "decoded_bytes": 975,
+            "duration_ms": 2.200000286102295
+          },
+          {
+            "path": "/api/actions/state",
+            "transfer_bytes": 501,
+            "encoded_bytes": 201,
+            "decoded_bytes": 201,
+            "duration_ms": 2.4000000953674316
+          },
+          {
+            "path": "/api/home-assistant/entities",
+            "transfer_bytes": 373,
+            "encoded_bytes": 73,
+            "decoded_bytes": 73,
+            "duration_ms": 7.599999904632568
+          },
+          {
+            "path": "/api/runtime/devices",
+            "transfer_bytes": 654,
+            "encoded_bytes": 354,
+            "decoded_bytes": 354,
+            "duration_ms": 57
+          },
+          {
+            "path": "/api/runtime/wav",
+            "transfer_bytes": 613,
+            "encoded_bytes": 313,
+            "decoded_bytes": 313,
+            "duration_ms": 258.80000019073486
+          }
+        ],
+        "performance_memory_used_js_heap_bytes": 10000000,
+        "js_heap": {
+          "usedSize": 3749992,
+          "totalSize": 6406144,
+          "embedderHeapUsedSize": 3111352,
+          "backingStorageSize": 218234
+        },
+        "dom": {
+          "documents": 5,
+          "nodes": 641,
+          "jsEventListeners": 39
+        }
+      },
+      "passed": true
+    },
+    {
+      "viewport": [
+        1024,
+        600
+      ],
+      "kind": "browser_resource_snapshot",
+      "metrics": {
+        "dom_elements": 78,
+        "assets": [
+          {
+            "path": "/",
+            "transfer_bytes": 671,
+            "encoded_bytes": 371,
+            "decoded_bytes": 371,
+            "duration_ms": 53.19999980926514
+          },
+          {
+            "path": "/assets/index-BZMRjEJK.js",
+            "transfer_bytes": 97900,
+            "encoded_bytes": 97600,
+            "decoded_bytes": 97600,
+            "duration_ms": 12.800000190734863
+          },
+          {
+            "path": "/assets/index-CGVxmaFV.css",
+            "transfer_bytes": 8994,
+            "encoded_bytes": 8694,
+            "decoded_bytes": 8694,
+            "duration_ms": 13.300000190734863
+          },
+          {
+            "path": "/api/health",
+            "transfer_bytes": 1275,
+            "encoded_bytes": 975,
+            "decoded_bytes": 975,
+            "duration_ms": 2.5999999046325684
+          },
+          {
+            "path": "/api/actions/state",
+            "transfer_bytes": 501,
+            "encoded_bytes": 201,
+            "decoded_bytes": 201,
+            "duration_ms": 2.799999713897705
+          },
+          {
+            "path": "/api/home-assistant/entities",
+            "transfer_bytes": 373,
+            "encoded_bytes": 73,
+            "decoded_bytes": 73,
+            "duration_ms": 3.4000000953674316
+          },
+          {
+            "path": "/api/runtime/devices",
+            "transfer_bytes": 654,
+            "encoded_bytes": 354,
+            "decoded_bytes": 354,
+            "duration_ms": 11.299999713897705
+          },
+          {
+            "path": "/api/runtime/wav",
+            "transfer_bytes": 614,
+            "encoded_bytes": 314,
+            "decoded_bytes": 314,
+            "duration_ms": 18
+          }
+        ],
+        "performance_memory_used_js_heap_bytes": 10000000,
+        "js_heap": {
+          "usedSize": 3747424,
+          "totalSize": 6406144,
+          "embedderHeapUsedSize": 3068672,
+          "backingStorageSize": 218232
+        },
+        "dom": {
+          "documents": 5,
+          "nodes": 641,
+          "jsEventListeners": 39
+        }
+      },
+      "passed": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "kind": "browser_resource_snapshot",
+      "metrics": {
+        "dom_elements": 78,
+        "assets": [
+          {
+            "path": "/",
+            "transfer_bytes": 671,
+            "encoded_bytes": 371,
+            "decoded_bytes": 371,
+            "duration_ms": 52.90000009536743
+          },
+          {
+            "path": "/assets/index-BZMRjEJK.js",
+            "transfer_bytes": 97900,
+            "encoded_bytes": 97600,
+            "decoded_bytes": 97600,
+            "duration_ms": 15.300000190734863
+          },
+          {
+            "path": "/assets/index-CGVxmaFV.css",
+            "transfer_bytes": 8994,
+            "encoded_bytes": 8694,
+            "decoded_bytes": 8694,
+            "duration_ms": 14.400000095367432
+          },
+          {
+            "path": "/api/health",
+            "transfer_bytes": 1275,
+            "encoded_bytes": 975,
+            "decoded_bytes": 975,
+            "duration_ms": 2.299999713897705
+          },
+          {
+            "path": "/api/actions/state",
+            "transfer_bytes": 501,
+            "encoded_bytes": 201,
+            "decoded_bytes": 201,
+            "duration_ms": 2.9000000953674316
+          },
+          {
+            "path": "/api/home-assistant/entities",
+            "transfer_bytes": 373,
+            "encoded_bytes": 73,
+            "decoded_bytes": 73,
+            "duration_ms": 3.700000286102295
+          },
+          {
+            "path": "/api/runtime/devices",
+            "transfer_bytes": 654,
+            "encoded_bytes": 354,
+            "decoded_bytes": 354,
+            "duration_ms": 17.300000190734863
+          },
+          {
+            "path": "/api/runtime/wav",
+            "transfer_bytes": 614,
+            "encoded_bytes": 314,
+            "decoded_bytes": 314,
+            "duration_ms": 16.899999618530273
+          }
+        ],
+        "performance_memory_used_js_heap_bytes": 10000000,
+        "js_heap": {
+          "usedSize": 3748448,
+          "totalSize": 6668288,
+          "embedderHeapUsedSize": 2988880,
+          "backingStorageSize": 218236
+        },
+        "dom": {
+          "documents": 5,
+          "nodes": 641,
+          "jsEventListeners": 39
+        }
+      },
+      "passed": true
+    }
+  ],
+  "process_resources": {
+    "available": true,
+    "targets": [
+      {
+        "role": "node_gateway",
+        "pid": 2375838
+      },
+      {
+        "role": "python_worker",
+        "pid": 2375929,
+        "numeric_thread_environment": {
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "MKL_NUM_THREADS": "1",
+          "VECLIB_MAXIMUM_THREADS": "1",
+          "NUMEXPR_NUM_THREADS": "1"
+        }
+      }
+    ],
+    "clock_ticks_per_second": 100,
+    "sampling_period_ms": 20,
+    "observations": [
+      {
+        "viewport": [
+          800,
+          480
+        ],
+        "idle": {
+          "wall_ms": 400.5132759999997,
+          "processes": [
+            {
+              "role": "node_gateway",
+              "pid": 2375838,
+              "cpu_seconds": 0,
+              "cpu_percent_one_core": 0,
+              "sampled_peak_rss_mib": 96.53125,
+              "lifetime_peak_rss_mib": 96.53125
+            },
+            {
+              "role": "python_worker",
+              "pid": 2375929,
+              "cpu_seconds": 0,
+              "cpu_percent_one_core": 0,
+              "sampled_peak_rss_mib": 133.22265625,
+              "lifetime_peak_rss_mib": 133.22265625
+            }
+          ],
+          "samples": [
+            {
+              "stage": "connected_idle_start",
+              "monotonic_ms": 2233.681531,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.48046875,
+                  "lifetime_peak_rss_mib": 96.48046875
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 117,
+                  "rss_mib": 132.9609375,
+                  "lifetime_peak_rss_mib": 132.9609375
+                }
+              ]
+            },
+            {
+              "stage": "connected_idle_end",
+              "monotonic_ms": 2634.194807,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.53125,
+                  "lifetime_peak_rss_mib": 96.53125
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 117,
+                  "rss_mib": 133.22265625,
+                  "lifetime_peak_rss_mib": 133.22265625
+                }
+              ]
+            }
+          ]
+        },
+        "replay": {
+          "wall_ms": 326.6191490000001,
+          "processes": [
+            {
+              "role": "node_gateway",
+              "pid": 2375838,
+              "cpu_seconds": 0,
+              "cpu_percent_one_core": 0,
+              "sampled_peak_rss_mib": 96.98828125,
+              "lifetime_peak_rss_mib": 96.98828125
+            },
+            {
+              "role": "python_worker",
+              "pid": 2375929,
+              "cpu_seconds": 0.02,
+              "cpu_percent_one_core": 6.123339694330045,
+              "sampled_peak_rss_mib": 138.6953125,
+              "lifetime_peak_rss_mib": 138.6953125
+            }
+          ],
+          "samples": [
+            {
+              "stage": "replay_start",
+              "monotonic_ms": 2634.56068,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.53125,
+                  "lifetime_peak_rss_mib": 96.53125
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 117,
+                  "rss_mib": 133.22265625,
+                  "lifetime_peak_rss_mib": 133.22265625
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 2655.461782,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.53125,
+                  "lifetime_peak_rss_mib": 96.53125
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 117,
+                  "rss_mib": 133.22265625,
+                  "lifetime_peak_rss_mib": 133.22265625
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 2675.006425,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.97265625,
+                  "lifetime_peak_rss_mib": 96.97265625
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 117,
+                  "rss_mib": 133.515625,
+                  "lifetime_peak_rss_mib": 133.515625
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 2695.261143,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.97265625,
+                  "lifetime_peak_rss_mib": 96.97265625
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 117,
+                  "rss_mib": 133.515625,
+                  "lifetime_peak_rss_mib": 133.515625
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 2715.643231,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.97265625,
+                  "lifetime_peak_rss_mib": 96.97265625
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 117,
+                  "rss_mib": 133.515625,
+                  "lifetime_peak_rss_mib": 133.515625
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 2735.322379,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.97265625,
+                  "lifetime_peak_rss_mib": 96.97265625
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 117,
+                  "rss_mib": 134.046875,
+                  "lifetime_peak_rss_mib": 134.046875
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 2755.712874,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.97265625,
+                  "lifetime_peak_rss_mib": 96.97265625
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 117,
+                  "rss_mib": 134.046875,
+                  "lifetime_peak_rss_mib": 134.046875
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 2775.056466,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.97265625,
+                  "lifetime_peak_rss_mib": 96.97265625
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 117,
+                  "rss_mib": 134.046875,
+                  "lifetime_peak_rss_mib": 134.046875
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 2795.373271,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.97265625,
+                  "lifetime_peak_rss_mib": 96.97265625
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 117,
+                  "rss_mib": 134.1328125,
+                  "lifetime_peak_rss_mib": 134.1328125
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 2815.709724,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.97265625,
+                  "lifetime_peak_rss_mib": 96.97265625
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 117,
+                  "rss_mib": 134.1328125,
+                  "lifetime_peak_rss_mib": 134.1328125
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 2836.034053,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.97265625,
+                  "lifetime_peak_rss_mib": 96.97265625
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 117,
+                  "rss_mib": 134.1328125,
+                  "lifetime_peak_rss_mib": 134.1328125
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 2856.385283,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.97265625,
+                  "lifetime_peak_rss_mib": 96.97265625
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 118,
+                  "rss_mib": 137.6796875,
+                  "lifetime_peak_rss_mib": 137.6796875
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 2876.731765,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.97265625,
+                  "lifetime_peak_rss_mib": 96.97265625
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 118,
+                  "rss_mib": 137.6796875,
+                  "lifetime_peak_rss_mib": 137.6796875
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 2897.118863,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.97265625,
+                  "lifetime_peak_rss_mib": 96.97265625
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 118,
+                  "rss_mib": 137.6796875,
+                  "lifetime_peak_rss_mib": 137.6796875
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 2917.570513,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.97265625,
+                  "lifetime_peak_rss_mib": 96.97265625
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 119,
+                  "rss_mib": 138.1875,
+                  "lifetime_peak_rss_mib": 138.1875
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 2939.855195,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.98828125,
+                  "lifetime_peak_rss_mib": 96.98828125
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 119,
+                  "rss_mib": 138.6953125,
+                  "lifetime_peak_rss_mib": 138.6953125
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 2959.236329,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.98828125,
+                  "lifetime_peak_rss_mib": 96.98828125
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 119,
+                  "rss_mib": 138.6953125,
+                  "lifetime_peak_rss_mib": 138.6953125
+                }
+              ]
+            },
+            {
+              "stage": "replay_end",
+              "monotonic_ms": 2961.179829,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 69,
+                  "rss_mib": 96.98828125,
+                  "lifetime_peak_rss_mib": 96.98828125
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 119,
+                  "rss_mib": 138.6953125,
+                  "lifetime_peak_rss_mib": 138.6953125
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "viewport": [
+          1024,
+          600
+        ],
+        "idle": {
+          "wall_ms": 400.047004,
+          "processes": [
+            {
+              "role": "node_gateway",
+              "pid": 2375838,
+              "cpu_seconds": 0.01,
+              "cpu_percent_one_core": 2.4997062595174437,
+              "sampled_peak_rss_mib": 97.13671875,
+              "lifetime_peak_rss_mib": 97.13671875
+            },
+            {
+              "role": "python_worker",
+              "pid": 2375929,
+              "cpu_seconds": 0,
+              "cpu_percent_one_core": 0,
+              "sampled_peak_rss_mib": 138.71484375,
+              "lifetime_peak_rss_mib": 138.71484375
+            }
+          ],
+          "samples": [
+            {
+              "stage": "connected_idle_start",
+              "monotonic_ms": 3296.039524,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 70,
+                  "rss_mib": 97.13671875,
+                  "lifetime_peak_rss_mib": 97.13671875
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 119,
+                  "rss_mib": 138.71484375,
+                  "lifetime_peak_rss_mib": 138.71484375
+                }
+              ]
+            },
+            {
+              "stage": "connected_idle_end",
+              "monotonic_ms": 3696.086528,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 71,
+                  "rss_mib": 97.13671875,
+                  "lifetime_peak_rss_mib": 97.13671875
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 119,
+                  "rss_mib": 138.71484375,
+                  "lifetime_peak_rss_mib": 138.71484375
+                }
+              ]
+            }
+          ]
+        },
+        "replay": {
+          "wall_ms": 63.399253000000044,
+          "processes": [
+            {
+              "role": "node_gateway",
+              "pid": 2375838,
+              "cpu_seconds": 0,
+              "cpu_percent_one_core": 0,
+              "sampled_peak_rss_mib": 97.2421875,
+              "lifetime_peak_rss_mib": 97.2421875
+            },
+            {
+              "role": "python_worker",
+              "pid": 2375929,
+              "cpu_seconds": 0.02,
+              "cpu_percent_one_core": 31.546113011773162,
+              "sampled_peak_rss_mib": 140.125,
+              "lifetime_peak_rss_mib": 140.125
+            }
+          ],
+          "samples": [
+            {
+              "stage": "replay_start",
+              "monotonic_ms": 3696.29904,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 71,
+                  "rss_mib": 97.13671875,
+                  "lifetime_peak_rss_mib": 97.13671875
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 119,
+                  "rss_mib": 138.71484375,
+                  "lifetime_peak_rss_mib": 138.71484375
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 3716.578114,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 71,
+                  "rss_mib": 97.2421875,
+                  "lifetime_peak_rss_mib": 97.2421875
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 120,
+                  "rss_mib": 140.125,
+                  "lifetime_peak_rss_mib": 140.125
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 3736.317536,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 71,
+                  "rss_mib": 97.2421875,
+                  "lifetime_peak_rss_mib": 97.2421875
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 121,
+                  "rss_mib": 140.125,
+                  "lifetime_peak_rss_mib": 140.125
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 3757.032946,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 71,
+                  "rss_mib": 97.2421875,
+                  "lifetime_peak_rss_mib": 97.2421875
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 121,
+                  "rss_mib": 140.125,
+                  "lifetime_peak_rss_mib": 140.125
+                }
+              ]
+            },
+            {
+              "stage": "replay_end",
+              "monotonic_ms": 3759.698293,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 71,
+                  "rss_mib": 97.2421875,
+                  "lifetime_peak_rss_mib": 97.2421875
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 121,
+                  "rss_mib": 140.125,
+                  "lifetime_peak_rss_mib": 140.125
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "viewport": [
+          390,
+          844
+        ],
+        "idle": {
+          "wall_ms": 400.7796309999999,
+          "processes": [
+            {
+              "role": "node_gateway",
+              "pid": 2375838,
+              "cpu_seconds": 0,
+              "cpu_percent_one_core": 0,
+              "sampled_peak_rss_mib": 97.39453125,
+              "lifetime_peak_rss_mib": 97.39453125
+            },
+            {
+              "role": "python_worker",
+              "pid": 2375929,
+              "cpu_seconds": 0,
+              "cpu_percent_one_core": 0,
+              "sampled_peak_rss_mib": 140.12890625,
+              "lifetime_peak_rss_mib": 140.12890625
+            }
+          ],
+          "samples": [
+            {
+              "stage": "connected_idle_start",
+              "monotonic_ms": 4078.942125,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 73,
+                  "rss_mib": 97.39453125,
+                  "lifetime_peak_rss_mib": 97.39453125
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 121,
+                  "rss_mib": 140.125,
+                  "lifetime_peak_rss_mib": 140.125
+                }
+              ]
+            },
+            {
+              "stage": "connected_idle_end",
+              "monotonic_ms": 4479.721756,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 73,
+                  "rss_mib": 97.39453125,
+                  "lifetime_peak_rss_mib": 97.39453125
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 121,
+                  "rss_mib": 140.12890625,
+                  "lifetime_peak_rss_mib": 140.12890625
+                }
+              ]
+            }
+          ]
+        },
+        "replay": {
+          "wall_ms": 61.30400499999996,
+          "processes": [
+            {
+              "role": "node_gateway",
+              "pid": 2375838,
+              "cpu_seconds": 0,
+              "cpu_percent_one_core": 0,
+              "sampled_peak_rss_mib": 97.3984375,
+              "lifetime_peak_rss_mib": 97.3984375
+            },
+            {
+              "role": "python_worker",
+              "pid": 2375929,
+              "cpu_seconds": 0.01,
+              "cpu_percent_one_core": 16.312147958359336,
+              "sampled_peak_rss_mib": 140.296875,
+              "lifetime_peak_rss_mib": 140.296875
+            }
+          ],
+          "samples": [
+            {
+              "stage": "replay_start",
+              "monotonic_ms": 4479.985095,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 73,
+                  "rss_mib": 97.39453125,
+                  "lifetime_peak_rss_mib": 97.39453125
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 121,
+                  "rss_mib": 140.12890625,
+                  "lifetime_peak_rss_mib": 140.12890625
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 4500.483484,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 73,
+                  "rss_mib": 97.3984375,
+                  "lifetime_peak_rss_mib": 97.3984375
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 121,
+                  "rss_mib": 140.12890625,
+                  "lifetime_peak_rss_mib": 140.12890625
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 4519.942244,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 73,
+                  "rss_mib": 97.3984375,
+                  "lifetime_peak_rss_mib": 97.3984375
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 122,
+                  "rss_mib": 140.296875,
+                  "lifetime_peak_rss_mib": 140.296875
+                }
+              ]
+            },
+            {
+              "stage": "replay",
+              "monotonic_ms": 4540.96166,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 73,
+                  "rss_mib": 97.3984375,
+                  "lifetime_peak_rss_mib": 97.3984375
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 122,
+                  "rss_mib": 140.296875,
+                  "lifetime_peak_rss_mib": 140.296875
+                }
+              ]
+            },
+            {
+              "stage": "replay_end",
+              "monotonic_ms": 4541.2891,
+              "processes": [
+                {
+                  "role": "node_gateway",
+                  "pid": 2375838,
+                  "start_ticks": "413575233",
+                  "cpu_ticks": 73,
+                  "rss_mib": 97.3984375,
+                  "lifetime_peak_rss_mib": 97.3984375
+                },
+                {
+                  "role": "python_worker",
+                  "pid": 2375929,
+                  "numeric_thread_environment": {
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "MKL_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1"
+                  },
+                  "start_ticks": "413575621",
+                  "cpu_ticks": 122,
+                  "rss_mib": 140.296875,
+                  "lifetime_peak_rss_mib": 140.296875
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "scope": "Actual local Node gateway and its resident speaker_worker process; Linux /proc CPU counters and RSS. CPU resolution is one clock tick. Replay sampling is bounded to the WAV request/readout path; RSS peaks between samples can be missed. Lifetime HWM includes earlier work. Browser CDP heap/DOM/assets are separate; no unique physical-memory total or Pi/browser RSS is inferred."
+  },
+  "same_vcm_results_across_viewports": true,
+  "resident_worker_reused": true,
+  "native_owner_protected_ready_at_startup": true,
+  "actions_capable_at_startup": true,
+  "action_state_before": {
+    "revision": 0,
+    "jobs": [],
+    "receipts": [],
+    "actions_enabled": true,
+    "timezone": "Asia/Manila",
+    "bindings": {
+      "lights": {},
+      "songs": [],
+      "climate": null,
+      "weather": null,
+      "media_player": {},
+      "contacts": [],
+      "messages": false
+    }
+  },
+  "action_state_after": {
+    "revision": 0,
+    "jobs": [],
+    "receipts": [],
+    "actions_enabled": true,
+    "timezone": "Asia/Manila",
+    "bindings": {
+      "lights": {},
+      "songs": [],
+      "climate": null,
+      "weather": null,
+      "media_player": {},
+      "contacts": [],
+      "messages": false
+    }
+  },
+  "action_store_unchanged": true,
+  "browser_mutations": [
+    {
+      "viewport": [
+        800,
+        480
+      ],
+      "method": "POST",
+      "path": "/api/runtime/wav",
+      "query": "?wake=false"
+    },
+    {
+      "viewport": [
+        1024,
+        600
+      ],
+      "method": "POST",
+      "path": "/api/runtime/wav",
+      "query": "?wake=false"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "method": "POST",
+      "path": "/api/runtime/wav",
+      "query": "?wake=false"
+    }
+  ],
+  "external_browser_requests": [],
+  "typed_fixtures": 0,
+  "actions_executed": false,
+  "live_microphone_measured": false,
+  "wake_detection_tested": false,
+  "owner_decisions_tested_on_replay": false,
+  "physical_pi_measured": false,
+  "acoustic_quality_approved": false,
+  "limitations": [
+    "The raw LIGHT_OFF/light.ceiling candidate is exact, but probability 0.43395937937517104 is rejected OOV in every layout; accepted-command correctness is false for this example.",
+    "WAV replay intentionally bypasses wake/owner decisions and declares benchmark-compatible/action-inert output, while the resident native worker starts owner-protected and actions-capable. No device/provider action was requested.",
+    "Observed worker RSS covers the actual command-WAV path with owner backend resident; wake/VAD streaming and owner continuity cost are in the separate component resource receipt. This is desktop host evidence, not complete live-microphone or physical-Pi latency.",
+    "CPU counters have one-clock-tick resolution; 20ms replay RSS sampling can miss intermediate peaks. Browser CDP JS heap is not full browser process RSS. No unique physical-memory total is inferred.",
+    "Preview evidence injects recorded synthetic PCM directly into the microphone-only AudioService test branch. Separate adapter replay verifies clearing; actual WAV\u2192worker\u2192WS\u2192compiled browser verification remains separate. No live capture or human owner qualification was measured.",
+    "HeyIris and both Silero CPU sessions were actually loaded from the final ZIP in the separate model-only probe, without opening an input stream or testing wake detection. Owner backend readiness is experimental, not identity authentication."
+  ],
+  "harness": {
+    "original_path": "SpeakerUI/scripts/browser-runtime-check.mjs",
+    "original_sha256": "d364899dc84aae036a08e2333df23d6cb0a58398eb010189aa4ef87850d7c758",
+    "original_unmodified": true,
+    "amended_ignored_copy": ".cache/iris-release-v1/ui/final-package-48ae0ee4/harness/browser-runtime-check-owner.mjs",
+    "amended_sha256": "a96cf9dc74f39ecb6d092313a8ca1f1ae92effb4a728ce6710c5350ffebd350c",
+    "exact_diff": "--- SpeakerUI/scripts/browser-runtime-check.mjs\n+++ scratch/browser-runtime-check-owner.mjs\n@@ -85,8 +85,8 @@\n const errors=[];const checks=[];\n const health=await (await fetch(new URL('/api/health',url))).json();\n assert.equal(health.inference,'onnx');assert.equal(health.runtime.loaded,true);assert.equal(health.runtime.nativeSession,true);\n-assert.equal(health.runtime.profile,'benchmark-compatible');assert.equal(health.runtime.owner_gating_enabled,false);\n-assert.equal(health.runtime.actions_enabled,false);assert.equal(health.actionsEnabled,false);\n+assert.equal(health.runtime.profile,'owner-protected');assert.equal(health.runtime.owner_gating_enabled,true);\n+assert.equal(health.runtime.actions_enabled,true);assert.equal(health.actionsEnabled,true);\n assert.equal(health.homeAssistant,'disabled');assert.equal(health.spotify,'disabled');\n if(reference.bundle) {\n   const payload=await readFile(resolve(reference.bundle,'bundle.json'));\n@@ -186,14 +186,15 @@\n   await page.screenshot({path:resolve(output,'intent-contract.png')});await context.close();\n   }\n   const after=await (await fetch(new URL('/api/actions/state',url))).json();\n-  assert.deepEqual(after,before,'Recorded WAV replay must leave the action journal and jobs unchanged');\n+  const persisted=value=>({revision:value.revision,jobs:value.jobs,receipts:value.receipts,bindings:value.bindings,timezone:value.timezone});\n+  assert.deepEqual(persisted(after),persisted(before),'Recorded WAV replay must leave the action journal and jobs unchanged');\n   assert.deepEqual(externalRequests,[]);\n   assert.equal(mutations.length,viewports.length);\n   assert.ok(mutations.every(request=>request.method==='POST'&&request.path==='/api/runtime/wav'&&request.query==='?wake=false'));\n   assert.deepEqual(errors,[]);\n   const finalHealth=await (await fetch(new URL('/api/health',url))).json();\n   assert.equal(finalHealth.runtime.session_id,health.runtime.session_id,'All replays must share one resident worker');\n-  assert.equal(finalHealth.runtime.loaded,true);assert.equal(finalHealth.actionsEnabled,false);\n+  assert.equal(finalHealth.runtime.loaded,true); // Record dynamic capability after replay separately from persistent store.\n   await writeFile(resolve(output,'websocket-events.json'),JSON.stringify(sockets,null,2)+'\\n');\n   await writeFile(resolve(output,'results.json'),JSON.stringify({schema_version:1,passed:true,utc:new Date().toISOString(),\n     evidence_kind:'compiled_iris_resident_worker_recorded_wav',measurement_host:'desktop_host',host:{platform:platform(),arch:arch(),node:process.version},\n",
+    "purpose": "Require owner-protected/actions-enabled native readiness; retain benchmark/action-inert WAV assertions and compare persistent store independently of dynamic capability."
+  },
+  "frozen_sources_changed": false,
+  "baseline_receipt": {
+    "path": "experiments/iris-release-v1/ui-integration.json",
+    "sha256": "28b6d40742c9b6fb56d47cb1c667d3f0f95d750e5c3962920ad5912ac3a981f7",
+    "preserved": true
+  },
+  "command": {
+    "cwd": ".",
+    "program": ".runtime/tools/node-v24.13.0-linux-x64/bin/node",
+    "args": [
+      ".cache/iris-release-v1/ui/final-package-48ae0ee4/harness/browser-runtime-check-owner.mjs",
+      "http://127.0.0.1:39246",
+      ".cache/iris-release-v1/ui/final-package-48ae0ee4/installation",
+      ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser",
+      "--recording",
+      ".cache/iris-release-v1/ui/final-package-48ae0ee4/recording-reference.json",
+      "--server-pid",
+      "2375838",
+      "--real-only"
+    ],
+    "worker_environment": {
+      "INFERENCE_ENGINE": "ncnn",
+      "EXECUTION_MODE": "demo",
+      "RECOGNITION_PROFILE": "owner-protected",
+      "ACTIONS_ENABLED": "true",
+      "HA_ENABLED": "false",
+      "SPOTIFY_ENABLED": "false",
+      "SMART_SPEAKER_THREADS": "1",
+      "SMART_SPEAKER_BINDINGS": "{\"lights\": {}, \"songs\": {}, \"climate\": {}, \"weather\": {}, \"media_player\": {}, \"contacts\": {}, \"messages\": {}}"
+    },
+    "numeric_thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    },
+    "binding_environment_source": "Generated by actual packaged resolve_config from untouched initialized config; no input override"
+  },
+  "artifacts": {
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/results.json": {
+      "sha256": "dd6544324db1ce6845ca40ee64e024aeea9204b4f1dc0e924f431abb34839a6e",
+      "bytes": 96186
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/websocket-events.json": {
+      "sha256": "289dd8c9d4e8eec8f1f8abca3508ec40b675508196efbab9eac83e6a81884889",
+      "bytes": 54383
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/recording-reference.json": {
+      "sha256": "5071279f50bcf7270a2674dcd5e5cdc9f5a97c8f759274a13fbd9d96363aaf79",
+      "bytes": 1091
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/initialized-defaults.json": {
+      "sha256": "3e57a3eea4c676a2f609ea1c9e6a31e328c96cedfde775f5068c59e072ef7b9b",
+      "bytes": 3196
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/gateway.log": {
+      "sha256": "e5acb1f30c9f4bcf0a4b70e479ab71e49eb6d13c07810a3ff9dfc50dddf2db8b",
+      "bytes": 350
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/process.json": {
+      "sha256": "12709c8540d0d4c9b35cfdaeb3a08daf88b624cef05fdba822ea7b66906ebd91",
+      "bytes": 61
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/harness/browser-runtime-check-owner.mjs": {
+      "sha256": "a96cf9dc74f39ecb6d092313a8ca1f1ae92effb4a728ce6710c5350ffebd350c",
+      "bytes": 17039
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/harness/compose-final-proof.py": {
+      "sha256": "36bf6620e2f61be7c868737e02dfe2d2e00a9754d79df72602edd002712ad1c2",
+      "bytes": 8491
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/harness/launch-final-defaults.py": {
+      "sha256": "cfe36910ee84d28aaa5c6c759bacbf7a659857e1a342a46537a194f462cd7a01",
+      "bytes": 3199
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/harness/owner-profile.patch": {
+      "sha256": "80539df9432396836e2bac212eb0c602c528948f876926bd3265f47644173c6f",
+      "bytes": 2579
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/harness/preview-adapter-check.mjs": {
+      "sha256": "7dae467af95b15d5b2c3828f8f0e12b74dbdf8e50b90e487cb3d01db757440fc",
+      "bytes": 2810
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/harness/preview-probe.py": {
+      "sha256": "3ce7867e05c3af80688fc74a039d762c0e3010061c4114f11446538c67f6a8d1",
+      "bytes": 8897
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/preview-results.json": {
+      "sha256": "a86df980e2af0176e2d422928fa0ede156cc25392d4694c2ef97eae6789fc57c",
+      "bytes": 33619
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/preview-adapter-results.json": {
+      "sha256": "2603e39a91bc91cb3a8f53a6460e9d56190f967f15981bde71b0d63d7dfbab71",
+      "bytes": 2557
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/home-1024x600.png": {
+      "sha256": "ed59d96a2a0f6ce000b13c27e629fba02be421c72839050818021734f73524c6",
+      "bytes": 46160
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/home-390x844.png": {
+      "sha256": "b0a7e2b9b12941979beba9cb9682e0dc0ce25187db3e0a2ce3ed83658a78ec92",
+      "bytes": 41564
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/home-800x480.png": {
+      "sha256": "0ac7739b2f4078b49270636c41955b8cfff5485417476b3c8cd7f449aad136c2",
+      "bytes": 42320
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/wav-1024x600.png": {
+      "sha256": "99ecd07007f2cf9fe971e7e8879617bd9a6bdd58831098eb53a49e392fdf53a7",
+      "bytes": 55518
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/wav-390x844.png": {
+      "sha256": "a0ac2a41fc7c5163a8f0be9ff3ec6b4db2a8ed3cc7357bd7ffb36a6d7cb9891a",
+      "bytes": 70766
+    },
+    ".cache/iris-release-v1/ui/final-package-48ae0ee4/browser/wav-800x480.png": {
+      "sha256": "0716d3f4c0eb1257f106776635f01fcfd116c76c70dd048e3c6017059d2ade8e",
+      "bytes": 47325
+    }
+  },
+  "fresh_default_configuration": {
+    "settings": {
+      "inference": {
+        "mode": "demo",
+        "engine": "ncnn",
+        "intent_threshold": 0.95,
+        "slot_threshold": 0.9,
+        "threads": 1,
+        "profile": "owner-protected"
+      },
+      "audio": {
+        "microphone": -1
+      },
+      "server": {
+        "host": "127.0.0.1",
+        "port": 3000,
+        "origin": "http://127.0.0.1:3000"
+      },
+      "ui": {
+        "debug": false,
+        "readout": false
+      },
+      "actions": {
+        "enabled": true
+      },
+      "benchmark": {
+        "cpu": 0,
+        "output": "results"
+      },
+      "providers": {
+        "ha_enabled": false,
+        "ha_url": "",
+        "ha_entity_ids": "",
+        "spotify_enabled": false,
+        "spotify_redirect_uri": "",
+        "spotify_device_id": "",
+        "local_media_dir": "media",
+        "data_dir": "state",
+        "timezone": "Asia/Manila"
+      },
+      "bindings": {
+        "lights": {},
+        "songs": {},
+        "climate": {},
+        "weather": {},
+        "media_player": {},
+        "contacts": {},
+        "messages": {}
+      }
+    },
+    "environment": {
+      "INFERENCE_ENGINE": "ncnn",
+      "RECOGNITION_PROFILE": "owner-protected",
+      "EXECUTION_MODE": "demo",
+      "INTENT_THRESHOLD": "0.95",
+      "SLOT_THRESHOLD": "0.9",
+      "SMART_SPEAKER_THREADS": "1",
+      "MICROPHONE_INDEX": "-1",
+      "HOST": "127.0.0.1",
+      "PORT": "3000",
+      "APP_ORIGIN": "http://127.0.0.1:3000",
+      "DEBUG_ENABLED": "false",
+      "INFERENCE_READOUT": "false",
+      "ACTIONS_ENABLED": "true",
+      "BENCHMARK_CPU": "0",
+      "BENCHMARK_OUTPUT": "results",
+      "HA_ENABLED": "false",
+      "HA_URL": "",
+      "HA_ENTITY_IDS": "",
+      "SPOTIFY_ENABLED": "false",
+      "SPOTIFY_REDIRECT_URI": "http://127.0.0.1:3000/auth/spotify/callback",
+      "SPOTIFY_DEVICE_ID": "",
+      "LOCAL_MEDIA_DIR": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/ui/final-package-48ae0ee4/installation/media",
+      "DATA_DIR": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/ui/final-package-48ae0ee4/installation/state",
+      "TIMEZONE": "Asia/Manila",
+      "SMART_SPEAKER_BINDINGS": "{\"lights\": {}, \"songs\": {}, \"climate\": {}, \"weather\": {}, \"media_player\": {}, \"contacts\": {}, \"messages\": {}}"
+    },
+    "initialized_config_sha256": "bbcf2b8976a325d53426ed49c6903751450ef157256eec5936fbd4b1aaa3dabc",
+    "configuration_source": "exact packaged example initialized unchanged; no SMART_SPEAKER_BINDINGS input override",
+    "gateway_transport_overrides": {
+      "INFERENCE_MODE": "onnx",
+      "SMART_SPEAKER_ROOT": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/ui/final-package-48ae0ee4/installation",
+      "SMART_SPEAKER_PYTHON": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1/.venv/bin/python",
+      "SMART_SPEAKER_BUNDLE": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/iris-release-v1/ui/final-package-48ae0ee4/installation/models/default",
+      "PORT": "39246",
+      "HOST": "127.0.0.1",
+      "APP_ORIGIN": "http://127.0.0.1:39246"
+    },
+    "numeric_thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    },
+    "verified_without_input_binding_override": true,
+    "packaged_example_sha256": "bbcf2b8976a325d53426ed49c6903751450ef157256eec5936fbd4b1aaa3dabc"
+  },
+  "separate_real_pcm_preview": {
+    "schema_version": 1,
+    "passed": true,
+    "evidence_kind": "offline_recorded_pcm_real_AudioService_preview_and_final_file_path",
+    "transport": "direct actual bundled AudioService calls; no JSONL/WS/browser transport for preview",
+    "source_context": "The microphone-only branch is selected internally for recorded-PCM injection; no microphone is opened or measured.",
+    "module_paths": {
+      "scripts.runtime.mvp_static": "scripts/runtime/mvp_static.py",
+      "scripts.runtime.speaker_worker": "scripts/runtime/speaker_worker.py",
+      "scripts.runtime.mvp_wake": "scripts/runtime/mvp_wake.py",
+      "scripts.runtime.wake_models": "scripts/runtime/wake_models.py"
+    },
+    "module_sha256": {
+      "scripts.runtime.mvp_static": "8011085d87772102e2f4f7fa35ff4f71c58b32e4bc111da5370a124ac840f263",
+      "scripts.runtime.speaker_worker": "3ab8f0c98607c2e8b45d8939a11787f0ba449c5c2315daba2d58171997efb939",
+      "scripts.runtime.mvp_wake": "234013fc78aa1ab1f30854e38bd3b5eb73651a8100df2db9bde1c91c45ccaca9",
+      "scripts.runtime.wake_models": "d07b9b42b37f82111efa1174c83f02387ed752f7f2da3a18ce18c37901d00eb3"
+    },
+    "recording": {
+      "id": "iris1/5b6936c05d99ad0f1c57",
+      "sha256": "7ba842efbcbd92a72a66d9a7d3c335b35b72fb043fe29d195b2d0a14773d2b9e",
+      "samples": 43520,
+      "sample_rate": 16000,
+      "channels": 1,
+      "expected": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.ceiling"
+        }
+      },
+      "synthetic": true,
+      "source": "Qwen3-original-designed-iris-v1"
+    },
+    "vcm": {
+      "engine": "ncnn",
+      "threads": 1,
+      "model_sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "engine_model_sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133",
+      "load_ms": 109.95929734781384
+    },
+    "additional_actual_loaded_sessions": {
+      "gate": "IrisGate",
+      "wake": "HeyIris",
+      "wake_engine": "ncnn",
+      "wake_meta_sha256": "12d21a9460a2ac37582d28c0f31cb90f670b8bbc423f5c3bca664bb02d3d0922",
+      "wake_ncnn_bin_sha256": "f5608815519830107220939124abf65222dec6f159ed36ead1f50d124392da98",
+      "wake_voice_vad": "SileroProbability",
+      "command_endpoint_vad": "SileroProbability",
+      "silero_providers": [
+        "CPUExecutionProvider"
+      ],
+      "silero_sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "load_ms": 384.4550158828497,
+      "audio_stream_created": false,
+      "wake_detection_or_owner_qualification_tested": false
+    },
+    "pool_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    },
+    "prefix_submission_interval_seconds": 0.55,
+    "prefix_sample_increment": 8000,
+    "submissions": [
+      {
+        "stage": "growing_prefix",
+        "samples": 8000,
+        "audio_seconds": 0.5,
+        "elapsed_ms": 384.554033,
+        "utterance_id": "197c974b46cb4ff797063658a2efc07d",
+        "emitted_sequence": 1
+      },
+      {
+        "stage": "growing_prefix",
+        "samples": 16000,
+        "audio_seconds": 1.0,
+        "elapsed_ms": 934.628974,
+        "utterance_id": "197c974b46cb4ff797063658a2efc07d",
+        "emitted_sequence": 2
+      },
+      {
+        "stage": "growing_prefix",
+        "samples": 24000,
+        "audio_seconds": 1.5,
+        "elapsed_ms": 1484.698766,
+        "utterance_id": "197c974b46cb4ff797063658a2efc07d",
+        "emitted_sequence": 3
+      },
+      {
+        "stage": "growing_prefix",
+        "samples": 32000,
+        "audio_seconds": 2.0,
+        "elapsed_ms": 2034.77532,
+        "utterance_id": "197c974b46cb4ff797063658a2efc07d",
+        "emitted_sequence": 4
+      },
+      {
+        "stage": "growing_prefix",
+        "samples": 40000,
+        "audio_seconds": 2.5,
+        "elapsed_ms": 2584.909032,
+        "utterance_id": "197c974b46cb4ff797063658a2efc07d",
+        "emitted_sequence": 5
+      },
+      {
+        "stage": "after_reset_full_pcm",
+        "samples": 43520,
+        "audio_seconds": 2.72,
+        "elapsed_ms": 3245.633226,
+        "utterance_id": "923f213385a343de9c4f589378fa21a8",
+        "emitted_sequence": 7
+      }
+    ],
+    "tentative_count": 6,
+    "tentative_spacing_ms": [
+      529.2888270000001,
+      552.5283069999999,
+      551.663609,
+      551.7502440000003,
+      661.6540849999997
+    ],
+    "minimum_tentative_spacing_ms": 529.2888270000001,
+    "candidate_change_count": 4,
+    "score_change_count": 5,
+    "reset_sequence": 6,
+    "reset_canceled_pending_result": true,
+    "last_preview_before_final_sequence": 7,
+    "wav_final_reply": {
+      "commands": 1,
+      "wake_detected": false,
+      "audio_seconds": 2.72
+    },
+    "wav_source_suppressed_preview_and_no_late_result": true,
+    "actions_executed": false,
+    "microphone_touched": false,
+    "live_microphone_or_physical_pi_evidence": false,
+    "updates": [
+      {
+        "elapsed_ms": 410.129748,
+        "event": {
+          "candidate": null,
+          "score": 0.7737723551758406,
+          "confidence_interpretation": "model score; tentative, not executed",
+          "event": "tentative",
+          "utterance_id": "197c974b46cb4ff797063658a2efc07d",
+          "is_final": false,
+          "session_id": "d461e492b8ef42b28c51304bd022fce3",
+          "sequence": 1,
+          "source": "microphone",
+          "profile": "benchmark-compatible",
+          "owner_gating_enabled": false,
+          "ownership_experimental": false,
+          "actions_enabled": false
+        }
+      },
+      {
+        "elapsed_ms": 939.418575,
+        "event": {
+          "candidate": null,
+          "score": 0.9161991261101885,
+          "confidence_interpretation": "model score; tentative, not executed",
+          "event": "tentative",
+          "utterance_id": "197c974b46cb4ff797063658a2efc07d",
+          "is_final": false,
+          "session_id": "d461e492b8ef42b28c51304bd022fce3",
+          "sequence": 2,
+          "source": "microphone",
+          "profile": "benchmark-compatible",
+          "owner_gating_enabled": false,
+          "ownership_experimental": false,
+          "actions_enabled": false
+        }
+      },
+      {
+        "elapsed_ms": 1491.946882,
+        "event": {
+          "candidate": {
+            "intent": "STOP",
+            "slots": {}
+          },
+          "score": 0.4932950419132709,
+          "confidence_interpretation": "model score; tentative, not executed",
+          "event": "tentative",
+          "utterance_id": "197c974b46cb4ff797063658a2efc07d",
+          "is_final": false,
+          "session_id": "d461e492b8ef42b28c51304bd022fce3",
+          "sequence": 3,
+          "source": "microphone",
+          "profile": "benchmark-compatible",
+          "owner_gating_enabled": false,
+          "ownership_experimental": false,
+          "actions_enabled": false
+        }
+      },
+      {
+        "elapsed_ms": 2043.610491,
+        "event": {
+          "candidate": {
+            "intent": "LIGHT_OFF",
+            "slots": {
+              "light_id": "light.ceiling"
+            }
+          },
+          "score": 0.6007254806841769,
+          "confidence_interpretation": "model score; tentative, not executed",
+          "event": "tentative",
+          "utterance_id": "197c974b46cb4ff797063658a2efc07d",
+          "is_final": false,
+          "session_id": "d461e492b8ef42b28c51304bd022fce3",
+          "sequence": 4,
+          "source": "microphone",
+          "profile": "benchmark-compatible",
+          "owner_gating_enabled": false,
+          "ownership_experimental": false,
+          "actions_enabled": false
+        }
+      },
+      {
+        "elapsed_ms": 2595.360735,
+        "event": {
+          "candidate": {
+            "intent": "LIGHT_ON",
+            "slots": {
+              "light_id": "light.ceiling"
+            }
+          },
+          "score": 0.43246974657890236,
+          "confidence_interpretation": "model score; tentative, not executed",
+          "event": "tentative",
+          "utterance_id": "197c974b46cb4ff797063658a2efc07d",
+          "is_final": false,
+          "session_id": "d461e492b8ef42b28c51304bd022fce3",
+          "sequence": 5,
+          "source": "microphone",
+          "profile": "benchmark-compatible",
+          "owner_gating_enabled": false,
+          "ownership_experimental": false,
+          "actions_enabled": false
+        }
+      },
+      {
+        "elapsed_ms": 3257.01482,
+        "event": {
+          "candidate": {
+            "intent": "LIGHT_OFF",
+            "slots": {
+              "light_id": "light.ceiling"
+            }
+          },
+          "score": 0.43395937937517104,
+          "confidence_interpretation": "model score; tentative, not executed",
+          "event": "tentative",
+          "utterance_id": "923f213385a343de9c4f589378fa21a8",
+          "is_final": false,
+          "session_id": "d461e492b8ef42b28c51304bd022fce3",
+          "sequence": 7,
+          "source": "microphone",
+          "profile": "benchmark-compatible",
+          "owner_gating_enabled": false,
+          "ownership_experimental": false,
+          "actions_enabled": false
+        }
+      }
+    ],
+    "display_adapter": {
+      "schema_version": 1,
+      "passed": true,
+      "evidence_kind": "actual_worker_acoustic_events_replayed_through_unchanged_product_display_adapter",
+      "transport": "offline adapter replay; browser fixture checks separately cover compiled rendering",
+      "input_sha256": "a86df980e2af0176e2d422928fa0ede156cc25392d4694c2ef97eae6789fc57c",
+      "adapter_sha256": "a09c38ab0268f39f94a05bcc299760cf3001fa76da703e1ef0791bf8cbeb3b88",
+      "actual_candidates_preserved": true,
+      "processing_preserved_last_preview": true,
+      "reset_cleared_preview": true,
+      "final_cleared_preview": true,
+      "tentatives_created_no_final_history": true,
+      "actions_executed": false,
+      "agent_states": [
+        "idle",
+        "thinking",
+        "idle",
+        "idle"
+      ]
+    },
+    "display_adapter_steps": [
+      {
+        "sequence": 1,
+        "event": "tentative",
+        "state": null,
+        "tentative": null,
+        "history_count": 0
+      },
+      {
+        "sequence": 2,
+        "event": "tentative",
+        "state": null,
+        "tentative": null,
+        "history_count": 0
+      },
+      {
+        "sequence": 3,
+        "event": "tentative",
+        "state": null,
+        "tentative": {
+          "intent": "STOP",
+          "slots": {}
+        },
+        "history_count": 0
+      },
+      {
+        "sequence": 4,
+        "event": "tentative",
+        "state": null,
+        "tentative": {
+          "intent": "LIGHT_OFF",
+          "slots": {
+            "light_id": "light.ceiling"
+          }
+        },
+        "history_count": 0
+      },
+      {
+        "sequence": 5,
+        "event": "tentative",
+        "state": null,
+        "tentative": {
+          "intent": "LIGHT_ON",
+          "slots": {
+            "light_id": "light.ceiling"
+          }
+        },
+        "history_count": 0
+      },
+      {
+        "sequence": 6,
+        "event": "state",
+        "state": "wake_listening",
+        "tentative": null,
+        "history_count": 0
+      },
+      {
+        "sequence": 7,
+        "event": "tentative",
+        "state": null,
+        "tentative": {
+          "intent": "LIGHT_OFF",
+          "slots": {
+            "light_id": "light.ceiling"
+          }
+        },
+        "history_count": 0
+      },
+      {
+        "sequence": 8,
+        "event": "state",
+        "state": "processing",
+        "tentative": {
+          "intent": "LIGHT_OFF",
+          "slots": {
+            "light_id": "light.ceiling"
+          }
+        },
+        "history_count": 0
+      },
+      {
+        "sequence": 9,
+        "event": "command",
+        "state": null,
+        "tentative": null,
+        "history_count": 1
+      },
+      {
+        "sequence": 10,
+        "event": "state",
+        "state": "awaiting_microphone",
+        "tentative": null,
+        "history_count": 1
+      }
+    ],
+    "boundary": "Real extracted acoustic backend and AudioService plus separate unchanged display-adapter replay. Primary browser WAV proof contains no tentative events. This is not live microphone or end-to-end preview WS evidence."
+  },
+  "wake_sessions_loaded_from_final_zip": {
+    "gate": "IrisGate",
+    "wake": "HeyIris",
+    "wake_engine": "ncnn",
+    "wake_meta_sha256": "12d21a9460a2ac37582d28c0f31cb90f670b8bbc423f5c3bca664bb02d3d0922",
+    "wake_ncnn_bin_sha256": "f5608815519830107220939124abf65222dec6f159ed36ead1f50d124392da98",
+    "wake_voice_vad": "SileroProbability",
+    "command_endpoint_vad": "SileroProbability",
+    "silero_providers": [
+      "CPUExecutionProvider"
+    ],
+    "silero_sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+    "load_ms": 384.4550158828497,
+    "audio_stream_created": false,
+    "wake_detection_or_owner_qualification_tested": false
+  },
+  "owner_backend_loaded_from_final_zip": {
+    "native_ready": true,
+    "experimental": true,
+    "graph_binding": {
+      "sha256": "84e860f814e248e793567b2f1c8fe83d24d82b9d58f5379e4da69eb7b78d0a3f",
+      "bytes": 542023
+    },
+    "owner_decisions_on_replay": false,
+    "human_owner_qualified": false
+  },
+  "prior_package_proof": {
+    "path": ".cache/iris-release-v1/ui/final-package-8bba350c/ui-final-integration-prior.json",
+    "sha256": "5cb525b72dc6e21bfe37ae5b86df69d798a540d99b8f2b7c1ed80d176452a828",
+    "bytes": 81537,
+    "package_sha256": "8bba350ccca5992b638beb3ddeed9a140810bbf267577bcaa72de7daf2f987a3",
+    "superseded_reason": "Source publication inventory and card-linked evidence closure changed; this proof independently measures the newly rebound final ZIP. Runtime/UI/models are unchanged."
+  }
+}

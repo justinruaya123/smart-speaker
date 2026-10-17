@@ -1,0 +1,16 @@
+{
+  "authentication": "Existing authorized Hub login used for public network downloads only. Credential never logged, saved, or copied into the fresh checkout.",
+  "cache_dir": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/.cache/huggingface/hub",
+  "completed_utc": "2026-10-17T02:36:40.145318+00:00",
+  "input_receipt_sha256": "b5e04d7bf33b8b10b94e9e732cfaf2ae0c91eb590387f094ef2e81671274c518",
+  "reference_count": 4643,
+  "schema_version": 1,
+  "scope": "Pinned network downloads into the same independently populated fresh cache after anonymous service quotas. Explicit cache_dir; no original payload cache reads or aliases.",
+  "started_utc": "2026-10-17T02:23:27.605763+00:00",
+  "status": "verified",
+  "target": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final",
+  "transport": "HF_HUB_DISABLE_XET=1 standard HTTP",
+  "verified_bytes": 2741670745,
+  "verified_files": 4643,
+  "workers": 8
+}

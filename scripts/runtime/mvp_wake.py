@@ -73,25 +73,31 @@ def make_gate(runtime,observed=None):
     import sys
     from scripts.runtime.wake_models import SileroProbability,SileroVAD
     from scripts.runtime.pcv_schema import output
-    try:from wake_gate import WakeGate
-    except ImportError:
-        sys.path.insert(0,str(Path(__file__).resolve().parents[2]/'experiments/pcv-synthetic-v2'))
-        from wake_gate import WakeGate
+    from scripts.runtime.wake_gate import WakeGate
     folder=runtime.root/'wake';recognizer=observed or runtime
     class Endpoint:
         def __init__(self):
             self.vad=SileroVAD(folder,{'silence_ms':400,'max_utterance_seconds':15,'preroll_ms':128,'speech_threshold':.5})
             self.reset()
-        def reset(self):self.vad.reset();self.samples=0;self.finalized=False
+        def reset(self):self.vad.reset();self.samples=0;self.finalized=False;self.preview_next=8000
         def feed(self,pcm,sequence):
             if sequence!=self.samples:
                 self.finalized=True;return {'output':output(None,'capture_fault'),'reason':'capture_fault'}
             self.samples+=len(pcm);result=self.vad.push(pcm)
-            if result is None:return {'reason':None}
+            if result is None:
+                if self.vad.active and self.vad.elapsed_samples>=self.preview_next and hasattr(recognizer,'preview'):
+                    self.preview_next=self.vad.elapsed_samples+8000
+                    recognizer.preview(np.concatenate(self.vad.buffer))
+                return {'reason':None}
             self.finalized=True;audio,timed_out=result
             return {'output':output(None,'capture_fault'),'reason':'capture_fault'} if timed_out else recognizer.recognize(audio)
     class IrisGate(WakeGate):
+        def __init__(self,*args,**kwargs):
+            self.on_wake=getattr(recognizer,'on_wake',None)
+            self.on_reset=getattr(recognizer,'on_reset',None)
+            super().__init__(*args,**kwargs)
         def feed(self,*args,**kwargs):
+            events=super().feed(*args,**kwargs)
             return [{**event,**({'wake_phrase':'hey iris'} if 'wake_phrase' in event else {}),
-                     'profile':runtime.profile,'owner_gating_enabled':False} for event in super().feed(*args,**kwargs)]
+                     'profile':runtime.profile,'owner_gating_enabled':False} for event in events]
     return IrisGate(Endpoint(),HeyIris(folder,engine=runtime.engine),SileroProbability(folder))

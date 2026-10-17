@@ -2,6 +2,7 @@ import { isRecord } from '../../shared/protocol.js';
 import { IntegrationError } from './http.js';
 
 export interface EntityAttributes {
+  [key: string]: unknown;
   brightness?: number;
   rgb_color?: number[];
   color_temp_kelvin?: number;
@@ -27,6 +28,11 @@ export function lightAttributes(value: unknown): EntityAttributes {
     if (typeof value[key] === 'string') result[key] = value[key].slice(0, 80);
   }
   if (Array.isArray(value.supported_color_modes)) result.supported_color_modes = value.supported_color_modes.filter((mode): mode is string => typeof mode === 'string' && mode.length < 32).slice(0, 10);
+  for (const key of ['supported_features', 'temperature', 'current_temperature', 'min_temp', 'max_temp', 'volume_level', 'humidity', 'media_duration', 'media_position']) {
+    if (typeof value[key] === 'number' && Number.isFinite(value[key])) result[key] = value[key];
+  }
+  for (const key of ['temperature_unit', 'media_title', 'media_artist']) if (typeof value[key] === 'string') result[key] = value[key].slice(0, 200);
+  if (typeof value.is_volume_muted === 'boolean') result.is_volume_muted = value.is_volume_muted;
   return result;
 }
 

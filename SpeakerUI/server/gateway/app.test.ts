@@ -165,3 +165,54 @@ test('ambient fixture endpoint loads dummy runtime, validates input and never ca
     assert.equal(outbound,0);
   } finally { await app.close(); }
 });
+
+test('canonical touch actions persist jobs and dedup receipts, validate slots, and enforce the action switch', async () => {
+  const directory = await mkdtemp(join(tmpdir(), 'iris-actions-'));
+  const cfg = { ...config(), dataDir: directory };
+  let app = await createApp(cfg, { fetcher: forbiddenFetch });
+  const payload = { request_id: 'timer-once', command: { intent: 'TIMER', slots: { duration_seconds: 123 } } };
+  try {
+    const result = await app.inject({ method: 'POST', url: '/api/actions', headers, payload });
+    assert.equal(result.statusCode, 200);
+    assert.equal(result.json().status, 'local');
+    const again = await app.inject({ method: 'POST', url: '/api/actions', headers, payload });
+    assert.equal(again.json().id, result.json().id);
+    assert.equal((await app.inject({ url: '/api/actions/state', headers })).json().jobs.length, 1);
+    assert.equal((await app.inject({ method: 'POST', url: '/api/actions', headers, payload: { ...payload, command: { intent: 'TIMER', slots: { duration_seconds: 1.2 } } } })).statusCode, 400);
+    assert.equal((await app.inject({ method: 'POST', url: '/api/actions', headers: { ...headers, origin: 'https://other.invalid' }, payload })).statusCode, 403);
+    await app.close();
+    app = await createApp(cfg, { fetcher: forbiddenFetch });
+    assert.equal((await app.inject({ url: '/api/actions/state', headers })).json().jobs[0].status, 'scheduled');
+    await app.inject({ method: 'POST', url: '/api/actions', headers, payload });
+    assert.equal((await app.inject({ url: '/api/actions/state', headers })).json().jobs.length, 1);
+  } finally { await app.close(); await rm(directory, { recursive: true, force: true }); }
+  const disabled = await createApp({ ...cfg, actionsEnabled: false }, { fetcher: forbiddenFetch });
+  try { assert.equal((await disabled.inject({ method: 'POST', url: '/api/actions', headers, payload })).json().status, 'disabled'); }
+  finally { await disabled.close(); await rm(directory, { recursive: true, force: true }); }
+});
+
+test('local media elects one player, records acknowledgment once, and duplicate touch requests do not replay playback', async () => {
+  const directory=await mkdtemp(join(tmpdir(),'iris-local-player-'));
+  await writeFile(join(directory,'Song.mp3'),'fixture payload; no audio playback in this server test');
+  const cfg=readConfig({APP_ORIGIN:headers.origin,ACTIONS_ENABLED:'true',DATA_DIR:directory,LOCAL_MEDIA_DIR:directory,
+    SMART_SPEAKER_BINDINGS:JSON.stringify({media_player:{provider:'local'}})},directory);
+  const app=await createApp(cfg,{fetcher:forbiddenFetch});
+  const events:any[][]=[[],[]];const sockets:any[]=[];
+  try {
+    const search=(await app.inject({url:'/api/media/search?q=Song',headers})).json();
+    cfg.bindings.songs['song.dynamite']=search.tracks[0].id;
+    for(let index=0;index<2;index++)sockets.push(await app.injectWS('/ws/actions',{headers},{onInit(socket){socket.on('message',bytes=>events[index]!.push(JSON.parse(bytes.toString())));}}));
+    const first=events[0]!.find(e=>e.event==='action_state'),second=events[1]!.find(e=>e.event==='action_state');
+    assert.equal(first.local_player,true);assert.equal(second.local_player,false);
+    const payload={request_id:'local-once',command:{intent:'PLAY_MUSIC',slots:{song_id:'song.dynamite'}}};
+    const receipt=(await app.inject({method:'POST',url:'/api/actions',headers,payload})).json();
+    assert.equal(receipt.status,'requested');
+    assert.equal((await app.inject({method:'POST',url:'/api/actions/local-receipt',headers,payload:{id:receipt.id,client_id:second.client_id,status:'succeeded'}})).statusCode,400);
+    assert.equal((await app.inject({method:'POST',url:'/api/actions/local-receipt',headers,payload:{id:receipt.id,client_id:first.client_id,status:'succeeded'}})).json().status,'succeeded');
+    const requestedBefore=events[0]!.filter(e=>e.event==='execution'&&e.execution.status==='requested').length;
+    const duplicate=(await app.inject({method:'POST',url:'/api/actions',headers,payload})).json();
+    assert.equal(duplicate.replayed,true);assert.equal(duplicate.status,'succeeded');
+    await delay(10);
+    assert.equal(events[0]!.filter(e=>e.event==='execution'&&e.execution.status==='requested').length,requestedBefore);
+  } finally {for(const socket of sockets)socket.terminate();await app.close();await rm(directory,{recursive:true,force:true});}
+});

@@ -1,0 +1,18 @@
+{
+  "experiment": "iris-release-v1",
+  "protocol_sha256": "26851f20cc919812ff555eaf2b02ba4c0908338a148f2371176886a786a2f47a",
+  "classification": "implementation factoring, portable data resolution and scoring detail only; frozen datasets, splits, schedules, losses and selection rule unchanged",
+  "source_files": {
+    "scripts/train/iris_diversity.py": "e97e8c1179e7c2407e3ef3bcdace3b74c32e3ca4ae1b7ac4da8a348680022b32",
+    "scripts/models/mvp_static.py": "2e9e284621a41a29766c35d99d399e6ffa6bb238418aeeb4ad27e6a3f25c6ff8",
+    "scripts/models/speaker_demo.py": "57a827ba38fcce088a213894433ba9d8b7b7944b335c2116859919a79f49cb7e",
+    "scripts/train/iris_export.py": "bcfb6b32a8297eb09017fbc8033067ff48a345175b562899bfcf8ee6f4f6dcf8",
+    "scripts/test/iris_metrics.py": "00f8bf517d767f8758c971ae32441d4f058a5b4965aa734537de61540bd4b802",
+    "scripts/test/iris_benchmark.py": "59fb5eedf1f04a2ee9b687bf1292a2b2dc4bbaae166cea9eb75454b589494781",
+    "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+  },
+  "encoder_parity_receipt": "experiments/iris-release-v1/encoder-cleanup-parity.json",
+  "archive_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a",
+  "fitting_started": false,
+  "test_used_for_selection": false
+}

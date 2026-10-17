@@ -1,100 +1,40 @@
-# Ambient / SpeakerUI
+# Iris display
 
-A dark, touch-first voice display for an **800 × 480 landscape Raspberry Pi 4 screen**, built with Svelte 5 and Vite. The approved prototype is now implemented as Svelte components: centered live aura, glass controls, gesture-driven reminders, lights, thermostat, timers/alarms, media and Home Assistant camera views.
+The Svelte display shows microphone/listening state, tentative finite intent and slots, the final accepted or rejected command, and an execution receipt. Use-case panels expose the same typed action routes through explicit touch controls. The product has no decorative aura or simulated device state.
 
-**Production inference uses the smart-speaker Python CPU ONNX worker.** The integrated launcher supplies its complete model bundle, serves the compiled frontend and forwards real states/typed results. Actions are disabled while validating inference. The explicit development mock mode retains fixtures. Enabled Home Assistant and Spotify integrations supply live state and touch controls; inference fixtures, weather and audio calls remain simulated. Allowlisted Home Assistant cameras can stream live video. Spotify playback occurs on its active/configured Connect device, not in this browser.
+Start from the repository root with `python start.py --mode serve`. The root launcher supplies the selected models, private configuration and resident Python CPU worker, and serves the compiled website. Pi packages include the compiled UI. See the [root guide](../README.md), [operator runbook](../docs/HANDOFF-iris-rpi-v1.md), [requirements](../REQUIREMENTS.md), [configuration template](../config.example.toml) and [release evidence](../docs/EXPERIMENT-iris-release-v1.md).
 
-## Run
+Open **Microphone settings** in Iris to select a host microphone, mute, replay a mono 16 kHz WAV and inspect exact worker JSON. The history view preserves recent final results. Recognition uses direct finite commands with local wake/VAD and an experimental voice-similarity check. Original-human wake/command and physical Pi qualification remain separate operator work.
 
-Use **`python start.py` in the parent smart-speaker directory**. It bootstraps local tools and exposes setup/publish/serve/benchmark modes. See the [root usage guide](../README.md#smart-speaker--speakerui). In an extracted Pi ZIP, the same command installs the runtime and serves the prebuilt website immediately; it never compiles Svelte on the Pi.
+Only accepted final microphone commands with passed owner evidence may dispatch configured actions. Tentative results, WAV replay, fixtures and `benchmark-compatible` mode are action-free. Explicit touch controls still require configured action capability. `ACTIONS_ENABLED=false` and recognizer/deployment disablement suppress actions. The bare development gateway defaults to explicitly labelled mock transport; production uses the root launcher, which requires native worker readiness and an installation token.
 
-```sh
-# From the repository root:
-python start.py --skip-train --benchmarks skip
-python start.py --mode serve
-# Compatibility alias, inside SpeakerUI:
-pnpm start
-# Explicit frontend development, with mock backend:
-pnpm dev
-```
+Configure providers and finite bindings in the root `config.toml` and private root `.env`; [.env.example](.env.example) documents direct-gateway settings. Home Assistant handles bound lights/groups, climate, weather, media players and user-supplied contact/preset-message scripts. Local MP3 playback requires an explicitly chosen local provider. Missing bindings remain unconfigured, and provider outcomes are reported without invented observed device state or automatic retry after an unknown outcome. Secrets remain server-side.
 
-The deployed page, API and WebSocket share **http://127.0.0.1:3000**. Open **Inference debug** for host microphone selection, mute, WAV upload, real state, exact intent/slots and diagnostic reasons. There is no mock fallback in real mode. Models stay outside the public website. Do not copy ONNX files into dist or this frontend's models directory.
+Timers, alarms, finite reminder tasks and action identifiers persist in `DATA_DIR/action-state.json`. Future jobs restore after restart; expired jobs are marked missed. `TIMEZONE` selects the IANA zone for the local clock and TIME receipt, defaulting to `Asia/Manila`; ALARM retains the timezone in its validated finite command.
 
-The lower-left sliders open the simulator. Choose among 15 shortcuts and intent fixtures, or the nine aura states. **Play music** and **Camera call** are marked **Live** when their providers are enabled. The opposite corner opens the last 30 intent/parameter receipts. The top-right controls and reminder count expose editing; the large central clock/aura is the wake target. Simulator intents remain simulated. Touch controls operate enabled Home Assistant lights and Spotify playback when `ACTIONS_ENABLED=true`.
+For source changes, use Node 24.13 or newer and the configured shared dependencies:
 
 ```sh
-pnpm dev                    # development frontend :5173 and gateway :3000
-pnpm check                  # Svelte and server type checks
-pnpm test                   # offline wrapper/transport tests
-pnpm build                  # optimized frontend and backend without starting
-pnpm kiosk                  # Chromium kiosk at the configured frontend URL
+cd SpeakerUI
+npm test
+npm run check
+npm run build
 ```
 
-For a prebuilt release, run the exported `start.py`; `pnpm start` is an alias. The shared launcher verifies the optional home-directory model ZIP and starts the precompiled gateway/site. It owns shutdown of the Python worker.
+The build runs Vite, asset compression and TypeScript. `scripts/browser-runtime-check.mjs URL INSTALLATION_ROOT OUTPUT_DIRECTORY --server-pid LOCAL_GATEWAY_PID --real-only` checks the compiled UI with real worker WAV events at 800×480, 1024×600 and 390×844. It records replay-only receipts, unchanged action state, observed Node/worker RSS and CPU, browser heap/DOM/assets and upload-to-readout timings. Supply `--recording HASH_BOUND_REFERENCE_JSON` for a permitted external replay reference. These are host software measurements, not live microphone or Pi measurements. `scripts/iris-browser-check.mjs` separately tests typed transport fixtures and local jobs; it is not acoustic evidence.
 
-## Display, interaction and retained reference
+The supported complete source check is `python train.py --skip-train` from the repository root after selected exports are available. It checks the selected lineage, actual CPU engine parity, tests, UI build and package. Use the package's action-free `benchmark.py` for operator replay/resource measurements; see the root runbook for its manifest and output contract.
 
-- Branding, component ownership, animation and touch rules: [docs/design/ambient.md](docs/design/ambient.md). Agent rules: [AGENTS.md](AGENTS.md).
-- Retained standalone mockup: [mockups/ambient-v6/04-ambient.html](mockups/ambient-v6/04-ambient.html). Thermostat entry and branding sheet sit beside it. This is a comparison reference, not an iframe or dependency of the production app.
-- Verification, screenshots and resource measurements: [docs/testing/ambient/README.md](docs/testing/ambient/README.md).
+The separate `?diagnostics` page preserves explicitly **mock audio transport**, browser PCM capture and manual media checks. Its mock audio never recognizes speech or dispatches providers; native-worker mode rejects that legacy audio socket. Use the Iris settings panel for native WAV/microphone diagnostics. Manually selected media playback is a separate configured-provider operation.
 
-Mouse, touch and pen drag directly move the alarm wheels. Reminder swipes reveal the completion action progressively; full travel or a deliberate short flick completes only that reminder. Reordering belongs to the grip. Light rows swipe for brightness; compact control tiles and expanded lists share state.
+Earlier Ambient designs, decorative visualization, simulated interaction tests and their screenshots are historical evidence. Recovery uses the immutable [archive commit](https://github.com/justinruaya123/smart-speaker/tree/ae1f1d7c67616e4efbae4619ac75620495e6073a/SpeakerUI) and [path/hash manifest](../experiments/iris-release-v1/archive-manifest.json). Historical [design](https://github.com/justinruaya123/smart-speaker/blob/ae1f1d7c67616e4efbae4619ac75620495e6073a/SpeakerUI/docs/design/ambient.md) and [testing summary](https://github.com/justinruaya123/smart-speaker/blob/ae1f1d7c67616e4efbae4619ac75620495e6073a/SpeakerUI/docs/testing/ambient/README.md) do not describe the current Iris product. The seven retired QA scripts remain available there:
 
-Control center closes after 60 idle seconds, with a final five-second rounded perimeter stroke. Device/media/weather views use five idle seconds plus five seconds of stroke. Focused forms and alarm editing remain open. Ringing alerts flash all four rounded edges in a 3.6-second long/short/short rhythm and dismiss after five minutes without completing reminders. Snooze clears older queued notifications for the same reminder. Reduced-motion settings use steady indicators.
+- [Alerts](https://github.com/justinruaya123/smart-speaker/blob/ae1f1d7c67616e4efbae4619ac75620495e6073a/SpeakerUI/scripts/qa/alerts.cjs)
+- [Camera](https://github.com/justinruaya123/smart-speaker/blob/ae1f1d7c67616e4efbae4619ac75620495e6073a/SpeakerUI/scripts/qa/camera.mjs)
+- [Interactions](https://github.com/justinruaya123/smart-speaker/blob/ae1f1d7c67616e4efbae4619ac75620495e6073a/SpeakerUI/scripts/qa/interactions.cjs)
+- [Parity](https://github.com/justinruaya123/smart-speaker/blob/ae1f1d7c67616e4efbae4619ac75620495e6073a/SpeakerUI/scripts/qa/parity.cjs)
+- [Providers](https://github.com/justinruaya123/smart-speaker/blob/ae1f1d7c67616e4efbae4619ac75620495e6073a/SpeakerUI/scripts/qa/providers.cjs)
+- [Resources](https://github.com/justinruaya123/smart-speaker/blob/ae1f1d7c67616e4efbae4619ac75620495e6073a/SpeakerUI/scripts/qa/resources.cjs)
+- [Startup](https://github.com/justinruaya123/smart-speaker/blob/ae1f1d7c67616e4efbae4619ac75620495e6073a/SpeakerUI/scripts/qa/startup.mjs)
 
-When HA is enabled, the display lists only the configured lights and uses allowlisted temperature sensors for the current temperature. Add the desired `sensor.*` IDs to `HA_ENTITY_IDS`; sensor selection is read-only. Without an available temperature sensor the display shows a dash. Climate target control is not connected and remains unavailable in live HA mode. Disabled HA retains the light and thermostat demos. Add a `camera.*` ID to the same allowlist for a live camera view. Disabled HA retains simulated camera calls; weather remains a local fixture.
-
-## Raspberry Pi deployment
-
-Target the original 7-inch display at 800 × 480; 1024 × 600 is also checked. Use 64-bit Raspberry Pi OS and a current Chromium with working hardware graphics. No font, icon, analytics or animation CDN is required. Runtime assets are local.
-
-The app tries fullscreen on launch and retries once on the first touch if browser activation is required. `?fullscreen=0` disables this for embedded previews/testing. Escape is respected. `pnpm kiosk` starts a dedicated Chromium kiosk window; set `CHROMIUM_PATH` if the executable is named `chromium-browser` or installed elsewhere. A browser cannot promise automatic fullscreen without the relevant permission/activation, so kiosk mode is the reliable unattended route.
-
-Build off-device if useful and copy `dist/`, `dist-server/`, `scripts/`, package/lock/workspace files. Install Linux production dependencies with `pnpm install --prod --frozen-lockfile`; do not copy macOS `node_modules`. Serve the prebuilt release with the commands above. The existing [deploy/speaker-ui.service](deploy/speaker-ui.service) remains an alternative single-process Fastify static/API deployment; its comments describe the required origin/port settings. No system service or kiosk autostart has been installed by this change.
-
-Animations are retained. The build bakes fixed CSS keyframes, the static icon subset and camera background, and emits Brotli/gzip assets. The live LiveKit-derived shader keeps its 18 samples, maximum 320 × 320 backing canvas, 24 fps speaking / 20 fps other active states. Settled idle stops shader draws while a CSS breath continues. Hidden rendering pauses, and all native listeners/renderers have explicit teardown. **Desktop software-GPU results are not a Pi benchmark.**
-
-## Configuration and integrations
-
-Edit [.env.example](.env.example) into a private `.env`. Never put credentials in `VITE_*` variables. Filling credentials alone does not enable a provider. Defaults keep integrations and real actions disabled.
-
-| Setting | Purpose |
-| --- | --- |
-| `FRONTEND_HOST`, `FRONTEND_PORT` | Display server, default `127.0.0.1:3000` |
-| `HOST`, `BACKEND_PORT` | Backend binding, default `127.0.0.1:3001` for start modes |
-| `DISPLAY_ORIGIN` | Exact browser origin in production; otherwise derived from frontend host/port |
-| `BACKEND_URL` | Optional proxy/readiness target when backend URL differs; set explicitly for a TLS backend |
-| `APP_ORIGIN`, `PORT` | Existing development/direct gateway configuration; start modes supply their own production values |
-| `HA_URL` | Nabu Casa remote HTTPS base, e.g. `https://<instance>.ui.nabu.casa`, without `/api` |
-| `HA_TOKEN` | Home Assistant long-lived token, not a Nabu Casa password |
-| `HA_ENTITY_IDS` | Comma-separated allowlist of `light.*`, `camera.*`, and `sensor.*`; temperature sensors must report a temperature device class and unit |
-| `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET` | Server-side Spotify application credentials |
-| `SPOTIFY_REDIRECT_URI` | Exact registered callback, typically `http://127.0.0.1:3000/auth/spotify/callback` for production loopback |
-| `SPOTIFY_DEVICE_ID` | Optional Spotify Connect playback device |
-| `INFERENCE_MODE` | `mock` for explicit development; the integrated launcher sets `onnx` and supplies the private worker paths |
-| `ONNX_MODEL_DIR` | Reserved private directory for ONNX model files; not read by the current mock |
-| `LOCAL_MEDIA_DIR`, `DATA_DIR` | Local music catalog and private token data |
-
-With `HA_ENABLED=true`, Ambient shows the allowlisted lights' names, on/off state, brightness and color. Touch controls send on/off, dimming, color and white-temperature requests through the gateway. With `SPOTIFY_ENABLED=true`, it shows the current track/episode, artist/show, album when provided, progress, play/pause state, volume, shuffle and repeat. Album/episode artwork appears in the compact player and expanded music view, using the image URL from the existing playback response. Missing or failed images retain the original placeholders. The music view offers **Connect Spotify** when authorization is missing, and controls for resume/pause, previous/next, seek, volume, shuffle and repeat. The square button pauses live Spotify playback. `SPOTIFY_DEVICE_ID` selects the control target when set; otherwise Spotify uses the active device.
-
-`ACTIONS_ENABLED=false` keeps live state visible but disables device/playback controls. Disabled integrations retain their local demos. Enabled integrations never fall back to fabricated state: missing entities, unavailable devices, expired authorization and provider errors are shown explicitly. The explicitly tapped **Play music** shortcut sends a resume request to Spotify without search text, a track URI or a replacement playlist. It continues the active/configured Connect session. If there is no playable session, open Spotify on that device first. Missing authorization opens the connection prompt. The **Camera call** shortcut opens the only allowlisted camera, or the camera selector when more than one is configured. These touch shortcuts bypass dummy inference; simulator/ONNX fixture events still cannot operate live providers. Backend credentials and provider tokens stay on the server. The SPA does not decode Spotify audio or RTSP.
-
-For an ONVIF camera, configure it in Home Assistant first, confirm its feed works there, then append its entity ID to `HA_ENTITY_IDS`, preserving your light IDs. For example:
-
-```dotenv
-HA_ENTITY_IDS=light.hue_color_lamp_1,camera.your_camera
-```
-
-The gateway proxies HA's `/api/camera_proxy_stream/<entity_id>` as a same-origin MJPEG stream. The HA token stays on the server. Home Assistant performs the ONVIF/RTSP conversion; this app needs no camera decoder package. The camera is the centered call view. Minimizing or leaving that view keeps the ongoing call in a floating preview; restoring it reuses the same stream. This is **video only**, with camera off/on, retry and end controls; no microphone, camera audio or two-way talk is connected. Stream reads work with `ACTIONS_ENABLED=false`. Camera-off, hidden pages, hangup, unmount and disconnection release the stream. Setup has a 15-second deadline; open streams are not cut off by the normal five-second API timeout. The gateway permits at most two concurrent streams. See the [camera checks](docs/testing/camera/README.md).
-
-HA state reaches the backend over its existing WebSocket, with the display refreshing every 1.5 seconds. Spotify normally refreshes every five seconds. After a touch command, it refreshes immediately and every half-second for three seconds; the backend briefly reduces its cache lifetime and prevents older reads from replacing newer results. Successful playback commands may return empty bodies; playback state reads still require valid JSON. The existing rate-limit cooldown remains enforced. Scrubbing immediately shows the requested position with **Seeking…** until observed progress confirms it or a four-second settling window expires. Display polling pauses while hidden and stops on unmount. Other playback state remains based on observed values. Restart `pnpm start` after changing `.env` or backend code.
-
-## Audio diagnostics and real inference handoff
-
-Open **http://127.0.0.1:3000/?diagnostics** (development: `:5173/?diagnostics`) for the preserved microphone/PCM workflow, local audio search and optional provider setup. Each nonempty recording yields a fixed mock media search even for silence; cancellation, disconnect and page hiding release capture. Put your own `.mp3` files in `media/` for local playback. None are bundled.
-
-The loopback setup is for a single trusted user. For remote browsers use a trusted HTTPS reverse proxy and matching origin; non-loopback HTTP cannot capture microphone audio. Keep provider tokens and private data server-side. Existing host/origin checks still apply through the frontend proxy.
-
-[docs/architecture.md](docs/architecture.md) documents the preserved audio gateway. [docs/onnx-sanity.md](docs/onnx-sanity.md) describes the real adapter gate. The older inference-sanity script covers the historical mock boundary. Use `scripts/validate-runtime.mjs` for real WAV/CLI/gateway parity and `scripts/browser-runtime-check.mjs` for compiled-page checks. Typed browser fixtures are not acoustic evidence.
-
-Source notices are retained in [mockups/ambient-v6/licenses](mockups/ambient-v6/licenses) and copied to the build's `licenses/` folder. The aura shader carries its own upstream notice; do not assume the shader is covered by the React wrapper's Apache license.
+Keep [third-party notices](mockups/ambient-v6/licenses); the compression step copies them into `dist/licenses`. Historical source and negative results remain recoverable through the archive.

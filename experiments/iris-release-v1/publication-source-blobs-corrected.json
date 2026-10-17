@@ -1,0 +1,456 @@
+{
+  "bytes": 20154479,
+  "files": [
+    {
+      "bytes": 3258,
+      "path": "SpeakerUI/.env.example",
+      "sha": "11bcfead26331da9b4a71ef2c641f425ca3073a3"
+    },
+    {
+      "bytes": 13704,
+      "path": "MODEL_CARD.md",
+      "sha": "220880f41fa009abde31f9a01d2b1e526b136fd3"
+    },
+    {
+      "bytes": 2459,
+      "path": "SpeakerUI/AGENTS.md",
+      "sha": "e0ceb54668bde5e6d58359b3fcf1783ee0ad196c"
+    },
+    {
+      "bytes": 5093,
+      "path": ".gitignore",
+      "sha": "74c37d82382af79f07b5b9f8f37025b232215655"
+    },
+    {
+      "bytes": 7619,
+      "path": "EXPERIMENTS.md",
+      "sha": "da1bb7f9e970f410502550473d3d9839f7b59143"
+    },
+    {
+      "bytes": 1642,
+      "path": "SpeakerUI/package.json",
+      "sha": "6c29e97b4aea0ac19a46117c0547cb7f0d6e544a"
+    },
+    {
+      "bytes": 16854,
+      "path": "SpeakerUI/scripts/browser-runtime-check.mjs",
+      "sha": "70c54bffbc06b456903e86fb32e7e077c91a6329"
+    },
+    {
+      "bytes": 6084,
+      "path": "SpeakerUI/README.md",
+      "sha": "7304c650880a857a2039888ef02f4f71078ee846"
+    },
+    {
+      "bytes": 765,
+      "path": "SpeakerUI/scripts/build.mjs",
+      "sha": "3b7f238a6fce552243ae231271d48a4934be9411"
+    },
+    {
+      "bytes": 4936,
+      "path": "SpeakerUI/server/config.test.ts",
+      "sha": "8f112f825323a8bafa2635726317f26231866d8d"
+    },
+    {
+      "bytes": 8008,
+      "path": "SpeakerUI/scripts/iris-browser-check.mjs",
+      "sha": "f3227fb4642ed9a03107015f393e13502ea1dd31"
+    },
+    {
+      "bytes": 3214,
+      "path": "SpeakerUI/server/inference/python-runtime.test.ts",
+      "sha": "c30f095d63a4ad91d723f597e66e4e34f43a6152"
+    },
+    {
+      "bytes": 4512,
+      "path": "SpeakerUI/server/inference/python-runtime.ts",
+      "sha": "6b9e55b6b9ea61a2637c08358a0550f0e2990abc"
+    },
+    {
+      "bytes": 10354,
+      "path": "SpeakerUI/src/diagnostics/Diagnostics.svelte",
+      "sha": "a1c1608b393ac40426860079c324db5cb4daa584"
+    },
+    {
+      "bytes": 1420,
+      "path": "config.example.toml",
+      "sha": "f4c6f258dabfcbcfdd96f18271fbcf2f5969bbb7"
+    },
+    {
+      "bytes": 3253,
+      "path": "docs/DOCS.md",
+      "sha": "56ba8b9b64d82c62f1b977bc593e4b6d270bacca"
+    },
+    {
+      "bytes": 7494,
+      "path": "docs/DATASETS.md",
+      "sha": "efecf6e0a62a45df646b05adbcd0ad347f292a76"
+    },
+    {
+      "bytes": 9719,
+      "path": "docs/HANDOFF-iris-rpi-v1.md",
+      "sha": "b265bc199f4d1bedc83036dd11af20c1900c9d58"
+    },
+    {
+      "bytes": 20813,
+      "path": "docs/EXPERIMENT-iris-release-v1.md",
+      "sha": "b4532b7806e7d929cf08871c65ddfb8f5a468f15"
+    },
+    {
+      "bytes": 1193,
+      "path": "experiments/iris-release-v1/archive-verification.json",
+      "sha": "9b8edb8c18cffb18282109e92f23a3b8ff69c948"
+    },
+    {
+      "bytes": 1161,
+      "path": "experiments/iris-release-v1/audio-audit-before-fitting.json",
+      "sha": "ab42372a6fcc30b5b3b231368bf599f2aaf51bf0"
+    },
+    {
+      "bytes": 114072,
+      "path": "experiments/iris-release-v1/catalog.json",
+      "sha": "103f2ed93f20130062b7fc55387662758ee1122b"
+    },
+    {
+      "bytes": 4436,
+      "path": "experiments/iris-release-v1/data-audit.json",
+      "sha": "5c6063d5571b394c98394fcbafcce542fe08c35f"
+    },
+    {
+      "bytes": 3745,
+      "path": "experiments/iris-release-v1/development-selection.json",
+      "sha": "c0085c67aec09373c0ee8788b3913f6d9d8b5114"
+    },
+    {
+      "bytes": 3228,
+      "path": "experiments/iris-release-v1/decision-parity.json",
+      "sha": "6961b94a07aba50d021e7e1f757a3144fb98ed0a"
+    },
+    {
+      "bytes": 316,
+      "path": "experiments/iris-release-v1/generation-complete.json",
+      "sha": "d866e48729892a82914b5ada17baaeb938de5b23"
+    },
+    {
+      "bytes": 1681,
+      "path": "experiments/iris-release-v1/gpu-portability-before-fitting.json",
+      "sha": "0119c2e6c726270a16fe34caf93b0b05b5b7c8c4"
+    },
+    {
+      "bytes": 592,
+      "path": "experiments/iris-release-v1/gpu-secondary-guard.json",
+      "sha": "c3489408bdf491f3eb4bfe9355abb64efef1f31b"
+    },
+    {
+      "bytes": 781175,
+      "path": "experiments/iris-release-v1/archive-manifest.json",
+      "sha": "a52dc4b9d29a99714cee0e52c47262f613bbd96c"
+    },
+    {
+      "bytes": 1604,
+      "path": "experiments/iris-release-v1/owner-execution.json",
+      "sha": "66024e0a052778a3ab32e036192ce450788b2017"
+    },
+    {
+      "bytes": 5235,
+      "path": "experiments/iris-release-v1/owner-export.json",
+      "sha": "ed5b3d2fbfcb357975cc4db5c68571c0cb8c35b6"
+    },
+    {
+      "bytes": 3783,
+      "path": "experiments/iris-release-v1/owner-results.json",
+      "sha": "6a6f2fba7b17bd51210613026a1f2e19e1714144"
+    },
+    {
+      "bytes": 955,
+      "path": "experiments/iris-release-v1/owner-graph-before-test.json",
+      "sha": "d5e3f5976045b748338b8aef5f2946bb07e78bb9"
+    },
+    {
+      "bytes": 3994,
+      "path": "experiments/iris-release-v1/owner-implementation-before-fitting-1e0ad09fcda73876.json",
+      "sha": "546050e849d6a7f24fbe6e5e6ff03ad5cd62b29d"
+    },
+    {
+      "bytes": 4001,
+      "path": "experiments/iris-release-v1/owner-selection-before-test.json",
+      "sha": "f5d23a9bf9b28caabf1776b2b9bf87fa88b3de45"
+    },
+    {
+      "bytes": 3148,
+      "path": "experiments/iris-release-v1/owner-runtime-checks.json",
+      "sha": "c0d5e624746c7795cc3f06a198a69986e0ecf16f"
+    },
+    {
+      "bytes": 5361,
+      "path": "experiments/iris-release-v1/package-replay.json",
+      "sha": "94dcba0a2ee779de648c9ef3bce14ed84245d60e"
+    },
+    {
+      "bytes": 17785,
+      "path": "experiments/iris-release-v1/owner-wake-duration-diagnostic.json",
+      "sha": "91dee444922709fa7629f3a57385d995092bfde8"
+    },
+    {
+      "bytes": 78801,
+      "path": "experiments/iris-release-v1/pipeline-resources.json",
+      "sha": "adb2d5d45a414a49e5680d4e4dc8044fa1553e94"
+    },
+    {
+      "bytes": 30512,
+      "path": "experiments/iris-release-v1/publication-inputs-plan-inputs-20261017T021222200569Z.json",
+      "sha": "112d8e2aafb1bae5dcb79487a820763fb69d6792"
+    },
+    {
+      "bytes": 15888,
+      "path": "experiments/iris-release-v1/publication-source-blobs-prefit.json",
+      "sha": "fb4f867f8294743002115cce32a65d029a9b166b"
+    },
+    {
+      "bytes": 1207376,
+      "path": "experiments/iris-release-v1/publication-hf-preupload-inputs-20261017T013213809982Z.json",
+      "sha": "06e37e694fd5a74a74c6ca4d61c0b7034da247a6"
+    },
+    {
+      "bytes": 1224904,
+      "path": "experiments/iris-release-v1/publication-hf-inputs-20261017T021222200569Z.json",
+      "sha": "033bcf9ec07d7ccea7cc994f6961f7794b1ad481"
+    },
+    {
+      "bytes": 745010,
+      "path": "experiments/iris-release-v1/recognition-results.json",
+      "sha": "905a6ff0437ea17bc8810d720253ee5a62484318"
+    },
+    {
+      "bytes": 893,
+      "path": "experiments/iris-release-v1/release-choice.json",
+      "sha": "61eca56ea79bc01bc9798b2bae1816b9c077a8da"
+    },
+    {
+      "bytes": 7198,
+      "path": "experiments/iris-release-v1/reproduction-completed-stage-verification.json",
+      "sha": "448a12c39f345daa7668428e1886c23123b6b7b0"
+    },
+    {
+      "bytes": 933,
+      "path": "experiments/iris-release-v1/reproduction-fresh-input-prefetch-authenticated.json",
+      "sha": "d87e71cbe39ed74f1dbf2e46b3cd88eec339c59a"
+    },
+    {
+      "bytes": 711,
+      "path": "experiments/iris-release-v1/reproduction-fresh-input-prefetch-http.json",
+      "sha": "8345354bdbc3effcb785c2636343b388950e0f69"
+    },
+    {
+      "bytes": 910,
+      "path": "experiments/iris-release-v1/reproduction-fresh-input-prefetch.json",
+      "sha": "ca8c40db7c2615a6a5aabc24272732237af501f2"
+    },
+    {
+      "bytes": 5270,
+      "path": "experiments/iris-release-v1/reproduction-prefit-compatibility.json",
+      "sha": "0d997ce8470a474daf93f0f4f01ffeb87747234a"
+    },
+    {
+      "bytes": 78381,
+      "path": "experiments/iris-release-v1/reproduction-release.json",
+      "sha": "2a5483afbedebd2c780d57e8c07250f3f6292fae"
+    },
+    {
+      "bytes": 381436,
+      "path": "experiments/iris-release-v1/reproduction-run-iris-final-configfix.json",
+      "sha": "337d827ac4a38cdbd17f763cccc1089a2d763f93"
+    },
+    {
+      "bytes": 374318,
+      "path": "experiments/iris-release-v1/reproduction-run-iris-final-prepublication.json",
+      "sha": "9d0cb90fdd010280d9c0cc746a3ff6e39454fb5d"
+    },
+    {
+      "bytes": 3145,
+      "path": "experiments/iris-release-v1/reproduction-run-iris-final.json",
+      "sha": "68c5b5e05307c01fbb0d847c39a586e6974f1f32"
+    },
+    {
+      "bytes": 1818,
+      "path": "experiments/iris-release-v1/reproduction-source-inventory-rebind.json",
+      "sha": "aad8fb8f8e09a05539a88d74d55e3efd10678275"
+    },
+    {
+      "bytes": 1493,
+      "path": "experiments/iris-release-v1/reproduction-startup-fix-preservation.json",
+      "sha": "81eb29134ebe9334393214a2348941ae3521e72e"
+    },
+    {
+      "bytes": 3640840,
+      "path": "experiments/iris-release-v1/publication-plan-preupload-inputs-20261017T013213809982Z.json",
+      "sha": "cc9c36e180f868a97d4aa11861f23a44cc88ca20"
+    },
+    {
+      "bytes": 720,
+      "path": "experiments/iris-release-v1/reproduction-startup-fix-source-preservation.json",
+      "sha": "1e4fed983dedd6943b7fefc6d0391db984917c00"
+    },
+    {
+      "bytes": 794,
+      "path": "experiments/iris-release-v1/software-verification.json",
+      "sha": "eb2ae8e033bb24c23d76e38bda243d8813cf0459"
+    },
+    {
+      "bytes": 2065,
+      "path": "experiments/iris-release-v1/selection-before-test.json",
+      "sha": "95afa3accf032539fb4d8452ca25b23e234a603b"
+    },
+    {
+      "bytes": 81419,
+      "path": "experiments/iris-release-v1/ui-final-integration.json",
+      "sha": "905af43a6f970cd2fba0cba631d250b9d26a8145"
+    },
+    {
+      "bytes": 5946,
+      "path": "experiments/iris-release-v1/training-execution.json",
+      "sha": "81ff99cb701d299d93624f8dd49361a599705dcf"
+    },
+    {
+      "bytes": 2022,
+      "path": "experiments/iris-release-v1/wake-protocol.json",
+      "sha": "8a61a8b34aa85bd2a125ea51ecea29809038dd93"
+    },
+    {
+      "bytes": 2055,
+      "path": "experiments/iris-release-v1/wake-calibration.json",
+      "sha": "d167506143d1ef9e9f65e380fe70d446207e3185"
+    },
+    {
+      "bytes": 563,
+      "path": "experiments/iris-release-v1/wake-results.json",
+      "sha": "7cb1a60586a021c3e5928c55e59f3f62157fc5ee"
+    },
+    {
+      "bytes": 654,
+      "path": "experiments/iris-release-v1/wake-selection-before-test.json",
+      "sha": "69c5c19d9fa7bfca09a1fb5810c37c164a8183c0"
+    },
+    {
+      "bytes": 2208,
+      "path": "experiments/iris-release-v1/width-selection-before-repeat.json",
+      "sha": "2ee026fe67cd98338c34551826ddd42f3fcf6c69"
+    },
+    {
+      "bytes": 29045,
+      "path": "scripts/iris_publish.py",
+      "sha": "e5cefe17630f4849dccac30b81dbc3d681dabeae"
+    },
+    {
+      "bytes": 77740,
+      "path": "scripts/iris_release.py",
+      "sha": "26380ab2cbdb78f8c904d582448214a0a4bab9fd"
+    },
+    {
+      "bytes": 4558,
+      "path": "scripts/modules.json",
+      "sha": "9db49d6b01fef832eecc0c148f2d15fef9f14485"
+    },
+    {
+      "bytes": 21971,
+      "path": "scripts/iris_report.py",
+      "sha": "9f5a23a0c88bb63078f98fcaba786af3c4882a5f"
+    },
+    {
+      "bytes": 11120,
+      "path": "scripts/mvp_delivery.py",
+      "sha": "d8277044a466b657d48815f91c5a650eb130c9b7"
+    },
+    {
+      "bytes": 5287,
+      "path": "scripts/runtime/wake_gate.py",
+      "sha": "27fd10c5c45882410b9f5ff7ef7ce58d39fe250d"
+    },
+    {
+      "bytes": 6101,
+      "path": "scripts/test/iris_benchmark.py",
+      "sha": "9d25fda99bdfb4309c0dbb3ad7eea70a20396274"
+    },
+    {
+      "bytes": 5952,
+      "path": "scripts/test/iris_decision_parity.py",
+      "sha": "7f48e7d7a37177801bc980dc1c2140c6b81594ac"
+    },
+    {
+      "bytes": 8361,
+      "path": "scripts/test/iris_metrics.py",
+      "sha": "92f49712e1a55a769d7067a7ee17c2fb102bcc2f"
+    },
+    {
+      "bytes": 6975,
+      "path": "scripts/test/test_iris_diversity.py",
+      "sha": "08d89ef843825e61c95be4c396f3a8a634ba95b5"
+    },
+    {
+      "bytes": 24549,
+      "path": "scripts/test/iris_resources.py",
+      "sha": "91448416730208a1f56de8900b2e69f57a578b58"
+    },
+    {
+      "bytes": 4710,
+      "path": "scripts/test/test_iris_metrics.py",
+      "sha": "009f5ec5b76ab3fa172e188f84acc71ced39d9ac"
+    },
+    {
+      "bytes": 12337,
+      "path": "scripts/test/test_iris_owner.py",
+      "sha": "3abd3abe2ee67cae614e8a0313f9f015784781a7"
+    },
+    {
+      "bytes": 5375358,
+      "path": "experiments/iris-release-v1/reproduction-inputs-before-startup-fix.json",
+      "sha": "de2bdedc7ff1689d6b5f40c167bd824e629485c7"
+    },
+    {
+      "bytes": 49252,
+      "path": "scripts/test/test_iris_release.py",
+      "sha": "55bcb4b2e0dad8937cb26d2e47caff5249874807"
+    },
+    {
+      "bytes": 1870,
+      "path": "scripts/test/test_iris_wake_models.py",
+      "sha": "9ec2df9b180f18d39f3dec079b773df83a6dcb6f"
+    },
+    {
+      "bytes": 12147,
+      "path": "scripts/test/test_iris_resources.py",
+      "sha": "2957dbd29f1a891a140e26e625e5f35b4ba18db7"
+    },
+    {
+      "bytes": 5836,
+      "path": "scripts/test/test_iris_session.py",
+      "sha": "6d7547e71059dda6d27bf96e6c13fbbb5ff4f120"
+    },
+    {
+      "bytes": 77703,
+      "path": "scripts/train/iris_owner.py",
+      "sha": "b36fea6631af1117ce7a1ac7fec3aace6c05db22"
+    },
+    {
+      "bytes": 38509,
+      "path": "scripts/train/iris_diversity.py",
+      "sha": "6e803032e4c41b657b1d1df66aba504207213614"
+    },
+    {
+      "bytes": 12687,
+      "path": "scripts/train/iris_wake.py",
+      "sha": "d386bc4a82cc846f5777ce60299f1017f6fce1a7"
+    },
+    {
+      "bytes": 5375462,
+      "path": "experiments/iris-release-v1/reproduction-inputs.json",
+      "sha": "78b4bb31c1bd4190b6afb797588f73ca0c15c31f"
+    }
+  ],
+  "refs_moved": false,
+  "repository": "justinruaya123/smart-speaker",
+  "schema_version": 1,
+  "scope": "Corrected final source, documentation and compact evidence before fresh-clone completion; uploaded immutable Git blob objects only. Subsequent ordering-only fix and final evidence require additional blobs.",
+  "status": "verified_immutable_blobs_uploaded",
+  "visibility": "private"
+}

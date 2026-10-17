@@ -1,0 +1,163 @@
+{
+  "experiment": "iris-release-v1",
+  "completed_training_runs": 6,
+  "runs": [
+    {
+      "model": "compact",
+      "arm": "ce",
+      "seed": 53,
+      "epochs": 8,
+      "seconds": 120.86940657068044,
+      "checkpoint_sha256": "34f5daf2ef8949e4c3459d91a992493e485e6c0c4a831efbe35462a8d2f650c6",
+      "command": [
+        "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1/scripts/train/iris_diversity.py",
+        "train",
+        "--model",
+        "compact",
+        "--arm",
+        "ce",
+        "--seed",
+        "53",
+        "--device",
+        "cuda"
+      ],
+      "source_revision": "1d3e6458e1030649f7aad7da6b8ce16e5a14d1ef",
+      "trainer_sha256": "1507f5680ba9c09ca6de02750bf9cb3b5f781a2113b17cf5e8368d5cfbc97be7",
+      "optimizer_rng_snapshot_sha256": "84a7ed6da62bfa70337e025011a7b823c1257293517f310f187879b11338996e"
+    },
+    {
+      "model": "compact",
+      "arm": "ce",
+      "seed": 67,
+      "epochs": 9,
+      "seconds": 125.82864363398403,
+      "checkpoint_sha256": "9742dd7a5a1ac167efe405d5df2f362c15ebd4642b8031d4802c53eaf3c1d42d",
+      "command": [
+        "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1/scripts/train/iris_diversity.py",
+        "train",
+        "--model",
+        "compact",
+        "--arm",
+        "ce",
+        "--seed",
+        "67",
+        "--device",
+        "cuda"
+      ],
+      "source_revision": "ffea3be055388db3d8c91b115dc057c13a1fb4c4",
+      "trainer_sha256": "1507f5680ba9c09ca6de02750bf9cb3b5f781a2113b17cf5e8368d5cfbc97be7",
+      "optimizer_rng_snapshot_sha256": "9699c56b78a505f93c41308cd5a4cc101e6d2d1a9792e1f92deab228631a7336"
+    },
+    {
+      "model": "compact",
+      "arm": "supcon",
+      "seed": 53,
+      "epochs": 8,
+      "seconds": 109.08531090384349,
+      "checkpoint_sha256": "7057b368334f830b5abbaaa43f7aacff1d7590fd8740cc40f7c6eb0d86b68a37",
+      "command": [
+        "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1/scripts/train/iris_diversity.py",
+        "train",
+        "--model",
+        "compact",
+        "--arm",
+        "supcon",
+        "--seed",
+        "53",
+        "--device",
+        "cuda"
+      ],
+      "source_revision": "1d3e6458e1030649f7aad7da6b8ce16e5a14d1ef",
+      "trainer_sha256": "1507f5680ba9c09ca6de02750bf9cb3b5f781a2113b17cf5e8368d5cfbc97be7",
+      "optimizer_rng_snapshot_sha256": "3d1d0d5cb32f63fa5ef88b672057ca7d2378da0b59d6711df6cfa213572975e0"
+    },
+    {
+      "model": "compact",
+      "arm": "supcon",
+      "seed": 67,
+      "epochs": 9,
+      "seconds": 124.86822384316474,
+      "checkpoint_sha256": "2607428712aace41d5b894176cb8d305438d95fe16c27965d55c266d36e8630b",
+      "command": [
+        "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1/scripts/train/iris_diversity.py",
+        "train",
+        "--model",
+        "compact",
+        "--arm",
+        "supcon",
+        "--seed",
+        "67",
+        "--device",
+        "cuda"
+      ],
+      "source_revision": "ffea3be055388db3d8c91b115dc057c13a1fb4c4",
+      "trainer_sha256": "1507f5680ba9c09ca6de02750bf9cb3b5f781a2113b17cf5e8368d5cfbc97be7",
+      "optimizer_rng_snapshot_sha256": "0053466ea2762705326093c95310c2d598cbe6b0f6417e96f1485bbc680e2dbf"
+    },
+    {
+      "model": "full",
+      "arm": "ce",
+      "seed": 53,
+      "epochs": 12,
+      "seconds": 164.15548602119088,
+      "checkpoint_sha256": "0aae2669a7dcd622d3846118206d8d3ce99e816dfc89f14c51d51d6f53b8c02c",
+      "command": [
+        "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1/scripts/train/iris_diversity.py",
+        "train",
+        "--model",
+        "full",
+        "--arm",
+        "ce",
+        "--seed",
+        "53",
+        "--device",
+        "cuda"
+      ],
+      "source_revision": "1d3e6458e1030649f7aad7da6b8ce16e5a14d1ef",
+      "trainer_sha256": "1507f5680ba9c09ca6de02750bf9cb3b5f781a2113b17cf5e8368d5cfbc97be7",
+      "optimizer_rng_snapshot_sha256": "0bffc0ecefef0506d2884990d0d22c6cd7b500c8ff6d510b2848a231d3916b72"
+    },
+    {
+      "model": "full",
+      "arm": "supcon",
+      "seed": 53,
+      "epochs": 16,
+      "seconds": 214.11927540134639,
+      "checkpoint_sha256": "1cc9add87619f116562ea86b83661de410309541ecb5f0a03fe4222c48aaf659",
+      "command": [
+        "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1/scripts/train/iris_diversity.py",
+        "train",
+        "--model",
+        "full",
+        "--arm",
+        "supcon",
+        "--seed",
+        "53",
+        "--device",
+        "cuda"
+      ],
+      "source_revision": "671c629cc12eef3d5d080ce5ca276de70e975e7a",
+      "trainer_sha256": "1507f5680ba9c09ca6de02750bf9cb3b5f781a2113b17cf5e8368d5cfbc97be7",
+      "optimizer_rng_snapshot_sha256": "bb56dc0a6c8f1c2bd98da0a4f0b2cd874d3415c3c66f4ae7691751f0422ba63b"
+    }
+  ],
+  "primary_visible_gpu": "5",
+  "secondary": "stopped before allocation under utilization guard",
+  "training_sequential": true,
+  "total_training_seconds": 858.92634637421,
+  "total_fit_process_seconds_including_input_loading": 1111.406791745685,
+  "scratch_wrapper_exit_code": 1,
+  "orchestration_issues": [
+    "Final select scratch log filename collided with the initial select.log; six training processes had already exited zero.",
+    "Separately rerunning final select exposed a redundant test_used_for_selection keyword TypeError. Only metadata serialization was corrected; ranking, data, policies and fitting functions were unchanged. Regression reproduced failure before correction."
+  ],
+  "recovery_final_select_command": "CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 .venv/bin/python -u -m scripts.train.iris_diversity select",
+  "recovery_final_select_exit_code": 0,
+  "selected": {
+    "model": "compact",
+    "arm": "supcon",
+    "seed": 67,
+    "epoch": 3
+  },
+  "test_used_for_selection": false
+}

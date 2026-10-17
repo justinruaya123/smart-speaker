@@ -1,0 +1,218 @@
+[
+  {
+    "id": "iris-release-voice-00",
+    "split": "train",
+    "prompt": "A clear natural voice of an adult woman with a medium pitch speaking Philippine English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83000,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-01",
+    "split": "train",
+    "prompt": "A clear natural voice of an adult woman with a medium pitch speaking American English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83001,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-02",
+    "split": "train",
+    "prompt": "A clear natural voice of an adult woman with a medium pitch speaking British English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83002,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-03",
+    "split": "train",
+    "prompt": "A clear natural voice of an adult woman with a medium pitch speaking Indian English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83003,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-04",
+    "split": "train",
+    "prompt": "A clear natural voice of an adult woman with a medium pitch speaking Australian English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83004,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-05",
+    "split": "train",
+    "prompt": "A clear natural voice of an adult woman with a medium pitch speaking Irish English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83005,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-06",
+    "split": "train",
+    "prompt": "A clear natural voice of an adult woman with a medium pitch speaking South African English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83006,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-07",
+    "split": "train",
+    "prompt": "A clear natural voice of an adult woman with a medium pitch speaking Canadian English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83007,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-08",
+    "split": "train",
+    "prompt": "A clear natural voice of an adult man with a lower pitch speaking Philippine English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83008,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-09",
+    "split": "train",
+    "prompt": "A clear natural voice of an adult man with a lower pitch speaking American English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83009,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-10",
+    "split": "train",
+    "prompt": "A clear natural voice of an adult man with a lower pitch speaking British English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83010,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-11",
+    "split": "train",
+    "prompt": "A clear natural voice of an adult man with a lower pitch speaking Indian English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83011,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-12",
+    "split": "dev",
+    "prompt": "A clear natural voice of an adult man with a lower pitch speaking Australian English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83012,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-13",
+    "split": "dev",
+    "prompt": "A clear natural voice of an adult man with a lower pitch speaking Irish English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83013,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-14",
+    "split": "dev",
+    "prompt": "A clear natural voice of an adult man with a lower pitch speaking South African English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83014,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-15",
+    "split": "dev",
+    "prompt": "A clear natural voice of an adult man with a lower pitch speaking Canadian English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83015,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-16",
+    "split": "calibration",
+    "prompt": "A clear natural voice of an adult with an androgynous higher voice speaking Philippine English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83016,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-17",
+    "split": "calibration",
+    "prompt": "A clear natural voice of an adult with an androgynous higher voice speaking American English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83017,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-18",
+    "split": "calibration",
+    "prompt": "A clear natural voice of an adult with an androgynous higher voice speaking British English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83018,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-19",
+    "split": "calibration",
+    "prompt": "A clear natural voice of an adult with an androgynous higher voice speaking Indian English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83019,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-20",
+    "split": "voice-test",
+    "prompt": "A clear natural voice of an adult with an androgynous higher voice speaking Australian English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83020,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-21",
+    "split": "voice-test",
+    "prompt": "A clear natural voice of an adult with an androgynous higher voice speaking Irish English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83021,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-22",
+    "split": "voice-test",
+    "prompt": "A clear natural voice of an adult with an androgynous higher voice speaking South African English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83022,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  },
+  {
+    "id": "iris-release-voice-23",
+    "split": "voice-test",
+    "prompt": "A clear natural voice of an adult with an androgynous higher voice speaking Canadian English. Comfortable conversational delivery. Clean dry speech, no music.",
+    "design_seed": 83023,
+    "identity_source": "original_synthetic_voice_design",
+    "accent_verified": false,
+    "demographic_labels": "requested design conditions, not verified people"
+  }
+]

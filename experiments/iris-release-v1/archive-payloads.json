@@ -1,0 +1,1419 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-17T01:10:46.529267+00:00",
+  "operation": "read-only hash audit; no payload moved, deleted, installed or uploaded",
+  "archives": "Git-tracked payloads use archive-manifest.json; selected current training/release payloads also use immutable published reproduction-inputs.json",
+  "local_recovery_limit": "Historical ignored candidates are retained at their original shared-cache paths; not newly uploaded. Upstream sources/selected project checkpoints have separate durable pinned recovery receipts.",
+  "payload_n": 176,
+  "bytes": 681788861,
+  "payloads": [
+    {
+      "path": ".cache/speaker-compact-recall-v1/export/model.fp32.onnx",
+      "bytes": 3864875,
+      "sha256": "61f639126d7226f17f4e94c970b2fb60f66182578c77238ff65ebaf4b5993be3",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/export/model.int8.onnx",
+      "bytes": 1595296,
+      "sha256": "eea074677af2ebbcea12fd4790f4fdc242cd8e563da50b884ccf9e96513503e6",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/export/model.preprocessed.onnx",
+      "bytes": 3917081,
+      "sha256": "3cb51c4a99be60218c1f69b41412478f04ae548370921a9909534e1503bae1c1",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/training/human-shared/epoch-004.pt",
+      "bytes": 3786891,
+      "sha256": "2f63d1c1fa59006b7fcfbd6c8ebd17277724485559696e02b99cc99090e1b79d",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/training/human-shared/epoch-008.pt",
+      "bytes": 3786891,
+      "sha256": "809533bb7960a80567d75e5963cef721b2071add7eddf8d50e48679e08ce5899",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/training/human-shared/last.pt",
+      "bytes": 3786764,
+      "sha256": "d62efa46e7ecdd0e493eb7b515821f10c4ad30f2b0fbd24424f61624ee0c87f9",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-004.pt",
+      "bytes": 3786891,
+      "sha256": "d969178bf576d21c231b56dcdd8b2d76d761aabebfcb0da60f07505cd97f147c",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-008.pt",
+      "bytes": 3786891,
+      "sha256": "79930e472b2fab098da7e4927283200e5657820fc2cc83034afc2ae3818ae54c",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-012.pt",
+      "bytes": 3786891,
+      "sha256": "03f439714a727bec0d72c825028d6dc0742546eb032ba6291d523eef568d7185",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-016.pt",
+      "bytes": 3786891,
+      "sha256": "2e5c9f365a5f645982ce6b61eb80a8e16243c1e40f68d3d823320813d2178f37",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-020.pt",
+      "bytes": 3786891,
+      "sha256": "bb3673483a0e75f9a460bebf09025cfe91abc542425a3d31bc2047db82921a6f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-024.pt",
+      "bytes": 3786891,
+      "sha256": "a0048a5a4a5bcafc81232cba7ce975543fa825d408923efc13cf049fe44a82e9",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-028.pt",
+      "bytes": 3786891,
+      "sha256": "a727e5070053045d6f276a3f58084ef16dd2bcbf9f931eea71db42a512f7d76a",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-032.pt",
+      "bytes": 3786891,
+      "sha256": "1aac21b3bcebc94d868c90fbefb42242ac4363fce55cb1f38c132c558fb55efc",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/training/mixed-control/last.pt",
+      "bytes": 3786764,
+      "sha256": "3549ded092f02a6690e20c41cb8bbda17ff5ba7cf10813624e0f8995dd1163dc",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-recovery-v2/bundle/model.onnx",
+      "bytes": 3864875,
+      "sha256": "61f639126d7226f17f4e94c970b2fb60f66182578c77238ff65ebaf4b5993be3",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-recovery-v2/pi-final-extracted/models/default/model.onnx",
+      "bytes": 3864875,
+      "sha256": "61f639126d7226f17f4e94c970b2fb60f66182578c77238ff65ebaf4b5993be3",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-recovery-v2/pi-final-extracted/models/default/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-recovery-v2/pi-final-extracted/models/default/wake/wake-embedding.onnx",
+      "bytes": 1326578,
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-recovery-v2/pi-final-extracted/models/default/wake/wake-hey-jarvis.onnx",
+      "bytes": 1271370,
+      "sha256": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-recovery-v2/pi-final-extracted/models/default/wake/wake-melspectrogram.onnx",
+      "bytes": 1087958,
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-recovery-v2/pi-extracted/models/default/model.onnx",
+      "bytes": 3864875,
+      "sha256": "61f639126d7226f17f4e94c970b2fb60f66182578c77238ff65ebaf4b5993be3",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-recovery-v2/pi-extracted/models/default/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-recovery-v2/pi-extracted/models/default/wake/wake-embedding.onnx",
+      "bytes": 1326578,
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-recovery-v2/pi-extracted/models/default/wake/wake-hey-jarvis.onnx",
+      "bytes": 1271370,
+      "sha256": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-recovery-v2/pi-extracted/models/default/wake/wake-melspectrogram.onnx",
+      "bytes": 1087958,
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-recovery-v2/bundle/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-recovery-v2/bundle/wake/wake-embedding.onnx",
+      "bytes": 1326578,
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-recovery-v2/bundle/wake/wake-hey-jarvis.onnx",
+      "bytes": 1271370,
+      "sha256": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-recovery-v2/bundle/wake/wake-melspectrogram.onnx",
+      "bytes": 1087958,
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-recovery-v1/bundle/model.onnx",
+      "bytes": 3864875,
+      "sha256": "61f639126d7226f17f4e94c970b2fb60f66182578c77238ff65ebaf4b5993be3",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-compact-recall-v1/fp32-fallback/bundle/model.onnx",
+      "bytes": 3864875,
+      "sha256": "61f639126d7226f17f4e94c970b2fb60f66182578c77238ff65ebaf4b5993be3",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/bundle/model.onnx",
+      "bytes": 3173089,
+      "sha256": "3dea2e25dd431c0b085033f04e0b3f16181016ed42c41a1b84ff6acd43d2ac7e",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/export/model.fp32.onnx",
+      "bytes": 8390059,
+      "sha256": "cf75e081b034f8c2f9ed56550df60cb9307216c7d7287ada05855c13835b1cc9",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/export/model.int8.onnx",
+      "bytes": 3173089,
+      "sha256": "3dea2e25dd431c0b085033f04e0b3f16181016ed42c41a1b84ff6acd43d2ac7e",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/export/model.preprocessed.onnx",
+      "bytes": 8442265,
+      "sha256": "87b76b6f25e09bc472401fe19adec2397a8badbb186c285abd573270fa7057eb",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/wake/wake-embedding.onnx",
+      "bytes": 1326578,
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/wake/wake-hey-jarvis.onnx",
+      "bytes": 1271370,
+      "sha256": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/wake/wake-melspectrogram.onnx",
+      "bytes": 1087958,
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/human-shared/epoch-004.pt",
+      "bytes": 8312075,
+      "sha256": "776e744dafe659156eeb585bcf88b6f6f252a7cecca0cf56967bc083c18420a8",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/human-shared/epoch-008.pt",
+      "bytes": 8312075,
+      "sha256": "8044e31b23b0ab95c3722ebee9f46d01b252de38883c8c10ed5c8bfdd2e4f788",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/human-shared/epoch-012.pt",
+      "bytes": 8312075,
+      "sha256": "ff12372e864070f44f1c23dc21b78e72ec539a0e24c273e210a39be51b78a982",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/human-shared/epoch-016.pt",
+      "bytes": 8312075,
+      "sha256": "fe32b97ad1dafee5eb10c326f5c3155918abc46896b3a1cf0dba2f240e980675",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/human-shared/epoch-020.pt",
+      "bytes": 8312075,
+      "sha256": "9b590f6657539a9159c88e8c604020b92256eb73f513f2837abbf137023b75e0",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/human-shared/last.pt",
+      "bytes": 8311948,
+      "sha256": "becdafde858d82b32f17dc33ba4e42d4a62a8c18b3ddef5c9b829593eea80003",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/mixed-completion/epoch-004.pt",
+      "bytes": 8312075,
+      "sha256": "e082d0409df5661e0d0fdd5f1651fd7a62c492afca6d334bf6182452814ea7a3",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/mixed-completion/epoch-008.pt",
+      "bytes": 8312075,
+      "sha256": "65b60079915933e820d330d2bc0281f73148414fa5c20bfc4a0dbd416b0a3a3e",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/mixed-completion/epoch-012.pt",
+      "bytes": 8312075,
+      "sha256": "c46c5713961a4b502d7c85ffdde5f1c76ab948b5c45b56f576512ff8474dd9e1",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/mixed-completion/epoch-024.pt",
+      "bytes": 8312075,
+      "sha256": "d7e313e79257f28ef5cf784b26743dccb11feef8e91c80d4f726898515d0a342",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/mixed-completion/epoch-032.pt",
+      "bytes": 8312075,
+      "sha256": "52af82b3caa8252f80393e7afd4f3c46115bae92c8598414d161733d2f32e47f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/mixed-completion/last.pt",
+      "bytes": 8311948,
+      "sha256": "05aedebb0550acdebbc02001d2b5d2f573eebbd24c65e53192f3d991522e9c51",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/mixed-control/epoch-004.pt",
+      "bytes": 8312075,
+      "sha256": "e2a7e9298022a01b4bf0e56ad49498f952235e1f4a10f9c0df4b7fd340960c61",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/mixed-control/epoch-008.pt",
+      "bytes": 8312075,
+      "sha256": "3bfde70439250aa4dbc518fc294970d2639ade3b5bb5d2f252fd6c54f9038719",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/mixed-control/epoch-012.pt",
+      "bytes": 8312075,
+      "sha256": "cdf4bd32feaab138e376843533a2ffdf1385b1d889477c794c4853a6bc3add4d",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/mixed-control/epoch-016.pt",
+      "bytes": 8312075,
+      "sha256": "c1679ae80dbd3bcfa1c7ccc85cccc67d06ac96dc6db4a07c49482b398feb4c0f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/mixed-control/epoch-020.pt",
+      "bytes": 8312075,
+      "sha256": "7c9dd7f014a9348f0647deff080f46983df30d90a92dc196304cede64c4048a7",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/mixed-control/epoch-032.pt",
+      "bytes": 8312075,
+      "sha256": "ff6a3af63115a8f92a0106b20a17ee57c3e84f263177b89aaedb9cce326fce9b",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/training/mixed-control/last.pt",
+      "bytes": 8311948,
+      "sha256": "f30cf496794d9e5d3fd5201af9a674bfc975c209b0df3a9a1ac5f93e5034f79e",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/package-smoke/models/default/model.onnx",
+      "bytes": 3173089,
+      "sha256": "3dea2e25dd431c0b085033f04e0b3f16181016ed42c41a1b84ff6acd43d2ac7e",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/package-smoke/models/default/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/package-smoke/models/default/wake/wake-embedding.onnx",
+      "bytes": 1326578,
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/package-smoke/models/default/wake/wake-hey-jarvis.onnx",
+      "bytes": 1271370,
+      "sha256": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/package-smoke/models/default/wake/wake-melspectrogram.onnx",
+      "bytes": 1087958,
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/bundle/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/bundle/wake/wake-embedding.onnx",
+      "bytes": 1326578,
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/bundle/wake/wake-hey-jarvis.onnx",
+      "bytes": 1271370,
+      "sha256": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-final-refinement-v1/bundle/wake/wake-melspectrogram.onnx",
+      "bytes": 1087958,
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-official-vcm-benchmark-v1/20261016-recorded-01/full/package/models/default/model.onnx",
+      "bytes": 3173089,
+      "sha256": "3dea2e25dd431c0b085033f04e0b3f16181016ed42c41a1b84ff6acd43d2ac7e",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-official-vcm-benchmark-v1/20261016-recorded-01/full/package/models/default/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-official-vcm-benchmark-v1/20261016-recorded-01/full/package/models/default/wake/wake-embedding.onnx",
+      "bytes": 1326578,
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-official-vcm-benchmark-v1/20261016-recorded-01/full/package/models/default/wake/wake-hey-jarvis.onnx",
+      "bytes": 1271370,
+      "sha256": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-official-vcm-benchmark-v1/20261016-recorded-01/full/package/models/default/wake/wake-melspectrogram.onnx",
+      "bytes": 1087958,
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-official-vcm-benchmark-v1/20261016-recorded-01/compact/package/models/default/model.onnx",
+      "bytes": 3864875,
+      "sha256": "fc87c98c242ccb6f37ed9fcd84bad3869b8c90eaae6267fdab2a1a5af2737f6d",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-official-vcm-benchmark-v1/20261016-recorded-01/compact/package/models/default/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-official-vcm-benchmark-v1/20261016-recorded-01/compact/package/models/default/wake/wake-embedding.onnx",
+      "bytes": 1326578,
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-official-vcm-benchmark-v1/20261016-recorded-01/compact/package/models/default/wake/wake-hey-jarvis.onnx",
+      "bytes": 1271370,
+      "sha256": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-official-vcm-benchmark-v1/20261016-recorded-01/compact/package/models/default/wake/wake-melspectrogram.onnx",
+      "bytes": 1087958,
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-pipeline-repair-v1/saved-epoch28/bundle/model.onnx",
+      "bytes": 3864875,
+      "sha256": "fc87c98c242ccb6f37ed9fcd84bad3869b8c90eaae6267fdab2a1a5af2737f6d",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-pipeline-repair-v1/saved-epoch28/bundle/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-pipeline-repair-v1/saved-epoch28/bundle/wake/wake-embedding.onnx",
+      "bytes": 1326578,
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-pipeline-repair-v1/saved-epoch28/bundle/wake/wake-hey-jarvis.onnx",
+      "bytes": 1271370,
+      "sha256": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-pipeline-repair-v1/saved-epoch28/bundle/wake/wake-melspectrogram.onnx",
+      "bytes": 1087958,
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-pipeline-repair-v1/pi-extracted/models/default/model.onnx",
+      "bytes": 3864875,
+      "sha256": "fc87c98c242ccb6f37ed9fcd84bad3869b8c90eaae6267fdab2a1a5af2737f6d",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-pipeline-repair-v1/pi-extracted/models/default/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-pipeline-repair-v1/pi-extracted/models/default/wake/wake-embedding.onnx",
+      "bytes": 1326578,
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-pipeline-repair-v1/pi-extracted/models/default/wake/wake-hey-jarvis.onnx",
+      "bytes": 1271370,
+      "sha256": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/speaker-pipeline-repair-v1/pi-extracted/models/default/wake/wake-melspectrogram.onnx",
+      "bytes": 1087958,
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/compact/best.pt",
+      "bytes": 3910894,
+      "sha256": "f1fb788569618351d63db80c316ba035fbd8221578f4b94827d22fa2dda32ef4",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/wake-v1/export/iris.ncnn.bin",
+      "bytes": 323904,
+      "sha256": "fcf2975de95efa6bd2283c029028e009ab49870b4f15ab334cda76e95ffc03b0",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/wake-v1/export/iris.onnx",
+      "bytes": 330103,
+      "sha256": "4cc32fcb2cf20e7bf1310dcbe1d4f4ad0a9ad99d35575d0e31e3c5f5a4db95ac",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/wake-v1/export/iris.pnnx.bin",
+      "bytes": 328762,
+      "sha256": "df49d8b6968967246288f7ff673efdee475fb1fcbaa14739e38260dd28445f29",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/wake-v1/export/iris.pnnx.onnx",
+      "bytes": 329423,
+      "sha256": "97d40361297f2f2a354c8b992b0ed6c890cf98fdfd57ac41e9d809f55088d7ce",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/wake-v1/export/iris.pt",
+      "bytes": 400250,
+      "sha256": "240969e6f8e6cb18a71f2f1d64fd0663c038cabbd69018f07f282f7c60489978",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/wake-v1/export-balanced-v2/iris.ncnn.bin",
+      "bytes": 323904,
+      "sha256": "f9f1d29f4286f87c0a4958211b32c059f35541bfcdd5975df706b8accf5ce561",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/wake-v1/export-balanced-v2/iris.onnx",
+      "bytes": 330103,
+      "sha256": "8768a1105f229e5ec8bdb972ab3755e93bf8d1e15e945ae3624ee214486b9412",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/wake-v1/export-balanced-v2/iris.pnnx.bin",
+      "bytes": 328762,
+      "sha256": "ece08dd8de726b1ebaa87d2cc7100825a8b0ef9824575c67bfae34ff99ed8099",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/wake-v1/export-balanced-v2/iris.pnnx.onnx",
+      "bytes": 329423,
+      "sha256": "de4c8c1afd94f1941bca3978c237558e4f7d5b198bcace59e17a40c3ecfd49a6",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/wake-v1/export-balanced-v2/iris.pt",
+      "bytes": 400250,
+      "sha256": "a37ccf008ea73577f45403e56d7281d0e4aa51e2d493b57cbe52f8e6b1ba9978",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/wake-v1/training/best.pt",
+      "bytes": 351771,
+      "sha256": "3452b5300f82cd853ac61e6b9efe3fad9bc659b3ae3452987c125ea319e1273d",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/wake-v1/training-balanced-v2/best.pt",
+      "bytes": 351771,
+      "sha256": "e4455a3f5f1463f0067de3a90b346780aeeb831496db57c8640b8f22289702b6",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/longer-v2-20261017/compact/best.pt",
+      "bytes": 3910894,
+      "sha256": "8a8b18871ec15f1d3c1986c51c9a2aa495ad122ff1c1c573bc3ae8442bd16a89",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/longer-v2-20261017/full/best.pt",
+      "bytes": 8504430,
+      "sha256": "f907d806978b0d4d3b50865966d962d26ff9f9fd42bb7240ee9824da797d0cce",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/longer-v2-20261017/full/export/model.onnx",
+      "bytes": 8566683,
+      "sha256": "16c65d541a2e7fe5d4bf0c8dc247af013dd86037b10f2ed07a754e165b53f6fe",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/longer-v2-20261017/full/export/ncnn/model.ncnn.bin",
+      "bytes": 8473368,
+      "sha256": "152771959f6a5f91b6c81a77f11bc5a2221eac9055e00280ae370106176920a1",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/longer-v2-20261017/full/export/ncnn/model.pnnx.bin",
+      "bytes": 8495418,
+      "sha256": "569c91145c904a479788cdcb7d610edee16f92a55e874680a6316c6f8138d17f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/longer-v2-20261017/full/export/ncnn/model.pnnx.onnx",
+      "bytes": 8495043,
+      "sha256": "ab2f9c3299b2d85b0a1465502e36d38119ff3d2f9334ad7d676338addb779199",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/longer-v2-20261017/full/export/ncnn/model.pt",
+      "bytes": 12218661,
+      "sha256": "58dc4beecc0eb50216bd4bf734d36a1fd70ab3ab7184bc506cc395e6a0329753",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/longer-v2-20261017/compact/export/model.onnx",
+      "bytes": 3973147,
+      "sha256": "452342295dd4df9fdff6bc55492db015584d5fb843618369b509fcfef28c5e73",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/longer-v2-20261017/compact/export/ncnn/model.ncnn.bin",
+      "bytes": 3879960,
+      "sha256": "eedd7f46478f301ab500a68a160bf51fbfa239174862f330167d120b3be6315b",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/longer-v2-20261017/compact/export/ncnn/model.pnnx.bin",
+      "bytes": 3902010,
+      "sha256": "7a4601b20e9635cf3215b5e9b48aab71a6434716c2970e5ded55753b6389b511",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/longer-v2-20261017/compact/export/ncnn/model.pnnx.onnx",
+      "bytes": 3901635,
+      "sha256": "25a29ff0b61fd2ffac564df8fa135ba28786745d75e8f60794facc4bc25c8b6e",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/longer-v2-20261017/compact/export/ncnn/model.pt",
+      "bytes": 5652837,
+      "sha256": "e625c64120b1f4f01f831f9a2f6492bc9482da116c7f104681dffd8249cc1de2",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/complete-20261017/compact/best.pt",
+      "bytes": 3910894,
+      "sha256": "1af9a570fdb5517049e071a0c95bc40f06554078619a727f88aacc1ab2490011",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/complete-20261017/full/best.pt",
+      "bytes": 8504430,
+      "sha256": "3a1cbdb423860571b9180a6925f7a23b8f090a0273d39c93357651bbc07050fa",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/complete-20261017/full/export/model.onnx",
+      "bytes": 8566683,
+      "sha256": "9a6e9a9a0410f2152f0e4354e0d577c998169088ca5b1c05cd62fc37f006c8c3",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/complete-20261017/compact/export/model.onnx",
+      "bytes": 3973147,
+      "sha256": "7ecaf5c029c2dbd40f9420cb2b2ade37442d802fa8e772443519bb15123e8b8f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v1/runs/complete-20261017/compact/export-002/model.onnx",
+      "bytes": 3973147,
+      "sha256": "7ecaf5c029c2dbd40f9420cb2b2ade37442d802fa8e772443519bb15123e8b8f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/runs/augmented-20261017/compact/best.pt",
+      "bytes": 3910894,
+      "sha256": "32407d9540367bd84f4052c06dc4e5db73a79aef602614766cecfa4e74fe965e",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/runs/augmented-20261017/full/best.pt",
+      "bytes": 8504430,
+      "sha256": "4721c60525f90f9a501ea3328b5e82bde48e0634a83a7c0a6c7003b12cfe998f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/runs/augmented-20261017/full/export/model.onnx",
+      "bytes": 8566683,
+      "sha256": "53e285a078526237ee80fbcb0d92f18aeabdd1b18ce26f84961b32fda377b4d0",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/runs/augmented-20261017/full/export/ncnn/model.ncnn.bin",
+      "bytes": 8473368,
+      "sha256": "d42e31b7ffab2ac412e4fe48174fa461c08ced55afca3c1c74465286f89192be",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/runs/augmented-20261017/full/export/ncnn/model.pnnx.bin",
+      "bytes": 8495418,
+      "sha256": "6972e373f3c14913e5c254c58e23489069a6d3fa1dc8d2a8d5424c6b11e197f3",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/runs/augmented-20261017/full/export/ncnn/model.pnnx.onnx",
+      "bytes": 8495043,
+      "sha256": "d2d56b75367c80bef397f97c7c1905546040438d5087c93b188ca36bcca0d881",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/runs/augmented-20261017/full/export/ncnn/model.pt",
+      "bytes": 12218597,
+      "sha256": "f438dc1c4c7edb2d53c61892b6289eb098f6957e4ce8ef15f8dc41eb5ec7d219",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/runs/augmented-20261017/compact/export/model.onnx",
+      "bytes": 3973147,
+      "sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/runs/augmented-20261017/compact/export/ncnn/model.ncnn.bin",
+      "bytes": 3879960,
+      "sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/runs/augmented-20261017/compact/export/ncnn/model.pnnx.bin",
+      "bytes": 3902010,
+      "sha256": "663ea5fa63cc5c2ae2cb5c1ce1b5d5b873e93d5531dce1c79f97b351fde811e1",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/runs/augmented-20261017/compact/export/ncnn/model.pnnx.onnx",
+      "bytes": 3901635,
+      "sha256": "f79d39c55e7fe8a67603e5ac1d0403a468454693ed8e9801743d2c73b7f95493",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/runs/augmented-20261017/compact/export/ncnn/model.pt",
+      "bytes": 5652837,
+      "sha256": "f5afc43ca03472f6446b275b671bb5d9343b1be33e49e8d61820586945be1d20",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-03/full/models/default/model.onnx",
+      "bytes": 8566683,
+      "sha256": "53e285a078526237ee80fbcb0d92f18aeabdd1b18ce26f84961b32fda377b4d0",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-03/full/models/default/ncnn/model.ncnn.bin",
+      "bytes": 8473368,
+      "sha256": "d42e31b7ffab2ac412e4fe48174fa461c08ced55afca3c1c74465286f89192be",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-03/full/models/default/wake/iris.ncnn.bin",
+      "bytes": 323904,
+      "sha256": "fcf2975de95efa6bd2283c029028e009ab49870b4f15ab334cda76e95ffc03b0",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-03/full/models/default/wake/iris.onnx",
+      "bytes": 330103,
+      "sha256": "4cc32fcb2cf20e7bf1310dcbe1d4f4ad0a9ad99d35575d0e31e3c5f5a4db95ac",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-03/full/models/default/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-03/compact/models/default/model.onnx",
+      "bytes": 3973147,
+      "sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-03/compact/models/default/ncnn/model.ncnn.bin",
+      "bytes": 3879960,
+      "sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-03/compact/models/default/wake/iris.ncnn.bin",
+      "bytes": 323904,
+      "sha256": "fcf2975de95efa6bd2283c029028e009ab49870b4f15ab334cda76e95ffc03b0",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-03/compact/models/default/wake/iris.onnx",
+      "bytes": 330103,
+      "sha256": "4cc32fcb2cf20e7bf1310dcbe1d4f4ad0a9ad99d35575d0e31e3c5f5a4db95ac",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-03/compact/models/default/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-02/compact/models/default/model.onnx",
+      "bytes": 3973147,
+      "sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-02/compact/models/default/ncnn/model.ncnn.bin",
+      "bytes": 3879960,
+      "sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-02/compact/models/default/wake/iris.ncnn.bin",
+      "bytes": 323904,
+      "sha256": "fcf2975de95efa6bd2283c029028e009ab49870b4f15ab334cda76e95ffc03b0",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-02/compact/models/default/wake/iris.onnx",
+      "bytes": 330103,
+      "sha256": "4cc32fcb2cf20e7bf1310dcbe1d4f4ad0a9ad99d35575d0e31e3c5f5a4db95ac",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-02/compact/models/default/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-01/compact/models/default/model.onnx",
+      "bytes": 3973147,
+      "sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-01/compact/models/default/ncnn/model.ncnn.bin",
+      "bytes": 3879960,
+      "sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-01/compact/models/default/wake/iris.ncnn.bin",
+      "bytes": 323904,
+      "sha256": "fcf2975de95efa6bd2283c029028e009ab49870b4f15ab334cda76e95ffc03b0",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-01/compact/models/default/wake/iris.onnx",
+      "bytes": 330103,
+      "sha256": "4cc32fcb2cf20e7bf1310dcbe1d4f4ad0a9ad99d35575d0e31e3c5f5a4db95ac",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v2/delivery-verification-01/compact/models/default/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/runs/policy-20261017/compact/best.pt",
+      "bytes": 3910894,
+      "sha256": "32407d9540367bd84f4052c06dc4e5db73a79aef602614766cecfa4e74fe965e",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/runs/policy-20261017/full/best.pt",
+      "bytes": 8504430,
+      "sha256": "4721c60525f90f9a501ea3328b5e82bde48e0634a83a7c0a6c7003b12cfe998f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/runs/policy-20261017/full/export/model.onnx",
+      "bytes": 8566683,
+      "sha256": "53e285a078526237ee80fbcb0d92f18aeabdd1b18ce26f84961b32fda377b4d0",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/runs/policy-20261017/full/export/ncnn/model.ncnn.bin",
+      "bytes": 8473368,
+      "sha256": "d42e31b7ffab2ac412e4fe48174fa461c08ced55afca3c1c74465286f89192be",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/runs/policy-20261017/compact/export/model.onnx",
+      "bytes": 3973147,
+      "sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/runs/policy-20261017/compact/export/ncnn/model.ncnn.bin",
+      "bytes": 3879960,
+      "sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-02/full/models/default/model.onnx",
+      "bytes": 8566683,
+      "sha256": "53e285a078526237ee80fbcb0d92f18aeabdd1b18ce26f84961b32fda377b4d0",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-02/full/models/default/ncnn/model.ncnn.bin",
+      "bytes": 8473368,
+      "sha256": "d42e31b7ffab2ac412e4fe48174fa461c08ced55afca3c1c74465286f89192be",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-02/full/models/default/wake/iris.ncnn.bin",
+      "bytes": 323904,
+      "sha256": "fcf2975de95efa6bd2283c029028e009ab49870b4f15ab334cda76e95ffc03b0",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-02/full/models/default/wake/iris.onnx",
+      "bytes": 330103,
+      "sha256": "4cc32fcb2cf20e7bf1310dcbe1d4f4ad0a9ad99d35575d0e31e3c5f5a4db95ac",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-02/full/models/default/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-02/compact/models/default/model.onnx",
+      "bytes": 3973147,
+      "sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-02/compact/models/default/ncnn/model.ncnn.bin",
+      "bytes": 3879960,
+      "sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-02/compact/models/default/wake/iris.ncnn.bin",
+      "bytes": 323904,
+      "sha256": "fcf2975de95efa6bd2283c029028e009ab49870b4f15ab334cda76e95ffc03b0",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-02/compact/models/default/wake/iris.onnx",
+      "bytes": 330103,
+      "sha256": "4cc32fcb2cf20e7bf1310dcbe1d4f4ad0a9ad99d35575d0e31e3c5f5a4db95ac",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-02/compact/models/default/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-01/full/models/default/model.onnx",
+      "bytes": 8566683,
+      "sha256": "53e285a078526237ee80fbcb0d92f18aeabdd1b18ce26f84961b32fda377b4d0",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-01/full/models/default/ncnn/model.ncnn.bin",
+      "bytes": 8473368,
+      "sha256": "d42e31b7ffab2ac412e4fe48174fa461c08ced55afca3c1c74465286f89192be",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-01/full/models/default/wake/iris.ncnn.bin",
+      "bytes": 323904,
+      "sha256": "fcf2975de95efa6bd2283c029028e009ab49870b4f15ab334cda76e95ffc03b0",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-01/full/models/default/wake/iris.onnx",
+      "bytes": 330103,
+      "sha256": "4cc32fcb2cf20e7bf1310dcbe1d4f4ad0a9ad99d35575d0e31e3c5f5a4db95ac",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-01/full/models/default/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-01/compact/models/default/model.onnx",
+      "bytes": 3973147,
+      "sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-01/compact/models/default/ncnn/model.ncnn.bin",
+      "bytes": 3879960,
+      "sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-01/compact/models/default/wake/iris.ncnn.bin",
+      "bytes": 323904,
+      "sha256": "fcf2975de95efa6bd2283c029028e009ab49870b4f15ab334cda76e95ffc03b0",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-01/compact/models/default/wake/iris.onnx",
+      "bytes": 330103,
+      "sha256": "4cc32fcb2cf20e7bf1310dcbe1d4f4ad0a9ad99d35575d0e31e3c5f5a4db95ac",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    },
+    {
+      "path": ".cache/vcm-mvp-hey-iris-v3/delivery-verification-01/compact/models/default/wake/silero-vad.onnx",
+      "bytes": 2327524,
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "unchanged_during_audit": true,
+      "recovery": "existing shared cache at original relative path; original worktrees/cache symlink preserved",
+      "archive_protocol_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "change": "Move existing Python-tests stage after UI install/test/check/build; strengthen existing stage-order test with initially absent UI output directories.",
+  "full_fresh_retry_status": "pending_owner_preparation_restore",
+  "initial_fresh_failure": {
+    "failed": 1,
+    "failing_test": "test_profile_inventory_no_ui_or_benchmark_leaks",
+    "log": ".cache/iris-release-v1/ordering-fix/fresh-python-tests-red.log",
+    "log_sha256": "72ec5137d2eae40532d9e683e92f5bfd19fed4a09e3aaf40a297b45929fb068a",
+    "passed": 166,
+    "stage": "python-tests",
+    "workflow": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/experiments/iris-release-v1/reproduction-run-fresh-configfix.json",
+    "workflow_sha256": "748c4c1cafe6764ef2f8be81bfefc864bd0988ee466ce6c3479d08d12e98e004"
+  },
+  "isolated_regression_before_fix": {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "scripts/test/test_iris_release.py::test_reports_render_after_acoustics_and_software_before_final_freeze",
+      "-q"
+    ],
+    "exit_code": 1,
+    "failure": "Compile SpeakerUI before Python package inventory tests",
+    "ui_outputs_initially_absent": true
+  },
+  "issue": "Python package inventory consumes UI dist/dist-server, absent on a source-only checkout; the workflow previously ran Python tests before UI build.",
+  "model_data_policy_changes": false,
+  "preservation": "experiments/iris-release-v1/reproduction-ordering-fix-preservation.json",
+  "preservation_sha256": "6e949dbc8246557a1bb172ca2f007b1f3a408ff2d877b3e7a970b79ac3e3dc2b",
+  "production_diff": "--- before/scripts/iris_release.py\n+++ after/scripts/iris_release.py\n@@ -1250,7 +1250,6 @@\n         derived = {'MODEL_CARD.md', 'docs/EXPERIMENT-iris-release-v1.md', 'EXPERIMENTS.md',\n                    HERE + '/software-verification.json'}\n         immutable = {name: expected for name, expected in before_software['bindings'].items() if name not in derived}\n-        stage('python-tests', [python, '-m', 'pytest', *(test_modules or DEFAULT_TESTS), '-q'])\n         ui = root / 'SpeakerUI'\n         ui_environment = None\n         if ui_command is None:\n@@ -1265,6 +1264,7 @@\n         for name, args in (('install', ('install', '--frozen-lockfile')), ('test', ('test',)),\n                            ('check', ('check',)), ('build', ('build',))):\n             stage('ui-' + name, [*ui_command, *args], cwd=ui, environment=ui_environment)\n+        stage('python-tests', [python, '-m', 'pytest', *(test_modules or DEFAULT_TESTS), '-q'])\n         stage('verify-after-build', action=lambda: verify_bindings(root, immutable))\n         software = {'schema_version': 1, 'passed': True,\n                     'checks': ['python-tests', 'ui-install', 'ui-test', 'ui-check', 'ui-build'],\n",
+  "schema_version": 1,
+  "sources": [
+    {
+      "after_sha256": "af5f2ec37eda67f6d5da772611e94a21c6d96c2498f3e4607af33b530c439467",
+      "before_sha256": "ed6274d3ad336f29862608b7e1131de4e82b9119e0e4d6b0bc558b253c68b52c",
+      "path": "scripts/iris_release.py"
+    },
+    {
+      "after_sha256": "54163588fab000271cd6b9a08a002193940f12916c745c9569f030d587b6d7c2",
+      "before_sha256": "c956686ffd15de109b3374248a3117416637a6cefec9493e30cfe8dd968de7be",
+      "path": "scripts/test/test_iris_release.py"
+    }
+  ],
+  "status": "regression_verified",
+  "verification_after_fix": {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "scripts/test/test_iris_release.py",
+      "-q"
+    ],
+    "exit_code": 0,
+    "log": ".cache/iris-release-v1/ordering-fix/release-tests-green.log",
+    "log_sha256": "faa386e021a403f62b696e674c750480e28bfcfee4b58323874fd6cf3ec1fab5",
+    "passed": 47,
+    "stdout": "47 passed in 39.92s"
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "version": "example-artists-v1",
-  "entries": [
-    {"role": "artist", "id": "artist:adele", "name": "Adele"},
-    {"role": "artist", "id": "artist:queen", "name": "Queen"},
-    {"role": "artist", "id": "artist:custom-example", "name": "Qzcustom", "pronunciation": ["K", "AH", "S", "T", "AH", "M"]}
-  ]
-}

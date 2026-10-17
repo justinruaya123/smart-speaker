@@ -1,0 +1,73 @@
+{
+  "binding": {
+    "base_view_equivalence_sha256": "a5a97d7d660b837e5eff3beb3733d620adf159ded2d4de71ebca99cad72ca5b5",
+    "base_views": [
+      {
+        "path": ".cache/iris-release-v1/inputs/base-views/train.jsonl",
+        "sha256": "e5a428b4ad25e5a6bac2cfcfa8817680df266397dd20d26b04b42f7193702ad7"
+      },
+      {
+        "path": ".cache/iris-release-v1/inputs/base-views/dev.jsonl",
+        "sha256": "6b47beb8aade5bf86da67d08b78a03949dc03956754cd705c1cc82f3d9018c8b"
+      },
+      {
+        "path": ".cache/iris-release-v1/inputs/base-views/calibration.jsonl",
+        "sha256": "143bb64061e3bf0e4d453960cb6d0765490a183fa4de1f5982dfcf0ba092fed9"
+      },
+      {
+        "path": ".cache/iris-release-v1/inputs/base-views/test.jsonl",
+        "sha256": "3461a214a3566ed1d466f752de2c93b136570e461148bf497e983a9bda0a2c2d"
+      },
+      {
+        "path": ".cache/iris-release-v1/inputs/base-views/personal-test.jsonl",
+        "sha256": "c1be08c9d1a78eb99b6efcce2f95efa3528209bbbbb09a15238400cb82efa3a9"
+      }
+    ],
+    "manifest_sha256": "d22c1bf537a4f66f9eb4f2b33de7ac7c43fbff4c5f75387d228d7b47d184a884",
+    "normalization_sha256": "8ec1dfdf362c44c682575640177d8b0c8567986988cd5ceb9d515c9be58c04ce",
+    "protocol_sha256": "174daed6764e00c4026e6a3be88231823b98967f22bec5ab393a05f686181c0a",
+    "reservation_sha256": "1b7208fbb66173d72c29f6e79312386b352e7e4f6c2e64b8569b9a1c7fe52897",
+    "source_files": {
+      "pipeline.toml": "deacde78362380534d71f57221b15826e72535d828fce36e274bf686f673e97a",
+      "requirements.lock": "49b36c847131665d40078620c3149905656d85df71d4f2edb228002249c8d18a",
+      "scripts/iris_release.py": "09cae24643c831efaab42f5c0da8d7a5a778f3687bd709b8c85839dd55844315",
+      "scripts/models/iris_owner.py": "6d0a4a3be1ea77c55236ffbe3d6e34affd9ad60156ab200c8b30e1f476c50bbc",
+      "scripts/runtime/audio.py": "a1af89d6a022ccc2ba09b5b794a2b9ff63d314d3a9d04f8a2037042694b3f3dd",
+      "scripts/runtime/iris_owner.py": "af1838c143813a82671d0d1a9e5007cb449502a3fa9d44cba2d92e62fe24c474",
+      "scripts/runtime/speaker_session.py": "9aa7fcb7b88919ebf657265acc32e1f1ab3aadfa9df8c4632b65a0a2de73bde9",
+      "scripts/train/iris_owner.py": "1007fa9bd41c9f8f0093d07e50420e86c44ab0867f7931c23ca34ecc3ab8af06"
+    },
+    "synthetic_proxy_manifest_sha256": "eeb42b0310582bf75dac05ee5600f7335dbfc4b038ddabbc8e04bdd07acd7a88"
+  },
+  "changes_from_frozen_source_snapshot": {
+    "pipeline.toml": {
+      "current": "deacde78362380534d71f57221b15826e72535d828fce36e274bf686f673e97a",
+      "historical": "6ce3417cb1e779093c5413d94b50c2e071d7cd623a83a0e584fc17b396a737a9"
+    },
+    "scripts/iris_release.py": {
+      "current": "09cae24643c831efaab42f5c0da8d7a5a778f3687bd709b8c85839dd55844315",
+      "historical": null
+    },
+    "scripts/runtime/iris_owner.py": {
+      "current": "af1838c143813a82671d0d1a9e5007cb449502a3fa9d44cba2d92e62fe24c474",
+      "historical": "876475971e3912d103d811296d9a27b6eec41d4f2652afc45f0c9dd4129512d6"
+    },
+    "scripts/train/iris_owner.py": {
+      "current": "1007fa9bd41c9f8f0093d07e50420e86c44ab0867f7931c23ca34ecc3ab8af06",
+      "historical": "681f67f31323a683d796818e3fa540d12f3f39226266568133d6341224762a4f"
+    }
+  },
+  "classification": "path resolution and pre-fitting execution controls only; no acoustic data/model/frontend/loss/threshold design change",
+  "component": "owner",
+  "experiment_id": "iris-release-v1",
+  "fingerprint": "099dbe6ab45b2d07c144838cd1d9352a04dce30c97dbf0863aa1b68a34d56500",
+  "frozen_manifest_preserved": true,
+  "frozen_protocol_preserved": true,
+  "historical_installed_files_are_required_inputs": false,
+  "historical_installed_integrity": {
+    "artifacts/bundle.json": "e1f9519400058b9fc5ebadcbb68f520a61faed93ff50eb528e530748e369ec85",
+    "artifacts/manifest.json": "8c1745c07dbb5a47299c09e0eac460fdfacc174d052c06cdacbcaa8e5446c128"
+  },
+  "schema_version": 1,
+  "source_policy": "Current implementation is bound here; original protocol source hashes remain historical evidence."
+}

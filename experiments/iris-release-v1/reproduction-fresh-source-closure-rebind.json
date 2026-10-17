@@ -1,0 +1,52 @@
+{
+  "all_published_assets_and_pins_unchanged": true,
+  "changed_files": [
+    {
+      "after_sha256": "ba086fc12638dbf209b17e7d9b495e2f7f065ba2a68ebcfbe9f35746403b339a",
+      "before_sha256": null,
+      "path": "benchmark.py"
+    },
+    {
+      "after_sha256": "7a6e10e887f5daeb3d3a4788baded03d381b3e18818b325c35026f944cd63bb4",
+      "before_sha256": "284a532cbebf778d22abc6bca416a50fce78a8a949d3189fe4e442d34b5a182c",
+      "path": "docs/EXPERIMENT-iris-release-v1.md"
+    },
+    {
+      "after_sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945",
+      "before_sha256": "3cbd4a0f36777218bed5944d1529f80b03479a2382861be7891129c46284888d",
+      "path": "experiments/iris-release-v1/reproduction-inputs.json"
+    },
+    {
+      "after_sha256": "bb0ad537e1d285d200b8121bb639453d40f7666537837f29ba0caa3ec2874475",
+      "before_sha256": "dea28b42e32838cb2a443b4195b6f0c6c2d8e4484522d9ae4c995d088b1e1243",
+      "path": "experiments/iris-release-v1/reproduction-release.json"
+    },
+    {
+      "after_sha256": "b65240b86e1ee6eee86a3865bdba496c02d3208244445b509e6752f9cb150296",
+      "before_sha256": null,
+      "path": "experiments/iris-release-v1/reproduction-source-closure-fix.json"
+    },
+    {
+      "after_sha256": "6ee97c4fe3b459b6e195701e93cb4824ce9a8b9163d4e8afcca3c0655b735f8c",
+      "before_sha256": "ab067c3750b55de7421c27fe1cafb385845f31e6d41362cf0c7607d602387799",
+      "path": "scripts/iris_publish.py"
+    },
+    {
+      "after_sha256": "8df1fd04efdf8090c76f6b28c56afaffcef6b3c2422ca821b63e9b3bf76aad5d",
+      "before_sha256": "a919db95db46a5fd1b16f78d963c5d4fa73aef5d857a840f6eec4f4b0cc79170",
+      "path": "scripts/iris_report.py"
+    },
+    {
+      "after_sha256": "f638265186b72687274bea1c2959aafa308c3e408f58977f06ac625ef5d1970c",
+      "before_sha256": "54163588fab000271cd6b9a08a002193940f12916c745c9569f030d587b6d7c2",
+      "path": "scripts/test/test_iris_release.py"
+    }
+  ],
+  "copied_files": 315,
+  "input_receipt_sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945",
+  "release_sha256": "bb0ad537e1d285d200b8121bb639453d40f7666537837f29ba0caa3ec2874475",
+  "schema_version": 1,
+  "status": "verified",
+  "target": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final",
+  "unlisted_owner_preparation_evidence_preserved": true
+}

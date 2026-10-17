@@ -18,6 +18,57 @@ import soundfile as sf
 MAX_WAV_BYTES=4*1024*1024
 
 
+class LatestPreview:
+    """One in-flight computation and one replaceable pending prefix."""
+    def __init__(self,infer,emit):
+        self.infer=infer;self.deliver=emit;self.pending=queue.Queue(maxsize=1)
+        self.lock=threading.RLock();self.generation=0;self.closed=False
+        self.last_started=self.last_delivered=-float('inf')
+        threading.Thread(target=self._run,daemon=True).start()
+
+    def submit(self,pcm,utterance_id):
+        with self.lock:
+            if self.closed:return
+            job=(self.generation,np.asarray(pcm,dtype='float32').copy(),utterance_id)
+            try:self.pending.put_nowait(job)
+            except queue.Full:
+                try:self.pending.get_nowait();self.pending.task_done()
+                except queue.Empty:pass
+                self.pending.put_nowait(job)
+
+    def clear(self):
+        with self.lock:
+            self.generation+=1
+            try:self.pending.get_nowait();self.pending.task_done()
+            except queue.Empty:pass
+
+    def close(self):
+        self.clear()
+        with self.lock:self.closed=True
+
+    def _run(self):
+        while True:
+            try:token,pcm,utterance=self.pending.get(timeout=.5)
+            except queue.Empty:
+                if self.closed:return
+                continue
+            try:
+                delay=.5-(time.monotonic()-self.last_started)
+                if delay>0:time.sleep(delay)
+                self.last_started=time.monotonic()
+                value=self.infer(pcm)
+                delay=.5-(time.monotonic()-self.last_delivered)
+                if delay>0:time.sleep(delay)
+                with self.lock:
+                    if token==self.generation and not self.closed:
+                        self.deliver({**value,'event':'tentative','utterance_id':utterance,'is_final':False})
+                        self.last_delivered=time.monotonic()
+            except Exception:
+                # A preview never changes the authoritative final path.
+                pass
+            finally:self.pending.task_done()
+
+
 def decode_wav(data, *, wake=False):
     if not isinstance(data,bytes) or not 44<=len(data)<=MAX_WAV_BYTES or data[:4]!=b'RIFF' or data[8:12]!=b'WAVE':
         raise ValueError('Use a WAV file, maximum 4 MiB')
@@ -30,29 +81,67 @@ def decode_wav(data, *, wake=False):
 
 
 class AudioService:
-    def __init__(self,runtime,emit,settings=None):
+    def __init__(self,runtime,emit,settings=None,*,owner=None,profile=None):
         self.runtime=runtime;self.deliver=emit;self.sequence=0;self.session=uuid.uuid4().hex
         self.state='awaiting_microphone';self.stream=None;self.gate=None;self.offset=0;self.source='microphone'
         self.last_signal=time.monotonic();self.warned_silent=False
         self.settings=settings
+        self.profile=profile or getattr(runtime,'profile','benchmark-compatible')
+        self.owner=owner;self.owner_session=None;self.utterance=uuid.uuid4().hex
+        self.inference_lock=threading.Lock();self.emission_lock=threading.RLock();self.previews=None
+        if self.profile=='owner-protected':
+            if owner is None:raise ValueError('Owner-protected profile requires the speaker backend')
+            from scripts.runtime.speaker_session import SpeakerSession
+            self.owner_session=SpeakerSession(owner.policy)
 
     def emit(self,value):
-        self.sequence+=1
-        if value.get('event')=='command' and self.settings:
-            if getattr(self.runtime,'decision_authority',None)=='atomic_command':
+        with self.emission_lock:
+            self.sequence+=1
+            if value.get('event')=='command' and self.settings:
                 value={**value,'application':{'mode':self.settings['inference']['mode'],**value['output']}}
-            else:
-                from scripts.runtime.speaker_confidence import application_decision
-                value={**value,'application':application_decision(value,self.settings['inference'])}
-        self.deliver({**value,'session_id':self.session,'sequence':self.sequence,'source':self.source,
-                      'actions_enabled':bool(self.settings and self.settings['actions']['enabled'] and self.source=='microphone')})
+            self.deliver({**value,'session_id':self.session,'sequence':self.sequence,'source':self.source,
+                'profile':self.profile,'owner_gating_enabled':self.owner_session is not None,
+                'ownership_experimental':self.owner_session is not None,
+                'actions_enabled':bool(self.settings and self.settings['actions']['enabled'] and
+                    self.source=='microphone' and self.profile=='owner-protected')})
 
     def set_state(self,state,**extra):
         self.state=state;self.emit({'event':'state','state':state,**extra})
 
     def recognize(self,pcm):
+        if self.previews:self.previews.clear()
         self.set_state('processing')
-        return self.runtime.recognize(pcm)
+        with self.inference_lock:event=self.runtime.recognize(pcm)
+        if self.owner_session:
+            from scripts.runtime.speaker_session import gate_application
+            verdict=self.owner_session.finish(self.utterance,self.owner.evidence(pcm),
+                now=time.monotonic(),windows=self.owner.continuity(pcm))
+            event={**event,'output':gate_application(event['output'],verdict),
+                'owner_result':{'accepted':verdict.accepted,'reason':verdict.reason}}
+        return event
+
+    def arm_owner(self,pcm,*,reference=None):
+        if self.previews:self.previews.clear()
+        self.utterance=uuid.uuid4().hex
+        if self.owner_session:
+            verdict=self.owner_session.arm(self.utterance,reference or self.owner.evidence(pcm),now=time.monotonic())
+            self.emit({'event':'ownership','accepted':verdict.accepted,'reason':verdict.reason})
+
+    def reset_command(self):
+        if self.previews:self.previews.clear()
+        if self.owner_session:self.owner_session.reset()
+
+    def preview(self,pcm):
+        if self.source!='microphone':return
+        if self.previews is None:
+            def infer(prefix):
+                with self.inference_lock:event=self.runtime.recognize(prefix)
+                diagnostic=event.get('diagnostic_candidate') or {}
+                return {'candidate':diagnostic.get('candidate'),
+                    'score':diagnostic.get('class_probability'),
+                    'confidence_interpretation':'model score; tentative, not executed'}
+            self.previews=LatestPreview(infer,self.emit)
+        self.previews.submit(pcm,self.utterance)
 
     def new_gate(self):
         # A thin proxy adds actual processing state without changing the frozen recognizer.
@@ -60,23 +149,33 @@ class AudioService:
         class Observed:
             root=service.runtime.root
             def recognize(self,pcm):return service.recognize(pcm)
-        if hasattr(self.runtime,'make_gate'):return self.runtime.make_gate(Observed())
-        from scripts.runtime.pcv_final_runtime import make_gate
-        return make_gate(Observed())
+            def on_wake(self,pcm):service.arm_owner(pcm)
+            def on_reset(self):service.reset_command()
+            def preview(self,pcm):service.preview(pcm)
+        return self.runtime.make_gate(Observed())
 
     def forward(self,event):
         if event.get('status')=='detected':self.set_state('wake_detected')
         elif event.get('status')=='command_ready':self.set_state('command_ready')
         if 'output' in event:
-            self.emit({**event,'event':'command','utterance_id':uuid.uuid4().hex})
+            if self.previews:self.previews.clear()
+            self.emit({**event,'event':'command','utterance_id':self.utterance})
+            self.utterance=uuid.uuid4().hex
             self.set_state('wake_listening' if self.stream else 'awaiting_microphone')
         else:
             self.emit(event)
-            if event.get('reason'):self.set_state('wake_listening' if self.stream else 'awaiting_microphone',reason=event['reason'])
+            if event.get('reason'):
+                self.reset_command()
+                self.set_state('wake_listening' if self.stream else 'awaiting_microphone',reason=event['reason'])
 
     def wav(self,data,*,wake=False):
         pcm=decode_wav(data,wake=wake)
-        self.stop(announce=False);self.source='wav';commands=0;wake_detected=False
+        self.stop(announce=False);self.source='wav';self.utterance=uuid.uuid4().hex;commands=0;wake_detected=False
+        saved_profile,saved_owner=self.profile,self.owner_session
+        if not wake:
+            # A file operation is explicitly a command-only preview. Its events
+            # declare the benchmark profile and can never authorize actions.
+            self.profile='benchmark-compatible';self.owner_session=None
         try:
             if wake:
                 gate=self.new_gate();self.set_state('wake_listening')
@@ -89,6 +188,7 @@ class AudioService:
             return {'commands':commands,'wake_detected':wake_detected,'audio_seconds':len(pcm)/16000}
         finally:
             if self.state!='awaiting_microphone':self.set_state('awaiting_microphone')
+            self.profile,self.owner_session=saved_profile,saved_owner
 
     def devices(self):
         try:
@@ -129,14 +229,16 @@ class AudioService:
             try:stream.abort()
             finally:stream.close()
         if self.gate:self.gate.reset()
+        self.reset_command()
         if announce:self.set_state('muted')
 
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--bundle',type=Path,required=True)
     p.add_argument('--threads',type=int,default=1);p.add_argument('--diagnostic',action='store_true')
-    p.add_argument('--profile',choices=['benchmark-compatible','owner-protected'],default='benchmark-compatible')
+    p.add_argument('--profile',choices=['benchmark-compatible','owner-protected'])
     p.add_argument('--engine',choices=['ncnn','onnxruntime'])
+    p.add_argument('--check',action='store_true',help='Load and verify command, wake, VAD and owner assets; no capture')
     p.add_argument('--wav',type=Path);p.add_argument('--wake',action='store_true');p.add_argument('--list-mics',action='store_true')
     args=p.parse_args()
     benchmark_log = None
@@ -148,24 +250,29 @@ def main():
         print(json.dumps(event,allow_nan=False),flush=True)
     from scripts.runtime.speaker_config import resolve_config
     settings,_=resolve_config(Path(os.environ.get('SMART_SPEAKER_ROOT',Path.cwd())),overrides={'engine':args.engine})
+    profile=args.profile or settings['inference'].get('profile','benchmark-compatible')
     if args.list_mics:
         emit({'event':'devices','devices':AudioService(None,emit).devices()});return
-    if (args.bundle/'bundle.json').exists() and json.loads((args.bundle/'bundle.json').read_text()).get('format')=='mvp-static-v1':
-        from scripts.runtime.mvp_static import Runtime as DirectRuntime
-        runtime=DirectRuntime(args.bundle,threads=args.threads,engine=settings['inference']['engine'],mode=settings['inference']['mode'],profile=args.profile)
-        settings['actions']['enabled']=False
-    else:
-        if args.profile!='benchmark-compatible':raise ValueError('Owner-protected backend is not qualified')
-        from scripts.runtime.pcv_final_runtime import Runtime
-        runtime=Runtime(args.bundle,diagnostic=args.diagnostic,threads=args.threads,engine=settings['inference']['engine'])
-    service=AudioService(runtime,emit,settings)
+    from scripts.runtime.mvp_static import Runtime as DirectRuntime
+    runtime=DirectRuntime(args.bundle,threads=args.threads,engine=settings['inference']['engine'],mode=settings['inference']['mode'])
+    if profile=='benchmark-compatible':settings['actions']['enabled']=False
+    owner=None
+    if profile=='owner-protected':
+        from scripts.runtime.iris_owner import OwnerBackend
+        owner=OwnerBackend(args.bundle/'owner',threads=args.threads)
+    service=AudioService(runtime,emit,settings,owner=owner,profile=profile)
+    if args.check:
+        service.new_gate()
+        emit({'event':'checked','profile':profile,'owner_gating_enabled':owner is not None,'actions_executed':False})
+        return
     if args.list_mics:emit({'event':'devices','devices':service.devices()});return
     if args.wav:emit({'event':'done',**service.wav(args.wav.read_bytes(),wake=args.wake)});return
     service.emit({'event':'ready','engine':runtime.engine,'loaded':True,'nativeSession':True,'state':service.state,
-                  'profile':getattr(runtime,'profile','legacy-no-owner'),'owner_gating_enabled':False,
+                  'profile':profile,'owner_gating_enabled':owner is not None,
+                  'ownership_experimental':owner is not None,
                   'application_config':settings['inference'],'ui':settings['ui'],
                   'model_sha256':runtime.recipe['binding']['model_sha256'],
-                  'wake_phrase':'hey iris' if getattr(runtime,'decision_authority',None)=='atomic_command' else 'hey jarvis',
+                  'wake_phrase':'hey iris',
                   'policy_enabled':runtime.policy['enabled'] and getattr(runtime,'mode','demo')=='demo',
                   'threads':args.threads,'session_load_ms':runtime.load_ms})
     incoming=queue.Queue(maxsize=8)

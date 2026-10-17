@@ -1,0 +1,13 @@
+{
+  "all_payload_hashes_rechecked_before_fitting": true,
+  "clipped_recordings": 0,
+  "embeddings_computed": false,
+  "experiment_id": "iris-release-v1",
+  "manifest_sha256": "d22c1bf537a4f66f9eb4f2b33de7ac7c43fbff4c5f75387d228d7b47d184a884",
+  "original_human_recordings": 9429,
+  "readability_receipt": ".cache/iris-release-v1/owner/audio-readability.jsonl",
+  "readability_receipt_sha256": "f77ca85b203d9b5979de0b89ecfe48722bf2202b9e1a7cc4df1f7cf010b22ed4",
+  "readable_finite_recordings": 9621,
+  "synthetic_proxy_recordings": 192,
+  "test_features_extracted": false
+}

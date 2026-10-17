@@ -1,0 +1,91 @@
+{
+  "experiment": "iris-release-v1",
+  "inputs": {
+    "receipt": "experiments/iris-release-v1/reproduction-inputs.json",
+    "receipt_sha256": "b5e04d7bf33b8b10b94e9e732cfaf2ae0c91eb590387f094ef2e81671274c518"
+  },
+  "live_microphone_measured": false,
+  "package": {
+    "actions_enabled": true,
+    "bytes": 14115880,
+    "files": 213,
+    "model_sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+    "parameters": 969928,
+    "path": "dist/iris-release-v1/iris-final/iris-pi.zip",
+    "profile": "owner-protected",
+    "qualified": false,
+    "sha256": "ef8ca83857db5849ecc0092f58cd00038bc5fc121410ac51e0500ed9339ed092"
+  },
+  "package_verification": {
+    "bytes": 14115880,
+    "members": 214,
+    "passed": true,
+    "sha256": "ef8ca83857db5849ecc0092f58cd00038bc5fc121410ac51e0500ed9339ed092"
+  },
+  "physical_pi_measured": false,
+  "receipt": "experiments/iris-release-v1/reproduction-run-iris-final.json",
+  "release": "experiments/iris-release-v1/reproduction-release.json",
+  "release_sha256": "46d630f3dc5eb5b34a88bb1fbdbbfc4df172a06df4562c47e95829eb045f7958",
+  "run_id": "iris-final",
+  "schema_version": 1,
+  "software_verification": {
+    "checks": [
+      "python-tests",
+      "ui-install",
+      "ui-test",
+      "ui-check",
+      "ui-build"
+    ],
+    "live_microphone_measured": false,
+    "passed": true,
+    "physical_pi_measured": false,
+    "schema_version": 1,
+    "test_modules": [
+      "scripts/test/test_iris_models.py",
+      "scripts/test/test_iris_wake_models.py",
+      "scripts/test/test_iris_archive.py",
+      "scripts/test/test_iris_configuration.py",
+      "scripts/test/test_iris_session.py",
+      "scripts/test/test_iris_worker.py",
+      "scripts/test/test_iris_wake_release.py",
+      "scripts/test/test_iris_pi_benchmark.py",
+      "scripts/test/test_iris_diversity.py",
+      "scripts/test/test_iris_owner.py",
+      "scripts/test/test_iris_resources.py",
+      "scripts/test/test_iris_metrics.py",
+      "scripts/test/test_iris_release.py"
+    ]
+  },
+  "stages": [
+    {
+      "name": "verify-prepublication-bindings",
+      "status": "passed"
+    },
+    {
+      "name": "verify-input-publication",
+      "status": "passed"
+    },
+    {
+      "name": "freeze-selected-release",
+      "status": "passed"
+    },
+    {
+      "name": "package",
+      "status": "passed"
+    },
+    {
+      "name": "verify-package",
+      "status": "passed"
+    }
+  ],
+  "status": "complete",
+  "training_mode": "verified_completed_stages_and_published_input_rebind",
+  "verification_origin": {
+    "permitted_binding_change": "Pinned reproduction input receipt and its verified publication proof; newly included compact source/provenance evidence.",
+    "previously_verified_source_and_export_bindings_unchanged": true,
+    "software_receipt": "experiments/iris-release-v1/software-verification.json",
+    "software_receipt_sha256": "1f19718ed929ae6fa20615d7f786f61ddbf056c2bcb7b0052267911f676d5dbe",
+    "workflow": "experiments/iris-release-v1/reproduction-run-iris-final-prepublication.json",
+    "workflow_sha256": "15d87c3d9bfb679cb7ba596fc5c02db4b5a60d645db6081a37506e957257dd0b"
+  }
+}

@@ -1,7 +1,0 @@
-{
-  "clarification": "Pinned model card license link points to Microsoft UniSpeech; the acquisition receipt UNILM wording names the model code repository, not the license link. This does not change dataset licenses.",
-  "model_card_revision": "4c66d4806a428f2e922ccfa1a962776e232d487b",
-  "revision": "6112826ac13a4327f4c9a7afa2a505e35b763514",
-  "sha256": "74295d561f60f770a4aa7525b71c0d119ec70422e9f5c601ee3c77e1b7822c91",
-  "url": "https://raw.githubusercontent.com/microsoft/UniSpeech/6112826ac13a4327f4c9a7afa2a505e35b763514/LICENSE"
-}

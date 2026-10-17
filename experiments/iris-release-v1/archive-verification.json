@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "utc": "2026-10-17T02:23:40.908694+00:00",
+  "passed": true,
+  "archive_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a",
+  "archive_tree": "f9a037ec364ca3abe49ce9896fcc8fa7897c510d",
+  "equivalent_local_snapshot": "600be8a561d436c70d1e02f92aa44f9b693bef3f",
+  "archive_publication_receipt": "experiments/iris-release-v1/publication-archive.json",
+  "archive_manifest_sha256": "2ff3ab1ecee6278f4175563ce6adfdf86c84e153f4cc5d4c524258b5240c2eb2",
+  "verified_original_blobs_n": 1337,
+  "verified_original_bytes": 205464271,
+  "original_file_contents_removed_n": 1337,
+  "paths_absent_from_final_checkout_n": 1336,
+  "new_replacements_at_canonical_paths": [
+    {
+      "path": "docs/DATASETS.md",
+      "archived_original_sha256": "5777a5c55349219db50d7dea66ef4f37a9255ee80ae8cef65c830ad1ccf2e0a0",
+      "current_replacement_sha256": "42f708b8c2a61b730756a0eadbf0eb6cdb55c16d66571391fe8315bb54e437c2",
+      "reason": "Historical dataset-directory contents were archived, then the same canonical path was rebuilt for this release; the original remains recoverable byte-for-byte."
+    }
+  ],
+  "shared_payloads_removed": false,
+  "other_worktrees_altered": false
+}

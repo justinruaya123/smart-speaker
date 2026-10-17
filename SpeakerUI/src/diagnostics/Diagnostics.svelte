@@ -160,7 +160,8 @@
 
 <main>
   <h1>Audio diagnostics</h1>
-  <p><strong>MOCK inference:</strong> every nonempty recording returns a fixed “demo” media search. No speech recognition or integration actions occur.</p>
+  <p><strong>MOCK audio transport:</strong> every nonempty recording returns a fixed “demo” media search. This audio path does not recognize speech or execute actions. Use Iris microphone settings for native worker diagnostics.</p>
+  <p>Media search and playback below are separate manual controls for your configured providers. <a href="/">Return to Iris</a>.</p>
   <p aria-live="polite">Connection: {connection}. Capture: {phase}.</p>
   <button onclick={start} disabled={phase !== 'idle' || connection !== 'connected (mock)'}>Start microphone</button>
   <button onclick={end} disabled={phase !== 'recording'}>Stop and process</button>

@@ -1,6 +1,0 @@
-.cache/
-__pycache__/
-reports/baseline_development.json
-reports/stem_epoch_*.json
-reports/*_predictions.json
-reports/optionb_reaudit.json

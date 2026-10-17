@@ -1,0 +1,21 @@
+{
+  "experiment": "iris-release-v1",
+  "operation": "read-only original/generated audio SHA-256 verification before VCM fitting",
+  "rows": 34659,
+  "unique_audio_paths": 34659,
+  "unique_file_hashes": 34659,
+  "all_file_hashes_match": true,
+  "manifest_bindings": {
+    "train": "5476fceb6f1297cf454e649081b80fb7bd05e83eba1d81d791d1534195a8204b",
+    "dev": "2d50045f59fa10932a9bb6213a3ee4014c9ed6d4adc01b8f2a91f0859bf80fb1",
+    "calibration": "3ecaa89cdb85f5324a53241b7d62a5e891906cacd9cc8cd01fac9dd15912c2ae",
+    "test": "3461a214a3566ed1d466f752de2c93b136570e461148bf497e983a9bda0a2c2d",
+    "holdout": "c1ce15b6c401b425eee079834d4bc9d2b1baa2994d97e09e9ff31533400cad1b",
+    "personal-test": "c1be08c9d1a78eb99b6efcce2f95efa3528209bbbbb09a15238400cb82efa3a9",
+    "voice-test": "94d4b0a0bf282f571aea3bbe6098813bc5400c77607eb69dacb53300cd2224de"
+  },
+  "protocol_sha256": "26851f20cc919812ff555eaf2b02ba4c0908338a148f2371176886a786a2f47a",
+  "audit_command": ".venv/bin/python .cache/iris-release-v1/prepare_after_synthesis.py",
+  "audit_source_sha256": "25b07191d01669975b18c7ac8fbe5d754b3563fefe4e984396b31f13f9958d25",
+  "physical_pi_measured": false
+}

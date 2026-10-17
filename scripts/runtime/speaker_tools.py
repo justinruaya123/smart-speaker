@@ -22,10 +22,29 @@ def run(command, **kwargs):
 
 
 def find_uv(root):
-    # Reuse the existing official installer, but keep all tools in ignored .runtime.
-    from scripts.runtime.launcher import find_uv as existing
-    location=Path(root)/'.runtime'; location.mkdir(parents=True,exist_ok=True)
-    return existing(location)
+    """Use installed uv, or bootstrap the official pinned tool beside the release."""
+    available = shutil.which('uv')
+    if available:
+        return available
+    root = Path(root)
+    directory = root / '.runtime' / 'tools' / 'uv'
+    executable = directory / ('uv.exe' if os.name == 'nt' else 'uv')
+    if executable.is_file():
+        return str(executable)
+    suffix = 'ps1' if os.name == 'nt' else 'sh'
+    environment = os.environ.copy()
+    environment['UV_UNMANAGED_INSTALL'] = str(directory)
+    environment['UV_NO_MODIFY_PATH'] = '1'
+    print('Installing uv 0.12.5 locally (first setup only)...', flush=True)
+    with tempfile.TemporaryDirectory(prefix='uv-bootstrap-', dir=root) as temporary:
+        installer = Path(temporary) / ('install.' + suffix)
+        urllib.request.urlretrieve('https://astral.sh/uv/0.12.5/install.' + suffix, installer)
+        command = (['powershell.exe', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', str(installer)]
+                   if os.name == 'nt' else ['sh', str(installer)])
+        subprocess.run(command, check=True, env=environment, cwd=root)
+    if not executable.is_file():
+        raise RuntimeError('uv installation did not produce ' + str(executable))
+    return str(executable)
 
 
 def python_path(root):

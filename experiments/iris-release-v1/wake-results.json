@@ -1,0 +1,19 @@
+{
+  "selected": "expanded",
+  "test": {
+    "positive_n": 32,
+    "detected": 29,
+    "missed": 3,
+    "duplicate_detections": 0,
+    "negative_n": 660,
+    "negative_seconds": 1160.808125,
+    "false_wakes": 0,
+    "recall": 0.90625,
+    "false_wakes_per_hour": 0.0,
+    "negative_exposure": "separate clips; resets and synthetic silence padding excluded from exposure; not household continuous audio"
+  },
+  "original_human_positive_n": 0,
+  "physical_pi_measured": false,
+  "qualified": false,
+  "zero_event_false_wakes_per_hour_upper_95": 9.290627755378923
+}

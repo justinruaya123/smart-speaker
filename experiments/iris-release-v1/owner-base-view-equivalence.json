@@ -1,0 +1,54 @@
+{
+  "canonicalization": "JSON sort_keys=true, compact separators, UTF8, no NaN; newline after each parsed row",
+  "classification": "JSON reserialization only; every parsed field, row and row order unchanged",
+  "experiment_id": "iris-release-v1",
+  "frozen_owner_protocol_and_manifests_changed": false,
+  "owner_protocol_sha256": "174daed6764e00c4026e6a3be88231823b98967f22bec5ab393a05f686181c0a",
+  "views": [
+    {
+      "canonical_rows_sha256": "88f4d52cdb3758e9d9751ba77d5902d4e212a3d86f03ceea33ece1fa800ba8d5",
+      "name": "train.jsonl",
+      "original_path": ".cache/vcm-mvp-hey-iris-v2/views/train.jsonl",
+      "original_sha256": "88f4d52cdb3758e9d9751ba77d5902d4e212a3d86f03ceea33ece1fa800ba8d5",
+      "portable_path": ".cache/iris-release-v1/inputs/base-views/train.jsonl",
+      "portable_sha256": "e5a428b4ad25e5a6bac2cfcfa8817680df266397dd20d26b04b42f7193702ad7",
+      "row_count": 23739
+    },
+    {
+      "canonical_rows_sha256": "e8b01b9fdb954879070dc0b4487cc7d1f456c7fc7562d1a938489f0bf14112cb",
+      "name": "dev.jsonl",
+      "original_path": ".cache/vcm-mvp-hey-iris-v2/views/dev.jsonl",
+      "original_sha256": "e8b01b9fdb954879070dc0b4487cc7d1f456c7fc7562d1a938489f0bf14112cb",
+      "portable_path": ".cache/iris-release-v1/inputs/base-views/dev.jsonl",
+      "portable_sha256": "6b47beb8aade5bf86da67d08b78a03949dc03956754cd705c1cc82f3d9018c8b",
+      "row_count": 1339
+    },
+    {
+      "canonical_rows_sha256": "b677030b1214d005688feee1fec5f04c2d41cfa31913f83975a5864b05a82187",
+      "name": "calibration.jsonl",
+      "original_path": ".cache/vcm-mvp-hey-iris-v2/views/calibration.jsonl",
+      "original_sha256": "b677030b1214d005688feee1fec5f04c2d41cfa31913f83975a5864b05a82187",
+      "portable_path": ".cache/iris-release-v1/inputs/base-views/calibration.jsonl",
+      "portable_sha256": "143bb64061e3bf0e4d453960cb6d0765490a183fa4de1f5982dfcf0ba092fed9",
+      "row_count": 1495
+    },
+    {
+      "canonical_rows_sha256": "c39e36fdc98e83ecfebf4ff9a5c7c1d58f079267cfbdf3ce7c64d03ce91ab76f",
+      "name": "test.jsonl",
+      "original_path": ".cache/vcm-mvp-hey-iris-v2/views/test.jsonl",
+      "original_sha256": "c39e36fdc98e83ecfebf4ff9a5c7c1d58f079267cfbdf3ce7c64d03ce91ab76f",
+      "portable_path": ".cache/iris-release-v1/inputs/base-views/test.jsonl",
+      "portable_sha256": "3461a214a3566ed1d466f752de2c93b136570e461148bf497e983a9bda0a2c2d",
+      "row_count": 4418
+    },
+    {
+      "canonical_rows_sha256": "3f752adb010ca17f1f909ffe428515b07e97064f60f54636e7c58d5eb1a80a9a",
+      "name": "personal-test.jsonl",
+      "original_path": ".cache/vcm-mvp-hey-iris-v2/views/personal-test.jsonl",
+      "original_sha256": "3f752adb010ca17f1f909ffe428515b07e97064f60f54636e7c58d5eb1a80a9a",
+      "portable_path": ".cache/iris-release-v1/inputs/base-views/personal-test.jsonl",
+      "portable_sha256": "c1be08c9d1a78eb99b6efcce2f95efa3528209bbbbb09a15238400cb82efa3a9",
+      "row_count": 88
+    }
+  ]
+}

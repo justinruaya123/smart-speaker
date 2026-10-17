@@ -1,0 +1,58 @@
+{
+  "name": "expanded",
+  "checkpoint": ".cache/iris-release-v1/wake/training/best.pt",
+  "checkpoint_sha256": "9194e00bf2bc99dd3cc066b433f12cfec4792513e03e2afbc2fc9deaba0801c2",
+  "threshold": 0.9999,
+  "metrics": {
+    "positive_n": 32,
+    "detected": 17,
+    "missed": 15,
+    "duplicate_detections": 0,
+    "negative_n": 660,
+    "negative_seconds": 1227.930625,
+    "false_wakes": 0,
+    "recall": 0.53125,
+    "false_wakes_per_hour": 0.0,
+    "negative_exposure": "separate clips; resets and synthetic silence padding excluded from exposure; not household continuous audio"
+  },
+  "candidates": [
+    {
+      "name": "expanded",
+      "checkpoint": ".cache/iris-release-v1/wake/training/best.pt",
+      "checkpoint_sha256": "9194e00bf2bc99dd3cc066b433f12cfec4792513e03e2afbc2fc9deaba0801c2",
+      "threshold": 0.9999,
+      "metrics": {
+        "positive_n": 32,
+        "detected": 17,
+        "missed": 15,
+        "duplicate_detections": 0,
+        "negative_n": 660,
+        "negative_seconds": 1227.930625,
+        "false_wakes": 0,
+        "recall": 0.53125,
+        "false_wakes_per_hour": 0.0,
+        "negative_exposure": "separate clips; resets and synthetic silence padding excluded from exposure; not household continuous audio"
+      }
+    },
+    {
+      "name": "baseline",
+      "checkpoint": ".cache/iris-release-v1/inputs/wake-baseline.pt",
+      "checkpoint_sha256": "3452b5300f82cd853ac61e6b9efe3fad9bc659b3ae3452987c125ea319e1273d",
+      "threshold": 0.995,
+      "metrics": {
+        "positive_n": 32,
+        "detected": 15,
+        "missed": 17,
+        "duplicate_detections": 0,
+        "negative_n": 660,
+        "negative_seconds": 1227.930625,
+        "false_wakes": 0,
+        "recall": 0.46875,
+        "false_wakes_per_hour": 0.0,
+        "negative_exposure": "separate clips; resets and synthetic silence padding excluded from exposure; not household continuous audio"
+      }
+    }
+  ],
+  "protocol_sha256": "6ed8ece2336ddabb858fe8839e6429b977a4d43e2e34f3dc896505f9675d0e5c",
+  "test_used_for_selection": false
+}

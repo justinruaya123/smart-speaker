@@ -1,0 +1,33 @@
+{
+  "command": [
+    "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1/.venv/bin/python",
+    "-u",
+    "-m",
+    "scripts.train.iris_owner",
+    "train",
+    "--device",
+    "cuda"
+  ],
+  "gpu": 2,
+  "other_gpu_baseline": {
+    "0": 94,
+    "1": 92,
+    "3": 100,
+    "4": 80,
+    "6": 0,
+    "7": 0
+  },
+  "poll_seconds": 5,
+  "exit_code": 75,
+  "seconds": 8.963961124420166,
+  "events": [
+    {
+      "time": 1792197673.822668,
+      "spikes": {
+        "4": 100
+      },
+      "new_foreign_jobs": [],
+      "reason": "secondary_stop_requested"
+    }
+  ]
+}

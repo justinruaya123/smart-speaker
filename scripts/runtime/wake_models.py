@@ -1,7 +1,4 @@
-"""Small CPU ONNX adapters for version-pinned openWakeWord and Silero models.
-
-Feature timing/scaling follows openWakeWord v0.6.0 (David Scripka,
-Apache-2.0); Silero state/context follows v5.1 (Silero Team, MIT).
+"""Local CPU adapter for the pinned Silero v5.1 VAD (Silero Team, MIT).
 See the shipped upstream license files and wake-models.json for provenance.
 No package download or transcription occurs in this module.
 """
@@ -26,49 +23,6 @@ def session(folder, name):
     options = ort.SessionOptions()
     options.intra_op_num_threads = options.inter_op_num_threads = 1
     return ort.InferenceSession(str(path), sess_options=options, providers=['CPUExecutionProvider'])
-
-
-class HeyJarvis:
-    """80 ms openWakeWord frames; accept arbitrary finite mono 16 kHz chunks."""
-    def __init__(self, folder):
-        self.mel = session(folder, 'wake-melspectrogram.onnx')
-        self.embedding = session(folder, 'wake-embedding.onnx')
-        self.head = session(folder, 'wake-hey-jarvis.onnx')
-        self.reset()
-
-    def reset(self):
-        self.pending = np.empty(0, dtype=np.float32)
-        self.raw = np.empty(0, dtype=np.int16)
-        self.mels = np.ones((76, 32), dtype=np.float32)
-        self.embeddings = np.zeros((16, 96), dtype=np.float32)
-        self.frames = 0
-        self.score = 0.
-
-    def push(self, pcm):
-        self.pending, _ = pack([self.pending, pcm], '*')
-        newest = None
-        while len(self.pending) >= 1280:
-            block = (np.clip(self.pending[:1280], -1, 1) * 32767).astype(np.int16)
-            self.pending = self.pending[1280:]
-            self.raw, _ = pack([self.raw, block], '*')
-            self.raw = self.raw[-1760:]
-            raw = rearrange(self.raw.astype(np.float32), 'samples -> 1 samples')
-            mel = self.mel.run(None, {'input': raw})[0]
-            mel = rearrange(mel, '1 1 frames bins -> frames bins') / 10 + 2
-            self.mels, _ = pack([self.mels, mel], '* bins')
-            self.mels = self.mels[-76:]
-            features = rearrange(self.mels, 'frames bins -> 1 frames bins 1')
-            embedding = self.embedding.run(None, {'input_1': features})[0]
-            embedding = rearrange(embedding, '1 1 1 features -> 1 features')
-            self.embeddings, _ = pack([self.embeddings, embedding], '* features')
-            self.embeddings = self.embeddings[-16:]
-            x = rearrange(self.embeddings, 'frames features -> 1 frames features')
-            score = self.head.run(None, {self.head.get_inputs()[0].name: x})[0].item()
-            # Warmup must contain real feature context, never artificial startup scores.
-            self.frames += 1
-            self.score = float(score) if self.frames >= 16 else 0.
-            newest = self.score if newest is None else max(newest, self.score)
-        return newest
 
 
 class SileroProbability:

@@ -1,0 +1,122 @@
+{
+  "calibration_kind": "short_utterance_proxy+synthetic_wake_proxy",
+  "checks": {
+    "missing_continuity": {
+      "accepted": false,
+      "passed": true,
+      "reason": "continuity_unchecked"
+    },
+    "short_command": {
+      "accepted": false,
+      "passed": true,
+      "reason": "insufficient_speech"
+    },
+    "short_reference": {
+      "accepted": false,
+      "passed": true,
+      "reason": "insufficient_speech"
+    },
+    "silence_without_overlap_evidence": {
+      "accepted": false,
+      "passed": true,
+      "reason": "overlap_unchecked"
+    },
+    "timeout_at_eight_seconds": {
+      "accepted": false,
+      "passed": true,
+      "reason": "owner_expired"
+    },
+    "timeout_consumes_session": {
+      "accepted": false,
+      "passed": true,
+      "reason": "no_owner"
+    },
+    "whole_pcm_including_quiet_edges": {
+      "covered_samples": 60800,
+      "minimum_observed_voiced_seconds": 0.7,
+      "passed": true,
+      "samples": 60800,
+      "windows": 6
+    },
+    "wrong_session": {
+      "accepted": false,
+      "passed": true,
+      "reason": "session_mismatch"
+    },
+    "wrong_session_consumes_owner": {
+      "accepted": false,
+      "passed": true,
+      "reason": "no_owner"
+    }
+  },
+  "component": "owner",
+  "desktop_cpu_component": {
+    "continuity_windows_per_observation": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "excludes": [
+      "disk I/O",
+      "utterance duration",
+      "wake/VAD",
+      "command model",
+      "application handling"
+    ],
+    "includes": [
+      "speech mask",
+      "PCM normalization",
+      "shared frontend",
+      "whole-command ONNX",
+      "all coverage-window ONNX"
+    ],
+    "machine": "x86_64",
+    "max_pcm_seconds": 3.0,
+    "not_physical_pi": true,
+    "observations": 12,
+    "p50_ms": 9.837929625064135,
+    "p95_ms": 10.392727679573,
+    "process_peak_rss_bytes": 183803904,
+    "threads": 1
+  },
+  "embedding_logs_written": false,
+  "evidence": "actual held-out original PCM -> trained CPU ONNX -> SpeakerSession; simulated clock only",
+  "experiment_id": "iris-release-v1",
+  "experimental": true,
+  "graph_sha256": "84e860f814e248e793567b2f1c8fe83d24d82b9d58f5379e4da69eb7b78d0a3f",
+  "human_wake_qualified": false,
+  "overlap_threshold": 0.6400450766086578,
+  "passed": true,
+  "physical_pi_measured": false,
+  "policy": {
+    "min_command_seconds": 0.4,
+    "min_reference_seconds": 0.8,
+    "min_window_seconds": 0.25,
+    "require_windows": true,
+    "threshold": 0.4445243924856186,
+    "timeout_seconds": 8.0
+  },
+  "pretest_graph_identical": true,
+  "real_simultaneous_overlap_measured": false,
+  "reference": {
+    "samples": 48000,
+    "source_audio_sha256": "693a4e34ea6af78b581e2fd76581c6bd71c29d7dd739640fe98f17f294891f98",
+    "voiced_seconds": 2.665
+  },
+  "selection_sha256": "aee3f2d780d56552b3865a11e580598c86d6f5e7cbf8f6a0190668420c70c74c",
+  "short_original_speech_proxy": {
+    "samples": 4800,
+    "source_audio_sha256": "693a4e34ea6af78b581e2fd76581c6bd71c29d7dd739640fe98f17f294891f98",
+    "voiced_seconds": 0.295
+  },
+  "test_tuning": false
+}

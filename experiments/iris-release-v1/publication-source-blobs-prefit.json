@@ -1,0 +1,554 @@
+{
+  "schema_version": 1,
+  "status": "immutable_source_blobs_uploaded_and_sha_verified",
+  "repository": "justinruaya123/smart-speaker",
+  "visibility": "private",
+  "local_commit": "7d194b3e6c9c03a676fab8a15fc5ac1279238026",
+  "source_tree_sha": "92a581f27cecdb5f44e110cbc7d8994bf01eb2de",
+  "uploaded_blobs": 108,
+  "uploaded_bytes": 4343273,
+  "branch_refs_moved": false,
+  "archive_ref_preserved": "archive/iris-research-20261017",
+  "blobs": [
+    {
+      "path": ".gitignore",
+      "sha": "48030cdf17c4ce0f45d3bc5346dbdd88fd05703e",
+      "bytes": 3181
+    },
+    {
+      "path": "DATASET.md",
+      "sha": "f4d2919f9b1472e090a7af801fa7b03c094b45ec",
+      "bytes": 385
+    },
+    {
+      "path": "MODEL_CARD.md",
+      "sha": "6b09652232fe1ccacc2b326bbac4a7a63716cbc7",
+      "bytes": 756
+    },
+    {
+      "path": "EXPERIMENTS.md",
+      "sha": "2ea27595779fd93405de2492799b9588b04751d9",
+      "bytes": 4590
+    },
+    {
+      "path": "AGENTS.md",
+      "sha": "7df3f49c4730399339e1a805bf1163d13646525f",
+      "bytes": 4358
+    },
+    {
+      "path": "README.md",
+      "sha": "c7454ae946b46d4d5552b4f8982454eb00ea5ffa",
+      "bytes": 1737
+    },
+    {
+      "path": "REQUIREMENTS.md",
+      "sha": "c7ff1c7b8043bc3c13a3f90a1254a2515e16fce7",
+      "bytes": 5306
+    },
+    {
+      "path": "SpeakerUI/package.json",
+      "sha": "5b661d5b3c6d88d7dc5501028543d794a5654b72",
+      "bytes": 1796
+    },
+    {
+      "path": "SpeakerUI/.env.example",
+      "sha": "12d76da96d920482bcbe561451715ffdabeb0c16",
+      "bytes": 2942
+    },
+    {
+      "path": "SpeakerUI/scripts/check-svelte.mjs",
+      "sha": "71ffb2b7e11e2515f76aca558cd52ec69592ce57",
+      "bytes": 660
+    },
+    {
+      "path": "SpeakerUI/scripts/browser-runtime-check.mjs",
+      "sha": "81546d80ae75b33324b0a366bff22f6e96357251",
+      "bytes": 11347
+    },
+    {
+      "path": "SpeakerUI/scripts/iris-browser-check.mjs",
+      "sha": "7c24f6f352b3b43bbe60167560f434a5fcc18b4f",
+      "bytes": 6771
+    },
+    {
+      "path": "SpeakerUI/scripts/build.mjs",
+      "sha": "a3744436d4dc651e3cbc1786e1533db2997e7946",
+      "bytes": 794
+    },
+    {
+      "path": "SpeakerUI/server/app.ts",
+      "sha": "b503d5395c704493612607494661642de3514c55",
+      "bytes": 24150
+    },
+    {
+      "path": "SpeakerUI/server/gateway/app.test.ts",
+      "sha": "493c5a28353791fdcaa7303991e3392467f40ae4",
+      "bytes": 15169
+    },
+    {
+      "path": "SpeakerUI/server/config.ts",
+      "sha": "48bc4eb2bf060ece2a16829a0420be4fbb48a6f4",
+      "bytes": 7289
+    },
+    {
+      "path": "SpeakerUI/server/config.test.ts",
+      "sha": "24eeda615520d1bb83036c7ee2594656dd66fed1",
+      "bytes": 1866
+    },
+    {
+      "path": "SpeakerUI/server/inference/action-store.test.ts",
+      "sha": "72b73252a3d6029cc6ba024de81199b511743022",
+      "bytes": 2295
+    },
+    {
+      "path": "SpeakerUI/server/inference/action-store.ts",
+      "sha": "bdf4bac70147cef0b065e47592a23b965105b305",
+      "bytes": 6967
+    },
+    {
+      "path": "SpeakerUI/server/inference/python-runtime.ts",
+      "sha": "e7c167abe6e9b3f844dec6db8bd5b54ae2d15a33",
+      "bytes": 3987
+    },
+    {
+      "path": "SpeakerUI/server/inference/runtime-actions.test.ts",
+      "sha": "39ab137b000126e8cadc049378f941b3f48afb09",
+      "bytes": 8442
+    },
+    {
+      "path": "SpeakerUI/server/inference/runtime-actions.ts",
+      "sha": "2e5e5a41bac0590aab508566cdd8c10bab0803c5",
+      "bytes": 10640
+    },
+    {
+      "path": "SpeakerUI/server/integrations/home-assistant.ts",
+      "sha": "d96fad24bb2200c889a4564ee0c1adf5fcb7b9e1",
+      "bytes": 15999
+    },
+    {
+      "path": "SpeakerUI/server/integrations/home-assistant.test.ts",
+      "sha": "9cb034b936f479120ba9d21380d3a5d8a6d40e29",
+      "bytes": 10201
+    },
+    {
+      "path": "SpeakerUI/server/integrations/state.ts",
+      "sha": "6556049a4aa7f7b986632c03b1c2972ab4208d22",
+      "bytes": 5302
+    },
+    {
+      "path": "SpeakerUI/shared/canonical-command.ts",
+      "sha": "bd5884fb0b3789e803266944ef5bebd7f30f5120",
+      "bytes": 2718
+    },
+    {
+      "path": "SpeakerUI/src/ambient/Iris.svelte",
+      "sha": "8b676a258d46970d554b3fb0dd9e74672e415edb",
+      "bytes": 30033
+    },
+    {
+      "path": "SpeakerUI/src/App.svelte",
+      "sha": "21c8d65a888b59a5f453e8f6d5a14cc5496cf550",
+      "bytes": 339
+    },
+    {
+      "path": "SpeakerUI/src/ambient/local-player.test.ts",
+      "sha": "bd01c155ccff2210ff5faac9545394be4a4ed0e1",
+      "bytes": 2019
+    },
+    {
+      "path": "SpeakerUI/src/ambient/local-player.js",
+      "sha": "69c7ebd43a9b4c88d9290728f0ab027de9176ff5",
+      "bytes": 1881
+    },
+    {
+      "path": "artifacts/wake-models.json",
+      "sha": "762c4739351ff3b824e4204e1123155588a75163",
+      "bytes": 381
+    },
+    {
+      "path": "SpeakerUI/src/ambient/runtime-events.test.ts",
+      "sha": "35bfacaaeba3c828c0aa8f531ff5b9971b495bda",
+      "bytes": 6478
+    },
+    {
+      "path": "SpeakerUI/src/ambient/runtime-events.js",
+      "sha": "0ae5d34295713d0fcc4ece358c1d31c8c847294f",
+      "bytes": 7182
+    },
+    {
+      "path": "benchmark.py",
+      "sha": "214e85d5467f9c2861b69b5e22aa172caa5b7ec7",
+      "bytes": 189
+    },
+    {
+      "path": "docs/DATASETS.md",
+      "sha": "80321d7477b03de25aad25dcc5abbf85eda743c7",
+      "bytes": 6778
+    },
+    {
+      "path": "scripts/runtime/config.example.toml",
+      "sha": "9d410f9776c0e40316999204900e0d7c9e6d1898",
+      "bytes": 1337
+    },
+    {
+      "path": "docs/EXPERIMENT-iris-release-v1.md",
+      "sha": "ff0d6212b9249609539fd252163478e93226010d",
+      "bytes": 3450
+    },
+    {
+      "path": "docs/DOCS.md",
+      "sha": "a9697292f10aa8b994074b39f61836ca8d905111",
+      "bytes": 2973
+    },
+    {
+      "path": "docs/HANDOFF-iris-rpi-v1.md",
+      "sha": "83543fb33b3f58097e5c3af6026a9f6e4b007b2c",
+      "bytes": 8679
+    },
+    {
+      "path": "experiments/iris-release-v1/archive-payloads.json",
+      "sha": "45b879d3a27efd45c145c6009b905ee723ab0944",
+      "bytes": 78957
+    },
+    {
+      "path": "experiments/iris-release-v1/diversity-implementation-before-fitting.json",
+      "sha": "0ca38b57898db40fa01ff2c47e6f5485419abb49",
+      "bytes": 1259
+    },
+    {
+      "path": "experiments/iris-release-v1/diversity-implementation-final-before-fitting.json",
+      "sha": "88d33279967c56017c0554f0a9fb72260f82590e",
+      "bytes": 1845
+    },
+    {
+      "path": "experiments/iris-release-v1/encoder-cleanup-parity.json",
+      "sha": "7bd5e5867ca58ccb6fd437dab9ab1560d8f53c5c",
+      "bytes": 549
+    },
+    {
+      "path": "experiments/iris-release-v1/owner-dataset-audit.json",
+      "sha": "019354fed472e7c627b1dc0152974fc867e2a6fb",
+      "bytes": 1043
+    },
+    {
+      "path": "experiments/iris-release-v1/owner-base-view-equivalence.json",
+      "sha": "5e7cce4c5f8af5d92b127c7da5b027d53a8c1e13",
+      "bytes": 2954
+    },
+    {
+      "path": "experiments/iris-release-v1/owner-feature-audit.json",
+      "sha": "ea330ae382284470e377859bf988625745177897",
+      "bytes": 836
+    },
+    {
+      "path": "experiments/iris-release-v1/owner-implementation-before-fitting-099dbe6ab45b2d07.json",
+      "sha": "0c670646f495e3b2a0f3d07236d6e6f35b9aa30d",
+      "bytes": 3994
+    },
+    {
+      "path": "experiments/iris-release-v1/archive-manifest.json",
+      "sha": "c751374973e1e4b4efa93c49dbdd0a9e4dfd8e54",
+      "bytes": 752692
+    },
+    {
+      "path": "experiments/iris-release-v1/owner-portability-check.json",
+      "sha": "1b725300553d42df37fcec530d5464432d2602c5",
+      "bytes": 1109
+    },
+    {
+      "path": "experiments/iris-release-v1/owner-protocol.json",
+      "sha": "559a9dcbf01a1982c0c20bc0b066bad0758f0eef",
+      "bytes": 6449
+    },
+    {
+      "path": "experiments/iris-release-v1/owner-readability-audit.json",
+      "sha": "f9c9149fca2f06f1c4ea99ce78ffbc3227096b5c",
+      "bytes": 573
+    },
+    {
+      "path": "experiments/iris-release-v1/owner-reservations.json",
+      "sha": "156d7295cbc1ce70f4f015a496f2d5ed3d2119bb",
+      "bytes": 42227
+    },
+    {
+      "path": "experiments/iris-release-v1/protocol.json",
+      "sha": "1669e9460a50e9f36a286c8d5c567863bc502605",
+      "bytes": 4589
+    },
+    {
+      "path": "experiments/iris-release-v1/publication-archive.json",
+      "sha": "d4a422093288e3b18b22c170d9f964cb7ed99f56",
+      "bytes": 992
+    },
+    {
+      "path": "experiments/iris-release-v1/publication-hf-access.json",
+      "sha": "017fea97c0ccbdc2937325640b5c48fb2cdf2b7d",
+      "bytes": 272
+    },
+    {
+      "path": "experiments/iris-release-v1/reproduction-environment.json",
+      "sha": "3e1aaff95a85d0f0883c0fece4aaeeb68165552f",
+      "bytes": 11193
+    },
+    {
+      "path": "experiments/iris-release-v1/reproduction-run-input-snapshot-probe.json",
+      "sha": "ade1bf076566322df34113259f4918ea96b66f7c",
+      "bytes": 3137
+    },
+    {
+      "path": "experiments/iris-release-v1/reproduction-source-access.json",
+      "sha": "1646518ed8f4c14388b038f1feb4a2da4f6a804c",
+      "bytes": 2637
+    },
+    {
+      "path": "experiments/iris-release-v1/ui-integration.json",
+      "sha": "6fa2f48ab1cdbc43edbe62afcdd6b2ad8f221c35",
+      "bytes": 8582
+    },
+    {
+      "path": "experiments/iris-release-v1/voices.json",
+      "sha": "b7ede0081059b0968003fa48cc9beace268fc0ca",
+      "bytes": 10304
+    },
+    {
+      "path": "pipeline.toml",
+      "sha": "5e0b238d7db9c4e0ddbc338e39a5c089fea96dab",
+      "bytes": 610
+    },
+    {
+      "path": "experiments/iris-release-v1/generation-plan.json",
+      "sha": "3be7d024ae08703f71ef094db3c7338cea67e15c",
+      "bytes": 1715919
+    },
+    {
+      "path": "publish.py",
+      "sha": "36a5a1f6538f13f165b280a9edbdbe25834e70a8",
+      "bytes": 234
+    },
+    {
+      "path": "scripts/archive_io.py",
+      "sha": "adee01dd537b1fb6bcd07dff58f4c99de14d907a",
+      "bytes": 1261
+    },
+    {
+      "path": "scripts/iris_publish.py",
+      "sha": "366d98cece5c4a1dd59a47054eff6d8671686afd",
+      "bytes": 25381
+    },
+    {
+      "path": "experiments/iris-release-v1/reproduction-inputs.json",
+      "sha": "c397d5ea65fe46382b79831029fb2062e958a823",
+      "bytes": 947858
+    },
+    {
+      "path": "scripts/train/__init__.py",
+      "sha": "c71601cca064ba0a86f14fd3cc3f5dd7beca34ed",
+      "bytes": 59
+    },
+    {
+      "path": "scripts/iris_report.py",
+      "sha": "f4bccce6d6eed48550cd1f97e48049829a2d09b5",
+      "bytes": 14868
+    },
+    {
+      "path": "scripts/iris_release.py",
+      "sha": "8fad97449489c8f61f713cb32a0e2adbc7896ac9",
+      "bytes": 63607
+    },
+    {
+      "path": "scripts/models/iris_owner.py",
+      "sha": "ac1fe1eddb045ab140f7f67168c660a295546df2",
+      "bytes": 3857
+    },
+    {
+      "path": "scripts/modules.json",
+      "sha": "9310f317e6ed60deae75e90f2f4e44e49d25e629",
+      "bytes": 4348
+    },
+    {
+      "path": "scripts/models/mvp_static.py",
+      "sha": "b39855b690db99709a8d66020f7e0f4ea923159c",
+      "bytes": 4141
+    },
+    {
+      "path": "scripts/mvp_delivery.py",
+      "sha": "6c53bcf9bf563c6115287bd803a771d5369b6101",
+      "bytes": 10996
+    },
+    {
+      "path": "scripts/runtime/iris_owner.py",
+      "sha": "386f548efd49b42f48c2a519aa8a6f30007dbcfc",
+      "bytes": 7442
+    },
+    {
+      "path": "scripts/models/speaker_demo.py",
+      "sha": "c56a409d55485891df3bceb974ecfb755cf57063",
+      "bytes": 3039
+    },
+    {
+      "path": "scripts/runtime/iris_pi_benchmark.py",
+      "sha": "31eba4680b919a47d19f03abdbb1cd803ca58197",
+      "bytes": 24465
+    },
+    {
+      "path": "scripts/runtime/mvp_wake.py",
+      "sha": "9c479fe2dcd564edc181ad7b82eac734b46173ab",
+      "bytes": 6022
+    },
+    {
+      "path": "scripts/runtime/pcv_schema.py",
+      "sha": "9d146904d5303892c64eb34bb591f5e61fd1c55d",
+      "bytes": 11034
+    },
+    {
+      "path": "scripts/runtime/speaker.env.example",
+      "sha": "64b1d89ac9c2006516de048c216b9e57b370b0c1",
+      "bytes": 452
+    },
+    {
+      "path": "scripts/runtime/speaker_config.py",
+      "sha": "317ac85205caf79fe4a900d06457573e35723820",
+      "bytes": 7777
+    },
+    {
+      "path": "scripts/runtime/speaker_tools.py",
+      "sha": "0d7534b2db0d94686255239fc30924e0cd77727d",
+      "bytes": 5663
+    },
+    {
+      "path": "scripts/runtime/speaker_start.py",
+      "sha": "035a9ca89adab142ea450fe831f74d102902494e",
+      "bytes": 15027
+    },
+    {
+      "path": "scripts/runtime/speaker_worker.py",
+      "sha": "209e3ac449d27cf67eafb98fdf449b813591ea52",
+      "bytes": 16319
+    },
+    {
+      "path": "scripts/runtime/wake_gate.py",
+      "sha": "71a35b1ddc7dae5420fdc2fcd4078d84809a9df1",
+      "bytes": 5288
+    },
+    {
+      "path": "scripts/runtime/wake_models.py",
+      "sha": "4fd49ed19c1e58bc5b34d318e7f87e7fd3dd63a1",
+      "bytes": 4214
+    },
+    {
+      "path": "scripts/speaker_publish.py",
+      "sha": "2d2dab07a7846545087808517cadf4ec5358cf8c",
+      "bytes": 3201
+    },
+    {
+      "path": "scripts/test/iris_benchmark.py",
+      "sha": "c417672e4dceae3423bf239ee48d0eb01a47a8e6",
+      "bytes": 3574
+    },
+    {
+      "path": "scripts/test/iris_metrics.py",
+      "sha": "f2c14eecd54cc293799a1bdc9336b35da41b787b",
+      "bytes": 4669
+    },
+    {
+      "path": "scripts/test/iris_resources.py",
+      "sha": "b5e03252dfc237b507af83a5b0ce504a116b2cff",
+      "bytes": 23386
+    },
+    {
+      "path": "scripts/test/test_iris_archive.py",
+      "sha": "c78c878f4b0a81090c7498c2d70bd546c68d845e",
+      "bytes": 839
+    },
+    {
+      "path": "scripts/test/test_iris_configuration.py",
+      "sha": "345732245fd6a8360a6013f7e638201cb0863584",
+      "bytes": 4593
+    },
+    {
+      "path": "scripts/test/test_iris_diversity.py",
+      "sha": "4b4fdd97ee5cebf90cd11871041a491a485b4829",
+      "bytes": 5019
+    },
+    {
+      "path": "scripts/test/test_iris_models.py",
+      "sha": "0260167cfd96d6e7b3061742ad9149d62436f2e7",
+      "bytes": 13650
+    },
+    {
+      "path": "scripts/test/test_iris_owner.py",
+      "sha": "c3fa7f4d5d5813943785ed5546cc23d22a916dcb",
+      "bytes": 10566
+    },
+    {
+      "path": "scripts/test/test_iris_pi_benchmark.py",
+      "sha": "7f04e13793a5e442b4a852c2cd0891c5ffc20745",
+      "bytes": 9406
+    },
+    {
+      "path": "scripts/test/test_iris_release.py",
+      "sha": "98a52c3deebc79f3defd9f101d4194bdc5c9d5b5",
+      "bytes": 29230
+    },
+    {
+      "path": "scripts/test/test_iris_resources.py",
+      "sha": "2c70b54e1ea7c691fbad5eb0ea8617be2f26566a",
+      "bytes": 10124
+    },
+    {
+      "path": "scripts/test/test_iris_session.py",
+      "sha": "2fb167f91607136cdf67e476e852ec0ea2a656e4",
+      "bytes": 5837
+    },
+    {
+      "path": "scripts/test/test_iris_wake_models.py",
+      "sha": "ad732e2823bd4311705ab27aa2da4cc14bd5c58e",
+      "bytes": 1871
+    },
+    {
+      "path": "scripts/test/test_iris_wake_release.py",
+      "sha": "df07c5fc647d627a1d519c788d824d7cc0564e21",
+      "bytes": 2736
+    },
+    {
+      "path": "scripts/test/test_iris_worker.py",
+      "sha": "771324810d8d5daf63e14b030bc770fbe1906fec",
+      "bytes": 7118
+    },
+    {
+      "path": "scripts/train/iris_export.py",
+      "sha": "d8f4fd1a22ca46338e13e35bcac0e3a76e79af01",
+      "bytes": 5239
+    },
+    {
+      "path": "scripts/train/iris_owner.py",
+      "sha": "55941771c7fc89033f3e5afccfdf185b218bf979",
+      "bytes": 76663
+    },
+    {
+      "path": "scripts/train/iris_diversity.py",
+      "sha": "5daafe5176b9f738f8fae6dc41e26ae237dcdeb6",
+      "bytes": 38348
+    },
+    {
+      "path": "scripts/train/iris_wake_helpers.py",
+      "sha": "73795ff67d7e91ead026c27c900b70c97d47d234",
+      "bytes": 6095
+    },
+    {
+      "path": "scripts/train/iris_wake.py",
+      "sha": "b7aa0483a32701d211065507665e1090b0a90854",
+      "bytes": 12719
+    },
+    {
+      "path": "train.py",
+      "sha": "d837e0db7d0b94f24bbccf7309ba761ad40d5288",
+      "bytes": 859
+    },
+    {
+      "path": "vcm/__init__.py",
+      "sha": "1c073cf311123146c4c292f90e41c17100ea98cc",
+      "bytes": 90
+    }
+  ]
+}

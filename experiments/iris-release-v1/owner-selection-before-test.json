@@ -1,0 +1,151 @@
+{
+  "checkpoint_sha256": "05e998279a2018d126368dc568ae7adb48c6fee4c9eade5c9979015c2d59edc0",
+  "component": "owner",
+  "development": {
+    "clean_false_overlap": {
+      "denominator": 508,
+      "errors": 25,
+      "rate": 0.04921259842519685
+    },
+    "impostor_FAR": {
+      "denominator": 508,
+      "errors": 25,
+      "rate": 0.04921259842519685
+    },
+    "overlap_miss_rate": {
+      "denominator": 508,
+      "errors": 177,
+      "rate": 0.3484251968503937
+    },
+    "same_speaker_FRR": {
+      "denominator": 508,
+      "errors": 112,
+      "rate": 0.2204724409448819
+    },
+    "switch_FAR": {
+      "denominator": 508,
+      "errors": 22,
+      "rate": 0.04330708661417323
+    }
+  },
+  "development_domains": {
+    "LibriSpeech-train-clean-100": {
+      "clean_false_overlap": {
+        "denominator": 192,
+        "errors": 9,
+        "rate": 0.046875
+      },
+      "impostor_FAR": {
+        "denominator": 192,
+        "errors": 10,
+        "rate": 0.052083333333333336
+      },
+      "overlap_miss_rate": {
+        "denominator": 192,
+        "errors": 31,
+        "rate": 0.16145833333333334
+      },
+      "same_speaker_FRR": {
+        "denominator": 192,
+        "errors": 42,
+        "rate": 0.21875
+      },
+      "switch_FAR": {
+        "denominator": 192,
+        "errors": 8,
+        "rate": 0.041666666666666664
+      }
+    },
+    "Synthetic-wake-command-proxy": {
+      "clean_false_overlap": {
+        "denominator": 32,
+        "errors": 0,
+        "rate": 0.0
+      },
+      "impostor_FAR": {
+        "denominator": 32,
+        "errors": 1,
+        "rate": 0.03125
+      },
+      "overlap_miss_rate": {
+        "denominator": 32,
+        "errors": 26,
+        "rate": 0.8125
+      },
+      "same_speaker_FRR": {
+        "denominator": 32,
+        "errors": 1,
+        "rate": 0.03125
+      },
+      "switch_FAR": {
+        "denominator": 32,
+        "errors": 1,
+        "rate": 0.03125
+      }
+    },
+    "VCM-original-human": {
+      "clean_false_overlap": {
+        "denominator": 284,
+        "errors": 16,
+        "rate": 0.056338028169014086
+      },
+      "impostor_FAR": {
+        "denominator": 284,
+        "errors": 14,
+        "rate": 0.04929577464788732
+      },
+      "overlap_miss_rate": {
+        "denominator": 284,
+        "errors": 120,
+        "rate": 0.4225352112676056
+      },
+      "same_speaker_FRR": {
+        "denominator": 284,
+        "errors": 69,
+        "rate": 0.24295774647887325
+      },
+      "switch_FAR": {
+        "denominator": 284,
+        "errors": 13,
+        "rate": 0.045774647887323945
+      }
+    }
+  },
+  "execution_sha256": "468f1947652d60b5b35b63497b2715ab62e11d01d51d1955d61fe175e4c9247a",
+  "experiment_id": "iris-release-v1",
+  "history_sha256": "5210b73f670a0c941d7cb15de6fc81a3a783169a937bc928ab4c27777c0f4edc",
+  "human_wake_qualified": false,
+  "manifest_sha256": "d22c1bf537a4f66f9eb4f2b33de7ac7c43fbff4c5f75387d228d7b47d184a884",
+  "normalization_sha256": "8ec1dfdf362c44c682575640177d8b0c8567986988cd5ceb9d515c9be58c04ce",
+  "physical_pi_measured": false,
+  "policy": {
+    "calibration_kind": "short_utterance_proxy+synthetic_wake_proxy",
+    "experimental": true,
+    "overlap_threshold": 0.6400450766086578,
+    "threshold": 0.4445243924856186
+  },
+  "protocol_sha256": "174daed6764e00c4026e6a3be88231823b98967f22bec5ab393a05f686181c0a",
+  "schema_version": 1,
+  "selected_epoch": 18,
+  "selection_completed_before_test": true,
+  "training": {
+    "command": [
+      "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1/scripts/train/iris_owner.py",
+      "train",
+      "--device",
+      "cuda"
+    ],
+    "cuda_visible_devices": "5",
+    "deterministic_algorithms": false,
+    "device": "cuda",
+    "dtype": "float32",
+    "epochs": 20,
+    "gpu_name": "NVIDIA A100-SXM4-40GB",
+    "peak_cuda_allocated_bytes": 279828480,
+    "random_seed": 20261017,
+    "seconds": 281.0716049671173,
+    "speaker_classes": 346,
+    "steps_per_epoch": 160,
+    "torch": "2.10.0+cu128"
+  }
+}

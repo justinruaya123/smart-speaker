@@ -1,0 +1,144 @@
+{
+  "calibration_kind": "short_utterance_proxy+synthetic_wake_proxy",
+  "checkpoint_sha256": "05e998279a2018d126368dc568ae7adb48c6fee4c9eade5c9979015c2d59edc0",
+  "component": "owner",
+  "construction": "different original utterances, 1.2s acoustic crops; same-split constructed mixtures and switches; no human wake qualification",
+  "embedding_logs_written": false,
+  "experiment_id": "iris-release-v1",
+  "gates": {
+    "human_wake_qualified": false,
+    "physical_pi_measured": false,
+    "proxy_impostor_FAR_le_5_percent": false,
+    "proxy_overlap_miss_le_20_percent": false,
+    "proxy_same_speaker_FRR_le_35_percent": true
+  },
+  "installed_artifacts_changed": false,
+  "manifest_sha256": "d22c1bf537a4f66f9eb4f2b33de7ac7c43fbff4c5f75387d228d7b47d184a884",
+  "policy": {
+    "calibration_kind": "short_utterance_proxy+synthetic_wake_proxy",
+    "experimental": true,
+    "overlap_threshold": 0.6400450766086578,
+    "threshold": 0.4445243924856186
+  },
+  "remaining": [
+    "fresh original-human wake-command recordings >=.8s wake",
+    "real simultaneous overlap",
+    "unseen microphones/environments",
+    "physical Pi CPU timing and live capture"
+  ],
+  "selection_sha256": "aee3f2d780d56552b3865a11e580598c86d6f5e7cbf8f6a0190668420c70c74c",
+  "status": "experimental_proxy_only",
+  "synthetic_wake_command_proxy": {
+    "clean_false_overlap": {
+      "denominator": 16,
+      "errors": 0,
+      "rate": 0.0
+    },
+    "impostor_FAR": {
+      "denominator": 16,
+      "errors": 2,
+      "rate": 0.125
+    },
+    "overlap_miss_rate": {
+      "denominator": 16,
+      "errors": 8,
+      "rate": 0.5
+    },
+    "same_speaker_FRR": {
+      "denominator": 16,
+      "errors": 0,
+      "rate": 0.0
+    },
+    "switch_FAR": {
+      "denominator": 16,
+      "errors": 0,
+      "rate": 0.0
+    }
+  },
+  "test": {
+    "clean_false_overlap": {
+      "denominator": 1005,
+      "errors": 77,
+      "rate": 0.07661691542288557
+    },
+    "impostor_FAR": {
+      "denominator": 1005,
+      "errors": 72,
+      "rate": 0.07164179104477612
+    },
+    "overlap_miss_rate": {
+      "denominator": 1005,
+      "errors": 280,
+      "rate": 0.27860696517412936
+    },
+    "same_speaker_FRR": {
+      "denominator": 1005,
+      "errors": 279,
+      "rate": 0.27761194029850744
+    },
+    "switch_FAR": {
+      "denominator": 1005,
+      "errors": 56,
+      "rate": 0.05572139303482587
+    }
+  },
+  "test_domains": {
+    "LibriSpeech-train-clean-100": {
+      "clean_false_overlap": {
+        "denominator": 352,
+        "errors": 32,
+        "rate": 0.09090909090909091
+      },
+      "impostor_FAR": {
+        "denominator": 352,
+        "errors": 16,
+        "rate": 0.045454545454545456
+      },
+      "overlap_miss_rate": {
+        "denominator": 352,
+        "errors": 39,
+        "rate": 0.11079545454545454
+      },
+      "same_speaker_FRR": {
+        "denominator": 352,
+        "errors": 60,
+        "rate": 0.17045454545454544
+      },
+      "switch_FAR": {
+        "denominator": 352,
+        "errors": 15,
+        "rate": 0.04261363636363636
+      }
+    },
+    "VCM-original-human": {
+      "clean_false_overlap": {
+        "denominator": 653,
+        "errors": 45,
+        "rate": 0.06891271056661562
+      },
+      "impostor_FAR": {
+        "denominator": 653,
+        "errors": 56,
+        "rate": 0.08575803981623277
+      },
+      "overlap_miss_rate": {
+        "denominator": 653,
+        "errors": 241,
+        "rate": 0.36906584992343033
+      },
+      "same_speaker_FRR": {
+        "denominator": 653,
+        "errors": 219,
+        "rate": 0.33537519142419603
+      },
+      "switch_FAR": {
+        "denominator": 653,
+        "errors": 41,
+        "rate": 0.06278713629402756
+      }
+    }
+  },
+  "test_recordings": 1016,
+  "test_speakers": 114,
+  "test_tuning": false
+}

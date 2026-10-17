@@ -1,0 +1,83 @@
+{
+  "model": "compact",
+  "runs": [
+    {
+      "epoch": 1,
+      "key": [
+        0.31175414497782916,
+        74,
+        1087
+      ],
+      "checkpoint_sha256": "34f5daf2ef8949e4c3459d91a992493e485e6c0c4a831efbe35462a8d2f650c6",
+      "model": "compact",
+      "arm": "ce",
+      "seed": 53,
+      "parameters": 969928,
+      "training_seconds": 120.86940657068044,
+      "epochs_completed": 8,
+      "device": "cuda",
+      "checkpoint": ".cache/iris-release-v1/diversity/runs/compact-ce-s53/best.pt",
+      "test_used_for_selection": false
+    },
+    {
+      "epoch": 1,
+      "key": [
+        0.31636151677270097,
+        74,
+        1084
+      ],
+      "checkpoint_sha256": "7057b368334f830b5abbaaa43f7aacff1d7590fd8740cc40f7c6eb0d86b68a37",
+      "model": "compact",
+      "arm": "supcon",
+      "seed": 53,
+      "parameters": 969928,
+      "training_seconds": 109.08531090384349,
+      "epochs_completed": 8,
+      "device": "cuda",
+      "checkpoint": ".cache/iris-release-v1/diversity/runs/compact-supcon-s53/best.pt",
+      "test_used_for_selection": false
+    },
+    {
+      "epoch": 6,
+      "key": [
+        0.28067750506072875,
+        77,
+        1228
+      ],
+      "checkpoint_sha256": "0aae2669a7dcd622d3846118206d8d3ce99e816dfc89f14c51d51d6f53b8c02c",
+      "model": "full",
+      "arm": "ce",
+      "seed": 53,
+      "parameters": 2118280,
+      "training_seconds": 164.15548602119088,
+      "epochs_completed": 12,
+      "device": "cuda",
+      "checkpoint": ".cache/iris-release-v1/diversity/runs/full-ce-s53/best.pt",
+      "test_used_for_selection": false
+    },
+    {
+      "epoch": 14,
+      "key": [
+        0.28009793112589165,
+        83,
+        1271
+      ],
+      "checkpoint_sha256": "1cc9add87619f116562ea86b83661de410309541ecb5f0a03fe4222c48aaf659",
+      "model": "full",
+      "arm": "supcon",
+      "seed": 53,
+      "parameters": 2118280,
+      "training_seconds": 214.11927540134639,
+      "epochs_completed": 16,
+      "device": "cuda",
+      "checkpoint": ".cache/iris-release-v1/diversity/runs/full-supcon-s53/best.pt",
+      "test_used_for_selection": false
+    }
+  ],
+  "seed": 67,
+  "arms": [
+    "ce",
+    "supcon"
+  ],
+  "test_used_for_selection": false
+}

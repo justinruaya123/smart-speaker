@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "status": "archived_before_cleanup",
+  "created_utc": "2026-10-17T00:26:17.624717+00:00",
+  "repository": "justinruaya123/smart-speaker",
+  "visibility": "private",
+  "branch": "archive/iris-research-20261017",
+  "remote_commit": "ae1f1d7c67616e4efbae4619ac75620495e6073a",
+  "remote_ignore_only_commit": "6c1cd27e14fc23c34ec63374907e840422202888",
+  "remote_base": "5d872e3a249e5876aaa8130b76f6e3b31622355f",
+  "local_source_commit": "600be8a561d436c70d1e02f92aa44f9b693bef3f",
+  "local_ignore_only_commit": "03f2a64100647f560d3bbcabdd8f6e67203747dd",
+  "source_tree_sha": "f9a037ec364ca3abe49ce9896fcc8fa7897c510d",
+  "ignore_tree_sha": "d0763f61e4efcedf57511d890db3f5fc25b7aa59",
+  "tree_identity_verified": true,
+  "changed_files": 194,
+  "unique_blobs": 186,
+  "changed_bytes": 9152423,
+  "main_ref_moved": false,
+  "working_files_removed": false,
+  "method": "GitHub connector Git object upload; source tree compared to git rev-parse local snapshot^{tree}"
+}

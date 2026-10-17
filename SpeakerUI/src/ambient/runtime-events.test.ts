@@ -66,3 +66,28 @@ test('application acceptance is separate from qualification and local execution 
   model.timer.end=999;
   applyRuntimeEvent(model,execution,()=>{});assert.equal(model.timer.end,999);
 });
+
+test('tentative revisions preview only, expire on state reset and cannot overwrite a final result', () => {
+  const model: any = { history: [] };
+  const candidate = { intent: 'TIMER', slots: { duration_seconds: 30 } };
+  applyRuntimeEvent(model, { event: 'tentative', session_id: 's', utterance_id: 'u', sequence: 1, candidate, score: .8, is_final: false }, () => {});
+  assert.deepEqual(model.tentative.candidate, candidate);
+  assert.equal(model.history.length, 0);
+  assert.equal(model.timer, undefined);
+  applyRuntimeEvent(model, { event: 'state', session_id: 's', sequence: 1.5, state: 'processing' }, () => {});
+  assert.deepEqual(model.tentative.candidate, candidate);
+  applyRuntimeEvent(model, { event: 'state', session_id: 's', sequence: 2, state: 'wake_listening' }, () => {});
+  assert.equal(model.tentative, null);
+  applyRuntimeEvent(model, { event: 'command', session_id: 's', utterance_id: 'u', sequence: 3, source: 'microphone',
+    output: { schema_version: 3, accepted: true, command: candidate }, application: { accepted: true, command: candidate } }, () => {});
+  applyRuntimeEvent(model, { event: 'tentative', session_id: 's', utterance_id: 'u', sequence: 4, candidate, score: .9, is_final: false }, () => {});
+  assert.equal(model.tentative, null);
+  assert.equal(model.history.length, 1);
+});
+
+test('a reconnect snapshot of a failed worker cannot display a ready microphone', () => {
+  const model:any={runtimeReady:true};
+  applyRuntimeEvent(model,{event:'ready',session_id:'s',sequence:1,loaded:false,state:'runtime_error',actions_enabled:false},()=>{});
+  assert.equal(model.runtimeReady,false);
+  assert.equal(model.runtimeState,'runtime_error');
+});

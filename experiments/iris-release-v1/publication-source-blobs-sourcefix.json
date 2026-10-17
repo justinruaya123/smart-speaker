@@ -1,0 +1,101 @@
+{
+  "bytes": 6382417,
+  "files": [
+    {
+      "bytes": 5357,
+      "path": "experiments/iris-release-v1/package-replay.json",
+      "sha": "3cd35cf82fef8f421e78e1fa014352b883b0f98d"
+    },
+    {
+      "bytes": 78779,
+      "path": "experiments/iris-release-v1/pipeline-resources.json",
+      "sha": "7d3078c60a38fe892dc98c44043a2bb8c1db0ed7"
+    },
+    {
+      "bytes": 14162,
+      "path": "experiments/iris-release-v1/publication-source-blobs-corrected.json",
+      "sha": "a00778fef7ef18a1f105b18dd4b422660b14352b"
+    },
+    {
+      "bytes": 2172,
+      "path": "experiments/iris-release-v1/reproduction-fresh-source-ordering-rebind.json",
+      "sha": "f4489e6ee45a64800aed2150d91afbc0ae918825"
+    },
+    {
+      "bytes": 99395,
+      "path": "experiments/iris-release-v1/reproduction-ordering-fix-preservation.json",
+      "sha": "f5a567c775dc5e4e2d226c35a7e859b976d137f8"
+    },
+    {
+      "bytes": 18309,
+      "path": "experiments/iris-release-v1/reproduction-owner-fresh-preparation.json",
+      "sha": "bff618c5a87b4108abcf6411447d38bf097bd015"
+    },
+    {
+      "bytes": 983,
+      "path": "experiments/iris-release-v1/reproduction-source-closure-fix.json",
+      "sha": "c694796508d2abf16035a30bfade8485dc90e191"
+    },
+    {
+      "bytes": 99975,
+      "path": "experiments/iris-release-v1/reproduction-source-closure-preservation.json",
+      "sha": "30f499bc50187226a92d995cb26db07b1f03c73a"
+    },
+    {
+      "bytes": 381408,
+      "path": "experiments/iris-release-v1/reproduction-run-iris-final-orderfix.json",
+      "sha": "a0d1c7ce62e916f4800f047f242cebdc9cfec7a2"
+    },
+    {
+      "bytes": 4386,
+      "path": "experiments/iris-release-v1/reproduction-source-closure-validation.json",
+      "sha": "81661d03ff586eb074573632efa0aae10a5def69"
+    },
+    {
+      "bytes": 81537,
+      "path": "experiments/iris-release-v1/ui-final-integration.json",
+      "sha": "2e424cfe42dae0129a54f92f709a79f912cd4263"
+    },
+    {
+      "bytes": 13702,
+      "path": "MODEL_CARD.md",
+      "sha": "2259e16f57243694946bd76c2a42d1b29328e395"
+    },
+    {
+      "bytes": 21863,
+      "path": "docs/EXPERIMENT-iris-release-v1.md",
+      "sha": "de0e3caca9b510e42e000c06a516e8b58f4331ec"
+    },
+    {
+      "bytes": 30977,
+      "path": "scripts/iris_publish.py",
+      "sha": "cf201e3c75e88d4d523e764855837ef54101d3e3"
+    },
+    {
+      "bytes": 77740,
+      "path": "scripts/iris_release.py",
+      "sha": "98d0bfe462b220ae9d897713851cd5520f58d616"
+    },
+    {
+      "bytes": 23023,
+      "path": "scripts/iris_report.py",
+      "sha": "1776a4a1df23e9e6bfae21b1cbe36195b582e0c8"
+    },
+    {
+      "bytes": 53095,
+      "path": "scripts/test/test_iris_release.py",
+      "sha": "51e381c0836486fcae895fd1767c1de0558ec9d0"
+    },
+    {
+      "bytes": 5375554,
+      "path": "experiments/iris-release-v1/reproduction-inputs.json",
+      "sha": "f3728022ee8d738cb2ff22e81fa0c398b87dd904"
+    }
+  ],
+  "refs_moved": false,
+  "repository": "justinruaya123/smart-speaker",
+  "schema_version": 1,
+  "scope": "Frozen source inventory, publisher closure and compact evidence before completed fresh-sourcefix attestation; later complete workflow and final proof blobs remain to upload after the reviewed source commit.",
+  "status": "verified_immutable_blobs_uploaded",
+  "visibility": "private"
+}

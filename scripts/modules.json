@@ -1,622 +1,190 @@
 {
-  "speaker.pipeline_repair": {
-    "path": "train/speaker_pipeline_repair.py",
+  "iris.models.iris_owner": {
+    "path": "models/iris_owner.py",
     "runtime": false
   },
-  "speaker.compact_fp32_release": {
-    "path": "train/speaker_compact_fp32_release.py",
-    "runtime": false
-  },
-  "speaker.compact_train": {
-    "path": "train/speaker_compact.py",
-    "runtime": false
-  },
-  "speaker.compact_policy": {
-    "path": "train/speaker_compact_policy.py",
-    "runtime": false
-  },
-  "speaker.compact_release": {
-    "path": "train/speaker_compact_release.py",
-    "runtime": false
-  },
-  "speaker.compact_runtime": {
-    "path": "runtime/speaker_compact.py",
-    "runtime": true
-  },
-  "speaker.compact_benchmark": {
-    "path": "runtime/speaker_compact_benchmark.py",
-    "runtime": true
-  },
-  "speaker.final_train": {
-    "path": "train/speaker_final_train.py",
-    "runtime": false
-  },
-  "speaker.final_release": {
-    "path": "train/speaker_final_release.py",
-    "runtime": false
-  },
-  "speaker.synthetic_data": {
-    "path": "train/speaker_synthetic_data.py",
-    "runtime": false
-  },
-  "speaker.synthetic_prepare": {
-    "path": "train/speaker_synthetic_prepare.py",
-    "runtime": false
-  },
-  "speaker.synthetic_recovery": {
-    "path": "train/speaker_synthetic_recovery.py",
-    "runtime": false
-  },
-  "speaker.demo_v2_data": {
-    "path": "train/speaker_demo_v2_data.py",
-    "runtime": false
-  },
-  "speaker.dataset_install": {
-    "path": "train/speaker_dataset_install.py",
-    "runtime": false
-  },
-  "pcv.bundle_checks": {
-    "path": "test/pcv_bundle_checks.py",
-    "runtime": false
-  },
-  "pcv.calibration": {
-    "path": "train/pcv_calibration.py",
-    "runtime": false
-  },
-  "pcv.dia_bounded": {
-    "path": "train/pcv_dia_bounded.py",
-    "runtime": false
-  },
-  "pcv.three_engine_finish": {
-    "path": "test/pcv_three_engine_finish.py",
-    "runtime": false
-  },
-  "pcv.updated_data": {
-    "path": "train/pcv_updated_data.py",
-    "runtime": false
-  },
-  "pcv.updated_prepare": {
-    "path": "train/pcv_updated_prepare.py",
-    "runtime": false
-  },
-  "pcv.updated_training": {
-    "path": "train/pcv_updated_training.py",
-    "runtime": false
-  },
-  "pcv.updated_eval": {
-    "path": "test/pcv_updated_eval.py",
-    "runtime": false
-  },
-  "pcv.updated_boundaries": {
-    "path": "test/pcv_updated_boundaries.py",
-    "runtime": false
-  },
-  "pcv.updated_heads": {
-    "path": "train/pcv_updated_heads.py",
-    "runtime": false
-  },
-  "pcv.updated_heads_run": {
-    "path": "train/pcv_updated_heads_run.py",
-    "runtime": false
-  },
-  "pcv.updated_continue": {
-    "path": "train/pcv_updated_continue.py",
-    "runtime": false
-  },
-  "pcv.teacher_data": {
-    "path": "train/pcv_teacher_data.py",
-    "runtime": false
-  },
-  "pcv.teacher_model": {
-    "path": "models/pcv_teacher.py",
-    "runtime": false
-  },
-  "pcv.teacher_train": {
-    "path": "train/pcv_teacher_train.py",
-    "runtime": false
-  },
-  "pcv.distillation": {
-    "path": "train/pcv_distillation.py",
-    "runtime": false
-  },
-  "pcv.student_distill": {
-    "path": "train/pcv_student_distill.py",
-    "runtime": false
-  },
-  "pcv.distill_eval": {
-    "path": "test/pcv_distill_eval.py",
-    "runtime": false
-  },
-  "pcv.contextual_model": {
-    "path": "models/pcv_contextual.py",
-    "runtime": false
-  },
-  "pcv.context_training": {
-    "path": "train/pcv_context_training.py",
-    "runtime": false
-  },
-  "pcv.context_int8": {
-    "path": "train/pcv_context_int8.py",
-    "runtime": false
-  },
-  "pcv.final_qualification": {
-    "path": "test/pcv_final_qualification.py",
-    "runtime": false
-  },
-  "pcv.dia_cpu_codec": {
-    "path": "train/pcv_dia_cpu_codec.py",
-    "runtime": false
-  },
-  "pcv.dia_single": {
-    "path": "train/pcv_dia_single.py",
-    "runtime": false
-  },
-  "pcv.endpoint_checks": {
-    "path": "test/pcv_endpoint_checks.py",
-    "runtime": false
-  },
-  "pcv.public": {
-    "path": "pcv_public.py",
-    "runtime": false
-  },
-  "pcv.public_data": {
-    "path": "train/pcv_public_data.py",
-    "runtime": false
-  },
-  "pcv.public_eval": {
-    "path": "test/pcv_public_eval.py",
-    "runtime": false
-  },
-  "pcv.public_tests": {
-    "path": "test/test_pcv_public.py",
-    "runtime": false
-  },
-  "pcv.public_training": {
-    "path": "train/pcv_public_training.py",
-    "runtime": false
-  },
-  "pcv.qualification": {
-    "path": "test/pcv_public_qualification.py",
-    "runtime": false
-  },
-  "pcv.qualification_tests": {
-    "path": "test/test_pcv_qualification.py",
-    "runtime": false
-  },
-  "pcv.registry": {
-    "path": "runtime/pcv_registry.py",
-    "runtime": false
-  },
-  "pcv.residual_model": {
-    "path": "models/pcv_residual.py",
-    "runtime": false
-  },
-  "pcv.schema_v3": {
-    "path": "runtime/pcv_schema.py",
-    "runtime": false
-  },
-  "pcv.three_engine": {
-    "path": "train/pcv_three_engine.py",
-    "runtime": false
-  },
-  "pcv.three_engine_report": {
-    "path": "test/pcv_three_engine_report.py",
-    "runtime": false
-  },
-  "pcv.three_engine_report_tests": {
-    "path": "test/test_pcv_three_engine_report.py",
-    "runtime": false
-  },
-  "pcv.three_engine_tests": {
-    "path": "test/test_pcv_three_engine.py",
-    "runtime": false
-  },
-  "tinyvcm.__init__": {
-    "path": "runtime/__init__.py",
-    "runtime": true
-  },
-  "tinyvcm.activation": {
-    "path": "runtime/activation.py",
-    "runtime": true
-  },
-  "tinyvcm.audio": {
-    "path": "runtime/audio.py",
-    "runtime": true
-  },
-  "tinyvcm.benchmark": {
-    "path": "runtime/benchmark.py",
-    "runtime": true
-  },
-  "tinyvcm.brightness_benchmark": {
-    "path": "test/brightness_benchmark.py",
-    "runtime": false
-  },
-  "tinyvcm.brightness_data": {
-    "path": "train/brightness_data.py",
-    "runtime": false
-  },
-  "tinyvcm.brightness_training": {
-    "path": "train/brightness_training.py",
-    "runtime": false
-  },
-  "tinyvcm.brightness_workflow": {
-    "path": "train/brightness_workflow.py",
-    "runtime": false
-  },
-  "tinyvcm.bundle": {
-    "path": "runtime/bundle.py",
-    "runtime": true
-  },
-  "tinyvcm.candidate": {
-    "path": "train/candidate.py",
-    "runtime": false
-  },
-  "tinyvcm.capture": {
-    "path": "runtime/capture.py",
-    "runtime": true
-  },
-  "tinyvcm.complete_average": {
-    "path": "test/complete_average.py",
-    "runtime": false
-  },
-  "tinyvcm.complete_calibration": {
-    "path": "test/complete_calibration.py",
-    "runtime": false
-  },
-  "tinyvcm.complete_checks": {
-    "path": "test/complete_checks.py",
-    "runtime": false
-  },
-  "tinyvcm.complete_data": {
-    "path": "train/complete_data.py",
-    "runtime": false
-  },
-  "tinyvcm.complete_diagnosis": {
-    "path": "test/complete_diagnosis.py",
-    "runtime": false
-  },
-  "tinyvcm.complete_eval": {
-    "path": "test/complete_commands.py",
-    "runtime": false
-  },
-  "tinyvcm.complete_timing": {
-    "path": "test/complete_timing.py",
-    "runtime": false
-  },
-  "tinyvcm.complete_training": {
-    "path": "train/complete_commands.py",
-    "runtime": false
-  },
-  "tinyvcm.config": {
-    "path": "runtime/config.py",
-    "runtime": true
-  },
-  "tinyvcm.data": {
-    "path": "train/data.py",
-    "runtime": false
-  },
-  "tinyvcm.family_contract": {
-    "path": "runtime/family_contract.py",
-    "runtime": true
-  },
-  "tinyvcm.finite_policy": {
-    "path": "train/finite_policy.py",
-    "runtime": false
-  },
-  "tinyvcm.improvement": {
-    "path": "train/improvement.py",
-    "runtime": false
-  },
-  "tinyvcm.inference": {
-    "path": "runtime/inference.py",
-    "runtime": true
-  },
-  "tinyvcm.keyword_data": {
-    "path": "train/keyword_data.py",
-    "runtime": false
-  },
-  "tinyvcm.keyword_eval": {
-    "path": "test/keyword_eval.py",
-    "runtime": false
-  },
-  "tinyvcm.keyword_intent": {
-    "path": "models/keyword_intent.py",
-    "runtime": false
-  },
-  "tinyvcm.keyword_replay_eval": {
-    "path": "test/keyword_replay_eval.py",
-    "runtime": false
-  },
-  "tinyvcm.keyword_runtime": {
-    "path": "runtime/keyword_runtime.py",
-    "runtime": false
-  },
-  "tinyvcm.keyword_training": {
-    "path": "train/keyword_training.py",
-    "runtime": false
-  },
-  "tinyvcm.keyword_vcm": {
-    "path": "models/keyword_vcm.py",
-    "runtime": false
-  },
-  "tinyvcm.launcher": {
-    "path": "runtime/launcher.py",
-    "runtime": true
-  },
-  "tinyvcm.levels": {
-    "path": "runtime/levels.py",
-    "runtime": true
-  },
-  "tinyvcm.metrics": {
-    "path": "runtime/metrics.py",
-    "runtime": true
-  },
-  "tinyvcm.number_stress": {
-    "path": "test/number_stress.py",
-    "runtime": false
-  },
-  "tinyvcm.optimization": {
-    "path": "train/optimization.py",
-    "runtime": false
-  },
-  "tinyvcm.parameter_backend": {
-    "path": "runtime/parameter_backend.py",
-    "runtime": false
-  },
-  "tinyvcm.parameter_models": {
-    "path": "models/parameter_models.py",
-    "runtime": false
-  },
-  "tinyvcm.parameter_study": {
-    "path": "train/parameter_study.py",
-    "runtime": false
-  },
-  "tinyvcm.parameter_study_data": {
-    "path": "train/parameter_study_data.py",
-    "runtime": false
-  },
-  "tinyvcm.parameter_study_eval": {
-    "path": "test/parameter_study_eval.py",
-    "runtime": false
-  },
-  "tinyvcm.phonetic_data": {
-    "path": "train/phonetic_data.py",
-    "runtime": false
-  },
-  "tinyvcm.phonetic_eval": {
-    "path": "test/phonetic_eval.py",
-    "runtime": false
-  },
-  "tinyvcm.phonetic_reader": {
-    "path": "models/phonetic_reader.py",
-    "runtime": false
-  },
-  "tinyvcm.phonetic_training": {
-    "path": "train/phonetic_training.py",
-    "runtime": false
-  },
-  "tinyvcm.pipeline": {
-    "path": "runtime/pipeline.py",
-    "runtime": true
-  },
-  "tinyvcm.prototype_data": {
-    "path": "train/prototype_data.py",
-    "runtime": false
-  },
-  "tinyvcm.prototype_eval": {
-    "path": "test/prototype.py",
-    "runtime": false
-  },
-  "tinyvcm.prototype_training": {
-    "path": "train/prototype.py",
-    "runtime": false
-  },
-  "tinyvcm.prototype_validation": {
-    "path": "test/prototype_validation.py",
-    "runtime": false
-  },
-  "tinyvcm.release_setup_checks": {
-    "path": "test/release_setup.py",
-    "runtime": false
-  },
-  "tinyvcm.routing": {
-    "path": "runtime/routing.py",
-    "runtime": true
-  },
-  "tinyvcm.slot_contract": {
-    "path": "runtime/slot_contract.py",
-    "runtime": true
-  },
-  "tinyvcm.slot_model": {
-    "path": "models/slot_model.py",
-    "runtime": false
-  },
-  "tinyvcm.speech_embedding": {
-    "path": "models/speech_embedding.py",
-    "runtime": false
-  },
-  "tinyvcm.speech_embedding_data": {
-    "path": "train/speech_embedding_data.py",
-    "runtime": false
-  },
-  "tinyvcm.speech_embedding_eval": {
-    "path": "test/speech_embedding_eval.py",
-    "runtime": false
-  },
-  "tinyvcm.speech_embedding_study": {
-    "path": "train/speech_embedding_study.py",
-    "runtime": false
-  },
-  "tinyvcm.stt": {
-    "path": "models/stt.py",
-    "runtime": false
-  },
-  "tinyvcm.stt_runtime": {
-    "path": "runtime/stt_runtime.py",
-    "runtime": false
-  },
-  "tinyvcm.supervision": {
-    "path": "train/supervision.py",
-    "runtime": false
-  },
-  "tinyvcm.synthetic_data": {
-    "path": "train/synthetic_data.py",
-    "runtime": false
-  },
-  "tinyvcm.synthetic_eval": {
-    "path": "test/synthetic_eval.py",
-    "runtime": false
-  },
-  "tinyvcm.synthetic_training": {
-    "path": "train/synthetic_training.py",
-    "runtime": false
-  },
-  "tinyvcm.synthetic_tts": {
-    "path": "train/synthetic_tts.py",
-    "runtime": false
-  },
-  "tinyvcm.synthetic_vcm": {
-    "path": "models/synthetic_vcm.py",
-    "runtime": false
-  },
-  "tinyvcm.text": {
-    "path": "runtime/text.py",
-    "runtime": true
-  },
-  "tinyvcm.train_helpers": {
-    "path": "train/train_helpers.py",
-    "runtime": false
-  },
-  "tinyvcm.training": {
-    "path": "train/training.py",
-    "runtime": false
-  },
-  "tinyvcm.validation": {
-    "path": "test/validation.py",
-    "runtime": true
-  },
-  "tinyvcm.vcm": {
-    "path": "models/vcm.py",
-    "runtime": false
-  },
-  "tinyvcm.wake_models": {
-    "path": "runtime/wake_models.py",
-    "runtime": true
-  },
-  "tinyvcm.wake_pipeline_tests": {
-    "path": "test/wake_pipeline.py",
-    "runtime": false
-  },
-  "tinyvcm.wake_quantization_tests": {
-    "path": "test/wake_quantization.py",
-    "runtime": false
-  },
-  "pcv.release_data": {
-    "path": "train/pcv_release_data.py",
-    "runtime": false
-  },
-  "pcv.release_prepare": {
-    "path": "train/pcv_release_prepare.py",
-    "runtime": false
-  },
-  "pcv.release_training": {
-    "path": "train/pcv_release_training.py",
-    "runtime": false
-  },
-  "pcv.release_pooling": {
-    "path": "models/pcv_release_pooling.py",
-    "runtime": false
-  },
-  "pcv.release_qualification": {
-    "path": "test/pcv_release_qualification.py",
-    "runtime": false
-  },
-  "pcv.release_workflow": {
-    "path": "pcv_release.py",
-    "runtime": false
-  },
-  "pcv.final_delivery": {
-    "path": "pcv_final_delivery.py",
-    "runtime": false
-  },
-  "pcv.final_runtime": {
-    "path": "runtime/pcv_final_runtime.py",
-    "runtime": true
-  },
-  "pcv.pi_benchmark": {
-    "path": "runtime/pcv_pi_benchmark.py",
-    "runtime": true
-  },
-  "pcv.speaker_start": {
-    "path": "runtime/speaker_start.py",
-    "runtime": true
-  },
-  "pcv.speaker_tools": {
-    "path": "runtime/speaker_tools.py",
-    "runtime": true
-  },
-  "pcv.speaker_package": {
-    "path": "runtime/speaker_package.py",
-    "runtime": true
-  },
-  "pcv.speaker_worker": {
-    "path": "runtime/speaker_worker.py",
-    "runtime": true
-  },
-  "pcv.speaker_publish": {
-    "path": "speaker_publish.py",
-    "runtime": false
-  },
-  "pcv.source_setup": {
-    "path": "source_setup.py",
-    "runtime": false
-  },
-  "pcv.speaker_start_tests": {
-    "path": "test/test_speaker_start.py",
-    "runtime": false
-  },
-  "pcv.speaker_worker_tests": {
-    "path": "test/test_speaker_worker.py",
-    "runtime": false
-  },
-  "pcv.speaker_wake_replay": {
-    "path": "test/speaker_wake_replay.py",
-    "runtime": false
-  },
-  "mvp.static_model": {
+  "iris.models.mvp_static": {
     "path": "models/mvp_static.py",
     "runtime": false
   },
-  "mvp.static_train": {
-    "path": "train/mvp_static_train.py",
-    "runtime": false
-  },
-  "mvp.static_release": {
-    "path": "train/mvp_static_release.py",
-    "runtime": false
-  },
-  "mvp.static_runtime": {
-    "path": "runtime/mvp_static.py",
-    "runtime": true
-  },
-  "mvp.wake_model": {
+  "iris.models.mvp_wake": {
     "path": "models/mvp_wake.py",
     "runtime": false
   },
-  "mvp.wake_train": {
-    "path": "train/mvp_wake.py",
+  "iris.models.speaker_demo": {
+    "path": "models/speaker_demo.py",
     "runtime": false
   },
-  "mvp.wake_runtime": {
+  "iris.runtime.audio": {
+    "path": "runtime/audio.py",
+    "runtime": true
+  },
+  "iris.runtime.iris_owner": {
+    "path": "runtime/iris_owner.py",
+    "runtime": true
+  },
+  "iris.runtime.iris_pi_benchmark": {
+    "path": "runtime/iris_pi_benchmark.py",
+    "runtime": true
+  },
+  "iris.runtime.mvp_static": {
+    "path": "runtime/mvp_static.py",
+    "runtime": true
+  },
+  "iris.runtime.mvp_wake": {
     "path": "runtime/mvp_wake.py",
     "runtime": true
   },
-  "mvp.delivery": {
+  "iris.runtime.pcv_benchmark_adapter": {
+    "path": "runtime/pcv_benchmark_adapter.py",
+    "runtime": true
+  },
+  "iris.runtime.pcv_schema": {
+    "path": "runtime/pcv_schema.py",
+    "runtime": true
+  },
+  "iris.runtime.speaker_config": {
+    "path": "runtime/speaker_config.py",
+    "runtime": true
+  },
+  "iris.runtime.speaker_package": {
+    "path": "runtime/speaker_package.py",
+    "runtime": true
+  },
+  "iris.runtime.speaker_session": {
+    "path": "runtime/speaker_session.py",
+    "runtime": true
+  },
+  "iris.runtime.speaker_start": {
+    "path": "runtime/speaker_start.py",
+    "runtime": true
+  },
+  "iris.runtime.speaker_tools": {
+    "path": "runtime/speaker_tools.py",
+    "runtime": true
+  },
+  "iris.runtime.speaker_worker": {
+    "path": "runtime/speaker_worker.py",
+    "runtime": true
+  },
+  "iris.runtime.wake_gate": {
+    "path": "runtime/wake_gate.py",
+    "runtime": true
+  },
+  "iris.runtime.wake_models": {
+    "path": "runtime/wake_models.py",
+    "runtime": true
+  },
+  "iris.train.iris_diversity": {
+    "path": "train/iris_diversity.py",
+    "runtime": false
+  },
+  "iris.train.iris_export": {
+    "path": "train/iris_export.py",
+    "runtime": false
+  },
+  "iris.train.iris_owner": {
+    "path": "train/iris_owner.py",
+    "runtime": false
+  },
+  "iris.train.iris_wake": {
+    "path": "train/iris_wake.py",
+    "runtime": false
+  },
+  "iris.train.iris_wake_helpers": {
+    "path": "train/iris_wake_helpers.py",
+    "runtime": false
+  },
+  "iris.test.iris_benchmark": {
+    "path": "test/iris_benchmark.py",
+    "runtime": false
+  },
+  "iris.test.iris_metrics": {
+    "path": "test/iris_metrics.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_archive": {
+    "path": "test/test_iris_archive.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_configuration": {
+    "path": "test/test_iris_configuration.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_diversity": {
+    "path": "test/test_iris_diversity.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_models": {
+    "path": "test/test_iris_models.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_owner": {
+    "path": "test/test_iris_owner.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_pi_benchmark": {
+    "path": "test/test_iris_pi_benchmark.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_release": {
+    "path": "test/test_iris_release.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_session": {
+    "path": "test/test_iris_session.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_wake_models": {
+    "path": "test/test_iris_wake_models.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_wake_release": {
+    "path": "test/test_iris_wake_release.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_worker": {
+    "path": "test/test_iris_worker.py",
+    "runtime": false
+  },
+  "iris.iris_release": {
+    "path": "iris_release.py",
+    "runtime": false
+  },
+  "iris.iris_publish": {
+    "path": "iris_publish.py",
+    "runtime": false
+  },
+  "iris.archive_io": {
+    "path": "archive_io.py",
+    "runtime": false
+  },
+  "iris.mvp_delivery": {
     "path": "mvp_delivery.py",
     "runtime": false
   },
-  "mvp.policy_refine": {
-    "path": "train/mvp_policy_refine.py",
+  "iris.speaker_publish": {
+    "path": "speaker_publish.py",
+    "runtime": false
+  },
+  "iris.test.iris_resources": {
+    "path": "test/iris_resources.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_resources": {
+    "path": "test/test_iris_resources.py",
+    "runtime": false
+  },
+  "iris.iris_report": {
+    "path": "iris_report.py",
+    "runtime": false
+  },
+  "iris.test.iris_decision_parity": {
+    "path": "test/iris_decision_parity.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_metrics": {
+    "path": "test/test_iris_metrics.py",
     "runtime": false
   }
 }

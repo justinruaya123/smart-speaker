@@ -1,0 +1,2011 @@
+{
+  "files": [
+    {
+      "bytes": 671,
+      "original_path": ".cache/iris-release-v1/diversity/release-export/bundle.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/diversity/release-export/bundle.json",
+      "sha256": "d7671bb393f7a81b4a354e6922b8a469c76a57aec8264ba3ff030fbba1adaa03"
+    },
+    {
+      "bytes": 114053,
+      "original_path": ".cache/iris-release-v1/diversity/release-export/catalog.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/diversity/release-export/catalog.json",
+      "sha256": "f169f8b80be8a844de4fca1cfbe7ead9841d4165ec8ad748b0af9010c6c5e8b1"
+    },
+    {
+      "bytes": 3973147,
+      "original_path": ".cache/iris-release-v1/diversity/release-export/model.onnx",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/diversity/release-export/model.onnx",
+      "sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a"
+    },
+    {
+      "bytes": 811,
+      "original_path": ".cache/iris-release-v1/diversity/release-export/ncnn/engine.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/diversity/release-export/ncnn/engine.json",
+      "sha256": "d4180c8657a9db0ae87f1384dbb43cf3caa6d8e54d8ec76f625a2e365a670f51"
+    },
+    {
+      "bytes": 3879960,
+      "original_path": ".cache/iris-release-v1/diversity/release-export/ncnn/model.ncnn.bin",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/diversity/release-export/ncnn/model.ncnn.bin",
+      "sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133"
+    },
+    {
+      "bytes": 8904,
+      "original_path": ".cache/iris-release-v1/diversity/release-export/ncnn/model.ncnn.param",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/diversity/release-export/ncnn/model.ncnn.param",
+      "sha256": "e7289f35da2cf35147d3b8833a4915b8e3a0520cc99573ebfffae07ec6da7998"
+    },
+    {
+      "bytes": 1515,
+      "original_path": ".cache/iris-release-v1/diversity/release-export/ncnn/position-frequency.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/diversity/release-export/ncnn/position-frequency.json",
+      "sha256": "2cf4b7057c69f59eff846bf80903eb98f9ed17da9edd3ba0efb6f1940fa97605"
+    },
+    {
+      "bytes": 148035,
+      "original_path": ".cache/iris-release-v1/diversity/release-export/normalization.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/diversity/release-export/normalization.json",
+      "sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262"
+    },
+    {
+      "bytes": 31127,
+      "original_path": ".cache/iris-release-v1/diversity/release-export/policy.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/diversity/release-export/policy.json",
+      "sha256": "77de4929939d618b84238f1c95e449eb8a3697c636c23a7861e72c0b52c5b13e"
+    },
+    {
+      "bytes": 2327524,
+      "original_path": ".cache/iris-release-v1/inputs/vad/silero-vad.onnx",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/inputs/vad/silero-vad.onnx",
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f"
+    },
+    {
+      "bytes": 381,
+      "original_path": ".cache/iris-release-v1/inputs/vad/wake-models.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/inputs/vad/wake-models.json",
+      "sha256": "9784dd9b5836cbaaf6a6fdb7912ae2baedde17e538befe2fe3d8c2b7c4b7dd6a"
+    },
+    {
+      "bytes": 4640,
+      "original_path": ".cache/iris-release-v1/owner/export/owner.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/owner/export/owner.json",
+      "sha256": "e2d531627fabf90453762cf17eb082b3f52f8922aa830e37a9202144b91fb310"
+    },
+    {
+      "bytes": 542023,
+      "original_path": ".cache/iris-release-v1/owner/export/owner.onnx",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/owner/export/owner.onnx",
+      "sha256": "84e860f814e248e793567b2f1c8fe83d24d82b9d58f5379e4da69eb7b78d0a3f"
+    },
+    {
+      "bytes": 152922,
+      "original_path": ".cache/iris-release-v1/wake/export/iris.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/wake/export/iris.json",
+      "sha256": "12d21a9460a2ac37582d28c0f31cb90f670b8bbc423f5c3bca664bb02d3d0922"
+    },
+    {
+      "bytes": 323904,
+      "original_path": ".cache/iris-release-v1/wake/export/iris.ncnn.bin",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/wake/export/iris.ncnn.bin",
+      "sha256": "f5608815519830107220939124abf65222dec6f159ed36ead1f50d124392da98"
+    },
+    {
+      "bytes": 2713,
+      "original_path": ".cache/iris-release-v1/wake/export/iris.ncnn.param",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/wake/export/iris.ncnn.param",
+      "sha256": "43ce9accd880119cba8737365ef799280d22985dd69bc7d7940339ea5f88c067"
+    },
+    {
+      "bytes": 330103,
+      "original_path": ".cache/iris-release-v1/wake/export/iris.onnx",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/.cache/iris-release-v1/wake/export/iris.onnx",
+      "sha256": "22fc8b0c6a3c80e1d1686d321a6251957085216efaca1752eb22067064a4ea57"
+    },
+    {
+      "bytes": 13702,
+      "original_path": "MODEL_CARD.md",
+      "recovery_path": ".cache/iris-release-v1/pre-source-closure-fix/MODEL_CARD.md",
+      "sha256": "bd1b4e65e3c07196aaf4ab3948e488e2355ff9317b085c95ec530b1b276dee2f"
+    },
+    {
+      "bytes": 3258,
+      "original_path": "SpeakerUI/.env.example",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/.env.example",
+      "sha256": "e490907fb6ffd1a9e03e72828a5510748e07474f7e6d6cd06ed25bb3b6989b61"
+    },
+    {
+      "bytes": 2459,
+      "original_path": "SpeakerUI/AGENTS.md",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/AGENTS.md",
+      "sha256": "6e7bbd7f13dc1ce351ca3d5a2e63751abc57863b930325aa4b022f78b32e7733"
+    },
+    {
+      "bytes": 6084,
+      "original_path": "SpeakerUI/README.md",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/README.md",
+      "sha256": "2b30000384034919ef95350fa94d8d1c01d357bd2ff8c55a44eb89546eb45099"
+    },
+    {
+      "bytes": 384,
+      "original_path": "SpeakerUI/UPSTREAM.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/UPSTREAM.json",
+      "sha256": "4a546211fb7e9e8f99e136bfd6aa9a2ec0848e636f3c935d5bd3322a825e6c78"
+    },
+    {
+      "bytes": 355,
+      "original_path": "SpeakerUI/components.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/components.json",
+      "sha256": "eafc787ff3a3f3224bfa05d6e74d697876e69dfa589541a9a714a8bd0a581d49"
+    },
+    {
+      "bytes": 8013,
+      "original_path": "SpeakerUI/docs/architecture.md",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/architecture.md",
+      "sha256": "470a6ce9cd824df9fa9e7972f4e68fd237a326b319582d5e9e375f25629292a4"
+    },
+    {
+      "bytes": 8015,
+      "original_path": "SpeakerUI/docs/design/ambient.md",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/design/ambient.md",
+      "sha256": "793f4901c1501475af6a33307ccdd825eb66caf190f5a7e40aeb814ff48bc568"
+    },
+    {
+      "bytes": 2904,
+      "original_path": "SpeakerUI/docs/onnx-sanity.md",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/onnx-sanity.md",
+      "sha256": "f50bb8bd1472175376efb9778f6ed946914d30a95b4f158c2f702127318775b6"
+    },
+    {
+      "bytes": 4972,
+      "original_path": "SpeakerUI/docs/superpowers/plans/2026-10-01-ambient-implementation.md",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/superpowers/plans/2026-10-01-ambient-implementation.md",
+      "sha256": "ab18fe87ed270678aedf7de1e28cf692b3d1ad47099b1e82905f2be48f5018b8"
+    },
+    {
+      "bytes": 5901,
+      "original_path": "SpeakerUI/docs/testing/ambient/README.md",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/README.md",
+      "sha256": "07e9dd82bba973cb663b2ef920449064e16ddf83f35fb54e84e32b0b8005138c"
+    },
+    {
+      "bytes": 942,
+      "original_path": "SpeakerUI/docs/testing/ambient/alerts.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/alerts.json",
+      "sha256": "33c0db1da068851ae9b2ada05eabca4c268691c6a54ecf06970662f98e3d31ce"
+    },
+    {
+      "bytes": 4907,
+      "original_path": "SpeakerUI/docs/testing/ambient/parity.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/parity.json",
+      "sha256": "f929e1639be2109845e0762376a7df705877ed96530d3adc4c36c36de13ba7c9"
+    },
+    {
+      "bytes": 71998,
+      "original_path": "SpeakerUI/docs/testing/ambient/prototype-alarm.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/prototype-alarm.png",
+      "sha256": "262d61929301d62777fa9434cfa37df96cfb8854e00533b2a91bbc7857abe9b8"
+    },
+    {
+      "bytes": 947,
+      "original_path": "SpeakerUI/docs/testing/ambient/prototype-alerts.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/prototype-alerts.json",
+      "sha256": "b8938761cb9830742c80a5702470db179f61af71e8ce9f466013ad7ba3151790"
+    },
+    {
+      "bytes": 57945,
+      "original_path": "SpeakerUI/docs/testing/ambient/prototype-call.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/prototype-call.png",
+      "sha256": "1fca525bc65293a4b4c3f10593b48172f814fe1315e558d53ca319775048eb0f"
+    },
+    {
+      "bytes": 165131,
+      "original_path": "SpeakerUI/docs/testing/ambient/prototype-climate.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/prototype-climate.png",
+      "sha256": "a11456ac518b23a0aa6c504feb166e6224333e8c3d276662185c553975b02782"
+    },
+    {
+      "bytes": 61841,
+      "original_path": "SpeakerUI/docs/testing/ambient/prototype-contacts.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/prototype-contacts.png",
+      "sha256": "6ebe57f1684c8f6444f4a218fbe62e77f22bf57ae0b8afc03cc9344cd87d0847"
+    },
+    {
+      "bytes": 122840,
+      "original_path": "SpeakerUI/docs/testing/ambient/prototype-controls.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/prototype-controls.png",
+      "sha256": "f08385de9d174cd742bd8c216d56fa6c5da434572a4459a861d71dcdb28f8df5"
+    },
+    {
+      "bytes": 157336,
+      "original_path": "SpeakerUI/docs/testing/ambient/prototype-home.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/prototype-home.png",
+      "sha256": "f4660492b48004f26e2afc4099366abaa7769a2a9eb2ad80351a993338d870f6"
+    },
+    {
+      "bytes": 2247,
+      "original_path": "SpeakerUI/docs/testing/ambient/prototype-interactions.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/prototype-interactions.json",
+      "sha256": "503fc8c3fa75cd50b59b4487b6393b4357b51069857e39b3364912b0374b82f6"
+    },
+    {
+      "bytes": 143189,
+      "original_path": "SpeakerUI/docs/testing/ambient/prototype-lights.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/prototype-lights.png",
+      "sha256": "c2e171ea7683127106b207741119a36ec625dfb132ee19137dd5b152a8dc8b60"
+    },
+    {
+      "bytes": 93373,
+      "original_path": "SpeakerUI/docs/testing/ambient/prototype-music.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/prototype-music.png",
+      "sha256": "c02915b263ce39cbe66a5db1fdb9a9e1b84ac293ff6e46fd018c332c2ec99e7a"
+    },
+    {
+      "bytes": 66879,
+      "original_path": "SpeakerUI/docs/testing/ambient/prototype-reminder.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/prototype-reminder.png",
+      "sha256": "3634892b9444972bf9aab9e1c1569141ba2bebb4e7a4d18ab6088c586105b7ec"
+    },
+    {
+      "bytes": 43827,
+      "original_path": "SpeakerUI/docs/testing/ambient/prototype-timer.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/prototype-timer.png",
+      "sha256": "ecf34ad854595eb63cff23578215ec9c5b9ab36d412d09f066c474ccdb895dc0"
+    },
+    {
+      "bytes": 78563,
+      "original_path": "SpeakerUI/docs/testing/ambient/r6-alarm.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/r6-alarm.png",
+      "sha256": "b625efe7db6cdb74ad88312c9080bc34e4ae883bd3772a12db98adccae4874cb"
+    },
+    {
+      "bytes": 48017,
+      "original_path": "SpeakerUI/docs/testing/ambient/r6-alert.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/r6-alert.png",
+      "sha256": "921beb519b4fead400a97df30007ba71f7ddd02f07afb447ef5ef974c98f31aa"
+    },
+    {
+      "bytes": 168532,
+      "original_path": "SpeakerUI/docs/testing/ambient/r6-climate.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/r6-climate.png",
+      "sha256": "11d0264ffa5617c39458bd82f71dcbaa5464dfafc5f8c45e199d579fdbc51158"
+    },
+    {
+      "bytes": 137892,
+      "original_path": "SpeakerUI/docs/testing/ambient/r6-control-1024.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/r6-control-1024.png",
+      "sha256": "559ce61cb3db6655d4837928d242752d280fa3c99f91d62076a432bf90f7d4e0"
+    },
+    {
+      "bytes": 223548,
+      "original_path": "SpeakerUI/docs/testing/ambient/r6-home-1024.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/r6-home-1024.png",
+      "sha256": "de80b9b2068c68d7f9c7b7dbcdd2a8927131227a1a319e63c17ef7cea758a26b"
+    },
+    {
+      "bytes": 154679,
+      "original_path": "SpeakerUI/docs/testing/ambient/r6-home.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/r6-home.png",
+      "sha256": "dd8d7a340e10bf1ef31d6d4e07cd912a14049f3521541533ac0c0ff807c83b22"
+    },
+    {
+      "bytes": 203571,
+      "original_path": "SpeakerUI/docs/testing/ambient/r6-listening.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/r6-listening.png",
+      "sha256": "4e7f95e7e3ad9cdf2c0aeabd3347ff4382776f0a350471ac02defc7d6bf955ea"
+    },
+    {
+      "bytes": 192262,
+      "original_path": "SpeakerUI/docs/testing/ambient/r6-music.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/r6-music.png",
+      "sha256": "4ec357554ee4c3b954469d00b96db5be30de71508a61cb158a68c9d6aadb00a8"
+    },
+    {
+      "bytes": 186045,
+      "original_path": "SpeakerUI/docs/testing/ambient/r6-swipe.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/r6-swipe.png",
+      "sha256": "190760f1ac8c91fb5d113e34f4704d83b86997e47693d7db950e3908e7cfeb8d"
+    },
+    {
+      "bytes": 9599,
+      "original_path": "SpeakerUI/docs/testing/ambient/resources.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/resources.json",
+      "sha256": "155bf6838f71cb5fe67b533785cecce9091e9fd03fee71506de59efcc56000a5"
+    },
+    {
+      "bytes": 2247,
+      "original_path": "SpeakerUI/docs/testing/ambient/revision-6-checks.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/revision-6-checks.json",
+      "sha256": "503fc8c3fa75cd50b59b4487b6393b4357b51069857e39b3364912b0374b82f6"
+    },
+    {
+      "bytes": 990,
+      "original_path": "SpeakerUI/docs/testing/ambient/startup.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/startup.json",
+      "sha256": "7e6f6ed093ded059aa7e4562b5b5f2b369fb441fd70bb0df2c884ccb5bb8cf49"
+    },
+    {
+      "bytes": 71998,
+      "original_path": "SpeakerUI/docs/testing/ambient/svelte-alarm.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/svelte-alarm.png",
+      "sha256": "262d61929301d62777fa9434cfa37df96cfb8854e00533b2a91bbc7857abe9b8"
+    },
+    {
+      "bytes": 57539,
+      "original_path": "SpeakerUI/docs/testing/ambient/svelte-call.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/svelte-call.png",
+      "sha256": "a43cd419f703c66ed8c818c843e3bfeec594ff0c22aff22429b0262f67f4fc47"
+    },
+    {
+      "bytes": 165131,
+      "original_path": "SpeakerUI/docs/testing/ambient/svelte-climate.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/svelte-climate.png",
+      "sha256": "a11456ac518b23a0aa6c504feb166e6224333e8c3d276662185c553975b02782"
+    },
+    {
+      "bytes": 61841,
+      "original_path": "SpeakerUI/docs/testing/ambient/svelte-contacts.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/svelte-contacts.png",
+      "sha256": "6ebe57f1684c8f6444f4a218fbe62e77f22bf57ae0b8afc03cc9344cd87d0847"
+    },
+    {
+      "bytes": 122840,
+      "original_path": "SpeakerUI/docs/testing/ambient/svelte-controls.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/svelte-controls.png",
+      "sha256": "f08385de9d174cd742bd8c216d56fa6c5da434572a4459a861d71dcdb28f8df5"
+    },
+    {
+      "bytes": 157336,
+      "original_path": "SpeakerUI/docs/testing/ambient/svelte-home.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/svelte-home.png",
+      "sha256": "f4660492b48004f26e2afc4099366abaa7769a2a9eb2ad80351a993338d870f6"
+    },
+    {
+      "bytes": 143256,
+      "original_path": "SpeakerUI/docs/testing/ambient/svelte-lights.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/svelte-lights.png",
+      "sha256": "3ea348c536558f1acd78cd615477ac656865943722c5f75fe6cbdb1a0ae37dc1"
+    },
+    {
+      "bytes": 93373,
+      "original_path": "SpeakerUI/docs/testing/ambient/svelte-music.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/svelte-music.png",
+      "sha256": "c02915b263ce39cbe66a5db1fdb9a9e1b84ac293ff6e46fd018c332c2ec99e7a"
+    },
+    {
+      "bytes": 66879,
+      "original_path": "SpeakerUI/docs/testing/ambient/svelte-reminder.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/svelte-reminder.png",
+      "sha256": "3634892b9444972bf9aab9e1c1569141ba2bebb4e7a4d18ab6088c586105b7ec"
+    },
+    {
+      "bytes": 43827,
+      "original_path": "SpeakerUI/docs/testing/ambient/svelte-timer.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/ambient/svelte-timer.png",
+      "sha256": "ecf34ad854595eb63cff23578215ec9c5b9ab36d412d09f066c474ccdb895dc0"
+    },
+    {
+      "bytes": 2071,
+      "original_path": "SpeakerUI/docs/testing/artwork/README.md",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/README.md",
+      "sha256": "411fbb30d5252fcf5571fe928f4370bda3ac51aee54c384cf66d032978615c00"
+    },
+    {
+      "bytes": 3691,
+      "original_path": "SpeakerUI/docs/testing/artwork/checks.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/checks.json",
+      "sha256": "5706f7ec79a9959e650fdb2013cb1b089117002226df48d6faa67c70f7db5e4b"
+    },
+    {
+      "bytes": 168372,
+      "original_path": "SpeakerUI/docs/testing/artwork/live-home-800.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/live-home-800.png",
+      "sha256": "5bac6f52ec2792cb5c20a3d109defc003e4b49119c832796e497918a1fa61061"
+    },
+    {
+      "bytes": 180760,
+      "original_path": "SpeakerUI/docs/testing/artwork/live-lights-1024.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/live-lights-1024.png",
+      "sha256": "6c64546f5d3682de0e13ac25817b549ba85b0b069b3204fdf4b06158b0ad0fb0"
+    },
+    {
+      "bytes": 96769,
+      "original_path": "SpeakerUI/docs/testing/artwork/live-lights-800.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/live-lights-800.png",
+      "sha256": "c5bf61974372c65b948e28cca34dedb53da9b8f6e552d4d5d952388551483f43"
+    },
+    {
+      "bytes": 92717,
+      "original_path": "SpeakerUI/docs/testing/artwork/live-music-1024.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/live-music-1024.png",
+      "sha256": "8a1338ea18a6b6d380d56377dccf8c5452f04d2ed9c890e43c3e7b4406da6cf9"
+    },
+    {
+      "bytes": 73631,
+      "original_path": "SpeakerUI/docs/testing/artwork/live-music-800.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/live-music-800.png",
+      "sha256": "d6ba41c4a1d920c1f371737fcee365e1202ae08c120c7e4e8e5cb4d82e8766ce"
+    },
+    {
+      "bytes": 78930,
+      "original_path": "SpeakerUI/docs/testing/artwork/regression/r6-alarm.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/regression/r6-alarm.png",
+      "sha256": "58e690d76236955adadb4b3e877c4024adab5588ebc5d97cb77db8cbe78c3aac"
+    },
+    {
+      "bytes": 48380,
+      "original_path": "SpeakerUI/docs/testing/artwork/regression/r6-alert.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/regression/r6-alert.png",
+      "sha256": "349c42374cf920640833ed27077cca9dbab386e875982c993e53954ed1705d0f"
+    },
+    {
+      "bytes": 180568,
+      "original_path": "SpeakerUI/docs/testing/artwork/regression/r6-climate.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/regression/r6-climate.png",
+      "sha256": "0eb5c30bc9904f247e5ebc2c1a132c4c76f0c185cc84ef82d8387c550e454912"
+    },
+    {
+      "bytes": 138097,
+      "original_path": "SpeakerUI/docs/testing/artwork/regression/r6-control-1024.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/regression/r6-control-1024.png",
+      "sha256": "f71e25a985d6237208651a9411b3a377b3954819e2738ba099127f6335a9eceb"
+    },
+    {
+      "bytes": 223364,
+      "original_path": "SpeakerUI/docs/testing/artwork/regression/r6-home-1024.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/regression/r6-home-1024.png",
+      "sha256": "92d2c9a66c7c7753b542077626712db7c2c21fa5d8ea8dc2f1ff8a82f52431ff"
+    },
+    {
+      "bytes": 154828,
+      "original_path": "SpeakerUI/docs/testing/artwork/regression/r6-home.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/regression/r6-home.png",
+      "sha256": "f99cdbcdf0528bbec3ae9b96d1dd0edfcb55ace20a06b6108bc4850ea4f01ba5"
+    },
+    {
+      "bytes": 172799,
+      "original_path": "SpeakerUI/docs/testing/artwork/regression/r6-listening.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/regression/r6-listening.png",
+      "sha256": "ad66ee7b89b639816ef5b45e0477ff98e82d01fb74f043357c53e3ee8ec76fe6"
+    },
+    {
+      "bytes": 184655,
+      "original_path": "SpeakerUI/docs/testing/artwork/regression/r6-music.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/regression/r6-music.png",
+      "sha256": "d42088b02a1a8c2c24b2522458e22f9b16eb515f3202c8dbe4eab198f39dee02"
+    },
+    {
+      "bytes": 186449,
+      "original_path": "SpeakerUI/docs/testing/artwork/regression/r6-swipe.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/regression/r6-swipe.png",
+      "sha256": "64c5d2912ea666b8bfef477bc7070f544b26e28dc8ee0bf780b4e65d252e377a"
+    },
+    {
+      "bytes": 2247,
+      "original_path": "SpeakerUI/docs/testing/artwork/regression/revision-6-checks.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/regression/revision-6-checks.json",
+      "sha256": "503fc8c3fa75cd50b59b4487b6393b4357b51069857e39b3364912b0374b82f6"
+    },
+    {
+      "bytes": 115920,
+      "original_path": "SpeakerUI/docs/testing/artwork/spotify-connect.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/artwork/spotify-connect.png",
+      "sha256": "f4522b03e495c9c3ab2e6dbdb3fb02f302f1b73912709a80dd284711d7aea7c3"
+    },
+    {
+      "bytes": 4710,
+      "original_path": "SpeakerUI/docs/testing/camera/README.md",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/README.md",
+      "sha256": "04690bbf3b5cc6cd5c088628f48aa508d781c1e7710cf933795961f2991dc4f2"
+    },
+    {
+      "bytes": 37805,
+      "original_path": "SpeakerUI/docs/testing/camera/camera-centered-800.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/camera-centered-800.png",
+      "sha256": "df89df4526726fc5f754f4199e589d393bb6263cabd17e6861a3fea1a0156e0d"
+    },
+    {
+      "bytes": 24799,
+      "original_path": "SpeakerUI/docs/testing/camera/camera-error-800.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/camera-error-800.png",
+      "sha256": "d7c49648e36b7d51c340475160fa575b3d13af6a2b27487b216ef83c09822682"
+    },
+    {
+      "bytes": 48601,
+      "original_path": "SpeakerUI/docs/testing/camera/camera-expanded-1024.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/camera-expanded-1024.png",
+      "sha256": "ba65e83da1763cf4950cec87fd133eecd754a1226c673cb44fbbd4a766a7be15"
+    },
+    {
+      "bytes": 37805,
+      "original_path": "SpeakerUI/docs/testing/camera/camera-expanded-800.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/camera-expanded-800.png",
+      "sha256": "7ce4478b52db046972dade2f4c409fd82e3581bed3c3af461f633e7cd2d12138"
+    },
+    {
+      "bytes": 157907,
+      "original_path": "SpeakerUI/docs/testing/camera/camera-floating-800.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/camera-floating-800.png",
+      "sha256": "c6728056b5d6b01bda1e8cd72b80c1dada8ecf4859e1636cfa107121ff6cff9e"
+    },
+    {
+      "bytes": 129949,
+      "original_path": "SpeakerUI/docs/testing/camera/camera-floating-music-1024.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/camera-floating-music-1024.png",
+      "sha256": "bff4e3e9e63bae0cb419bcf748759c5c14bd18fa22014fe0e452ea39d99daf02"
+    },
+    {
+      "bytes": 106787,
+      "original_path": "SpeakerUI/docs/testing/camera/camera-floating-music-800.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/camera-floating-music-800.png",
+      "sha256": "cacd71c4fb96c80c4e1321d7164a3004958639389fa70965d2739e4345c08a35"
+    },
+    {
+      "bytes": 55293,
+      "original_path": "SpeakerUI/docs/testing/camera/camera-preview-800.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/camera-preview-800.png",
+      "sha256": "879f1537d5f5e500cfa42b8be1e9be8b14d04d2de002a632b7f3b3deb6ab46cc"
+    },
+    {
+      "bytes": 1749,
+      "original_path": "SpeakerUI/docs/testing/camera/checks.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/checks.json",
+      "sha256": "5f8c18701403823ff17e42502fd83f05cb1459c4c99d4a3b5f7500a160591b8d"
+    },
+    {
+      "bytes": 78428,
+      "original_path": "SpeakerUI/docs/testing/camera/regression/r6-alarm.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/regression/r6-alarm.png",
+      "sha256": "ab796737c2a6e282b3835982868a7d2922e262e12af6aa6147128655c793c0a7"
+    },
+    {
+      "bytes": 48242,
+      "original_path": "SpeakerUI/docs/testing/camera/regression/r6-alert.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/regression/r6-alert.png",
+      "sha256": "8af8683f79a3486622018859e835f415e4aefa71a1cef23788589cecefaa4f83"
+    },
+    {
+      "bytes": 177777,
+      "original_path": "SpeakerUI/docs/testing/camera/regression/r6-climate.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/regression/r6-climate.png",
+      "sha256": "1cfcdc2cb61cdd827ecd0694ab902bcb14241ff8d8f5d751e0376b36398cb03c"
+    },
+    {
+      "bytes": 138137,
+      "original_path": "SpeakerUI/docs/testing/camera/regression/r6-control-1024.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/regression/r6-control-1024.png",
+      "sha256": "9a16912cf9d3b183ffd07892698ca202a9fe0905645da4a15c4e0b5a8dd635e3"
+    },
+    {
+      "bytes": 224698,
+      "original_path": "SpeakerUI/docs/testing/camera/regression/r6-home-1024.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/regression/r6-home-1024.png",
+      "sha256": "1d820d0a1d2f81ff21f9559c81eb8481f5e885c03922dcc5e28a30af7536bfaa"
+    },
+    {
+      "bytes": 155046,
+      "original_path": "SpeakerUI/docs/testing/camera/regression/r6-home.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/regression/r6-home.png",
+      "sha256": "17e9b1c11d4862d9fa05734ff8ea1b06720325bb04b70952b8f12720c48dd2d8"
+    },
+    {
+      "bytes": 189590,
+      "original_path": "SpeakerUI/docs/testing/camera/regression/r6-listening.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/regression/r6-listening.png",
+      "sha256": "51f8d185b3276293fac9bd5f9645d7a0bdd915b708ffbad50cc4bd7acfa6e807"
+    },
+    {
+      "bytes": 184267,
+      "original_path": "SpeakerUI/docs/testing/camera/regression/r6-music.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/regression/r6-music.png",
+      "sha256": "e808f656fcf14d641cbd6fce240806a81b1cd819e4386850ff87c9028b78ec9d"
+    },
+    {
+      "bytes": 186321,
+      "original_path": "SpeakerUI/docs/testing/camera/regression/r6-swipe.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/regression/r6-swipe.png",
+      "sha256": "c776f0f0fbd16b8ae379fd1c27a6c1d4ffd75004179eb3ee9c1860d3bf483fe2"
+    },
+    {
+      "bytes": 2247,
+      "original_path": "SpeakerUI/docs/testing/camera/regression/revision-6-checks.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/camera/regression/revision-6-checks.json",
+      "sha256": "503fc8c3fa75cd50b59b4487b6393b4357b51069857e39b3364912b0374b82f6"
+    },
+    {
+      "bytes": 78512,
+      "original_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-alarm.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/playback-camera-regression/r6-alarm.png",
+      "sha256": "758a11fe130f126796887ad4cea0b5fd92043da394378e6640e1292731b073ae"
+    },
+    {
+      "bytes": 48627,
+      "original_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-alert.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/playback-camera-regression/r6-alert.png",
+      "sha256": "fe2f2d49308dd9bb7a6753d130094b4088599a4e6b898f9aeb47c9ddcf8bc7c1"
+    },
+    {
+      "bytes": 180318,
+      "original_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-climate.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/playback-camera-regression/r6-climate.png",
+      "sha256": "2c34fa708c92117cd955c8e88f4f71d81bc88055f68b162f54b392dc0f5160aa"
+    },
+    {
+      "bytes": 138015,
+      "original_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-control-1024.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/playback-camera-regression/r6-control-1024.png",
+      "sha256": "9bfb042608cabe65af5815b79f62de008c54b946df34a306da499b6decb66efd"
+    },
+    {
+      "bytes": 223548,
+      "original_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-home-1024.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/playback-camera-regression/r6-home-1024.png",
+      "sha256": "de80b9b2068c68d7f9c7b7dbcdd2a8927131227a1a319e63c17ef7cea758a26b"
+    },
+    {
+      "bytes": 154094,
+      "original_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-home.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/playback-camera-regression/r6-home.png",
+      "sha256": "763e91d25730e06bd17b62d9818d7b2ade7f3a83a289fb3fc39f199e33c4dd3c"
+    },
+    {
+      "bytes": 189529,
+      "original_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-listening.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/playback-camera-regression/r6-listening.png",
+      "sha256": "29e420f326a5a36d60421c953f599c7c3d963fef264d647b73cc40160431bb97"
+    },
+    {
+      "bytes": 182959,
+      "original_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-music.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/playback-camera-regression/r6-music.png",
+      "sha256": "b75aabd06bd3e500b03eb7504004a7b717a6fd3c89ddfb06634f9b2baff2b3a5"
+    },
+    {
+      "bytes": 185152,
+      "original_path": "SpeakerUI/docs/testing/playback-camera-regression/r6-swipe.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/playback-camera-regression/r6-swipe.png",
+      "sha256": "4e03cc7187dfe6fd344ad0ee8049e744f525dc9650ef5bea112becee25f1cc7c"
+    },
+    {
+      "bytes": 2247,
+      "original_path": "SpeakerUI/docs/testing/playback-camera-regression/revision-6-checks.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/playback-camera-regression/revision-6-checks.json",
+      "sha256": "503fc8c3fa75cd50b59b4487b6393b4357b51069857e39b3364912b0374b82f6"
+    },
+    {
+      "bytes": 4305,
+      "original_path": "SpeakerUI/docs/testing/providers/README.md",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/README.md",
+      "sha256": "e6c8147c485cea8a8c677f4e0a415c968ed128240692ad04075aa9aaafc472e4"
+    },
+    {
+      "bytes": 3245,
+      "original_path": "SpeakerUI/docs/testing/providers/checks.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/checks.json",
+      "sha256": "d9beea0493088b26d5c131eea0453b2fa1b89f3353ac653f06f91fcbfcfea37e"
+    },
+    {
+      "bytes": 167900,
+      "original_path": "SpeakerUI/docs/testing/providers/live-home-800.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/live-home-800.png",
+      "sha256": "584a63b73951b1d649378c91d3f56d13a1fd7a326fa31f2c8ea1773607a8a580"
+    },
+    {
+      "bytes": 180717,
+      "original_path": "SpeakerUI/docs/testing/providers/live-lights-1024.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/live-lights-1024.png",
+      "sha256": "7fe25c18dd221775ee66d96825cc85fb56b458f2ec95e36ef390aa164c9e3c84"
+    },
+    {
+      "bytes": 96854,
+      "original_path": "SpeakerUI/docs/testing/providers/live-lights-800.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/live-lights-800.png",
+      "sha256": "e54cdcead7e0f959bd5447d28879778cf59576806ebef2027ed7ab98486b4ac6"
+    },
+    {
+      "bytes": 117401,
+      "original_path": "SpeakerUI/docs/testing/providers/live-music-1024.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/live-music-1024.png",
+      "sha256": "ce512f4b048573db6b36d84780b5cf1eeca676eb3c1237f5ae5d8661c8a113a1"
+    },
+    {
+      "bytes": 98449,
+      "original_path": "SpeakerUI/docs/testing/providers/live-music-800.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/live-music-800.png",
+      "sha256": "d0156e566f09f4da169292633800fa1eda2d4656aac66b675834282a87faf3a8"
+    },
+    {
+      "bytes": 78585,
+      "original_path": "SpeakerUI/docs/testing/providers/regression/r6-alarm.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/regression/r6-alarm.png",
+      "sha256": "8a318a9f42c6e8e0c0415831b67e32448aeb8d1c0f8920c44a90776b3bd3c00d"
+    },
+    {
+      "bytes": 48430,
+      "original_path": "SpeakerUI/docs/testing/providers/regression/r6-alert.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/regression/r6-alert.png",
+      "sha256": "37bbaaf24c1ab898d366ed4667f580315752504db4c56f85d5982be6cc565d3c"
+    },
+    {
+      "bytes": 177223,
+      "original_path": "SpeakerUI/docs/testing/providers/regression/r6-climate.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/regression/r6-climate.png",
+      "sha256": "a9235f7a11a6fd8a842282a48e98b3b58386872ad2fd95b8eceda5854833e573"
+    },
+    {
+      "bytes": 138069,
+      "original_path": "SpeakerUI/docs/testing/providers/regression/r6-control-1024.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/regression/r6-control-1024.png",
+      "sha256": "96ef0dd2a8f82f6c8e4a4ee6bae8ee82d2706b89d325f5694756f0c31445f54a"
+    },
+    {
+      "bytes": 223495,
+      "original_path": "SpeakerUI/docs/testing/providers/regression/r6-home-1024.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/regression/r6-home-1024.png",
+      "sha256": "6f0254f3e5dfb4cbfcd4834f6505b00327be196f56ea42cf079ec6658cdff24c"
+    },
+    {
+      "bytes": 155356,
+      "original_path": "SpeakerUI/docs/testing/providers/regression/r6-home.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/regression/r6-home.png",
+      "sha256": "8e8feeaebc80c56d80ff06ad32e58c589650ef9eb61f260c19e968550425037b"
+    },
+    {
+      "bytes": 198857,
+      "original_path": "SpeakerUI/docs/testing/providers/regression/r6-listening.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/regression/r6-listening.png",
+      "sha256": "273917c93ed8ef6c33c866a2a62b04ed2d92fc75311e694e0ec642d6dced0686"
+    },
+    {
+      "bytes": 188467,
+      "original_path": "SpeakerUI/docs/testing/providers/regression/r6-music.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/regression/r6-music.png",
+      "sha256": "11e8dc1e8a90d7ab7bb5230e29ef10013278a6ece46650920fdf55cf7adeb98c"
+    },
+    {
+      "bytes": 186946,
+      "original_path": "SpeakerUI/docs/testing/providers/regression/r6-swipe.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/regression/r6-swipe.png",
+      "sha256": "45bdfa2b949e372a92d7268281f61330178f74760d343baa7210c1751e04cf54"
+    },
+    {
+      "bytes": 2247,
+      "original_path": "SpeakerUI/docs/testing/providers/regression/revision-6-checks.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/regression/revision-6-checks.json",
+      "sha256": "503fc8c3fa75cd50b59b4487b6393b4357b51069857e39b3364912b0374b82f6"
+    },
+    {
+      "bytes": 10449,
+      "original_path": "SpeakerUI/docs/testing/providers/resources.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/resources.json",
+      "sha256": "d48472b1d9a6992d0bcf11c984c059863775e48ceb4cf71f5e7486b6e43bfdba"
+    },
+    {
+      "bytes": 116002,
+      "original_path": "SpeakerUI/docs/testing/providers/spotify-connect.png",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/docs/testing/providers/spotify-connect.png",
+      "sha256": "83446e105b0745942035e055bcbd4311ac4004c869941b9c068240a42ddf365c"
+    },
+    {
+      "bytes": 271,
+      "original_path": "SpeakerUI/index.html",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/index.html",
+      "sha256": "b1a9c53551f00ab22701eebd1be9777a8f280afa9fc61c4b4dae9d38f8774a04"
+    },
+    {
+      "bytes": 12088,
+      "original_path": "SpeakerUI/mockups/ambient-v6/00-brand-and-behavior.html",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/00-brand-and-behavior.html",
+      "sha256": "3149d06c08aa6687b43f41dae01f3471ed9500da93d2ba85378241581db623a6"
+    },
+    {
+      "bytes": 187400,
+      "original_path": "SpeakerUI/mockups/ambient-v6/04-ambient.html",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/04-ambient.html",
+      "sha256": "2cf3a5465c54d7c72002a7e21c44c068a0ca52dddc719f5828ab7dc5cca9149b"
+    },
+    {
+      "bytes": 187560,
+      "original_path": "SpeakerUI/mockups/ambient-v6/05-thermostat.html",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/05-thermostat.html",
+      "sha256": "c807c72b1fc1fb181cb1cf78ec9dd5b138f5800645dcbb5eae730055210d8ed7"
+    },
+    {
+      "bytes": 12519,
+      "original_path": "SpeakerUI/mockups/ambient-v6/README.md",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/README.md",
+      "sha256": "86235b072c13fe39f39571cf60d59fb7a8a8a7014a3964e283e35340109cd8af"
+    },
+    {
+      "bytes": 1236,
+      "original_path": "SpeakerUI/mockups/ambient-v6/licenses/AURA-NOTICE.txt",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/licenses/AURA-NOTICE.txt",
+      "sha256": "da422fd6a87d323e005ba0fc9364d0443fc0b1b76f8f3c5360cdab702f18f88d"
+    },
+    {
+      "bytes": 11357,
+      "original_path": "SpeakerUI/mockups/ambient-v6/licenses/LIVEKIT-APACHE-2.0.txt",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/licenses/LIVEKIT-APACHE-2.0.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "bytes": 3208,
+      "original_path": "SpeakerUI/mockups/ambient-v6/licenses/LUCIDE.txt",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/licenses/LUCIDE.txt",
+      "sha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57"
+    },
+    {
+      "bytes": 1234,
+      "original_path": "SpeakerUI/mockups/ambient-v6/source/LiveKitAura.svelte",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/source/LiveKitAura.svelte",
+      "sha256": "ae52f777379f856dc4898c9620d97ee00d3d4150c59b851ef40e5ffbb35446b6"
+    },
+    {
+      "bytes": 5745,
+      "original_path": "SpeakerUI/mockups/ambient-v6/source/alarm-wheels.js",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/source/alarm-wheels.js",
+      "sha256": "5c7535d01c527b7415781df5a0eb2afd4d05134714c2e1073b088563ff1a63a9"
+    },
+    {
+      "bytes": 68225,
+      "original_path": "SpeakerUI/mockups/ambient-v6/source/app.js",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/source/app.js",
+      "sha256": "33c961b42da4341ae04d7d96fc7f240a15b62a799f5cb37c65d143ac4aed8ff6"
+    },
+    {
+      "bytes": 6072,
+      "original_path": "SpeakerUI/mockups/ambient-v6/source/aura-renderer.js",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/source/aura-renderer.js",
+      "sha256": "5e114dfddf0f22a75dc74078cba862fe103d45ff59e996fdf5f51c4997482a28"
+    },
+    {
+      "bytes": 3712,
+      "original_path": "SpeakerUI/mockups/ambient-v6/source/device-contracts.js",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/source/device-contracts.js",
+      "sha256": "26f7ce1bb6d8d61e09e83a2f9d99679d5fdb3af9511b1bec2065d76cdf095b3a"
+    },
+    {
+      "bytes": 17490,
+      "original_path": "SpeakerUI/mockups/ambient-v6/source/icons.js",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/source/icons.js",
+      "sha256": "762e29157b395e0c5940a74108ae0930177347ed35d659a8d313f2b42952417c"
+    },
+    {
+      "bytes": 5107,
+      "original_path": "SpeakerUI/mockups/ambient-v6/source/livekit-aura-shader.js",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/source/livekit-aura-shader.js",
+      "sha256": "9cb9fbdd4192e3f9139e3621002ba820bd690ed2fb67f6bfa60622a266572180"
+    },
+    {
+      "bytes": 77376,
+      "original_path": "SpeakerUI/mockups/ambient-v6/source/screen.css",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/source/screen.css",
+      "sha256": "8a08ef7be37c1bdb8caf455a50c78a64ead6102989abd070d4946e2e18f37654"
+    },
+    {
+      "bytes": 3952,
+      "original_path": "SpeakerUI/mockups/ambient-v6/source/screen.html",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/source/screen.html",
+      "sha256": "69a42bd8c2e4795aa381685f677a9b591bcb9638de46130caeb824c401e733e1"
+    },
+    {
+      "bytes": 4014,
+      "original_path": "SpeakerUI/mockups/ambient-v6/source/upstream-aura-states.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/mockups/ambient-v6/source/upstream-aura-states.ts",
+      "sha256": "664e87be6523b6600bd67d7d747a454430bdefc56214f29d61b233f8ab809061"
+    },
+    {
+      "bytes": 1642,
+      "original_path": "SpeakerUI/package.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/package.json",
+      "sha256": "6e612d95fac6bb63c9d0328113520136123cac314c73da795abe08cb1e924ad8"
+    },
+    {
+      "bytes": 73375,
+      "original_path": "SpeakerUI/pnpm-lock.yaml",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/pnpm-lock.yaml",
+      "sha256": "034cb8c0fb0dabd4fd711f7109437af91a06b074e1bc79ba5b4065846c36b2fb"
+    },
+    {
+      "bytes": 29,
+      "original_path": "SpeakerUI/pnpm-workspace.yaml",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/pnpm-workspace.yaml",
+      "sha256": "ac02d96368617c760f093cfe61fdec64b6244007ab3553e0d6621f706f54a353"
+    },
+    {
+      "bytes": 1239,
+      "original_path": "SpeakerUI/public/audio-worklet.js",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/public/audio-worklet.js",
+      "sha256": "5ad497f7e50b8de741a678eaa2f71c475deda904f6c61c6f7b597008bf258fbf"
+    },
+    {
+      "bytes": 982,
+      "original_path": "SpeakerUI/public/pcm-framer.js",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/public/pcm-framer.js",
+      "sha256": "9c771578a4922217a6519193c12fd2f45be67e70d0009781724023e4b0238803"
+    },
+    {
+      "bytes": 16854,
+      "original_path": "SpeakerUI/scripts/browser-runtime-check.mjs",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/scripts/browser-runtime-check.mjs",
+      "sha256": "d364899dc84aae036a08e2333df23d6cb0a58398eb010189aa4ef87850d7c758"
+    },
+    {
+      "bytes": 765,
+      "original_path": "SpeakerUI/scripts/build.mjs",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/scripts/build.mjs",
+      "sha256": "0cdf01508eb4b6f9d45a8ffeb99ca092cef2c6cc4a60c91a349eb2dc75956262"
+    },
+    {
+      "bytes": 660,
+      "original_path": "SpeakerUI/scripts/check-svelte.mjs",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/scripts/check-svelte.mjs",
+      "sha256": "c70694d4279bf9c982267013569a3c10a9049a9ff554c36fdb4cfc2d3a5d074f"
+    },
+    {
+      "bytes": 681,
+      "original_path": "SpeakerUI/scripts/compress.mjs",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/scripts/compress.mjs",
+      "sha256": "c9d608fda552a45ca0ab4623fb08d097e0b0af801ecf8c3ed84a10f1729bf755"
+    },
+    {
+      "bytes": 4808,
+      "original_path": "SpeakerUI/scripts/frontend.mjs",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/scripts/frontend.mjs",
+      "sha256": "20261b0584ccff1d35796918fd4cb0d0dfd95e7b194e6c9f9b222e477cdb316b"
+    },
+    {
+      "bytes": 8008,
+      "original_path": "SpeakerUI/scripts/iris-browser-check.mjs",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/scripts/iris-browser-check.mjs",
+      "sha256": "8506f695560f01af2577bdf1abfe02e1274a0765b7cf9c06bf285c5cde1e0ea0"
+    },
+    {
+      "bytes": 765,
+      "original_path": "SpeakerUI/scripts/kiosk.mjs",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/scripts/kiosk.mjs",
+      "sha256": "e29c2555f446921c1588bbe1e0be81bda2e692e7d847d217557041a0392eb855"
+    },
+    {
+      "bytes": 731,
+      "original_path": "SpeakerUI/scripts/setup.mjs",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/scripts/setup.mjs",
+      "sha256": "dc99c82aa82dedf8b427ba13db968a639edce524a3f59f77ca0e1fa34b106270"
+    },
+    {
+      "bytes": 965,
+      "original_path": "SpeakerUI/scripts/start.mjs",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/scripts/start.mjs",
+      "sha256": "eb69f2c483bcf177f1c3102a16b8a20c84e359f3c7fd61ee289ccf826c7d2f94"
+    },
+    {
+      "bytes": 24150,
+      "original_path": "SpeakerUI/server/app.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/app.ts",
+      "sha256": "6389b054047e203326fc559c237596545baa6098edc69e46125b664a2e23728b"
+    },
+    {
+      "bytes": 4936,
+      "original_path": "SpeakerUI/server/config.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/config.test.ts",
+      "sha256": "b81651dfe1546a79e2a2e1a2f736cadc28613f97d5ea2000f8dababb440073dc"
+    },
+    {
+      "bytes": 7289,
+      "original_path": "SpeakerUI/server/config.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/config.ts",
+      "sha256": "9f4d5124380fe025618251d851dd03467315ef67a5d96be60a5679d7ad5cbd7b"
+    },
+    {
+      "bytes": 15169,
+      "original_path": "SpeakerUI/server/gateway/app.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/gateway/app.test.ts",
+      "sha256": "44effe2ee895d556995e44f63052ca90fa35b6ff41af0126afe29aa97e2c6c7f"
+    },
+    {
+      "bytes": 2295,
+      "original_path": "SpeakerUI/server/inference/action-store.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/inference/action-store.test.ts",
+      "sha256": "be1f5af6cf5c17f7bc8a5b8d6f0f893215403899e325e54408a492616e4b14b4"
+    },
+    {
+      "bytes": 6967,
+      "original_path": "SpeakerUI/server/inference/action-store.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/inference/action-store.ts",
+      "sha256": "8cec2e3ec3df73b81f3a7b7f0adc54e0f3ddea0dd664ffbb2418e42f67cc9f4c"
+    },
+    {
+      "bytes": 1375,
+      "original_path": "SpeakerUI/server/inference/adapter.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/inference/adapter.ts",
+      "sha256": "9635ecf614357ea1fa33a2ac9929bd78d27529b9fd5fd323452f5ab31be20e97"
+    },
+    {
+      "bytes": 1107,
+      "original_path": "SpeakerUI/server/inference/dummy-runtime.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/inference/dummy-runtime.test.ts",
+      "sha256": "5c377f53848877b1deedbf991b2e9acb6c00bbabfdbf5c9949b9c726b88cc8e6"
+    },
+    {
+      "bytes": 2198,
+      "original_path": "SpeakerUI/server/inference/dummy-runtime.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/inference/dummy-runtime.ts",
+      "sha256": "feaf3a9f054a285e783bf17cdb885aced0e1779bab6f2768c1e973e17a8a385c"
+    },
+    {
+      "bytes": 2620,
+      "original_path": "SpeakerUI/server/inference/policy.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/inference/policy.test.ts",
+      "sha256": "848cc7ea0f472571d2e069010029aa06a1b292ced6a865491805cbd6962133f9"
+    },
+    {
+      "bytes": 3652,
+      "original_path": "SpeakerUI/server/inference/policy.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/inference/policy.ts",
+      "sha256": "02ec65d33dee45eef8b2cdb24a7197c7080d815d3328e22364b62940317340fe"
+    },
+    {
+      "bytes": 3214,
+      "original_path": "SpeakerUI/server/inference/python-runtime.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/inference/python-runtime.test.ts",
+      "sha256": "c5b03d5bb5448b5ec73a2c1f82efab74d856a64375909334ceaac4d72c6b90a4"
+    },
+    {
+      "bytes": 4512,
+      "original_path": "SpeakerUI/server/inference/python-runtime.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/inference/python-runtime.ts",
+      "sha256": "206bdd510f629eadcada768e4f96ae818a9cb904518dfbbe79c234b676b7b41f"
+    },
+    {
+      "bytes": 8442,
+      "original_path": "SpeakerUI/server/inference/runtime-actions.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/inference/runtime-actions.test.ts",
+      "sha256": "ca658475dcefce8f953a540009a01528aec8c9cfbebdad05f6a45c35612303d4"
+    },
+    {
+      "bytes": 10640,
+      "original_path": "SpeakerUI/server/inference/runtime-actions.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/inference/runtime-actions.ts",
+      "sha256": "369a66876c1bb74e97ea77ef44a2bf84fa58e44ae3fd10d3be494a30679fc751"
+    },
+    {
+      "bytes": 7206,
+      "original_path": "SpeakerUI/server/inference/session.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/inference/session.ts",
+      "sha256": "625b179a728363eb857d3f303bc2e55301df33f89d86b0e54ea3194e7e83c09b"
+    },
+    {
+      "bytes": 1315,
+      "original_path": "SpeakerUI/server/integrations/commands.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/integrations/commands.test.ts",
+      "sha256": "3514fab5732e0177900daa0641edc92e243cce885d2a112604c45b9c860c4ad2"
+    },
+    {
+      "bytes": 2783,
+      "original_path": "SpeakerUI/server/integrations/commands.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/integrations/commands.ts",
+      "sha256": "bccbd2af8d43d9e86373cb33c90d9718234c4b721ae19c9af6b9a6b34f8e1c66"
+    },
+    {
+      "bytes": 754,
+      "original_path": "SpeakerUI/server/integrations/fixtures.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/integrations/fixtures.json",
+      "sha256": "3b7ece0cb844b6d91d176d5e976317180f84879d655c5164e43a39758d990bfd"
+    },
+    {
+      "bytes": 10201,
+      "original_path": "SpeakerUI/server/integrations/home-assistant.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/integrations/home-assistant.test.ts",
+      "sha256": "4ea5456ca7b8f8aa7248b27ac9aba13f214455a2c50029d1e597b80fb789c3df"
+    },
+    {
+      "bytes": 15999,
+      "original_path": "SpeakerUI/server/integrations/home-assistant.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/integrations/home-assistant.ts",
+      "sha256": "35e3003595fe196ca029fb063317aa87cb4a46b7fc6011846df67113a87ce1f4"
+    },
+    {
+      "bytes": 551,
+      "original_path": "SpeakerUI/server/integrations/http.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/integrations/http.test.ts",
+      "sha256": "5e98cfb5958279a904750277858d3f2a3cc43dff35a35075511268d531e38b90"
+    },
+    {
+      "bytes": 1097,
+      "original_path": "SpeakerUI/server/integrations/http.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/integrations/http.ts",
+      "sha256": "307f2a2bfdfaac019941cbac125f909dbd237c890ed051fc311b0c14d793d9ab"
+    },
+    {
+      "bytes": 11698,
+      "original_path": "SpeakerUI/server/integrations/spotify.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/integrations/spotify.test.ts",
+      "sha256": "4e27fb7eeeff73b7b30830bc544acfde67c12ac18623aade69e2207c28ece5f0"
+    },
+    {
+      "bytes": 12117,
+      "original_path": "SpeakerUI/server/integrations/spotify.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/integrations/spotify.ts",
+      "sha256": "0b0ad38fb6e0ff2db542ff2fe7e0b7a2aa951b81406dce4d898047b72f58c2cb"
+    },
+    {
+      "bytes": 5113,
+      "original_path": "SpeakerUI/server/integrations/state.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/integrations/state.test.ts",
+      "sha256": "21ca2a3037f6decc0e0f2c7a5556b4a84f0bb8c3d033ee67586252ac1a350931"
+    },
+    {
+      "bytes": 5302,
+      "original_path": "SpeakerUI/server/integrations/state.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/integrations/state.ts",
+      "sha256": "ca301cf5d4f485571702d22b4cca7c8b07939a5770d5d04f56d329c495636071"
+    },
+    {
+      "bytes": 822,
+      "original_path": "SpeakerUI/server/main.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/main.ts",
+      "sha256": "2ae91ac16ecbf913aeca16dde6faf289a4a9c8c0735692da6ed525b3a63aa5c5"
+    },
+    {
+      "bytes": 1803,
+      "original_path": "SpeakerUI/server/media/local.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/media/local.test.ts",
+      "sha256": "bece8ea2b90a4ad6ba4eb7c61812cf1ce87a79545248816a776c1222362b88f2"
+    },
+    {
+      "bytes": 3721,
+      "original_path": "SpeakerUI/server/media/local.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/media/local.ts",
+      "sha256": "c3ed041479a568d6f843c14cc61305de1f0d91e855a8d8163a77dce6b4bb49b7"
+    },
+    {
+      "bytes": 872,
+      "original_path": "SpeakerUI/server/media/search.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/server/media/search.ts",
+      "sha256": "a8208a28c3bd3d5d772d2fc0352466e757dd67fa27e35afcbebff16a8c4dd1f9"
+    },
+    {
+      "bytes": 2718,
+      "original_path": "SpeakerUI/shared/canonical-command.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/shared/canonical-command.ts",
+      "sha256": "16e901d9a8203cce50d3d74869472e01c84fd2754f20cb4086c8830d8755f44d"
+    },
+    {
+      "bytes": 3124,
+      "original_path": "SpeakerUI/shared/protocol.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/shared/protocol.ts",
+      "sha256": "439b194d39454ffc57ef9fe4c2ddd544814bd3848e485c65b1f091daf3325dbf"
+    },
+    {
+      "bytes": 339,
+      "original_path": "SpeakerUI/src/App.svelte",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/App.svelte",
+      "sha256": "6baf49685f024466fecbf54cfd7ca009dbee36a583769ab7c2185ba02416e398"
+    },
+    {
+      "bytes": 30033,
+      "original_path": "SpeakerUI/src/ambient/Iris.svelte",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/ambient/Iris.svelte",
+      "sha256": "9ef85c2affe34c79de381b8c323d997761af3f81c20a59fd65263217ccf2a25a"
+    },
+    {
+      "bytes": 216,
+      "original_path": "SpeakerUI/src/ambient/components/Icon.svelte",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/ambient/components/Icon.svelte",
+      "sha256": "7409587780381281bf69ebf337ea67a51eb64897f40dbbe412c71676c4a72550"
+    },
+    {
+      "bytes": 4197,
+      "original_path": "SpeakerUI/src/ambient/components/RuntimeDebug.svelte",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/ambient/components/RuntimeDebug.svelte",
+      "sha256": "d522641e27ac6fbc14622e456759414c389b72eacf9f27039581b172eb13e6cc"
+    },
+    {
+      "bytes": 17773,
+      "original_path": "SpeakerUI/src/ambient/icons.js",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/ambient/icons.js",
+      "sha256": "c058582611d1c6fc96dbc00a074b142a2e72c3f8c34fab887acf89228024a258"
+    },
+    {
+      "bytes": 1881,
+      "original_path": "SpeakerUI/src/ambient/local-player.js",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/ambient/local-player.js",
+      "sha256": "94d5af3a3b84f0b29b652129707f3e6521f4cae1891956474a702004c00e636f"
+    },
+    {
+      "bytes": 2019,
+      "original_path": "SpeakerUI/src/ambient/local-player.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/ambient/local-player.test.ts",
+      "sha256": "5440f126e041851c81aa5124b7f5af43c63343c4ea5c2f61542f99430b80a74b"
+    },
+    {
+      "bytes": 7182,
+      "original_path": "SpeakerUI/src/ambient/runtime-events.js",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/ambient/runtime-events.js",
+      "sha256": "a09c38ab0268f39f94a05bcc299760cf3001fa76da703e1ef0791bf8cbeb3b88"
+    },
+    {
+      "bytes": 6478,
+      "original_path": "SpeakerUI/src/ambient/runtime-events.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/ambient/runtime-events.test.ts",
+      "sha256": "cc511fd5f8a7bb7161937a180f3d203e81b806d0aa507ae90f61235696b9eabf"
+    },
+    {
+      "bytes": 2028,
+      "original_path": "SpeakerUI/src/app.css",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/app.css",
+      "sha256": "229e513ee4636d75340ecb17ee1e1b03ce6f3a3747177ef1d42bfcb2524d5f44"
+    },
+    {
+      "bytes": 2399,
+      "original_path": "SpeakerUI/src/audio/capture.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/audio/capture.test.ts",
+      "sha256": "a2a7209c89d4f413accfa340071ad994706b7ee25819c61449fcfded63e718ad"
+    },
+    {
+      "bytes": 3723,
+      "original_path": "SpeakerUI/src/audio/capture.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/audio/capture.ts",
+      "sha256": "5012c1966ac2f8c2801c2c69a8856181457b0c6d33bcb8b9972cd64be0951291"
+    },
+    {
+      "bytes": 662,
+      "original_path": "SpeakerUI/src/audio/pcm.test.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/audio/pcm.test.ts",
+      "sha256": "1087265be66c01b216e278a22294ebe7cf7211d2d823b318b2b417b08397f655"
+    },
+    {
+      "bytes": 10354,
+      "original_path": "SpeakerUI/src/diagnostics/Diagnostics.svelte",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/diagnostics/Diagnostics.svelte",
+      "sha256": "1af9add21560594a6de5ae0e406ebe97af641a69baf889e73db5da2fed5cc3c7"
+    },
+    {
+      "bytes": 166,
+      "original_path": "SpeakerUI/src/lib/utils.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/lib/utils.ts",
+      "sha256": "0c97f5ec0478867d5369a4369f811e1b779c7f2548f671ef252f1503a6392d9d"
+    },
+    {
+      "bytes": 209,
+      "original_path": "SpeakerUI/src/main.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/main.ts",
+      "sha256": "dd76f0d995437e5831be225fd76e988b04b28be979d52eeba74576bbb3affad1"
+    },
+    {
+      "bytes": 104,
+      "original_path": "SpeakerUI/src/shell.css",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/src/shell.css",
+      "sha256": "e875f4888a38e5e9d842c3055b8b5dcbe86e973878ed2cf0ac60f7f2e617b625"
+    },
+    {
+      "bytes": 112,
+      "original_path": "SpeakerUI/svelte.config.js",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/svelte.config.js",
+      "sha256": "3c328d509de22605aa7d1bcfd4a34941b99c2ecaea7026dde935785d8b6661e4"
+    },
+    {
+      "bytes": 559,
+      "original_path": "SpeakerUI/tsconfig.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/tsconfig.json",
+      "sha256": "683658125f838374c5ae748cff8b73fcba9fbf4a349584b2c6a53ec23ad5ed71"
+    },
+    {
+      "bytes": 390,
+      "original_path": "SpeakerUI/tsconfig.server.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/tsconfig.server.json",
+      "sha256": "d8119f10f283cf614d6fce8d8c25729952a7d9465cd4f95e00f85fde6ccb0bb3"
+    },
+    {
+      "bytes": 629,
+      "original_path": "SpeakerUI/vite.config.ts",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/SpeakerUI/vite.config.ts",
+      "sha256": "b42ebebdd52fb0f66464192e4aca041f0396c57d8cfc4405eaeba18db0f0b1b2"
+    },
+    {
+      "bytes": 1075,
+      "original_path": "artifacts/silero-LICENSE.txt",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/artifacts/silero-LICENSE.txt",
+      "sha256": "2e63e9a38b6e8fc0c7bc37ce174caca1862870856c6daf5697cfb785e925520b"
+    },
+    {
+      "bytes": 381,
+      "original_path": "artifacts/wake-models.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/artifacts/wake-models.json",
+      "sha256": "9784dd9b5836cbaaf6a6fdb7912ae2baedde17e538befe2fe3d8c2b7c4b7dd6a"
+    },
+    {
+      "bytes": 1420,
+      "original_path": "config.example.toml",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/config.example.toml",
+      "sha256": "8c09b3919ac44f9779420a11484aa203c0acc7244091929afbbd7f5d563f281d"
+    },
+    {
+      "bytes": 4512,
+      "original_path": "data/sources/ai231-primary.source.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/data/sources/ai231-primary.source.json",
+      "sha256": "c493d87e763fbb1d87ee7f9137e2ea371775416f6ee3ec61ec1eae5b196a8757"
+    },
+    {
+      "bytes": 3444,
+      "original_path": "data/sources/fil-supplemental.source.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/data/sources/fil-supplemental.source.json",
+      "sha256": "41bc968e3e90d299c1aca11bdfe1345a2b6fec60676d9c6c75f2276da0788a23"
+    },
+    {
+      "bytes": 1151,
+      "original_path": "data/sources/librispeech.source.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/data/sources/librispeech.source.json",
+      "sha256": "f9891785f12dbbf1bf88e735259c170088a98571e9b3acf21ae1bce99f1b81b0"
+    },
+    {
+      "bytes": 10839,
+      "original_path": "data/sources/qwen-synthetic-completion.source.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/data/sources/qwen-synthetic-completion.source.json",
+      "sha256": "cd3753dad2a43fcfa277e73908222994a56a9767883f8747954dc531ecfb33ac"
+    },
+    {
+      "bytes": 14116510,
+      "original_path": "dist/iris-release-v1/iris-final-orderfix/iris-pi.zip",
+      "recovery_path": ".cache/iris-release-v1/pre-source-closure-fix/dist/iris-release-v1/iris-final-orderfix/iris-pi.zip",
+      "sha256": "8bba350ccca5992b638beb3ddeed9a140810bbf267577bcaa72de7daf2f987a3"
+    },
+    {
+      "bytes": 7494,
+      "original_path": "docs/DATASETS.md",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/docs/DATASETS.md",
+      "sha256": "42f708b8c2a61b730756a0eadbf0eb6cdb55c16d66571391fe8315bb54e437c2"
+    },
+    {
+      "bytes": 21312,
+      "original_path": "docs/EXPERIMENT-iris-release-v1.md",
+      "recovery_path": ".cache/iris-release-v1/pre-source-closure-fix/docs/EXPERIMENT-iris-release-v1.md",
+      "sha256": "284a532cbebf778d22abc6bca416a50fce78a8a949d3189fe4e442d34b5a182c"
+    },
+    {
+      "bytes": 9719,
+      "original_path": "docs/HANDOFF-iris-rpi-v1.md",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/docs/HANDOFF-iris-rpi-v1.md",
+      "sha256": "77ee4e49bce3eacc47f9a26be00c9c8689f508c7e2904d3571cefe3dc12516b1"
+    },
+    {
+      "bytes": 114072,
+      "original_path": "experiments/iris-release-v1/catalog.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/catalog.json",
+      "sha256": "8c1e1e1c4c144b926f37e97fdd020626e88ce0f7be6b4f42d20576df52313fd1"
+    },
+    {
+      "bytes": 3228,
+      "original_path": "experiments/iris-release-v1/decision-parity.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/decision-parity.json",
+      "sha256": "4b8a6a01bd51fc9d3bdcaebe4b1319d107995bfc243014dcc0e1fe364e0f20a9"
+    },
+    {
+      "bytes": 3745,
+      "original_path": "experiments/iris-release-v1/development-selection.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/development-selection.json",
+      "sha256": "89b2c852cddc906de48a3b3c84c44d4447d591296f1d5b117fb8489f79a3fe03"
+    },
+    {
+      "bytes": 316,
+      "original_path": "experiments/iris-release-v1/generation-complete.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/generation-complete.json",
+      "sha256": "2574e74b85be8c39c336915d06038743da5d344cb564351df5913ff393801a8b"
+    },
+    {
+      "bytes": 1715919,
+      "original_path": "experiments/iris-release-v1/generation-plan.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/generation-plan.json",
+      "sha256": "1f767e35d75d7ba5a8b9ecd4f5332233d402377a41a6ac1275ad12de74a33599"
+    },
+    {
+      "bytes": 2954,
+      "original_path": "experiments/iris-release-v1/owner-base-view-equivalence.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/owner-base-view-equivalence.json",
+      "sha256": "a5a97d7d660b837e5eff3beb3733d620adf159ded2d4de71ebca99cad72ca5b5"
+    },
+    {
+      "bytes": 1604,
+      "original_path": "experiments/iris-release-v1/owner-execution.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/owner-execution.json",
+      "sha256": "468f1947652d60b5b35b63497b2715ab62e11d01d51d1955d61fe175e4c9247a"
+    },
+    {
+      "bytes": 5235,
+      "original_path": "experiments/iris-release-v1/owner-export.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/owner-export.json",
+      "sha256": "7c494f8e3e15e91e8db533375d21b616dd5b1f844096e002e36368fee6aff7c9"
+    },
+    {
+      "bytes": 836,
+      "original_path": "experiments/iris-release-v1/owner-feature-audit.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/owner-feature-audit.json",
+      "sha256": "360e944195113dceae206b03a49dabde5df0c450bd57f5b604670a045bcbd065"
+    },
+    {
+      "bytes": 955,
+      "original_path": "experiments/iris-release-v1/owner-graph-before-test.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/owner-graph-before-test.json",
+      "sha256": "5e42385e0411b788c4165103077b40227d858f8ea0af4e5795631b61c813c9f1"
+    },
+    {
+      "bytes": 3994,
+      "original_path": "experiments/iris-release-v1/owner-implementation-before-fitting-099dbe6ab45b2d07.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/owner-implementation-before-fitting-099dbe6ab45b2d07.json",
+      "sha256": "bd7463a7bfdf40202dc377d6c819dee89c3daa268adb6a91a7a458b18c681236"
+    },
+    {
+      "bytes": 3994,
+      "original_path": "experiments/iris-release-v1/owner-implementation-before-fitting-1e0ad09fcda73876.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/owner-implementation-before-fitting-1e0ad09fcda73876.json",
+      "sha256": "e492f14831b6e54e7b6ed5b5ebaea6be5bb658679656905b61a5e38bd3071797"
+    },
+    {
+      "bytes": 1109,
+      "original_path": "experiments/iris-release-v1/owner-portability-check.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/owner-portability-check.json",
+      "sha256": "6cac8738983941bd4e971fea273ab64612203f89608dbde59a49052b0d3ac89d"
+    },
+    {
+      "bytes": 6449,
+      "original_path": "experiments/iris-release-v1/owner-protocol.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/owner-protocol.json",
+      "sha256": "174daed6764e00c4026e6a3be88231823b98967f22bec5ab393a05f686181c0a"
+    },
+    {
+      "bytes": 42227,
+      "original_path": "experiments/iris-release-v1/owner-reservations.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/owner-reservations.json",
+      "sha256": "1b7208fbb66173d72c29f6e79312386b352e7e4f6c2e64b8569b9a1c7fe52897"
+    },
+    {
+      "bytes": 3783,
+      "original_path": "experiments/iris-release-v1/owner-results.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/owner-results.json",
+      "sha256": "4a6a9ae62d887a6498eeba862f7b325de4ee6abaaf0e65da22a69808c5147f11"
+    },
+    {
+      "bytes": 3148,
+      "original_path": "experiments/iris-release-v1/owner-runtime-checks.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/owner-runtime-checks.json",
+      "sha256": "241d991387ce1d33b01aa2daac6a2764d99bf6560ba838eac43866eaeeecf2be"
+    },
+    {
+      "bytes": 4001,
+      "original_path": "experiments/iris-release-v1/owner-selection-before-test.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/owner-selection-before-test.json",
+      "sha256": "aee3f2d780d56552b3865a11e580598c86d6f5e7cbf8f6a0190668420c70c74c"
+    },
+    {
+      "bytes": 17785,
+      "original_path": "experiments/iris-release-v1/owner-wake-duration-diagnostic.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/owner-wake-duration-diagnostic.json",
+      "sha256": "dafd7d152393acbf167b0eb458bed83066113736ac6600ac91cf960192429f5d"
+    },
+    {
+      "bytes": 5357,
+      "original_path": "experiments/iris-release-v1/package-replay.json",
+      "recovery_path": ".cache/iris-release-v1/pre-source-closure-fix/experiments/iris-release-v1/package-replay.json",
+      "sha256": "df9b101314aed0f6036fa1d1579751cb5eb3975f4541ef06a25b8290e0eb5976"
+    },
+    {
+      "bytes": 78779,
+      "original_path": "experiments/iris-release-v1/pipeline-resources.json",
+      "recovery_path": ".cache/iris-release-v1/pre-source-closure-fix/experiments/iris-release-v1/pipeline-resources.json",
+      "sha256": "781470a7f1472c96aac129690830017f6f5d1a7d789b728cd3bab271a464fe3a"
+    },
+    {
+      "bytes": 4589,
+      "original_path": "experiments/iris-release-v1/protocol.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/protocol.json",
+      "sha256": "26851f20cc919812ff555eaf2b02ba4c0908338a148f2371176886a786a2f47a"
+    },
+    {
+      "bytes": 1224904,
+      "original_path": "experiments/iris-release-v1/publication-hf-inputs-20261017T021222200569Z.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/publication-hf-inputs-20261017T021222200569Z.json",
+      "sha256": "3d130f44d8d8b7ccc1c24924ed6a25c545e7b7e0392fc8d217cce48049da1f1c"
+    },
+    {
+      "bytes": 1207376,
+      "original_path": "experiments/iris-release-v1/publication-hf-preupload-inputs-20261017T013213809982Z.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/publication-hf-preupload-inputs-20261017T013213809982Z.json",
+      "sha256": "dad3f3461d31253604d072fb77ed50e0ad01d02a0af8c9657dd77f1792c2432d"
+    },
+    {
+      "bytes": 745010,
+      "original_path": "experiments/iris-release-v1/recognition-results.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/recognition-results.json",
+      "sha256": "4ddbdb79bccdd1e88465f4aaeabe8d7da2fa90c8e4b9772217da9cafd7fdd7e8"
+    },
+    {
+      "bytes": 893,
+      "original_path": "experiments/iris-release-v1/release-choice.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/release-choice.json",
+      "sha256": "eb65f0e586a1a93e6c941ee743e5b1c1005b97221cd6ebbe8eeb3b23b5bd6163"
+    },
+    {
+      "bytes": 7198,
+      "original_path": "experiments/iris-release-v1/reproduction-completed-stage-verification.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/reproduction-completed-stage-verification.json",
+      "sha256": "a23d8201ab53aeb7feeb9b909d934aab77c9579d3c8faa53cb88d830e6b23bc6"
+    },
+    {
+      "bytes": 11193,
+      "original_path": "experiments/iris-release-v1/reproduction-environment.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/reproduction-environment.json",
+      "sha256": "50d0326a6fc0e959c0f96e4c1ac5818466a7b22b0092a427d87bdef002203612"
+    },
+    {
+      "bytes": 5375462,
+      "original_path": "experiments/iris-release-v1/reproduction-inputs.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/reproduction-inputs.json",
+      "sha256": "3cbd4a0f36777218bed5944d1529f80b03479a2382861be7891129c46284888d"
+    },
+    {
+      "bytes": 5270,
+      "original_path": "experiments/iris-release-v1/reproduction-prefit-compatibility.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/reproduction-prefit-compatibility.json",
+      "sha256": "8ffa71b12bc1edfb300de90c1f78fed0798f2435d22ae0217109e3a6d79a2286"
+    },
+    {
+      "bytes": 78381,
+      "original_path": "experiments/iris-release-v1/reproduction-release.json",
+      "recovery_path": ".cache/iris-release-v1/pre-source-closure-fix/experiments/iris-release-v1/reproduction-release.json",
+      "sha256": "dea28b42e32838cb2a443b4195b6f0c6c2d8e4484522d9ae4c995d088b1e1243"
+    },
+    {
+      "bytes": 381408,
+      "original_path": "experiments/iris-release-v1/reproduction-run-iris-final-orderfix.json",
+      "recovery_path": ".cache/iris-release-v1/pre-source-closure-fix/experiments/iris-release-v1/reproduction-run-iris-final-orderfix.json",
+      "sha256": "021b4957868560dde012c90cda926f1e52261c0a707089a5f580ef9f300c2ec1"
+    },
+    {
+      "bytes": 2637,
+      "original_path": "experiments/iris-release-v1/reproduction-source-access.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/reproduction-source-access.json",
+      "sha256": "998759f1c7956ff83fbf6601f1ec0cb2b1a5563e6989919eccf30a56c775cb29"
+    },
+    {
+      "bytes": 1818,
+      "original_path": "experiments/iris-release-v1/reproduction-source-inventory-rebind.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/reproduction-source-inventory-rebind.json",
+      "sha256": "9d312158c35538e520fc8063bd9ad2812781dff6ea2fb93ff2272e26317fd6a9"
+    },
+    {
+      "bytes": 2065,
+      "original_path": "experiments/iris-release-v1/selection-before-test.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/selection-before-test.json",
+      "sha256": "006e795f976010ee070f853b6355339884e4e733e60d44757037a1d7094eb861"
+    },
+    {
+      "bytes": 794,
+      "original_path": "experiments/iris-release-v1/software-verification.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/software-verification.json",
+      "sha256": "1f19718ed929ae6fa20615d7f786f61ddbf056c2bcb7b0052267911f676d5dbe"
+    },
+    {
+      "bytes": 81537,
+      "original_path": "experiments/iris-release-v1/ui-final-integration.json",
+      "recovery_path": ".cache/iris-release-v1/pre-source-closure-fix/experiments/iris-release-v1/ui-final-integration.json",
+      "sha256": "5cb525b72dc6e21bfe37ae5b86df69d798a540d99b8f2b7c1ed80d176452a828"
+    },
+    {
+      "bytes": 10304,
+      "original_path": "experiments/iris-release-v1/voices.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/voices.json",
+      "sha256": "b3fb665c57ad5a4ea08272aa79b5b0ebd60ba9544210ae597c48141a66f0818d"
+    },
+    {
+      "bytes": 2055,
+      "original_path": "experiments/iris-release-v1/wake-calibration.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/wake-calibration.json",
+      "sha256": "f1f3a565590c3f9424d79e4681468b5cd5cc5d5bbcc93e3a08d6748181e21df8"
+    },
+    {
+      "bytes": 2022,
+      "original_path": "experiments/iris-release-v1/wake-protocol.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/wake-protocol.json",
+      "sha256": "6ed8ece2336ddabb858fe8839e6429b977a4d43e2e34f3dc896505f9675d0e5c"
+    },
+    {
+      "bytes": 563,
+      "original_path": "experiments/iris-release-v1/wake-results.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/wake-results.json",
+      "sha256": "1199d7c5b28e9dc3f1583b8db3824aabac1d21356f05361f36e5c11100bb9ba7"
+    },
+    {
+      "bytes": 654,
+      "original_path": "experiments/iris-release-v1/wake-selection-before-test.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/wake-selection-before-test.json",
+      "sha256": "fb006eead2891578e6a66ed8cecd163d61ac5262a5eb96cdbb9666f622537907"
+    },
+    {
+      "bytes": 2208,
+      "original_path": "experiments/iris-release-v1/width-selection-before-repeat.json",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/experiments/iris-release-v1/width-selection-before-repeat.json",
+      "sha256": "bd1213acdb91b52e2b6989551d3ea06e6fc09dc841951fd3a2ec6a67e4d4a98d"
+    },
+    {
+      "bytes": 610,
+      "original_path": "pipeline.toml",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/pipeline.toml",
+      "sha256": "deacde78362380534d71f57221b15826e72535d828fce36e274bf686f673e97a"
+    },
+    {
+      "bytes": 234,
+      "original_path": "publish.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/publish.py",
+      "sha256": "4d67d6e2185baf52dfb0963642c77ed7c54b312b4974429d3d7c1f0bc5db6193"
+    },
+    {
+      "bytes": 34917,
+      "original_path": "requirements.lock",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/requirements.lock",
+      "sha256": "49b36c847131665d40078620c3149905656d85df71d4f2edb228002249c8d18a"
+    },
+    {
+      "bytes": 59,
+      "original_path": "scripts/__init__.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/__init__.py",
+      "sha256": "eb94d12c1a5b6eade8e78e64f141e17b4cf5f0995d7c45190f5bce75818a0990"
+    },
+    {
+      "bytes": 1261,
+      "original_path": "scripts/archive_io.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/archive_io.py",
+      "sha256": "8de4cb5eb356d2122e75f903295d748779d1e032f4810b2a5390268a3b57b913"
+    },
+    {
+      "bytes": 29045,
+      "original_path": "scripts/iris_publish.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/iris_publish.py",
+      "sha256": "ab067c3750b55de7421c27fe1cafb385845f31e6d41362cf0c7607d602387799"
+    },
+    {
+      "bytes": 77740,
+      "original_path": "scripts/iris_release.py",
+      "recovery_path": ".cache/iris-release-v1/pre-source-closure-fix/scripts/iris_release.py",
+      "sha256": "af5f2ec37eda67f6d5da772611e94a21c6d96c2498f3e4607af33b530c439467"
+    },
+    {
+      "bytes": 22472,
+      "original_path": "scripts/iris_report.py",
+      "recovery_path": ".cache/iris-release-v1/pre-source-closure-fix/scripts/iris_report.py",
+      "sha256": "a919db95db46a5fd1b16f78d963c5d4fa73aef5d857a840f6eec4f4b0cc79170"
+    },
+    {
+      "bytes": 3857,
+      "original_path": "scripts/models/iris_owner.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/models/iris_owner.py",
+      "sha256": "6d0a4a3be1ea77c55236ffbe3d6e34affd9ad60156ab200c8b30e1f476c50bbc"
+    },
+    {
+      "bytes": 4141,
+      "original_path": "scripts/models/mvp_static.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/models/mvp_static.py",
+      "sha256": "2e9e284621a41a29766c35d99d399e6ffa6bb238418aeeb4ad27e6a3f25c6ff8"
+    },
+    {
+      "bytes": 865,
+      "original_path": "scripts/models/mvp_wake.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/models/mvp_wake.py",
+      "sha256": "57372639b362da85301aafb1bd4f5e8c1dfce3a512009e7f70f444459a02dccd"
+    },
+    {
+      "bytes": 3039,
+      "original_path": "scripts/models/speaker_demo.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/models/speaker_demo.py",
+      "sha256": "57a827ba38fcce088a213894433ba9d8b7b7944b335c2116859919a79f49cb7e"
+    },
+    {
+      "bytes": 11120,
+      "original_path": "scripts/mvp_delivery.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/mvp_delivery.py",
+      "sha256": "6c5e7a2335c9cf28c03138577290d6506ae08f70eaefeabd244f58667788d110"
+    },
+    {
+      "bytes": 35,
+      "original_path": "scripts/runtime/__init__.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/__init__.py",
+      "sha256": "d4c03dc0251ebdebbe93a07beab5380fc096431883632863db12576b46f0da8c"
+    },
+    {
+      "bytes": 5734,
+      "original_path": "scripts/runtime/audio.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/audio.py",
+      "sha256": "a1af89d6a022ccc2ba09b5b794a2b9ff63d314d3a9d04f8a2037042694b3f3dd"
+    },
+    {
+      "bytes": 1420,
+      "original_path": "scripts/runtime/config.example.toml",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/config.example.toml",
+      "sha256": "8c09b3919ac44f9779420a11484aa203c0acc7244091929afbbd7f5d563f281d"
+    },
+    {
+      "bytes": 7442,
+      "original_path": "scripts/runtime/iris_owner.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/iris_owner.py",
+      "sha256": "af1838c143813a82671d0d1a9e5007cb449502a3fa9d44cba2d92e62fe24c474"
+    },
+    {
+      "bytes": 24465,
+      "original_path": "scripts/runtime/iris_pi_benchmark.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/iris_pi_benchmark.py",
+      "sha256": "e8378716360068d5c206917565e257055e7982183f75cd5a63b1a57c3624be20"
+    },
+    {
+      "bytes": 14123,
+      "original_path": "scripts/runtime/mvp_static.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/mvp_static.py",
+      "sha256": "8011085d87772102e2f4f7fa35ff4f71c58b32e4bc111da5370a124ac840f263"
+    },
+    {
+      "bytes": 6022,
+      "original_path": "scripts/runtime/mvp_wake.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/mvp_wake.py",
+      "sha256": "234013fc78aa1ab1f30854e38bd3b5eb73651a8100df2db9bde1c91c45ccaca9"
+    },
+    {
+      "bytes": 6427,
+      "original_path": "scripts/runtime/ncnn-LICENSE.txt",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/ncnn-LICENSE.txt",
+      "sha256": "7c974bac98848df46be1af5bdaa3c3c9c01f6082a90f55caeb7f60c6208aa255"
+    },
+    {
+      "bytes": 3150,
+      "original_path": "scripts/runtime/pcv_benchmark_adapter.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/pcv_benchmark_adapter.py",
+      "sha256": "418611b51d1d2675b6290c85ed4c0b1c9fe39e3ea3f9fe6565bbb277b2b9938f"
+    },
+    {
+      "bytes": 11034,
+      "original_path": "scripts/runtime/pcv_schema.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/pcv_schema.py",
+      "sha256": "41023e876b6b36d3ee303bfe8f4641030cea6e32371f07c5d960b575cc8bf20f"
+    },
+    {
+      "bytes": 579,
+      "original_path": "scripts/runtime/pyproject.toml",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/pyproject.toml",
+      "sha256": "bf7fd31f052f96c30bce539a7bbe3502fbe69d706828f20ea36fa54ce8c0d6dc"
+    },
+    {
+      "bytes": 452,
+      "original_path": "scripts/runtime/speaker.env.example",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/speaker.env.example",
+      "sha256": "6cba129f8a725430a51ee96e74c85ae94ceead14499e9b46e31744f59b8cc9c2"
+    },
+    {
+      "bytes": 7777,
+      "original_path": "scripts/runtime/speaker_config.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/speaker_config.py",
+      "sha256": "3f5ca6bfabdde486bd136d1c983d28a8fef91b41e756957e3403d12c5a92343f"
+    },
+    {
+      "bytes": 4741,
+      "original_path": "scripts/runtime/speaker_package.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/speaker_package.py",
+      "sha256": "01cdae8f289fa26f6a406fdacb57c7de9f66f555de5c8ddeea557100884ec204"
+    },
+    {
+      "bytes": 7464,
+      "original_path": "scripts/runtime/speaker_session.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/speaker_session.py",
+      "sha256": "9aa7fcb7b88919ebf657265acc32e1f1ab3aadfa9df8c4632b65a0a2de73bde9"
+    },
+    {
+      "bytes": 15027,
+      "original_path": "scripts/runtime/speaker_start.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/speaker_start.py",
+      "sha256": "bcfcf2cb34c1cff6745ec4860967b0353a51aa193ba87e77d89a2a660ecc2d8f"
+    },
+    {
+      "bytes": 5663,
+      "original_path": "scripts/runtime/speaker_tools.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/speaker_tools.py",
+      "sha256": "2e70ab4067e7b18ca4b9282aeaf758486d5cacb1e8fdd8ad84ff74f8e0f22ef5"
+    },
+    {
+      "bytes": 16319,
+      "original_path": "scripts/runtime/speaker_worker.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/speaker_worker.py",
+      "sha256": "3ab8f0c98607c2e8b45d8939a11787f0ba449c5c2315daba2d58171997efb939"
+    },
+    {
+      "bytes": 124634,
+      "original_path": "scripts/runtime/uv.lock",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/uv.lock",
+      "sha256": "8c0a9d98063b4f858018e3fd2875632f98b7fb9be5c91ec7736fdb4620686399"
+    },
+    {
+      "bytes": 5287,
+      "original_path": "scripts/runtime/wake_gate.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/wake_gate.py",
+      "sha256": "37830138a7f10c1dc7a3edc9e574e2b1d43245b7990907c3123c9dbd31325489"
+    },
+    {
+      "bytes": 4214,
+      "original_path": "scripts/runtime/wake_models.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/runtime/wake_models.py",
+      "sha256": "d07b9b42b37f82111efa1174c83f02387ed752f7f2da3a18ce18c37901d00eb3"
+    },
+    {
+      "bytes": 3201,
+      "original_path": "scripts/speaker_publish.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/speaker_publish.py",
+      "sha256": "791542a57d6b2c52b1a20c0aa8bfd48ac56830b82ce0c77ab7c4160c762c6b5f"
+    },
+    {
+      "bytes": 59,
+      "original_path": "scripts/test/__init__.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/__init__.py",
+      "sha256": "eb94d12c1a5b6eade8e78e64f141e17b4cf5f0995d7c45190f5bce75818a0990"
+    },
+    {
+      "bytes": 6101,
+      "original_path": "scripts/test/iris_benchmark.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/iris_benchmark.py",
+      "sha256": "c41a5a4904e2565b999708c5c055dd0c43f8f640738c85c1812db5a7a40973df"
+    },
+    {
+      "bytes": 5952,
+      "original_path": "scripts/test/iris_decision_parity.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/iris_decision_parity.py",
+      "sha256": "32b002c750711efaae34b9c3d3b306ad1f1a76c662589f38a8b1306c9ebb9673"
+    },
+    {
+      "bytes": 8361,
+      "original_path": "scripts/test/iris_metrics.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/iris_metrics.py",
+      "sha256": "cce9a3f2a6213cb1b6b9649297d2c84e1d278d58772000d2d1769c3e4b5ebed9"
+    },
+    {
+      "bytes": 24549,
+      "original_path": "scripts/test/iris_resources.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/iris_resources.py",
+      "sha256": "3fc87718c83774c85846e7f07b6b32eaab9ea2c6c87e809121b8894e48610785"
+    },
+    {
+      "bytes": 839,
+      "original_path": "scripts/test/test_iris_archive.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/test_iris_archive.py",
+      "sha256": "5be69f9416d2024cda04e449d5e17f12fbec36d40cda0c9f1bdd834ba297a8a3"
+    },
+    {
+      "bytes": 4593,
+      "original_path": "scripts/test/test_iris_configuration.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/test_iris_configuration.py",
+      "sha256": "2b7662a4a68e5db19da20acacb9986bd14fe4ca959cb8235bfed58583e14dd5c"
+    },
+    {
+      "bytes": 6975,
+      "original_path": "scripts/test/test_iris_diversity.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/test_iris_diversity.py",
+      "sha256": "4ff858b41f36ff00df21aa66a36452129251ecded36ffb210ee01dedeeeeda1f"
+    },
+    {
+      "bytes": 4710,
+      "original_path": "scripts/test/test_iris_metrics.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/test_iris_metrics.py",
+      "sha256": "96da2685922cf26a5ae9307840c841e90e0ce69ccd61eb387a8c15e0060e4240"
+    },
+    {
+      "bytes": 13650,
+      "original_path": "scripts/test/test_iris_models.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/test_iris_models.py",
+      "sha256": "b2de3292cb6928a5d3118400c0711f85675fb34479a5cc2c8178d9d46ec37aee"
+    },
+    {
+      "bytes": 12337,
+      "original_path": "scripts/test/test_iris_owner.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/test_iris_owner.py",
+      "sha256": "217f6ad670a3243a39dbae64b7b823af3ea8df9dfb25b759a7d2625b8bb7ebbe"
+    },
+    {
+      "bytes": 9406,
+      "original_path": "scripts/test/test_iris_pi_benchmark.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/test_iris_pi_benchmark.py",
+      "sha256": "953909ec718e9d21dbaacf89ff83eb41544eb56f4c85200880382fa79fc90fdf"
+    },
+    {
+      "bytes": 49882,
+      "original_path": "scripts/test/test_iris_release.py",
+      "recovery_path": ".cache/iris-release-v1/pre-source-closure-fix/scripts/test/test_iris_release.py",
+      "sha256": "54163588fab000271cd6b9a08a002193940f12916c745c9569f030d587b6d7c2"
+    },
+    {
+      "bytes": 12147,
+      "original_path": "scripts/test/test_iris_resources.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/test_iris_resources.py",
+      "sha256": "0276377dfb31173fe43d1f774e8609247f181aa1ee8fc5533dacf8a969178820"
+    },
+    {
+      "bytes": 5836,
+      "original_path": "scripts/test/test_iris_session.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/test_iris_session.py",
+      "sha256": "f16e9c711d04fa1d49db6d8d4e5e2cbd04edec51a2e2788749b6dd70a33a2098"
+    },
+    {
+      "bytes": 1870,
+      "original_path": "scripts/test/test_iris_wake_models.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/test_iris_wake_models.py",
+      "sha256": "127e40e1bd05adb12f9b756e7b47c256a1c22cdf017ad1f4c5f80e1534123dd0"
+    },
+    {
+      "bytes": 2736,
+      "original_path": "scripts/test/test_iris_wake_release.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/test_iris_wake_release.py",
+      "sha256": "7aa8b9529b44bb39b5697f05e372918de7e01ba40377102dbf7bb55ef40080c4"
+    },
+    {
+      "bytes": 7118,
+      "original_path": "scripts/test/test_iris_worker.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/test/test_iris_worker.py",
+      "sha256": "0f1e774309fe3331851ab59ad0949a6889d5c637aeb4e0462e2f0d1396b08bd9"
+    },
+    {
+      "bytes": 59,
+      "original_path": "scripts/train/__init__.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/train/__init__.py",
+      "sha256": "eb94d12c1a5b6eade8e78e64f141e17b4cf5f0995d7c45190f5bce75818a0990"
+    },
+    {
+      "bytes": 38509,
+      "original_path": "scripts/train/iris_diversity.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/train/iris_diversity.py",
+      "sha256": "0bc25c969f141d522ac928bdbc369de4a44522b144671b9c67ccf3b6d3f3e00c"
+    },
+    {
+      "bytes": 5239,
+      "original_path": "scripts/train/iris_export.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/train/iris_export.py",
+      "sha256": "bcfb6b32a8297eb09017fbc8033067ff48a345175b562899bfcf8ee6f4f6dcf8"
+    },
+    {
+      "bytes": 77703,
+      "original_path": "scripts/train/iris_owner.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/train/iris_owner.py",
+      "sha256": "6e9d52362e5e35a93e688d94286453080350c2260b20432ca0766cb71f68bc6f"
+    },
+    {
+      "bytes": 12687,
+      "original_path": "scripts/train/iris_wake.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/train/iris_wake.py",
+      "sha256": "d410de634e6e10deddeeb0dc9e7240b7049b5649463e3efb6a1a89ea9a79bb47"
+    },
+    {
+      "bytes": 6095,
+      "original_path": "scripts/train/iris_wake_helpers.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/scripts/train/iris_wake_helpers.py",
+      "sha256": "10cf4a75f746085a376cc74c9eabda2aed8bbc79c250c679678b7f4cfab8948a"
+    },
+    {
+      "bytes": 407,
+      "original_path": "start.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/start.py",
+      "sha256": "864641ea126c1c51243ed7663f84aa6f2885a88db0aa2f7c2bd81285829d66d8"
+    },
+    {
+      "bytes": 859,
+      "original_path": "train.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/train.py",
+      "sha256": "17ef1f84add6694e96d05ad268f2d2be0983e720f0ab931cb2559d1db9c6820b"
+    },
+    {
+      "bytes": 90,
+      "original_path": "vcm/__init__.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/vcm/__init__.py",
+      "sha256": "8e7184c3193018c242dc2479c890e104a192611e7adb32d0afea8e4593c3d7f0"
+    },
+    {
+      "bytes": 2206,
+      "original_path": "vcm/frontend.py",
+      "recovery_path": ".cache/iris-release-v1/pre-ordering-fix/vcm/frontend.py",
+      "sha256": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+    }
+  ],
+  "reason": "Preserve ordering-fixed source/release/package before benchmark launcher inventory and automatic card-evidence publication correction.",
+  "schema_version": 1,
+  "status": "preserved"
+}

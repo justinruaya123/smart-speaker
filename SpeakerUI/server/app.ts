@@ -18,6 +18,10 @@ import { attachVoiceSession, type ActionResult, type RecordingLease } from './in
 import type { InferenceFactory } from './inference/adapter.js';
 import { PythonRuntime } from './inference/python-runtime.js';
 import { RuntimeActions } from './inference/runtime-actions.js';
+import { ActionStore, type Execution } from './inference/action-store.js';
+import { canonicalCommand } from '../shared/canonical-command.js';
+import { isRecord } from '../shared/protocol.js';
+import { randomUUID } from 'node:crypto';
 
 interface Options { staticDir?: string; fetcher?: typeof fetch; inferenceFactory?: InferenceFactory }
 
@@ -25,22 +29,66 @@ export async function createApp(config: Config, options: Options = {}) {
   const https = config.tls ? { cert: await readFile(config.tls.cert), key: await readFile(config.tls.key) } : undefined;
   const app = Fastify({ ...(https ? { https } : {}), bodyLimit: 4_096, requestTimeout: 10_000, logger: false });
   const dummyRuntime = loadDummyRuntime();
-  const runtime = config.runtime ? new PythonRuntime(config.runtime) : undefined;
   const local = await createLocalMedia(config.mediaDir);
   const fetcher = options.fetcher ?? fetch;
   const ha = createHomeAssistant(config.ha, fetcher);
   const spotify = createSpotify(config.spotify, config.dataDir, fetcher);
-  const actions=new RuntimeActions({enabled:config.actionsEnabled,bindings:config.bindings},{
-    light:c=>ha.control(c),spotify:c=>spotify.control(c),song:uri=>spotify.playConfigured(uri),
+  const store = await ActionStore.open(config.dataDir);
+  const runtime = config.runtime ? new PythonRuntime(config.runtime) : undefined;
+  const actionClients = new Map<import('ws').default, string>();
+  const localPending = new Map<string,{owner:string;timer:NodeJS.Timeout}>();
+  let localOwner: string | undefined, localCurrent: string | undefined;
+  const runtimeEnabled = () => !runtime || config.runtime?.profile !== 'benchmark-compatible' && runtime.status().loaded === true && runtime.status().actions_enabled === true;
+  const actionsEnabled = () => config.actionsEnabled && runtimeEnabled();
+  const send = (socket: import('ws').default, event: object) => {
+    if (socket.readyState !== 1) return;
+    if (socket.bufferedAmount > 256_000) socket.close(1013, 'Slow consumer');
+    else socket.send(JSON.stringify(event));
+  };
+  const broadcast = (event: object) => { for (const socket of actionClients.keys()) send(socket, event); };
+  const actionState = () => ({ ...store.snapshot(), actions_enabled: actionsEnabled(), timezone:config.timezone,
+    bindings: { lights: config.bindings.lights, songs: Object.keys(config.bindings.songs),
+      climate: config.bindings.climate?.default || null, weather: config.bindings.weather?.default || null,
+      media_player: config.bindings.media_player || {}, contacts: Object.keys(config.bindings.contacts || {}), messages: Boolean(config.bindings.messages?.default) } });
+  store.on('change', () => broadcast({ event: 'action_state', ...actionState() }));
+  const publishExecution = (execution: Execution, sessionId?: string) => {
+    if (execution.local_media && execution.status==='requested' && localOwner && !localPending.has(execution.id)) {
+      const timer=setTimeout(()=>{localPending.delete(execution.id);const previous=store.receipt(execution.id);
+        if(previous?.status==='requested')void store.finish(execution.id,{...previous,status:'unknown',detail:'The local player did not confirm playback. This action will not be retried.'}).then(value=>publishExecution(value)).catch(()=>{});
+      },15000);timer.unref();localPending.set(execution.id,{owner:localOwner,timer});
+    }
+    if (execution.status!=='requested') {clearTimeout(localPending.get(execution.id)?.timer);localPending.delete(execution.id);}
+    const event = { event: 'execution', session_id: sessionId, utterance_id: execution.utterance_id, execution };
+    broadcast(event); runtime?.emit('action', event);
+  };
+  const actions=new RuntimeActions({enabled:config.actionsEnabled,bindings:config.bindings,profile:config.runtime?.profile,timezone:config.timezone},{
+    light:c=>ha.control(c),lights:commands=>ha.controlLights(commands),spotify:c=>spotify.control(c),song:uri=>spotify.playConfigured(uri),
     volume:async()=>{const state=await spotify.snapshot();return state.playback?.device?.volume??undefined;},
-  });
+    climate:(entity,degrees)=>ha.climate(entity,degrees), weather:entity=>ha.weather(entity), script:entity=>ha.script(entity),
+    media:(entity,command,content)=>ha.media(entity,command,content),
+    local:async(command,content)=>{
+      if (!localOwner) throw new IntegrationError('disabled','Open the configured local player in Iris before controlling playback.');
+      if (command.intent === 'PLAY_MUSIC' && content) {
+        if (!local.find(content)) throw new IntegrationError('not_found','The configured local track is not indexed.');
+        localCurrent = content;
+      }
+      if (command.intent === 'NEXT') {
+        const playlist = [...new Set(Object.values(config.bindings.songs))].filter(id => local.find(id));
+        const index = playlist.indexOf(localCurrent || '');
+        if (index < 0) throw new IntegrationError('disabled','Choose a configured local song first.');
+        localCurrent = playlist[(index + 1) % playlist.length];
+      }
+      if (['PLAY_MUSIC','NEXT'].includes(command.intent) && !localCurrent) throw new IntegrationError('disabled','Choose a configured local song first.');
+      return { action: command.intent, slots: command.slots, ...(localCurrent ? { track: local.find(localCurrent), url: `/api/media/local/${localCurrent}` } : {}) };
+    },
+  },store);
   let actionChain=Promise.resolve();
   runtime?.on('event',event=>{
     if(event.event!=='command')return;
     actionChain=actionChain.then(async()=>{
       const execution=await actions.handle(event);
-      if(execution)runtime.emit('action',{event:'execution',utterance_id:event.utterance_id,execution});
-    }).catch(()=>{});
+      if(execution)publishExecution(execution,event.session_id);
+    }).catch(()=>broadcast({event:'action_error',message:'The action could not be safely recorded. It was not dispatched or retried.'}));
   });
   const lease: RecordingLease = { owner: undefined };
   const activeSockets = new Set<import('ws').default>();
@@ -103,7 +151,44 @@ export async function createApp(config: Config, options: Options = {}) {
     activeSockets.add(socket); socket.once('close', () => activeSockets.delete(socket));
     attachVoiceSession(socket, config, lease, dispatch, options.inferenceFactory);
   });
-  app.get('/api/health', async () => ({ status: 'ok', inference: config.inferenceMode, instance: config.runtime?.token.slice(0,12), runtime: runtime?.status() ?? dummyRuntime.status(), actionsEnabled: config.actionsEnabled, audio: AUDIO, homeAssistant: ha.snapshot().status, spotify: config.spotify.enabled ? 'configured' : 'disabled', localMedia: local.status() }));
+  app.get('/api/health', async () => ({ status: 'ok', inference: config.inferenceMode, instance: config.runtime?.token.slice(0,12), runtime: runtime?.status() ?? dummyRuntime.status(), actionsEnabled: actionsEnabled(), audio: AUDIO, homeAssistant: ha.snapshot().status, spotify: config.spotify.enabled ? 'configured' : 'disabled', localMedia: local.status() }));
+  app.get('/api/actions/state', async () => actionState());
+  app.get('/ws/actions', { websocket: true }, (socket, req) => {
+    if (req.headers.origin !== config.origin || actionClients.size >= 4) { socket.close(1008, 'Origin rejected or connection limit reached'); return; }
+    const clientId = randomUUID(); actionClients.set(socket, clientId);
+    if (!localOwner && config.bindings.media_player?.provider === 'local') localOwner = clientId;
+    send(socket, { event: 'action_state', ...actionState(), client_id: clientId, local_player: localOwner === clientId });
+    socket.once('close', () => {
+      actionClients.delete(socket);
+      if (localOwner === clientId) {
+        for(const [id,pending] of localPending)if(pending.owner===clientId){clearTimeout(pending.timer);localPending.delete(id);const previous=store.receipt(id);
+          if(previous?.status==='requested')void store.finish(id,{...previous,status:'unknown',detail:'The local player disconnected before confirming playback. This action will not be retried.'}).then(value=>publishExecution(value)).catch(()=>{});
+        }
+        localOwner = config.bindings.media_player?.provider === 'local' ? actionClients.values().next().value : undefined;
+        for (const [other, id] of actionClients) send(other, { event: 'player_role', local_player: id === localOwner });
+      }
+    });
+  });
+  app.post('/api/actions', async (req, reply) => {
+    if (!isRecord(req.body) || Object.keys(req.body).some(key=>!['request_id','command'].includes(key)) || typeof req.body.request_id !== 'string' || !/^[\w-]{1,64}$/.test(req.body.request_id) || !canonicalCommand(req.body.command)) return reply.code(400).send({ error: 'invalid_command' });
+    const execution = await actions.touch(req.body.request_id, req.body.command, runtimeEnabled());
+    if (execution && !execution.replayed) publishExecution(execution);
+    return execution;
+  });
+  app.post('/api/actions/jobs/:id', async (req, reply) => {
+    if (!actionsEnabled()) return reply.code(409).send({ error: 'actions_disabled' });
+    const id = (req.params as {id:string}).id;
+    if (!isRecord(req.body) || typeof req.body.action !== 'string' || !['complete','cancel','snooze','pause','resume'].includes(req.body.action) || Object.keys(req.body).some(key=>key!=='action')) return reply.code(400).send({ error: 'invalid_job_action' });
+    try { return await store.updateJob(id,req.body.action); }
+    catch { return reply.code(409).send({ error: 'job_changed', message: 'Job is no longer in a state that supports this action. Refresh its current state.' }); }
+  });
+  app.post('/api/actions/local-receipt', async (req, reply) => {
+    if (!isRecord(req.body) || !localOwner || req.body.client_id !== localOwner || typeof req.body.id !== 'string' || !['succeeded','failed'].includes(String(req.body.status))) return reply.code(400).send({ error:'invalid_player_receipt' });
+    const existing = store.receipt(req.body.id);
+    if (!existing?.local_media || existing.status !== 'requested') return reply.code(409).send({ error:'playback_already_resolved' });
+    const execution = await store.finish(req.body.id,{ ...existing,status:String(req.body.status),detail:req.body.status==='succeeded'?'The local browser confirmed the playback action.':'The browser could not complete playback. Enable browser audio and choose the song again explicitly.' });
+    publishExecution(execution); return execution;
+  });
   if (runtime) {
     app.get('/ws/runtime', { websocket: true }, (socket, req) => {
       if (req.headers.origin !== config.origin || activeSockets.size >= 4) { socket.close(1008, 'Origin rejected or connection limit reached'); return; }
@@ -140,15 +225,15 @@ export async function createApp(config: Config, options: Options = {}) {
     if (fixture === undefined) return reply.code(400).send({ error: 'invalid_fixture' });
     return dummyRuntime.infer(fixture);
   });
-  app.get('/api/home-assistant/entities', async () => ({ ...ha.snapshot(), actionsEnabled: config.actionsEnabled }));
-  app.get('/api/spotify/state', async () => ({ ...await spotify.snapshot(), actionsEnabled: config.actionsEnabled }));
+  app.get('/api/home-assistant/entities', async () => ({ ...ha.snapshot(), actionsEnabled: actionsEnabled() }));
+  app.get('/api/spotify/state', async () => ({ ...await spotify.snapshot(), actionsEnabled: actionsEnabled() }));
   app.post('/api/home-assistant/control', async (req, reply) => {
-    if (!config.actionsEnabled) return reply.code(409).send({ error: 'actions_disabled', message: 'Device actions are disabled.' });
+    if (!actionsEnabled()) return reply.code(409).send({ error: 'actions_disabled', message: 'Device actions are disabled.' });
     await ha.control(lightCommand(req.body));
     return { ...ha.snapshot(), actionsEnabled: config.actionsEnabled };
   });
   app.post('/api/spotify/control', async (req, reply) => {
-    if (!config.actionsEnabled) return reply.code(409).send({ error: 'actions_disabled', message: 'Playback actions are disabled.' });
+    if (!actionsEnabled()) return reply.code(409).send({ error: 'actions_disabled', message: 'Playback actions are disabled.' });
     await spotify.control(spotifyCommand(req.body));
     return { ...await spotify.snapshot(), actionsEnabled: config.actionsEnabled };
   });
@@ -184,11 +269,11 @@ export async function createApp(config: Config, options: Options = {}) {
   app.post<{ Body: Pick<Track, 'id' | 'source'> }>('/api/media/play', {
     schema: { body: { type: 'object', required: ['id', 'source'], properties: { id: { type: 'string', minLength: 1, maxLength: 64 }, source: { enum: ['local', 'spotify'] } }, additionalProperties: false } },
   }, async (req, reply) => {
-    if (req.body.source === MediaSource.Spotify && !config.actionsEnabled) return reply.code(409).send({ error: 'actions_disabled' });
+    if (!actionsEnabled()) return reply.code(409).send({ error: 'actions_disabled' });
     return playback(req.body.source, req.body.id);
   });
   app.post('/api/media/pause', async (_req, reply) => {
-    if (!config.actionsEnabled) return reply.code(409).send({ error: 'actions_disabled' });
+    if (!actionsEnabled()) return reply.code(409).send({ error: 'actions_disabled' });
     return dispatch({ intent: Intent.MediaPause, source: MediaSource.Spotify });
   });
   app.get<{ Params: { id: string } }>('/api/media/local/:id', async (req, reply) => {
@@ -222,8 +307,9 @@ export async function createApp(config: Config, options: Options = {}) {
   if (options.staticDir) {
     await app.register(staticFiles, { root: resolve(options.staticDir), index: ['index.html'], cacheControl: true, maxAge: 0 });
   }
+  const clock = setInterval(() => { void store.expire().catch(()=>broadcast({event:'action_error',message:'Scheduled job state could not be saved. Check DATA_DIR access.'})); }, 500); clock.unref();
   app.addHook('onReady', async () => { ha.start(); });
-  app.addHook('preClose', async () => { for (const socket of activeSockets) socket.terminate(); for (const stream of cameraStreams.keys()) stream.abort(); });
-  app.addHook('onClose', async () => { ha.close(); dummyRuntime.close(); await runtime?.close(); });
+  app.addHook('preClose', async () => { clearInterval(clock); for(const pending of localPending.values())clearTimeout(pending.timer); for (const socket of activeSockets) socket.terminate(); for (const socket of actionClients.keys()) socket.terminate(); for (const stream of cameraStreams.keys()) stream.abort(); });
+  app.addHook('onClose', async () => { ha.close(); dummyRuntime.close(); await runtime?.close(); await actionChain; await store.flush(); });
   return app;
 }

@@ -1,0 +1,2717 @@
+{
+  "schema_version": 1,
+  "utc": "2026-10-17T03:07:03.332279+00:00",
+  "evidence_kind": "bounded_cpu_component_resource_profile",
+  "hardware": {
+    "measurement_host": "desktop_host",
+    "physical_pi_measured": false,
+    "device_model": null,
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "python": "3.13.9",
+    "cpu_count": 256
+  },
+  "physical_pi_measured": false,
+  "live_microphone_measured": false,
+  "human_audio_measured": false,
+  "actions_executed": false,
+  "acoustic_quality_approved": false,
+  "ownership_experimental": true,
+  "bindings": {
+    "files": {
+      "commands:iris1/40aace8b8d8c21d1e190": {
+        "sha256": "d80554369f674a57b157469b5becc543492fba17e6823418ee95a60725f8c61d",
+        "bytes": 94764
+      },
+      "commands:iris1/5b6936c05d99ad0f1c57": {
+        "sha256": "7ba842efbcbd92a72a66d9a7d3c335b35b72fb043fe29d195b2d0a14773d2b9e",
+        "bytes": 87084
+      },
+      "commands:iris1/7c3dd473ae9fe344bff0": {
+        "sha256": "4a1d31736d9e7cdde9886bfc7fb40a250c2daec7e39a40f953f068176050d7ea",
+        "bytes": 64044
+      },
+      "commands:iris1/7c94f357bcf21c5ebcef": {
+        "sha256": "de141d75e580306394a845906628f102d2c700da31068689fbec530d3dd0feff",
+        "bytes": 74284
+      },
+      "commands:iris1/bba7ec8f922829624b58": {
+        "sha256": "94950868a94ce17354b99e018c96fdb9acd42fd3b99a12609d080e9aa5dde273",
+        "bytes": 81964
+      },
+      "commands:iris1/c76da9c8fd40dcd0d9bd": {
+        "sha256": "34917e00abd159d16d0aadca6c64724800e4bb832a6ecec55bfae45564c098db",
+        "bytes": 87084
+      },
+      "commands:iris1/e6f332af2f3d72da2793": {
+        "sha256": "e38ce76dd4fdc5ee004e9370a677a53e6009aca3e589c08ed950159a102bcb52",
+        "bytes": 71724
+      },
+      "commands:iris1/e8707fc99f7189a21adf": {
+        "sha256": "663970baebbcb4e0e1c609151b1109770f93a9605a6d0e190de2ebb9bfb3d9c5",
+        "bytes": 66604
+      },
+      "generated_manifest": {
+        "sha256": "59ef286523444f61ec6cb07303349e3397bce0c6b967517a9ddb3100491625c1",
+        "bytes": 3567218
+      },
+      "generation_complete": {
+        "sha256": "2574e74b85be8c39c336915d06038743da5d344cb564351df5913ff393801a8b",
+        "bytes": 316
+      },
+      "owner:.cache/iris-release-v1/owner/export/owner.json": {
+        "sha256": "e2d531627fabf90453762cf17eb082b3f52f8922aa830e37a9202144b91fb310",
+        "bytes": 4640
+      },
+      "owner:.cache/iris-release-v1/owner/export/owner.onnx": {
+        "sha256": "84e860f814e248e793567b2f1c8fe83d24d82b9d58f5379e4da69eb7b78d0a3f",
+        "bytes": 542023
+      },
+      "personal_manifest": {
+        "sha256": "c1be08c9d1a78eb99b6efcce2f95efa3528209bbbbb09a15238400cb82efa3a9",
+        "bytes": 87666
+      },
+      "protocol": {
+        "sha256": "26851f20cc919812ff555eaf2b02ba4c0908338a148f2371176886a786a2f47a",
+        "bytes": 4589
+      },
+      "scripts/iris_release.py": {
+        "sha256": "af5f2ec37eda67f6d5da772611e94a21c6d96c2498f3e4607af33b530c439467",
+        "bytes": 77740
+      },
+      "scripts/runtime/audio.py": {
+        "sha256": "a1af89d6a022ccc2ba09b5b794a2b9ff63d314d3a9d04f8a2037042694b3f3dd",
+        "bytes": 5734
+      },
+      "scripts/runtime/iris_owner.py": {
+        "sha256": "af1838c143813a82671d0d1a9e5007cb449502a3fa9d44cba2d92e62fe24c474",
+        "bytes": 7442
+      },
+      "scripts/runtime/iris_pi_benchmark.py": {
+        "sha256": "e8378716360068d5c206917565e257055e7982183f75cd5a63b1a57c3624be20",
+        "bytes": 24465
+      },
+      "scripts/runtime/mvp_static.py": {
+        "sha256": "8011085d87772102e2f4f7fa35ff4f71c58b32e4bc111da5370a124ac840f263",
+        "bytes": 14123
+      },
+      "scripts/runtime/mvp_wake.py": {
+        "sha256": "234013fc78aa1ab1f30854e38bd3b5eb73651a8100df2db9bde1c91c45ccaca9",
+        "bytes": 6022
+      },
+      "scripts/runtime/pcv_schema.py": {
+        "sha256": "41023e876b6b36d3ee303bfe8f4641030cea6e32371f07c5d960b575cc8bf20f",
+        "bytes": 11034
+      },
+      "scripts/runtime/speaker_config.py": {
+        "sha256": "3f5ca6bfabdde486bd136d1c983d28a8fef91b41e756957e3403d12c5a92343f",
+        "bytes": 7777
+      },
+      "scripts/runtime/speaker_session.py": {
+        "sha256": "9aa7fcb7b88919ebf657265acc32e1f1ab3aadfa9df8c4632b65a0a2de73bde9",
+        "bytes": 7464
+      },
+      "scripts/runtime/speaker_worker.py": {
+        "sha256": "3ab8f0c98607c2e8b45d8939a11787f0ba449c5c2315daba2d58171997efb939",
+        "bytes": 16319
+      },
+      "scripts/runtime/wake_gate.py": {
+        "sha256": "37830138a7f10c1dc7a3edc9e574e2b1d43245b7990907c3123c9dbd31325489",
+        "bytes": 5287
+      },
+      "scripts/runtime/wake_models.py": {
+        "sha256": "d07b9b42b37f82111efa1174c83f02387ed752f7f2da3a18ce18c37901d00eb3",
+        "bytes": 4214
+      },
+      "scripts/test/iris_resources.py": {
+        "sha256": "3fc87718c83774c85846e7f07b6b32eaab9ea2c6c87e809121b8894e48610785",
+        "bytes": 24549
+      },
+      "silero:.cache/iris-release-v1/inputs/vad/silero-vad.onnx": {
+        "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+        "bytes": 2327524
+      },
+      "silero:.cache/iris-release-v1/inputs/vad/wake-models.json": {
+        "sha256": "9784dd9b5836cbaaf6a6fdb7912ae2baedde17e538befe2fe3d8c2b7c4b7dd6a",
+        "bytes": 381
+      },
+      "synthetic_license": {
+        "sha256": "cd3753dad2a43fcfa277e73908222994a56a9767883f8747954dc531ecfb33ac",
+        "bytes": 10839
+      },
+      "vcm/frontend.py": {
+        "sha256": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a",
+        "bytes": 2206
+      },
+      "vcm:.cache/iris-release-v1/diversity/release-export/bundle.json": {
+        "sha256": "d7671bb393f7a81b4a354e6922b8a469c76a57aec8264ba3ff030fbba1adaa03",
+        "bytes": 671
+      },
+      "vcm:.cache/iris-release-v1/diversity/release-export/catalog.json": {
+        "sha256": "f169f8b80be8a844de4fca1cfbe7ead9841d4165ec8ad748b0af9010c6c5e8b1",
+        "bytes": 114053
+      },
+      "vcm:.cache/iris-release-v1/diversity/release-export/model.onnx": {
+        "sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a",
+        "bytes": 3973147
+      },
+      "vcm:.cache/iris-release-v1/diversity/release-export/ncnn/engine.json": {
+        "sha256": "d4180c8657a9db0ae87f1384dbb43cf3caa6d8e54d8ec76f625a2e365a670f51",
+        "bytes": 811
+      },
+      "vcm:.cache/iris-release-v1/diversity/release-export/ncnn/model.ncnn.bin": {
+        "sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133",
+        "bytes": 3879960
+      },
+      "vcm:.cache/iris-release-v1/diversity/release-export/ncnn/model.ncnn.param": {
+        "sha256": "e7289f35da2cf35147d3b8833a4915b8e3a0520cc99573ebfffae07ec6da7998",
+        "bytes": 8904
+      },
+      "vcm:.cache/iris-release-v1/diversity/release-export/ncnn/position-frequency.json": {
+        "sha256": "2cf4b7057c69f59eff846bf80903eb98f9ed17da9edd3ba0efb6f1940fa97605",
+        "bytes": 1515
+      },
+      "vcm:.cache/iris-release-v1/diversity/release-export/normalization.json": {
+        "sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+        "bytes": 148035
+      },
+      "vcm:.cache/iris-release-v1/diversity/release-export/policy.json": {
+        "sha256": "77de4929939d618b84238f1c95e449eb8a3697c636c23a7861e72c0b52c5b13e",
+        "bytes": 31127
+      },
+      "wake:.cache/iris-release-v1/wake/export/iris.json": {
+        "sha256": "12d21a9460a2ac37582d28c0f31cb90f670b8bbc423f5c3bca664bb02d3d0922",
+        "bytes": 152922
+      },
+      "wake:.cache/iris-release-v1/wake/export/iris.ncnn.bin": {
+        "sha256": "f5608815519830107220939124abf65222dec6f159ed36ead1f50d124392da98",
+        "bytes": 323904
+      },
+      "wake:.cache/iris-release-v1/wake/export/iris.ncnn.param": {
+        "sha256": "43ce9accd880119cba8737365ef799280d22985dd69bc7d7940339ea5f88c067",
+        "bytes": 2713
+      },
+      "wake:.cache/iris-release-v1/wake/export/iris.onnx": {
+        "sha256": "22fc8b0c6a3c80e1d1686d321a6251957085216efaca1752eb22067064a4ea57",
+        "bytes": 330103
+      },
+      "wakes:iris-release/08964b2f1fc085690cb3": {
+        "sha256": "9dc9063863276bf730a9ca489246f6840149e4438582448b026b71c1c96f27ec",
+        "bytes": 33324
+      },
+      "wakes:iris-release/1de24efe39e943e1d76a": {
+        "sha256": "dce3f800107bc2d8491906a83520b0ad792143246741ee28186990775031ec37",
+        "bytes": 43564
+      },
+      "wakes:iris-release/244ad6f7a6397eb15912": {
+        "sha256": "0371a590941dea549800c2ba56de655cc824176a22b88abf8d5d56160a2d2840",
+        "bytes": 53804
+      },
+      "wakes:iris-release/3f20f6e747d3cb6c68a4": {
+        "sha256": "10fbf7751f0a8f73608f17f0d2bcc734465694adde41b292d3799c91ecf37057",
+        "bytes": 46124
+      },
+      "wakes:iris-release/89ab90a60f692e829da9": {
+        "sha256": "b1374d5d7bffb379b1400ba95a284ebc2d9f57707c7831527ca73412baf25f40",
+        "bytes": 41004
+      },
+      "wakes:iris-release/c60f75b39949b419cd48": {
+        "sha256": "6d13ae703ea43f8bfe2eaf1724f2d96fc1e395c55475c54bc91446711ef6cdc4",
+        "bytes": 56364
+      },
+      "wakes:iris-release/e9a509d8778c9274bc6d": {
+        "sha256": "fc8ddca6517e03421d2e9dc7cad8a941099437b1d804028e23ef87055c7f01ac",
+        "bytes": 41004
+      },
+      "wakes:iris-release/fb397105c08bdec38b8f": {
+        "sha256": "9c703b214a6de5326f1be3a0402b662c66c87a3e5c12577b107ea59f0e1ed27d",
+        "bytes": 35884
+      }
+    },
+    "engine": "ncnn",
+    "threads": 1,
+    "sample_rate": 16000,
+    "samples_per_component": 8,
+    "prefix_cadence_samples": 8000,
+    "warmup_source_samples": 32000,
+    "frontend_thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    },
+    "software_versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "soundfile": "0.13.1",
+      "onnxruntime": "1.23.2",
+      "ncnn": "1.0.20260526",
+      "einops": "0.8.1"
+    }
+  },
+  "parameters": {
+    "vcm": 969928,
+    "wake": 82114,
+    "owner": 129985,
+    "known_own_runtime_total": 1182027,
+    "metadata_count_complete": true,
+    "silero": {
+      "trainable_parameters": null,
+      "status": "unknown; pretrained graph trainable-parameter inventory not audited"
+    },
+    "complete_pipeline_trainable_parameters": null,
+    "scope": "Declared VCM/wake parameter counts and owner runtime_parameters; no ONNX initializer-size proxy. Owner training identity classifier is excluded from its runtime count."
+  },
+  "sizes": {
+    "files": [
+      {
+        "component": "vcm",
+        "path": ".cache/iris-release-v1/diversity/release-export/bundle.json",
+        "kind": "metadata",
+        "bytes": 671,
+        "sha256": "d7671bb393f7a81b4a354e6922b8a469c76a57aec8264ba3ff030fbba1adaa03"
+      },
+      {
+        "component": "vcm",
+        "path": ".cache/iris-release-v1/diversity/release-export/model.onnx",
+        "kind": "graph",
+        "bytes": 3973147,
+        "sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a"
+      },
+      {
+        "component": "vcm",
+        "path": ".cache/iris-release-v1/diversity/release-export/catalog.json",
+        "kind": "metadata",
+        "bytes": 114053,
+        "sha256": "f169f8b80be8a844de4fca1cfbe7ead9841d4165ec8ad748b0af9010c6c5e8b1"
+      },
+      {
+        "component": "vcm",
+        "path": ".cache/iris-release-v1/diversity/release-export/normalization.json",
+        "kind": "metadata",
+        "bytes": 148035,
+        "sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262"
+      },
+      {
+        "component": "vcm",
+        "path": ".cache/iris-release-v1/diversity/release-export/policy.json",
+        "kind": "metadata",
+        "bytes": 31127,
+        "sha256": "77de4929939d618b84238f1c95e449eb8a3697c636c23a7861e72c0b52c5b13e"
+      },
+      {
+        "component": "vcm",
+        "path": ".cache/iris-release-v1/diversity/release-export/ncnn/engine.json",
+        "kind": "metadata",
+        "bytes": 811,
+        "sha256": "d4180c8657a9db0ae87f1384dbb43cf3caa6d8e54d8ec76f625a2e365a670f51"
+      },
+      {
+        "component": "vcm",
+        "path": ".cache/iris-release-v1/diversity/release-export/ncnn/model.ncnn.param",
+        "kind": "graph",
+        "bytes": 8904,
+        "sha256": "e7289f35da2cf35147d3b8833a4915b8e3a0520cc99573ebfffae07ec6da7998"
+      },
+      {
+        "component": "vcm",
+        "path": ".cache/iris-release-v1/diversity/release-export/ncnn/model.ncnn.bin",
+        "kind": "graph",
+        "bytes": 3879960,
+        "sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133"
+      },
+      {
+        "component": "vcm",
+        "path": ".cache/iris-release-v1/diversity/release-export/ncnn/position-frequency.json",
+        "kind": "support",
+        "bytes": 1515,
+        "sha256": "2cf4b7057c69f59eff846bf80903eb98f9ed17da9edd3ba0efb6f1940fa97605"
+      },
+      {
+        "component": "wake",
+        "path": ".cache/iris-release-v1/wake/export/iris.json",
+        "kind": "metadata",
+        "bytes": 152922,
+        "sha256": "12d21a9460a2ac37582d28c0f31cb90f670b8bbc423f5c3bca664bb02d3d0922"
+      },
+      {
+        "component": "wake",
+        "path": ".cache/iris-release-v1/wake/export/iris.onnx",
+        "kind": "graph",
+        "bytes": 330103,
+        "sha256": "22fc8b0c6a3c80e1d1686d321a6251957085216efaca1752eb22067064a4ea57"
+      },
+      {
+        "component": "wake",
+        "path": ".cache/iris-release-v1/wake/export/iris.ncnn.param",
+        "kind": "graph",
+        "bytes": 2713,
+        "sha256": "43ce9accd880119cba8737365ef799280d22985dd69bc7d7940339ea5f88c067"
+      },
+      {
+        "component": "wake",
+        "path": ".cache/iris-release-v1/wake/export/iris.ncnn.bin",
+        "kind": "graph",
+        "bytes": 323904,
+        "sha256": "f5608815519830107220939124abf65222dec6f159ed36ead1f50d124392da98"
+      },
+      {
+        "component": "owner",
+        "path": ".cache/iris-release-v1/owner/export/owner.json",
+        "kind": "metadata",
+        "bytes": 4640,
+        "sha256": "e2d531627fabf90453762cf17eb082b3f52f8922aa830e37a9202144b91fb310"
+      },
+      {
+        "component": "owner",
+        "path": ".cache/iris-release-v1/owner/export/owner.onnx",
+        "kind": "graph",
+        "bytes": 542023,
+        "sha256": "84e860f814e248e793567b2f1c8fe83d24d82b9d58f5379e4da69eb7b78d0a3f"
+      },
+      {
+        "component": "silero",
+        "path": ".cache/iris-release-v1/inputs/vad/wake-models.json",
+        "kind": "metadata",
+        "bytes": 381,
+        "sha256": "9784dd9b5836cbaaf6a6fdb7912ae2baedde17e538befe2fe3d8c2b7c4b7dd6a"
+      },
+      {
+        "component": "silero",
+        "path": ".cache/iris-release-v1/inputs/vad/silero-vad.onnx",
+        "kind": "graph",
+        "bytes": 2327524,
+        "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f"
+      }
+    ],
+    "graph_bytes": 11388278,
+    "metadata_and_support_bytes": 454155,
+    "all_packaged_model_asset_bytes": 11842433,
+    "by_component": {
+      "vcm": 8158223,
+      "wake": 809642,
+      "owner": 546663,
+      "silero": 2327905
+    },
+    "scope": "Runtime graph variants plus required model metadata/support; includes ONNX and ncnn copies. Silero graph is packaged once and loaded into two sessions. Excludes training checkpoints, Python/Node libraries, UI, licenses, archive compression and operating-system memory."
+  },
+  "measurements": {
+    "command_n": 8,
+    "wake_n": 8,
+    "commands": [
+      {
+        "id": "iris1/5b6936c05d99ad0f1c57",
+        "sha256": "7ba842efbcbd92a72a66d9a7d3c335b35b72fb043fe29d195b2d0a14773d2b9e",
+        "audio_seconds": 2.72,
+        "timing": {
+          "vcm_final": {
+            "wall_ms": 10.111635085195303,
+            "cpu_ms": 10.11320799999993
+          },
+          "command_vad": {
+            "wall_ms": 16.932280268520117,
+            "cpu_ms": 16.934732000000174
+          },
+          "owner_command_whole": {
+            "wall_ms": 4.00074478238821,
+            "cpu_ms": 4.00260699999988
+          },
+          "owner_continuity": {
+            "wall_ms": 8.06973921135068,
+            "cpu_ms": 8.070727000000222
+          },
+          "owner_wake_reference": {
+            "wall_ms": 7.12128309533,
+            "cpu_ms": 3.649373999999872
+          },
+          "speaker_arm": {
+            "wall_ms": 0.42764004319906235,
+            "cpu_ms": 0.4291149999997579
+          },
+          "speaker_finish": {
+            "wall_ms": 0.006453134119510651,
+            "cpu_ms": 0.007505000000129769
+          },
+          "application_gate": {
+            "wall_ms": 0.0022337771952152252,
+            "cpu_ms": 0.0031860000002659206
+          },
+          "vcm_frontend": {
+            "wall_ms": 1.447069924324751,
+            "cpu_ms": null
+          },
+          "vcm_engine_decision_and_wrapper": {
+            "wall_ms": 8.664565160870552,
+            "cpu_ms": null
+          }
+        },
+        "preview_calls": 5,
+        "preview_candidates": [
+          {
+            "samples": 8000,
+            "raw_candidate": null,
+            "score": 0.7737723551758406,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 7.1850549429655075,
+              "cpu_ms": 4.861646999999802
+            }
+          },
+          {
+            "samples": 16000,
+            "raw_candidate": null,
+            "score": 0.9161991261101885,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 4.528173711150885,
+              "cpu_ms": 4.529835999999676
+            }
+          },
+          {
+            "samples": 24000,
+            "raw_candidate": {
+              "intent": "STOP",
+              "slots": {}
+            },
+            "score": 0.4932950419132709,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 5.683351308107376,
+              "cpu_ms": 5.684842000000412
+            }
+          },
+          {
+            "samples": 32000,
+            "raw_candidate": {
+              "intent": "LIGHT_OFF",
+              "slots": {
+                "light_id": "light.ceiling"
+              }
+            },
+            "score": 0.6007254806841769,
+            "output": {
+              "schema_version": 3,
+              "accepted": true,
+              "command": {
+                "intent": "LIGHT_OFF",
+                "slots": {
+                  "light_id": "light.ceiling"
+                }
+              },
+              "reason": null
+            },
+            "timing": {
+              "wall_ms": 7.694368716329336,
+              "cpu_ms": 7.695873999999936
+            }
+          },
+          {
+            "samples": 40000,
+            "raw_candidate": {
+              "intent": "LIGHT_ON",
+              "slots": {
+                "light_id": "light.ceiling"
+              }
+            },
+            "score": 0.43246974657890236,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 9.313683956861496,
+              "cpu_ms": 9.315061000000124
+            }
+          }
+        ],
+        "preview_candidate_changes": 3,
+        "final_raw_candidate": {
+          "intent": "LIGHT_OFF",
+          "slots": {
+            "light_id": "light.ceiling"
+          }
+        },
+        "output": {
+          "schema_version": 3,
+          "accepted": false,
+          "command": null,
+          "reason": "OOV"
+        },
+        "owner_continuity_calls": 4,
+        "owner_continuity_complete": true,
+        "owner_arm": {
+          "accepted": false,
+          "reason": "insufficient_speech"
+        },
+        "owner_final": {
+          "accepted": false,
+          "reason": "no_owner"
+        },
+        "paired_wake_id": "iris-release/244ad6f7a6397eb15912",
+        "command_vad_endpoints": 1,
+        "compute_budget": {
+          "wall_ms": 81.0766420327127,
+          "cpu_ms": 75.29771400000018
+        },
+        "complete_compute_budget": {
+          "wall_ms": 129.1076773777604,
+          "cpu_ms": 123.37802499999917,
+          "wall_rtf": 0.029342653949491,
+          "cpu_rtf": 0.028040460227272537
+        }
+      },
+      {
+        "id": "iris1/e6f332af2f3d72da2793",
+        "sha256": "e38ce76dd4fdc5ee004e9370a677a53e6009aca3e589c08ed950159a102bcb52",
+        "audio_seconds": 2.24,
+        "timing": {
+          "vcm_final": {
+            "wall_ms": 8.3207949064672,
+            "cpu_ms": 8.322149000000056
+          },
+          "command_vad": {
+            "wall_ms": 14.234181959182024,
+            "cpu_ms": 14.236000999999998
+          },
+          "owner_command_whole": {
+            "wall_ms": 2.90810689330101,
+            "cpu_ms": 2.910269000000021
+          },
+          "owner_continuity": {
+            "wall_ms": 6.011391058564186,
+            "cpu_ms": 6.012286000000255
+          },
+          "owner_wake_reference": {
+            "wall_ms": 2.1430980414152145,
+            "cpu_ms": 2.1451729999999447
+          },
+          "speaker_arm": {
+            "wall_ms": 0.02071913331747055,
+            "cpu_ms": 0.021790999999993232
+          },
+          "speaker_finish": {
+            "wall_ms": 0.003396999090909958,
+            "cpu_ms": 0.004317999999781108
+          },
+          "application_gate": {
+            "wall_ms": 0.008196104317903519,
+            "cpu_ms": 0.00914699999965407
+          },
+          "vcm_frontend": {
+            "wall_ms": 1.2780302204191685,
+            "cpu_ms": null
+          },
+          "vcm_engine_decision_and_wrapper": {
+            "wall_ms": 7.042764686048031,
+            "cpu_ms": null
+          }
+        },
+        "preview_calls": 4,
+        "preview_candidates": [
+          {
+            "samples": 8000,
+            "raw_candidate": null,
+            "score": 0.9043996344525216,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 2.9157008975744247,
+              "cpu_ms": 2.9182839999997157
+            }
+          },
+          {
+            "samples": 16000,
+            "raw_candidate": {
+              "intent": "NEXT",
+              "slots": {}
+            },
+            "score": 0.4234716308914572,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 4.20361990109086,
+              "cpu_ms": 4.205076999999946
+            }
+          },
+          {
+            "samples": 24000,
+            "raw_candidate": null,
+            "score": 0.7658207643822553,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 5.717094987630844,
+              "cpu_ms": 5.719097000000062
+            }
+          },
+          {
+            "samples": 32000,
+            "raw_candidate": {
+              "intent": "LIGHT_ON",
+              "slots": {
+                "light_id": "light.ceiling"
+              }
+            },
+            "score": 0.4635009600809003,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 7.905248086899519,
+              "cpu_ms": 7.906618999999893
+            }
+          }
+        ],
+        "preview_candidate_changes": 3,
+        "final_raw_candidate": {
+          "intent": "LIGHT_ON",
+          "slots": {
+            "light_id": "light.ceiling"
+          }
+        },
+        "output": {
+          "schema_version": 3,
+          "accepted": false,
+          "command": null,
+          "reason": "no_owner"
+        },
+        "owner_continuity_calls": 3,
+        "owner_continuity_complete": true,
+        "owner_arm": {
+          "accepted": false,
+          "reason": "insufficient_speech"
+        },
+        "owner_final": {
+          "accepted": false,
+          "reason": "no_owner"
+        },
+        "paired_wake_id": "iris-release/1de24efe39e943e1d76a",
+        "command_vad_endpoints": 1,
+        "compute_budget": {
+          "wall_ms": 54.391548968851566,
+          "cpu_ms": 54.41021099999932
+        },
+        "complete_compute_budget": {
+          "wall_ms": 96.12165903672576,
+          "cpu_ms": 96.18007899999782,
+          "wall_rtf": 0.026700460843534928,
+          "cpu_rtf": 0.0267166886111105
+        }
+      },
+      {
+        "id": "iris1/c76da9c8fd40dcd0d9bd",
+        "sha256": "34917e00abd159d16d0aadca6c64724800e4bb832a6ecec55bfae45564c098db",
+        "audio_seconds": 2.72,
+        "timing": {
+          "vcm_final": {
+            "wall_ms": 10.559864342212677,
+            "cpu_ms": 10.561417999999989
+          },
+          "command_vad": {
+            "wall_ms": 16.80387696251273,
+            "cpu_ms": 16.80586999999978
+          },
+          "owner_command_whole": {
+            "wall_ms": 3.6523351445794106,
+            "cpu_ms": 3.6546939999997363
+          },
+          "owner_continuity": {
+            "wall_ms": 7.15830409899354,
+            "cpu_ms": 7.159166999999744
+          },
+          "owner_wake_reference": {
+            "wall_ms": 1.5887580811977386,
+            "cpu_ms": 1.5906939999998926
+          },
+          "speaker_arm": {
+            "wall_ms": 0.017964281141757965,
+            "cpu_ms": 0.01902599999992205
+          },
+          "speaker_finish": {
+            "wall_ms": 0.007974915206432343,
+            "cpu_ms": 0.008886000000263294
+          },
+          "application_gate": {
+            "wall_ms": 0.0043781474232673645,
+            "cpu_ms": 0.005279000000246725
+          },
+          "vcm_frontend": {
+            "wall_ms": 1.7044669948518276,
+            "cpu_ms": null
+          },
+          "vcm_engine_decision_and_wrapper": {
+            "wall_ms": 8.85539734736085,
+            "cpu_ms": null
+          }
+        },
+        "preview_calls": 5,
+        "preview_candidates": [
+          {
+            "samples": 8000,
+            "raw_candidate": null,
+            "score": 0.8078701846563582,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 2.7199601754546165,
+              "cpu_ms": 2.721764999999987
+            }
+          },
+          {
+            "samples": 16000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.enemy"
+              }
+            },
+            "score": 0.3140139392433072,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 4.211302846670151,
+              "cpu_ms": 4.212791000000049
+            }
+          },
+          {
+            "samples": 24000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.enemy"
+              }
+            },
+            "score": 0.7811899365076951,
+            "output": {
+              "schema_version": 3,
+              "accepted": true,
+              "command": {
+                "intent": "PLAY_MUSIC",
+                "slots": {
+                  "song_id": "song.enemy"
+                }
+              },
+              "reason": null
+            },
+            "timing": {
+              "wall_ms": 5.646612029522657,
+              "cpu_ms": 5.64810299999996
+            }
+          },
+          {
+            "samples": 32000,
+            "raw_candidate": {
+              "intent": "ALARM",
+              "slots": {
+                "time": "21:00",
+                "timezone": "Asia/Manila"
+              }
+            },
+            "score": 0.234177441123775,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 7.510290015488863,
+              "cpu_ms": 7.511919000000145
+            }
+          },
+          {
+            "samples": 40000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.enemy",
+                "artist_id": "artist.imagine_dragons"
+              }
+            },
+            "score": 0.7478710300627185,
+            "output": {
+              "schema_version": 3,
+              "accepted": true,
+              "command": {
+                "intent": "PLAY_MUSIC",
+                "slots": {
+                  "song_id": "song.enemy",
+                  "artist_id": "artist.imagine_dragons"
+                }
+              },
+              "reason": null
+            },
+            "timing": {
+              "wall_ms": 9.1925747692585,
+              "cpu_ms": 9.194283999999886
+            }
+          }
+        ],
+        "preview_candidate_changes": 3,
+        "final_raw_candidate": {
+          "intent": "PLAY_MUSIC",
+          "slots": {
+            "song_id": "song.enemy",
+            "artist_id": "artist.imagine_dragons"
+          }
+        },
+        "output": {
+          "schema_version": 3,
+          "accepted": false,
+          "command": null,
+          "reason": "no_owner"
+        },
+        "owner_continuity_calls": 4,
+        "owner_continuity_complete": true,
+        "owner_arm": {
+          "accepted": false,
+          "reason": "insufficient_speech"
+        },
+        "owner_final": {
+          "accepted": false,
+          "reason": "no_owner"
+        },
+        "paired_wake_id": "iris-release/08964b2f1fc085690cb3",
+        "command_vad_endpoints": 1,
+        "compute_budget": {
+          "wall_ms": 69.07419580966234,
+          "cpu_ms": 69.0938959999996
+        },
+        "complete_compute_budget": {
+          "wall_ms": 98.56672585010529,
+          "cpu_ms": 98.62845799999965,
+          "wall_rtf": 0.026214554747368425,
+          "cpu_rtf": 0.026230972872340334
+        }
+      },
+      {
+        "id": "iris1/7c94f357bcf21c5ebcef",
+        "sha256": "de141d75e580306394a845906628f102d2c700da31068689fbec530d3dd0feff",
+        "audio_seconds": 2.32,
+        "timing": {
+          "vcm_final": {
+            "wall_ms": 10.474031791090965,
+            "cpu_ms": 10.475556999999913
+          },
+          "command_vad": {
+            "wall_ms": 14.52327799052,
+            "cpu_ms": 14.525182999999942
+          },
+          "owner_command_whole": {
+            "wall_ms": 3.1179143115878105,
+            "cpu_ms": 3.1195799999998997
+          },
+          "owner_continuity": {
+            "wall_ms": 6.544881965965033,
+            "cpu_ms": 6.54576699999998
+          },
+          "owner_wake_reference": {
+            "wall_ms": 1.78558100014925,
+            "cpu_ms": 1.7874220000000385
+          },
+          "speaker_arm": {
+            "wall_ms": 0.019526109099388123,
+            "cpu_ms": 0.02064900000009473
+          },
+          "speaker_finish": {
+            "wall_ms": 0.0032261013984680176,
+            "cpu_ms": 0.004176999999661035
+          },
+          "application_gate": {
+            "wall_ms": 0.00303611159324646,
+            "cpu_ms": 0.004006999999806027
+          },
+          "vcm_frontend": {
+            "wall_ms": 1.5212511643767357,
+            "cpu_ms": null
+          },
+          "vcm_engine_decision_and_wrapper": {
+            "wall_ms": 8.95278062671423,
+            "cpu_ms": null
+          }
+        },
+        "preview_calls": 4,
+        "preview_candidates": [
+          {
+            "samples": 8000,
+            "raw_candidate": null,
+            "score": 0.7703601226925955,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 3.0358177609741688,
+              "cpu_ms": 3.037987000000353
+            }
+          },
+          {
+            "samples": 16000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.enemy"
+              }
+            },
+            "score": 0.4971924045743063,
+            "output": {
+              "schema_version": 3,
+              "accepted": true,
+              "command": {
+                "intent": "PLAY_MUSIC",
+                "slots": {
+                  "song_id": "song.enemy"
+                }
+              },
+              "reason": null
+            },
+            "timing": {
+              "wall_ms": 4.275504965335131,
+              "cpu_ms": 4.277671999999733
+            }
+          },
+          {
+            "samples": 24000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.basics"
+              }
+            },
+            "score": 0.6855706069017683,
+            "output": {
+              "schema_version": 3,
+              "accepted": true,
+              "command": {
+                "intent": "PLAY_MUSIC",
+                "slots": {
+                  "song_id": "song.basics"
+                }
+              },
+              "reason": null
+            },
+            "timing": {
+              "wall_ms": 5.6648459285497665,
+              "cpu_ms": 5.666446999999852
+            }
+          },
+          {
+            "samples": 32000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.basics",
+                "artist_id": "artist.twice"
+              }
+            },
+            "score": 0.5621492634649455,
+            "output": {
+              "schema_version": 3,
+              "accepted": true,
+              "command": {
+                "intent": "PLAY_MUSIC",
+                "slots": {
+                  "song_id": "song.basics",
+                  "artist_id": "artist.twice"
+                }
+              },
+              "reason": null
+            },
+            "timing": {
+              "wall_ms": 8.30208882689476,
+              "cpu_ms": 8.304224999999832
+            }
+          }
+        ],
+        "preview_candidate_changes": 3,
+        "final_raw_candidate": {
+          "intent": "PLAY_MUSIC",
+          "slots": {
+            "song_id": "song.basics",
+            "artist_id": "artist.twice"
+          }
+        },
+        "output": {
+          "schema_version": 3,
+          "accepted": false,
+          "command": null,
+          "reason": "no_owner"
+        },
+        "owner_continuity_calls": 3,
+        "owner_continuity_complete": true,
+        "owner_arm": {
+          "accepted": false,
+          "reason": "insufficient_speech"
+        },
+        "owner_final": {
+          "accepted": false,
+          "reason": "no_owner"
+        },
+        "paired_wake_id": "iris-release/89ab90a60f692e829da9",
+        "command_vad_endpoints": 1,
+        "compute_budget": {
+          "wall_ms": 57.74973286315799,
+          "cpu_ms": 57.768672999999104
+        },
+        "complete_compute_budget": {
+          "wall_ms": 93.97803852334619,
+          "cpu_ms": 94.03363999999992,
+          "wall_rtf": 0.0261050107009295,
+          "cpu_rtf": 0.026120455555555536
+        }
+      },
+      {
+        "id": "iris1/e8707fc99f7189a21adf",
+        "sha256": "663970baebbcb4e0e1c609151b1109770f93a9605a6d0e190de2ebb9bfb3d9c5",
+        "audio_seconds": 2.08,
+        "timing": {
+          "vcm_final": {
+            "wall_ms": 7.578989956527948,
+            "cpu_ms": 7.580598000000105
+          },
+          "command_vad": {
+            "wall_ms": 13.248795177787542,
+            "cpu_ms": 13.250682000000236
+          },
+          "owner_command_whole": {
+            "wall_ms": 2.6804963126778603,
+            "cpu_ms": 2.6825409999999827
+          },
+          "owner_continuity": {
+            "wall_ms": 5.276540294289589,
+            "cpu_ms": 5.277467999999619
+          },
+          "owner_wake_reference": {
+            "wall_ms": 2.0663426257669926,
+            "cpu_ms": 2.0682690000000115
+          },
+          "speaker_arm": {
+            "wall_ms": 0.01604994758963585,
+            "cpu_ms": 0.017101999999713513
+          },
+          "speaker_finish": {
+            "wall_ms": 0.0024051405489444733,
+            "cpu_ms": 0.0032769999998016885
+          },
+          "application_gate": {
+            "wall_ms": 0.0025741755962371826,
+            "cpu_ms": 0.0034659999998964963
+          },
+          "vcm_frontend": {
+            "wall_ms": 1.2110029347240925,
+            "cpu_ms": null
+          },
+          "vcm_engine_decision_and_wrapper": {
+            "wall_ms": 6.367987021803856,
+            "cpu_ms": null
+          }
+        },
+        "preview_calls": 4,
+        "preview_candidates": [
+          {
+            "samples": 8000,
+            "raw_candidate": null,
+            "score": 0.7665795054551842,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 3.1757731921970844,
+              "cpu_ms": 3.1778899999999055
+            }
+          },
+          {
+            "samples": 16000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.enemy"
+              }
+            },
+            "score": 0.3828723214376756,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 5.056583788245916,
+              "cpu_ms": 5.058276999999833
+            }
+          },
+          {
+            "samples": 24000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.brave"
+              }
+            },
+            "score": 0.7857922214882336,
+            "output": {
+              "schema_version": 3,
+              "accepted": true,
+              "command": {
+                "intent": "PLAY_MUSIC",
+                "slots": {
+                  "song_id": "song.brave"
+                }
+              },
+              "reason": null
+            },
+            "timing": {
+              "wall_ms": 6.345053669065237,
+              "cpu_ms": 6.3467539999999545
+            }
+          },
+          {
+            "samples": 32000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.brave",
+                "artist_id": "artist.twice"
+              }
+            },
+            "score": 0.6025294268578124,
+            "output": {
+              "schema_version": 3,
+              "accepted": true,
+              "command": {
+                "intent": "PLAY_MUSIC",
+                "slots": {
+                  "song_id": "song.brave",
+                  "artist_id": "artist.twice"
+                }
+              },
+              "reason": null
+            },
+            "timing": {
+              "wall_ms": 7.525989785790443,
+              "cpu_ms": 7.527647999999942
+            }
+          }
+        ],
+        "preview_candidate_changes": 3,
+        "final_raw_candidate": {
+          "intent": "PLAY_MUSIC",
+          "slots": {
+            "song_id": "song.brave",
+            "artist_id": "artist.twice"
+          }
+        },
+        "output": {
+          "schema_version": 3,
+          "accepted": false,
+          "command": null,
+          "reason": "no_owner"
+        },
+        "owner_continuity_calls": 3,
+        "owner_continuity_complete": true,
+        "owner_arm": {
+          "accepted": false,
+          "reason": "insufficient_speech"
+        },
+        "owner_final": {
+          "accepted": false,
+          "reason": "no_owner"
+        },
+        "paired_wake_id": "iris-release/e9a509d8778c9274bc6d",
+        "command_vad_endpoints": 1,
+        "compute_budget": {
+          "wall_ms": 52.97559406608343,
+          "cpu_ms": 52.993971999999005
+        },
+        "complete_compute_budget": {
+          "wall_ms": 89.60395492613316,
+          "cpu_ms": 89.6592689999991,
+          "wall_rtf": 0.026667843728015818,
+          "cpu_rtf": 0.02668430624999973
+        }
+      },
+      {
+        "id": "iris1/7c3dd473ae9fe344bff0",
+        "sha256": "4a1d31736d9e7cdde9886bfc7fb40a250c2daec7e39a40f953f068176050d7ea",
+        "audio_seconds": 2.0,
+        "timing": {
+          "vcm_final": {
+            "wall_ms": 7.326683029532433,
+            "cpu_ms": 7.328524999999697
+          },
+          "command_vad": {
+            "wall_ms": 12.919351924210787,
+            "cpu_ms": 12.921554999999696
+          },
+          "owner_command_whole": {
+            "wall_ms": 3.060785587877035,
+            "cpu_ms": 3.062815000000274
+          },
+          "owner_continuity": {
+            "wall_ms": 5.286599043756723,
+            "cpu_ms": 5.287817000000139
+          },
+          "owner_wake_reference": {
+            "wall_ms": 1.9252547062933445,
+            "cpu_ms": 1.9269739999998592
+          },
+          "speaker_arm": {
+            "wall_ms": 0.014967750757932663,
+            "cpu_ms": 0.01602000000033854
+          },
+          "speaker_finish": {
+            "wall_ms": 0.0031460076570510864,
+            "cpu_ms": 0.0040569999999462425
+          },
+          "application_gate": {
+            "wall_ms": 0.0028247013688087463,
+            "cpu_ms": 0.0037470000000539017
+          },
+          "vcm_frontend": {
+            "wall_ms": 1.216762699186802,
+            "cpu_ms": null
+          },
+          "vcm_engine_decision_and_wrapper": {
+            "wall_ms": 6.109920330345631,
+            "cpu_ms": null
+          }
+        },
+        "preview_calls": 3,
+        "preview_candidates": [
+          {
+            "samples": 8000,
+            "raw_candidate": null,
+            "score": 0.8272842562222102,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 2.6449388824403286,
+              "cpu_ms": 2.6466840000001213
+            }
+          },
+          {
+            "samples": 16000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.enemy"
+              }
+            },
+            "score": 0.3490496765185497,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 4.020493011921644,
+              "cpu_ms": 4.022053999999997
+            }
+          },
+          {
+            "samples": 24000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.gone"
+              }
+            },
+            "score": 0.6549544548933123,
+            "output": {
+              "schema_version": 3,
+              "accepted": true,
+              "command": {
+                "intent": "PLAY_MUSIC",
+                "slots": {
+                  "song_id": "song.gone"
+                }
+              },
+              "reason": null
+            },
+            "timing": {
+              "wall_ms": 5.481929052621126,
+              "cpu_ms": 5.483555000000084
+            }
+          }
+        ],
+        "preview_candidate_changes": 2,
+        "final_raw_candidate": {
+          "intent": "PLAY_MUSIC",
+          "slots": {
+            "song_id": "song.gone",
+            "artist_id": "artist.twice"
+          }
+        },
+        "output": {
+          "schema_version": 3,
+          "accepted": false,
+          "command": null,
+          "reason": "no_owner"
+        },
+        "owner_continuity_calls": 3,
+        "owner_continuity_complete": true,
+        "owner_arm": {
+          "accepted": false,
+          "reason": "insufficient_speech"
+        },
+        "owner_final": {
+          "accepted": false,
+          "reason": "no_owner"
+        },
+        "paired_wake_id": "iris-release/fb397105c08bdec38b8f",
+        "command_vad_endpoints": 1,
+        "compute_budget": {
+          "wall_ms": 42.686973698437214,
+          "cpu_ms": 42.70380300000021
+        },
+        "complete_compute_budget": {
+          "wall_ms": 74.80501104146242,
+          "cpu_ms": 74.85386400000138,
+          "wall_rtf": 0.0239759650773918,
+          "cpu_rtf": 0.02399162307692352
+        }
+      },
+      {
+        "id": "iris1/bba7ec8f922829624b58",
+        "sha256": "94950868a94ce17354b99e018c96fdb9acd42fd3b99a12609d080e9aa5dde273",
+        "audio_seconds": 2.56,
+        "timing": {
+          "vcm_final": {
+            "wall_ms": 9.538660291582346,
+            "cpu_ms": 9.540182999999924
+          },
+          "command_vad": {
+            "wall_ms": 15.953796915709972,
+            "cpu_ms": 15.955495000000042
+          },
+          "owner_command_whole": {
+            "wall_ms": 3.857063129544258,
+            "cpu_ms": 3.85900699999997
+          },
+          "owner_continuity": {
+            "wall_ms": 8.05802782997489,
+            "cpu_ms": 8.05889500000001
+          },
+          "owner_wake_reference": {
+            "wall_ms": 2.3071281611919403,
+            "cpu_ms": 2.308870999999879
+          },
+          "speaker_arm": {
+            "wall_ms": 0.017384067177772522,
+            "cpu_ms": 0.0186050000001714
+          },
+          "speaker_finish": {
+            "wall_ms": 0.0023548491299152374,
+            "cpu_ms": 0.003206000000144371
+          },
+          "application_gate": {
+            "wall_ms": 0.0031460076570510864,
+            "cpu_ms": 0.004027000000128567
+          },
+          "vcm_frontend": {
+            "wall_ms": 1.3869358226656914,
+            "cpu_ms": null
+          },
+          "vcm_engine_decision_and_wrapper": {
+            "wall_ms": 8.151724468916655,
+            "cpu_ms": null
+          }
+        },
+        "preview_calls": 5,
+        "preview_candidates": [
+          {
+            "samples": 8000,
+            "raw_candidate": null,
+            "score": 0.8406655221401927,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 2.64185294508934,
+              "cpu_ms": 2.643607999999631
+            }
+          },
+          {
+            "samples": 16000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.basics",
+                "artist_id": "artist.twice"
+              }
+            },
+            "score": 0.28755959571202966,
+            "output": {
+              "schema_version": 3,
+              "accepted": true,
+              "command": {
+                "intent": "PLAY_MUSIC",
+                "slots": {
+                  "song_id": "song.basics",
+                  "artist_id": "artist.twice"
+                }
+              },
+              "reason": null
+            },
+            "timing": {
+              "wall_ms": 4.391274880617857,
+              "cpu_ms": 4.392748999999974
+            }
+          },
+          {
+            "samples": 24000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.queen_of_hearts"
+              }
+            },
+            "score": 0.39169119847936773,
+            "output": {
+              "schema_version": 3,
+              "accepted": true,
+              "command": {
+                "intent": "PLAY_MUSIC",
+                "slots": {
+                  "song_id": "song.queen_of_hearts"
+                }
+              },
+              "reason": null
+            },
+            "timing": {
+              "wall_ms": 6.638569291681051,
+              "cpu_ms": 6.640254000000123
+            }
+          },
+          {
+            "samples": 32000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.queen_of_hearts",
+                "artist_id": "artist.twice"
+              }
+            },
+            "score": 0.4017130164419959,
+            "output": {
+              "schema_version": 3,
+              "accepted": true,
+              "command": {
+                "intent": "PLAY_MUSIC",
+                "slots": {
+                  "song_id": "song.queen_of_hearts",
+                  "artist_id": "artist.twice"
+                }
+              },
+              "reason": null
+            },
+            "timing": {
+              "wall_ms": 7.527523208409548,
+              "cpu_ms": 7.529612000000352
+            }
+          },
+          {
+            "samples": 40000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.queen_of_hearts",
+                "artist_id": "artist.twice"
+              }
+            },
+            "score": 0.540829088713524,
+            "output": {
+              "schema_version": 3,
+              "accepted": true,
+              "command": {
+                "intent": "PLAY_MUSIC",
+                "slots": {
+                  "song_id": "song.queen_of_hearts",
+                  "artist_id": "artist.twice"
+                }
+              },
+              "reason": null
+            },
+            "timing": {
+              "wall_ms": 9.25089605152607,
+              "cpu_ms": 9.252744999999951
+            }
+          }
+        ],
+        "preview_candidate_changes": 3,
+        "final_raw_candidate": {
+          "intent": "PLAY_MUSIC",
+          "slots": {
+            "song_id": "song.queen_of_hearts",
+            "artist_id": "artist.twice"
+          }
+        },
+        "output": {
+          "schema_version": 3,
+          "accepted": false,
+          "command": null,
+          "reason": "no_owner"
+        },
+        "owner_continuity_calls": 4,
+        "owner_continuity_complete": true,
+        "owner_arm": {
+          "accepted": false,
+          "reason": "insufficient_speech"
+        },
+        "owner_final": {
+          "accepted": false,
+          "reason": "no_owner"
+        },
+        "paired_wake_id": "iris-release/3f20f6e747d3cb6c68a4",
+        "command_vad_endpoints": 1,
+        "compute_budget": {
+          "wall_ms": 70.18767762929201,
+          "cpu_ms": 70.2072570000003
+        },
+        "complete_compute_budget": {
+          "wall_ms": 111.06002610176802,
+          "cpu_ms": 111.12116600000155,
+          "wall_rtf": 0.027765006525442004,
+          "cpu_rtf": 0.027780291500000387
+        }
+      },
+      {
+        "id": "iris1/40aace8b8d8c21d1e190",
+        "sha256": "d80554369f674a57b157469b5becc543492fba17e6823418ee95a60725f8c61d",
+        "audio_seconds": 2.96,
+        "timing": {
+          "vcm_final": {
+            "wall_ms": 11.290387250483036,
+            "cpu_ms": 11.29234900000009
+          },
+          "command_vad": {
+            "wall_ms": 17.98429200425744,
+            "cpu_ms": 17.964804
+          },
+          "owner_command_whole": {
+            "wall_ms": 5.093753803521395,
+            "cpu_ms": 5.0969990000000465
+          },
+          "owner_continuity": {
+            "wall_ms": 8.590845856815577,
+            "cpu_ms": 8.591743999999846
+          },
+          "owner_wake_reference": {
+            "wall_ms": 4.830585792660713,
+            "cpu_ms": 4.832533000000083
+          },
+          "speaker_arm": {
+            "wall_ms": 0.02089003100991249,
+            "cpu_ms": 0.022022000000010422
+          },
+          "speaker_finish": {
+            "wall_ms": 0.0023851171135902405,
+            "cpu_ms": 0.003485999999774947
+          },
+          "application_gate": {
+            "wall_ms": 0.0033262185752391815,
+            "cpu_ms": 0.004217999999944766
+          },
+          "vcm_frontend": {
+            "wall_ms": 1.7032139003276825,
+            "cpu_ms": null
+          },
+          "vcm_engine_decision_and_wrapper": {
+            "wall_ms": 9.587173350155354,
+            "cpu_ms": null
+          }
+        },
+        "preview_calls": 5,
+        "preview_candidates": [
+          {
+            "samples": 8000,
+            "raw_candidate": null,
+            "score": 0.8087361114726908,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 2.7469112537801266,
+              "cpu_ms": 2.748545000000213
+            }
+          },
+          {
+            "samples": 16000,
+            "raw_candidate": null,
+            "score": 0.5181614031954881,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 4.089051857590675,
+              "cpu_ms": 4.090492000000001
+            }
+          },
+          {
+            "samples": 24000,
+            "raw_candidate": {
+              "intent": "STOP",
+              "slots": {}
+            },
+            "score": 0.4034021990152145,
+            "output": {
+              "schema_version": 3,
+              "accepted": false,
+              "command": null,
+              "reason": "OOV"
+            },
+            "timing": {
+              "wall_ms": 5.601064767688513,
+              "cpu_ms": 5.602558000000091
+            }
+          },
+          {
+            "samples": 32000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.talk_that_talk"
+              }
+            },
+            "score": 0.3101119811631263,
+            "output": {
+              "schema_version": 3,
+              "accepted": true,
+              "command": {
+                "intent": "PLAY_MUSIC",
+                "slots": {
+                  "song_id": "song.talk_that_talk"
+                }
+              },
+              "reason": null
+            },
+            "timing": {
+              "wall_ms": 7.406473625451326,
+              "cpu_ms": 7.408164000000106
+            }
+          },
+          {
+            "samples": 40000,
+            "raw_candidate": {
+              "intent": "PLAY_MUSIC",
+              "slots": {
+                "song_id": "song.talk_that_talk",
+                "artist_id": "artist.twice"
+              }
+            },
+            "score": 0.522738450938189,
+            "output": {
+              "schema_version": 3,
+              "accepted": true,
+              "command": {
+                "intent": "PLAY_MUSIC",
+                "slots": {
+                  "song_id": "song.talk_that_talk",
+                  "artist_id": "artist.twice"
+                }
+              },
+              "reason": null
+            },
+            "timing": {
+              "wall_ms": 9.017263073474169,
+              "cpu_ms": 9.018794999999802
+            }
+          }
+        ],
+        "preview_candidate_changes": 3,
+        "final_raw_candidate": {
+          "intent": "PLAY_MUSIC",
+          "slots": {
+            "song_id": "song.talk_that_talk",
+            "artist_id": "artist.twice"
+          }
+        },
+        "output": {
+          "schema_version": 3,
+          "accepted": false,
+          "command": null,
+          "reason": "no_owner"
+        },
+        "owner_continuity_calls": 4,
+        "owner_continuity_complete": true,
+        "owner_arm": {
+          "accepted": false,
+          "reason": "insufficient_speech"
+        },
+        "owner_final": {
+          "accepted": false,
+          "reason": "no_owner"
+        },
+        "paired_wake_id": "iris-release/c60f75b39949b419cd48",
+        "command_vad_endpoints": 1,
+        "compute_budget": {
+          "wall_ms": 76.67723065242171,
+          "cpu_ms": 76.67670900000002
+        },
+        "complete_compute_budget": {
+          "wall_ms": 127.12009670212865,
+          "cpu_ms": 127.16974000000204,
+          "wall_rtf": 0.02693222387756963,
+          "cpu_rtf": 0.02694274152542416
+        }
+      }
+    ],
+    "wakes": [
+      {
+        "id": "iris-release/244ad6f7a6397eb15912",
+        "sha256": "0371a590941dea549800c2ba56de655cc824176a22b88abf8d5d56160a2d2840",
+        "audio_seconds": 1.68,
+        "warmup": {
+          "wall_ms": 210.18864633515477,
+          "cpu_ms": 27.303937999999526,
+          "frames": 63,
+          "source_samples": 32000,
+          "delivered_samples": 32256,
+          "zero_alignment_samples": 256,
+          "hits": 0,
+          "speech_frames": 0
+        },
+        "active": {
+          "wall_ms": 48.03103534504771,
+          "cpu_ms": 48.080310999998986,
+          "frames": 53,
+          "source_samples": 26880,
+          "delivered_samples": 27136,
+          "zero_alignment_samples": 256,
+          "hits": 0,
+          "speech_frames": 21,
+          "wall_rtf": 0.028589901991099828,
+          "cpu_rtf": 0.028619232738094635
+        },
+        "owner_reference": {
+          "wall_ms": 7.12128309533,
+          "cpu_ms": 3.649373999999872
+        }
+      },
+      {
+        "id": "iris-release/1de24efe39e943e1d76a",
+        "sha256": "dce3f800107bc2d8491906a83520b0ad792143246741ee28186990775031ec37",
+        "audio_seconds": 1.36,
+        "warmup": {
+          "wall_ms": 22.92282646521926,
+          "cpu_ms": 22.91026400000007,
+          "frames": 63,
+          "source_samples": 32000,
+          "delivered_samples": 32256,
+          "zero_alignment_samples": 256,
+          "hits": 0,
+          "speech_frames": 0
+        },
+        "active": {
+          "wall_ms": 41.73011006787419,
+          "cpu_ms": 41.76986799999849,
+          "frames": 43,
+          "source_samples": 21760,
+          "delivered_samples": 22016,
+          "zero_alignment_samples": 256,
+          "hits": 0,
+          "speech_frames": 23,
+          "wall_rtf": 0.0306839044616722,
+          "cpu_rtf": 0.030713138235293005
+        },
+        "owner_reference": {
+          "wall_ms": 2.1430980414152145,
+          "cpu_ms": 2.1451729999999447
+        }
+      },
+      {
+        "id": "iris-release/08964b2f1fc085690cb3",
+        "sha256": "9dc9063863276bf730a9ca489246f6840149e4438582448b026b71c1c96f27ec",
+        "audio_seconds": 1.04,
+        "warmup": {
+          "wall_ms": 23.230234626680613,
+          "cpu_ms": 23.28916999999975,
+          "frames": 63,
+          "source_samples": 32000,
+          "delivered_samples": 32256,
+          "zero_alignment_samples": 256,
+          "hits": 0,
+          "speech_frames": 0
+        },
+        "active": {
+          "wall_ms": 29.492530040442944,
+          "cpu_ms": 29.534562000000044,
+          "frames": 33,
+          "source_samples": 16640,
+          "delivered_samples": 16896,
+          "zero_alignment_samples": 256,
+          "hits": 0,
+          "speech_frames": 21,
+          "wall_rtf": 0.02835820196196437,
+          "cpu_rtf": 0.028398617307692352
+        },
+        "owner_reference": {
+          "wall_ms": 1.5887580811977386,
+          "cpu_ms": 1.5906939999998926
+        }
+      },
+      {
+        "id": "iris-release/89ab90a60f692e829da9",
+        "sha256": "b1374d5d7bffb379b1400ba95a284ebc2d9f57707c7831527ca73412baf25f40",
+        "audio_seconds": 1.28,
+        "warmup": {
+          "wall_ms": 22.770938463509083,
+          "cpu_ms": 22.83025499999969,
+          "frames": 63,
+          "source_samples": 32000,
+          "delivered_samples": 32256,
+          "zero_alignment_samples": 256,
+          "hits": 0,
+          "speech_frames": 0
+        },
+        "active": {
+          "wall_ms": 36.2283056601882,
+          "cpu_ms": 36.264967000000816,
+          "frames": 40,
+          "source_samples": 20480,
+          "delivered_samples": 20480,
+          "zero_alignment_samples": 0,
+          "hits": 0,
+          "speech_frames": 23,
+          "wall_rtf": 0.02830336379702203,
+          "cpu_rtf": 0.028332005468750636
+        },
+        "owner_reference": {
+          "wall_ms": 1.78558100014925,
+          "cpu_ms": 1.7874220000000385
+        }
+      },
+      {
+        "id": "iris-release/e9a509d8778c9274bc6d",
+        "sha256": "fc8ddca6517e03421d2e9dc7cad8a941099437b1d804028e23ef87055c7f01ac",
+        "audio_seconds": 1.28,
+        "warmup": {
+          "wall_ms": 25.131817441433668,
+          "cpu_ms": 25.177820999999767,
+          "frames": 63,
+          "source_samples": 32000,
+          "delivered_samples": 32256,
+          "zero_alignment_samples": 256,
+          "hits": 0,
+          "speech_frames": 0
+        },
+        "active": {
+          "wall_ms": 36.628360860049725,
+          "cpu_ms": 36.665297000000095,
+          "frames": 40,
+          "source_samples": 20480,
+          "delivered_samples": 20480,
+          "zero_alignment_samples": 0,
+          "hits": 0,
+          "speech_frames": 23,
+          "wall_rtf": 0.028615906921913847,
+          "cpu_rtf": 0.028644763281250075
+        },
+        "owner_reference": {
+          "wall_ms": 2.0663426257669926,
+          "cpu_ms": 2.0682690000000115
+        }
+      },
+      {
+        "id": "iris-release/fb397105c08bdec38b8f",
+        "sha256": "9c703b214a6de5326f1be3a0402b662c66c87a3e5c12577b107ea59f0e1ed27d",
+        "audio_seconds": 1.12,
+        "warmup": {
+          "wall_ms": 23.014604579657316,
+          "cpu_ms": 23.077592999999563,
+          "frames": 63,
+          "source_samples": 32000,
+          "delivered_samples": 32256,
+          "zero_alignment_samples": 256,
+          "hits": 0,
+          "speech_frames": 0
+        },
+        "active": {
+          "wall_ms": 32.11803734302521,
+          "cpu_ms": 32.15006100000117,
+          "frames": 35,
+          "source_samples": 17920,
+          "delivered_samples": 17920,
+          "zero_alignment_samples": 0,
+          "hits": 0,
+          "speech_frames": 21,
+          "wall_rtf": 0.028676819056272503,
+          "cpu_rtf": 0.0287054116071439
+        },
+        "owner_reference": {
+          "wall_ms": 1.9252547062933445,
+          "cpu_ms": 1.9269739999998592
+        }
+      },
+      {
+        "id": "iris-release/3f20f6e747d3cb6c68a4",
+        "sha256": "10fbf7751f0a8f73608f17f0d2bcc734465694adde41b292d3799c91ecf37057",
+        "audio_seconds": 1.44,
+        "warmup": {
+          "wall_ms": 22.87786127999425,
+          "cpu_ms": 22.935741000000398,
+          "frames": 63,
+          "source_samples": 32000,
+          "delivered_samples": 32256,
+          "zero_alignment_samples": 256,
+          "hits": 0,
+          "speech_frames": 0
+        },
+        "active": {
+          "wall_ms": 40.872348472476006,
+          "cpu_ms": 40.91390900000125,
+          "frames": 45,
+          "source_samples": 23040,
+          "delivered_samples": 23040,
+          "zero_alignment_samples": 0,
+          "hits": 0,
+          "speech_frames": 25,
+          "wall_rtf": 0.028383575328108337,
+          "cpu_rtf": 0.028412436805556423
+        },
+        "owner_reference": {
+          "wall_ms": 2.3071281611919403,
+          "cpu_ms": 2.308870999999879
+        }
+      },
+      {
+        "id": "iris-release/c60f75b39949b419cd48",
+        "sha256": "6d13ae703ea43f8bfe2eaf1724f2d96fc1e395c55475c54bc91446711ef6cdc4",
+        "audio_seconds": 1.76,
+        "warmup": {
+          "wall_ms": 31.29816148430109,
+          "cpu_ms": 31.342759000001497,
+          "frames": 63,
+          "source_samples": 32000,
+          "delivered_samples": 32256,
+          "zero_alignment_samples": 256,
+          "hits": 0,
+          "speech_frames": 0
+        },
+        "active": {
+          "wall_ms": 50.442866049706936,
+          "cpu_ms": 50.49303100000202,
+          "frames": 55,
+          "source_samples": 28160,
+          "delivered_samples": 28160,
+          "zero_alignment_samples": 0,
+          "hits": 0,
+          "speech_frames": 20,
+          "wall_rtf": 0.028660719346424394,
+          "cpu_rtf": 0.028689222159092056
+        },
+        "owner_reference": {
+          "wall_ms": 4.830585792660713,
+          "cpu_ms": 4.832533000000083
+        }
+      }
+    ],
+    "component_latency_ms": {
+      "wake_graph_with_frontend": {
+        "wall_ms": {
+          "n": 185,
+          "p50": 1.7636599950492382,
+          "p95": 1.9320315681397915,
+          "mean": 2.815655032424508
+        },
+        "cpu_ms": {
+          "n": 185,
+          "p50": 1.765580999999905,
+          "p95": 1.9341355999999088,
+          "mean": 1.8315562918918966
+        }
+      },
+      "wake_push_frame": {
+        "wall_ms": {
+          "n": 848,
+          "p50": 0.014116987586021423,
+          "p95": 1.8067514756694436,
+          "mean": 0.6323649953251248
+        },
+        "cpu_ms": {
+          "n": 848,
+          "p50": 0.015218000000150056,
+          "p95": 1.807482299999974,
+          "mean": 0.41831156721697266
+        }
+      },
+      "silero_wake_frame": {
+        "wall_ms": {
+          "n": 848,
+          "p50": 0.1694804523140192,
+          "p95": 0.2003922127187252,
+          "mean": 0.1822321753694131
+        },
+        "cpu_ms": {
+          "n": 848,
+          "p50": 0.1709709999998532,
+          "p95": 0.20203615000002895,
+          "mean": 0.1830648620282989
+        }
+      },
+      "wake_stream": {
+        "wall_ms": {
+          "n": 8,
+          "p50": 38.750354666262865,
+          "p95": 49.59872530307621,
+          "mean": 39.442949229851365
+        },
+        "cpu_ms": {
+          "n": 8,
+          "p50": 38.78960300000067,
+          "p95": 49.64857900000096,
+          "mean": 39.484000750000355
+        }
+      },
+      "wake_warmup": {
+        "wall_ms": {
+          "n": 8,
+          "p50": 23.122419603168964,
+          "p95": 147.5769766373559,
+          "mean": 47.679386334493756
+        },
+        "cpu_ms": {
+          "n": 8,
+          "p50": 23.183381499999655,
+          "p95": 29.929171650000804,
+          "mean": 24.858442625000034
+        }
+      },
+      "vcm_final": {
+        "wall_ms": {
+          "n": 8,
+          "p50": 9.825147688388824,
+          "p95": 11.03470423258841,
+          "mean": 9.400130831636488
+        },
+        "cpu_ms": {
+          "n": 8,
+          "p50": 9.826695499999927,
+          "p95": 11.036523150000054,
+          "mean": 9.401748374999963
+        }
+      },
+      "vcm_preview": {
+        "wall_ms": {
+          "n": 35,
+          "p50": 5.646612029522657,
+          "p95": 9.21007115393877,
+          "mean": 5.6933410332671235
+        },
+        "cpu_ms": {
+          "n": 35,
+          "p50": 5.602558000000091,
+          "p95": 9.211822299999906,
+          "mean": 5.628626114285699
+        }
+      },
+      "owner_wake_reference": {
+        "wall_ms": {
+          "n": 8,
+          "p50": 2.1047203335911036,
+          "p95": 6.319539039395749,
+          "mean": 2.971003938000649
+        },
+        "cpu_ms": {
+          "n": 8,
+          "p50": 2.106720999999978,
+          "p95": 4.418427350000009,
+          "mean": 2.5386637499999476
+        }
+      },
+      "owner_command_whole": {
+        "wall_ms": {
+          "n": 8,
+          "p50": 3.3851247280836105,
+          "p95": 4.711200646124779,
+          "mean": 3.5463999956846237
+        },
+        "cpu_ms": {
+          "n": 8,
+          "p50": 3.387136999999818,
+          "p95": 4.713961799999987,
+          "mean": 3.5485639999999763
+        }
+      },
+      "owner_continuity": {
+        "wall_ms": {
+          "n": 8,
+          "p50": 6.851593032479286,
+          "p95": 8.408458530902863,
+          "mean": 6.874541169963777
+        },
+        "cpu_ms": {
+          "n": 8,
+          "p50": 6.852466999999862,
+          "p95": 8.409388049999977,
+          "mean": 6.875483874999977
+        }
+      },
+      "owner_continuity_window": {
+        "wall_ms": {
+          "n": 28,
+          "p50": 1.5580300241708755,
+          "p95": 2.1509160520508885,
+          "mean": 1.706216434415962
+        },
+        "cpu_ms": {
+          "n": 28,
+          "p50": 1.560086000000016,
+          "p95": 2.1534450500001467,
+          "mean": 1.7082846785714254
+        }
+      },
+      "command_vad": {
+        "wall_ms": {
+          "n": 8,
+          "p50": 15.238537453114986,
+          "p95": 17.616087896749377,
+          "mean": 15.324981650337577
+        },
+        "cpu_ms": {
+          "n": 8,
+          "p50": 15.240338999999992,
+          "p95": 17.60427880000006,
+          "mean": 15.324290249999983
+        }
+      },
+      "speaker_arm": {
+        "wall_ms": {
+          "n": 8,
+          "p50": 0.018745195120573044,
+          "p95": 0.2852775389328597,
+          "mean": 0.06939267041161656
+        },
+        "cpu_ms": {
+          "n": 8,
+          "p50": 0.01983750000000839,
+          "p95": 0.28663244999984605,
+          "mean": 0.07054125000000022
+        }
+      },
+      "speaker_finish": {
+        "wall_ms": {
+          "n": 8,
+          "p50": 0.003186054527759552,
+          "p95": 0.0074422918260097495,
+          "mean": 0.003917783033102751
+        },
+        "cpu_ms": {
+          "n": 8,
+          "p50": 0.004116999999803639,
+          "p95": 0.00840265000021656,
+          "mean": 0.004863999999937807
+        }
+      },
+      "application_gate": {
+        "wall_ms": {
+          "n": 8,
+          "p50": 0.003091059625148773,
+          "p95": 0.006859819404780863,
+          "mean": 0.0037144054658710957
+        },
+        "cpu_ms": {
+          "n": 8,
+          "p50": 0.004016999999967297,
+          "p95": 0.007793199999861498,
+          "mean": 0.004634624999999559
+        }
+      }
+    },
+    "command_frontend_wall_ms": {
+      "n": 8,
+      "p50": 1.4170028734952211,
+      "p95": 1.7040284117683768,
+      "mean": 1.4335917076095939
+    },
+    "command_engine_decision_wrapper_wall_ms": {
+      "n": 8,
+      "p50": 8.408144814893603,
+      "p95": 9.36513589695096,
+      "mean": 7.966539124026895
+    },
+    "command_compute_budget_ms": {
+      "wall_ms": {
+        "n": 8,
+        "p50": 63.411964336410165,
+        "p95": 79.53684804961085,
+        "mean": 63.10244946507737
+      },
+      "cpu_ms": {
+        "n": 8,
+        "p50": 63.43128449999935,
+        "p95": 76.19406075000008,
+        "mean": 62.39402937499972
+      }
+    },
+    "complete_compute_budget_ms": {
+      "wall_ms": {
+        "n": 8,
+        "p50": 97.34419244341552,
+        "p95": 128.4120241412893,
+        "mean": 102.54539869492874
+      },
+      "cpu_ms": {
+        "n": 8,
+        "p50": 97.40426849999874,
+        "p95": 125.84263975000103,
+        "mean": 101.87803012500008
+      }
+    },
+    "complete_compute_rtf": {
+      "wall_rtf": {
+        "n": 8,
+        "p50": 0.02668415228577537,
+        "p95": 0.02879047735107385,
+        "mean": 0.026712964931217886
+      },
+      "cpu_rtf": {
+        "n": 8,
+        "p50": 0.026700497430555116,
+        "p95": 0.027949401172727286,
+        "mean": 0.026563442452328338
+      }
+    }
+  },
+  "session_load": {
+    "vcm": {
+      "wall_ms": 248.94422572106123,
+      "cpu_ms": 52.69853800000001
+    },
+    "wake": {
+      "wall_ms": 156.12772619351745,
+      "cpu_ms": 3.981698999999894
+    },
+    "owner": {
+      "wall_ms": 122.33120389282703,
+      "cpu_ms": 18.09841099999998
+    },
+    "wake_vad": {
+      "wall_ms": 63.30185802653432,
+      "cpu_ms": 57.71568999999999
+    },
+    "endpoint_vad": {
+      "wall_ms": 55.03623699769378,
+      "cpu_ms": 53.504731000000085
+    }
+  },
+  "source_context": {
+    "module_root": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1",
+    "input_root": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.worktrees/iris-release-v1",
+    "scope": "Observed paths for this measurement only, not replay dependencies. Code hashes bind the executing module checkout; --root selects input/configuration files. Fresh execution resolves its current module root and explicitly configured .cache mount."
+  },
+  "total_session_load": {
+    "wall_ms": 645.7412508316338,
+    "cpu_ms": 185.99906899999996
+  },
+  "memory": {
+    "samples": [
+      {
+        "stage": "before_load",
+        "rss_mib": 149.63671875,
+        "peak_rss_mib": 149.63671875,
+        "method": "/proc/self/status (KiB converted to MiB)"
+      },
+      {
+        "stage": "after_vcm",
+        "rss_mib": 162.890625,
+        "peak_rss_mib": 162.890625,
+        "method": "/proc/self/status (KiB converted to MiB)"
+      },
+      {
+        "stage": "after_wake",
+        "rss_mib": 163.2265625,
+        "peak_rss_mib": 163.2265625,
+        "method": "/proc/self/status (KiB converted to MiB)"
+      },
+      {
+        "stage": "after_owner",
+        "rss_mib": 169.33203125,
+        "peak_rss_mib": 169.33203125,
+        "method": "/proc/self/status (KiB converted to MiB)"
+      },
+      {
+        "stage": "after_wake_vad",
+        "rss_mib": 183.6875,
+        "peak_rss_mib": 183.6875,
+        "method": "/proc/self/status (KiB converted to MiB)"
+      },
+      {
+        "stage": "after_endpoint_vad",
+        "rss_mib": 192.44140625,
+        "peak_rss_mib": 192.44140625,
+        "method": "/proc/self/status (KiB converted to MiB)"
+      },
+      {
+        "stage": "after_measurement",
+        "rss_mib": 197.19140625,
+        "peak_rss_mib": 197.19140625,
+        "method": "/proc/self/status (KiB converted to MiB)"
+      }
+    ],
+    "resident_sessions": {
+      "vcm": 1,
+      "wake": 1,
+      "owner": 1,
+      "silero": 2
+    },
+    "peak_process_rss_mib": 197.19140625,
+    "scope": "Whole current Python process including libraries, all five sessions, retained PCM and result storage; lifetime peak, not model-only RSS. Python worker IPC, Node, browser and OS costs excluded."
+  },
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255
+  ],
+  "telemetry_before": {
+    "temperature_c": null,
+    "cpu0_mhz": 2250.0,
+    "throttled": null
+  },
+  "telemetry_after": {
+    "temperature_c": null,
+    "cpu0_mhz": 3392.344,
+    "throttled": null
+  },
+  "software_versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "soundfile": "0.13.1",
+    "onnxruntime": "1.23.2",
+    "ncnn": "1.0.20260526",
+    "einops": "0.8.1"
+  },
+  "thread_scope": {
+    "vcm": 1,
+    "owner": 1,
+    "wake": 1,
+    "silero_each": 1,
+    "vulkan": false
+  },
+  "timing_scope": "Actual serial CPU calls without sleeping. Complete budget sums one final VCM, every pre-final 8000-sample prefix, command VAD including computed silence tail, wake reference evidence, command evidence, all actual continuity passes, SpeakerSession arm/finish/application intersection, and active wake+VAD streaming. Wake startup warmup is measured separately. Nested frontend/window timings are not added twice.",
+  "timing_excludes": [
+    "audio file I/O/decoding/hash checks",
+    "utterance elapsed time",
+    "endpoint waiting elapsed time",
+    "microphone/capture scheduling",
+    "worker IPC",
+    "providers/network/actions",
+    "Node/browser/UI"
+  ],
+  "interpretation": "Preview max-cadence serial compute budget, not live concurrency or user latency. RTF divides compute by original paired command+wake duration; command endpoint silence and 512 alignment compute are included but add no credited speech duration. Warmup is 32000 zeros plus explicit final-frame alignment. First model calls are included. Synthetic command/wake pairs are chosen by fixed manifest order, not verified same-speaker ownership pairs; verdicts are diagnostic, not acoustic accuracy or authentication evidence.",
+  "input_policy": "First eight distinct hash-bound own Qwen3 synthetic positive personal commands and first eight generated voice-test positive wakes; Apache-2.0 generation source receipt. No mixing/resampling/truncation."
+}

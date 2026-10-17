@@ -1,0 +1,14 @@
+{
+  "input_receipt_sha256": "b5e04d7bf33b8b10b94e9e732cfaf2ae0c91eb590387f094ef2e81671274c518",
+  "reason": "Anonymous resolver IP HTTP429; all own network prefetch stopped to honor cooldown.",
+  "reference_count": 4643,
+  "schema_version": 1,
+  "scope": "Same fresh target and target-local HF cache, anonymous standard HTTP, no original cache aliases. Original empty-cache attempt and Xet HTTP429 remain preserved.",
+  "started_utc": "2026-10-17T02:20:29.120633+00:00",
+  "status": "interrupted_for_rate_limit_cooldown",
+  "target": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final",
+  "transport": "HF_HUB_DISABLE_XET=1",
+  "verified_bytes": 27910648,
+  "verified_files": 500,
+  "workers": 8
+}

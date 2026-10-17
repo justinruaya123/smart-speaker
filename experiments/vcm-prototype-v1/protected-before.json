@@ -1,9 +1,0 @@
-{
-  "artifacts/vcm.pt": "d5fd4977350ba624d9ef1fc5dbfb1621b480cd57ee89ae6c6c70e294bd950c8e",
-  "artifacts/vcm.fp32.onnx": "a7fa48af1d8a24a24c08c8a98cf19e303fffdda3d0281fd7f11ea80223fd6eba",
-  "artifacts/bundle.json": "9627042ee96035937b38ca202cb5a4e8f2aaae8fb49812bac88eb778afcb71ec",
-  "artifacts/manifest.json": "4b90d6015e270eb74aa699c7f92fb8cbedf4498719a86558946a68d0616bce60",
-  "dist/smart-speaker-rpi4.zip": "1256eacc41079d4a1c5fdf2d500a83e1a370a35b83c01ad9826987e96985d08d",
-  "pipeline.toml": "9c497ba812ee4549428e8ff3ece3178e031ec98982c9e661b1e316f83f62e707",
-  "requirements.lock": "ae5e740afc261bd57dbf6cffc35f22e249d09ca85ab1f4f5170551b4e383eb18"
-}

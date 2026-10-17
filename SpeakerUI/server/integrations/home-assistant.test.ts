@@ -125,3 +125,48 @@ for (const outcome of ['404', 'reject']) test(`old hydration ${outcome} cannot o
     assert.equal(ha.snapshot().status, 'connected');
   } finally { ha.close(); }
 });
+
+test('climate, media, weather and scripts enforce capability/allowlist checks and exact service payloads', async () => {
+  const posts: any[] = [];
+  const entities: Record<string, any> = {
+    'climate.room': { supported_features: 1, temperature_unit: '°C', min_temp: 16, max_temp: 30 },
+    'media_player.room': { supported_features: 512 | 16384 | 4 | 4096 },
+    'weather.home': { temperature: 28, temperature_unit: '°C', humidity: 70, secret: 'hidden' },
+    'script.call_home': {},
+  };
+  const ha = createHomeAssistant({ ...config, entityIds: Object.keys(entities) }, async (url, init) => {
+    if (init?.method === 'POST') { posts.push([String(url), JSON.parse(String(init.body))]); return Response.json([]); }
+    const id = decodeURIComponent(String(url).split('/').at(-1)!);
+    return Response.json({ ...state, entity_id: id, state: id.startsWith('weather.') ? 'sunny' : 'on', attributes: entities[id] });
+  });
+  await (ha as any).climate('climate.room', 22);
+  await (ha as any).media('media_player.room', { intent: 'PLAY_MUSIC', slots: { song_id: 'song.dynamite' } }, 'media-source://music/song');
+  await (ha as any).media('media_player.room', { intent: 'VOLUME', slots: { operation: 'set', percent: 17 } });
+  await (ha as any).media('media_player.room', { intent: 'STOP', slots: {} });
+  await (ha as any).script('script.call_home');
+  assert.deepEqual(posts.map(post => post[1]), [{ entity_id: 'climate.room', temperature: 22 },
+    { entity_id: 'media_player.room', media_content_id: 'media-source://music/song', media_content_type: 'music' },
+    { entity_id: 'media_player.room', volume_level: .17 }, { entity_id: 'media_player.room' }, { entity_id: 'script.call_home' }]);
+  assert.match(posts[3][0], /media_stop$/);
+  const weather = await (ha as any).weather('weather.home');
+  assert.deepEqual(weather, { entity_id: 'weather.home', state: 'sunny', temperature: 28, unit: '°C', humidity: 70, observed_at: state.last_updated });
+  await assert.rejects((ha as any).climate('climate.other', 22), /allowlisted/);
+  await assert.rejects((ha as any).climate('climate.room', 40), /range/);
+  await assert.rejects((ha as any).media('media_player.room', { intent: 'NEXT', slots: {} }), /support/);
+  assert.equal(posts.length, 5);
+});
+
+test('a light group preflights every capability before making one group request', async () => {
+  const posts: any[] = [];
+  let dimmable = false;
+  const ha = createHomeAssistant({ ...config, entityIds: ['light.a', 'light.b'] }, async (url, init) => {
+    if (init?.method === 'POST') { posts.push(JSON.parse(String(init.body))); return Response.json([]); }
+    return Response.json({ ...state, entity_id: String(url).split('/').at(-1), attributes: { supported_color_modes: String(url).endsWith('light.a') || dimmable ? ['brightness'] : ['onoff'] } });
+  });
+  const commands = [{ entityId: 'light.a', action: 'brightness', value: 37 }, { entityId: 'light.b', action: 'brightness', value: 37 }];
+  await assert.rejects((ha as any).controlLights(commands), /support/);
+  assert.equal(posts.length, 0);
+  dimmable = true;
+  await (ha as any).controlLights(commands);
+  assert.deepEqual(posts, [{ entity_id: ['light.a', 'light.b'], brightness_pct: 37 }]);
+});

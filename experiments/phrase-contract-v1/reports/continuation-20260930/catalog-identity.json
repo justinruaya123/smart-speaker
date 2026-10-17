@@ -1,8 +1,0 @@
-{
-  "calibrated_policy": null,
-  "catalog_canonical_sha256": "70b71d67bb4917ae5bf1e4c9d98da5f12dd1419ff9f7b49910781b87afd7c00e",
-  "contract_sha256": "ae004037a95bf8ab8fb170896927ab262898f4d11e1e5a251fdff0bafa10c35f",
-  "lexicon_sha256": "81340dbdeb5fe8c6f93ac2306280b6127befd9a3e186ce90428b2c45b178c671",
-  "selected_endpoint": null,
-  "trained_model": null
-}

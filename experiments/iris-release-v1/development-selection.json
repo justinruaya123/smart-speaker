@@ -1,0 +1,129 @@
+{
+  "epoch": 3,
+  "key": [
+    0.3561272472045498,
+    83,
+    1131
+  ],
+  "checkpoint_sha256": "2607428712aace41d5b894176cb8d305438d95fe16c27965d55c266d36e8630b",
+  "model": "compact",
+  "arm": "supcon",
+  "seed": 67,
+  "parameters": 969928,
+  "training_seconds": 124.86822384316474,
+  "epochs_completed": 9,
+  "device": "cuda",
+  "checkpoint": ".cache/iris-release-v1/diversity/runs/compact-supcon-s67/best.pt",
+  "test_used_for_selection": false,
+  "all_runs": [
+    {
+      "epoch": 1,
+      "key": [
+        0.31175414497782916,
+        74,
+        1087
+      ],
+      "checkpoint_sha256": "34f5daf2ef8949e4c3459d91a992493e485e6c0c4a831efbe35462a8d2f650c6",
+      "model": "compact",
+      "arm": "ce",
+      "seed": 53,
+      "parameters": 969928,
+      "training_seconds": 120.86940657068044,
+      "epochs_completed": 8,
+      "device": "cuda",
+      "checkpoint": ".cache/iris-release-v1/diversity/runs/compact-ce-s53/best.pt",
+      "test_used_for_selection": false
+    },
+    {
+      "epoch": 3,
+      "key": [
+        0.35604711899942165,
+        81,
+        1133
+      ],
+      "checkpoint_sha256": "9742dd7a5a1ac167efe405d5df2f362c15ebd4642b8031d4802c53eaf3c1d42d",
+      "model": "compact",
+      "arm": "ce",
+      "seed": 67,
+      "parameters": 969928,
+      "training_seconds": 125.82864363398403,
+      "epochs_completed": 9,
+      "device": "cuda",
+      "checkpoint": ".cache/iris-release-v1/diversity/runs/compact-ce-s67/best.pt",
+      "test_used_for_selection": false
+    },
+    {
+      "epoch": 1,
+      "key": [
+        0.31636151677270097,
+        74,
+        1084
+      ],
+      "checkpoint_sha256": "7057b368334f830b5abbaaa43f7aacff1d7590fd8740cc40f7c6eb0d86b68a37",
+      "model": "compact",
+      "arm": "supcon",
+      "seed": 53,
+      "parameters": 969928,
+      "training_seconds": 109.08531090384349,
+      "epochs_completed": 8,
+      "device": "cuda",
+      "checkpoint": ".cache/iris-release-v1/diversity/runs/compact-supcon-s53/best.pt",
+      "test_used_for_selection": false
+    },
+    {
+      "epoch": 3,
+      "key": [
+        0.3561272472045498,
+        83,
+        1131
+      ],
+      "checkpoint_sha256": "2607428712aace41d5b894176cb8d305438d95fe16c27965d55c266d36e8630b",
+      "model": "compact",
+      "arm": "supcon",
+      "seed": 67,
+      "parameters": 969928,
+      "training_seconds": 124.86822384316474,
+      "epochs_completed": 9,
+      "device": "cuda",
+      "checkpoint": ".cache/iris-release-v1/diversity/runs/compact-supcon-s67/best.pt",
+      "test_used_for_selection": false
+    },
+    {
+      "epoch": 6,
+      "key": [
+        0.28067750506072875,
+        77,
+        1228
+      ],
+      "checkpoint_sha256": "0aae2669a7dcd622d3846118206d8d3ce99e816dfc89f14c51d51d6f53b8c02c",
+      "model": "full",
+      "arm": "ce",
+      "seed": 53,
+      "parameters": 2118280,
+      "training_seconds": 164.15548602119088,
+      "epochs_completed": 12,
+      "device": "cuda",
+      "checkpoint": ".cache/iris-release-v1/diversity/runs/full-ce-s53/best.pt",
+      "test_used_for_selection": false
+    },
+    {
+      "epoch": 14,
+      "key": [
+        0.28009793112589165,
+        83,
+        1271
+      ],
+      "checkpoint_sha256": "1cc9add87619f116562ea86b83661de410309541ecb5f0a03fe4222c48aaf659",
+      "model": "full",
+      "arm": "supcon",
+      "seed": 53,
+      "parameters": 2118280,
+      "training_seconds": 214.11927540134639,
+      "epochs_completed": 16,
+      "device": "cuda",
+      "checkpoint": ".cache/iris-release-v1/diversity/runs/full-supcon-s53/best.pt",
+      "test_used_for_selection": false
+    }
+  ],
+  "rule": "dev accepted macro human-speaker exact recall, human correct count, synthetic correct count, cost; thresholds fit development/calibration only"
+}

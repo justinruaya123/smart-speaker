@@ -1,0 +1,28 @@
+{
+  "derived_feature_manifest": ".cache/iris-release-v1/owner/features-manifest.jsonl",
+  "derived_feature_manifest_sha256": "dba3620e379e62e5f57e186d4722df79579b42cf3267e2ad35fbe2b2ea4e7bb1",
+  "experiment_id": "iris-release-v1",
+  "feature_recipe": {
+    "frontend": {
+      "convention": "htk_peak_triangles_power_natural_log",
+      "fft": 512,
+      "fmax": 7600.0,
+      "fmin": 60.0,
+      "hop": 160,
+      "log_floor": 1e-08,
+      "mel_bins": 40,
+      "sample_rate": 16000,
+      "window": 400
+    },
+    "maximum_seconds": 6,
+    "pcm_normalization": {
+      "floor": 1e-06,
+      "kind": "utterance_rms",
+      "target": 0.035
+    }
+  },
+  "feature_recipe_id": "67b372bb80872d01",
+  "normalization_sha256": "8ec1dfdf362c44c682575640177d8b0c8567986988cd5ceb9d515c9be58c04ce",
+  "recordings": 7001,
+  "training_only": true
+}

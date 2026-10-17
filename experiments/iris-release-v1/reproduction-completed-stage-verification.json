@@ -1,0 +1,145 @@
+{
+  "canonical_prepublication_workflow": {
+    "path": "experiments/iris-release-v1/reproduction-run-iris-final-prepublication.json",
+    "sha256": "15d87c3d9bfb679cb7ba596fc5c02db4b5a60d645db6081a37506e957257dd0b"
+  },
+  "completed_stages": [
+    {
+      "result": {
+        "checkpoint_sha256": "05e998279a2018d126368dc568ae7adb48c6fee4c9eade5c9979015c2d59edc0",
+        "implementation_before_fitting": {
+          "fingerprint": "1e0ad09fcda73876248f868c9750c63017d61ecdf7af6f62eadb9d6dbdc8e5f9",
+          "path": "experiments/iris-release-v1/owner-implementation-before-fitting-1e0ad09fcda73876.json",
+          "sha256": "e492f14831b6e54e7b6ed5b5ebaea6be5bb658679656905b61a5e38bd3071797"
+        },
+        "original_receipts_rewritten": false,
+        "raw_librispeech_hydrated": false,
+        "resolver_contract": {
+          "CACHE": "d938a9ddb3ac8d2ee6cc82c245d9de58a60d859cb7ab18bff231ff7694019702",
+          "DEFAULT_INPUTS": "848a2677840803bc4a45f083f70e96dfb3ba874d5c3d813a9a536addf6f233a1",
+          "EXPERIMENT": "574493c316b62013aa9b7d5ba4870c5203a9d23b5d6eb542205114f72c804ca0",
+          "HERE": "73e1ece48c6a05ff7417df44e8dce594c7c55b8818f9b4636caddd411dde96d0",
+          "Path": "40c6b803ee13cbcec633052def0cd7814baf9bfd67818b3dd46dd82625d3e333",
+          "PurePosixPath": "40c6b803ee13cbcec633052def0cd7814baf9bfd67818b3dd46dd82625d3e333",
+          "ROOT": "7efba0850e8eeaef93e5c3de6b7d47927a3e4bde0e8161dfb3d03fc10717d3c2",
+          "SHA256": "4fefaef0c2a36a6b0141ee5efa0ccb8f7ba2c9095991db332bb680ecbb62b016",
+          "_audio_mapping": "b4c1690439d0429f43a5d792550249945dd610b5dc85460061c0205efae399cf",
+          "hashlib": "092cb77ae0770f1627b29bf41b2732722fbcc3a0e1d77a79674801800a2721d1",
+          "json": "211ee42757705c7e350e70e36b762987a737f5e9c268f2a343e2dbfcb8fbea75",
+          "lru_cache": "c519b84a63035f6aaf0ea8f230b5de368c6c6984aeb373f2a1ace94ab210c265",
+          "os": "ac3a74d6dd975a8e8fe4b7f85fce794793a9355595b850e3926964913948d386",
+          "re": "6b81b4ca19c88ec507aad63f1f49291209368a9490113655a68e994c91d092c1",
+          "read": "28e382739e484b8e67ed9633127340043d16de499234582c7148723d666630e8",
+          "read_audio_map": "f1d8579bb543059968cfbdba7874000b39d10166d6f359cb6ec079766017ab7c",
+          "relative_path": "3166cf2f72085016b20eeec655145345eb6f0c87112a86e237af3cd8a2818131",
+          "resolve_audio": "9b21ca203c1765dde19711d145c01cd67b6aafdbd64ff77ee393b0d3460763eb",
+          "sha": "c36f795b9a0ac4d69ce43afc8e0d8b77267d9ef093edfabd5e4bff7eb9162e84"
+        },
+        "selection_sha256": "aee3f2d780d56552b3865a11e580598c86d6f5e7cbf8f6a0190668420c70c74c",
+        "status": "verified_completed_owner_preparation"
+      },
+      "stage": "owner-prepare",
+      "status": "passed"
+    },
+    {
+      "result": {
+        "arm": "ce",
+        "checkpoint_sha256": "34f5daf2ef8949e4c3459d91a992493e485e6c0c4a831efbe35462a8d2f650c6",
+        "fit_source_contract_sha256": "8140360d5721048ea9cc94707c1e9bcf438bc2403701f216dac7dcf91a6b10e1",
+        "model": "compact",
+        "original_receipts_rewritten": false,
+        "seed": 53,
+        "selection_sha256": "2ba0e2992d939a71d3690dd55ed0629bd9408ed69c730a93d8bfafd93f73a278",
+        "status": "verified_completed_diversity_fit"
+      },
+      "stage": "diversity-compact-ce-53",
+      "status": "passed"
+    },
+    {
+      "result": {
+        "arm": "supcon",
+        "checkpoint_sha256": "7057b368334f830b5abbaaa43f7aacff1d7590fd8740cc40f7c6eb0d86b68a37",
+        "fit_source_contract_sha256": "8140360d5721048ea9cc94707c1e9bcf438bc2403701f216dac7dcf91a6b10e1",
+        "model": "compact",
+        "original_receipts_rewritten": false,
+        "seed": 53,
+        "selection_sha256": "d11b727d7586f09afa80a62b0fbd2996d6ed9bb44f5b520a6a35b2b2afbc4ab3",
+        "status": "verified_completed_diversity_fit"
+      },
+      "stage": "diversity-compact-supcon-53",
+      "status": "passed"
+    },
+    {
+      "result": {
+        "arm": "ce",
+        "checkpoint_sha256": "0aae2669a7dcd622d3846118206d8d3ce99e816dfc89f14c51d51d6f53b8c02c",
+        "fit_source_contract_sha256": "8140360d5721048ea9cc94707c1e9bcf438bc2403701f216dac7dcf91a6b10e1",
+        "model": "full",
+        "original_receipts_rewritten": false,
+        "seed": 53,
+        "selection_sha256": "aeeb8230f4141ce07f8a60c9d55510c932917947b0d471c63dc40cd7501b45ef",
+        "status": "verified_completed_diversity_fit"
+      },
+      "stage": "diversity-full-ce-53",
+      "status": "passed"
+    },
+    {
+      "result": {
+        "arm": "supcon",
+        "checkpoint_sha256": "1cc9add87619f116562ea86b83661de410309541ecb5f0a03fe4222c48aaf659",
+        "fit_source_contract_sha256": "8140360d5721048ea9cc94707c1e9bcf438bc2403701f216dac7dcf91a6b10e1",
+        "model": "full",
+        "original_receipts_rewritten": false,
+        "seed": 53,
+        "selection_sha256": "b8e6c617e5a2d2b67b38e4887d28080ee937409664e1e1981cfd783962a97876",
+        "status": "verified_completed_diversity_fit"
+      },
+      "stage": "diversity-full-supcon-53",
+      "status": "passed"
+    },
+    {
+      "result": {
+        "arm": "ce",
+        "checkpoint_sha256": "9742dd7a5a1ac167efe405d5df2f362c15ebd4642b8031d4802c53eaf3c1d42d",
+        "fit_source_contract_sha256": "8140360d5721048ea9cc94707c1e9bcf438bc2403701f216dac7dcf91a6b10e1",
+        "model": "compact",
+        "original_receipts_rewritten": false,
+        "seed": 67,
+        "selection_sha256": "98476ff58b27f3ee1f99028e820f5dc58e01be8f0adf68b068b3848a08918f2f",
+        "status": "verified_completed_diversity_fit"
+      },
+      "stage": "diversity-compact-ce-67",
+      "status": "passed"
+    },
+    {
+      "result": {
+        "arm": "supcon",
+        "checkpoint_sha256": "2607428712aace41d5b894176cb8d305438d95fe16c27965d55c266d36e8630b",
+        "fit_source_contract_sha256": "8140360d5721048ea9cc94707c1e9bcf438bc2403701f216dac7dcf91a6b10e1",
+        "model": "compact",
+        "original_receipts_rewritten": false,
+        "seed": 67,
+        "selection_sha256": "96f007cfd92f15ab66d2f8edcfe53061d47e656dabe693ed3c97967e54a34e9e",
+        "status": "verified_completed_diversity_fit"
+      },
+      "stage": "diversity-compact-supcon-67",
+      "status": "passed"
+    }
+  ],
+  "current_diversity_source_sha256": "0bc25c969f141d522ac928bdbc369de4a44522b144671b9c67ccf3b6d3f3e00c",
+  "diversity_fitting_and_selection_ast_equal": true,
+  "executed_validator_sha256": "ed6274d3ad336f29862608b7e1131de4e82b9119e0e4d6b0bc558b253c68b52c",
+  "experiment": "iris-release-v1",
+  "new_fitting_executed": false,
+  "original_training_receipts_rewritten": false,
+  "owner_consumed_resolver_ast_equal": true,
+  "package_verification_passed": true,
+  "physical_pi_measured": false,
+  "prefit_source_compatibility": {
+    "path": "experiments/iris-release-v1/reproduction-prefit-compatibility.json",
+    "sha256": "8ffa71b12bc1edfb300de90c1f78fed0798f2435d22ae0217109e3a6d79a2286"
+  },
+  "schema_version": 1,
+  "source_compatibility_contract": "Original prefitting receipts and source snapshots remain unchanged; the current validator rechecks exact consumed source AST and all frozen component/data/checkpoint bindings.",
+  "status": "verified_completed_stages"
+}

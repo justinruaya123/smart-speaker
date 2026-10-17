@@ -1,8 +1,0 @@
-{
-  "status": "aborted during preparation/early fitting before final test",
-  "reason": "The supplemental enrollment split shares training speakers; treating all enrollment speakers as held out unnecessarily excluded 42 FSC training speakers. Corrected in a new study version; actual dev/test/calibration speakers remain excluded.",
-  "terminated_training_processes": [
-    9868,
-    62472
-  ]
-}

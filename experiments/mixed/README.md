@@ -1,3 +1,0 @@
-Start with [COMPARISON.md](COMPARISON.md) and [REPORT.md](REPORT.md). The completed ensemble failed the all-intent human-speech quality target; no candidate was installed. [DESIGN.md](DESIGN.md) explains the source-specific ensemble and development-only confidence/source-preference tuning. The synthetic comparison is ../synthetic/REPORT.md. Human-only expert training evidence is human-training.json; human-only-results.json records the separately calibrated control.
-
-The comparison and outcome paragraphs are post-scoring commentary. Running the report command regenerates the tables from frozen JSON and replaces REPORT.md; COMPARISON.md remains the editorial conclusion. Do not rerun final evaluation in this study version.

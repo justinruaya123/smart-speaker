@@ -1,8 +1,0 @@
-{
-  "path": ".cache\\pcv-updated-distill-v1\\targets.jsonl",
-  "rows": 7725,
-  "sha256": "b029df55a4df4562361307052a3907a2060f5089a33d37ce4661f6119e4e8ba6",
-  "student_protocol_sha256": "deaba08f6da051932f3fd768f7bec6df100b406f7ada547c9db903d7a2bab85d",
-  "teacher_checkpoint_sha256": "f56a1030e7c86c28a09ae248aaec9ef42715bef9ee8cea6bd9f74a709d04289f",
-  "test_inference_accessed": false
-}

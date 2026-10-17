@@ -1,4 +1,0 @@
-# Hash-bound dependency locks and receipts must retain their bytes across hosts.
-configs/runtime-cp312-aarch64/** -text
-configs/flatbuffers-25.12.19-LICENSE.* -text
-reports/continuation-20260930/** -text

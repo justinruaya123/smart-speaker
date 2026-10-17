@@ -1,5 +1,0 @@
-{
-  "affects_audio": false,
-  "affects_splits": false,
-  "statement": "The initial 176 Parler manifest rows retain a voice_anchor_sha256 field for the corresponding Qwen-designed split group. Parler does not consume that audio. Its actual conditioning is the named voice and accent description, frozen in study.py/VOICES and generation recipes. New Parler rows set voice_anchor_sha256 to null and name the conditioning voice explicitly."
-}

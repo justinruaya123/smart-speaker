@@ -1,0 +1,112 @@
+{
+  "application_modes_traced": 9,
+  "application_source_inputs": [
+    {
+      "path": "SpeakerUI/UPSTREAM.json",
+      "sha256": "4a546211fb7e9e8f99e136bfd6aa9a2ec0848e636f3c935d5bd3322a825e6c78"
+    },
+    {
+      "path": "SpeakerUI/package.json",
+      "sha256": "6e612d95fac6bb63c9d0328113520136123cac314c73da795abe08cb1e924ad8"
+    },
+    {
+      "path": "SpeakerUI/pnpm-lock.yaml",
+      "sha256": "034cb8c0fb0dabd4fd711f7109437af91a06b074e1bc79ba5b4065846c36b2fb"
+    },
+    {
+      "path": "SpeakerUI/pnpm-workspace.yaml",
+      "sha256": "ac02d96368617c760f093cfe61fdec64b6244007ab3553e0d6621f706f54a353"
+    },
+    {
+      "path": "SpeakerUI/scripts/start.mjs",
+      "sha256": "eb69f2c483bcf177f1c3102a16b8a20c84e359f3c7fd61ee289ccf826c7d2f94"
+    },
+    {
+      "path": "benchmark.py",
+      "sha256": "ba086fc12638dbf209b17e7d9b495e2f7f065ba2a68ebcfbe9f35746403b339a"
+    },
+    {
+      "path": "scripts/runtime/config.example.toml",
+      "sha256": "8c09b3919ac44f9779420a11484aa203c0acc7244091929afbbd7f5d563f281d"
+    },
+    {
+      "path": "scripts/runtime/iris_pi_benchmark.py",
+      "sha256": "e8378716360068d5c206917565e257055e7982183f75cd5a63b1a57c3624be20"
+    },
+    {
+      "path": "scripts/runtime/ncnn-LICENSE.txt",
+      "sha256": "7c974bac98848df46be1af5bdaa3c3c9c01f6082a90f55caeb7f60c6208aa255"
+    },
+    {
+      "path": "scripts/runtime/pyproject.toml",
+      "sha256": "bf7fd31f052f96c30bce539a7bbe3502fbe69d706828f20ea36fa54ce8c0d6dc"
+    },
+    {
+      "path": "scripts/runtime/speaker.env.example",
+      "sha256": "6cba129f8a725430a51ee96e74c85ae94ceead14499e9b46e31744f59b8cc9c2"
+    },
+    {
+      "path": "scripts/runtime/speaker_config.py",
+      "sha256": "3f5ca6bfabdde486bd136d1c983d28a8fef91b41e756957e3403d12c5a92343f"
+    },
+    {
+      "path": "scripts/runtime/speaker_package.py",
+      "sha256": "01cdae8f289fa26f6a406fdacb57c7de9f66f555de5c8ddeea557100884ec204"
+    },
+    {
+      "path": "scripts/runtime/speaker_start.py",
+      "sha256": "bcfcf2cb34c1cff6745ec4860967b0353a51aa193ba87e77d89a2a660ecc2d8f"
+    },
+    {
+      "path": "scripts/runtime/speaker_tools.py",
+      "sha256": "2e70ab4067e7b18ca4b9282aeaf758486d5cacb1e8fdd8ad84ff74f8e0f22ef5"
+    },
+    {
+      "path": "scripts/runtime/speaker_worker.py",
+      "sha256": "3ab8f0c98607c2e8b45d8939a11787f0ba449c5c2315daba2d58171997efb939"
+    },
+    {
+      "path": "scripts/runtime/uv.lock",
+      "sha256": "8c0a9d98063b4f858018e3fd2875632f98b7fb9be5c91ec7736fdb4620686399"
+    },
+    {
+      "path": "start.py",
+      "sha256": "864641ea126c1c51243ed7663f84aa6f2885a88db0aa2f7c2bd81285829d66d8"
+    }
+  ],
+  "changed_sources": {
+    "scripts/iris_publish.py": "6ee97c4fe3b459b6e195701e93cb4824ce9a8b9163d4e8afcca3c0655b735f8c",
+    "scripts/iris_report.py": "8df1fd04efdf8090c76f6b28c56afaffcef6b3c2422ca821b63e9b3bf76aad5d",
+    "scripts/test/test_iris_release.py": "f638265186b72687274bea1c2959aafa308c3e408f58977f06ac625ef5d1970c"
+  },
+  "duplicate_and_missing_evidence_regression": {
+    "log": ".cache/iris-release-v1/source-closure-duplicate-green.log",
+    "passed": 3,
+    "sha256": "9e10546ba366b1ade1b92bbe1bae7650500eaaf1ccc8c754b92df8ff38027207"
+  },
+  "generated_build_inputs": 43,
+  "input_receipt_sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945",
+  "missing_source_inputs": [],
+  "no_ml_policy_or_audio_changes": true,
+  "preserved_failed_fresh_run": {
+    "failed": 1,
+    "passed": 166,
+    "path": ".cache/iris-release-v1/fresh-clone/iris-published-inputs-final/experiments/iris-release-v1/reproduction-run-fresh-orderfix.json",
+    "reason": "Omitted root benchmark.py after successful cold UI build",
+    "sha256": "2c02a8a8fb1327e208fa41c109b52ac3f115cc4e7404b31a7718ceb7c399864e"
+  },
+  "regression_before_fix": {
+    "failed": 3,
+    "log": ".cache/iris-release-v1/source-closure-red.log",
+    "sha256": "ada8e0266e8457912169ba70a448b888c33acbf9474f6e8b5a1df77e20200b87"
+  },
+  "release_suite_after_fix": {
+    "log": ".cache/iris-release-v1/source-closure-green.log",
+    "passed": 50,
+    "sha256": "926ec618273693b44eff30ae7c9efdc1db873546452999ac8fd900b4e14380b6"
+  },
+  "schema_version": 1,
+  "source_inventory_proof": "experiments/iris-release-v1/reproduction-source-closure-fix.json",
+  "source_inventory_proof_sha256": "b65240b86e1ee6eee86a3865bdba496c02d3208244445b509e6752f9cb150296",
+  "status": "passed"
+}

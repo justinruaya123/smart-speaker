@@ -1,0 +1,88 @@
+{
+  "all_sources_accessible": true,
+  "checked_utc_date": "2026-10-17",
+  "files": [
+    {
+      "available": true,
+      "bytes": 244957155,
+      "etag_matches_sha256": true,
+      "expected_bytes": 244957155,
+      "file": "data/train-00000-of-00004.parquet",
+      "source": "martinnavs/ai231-fil-supplemental-data"
+    },
+    {
+      "available": true,
+      "bytes": 276168578,
+      "etag_matches_sha256": true,
+      "expected_bytes": 276168578,
+      "file": "data/train-00001-of-00004.parquet",
+      "source": "martinnavs/ai231-fil-supplemental-data"
+    },
+    {
+      "available": true,
+      "bytes": 235971285,
+      "etag_matches_sha256": true,
+      "expected_bytes": 235971285,
+      "file": "data/train-00002-of-00004.parquet",
+      "source": "martinnavs/ai231-fil-supplemental-data"
+    },
+    {
+      "available": true,
+      "bytes": 235454295,
+      "etag_matches_sha256": true,
+      "expected_bytes": 235454295,
+      "file": "data/train-00003-of-00004.parquet",
+      "source": "martinnavs/ai231-fil-supplemental-data"
+    },
+    {
+      "available": true,
+      "bytes": 118240931,
+      "etag_matches_sha256": true,
+      "expected_bytes": 118240931,
+      "file": "gap_fill/train-00000-of-00001.parquet",
+      "source": "martinnavs/ai231-fil-supplemental-data"
+    },
+    {
+      "available": true,
+      "bytes": 411129,
+      "etag_matches_sha256": true,
+      "expected_bytes": 411129,
+      "file": "numeral_wordings/train-00000-of-00001.parquet",
+      "source": "martinnavs/ai231-fil-supplemental-data"
+    },
+    {
+      "available": true,
+      "bytes": 14553313,
+      "etag_matches_sha256": true,
+      "expected_bytes": 14553313,
+      "file": "data/holdout-00000-of-00001.parquet",
+      "source": "airimonda/ai231-me2-voice-commands"
+    },
+    {
+      "available": true,
+      "bytes": 284419574,
+      "etag_matches_sha256": true,
+      "expected_bytes": 284419574,
+      "file": "data/test-00000-of-00001.parquet",
+      "source": "airimonda/ai231-me2-voice-commands"
+    },
+    {
+      "available": true,
+      "bytes": 315293385,
+      "etag_matches_sha256": true,
+      "expected_bytes": 315293385,
+      "file": "data/train-00000-of-00002.parquet",
+      "source": "airimonda/ai231-me2-voice-commands"
+    },
+    {
+      "available": true,
+      "bytes": 397331137,
+      "etag_matches_sha256": true,
+      "expected_bytes": 397331137,
+      "file": "data/train-00001-of-00002.parquet",
+      "source": "airimonda/ai231-me2-voice-commands"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Pinned upstream Parquet metadata availability; payload byte hydration separately verifies SHA256"
+}

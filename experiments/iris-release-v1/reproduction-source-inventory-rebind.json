@@ -1,0 +1,38 @@
+{
+  "added_source_paths": [
+    "config.example.toml",
+    "experiments/iris-release-v1/reproduction-source-inventory-rebind.json"
+  ],
+  "all_non_source_files_fields_identical": true,
+  "asset_inventory_keys": [
+    "files",
+    "cache_aliases",
+    "parquet_sources",
+    "audio_map_path",
+    "audio_map_sha256",
+    "input_publication_receipt"
+  ],
+  "asset_inventory_sha256_after": "60d643538070004c1c76af55441ea1429d0e8106ba2b2721e66ba81b57c0094b",
+  "asset_inventory_sha256_before": "60d643538070004c1c76af55441ea1429d0e8106ba2b2721e66ba81b57c0094b",
+  "change": "Add the actual root default configuration template and this compact rebind proof to the published source-name inventory after a source-only fresh-start configuration repair.",
+  "current_input_receipt": {
+    "path": "experiments/iris-release-v1/reproduction-inputs.json",
+    "sha256": "3cbd4a0f36777218bed5944d1529f80b03479a2382861be7891129c46284888d"
+  },
+  "experiment": "iris-release-v1",
+  "fixed_template_sha256": "8c09b3919ac44f9779420a11484aa203c0acc7244091929afbbd7f5d563f281d",
+  "model_data_protocol_selection_unchanged": true,
+  "payloads_or_checkpoint_weights_changed": false,
+  "preserved_prior_release": {
+    "receipt": "experiments/iris-release-v1/reproduction-startup-fix-preservation.json",
+    "sha256": "8343e7cf6130b17ceff1d56b2e2e3f38af23cd345a2271505c74f5960c924c25"
+  },
+  "previous_input_receipt": {
+    "path": "experiments/iris-release-v1/reproduction-inputs-before-startup-fix.json",
+    "sha256": "b5e04d7bf33b8b10b94e9e732cfaf2ae0c91eb590387f094ef2e81671274c518"
+  },
+  "remote_pins_unchanged": true,
+  "republication": "Updated metadata is mirrored in the final published source; existing verified payload revisions remain pinned.",
+  "schema_version": 1,
+  "status": "source_inventory_rebound_assets_unchanged"
+}

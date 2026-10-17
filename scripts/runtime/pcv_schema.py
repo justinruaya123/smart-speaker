@@ -1,11 +1,18 @@
-"""PCV-B1 typed contract. Catalog text is compiled offline, never transcribed."""
+"""Finite command schema and reference wordings; no audio transcription."""
 from __future__ import annotations
 
 import hashlib
 import json
 import re
 
-from vcm.catalog import number_words, PHONES
+def number_words(n):
+    if type(n) is not int or not 0<=n<=100: raise ValueError('Integer 0..100 required')
+    units='zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen'.split()
+    if n<20: return units[n]
+    if n==100: return 'one hundred'
+    tens='zero ten twenty thirty forty fifty sixty seventy eighty ninety'.split()
+    return tens[n//10]+(' '+units[n%10] if n%10 else '')
+
 
 INTENTS = ['PLAY_MUSIC', 'WEATHER', 'TIME', 'LIGHT_ON', 'LIGHT_OFF', 'PAUSE', 'STOP', 'NEXT',
            'VOLUME', 'CALL', 'MESSAGE', 'LIST_REMINDERS', 'TIMER', 'ALARM', 'TEMPERATURE',
@@ -174,33 +181,3 @@ def extended_cases(custom=None):
                    'what is the population of mars', 'delete all my files'):
         add(phrase, None, 'OOV')
     return rows
-
-
-def compile_inventory(rows, words):
-    entries, seen, texts = [], {}, {}
-    for row in rows:
-        cmd = row['command']
-        if cmd is not None:
-            validate_command(cmd)
-        text = normalize_text(row.get('spoken_text', row['text']))
-        signature = canonical(cmd)
-        if text in texts:
-            if texts[text] != signature:
-                raise ValueError('Text command collision: ' + text)
-            continue
-        labels = []
-        tokens = text.split()
-        for i, token in enumerate(tokens):
-            phones = ['EY'] if token == 'a' and tokens[i+1:i+2] == ['m'] else words.get(token)
-            if not phones:
-                raise ValueError('Missing pronunciation: ' + token)
-            labels.extend(PHONES.index(p) + 1 for p in phones)
-        key = tuple(labels)
-        if key in seen and seen[key] != signature:
-            raise ValueError('Pronunciation command collision: ' + text)
-        if not labels:
-            raise ValueError('Empty pronunciation')
-        seen[key] = signature
-        texts[text] = signature
-        entries.append({**row, 'text': text, 'phones': labels, 'use_case': row.get('use_case', cmd['intent'] if cmd else 'OOV')})
-    return {'schema_version': 3, 'entries': entries, 'acoustic_qualification': False}

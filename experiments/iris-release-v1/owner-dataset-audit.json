@@ -1,0 +1,35 @@
+{
+  "all_selected_files_hash_verified": true,
+  "by_source": {
+    "LibriSpeech-train-clean-100": 6024,
+    "VCM-original-human": 3405
+  },
+  "by_split": {
+    "calibration": 210,
+    "dev": 640,
+    "test": 1578,
+    "train": 7001
+  },
+  "cross_split_hash_overlap": {},
+  "cross_split_speaker_overlap": {},
+  "excluded": {},
+  "historical_reservation_limit": "Missing old manifests prevent independent audit of their identity lists; the identical historical fallback rule is retained.",
+  "hours": {
+    "calibration": 0.1805225,
+    "dev": 1.5568976562499999,
+    "test": 2.785777065972222,
+    "train": 19.740955711805558
+  },
+  "libri_official_benchmark": false,
+  "manifest_sha256": "d22c1bf537a4f66f9eb4f2b33de7ac7c43fbff4c5f75387d228d7b47d184a884",
+  "recordings": 9429,
+  "speakers": {
+    "calibration": 24,
+    "dev": 52,
+    "test": 114,
+    "train": 389
+  },
+  "synthetic_proxy_manifest_sha256": "eeb42b0310582bf75dac05ee5600f7335dbfc4b038ddabbc8e04bdd07acd7a88",
+  "synthetic_proxy_recordings": 192,
+  "transcripts_used": false
+}

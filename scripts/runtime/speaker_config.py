@@ -8,18 +8,19 @@ import re
 import tomllib
 
 DEFAULTS = {
-    'inference': {'mode':'demo', 'engine':'ncnn', 'intent_threshold':.95, 'slot_threshold':.90, 'threads':1},
+    'inference': {'mode':'demo', 'engine':'ncnn', 'intent_threshold':.95, 'slot_threshold':.90, 'threads':1,'profile':'benchmark-compatible'},
     'audio': {'microphone':-1},
     'server': {'host':'127.0.0.1', 'port':3000, 'origin':''},
     'ui': {'debug':True, 'readout':True},
     'actions': {'enabled':True},
     'benchmark': {'cpu':0, 'output':'results'},
     'providers': {'ha_enabled':False, 'ha_url':'', 'ha_entity_ids':'', 'spotify_enabled':False,
-                  'spotify_redirect_uri':'', 'spotify_device_id':'', 'local_media_dir':'media', 'data_dir':'data'},
-    'bindings': {'lights':{}, 'songs':{}},
+                  'spotify_redirect_uri':'', 'spotify_device_id':'', 'local_media_dir':'media', 'data_dir':'data','timezone':'Asia/Manila'},
+    'bindings': {'lights':{}, 'songs':{}, 'climate':{}, 'weather':{}, 'media_player':{},'contacts':{},'messages':{}},
 }
 ENV_KEYS = {
     'INFERENCE_ENGINE':('inference','engine'),
+    'RECOGNITION_PROFILE':('inference','profile'),
     'EXECUTION_MODE':('inference','mode'), 'INTENT_THRESHOLD':('inference','intent_threshold'),
     'SLOT_THRESHOLD':('inference','slot_threshold'), 'SMART_SPEAKER_THREADS':('inference','threads'),
     'MICROPHONE_INDEX':('audio','microphone'), 'HOST':('server','host'), 'PORT':('server','port'),
@@ -79,7 +80,7 @@ def resolve_config(root, *, environ=None, overrides=None, profile='inference'):
         cfg[section][key]=value
     for key,value in (overrides or {}).items():
         if value is None:continue
-        section,field={'engine':('inference','engine'),'threads':('inference','threads'),'port':('server','port'),'mic':('audio','microphone'),'cpu':('benchmark','cpu')}[key]
+        section,field={'engine':('inference','engine'),'threads':('inference','threads'),'port':('server','port'),'mic':('audio','microphone'),'cpu':('benchmark','cpu'),'profile':('inference','profile')}[key]
         cfg[section][field]=value
     if env.get('SMART_SPEAKER_BINDINGS'):
         try: bindings=json.loads(env['SMART_SPEAKER_BINDINGS'])
@@ -90,7 +91,13 @@ def resolve_config(root, *, environ=None, overrides=None, profile='inference'):
         for key,value in values.items():
             expected=DEFAULTS[section][key]
             if isinstance(expected,dict):
-                if not isinstance(value,dict) or any(not isinstance(k,str) or not isinstance(v,str) or not v for k,v in value.items()):
+                def identifier(item):return isinstance(item,str) and bool(item)
+                def valid_binding(k,v):
+                    if not isinstance(k,str):return False
+                    if section=='bindings' and key=='lights' and isinstance(v,list):
+                        return 0<len(v)<=100 and all(identifier(i) for i in v) and len(set(v))==len(v)
+                    return identifier(v)
+                if not isinstance(value,dict) or any(not valid_binding(k,v) for k,v in value.items()):
                     raise ValueError(f'{section}.{key} must map names to nonempty identifiers')
             elif type(expected) is float:
                 if type(value) not in (int,float) or not math.isfinite(value) or not 0<=value<=1:raise ValueError(f'{section}.{key} must be 0..1')
@@ -99,6 +106,7 @@ def resolve_config(root, *, environ=None, overrides=None, profile='inference'):
         if not low<=cfg[section][key]<=high:raise ValueError(f'{section}.{key} must be {low}..{high}')
     if cfg['inference']['mode'] not in ('demo','qualified'):raise ValueError('inference.mode must be demo or qualified')
     if cfg['inference']['engine'] not in ('ncnn','onnxruntime'):raise ValueError('inference.engine must be ncnn or onnxruntime')
+    if cfg['inference']['profile'] not in ('benchmark-compatible','owner-protected'):raise ValueError('Unknown recognition profile')
     deployment=root/'deployment.json'
     if deployment.exists() and json.loads(deployment.read_text()).get('actions_enabled') is False:
         cfg['actions']['enabled']=False

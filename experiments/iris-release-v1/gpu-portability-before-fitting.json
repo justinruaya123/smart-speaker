@@ -1,0 +1,25 @@
+{
+  "experiment": "iris-release-v1",
+  "classification": "Portable GPU selection and selected-device-only RNG checkpoints, before fitting. Data, frontend, architectures, loss, schedule, calibration and selection unchanged.",
+  "protocol_sha256": "26851f20cc919812ff555eaf2b02ba4c0908338a148f2371176886a786a2f47a",
+  "owner_protocol_sha256": "174daed6764e00c4026e6a3be88231823b98967f22bec5ab393a05f686181c0a",
+  "source_files": {
+    "scripts/train/iris_diversity.py": "1507f5680ba9c09ca6de02750bf9cb3b5f781a2113b17cf5e8368d5cfbc97be7",
+    "scripts/train/iris_wake.py": "d410de634e6e10deddeeb0dc9e7240b7049b5649463e3efb6a1a89ea9a79bb47",
+    "scripts/train/iris_owner.py": "6e9d52362e5e35a93e688d94286453080350c2260b20432ca0766cb71f68bc6f",
+    "scripts/models/mvp_static.py": "2e9e284621a41a29766c35d99d399e6ffa6bb238418aeeb4ad27e6a3f25c6ff8",
+    "scripts/models/speaker_demo.py": "57a827ba38fcce088a213894433ba9d8b7b7944b335c2116859919a79f49cb7e",
+    "scripts/models/iris_owner.py": "6d0a4a3be1ea77c55236ffbe3d6e34affd9ad60156ab200c8b30e1f476c50bbc",
+    "scripts/runtime/iris_owner.py": "af1838c143813a82671d0d1a9e5007cb449502a3fa9d44cba2d92e62fe24c474",
+    "scripts/runtime/speaker_session.py": "9aa7fcb7b88919ebf657265acc32e1f1ab3aadfa9df8c4632b65a0a2de73bde9",
+    "scripts/runtime/audio.py": "a1af89d6a022ccc2ba09b5b794a2b9ff63d314d3a9d04f8a2037042694b3f3dd",
+    "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+  },
+  "checks": {
+    "passed": 25,
+    "cuda_calls_mocked_in_portability_tests": true
+  },
+  "source_parent": "15e048f05c525a20504d875aed82b94d48b47bf3",
+  "fitting_started": false,
+  "test_used_for_selection": false
+}

@@ -1,0 +1,64 @@
+{
+  "experiment": "iris-release-v1-wake",
+  "parent_protocol_sha256": "26851f20cc919812ff555eaf2b02ba4c0908338a148f2371176886a786a2f47a",
+  "seed": 61,
+  "initialization": "random; separate older own-weight baseline compared on new calibration only",
+  "training": {
+    "epochs": 20,
+    "steps_per_epoch": 96,
+    "batch": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.001
+  },
+  "input_bindings": {
+    ".cache/iris-release-v1/wake/views/train.jsonl": "3dc7cba5c03cb6a3430734d31b1dff89deea84ca9010d78e1c23f790b1d8804e",
+    ".cache/iris-release-v1/wake/views/dev.jsonl": "089de564617341cb3b86bb731a1f5ba35021038bb679abdf704910fc8b38ae5c",
+    ".cache/iris-release-v1/wake/views/calibration.jsonl": "3cf419bd96fbd913ec567534e95683b491c353a3e175a7f01753624f7d2266dd",
+    ".cache/iris-release-v1/wake/views/test.jsonl": "3b836a86e7cd073030ad2fb5632cdf273d1fb7c7c9e1d3faac9580b7c44019ab"
+  },
+  "normalization_sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+  "baseline_checkpoint_sha256": "3452b5300f82cd853ac61e6b9efe3fad9bc659b3ae3452987c125ea319e1273d",
+  "split_counts": {
+    "train": {
+      "total": 2716,
+      "positive": 96,
+      "original_human_positive": 0
+    },
+    "dev": {
+      "total": 692,
+      "positive": 32,
+      "original_human_positive": 0
+    },
+    "calibration": {
+      "total": 692,
+      "positive": 32,
+      "original_human_positive": 0
+    },
+    "test": {
+      "total": 692,
+      "positive": 32,
+      "original_human_positive": 0
+    }
+  },
+  "calibration": "maximize detected synthetic calibration wakes with zero observed negative/duplicate wakes; no test tuning",
+  "threshold_grid": [
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    0.98,
+    0.995,
+    0.999,
+    0.9999,
+    1.0
+  ],
+  "window_samples": 25600,
+  "step_samples": 1280,
+  "original_human_wake_positive_n": 0,
+  "source_sha256": "d410de634e6e10deddeeb0dc9e7240b7049b5649463e3efb6a1a89ea9a79bb47",
+  "physical_pi_measured": false,
+  "qualified": false
+}

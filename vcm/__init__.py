@@ -1,2 +1,2 @@
-"""Streaming, constrained-phoneme command recognition. No action executor."""
-__version__ = '0.2.0'
+"""Shared log-mel frontend for finite voice-command recognition."""
+__version__ = "1.0.0"

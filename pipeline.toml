@@ -1,52 +1,17 @@
-# One configuration for train.py, publish.py and the published application.
-# Stage switches accept true/false or expressions using and, or, not and
-# parentheses. Expressions can refer to other switches in the same section.
-
-[workflow]
-setup = true
-train = false                 # Keep the current weights unless explicitly enabled.
-test = true
-validate = true
-report = true
-
-[tests]
-vad = true
-vcm = true
-pipeline = "vad and vcm"
+# Iris release entry point: python train.py (root environment).
+# Frozen experimental schedules live in experiments/iris-release-v1/protocol.json.
+# Installation settings live in config.toml, created from config.example.toml.
+[release]
+experiment = "iris-release-v1"
+protocol = "experiments/iris-release-v1/protocol.json"
+inputs = "experiments/iris-release-v1/reproduction-inputs.json"
+selection = "experiments/iris-release-v1/reproduction-release.json"
+profile = "owner-protected"
+qualified = false
 
 [runtime]
-vad = true
-vcm = true
-
-[validation]
-split = "test"
-max_examples = 0              # 0 means every recording in the chosen split.
-require_quality_gate = false  # Record failed quality gates; this remains experimental.
-threads = 2
-
-[training]
-vcm = true
-device = "cuda"
-seed = 17
-vcm_epochs = 12
-batch_size = 48
-learning_rate = 0.0001
-patience = 6
-max_train_examples = 0
-max_dev_examples = 0
-update_artifacts = true       # Applies only when workflow.train or --fit is enabled.
-
-[publish]
-include_wheels = true         # Offline Python dependency installation on the Pi.
-python_versions = ["3.11", "3.12", "3.13"]
-sample_per_intent = 2
-output = "dist/smart-speaker-rpi4.zip"
-
-[audio]
 sample_rate = 16000
-block_ms = 40
-preroll_ms = 200
-silence_ms = 400
-max_utterance_seconds = 8.0
-energy_floor = 0.008
-noise_multiplier = 3.0
+threads = 1
+engine = "ncnn"
+no_transcription = true
+no_remote_inference = true

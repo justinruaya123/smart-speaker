@@ -1,7 +1,0 @@
-{
-  "checkpoint_sha256": "3452b5300f82cd853ac61e6b9efe3fad9bc659b3ae3452987c125ea319e1273d",
-  "model_sha256": "4cc32fcb2cf20e7bf1310dcbe1d4f4ad0a9ad99d35575d0e31e3c5f5a4db95ac",
-  "policy_sha256": "df61a27990d5ed089e19262ac8fb4d7a5753f7e9aaabb06a67737e1be8e0e4df",
-  "manifest_sha256": "b878f6b74145cbcb26c084588631748102654e228468474033928ace290ea5f4",
-  "test_used_for_selection": false
-}

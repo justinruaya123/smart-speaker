@@ -1,0 +1,18 @@
+{
+  "after_receipt": "experiments/iris-release-v1/reproduction-inputs.json",
+  "after_sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945",
+  "all_non_source_file_fields_identical": true,
+  "before_receipt": "experiments/iris-release-v1/reproduction-inputs-before-source-closure-fix.json",
+  "before_sha256": "3cbd4a0f36777218bed5944d1529f80b03479a2382861be7891129c46284888d",
+  "benchmark_sha256": "ba086fc12638dbf209b17e7d9b495e2f7f065ba2a68ebcfbe9f35746403b339a",
+  "cache_aliases": 134,
+  "files": 4634,
+  "parquet_sources": 10,
+  "reason": "Trace all application_files target/benchmark modes. Root benchmark.py is consumed through a literal filesystem path, outside Python import discovery; include the existing launcher and this append-only source inventory proof.",
+  "schema_version": 1,
+  "source_files_added": [
+    "benchmark.py",
+    "experiments/iris-release-v1/reproduction-source-closure-fix.json"
+  ],
+  "status": "asset_inventory_unchanged"
+}
