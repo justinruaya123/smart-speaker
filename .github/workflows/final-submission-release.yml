@@ -1,0 +1,42 @@
+name: Selected 2M submission release
+
+on:
+  push:
+    branches: [codex/final-submission]
+    paths:
+      - .github/workflows/final-submission-release.yml
+      - scripts/submission/github_release.py
+      - submission/release/downloads.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: selected-2m-submission-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.ref == 'refs/heads/codex/final-submission'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out the reviewed source and automation
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - name: Check archive-integrity failure paths
+        run: python3 -m unittest scripts.test.test_submission_github_release
+      - name: Download and verify the pinned release archives
+        run: python3 scripts/submission/github_release.py --verify-only
+      - name: Prepare, verify, and publish the task-specific release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >-
+          python3 scripts/submission/github_release.py
+          --draft --publish
+          --target 111f73ce4fed27b0ef44916f7391e4b027e50e7d
+          --tag 2m-submission-v1
+          --status-branch codex/final-submission
