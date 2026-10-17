@@ -1,7 +1,7 @@
 # Single environment and generated workflow artifacts
-/.venv/
-/.runtime/
-/.cache/
+/.venv
+/.runtime
+/.cache
 /dist/
 /.worktrees/
 .pytest_cache/
@@ -12,7 +12,7 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Public dataset payloads stay local; manifests, references and licenses are versionable.
-/data/audio/
+/data/audio
 /data/raw/
 # Shared pool payloads; function manifests, source receipts and audits stay versionable.
 /data/pool/
