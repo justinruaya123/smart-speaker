@@ -1,0 +1,13 @@
+{
+  "source_commit": "ba12daf0f77a86a3354d0d7ac716be0d31af05d3",
+  "workflow_run": "https://github.com/justinruaya123/smart-speaker/actions/runs/39011646322",
+  "release_url": "https://github.com/justinruaya123/smart-speaker/releases/tag/2m-submission-3-1",
+  "benchmark_url": "https://github.com/justinruaya123/smart-speaker/releases/download/2m-submission-3-1/smart-speaker-benchmark-2m.zip",
+  "sha256": "17c0239b0b583b919bf0e607734c68cf2fca783e2ea4caeaace190dcc952bf4b",
+  "bytes": 18848931,
+  "verified_files": 243,
+  "recordings": 196,
+  "physical_pi_measured": false,
+  "actions_enabled": false,
+  "download_verified": true
+}
