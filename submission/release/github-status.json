@@ -6,18 +6,21 @@
   "target_commit": "111f73ce4fed27b0ef44916f7391e4b027e50e7d",
   "assets": [
     {
-      "filename": "smart-speaker-inference-2m-v4.zip",
-      "bytes": 13097552,
-      "sha256": "9c45b22b65cfd8072043c6844d1cddf7d9d9079d86d3123439343f83dfb13d14",
-      "url": "https://github.com/justinruaya123/smart-speaker/releases/download/untagged-e0b76a82cb0294c5e1de/smart-speaker-inference-2m-v4.zip"
-    },
-    {
       "filename": "final-submission-benchmark-2m-v3.zip",
       "bytes": 18847326,
       "sha256": "741bc82951331974ef3eb149e02951fd55726a19e946d38417283ce8c3730a53",
-      "url": "https://github.com/justinruaya123/smart-speaker/releases/download/untagged-e0b76a82cb0294c5e1de/final-submission-benchmark-2m-v3.zip"
+      "url": "https://github.com/justinruaya123/smart-speaker/releases/download/2m-submission-v1/final-submission-benchmark-2m-v3.zip"
+    },
+    {
+      "filename": "smart-speaker-inference-2m-v4.zip",
+      "bytes": 13097552,
+      "sha256": "9c45b22b65cfd8072043c6844d1cddf7d9d9079d86d3123439343f83dfb13d14",
+      "url": "https://github.com/justinruaya123/smart-speaker/releases/download/2m-submission-v1/smart-speaker-inference-2m-v4.zip"
     }
   ],
   "tag_commit": "111f73ce4fed27b0ef44916f7391e4b027e50e7d",
-  "workflow_url": "https://github.com/justinruaya123/smart-speaker/actions/runs/39007902300"
+  "workflow_url": "https://github.com/justinruaya123/smart-speaker/actions/runs/39007902300",
+  "workflow_conclusion": "success",
+  "published_at": "2026-10-17T05:53:48Z",
+  "github_api_readback_verified": true
 }
