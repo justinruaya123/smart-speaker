@@ -164,3 +164,11 @@ Desktop.ini
 /SpeakerUI/scripts/qa/startup.mjs
 /SpeakerUI/scripts/inference-sanity.mjs
 /SpeakerUI/scripts/validate-runtime.mjs
+
+# Deliberately shipped finite-command inference bundle; training weights stay ignored.
+!/artifacts/iris/model.onnx
+!/artifacts/iris/ncnn/model.ncnn.bin
+!/artifacts/iris/wake/iris.onnx
+!/artifacts/iris/wake/iris.ncnn.bin
+!/artifacts/iris/owner/owner.onnx
+!/artifacts/iris/wake/silero-vad.onnx
