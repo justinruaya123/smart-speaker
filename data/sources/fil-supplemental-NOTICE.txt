@@ -1,0 +1,115 @@
+---
+language:
+- en
+task_categories:
+- automatic-speech-recognition
+- audio-classification
+pretty_name: AI231 ME2 Filipino-accented synthetic voice commands (supplemental)
+size_categories:
+- 10K<n<100K
+configs:
+- config_name: default
+  data_files:
+  - split: train
+    path: data/train-*
+- config_name: gap_fill
+  data_files:
+  - split: train
+    path: gap_fill/train-*
+- config_name: numeral_wordings
+  data_files:
+  - split: train
+    path: numeral_wordings/train-*
+---
+
+# AI231 ME2 Filipino-accented synthetic commands (supplemental training data)
+
+Optional extra training data for the [AI231 ME2 voice-command dataset](https://huggingface.co/datasets/airimonda/ai231-me2-voice-commands):
+English voice commands spoken by 17 cloned Filipino-accented voices. It follows that dataset's schema and is **train only**:
+it is not part of its train, test or holdout splits.
+
+```
+data/train-0000{0..3}-of-00004.parquet   14,120 clips, 8.7 h, 17 voices, 19 commands (223-1,482 clips each)
+```
+
+- **Audio:** 16 kHz, mono, 16-bit PCM WAV, stored in the parquet files.
+- **Why:** in the AI231 dataset, real Filipino speech is 5.6% of the train command clips (590 of 10,463) and 4.3% of test, and
+  45% of the holdout (84 of 186 clips, one speaker). Models trained on the AI231 train split alone score 6-27% on that
+  speaker's clips. The synthetic voices in the AI231 dataset carry no accent label.
+- **How it was made:** zero-shot voice cloning (CosyVoice2) from 17 short reference recordings (`reference_voice`:
+  `references:tagalog1.mp3` to `tagalog16.mp3` and `references:ilonggo1.mp3`; each a person reading the English
+  "Please call Stella..." paragraph) saying one of the 93 Option B command wordings; each clip passed a transcription check.
+  `accent_group` is `Synthetic`, as for the other synthetic voices; `voice_accent` is `Filipino`.
+- **Columns:** the same first 18 columns as the AI231 dataset (`file`, `transcript`, `command`, `variation`, `slot_value`,
+  `out_of_scope` (always 0), `bucket`, `speaker_id`, `source` (`fil50_persona`), `is_synthetic` (1), `accent_group`,
+  `numerals`, `duration_s`, `transcript_source` (`label`), `variation_match` (`exact`), `whisper_check`
+  (`persona QA pass`), `whisper_transcript` (empty), `note`), plus `reference_voice` and `voice_accent`. `variation`, `slot_value`
+  and `bucket` follow the AI231 `variations.csv`.
+- **Left out:** 273 clips from the same job whose wording is not one of the 93 variations (older wordings such as "Place a
+  call" and "Pause for now", and spelled-out numbers). Noise-mixed copies and voice-converted recordings of a team member
+  are not included.
+
+## Gap-fill clips (config `gap_fill`)
+
+```
+gap_fill/train-00000-of-00001.parquet   1,849 clips, 17 voices, all QA outcomes
+```
+
+The 1,849 clips generated to top thin wordings up to a per-wording target (`accent_balance/plan_gap_jobs.py`, then
+`accent_balance/generate.py`, same CosyVoice2 zero-shot cloning from the same 17 references), **including the clips that failed the
+transcription check**. They are not in the default `train` split. Extra columns: `job_id`, `qa_passed` (passed the Whisper check),
+`qa_rescued` (failed it only because Whisper wrote "100%" for "100 percent"), `manifest_split` (the split the clip got in the
+project's training manifest; empty if it was not used). Filter on `qa_passed or qa_rescued` for the clips the project trained on
+(`manifest_split` shows the ones it actually picked, capped per wording).
+
+```python
+gap = load_dataset("martinnavs/ai231-fil-supplemental-data", "gap_fill", split="train")
+```
+
+Sampling is not seeded, so regenerating the same jobs gives the same wording, voice and label but different audio.
+
+## Numeral wordings (config `numeral_wordings`)
+
+```
+numeral_wordings/train-00000-of-00001.parquet   4 clips, 4 voices
+```
+
+Four persona clips whose wording has a spelled-out number ("wake me up at six am", "set an alarm for eight am", "set the temperature to twenty
+two degrees", "change the temperature to twenty two degrees"). The default `train` split leaves this kind of wording out, but the project's
+training manifest uses these four, so they are published here to make that manifest rebuildable. They passed the same transcription check and are
+not in the default `train` split. `source_filename` is the clip's name in the project's persona pool.
+
+```python
+num = load_dataset("martinnavs/ai231-fil-supplemental-data", "numeral_wordings", split="train")
+```
+
+## Loading
+
+```python
+from datasets import load_dataset
+fil = load_dataset("martinnavs/ai231-fil-supplemental-data", split="train")
+```
+
+To train with it, add these rows to the AI231 `train` split only; do not mix them into test or holdout.
+
+## Caveats
+
+- **Speaker overlap not checked.** The 17 reference speakers are not AI231 speaker ids, but the AI231 group synthetic
+  voices were also cloned from Filipino references (SilencioPH), and whether any reference speaker is the same person has not
+  been verified.
+- **No accent measurement of the synthetic output.** "Filipino-accented" describes the reference voices; it has not been rated.
+- **Single TTS model, short references,** so the voices may be less varied than 17 real speakers.
+- Models trained with a version of this data (the project's `fil50` runs) score 68-71% on the real Filipino holdout speaker
+  against 6-27% for models trained on the AI231 train split alone, but those runs also differ in other training data, so the
+  gain from this data alone is not measured.
+
+## Sources and licenses
+
+| Source | License / terms |
+| --- | --- |
+| Reference recordings (17 voices: `tagalog1-16`, `ilonggo1`) | **source, speakers' consent and license are not recorded; this is an open item the uploader has accepted** |
+| CosyVoice2 (voice cloning model) | model-weights license not verified |
+| Command wordings (Option B variations) | from the AI231 ME2 dataset (`variations.csv`) |
+
+Use for research and education only. Because the terms of the reference recordings are unconfirmed, do not redistribute the
+voices or use them commercially.

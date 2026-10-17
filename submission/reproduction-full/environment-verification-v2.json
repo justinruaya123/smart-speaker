@@ -1,0 +1,19 @@
+{
+  "cuda": "12.8",
+  "einops": "0.8.1",
+  "format": "submission-training-bootstrap-v1",
+  "fresh_uv_sync_locked": true,
+  "gpu_available": true,
+  "matplotlib": "3.11.2",
+  "numpy": "2.3.5",
+  "onnx": "1.20.1",
+  "onnxruntime": "1.23.2",
+  "pyarrow": "23.0.1",
+  "pyproject_sha256": "5823355fb7a1f083a0d88536098a55496bcf6c61568bd5880cf373c5722d094a",
+  "python": "3.13.9",
+  "scope": "Fresh locked training installation/import verification, then locked addition of threadpoolctl for the explicit historical frontend thread contract; actual full fit used the root interpreter with the same numerical framework versions.",
+  "soundfile": "0.13.1",
+  "threadpoolctl": "3.6.0",
+  "torch": "2.10.0+cu128",
+  "uv_lock_sha256": "c24ebb9579b75f06970e130d9a1a6026bff8778d7bb95232da339f6d155d1362"
+}

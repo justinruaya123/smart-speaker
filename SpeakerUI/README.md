@@ -4,6 +4,8 @@ A dark, touch-first voice display for an **800 × 480 landscape Raspberry Pi 4 s
 
 **Production inference uses the smart-speaker Python CPU ONNX worker.** The integrated launcher supplies its complete model bundle, serves the compiled frontend and forwards real states/typed results. Actions are disabled while validating inference. The explicit development mock mode retains fixtures. Enabled Home Assistant and Spotify integrations supply live state and touch controls; inference fixtures, weather and audio calls remain simulated. Allowlisted Home Assistant cameras can stream live video. Spotify playback occurs on its active/configured Connect device, not in this browser.
 
+For the final 2M submission, run `python inference.py --mode ui` from the repository root or extracted inference release. It reads the private root `.env` and optional `config.toml`, serves the prebuilt interface and uses prerecorded recognition replies. Copy [the configuration template](.env.example) to `.env` in that root; keep credentials out of Git. `HA_ENABLED=true` and `SPOTIFY_ENABLED=true` enable the configured providers. Set `ACTIONS_ENABLED=true` to permit touch controls and accepted microphone commands; its submission default is false. CLI diagnostics and recorded WAV uploads never operate devices.
+
 ## Run
 
 Use **`python start.py` in the parent smart-speaker directory**. It bootstraps local tools and exposes setup/publish/serve/benchmark modes. See the [root usage guide](../README.md#smart-speaker--speakerui). In an extracted Pi ZIP, the same command installs the runtime and serves the prebuilt website immediately; it never compiles Svelte on the Pi.
@@ -56,7 +58,7 @@ Animations are retained. The build bakes fixed CSS keyframes, the static icon su
 
 ## Configuration and integrations
 
-Edit [.env.example](.env.example) into a private `.env`. Never put credentials in `VITE_*` variables. Filling credentials alone does not enable a provider. Defaults keep integrations and real actions disabled.
+Copy [.env.example](.env.example) to a private `.env` in the repository root for `inference.py`/`start.py`, or beside the gateway for direct `pnpm dev` development. Never put credentials in `VITE_*` variables. Filling credentials alone does not enable a provider. Defaults keep integrations and real actions disabled.
 
 | Setting | Purpose |
 | --- | --- |
@@ -82,8 +84,26 @@ With `HA_ENABLED=true`, Ambient shows the allowlisted lights' names, on/off stat
 For an ONVIF camera, configure it in Home Assistant first, confirm its feed works there, then append its entity ID to `HA_ENTITY_IDS`, preserving your light IDs. For example:
 
 ```dotenv
-HA_ENTITY_IDS=light.hue_color_lamp_1,camera.your_camera
+HA_ENTITY_IDS=light.hue_color_lamp_1,light.dining_light,camera.dining_area_main_camera_tc70_mainstream
 ```
+
+These are also the final submission launcher's default entity IDs when none are configured. The allowlist makes these entities available to touch controls and the camera view; it does not infer which physical lamp corresponds to an acoustic label such as `light.kitchen`. Map those labels explicitly in root `config.toml` under `[bindings.lights]` when using spoken light commands. Generic **play music** uses Spotify resume with no song/artist search or playlist replacement. Open Spotify on the intended Connect device and authorize it in **Connect Spotify** first. The registered callback must match the launch port, normally `http://127.0.0.1:3000/auth/spotify/callback`.
+
+For example, this private root `.env` enables the existing touch light/camera controls and generic music playback after you fill in your own credentials:
+
+```dotenv
+HA_ENABLED=true
+HA_URL=https://your-instance.ui.nabu.casa
+HA_TOKEN=your-long-lived-home-assistant-token
+HA_ENTITY_IDS=light.hue_color_lamp_1,light.dining_light,camera.dining_area_main_camera_tc70_mainstream
+SPOTIFY_ENABLED=true
+SPOTIFY_CLIENT_ID=your-spotify-app-client-id
+SPOTIFY_CLIENT_SECRET=your-spotify-app-client-secret
+SPOTIFY_REDIRECT_URI=http://127.0.0.1:3000/auth/spotify/callback
+ACTIONS_ENABLED=true
+```
+
+Run `python inference.py --mode ui`; no source edit is needed. Use `ACTIONS_ENABLED=false` to inspect provider state without sending light or playback controls. The model's light labels (`light.all`, `light.kitchen`, `light.bathroom`, `light.bedroom`) are separate from this entity allowlist. There is no default assignment from these labels to either lamp; missing mappings return `not_configured`. An explicit `[bindings.lights]` entry maps one model label to one allowlisted HA light or group entity. Configure any such group in Home Assistant first.
 
 The gateway proxies HA's `/api/camera_proxy_stream/<entity_id>` as a same-origin MJPEG stream. The HA token stays on the server. Home Assistant performs the ONVIF/RTSP conversion; this app needs no camera decoder package. The camera is the centered call view. Minimizing or leaving that view keeps the ongoing call in a floating preview; restoring it reuses the same stream. This is **video only**, with camera off/on, retry and end controls; no microphone, camera audio or two-way talk is connected. Stream reads work with `ACTIONS_ENABLED=false`. Camera-off, hidden pages, hangup, unmount and disconnection release the stream. Setup has a 15-second deadline; open streams are not cut off by the normal five-second API timeout. The gateway permits at most two concurrent streams. See the [camera checks](docs/testing/camera/README.md).
 

@@ -1,0 +1,19 @@
+{
+  "bindings": {
+    ".cache/speaker-pipeline-repair-v1/saved-epoch28/bundle/model.onnx": "fc87c98c242ccb6f37ed9fcd84bad3869b8c90eaae6267fdab2a1a5af2737f6d",
+    ".cache/speaker-pipeline-repair-v1/saved-epoch28/bundle/policy.json": "e3c819583bf852c67aea8f8ba3bac7ddb4aa27a844f3cf02fb85fd75f2e3a9b4",
+    ".cache/speaker-pipeline-repair-v1/saved-epoch28/bundle/recall-policy.json": "02057ac95b37bc1fd011f5bce26f8216c97bea32cf9ee3edd2a300ac088c3fde",
+    ".cache/speaker-pipeline-repair-v1/saved-epoch28/bundle/recipe.json": "6e2beb53e14ce58ae59a49630b0a843a2aed0ef3b4c9b201aecff06688a424f9",
+    ".cache/speaker-pipeline-repair-v1/saved-epoch28/calibration-excluded.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/speaker-pipeline-repair-v1/saved-epoch28/calibration-predictions.json": "8cbea6961f595d623389f6ef851ad2d31c075aef6873d666e4244870e22c718e",
+    ".cache/speaker-pipeline-repair-v1/saved-epoch28/development-fp32.json": "791d445b626abf3b090da4e1434f788b1feca7cb6e46594185d9a7a6a7a2e293",
+    "experiments/speaker-pipeline-repair-v1/protocol.json": "fb2e886e2afb55527036b7082e4858f9d22d0ca2f79b24e6bb51ca129f362b52",
+    "experiments/speaker-pipeline-repair-v1/saved-epoch28/selection-before-calibration.json": "3ade984d72e686096482f04dd6a3c67a06f45a6d5f9015483aceaf8a379360d1"
+  },
+  "bundle": ".cache/speaker-pipeline-repair-v1/saved-epoch28/bundle",
+  "candidate": "saved-epoch28",
+  "decision": "experiments/speaker-pipeline-repair-v1/saved-epoch28/decision.json",
+  "decision_sha256": "ded4547e07aaeb6a039fbf1d0ffefd16a7b96a979f8fc1d2eafe8d7c505ffbf7",
+  "evaluation_scope": "One regression replay of already examined test and holdout; never new validation",
+  "published_test_used_for_selection": false
+}

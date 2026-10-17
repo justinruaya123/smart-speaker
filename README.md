@@ -1,6 +1,84 @@
+<!-- final-submission:start -->
+# Final submission: 2M direct VCM
+
+The primary model is **2,066,831 parameters, control mixed epoch 32** (`speaker-final-refinement-v1`); the 935,567-parameter pipeline-repair model is retained as comparison evidence. It encodes a complete utterance after the VAD endpoint and returns finite typed commands or rejection. The final submission uses ONNX Runtime CPU, one thread, pretrained Hey Jarvis/Silero activation and no transcription or cloud inference.
+
+Use the [`codex/final-submission` branch](https://github.com/justinruaya123/smart-speaker/tree/codex/final-submission) for these entry points. For a fresh checkout: `git clone --branch codex/final-submission --single-branch https://github.com/justinruaya123/smart-speaker.git`.
+
+```sh
+python reproduce.py --seed 53 --yes --no-benchmark  # reconstruct pinned data and fit in a new workspace
+python benchmark.py   # choose silent PC replay or SSH Pi replay
+python inference.py   # choose CLI or prebuilt UI; input/output devices are prompted
+```
+
+See the [reproduction guide](docs/REPRODUCIBILITY-935k-2m.md), [dataset membership and terms](docs/DATASETS.md), [citations](docs/DATASET-CITATIONS.md), and [benchmark handoff](docs/BENCHMARK-HANDOFF.md). The [selected recovery checkpoint](submission/checkpoints/full-selected.pt) and [verbatim metric histories](submission/training/manifest.json) are retained separately from inference distribution. Use `--model-choice compact` to reproduce the comparison model explicitly.
+
+**Reproduction checked on this host:** seed 53, 5,376 optimizer updates, 14.06 minutes fitting/development on one NVIDIA A100-SXM4-40GB. Weight tensors bitwise equal: **True**; maximum difference 0; exported ONNX SHA-256 matches the submission. Human project test: raw 516/636, correct demo accepts 274/636. Regenerated-model PC p50/p95 103.87/221.75 ms; peak worker RSS 84.21 MiB. The original cached fitting/development frontend and single-thread evaluation frontend are explicitly pinned; the initial rounding-drift evaluation is preserved, with no weight or threshold changes. The fit used a separate source/output folder and the root interpreter; fresh locked uv setup was verified separately. [Machine comparison](submission/reproduction-full/verification.json), [new training curves](submission/reproduction-full/figures/training-curves.png), [reproduction slide card](submission/reproduction-full/figures/model-dataset-training-card.png).
+
+For the GUI, copy `SpeakerUI/.env.example` to private root `.env` and configure existing HA/Spotify credentials and flags. The default allowlist is `light.hue_color_lamp_1,light.dining_light,camera.dining_area_main_camera_tc70_mainstream`. Spotify voice scope is generic **play music** on its active/configured Connect device. Device controls require explicit `ACTIONS_ENABLED=true`; CLI, reproduction and benchmarks remain action-free. Map finite light labels under `[bindings.lights]` in private root `config.toml` for spoken light actions. [GUI configuration](SpeakerUI/README.md) describes setup; credentials are excluded from Git and ZIPs.
+
+![Model, dataset and training card](submission/figures/model-dataset-training-card.png)
+
+| Model | Fitting rows / hours | Human + synthetic | Selected human → mixed epoch | Study fit/dev wall-clock | Selected CTC / intent CE / target CE |
+| --- | ---: | ---: | ---: | ---: | --- |
+| 2m | 23,295 / 14.038888 h | 1,869 + 21,426 | 20 → 32 | 33.1745 min | 0.2313055 / 0.02765864 / 0.000810802 |
+| 935k | 23,289 / 14.033144 h | 1,863 + 21,426 | 8 → 28 | 24.0495 min | 0.6652324 / 0.08536265 / 0.006286416 |
+
+Both use one shared A100-SXM4-40GB, seed 53, AdamW (weight decay .001), batch 32 / microbatch 8, 96 updates/epoch, cosine learning rates .0008 human / .00025 mixed (floor .00002), and CTC + .30 intent CE + .15 target CE. Study times exclude input loading and include the unselected 2M completion arm; loss components are training means. CUDA CTC is not guaranteed bitwise deterministic.
+
+| Model | VCM graph bytes | Wake/VAD assets + metadata bytes | Complete selected bundle bytes |
+| --- | ---: | ---: | ---: |
+| 2m | 3,173,089 | 6,014,823 | 9,930,387 |
+| 935k | 3,864,875 | 6,014,823 | 10,624,305 |
+
+Bundle bytes include graph, wake/VAD and JSON metadata; Python/Node/UI dependencies add to the deployed footprint.
+
+Recorded **project typed test**, with 636 human positive references, 229 human UNKNOWN references and 3,368 synthetic positives:
+
+| Model | Parameters | ONNX export | Human raw correct | Human correct accepts | Human wrong positive accepts | UNKNOWN accepts | Synthetic correct accepts |
+| --- | ---: | --- | ---: | ---: | ---: | ---: | ---: |
+| 2m | 2,066,831 | INT8 / 3.026 MiB | 516/636 | 274/636 (43.08%) | 20 | 3/229 | 3219/3368 |
+| 935k | 935,567 | FP32 / 3.686 MiB | 489/636 | 238/636 (37.42%) | 18 | 1/229 | 3078/3368 |
+
+The compact row uses the frozen per-intent recall policy; 2M uses fixed .95 intent / .90 slot gates. Six human fitting labels and export precision also differ, so this is not a controlled size-only ablation. Both fail strict qualification; qualified mode accepts zero commands. Published data was previously examined. Per-intent gaps remain, including compact human brightness correct accepts 0/23. [Compact results](experiments/speaker-pipeline-repair-v1/results.json) and [2M results](experiments/speaker-final-refinement-v1/results.json) retain the complete breakdowns.
+
+The external class scorer uses **all 196 holdout references**, including its own UNKNOWN/reference conventions; it has a different denominator from the project test above. These existing x86 recorded replays use demo decisions:
+
+| Model | Official command accuracy | Official intent accuracy | Command macro F1 | UNKNOWN accepts |
+| --- | ---: | ---: | ---: | ---: |
+| 2m | 87.24% | 87.76% | 0.9038 | 0/10 |
+| 935k | 74.49% | 75.00% | 0.8110 | 1/10 |
+
+Source: [locked official replay](experiments/speaker-official-vcm-benchmark-v1/results.json).
+**Pi/live wake accuracy, intent accuracy, false accepts, p95 latency, RTF, memory and thermal behavior remain unmeasured** until the posted scripts run on the actual device. Desktop replay and successful packaging do not fill these fields.
+
+Latest attached **desktop recorded replay** (2,066,831 parameters, 196 recordings): inference p50/p95 106.58/236.12 ms; peak worker RSS 90.93359375 MiB. Includes frontend, ONNX CPU, finite decoding and policy; excludes disk, utterance duration, wake listening and endpoint wait. Its hardware/model identity and receipt hash are retained in [figure metrics](submission/figures/metrics.json). Typed scoring excludes two uncertain references, retaining their predictions.
+
+| Portable desktop policy / group | Complete correct / positive references | UNKNOWN accepts / negatives |
+| --- | ---: | ---: |
+| raw / human | 81/83 | 10/11 |
+| raw / synthetic | 99/100 | 0/0 |
+| demo / human | 38/83 | 0/11 |
+| demo / synthetic | 99/100 | 0/0 |
+
+![Training and development curves](submission/figures/training-curves.png)
+
+The plots show all completed foundation/control epochs, selected epochs and development checks every four epochs; losses are training component means. The unselected 2M completion-arm history is preserved. The compact repair performed zero additional fits. Regenerate SVG/PNG figures and the evidence tables with `uv run --group training python -m scripts.submission.report --update-readme`.
+
+Extract the prebuilt inference-only ZIP and run `python inference.py`; no pnpm build is required in the ZIP. It contains the selected graph, wake/VAD assets, minimal runtime lock, prebuilt UI and fixed acknowledgment audio. Training datasets, trainers, tests, recovery checkpoints and histories are excluded. Source-checkout GUI startup installs pinned Node/pnpm and builds missing UI assets automatically. The workstation packaging helper `scripts.submission.package` consumes already built UI, separately staged locked production Node packages via `--node-modules`, and verified response WAVs; it is not a fresh-clone build command. Root code licensing does not grant rights to dataset recordings, trained weights or third-party wake assets; retain the source-specific notices.
+
+[Download 2M inference ZIP](https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/resolve/f61d1cfb784ac3c5341899b905d88ccfd06d215e/releases/2m-submission-final/smart-speaker-inference-2m-v4.zip?download=true): 13,097,552 bytes; SHA-256 `9c45b22b65cfd8072043c6844d1cddf7d9d9079d86d3123439343f83dfb13d14`. The [public checksum inventory](submission/release/inference.json) binds its files. The [pinned download receipt](submission/release/downloads.json) records inference and independent benchmark archives.
+
+The earlier README is preserved below as historical context. Its model defaults, causal architecture and action integrations describe earlier workflows.
+<!-- final-submission:end -->
+
 # Streaming VCM: diagnostic semifinal
 
 ## Smart speaker publication
+
+Dataset shipping preparation is documented in the [final structure and Hugging Face plan](docs/PLAN-shipping-and-huggingface.md), [dataset citations and selection/mutation ledger](docs/DATASETS.md), and [local dataset-card draft](docs/HF-DATASET-CARD-DRAFT.md). No upload was performed. The recorded 2026-10-16 access check found the target dataset publicly readable and no Hugging Face token configured; authenticated write permission remains unverified. These documents distinguish the final control-arm experiment from the target's existing dataset snapshot and record unresolved source terms.
+
+For the submitted **935,567-parameter pipeline-repair** and **2,066,831-parameter final-refinement** models, start with the [reproducibility and slide field guide](docs/REPRODUCIBILITY-935k-2m.md), [verified source counts](docs/DATASETS.md#submitted-935k-and-2m-models-verified-input-membership), [publisher citations/DOIs](docs/DATASET-CITATIONS.md), [BibTeX](docs/dataset-citations.bib) and [hash-bound input/artifact audit](docs/model-dataset-usage.json). Their eligible fitting pools are 23,289 and 23,295 rows respectively; the auxiliary numeral pool is excluded. Public code/weight release, derivative DOI, source-specific recording inclusion, clean-clone reproduction and physical Pi evidence remain pending. Documentation and local integrity checks do not establish those publication results.
 
 Publish the selected model without training:
 

@@ -1,0 +1,2863 @@
+{
+  "source": {
+    "repository": "airimonda/ai231-me2-voice-commands",
+    "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+    "file": "data/holdout-00000-of-00001.parquet",
+    "sha256": "9917e336ec596eaaddb476e266f36451326e3f8e5a2cb3dafbb675c33be133aa"
+  },
+  "scoring": "Frozen project typed references; uncertain references excluded with predictions retained; raw original WAV, no trim/normalize; not the official live acoustic benchmark",
+  "rows": [
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000000",
+      "parquet_row": 0,
+      "sha256": "1289b1a8fbca53c7c3acffe89101219801d2166d9d8adcf4b285e6a24303463e",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0000.wav",
+      "expected": {
+        "intent": "PLAY_MUSIC",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000001",
+      "parquet_row": 1,
+      "sha256": "be9b001136c9219af1f06b84b75f85839861f0d882a2d73e1c7b7980a2851b0f",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0001.wav",
+      "expected": {
+        "intent": "PLAY_MUSIC",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000002",
+      "parquet_row": 2,
+      "sha256": "81776b23eb521a5b956beba19f1e593841a043a3548749687419629efa3c1698",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0002.wav",
+      "expected": {
+        "intent": "PLAY_MUSIC",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000003",
+      "parquet_row": 3,
+      "sha256": "159de6bed8005ccdc713f67037e74220ce32ec9de409cbeb0a1b7ace2563437f",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0003.wav",
+      "expected": {
+        "intent": "PLAY_MUSIC",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000004",
+      "parquet_row": 4,
+      "sha256": "d937e7a9752f0f1b2bdbba664698bebb783ebf3235b24607277a1c95961d2504",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0004.wav",
+      "expected": {
+        "intent": "PLAY_MUSIC",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000005",
+      "parquet_row": 5,
+      "sha256": "5d6d50afee449a10cb8550b5345a854435d320915865e0e61607cfe3e8d167f4",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0005.wav",
+      "expected": {
+        "intent": "PLAY_MUSIC",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000006",
+      "parquet_row": 6,
+      "sha256": "6363371a9f6f5602265ff0570e58d529d903a0faeb239e16d6efe291fd960a52",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0006.wav",
+      "expected": {
+        "intent": "WEATHER",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000007",
+      "parquet_row": 7,
+      "sha256": "ad12faec184342a67497035b4a4d72fc873d19e492c036414c54be5c46b8b482",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0007.wav",
+      "expected": {
+        "intent": "WEATHER",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000008",
+      "parquet_row": 8,
+      "sha256": "582da7a6f73d71d9aaa52d5555cff8718e8d8b1c32a2798e9da14c1859f6cea1",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0008.wav",
+      "expected": {
+        "intent": "WEATHER",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000009",
+      "parquet_row": 9,
+      "sha256": "01da9e98f23268bd590ed9018da59797b4cfecdca233b5783b3267e09af0d67a",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0009.wav",
+      "expected": {
+        "intent": "WEATHER",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000010",
+      "parquet_row": 10,
+      "sha256": "7e27e0030c7bee8f5d573a623d7027e5a7a64e6158ab6312994778ade09409e0",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0010.wav",
+      "expected": {
+        "intent": "WEATHER",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000011",
+      "parquet_row": 11,
+      "sha256": "7207e24708a90acadc55c34609a17a1f21bb983bbfe32ee7606b1002c7d1b391",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0011.wav",
+      "expected": {
+        "intent": "WEATHER",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000012",
+      "parquet_row": 12,
+      "sha256": "e11c03e9e89ac3ceb76611711fbdd0b13f72a1942b9abc6f7c248b752fe45b25",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0012.wav",
+      "expected": {
+        "intent": "TIME",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000013",
+      "parquet_row": 13,
+      "sha256": "4cbcc1c32a5a50c7d1f7a63958e60c761c6237bbdeadec44712e36cfd7fad879",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0013.wav",
+      "expected": {
+        "intent": "TIME",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000014",
+      "parquet_row": 14,
+      "sha256": "064bc55dd5afb1856d6b0acf3a6df7e00bbf462b91ffa92b4ed88aa225bb7d87",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0014.wav",
+      "expected": {
+        "intent": "TIME",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000015",
+      "parquet_row": 15,
+      "sha256": "39697f921c3b694ef5c8c65817003cc6b19311510a307b1b6a508c6f21f93071",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0015.wav",
+      "expected": {
+        "intent": "TIME",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000016",
+      "parquet_row": 16,
+      "sha256": "4c8bff0a32651dddf3751cdedd9054c92eab24430d2f85cf388269fcc6ca3bd2",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0016.wav",
+      "expected": {
+        "intent": "TIME",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000017",
+      "parquet_row": 17,
+      "sha256": "cf69cc1dc8e5847b0847bcb98c62cbed7ace416d8a4adf247e7155c7343fb355",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0017.wav",
+      "expected": {
+        "intent": "TIME",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000018",
+      "parquet_row": 18,
+      "sha256": "3615f1b74a9fe6ea236a0129b4134d58f479ba063aefad928fb2cce7c9442b92",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0018.wav",
+      "expected": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000019",
+      "parquet_row": 19,
+      "sha256": "89cedde0b7c10e2301f4f3b38c49c6191343da1fb8736f9f87d5561ede07adfe",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0019.wav",
+      "expected": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000020",
+      "parquet_row": 20,
+      "sha256": "aac2d222332ac1b9441850086a20a089713340d9b9d9c8e0645bbf1a77087991",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0020.wav",
+      "expected": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000021",
+      "parquet_row": 21,
+      "sha256": "856ef0f4811299b2cfe75cd16fbc77a70ea6270aab7d6a745e8670182dfbc46a",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0021.wav",
+      "expected": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000022",
+      "parquet_row": 22,
+      "sha256": "f867ac2e0c71bf80c4a9aedf7790c7d721ddd09c058a4c6b2ecabd9893024a81",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0022.wav",
+      "expected": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.kitchen"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000023",
+      "parquet_row": 23,
+      "sha256": "eae7bf407f44e804f49fa6c6b95e71e4956f67eecdf5f7992a34bc5e06297b45",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0023.wav",
+      "expected": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000024",
+      "parquet_row": 24,
+      "sha256": "7b34b416ed1f0a561a28eaba15df8c79db925de3adf438f8f8a7838ee65bea05",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "explicit_light_target",
+      "audio": "0024.wav",
+      "expected": null
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000025",
+      "parquet_row": 25,
+      "sha256": "4902c1d29efbaaceed6cf43ea2a8291598fbb8751a7841c4c427837d726353cf",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0025.wav",
+      "expected": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000026",
+      "parquet_row": 26,
+      "sha256": "26430255643d4651ff37a7369db6918f34b56d8db2409a7008351b65b754d53c",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "explicit_light_target",
+      "audio": "0026.wav",
+      "expected": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.bedroom"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000027",
+      "parquet_row": 27,
+      "sha256": "167aa344abbd52cc58eee86463446bcae76adb5881dc5c76e8e733b91c85909a",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0027.wav",
+      "expected": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000028",
+      "parquet_row": 28,
+      "sha256": "8ea5cf896edad014c0fa31ff702468d5a118ee89c7c5aee42183e6e884bdc92b",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0028.wav",
+      "expected": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.kitchen"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000029",
+      "parquet_row": 29,
+      "sha256": "a054fd2bdc5730e436d17f9b64b136fc44cc01eaa7bc50ab7aff6c2b5b9e10a9",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0029.wav",
+      "expected": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000030",
+      "parquet_row": 30,
+      "sha256": "09b07f37484f692f22c6ebe12955ae6f4693462a9c178f9ce8f1bff7baf77467",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0030.wav",
+      "expected": {
+        "intent": "PAUSE",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000031",
+      "parquet_row": 31,
+      "sha256": "9fb406c5b00ea88bd5b10af0da476ff39de04ba0457a382c0c61c5d549e76c22",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0031.wav",
+      "expected": {
+        "intent": "PAUSE",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000032",
+      "parquet_row": 32,
+      "sha256": "a9e98f61d1fc88d94606399778d996a76c04692e176da89d6305b8976431f2a4",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0032.wav",
+      "expected": {
+        "intent": "PAUSE",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000033",
+      "parquet_row": 33,
+      "sha256": "e122b625c924a7c413a6c66da411716e059875395b0614dc930049e75a367b42",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0033.wav",
+      "expected": {
+        "intent": "PAUSE",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000034",
+      "parquet_row": 34,
+      "sha256": "67f3fd09b8d6a8ac35f7eb65f17a32018165bd02cdf9468164b63f7695002828",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0034.wav",
+      "expected": {
+        "intent": "PAUSE",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000035",
+      "parquet_row": 35,
+      "sha256": "43737194c4d0e40628c25aa49d4553556bd6d9db2ae020d22c29a0d5cdeb2078",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0035.wav",
+      "expected": {
+        "intent": "PAUSE",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000036",
+      "parquet_row": 36,
+      "sha256": "e75e5d9c35b9f74eb809f61c93a5b6ceff982e419b74a24c0aac881cace60764",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0036.wav",
+      "expected": {
+        "intent": "STOP",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000037",
+      "parquet_row": 37,
+      "sha256": "64c36239510d8a6d2324770ec7b6e2bfa7b3c8eed6f8ac81e21edf80ba6b9f3a",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0037.wav",
+      "expected": {
+        "intent": "STOP",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000038",
+      "parquet_row": 38,
+      "sha256": "504ac720676cf3e607d329953fa9b7b1ea943457d58d6722b85aad3572b56518",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0038.wav",
+      "expected": {
+        "intent": "STOP",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000039",
+      "parquet_row": 39,
+      "sha256": "c5f3c50a1998f7a2bb6e9d894997801039d90e2053fa2f898f5a43dddb05a0c8",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0039.wav",
+      "expected": {
+        "intent": "STOP",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000040",
+      "parquet_row": 40,
+      "sha256": "b8dec910e0ed18e1eadc9187a87c50bd8c441e312c7e9eba8c4601b0f4364c5c",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0040.wav",
+      "expected": {
+        "intent": "STOP",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000041",
+      "parquet_row": 41,
+      "sha256": "a55b33a0847b8e8e3f531f1bf5d46c105a485cef8be7b63aff62070d1d79a5c9",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0041.wav",
+      "expected": {
+        "intent": "STOP",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000042",
+      "parquet_row": 42,
+      "sha256": "5f673c68dbdf5898ea95f9ab7bcbcb4c0eb2f321d6fd3984cd5711ad1f7ed81a",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0042.wav",
+      "expected": {
+        "intent": "NEXT",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000043",
+      "parquet_row": 43,
+      "sha256": "89fc47cd78c02c4b85eebf2e14e4746ad320ee6aac4f570e8bf18534d5777c1b",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0043.wav",
+      "expected": {
+        "intent": "NEXT",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000044",
+      "parquet_row": 44,
+      "sha256": "32fc511e9c485181bfd711a41e7bca5d143d640938923f6a6a8c46472cccdb8d",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0044.wav",
+      "expected": {
+        "intent": "NEXT",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000045",
+      "parquet_row": 45,
+      "sha256": "bbe5f42b6062a54a7711a1a40e00c2f4d573df89fe960bbcb052ac8ccb58defb",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0045.wav",
+      "expected": {
+        "intent": "NEXT",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000046",
+      "parquet_row": 46,
+      "sha256": "ca4779cb1cd2923bf808aac356b730581f6fdb5c22108ea74fddbda69b041e53",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0046.wav",
+      "expected": {
+        "intent": "NEXT",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000047",
+      "parquet_row": 47,
+      "sha256": "a01d85be619706e117c6da781777bdcf8e3a261cf42956de6dc80e8d9611eac7",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0047.wav",
+      "expected": {
+        "intent": "NEXT",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000048",
+      "parquet_row": 48,
+      "sha256": "6cc2b510ff4d08caccac00c94fa37905dca4edb1e8f3fdfc1162d684b6f92df3",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0048.wav",
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000049",
+      "parquet_row": 49,
+      "sha256": "c943e578021c893864e97403f6ec719d6ad74634574952e226c293d81fd2ed02",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0049.wav",
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000050",
+      "parquet_row": 50,
+      "sha256": "e40d0b391459dc28a65d0a51618724147231cf6b2875eeefc063745affd7b1ef",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0050.wav",
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000051",
+      "parquet_row": 51,
+      "sha256": "337039a300f7902b5b27318f0ce5dac4e07eb556ca8cbd99189828b9a5a54787",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0051.wav",
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000052",
+      "parquet_row": 52,
+      "sha256": "36bd6bfa68d14da199544ae5306debafff2d242f915caa66b657fe4c8d256aa0",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0052.wav",
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000053",
+      "parquet_row": 53,
+      "sha256": "8de2f9f0e1ec4d8542f02f8d871ea1f3119c0f8b2498606df352090800534594",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0053.wav",
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000054",
+      "parquet_row": 54,
+      "sha256": "a8872e0a37e3bc5ccded3bd89768a8236cc620207962643a9bbbb15a202bb099",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0054.wav",
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000055",
+      "parquet_row": 55,
+      "sha256": "6494ac275f9b59df29d22422d9f39aad9bf553c73ba8d29f97fd71988b599430",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0055.wav",
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000056",
+      "parquet_row": 56,
+      "sha256": "d3d28154d09342eb97cbbfba68178184ed4eb7cb45a0e239dc5527f56a1eb7c2",
+      "kind": "human",
+      "metric_eligible": false,
+      "reference_reason": "unresolved_reference",
+      "audio": "0056.wav",
+      "expected": null
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000057",
+      "parquet_row": 57,
+      "sha256": "8a760c7ed986cdc7ffad5c282200bc527f0529cbb7d072cd0b5fbea60b56556b",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0057.wav",
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000058",
+      "parquet_row": 58,
+      "sha256": "7d6b8c3aa4f7d00a26bae7e8b416c669693368c22a7a1b7f92b1651ac93740ff",
+      "kind": "human",
+      "metric_eligible": false,
+      "reference_reason": "unresolved_reference",
+      "audio": "0058.wav",
+      "expected": null
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000059",
+      "parquet_row": 59,
+      "sha256": "a5783f3c93239fa6ff3ee594c5268a2b35c667bdf0bdbddbc8cf06f5c4d7b9cd",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0059.wav",
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000060",
+      "parquet_row": 60,
+      "sha256": "2d7bbbb15b665ab8d482b6bc33f5212dac0f0c2182e31f0c312ee07c03431df9",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0060.wav",
+      "expected": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000061",
+      "parquet_row": 61,
+      "sha256": "a5e40b4ce9c700fed33c4b0d169d6e6acf947e75260b25dc58b580bae2e35948",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0061.wav",
+      "expected": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000062",
+      "parquet_row": 62,
+      "sha256": "a359588d75db4848b8225e979d3b157bdd11b6feada29e4f6305c100526c58ad",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0062.wav",
+      "expected": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000063",
+      "parquet_row": 63,
+      "sha256": "0871797020ba9eca0fa14c8c0f4578ce58647b97d97b9f99c9ee808e8b67a4fc",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0063.wav",
+      "expected": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000064",
+      "parquet_row": 64,
+      "sha256": "742edf013fe38a9cc9664b7f28ed1f03f107ee1bb03ea1ce9c80a5b007b5c050",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0064.wav",
+      "expected": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000065",
+      "parquet_row": 65,
+      "sha256": "a6f7f66d35ae84eca85f08efe2e2a9d121d299550869f443224b8e78f796282b",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0065.wav",
+      "expected": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000066",
+      "parquet_row": 66,
+      "sha256": "c38cca4f4893414b870f5ad60395956ad47041bb7d0f19e16f002bc823de3d59",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0066.wav",
+      "expected": {
+        "intent": "MESSAGE",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000067",
+      "parquet_row": 67,
+      "sha256": "4f2fda0fdb58a9b64e279fb69d7cc353fe3057b61820389138502ca0fbfdc851",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0067.wav",
+      "expected": {
+        "intent": "MESSAGE",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000068",
+      "parquet_row": 68,
+      "sha256": "4c33bcff1db13fb15e57f8741c0de8788583ea6780b207b2b9c15238d2407dc3",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0068.wav",
+      "expected": {
+        "intent": "MESSAGE",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000069",
+      "parquet_row": 69,
+      "sha256": "2481fa63601cb58fd7237051b67334f25f7f32bb8f77eda0514693055861ba29",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0069.wav",
+      "expected": {
+        "intent": "MESSAGE",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000070",
+      "parquet_row": 70,
+      "sha256": "2a96c0a21df205f11eb4afee3b04d20490a296efe07eb4e27458f486be528f8b",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0070.wav",
+      "expected": {
+        "intent": "MESSAGE",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000071",
+      "parquet_row": 71,
+      "sha256": "b29f093e93cb20cb9b46a23ded2ed1b9b82c68473e897362e6c246583b0271fa",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0071.wav",
+      "expected": {
+        "intent": "MESSAGE",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000072",
+      "parquet_row": 72,
+      "sha256": "21f7dbc20207c39b75e3226a9bf3def50d23d33d04d6a1c9a6704869c7a2b88c",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0072.wav",
+      "expected": {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000073",
+      "parquet_row": 73,
+      "sha256": "ed7b4b11bef2e60e30a4cce414f8e35b52e9c20cdb7a7ddfe8dc530ce38a78db",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0073.wav",
+      "expected": {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000074",
+      "parquet_row": 74,
+      "sha256": "193c3f0e3e11af6b5f8de0aa1f9d1661b61f0e7bb77088609c60cde3acb2debf",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0074.wav",
+      "expected": {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000075",
+      "parquet_row": 75,
+      "sha256": "959cb34f36432af41156618dad8b6ba2d9939f10af26c687579d5ed8c9f229f7",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0075.wav",
+      "expected": {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000076",
+      "parquet_row": 76,
+      "sha256": "9d49d07e8e0d3258ac484c3de580fe93efa07c344f30eb43d313cc994af94a85",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0076.wav",
+      "expected": {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000077",
+      "parquet_row": 77,
+      "sha256": "481a13b427bf3a55406cbe0f05d2776793c80842cb26c20c3c0d1cd8a2028a54",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0077.wav",
+      "expected": {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000078",
+      "parquet_row": 78,
+      "sha256": "205b9e77c1695de5a0f4c671ab2239268727225b7fd5fbb51051c673a0731bcf",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0078.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000079",
+      "parquet_row": 79,
+      "sha256": "9a30b87191e91c7b5298a0236e1dc5dfe2a2317966bcd84f97c5682eb8f8cddc",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0079.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000080",
+      "parquet_row": 80,
+      "sha256": "cece0a4f530afc7b2372d5768fa4deca9de21223da226cfeca7ace297235ceea",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0080.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000081",
+      "parquet_row": 81,
+      "sha256": "d5c38893067985c5d994a408806ac4638d50a584014ac5550992198a45692f50",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0081.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000082",
+      "parquet_row": 82,
+      "sha256": "46f243337ab5ac4dba33d8d30c8f706fbf4d50369af8e16489491ef38508837d",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0082.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000083",
+      "parquet_row": 83,
+      "sha256": "3b6054cba4cec4a2f9dfe83c5cd55853c00e2f7b35504351f7d27a4793629374",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0083.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000084",
+      "parquet_row": 84,
+      "sha256": "e3434ab9587310aa6dd0c42f222041d543f8ca13feae026ad871051b8e447de5",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0084.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000085",
+      "parquet_row": 85,
+      "sha256": "777830534a5ca2e030c3cdf8d26c4f53797c78211c6d393da6a59c128d8fe510",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0085.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000086",
+      "parquet_row": 86,
+      "sha256": "0a37de1a87040248ab946f8a69e2b1b9ba0da2e762a5e35e08fe3cda8dd057e1",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0086.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000087",
+      "parquet_row": 87,
+      "sha256": "262beabd91f4f19680a09a205f8fbe17d0a59f7859e79f6a9392054ea543186f",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0087.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000088",
+      "parquet_row": 88,
+      "sha256": "eca262b236124ca4ab5c760e324f816f972106ee40ef0a406371fc0a9327b001",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0088.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000089",
+      "parquet_row": 89,
+      "sha256": "58561f3100dcc78a54dc8188c211f86be1266b15c9132f2db15e345dbfe2ed78",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0089.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000090",
+      "parquet_row": 90,
+      "sha256": "9b45a7adab7d5527a24c0a8b0d11f85acf29c34577c1717ac27dec49b0863dee",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0090.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000091",
+      "parquet_row": 91,
+      "sha256": "b2aa8fdfddb28715c61d7e8700e311a6f98ed06f057e3b13b6d2023437e27bf9",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0091.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000092",
+      "parquet_row": 92,
+      "sha256": "ded4b5eb228f41f01cd64f25a685b5b9fdadf6592c6918cb26a87b6bb92a80ff",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0092.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000093",
+      "parquet_row": 93,
+      "sha256": "dd0ae0df3fe3ecbeaf05cf929d2f521ae198f5ba6f4ffe7f11020e750b400829",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0093.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000094",
+      "parquet_row": 94,
+      "sha256": "7d565d023eab0bc7db7c5ffd73079586f6530be974c704dc52193443ee91208d",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0094.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000095",
+      "parquet_row": 95,
+      "sha256": "8f8cd1dae35ce3949f54a0705afc0ba70f2c4597d4c26d04c038c16c3d2fbd15",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0095.wav",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000096",
+      "parquet_row": 96,
+      "sha256": "a0376188eee742a3ce03fb3ee6f4462def1098c23f6caf9eab6632d9040b9035",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0096.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000097",
+      "parquet_row": 97,
+      "sha256": "86069a87d824d09c8864f9589d0878fe67a67cd39e82130d62e2b87c42b8958c",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0097.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000098",
+      "parquet_row": 98,
+      "sha256": "b3a9516f742689421018a4c2b144bf454db85e9860f04b2bc9c8804d708b3829",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0098.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000099",
+      "parquet_row": 99,
+      "sha256": "0d796831589129c04ad809a6e223452da1c111188a6b9135d40edff39ab88edb",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0099.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000100",
+      "parquet_row": 100,
+      "sha256": "7d34feec5d4ddda92efa0f72753ecd88f38d371e4d465e804ae873c065aa18fd",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0100.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000101",
+      "parquet_row": 101,
+      "sha256": "4a8ccef42086a75073e90568c1cca3a113800b6651c0cf5b1ce8d744b27e6ecb",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0101.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000102",
+      "parquet_row": 102,
+      "sha256": "f917400582c39603c47679e45ace9f69f0c641709b4992300d64700bcaaed3ed",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0102.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000103",
+      "parquet_row": 103,
+      "sha256": "e62026afb7c9660478e3c890e1c3b502ec17fe12c00b60a328dd5191f3f29456",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0103.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000104",
+      "parquet_row": 104,
+      "sha256": "9b16ea2fb8ccb9c2229bf116159e6aa66e152266b98ac3795cdf80c89dc5e84f",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0104.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000105",
+      "parquet_row": 105,
+      "sha256": "3a7d47b6c25e242191ebfa1f27fc8f0d36acc1ba21b67c4ab6578e60a9960f55",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0105.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000106",
+      "parquet_row": 106,
+      "sha256": "c425f4478163e77026508778e74f781dcc4e41ba05341da85bdb834dd26837a1",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0106.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000107",
+      "parquet_row": 107,
+      "sha256": "09bbb09cf4f69de8d1dadcccea8ef288353fb3d0c16b936733036bb6b85aa592",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0107.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000108",
+      "parquet_row": 108,
+      "sha256": "260364e3d650a0d53a45fb81dff98a011b1642e22dd4d30d8bd436044a297bcd",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0108.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000109",
+      "parquet_row": 109,
+      "sha256": "ff1ecc109b7c667e2ace636e2037d5cb52f4709b76ae3b52709c0b1ca9acfbe0",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0109.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000110",
+      "parquet_row": 110,
+      "sha256": "a5a213b22d0e94a73c09f18f0e3df4d689ae7a03ee3430e5782f8bfb543c070f",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0110.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000111",
+      "parquet_row": 111,
+      "sha256": "786b331c980e1f22fd12001894788758d0049bae0319a2213ddd79bd458cb44c",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0111.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000112",
+      "parquet_row": 112,
+      "sha256": "5767868601751619587111d08ae32cdd22bd365255a47a7636bfc15e10607bd7",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0112.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000113",
+      "parquet_row": 113,
+      "sha256": "79f4451b34f362e75dd9420b0b4eca3461a76b91fc12d6be202b7afba55995dd",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0113.wav",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000114",
+      "parquet_row": 114,
+      "sha256": "292d49d8b6f3c815f3082843761ecec577ebb0d7da403445e7bc8139f904090d",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0114.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000115",
+      "parquet_row": 115,
+      "sha256": "2243c6858f97eced6eccfa12b3cd36c320fa933ccd6b72af89d784b7da5f9a76",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0115.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000116",
+      "parquet_row": 116,
+      "sha256": "1f3315684a15344fed6d37b732570b7c29236d659635bf7f016ad56eba18c845",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0116.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000117",
+      "parquet_row": 117,
+      "sha256": "35cea99a952202c0fc3eac78526aabc78e0d2f91769c819f3014d158fff960d8",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0117.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000118",
+      "parquet_row": 118,
+      "sha256": "5fcc3572713fb472f8b7154493ee647cf716069dd76d4f374e9aa531aeabea4f",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0118.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000119",
+      "parquet_row": 119,
+      "sha256": "350b8b00f538aed737252be2a02f6a4352e325206518063699d17d058b26ef0b",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0119.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000120",
+      "parquet_row": 120,
+      "sha256": "61774b994ad3c0e46a33483ac0de6c1f1feb1a4df3e5e13dbb579cdd302f829d",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0120.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000121",
+      "parquet_row": 121,
+      "sha256": "d7b2af42625891edb5af6393629c71f761fd44d46f8d2b3ca457e04eb00ea304",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0121.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000122",
+      "parquet_row": 122,
+      "sha256": "adc256995221daeaacc9f81f986393fe2b76e01f519b0ee3b7c9492027e5989a",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0122.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000123",
+      "parquet_row": 123,
+      "sha256": "d972a3f4c58bca472fb8a789c51c0343fc265aa7dbe189518e4a19b53160e8b5",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0123.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000124",
+      "parquet_row": 124,
+      "sha256": "4e4bb5822c22984ecf5962721a6fb32a1bb195e8f6110e56759cc0068510c4c1",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0124.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000125",
+      "parquet_row": 125,
+      "sha256": "8a2c0b40ca4f4c18b8659be156cd7e34e7b8c1c6939b9519b7437d3e75f04d5e",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0125.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000126",
+      "parquet_row": 126,
+      "sha256": "e0f3673917e9fd7b8dbd8a4fbfad10312ef9e513bcb8c73b901e49b7dffd24cf",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0126.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000127",
+      "parquet_row": 127,
+      "sha256": "e87ffb680667354b12daadc264e7acb20066692d0e567042f30ed3ce1deb1ffb",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0127.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000128",
+      "parquet_row": 128,
+      "sha256": "9a821f9f4f9655dff489d4f26b3f8615ea361cd6e3f5c333e17da5459372eb7a",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0128.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000129",
+      "parquet_row": 129,
+      "sha256": "a958370c962d0875651d8fcc3682c68c75c8688cfe575eba23d209117e8767c5",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0129.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000130",
+      "parquet_row": 130,
+      "sha256": "49ea0ee880e258b6c39af2fef76633a51c78b96125c83a319d3db0bcde19a90a",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0130.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000131",
+      "parquet_row": 131,
+      "sha256": "4b77f71083f4455ebaa1bcace92c943a7dc3b25c18541a2574f2e8b98fff1e12",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0131.wav",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000132",
+      "parquet_row": 132,
+      "sha256": "93c97a84357d353bcbfaf1d9f6b147db698345913338ff84ae676c9a880db012",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0132.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 20
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000133",
+      "parquet_row": 133,
+      "sha256": "e91a6216d1c560d15cb52f0fd2fa44549c6d1ecfdba75809053d735757ed8cb8",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0133.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 20
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000134",
+      "parquet_row": 134,
+      "sha256": "f8d9ef7550d931ef9e7e55b7f19a10ba4a00b626f03364a6b200cf9c13d90499",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0134.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000135",
+      "parquet_row": 135,
+      "sha256": "49a00875688e9b3eb28f3878ae629ed32d319d7d2716145d4caf0793c48ce3bd",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0135.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000136",
+      "parquet_row": 136,
+      "sha256": "90e35fff4f1e3ed2c9fd09b6f7afb7d68f87afc10bd848dc0081f3a4febc1aa1",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0136.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000137",
+      "parquet_row": 137,
+      "sha256": "ee2b5936512d7e82e238da88bf01e1020371341df2fe75947fdeae332e753168",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0137.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000138",
+      "parquet_row": 138,
+      "sha256": "73f595a78cf51771f6dd9c18451f6fd986672ce928d31f8bcbad0e4eb1f7ed0c",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "explicit_brightness_target",
+      "audio": "0138.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 20
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000139",
+      "parquet_row": 139,
+      "sha256": "68f9494d4ba559c97576866e6efccd21fba07c16ed35d133f9b97cd49284f937",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0139.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 20
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000140",
+      "parquet_row": 140,
+      "sha256": "305f7a3c18760a2014f92194be0efb9331198b4e0b75edca637533e6c7bb95ac",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "explicit_brightness_target",
+      "audio": "0140.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000141",
+      "parquet_row": 141,
+      "sha256": "370883e9e1011b241117ddd3b32e14bd699c085ff3a4958e17206c49f24c492c",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0141.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000142",
+      "parquet_row": 142,
+      "sha256": "a6c1efd41031931ee0597acdecd263f15a37293c3687a40a1817a6662c6b6eef",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "explicit_brightness_target",
+      "audio": "0142.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000143",
+      "parquet_row": 143,
+      "sha256": "73bab9b555cc470ae561e9bfa2a9e6202cdb9c5b9c9736b08e552259ac53c340",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0143.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000144",
+      "parquet_row": 144,
+      "sha256": "3a5bc3f4e114bf0bdaa4f2170fbce7a533983db342180d9a71ceb8f77c3e6b94",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0144.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 20
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000145",
+      "parquet_row": 145,
+      "sha256": "f01b78ee703d94cf878d525c04e8cfefb1c896c55d9c004a1b54a96687406137",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0145.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 20
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000146",
+      "parquet_row": 146,
+      "sha256": "ebe90e2dce0af047678b5f5b1e43e5b5934e871b143e17e725128687e957aa02",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0146.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000147",
+      "parquet_row": 147,
+      "sha256": "f89fe7485f7f00e0a06493b9634325469d6c10c05813a30c086ce88d6d79a53f",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0147.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000148",
+      "parquet_row": 148,
+      "sha256": "db88e2a01458dbda8b186b2e1553b761bb11406d40602d0b88d815df1b3406bf",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0148.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000149",
+      "parquet_row": 149,
+      "sha256": "59c1427aa80261d37ff068d2a4c7fdea8b1f2b0c1aa3f3d9402433fa0077958b",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0149.wav",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000150",
+      "parquet_row": 150,
+      "sha256": "0fb7ba9fb8de7b8de7bf0a992642cadabe0ed77382b5456a4d53b10ef435740e",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "explicit_color_target",
+      "audio": "0150.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "red",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000151",
+      "parquet_row": 151,
+      "sha256": "092bdcb7de0b874a260fa394e9c5c19fc11884c5c1f04c3ceea8a4c89fbda8c3",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0151.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "red",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000152",
+      "parquet_row": 152,
+      "sha256": "49834ad10cc68618deda17b0a8aed4104012ef314422cf99089c60c056c80704",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "explicit_color_target",
+      "audio": "0152.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "blue",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000153",
+      "parquet_row": 153,
+      "sha256": "013c84e5c1413c52135e21b06e05e8a3e3ce6a00dfaf725c504f146be31727e1",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0153.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "blue",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000154",
+      "parquet_row": 154,
+      "sha256": "62f427dfa5d8dd49e2ab44860c14c7067a4c0a38940528cba1a4a19b4f4a905f",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "explicit_color_target",
+      "audio": "0154.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "green",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000155",
+      "parquet_row": 155,
+      "sha256": "2257c4f532d51ad8f1fa11ca4b09e192f2a3bd34fc4b86cc8e00466760c2adc2",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0155.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "green",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000156",
+      "parquet_row": 156,
+      "sha256": "8bea1025bdc08aab1b59b20346d8c22bd160a4a82bb32d237e322076b442e5c2",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0156.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "red",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000157",
+      "parquet_row": 157,
+      "sha256": "c01dbcfd941932071e7f6c9169c9cbb5ddae133a1ccdfb7fbbc9e5ea5c73a831",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0157.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "red",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000158",
+      "parquet_row": 158,
+      "sha256": "91ffc04d3f5aac84b8eaee6ead0afd5a760219ee04b4f3ecefff4f5303b7388c",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0158.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "blue",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000159",
+      "parquet_row": 159,
+      "sha256": "ad61e9ee8f8a6da126f5e79690afce1b6d40a8d539d1448e94902c07cbd660d7",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0159.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "blue",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000160",
+      "parquet_row": 160,
+      "sha256": "433ab6e800b556e294f35b873095e17d834c761503a8c6c4470d7c8d5a84064b",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0160.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "green",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000161",
+      "parquet_row": 161,
+      "sha256": "b92685d87a5499b5b170a480323ca86f157702573613ef8823a370ab07857d0d",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0161.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "green",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000162",
+      "parquet_row": 162,
+      "sha256": "b90f749ce94526a05b1cd977f1800d8b6603494261e1faeb0851c37f1417841a",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "explicit_color_target",
+      "audio": "0162.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "red",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000163",
+      "parquet_row": 163,
+      "sha256": "92221c01624dd09d5b65668f1795f7dc441a037cc44ab07d296f48819c794c80",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0163.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "red",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000164",
+      "parquet_row": 164,
+      "sha256": "7e1597e3688a9e25a4f6ee8e09dbff0d2dc1335fc954b8c3ba88fe4fbf67ef1c",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "explicit_color_target",
+      "audio": "0164.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "blue",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000165",
+      "parquet_row": 165,
+      "sha256": "1c574dbd34626c0d91e03867b04a5f4e4bf3e602583ec6719e81dd7354e24b77",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0165.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "blue",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000166",
+      "parquet_row": 166,
+      "sha256": "2a452e2bcbb47513f603247c09402fc9abef551f58c2f14094b6901c70b07757",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "explicit_color_target",
+      "audio": "0166.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "green",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000167",
+      "parquet_row": 167,
+      "sha256": "fd25035adcfbf76aec9772b3dccb07462383ac3f2df57fc765fd91e5468e126b",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0167.wav",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "green",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000168",
+      "parquet_row": 168,
+      "sha256": "e6c58b5274b43014ed75ec99b835ffb7d6061586cfcfc8b7fac6216667096c18",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0168.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000169",
+      "parquet_row": 169,
+      "sha256": "6e5814cd6726b2ecba0421ac14a567934d0a7fe57bd5f9be9af7df2f3b349a27",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0169.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000170",
+      "parquet_row": 170,
+      "sha256": "a25389d4be0be42e89f00552453520095870b9ee71f2be4779c13c76d2cffcc3",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0170.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000171",
+      "parquet_row": 171,
+      "sha256": "022ee13876ecaf2194f07cbcf1e3a448f5157fae7640a7a7886a70090d46fafd",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0171.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000172",
+      "parquet_row": 172,
+      "sha256": "e014a02447adf37727118768921dd861ca9df3288fd2eee8291e3ee9d0b783f4",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0172.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000173",
+      "parquet_row": 173,
+      "sha256": "56f8dfeee146f7f94e6dffff1ae55422f5e275769391b6d3f3a786ba1c15fdca",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0173.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000174",
+      "parquet_row": 174,
+      "sha256": "82423e14528b84605490d9eaea8fc3ac1f4add1ccab4046981f001b816aa0598",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0174.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000175",
+      "parquet_row": 175,
+      "sha256": "1e3a504ecc6341b92fb2cbb25e62c338877f00d67f9973d9e61b7d395ba757d2",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0175.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000176",
+      "parquet_row": 176,
+      "sha256": "703503c22a426b5fde37c1d791ca532b364d423530741be24abafe3cc9481a92",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0176.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000177",
+      "parquet_row": 177,
+      "sha256": "10c519c88d5e691658177f7d145ea8875365e0a6f0138ba84d12e91c9ba94c7c",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0177.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000178",
+      "parquet_row": 178,
+      "sha256": "90043a6de1160e9d9e6febed586c84b299cb0767bc02d7b18934034d4670f7b4",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0178.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000179",
+      "parquet_row": 179,
+      "sha256": "ed75af3079bfd791bece333f088030e07e5d148f218d77ba67171d69ef5cb225",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0179.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000180",
+      "parquet_row": 180,
+      "sha256": "b258341191d439cf9f0824a9cdf5edd47d999cf9fff84bf7fffffa797097e361",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0180.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000181",
+      "parquet_row": 181,
+      "sha256": "d564e76fe918619f0a25d7728984fd101fa773b20c74f25a4894aa065621055a",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0181.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000182",
+      "parquet_row": 182,
+      "sha256": "a6763e89a3bf8bee9fade99ce3fb3574077aa81d42c37c8919906045d2ef3e0a",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0182.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000183",
+      "parquet_row": 183,
+      "sha256": "a316c79bfefd033c19ec90949de97878837bcd1cf2e055143ba50a03c21e66b8",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0183.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000184",
+      "parquet_row": 184,
+      "sha256": "d0d960c90f69155feb240d4ab32a011fd66e430f2e2b33cc6e6b6dcb1569e06c",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0184.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000185",
+      "parquet_row": 185,
+      "sha256": "aeab927efe37738f783222b2166ff92bfb953de263d75f92c297ed03656430fb",
+      "kind": "synthetic",
+      "metric_eligible": true,
+      "reference_reason": "finite_definition",
+      "audio": "0185.wav",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      }
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000186",
+      "parquet_row": 186,
+      "sha256": "3a3dd9df2f8352f8c4e765cc98f68f61ac3e428c0126edbd270a83c638deaeee",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "publisher_out_of_scope",
+      "audio": "0186.wav",
+      "expected": null
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000187",
+      "parquet_row": 187,
+      "sha256": "c1dcbc43f4a4a0125b3c9f77e83ab1b200eb8c297756d3f46f6d48107b0371b3",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "publisher_out_of_scope",
+      "audio": "0187.wav",
+      "expected": null
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000188",
+      "parquet_row": 188,
+      "sha256": "6c2e172a30b62c3b0acbe9b03c8ddeeb13405fe085eec353233d6d4104c0fb4b",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "publisher_out_of_scope",
+      "audio": "0188.wav",
+      "expected": null
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000189",
+      "parquet_row": 189,
+      "sha256": "cbf5bef3360fbd90e66bfc465690ff07846cf0dbabaf7b05e5c79661ae4e0752",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "publisher_out_of_scope",
+      "audio": "0189.wav",
+      "expected": null
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000190",
+      "parquet_row": 190,
+      "sha256": "1524cf59f3cc6e4b25b368193c82ea0ef088e8534fcaa93be73a412f64408437",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "publisher_out_of_scope",
+      "audio": "0190.wav",
+      "expected": null
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000191",
+      "parquet_row": 191,
+      "sha256": "adb3c321e21696a2f65eb2529c9da4d833d46bf7a0bb8ba281d1b3f9d04cb69b",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "publisher_out_of_scope",
+      "audio": "0191.wav",
+      "expected": null
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000192",
+      "parquet_row": 192,
+      "sha256": "06b81075d0582012c3a148f542c45c4df8195df72325c38d48425f8983dcc337",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "publisher_out_of_scope",
+      "audio": "0192.wav",
+      "expected": null
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000193",
+      "parquet_row": 193,
+      "sha256": "f7a2c8200375b1ca5f4d6a276295e0eb96984d2cf074bd034780b6ecde270c5a",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "publisher_out_of_scope",
+      "audio": "0193.wav",
+      "expected": null
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000194",
+      "parquet_row": 194,
+      "sha256": "472e0c569e04a21f5e07c0888c0ae05bf2100d7d5602f5430c92bea1af53d801",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "publisher_out_of_scope",
+      "audio": "0194.wav",
+      "expected": null
+    },
+    {
+      "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000195",
+      "parquet_row": 195,
+      "sha256": "4b028445d62ff7b967858bf105bf5a7ba6be0406047a6b1f17ab0ebc176ff4b3",
+      "kind": "human",
+      "metric_eligible": true,
+      "reference_reason": "publisher_out_of_scope",
+      "audio": "0195.wav",
+      "expected": null
+    }
+  ],
+  "original_manifest_sha256": "a51e720b97f7b31e3e2f025c21bf679006ad444fd2d363916d9a11aa0f488b5b"
+}

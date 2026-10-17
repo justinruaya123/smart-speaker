@@ -1,0 +1,31 @@
+{
+  "application": {
+    "intent_threshold": 0.95,
+    "mode": "demo",
+    "slot_threshold": 0.9
+  },
+  "augmentation_at_evaluation": false,
+  "bindings": {
+    ".cache/speaker-synthetic-completion-v1/prepared-v1/views/evaluation/holdout.jsonl": "a51e720b97f7b31e3e2f025c21bf679006ad444fd2d363916d9a11aa0f488b5b",
+    ".cache/speaker-synthetic-completion-v1/prepared-v1/views/evaluation/test.jsonl": "a4fdcedfc86efebb36414114887abdc4ee51eba102b0247740aef18d1ad15abc",
+    ".cache/speaker-synthetic-completion-v1/prepared-v1/views/human/calibration.jsonl": "af7858186f401f0c016cd930dd057c08c1e4d8552d7dc4179e489ca3e0c48253",
+    "data/sources/speaker-final-pi-assets.source.json": "ac9bb59656fbcb103cc4dbdbf9425ae21aacb43dca1efd719a4fab7c1714f292",
+    "experiments/pcv-human-slots-v1/output.schema.json": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c",
+    "experiments/pcv-release-train-v1/custom-slots.json": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5",
+    "experiments/phrase-contract-v1/configs/runtime-cp312-aarch64/dependencies.json": "a494da595206f17f78b52a9010546e4e1dabcbb9d6afae27e7f5ac35178c42b8",
+    "experiments/speaker-final-refinement-v1/protocol.json": "ac9b851b5bafb8bf38fc8db4f78228bafab2d16449f42e13a2c4d3248e49e945",
+    "experiments/speaker-final-refinement-v1/selection-before-calibration.json": "ebda4761d2e7724d93181b14e4bb6de9d4b6b4e380805c6084d61616d231a5be",
+    "scripts/pcv_final_delivery.py": "a53428e4292ad540542bef055cf31d4c10c6dc678e3c2418132c105125b3c617",
+    "scripts/runtime/pcv_final_runtime.py": "41a45f4612c871660cae145e60dc849ee5de314d821a2433a7391c63523badf1",
+    "scripts/runtime/pcv_pi_benchmark.py": "c7aa5f510282686f5d2a2203883b04e972f22a2f6157a0bf1d2a223492daf303",
+    "scripts/runtime/speaker_config.py": "78b496d6809a906dbaa28498a0b97f51c97fbfb6073ff22318a56929f1d06375",
+    "scripts/test/pcv_public_qualification.py": "732003d6cf27b300d11a05dd652d93c9cb8a5ec26fab59d5e244c15125d0d33f",
+    "scripts/train/pcv_context_int8.py": "af6215f2fa8806025d892082b7067dd6a90a7c05aa2f5ea0b64c5fe3b838890e",
+    "scripts/train/speaker_final_release.py": "e3a83262c31fde51b70b2f509cacb98a107cfb505bedeeacbf442acb1998abb9"
+  },
+  "calibration": "original human only; no synthetic replacement",
+  "experiment_id": "speaker-final-refinement-v1",
+  "maximum_int8_graph_bytes": 4194304,
+  "published_test": "one locked regression replay after selection; previously examined corpus",
+  "selected_before_calibration": true
+}

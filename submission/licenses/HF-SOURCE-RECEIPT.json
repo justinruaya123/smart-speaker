@@ -1,0 +1,9 @@
+{
+  "repository": "airimonda/ai231-me2-voice-commands",
+  "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+  "manifest_sha256": "b56caea9914ab87471909e856491e219978e2c6ad2420400d26e3e9132a03da8",
+  "source_card_sha256": "fc5c2ca3b2a09c6f69f7edf8fcd178b7733d08a64509a0338375f0113d245877",
+  "acquisition_receipt_sha256": "43db37441d2c8ab5606ece998a5ac53334c74d0ba20c67ba195908e246711ef3",
+  "selection": "first per-intent CC BY SLURP human test rows; up to two negatives; previously evaluated smoke only",
+  "sample_count": 15
+}

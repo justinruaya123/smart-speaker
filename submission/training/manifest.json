@@ -1,0 +1,66 @@
+{
+  "checkpoint": {
+    "original_path": ".cache/speaker-final-refinement-v1/training/mixed-control/epoch-032.pt",
+    "path": "submission/checkpoints/full-selected.pt",
+    "sha256": "ff6a3af63115a8f92a0106b20a17ee57c3e84f263177b89aaedb9cce326fce9b"
+  },
+  "checkpoints": {
+    "2m": {
+      "original_path": ".cache/speaker-final-refinement-v1/training/mixed-control/epoch-032.pt",
+      "path": "submission/checkpoints/full-selected.pt",
+      "sha256": "ff6a3af63115a8f92a0106b20a17ee57c3e84f263177b89aaedb9cce326fce9b"
+    },
+    "935k": {
+      "original_path": ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-028.pt",
+      "path": "submission/checkpoints/compact-selected.pt",
+      "sha256": "a727e5070053045d6f276a3f58084ef16dd2bcbf9f931eea71db42a512f7d76a"
+    }
+  },
+  "format": "submission-training-evidence-v1",
+  "histories": [
+    {
+      "epochs": 24,
+      "model": "935k",
+      "original_path": ".cache/speaker-compact-recall-v1/training/human-shared/history.json",
+      "path": "submission/training/935k-human-shared.json",
+      "phase": "human-shared",
+      "sha256": "ca5c7c17b593a1024e1f3a0e4249b71922888bd1a43bd01b655cc6906f8f600e"
+    },
+    {
+      "epochs": 32,
+      "model": "935k",
+      "original_path": ".cache/speaker-compact-recall-v1/training/mixed-control/history.json",
+      "path": "submission/training/935k-mixed-control.json",
+      "phase": "mixed-control",
+      "sha256": "cdc80c3e9e89f1fea5a2e856b272af0cc7a7bd3c6e9c350920080767a39cca8b"
+    },
+    {
+      "epochs": 24,
+      "model": "2m",
+      "original_path": ".cache/speaker-final-refinement-v1/training/human-shared/history.json",
+      "path": "submission/training/2m-human-shared.json",
+      "phase": "human-shared",
+      "sha256": "070a7a24555312065d919cc2b3b05a217c3d4fe676be59096161b1e33583b776"
+    },
+    {
+      "epochs": 32,
+      "model": "2m",
+      "original_path": ".cache/speaker-final-refinement-v1/training/mixed-control/history.json",
+      "path": "submission/training/2m-mixed-control.json",
+      "phase": "mixed-control",
+      "sha256": "a2fb68410020572f2a4a79f24f75208a6e2deabbba95430f85cbbffdaffd91ef"
+    },
+    {
+      "epochs": 32,
+      "model": "2m",
+      "original_path": ".cache/speaker-final-refinement-v1/training/mixed-completion/history.json",
+      "path": "submission/training/2m-mixed-completion.json",
+      "phase": "mixed-completion",
+      "sha256": "cf5b89194807b13fa0150fdcbb59d393eb7c19a43a48b6a6ffb7a869725b1bf8"
+    }
+  ],
+  "history_copy": "Verbatim JSON with training/development metrics; no raw fitting logs or audio.",
+  "primary_model": "2m",
+  "selected_compact": "Human epoch 8 -> mixed-control epoch 28; repair performs zero additional fits.",
+  "selected_comparison": "Human epoch 20 -> mixed-control epoch 32; completion arm is retained as comparison evidence."
+}

@@ -1,4 +1,60 @@
 {
+  "speaker.pipeline_repair": {
+    "path": "train/speaker_pipeline_repair.py",
+    "runtime": false
+  },
+  "speaker.compact_fp32_release": {
+    "path": "train/speaker_compact_fp32_release.py",
+    "runtime": false
+  },
+  "speaker.compact_train": {
+    "path": "train/speaker_compact.py",
+    "runtime": false
+  },
+  "speaker.compact_policy": {
+    "path": "train/speaker_compact_policy.py",
+    "runtime": false
+  },
+  "speaker.compact_release": {
+    "path": "train/speaker_compact_release.py",
+    "runtime": false
+  },
+  "speaker.compact_runtime": {
+    "path": "runtime/speaker_compact.py",
+    "runtime": true
+  },
+  "speaker.compact_benchmark": {
+    "path": "runtime/speaker_compact_benchmark.py",
+    "runtime": true
+  },
+  "speaker.final_train": {
+    "path": "train/speaker_final_train.py",
+    "runtime": false
+  },
+  "speaker.final_release": {
+    "path": "train/speaker_final_release.py",
+    "runtime": false
+  },
+  "speaker.synthetic_data": {
+    "path": "train/speaker_synthetic_data.py",
+    "runtime": false
+  },
+  "speaker.synthetic_prepare": {
+    "path": "train/speaker_synthetic_prepare.py",
+    "runtime": false
+  },
+  "speaker.synthetic_recovery": {
+    "path": "train/speaker_synthetic_recovery.py",
+    "runtime": false
+  },
+  "speaker.demo_v2_data": {
+    "path": "train/speaker_demo_v2_data.py",
+    "runtime": false
+  },
+  "speaker.dataset_install": {
+    "path": "train/speaker_dataset_install.py",
+    "runtime": false
+  },
   "pcv.bundle_checks": {
     "path": "test/pcv_bundle_checks.py",
     "runtime": false

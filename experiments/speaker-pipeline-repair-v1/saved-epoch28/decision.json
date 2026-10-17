@@ -1,0 +1,111 @@
+{
+  "baseline": {
+    "calibration": {
+      "correct": 40,
+      "false_accepts": 0,
+      "wrong": 0
+    },
+    "development": {
+      "correct": 96,
+      "false_accepts": 1,
+      "wrong": 6
+    }
+  },
+  "bindings": {
+    ".cache/speaker-pipeline-repair-v1/saved-epoch28/bundle/model.onnx": "fc87c98c242ccb6f37ed9fcd84bad3869b8c90eaae6267fdab2a1a5af2737f6d",
+    ".cache/speaker-pipeline-repair-v1/saved-epoch28/bundle/policy.json": "e3c819583bf852c67aea8f8ba3bac7ddb4aa27a844f3cf02fb85fd75f2e3a9b4",
+    ".cache/speaker-pipeline-repair-v1/saved-epoch28/bundle/recall-policy.json": "02057ac95b37bc1fd011f5bce26f8216c97bea32cf9ee3edd2a300ac088c3fde",
+    ".cache/speaker-pipeline-repair-v1/saved-epoch28/bundle/recipe.json": "6e2beb53e14ce58ae59a49630b0a843a2aed0ef3b4c9b201aecff06688a424f9",
+    ".cache/speaker-pipeline-repair-v1/saved-epoch28/calibration-excluded.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/speaker-pipeline-repair-v1/saved-epoch28/calibration-predictions.json": "8cbea6961f595d623389f6ef851ad2d31c075aef6873d666e4244870e22c718e",
+    ".cache/speaker-pipeline-repair-v1/saved-epoch28/development-fp32.json": "791d445b626abf3b090da4e1434f788b1feca7cb6e46594185d9a7a6a7a2e293",
+    "experiments/speaker-pipeline-repair-v1/protocol.json": "fb2e886e2afb55527036b7082e4858f9d22d0ca2f79b24e6bb51ca129f362b52",
+    "experiments/speaker-pipeline-repair-v1/saved-epoch28/selection-before-calibration.json": "3ade984d72e686096482f04dd6a3c67a06f45a6d5f9015483aceaf8a379360d1"
+  },
+  "bundle": ".cache/speaker-pipeline-repair-v1/saved-epoch28/bundle",
+  "candidate": "saved-epoch28",
+  "checkpoint": ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-028.pt",
+  "checkpoint_sha256": "a727e5070053045d6f276a3f58084ef16dd2bcbf9f931eea71db42a512f7d76a",
+  "correct_gain": 7,
+  "development": {
+    "human": {
+      "accepted": 85,
+      "exact": 80,
+      "false_accept_rate": 0.015873015873015872,
+      "macro_speaker_recall": 0.3788160304607673,
+      "negative_errors": 1,
+      "negative_n": 63,
+      "positive_n": 193,
+      "positive_speakers": 32,
+      "precision": 0.9411764705882353,
+      "raw_exact": 155,
+      "raw_macro_speaker_recall": 0.7264032979082321,
+      "raw_negative_errors": 40,
+      "raw_recall": 0.8031088082901554,
+      "recall": 0.41450777202072536,
+      "rows": 256
+    },
+    "synthetic": {
+      "accepted": 807,
+      "exact": 796,
+      "false_accept_rate": 0.03571428571428571,
+      "macro_speaker_recall": 0.7897753001114235,
+      "negative_errors": 1,
+      "negative_n": 28,
+      "positive_n": 967,
+      "positive_speakers": 9,
+      "precision": 0.9863692688971499,
+      "raw_exact": 904,
+      "raw_macro_speaker_recall": 0.914329734314903,
+      "raw_negative_errors": 16,
+      "raw_recall": 0.9348500517063082,
+      "recall": 0.8231644260599793,
+      "rows": 995
+    }
+  },
+  "export": {
+    "errors": [
+      3.337860107421875e-06,
+      5.7220458984375e-06,
+      3.814697265625e-06,
+      5.245208740234375e-06,
+      5.245208740234375e-06,
+      6.198883056640625e-06
+    ],
+    "frame_counts": [
+      1,
+      3,
+      16,
+      37,
+      80,
+      121
+    ],
+    "input_feature_hop_ms": 10,
+    "legacy_two_mib_pass": false,
+    "logits": "raw; finite decoder applies log-softmax once",
+    "max_absolute_error": 6.198883056640625e-06,
+    "mode": "single complete-utterance inference after VAD endpoint; no streaming caches",
+    "onnx_bytes": 3864875,
+    "output_heads": [
+      "ctc",
+      "intent",
+      "target"
+    ],
+    "output_hop_ms": 20,
+    "parameters": 935567,
+    "repair_four_mib_numerical_pass": true,
+    "tolerance": 2e-05
+  },
+  "human_fitting_views_only": true,
+  "model_binding": {
+    "catalog_sha256": "429a15bc364d7fd9e723a2879c611472b5176de6cb3a2b54be7c137b050c985d",
+    "custom_slots_sha256": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5",
+    "model_sha256": "fc87c98c242ccb6f37ed9fcd84bad3869b8c90eaae6267fdab2a1a5af2737f6d",
+    "normalization_sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+    "schema_sha256": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c"
+  },
+  "pass": true,
+  "qualified": false,
+  "reasons": [],
+  "test_used": false
+}

@@ -1,0 +1,424 @@
+{
+  "architecture": {
+    "changed": false,
+    "class": "PooledContextVCM",
+    "dropout": 0.1,
+    "feedforward": 384,
+    "heads": 4,
+    "layers": 6,
+    "outputs": {
+      "acoustic": 40,
+      "intent": 19,
+      "target": 2
+    },
+    "parameters": 2066831,
+    "width": 192
+  },
+  "date": "2026-10-16",
+  "evidence_bindings": {
+    ".cache/speaker-final-refinement-v1/final-focused-tests.log": "2e22fb9cf8ef11a54733e934a73e7cab7076a790daf9dafec0085cdec5604b48",
+    ".cache/speaker-final-refinement-v1/package-import-audit.json": "46c22b915395542246e04afecb37163669a3ecd931cd74aa760fbc23afa43ff4",
+    ".cache/speaker-final-refinement-v1/package-integration.json": "83d84855f5b513f47ea8de1da6c0842cb7379f417e0d66666d077d3674b87d44",
+    ".cache/speaker-final-refinement-v1/package-replay/metrics.json": "10063644cd2b83a54293e3d9ef13c14722220c325d5908ee708a40212ed0e07d",
+    ".cache/speaker-final-refinement-v1/package-replay/trials.jsonl": "b109a1cb1f6e0a556a87b00c820996fa2586c61ed9df8279356e44d4019b72be",
+    ".cache/speaker-final-refinement-v1/repository-tests.log": "bdf7129530397133a7a841138d4e931b96d56bc567d2e24374c2f37532eb9977",
+    "EXPERIMENTS.md": "a86d9165364f0544aa5b482b5e627b78c29fe3113a59b2ec2a7bdcf618e7d28f",
+    "REQUIREMENTS.md": "4f5e04f266c45eb531ca2e3e73c8a9def2b17a36a730dbd81c15c539fd792888",
+    "data/sources/speaker-final-pi-assets.source.json": "ac9bb59656fbcb103cc4dbdbf9425ae21aacb43dca1efd719a4fab7c1714f292",
+    "dist/speaker-final-refinement-v1/speaker-pi4-final.zip": "f21292606581ea793b099b5f6a4fbe5a3d3ea221775595bdeb6794f38a21e93a",
+    "docs/EXPERIMENT-speaker-final-refinement-v1.md": "5cb682ee645b122dd06aaa29954f74174fc9eae270e548fe47085e4e934e7fe5",
+    "docs/PLAN-speaker-demo-v2.md": "51a8a281cd3658c641560cc7c007bfb77c2c200489df60d603a6f50da29a59d7",
+    "experiments/speaker-final-refinement-v1/export-development.json": "e2f057a21611eda7e5d5acc2c27edfae7afa4c2383384e510da87179e186aa23",
+    "experiments/speaker-final-refinement-v1/package.json": "c83ff923b86a587139684fb4139c14472494857e0874418e425bad5ad42075bd",
+    "experiments/speaker-final-refinement-v1/protocol.json": "ac9b851b5bafb8bf38fc8db4f78228bafab2d16449f42e13a2c4d3248e49e945",
+    "experiments/speaker-final-refinement-v1/references.json": "8a399583a6670f265c81836de7ddc6a9ac5d2fbc1bd1422c8b3c8ac521fc6829",
+    "experiments/speaker-final-refinement-v1/release-protocol-before-evaluation.json": "07987c5b6a80859bdccfbda28bb9c866d8915a19d940f009300ce6ae66f1f4d1",
+    "experiments/speaker-final-refinement-v1/results.json": "ae2787a3e996831140817c4fdf78ab8e0020de3bfe62b382ba3a70258ebc7228",
+    "experiments/speaker-final-refinement-v1/selection-before-calibration.json": "ebda4761d2e7724d93181b14e4bb6de9d4b6b4e380805c6084d61616d231a5be",
+    "experiments/speaker-final-refinement-v1/selection-before-test.json": "22ed617b8999a02446b7bd87cf6e054636b3043d1c0014842b945f2160f34bc2",
+    "scripts/modules.json": "cd5e8f8949b809b397e5123dc5fdf029b19c4712b433abf65b865a53ef4c14b9",
+    "scripts/test/test_pcv_final_delivery.py": "6e111209fc5ebd24ddfa223ca8931dc90a6a4b006c4cd6bf8387ddc03def436d",
+    "scripts/test/test_pcv_release_pooling.py": "d9520a3917dcc9eb891ccc3a993fdbccf63cf098c2472ae6d30827ef7b35b580",
+    "scripts/test/test_pcv_updated.py": "4577580f261c676be77e711216323387b7290e18f69a8fbbd8afca3fe10fbaf0",
+    "scripts/test/test_speaker_dataset_install.py": "4281d0e6557d2613bec671fee64fcfc57b60257a06611e6ddefb3f2cbdc4e61c",
+    "scripts/test/test_speaker_demo_v1.py": "999e1f1ad6191ca218ec1e251d866d90c1660e3f468604e949b4b1a19b54d1b6",
+    "scripts/test/test_speaker_demo_v2_data.py": "f753478674dc5201d0c4175485b04a011cb9af84a1519a5ab667980c429e1955",
+    "scripts/test/test_speaker_final_release.py": "b48347fc3a1c70b6ab48dd5bf8b30be188fb602bc8515792272c69abfe47cc9d",
+    "scripts/test/test_speaker_final_train.py": "6a6d1ee78044ba606a6b8887c7a44f09369a2f8ef126fad884fdcf59461fe6e6",
+    "scripts/test/test_speaker_synthetic_data.py": "16194a78e4ebab5790f0fcab1eaf6218ffb247f25db2fb817972798ea829675b",
+    "scripts/test/test_speaker_synthetic_prepare.py": "849c0c7f14ef7b15df63ef293440f3a3b885f8f2b9561777922aae08a3253402",
+    "scripts/test/test_speaker_synthetic_recovery.py": "55595922b7981b510c24b83cfbcdc27af2cb178197c1af421441a2e5d39368a8",
+    "scripts/train/speaker_final_release.py": "e3a83262c31fde51b70b2f509cacb98a107cfb505bedeeacbf442acb1998abb9",
+    "scripts/train/speaker_final_train.py": "e89253c2fa415e80cdae563362b26505ce3b36dd1760221dca4165c812f66001"
+  },
+  "experiment_id": "speaker-final-refinement-v1",
+  "extracted_runtime": {
+    "desktop_measurement": {
+      "accepted": {
+        "accepted": 0,
+        "exact": 0,
+        "false_accept_rate": 0.0,
+        "n": 15,
+        "negative_errors": 0,
+        "negative_n": 2,
+        "positive_n": 13,
+        "precision": null,
+        "recall": 0.0,
+        "slots": {
+          "color": {
+            "correct": 0,
+            "reference_n": 1
+          },
+          "light_id": {
+            "correct": 0,
+            "reference_n": 4
+          },
+          "operation": {
+            "correct": 0,
+            "reference_n": 1
+          },
+          "percent": {
+            "correct": 0,
+            "reference_n": 1
+          },
+          "time": {
+            "correct": 0,
+            "reference_n": 1
+          },
+          "timezone": {
+            "correct": 0,
+            "reference_n": 1
+          }
+        }
+      },
+      "all_onnx_bytes": 9186519,
+      "cpu_percent_one_core": 84.71134153517563,
+      "cpu_seconds": 1.7615573029999998,
+      "diagnostic": {
+        "accepted": 14,
+        "exact": 8,
+        "false_accept_rate": 1.0,
+        "n": 15,
+        "negative_errors": 2,
+        "negative_n": 2,
+        "positive_n": 13,
+        "precision": 0.5714285714285714,
+        "recall": 0.6153846153846154,
+        "slots": {
+          "color": {
+            "correct": 1,
+            "reference_n": 1
+          },
+          "light_id": {
+            "correct": 2,
+            "reference_n": 4
+          },
+          "operation": {
+            "correct": 0,
+            "reference_n": 1
+          },
+          "percent": {
+            "correct": 0,
+            "reference_n": 1
+          },
+          "time": {
+            "correct": 1,
+            "reference_n": 1
+          },
+          "timezone": {
+            "correct": 1,
+            "reference_n": 1
+          }
+        }
+      },
+      "engine": "onnxruntime",
+      "hardware": {
+        "cpu_count": 256,
+        "device_model": "unavailable",
+        "machine": "x86_64",
+        "os": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+        "physical_pi_measured": false,
+        "processor": "x86_64",
+        "python": "3.13.9"
+      },
+      "latency_ms": {
+        "n": 15,
+        "p50": 97.13406208902597,
+        "p95": 228.11318095773456
+      },
+      "model_bytes": 3173089,
+      "peak_rss_mb": 67.6328125,
+      "providers": [
+        "CPUExecutionProvider"
+      ],
+      "rtf": {
+        "n": 15,
+        "p50": 0.06327138263530267,
+        "p95": 0.07667413631551481
+      },
+      "session_load_ms": 197.93192483484745,
+      "threads": 1,
+      "wake": {
+        "capture_seconds": 25,
+        "enabled": false,
+        "endpoint_silence_ms": 400,
+        "phrase": "hey jarvis",
+        "release_ms": 320,
+        "replay_wake_tested": false,
+        "session_load_ms": [],
+        "threshold": 0.5
+      },
+      "wall_seconds": 2.079482240602374
+    },
+    "fresh_process_import_audit": {
+      "cpu_affinity": [
+        0
+      ],
+      "forbidden_training_imports": [],
+      "modules_from_archive": {
+        "pcvcm.decoder": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-final-refinement-v1/package-smoke/pcvcm/decoder.py",
+        "scripts.runtime.pcv_final_runtime": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-final-refinement-v1/package-smoke/scripts/runtime/pcv_final_runtime.py",
+        "scripts.runtime.pcv_pi_benchmark": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-final-refinement-v1/package-smoke/scripts/runtime/pcv_pi_benchmark.py",
+        "scripts.runtime.speaker_config": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-final-refinement-v1/package-smoke/scripts/runtime/speaker_config.py",
+        "vcm.frontend": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-final-refinement-v1/package-smoke/vcm/frontend.py"
+      },
+      "packages": {
+        "numpy": "2.3.5",
+        "onnxruntime": "1.23.2",
+        "scipy": "1.17.0",
+        "soundfile": "0.13.1"
+      },
+      "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:16:10) [GCC 11.2.0]",
+      "reserved_cpu": false,
+      "wall_seconds_including_imports": 3.718870947137475
+    },
+    "identity_command": "pi_test.py --verify-only",
+    "identity_exit_code": 0,
+    "integration": {
+      "architecture": {
+        "dropout": 0.1,
+        "feedforward": 384,
+        "heads": 4,
+        "layers": 6,
+        "width": 192
+      },
+      "fixed_application_agreement_with_locked_test": 15,
+      "installed_metadata_verified": 15,
+      "negative_samples": 2,
+      "offline_wheel_closure_verified": true,
+      "original_human_slurp_cc_by_only": true,
+      "parameters": 2066831,
+      "positive_samples": 13,
+      "prior_evidence_preserved": 11,
+      "qualified_accepts": 0,
+      "raw_candidate_agreement_with_locked_test": 15,
+      "release_direct_and_nested_bindings_verified": true,
+      "sample_intents": [
+        "ALARM",
+        "BRIGHTNESS",
+        "COLOR",
+        "LIGHT_OFF",
+        "LIGHT_ON",
+        "LIST_REMINDERS",
+        "NEXT",
+        "PAUSE",
+        "PLAY_MUSIC",
+        "STOP",
+        "TIME",
+        "VOLUME",
+        "WEATHER"
+      ],
+      "sample_rows": 15,
+      "training_bindings_verified": 14,
+      "wheel_count": 11
+    },
+    "latency_scope": "Frontend + model + finite decoder; first inference included; excludes file read, speech duration, wake listening and endpoint silence",
+    "replay_command": "pi_test.py --engine onnxruntime --threads 1 --output <new-folder>",
+    "replay_exit_code": 0,
+    "rss_scope": "Fresh VCM replay process; wake/VAD sessions not loaded; not physical Pi or live memory"
+  },
+  "focused_suite": {
+    "command": ".venv/bin/python -m pytest -q scripts/test/test_speaker_final_train.py scripts/test/test_speaker_final_release.py scripts/test/test_speaker_synthetic_data.py scripts/test/test_speaker_synthetic_prepare.py scripts/test/test_speaker_synthetic_recovery.py scripts/test/test_speaker_demo_v2_data.py scripts/test/test_speaker_dataset_install.py scripts/test/test_speaker_demo_v1.py scripts/test/test_pcv_updated.py scripts/test/test_pcv_release_pooling.py scripts/test/test_pcv_final_delivery.py",
+    "exit_code": 0,
+    "log": ".cache/speaker-final-refinement-v1/final-focused-tests.log",
+    "passed": 168,
+    "seconds": 33.22
+  },
+  "installed": false,
+  "limitations": [
+    "Single seed; augmentation common to both arms, no isolated augmentation-effect estimate",
+    "Synthetic intended-text labels and voice identities lack independent listening validation",
+    "Human calibration missing-class failures remain; demo confidence scores are not calibrated accuracy probabilities",
+    "Published evaluation was previously examined; no new blind unseen-human claim",
+    "Wake/VAD is not trained speaker ownership or overlap recovery",
+    "No physical Pi, live microphone, temperature/throttling or wake/VAD resource measurement",
+    "Desktop Python/NumPy/ORT versions and ISA differ from the locked ARM64 target; device execution remains untested",
+    "The 15 previously exposed licensed smoke recordings cover only 13 intents and do not qualify the full command definition set",
+    "Review fixes passed regression tests but were not independently re-reviewed; one final review only"
+  ],
+  "live_microphone_measured": false,
+  "package": {
+    "acceptance_enabled": false,
+    "base_package_sha256": "721e4ba514a4acc03d9f2151912cddc945cb8e075b0a1c0b91c4a87513d7d3e0",
+    "bytes": 46316255,
+    "catalog_entries": 1079,
+    "checkpoint_or_training_payloads": [],
+    "config_actions_enabled": false,
+    "defined_phrases": 415,
+    "diagnostic": true,
+    "embedded_report_sha256": "b787916544f0038f7a0dee7ec5e083cef264e3b0c0630e1d56ec089de1cbec86",
+    "live_microphone_measured": false,
+    "manifest_verified_payloads": 74,
+    "members": 75,
+    "model_binding": {
+      "catalog_sha256": "429a15bc364d7fd9e723a2879c611472b5176de6cb3a2b54be7c137b050c985d",
+      "custom_slots_sha256": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5",
+      "model_sha256": "3dea2e25dd431c0b085033f04e0b3f16181016ed42c41a1b84ff6acd43d2ac7e",
+      "normalization_sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+      "schema_sha256": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c"
+    },
+    "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/dist/speaker-final-refinement-v1/speaker-pi4-final.zip",
+    "physical_pi_measured": false,
+    "postbuild_receipt_embedded": false,
+    "runtime_load_ms": 144.04721092432737,
+    "sample_count": 15,
+    "sha256": "f21292606581ea793b099b5f6a4fbe5a3d3ea221775595bdeb6794f38a21e93a",
+    "source_map_trainers_runtime": false,
+    "target": {
+      "implementation": "cp",
+      "machine": "aarch64",
+      "minimum_glibc": "2.28",
+      "python": "3.12",
+      "system": "Linux"
+    },
+    "zip_crc_verified": true
+  },
+  "physical_pi_measured": false,
+  "preservation": {
+    "branch": "codex/speaker-demo-v1",
+    "commit_push_install_device_actions": false,
+    "head": "5d872e3a249e5876aaa8130b76f6e3b31622355f",
+    "installed_metadata_files": 15,
+    "prior_source_and_v2_output_files": 11,
+    "staged_paths": [],
+    "training_and_release_input_bindings_verified": true
+  },
+  "qualified": false,
+  "repository_suite": {
+    "collection_errors": 2,
+    "command": ".venv/bin/python -m pytest -q",
+    "exit_code": 2,
+    "log": ".cache/speaker-final-refinement-v1/repository-tests.log",
+    "preexisting_errors": [
+      "Duplicate test_catalog module names in pcv-delivery-v1 and pcv-synthetic-v1",
+      "scripts/test_prototype.py imports absent train.register_sources"
+    ],
+    "seconds": 39.71
+  },
+  "review": {
+    "active_training_defects": 0,
+    "critical": 0,
+    "declined_to_judge": [
+      "Final winner, gains and export/calibration outcomes",
+      "Archive execution and desktop resources",
+      "Physical Pi/live ownership and overlap",
+      "Independent labels/voices and seed robustness"
+    ],
+    "findings": [
+      {
+        "finding": "Copied evaluation views were rebound without checking frozen preparation identities",
+        "red_then_green": true,
+        "regression_tests": 3,
+        "resolution": "frozen_evaluation_views verifies all three receipt paths/hashes before release protocol creation",
+        "severity": "Important"
+      },
+      {
+        "executor_severity": "Important",
+        "finding": "Package creation did not recheck nested runtime bindings",
+        "reason": "A shipped runtime differing from the evaluated source is a material deployment identity failure",
+        "red_then_green": true,
+        "regression_tests": 1,
+        "resolution": "verify_release_inputs rechecks nested evaluation source bindings before packaging",
+        "reviewer_severity": "Minor"
+      }
+    ],
+    "fix_independently_rereviewed": false,
+    "important_found": 1,
+    "minor_found": 1,
+    "original_20_new_tests_independently_passed": true,
+    "review": "independent read-only; one pass",
+    "suite_after_fix": {
+      "failed": 0,
+      "log": ".cache/speaker-final-refinement-v1/final-focused-tests.log",
+      "passed": 168,
+      "seconds": 33.22
+    }
+  },
+  "rulings": [
+    {
+      "cost_if_wrong": "Review must distinguish prior work from the final study",
+      "decision": "Use existing feature checkout and root environment",
+      "reason": "Required uncommitted inputs and active-work preservation hold"
+    },
+    {
+      "cost_if_wrong": "No seed-robust or isolated masking-effect claim",
+      "decision": "One seed and two matched arms, then stop",
+      "reason": "User requested the last refinement without overengineering"
+    },
+    {
+      "cost_if_wrong": "Single-seed negative finding may not generalize",
+      "decision": "Select control under the predeclared human rule",
+      "reason": "Added Qwen data improved synthetic development but failed to improve human selection"
+    },
+    {
+      "cost_if_wrong": "Extracted CLI closure requires verification; all 15 decisions now agree",
+      "decision": "Retain historical publisher and complete the final archive with its missing config dependency",
+      "reason": "Current endpoint CLI imports the resolver omitted by the old allowlist"
+    },
+    {
+      "cost_if_wrong": "Archive cannot establish action-executing deployment readiness",
+      "decision": "Preserve qualification-disabled diagnostic mode",
+      "reason": "Human coverage/quality gates and physical Pi/live ownership evidence fail or remain absent"
+    }
+  ],
+  "schema_version": 1,
+  "static_checks": {
+    "diff_check_exit_code": 0,
+    "ignored_output_probes": [
+      ".cache/speaker-final-refinement-v1/status.json",
+      "data/audio/ai231-pool-v1/probe.wav",
+      "dist/speaker-final-refinement-v1/speaker-pi4-final.zip"
+    ],
+    "new_document_local_links": 18,
+    "new_document_local_links_resolve": true,
+    "trainer_source_map_entries_research_only": true
+  },
+  "status": "final_refinement_and_diagnostic_pi_handoff_verified",
+  "study_outcome": {
+    "additional_qwen_human_improvement_supported": false,
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "human_test": {
+      "accepted": 297,
+      "exact": 274,
+      "false_accept_rate": 0.013100436681222707,
+      "macro_speaker_recall": 0.49894824992590353,
+      "negative_errors": 3,
+      "negative_n": 229,
+      "positive_n": 636,
+      "positive_speakers": 74,
+      "precision": 0.9225589225589226,
+      "raw_exact": 516,
+      "raw_macro_speaker_recall": 0.7796208768624969,
+      "raw_negative_errors": 179,
+      "raw_recall": 0.8113207547169812,
+      "recall": 0.4308176100628931,
+      "rows": 865
+    },
+    "no_further_training_or_test_driven_tuning": true,
+    "peak_cuda_allocated_bytes": 703036416,
+    "seconds": 1990.467459646985,
+    "seed": 53,
+    "selected_arm": "control",
+    "selected_epoch": 32
+  }
+}

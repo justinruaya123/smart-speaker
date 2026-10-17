@@ -1,0 +1,659 @@
+{
+  "complete": true,
+  "data": {
+    "normalization_reconstructed": true,
+    "original_pcm_hashes_verified": true,
+    "raw_fitting_feature_hash_mismatches": 0,
+    "unique_reconstructed_rows": 29370,
+    "upstream_shards_reused_read_only": true
+  },
+  "development_int8_guard": {
+    "exact_losses": {
+      "human": 0,
+      "synthetic": 0
+    },
+    "extra_human_negative_errors": -1,
+    "graph_bytes": 3173089,
+    "maximum_graph_bytes": 4194304,
+    "pass": true,
+    "physical_pi_measured": false
+  },
+  "environment": {
+    "fitting_interpreter": "Shared root interpreter; separate source/output folder",
+    "fresh_locked_uv_setup_tested_separately": true,
+    "path": "environment-verification-v2.json",
+    "same_original_framework_versions": true
+  },
+  "evaluation_frontend": {
+    "cause": "OpenBLAS matrix multiplication rounding; fixed original evaluation thread contract, no weights or thresholds changed.",
+    "correction_was_evaluation_replay": true,
+    "derived_feature_manifest_sha256": "cf06def9dd3f32a3e5b6d5941211405bf5319b1c6d8fdc0b77457490c802d487",
+    "external_evaluation_blas_threads": 1,
+    "fitting_cached_blas_threads": 64,
+    "initial_evaluation_preserved": true,
+    "initial_holdout_demo": 37,
+    "initial_test_demo": 273,
+    "initial_test_raw": 515,
+    "original_scored_fields": {
+      "holdout": {
+        "differences": {
+          "application_command": 0,
+          "candidate": 0,
+          "expected": 0,
+          "intent_probability": 0,
+          "slot_confidence": 0,
+          "target_named_probability": 0
+        },
+        "records": 194
+      },
+      "test": {
+        "differences": {
+          "application_command": 0,
+          "candidate": 0,
+          "expected": 0,
+          "intent_probability": 0,
+          "slot_confidence": 0,
+          "target_named_probability": 0
+        },
+        "records": 4233
+      }
+    }
+  },
+  "export_parity": {
+    "accuracy_fidelity": "requires locked development comparison",
+    "files": {
+      "model.fp32.onnx": {
+        "bytes": 8390059,
+        "sha256": "cf75e081b034f8c2f9ed56550df60cb9307216c7d7287ada05855c13835b1cc9"
+      },
+      "model.int8.onnx": {
+        "bytes": 3173089,
+        "sha256": "3dea2e25dd431c0b085033f04e0b3f16181016ed42c41a1b84ff6acd43d2ac7e"
+      },
+      "model.preprocessed.onnx": {
+        "bytes": 8442265,
+        "sha256": "87b76b6f25e09bc472401fe19adec2397a8badbb186c285abd573270fa7057eb"
+      }
+    },
+    "fp32": {
+      "errors": [
+        5.245208740234375e-06,
+        6.198883056640625e-06,
+        5.245208740234375e-06,
+        7.62939453125e-06,
+        9.059906005859375e-06,
+        6.079673767089844e-06
+      ],
+      "frame_counts": [
+        1,
+        3,
+        16,
+        37,
+        80,
+        121
+      ],
+      "input_feature_hop_ms": 10,
+      "logits": "raw; finite decoder applies log-softmax once",
+      "max_absolute_error": 9.059906005859375e-06,
+      "mode": "single complete-utterance inference after VAD endpoint; no streaming caches",
+      "onnx_bytes": 8390059,
+      "output_heads": [
+        "ctc",
+        "intent",
+        "target"
+      ],
+      "output_hop_ms": 20,
+      "parameters": 2066831,
+      "pass": false,
+      "tolerance": 2e-05
+    },
+    "fp32_numerical_parity_pass": true,
+    "int8_bytes": 3173089,
+    "physical_pi": false,
+    "size_pass": false
+  },
+  "figures": "figures/",
+  "format": "submission-full-reproduction-verification-v1",
+  "installed_artifacts_changed": false,
+  "limitations": [
+    "CUDA CTC is seeded with warn-only determinism; equal seeds do not promise identical weights.",
+    "Changed seed is a new run, not reproduction of original weights."
+  ],
+  "live_microphone_measured": false,
+  "maximum_weight_absolute_difference": 0.0,
+  "onnx_sha256": "3dea2e25dd431c0b085033f04e0b3f16181016ed42c41a1b84ff6acd43d2ac7e",
+  "original_checkpoint_sha256": "ff6a3af63115a8f92a0106b20a17ee57c3e84f263177b89aaedb9cce326fce9b",
+  "original_human_test": {
+    "demo_exact": 274,
+    "negative_n": 229,
+    "positive_n": 636,
+    "raw_exact": 516,
+    "unknown_accepts": 3
+  },
+  "original_protocol_reproduced": true,
+  "original_seed": 53,
+  "pc_benchmark": {
+    "latency_ms": {
+      "n": 588,
+      "p50": 103.87300630100071,
+      "p95": 221.75165384542197
+    },
+    "path": "pc-benchmark.json",
+    "peak_rss_mib": 84.21484375,
+    "rtf": {
+      "n": 588,
+      "p50": 0.04108064225874841,
+      "p95": 0.04461803493565236
+    },
+    "sha256": "c0f65fce7f6f08a47df2ed5d10efc4a58dbe1c6b78a40a64d1ef14dbcc7641c3",
+    "threads": 1
+  },
+  "physical_pi_measured": false,
+  "recipe_model": "full",
+  "reproduced_checkpoint_sha256": "1efbd02718ade69f30d80dc8c8f8c59208daa4f203067df31e2e42f6fe5591ec",
+  "results": {
+    "holdout": {
+      "human": {
+        "demo": {
+          "accepted": 38,
+          "exact": 38,
+          "false_accept_rate": 0.0,
+          "n": 94,
+          "negative_errors": 0,
+          "negative_n": 11,
+          "positive_n": 83,
+          "precision": 1.0,
+          "recall": 0.4578313253012048,
+          "slots": {
+            "color": {
+              "correct": 3,
+              "reference_n": 6
+            },
+            "contact_id": {
+              "correct": 2,
+              "reference_n": 3
+            },
+            "degrees": {
+              "correct": 7,
+              "reference_n": 9
+            },
+            "duration_seconds": {
+              "correct": 2,
+              "reference_n": 9
+            },
+            "light_id": {
+              "correct": 10,
+              "reference_n": 17
+            },
+            "operation": {
+              "correct": 2,
+              "reference_n": 4
+            },
+            "percent": {
+              "correct": 5,
+              "reference_n": 6
+            },
+            "task_id": {
+              "correct": 1,
+              "reference_n": 9
+            },
+            "time": {
+              "correct": 2,
+              "reference_n": 8
+            },
+            "timezone": {
+              "correct": 2,
+              "reference_n": 8
+            },
+            "unit": {
+              "correct": 7,
+              "reference_n": 9
+            }
+          }
+        },
+        "raw": {
+          "accepted": 93,
+          "exact": 81,
+          "false_accept_rate": 0.9090909090909091,
+          "n": 94,
+          "negative_errors": 10,
+          "negative_n": 11,
+          "positive_n": 83,
+          "precision": 0.8709677419354839,
+          "recall": 0.9759036144578314,
+          "slots": {
+            "color": {
+              "correct": 6,
+              "reference_n": 6
+            },
+            "contact_id": {
+              "correct": 3,
+              "reference_n": 3
+            },
+            "degrees": {
+              "correct": 9,
+              "reference_n": 9
+            },
+            "duration_seconds": {
+              "correct": 9,
+              "reference_n": 9
+            },
+            "light_id": {
+              "correct": 17,
+              "reference_n": 17
+            },
+            "operation": {
+              "correct": 3,
+              "reference_n": 4
+            },
+            "percent": {
+              "correct": 6,
+              "reference_n": 6
+            },
+            "task_id": {
+              "correct": 9,
+              "reference_n": 9
+            },
+            "time": {
+              "correct": 8,
+              "reference_n": 8
+            },
+            "timezone": {
+              "correct": 8,
+              "reference_n": 8
+            },
+            "unit": {
+              "correct": 9,
+              "reference_n": 9
+            }
+          }
+        }
+      },
+      "synthetic": {
+        "demo": {
+          "accepted": 100,
+          "exact": 99,
+          "false_accept_rate": null,
+          "n": 100,
+          "negative_errors": 0,
+          "negative_n": 0,
+          "positive_n": 100,
+          "precision": 0.99,
+          "recall": 0.99,
+          "slots": {
+            "color": {
+              "correct": 12,
+              "reference_n": 12
+            },
+            "contact_id": {
+              "correct": 3,
+              "reference_n": 3
+            },
+            "degrees": {
+              "correct": 9,
+              "reference_n": 9
+            },
+            "duration_seconds": {
+              "correct": 9,
+              "reference_n": 9
+            },
+            "light_id": {
+              "correct": 30,
+              "reference_n": 30
+            },
+            "operation": {
+              "correct": 6,
+              "reference_n": 6
+            },
+            "percent": {
+              "correct": 11,
+              "reference_n": 12
+            },
+            "task_id": {
+              "correct": 9,
+              "reference_n": 9
+            },
+            "time": {
+              "correct": 10,
+              "reference_n": 10
+            },
+            "timezone": {
+              "correct": 10,
+              "reference_n": 10
+            },
+            "unit": {
+              "correct": 9,
+              "reference_n": 9
+            }
+          }
+        },
+        "raw": {
+          "accepted": 100,
+          "exact": 99,
+          "false_accept_rate": null,
+          "n": 100,
+          "negative_errors": 0,
+          "negative_n": 0,
+          "positive_n": 100,
+          "precision": 0.99,
+          "recall": 0.99,
+          "slots": {
+            "color": {
+              "correct": 12,
+              "reference_n": 12
+            },
+            "contact_id": {
+              "correct": 3,
+              "reference_n": 3
+            },
+            "degrees": {
+              "correct": 9,
+              "reference_n": 9
+            },
+            "duration_seconds": {
+              "correct": 9,
+              "reference_n": 9
+            },
+            "light_id": {
+              "correct": 30,
+              "reference_n": 30
+            },
+            "operation": {
+              "correct": 6,
+              "reference_n": 6
+            },
+            "percent": {
+              "correct": 11,
+              "reference_n": 12
+            },
+            "task_id": {
+              "correct": 9,
+              "reference_n": 9
+            },
+            "time": {
+              "correct": 10,
+              "reference_n": 10
+            },
+            "timezone": {
+              "correct": 10,
+              "reference_n": 10
+            },
+            "unit": {
+              "correct": 9,
+              "reference_n": 9
+            }
+          }
+        }
+      }
+    },
+    "test": {
+      "human": {
+        "demo": {
+          "accepted": 297,
+          "exact": 274,
+          "false_accept_rate": 0.013100436681222707,
+          "n": 865,
+          "negative_errors": 3,
+          "negative_n": 229,
+          "positive_n": 636,
+          "precision": 0.9225589225589226,
+          "recall": 0.4308176100628931,
+          "slots": {
+            "color": {
+              "correct": 20,
+              "reference_n": 67
+            },
+            "contact_id": {
+              "correct": 5,
+              "reference_n": 6
+            },
+            "degrees": {
+              "correct": 15,
+              "reference_n": 28
+            },
+            "duration_seconds": {
+              "correct": 4,
+              "reference_n": 19
+            },
+            "light_id": {
+              "correct": 42,
+              "reference_n": 165
+            },
+            "operation": {
+              "correct": 38,
+              "reference_n": 113
+            },
+            "percent": {
+              "correct": 7,
+              "reference_n": 29
+            },
+            "task_id": {
+              "correct": 4,
+              "reference_n": 18
+            },
+            "time": {
+              "correct": 17,
+              "reference_n": 32
+            },
+            "timezone": {
+              "correct": 17,
+              "reference_n": 32
+            },
+            "unit": {
+              "correct": 17,
+              "reference_n": 28
+            }
+          }
+        },
+        "raw": {
+          "accepted": 809,
+          "exact": 516,
+          "false_accept_rate": 0.7816593886462883,
+          "n": 865,
+          "negative_errors": 179,
+          "negative_n": 229,
+          "positive_n": 636,
+          "precision": 0.6378244746600742,
+          "recall": 0.8113207547169812,
+          "slots": {
+            "color": {
+              "correct": 58,
+              "reference_n": 67
+            },
+            "contact_id": {
+              "correct": 6,
+              "reference_n": 6
+            },
+            "degrees": {
+              "correct": 24,
+              "reference_n": 28
+            },
+            "duration_seconds": {
+              "correct": 17,
+              "reference_n": 19
+            },
+            "light_id": {
+              "correct": 123,
+              "reference_n": 165
+            },
+            "operation": {
+              "correct": 77,
+              "reference_n": 113
+            },
+            "percent": {
+              "correct": 18,
+              "reference_n": 29
+            },
+            "task_id": {
+              "correct": 17,
+              "reference_n": 18
+            },
+            "time": {
+              "correct": 32,
+              "reference_n": 32
+            },
+            "timezone": {
+              "correct": 32,
+              "reference_n": 32
+            },
+            "unit": {
+              "correct": 28,
+              "reference_n": 28
+            }
+          }
+        }
+      },
+      "synthetic": {
+        "demo": {
+          "accepted": 3232,
+          "exact": 3219,
+          "false_accept_rate": null,
+          "n": 3368,
+          "negative_errors": 0,
+          "negative_n": 0,
+          "positive_n": 3368,
+          "precision": 0.9959777227722773,
+          "recall": 0.9557600950118765,
+          "slots": {
+            "color": {
+              "correct": 299,
+              "reference_n": 305
+            },
+            "contact_id": {
+              "correct": 95,
+              "reference_n": 96
+            },
+            "degrees": {
+              "correct": 383,
+              "reference_n": 395
+            },
+            "duration_seconds": {
+              "correct": 391,
+              "reference_n": 404
+            },
+            "light_id": {
+              "correct": 833,
+              "reference_n": 855
+            },
+            "operation": {
+              "correct": 127,
+              "reference_n": 138
+            },
+            "percent": {
+              "correct": 380,
+              "reference_n": 398
+            },
+            "task_id": {
+              "correct": 378,
+              "reference_n": 405
+            },
+            "time": {
+              "correct": 365,
+              "reference_n": 372
+            },
+            "timezone": {
+              "correct": 365,
+              "reference_n": 372
+            },
+            "unit": {
+              "correct": 383,
+              "reference_n": 395
+            }
+          }
+        },
+        "raw": {
+          "accepted": 3366,
+          "exact": 3335,
+          "false_accept_rate": null,
+          "n": 3368,
+          "negative_errors": 0,
+          "negative_n": 0,
+          "positive_n": 3368,
+          "precision": 0.9907902554961379,
+          "recall": 0.9902019002375297,
+          "slots": {
+            "color": {
+              "correct": 303,
+              "reference_n": 305
+            },
+            "contact_id": {
+              "correct": 96,
+              "reference_n": 96
+            },
+            "degrees": {
+              "correct": 393,
+              "reference_n": 395
+            },
+            "duration_seconds": {
+              "correct": 402,
+              "reference_n": 404
+            },
+            "light_id": {
+              "correct": 851,
+              "reference_n": 855
+            },
+            "operation": {
+              "correct": 136,
+              "reference_n": 138
+            },
+            "percent": {
+              "correct": 385,
+              "reference_n": 398
+            },
+            "task_id": {
+              "correct": 405,
+              "reference_n": 405
+            },
+            "time": {
+              "correct": 371,
+              "reference_n": 372
+            },
+            "timezone": {
+              "correct": 371,
+              "reference_n": 372
+            },
+            "unit": {
+              "correct": 394,
+              "reference_n": 395
+            }
+          }
+        }
+      }
+    }
+  },
+  "same_human_epoch": true,
+  "same_mixed_epoch": true,
+  "seed": 53,
+  "source": {
+    "corrected_evaluation_source_sha256": "3f67414d1d1b101b051075f045e495fe1f7a2c7a35c656f0475fa09b3248134e",
+    "final_portable_recipe_sha256": "1b7b456ce3875032cec1b879cab8583f794efbc654dbc4d7cee14f3572b094c8",
+    "fitting_source_receipt_sha256": "b78317f05ae95b23bf2e9555dbb7fc8bd32941d4fb57148a0ed02a84a57814de",
+    "original_executed_recipe_sha256": "5ebe8ab5b5092b641deffd74169a6efd9e8e8f9ff8846467077d1beac86fdb42"
+  },
+  "strict_qualification_enabled": false,
+  "training": {
+    "fit_development_seconds": 843.4295124709606,
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "gpu_count_used": 1,
+    "histories": {
+      "human-shared": {
+        "all_loss_components_exact": true,
+        "epochs": 24,
+        "path": "history-human-shared.json",
+        "sha256": "b018a340c0a6cf56875ad73a713d8fa3f7aa81a74b98d99e6491a66a29d89d90"
+      },
+      "mixed-control": {
+        "all_loss_components_exact": true,
+        "epochs": 32,
+        "path": "history-mixed-control.json",
+        "sha256": "1ba883355cca0d2515f874f94c7ab2be11c0269d1cc2e5e1a78466322e79e7b8"
+      }
+    },
+    "optimizer_updates_executed": 5376,
+    "parameters": 2066831,
+    "seed": 53,
+    "selected_human_epoch": 20,
+    "selected_mixed_epoch": 32
+  },
+  "weights_bitwise_equal": true
+}

@@ -1,0 +1,266 @@
+{
+  "experiment_id": "speaker-pipeline-repair-v1",
+  "status": "bounded_repair_complete_pi_comparison_candidate",
+  "architecture_unchanged": true,
+  "parameters": 935567,
+  "maximum_parameters": 1200000,
+  "parameter_delta": 0,
+  "new_training_runs": 0,
+  "optional_continuation_skipped": true,
+  "selected_saved_epoch": 28,
+  "graph_bytes": 3864875,
+  "precision": "fp32",
+  "human_fitting_promotion": true,
+  "regression_gate": {
+    "pass": true,
+    "reasons": []
+  },
+  "raw_human_test_regression": {
+    "previous": 493,
+    "current": 489
+  },
+  "human_test": {
+    "accepted": 257,
+    "exact": 238,
+    "false_accept_rate": 0.004366812227074236,
+    "n": 865,
+    "negative_errors": 1,
+    "negative_n": 229,
+    "positive_n": 636,
+    "precision": 0.9260700389105059,
+    "recall": 0.3742138364779874
+  },
+  "human_holdout": {
+    "accepted": 27,
+    "exact": 26,
+    "false_accept_rate": 0.09090909090909091,
+    "n": 94,
+    "negative_errors": 1,
+    "negative_n": 11,
+    "positive_n": 83,
+    "precision": 0.9629629629629629,
+    "recall": 0.3132530120481928
+  },
+  "per_intent_regressions": [
+    "BRIGHTNESS correct5->0",
+    "VOLUME26->21",
+    "COLOR12->10",
+    "LIGHT_OFF6->5"
+  ],
+  "synthetic_accepted_regression": {
+    "previous": 3099,
+    "current": 3078
+  },
+  "optionb_human_wrong_accepts": {
+    "previous": 3,
+    "current": 4
+  },
+  "strict_qualification": false,
+  "actions_enabled": false,
+  "installed_changed": false,
+  "physical_pi_measured": false,
+  "live_microphone_measured": false,
+  "examined_regression_data": true,
+  "published_data_used_for_threshold_tuning": false,
+  "package": {
+    "path": "dist/speaker-pipeline-repair-v1/speaker-pi4-pipeline-repair.zip",
+    "sha256": "6923a1636a4b506c2b75b0c5308a752b8f714dce5f0ce5a732498c282dbfe4dc",
+    "bytes": 46991377,
+    "payloads": 88,
+    "wheels": 11,
+    "all_onnx_bytes": 9878305,
+    "unchanged_runtime_wheel_sample_wake_payloads": 48
+  },
+  "resources": {
+    "demo": {
+      "latency_ms": {
+        "n": 15,
+        "p50": 58.41825343668461,
+        "p95": 144.6567098610103
+      },
+      "actual_proc_vmhwm_mib": 77.84765625,
+      "benchmark_ru_maxrss_mib": 85.828125,
+      "parity": {
+        "fixed": 15,
+        "qualified": 15,
+        "raw": 15,
+        "relaxed": 15,
+        "selected_output": 15
+      },
+      "smoke_quality": {
+        "accepted": 3,
+        "exact": 2,
+        "false_accept_rate": 0.0,
+        "n": 15,
+        "negative_errors": 0,
+        "negative_n": 2,
+        "positive_n": 13,
+        "precision": 0.6666666666666666,
+        "recall": 0.15384615384615385,
+        "slots": {
+          "color": {
+            "correct": 0,
+            "reference_n": 1
+          },
+          "light_id": {
+            "correct": 0,
+            "reference_n": 4
+          },
+          "operation": {
+            "correct": 0,
+            "reference_n": 1
+          },
+          "percent": {
+            "correct": 0,
+            "reference_n": 1
+          },
+          "time": {
+            "correct": 0,
+            "reference_n": 1
+          },
+          "timezone": {
+            "correct": 0,
+            "reference_n": 1
+          }
+        }
+      }
+    },
+    "qualified": {
+      "latency_ms": {
+        "n": 15,
+        "p50": 68.54058336466551,
+        "p95": 129.09160600975153
+      },
+      "actual_proc_vmhwm_mib": 77.79296875,
+      "benchmark_ru_maxrss_mib": 85.828125,
+      "parity": {
+        "fixed": 15,
+        "qualified": 15,
+        "raw": 15,
+        "relaxed": 15,
+        "selected_output": 15
+      },
+      "smoke_quality": {
+        "accepted": 0,
+        "exact": 0,
+        "false_accept_rate": 0.0,
+        "n": 15,
+        "negative_errors": 0,
+        "negative_n": 2,
+        "positive_n": 13,
+        "precision": null,
+        "recall": 0.0,
+        "slots": {
+          "color": {
+            "correct": 0,
+            "reference_n": 1
+          },
+          "light_id": {
+            "correct": 0,
+            "reference_n": 4
+          },
+          "operation": {
+            "correct": 0,
+            "reference_n": 1
+          },
+          "percent": {
+            "correct": 0,
+            "reference_n": 1
+          },
+          "time": {
+            "correct": 0,
+            "reference_n": 1
+          },
+          "timezone": {
+            "correct": 0,
+            "reference_n": 1
+          }
+        }
+      }
+    }
+  },
+  "smoke_parity_is_not_accuracy": true,
+  "protected_bindings": 87,
+  "protected_changed": [],
+  "source_and_control_frozen_bindings": 64,
+  "reference_exclusions_identical_to_control": true,
+  "exclusion_tamper_rejected": true,
+  "local_report_links_verified": 13,
+  "offline_package_links_verified": true,
+  "ignore_checks": {
+    ".cache/speaker-pipeline-repair-v1/probe.pt": true,
+    "dist/speaker-pipeline-repair-v1/probe.zip": true,
+    "scripts/train/speaker_pipeline_repair.py": false,
+    "experiments/speaker-pipeline-repair-v1/protocol.json": false,
+    "docs/EXPERIMENT-speaker-pipeline-repair-v1.md": false
+  },
+  "branch": "codex/speaker-demo-v1",
+  "head": "5d872e3a249e5876aaa8130b76f6e3b31622355f",
+  "staged_paths": [],
+  "committed": false,
+  "pushed": false,
+  "focused_tests": {
+    "passed": 67,
+    "seconds": 18.91,
+    "log": ".cache/speaker-pipeline-repair-v1/focused-reviewed.log"
+  },
+  "root_pytest": {
+    "status": "preexisting_collection_errors",
+    "count": 2,
+    "seconds": 44.98,
+    "errors": [
+      "experiments/pcv-synthetic-v1/tests/test_catalog.py: duplicate test_catalog module",
+      "scripts/test_prototype.py: missing train.register_sources"
+    ]
+  },
+  "fresh_independent_reviews": 1,
+  "review_fix_passes": 1,
+  "metadata_packaging_retries": 1,
+  "metadata_retry_scope": "Flat JSON/documentation extras only; no model/runtime/policy/gate changes, no extra acoustic replay",
+  "final_metadata_check_retry": "Missing repository sys.path in cache helper corrected before receipt publication; first failed log preserved",
+  "rulings": [
+    "Work stays in the existing dirty feature checkout without automatic commits; isolation uses new study paths and protected hashes. Cost: weaker isolation than a separate checkout, but uncommitted parent research is preserved.",
+    "Independent review does not certify acoustic, archive or Pi outcomes. Actual frozen replay/extracted execution cover the first two; Pi/live/owner/overlap remain unmeasured and unrelated root collection failures are preserved. Cost: this is not a universally improved, fully qualified or device-validated release."
+  ],
+  "deferred_minors": [
+    "Research CLI generic promoted field is not the regression verdict; authoritative results.regression_gate passes. Frozen research source preserved; shipped Pi status is correct."
+  ],
+  "bindings": {
+    "experiments/speaker-pipeline-repair-v1/protocol.json": "fb2e886e2afb55527036b7082e4858f9d22d0ca2f79b24e6bb51ca129f362b52",
+    "experiments/speaker-pipeline-repair-v1/review.json": "8f36815dd7d20a7e12cce31b6cff934a7e29455f92e91ba0e6a201708718595c",
+    "experiments/speaker-pipeline-repair-v1/recipe-equivalence.json": "a2d150039f3be598ac8e10461911efea3deb7608117da3bcfd182ea80d9c6fa4",
+    "experiments/speaker-pipeline-repair-v1/selection-before-test.json": "5c61a37d8a2824a9801ddde4a5c7c72a2b9e1e7a5f0286917cb88f34c6bae412",
+    "experiments/speaker-pipeline-repair-v1/results.json": "5d3a5a14364f9b219293f508303ca5432c37ed3e734a34997ba441e757d18461",
+    "experiments/speaker-pipeline-repair-v1/role-results.json": "2bc68efbb4d44c71234f828dd0605ebaf92915e03d8ee165477d892bd23360ee",
+    "experiments/speaker-pipeline-repair-v1/human-test-intents.csv": "b6dbface73f49cd00be9080db08cff606cccffd48f9dafde5918193dfb8dbf89",
+    "experiments/speaker-pipeline-repair-v1/optionb-analysis-receipt.json": "261c4ce45f3ee1a2ad33551ea893db344b6fb65ef804279abfab528131f4d345",
+    "experiments/speaker-pipeline-repair-v1/optionb-spoken-wordings.csv": "3ffd666b6901f72f6a2ce537edf002afa89545c58bb5a6aebc5540b6770d3272",
+    "experiments/speaker-pipeline-repair-v1/package.json": "2f5c30bbeb750fc543b4f48de8fedee3e31e70062b51a42d60e9b482626992e5",
+    "experiments/speaker-pipeline-repair-v1/package-verification.json": "5e79654eba7c8de4facc80ffa6cf121f7288bef4e3b42df9861860f6fd923692",
+    "experiments/speaker-pipeline-repair-v1/packaging-metadata.json": "0dc6045b1a1e979df91264b262d6c49044a1cfd6be51c47c20ee3f056a96bf13",
+    "experiments/speaker-pipeline-repair-v1/packaging-recovery.json": "6178914cf7b4eb3beb0ff6e0862397c0a7c35ac49920923527aeea84ebbcbffd",
+    "docs/PLAN-speaker-pipeline-repair-v1.md": "f7a9de5fbc68565a66e1be4d5824737a3601b0c56673ea968743c614d335c085",
+    "docs/EXPERIMENT-speaker-pipeline-repair-v1.md": "e3160ed1cc626922e71f7bec7557921608c088c561950f09c7345480d6236fb6",
+    "EXPERIMENTS.md": "84c97865da0c5758b4ded2cbf9cff97a8e8365c09a18600edf8b6834aa8de138",
+    "REQUIREMENTS.md": "2d8cff27f39880bfa0f6e9f7cde7db7be9c14b7b9e5d80c8426de618eaf2a4bd",
+    "scripts/modules.json": "fc0b3b88642d8222d08ce020d59abb555474b11c6e194251ff7c8ccc2c37a0be",
+    "scripts/train/speaker_pipeline_repair.py": "8e1b2376292ae67ff21f576c182ada7e58b1a236118a07a8a9046bb6818cd21e",
+    "scripts/test/test_speaker_pipeline_repair.py": "5d475994e588b0886ccdccb5c820bbbc91024dee0ff2c802219c82c50faee436",
+    ".cache/speaker-pipeline-repair-v1/red.log": "7e729fea07d42043860538911e34a7db861617a52d7076c961e8fb0f7dd06741",
+    ".cache/speaker-pipeline-repair-v1/green.log": "74e70ef9013f11bf2f504acf5ec40215f80c3a43501287fadb6d1a4609c2e091",
+    ".cache/speaker-pipeline-repair-v1/review-fix-red.log": "063a8c73ce4ee5414044ffda32f1a546f2be7d5c994ce695b6ef467b59fe5852",
+    ".cache/speaker-pipeline-repair-v1/focused-reviewed.log": "d3906b40e3250236f22c76ea77b8f9dec94aea485c324e40d527bb811fb5476f",
+    ".cache/speaker-pipeline-repair-v1/repository-final.log": "367e2bc4484ba1df2cbdc201534d5b39ee854605befea2c89b6822f40b652fd5",
+    ".cache/speaker-pipeline-repair-v1/reuse.log": "2e80e1625d71be86b6dcff4f4772db101cd016be7094b4c7f58c95aef51324a9",
+    ".cache/speaker-pipeline-repair-v1/regression.log": "7949e30066a8df471bc528ab79e997f1858603c5d0c1e14837fea7acf25e48c0",
+    ".cache/speaker-pipeline-repair-v1/package.log": "b02ca1046db009707955c3ef1e7219c59014afa09eea3201bb221b09b65fc88b",
+    ".cache/speaker-pipeline-repair-v1/package-retry.log": "5ce394032d33ddf7febf03e54eab34e1dfbb814061487d99f06d83e6eeb02a97",
+    ".cache/speaker-pipeline-repair-v1/verify-package.log": "f03773ab10f2f4c6cda6f7b5f4a3f466112ea1fea528f46118c36102b0364a3d",
+    ".cache/speaker-pipeline-repair-v1/package_retry.py": "ffae603204b728eff857177a69eb24f7f6f48c45802c4bd767bca7cc95540b96",
+    ".cache/speaker-pipeline-repair-v1/verify_package.py": "267b94358a7d2b09531714e0afe206a8a9d9a49cdab56d0c1d35e86631a5c7b9",
+    ".cache/speaker-pipeline-repair-v1/report_results.py": "0c9cbbe197d1fffcb137f33dbef7aba706057af3e1294a8efaeacbbf9e6e971a",
+    ".cache/speaker-pipeline-repair-v1/wording_analysis.py": "75f3047a6ca7590f61e1ce282e4a23452a61575539a8e43fef7e50295467b4b6",
+    "dist/speaker-pipeline-repair-v1/speaker-pi4-pipeline-repair.zip": "6923a1636a4b506c2b75b0c5308a752b8f714dce5f0ce5a732498c282dbfe4dc",
+    ".cache/speaker-pipeline-repair-v1/final_verify.py": "25f1cc24cf00966cda30c1b861697ef1404892c734b04693fa0e522e6f1dadd7"
+  }
+}

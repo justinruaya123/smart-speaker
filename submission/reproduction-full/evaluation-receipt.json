@@ -1,0 +1,11 @@
+{
+  "correction": "Historical external evaluation uses one OpenBLAS thread; preserve the exact fitted weights and original training/dev features. Initial evaluation files remain unchanged.",
+  "evaluation_source_sha256": "3f67414d1d1b101b051075f045e495fe1f7a2c7a35c656f0475fa09b3248134e",
+  "fitting_rerun": false,
+  "fitting_run": ".cache/submission/reproductions/2m-seed53-clean-source-v1",
+  "format": "submission-blas-evaluation-correction-v1",
+  "initial_comparison_sha256": "b72a438d73fdc5e8f3886daff6693e62809b49f8869a11493bab6cb23520754e",
+  "original_source_receipt_sha256": "b78317f05ae95b23bf2e9555dbb7fc8bd32941d4fb57148a0ed02a84a57814de",
+  "thresholds_changed": false,
+  "weights_changed": false
+}

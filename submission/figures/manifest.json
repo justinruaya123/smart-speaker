@@ -1,0 +1,23 @@
+{
+  "evidence": {
+    "docs/model-dataset-usage.json": "821f65a988447bb3e357cb157c41ab05fbe7921916a008a340aa4644aec53750",
+    "experiments/speaker-final-refinement-v1/results.json": "ae2787a3e996831140817c4fdf78ab8e0020de3bfe62b382ba3a70258ebc7228",
+    "experiments/speaker-official-vcm-benchmark-v1/results.json": "b60c8788d0b40c97c86d9825a5f23099cb6a5cc9e3f4b641b2cf36625c5604bb",
+    "experiments/speaker-pipeline-repair-v1/results.json": "5d3a5a14364f9b219293f508303ca5432c37ed3e734a34997ba441e757d18461",
+    "submission/benchmark/pc-recorded-metrics.json": "81c9259feb2693b0807e77e6f5d5c6dfbb82671bfd730a9a96100d14fe5794ca",
+    "submission/release/downloads.json": "1a088e74f5b1d6c00513d143f488e8543ab4993b17356674c62ba538f0e9477e",
+    "submission/release/inference.json": "0b50dc0b562b38f5887e647b69eb0f759878f48bf29ce9904bd88cd973a67e50",
+    "submission/reproduction-full/verification.json": "d45d94756220616929d69ccaa1d995e53ea406c7c576ebe1769c010c682ad6b1"
+  },
+  "files": {
+    "metrics.json": "418f35f2a5ac24be3bb185151a524b092d15f7b60506cf18045f799214eb1cf4",
+    "model-dataset-training-card.png": "1c8a9ffa0fe426f4360189f90a3e4e197126cc59d3827a124667e6562de86691",
+    "model-dataset-training-card.svg": "bfe5d45cabb3463cd487ad76d65beb1fee53a90044dc6f8678ac86ffa4adac41",
+    "recorded-comparison.png": "85e9ece4aa1fc47c87a1020f50633c238c7f45de81326e93d1c7cda6a810500f",
+    "recorded-comparison.svg": "5f23151bf0502b4efa8b4462fc70a74c17e87e7ee875f92f6693793a10b5dcb7",
+    "training-curves.png": "09686be73591d91e9885cc553cb033953ff401250cc262d1d5a2010d72059412",
+    "training-curves.svg": "3e571a038e6482e68343f356f5601e6accecb1f8be7ea9a534fb19eb295acbb5"
+  },
+  "generator": "python -m scripts.submission.report",
+  "training_manifest_sha256": "977f299d21e24522305f3343372a18627a450e0d1b357635eb842ae708273c10"
+}

@@ -1,0 +1,560 @@
+[
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 1,
+    "training_seconds": 22.356613798066974,
+    "losses": [
+      4.554900047679742,
+      2.7036141784240804,
+      0.5665332870557904
+    ],
+    "learning_rate": 0.0007966634959357861
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 2,
+    "training_seconds": 17.952662375755608,
+    "losses": [
+      3.426859712228179,
+      2.3059462308883667,
+      0.4757154367689509
+    ],
+    "learning_rate": 0.0007867110722527366
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 3,
+    "training_seconds": 19.636444956995547,
+    "losses": [
+      3.2611674492557845,
+      1.9714054679498076,
+      0.3098324923412292
+    ],
+    "learning_rate": 0.0007703130176794018
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 4,
+    "training_seconds": 19.88655785191804,
+    "losses": [
+      2.9523005864272513,
+      1.625685321322332,
+      0.24229448474701107
+    ],
+    "learning_rate": 0.0007477499074759311,
+    "development": {
+      "human": {
+        "rows": 256,
+        "positive_n": 193,
+        "negative_n": 63,
+        "exact": 0,
+        "accepted": 0,
+        "precision": null,
+        "recall": 0.0,
+        "negative_errors": 0,
+        "false_accept_rate": 0.0,
+        "raw_exact": 42,
+        "raw_recall": 0.21761658031088082,
+        "raw_negative_errors": 55,
+        "macro_speaker_recall": 0.0,
+        "raw_macro_speaker_recall": 0.2093521062271062,
+        "positive_speakers": 32
+      },
+      "synthetic": {
+        "rows": 0,
+        "positive_n": 0,
+        "negative_n": 0,
+        "exact": 0,
+        "accepted": 0,
+        "precision": null,
+        "recall": null,
+        "negative_errors": 0,
+        "false_accept_rate": null,
+        "raw_exact": 0,
+        "raw_recall": null,
+        "raw_negative_errors": 0,
+        "macro_speaker_recall": 0.0,
+        "raw_macro_speaker_recall": 0.0,
+        "positive_speakers": 0
+      }
+    },
+    "selection_key": [
+      0,
+      0.0,
+      0,
+      0,
+      0.2093521062271062,
+      0,
+      -4
+    ]
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 5,
+    "training_seconds": 19.223374272696674,
+    "losses": [
+      2.5796318914120397,
+      1.1987210880809773,
+      0.19486490991342484
+    ],
+    "learning_rate": 0.0007194078027135817
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 6,
+    "training_seconds": 10.491884261369705,
+    "losses": [
+      2.181945200699071,
+      0.7798525341010342,
+      0.15847776204706557
+    ],
+    "learning_rate": 0.0006857716446627536
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 7,
+    "training_seconds": 17.51617020741105,
+    "losses": [
+      1.8734242285912235,
+      0.5431223524307521,
+      0.10987736015764919
+    ],
+    "learning_rate": 0.0006474169573134011
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 8,
+    "training_seconds": 22.033153221942484,
+    "losses": [
+      1.617752879081915,
+      0.43180485071691993,
+      0.0813443668976106
+    ],
+    "learning_rate": 0.0006050000000000001,
+    "development": {
+      "human": {
+        "rows": 256,
+        "positive_n": 193,
+        "negative_n": 63,
+        "exact": 13,
+        "accepted": 13,
+        "precision": 1.0,
+        "recall": 0.06735751295336788,
+        "negative_errors": 0,
+        "false_accept_rate": 0.0,
+        "raw_exact": 125,
+        "raw_recall": 0.6476683937823834,
+        "raw_negative_errors": 45,
+        "macro_speaker_recall": 0.10737179487179488,
+        "raw_macro_speaker_recall": 0.5282822440717179,
+        "positive_speakers": 32
+      },
+      "synthetic": {
+        "rows": 0,
+        "positive_n": 0,
+        "negative_n": 0,
+        "exact": 0,
+        "accepted": 0,
+        "precision": null,
+        "recall": null,
+        "negative_errors": 0,
+        "false_accept_rate": null,
+        "raw_exact": 0,
+        "raw_recall": null,
+        "raw_negative_errors": 0,
+        "macro_speaker_recall": 0.0,
+        "raw_macro_speaker_recall": 0.0,
+        "positive_speakers": 0
+      }
+    },
+    "selection_key": [
+      1,
+      0.10737179487179488,
+      1.0,
+      0,
+      0.5282822440717179,
+      0,
+      -8
+    ]
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 9,
+    "training_seconds": 22.195636509917676,
+    "losses": [
+      1.423856621608138,
+      0.32141833602023934,
+      0.06126193627384661
+    ],
+    "learning_rate": 0.0005592465386223851
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 10,
+    "training_seconds": 22.28854019101709,
+    "losses": [
+      1.2169490372762084,
+      0.2229017345913841,
+      0.05942688801936432
+    ],
+    "learning_rate": 0.0005109394275899831
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 11,
+    "training_seconds": 22.02797327004373,
+    "losses": [
+      1.0949410058092326,
+      0.17549316654428063,
+      0.045443288132048565
+    ],
+    "learning_rate": 0.0004609052149658202
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 12,
+    "training_seconds": 22.383636846207082,
+    "losses": [
+      0.9945385804555068,
+      0.1676435940535157,
+      0.02092420203060404
+    ],
+    "learning_rate": 0.00041,
+    "development": {
+      "human": {
+        "rows": 256,
+        "positive_n": 193,
+        "negative_n": 63,
+        "exact": 55,
+        "accepted": 56,
+        "precision": 0.9821428571428571,
+        "recall": 0.2849740932642487,
+        "negative_errors": 0,
+        "false_accept_rate": 0.0,
+        "raw_exact": 135,
+        "raw_recall": 0.6994818652849741,
+        "raw_negative_errors": 46,
+        "macro_speaker_recall": 0.2819883241758242,
+        "raw_macro_speaker_recall": 0.5981181921149026,
+        "positive_speakers": 32
+      },
+      "synthetic": {
+        "rows": 0,
+        "positive_n": 0,
+        "negative_n": 0,
+        "exact": 0,
+        "accepted": 0,
+        "precision": null,
+        "recall": null,
+        "negative_errors": 0,
+        "false_accept_rate": null,
+        "raw_exact": 0,
+        "raw_recall": null,
+        "raw_negative_errors": 0,
+        "macro_speaker_recall": 0.0,
+        "raw_macro_speaker_recall": 0.0,
+        "positive_speakers": 0
+      }
+    },
+    "selection_key": [
+      0,
+      0.2819883241758242,
+      0.9821428571428571,
+      0,
+      0.5981181921149026,
+      0,
+      -12
+    ]
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 13,
+    "training_seconds": 22.16856988798827,
+    "losses": [
+      0.9078721553863337,
+      0.1570859637055643,
+      0.05080553944902514
+    ],
+    "learning_rate": 0.0003590947850341799
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 14,
+    "training_seconds": 22.249024376273155,
+    "losses": [
+      0.8410172856723269,
+      0.12630018079168318,
+      0.018306894640185572
+    ],
+    "learning_rate": 0.00030906057241001695
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 15,
+    "training_seconds": 22.282827959395945,
+    "losses": [
+      0.7531777357216924,
+      0.10285119192121783,
+      0.01866118497758862
+    ],
+    "learning_rate": 0.0002607534613776151
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 16,
+    "training_seconds": 22.251563142053783,
+    "losses": [
+      0.7137381158924351,
+      0.10015165809454629,
+      0.01347889705263583
+    ],
+    "learning_rate": 0.0002150000000000001,
+    "development": {
+      "human": {
+        "rows": 256,
+        "positive_n": 193,
+        "negative_n": 63,
+        "exact": 54,
+        "accepted": 58,
+        "precision": 0.9310344827586207,
+        "recall": 0.27979274611398963,
+        "negative_errors": 1,
+        "false_accept_rate": 0.015873015873015872,
+        "raw_exact": 143,
+        "raw_recall": 0.7409326424870466,
+        "raw_negative_errors": 42,
+        "macro_speaker_recall": 0.29574175824175825,
+        "raw_macro_speaker_recall": 0.6393947609408135,
+        "positive_speakers": 32
+      },
+      "synthetic": {
+        "rows": 0,
+        "positive_n": 0,
+        "negative_n": 0,
+        "exact": 0,
+        "accepted": 0,
+        "precision": null,
+        "recall": null,
+        "negative_errors": 0,
+        "false_accept_rate": null,
+        "raw_exact": 0,
+        "raw_recall": null,
+        "raw_negative_errors": 0,
+        "macro_speaker_recall": 0.0,
+        "raw_macro_speaker_recall": 0.0,
+        "positive_speakers": 0
+      }
+    },
+    "selection_key": [
+      0,
+      0.29574175824175825,
+      0.9310344827586207,
+      -1,
+      0.6393947609408135,
+      0,
+      -16
+    ]
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 17,
+    "training_seconds": 22.642222120426595,
+    "losses": [
+      0.6722843806104114,
+      0.08577634647432812,
+      0.009880470752506199
+    ],
+    "learning_rate": 0.00017258304268659896
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 18,
+    "training_seconds": 22.29641493037343,
+    "losses": [
+      0.6396102426806465,
+      0.07555466041715893,
+      0.012236694893734542
+    ],
+    "learning_rate": 0.00013422835533724651
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 19,
+    "training_seconds": 22.250657099299133,
+    "losses": [
+      0.605775145891433,
+      0.06825119552862209,
+      0.010537056598100966
+    ],
+    "learning_rate": 0.00010059219728641835
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 20,
+    "training_seconds": 22.029191604815423,
+    "losses": [
+      0.6017981598852202,
+      0.06775053163437406,
+      0.021128965536306055
+    ],
+    "learning_rate": 7.225009252406891e-05,
+    "development": {
+      "human": {
+        "rows": 256,
+        "positive_n": 193,
+        "negative_n": 63,
+        "exact": 66,
+        "accepted": 69,
+        "precision": 0.9565217391304348,
+        "recall": 0.34196891191709844,
+        "negative_errors": 0,
+        "false_accept_rate": 0.0,
+        "raw_exact": 143,
+        "raw_recall": 0.7409326424870466,
+        "raw_negative_errors": 39,
+        "macro_speaker_recall": 0.31900755494505495,
+        "raw_macro_speaker_recall": 0.6636335429920955,
+        "positive_speakers": 32
+      },
+      "synthetic": {
+        "rows": 0,
+        "positive_n": 0,
+        "negative_n": 0,
+        "exact": 0,
+        "accepted": 0,
+        "precision": null,
+        "recall": null,
+        "negative_errors": 0,
+        "false_accept_rate": null,
+        "raw_exact": 0,
+        "raw_recall": null,
+        "raw_negative_errors": 0,
+        "macro_speaker_recall": 0.0,
+        "raw_macro_speaker_recall": 0.0,
+        "positive_speakers": 0
+      }
+    },
+    "selection_key": [
+      0,
+      0.31900755494505495,
+      0.9565217391304348,
+      0,
+      0.6636335429920955,
+      0,
+      -20
+    ]
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 21,
+    "training_seconds": 21.91309783887118,
+    "losses": [
+      0.5592149315828768,
+      0.05527091540473824,
+      0.010245538662407702
+    ],
+    "learning_rate": 4.968698232059818e-05
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 22,
+    "training_seconds": 21.95009237062186,
+    "losses": [
+      0.5670454581656182,
+      0.06227944124111673,
+      0.006123845563583548
+    ],
+    "learning_rate": 3.328892774726341e-05
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 23,
+    "training_seconds": 22.078025361523032,
+    "losses": [
+      0.5465216840772579,
+      0.058505671893726685,
+      0.005869331538818301
+    ],
+    "learning_rate": 2.3336504064213954e-05
+  },
+  {
+    "phase": "human",
+    "arm": "shared",
+    "epoch": 24,
+    "training_seconds": 22.012146722525358,
+    "losses": [
+      0.5540190873628793,
+      0.04763383009352159,
+      0.00882664236910576
+    ],
+    "learning_rate": 2e-05,
+    "development": {
+      "human": {
+        "rows": 256,
+        "positive_n": 193,
+        "negative_n": 63,
+        "exact": 69,
+        "accepted": 73,
+        "precision": 0.9452054794520548,
+        "recall": 0.35751295336787564,
+        "negative_errors": 0,
+        "false_accept_rate": 0.0,
+        "raw_exact": 144,
+        "raw_recall": 0.7461139896373057,
+        "raw_negative_errors": 40,
+        "macro_speaker_recall": 0.3285227793040293,
+        "raw_macro_speaker_recall": 0.6587478311162521,
+        "positive_speakers": 32
+      },
+      "synthetic": {
+        "rows": 0,
+        "positive_n": 0,
+        "negative_n": 0,
+        "exact": 0,
+        "accepted": 0,
+        "precision": null,
+        "recall": null,
+        "negative_errors": 0,
+        "false_accept_rate": null,
+        "raw_exact": 0,
+        "raw_recall": null,
+        "raw_negative_errors": 0,
+        "macro_speaker_recall": 0.0,
+        "raw_macro_speaker_recall": 0.0,
+        "positive_speakers": 0
+      }
+    },
+    "selection_key": [
+      0,
+      0.3285227793040293,
+      0.9452054794520548,
+      0,
+      0.6587478311162521,
+      0,
+      -24
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "export_sha256": "e2f057a21611eda7e5d5acc2c27edfae7afa4c2383384e510da87179e186aa23",
+  "model_binding": {
+    "catalog_sha256": "429a15bc364d7fd9e723a2879c611472b5176de6cb3a2b54be7c137b050c985d",
+    "custom_slots_sha256": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5",
+    "model_sha256": "3dea2e25dd431c0b085033f04e0b3f16181016ed42c41a1b84ff6acd43d2ac7e",
+    "normalization_sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+    "schema_sha256": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c"
+  },
+  "policy_sha256": "f312414f808b846ae1ef13503cc2916db1b9642cc7ee5e17c4a5431a62d09fc6",
+  "protocol_sha256": "07987c5b6a80859bdccfbda28bb9c866d8915a19d940f009300ce6ae66f1f4d1",
+  "selection_sha256": "ebda4761d2e7724d93181b14e4bb6de9d4b6b4e380805c6084d61616d231a5be",
+  "test_used_for_selection": false
+}

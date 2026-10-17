@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1166.4pt" height="662.4pt" viewBox="0 0 1166.4 662.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>scripts.submission.report</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 662.4 
+L 1166.4 662.4 
+L 1166.4 0 
+L 0 0 
+z
+" style="fill: #f7f9fc"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 47.52 226.224 
+L 245.664 226.224 
+Q 254.88 226.224 254.88 221.04 
+L 254.88 136.8 
+Q 254.88 131.616 245.664 131.616 
+L 47.52 131.616 
+Q 38.304 131.616 38.304 136.8 
+L 38.304 221.04 
+Q 38.304 226.224 47.52 226.224 
+z
+" clip-path="url(#pb20bbf349f)" style="fill: #ffffff; stroke: #d3dde7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 268.704 226.224 
+L 466.848 226.224 
+Q 476.064 226.224 476.064 221.04 
+L 476.064 136.8 
+Q 476.064 131.616 466.848 131.616 
+L 268.704 131.616 
+Q 259.488 131.616 259.488 136.8 
+L 259.488 221.04 
+Q 259.488 226.224 268.704 226.224 
+z
+" clip-path="url(#pb20bbf349f)" style="fill: #ffffff; stroke: #d3dde7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 489.888 226.224 
+L 688.032 226.224 
+Q 697.248 226.224 697.248 221.04 
+L 697.248 136.8 
+Q 697.248 131.616 688.032 131.616 
+L 489.888 131.616 
+Q 480.672 131.616 480.672 136.8 
+L 480.672 221.04 
+Q 480.672 226.224 489.888 226.224 
+z
+" clip-path="url(#pb20bbf349f)" style="fill: #ffffff; stroke: #d3dde7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 711.072 226.224 
+L 909.216 226.224 
+Q 918.432 226.224 918.432 221.04 
+L 918.432 136.8 
+Q 918.432 131.616 909.216 131.616 
+L 711.072 131.616 
+Q 701.856 131.616 701.856 136.8 
+L 701.856 221.04 
+Q 701.856 226.224 711.072 226.224 
+z
+" clip-path="url(#pb20bbf349f)" style="fill: #ffffff; stroke: #d3dde7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 932.256 226.224 
+L 1130.4 226.224 
+Q 1139.616 226.224 1139.616 221.04 
+L 1139.616 136.8 
+Q 1139.616 131.616 1130.4 131.616 
+L 932.256 131.616 
+Q 923.04 131.616 923.04 136.8 
+L 923.04 221.04 
+Q 923.04 226.224 932.256 226.224 
+z
+" clip-path="url(#pb20bbf349f)" style="fill: #ffffff; stroke: #d3dde7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 47.52 593.64 
+L 1118.88 593.64 
+Q 1130.4 593.64 1130.4 587.16 
+L 1130.4 512.64 
+Q 1130.4 506.16 1118.88 506.16 
+L 47.52 506.16 
+Q 36 506.16 36 512.64 
+L 36 587.16 
+Q 36 593.64 47.52 593.64 
+z
+" clip-path="url(#pb20bbf349f)" style="fill: #e9eff5"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #147d92" x="47.52" y="39.6" transform="rotate(-0 47.52 39.6)">FINITE VOICE COMMAND MODEL</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 28px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #172a3a" x="47.52" y="72" transform="rotate(-0 47.52 72)">Model / dataset / training</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #405363" x="47.52" y="101.16" transform="rotate(-0 47.52 101.16)">Primary: 2,066,831 parameters  |  selected control epoch 32  |  direct command JSON / rejection</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #172a3a" x="146.592" y="162.72" transform="rotate(-0 146.592 162.72)">Capture</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #405363" transform="translate(113.613875 193.588125)">16 kHz mono</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #405363" transform="translate(100.257625 209.619375)">Hey Jarvis + Silero</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 251.122219 178.92 
+Q 254.306363 178.92 255.813455 178.92 
+" style="fill: none; stroke: #637789; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 251.813455 176.92 
+L 255.813455 178.92 
+L 251.813455 180.92 
+" style="fill: none; stroke: #637789; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #172a3a" x="367.776" y="162.72" transform="rotate(-0 367.776 162.72)">Frontend</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #405363" transform="translate(330.640062 192.619375)">40 × T log-mel</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #405363" transform="translate(332.060375 210.106875)">25 ms / 10 ms</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 472.306219 178.92 
+Q 475.490363 178.92 476.997455 178.92 
+" style="fill: none; stroke: #637789; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 472.997455 176.92 
+L 476.997455 178.92 
+L 472.997455 180.92 
+" style="fill: none; stroke: #637789; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #172a3a" x="588.96" y="162.72" transform="rotate(-0 588.96 162.72)">Contextual encoder</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #405363" transform="translate(540.130313 193.077969)">6 blocks; width 192</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #405363" transform="translate(545.202969 210.077969)">4 heads; FFN 384</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 693.490219 178.92 
+Q 696.674363 178.92 698.181455 178.92 
+" style="fill: none; stroke: #637789; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 694.181455 176.92 
+L 698.181455 178.92 
+L 694.181455 180.92 
+" style="fill: none; stroke: #637789; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #172a3a" x="810.144" y="162.72" transform="rotate(-0 810.144 162.72)">Finite outputs</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #405363" transform="translate(755.499469 193.077969)">40 acoustic; 19 intent</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #405363" transform="translate(769.485406 209.531094)">2 target outputs</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 914.674219 178.92 
+Q 917.858363 178.92 919.365455 178.92 
+" style="fill: none; stroke: #637789; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 915.365455 176.92 
+L 919.365455 178.92 
+L 915.365455 180.92 
+" style="fill: none; stroke: #637789; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #172a3a" x="1031.328" y="162.72" transform="rotate(-0 1031.328 162.72)">Typed validation</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #405363" transform="translate(977.993625 192.619375)">Finite catalog scoring</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #405363" transform="translate(978.953 209.619375)">Command / rejection</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #405363" x="47.52" y="250.2" transform="rotate(-0 47.52 250.2)">Complete-utterance contextual encoder after VAD endpoint; no attention/KV caches or unrestricted transcript.</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #147d92" x="47.52" y="292.32" transform="rotate(-0 47.52 292.32)">MODEL</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(47.52 335.107031)">2M INT8 ONNX: 3.026 MiB</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(47.52 354.119414)">6 blocks / width 192 / 4 heads / FFN 384</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(47.52 372.939844)">935k comparison: 935,567 parameters</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(47.52 393.382031)">935k FP32 ONNX: 3.686 MiB</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(47.52 412.807031)">18 command intents + UNKNOWN</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(47.52 431.214844)">Actions off by default; qualification failed</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #147d92" x="427.68" y="292.32" transform="rotate(-0 427.68 292.32)">DATASET</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(427.68 334.089844)">AI231 primary + Filipino supplement</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(427.68 353.514844)">23,295 fitting utterances / 14.039 hours</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(427.68 372.939844)">1,869 human + 21,426 synthetic</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(427.68 393.382031)">179 declared human IDs + 70 voice IDs</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(427.68 412.271367)">1,251 dev / 210 human calibration</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(427.68 431.696367)">Per-source terms; DOI 10.57967/hf/10723</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #147d92" x="807.84" y="292.32" transform="rotate(-0 807.84 292.32)">TRAINING</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(807.84 335.107031)">One shared NVIDIA A100-SXM4-40GB</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(807.84 353.514844)">Seed 53; PyTorch 2.10.0+cu128</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(807.84 372.939844)">AdamW; CTC + .30 intent CE + .15 target CE</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(807.84 392.364844)">24 human + 32 control + 32 completion epochs</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(807.84 411.789844)">Selected lineage: human 20 → control 32</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(807.84 431.214844)">33.17 min study wall-clock; one A100</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(807.84 450.639844)">Epoch 32 CTC / intent / target: .2313 / .02766 / .000811</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #172a3a" x="64.8" y="535.32" transform="rotate(-0 64.8 535.32)">RASPBERRY PI VALIDATION</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #405363" x="64.8" y="564.48" transform="rotate(-0 64.8 564.48)">Wake / intent accuracy, false accepts, p95 latency, RTF, memory and thermal behavior: NOT MEASURED</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #637789" x="47.52" y="619.56" transform="rotate(-0 47.52 619.56)">Evidence: docs/REPRODUCIBILITY-935k-2m.md; docs/model-dataset-usage.json; submission/training/manifest.json</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pb20bbf349f">
+   <rect x="7.2" y="7.2" width="1152" height="648"/>
+  </clipPath>
+ </defs>
+</svg>

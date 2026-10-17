@@ -1,0 +1,44 @@
+{
+  "audio_played": false,
+  "benchmark_196_recordings_passed": true,
+  "benchmark_archive_sha256": "741bc82951331974ef3eb149e02951fd55726a19e946d38417283ce8c3730a53",
+  "compiled_gateway_served": true,
+  "compiled_ui_unchanged_from_v3": true,
+  "configuration_example_included": true,
+  "evidence": {
+    "final_benchmark_metrics_sha256": "5933fcbcee81675d6ce63debb97b0ce7a98655409ef22716e80019f4f41bcff5",
+    "focused_test_log_sha256": "29c323048fc2b64ddfd4db0dbdb6704c1535f87375afb51970e36f3cf6744455",
+    "gateway_receipt_sha256": "64458d0bcd1571157f0a7bc71ecdcbcaea41bea5c74b43908f44a828024b0d4c",
+    "v4_runtime_receipt_sha256": "419090983be4aa1a05b411359178e28bc1fafadeb6efb1bcc42e436f88c57466"
+  },
+  "final_benchmark_published_rows": 196,
+  "final_benchmark_timing_repeats": 1,
+  "focused_python_tests": 70,
+  "focused_python_tests_passed": true,
+  "format": "submission-release-verification-v4",
+  "gui_provider_configuration_tested": "Offline fixtures only; private env/config controls preserved",
+  "inference_archive_bytes": 13097552,
+  "inference_archive_sha256": "9c45b22b65cfd8072043c6844d1cddf7d9d9079d86d3123439343f83dfb13d14",
+  "inference_members": 1652,
+  "inherited_blas64_borderline_cli_worker_parity": true,
+  "live_provider_requests": false,
+  "managed_python": "3.13.9",
+  "microphone_opened": false,
+  "model_load_passed": true,
+  "model_parameters": 2066831,
+  "numeric_frontend_blas_threads": 1,
+  "physical_pi_measured": false,
+  "previous_15_recording_cli_gateway_parity": true,
+  "recorded_wav_http_replay_passed": true,
+  "root_pytest_collection": {
+    "passed": false,
+    "preexisting_errors": [
+      "duplicate test_catalog module names",
+      "scripts/test_prototype.py imports missing train.register_sources"
+    ]
+  },
+  "runtime_environment": "Previously cold-created minimal managed Python; v4 CLI/worker and complete v3 recorded benchmark tested in extracted archives.",
+  "speaker_ui_tests": 91,
+  "speaker_ui_typecheck_passed": true,
+  "two_onnx_threads_one_blas_thread_smoke_passed": true
+}

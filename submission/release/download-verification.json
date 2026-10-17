@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "verified_utc": "2026-10-17T05:45:58.200074+00:00",
+  "method": "Anonymous HTTPS download to a new directory, then standard-library verification of exact size, SHA-256, ZIP inventory, every member hash and selected model binding",
+  "hf_revision": "f61d1cfb784ac3c5341899b905d88ccfd06d215e",
+  "assets": [
+    {
+      "kind": "inference",
+      "filename": "smart-speaker-inference-2m-v4.zip",
+      "path_in_repository": "releases/2m-submission-final/smart-speaker-inference-2m-v4.zip",
+      "bytes": 13097552,
+      "sha256": "9c45b22b65cfd8072043c6844d1cddf7d9d9079d86d3123439343f83dfb13d14",
+      "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/resolve/f61d1cfb784ac3c5341899b905d88ccfd06d215e/releases/2m-submission-final/smart-speaker-inference-2m-v4.zip?download=true",
+      "hashed_members": 1652,
+      "outer_sha256_verified": true,
+      "manifest_inventory_verified": true,
+      "member_hashes_verified": true,
+      "selected_model_verified": true,
+      "anonymous_full_download_verified": true
+    },
+    {
+      "kind": "benchmark",
+      "filename": "final-submission-benchmark-2m-v3.zip",
+      "path_in_repository": "releases/2m-submission-final/final-submission-benchmark-2m-v3.zip",
+      "bytes": 18847326,
+      "sha256": "741bc82951331974ef3eb149e02951fd55726a19e946d38417283ce8c3730a53",
+      "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/resolve/f61d1cfb784ac3c5341899b905d88ccfd06d215e/releases/2m-submission-final/final-submission-benchmark-2m-v3.zip?download=true",
+      "hashed_members": 241,
+      "outer_sha256_verified": true,
+      "manifest_inventory_verified": true,
+      "member_hashes_verified": true,
+      "selected_model_verified": true,
+      "anonymous_full_download_verified": true
+    }
+  ],
+  "inference_test": "Software/package integrity only; no physical Pi or live microphone claim"
+}

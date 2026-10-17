@@ -1,0 +1,16 @@
+{
+  "format": "submission-training-bootstrap-v1",
+  "fresh_uv_sync_locked": true,
+  "python": "3.13.9",
+  "torch": "2.10.0+cu128",
+  "cuda": "12.8",
+  "onnx": "1.20.1",
+  "onnxruntime": "1.23.2",
+  "numpy": "2.3.5",
+  "pyarrow": "23.0.1",
+  "matplotlib": "3.11.2",
+  "soundfile": "0.13.1",
+  "einops": "0.8.1",
+  "gpu_available": true,
+  "scope": "Fresh uv training-group installation/import verification; the separate-folder full fit used the root interpreter with the same listed package versions."
+}

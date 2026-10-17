@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "model": "2m",
+  "model_parameters": 2066831,
+  "model_sha256": "3dea2e25dd431c0b085033f04e0b3f16181016ed42c41a1b84ff6acd43d2ac7e",
+  "repository": "justinruaya123/ai231-smart-speaker",
+  "repo_type": "dataset",
+  "revision": "f61d1cfb784ac3c5341899b905d88ccfd06d215e",
+  "branch": "inference",
+  "assets": [
+    {
+      "kind": "inference",
+      "filename": "smart-speaker-inference-2m-v4.zip",
+      "path_in_repository": "releases/2m-submission-final/smart-speaker-inference-2m-v4.zip",
+      "bytes": 13097552,
+      "sha256": "9c45b22b65cfd8072043c6844d1cddf7d9d9079d86d3123439343f83dfb13d14",
+      "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/resolve/f61d1cfb784ac3c5341899b905d88ccfd06d215e/releases/2m-submission-final/smart-speaker-inference-2m-v4.zip?download=true"
+    },
+    {
+      "kind": "benchmark",
+      "filename": "final-submission-benchmark-2m-v3.zip",
+      "path_in_repository": "releases/2m-submission-final/final-submission-benchmark-2m-v3.zip",
+      "bytes": 18847326,
+      "sha256": "741bc82951331974ef3eb149e02951fd55726a19e946d38417283ce8c3730a53",
+      "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/resolve/f61d1cfb784ac3c5341899b905d88ccfd06d215e/releases/2m-submission-final/final-submission-benchmark-2m-v3.zip?download=true"
+    }
+  ],
+  "scope": "Only the two reviewed release ZIPs; public dataset main and private model repository unchanged."
+}

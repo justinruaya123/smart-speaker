@@ -1,0 +1,19 @@
+[project]
+name = "smart-speaker-submission"
+version = "1.0.0"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "numpy==2.3.5", "einops==0.8.1", "onnxruntime==1.23.2",
+  "soundfile==0.13.1", "sounddevice==0.5.3",
+]
+
+[dependency-groups]
+benchmark = ["pyarrow==23.0.1", "huggingface-hub==0.36.2"]
+training = [
+  "torch==2.10.0", "onnx==1.20.1", "pyarrow==23.0.1",
+  "huggingface-hub==0.36.2", "matplotlib==3.11.2",
+  "threadpoolctl==3.6.0",
+]
+
+[tool.uv]
+package = false

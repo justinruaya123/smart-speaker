@@ -1,0 +1,261 @@
+{
+  "anchor_sha256": "5d209f6537ad964555719a668794635b738906227fa457e249eaab257e728946",
+  "claim": "Recognition acknowledgments only; no device action or runtime synthesis",
+  "format": "smart-speaker-fixed-responses-v1",
+  "generation": {
+    "device": "NVIDIA A100-SXM4-40GB",
+    "models": [
+      "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    ],
+    "physical_gpu": 2,
+    "qwen_tts": "0.1.1",
+    "sampling": {
+      "do_sample": true,
+      "max_new_tokens": 512,
+      "temperature": 0.7
+    },
+    "seconds": 165.09565477026626,
+    "torch": "2.10.0+cu128"
+  },
+  "hub": {
+    "branch": "inference",
+    "repo_id": "justinruaya123/ai231-smart-speaker",
+    "revision": "85265d8191223c0af6a39ef70a689d828c16995f",
+    "subdirectory": "responses",
+    "repo_type": "dataset"
+  },
+  "human_voice_clone": false,
+  "identity_source": "original_synthetic_voice_design",
+  "listener_verified": false,
+  "responses": [
+    {
+      "bytes": 130604,
+      "duration_seconds": 2.72,
+      "id": "recognized_play_music",
+      "path": "audio/recognized_play_music.wav",
+      "sample_rate": 24000,
+      "samples": 65280,
+      "seed": 6101700,
+      "sha256": "eb19ed061316e9fc4ab9b602902500e36dbbcc7a1ea02945cca3dd9be0bec9b7",
+      "text": "I recognized a request to play music."
+    },
+    {
+      "bytes": 103724,
+      "duration_seconds": 2.16,
+      "id": "recognized_weather",
+      "path": "audio/recognized_weather.wav",
+      "sample_rate": 24000,
+      "samples": 51840,
+      "seed": 6101701,
+      "sha256": "518e8aaf5ef7364e9a252be6830dde372699f056560d28eafe5cb1d54a3b455c",
+      "text": "I recognized a weather request."
+    },
+    {
+      "bytes": 119084,
+      "duration_seconds": 2.48,
+      "id": "recognized_time",
+      "path": "audio/recognized_time.wav",
+      "sample_rate": 24000,
+      "samples": 59520,
+      "seed": 6101702,
+      "sha256": "e3bd984bf1e5134ab603a8233ff21940d3d1da5bdafb13dfd520535a0c04d090",
+      "text": "I recognized a request for the time."
+    },
+    {
+      "bytes": 142124,
+      "duration_seconds": 2.96,
+      "id": "recognized_light_on",
+      "path": "audio/recognized_light_on.wav",
+      "sample_rate": 24000,
+      "samples": 71040,
+      "seed": 6101703,
+      "sha256": "94b47decd3eefb87adaf7703f3f8ca5c244fdb75e434d98675534df595cf3f3d",
+      "text": "I recognized a request to turn the lights on."
+    },
+    {
+      "bytes": 126764,
+      "duration_seconds": 2.64,
+      "id": "recognized_light_off",
+      "path": "audio/recognized_light_off.wav",
+      "sample_rate": 24000,
+      "samples": 63360,
+      "seed": 6101704,
+      "sha256": "ac33704ff36aa9baf678b64a3cad58730285be497c2493a3322634fd2e29579f",
+      "text": "I recognized a request to turn the lights off."
+    },
+    {
+      "bytes": 142124,
+      "duration_seconds": 2.96,
+      "id": "recognized_pause",
+      "path": "audio/recognized_pause.wav",
+      "sample_rate": 24000,
+      "samples": 71040,
+      "seed": 6101705,
+      "sha256": "33366c7040d15198418c69b4300c17c66db3dd95866022c891287daf00ad540e",
+      "text": "I recognized a request to pause playback."
+    },
+    {
+      "bytes": 134444,
+      "duration_seconds": 2.8,
+      "id": "recognized_stop",
+      "path": "audio/recognized_stop.wav",
+      "sample_rate": 24000,
+      "samples": 67200,
+      "seed": 6101706,
+      "sha256": "099391e201cbfcd69da17d32167fd18a0afb0def29345c4abdaadb4ea4d0988a",
+      "text": "I recognized a request to stop playback."
+    },
+    {
+      "bytes": 134444,
+      "duration_seconds": 2.8,
+      "id": "recognized_next",
+      "path": "audio/recognized_next.wav",
+      "sample_rate": 24000,
+      "samples": 67200,
+      "seed": 6101707,
+      "sha256": "e33d5622688a72dd8cc9a93b30baa5edf77e654766019230c6ea7cc62a35ed56",
+      "text": "I recognized a request for the next song."
+    },
+    {
+      "bytes": 111404,
+      "duration_seconds": 2.32,
+      "id": "recognized_volume",
+      "path": "audio/recognized_volume.wav",
+      "sample_rate": 24000,
+      "samples": 55680,
+      "seed": 6101708,
+      "sha256": "16adccfab7c126cb301ec0a3e602c3bc7a60039ac9d8c6440ec990460244e2fb",
+      "text": "I recognized a volume request."
+    },
+    {
+      "bytes": 107564,
+      "duration_seconds": 2.24,
+      "id": "recognized_call",
+      "path": "audio/recognized_call.wav",
+      "sample_rate": 24000,
+      "samples": 53760,
+      "seed": 6101709,
+      "sha256": "15e22e93bd55e9a0575e2ef1cc73dd6cb5e09e329debb9402df4b098f62e4486",
+      "text": "I recognized a call request."
+    },
+    {
+      "bytes": 111404,
+      "duration_seconds": 2.32,
+      "id": "recognized_message",
+      "path": "audio/recognized_message.wav",
+      "sample_rate": 24000,
+      "samples": 55680,
+      "seed": 6101710,
+      "sha256": "dbff5c097d62137cd35231a54d1d58946df60dd470943bebe13472bf41baeb28",
+      "text": "I recognized a message request."
+    },
+    {
+      "bytes": 134444,
+      "duration_seconds": 2.8,
+      "id": "recognized_list_reminders",
+      "path": "audio/recognized_list_reminders.wav",
+      "sample_rate": 24000,
+      "samples": 67200,
+      "seed": 6101711,
+      "sha256": "9811e1eed4f94203ef08693a247070e5eaf0507e261aab02dbb5def11a4917cb",
+      "text": "I recognized a request to list reminders."
+    },
+    {
+      "bytes": 107564,
+      "duration_seconds": 2.24,
+      "id": "recognized_timer",
+      "path": "audio/recognized_timer.wav",
+      "sample_rate": 24000,
+      "samples": 53760,
+      "seed": 6101712,
+      "sha256": "d4a6b6cb5ff18f223374b675023442fcc578e761dbe54d8ca8893bbe057a9646",
+      "text": "I recognized a timer request."
+    },
+    {
+      "bytes": 103724,
+      "duration_seconds": 2.16,
+      "id": "recognized_alarm",
+      "path": "audio/recognized_alarm.wav",
+      "sample_rate": 24000,
+      "samples": 51840,
+      "seed": 6101713,
+      "sha256": "55ffa84fa2329668a2691209fd167cb6429f325af6fcd87d959c77a9e84e7f56",
+      "text": "I recognized an alarm request."
+    },
+    {
+      "bytes": 107564,
+      "duration_seconds": 2.24,
+      "id": "recognized_temperature",
+      "path": "audio/recognized_temperature.wav",
+      "sample_rate": 24000,
+      "samples": 53760,
+      "seed": 6101714,
+      "sha256": "9494a461cfb89e495f6f139dd41d794a745d1026b3cb51c1e5691a59b8bf32fe",
+      "text": "I recognized a temperature request."
+    },
+    {
+      "bytes": 111404,
+      "duration_seconds": 2.32,
+      "id": "recognized_brightness",
+      "path": "audio/recognized_brightness.wav",
+      "sample_rate": 24000,
+      "samples": 55680,
+      "seed": 6101715,
+      "sha256": "85b8584427d994ad0bae4792f4118991fde2bc983e9ea0a28e2c8c89810599e9",
+      "text": "I recognized a brightness request."
+    },
+    {
+      "bytes": 111404,
+      "duration_seconds": 2.32,
+      "id": "recognized_color",
+      "path": "audio/recognized_color.wav",
+      "sample_rate": 24000,
+      "samples": 55680,
+      "seed": 6101716,
+      "sha256": "a2b350f88627991a519ba52f9029765e47e66ddf6ff3ebc19b9336b886c81c4a",
+      "text": "I recognized a color request."
+    },
+    {
+      "bytes": 138284,
+      "duration_seconds": 2.88,
+      "id": "recognized_create_reminder",
+      "path": "audio/recognized_create_reminder.wav",
+      "sample_rate": 24000,
+      "samples": 69120,
+      "seed": 6101717,
+      "sha256": "b4f4b2ebbdc82635707783fb26dd4e06208267ec4d70b8106ebe8eae48d0f8f1",
+      "text": "I recognized a request to create a reminder."
+    },
+    {
+      "bytes": 180524,
+      "duration_seconds": 3.76,
+      "id": "not_recognized",
+      "path": "audio/not_recognized.wav",
+      "sample_rate": 24000,
+      "samples": 90240,
+      "seed": 6101718,
+      "sha256": "bcb980ce8da79f71dfee9931714fbea4946cc7419d736d7b0c7a0d1d81d343db",
+      "text": "I couldn't recognize that command. Please try again."
+    },
+    {
+      "bytes": 192044,
+      "duration_seconds": 4.0,
+      "id": "capture_fault",
+      "path": "audio/capture_fault.wav",
+      "sample_rate": 24000,
+      "samples": 96000,
+      "seed": 6101719,
+      "sha256": "d8f81aec45d26e2fb1d7f208ce71e6bcd840ac00cb957393ec50629154a54825",
+      "text": "I couldn't hear a usable command. Please check the microphone."
+    }
+  ],
+  "voice": {
+    "accent_verified": false,
+    "design_seed": 61017,
+    "id": "train-ph",
+    "identity_source": "original_synthetic_voice_design",
+    "prompt": "An adult woman speaking only the supplied English text with a requested Filipino English accent, calm medium pitch and conversational pace. Clean dry speech.",
+    "split": "train"
+  }
+}

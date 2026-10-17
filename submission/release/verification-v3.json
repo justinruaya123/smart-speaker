@@ -1,0 +1,36 @@
+{
+  "audio_played": false,
+  "benchmark_196_recordings_passed": true,
+  "benchmark_archive_sha256": "33973e509ed168a1abc602c4a4eff3ad9e5da7c0d029d2fbd2784b1ea45d9cc7",
+  "compiled_gateway_served": true,
+  "configuration_example_included": true,
+  "evidence": {
+    "focused_test_log_sha256": "f27eaf3885f92af8c21caab66fdf1dae03c113d87920a2310f273633ff7e8bbe",
+    "gateway_receipt_sha256": "64458d0bcd1571157f0a7bc71ecdcbcaea41bea5c74b43908f44a828024b0d4c"
+  },
+  "focused_python_tests": 65,
+  "focused_python_tests_passed": true,
+  "format": "submission-release-verification-v3",
+  "gui_provider_configuration_tested": "Offline fixtures only; private env/config controls preserved",
+  "inference_archive_bytes": 13097412,
+  "inference_archive_sha256": "014fd08e0e0456fab617df1c87a340113a4bad0690ddd092ef823dcacd842175",
+  "inference_members": 1652,
+  "live_provider_requests": false,
+  "managed_python": "3.13.9",
+  "microphone_opened": false,
+  "model_load_passed": true,
+  "model_parameters": 2066831,
+  "physical_pi_measured": false,
+  "previous_15_recording_cli_gateway_parity": true,
+  "recorded_wav_http_replay_passed": true,
+  "root_pytest_collection": {
+    "passed": false,
+    "preexisting_errors": [
+      "duplicate test_catalog module names",
+      "scripts/test_prototype.py imports missing train.register_sources"
+    ]
+  },
+  "runtime_environment": "Previously cold-created inference-only uv lock; reused for v3 checks",
+  "speaker_ui_tests": 91,
+  "speaker_ui_typecheck_passed": true
+}

@@ -1,0 +1,177 @@
+{
+  "arms": {
+    "control": {
+      "arm": "control",
+      "checkpoint": ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-032.pt",
+      "checkpoint_sha256": "1aac21b3bcebc94d868c90fbefb42242ac4363fce55cb1f38c132c558fb55efc",
+      "development": {
+        "human": {
+          "accepted": 90,
+          "exact": 84,
+          "false_accept_rate": 0.015873015873015872,
+          "macro_speaker_recall": 0.38294263302486986,
+          "negative_errors": 1,
+          "negative_n": 63,
+          "positive_n": 193,
+          "positive_speakers": 32,
+          "precision": 0.9333333333333333,
+          "raw_exact": 152,
+          "raw_macro_speaker_recall": 0.6769241312415655,
+          "raw_negative_errors": 39,
+          "raw_recall": 0.7875647668393783,
+          "recall": 0.43523316062176165,
+          "rows": 256
+        },
+        "synthetic": {
+          "accepted": 820,
+          "exact": 807,
+          "false_accept_rate": 0.0,
+          "macro_speaker_recall": 0.8000844716837872,
+          "negative_errors": 0,
+          "negative_n": 28,
+          "positive_n": 967,
+          "positive_speakers": 9,
+          "precision": 0.9841463414634146,
+          "raw_exact": 902,
+          "raw_macro_speaker_recall": 0.9120091755427313,
+          "raw_negative_errors": 16,
+          "raw_recall": 0.9327817993795243,
+          "recall": 0.8345398138572906,
+          "rows": 995
+        }
+      },
+      "epoch": 32,
+      "key": [
+        0,
+        0.38294263302486986,
+        0.9333333333333333,
+        -1,
+        0.6769241312415655,
+        0.8345398138572906,
+        -32
+      ],
+      "phase": "mixed",
+      "test_used_for_selection": false
+    }
+  },
+  "bindings": {
+    ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-032.pt": "1aac21b3bcebc94d868c90fbefb42242ac4363fce55cb1f38c132c558fb55efc",
+    "experiments/speaker-compact-recall-v1/protocol.json": "1fd622a5cd7fdbf024acb1ca6bde8ffad05ae849a34b1197ae07dd65542f19f4"
+  },
+  "cuda": "12.8",
+  "experiment_id": "speaker-compact-recall-v1",
+  "foundation": {
+    "arm": "shared",
+    "checkpoint": ".cache/speaker-compact-recall-v1/training/human-shared/epoch-008.pt",
+    "checkpoint_sha256": "809533bb7960a80567d75e5963cef721b2071add7eddf8d50e48679e08ce5899",
+    "development": {
+      "human": {
+        "accepted": 13,
+        "exact": 13,
+        "false_accept_rate": 0.0,
+        "macro_speaker_recall": 0.10737179487179488,
+        "negative_errors": 0,
+        "negative_n": 63,
+        "positive_n": 193,
+        "positive_speakers": 32,
+        "precision": 1.0,
+        "raw_exact": 125,
+        "raw_macro_speaker_recall": 0.5282822440717179,
+        "raw_negative_errors": 45,
+        "raw_recall": 0.6476683937823834,
+        "recall": 0.06735751295336788,
+        "rows": 256
+      },
+      "synthetic": {
+        "accepted": 0,
+        "exact": 0,
+        "false_accept_rate": null,
+        "macro_speaker_recall": 0.0,
+        "negative_errors": 0,
+        "negative_n": 0,
+        "positive_n": 0,
+        "positive_speakers": 0,
+        "precision": null,
+        "raw_exact": 0,
+        "raw_macro_speaker_recall": 0.0,
+        "raw_negative_errors": 0,
+        "raw_recall": null,
+        "recall": null,
+        "rows": 0
+      }
+    },
+    "epoch": 8,
+    "key": [
+      1,
+      0.10737179487179488,
+      1.0,
+      0,
+      0.5282822440717179,
+      0,
+      -8
+    ],
+    "phase": "human",
+    "test_used_for_selection": false
+  },
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "human_qualified": false,
+  "peak_cuda_allocated_bytes": 536026624,
+  "seconds": 1442.9722594879568,
+  "seed": 53,
+  "selected": {
+    "arm": "control",
+    "checkpoint": ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-032.pt",
+    "checkpoint_sha256": "1aac21b3bcebc94d868c90fbefb42242ac4363fce55cb1f38c132c558fb55efc",
+    "development": {
+      "human": {
+        "accepted": 90,
+        "exact": 84,
+        "false_accept_rate": 0.015873015873015872,
+        "macro_speaker_recall": 0.38294263302486986,
+        "negative_errors": 1,
+        "negative_n": 63,
+        "positive_n": 193,
+        "positive_speakers": 32,
+        "precision": 0.9333333333333333,
+        "raw_exact": 152,
+        "raw_macro_speaker_recall": 0.6769241312415655,
+        "raw_negative_errors": 39,
+        "raw_recall": 0.7875647668393783,
+        "recall": 0.43523316062176165,
+        "rows": 256
+      },
+      "synthetic": {
+        "accepted": 820,
+        "exact": 807,
+        "false_accept_rate": 0.0,
+        "macro_speaker_recall": 0.8000844716837872,
+        "negative_errors": 0,
+        "negative_n": 28,
+        "positive_n": 967,
+        "positive_speakers": 9,
+        "precision": 0.9841463414634146,
+        "raw_exact": 902,
+        "raw_macro_speaker_recall": 0.9120091755427313,
+        "raw_negative_errors": 16,
+        "raw_recall": 0.9327817993795243,
+        "recall": 0.8345398138572906,
+        "rows": 995
+      }
+    },
+    "epoch": 32,
+    "key": [
+      0,
+      0.38294263302486986,
+      0.9333333333333333,
+      -1,
+      0.6769241312415655,
+      0.8345398138572906,
+      -32
+    ],
+    "phase": "mixed",
+    "test_used_for_selection": false
+  },
+  "test_used_for_selection": false,
+  "torch": "2.10.0+cu128",
+  "winner": "control"
+}

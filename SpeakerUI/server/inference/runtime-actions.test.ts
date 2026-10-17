@@ -25,3 +25,17 @@ test('local timers preserve exact seconds and server deadline',async()=>{
   const result=await a.handle(e);assert.equal(result?.status,'local');assert.equal(result?.command.slots.duration_seconds,123);
   assert.ok(result!.deadline>=Date.now()+122000);
 });
+test('generic play music resumes Spotify without a track or playlist',async()=>{
+  const calls:unknown[]=[];
+  const actions=new RuntimeActions({enabled:true,bindings:{lights:{},songs:{}}},{
+    light:async()=>assert.fail('unexpected light control'),
+    spotify:async command=>{calls.push(command);},
+    song:async()=>assert.fail('generic playback must not select a song'),
+  });
+  const result=await actions.handle({...event('music'),application:{accepted:true,command:{intent:'PLAY_MUSIC',slots:{}}}});
+  assert.equal(result?.status,'succeeded');
+  assert.deepEqual(calls,[{action:'play'}]);
+  const named=await actions.handle({...event('named'),application:{accepted:true,command:{intent:'PLAY_MUSIC',slots:{song_id:'song.unconfigured'}}}});
+  assert.equal(named?.status,'not_configured');
+  assert.deepEqual(calls,[{action:'play'}]);
+});

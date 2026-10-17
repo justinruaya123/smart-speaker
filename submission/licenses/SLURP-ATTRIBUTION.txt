@@ -1,0 +1,9 @@
+SLURP: A Spoken Language Understanding Resource Package.
+Authors: Emanuele Bastianelli, Andrea Vanzo, Pawel Swietojanski, Verena Rieser.
+Original project: https://github.com/pswietojanski/slurp
+License: Creative Commons Attribution 4.0 International.
+https://creativecommons.org/licenses/by/4.0/
+These bounded smoke samples were distributed through the pinned HF source listed
+in HF-SOURCE-RECEIPT.json. Original WAV bytes are retained without modification.
+Each original recording identifier, speaker and expected finite output is listed
+in samples/manifest.json. No class-restricted group recordings are included.

@@ -1,0 +1,18 @@
+{
+  "files": {
+    "catalog.json": "429a15bc364d7fd9e723a2879c611472b5176de6cb3a2b54be7c137b050c985d",
+    "custom-slots.json": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5",
+    "model.onnx": "fc87c98c242ccb6f37ed9fcd84bad3869b8c90eaae6267fdab2a1a5af2737f6d",
+    "normalization.json": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+    "output.schema.json": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c",
+    "policy.json": "e3c819583bf852c67aea8f8ba3bac7ddb4aa27a844f3cf02fb85fd75f2e3a9b4",
+    "recipe.json": "6e2beb53e14ce58ae59a49630b0a843a2aed0ef3b4c9b201aecff06688a424f9",
+    "wake/silero-vad.onnx": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+    "wake/wake-embedding.onnx": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+    "wake/wake-hey-jarvis.onnx": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+    "wake/wake-melspectrogram.onnx": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+    "wake/wake-models.json": "9bc153473704dd425961ac0d4cc2f3b5607a8a35601a0bb5d687082651788c9e",
+    "recall-policy.json": "02057ac95b37bc1fd011f5bce26f8216c97bea32cf9ee3edd2a300ac088c3fde"
+  },
+  "status": "DIAGNOSTIC_UNQUALIFIED"
+}

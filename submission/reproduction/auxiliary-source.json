@@ -1,0 +1,11 @@
+{
+  "repository": "justinruaya123/ai231-smart-speaker",
+  "repo_type": "dataset",
+  "branch": "reproduction-v1",
+  "revision": "0fc3ac3ff257838d02000b6a8ce78225c262b9fa",
+  "prefix": "reproduction/auxiliary",
+  "files": 184,
+  "bytes": 12820896,
+  "public": true,
+  "purpose": "Exact synthetic development audio required by selected seed-53 compact recipe; no training or evaluation humans"
+}

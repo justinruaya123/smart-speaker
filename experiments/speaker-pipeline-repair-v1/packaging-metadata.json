@@ -1,0 +1,24 @@
+{
+  "extras": {
+    "docs/COMPACT-RECALL.md": "0898077421784c647cd9bfd01bdb45550f083d498d23794a2f2a1e0c2acc5a1e",
+    "evidence/human-test-intents.csv": "b6dbface73f49cd00be9080db08cff606cccffd48f9dafde5918193dfb8dbf89",
+    "evidence/optionb-analysis-receipt.json": "261c4ce45f3ee1a2ad33551ea893db344b6fb65ef804279abfab528131f4d345",
+    "evidence/optionb-spoken-normalized.json": "f165ca17b3fe780ec88ef20e018a6421fe25f447e7ac0fe8de445cdc163997b5",
+    "evidence/optionb-spoken-wordings.csv": "3ffd666b6901f72f6a2ce537edf002afa89545c58bb5a6aebc5540b6770d3272",
+    "evidence/protocol.json": "fb2e886e2afb55527036b7082e4858f9d22d0ca2f79b24e6bb51ca129f362b52",
+    "evidence/recipe-equivalence.json": "a2d150039f3be598ac8e10461911efea3deb7608117da3bcfd182ea80d9c6fa4",
+    "evidence/references.json": "8fd80f38516ebd6ec8b25a9172e1d814bb05b9cd7b3711b57fe86a1ff3825243",
+    "evidence/regression-started.json": "4698ee95f3a948590dbd9cf576c53a1cabbc05cdd766a03fe310fe426b5a98e8",
+    "evidence/results.json": "5d3a5a14364f9b219293f508303ca5432c37ed3e734a34997ba441e757d18461",
+    "evidence/review.json": "8f36815dd7d20a7e12cce31b6cff934a7e29455f92e91ba0e6a201708718595c",
+    "evidence/role-results.json": "2bc68efbb4d44c71234f828dd0605ebaf92915e03d8ee165477d892bd23360ee",
+    "evidence/saved-epoch28/decision.json": "ded4547e07aaeb6a039fbf1d0ffefd16a7b96a979f8fc1d2eafe8d7c505ffbf7",
+    "evidence/saved-epoch28/recall-policy.json": "02057ac95b37bc1fd011f5bce26f8216c97bea32cf9ee3edd2a300ac088c3fde",
+    "evidence/saved-epoch28/selection-before-calibration.json": "3ade984d72e686096482f04dd6a3c67a06f45a6d5f9015483aceaf8a379360d1",
+    "evidence/selection-before-test.json": "5c61a37d8a2824a9801ddde4a5c7c72a2b9e1e7a5f0286917cb88f34c6bae412"
+  },
+  "orchestration_sha256": "d0a7e9bb7220d5ee847876e200c31e1deff92ec987fa7b1ccbce2c7974feac61",
+  "packaged_report_sha256": "0898077421784c647cd9bfd01bdb45550f083d498d23794a2f2a1e0c2acc5a1e",
+  "scope": "Metadata/documentation only; same selected graph, policies, runtime and wheels",
+  "source_report_sha256": "e3160ed1cc626922e71f7bec7557921608c088c561950f09c7345480d6236fb6"
+}

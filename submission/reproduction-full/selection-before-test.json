@@ -1,0 +1,129 @@
+{
+  "binding": {
+    "catalog_sha256": "429a15bc364d7fd9e723a2879c611472b5176de6cb3a2b54be7c137b050c985d",
+    "custom_slots_sha256": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5",
+    "model_sha256": "3dea2e25dd431c0b085033f04e0b3f16181016ed42c41a1b84ff6acd43d2ac7e",
+    "normalization_sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+    "schema_sha256": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c"
+  },
+  "policy_sha256": "f312414f808b846ae1ef13503cc2916db1b9642cc7ee5e17c4a5431a62d09fc6",
+  "recall_policy_sha256": null,
+  "selection": {
+    "checkpoint": ".cache/reproduction/training/mixed-control/reproduction-epoch-032.pt",
+    "checkpoint_sha256": "1efbd02718ade69f30d80dc8c8f8c59208daa4f203067df31e2e42f6fe5591ec",
+    "cuda": "12.8",
+    "foundation": {
+      "arm": "shared",
+      "checkpoint": ".cache/reproduction/training/human-shared/epoch-020.pt",
+      "checkpoint_sha256": "6e26c5da0a52a97336733cc77276242c190f630594bf6b8842575855cbd1ef72",
+      "development": {
+        "human": {
+          "accepted": 78,
+          "exact": 73,
+          "false_accept_rate": 0.015873015873015872,
+          "macro_speaker_recall": 0.389360119047619,
+          "negative_errors": 1,
+          "negative_n": 63,
+          "positive_n": 193,
+          "positive_speakers": 32,
+          "precision": 0.9358974358974359,
+          "raw_exact": 151,
+          "raw_macro_speaker_recall": 0.7303738613360324,
+          "raw_negative_errors": 35,
+          "raw_recall": 0.7823834196891192,
+          "recall": 0.37823834196891193,
+          "rows": 256
+        },
+        "synthetic": {
+          "accepted": 0,
+          "exact": 0,
+          "false_accept_rate": null,
+          "macro_speaker_recall": 0.0,
+          "negative_errors": 0,
+          "negative_n": 0,
+          "positive_n": 0,
+          "positive_speakers": 0,
+          "precision": null,
+          "raw_exact": 0,
+          "raw_macro_speaker_recall": 0.0,
+          "raw_negative_errors": 0,
+          "raw_recall": null,
+          "recall": null,
+          "rows": 0
+        }
+      },
+      "epoch": 20,
+      "key": [
+        0,
+        0.389360119047619,
+        0.9358974358974359,
+        -1,
+        0.7303738613360324,
+        0,
+        -20
+      ],
+      "phase": "human",
+      "test_used_for_selection": false
+    },
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "mixed_acceptance_selection": {
+      "arm": "control",
+      "checkpoint": ".cache/reproduction/training/mixed-control/epoch-032.pt",
+      "checkpoint_sha256": "cf9250241a89bd5205572c1ce1926a858f1442bc3f7a201fb24c1d2266c9442c",
+      "development": {
+        "human": {
+          "accepted": 115,
+          "exact": 108,
+          "false_accept_rate": 0.031746031746031744,
+          "macro_speaker_recall": 0.5385508542992096,
+          "negative_errors": 2,
+          "negative_n": 63,
+          "positive_n": 193,
+          "positive_speakers": 32,
+          "precision": 0.9391304347826087,
+          "raw_exact": 166,
+          "raw_macro_speaker_recall": 0.8130768628301523,
+          "raw_negative_errors": 39,
+          "raw_recall": 0.8601036269430051,
+          "recall": 0.5595854922279793,
+          "rows": 256
+        },
+        "synthetic": {
+          "accepted": 852,
+          "exact": 847,
+          "false_accept_rate": 0.10714285714285714,
+          "macro_speaker_recall": 0.8382329086278596,
+          "negative_errors": 3,
+          "negative_n": 28,
+          "positive_n": 967,
+          "positive_speakers": 9,
+          "precision": 0.994131455399061,
+          "raw_exact": 914,
+          "raw_macro_speaker_recall": 0.9248971193415636,
+          "raw_negative_errors": 12,
+          "raw_recall": 0.9451913133402275,
+          "recall": 0.8759048603929679,
+          "rows": 995
+        }
+      },
+      "epoch": 32,
+      "key": [
+        0,
+        0.5385508542992096,
+        0.9391304347826087,
+        -2,
+        0.8130768628301523,
+        0.8759048603929679,
+        -32
+      ],
+      "phase": "mixed",
+      "test_used_for_selection": false
+    },
+    "recognition_epoch": 32,
+    "seconds": 843.4295124709606,
+    "seed": 53,
+    "test_used_for_selection": false,
+    "torch": "2.10.0+cu128"
+  },
+  "test_used": false
+}

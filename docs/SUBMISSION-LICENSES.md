@@ -1,0 +1,11 @@
+# Submission licenses and provenance
+
+The root [MIT license](../LICENSE) applies to original project software and documentation. It does not relicense upstream recordings, pretrained wake/VAD weights, pronunciation data, bundled dependencies, trademarks or other third-party material. Keep their source notices and original terms with the distribution.
+
+The selected VCM is randomly initialized project training, exported as a finite-command ONNX graph. The selected checkpoint, exact graph identity, mixed human/synthetic training provenance, failed qualification and original source terms are recorded in [the reproducibility guide](REPRODUCIBILITY-935k-2m.md), [dataset citations](DATASET-CITATIONS.md), [dataset directory](DATASETS.md), and the source receipts. Public availability does not resolve unknown recording consent, source restrictions, speaker aliases or independent label verification; those remain stated evidence gaps.
+
+The submission retains the upstream openWakeWord/Hey Jarvis and Silero notices in `submission/licenses/` and the wake source/hash receipt beside the graphs. The bundled Hey Jarvis weights retain their noncommercial share-alike terms; the software license is distinct. CMUdict pronunciations retain their upstream license. SpeakerUI is an imported project source snapshot with its upstream receipt and retained asset notices; production JavaScript packages carry their own licenses.
+
+Fixed reply WAVs are generated from a wholly designed synthetic voice using the recorded Qwen3-TTS VoiceDesign/Base assets. No real person's reference voice is used. The inference branch's `responses/NOTICE.txt` and the [reply manifest](../submission/responses/manifest.json) identify generation, waveform hashes and remaining listening verification. Rendering occurs offline during release preparation; the Pi receives verified WAVs and no synthesis model or training dataset.
+
+The runtime release contains original project source plus explicitly identified third-party components. Dataset payloads are retrieved from pinned upstream locations under their respective access terms, outside Git. The public repository's code license is not a blanket grant for the composite dataset. A derivative dataset DOI has not been minted by these scripts; use the verified upstream DOI with its exact historical source revision and cite all included sources.

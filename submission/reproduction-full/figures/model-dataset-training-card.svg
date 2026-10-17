@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1166.4pt" height="662.4pt" viewBox="0 0 1166.4 662.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>scripts.submission.report</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 662.4 
+L 1166.4 662.4 
+L 1166.4 0 
+L 0 0 
+z
+" style="fill: #f7f9fc"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #172a3a" x="64.8" y="65.52" transform="rotate(-0 64.8 65.52)">2M VCM REPRODUCTION</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 17px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #147d92" x="64.8" y="104.4" transform="rotate(-0 64.8 104.4)">Complete-utterance contextual encoder after VAD endpoint</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #405363" x="64.8" y="143.28" transform="rotate(-0 64.8 143.28)">16 kHz PCM → 40 × T log-mel → 6 contextual blocks → finite catalog → command JSON / rejection</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #147d92" x="64.8" y="208.08" transform="rotate(-0 64.8 208.08)">MODEL / DATA</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(64.8 261.659219)">2,066,831 VCM parameters; width 192</text>
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(64.8 284.159219)">23,295 pinned fitting utterances</text>
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(64.8 307.232461)">1,251 dev / 210 human calibration</text>
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(64.8 329.732461)">Dataset PCM, source and frontend identities audited</text>
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(64.8 352.134805)">Seed 53 (submitted: 53)</text>
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(64.8 375.259805)">GPU: NVIDIA A100-SXM4-40GB</text>
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(64.8 396.659219)">AdamW; CTC + .30 intent CE + .15 target CE</text>
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(64.8 419.159219)">56 epochs / 5,376 optimizer updates</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #147d92" x="617.76" y="208.08" transform="rotate(-0 617.76 208.08)">REPRODUCTION RESULT</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(617.76 261.659219)">Selected human / mixed epochs: 20 / 32</text>
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(617.76 284.159219)">Weights bitwise equal: True</text>
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(617.76 306.659219)">Maximum weight difference: 0</text>
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(617.76 329.878945)">Raw human correct: 516/636</text>
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(617.76 351.659219)">Demo human correct accepts: 274/636</text>
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; fill: #172a3a" transform="translate(617.76 374.048867)">Demo UNKNOWN accepts: 3/229</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #405363" x="64.8" y="499.68" transform="rotate(-0 64.8 499.68)">Strict qualification enabled: False. Equal seeds do not guarantee identical CUDA CTC weights.</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #405363" x="64.8" y="538.56" transform="rotate(-0 64.8 538.56)">PC recorded inference p50 / p95: 103.87 / 221.75 ms; RTF p95: 0.0446; peak worker RSS: 84.21 MiB</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #405363" x="64.8" y="570.96" transform="rotate(-0 64.8 570.96)">Raspberry Pi, live microphone and wake/keyword accuracy: NOT MEASURED</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #637789" x="64.8" y="609.84" transform="rotate(-0 64.8 609.84)">Source: results/comparison.json + selected fitting receipt; this card describes this new run only.</text>
+   </g>
+  </g>
+ </g>
+</svg>

@@ -5,6 +5,12 @@ import { EventEmitter } from 'node:events';
 
 type RuntimeEvent = Record<string, any>;
 
+export function workerModule(env: NodeJS.ProcessEnv): string {
+  const name = env.SMART_SPEAKER_WORKER_MODULE || 'scripts.runtime.speaker_worker';
+  if (!['scripts.runtime.speaker_worker', 'scripts.submission.worker'].includes(name)) throw new Error('Unsupported worker module.');
+  return name;
+}
+
 /** One native CPU worker owns models and the host microphone. No action dispatch. */
 export class PythonRuntime extends EventEmitter {
   private child: ChildProcessWithoutNullStreams;
@@ -14,7 +20,7 @@ export class PythonRuntime extends EventEmitter {
   private snapshot: RuntimeEvent | undefined;
   constructor(options: { python: string; root: string; bundle: string; threads: number }) {
     super();
-    this.child = spawn(options.python, ['-u', '-m', 'scripts.runtime.speaker_worker', '--bundle', options.bundle, '--diagnostic', '--threads', String(options.threads)],
+    this.child = spawn(options.python, ['-u', '-m', workerModule(process.env), '--bundle', options.bundle, '--diagnostic', '--threads', String(options.threads)],
       { cwd: options.root, stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true });
     const lines = createInterface({ input: this.child.stdout });
     lines.on('line', line => {

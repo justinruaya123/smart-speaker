@@ -4,11 +4,11 @@ import json
 import platform
 from pathlib import Path
 import time
-import numpy as np
-from vcm.integrity import save, digest
 
 
 def benchmark(bundle,manifest,output,threads=(1,2,4),limit=20):
+    import numpy as np
+    from vcm.integrity import save, digest
     from vcm.runtime import Runtime
     from vcm.tui import read_wav
     from vcm.system import memory_usage,cpu_seconds
@@ -40,7 +40,20 @@ def benchmark(bundle,manifest,output,threads=(1,2,4),limit=20):
     save(output/'benchmark.json',result); return result
 
 
-if __name__=='__main__':
+def legacy_main():
     p=argparse.ArgumentParser(description=__doc__); p.add_argument('--bundle',type=Path,required=True); p.add_argument('--manifest',type=Path,required=True)
     p.add_argument('--output',type=Path,required=True); p.add_argument('--threads',type=int,nargs='+',default=[1,2,4]); p.add_argument('--limit',type=int,default=20)
     a=p.parse_args(); benchmark(a.bundle,a.manifest,a.output,a.threads,a.limit)
+
+
+if __name__ == '__main__':
+    import sys
+    try:
+        if '--bundle' in sys.argv and '--manifest' in sys.argv:
+            legacy_main()
+        else:
+            from scripts.submission.benchmark import main
+            raise SystemExit(main())
+    except (OSError, ValueError, RuntimeError, __import__('subprocess').CalledProcessError) as error:
+        print('Benchmark:', error, file=sys.stderr)
+        raise SystemExit(1)
