@@ -55,6 +55,15 @@ Desktop.ini
 *.npz
 *.bin
 
+# Deliberately submitted inference graphs and selected recovery checkpoint.
+# Candidate weights, corpora, recordings and run caches remain ignored.
+!/submission/models/compact/model.onnx
+!/submission/models/compact/wake/*.onnx
+!/submission/checkpoints/compact-selected.pt
+!/submission/models/full/model.onnx
+!/submission/models/full/wake/*.onnx
+!/submission/checkpoints/full-selected.pt
+
 # Dataset row manifests and their large audio index stay local.
 /data/**/*.jsonl
 /data/audio-index.json
