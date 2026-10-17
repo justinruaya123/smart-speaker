@@ -19,6 +19,15 @@ test('WAV, rejection, disabled and missing bindings cannot operate providers',as
   const disabled=new RuntimeActions({enabled:false,bindings:{lights:{},songs:{}}},providers);
   assert.equal((await disabled.handle(event()))?.status,'disabled');
 });
+test('worker action-disable overrides enabled server configuration for providers and local commands',async()=>{
+  const actions=new RuntimeActions({enabled:true,bindings:{lights:{'light.kitchen':'light.actual'},songs:{}}},
+    {light:async()=>assert.fail('action'),spotify:async()=>assert.fail('action'),song:async()=>assert.fail('action')});
+  const light=await actions.handle({...event('candidate-light'),actions_enabled:false});
+  assert.equal(light?.status,'disabled');
+  const timer=await actions.handle({...event('candidate-timer'),actions_enabled:false,
+    application:{accepted:true,command:{intent:'TIMER',slots:{duration_seconds:123}}}});
+  assert.equal(timer?.status,'disabled');assert.equal(timer?.deadline,undefined);
+});
 test('local timers preserve exact seconds and server deadline',async()=>{
   const a=new RuntimeActions({enabled:true,bindings:{lights:{},songs:{}}},{light:async()=>{},spotify:async()=>{},song:async()=>{}});
   const e={...event(),application:{accepted:true,command:{intent:'TIMER',slots:{duration_seconds:123}}}};

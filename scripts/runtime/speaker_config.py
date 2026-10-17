@@ -99,6 +99,9 @@ def resolve_config(root, *, environ=None, overrides=None, profile='inference'):
         if not low<=cfg[section][key]<=high:raise ValueError(f'{section}.{key} must be {low}..{high}')
     if cfg['inference']['mode'] not in ('demo','qualified'):raise ValueError('inference.mode must be demo or qualified')
     if cfg['inference']['engine'] not in ('ncnn','onnxruntime'):raise ValueError('inference.engine must be ncnn or onnxruntime')
+    deployment=root/'deployment.json'
+    if deployment.exists() and json.loads(deployment.read_text()).get('actions_enabled') is False:
+        cfg['actions']['enabled']=False
     if not cfg['server']['origin']:
         host=cfg['server']['host'];host='127.0.0.1' if host in ('0.0.0.0','::') else host
         cfg['server']['origin']=f"http://{host}:{cfg['server']['port']}"

@@ -1,0 +1,114 @@
+{
+  "rows": {
+    "train": 23739,
+    "dev": 1339,
+    "calibration": 1495,
+    "test": 4418,
+    "holdout": 196,
+    "personal-test": 88
+  },
+  "additions": {
+    "train": 240,
+    "dev": 88,
+    "calibration": 88,
+    "test": 88
+  },
+  "excluded_synthetic": [],
+  "cross_split_overlap": {
+    "train/dev": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "train/calibration": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "train/test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "train/holdout": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "train/personal-test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "dev/calibration": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "dev/test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "dev/holdout": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "dev/personal-test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "calibration/test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "calibration/holdout": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "calibration/personal-test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "test/holdout": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "test/personal-test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    },
+    "holdout/personal-test": {
+      "id": 0,
+      "speaker": 0,
+      "pcm_sha256": 0,
+      "pair_id": 0
+    }
+  },
+  "human_positive_additions": 0,
+  "original_test_and_holdout_unchanged": true,
+  "independent_listening": false,
+  "actual_saved_pcm_hashes_recomputed": true,
+  "augmentation_plan_sha256": "c27bd3c1502f42c9a2788112c0026bbc22e77eb74839d29ea312bec61d99f99f"
+}

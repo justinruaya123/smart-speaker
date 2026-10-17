@@ -1,0 +1,155 @@
+{
+  "delivery": {
+    "host": "ai-n003.hpc.coe.upd.edu.ph",
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "cpu": 0,
+    "threads": 1,
+    "measurement": "x86 HPC CPU only; not Raspberry Pi or live microphone",
+    "models": {
+      "compact": {
+        "zip_sha256": "f612e41adb586388eae2efd43bc1707bed328a98c043df23509ff4d5473b4c4d",
+        "zip_bytes": 10258660,
+        "extracted_bytes": 12473519,
+        "file_count": 113,
+        "integrity_passed": true,
+        "decisions_compared": 124,
+        "real_audio_logit_parity_passed": true,
+        "max_torch_ncnn_error": 3.6954879760742188e-06,
+        "max_torch_ort_error": 5.7220458984375e-06,
+        "ncnn_ms": {
+          "n": 372,
+          "p50": 6.036558886989951,
+          "p95": 12.333023687824607
+        },
+        "ort_ms": {
+          "n": 372,
+          "p50": 4.988179076462984,
+          "p95": 9.52409841120243
+        },
+        "resident_roundtrip_ms": {
+          "n": 124,
+          "p50": 7.720703026279807,
+          "p95": 15.367036615498359
+        },
+        "fresh_process_startup_ms": 606.1010379344225,
+        "reported_session_load_ms": 126.25868013128638,
+        "memory": {
+          "VmHWM": "124920 kB",
+          "VmRSS": "124920 kB"
+        },
+        "constructed_pipeline_correct": 23,
+        "constructed_pipeline_n": 36,
+        "candidate_actions_disabled": true,
+        "offline_audit": {
+          "event": "offline_audit",
+          "socket_denied": true,
+          "forbidden_imports": []
+        },
+        "source_bundle_sha256": "d7671bb393f7a81b4a354e6922b8a469c76a57aec8264ba3ff030fbba1adaa03"
+      },
+      "full": {
+        "zip_sha256": "821e5cb72e9d2a1e896c3ab301eb5de75dd3297daec2822e426aaf74b2da260e",
+        "zip_bytes": 18760448,
+        "extracted_bytes": 21661100,
+        "file_count": 113,
+        "integrity_passed": true,
+        "decisions_compared": 124,
+        "real_audio_logit_parity_passed": true,
+        "max_torch_ncnn_error": 4.112720489501953e-06,
+        "max_torch_ort_error": 5.7220458984375e-06,
+        "ncnn_ms": {
+          "n": 372,
+          "p50": 9.983471594750881,
+          "p95": 20.115725067444146
+        },
+        "ort_ms": {
+          "n": 372,
+          "p50": 7.833992596715689,
+          "p95": 14.323682920075953
+        },
+        "resident_roundtrip_ms": {
+          "n": 124,
+          "p50": 11.61497482098639,
+          "p95": 23.246583249419924
+        },
+        "fresh_process_startup_ms": 665.7525831833482,
+        "reported_session_load_ms": 135.68538799881935,
+        "memory": {
+          "VmHWM": "129316 kB",
+          "VmRSS": "129316 kB"
+        },
+        "constructed_pipeline_correct": 28,
+        "constructed_pipeline_n": 36,
+        "candidate_actions_disabled": true,
+        "offline_audit": {
+          "event": "offline_audit",
+          "socket_denied": true,
+          "forbidden_imports": []
+        },
+        "source_bundle_sha256": "ec33a7493af5059bc8122620cf5ccea937504b2777745f2d33472c552d9b7cae"
+      }
+    }
+  },
+  "python_focused": {
+    "passed": 63,
+    "failed": 0,
+    "warnings": 17,
+    "log": ".cache/vcm-mvp-hey-iris-v1/focused-v3-reviewed-20261017.log"
+  },
+  "ui": {
+    "passed": 89,
+    "failed": 0,
+    "type_errors": 0,
+    "type_warnings": 0,
+    "production_build": true,
+    "log": ".cache/vcm-mvp-hey-iris-v1/ui-verification-final-20261017.log"
+  },
+  "root_pytest": {
+    "passed": false,
+    "collection_errors": [
+      "Duplicate test_catalog module across pcv-delivery-v1/pcv-synthetic-v1",
+      "scripts/test_prototype.py imports missing train.register_sources"
+    ],
+    "log": ".cache/vcm-mvp-hey-iris-v1/root-pytest-20261017.log"
+  },
+  "review": {
+    "important_findings_resolved": true,
+    "action_disable_enforced": true,
+    "class_policy_complete_keys_enforced": true,
+    "red_green_observed": true
+  },
+  "original_input_hashes_unchanged": 29,
+  "installed_hashes_unchanged": 12,
+  "interrupted_checkpoint_preserved": true,
+  "source_hashes": {
+    "scripts/runtime/mvp_static.py": "8011085d87772102e2f4f7fa35ff4f71c58b32e4bc111da5370a124ac840f263",
+    "scripts/runtime/mvp_wake.py": "3adc9fcc26cb2abedc51efed4c08f850e239a628b233aad6aa93c6002e826706",
+    "scripts/models/mvp_static.py": "fa291ddb3cbf4c6bcae5753697f34e47d0510101e78116b9212738fdd490f746",
+    "scripts/models/mvp_wake.py": "57372639b362da85301aafb1bd4f5e8c1dfce3a512009e7f70f444459a02dccd",
+    "scripts/train/mvp_static_train.py": "a27509dc05135f9cdd500c0f737fbb38df2815e253849ca07d2d4ddfad7f9d35",
+    "scripts/train/mvp_static_release.py": "f6e742bd5b4232eef3a6f6202068fa639c7a55056f4980435386adfe6be4f88b",
+    "scripts/train/mvp_policy_refine.py": "0d3158b23231af0a197302559cf07237942ded0019afb2b56e215472c498b8c8",
+    "scripts/train/mvp_wake.py": "dd0c822f0014ec7e41a397eb4933e3a783aa40ee64574af2d31f64d11193335a",
+    "scripts/mvp_delivery.py": "931859478e2c2bb5700231708f34998e357a2dd73048087510a15501a8509a8b",
+    "scripts/pcv_final_delivery.py": "3df76b58c621562caee8fb4d4b6121b2535b2fb7c49e6e57cebceb4abe0325f9",
+    "scripts/modules.json": "b662c783299fa172acfe3b4ab956e58aa8ffa34f895b49069a18f61e2fe8ec7f",
+    "scripts/runtime/speaker_worker.py": "e5e14bf42b34149a12389d0fd1538e96072b10f17116c9054a1ac0c67efeae8e",
+    "scripts/runtime/speaker_tools.py": "f24bdcc5f593a58411a0c92a36e0940ed7da263ef2a57a18138bcb87689c91c3",
+    "scripts/runtime/speaker_config.py": "5df761aaa33476c14d33466b51fd753ee6587a8ad47575d51713596e7cf9e4ee",
+    "SpeakerUI/server/inference/runtime-actions.ts": "cf396589d7e520bdafef8c47d8d973ed5bf9d2b90d71b291632ed37ec0991e53",
+    "SpeakerUI/server/inference/runtime-actions.test.ts": "38b2573f7a20c12807e820aa11441d83ae08099c7d7cfdc74cf44703a00c001a",
+    "SpeakerUI/src/ambient/components/RuntimeDebug.svelte": "d522641e27ac6fbc14622e456759414c389b72eacf9f27039581b172eb13e6cc",
+    "scripts/test/test_mvp_static.py": "b4d08c37f6ee3cd757b3162a19db79a660fea36e4b34fb065c57375491f2fd36",
+    "scripts/test/test_mvp_wake.py": "9b8df6849cd8bae0d82879967c7188cdc6c6cac472124c9157558883b9e817c0",
+    "scripts/test/test_mvp_delivery.py": "07f5707525636e34c34f662114f329cef098a1bb8540cff6f396f96cefd601d2",
+    "scripts/test/test_speaker_publication.py": "2fb44a6fb2179ee68ddaa6d980b1fb25a20b80fec162c6f7d03f18dde8b3def1"
+  },
+  "branch": "codex/vcm-mvp-hey-iris-v1",
+  "baseline_revision": "5d872e3a249e5876aaa8130b76f6e3b31622355f",
+  "worktree_contains_inherited_dirty_and_untracked_dependencies": true,
+  "committed": false,
+  "pushed": false,
+  "new_skill_installed": false,
+  "new_environment_created": false,
+  "physical_pi_measured": false
+}

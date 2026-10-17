@@ -1,0 +1,25 @@
+{
+  "version": "vcm-mvp-hey-iris-v2",
+  "parent": "vcm-mvp-hey-iris-v1/longer-v2-20261017",
+  "purpose": "Add the 18 explicitly requested personal command outcomes and training-only hard negatives; preserve all original benchmark references and larger catalog.",
+  "source_plan_sha256": "630e48d649853bce8d5eef741fd42c1d8abb83f9422376f91eaec5a88132bb14",
+  "initialization": "Own completed static checkpoint for each width, chosen only by existing development rule; optimizer restarts",
+  "training": {
+    "epochs": 16,
+    "steps_per_epoch": 96,
+    "learning_rate": 0.0001,
+    "min_epochs": 8,
+    "patience": 6,
+    "priority_probability": 0.8,
+    "seed": 53
+  },
+  "selection": "Original human macro-speaker raw command correctness, then human and synthetic exact counts; development only",
+  "demo_risk": {
+    "human": 0.03,
+    "synthetic": 0.01
+  },
+  "unknown_constraint": "Zero observed unknown accepts on fitting views in each predicted intent group",
+  "qualification": "Unchanged strict project targets and missing human/physical/owner gates; demo remains unqualified",
+  "no_new_candidate_test_or_holdout_used": true,
+  "scientific_claim": "Combined practical revision; not an isolated causal augmentation estimate"
+}

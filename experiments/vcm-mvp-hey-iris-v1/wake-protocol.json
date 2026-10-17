@@ -1,0 +1,44 @@
+{
+  "experiment": "hey-iris-v1",
+  "seed": 61,
+  "initialization": "all deployed wake parameters random; no pretrained embeddings",
+  "source_receipt": "data/sources/qwen-synthetic-completion.source.json",
+  "source_sha256": "cd3753dad2a43fcfa277e73908222994a56a9767883f8747954dc531ecfb33ac",
+  "plan_sha256": "630e48d649853bce8d5eef741fd42c1d8abb83f9422376f91eaec5a88132bb14",
+  "voices_sha256": "aa986377e8d21e4f113638cf73cf222ae04c8cef247566df8606101386877431",
+  "normalization_sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+  "window_samples": 25600,
+  "step_samples": 1280,
+  "generation": {
+    "batch": 4,
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "max_new_tokens": 160,
+    "cuda_memory_fraction": 0.35
+  },
+  "training": {
+    "epochs": 20,
+    "steps_per_epoch": 96,
+    "batch": 64,
+    "learning_rate": 0.001
+  },
+  "augmentation": {
+    "time_position": "Random full-phrase position inside 1.6 seconds; no positive truncation",
+    "gain_db": [
+      -6,
+      6
+    ],
+    "white_noise_snr_db": [
+      20,
+      35
+    ],
+    "probability": 0.5,
+    "citation": "https://github.com/tensorflow/tensorflow/blob/v2.20.0/tensorflow/examples/speech_commands/input_data.py",
+    "note": "Adaptation of time shift, volume and additive background noise; white noise here, no recorded room/RIR or speed perturbation"
+  },
+  "real_positive_recordings": 0,
+  "independent_listening": false,
+  "demographic_labels": "requested synthetic conditions; not verified people",
+  "physical_pi_measured": false,
+  "qualified": false
+}

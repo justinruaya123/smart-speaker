@@ -1,0 +1,237 @@
+{
+  "application": {
+    "intent_threshold": 0.95,
+    "mode": "demo",
+    "slot_threshold": 0.9
+  },
+  "architecture": {
+    "dropout": 0.1,
+    "feedforward": 256,
+    "heads": 4,
+    "layers": 6,
+    "width": 128
+  },
+  "architecture_class": "PooledContextVCM",
+  "arms": [
+    "control"
+  ],
+  "augmentation": {
+    "both_arms": false,
+    "each_probability": 0.5,
+    "fill": "zero in human-training-normalized feature space",
+    "frequency_masks": 1,
+    "frequency_width_max": 4,
+    "method": "conservative SpecAugment adaptation",
+    "noise": false,
+    "reverberation": false,
+    "speed": false,
+    "splicing": false,
+    "time_fraction_max": 0.05,
+    "time_masks": 1,
+    "time_warp": false,
+    "time_width_max": 10,
+    "train_only": true
+  },
+  "authorization": "User approved the fixed-size saved-checkpoint comparison and at most one continuation",
+  "bindings": {
+    ".cache/speaker-compact-recall-v1/fp32-recovery-v2/bundle/model.onnx": "61f639126d7226f17f4e94c970b2fb60f66182578c77238ff65ebaf4b5993be3",
+    ".cache/speaker-compact-recall-v1/fp32-recovery-v2/bundle/policy.json": "5297b6398ddf89a7d0864dfd3810dd9dd357e23be75ab69ec92d9e43be59319b",
+    ".cache/speaker-compact-recall-v1/fp32-recovery-v2/bundle/recall-policy.json": "9e25132f7bbde263abf1df7fd45ced570782c5525cbe38879dc3bf0f02a481d0",
+    ".cache/speaker-compact-recall-v1/fp32-recovery-v2/bundle/recipe.json": "04558103e3e4d9e774af369790160bc5453342853fc9b0726a905dbd14b76317",
+    ".cache/speaker-compact-recall-v1/fp32-recovery-v2/calibration-excluded.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/speaker-compact-recall-v1/fp32-recovery-v2/calibration-predictions.json": "cf34aa65166ec4001712f100e009445059f26cc4a2c96b236c5e3f1526e6343e",
+    ".cache/speaker-compact-recall-v1/fp32-recovery-v2/development-fp32.json": "d5e0640dcf6f1852ee68799b47c381ae6204a991237300ef15ac2af72b938daa",
+    ".cache/speaker-compact-recall-v1/fp32-recovery-v2/holdout-excluded.jsonl": "9e836b6c158c54286dcf66f1af894e3bcfa1d15522449e4fc9fc1436bfbe7b0d",
+    ".cache/speaker-compact-recall-v1/fp32-recovery-v2/holdout-predictions.json": "4b0e9da468bd71937922c47f25296a3f35cffd1b930e8c5064bcbfe3e180ea7a",
+    ".cache/speaker-compact-recall-v1/fp32-recovery-v2/test-excluded.jsonl": "4ded0be60159d92e6f3896813390cde1a0625ad300d5c175de11d3a71be98b17",
+    ".cache/speaker-compact-recall-v1/fp32-recovery-v2/test-predictions.json": "c6897f4c4e1a91727b1ef2f786da7afd640c342297841c3437cded23bc5bca5c",
+    ".cache/speaker-compact-recall-v1/prepared/dev.jsonl": "7a6bc9d2be660aad09713c34524a2780e010cb438cc75ddbf32d2bd9e40c20b8",
+    ".cache/speaker-compact-recall-v1/prepared/excluded.jsonl": "637aa7140b27b33234666c4189a3efa2b992b02e9631184c50ed021e137e548d",
+    ".cache/speaker-compact-recall-v1/prepared/train.jsonl": "c22401fcd644d99c9698836fe4f39852ed73e0f2765b6aa27914dad663f9e73c",
+    ".cache/speaker-compact-recall-v1/training/human-shared/history.json": "ca5c7c17b593a1024e1f3a0e4249b71922888bd1a43bd01b655cc6906f8f600e",
+    ".cache/speaker-compact-recall-v1/training/human-shared/last.pt": "d62efa46e7ecdd0e493eb7b515821f10c4ad30f2b0fbd24424f61624ee0c87f9",
+    ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-028.pt": "a727e5070053045d6f276a3f58084ef16dd2bcbf9f931eea71db42a512f7d76a",
+    ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-032.pt": "1aac21b3bcebc94d868c90fbefb42242ac4363fce55cb1f38c132c558fb55efc",
+    ".cache/speaker-compact-recall-v1/training/mixed-control/history.json": "cdc80c3e9e89f1fea5a2e856b272af0cc7a7bd3c6e9c350920080767a39cca8b",
+    ".cache/speaker-synthetic-completion-v1/prepared-v1/catalog.json": "429a15bc364d7fd9e723a2879c611472b5176de6cb3a2b54be7c137b050c985d",
+    ".cache/speaker-synthetic-completion-v1/prepared-v1/dev.jsonl": "7a6bc9d2be660aad09713c34524a2780e010cb438cc75ddbf32d2bd9e40c20b8",
+    ".cache/speaker-synthetic-completion-v1/prepared-v1/normalization.json": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+    ".cache/speaker-synthetic-completion-v1/prepared-v1/preparation.json": "6a3aa93a070b54d7eaa118607b7d7e05ea0f779da49ead0c5faa44e30a2f58ad",
+    ".cache/speaker-synthetic-completion-v1/prepared-v1/train.jsonl": "16b931d619867ee71f3239349e301bc221cca2bc34e5cba4e96e35ae367caa48",
+    ".cache/speaker-synthetic-completion-v1/prepared-v1/views/evaluation/holdout.jsonl": "a51e720b97f7b31e3e2f025c21bf679006ad444fd2d363916d9a11aa0f488b5b",
+    ".cache/speaker-synthetic-completion-v1/prepared-v1/views/evaluation/test.jsonl": "a4fdcedfc86efebb36414114887abdc4ee51eba102b0247740aef18d1ad15abc",
+    ".cache/speaker-synthetic-completion-v1/prepared-v1/views/human/calibration.jsonl": "af7858186f401f0c016cd930dd057c08c1e4d8552d7dc4179e489ca3e0c48253",
+    "data/sources/speaker-final-pi-assets.source.json": "ac9bb59656fbcb103cc4dbdbf9425ae21aacb43dca1efd719a4fab7c1714f292",
+    "docs/PLAN-speaker-pipeline-repair-v1.md": "f7a9de5fbc68565a66e1be4d5824737a3601b0c56673ea968743c614d335c085",
+    "experiments/pcv-human-slots-v1/output.schema.json": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c",
+    "experiments/pcv-release-train-v1/custom-slots.json": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5",
+    "experiments/phrase-contract-v1/configs/runtime-cp312-aarch64/dependencies.json": "a494da595206f17f78b52a9010546e4e1dabcbb9d6afae27e7f5ac35178c42b8",
+    "experiments/phrase-contract-v1/pcvcm/decoder.py": "c4a17d7c69d1f4464a8f36e064dd9aefd0df2bd100664d68bf6fa5daabb5dfba",
+    "experiments/speaker-compact-recall-v1/fp32-recovery-v2/package-final-verification.json": "5b3ea81bc11f1b545c0a12857aba96a8eb64d1dc3b18bea04e97b8897a35fdd6",
+    "experiments/speaker-compact-recall-v1/fp32-recovery-v2/package-final.json": "3feaffd9b009918f1deb173d3270b7a4d025367fbfa845ae30577c6b30bdcc73",
+    "experiments/speaker-compact-recall-v1/fp32-recovery-v2/recall-policy.json": "9e25132f7bbde263abf1df7fd45ced570782c5525cbe38879dc3bf0f02a481d0",
+    "experiments/speaker-compact-recall-v1/fp32-recovery-v2/release-protocol-before-evaluation.json": "b2db6231ea297203f23c0a602dc135cf8f2e9c6802a8a63d13b56a442390962c",
+    "experiments/speaker-compact-recall-v1/fp32-recovery-v2/results.json": "3fd00e4f3a02900ef1a624de7d9a56f808aca165e9cd7ef94fa457a47798284f",
+    "experiments/speaker-compact-recall-v1/fp32-recovery-v2/selection-before-test.json": "d1a9b8438f6692cfb7872be9b0c25e82fe69e9cd25e4debec9afc063eeac82c0",
+    "experiments/speaker-compact-recall-v1/protocol.json": "1fd622a5cd7fdbf024acb1ca6bde8ffad05ae849a34b1197ae07dd65542f19f4",
+    "experiments/speaker-compact-recall-v1/selection-before-calibration.json": "4477dc4018dc0bb58d49d20b8ca334eac8c2b6dbc495ab3c1e5012710bdc680b",
+    "experiments/speaker-final-refinement-v1/protocol.json": "ac9b851b5bafb8bf38fc8db4f78228bafab2d16449f42e13a2c4d3248e49e945",
+    "experiments/speaker-final-refinement-v1/references.json": "8a399583a6670f265c81836de7ddc6a9ac5d2fbc1bd1422c8b3c8ac521fc6829",
+    "experiments/speaker-pipeline-repair-v1/references.json": "8fd80f38516ebd6ec8b25a9172e1d814bb05b9cd7b3711b57fe86a1ff3825243",
+    "scripts/models/pcv_contextual.py": "0b1130d767209eab2f8de90b3e4c343590d2420d67c34877827c69a11aee0b1d",
+    "scripts/models/pcv_release_pooling.py": "553341c0844c46789555a12942289fbb33eb96ea72b8d7192511c20780393fa5",
+    "scripts/pcv_final_delivery.py": "a53428e4292ad540542bef055cf31d4c10c6dc678e3c2418132c105125b3c617",
+    "scripts/pcv_parallel.py": "c43d6e865a305477abc297f72352c680db60dee6a6bc5024bde0b4bb76bdd7fd",
+    "scripts/runtime/pcv_final_runtime.py": "41a45f4612c871660cae145e60dc849ee5de314d821a2433a7391c63523badf1",
+    "scripts/runtime/pcv_pi_benchmark.py": "c7aa5f510282686f5d2a2203883b04e972f22a2f6157a0bf1d2a223492daf303",
+    "scripts/runtime/pcv_schema.py": "603ec943eae1e7330dd2eb82f05bbd7c206382ecf13c0fb8f8801a7ecd0e134c",
+    "scripts/runtime/speaker_compact.py": "0d5878380b771cb8efbfb7cc5d73f423ce652ce1e90fea97a012082da1e2a2b6",
+    "scripts/runtime/speaker_compact_benchmark.py": "ec02bcd9ae4ad510cb8ea76da2fd61114cfa37b1d3e11a18be3c8fb214ed20d2",
+    "scripts/runtime/speaker_confidence.py": "48769f0592222da17e3dbac66ce49985989bc31cf51c982456fb711c301862d7",
+    "scripts/runtime/speaker_config.py": "78b496d6809a906dbaa28498a0b97f51c97fbfb6073ff22318a56929f1d06375",
+    "scripts/test/pcv_public_qualification.py": "732003d6cf27b300d11a05dd652d93c9cb8a5ec26fab59d5e244c15125d0d33f",
+    "scripts/test/test_speaker_pipeline_repair.py": "5d475994e588b0886ccdccb5c820bbbc91024dee0ff2c802219c82c50faee436",
+    "scripts/train/speaker_compact.py": "9339caa54a3ea3fd19ea997b4d3a3a5be53c3e5209333623132db2e3b44d6027",
+    "scripts/train/speaker_compact_policy.py": "3f1c3f0ae7ae118b0628ccea4fb09162414decb62b6088cb98336150eaa5105d",
+    "scripts/train/speaker_compact_release.py": "26e2924a94e2b845af04dc52ddc08d6c44118f67e0cebe4531678c3a8a68d871",
+    "scripts/train/speaker_final_release.py": "e3a83262c31fde51b70b2f509cacb98a107cfb505bedeeacbf442acb1998abb9",
+    "scripts/train/speaker_final_train.py": "e89253c2fa415e80cdae563362b26505ce3b36dd1760221dca4165c812f66001",
+    "scripts/train/speaker_pipeline_repair.py": "8e1b2376292ae67ff21f576c182ada7e58b1a236118a07a8a9046bb6818cd21e",
+    "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+  },
+  "continuation_limit": 1,
+  "control_batch": {
+    "human_negative": 4,
+    "human_positive": 12,
+    "new_synthetic": 0,
+    "old_synthetic": 16
+  },
+  "date": "2026-10-16",
+  "deterministic_algorithms": "warn_only; seeded draws, no bitwise CUDA guarantee",
+  "exclusions": 190,
+  "experiment_id": "speaker-pipeline-repair-v1",
+  "export": {
+    "maximum_bytes": 4194304,
+    "numerical_tolerance": 2e-05,
+    "precision": "fp32"
+  },
+  "fit_baseline": {
+    "calibration": {
+      "correct": 40,
+      "false_accepts": 0,
+      "wrong": 0
+    },
+    "development": {
+      "correct": 96,
+      "false_accepts": 1,
+      "wrong": 6
+    }
+  },
+  "foundation": ".cache/speaker-compact-recall-v1/training/human-shared/last.pt",
+  "foundation_batch": {
+    "human_negative": 8,
+    "human_positive": 24
+  },
+  "human_qualified": false,
+  "hypothesis": "Recognition-based weight selection improves accepted complete commands without increasing model size or fitting-view errors",
+  "initialization": "First saved mixed epoch28; if needed one mixed continuation from saved human epoch24",
+  "installed": false,
+  "installed_metadata": {
+    "artifacts/brightness-validation.json": "615f6b266124d89ee58de054874a4c752fd736bf0cb12449abdfca95e4f0c34c",
+    "artifacts/bundle.json": "e1f9519400058b9fc5ebadcbb68f520a61faed93ff50eb528e530748e369ec85",
+    "artifacts/export-verification.json": "a83385ef8d234a61b7997909911d72d86e533bf2b87d5b80c3013dcabe39169e",
+    "artifacts/family-metrics.json": "a1bc4c392ece85d0afdf1ddae24e0e4461537865941f6f385cd8e9103b0f48e7",
+    "artifacts/manifest.json": "8c1745c07dbb5a47299c09e0eac460fdfacc174d052c06cdacbcaa8e5446c128",
+    "artifacts/openwakeword-LICENSE.txt": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "artifacts/pilot-results.json": "a5c8b6653fa7fceb8d621bf5774052b3f1fa5a194ec88f7ae4459462865938c2",
+    "artifacts/pretrained-NOTICE.txt": "16f146f382cd504803fb425b1bcfe1680b23a58eabfa03ab310c37e0353de8a5",
+    "artifacts/silero-LICENSE.txt": "2e63e9a38b6e8fc0c7bc37ce174caca1862870856c6daf5697cfb785e925520b",
+    "artifacts/training-config.json": "c087d451e3a58638978b6ab9550311a2c59e414ffab664db9799bbbbedd60a81",
+    "artifacts/training-history.json": "9d30fd81efc7b0cd5408d68038d255fa9f50b4880182d361b14deaec1b19868c",
+    "artifacts/wake-models.json": "9bc153473704dd425961ac0d4cc2f3b5607a8a35601a0bb5d687082651788c9e"
+  },
+  "label_audit": "Metadata conflict exclusion only; no independent listening or label corrections",
+  "limitation": "One seed and previously examined data; no isolated estimate of checkpoint, foundation or calibration effects",
+  "maximum_parameters": 1200000,
+  "normalization": "Parent human-training-only normalization (1869 utterances), unchanged; excludes no evaluation data",
+  "parameters": 935567,
+  "physical_pi_measured": false,
+  "promotion": "Correct accepts nondecreasing on each human fitting view and strictly increasing in total; wrong and UNKNOWN accepts nonincreasing on each view",
+  "published_evaluation": "Previously examined regression corpus, not untouched validation",
+  "published_test_used_for_selection": false,
+  "qualification_unchanged": true,
+  "quality_gates": {
+    "all_18_human_calibration_intents": true,
+    "human_far": 0.01,
+    "precision": 0.99,
+    "recall": 0.9
+  },
+  "quantization_gate": {
+    "max_extra_human_negative_errors": 1,
+    "max_human_exact_loss": 1,
+    "max_synthetic_exact_loss": 1
+  },
+  "recall_policy": {
+    "fitting_views": [
+      "human/development",
+      "human/calibration"
+    ],
+    "intent_thresholds": [
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.85,
+      0.9,
+      0.95
+    ],
+    "missing_class": "retain .95",
+    "nonregression": "no additional wrong or UNKNOWN accepts on either human view",
+    "slot_threshold": 0.9
+  },
+  "regression_gate": {
+    "holdout": {
+      "maximum_unknown": 1,
+      "maximum_wrong": 1,
+      "minimum_correct": 24
+    },
+    "test": {
+      "maximum_unknown": 2,
+      "maximum_wrong": 21,
+      "minimum_correct": 230
+    }
+  },
+  "repeat_human_stage": false,
+  "requirements": [
+    "ME-01",
+    "ME-02",
+    "ME-03",
+    "ME-04",
+    "ME-05",
+    "ME-06",
+    "ME-07",
+    "ME-08"
+  ],
+  "sampling": "intent then complete command then declared speaker then recording; per-group common random streams",
+  "saved_checkpoint": ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-028.pt",
+  "selection": "Human raw macro speaker recall; raw exact; fewer raw negative candidates; synthetic raw recall; earlier epoch",
+  "torch_tf32": true,
+  "training": {
+    "batch_size": 32,
+    "decoder_workers": 6,
+    "development_every": 4,
+    "gradient_clip": 5.0,
+    "human_epochs": 24,
+    "human_learning_rate": 0.0008,
+    "intent_weight": 0.3,
+    "microbatch": 8,
+    "minimum_learning_rate": 2e-05,
+    "mixed_epochs": 32,
+    "mixed_learning_rate": 0.00025,
+    "seed": 53,
+    "steps_per_epoch": 96,
+    "target_weight": 0.15,
+    "weight_decay": 0.001
+  },
+  "training_rows": 23289
+}

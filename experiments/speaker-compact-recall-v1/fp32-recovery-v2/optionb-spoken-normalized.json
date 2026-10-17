@@ -1,0 +1,5942 @@
+[
+  {
+    "expected": {
+      "intent": "PLAY_MUSIC",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 1,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 1,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-001",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 19,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 19,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Play music"
+  },
+  {
+    "expected": {
+      "intent": "PLAY_MUSIC",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 1,
+      "qualified": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-002",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Start music"
+  },
+  {
+    "expected": {
+      "intent": "PLAY_MUSIC",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-003",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Play some music"
+  },
+  {
+    "expected": {
+      "intent": "WEATHER",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 9,
+      "fixed_demo": {
+        "correct": 2,
+        "rejected": 9,
+        "wrong": 0
+      },
+      "n": 11,
+      "qualified": {
+        "correct": 0,
+        "rejected": 11,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 7,
+        "rejected": 0,
+        "wrong": 4
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 3,
+        "rejected": 8,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-004",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 20,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 21,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Weather"
+  },
+  {
+    "expected": {
+      "intent": "WEATHER",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 2,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 3,
+      "qualified": {
+        "correct": 0,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-005",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 20,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 22,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "What's the weather?"
+  },
+  {
+    "expected": {
+      "intent": "WEATHER",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-006",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 22,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Tell me the weather"
+  },
+  {
+    "expected": {
+      "intent": "TIME",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 1,
+      "qualified": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 1,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 1,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-007",
+    "synthetic": {
+      "declared_speakers": 24,
+      "fixed_demo": {
+        "correct": 31,
+        "rejected": 7,
+        "wrong": 0
+      },
+      "n": 38,
+      "qualified": {
+        "correct": 0,
+        "rejected": 38,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 38,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 37,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Time"
+  },
+  {
+    "expected": {
+      "intent": "TIME",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 10,
+      "fixed_demo": {
+        "correct": 7,
+        "rejected": 7,
+        "wrong": 0
+      },
+      "n": 14,
+      "qualified": {
+        "correct": 0,
+        "rejected": 14,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 14,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 10,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-008",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "What time is it?"
+  },
+  {
+    "expected": {
+      "intent": "TIME",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-009",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 21,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 22,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 22,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Tell me the time"
+  },
+  {
+    "expected": {
+      "intent": "LIGHT_ON",
+      "slots": {
+        "light_id": "light.all"
+      }
+    },
+    "human": {
+      "declared_speakers": 2,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 3,
+      "qualified": {
+        "correct": 0,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-010",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 19,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 19,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Lights on"
+  },
+  {
+    "expected": {
+      "intent": "LIGHT_ON",
+      "slots": {
+        "light_id": "light.all"
+      }
+    },
+    "human": {
+      "declared_speakers": 2,
+      "fixed_demo": {
+        "correct": 1,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 4,
+      "qualified": {
+        "correct": 0,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 4,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 1,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-011",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 36,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 37,
+      "qualified": {
+        "correct": 0,
+        "rejected": 37,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 37,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 36,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Power on the lights"
+  },
+  {
+    "expected": {
+      "intent": "LIGHT_ON",
+      "slots": {
+        "light_id": "light.all"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-012",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 20,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 22,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 20,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Turn on the lights"
+  },
+  {
+    "expected": {
+      "intent": "LIGHT_OFF",
+      "slots": {
+        "light_id": "light.all"
+      }
+    },
+    "human": {
+      "declared_speakers": 2,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 4,
+      "qualified": {
+        "correct": 0,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 3,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-013",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 19,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 22,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 19,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Lights out"
+  },
+  {
+    "expected": {
+      "intent": "LIGHT_OFF",
+      "slots": {
+        "light_id": "light.all"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 1,
+      "qualified": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 1,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-014",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 18,
+        "rejected": 5,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 18,
+        "rejected": 5,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Kill the lights"
+  },
+  {
+    "expected": {
+      "intent": "LIGHT_OFF",
+      "slots": {
+        "light_id": "light.all"
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-015",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 20,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 21,
+        "rejected": 1,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 20,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Shut off the lights"
+  },
+  {
+    "expected": {
+      "intent": "PAUSE",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 22,
+      "fixed_demo": {
+        "correct": 20,
+        "rejected": 1,
+        "wrong": 1
+      },
+      "n": 22,
+      "qualified": {
+        "correct": 0,
+        "rejected": 22,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 21,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 21,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-016",
+    "synthetic": {
+      "declared_speakers": 25,
+      "fixed_demo": {
+        "correct": 22,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 25,
+      "qualified": {
+        "correct": 0,
+        "rejected": 25,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 24,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 23,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Pause"
+  },
+  {
+    "expected": {
+      "intent": "PAUSE",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-017",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Pause audio"
+  },
+  {
+    "expected": {
+      "intent": "PAUSE",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-018",
+    "synthetic": {
+      "declared_speakers": 28,
+      "fixed_demo": {
+        "correct": 36,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 40,
+      "qualified": {
+        "correct": 0,
+        "rejected": 40,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 40,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 38,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Pause song"
+  },
+  {
+    "expected": {
+      "intent": "STOP",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 10,
+      "fixed_demo": {
+        "correct": 12,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 14,
+      "qualified": {
+        "correct": 0,
+        "rejected": 14,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 14,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 12,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-019",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 19,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 22,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 19,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Stop"
+  },
+  {
+    "expected": {
+      "intent": "STOP",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-020",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 20,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 22,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Stop playing"
+  },
+  {
+    "expected": {
+      "intent": "STOP",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-021",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 17,
+        "rejected": 6,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 22,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 19,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "End playback"
+  },
+  {
+    "expected": {
+      "intent": "NEXT",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 7,
+      "fixed_demo": {
+        "correct": 12,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 13,
+      "qualified": {
+        "correct": 0,
+        "rejected": 13,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 12,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 12,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-022",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 21,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 22,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Next song"
+  },
+  {
+    "expected": {
+      "intent": "NEXT",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 1,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-023",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 37,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 40,
+      "qualified": {
+        "correct": 0,
+        "rejected": 40,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 39,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 39,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Skip song"
+  },
+  {
+    "expected": {
+      "intent": "NEXT",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 1,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-024",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 33,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 36,
+      "qualified": {
+        "correct": 0,
+        "rejected": 36,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 36,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 36,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Play next song"
+  },
+  {
+    "expected": {
+      "intent": "VOLUME",
+      "slots": {
+        "operation": "up"
+      }
+    },
+    "human": {
+      "declared_speakers": 2,
+      "fixed_demo": {
+        "correct": 1,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 4,
+      "qualified": {
+        "correct": 0,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 3,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 1,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-025",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Volume up"
+  },
+  {
+    "expected": {
+      "intent": "VOLUME",
+      "slots": {
+        "operation": "up"
+      }
+    },
+    "human": {
+      "declared_speakers": 3,
+      "fixed_demo": {
+        "correct": 2,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 4,
+      "qualified": {
+        "correct": 0,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 3,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 2,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-026",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 20,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 20,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Increase the volume"
+  },
+  {
+    "expected": {
+      "intent": "VOLUME",
+      "slots": {
+        "operation": "up"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 2
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-027",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 22,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 22,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Turn the volume up"
+  },
+  {
+    "expected": {
+      "intent": "VOLUME",
+      "slots": {
+        "operation": "down"
+      }
+    },
+    "human": {
+      "declared_speakers": 6,
+      "fixed_demo": {
+        "correct": 4,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 8,
+      "qualified": {
+        "correct": 0,
+        "rejected": 8,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 5,
+        "rejected": 0,
+        "wrong": 3
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 4,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-028",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 21,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 21,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Volume down"
+  },
+  {
+    "expected": {
+      "intent": "VOLUME",
+      "slots": {
+        "operation": "down"
+      }
+    },
+    "human": {
+      "declared_speakers": 3,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 4,
+      "qualified": {
+        "correct": 0,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 2
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-029",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 19,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 22,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 19,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Lower the volume"
+  },
+  {
+    "expected": {
+      "intent": "VOLUME",
+      "slots": {
+        "operation": "down"
+      }
+    },
+    "human": {
+      "declared_speakers": 5,
+      "fixed_demo": {
+        "correct": 2,
+        "rejected": 6,
+        "wrong": 0
+      },
+      "n": 8,
+      "qualified": {
+        "correct": 0,
+        "rejected": 8,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 6,
+        "rejected": 0,
+        "wrong": 2
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 2,
+        "rejected": 6,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-030",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 17,
+        "rejected": 6,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 22,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 17,
+        "rejected": 6,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Turn the volume down"
+  },
+  {
+    "expected": {
+      "intent": "CALL",
+      "slots": {
+        "contact_id": "contact.home"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-031",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 22,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 22,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Call"
+  },
+  {
+    "expected": {
+      "intent": "CALL",
+      "slots": {
+        "contact_id": "contact.home"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-032",
+    "synthetic": {
+      "declared_speakers": 28,
+      "fixed_demo": {
+        "correct": 38,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 38,
+      "qualified": {
+        "correct": 0,
+        "rejected": 38,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 38,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 38,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Make a call"
+  },
+  {
+    "expected": {
+      "intent": "CALL",
+      "slots": {
+        "contact_id": "contact.home"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-033",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 33,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 35,
+      "qualified": {
+        "correct": 0,
+        "rejected": 35,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 35,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 33,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Make a phone call"
+  },
+  {
+    "expected": {
+      "intent": "MESSAGE",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-034",
+    "synthetic": {
+      "declared_speakers": 21,
+      "fixed_demo": {
+        "correct": 37,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 41,
+      "qualified": {
+        "correct": 0,
+        "rejected": 41,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 41,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 37,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Message"
+  },
+  {
+    "expected": {
+      "intent": "MESSAGE",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-035",
+    "synthetic": {
+      "declared_speakers": 26,
+      "fixed_demo": {
+        "correct": 35,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 37,
+      "qualified": {
+        "correct": 0,
+        "rejected": 37,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 37,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 35,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Send a message"
+  },
+  {
+    "expected": {
+      "intent": "MESSAGE",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 1,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 1,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-036",
+    "synthetic": {
+      "declared_speakers": 28,
+      "fixed_demo": {
+        "correct": 41,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 41,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Send my message"
+  },
+  {
+    "expected": {
+      "intent": "LIST_REMINDERS",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 2,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 3,
+      "qualified": {
+        "correct": 0,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 3,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-037",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 36,
+        "rejected": 8,
+        "wrong": 0
+      },
+      "n": 44,
+      "qualified": {
+        "correct": 0,
+        "rejected": 44,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 44,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 36,
+        "rejected": 8,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Reminders"
+  },
+  {
+    "expected": {
+      "intent": "LIST_REMINDERS",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-038",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 21,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 21,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Show my reminders"
+  },
+  {
+    "expected": {
+      "intent": "LIST_REMINDERS",
+      "slots": {}
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-039",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 34,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 35,
+      "qualified": {
+        "correct": 0,
+        "rejected": 35,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 35,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 34,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "List my reminders"
+  },
+  {
+    "expected": {
+      "intent": "TIMER",
+      "slots": {
+        "duration_seconds": 10
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-040",
+    "synthetic": {
+      "declared_speakers": 28,
+      "fixed_demo": {
+        "correct": 42,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 44,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Timer ten seconds"
+  },
+  {
+    "expected": {
+      "intent": "TIMER",
+      "slots": {
+        "duration_seconds": 30
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-041",
+    "synthetic": {
+      "declared_speakers": 28,
+      "fixed_demo": {
+        "correct": 40,
+        "rejected": 4,
+        "wrong": 1
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 44,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 40,
+        "rejected": 4,
+        "wrong": 1
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Timer thirty seconds"
+  },
+  {
+    "expected": {
+      "intent": "TIMER",
+      "slots": {
+        "duration_seconds": 60
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-042",
+    "synthetic": {
+      "declared_speakers": 24,
+      "fixed_demo": {
+        "correct": 38,
+        "rejected": 7,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 39,
+        "rejected": 6,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Timer one minute"
+  },
+  {
+    "expected": {
+      "intent": "TIMER",
+      "slots": {
+        "duration_seconds": 10
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-043",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 30,
+        "rejected": 15,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 41,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Countdown for ten seconds"
+  },
+  {
+    "expected": {
+      "intent": "TIMER",
+      "slots": {
+        "duration_seconds": 30
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 1,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 1,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-044",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 37,
+        "rejected": 8,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 44,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 41,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Countdown for thirty seconds"
+  },
+  {
+    "expected": {
+      "intent": "TIMER",
+      "slots": {
+        "duration_seconds": 60
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 1,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 1,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 1,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-045",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 37,
+        "rejected": 8,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 41,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Countdown for one minute"
+  },
+  {
+    "expected": {
+      "intent": "TIMER",
+      "slots": {
+        "duration_seconds": 10
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 1,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-046",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 43,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Start a timer for ten seconds"
+  },
+  {
+    "expected": {
+      "intent": "TIMER",
+      "slots": {
+        "duration_seconds": 30
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 1,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 1,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-047",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 40,
+        "rejected": 5,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 44,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 44,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Start a timer for thirty seconds"
+  },
+  {
+    "expected": {
+      "intent": "TIMER",
+      "slots": {
+        "duration_seconds": 60
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-048",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 37,
+        "rejected": 7,
+        "wrong": 0
+      },
+      "n": 44,
+      "qualified": {
+        "correct": 0,
+        "rejected": 44,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 44,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 42,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Start a timer for one minute"
+  },
+  {
+    "expected": {
+      "intent": "ALARM",
+      "slots": {
+        "time": "06:00",
+        "timezone": "Asia/Manila"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-049",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 42,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Alarm six a m"
+  },
+  {
+    "expected": {
+      "intent": "ALARM",
+      "slots": {
+        "time": "08:00",
+        "timezone": "Asia/Manila"
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-050",
+    "synthetic": {
+      "declared_speakers": 26,
+      "fixed_demo": {
+        "correct": 47,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 47,
+      "qualified": {
+        "correct": 0,
+        "rejected": 47,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 47,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 47,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Alarm eight a m"
+  },
+  {
+    "expected": {
+      "intent": "ALARM",
+      "slots": {
+        "time": "21:00",
+        "timezone": "Asia/Manila"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 1
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 2
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 1
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-051",
+    "synthetic": {
+      "declared_speakers": 28,
+      "fixed_demo": {
+        "correct": 41,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Alarm nine p m"
+  },
+  {
+    "expected": {
+      "intent": "ALARM",
+      "slots": {
+        "time": "06:00",
+        "timezone": "Asia/Manila"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-052",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 42,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 43,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Wake me up at six a m"
+  },
+  {
+    "expected": {
+      "intent": "ALARM",
+      "slots": {
+        "time": "08:00",
+        "timezone": "Asia/Manila"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 1,
+      "qualified": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 1,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-053",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 37,
+        "rejected": 7,
+        "wrong": 0
+      },
+      "n": 44,
+      "qualified": {
+        "correct": 0,
+        "rejected": 44,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 44,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 42,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Wake me up at eight a m"
+  },
+  {
+    "expected": {
+      "intent": "ALARM",
+      "slots": {
+        "time": "21:00",
+        "timezone": "Asia/Manila"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 1,
+      "qualified": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 1,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-054",
+    "synthetic": {
+      "declared_speakers": 28,
+      "fixed_demo": {
+        "correct": 42,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 46,
+      "qualified": {
+        "correct": 0,
+        "rejected": 46,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 46,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 45,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Wake me up at nine p m"
+  },
+  {
+    "expected": {
+      "intent": "ALARM",
+      "slots": {
+        "time": "06:00",
+        "timezone": "Asia/Manila"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-055",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 17,
+        "rejected": 6,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 21,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Set an alarm for six a m"
+  },
+  {
+    "expected": {
+      "intent": "ALARM",
+      "slots": {
+        "time": "08:00",
+        "timezone": "Asia/Manila"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-056",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 36,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 39,
+      "qualified": {
+        "correct": 0,
+        "rejected": 39,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 39,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 38,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Set an alarm for eight a m"
+  },
+  {
+    "expected": {
+      "intent": "ALARM",
+      "slots": {
+        "time": "21:00",
+        "timezone": "Asia/Manila"
+      }
+    },
+    "human": {
+      "declared_speakers": 2,
+      "fixed_demo": {
+        "correct": 1,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 3,
+      "qualified": {
+        "correct": 0,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 3,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 1,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-057",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 34,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 38,
+      "qualified": {
+        "correct": 0,
+        "rejected": 38,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 38,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 37,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Set an alarm for nine p m"
+  },
+  {
+    "expected": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 18,
+        "unit": "C"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-058",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 42,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 42,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Temperature eighteen degrees"
+  },
+  {
+    "expected": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 22,
+        "unit": "C"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-059",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 43,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 43,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Temperature twenty two degrees"
+  },
+  {
+    "expected": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 26,
+        "unit": "C"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-060",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 43,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 44,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 43,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Temperature twenty six degrees"
+  },
+  {
+    "expected": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 18,
+        "unit": "C"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-061",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 42,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 42,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Change the temperature to eighteen degrees"
+  },
+  {
+    "expected": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 22,
+        "unit": "C"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-062",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 41,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 43,
+        "rejected": 0,
+        "wrong": 2
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 41,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Change the temperature to twenty two degrees"
+  },
+  {
+    "expected": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 26,
+        "unit": "C"
+      }
+    },
+    "human": {
+      "declared_speakers": 3,
+      "fixed_demo": {
+        "correct": 1,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 4,
+      "qualified": {
+        "correct": 0,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 4,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 1,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-063",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 33,
+        "rejected": 9,
+        "wrong": 1
+      },
+      "n": 43,
+      "qualified": {
+        "correct": 0,
+        "rejected": 43,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 38,
+        "rejected": 1,
+        "wrong": 4
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 33,
+        "rejected": 9,
+        "wrong": 1
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Change the temperature to twenty six degrees"
+  },
+  {
+    "expected": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 18,
+        "unit": "C"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-064",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 41,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 43,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 41,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Set the temperature to eighteen degrees"
+  },
+  {
+    "expected": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 22,
+        "unit": "C"
+      }
+    },
+    "human": {
+      "declared_speakers": 3,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 4,
+      "qualified": {
+        "correct": 0,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 3,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-065",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 35,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 39,
+      "qualified": {
+        "correct": 0,
+        "rejected": 39,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 39,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 35,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Set the temperature to twenty two degrees"
+  },
+  {
+    "expected": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 26,
+        "unit": "C"
+      }
+    },
+    "human": {
+      "declared_speakers": 3,
+      "fixed_demo": {
+        "correct": 1,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 4,
+      "qualified": {
+        "correct": 0,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 4,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 1,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-066",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 39,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 43,
+      "qualified": {
+        "correct": 0,
+        "rejected": 43,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 43,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 39,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Set the temperature to twenty six degrees"
+  },
+  {
+    "expected": {
+      "intent": "BRIGHTNESS",
+      "slots": {
+        "light_id": "light.all",
+        "percent": 20
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 1,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-067",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 42,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 44,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 44,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Brightness twenty percent"
+  },
+  {
+    "expected": {
+      "intent": "BRIGHTNESS",
+      "slots": {
+        "light_id": "light.all",
+        "percent": 60
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 1,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-068",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Brightness sixty percent"
+  },
+  {
+    "expected": {
+      "intent": "BRIGHTNESS",
+      "slots": {
+        "light_id": "light.all",
+        "percent": 100
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 1
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 1,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 1,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-069",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 28,
+        "rejected": 7,
+        "wrong": 10
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 29,
+        "rejected": 0,
+        "wrong": 16
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 29,
+        "rejected": 4,
+        "wrong": 12
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Brightness one hundred percent"
+  },
+  {
+    "expected": {
+      "intent": "BRIGHTNESS",
+      "slots": {
+        "light_id": "light.all",
+        "percent": 20
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-070",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 37,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 38,
+      "qualified": {
+        "correct": 0,
+        "rejected": 38,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 38,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 38,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Adjust brightness to twenty percent"
+  },
+  {
+    "expected": {
+      "intent": "BRIGHTNESS",
+      "slots": {
+        "light_id": "light.all",
+        "percent": 60
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-071",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 42,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 43,
+      "qualified": {
+        "correct": 0,
+        "rejected": 43,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 42,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 42,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Adjust brightness to sixty percent"
+  },
+  {
+    "expected": {
+      "intent": "BRIGHTNESS",
+      "slots": {
+        "light_id": "light.all",
+        "percent": 100
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-072",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 28,
+        "rejected": 9,
+        "wrong": 6
+      },
+      "n": 43,
+      "qualified": {
+        "correct": 0,
+        "rejected": 43,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 33,
+        "rejected": 0,
+        "wrong": 10
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 29,
+        "rejected": 7,
+        "wrong": 7
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Adjust brightness to one hundred percent"
+  },
+  {
+    "expected": {
+      "intent": "BRIGHTNESS",
+      "slots": {
+        "light_id": "light.all",
+        "percent": 20
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-073",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 42,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 42,
+        "rejected": 1,
+        "wrong": 2
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 42,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Brightness level twenty percent"
+  },
+  {
+    "expected": {
+      "intent": "BRIGHTNESS",
+      "slots": {
+        "light_id": "light.all",
+        "percent": 60
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-074",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 44,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 47,
+      "qualified": {
+        "correct": 0,
+        "rejected": 47,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 46,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 45,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Brightness level sixty percent"
+  },
+  {
+    "expected": {
+      "intent": "BRIGHTNESS",
+      "slots": {
+        "light_id": "light.all",
+        "percent": 100
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-075",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 40,
+        "rejected": 6,
+        "wrong": 1
+      },
+      "n": 47,
+      "qualified": {
+        "correct": 0,
+        "rejected": 47,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 44,
+        "rejected": 0,
+        "wrong": 3
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 40,
+        "rejected": 5,
+        "wrong": 2
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Brightness level one hundred percent"
+  },
+  {
+    "expected": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "red",
+        "light_id": "light.all"
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-076",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 21,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 22,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 21,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Change color to red"
+  },
+  {
+    "expected": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "blue",
+        "light_id": "light.all"
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-077",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 22,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 23,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 22,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Change color to blue"
+  },
+  {
+    "expected": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "green",
+        "light_id": "light.all"
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-078",
+    "synthetic": {
+      "declared_speakers": 23,
+      "fixed_demo": {
+        "correct": 20,
+        "rejected": 2,
+        "wrong": 1
+      },
+      "n": 23,
+      "qualified": {
+        "correct": 0,
+        "rejected": 23,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 22,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 20,
+        "rejected": 2,
+        "wrong": 1
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Change color to green"
+  },
+  {
+    "expected": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "red",
+        "light_id": "light.all"
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-079",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 46,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 47,
+      "qualified": {
+        "correct": 0,
+        "rejected": 47,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 47,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 46,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Switch color to red"
+  },
+  {
+    "expected": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "blue",
+        "light_id": "light.all"
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-080",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 44,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 44,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Switch color to blue"
+  },
+  {
+    "expected": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "green",
+        "light_id": "light.all"
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-081",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 39,
+        "rejected": 2,
+        "wrong": 2
+      },
+      "n": 43,
+      "qualified": {
+        "correct": 0,
+        "rejected": 43,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 41,
+        "rejected": 0,
+        "wrong": 2
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 39,
+        "rejected": 2,
+        "wrong": 2
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Switch color to green"
+  },
+  {
+    "expected": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "red",
+        "light_id": "light.all"
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-082",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 34,
+        "rejected": 1,
+        "wrong": 2
+      },
+      "n": 37,
+      "qualified": {
+        "correct": 0,
+        "rejected": 37,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 34,
+        "rejected": 0,
+        "wrong": 3
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 34,
+        "rejected": 1,
+        "wrong": 2
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Set color to red"
+  },
+  {
+    "expected": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "blue",
+        "light_id": "light.all"
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-083",
+    "synthetic": {
+      "declared_speakers": 25,
+      "fixed_demo": {
+        "correct": 22,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "n": 25,
+      "qualified": {
+        "correct": 0,
+        "rejected": 25,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 25,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 22,
+        "rejected": 3,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Set color to blue"
+  },
+  {
+    "expected": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "green",
+        "light_id": "light.all"
+      }
+    },
+    "human": {
+      "declared_speakers": 0,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 0,
+      "qualified": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": true
+    },
+    "id": "B1-084",
+    "synthetic": {
+      "declared_speakers": 28,
+      "fixed_demo": {
+        "correct": 35,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 39,
+      "qualified": {
+        "correct": 0,
+        "rejected": 39,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 39,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 35,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Set color to green"
+  },
+  {
+    "expected": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.drink_water"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-085",
+    "synthetic": {
+      "declared_speakers": 28,
+      "fixed_demo": {
+        "correct": 41,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 44,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 41,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Reminder Drink water"
+  },
+  {
+    "expected": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.study"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 1,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-086",
+    "synthetic": {
+      "declared_speakers": 27,
+      "fixed_demo": {
+        "correct": 39,
+        "rejected": 6,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 44,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 39,
+        "rejected": 6,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Reminder Study"
+  },
+  {
+    "expected": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.exercise"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-087",
+    "synthetic": {
+      "declared_speakers": 28,
+      "fixed_demo": {
+        "correct": 33,
+        "rejected": 12,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 42,
+        "rejected": 0,
+        "wrong": 3
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 33,
+        "rejected": 12,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Reminder Exercise"
+  },
+  {
+    "expected": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.drink_water"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 1,
+        "rejected": 1,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-088",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 41,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 43,
+        "rejected": 0,
+        "wrong": 2
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 41,
+        "rejected": 4,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Remind me to Drink water"
+  },
+  {
+    "expected": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.study"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-089",
+    "synthetic": {
+      "declared_speakers": 28,
+      "fixed_demo": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Remind me to Study"
+  },
+  {
+    "expected": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.exercise"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-090",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 43,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 43,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Remind me to Exercise"
+  },
+  {
+    "expected": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.drink_water"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 0,
+        "rejected": 1,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-091",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 37,
+        "rejected": 8,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 44,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 37,
+        "rejected": 8,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Create a reminder to Drink water"
+  },
+  {
+    "expected": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.study"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-092",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 39,
+        "rejected": 6,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 44,
+        "rejected": 0,
+        "wrong": 1
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 39,
+        "rejected": 6,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Create a reminder to Study"
+  },
+  {
+    "expected": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.exercise"
+      }
+    },
+    "human": {
+      "declared_speakers": 1,
+      "fixed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "n": 2,
+      "qualified": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 2,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 0,
+        "rejected": 2,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "id": "B1-093",
+    "synthetic": {
+      "declared_speakers": 29,
+      "fixed_demo": {
+        "correct": 40,
+        "rejected": 5,
+        "wrong": 0
+      },
+      "n": 45,
+      "qualified": {
+        "correct": 0,
+        "rejected": 45,
+        "wrong": 0
+      },
+      "raw": {
+        "correct": 45,
+        "rejected": 0,
+        "wrong": 0
+      },
+      "reference_conflicts": 0,
+      "relaxed_demo": {
+        "correct": 40,
+        "rejected": 5,
+        "wrong": 0
+      },
+      "unscored_matching_references": 0,
+      "untested": false
+    },
+    "verbatim": "Create a reminder to Exercise"
+  }
+]

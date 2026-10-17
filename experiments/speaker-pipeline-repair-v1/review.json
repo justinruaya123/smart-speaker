@@ -1,0 +1,37 @@
+{
+  "reviewer": "review_pipeline_repair",
+  "fresh_context": true,
+  "read_only": true,
+  "model": "gpt-6-astra",
+  "reviewed_adapter_sha256": "6ff5d5c308b96e7ed0f2cc053a56bfb2d6fd061fa90ffff19ac48c90c5e09f78",
+  "independent_scoped_tests": {
+    "passed": 16,
+    "seconds": 10.41
+  },
+  "critical": [],
+  "findings": [
+    {
+      "severity": "Important",
+      "issue": "Control results nested bindings were not verified/frozen",
+      "resolution": "Verify before initial/existing protocol use; incorporate all nested control bindings; observed failing drift test before fix"
+    },
+    {
+      "severity": "Minor, addressed as comparison-integrity requirement",
+      "issue": "Capture fault status missing from paired comparison",
+      "resolution": "Normalize capture_fault to bool in identity signatures; observed failing test before fix"
+    },
+    {
+      "severity": "Minor, addressed as evidence-integrity requirement",
+      "issue": "New excluded-reference receipts not bound",
+      "resolution": "Add calibration/test/holdout exclusions to decision/result bindings; verify actual written receipts in integration"
+    }
+  ],
+  "declined_to_judge": [
+    "Acoustic accuracy, convergence and export parity: planned empirical comparison",
+    "Extracted archive agreement: verify only if development and regression gates pass",
+    "Physical Pi readiness: unavailable and never claimed",
+    "Unrelated research and root collection failures: preserve outside scope"
+  ],
+  "second_review": false,
+  "fix_passes": 1
+}

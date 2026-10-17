@@ -1,0 +1,1658 @@
+[
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-8c4452c29833a13a",
+      "qsc1/cal-en/prompt-9e049c99019b9d5c",
+      "qsc1/cal-en/prompt-b0dcd92aecee47f7",
+      "qsc1/cal-en/prompt-11355e422354828b"
+    ],
+    "failures": [],
+    "seconds": 3.143985462374985,
+    "seed": 2519971095
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-b11c63f21c87f69a",
+      "qsc1/cal-en/prompt-eb9bc01770a2d86b",
+      "qsc1/cal-en/prompt-650b136b0a283f98",
+      "qsc1/cal-en/prompt-3ba3a9f6215125b5"
+    ],
+    "failures": [],
+    "seconds": 2.93792858812958,
+    "seed": 167483573
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-06f7637f13b13b5a",
+      "qsc1/cal-en/prompt-be456cf16e124325",
+      "qsc1/cal-en/prompt-6448e3e23ba37fd1",
+      "qsc1/cal-en/prompt-dcaba986a40f3da4"
+    ],
+    "failures": [],
+    "seconds": 4.614329722709954,
+    "seed": 2470968683
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-8668d84acfcc2c9e",
+      "qsc1/cal-en/prompt-c2cad0b31bae6a2f",
+      "qsc1/cal-en/prompt-42c5903734957486",
+      "qsc1/cal-en/prompt-c1e72efe389da1e6"
+    ],
+    "failures": [],
+    "seconds": 6.3702437514439225,
+    "seed": 3970664095
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-fcd0bf6b28e0e771",
+      "qsc1/cal-en/prompt-ae6c1ba20bbb8f07",
+      "qsc1/cal-en/prompt-b89245ceef6e1915",
+      "qsc1/cal-en/prompt-4fe9c8f119f5b67a"
+    ],
+    "failures": [],
+    "seconds": 6.184524607844651,
+    "seed": 1389557152
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-a9970922058d90c0",
+      "qsc1/cal-en/prompt-b56f34cc1ad5e8cd",
+      "qsc1/cal-en/prompt-eef48030a1527f78",
+      "qsc1/cal-en/prompt-3336a39406e5a72f"
+    ],
+    "failures": [],
+    "seconds": 4.540925002656877,
+    "seed": 3027424985
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-5875b2a09ebdab51",
+      "qsc1/cal-en/prompt-0dffde07395740d0",
+      "qsc1/cal-en/prompt-a3d1d89abc81d6d8",
+      "qsc1/cal-en/prompt-44c73e311824d88f"
+    ],
+    "failures": [],
+    "seconds": 5.208913607522845,
+    "seed": 1439611991
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-57210b4dc24c1c8f",
+      "qsc1/cal-en/prompt-c0dbaa824aafd52d",
+      "qsc1/cal-en/prompt-d4d9d414ba93b89d",
+      "qsc1/cal-en/prompt-97f50c1eaf22a122"
+    ],
+    "failures": [],
+    "seconds": 6.630403342656791,
+    "seed": 1292781502
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-457793367ecbc1b7",
+      "qsc1/cal-en/prompt-f7f518df406210eb",
+      "qsc1/cal-en/prompt-c5006bd843f92b2d",
+      "qsc1/cal-en/prompt-1381325795b38bdb"
+    ],
+    "failures": [],
+    "seconds": 6.52793550491333,
+    "seed": 4140464443
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-14cf3b83f707604d",
+      "qsc1/cal-en/prompt-b61c6caf79138742",
+      "qsc1/cal-en/prompt-16b4784226abf98e",
+      "qsc1/cal-en/prompt-e3901bdb2a08ca65"
+    ],
+    "failures": [],
+    "seconds": 4.75852666888386,
+    "seed": 2359723708
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-5464285fd5469da4",
+      "qsc1/cal-en/prompt-2b63d0e93c4011fa",
+      "qsc1/cal-en/prompt-8ba418727942ca1d",
+      "qsc1/cal-en/prompt-28b0b7725226f881"
+    ],
+    "failures": [],
+    "seconds": 4.729398869909346,
+    "seed": 3138320055
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-ceda5a2bbca21188",
+      "qsc1/cal-en/prompt-6af09d045d7c6a85",
+      "qsc1/cal-en/prompt-d17345b8d0408b9d",
+      "qsc1/cal-en/prompt-dfbb545739f1bb5f"
+    ],
+    "failures": [],
+    "seconds": 4.730447672307491,
+    "seed": 299042494
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-10003b45d0883660",
+      "qsc1/cal-en/prompt-8bac014a00a8de42",
+      "qsc1/cal-en/prompt-06b699be48eca98d",
+      "qsc1/cal-en/prompt-84965c68d9afc5a2"
+    ],
+    "failures": [],
+    "seconds": 4.307401808910072,
+    "seed": 2502255600
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-214c3cea01c11137",
+      "qsc1/cal-en/prompt-8e1ce877fcec97bb",
+      "qsc1/cal-en/prompt-37f14bd69d5b1a64",
+      "qsc1/cal-en/prompt-98b751e1c874c051"
+    ],
+    "failures": [],
+    "seconds": 5.335312530398369,
+    "seed": 3196880985
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-64b00f94a9c10cba",
+      "qsc1/cal-en/prompt-69aee545bda03a57",
+      "qsc1/cal-en/prompt-1df221672706edca",
+      "qsc1/cal-en/prompt-3771f79e1e717491"
+    ],
+    "failures": [],
+    "seconds": 4.793826254084706,
+    "seed": 3774831415
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-53b2196bd58dd6a9",
+      "qsc1/cal-en/prompt-7bb705df27f977c2",
+      "qsc1/cal-en/prompt-53189ff0044f0ce3",
+      "qsc1/cal-en/prompt-ce07dfa4523e904b"
+    ],
+    "failures": [],
+    "seconds": 5.946898258291185,
+    "seed": 3879357244
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-ef5401d116f1bf3a",
+      "qsc1/cal-en/prompt-f0c314d46215a04d",
+      "qsc1/cal-en/prompt-453985ab252afe97",
+      "qsc1/cal-en/prompt-cf280bef6ee9c01f"
+    ],
+    "failures": [],
+    "seconds": 5.4108233926817775,
+    "seed": 1033457224
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-de5f5a82c5345fe5",
+      "qsc1/cal-en/prompt-0bb7fbc61bfaca54",
+      "qsc1/cal-en/prompt-3a2028b70eefcfd9",
+      "qsc1/cal-en/prompt-0013123467818dd0"
+    ],
+    "failures": [],
+    "seconds": 5.603130901232362,
+    "seed": 987325026
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-ff52167ef8244051",
+      "qsc1/cal-en/prompt-0bfdaf1548bb066d",
+      "qsc1/cal-en/prompt-88143df22fc6a8ee",
+      "qsc1/cal-en/prompt-2ccb46dc76cd71d9"
+    ],
+    "failures": [],
+    "seconds": 6.068035082891583,
+    "seed": 2724287887
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-52a6606f2b295b13",
+      "qsc1/cal-en/prompt-b6b513cf09bb91cb",
+      "qsc1/cal-en/prompt-461747b3eb69a746",
+      "qsc1/cal-en/prompt-a4c67b3e7263fba4"
+    ],
+    "failures": [],
+    "seconds": 6.5263947285711765,
+    "seed": 4036092267
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-400893d6287bee02",
+      "qsc1/cal-en/prompt-9fe916867b55a669",
+      "qsc1/cal-en/prompt-1a8dd0b73281b393",
+      "qsc1/cal-en/prompt-b17ef5ffd6a048f6"
+    ],
+    "failures": [],
+    "seconds": 5.566912951879203,
+    "seed": 3468316503
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-56b9fd3b4ad1a8f8",
+      "qsc1/cal-en/prompt-2ebf67e13a977699",
+      "qsc1/cal-en/prompt-9762e7ef016d62b9",
+      "qsc1/cal-en/prompt-240ac3542a7afb84"
+    ],
+    "failures": [],
+    "seconds": 6.003634789958596,
+    "seed": 2805698300
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-en/prompt-039ae86bf23e1a94",
+      "qsc1/cal-en/prompt-96483d9c805c6985",
+      "qsc1/cal-en/prompt-0cf1c61d6736b880",
+      "qsc1/cal-en/prompt-e376d3d214816c78"
+    ],
+    "failures": [],
+    "seconds": 6.257973541505635,
+    "seed": 325111992
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-8c4452c29833a13a",
+      "qsc1/cal-ph/prompt-9e049c99019b9d5c",
+      "qsc1/cal-ph/prompt-b0dcd92aecee47f7",
+      "qsc1/cal-ph/prompt-11355e422354828b"
+    ],
+    "failures": [],
+    "seconds": 3.592784953303635,
+    "seed": 1762517732
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-b11c63f21c87f69a",
+      "qsc1/cal-ph/prompt-eb9bc01770a2d86b",
+      "qsc1/cal-ph/prompt-650b136b0a283f98",
+      "qsc1/cal-ph/prompt-3ba3a9f6215125b5"
+    ],
+    "failures": [],
+    "seconds": 4.048996149562299,
+    "seed": 401081887
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-06f7637f13b13b5a",
+      "qsc1/cal-ph/prompt-be456cf16e124325",
+      "qsc1/cal-ph/prompt-6448e3e23ba37fd1",
+      "qsc1/cal-ph/prompt-dcaba986a40f3da4"
+    ],
+    "failures": [],
+    "seconds": 4.875977591611445,
+    "seed": 425753792
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-8668d84acfcc2c9e",
+      "qsc1/cal-ph/prompt-c2cad0b31bae6a2f",
+      "qsc1/cal-ph/prompt-42c5903734957486",
+      "qsc1/cal-ph/prompt-c1e72efe389da1e6"
+    ],
+    "failures": [],
+    "seconds": 6.075159288011491,
+    "seed": 3176266762
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-fcd0bf6b28e0e771",
+      "qsc1/cal-ph/prompt-ae6c1ba20bbb8f07",
+      "qsc1/cal-ph/prompt-b89245ceef6e1915",
+      "qsc1/cal-ph/prompt-4fe9c8f119f5b67a"
+    ],
+    "failures": [],
+    "seconds": 6.2400575038045645,
+    "seed": 2799229201
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-a9970922058d90c0",
+      "qsc1/cal-ph/prompt-b56f34cc1ad5e8cd",
+      "qsc1/cal-ph/prompt-eef48030a1527f78",
+      "qsc1/cal-ph/prompt-3336a39406e5a72f"
+    ],
+    "failures": [],
+    "seconds": 4.926071964204311,
+    "seed": 3294779790
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-5875b2a09ebdab51",
+      "qsc1/cal-ph/prompt-0dffde07395740d0",
+      "qsc1/cal-ph/prompt-a3d1d89abc81d6d8",
+      "qsc1/cal-ph/prompt-44c73e311824d88f"
+    ],
+    "failures": [],
+    "seconds": 5.3539769714698195,
+    "seed": 4281642719
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-57210b4dc24c1c8f",
+      "qsc1/cal-ph/prompt-c0dbaa824aafd52d",
+      "qsc1/cal-ph/prompt-d4d9d414ba93b89d",
+      "qsc1/cal-ph/prompt-97f50c1eaf22a122"
+    ],
+    "failures": [],
+    "seconds": 6.213750062510371,
+    "seed": 3939371780
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-457793367ecbc1b7",
+      "qsc1/cal-ph/prompt-f7f518df406210eb",
+      "qsc1/cal-ph/prompt-c5006bd843f92b2d",
+      "qsc1/cal-ph/prompt-1381325795b38bdb"
+    ],
+    "failures": [],
+    "seconds": 6.3075329689309,
+    "seed": 4050795215
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-14cf3b83f707604d",
+      "qsc1/cal-ph/prompt-b61c6caf79138742",
+      "qsc1/cal-ph/prompt-16b4784226abf98e",
+      "qsc1/cal-ph/prompt-e3901bdb2a08ca65"
+    ],
+    "failures": [],
+    "seconds": 4.846997472457588,
+    "seed": 461908864
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-5464285fd5469da4",
+      "qsc1/cal-ph/prompt-2b63d0e93c4011fa",
+      "qsc1/cal-ph/prompt-8ba418727942ca1d",
+      "qsc1/cal-ph/prompt-28b0b7725226f881"
+    ],
+    "failures": [],
+    "seconds": 5.055418045260012,
+    "seed": 2253546507
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-ceda5a2bbca21188",
+      "qsc1/cal-ph/prompt-6af09d045d7c6a85",
+      "qsc1/cal-ph/prompt-d17345b8d0408b9d",
+      "qsc1/cal-ph/prompt-dfbb545739f1bb5f"
+    ],
+    "failures": [],
+    "seconds": 4.923982203938067,
+    "seed": 1231631579
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-10003b45d0883660",
+      "qsc1/cal-ph/prompt-8bac014a00a8de42",
+      "qsc1/cal-ph/prompt-06b699be48eca98d",
+      "qsc1/cal-ph/prompt-84965c68d9afc5a2"
+    ],
+    "failures": [],
+    "seconds": 5.236727612093091,
+    "seed": 1785159160
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-214c3cea01c11137",
+      "qsc1/cal-ph/prompt-8e1ce877fcec97bb",
+      "qsc1/cal-ph/prompt-37f14bd69d5b1a64",
+      "qsc1/cal-ph/prompt-98b751e1c874c051"
+    ],
+    "failures": [],
+    "seconds": 6.941126577556133,
+    "seed": 2688719052
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-64b00f94a9c10cba",
+      "qsc1/cal-ph/prompt-69aee545bda03a57",
+      "qsc1/cal-ph/prompt-1df221672706edca",
+      "qsc1/cal-ph/prompt-3771f79e1e717491"
+    ],
+    "failures": [],
+    "seconds": 6.375955353491008,
+    "seed": 3520067088
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-53b2196bd58dd6a9",
+      "qsc1/cal-ph/prompt-7bb705df27f977c2",
+      "qsc1/cal-ph/prompt-53189ff0044f0ce3",
+      "qsc1/cal-ph/prompt-ce07dfa4523e904b"
+    ],
+    "failures": [],
+    "seconds": 5.855680814944208,
+    "seed": 995963382
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-ef5401d116f1bf3a",
+      "qsc1/cal-ph/prompt-f0c314d46215a04d",
+      "qsc1/cal-ph/prompt-453985ab252afe97",
+      "qsc1/cal-ph/prompt-cf280bef6ee9c01f"
+    ],
+    "failures": [],
+    "seconds": 6.236010504886508,
+    "seed": 648811270
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-de5f5a82c5345fe5",
+      "qsc1/cal-ph/prompt-0bb7fbc61bfaca54",
+      "qsc1/cal-ph/prompt-3a2028b70eefcfd9",
+      "qsc1/cal-ph/prompt-0013123467818dd0"
+    ],
+    "failures": [],
+    "seconds": 5.809044041670859,
+    "seed": 2641965861
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-ff52167ef8244051",
+      "qsc1/cal-ph/prompt-0bfdaf1548bb066d",
+      "qsc1/cal-ph/prompt-88143df22fc6a8ee",
+      "qsc1/cal-ph/prompt-2ccb46dc76cd71d9"
+    ],
+    "failures": [],
+    "seconds": 6.082607477903366,
+    "seed": 572637798
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-52a6606f2b295b13",
+      "qsc1/cal-ph/prompt-b6b513cf09bb91cb",
+      "qsc1/cal-ph/prompt-461747b3eb69a746",
+      "qsc1/cal-ph/prompt-a4c67b3e7263fba4"
+    ],
+    "failures": [],
+    "seconds": 6.23421270865947,
+    "seed": 566765311
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-400893d6287bee02",
+      "qsc1/cal-ph/prompt-9fe916867b55a669",
+      "qsc1/cal-ph/prompt-1a8dd0b73281b393",
+      "qsc1/cal-ph/prompt-b17ef5ffd6a048f6"
+    ],
+    "failures": [],
+    "seconds": 5.916659367270768,
+    "seed": 1619734883
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-56b9fd3b4ad1a8f8",
+      "qsc1/cal-ph/prompt-2ebf67e13a977699",
+      "qsc1/cal-ph/prompt-9762e7ef016d62b9",
+      "qsc1/cal-ph/prompt-240ac3542a7afb84"
+    ],
+    "failures": [],
+    "seconds": 5.485937017947435,
+    "seed": 2734793878
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/cal-ph/prompt-039ae86bf23e1a94",
+      "qsc1/cal-ph/prompt-96483d9c805c6985",
+      "qsc1/cal-ph/prompt-0cf1c61d6736b880",
+      "qsc1/cal-ph/prompt-e376d3d214816c78"
+    ],
+    "failures": [],
+    "seconds": 6.34026382304728,
+    "seed": 2774119710
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-8c4452c29833a13a",
+      "qsc1/dev-en/prompt-9e049c99019b9d5c",
+      "qsc1/dev-en/prompt-b0dcd92aecee47f7",
+      "qsc1/dev-en/prompt-11355e422354828b"
+    ],
+    "failures": [],
+    "seconds": 2.9743710150942206,
+    "seed": 2232179537
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-b11c63f21c87f69a",
+      "qsc1/dev-en/prompt-eb9bc01770a2d86b",
+      "qsc1/dev-en/prompt-650b136b0a283f98",
+      "qsc1/dev-en/prompt-3ba3a9f6215125b5"
+    ],
+    "failures": [],
+    "seconds": 3.8643103605136275,
+    "seed": 131662783
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-06f7637f13b13b5a",
+      "qsc1/dev-en/prompt-be456cf16e124325",
+      "qsc1/dev-en/prompt-6448e3e23ba37fd1",
+      "qsc1/dev-en/prompt-dcaba986a40f3da4"
+    ],
+    "failures": [],
+    "seconds": 5.762945490889251,
+    "seed": 1868188046
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-8668d84acfcc2c9e",
+      "qsc1/dev-en/prompt-c2cad0b31bae6a2f",
+      "qsc1/dev-en/prompt-42c5903734957486",
+      "qsc1/dev-en/prompt-c1e72efe389da1e6"
+    ],
+    "failures": [],
+    "seconds": 6.272920088842511,
+    "seed": 4030426194
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-fcd0bf6b28e0e771",
+      "qsc1/dev-en/prompt-ae6c1ba20bbb8f07",
+      "qsc1/dev-en/prompt-b89245ceef6e1915",
+      "qsc1/dev-en/prompt-4fe9c8f119f5b67a"
+    ],
+    "failures": [],
+    "seconds": 6.123607272282243,
+    "seed": 1378672279
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-a9970922058d90c0",
+      "qsc1/dev-en/prompt-b56f34cc1ad5e8cd",
+      "qsc1/dev-en/prompt-eef48030a1527f78",
+      "qsc1/dev-en/prompt-3336a39406e5a72f"
+    ],
+    "failures": [],
+    "seconds": 4.680120206438005,
+    "seed": 1192967276
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-5875b2a09ebdab51",
+      "qsc1/dev-en/prompt-0dffde07395740d0",
+      "qsc1/dev-en/prompt-a3d1d89abc81d6d8",
+      "qsc1/dev-en/prompt-44c73e311824d88f"
+    ],
+    "failures": [],
+    "seconds": 5.626672048121691,
+    "seed": 3863162844
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-57210b4dc24c1c8f",
+      "qsc1/dev-en/prompt-c0dbaa824aafd52d",
+      "qsc1/dev-en/prompt-d4d9d414ba93b89d",
+      "qsc1/dev-en/prompt-97f50c1eaf22a122"
+    ],
+    "failures": [],
+    "seconds": 6.982275145128369,
+    "seed": 1733480593
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-457793367ecbc1b7",
+      "qsc1/dev-en/prompt-f7f518df406210eb",
+      "qsc1/dev-en/prompt-c5006bd843f92b2d",
+      "qsc1/dev-en/prompt-1381325795b38bdb"
+    ],
+    "failures": [],
+    "seconds": 6.424781375564635,
+    "seed": 4125139494
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-14cf3b83f707604d",
+      "qsc1/dev-en/prompt-b61c6caf79138742",
+      "qsc1/dev-en/prompt-16b4784226abf98e",
+      "qsc1/dev-en/prompt-e3901bdb2a08ca65"
+    ],
+    "failures": [],
+    "seconds": 4.983392516151071,
+    "seed": 853448341
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-5464285fd5469da4",
+      "qsc1/dev-en/prompt-2b63d0e93c4011fa",
+      "qsc1/dev-en/prompt-8ba418727942ca1d",
+      "qsc1/dev-en/prompt-28b0b7725226f881"
+    ],
+    "failures": [],
+    "seconds": 4.898480825126171,
+    "seed": 3865759423
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-ceda5a2bbca21188",
+      "qsc1/dev-en/prompt-6af09d045d7c6a85",
+      "qsc1/dev-en/prompt-d17345b8d0408b9d",
+      "qsc1/dev-en/prompt-dfbb545739f1bb5f"
+    ],
+    "failures": [],
+    "seconds": 5.418254109099507,
+    "seed": 580722007
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-10003b45d0883660",
+      "qsc1/dev-en/prompt-8bac014a00a8de42",
+      "qsc1/dev-en/prompt-06b699be48eca98d",
+      "qsc1/dev-en/prompt-84965c68d9afc5a2"
+    ],
+    "failures": [],
+    "seconds": 5.239080150611699,
+    "seed": 2529180899
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-214c3cea01c11137",
+      "qsc1/dev-en/prompt-8e1ce877fcec97bb",
+      "qsc1/dev-en/prompt-37f14bd69d5b1a64",
+      "qsc1/dev-en/prompt-98b751e1c874c051"
+    ],
+    "failures": [],
+    "seconds": 6.800444069318473,
+    "seed": 1632699194
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-64b00f94a9c10cba",
+      "qsc1/dev-en/prompt-69aee545bda03a57",
+      "qsc1/dev-en/prompt-1df221672706edca",
+      "qsc1/dev-en/prompt-3771f79e1e717491"
+    ],
+    "failures": [],
+    "seconds": 5.329671633429825,
+    "seed": 2368819683
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-53b2196bd58dd6a9",
+      "qsc1/dev-en/prompt-7bb705df27f977c2",
+      "qsc1/dev-en/prompt-53189ff0044f0ce3",
+      "qsc1/dev-en/prompt-ce07dfa4523e904b"
+    ],
+    "failures": [],
+    "seconds": 7.402576044201851,
+    "seed": 1531990807
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-ef5401d116f1bf3a",
+      "qsc1/dev-en/prompt-f0c314d46215a04d",
+      "qsc1/dev-en/prompt-453985ab252afe97",
+      "qsc1/dev-en/prompt-cf280bef6ee9c01f"
+    ],
+    "failures": [],
+    "seconds": 6.932097272947431,
+    "seed": 3973380506
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-de5f5a82c5345fe5",
+      "qsc1/dev-en/prompt-0bb7fbc61bfaca54",
+      "qsc1/dev-en/prompt-3a2028b70eefcfd9",
+      "qsc1/dev-en/prompt-0013123467818dd0"
+    ],
+    "failures": [],
+    "seconds": 6.248586176894605,
+    "seed": 144776153
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-ff52167ef8244051",
+      "qsc1/dev-en/prompt-0bfdaf1548bb066d",
+      "qsc1/dev-en/prompt-88143df22fc6a8ee",
+      "qsc1/dev-en/prompt-2ccb46dc76cd71d9"
+    ],
+    "failures": [],
+    "seconds": 6.072797991335392,
+    "seed": 3603018386
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-52a6606f2b295b13",
+      "qsc1/dev-en/prompt-b6b513cf09bb91cb",
+      "qsc1/dev-en/prompt-461747b3eb69a746",
+      "qsc1/dev-en/prompt-a4c67b3e7263fba4"
+    ],
+    "failures": [],
+    "seconds": 6.608079691417515,
+    "seed": 297897487
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-400893d6287bee02",
+      "qsc1/dev-en/prompt-9fe916867b55a669",
+      "qsc1/dev-en/prompt-1a8dd0b73281b393",
+      "qsc1/dev-en/prompt-b17ef5ffd6a048f6"
+    ],
+    "failures": [],
+    "seconds": 5.193415372632444,
+    "seed": 3487672988
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-56b9fd3b4ad1a8f8",
+      "qsc1/dev-en/prompt-2ebf67e13a977699",
+      "qsc1/dev-en/prompt-9762e7ef016d62b9",
+      "qsc1/dev-en/prompt-240ac3542a7afb84"
+    ],
+    "failures": [],
+    "seconds": 5.932809830643237,
+    "seed": 636752457
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-en/prompt-039ae86bf23e1a94",
+      "qsc1/dev-en/prompt-96483d9c805c6985",
+      "qsc1/dev-en/prompt-0cf1c61d6736b880",
+      "qsc1/dev-en/prompt-e376d3d214816c78"
+    ],
+    "failures": [],
+    "seconds": 7.327332119457424,
+    "seed": 3683835536
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-8c4452c29833a13a",
+      "qsc1/dev-ph/prompt-9e049c99019b9d5c",
+      "qsc1/dev-ph/prompt-b0dcd92aecee47f7",
+      "qsc1/dev-ph/prompt-11355e422354828b"
+    ],
+    "failures": [],
+    "seconds": 3.11229260917753,
+    "seed": 2492199088
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-b11c63f21c87f69a",
+      "qsc1/dev-ph/prompt-eb9bc01770a2d86b",
+      "qsc1/dev-ph/prompt-650b136b0a283f98",
+      "qsc1/dev-ph/prompt-3ba3a9f6215125b5"
+    ],
+    "failures": [],
+    "seconds": 2.9373887330293655,
+    "seed": 2866845381
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-06f7637f13b13b5a",
+      "qsc1/dev-ph/prompt-be456cf16e124325",
+      "qsc1/dev-ph/prompt-6448e3e23ba37fd1",
+      "qsc1/dev-ph/prompt-dcaba986a40f3da4"
+    ],
+    "failures": [],
+    "seconds": 4.689610557630658,
+    "seed": 508378831
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-8668d84acfcc2c9e",
+      "qsc1/dev-ph/prompt-c2cad0b31bae6a2f",
+      "qsc1/dev-ph/prompt-42c5903734957486",
+      "qsc1/dev-ph/prompt-c1e72efe389da1e6"
+    ],
+    "failures": [],
+    "seconds": 5.658500267192721,
+    "seed": 797107415
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-fcd0bf6b28e0e771",
+      "qsc1/dev-ph/prompt-ae6c1ba20bbb8f07",
+      "qsc1/dev-ph/prompt-b89245ceef6e1915",
+      "qsc1/dev-ph/prompt-4fe9c8f119f5b67a"
+    ],
+    "failures": [],
+    "seconds": 5.0219013588503,
+    "seed": 108767542
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-a9970922058d90c0",
+      "qsc1/dev-ph/prompt-b56f34cc1ad5e8cd",
+      "qsc1/dev-ph/prompt-eef48030a1527f78",
+      "qsc1/dev-ph/prompt-3336a39406e5a72f"
+    ],
+    "failures": [],
+    "seconds": 3.580260188318789,
+    "seed": 3637981808
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-5875b2a09ebdab51",
+      "qsc1/dev-ph/prompt-0dffde07395740d0",
+      "qsc1/dev-ph/prompt-a3d1d89abc81d6d8",
+      "qsc1/dev-ph/prompt-44c73e311824d88f"
+    ],
+    "failures": [],
+    "seconds": 4.575366687960923,
+    "seed": 872142787
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-57210b4dc24c1c8f",
+      "qsc1/dev-ph/prompt-c0dbaa824aafd52d",
+      "qsc1/dev-ph/prompt-d4d9d414ba93b89d",
+      "qsc1/dev-ph/prompt-97f50c1eaf22a122"
+    ],
+    "failures": [],
+    "seconds": 5.647832329384983,
+    "seed": 3429999408
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-457793367ecbc1b7",
+      "qsc1/dev-ph/prompt-f7f518df406210eb",
+      "qsc1/dev-ph/prompt-c5006bd843f92b2d",
+      "qsc1/dev-ph/prompt-1381325795b38bdb"
+    ],
+    "failures": [],
+    "seconds": 5.009944002144039,
+    "seed": 765544172
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-14cf3b83f707604d",
+      "qsc1/dev-ph/prompt-b61c6caf79138742",
+      "qsc1/dev-ph/prompt-16b4784226abf98e",
+      "qsc1/dev-ph/prompt-e3901bdb2a08ca65"
+    ],
+    "failures": [],
+    "seconds": 4.129017991013825,
+    "seed": 2693310317
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-5464285fd5469da4",
+      "qsc1/dev-ph/prompt-2b63d0e93c4011fa",
+      "qsc1/dev-ph/prompt-8ba418727942ca1d",
+      "qsc1/dev-ph/prompt-28b0b7725226f881"
+    ],
+    "failures": [],
+    "seconds": 4.405204089358449,
+    "seed": 583697735
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-ceda5a2bbca21188",
+      "qsc1/dev-ph/prompt-6af09d045d7c6a85",
+      "qsc1/dev-ph/prompt-d17345b8d0408b9d",
+      "qsc1/dev-ph/prompt-dfbb545739f1bb5f"
+    ],
+    "failures": [],
+    "seconds": 3.9028967786580324,
+    "seed": 2709157753
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-10003b45d0883660",
+      "qsc1/dev-ph/prompt-8bac014a00a8de42",
+      "qsc1/dev-ph/prompt-06b699be48eca98d",
+      "qsc1/dev-ph/prompt-84965c68d9afc5a2"
+    ],
+    "failures": [],
+    "seconds": 3.909758876077831,
+    "seed": 3250228951
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-214c3cea01c11137",
+      "qsc1/dev-ph/prompt-8e1ce877fcec97bb",
+      "qsc1/dev-ph/prompt-37f14bd69d5b1a64",
+      "qsc1/dev-ph/prompt-98b751e1c874c051"
+    ],
+    "failures": [],
+    "seconds": 4.833285100758076,
+    "seed": 1819615214
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-64b00f94a9c10cba",
+      "qsc1/dev-ph/prompt-69aee545bda03a57",
+      "qsc1/dev-ph/prompt-1df221672706edca",
+      "qsc1/dev-ph/prompt-3771f79e1e717491"
+    ],
+    "failures": [],
+    "seconds": 5.024357194080949,
+    "seed": 2033375220
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-53b2196bd58dd6a9",
+      "qsc1/dev-ph/prompt-7bb705df27f977c2",
+      "qsc1/dev-ph/prompt-53189ff0044f0ce3",
+      "qsc1/dev-ph/prompt-ce07dfa4523e904b"
+    ],
+    "failures": [],
+    "seconds": 4.424040476791561,
+    "seed": 3052857124
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-ef5401d116f1bf3a",
+      "qsc1/dev-ph/prompt-f0c314d46215a04d",
+      "qsc1/dev-ph/prompt-453985ab252afe97",
+      "qsc1/dev-ph/prompt-cf280bef6ee9c01f"
+    ],
+    "failures": [],
+    "seconds": 4.981821292079985,
+    "seed": 1042922440
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-de5f5a82c5345fe5",
+      "qsc1/dev-ph/prompt-0bb7fbc61bfaca54",
+      "qsc1/dev-ph/prompt-3a2028b70eefcfd9",
+      "qsc1/dev-ph/prompt-0013123467818dd0"
+    ],
+    "failures": [],
+    "seconds": 4.204403353855014,
+    "seed": 3893829916
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-ff52167ef8244051",
+      "qsc1/dev-ph/prompt-0bfdaf1548bb066d",
+      "qsc1/dev-ph/prompt-88143df22fc6a8ee",
+      "qsc1/dev-ph/prompt-2ccb46dc76cd71d9"
+    ],
+    "failures": [],
+    "seconds": 4.195702683180571,
+    "seed": 2015539045
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-52a6606f2b295b13",
+      "qsc1/dev-ph/prompt-b6b513cf09bb91cb",
+      "qsc1/dev-ph/prompt-461747b3eb69a746",
+      "qsc1/dev-ph/prompt-a4c67b3e7263fba4"
+    ],
+    "failures": [],
+    "seconds": 5.162404046393931,
+    "seed": 3418260736
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-400893d6287bee02",
+      "qsc1/dev-ph/prompt-9fe916867b55a669",
+      "qsc1/dev-ph/prompt-1a8dd0b73281b393",
+      "qsc1/dev-ph/prompt-b17ef5ffd6a048f6"
+    ],
+    "failures": [],
+    "seconds": 4.496446228586137,
+    "seed": 3977247690
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-56b9fd3b4ad1a8f8",
+      "qsc1/dev-ph/prompt-2ebf67e13a977699",
+      "qsc1/dev-ph/prompt-9762e7ef016d62b9",
+      "qsc1/dev-ph/prompt-240ac3542a7afb84"
+    ],
+    "failures": [],
+    "seconds": 4.875325703062117,
+    "seed": 1235435869
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/dev-ph/prompt-039ae86bf23e1a94",
+      "qsc1/dev-ph/prompt-96483d9c805c6985",
+      "qsc1/dev-ph/prompt-0cf1c61d6736b880",
+      "qsc1/dev-ph/prompt-e376d3d214816c78"
+    ],
+    "failures": [],
+    "seconds": 5.524822195060551,
+    "seed": 196633722
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-8c4452c29833a13a",
+      "qsc1/train-en/prompt-9e049c99019b9d5c",
+      "qsc1/train-en/prompt-b0dcd92aecee47f7",
+      "qsc1/train-en/prompt-11355e422354828b"
+    ],
+    "failures": [],
+    "seconds": 8.198687416501343,
+    "seed": 3760076998
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-b11c63f21c87f69a",
+      "qsc1/train-en/prompt-eb9bc01770a2d86b",
+      "qsc1/train-en/prompt-650b136b0a283f98",
+      "qsc1/train-en/prompt-3ba3a9f6215125b5"
+    ],
+    "failures": [],
+    "seconds": 10.389437790960073,
+    "seed": 243594766
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-06f7637f13b13b5a",
+      "qsc1/train-en/prompt-be456cf16e124325",
+      "qsc1/train-en/prompt-6448e3e23ba37fd1",
+      "qsc1/train-en/prompt-dcaba986a40f3da4"
+    ],
+    "failures": [],
+    "seconds": 11.740384080447257,
+    "seed": 1962644838
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-8668d84acfcc2c9e",
+      "qsc1/train-en/prompt-c2cad0b31bae6a2f",
+      "qsc1/train-en/prompt-42c5903734957486",
+      "qsc1/train-en/prompt-c1e72efe389da1e6"
+    ],
+    "failures": [],
+    "seconds": 12.894918452948332,
+    "seed": 3534502266
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-fcd0bf6b28e0e771",
+      "qsc1/train-en/prompt-ae6c1ba20bbb8f07",
+      "qsc1/train-en/prompt-b89245ceef6e1915",
+      "qsc1/train-en/prompt-4fe9c8f119f5b67a"
+    ],
+    "failures": [],
+    "seconds": 15.183198309503496,
+    "seed": 473157912
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-a9970922058d90c0",
+      "qsc1/train-en/prompt-b56f34cc1ad5e8cd",
+      "qsc1/train-en/prompt-eef48030a1527f78",
+      "qsc1/train-en/prompt-3336a39406e5a72f"
+    ],
+    "failures": [],
+    "seconds": 11.351442120037973,
+    "seed": 3781592298
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-5875b2a09ebdab51",
+      "qsc1/train-en/prompt-0dffde07395740d0",
+      "qsc1/train-en/prompt-a3d1d89abc81d6d8",
+      "qsc1/train-en/prompt-44c73e311824d88f"
+    ],
+    "failures": [],
+    "seconds": 11.46043552365154,
+    "seed": 2458701292
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-57210b4dc24c1c8f",
+      "qsc1/train-en/prompt-c0dbaa824aafd52d",
+      "qsc1/train-en/prompt-d4d9d414ba93b89d",
+      "qsc1/train-en/prompt-97f50c1eaf22a122"
+    ],
+    "failures": [],
+    "seconds": 13.346507304348052,
+    "seed": 799147080
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-457793367ecbc1b7",
+      "qsc1/train-en/prompt-f7f518df406210eb",
+      "qsc1/train-en/prompt-c5006bd843f92b2d",
+      "qsc1/train-en/prompt-1381325795b38bdb"
+    ],
+    "failures": [],
+    "seconds": 11.78084656316787,
+    "seed": 2720753706
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-14cf3b83f707604d",
+      "qsc1/train-en/prompt-b61c6caf79138742",
+      "qsc1/train-en/prompt-16b4784226abf98e",
+      "qsc1/train-en/prompt-e3901bdb2a08ca65"
+    ],
+    "failures": [],
+    "seconds": 10.367397447116673,
+    "seed": 2711102982
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-5464285fd5469da4",
+      "qsc1/train-en/prompt-2b63d0e93c4011fa",
+      "qsc1/train-en/prompt-8ba418727942ca1d",
+      "qsc1/train-en/prompt-28b0b7725226f881"
+    ],
+    "failures": [],
+    "seconds": 5.58546987734735,
+    "seed": 747794640
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-ceda5a2bbca21188",
+      "qsc1/train-en/prompt-6af09d045d7c6a85",
+      "qsc1/train-en/prompt-d17345b8d0408b9d",
+      "qsc1/train-en/prompt-dfbb545739f1bb5f"
+    ],
+    "failures": [],
+    "seconds": 4.925801120698452,
+    "seed": 1322257533
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-10003b45d0883660",
+      "qsc1/train-en/prompt-8bac014a00a8de42",
+      "qsc1/train-en/prompt-06b699be48eca98d",
+      "qsc1/train-en/prompt-84965c68d9afc5a2"
+    ],
+    "failures": [],
+    "seconds": 5.082710378803313,
+    "seed": 796116220
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-214c3cea01c11137",
+      "qsc1/train-en/prompt-8e1ce877fcec97bb",
+      "qsc1/train-en/prompt-37f14bd69d5b1a64",
+      "qsc1/train-en/prompt-98b751e1c874c051"
+    ],
+    "failures": [],
+    "seconds": 5.733203093521297,
+    "seed": 1739581481
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-64b00f94a9c10cba",
+      "qsc1/train-en/prompt-69aee545bda03a57",
+      "qsc1/train-en/prompt-1df221672706edca",
+      "qsc1/train-en/prompt-3771f79e1e717491"
+    ],
+    "failures": [],
+    "seconds": 5.990410526283085,
+    "seed": 2295829373
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-53b2196bd58dd6a9",
+      "qsc1/train-en/prompt-7bb705df27f977c2",
+      "qsc1/train-en/prompt-53189ff0044f0ce3",
+      "qsc1/train-en/prompt-ce07dfa4523e904b"
+    ],
+    "failures": [],
+    "seconds": 6.18471846729517,
+    "seed": 3583279459
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-ef5401d116f1bf3a",
+      "qsc1/train-en/prompt-f0c314d46215a04d",
+      "qsc1/train-en/prompt-453985ab252afe97",
+      "qsc1/train-en/prompt-cf280bef6ee9c01f"
+    ],
+    "failures": [],
+    "seconds": 6.8845640970394015,
+    "seed": 3828485018
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-de5f5a82c5345fe5",
+      "qsc1/train-en/prompt-0bb7fbc61bfaca54",
+      "qsc1/train-en/prompt-3a2028b70eefcfd9",
+      "qsc1/train-en/prompt-0013123467818dd0"
+    ],
+    "failures": [],
+    "seconds": 7.360052385367453,
+    "seed": 3771311754
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-ff52167ef8244051",
+      "qsc1/train-en/prompt-0bfdaf1548bb066d",
+      "qsc1/train-en/prompt-88143df22fc6a8ee",
+      "qsc1/train-en/prompt-2ccb46dc76cd71d9"
+    ],
+    "failures": [],
+    "seconds": 5.926124059595168,
+    "seed": 2540409442
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-52a6606f2b295b13",
+      "qsc1/train-en/prompt-b6b513cf09bb91cb",
+      "qsc1/train-en/prompt-461747b3eb69a746",
+      "qsc1/train-en/prompt-a4c67b3e7263fba4"
+    ],
+    "failures": [],
+    "seconds": 7.0280415043234825,
+    "seed": 233963376
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-400893d6287bee02",
+      "qsc1/train-en/prompt-9fe916867b55a669",
+      "qsc1/train-en/prompt-1a8dd0b73281b393",
+      "qsc1/train-en/prompt-b17ef5ffd6a048f6"
+    ],
+    "failures": [],
+    "seconds": 6.110986485145986,
+    "seed": 2401645871
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-56b9fd3b4ad1a8f8",
+      "qsc1/train-en/prompt-2ebf67e13a977699",
+      "qsc1/train-en/prompt-9762e7ef016d62b9",
+      "qsc1/train-en/prompt-240ac3542a7afb84"
+    ],
+    "failures": [],
+    "seconds": 6.22196242492646,
+    "seed": 756207498
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-en/prompt-039ae86bf23e1a94",
+      "qsc1/train-en/prompt-96483d9c805c6985",
+      "qsc1/train-en/prompt-0cf1c61d6736b880",
+      "qsc1/train-en/prompt-e376d3d214816c78"
+    ],
+    "failures": [],
+    "seconds": 6.650802136398852,
+    "seed": 1799317267
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-8c4452c29833a13a",
+      "qsc1/train-ph/prompt-9e049c99019b9d5c",
+      "qsc1/train-ph/prompt-b0dcd92aecee47f7",
+      "qsc1/train-ph/prompt-11355e422354828b"
+    ],
+    "failures": [],
+    "seconds": 2.93548272177577,
+    "seed": 1187040837
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-b11c63f21c87f69a",
+      "qsc1/train-ph/prompt-eb9bc01770a2d86b",
+      "qsc1/train-ph/prompt-650b136b0a283f98",
+      "qsc1/train-ph/prompt-3ba3a9f6215125b5"
+    ],
+    "failures": [],
+    "seconds": 4.350248300470412,
+    "seed": 3662051622
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-06f7637f13b13b5a",
+      "qsc1/train-ph/prompt-be456cf16e124325",
+      "qsc1/train-ph/prompt-6448e3e23ba37fd1",
+      "qsc1/train-ph/prompt-dcaba986a40f3da4"
+    ],
+    "failures": [],
+    "seconds": 4.369075730443001,
+    "seed": 2626695539
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-8668d84acfcc2c9e",
+      "qsc1/train-ph/prompt-c2cad0b31bae6a2f",
+      "qsc1/train-ph/prompt-42c5903734957486",
+      "qsc1/train-ph/prompt-c1e72efe389da1e6"
+    ],
+    "failures": [],
+    "seconds": 5.696312786079943,
+    "seed": 1645890086
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-fcd0bf6b28e0e771",
+      "qsc1/train-ph/prompt-ae6c1ba20bbb8f07",
+      "qsc1/train-ph/prompt-b89245ceef6e1915",
+      "qsc1/train-ph/prompt-4fe9c8f119f5b67a"
+    ],
+    "failures": [],
+    "seconds": 7.8756664879620075,
+    "seed": 2336464595
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-a9970922058d90c0",
+      "qsc1/train-ph/prompt-b56f34cc1ad5e8cd",
+      "qsc1/train-ph/prompt-eef48030a1527f78",
+      "qsc1/train-ph/prompt-3336a39406e5a72f"
+    ],
+    "failures": [],
+    "seconds": 3.720060272142291,
+    "seed": 551384456
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-5875b2a09ebdab51",
+      "qsc1/train-ph/prompt-0dffde07395740d0",
+      "qsc1/train-ph/prompt-a3d1d89abc81d6d8",
+      "qsc1/train-ph/prompt-44c73e311824d88f"
+    ],
+    "failures": [],
+    "seconds": 4.7742021000012755,
+    "seed": 2914008543
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-57210b4dc24c1c8f",
+      "qsc1/train-ph/prompt-c0dbaa824aafd52d",
+      "qsc1/train-ph/prompt-d4d9d414ba93b89d",
+      "qsc1/train-ph/prompt-97f50c1eaf22a122"
+    ],
+    "failures": [],
+    "seconds": 6.046198836527765,
+    "seed": 3465317061
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-457793367ecbc1b7",
+      "qsc1/train-ph/prompt-f7f518df406210eb",
+      "qsc1/train-ph/prompt-c5006bd843f92b2d",
+      "qsc1/train-ph/prompt-1381325795b38bdb"
+    ],
+    "failures": [],
+    "seconds": 5.385070845484734,
+    "seed": 234494629
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-14cf3b83f707604d",
+      "qsc1/train-ph/prompt-b61c6caf79138742",
+      "qsc1/train-ph/prompt-16b4784226abf98e",
+      "qsc1/train-ph/prompt-e3901bdb2a08ca65"
+    ],
+    "failures": [],
+    "seconds": 4.067710595205426,
+    "seed": 3700221571
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-5464285fd5469da4",
+      "qsc1/train-ph/prompt-2b63d0e93c4011fa",
+      "qsc1/train-ph/prompt-8ba418727942ca1d",
+      "qsc1/train-ph/prompt-28b0b7725226f881"
+    ],
+    "failures": [],
+    "seconds": 4.281595788896084,
+    "seed": 1105000662
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-ceda5a2bbca21188",
+      "qsc1/train-ph/prompt-6af09d045d7c6a85",
+      "qsc1/train-ph/prompt-d17345b8d0408b9d",
+      "qsc1/train-ph/prompt-dfbb545739f1bb5f"
+    ],
+    "failures": [],
+    "seconds": 4.3241358902305365,
+    "seed": 3435128844
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-10003b45d0883660",
+      "qsc1/train-ph/prompt-8bac014a00a8de42",
+      "qsc1/train-ph/prompt-06b699be48eca98d",
+      "qsc1/train-ph/prompt-84965c68d9afc5a2"
+    ],
+    "failures": [],
+    "seconds": 4.311330531723797,
+    "seed": 711927999
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-214c3cea01c11137",
+      "qsc1/train-ph/prompt-8e1ce877fcec97bb",
+      "qsc1/train-ph/prompt-37f14bd69d5b1a64",
+      "qsc1/train-ph/prompt-98b751e1c874c051"
+    ],
+    "failures": [],
+    "seconds": 5.102119351737201,
+    "seed": 2819025666
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-64b00f94a9c10cba",
+      "qsc1/train-ph/prompt-69aee545bda03a57",
+      "qsc1/train-ph/prompt-1df221672706edca",
+      "qsc1/train-ph/prompt-3771f79e1e717491"
+    ],
+    "failures": [],
+    "seconds": 5.876738564111292,
+    "seed": 3487776109
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-53b2196bd58dd6a9",
+      "qsc1/train-ph/prompt-7bb705df27f977c2",
+      "qsc1/train-ph/prompt-53189ff0044f0ce3",
+      "qsc1/train-ph/prompt-ce07dfa4523e904b"
+    ],
+    "failures": [],
+    "seconds": 4.88872379809618,
+    "seed": 3877110363
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-ef5401d116f1bf3a",
+      "qsc1/train-ph/prompt-f0c314d46215a04d",
+      "qsc1/train-ph/prompt-453985ab252afe97",
+      "qsc1/train-ph/prompt-cf280bef6ee9c01f"
+    ],
+    "failures": [],
+    "seconds": 5.658128942362964,
+    "seed": 15304535
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-de5f5a82c5345fe5",
+      "qsc1/train-ph/prompt-0bb7fbc61bfaca54",
+      "qsc1/train-ph/prompt-3a2028b70eefcfd9",
+      "qsc1/train-ph/prompt-0013123467818dd0"
+    ],
+    "failures": [],
+    "seconds": 4.821865043602884,
+    "seed": 4283213446
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-ff52167ef8244051",
+      "qsc1/train-ph/prompt-0bfdaf1548bb066d",
+      "qsc1/train-ph/prompt-88143df22fc6a8ee",
+      "qsc1/train-ph/prompt-2ccb46dc76cd71d9"
+    ],
+    "failures": [],
+    "seconds": 5.191371520981193,
+    "seed": 823867296
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-52a6606f2b295b13",
+      "qsc1/train-ph/prompt-b6b513cf09bb91cb",
+      "qsc1/train-ph/prompt-461747b3eb69a746",
+      "qsc1/train-ph/prompt-a4c67b3e7263fba4"
+    ],
+    "failures": [],
+    "seconds": 5.579822991043329,
+    "seed": 4079803253
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-400893d6287bee02",
+      "qsc1/train-ph/prompt-9fe916867b55a669",
+      "qsc1/train-ph/prompt-1a8dd0b73281b393",
+      "qsc1/train-ph/prompt-b17ef5ffd6a048f6"
+    ],
+    "failures": [],
+    "seconds": 5.445979944430292,
+    "seed": 1946202808
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-56b9fd3b4ad1a8f8",
+      "qsc1/train-ph/prompt-2ebf67e13a977699",
+      "qsc1/train-ph/prompt-9762e7ef016d62b9",
+      "qsc1/train-ph/prompt-240ac3542a7afb84"
+    ],
+    "failures": [],
+    "seconds": 4.8935873582959175,
+    "seed": 299142064
+  },
+  {
+    "attempt": 0,
+    "batch_ids": [
+      "qsc1/train-ph/prompt-039ae86bf23e1a94",
+      "qsc1/train-ph/prompt-96483d9c805c6985",
+      "qsc1/train-ph/prompt-0cf1c61d6736b880",
+      "qsc1/train-ph/prompt-e376d3d214816c78"
+    ],
+    "failures": [],
+    "seconds": 5.650680790655315,
+    "seed": 130622565
+  }
+]

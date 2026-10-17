@@ -1,0 +1,47 @@
+{
+  "checkpoint": ".cache/speaker-compact-recall-v1/training/mixed-control/epoch-028.pt",
+  "checkpoint_sha256": "a727e5070053045d6f276a3f58084ef16dd2bcbf9f931eea71db42a512f7d76a",
+  "epoch": 28,
+  "export": {
+    "errors": [
+      3.337860107421875e-06,
+      5.7220458984375e-06,
+      3.814697265625e-06,
+      5.245208740234375e-06,
+      5.245208740234375e-06,
+      6.198883056640625e-06
+    ],
+    "frame_counts": [
+      1,
+      3,
+      16,
+      37,
+      80,
+      121
+    ],
+    "input_feature_hop_ms": 10,
+    "legacy_two_mib_pass": false,
+    "logits": "raw; finite decoder applies log-softmax once",
+    "max_absolute_error": 6.198883056640625e-06,
+    "mode": "single complete-utterance inference after VAD endpoint; no streaming caches",
+    "onnx_bytes": 3864875,
+    "output_heads": [
+      "ctc",
+      "intent",
+      "target"
+    ],
+    "output_hop_ms": 20,
+    "parameters": 935567,
+    "repair_four_mib_numerical_pass": true,
+    "tolerance": 2e-05
+  },
+  "model_binding": {
+    "catalog_sha256": "429a15bc364d7fd9e723a2879c611472b5176de6cb3a2b54be7c137b050c985d",
+    "custom_slots_sha256": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5",
+    "model_sha256": "fc87c98c242ccb6f37ed9fcd84bad3869b8c90eaae6267fdab2a1a5af2737f6d",
+    "normalization_sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+    "schema_sha256": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c"
+  },
+  "protocol_sha256": "fb2e886e2afb55527036b7082e4858f9d22d0ca2f79b24e6bb51ca129f362b52",
+  "test_used_for_selection": false
+}

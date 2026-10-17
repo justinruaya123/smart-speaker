@@ -1,4 +1,60 @@
 {
+  "speaker.pipeline_repair": {
+    "path": "train/speaker_pipeline_repair.py",
+    "runtime": false
+  },
+  "speaker.compact_fp32_release": {
+    "path": "train/speaker_compact_fp32_release.py",
+    "runtime": false
+  },
+  "speaker.compact_train": {
+    "path": "train/speaker_compact.py",
+    "runtime": false
+  },
+  "speaker.compact_policy": {
+    "path": "train/speaker_compact_policy.py",
+    "runtime": false
+  },
+  "speaker.compact_release": {
+    "path": "train/speaker_compact_release.py",
+    "runtime": false
+  },
+  "speaker.compact_runtime": {
+    "path": "runtime/speaker_compact.py",
+    "runtime": true
+  },
+  "speaker.compact_benchmark": {
+    "path": "runtime/speaker_compact_benchmark.py",
+    "runtime": true
+  },
+  "speaker.final_train": {
+    "path": "train/speaker_final_train.py",
+    "runtime": false
+  },
+  "speaker.final_release": {
+    "path": "train/speaker_final_release.py",
+    "runtime": false
+  },
+  "speaker.synthetic_data": {
+    "path": "train/speaker_synthetic_data.py",
+    "runtime": false
+  },
+  "speaker.synthetic_prepare": {
+    "path": "train/speaker_synthetic_prepare.py",
+    "runtime": false
+  },
+  "speaker.synthetic_recovery": {
+    "path": "train/speaker_synthetic_recovery.py",
+    "runtime": false
+  },
+  "speaker.demo_v2_data": {
+    "path": "train/speaker_demo_v2_data.py",
+    "runtime": false
+  },
+  "speaker.dataset_install": {
+    "path": "train/speaker_dataset_install.py",
+    "runtime": false
+  },
   "pcv.bundle_checks": {
     "path": "test/pcv_bundle_checks.py",
     "runtime": false
@@ -525,6 +581,42 @@
   },
   "pcv.speaker_wake_replay": {
     "path": "test/speaker_wake_replay.py",
+    "runtime": false
+  },
+  "mvp.static_model": {
+    "path": "models/mvp_static.py",
+    "runtime": false
+  },
+  "mvp.static_train": {
+    "path": "train/mvp_static_train.py",
+    "runtime": false
+  },
+  "mvp.static_release": {
+    "path": "train/mvp_static_release.py",
+    "runtime": false
+  },
+  "mvp.static_runtime": {
+    "path": "runtime/mvp_static.py",
+    "runtime": true
+  },
+  "mvp.wake_model": {
+    "path": "models/mvp_wake.py",
+    "runtime": false
+  },
+  "mvp.wake_train": {
+    "path": "train/mvp_wake.py",
+    "runtime": false
+  },
+  "mvp.wake_runtime": {
+    "path": "runtime/mvp_wake.py",
+    "runtime": true
+  },
+  "mvp.delivery": {
+    "path": "mvp_delivery.py",
+    "runtime": false
+  },
+  "mvp.policy_refine": {
+    "path": "train/mvp_policy_refine.py",
     "runtime": false
   }
 }

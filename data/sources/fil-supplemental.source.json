@@ -1,0 +1,54 @@
+{
+  "repository": "martinnavs/ai231-fil-supplemental-data",
+  "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+  "authority": "https://huggingface.co/datasets/martinnavs/ai231-fil-supplemental-data/blob/230c8b8d58caf78e4bc90886d9c6fa77fe6024b8/README.md",
+  "license": "Research and education only; reference recording consent/license and CosyVoice2 weights license unverified; no redistribution or commercial use.",
+  "kind": "synthetic",
+  "use": "train only; excluded from speaker-demo-v1 human-only protocol and every test/holdout track",
+  "reference_speaker_overlap": "unverified",
+  "source_card_sha256": "46801041963a08d608293cfdc7bdee4be4c7c4ed4a7fe7017834c4f46af05af0",
+  "files": [
+    {
+      "remote_path": "data/train-00000-of-00004.parquet",
+      "path": ".cache/fil-supplemental-v1/source/data/train-00000-of-00004.parquet",
+      "sha256": "01d32c3ed7b2e9a0ee131a1dad128c8e63e7b20a198ce1170625bd0940db0778",
+      "bytes": 244957155,
+      "url": "https://huggingface.co/datasets/martinnavs/ai231-fil-supplemental-data/resolve/230c8b8d58caf78e4bc90886d9c6fa77fe6024b8/data/train-00000-of-00004.parquet?download=true"
+    },
+    {
+      "remote_path": "data/train-00001-of-00004.parquet",
+      "path": ".cache/fil-supplemental-v1/source/data/train-00001-of-00004.parquet",
+      "sha256": "c66da6df2579243d27fb956ddbc413f2e2ed0a4c5acaa77c333e905f866d885a",
+      "bytes": 276168578,
+      "url": "https://huggingface.co/datasets/martinnavs/ai231-fil-supplemental-data/resolve/230c8b8d58caf78e4bc90886d9c6fa77fe6024b8/data/train-00001-of-00004.parquet?download=true"
+    },
+    {
+      "remote_path": "data/train-00002-of-00004.parquet",
+      "path": ".cache/fil-supplemental-v1/source/data/train-00002-of-00004.parquet",
+      "sha256": "8a7e0460893a97cb4e3ad4b3729ae781a277dcbccced7484898e2f5985122566",
+      "bytes": 235971285,
+      "url": "https://huggingface.co/datasets/martinnavs/ai231-fil-supplemental-data/resolve/230c8b8d58caf78e4bc90886d9c6fa77fe6024b8/data/train-00002-of-00004.parquet?download=true"
+    },
+    {
+      "remote_path": "data/train-00003-of-00004.parquet",
+      "path": ".cache/fil-supplemental-v1/source/data/train-00003-of-00004.parquet",
+      "sha256": "0d31aa80f447423413fa097567c8df9cbdaa70439774d43df209c8ffc47df257",
+      "bytes": 235454295,
+      "url": "https://huggingface.co/datasets/martinnavs/ai231-fil-supplemental-data/resolve/230c8b8d58caf78e4bc90886d9c6fa77fe6024b8/data/train-00003-of-00004.parquet?download=true"
+    },
+    {
+      "remote_path": "gap_fill/train-00000-of-00001.parquet",
+      "path": ".cache/fil-supplemental-v1/source/gap_fill/train-00000-of-00001.parquet",
+      "sha256": "1e229f67df1b539711886e01062dbc0309c58f38e739dad787b11c669d314512",
+      "bytes": 118240931,
+      "url": "https://huggingface.co/datasets/martinnavs/ai231-fil-supplemental-data/resolve/230c8b8d58caf78e4bc90886d9c6fa77fe6024b8/gap_fill/train-00000-of-00001.parquet?download=true"
+    },
+    {
+      "remote_path": "numeral_wordings/train-00000-of-00001.parquet",
+      "path": ".cache/fil-supplemental-v1/source/numeral_wordings/train-00000-of-00001.parquet",
+      "sha256": "9808c05811bc0e3bdd152c74c4473673b1355e2dc355873ceb8bb48936a5ac5a",
+      "bytes": 411129,
+      "url": "https://huggingface.co/datasets/martinnavs/ai231-fil-supplemental-data/resolve/230c8b8d58caf78e4bc90886d9c6fa77fe6024b8/numeral_wordings/train-00000-of-00001.parquet?download=true"
+    }
+  ]
+}

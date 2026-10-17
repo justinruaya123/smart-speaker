@@ -1,0 +1,283 @@
+{
+  "date": "2026-10-16",
+  "experiment_id": "speaker-synthetic-completion-v1",
+  "generation": {
+    "anchors": ".cache/speaker-synthetic-completion-v1/anchors.json",
+    "anchors_sha256": "6987e99ce8f62f27057ef9e63322fd581bd4e1b4f991ee30c02c86a115f3d33e",
+    "batch_attempts": 138,
+    "complete": true,
+    "designed_conditions": 6,
+    "durable_anchors": "experiments/speaker-synthetic-completion-v1/anchors.json",
+    "durable_manifest": "experiments/speaker-synthetic-completion-v1/generated.jsonl",
+    "exact_pcm_overlap": 0,
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "human_qualification_coverage_added": 0,
+    "independent_listening": false,
+    "kind": "synthetic",
+    "manifest": ".cache/speaker-synthetic-completion-v1/generated.jsonl",
+    "manifest_sha256": "07e140c0be15c0d8b5f587c801398af3bd3cb8337ac13b57ae547c89c82eb2fe",
+    "missing": [],
+    "native_waveform_hashes_verified": 558,
+    "planned": 552,
+    "present": 552,
+    "prompts_per_voice": 92,
+    "protocol_sha256": "df1c5445777761e6e953fb5322eb15cf85d9f37de31fdf23d342bf86df22e0b8",
+    "qwen_tts": "0.1.1",
+    "seconds": 898.2159803062677,
+    "source_assets": {
+      "files": 24,
+      "gib": 8.442,
+      "receipt": "data/sources/qwen-synthetic-completion.source.json"
+    },
+    "splits": {
+      "calibration": 184,
+      "dev": 184,
+      "train": 184
+    },
+    "torch": "2.10.0+cu128",
+    "waveform_qa_failures": 0
+  },
+  "hardware": {
+    "cuda_stage": "approved host execution; default sandbox hides NVIDIA devices",
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "host": "ai-n002.hpc.coe.upd.edu.ph",
+    "host_gpu_count": 8,
+    "used_gpu_index": 0
+  },
+  "human_missing_intents": {
+    "human/calibration": [
+      "CALL",
+      "CREATE_REMINDER",
+      "LIST_REMINDERS",
+      "MESSAGE",
+      "TEMPERATURE"
+    ],
+    "human/dev": [
+      "CALL",
+      "MESSAGE"
+    ],
+    "human/train": [
+      "MESSAGE"
+    ]
+  },
+  "human_qualified": false,
+  "limitations": [
+    "Synthetic voices are not independent human people or verified accents",
+    "Original human calibration/qualification gaps remain; no new model gain or Pi claim",
+    "Labels are intended generated text or existing metadata, not independent listening",
+    "No independent unseen-human, wake-owner, overlap, export or physical Pi qualification",
+    "Original frozen generator needs the separate recovery helper for interrupted unjournaled failures; complete run needed none"
+  ],
+  "model_fitting_performed": false,
+  "output_bindings": {
+    "experiments/speaker-synthetic-completion-v1/anchors.json": "6987e99ce8f62f27057ef9e63322fd581bd4e1b4f991ee30c02c86a115f3d33e",
+    "experiments/speaker-synthetic-completion-v1/generated.jsonl": "07e140c0be15c0d8b5f587c801398af3bd3cb8337ac13b57ae547c89c82eb2fe",
+    "experiments/speaker-synthetic-completion-v1/generation-attempts.json": "940a4829051f40b8bce2f6c650c6acbaf806142c607511a14e56301c27128d7c",
+    "experiments/speaker-synthetic-completion-v1/generation-complete.json": "eb03e87e0be2373c3e154ecd06c4882360f6467a4dcb9c8928400a0dc64a0d4f",
+    "experiments/speaker-synthetic-completion-v1/protocol.json": "df1c5445777761e6e953fb5322eb15cf85d9f37de31fdf23d342bf86df22e0b8",
+    "scripts/train/speaker_synthetic_data.py": "ea25228577b0219f796f6954fe3e384dd8190e459374992f7fbb07c6d7d18f84",
+    "scripts/train/speaker_synthetic_prepare.py": "c69ef3ae118ab0764d029aabdac68ec18137aa472dbb9a6a8b585d20a116d4e0",
+    "scripts/train/speaker_synthetic_recovery.py": "a08bf2cb55b980272bdd8a4924990ad9082dfc1134e1e2f3a4bf3625803e88bd"
+  },
+  "preparation": {
+    "calibration_features_extracted": false,
+    "catalog_entries": 1079,
+    "coverage": {
+      "human/calibration": {
+        "declared_speakers": 24,
+        "intents": {
+          "ALARM": 7,
+          "BRIGHTNESS": 4,
+          "COLOR": 10,
+          "LIGHT_OFF": 14,
+          "LIGHT_ON": 17,
+          "NEXT": 8,
+          "PAUSE": 9,
+          "PLAY_MUSIC": 4,
+          "STOP": 13,
+          "TIME": 11,
+          "TIMER": 2,
+          "UNKNOWN": 88,
+          "VOLUME": 21,
+          "WEATHER": 2
+        },
+        "rows": 210
+      },
+      "human/dev": {
+        "declared_speakers": 36,
+        "intents": {
+          "ALARM": 9,
+          "BRIGHTNESS": 1,
+          "COLOR": 17,
+          "CREATE_REMINDER": 2,
+          "LIGHT_OFF": 11,
+          "LIGHT_ON": 7,
+          "LIST_REMINDERS": 5,
+          "NEXT": 13,
+          "PAUSE": 16,
+          "PLAY_MUSIC": 8,
+          "STOP": 20,
+          "TEMPERATURE": 20,
+          "TIME": 16,
+          "TIMER": 11,
+          "UNKNOWN": 63,
+          "VOLUME": 27,
+          "WEATHER": 10
+        },
+        "rows": 256
+      },
+      "human/train": {
+        "declared_speakers": 182,
+        "intents": {
+          "ALARM": 117,
+          "BRIGHTNESS": 40,
+          "CALL": 10,
+          "COLOR": 163,
+          "CREATE_REMINDER": 11,
+          "LIGHT_OFF": 92,
+          "LIGHT_ON": 78,
+          "LIST_REMINDERS": 37,
+          "NEXT": 89,
+          "PAUSE": 93,
+          "PLAY_MUSIC": 42,
+          "STOP": 135,
+          "TEMPERATURE": 72,
+          "TIME": 98,
+          "TIMER": 60,
+          "UNKNOWN": 473,
+          "VOLUME": 238,
+          "WEATHER": 47
+        },
+        "rows": 1895
+      },
+      "synthetic/calibration": {
+        "declared_speakers": 11,
+        "intents": {
+          "ALARM": 113,
+          "BRIGHTNESS": 121,
+          "CALL": 41,
+          "COLOR": 178,
+          "CREATE_REMINDER": 148,
+          "LIGHT_OFF": 23,
+          "LIGHT_ON": 24,
+          "LIST_REMINDERS": 36,
+          "MESSAGE": 38,
+          "NEXT": 28,
+          "PAUSE": 25,
+          "PLAY_MUSIC": 20,
+          "STOP": 18,
+          "TEMPERATURE": 133,
+          "TIME": 22,
+          "TIMER": 128,
+          "UNKNOWN": 28,
+          "VOLUME": 48,
+          "WEATHER": 25
+        },
+        "rows": 1197
+      },
+      "synthetic/dev": {
+        "declared_speakers": 9,
+        "intents": {
+          "ALARM": 88,
+          "BRIGHTNESS": 91,
+          "CALL": 38,
+          "COLOR": 158,
+          "CREATE_REMINDER": 121,
+          "LIGHT_OFF": 19,
+          "LIGHT_ON": 17,
+          "LIST_REMINDERS": 35,
+          "MESSAGE": 38,
+          "NEXT": 23,
+          "PAUSE": 15,
+          "PLAY_MUSIC": 16,
+          "STOP": 16,
+          "TEMPERATURE": 117,
+          "TIME": 23,
+          "TIMER": 98,
+          "UNKNOWN": 28,
+          "VOLUME": 33,
+          "WEATHER": 21
+        },
+        "rows": 995
+      },
+      "synthetic/train": {
+        "declared_speakers": 72,
+        "intents": {
+          "ALARM": 2066,
+          "BRIGHTNESS": 1921,
+          "CALL": 594,
+          "COLOR": 2061,
+          "CREATE_REMINDER": 1889,
+          "LIGHT_OFF": 643,
+          "LIGHT_ON": 641,
+          "LIST_REMINDERS": 696,
+          "MESSAGE": 713,
+          "NEXT": 1454,
+          "PAUSE": 431,
+          "PLAY_MUSIC": 699,
+          "STOP": 761,
+          "TEMPERATURE": 2250,
+          "TIME": 676,
+          "TIMER": 2136,
+          "UNKNOWN": 28,
+          "VOLUME": 1358,
+          "WEATHER": 593
+        },
+        "rows": 21610
+      }
+    },
+    "dev": {
+      "kinds": {
+        "human": 256,
+        "synthetic": 995
+      },
+      "rows": 1251
+    },
+    "excluded_training": {
+      "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-synthetic-completion-v1/prepared-v1/excluded-training.jsonl",
+      "rows": 26,
+      "sha256": "05425f57c14fc3e9955da5cea11f79c3e253c2e81917e6dbdbb0c804436cec03"
+    },
+    "features": 24756,
+    "generated_calibration_audio_integrity_checked": true,
+    "normalization_human_training_utterances": 1869,
+    "original_calibration_audio_read": false,
+    "preserved_parent_entries": 1031,
+    "published_evaluation_audio_read": false,
+    "published_evaluation_views": {
+      "evaluation/holdout": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-synthetic-completion-v1/prepared-v1/views/evaluation/holdout.jsonl",
+        "rows": 196,
+        "sha256": "a51e720b97f7b31e3e2f025c21bf679006ad444fd2d363916d9a11aa0f488b5b"
+      },
+      "evaluation/test": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-synthetic-completion-v1/prepared-v1/views/evaluation/test.jsonl",
+        "rows": 4418,
+        "sha256": "a4fdcedfc86efebb36414114887abdc4ee51eba102b0247740aef18d1ad15abc"
+      }
+    },
+    "receipt": ".cache/speaker-synthetic-completion-v1/prepared-v1/preparation.json",
+    "sha256": "6a3aa93a070b54d7eaa118607b7d7e05ea0f779da49ead0c5faa44e30a2f58ad",
+    "train": {
+      "kinds": {
+        "human": 1869,
+        "synthetic": 21610
+      },
+      "rows": 23479
+    },
+    "training_exclusion_reasons": {
+      "missing_pronunciation_or_text": 26
+    }
+  },
+  "recognition_gain_measured": false,
+  "requirements": [
+    "ME-01",
+    "ME-02",
+    "ME-03",
+    "ME-04",
+    "ME-07",
+    "ME-08"
+  ],
+  "research_ready_for_fitting": true,
+  "status": "synthetic_research_inputs_prepared"
+}

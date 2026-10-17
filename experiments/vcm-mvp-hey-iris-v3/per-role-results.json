@@ -1,0 +1,893 @@
+{
+  "definition": "All eligible positives with this expected role; exact typed value and matching intent required. Complete-command scoring separately penalizes all missing/extra roles.",
+  "models": {
+    "compact": {
+      "test": {
+        "predictions_sha256": "85a25233dcedbaae2a281f0aeede07c21d26850e1b7b93efea1d1bb0be2d4510",
+        "groups": {
+          "human/ALARM/time": {
+            "n": 32,
+            "raw_intent_match": 22,
+            "raw_role_correct": 20,
+            "accepted_intent_match": 12,
+            "accepted_role_correct": 11
+          },
+          "human/ALARM/timezone": {
+            "n": 32,
+            "raw_intent_match": 22,
+            "raw_role_correct": 22,
+            "accepted_intent_match": 12,
+            "accepted_role_correct": 12
+          },
+          "human/BRIGHTNESS/light_id": {
+            "n": 23,
+            "raw_intent_match": 13,
+            "raw_role_correct": 13,
+            "accepted_intent_match": 9,
+            "accepted_role_correct": 9
+          },
+          "human/BRIGHTNESS/percent": {
+            "n": 23,
+            "raw_intent_match": 13,
+            "raw_role_correct": 13,
+            "accepted_intent_match": 9,
+            "accepted_role_correct": 9
+          },
+          "human/CALL/contact_id": {
+            "n": 6,
+            "raw_intent_match": 6,
+            "raw_role_correct": 6,
+            "accepted_intent_match": 6,
+            "accepted_role_correct": 6
+          },
+          "human/COLOR/color": {
+            "n": 67,
+            "raw_intent_match": 51,
+            "raw_role_correct": 49,
+            "accepted_intent_match": 18,
+            "accepted_role_correct": 18
+          },
+          "human/COLOR/light_id": {
+            "n": 67,
+            "raw_intent_match": 51,
+            "raw_role_correct": 49,
+            "accepted_intent_match": 18,
+            "accepted_role_correct": 17
+          },
+          "human/CREATE_REMINDER/task_id": {
+            "n": 18,
+            "raw_intent_match": 4,
+            "raw_role_correct": 4,
+            "accepted_intent_match": 4,
+            "accepted_role_correct": 4
+          },
+          "human/LIGHT_OFF/light_id": {
+            "n": 45,
+            "raw_intent_match": 20,
+            "raw_role_correct": 20,
+            "accepted_intent_match": 2,
+            "accepted_role_correct": 2
+          },
+          "human/LIGHT_ON/light_id": {
+            "n": 30,
+            "raw_intent_match": 16,
+            "raw_role_correct": 10,
+            "accepted_intent_match": 3,
+            "accepted_role_correct": 2
+          },
+          "human/TEMPERATURE/degrees": {
+            "n": 28,
+            "raw_intent_match": 23,
+            "raw_role_correct": 17,
+            "accepted_intent_match": 9,
+            "accepted_role_correct": 5
+          },
+          "human/TEMPERATURE/unit": {
+            "n": 28,
+            "raw_intent_match": 23,
+            "raw_role_correct": 23,
+            "accepted_intent_match": 9,
+            "accepted_role_correct": 9
+          },
+          "human/TIMER/duration_seconds": {
+            "n": 19,
+            "raw_intent_match": 13,
+            "raw_role_correct": 13,
+            "accepted_intent_match": 5,
+            "accepted_role_correct": 5
+          },
+          "human/VOLUME/operation": {
+            "n": 113,
+            "raw_intent_match": 67,
+            "raw_role_correct": 53,
+            "accepted_intent_match": 8,
+            "accepted_role_correct": 8
+          },
+          "human/VOLUME/percent": {
+            "n": 6,
+            "raw_intent_match": 0,
+            "raw_role_correct": 0,
+            "accepted_intent_match": 0,
+            "accepted_role_correct": 0
+          },
+          "synthetic/ALARM/time": {
+            "n": 372,
+            "raw_intent_match": 371,
+            "raw_role_correct": 363,
+            "accepted_intent_match": 310,
+            "accepted_role_correct": 309
+          },
+          "synthetic/ALARM/timezone": {
+            "n": 372,
+            "raw_intent_match": 371,
+            "raw_role_correct": 371,
+            "accepted_intent_match": 310,
+            "accepted_role_correct": 310
+          },
+          "synthetic/BRIGHTNESS/light_id": {
+            "n": 398,
+            "raw_intent_match": 396,
+            "raw_role_correct": 396,
+            "accepted_intent_match": 307,
+            "accepted_role_correct": 307
+          },
+          "synthetic/BRIGHTNESS/percent": {
+            "n": 398,
+            "raw_intent_match": 396,
+            "raw_role_correct": 379,
+            "accepted_intent_match": 307,
+            "accepted_role_correct": 304
+          },
+          "synthetic/CALL/contact_id": {
+            "n": 96,
+            "raw_intent_match": 94,
+            "raw_role_correct": 94,
+            "accepted_intent_match": 93,
+            "accepted_role_correct": 93
+          },
+          "synthetic/COLOR/color": {
+            "n": 305,
+            "raw_intent_match": 305,
+            "raw_role_correct": 301,
+            "accepted_intent_match": 261,
+            "accepted_role_correct": 261
+          },
+          "synthetic/COLOR/light_id": {
+            "n": 305,
+            "raw_intent_match": 305,
+            "raw_role_correct": 305,
+            "accepted_intent_match": 261,
+            "accepted_role_correct": 261
+          },
+          "synthetic/CREATE_REMINDER/task_id": {
+            "n": 405,
+            "raw_intent_match": 404,
+            "raw_role_correct": 398,
+            "accepted_intent_match": 370,
+            "accepted_role_correct": 370
+          },
+          "synthetic/LIGHT_OFF/light_id": {
+            "n": 69,
+            "raw_intent_match": 66,
+            "raw_role_correct": 66,
+            "accepted_intent_match": 34,
+            "accepted_role_correct": 34
+          },
+          "synthetic/LIGHT_ON/light_id": {
+            "n": 83,
+            "raw_intent_match": 82,
+            "raw_role_correct": 82,
+            "accepted_intent_match": 62,
+            "accepted_role_correct": 62
+          },
+          "synthetic/TEMPERATURE/degrees": {
+            "n": 395,
+            "raw_intent_match": 393,
+            "raw_role_correct": 383,
+            "accepted_intent_match": 304,
+            "accepted_role_correct": 303
+          },
+          "synthetic/TEMPERATURE/unit": {
+            "n": 395,
+            "raw_intent_match": 393,
+            "raw_role_correct": 393,
+            "accepted_intent_match": 304,
+            "accepted_role_correct": 304
+          },
+          "synthetic/TIMER/duration_seconds": {
+            "n": 404,
+            "raw_intent_match": 397,
+            "raw_role_correct": 387,
+            "accepted_intent_match": 351,
+            "accepted_role_correct": 347
+          },
+          "synthetic/VOLUME/operation": {
+            "n": 138,
+            "raw_intent_match": 135,
+            "raw_role_correct": 131,
+            "accepted_intent_match": 91,
+            "accepted_role_correct": 91
+          }
+        }
+      },
+      "holdout": {
+        "predictions_sha256": "e2d339a743907a674c4399247ade792ced6c03ca70df10deac68d1d576d490af",
+        "groups": {
+          "human/ALARM/time": {
+            "n": 8,
+            "raw_intent_match": 7,
+            "raw_role_correct": 7,
+            "accepted_intent_match": 1,
+            "accepted_role_correct": 1
+          },
+          "human/ALARM/timezone": {
+            "n": 8,
+            "raw_intent_match": 7,
+            "raw_role_correct": 7,
+            "accepted_intent_match": 1,
+            "accepted_role_correct": 1
+          },
+          "human/BRIGHTNESS/light_id": {
+            "n": 6,
+            "raw_intent_match": 6,
+            "raw_role_correct": 6,
+            "accepted_intent_match": 4,
+            "accepted_role_correct": 4
+          },
+          "human/BRIGHTNESS/percent": {
+            "n": 6,
+            "raw_intent_match": 6,
+            "raw_role_correct": 6,
+            "accepted_intent_match": 4,
+            "accepted_role_correct": 4
+          },
+          "human/CALL/contact_id": {
+            "n": 3,
+            "raw_intent_match": 2,
+            "raw_role_correct": 2,
+            "accepted_intent_match": 2,
+            "accepted_role_correct": 2
+          },
+          "human/COLOR/color": {
+            "n": 6,
+            "raw_intent_match": 6,
+            "raw_role_correct": 6,
+            "accepted_intent_match": 1,
+            "accepted_role_correct": 1
+          },
+          "human/COLOR/light_id": {
+            "n": 6,
+            "raw_intent_match": 6,
+            "raw_role_correct": 6,
+            "accepted_intent_match": 1,
+            "accepted_role_correct": 1
+          },
+          "human/CREATE_REMINDER/task_id": {
+            "n": 9,
+            "raw_intent_match": 5,
+            "raw_role_correct": 5,
+            "accepted_intent_match": 2,
+            "accepted_role_correct": 2
+          },
+          "human/LIGHT_OFF/light_id": {
+            "n": 2,
+            "raw_intent_match": 0,
+            "raw_role_correct": 0,
+            "accepted_intent_match": 0,
+            "accepted_role_correct": 0
+          },
+          "human/LIGHT_ON/light_id": {
+            "n": 3,
+            "raw_intent_match": 3,
+            "raw_role_correct": 2,
+            "accepted_intent_match": 1,
+            "accepted_role_correct": 1
+          },
+          "human/TEMPERATURE/degrees": {
+            "n": 9,
+            "raw_intent_match": 6,
+            "raw_role_correct": 4,
+            "accepted_intent_match": 1,
+            "accepted_role_correct": 1
+          },
+          "human/TEMPERATURE/unit": {
+            "n": 9,
+            "raw_intent_match": 6,
+            "raw_role_correct": 6,
+            "accepted_intent_match": 1,
+            "accepted_role_correct": 1
+          },
+          "human/TIMER/duration_seconds": {
+            "n": 9,
+            "raw_intent_match": 8,
+            "raw_role_correct": 6,
+            "accepted_intent_match": 2,
+            "accepted_role_correct": 2
+          },
+          "human/VOLUME/operation": {
+            "n": 4,
+            "raw_intent_match": 2,
+            "raw_role_correct": 2,
+            "accepted_intent_match": 0,
+            "accepted_role_correct": 0
+          },
+          "synthetic/ALARM/time": {
+            "n": 10,
+            "raw_intent_match": 10,
+            "raw_role_correct": 10,
+            "accepted_intent_match": 9,
+            "accepted_role_correct": 9
+          },
+          "synthetic/ALARM/timezone": {
+            "n": 10,
+            "raw_intent_match": 10,
+            "raw_role_correct": 10,
+            "accepted_intent_match": 9,
+            "accepted_role_correct": 9
+          },
+          "synthetic/BRIGHTNESS/light_id": {
+            "n": 12,
+            "raw_intent_match": 12,
+            "raw_role_correct": 12,
+            "accepted_intent_match": 9,
+            "accepted_role_correct": 9
+          },
+          "synthetic/BRIGHTNESS/percent": {
+            "n": 12,
+            "raw_intent_match": 12,
+            "raw_role_correct": 12,
+            "accepted_intent_match": 9,
+            "accepted_role_correct": 9
+          },
+          "synthetic/CALL/contact_id": {
+            "n": 3,
+            "raw_intent_match": 3,
+            "raw_role_correct": 3,
+            "accepted_intent_match": 3,
+            "accepted_role_correct": 3
+          },
+          "synthetic/COLOR/color": {
+            "n": 12,
+            "raw_intent_match": 12,
+            "raw_role_correct": 12,
+            "accepted_intent_match": 12,
+            "accepted_role_correct": 12
+          },
+          "synthetic/COLOR/light_id": {
+            "n": 12,
+            "raw_intent_match": 12,
+            "raw_role_correct": 12,
+            "accepted_intent_match": 12,
+            "accepted_role_correct": 12
+          },
+          "synthetic/CREATE_REMINDER/task_id": {
+            "n": 9,
+            "raw_intent_match": 9,
+            "raw_role_correct": 9,
+            "accepted_intent_match": 9,
+            "accepted_role_correct": 9
+          },
+          "synthetic/LIGHT_OFF/light_id": {
+            "n": 3,
+            "raw_intent_match": 3,
+            "raw_role_correct": 3,
+            "accepted_intent_match": 2,
+            "accepted_role_correct": 2
+          },
+          "synthetic/LIGHT_ON/light_id": {
+            "n": 3,
+            "raw_intent_match": 3,
+            "raw_role_correct": 3,
+            "accepted_intent_match": 3,
+            "accepted_role_correct": 3
+          },
+          "synthetic/TEMPERATURE/degrees": {
+            "n": 9,
+            "raw_intent_match": 9,
+            "raw_role_correct": 9,
+            "accepted_intent_match": 8,
+            "accepted_role_correct": 8
+          },
+          "synthetic/TEMPERATURE/unit": {
+            "n": 9,
+            "raw_intent_match": 9,
+            "raw_role_correct": 9,
+            "accepted_intent_match": 8,
+            "accepted_role_correct": 8
+          },
+          "synthetic/TIMER/duration_seconds": {
+            "n": 9,
+            "raw_intent_match": 9,
+            "raw_role_correct": 9,
+            "accepted_intent_match": 9,
+            "accepted_role_correct": 9
+          },
+          "synthetic/VOLUME/operation": {
+            "n": 6,
+            "raw_intent_match": 6,
+            "raw_role_correct": 6,
+            "accepted_intent_match": 5,
+            "accepted_role_correct": 5
+          }
+        }
+      },
+      "personal-test": {
+        "predictions_sha256": "bca7d5f0a2d70e321d68e3e747bb3bf1b3e590f5caf8ddf663467f741c397236",
+        "groups": {
+          "synthetic/LIGHT_OFF/light_id": {
+            "n": 2,
+            "raw_intent_match": 2,
+            "raw_role_correct": 2,
+            "accepted_intent_match": 1,
+            "accepted_role_correct": 1
+          },
+          "synthetic/LIGHT_ON/light_id": {
+            "n": 2,
+            "raw_intent_match": 2,
+            "raw_role_correct": 2,
+            "accepted_intent_match": 1,
+            "accepted_role_correct": 1
+          },
+          "synthetic/PLAY_MUSIC/artist_id": {
+            "n": 16,
+            "raw_intent_match": 16,
+            "raw_role_correct": 16,
+            "accepted_intent_match": 16,
+            "accepted_role_correct": 16
+          },
+          "synthetic/PLAY_MUSIC/song_id": {
+            "n": 32,
+            "raw_intent_match": 30,
+            "raw_role_correct": 29,
+            "accepted_intent_match": 30,
+            "accepted_role_correct": 29
+          }
+        }
+      }
+    },
+    "full": {
+      "test": {
+        "predictions_sha256": "ecccc3a041bf5ae31282d01df13d6f2f3fc20d47246e3c5d62b73987a0536151",
+        "groups": {
+          "human/ALARM/time": {
+            "n": 32,
+            "raw_intent_match": 30,
+            "raw_role_correct": 28,
+            "accepted_intent_match": 19,
+            "accepted_role_correct": 19
+          },
+          "human/ALARM/timezone": {
+            "n": 32,
+            "raw_intent_match": 30,
+            "raw_role_correct": 30,
+            "accepted_intent_match": 19,
+            "accepted_role_correct": 19
+          },
+          "human/BRIGHTNESS/light_id": {
+            "n": 23,
+            "raw_intent_match": 15,
+            "raw_role_correct": 15,
+            "accepted_intent_match": 7,
+            "accepted_role_correct": 7
+          },
+          "human/BRIGHTNESS/percent": {
+            "n": 23,
+            "raw_intent_match": 15,
+            "raw_role_correct": 13,
+            "accepted_intent_match": 7,
+            "accepted_role_correct": 7
+          },
+          "human/CALL/contact_id": {
+            "n": 6,
+            "raw_intent_match": 3,
+            "raw_role_correct": 3,
+            "accepted_intent_match": 3,
+            "accepted_role_correct": 3
+          },
+          "human/COLOR/color": {
+            "n": 67,
+            "raw_intent_match": 50,
+            "raw_role_correct": 46,
+            "accepted_intent_match": 12,
+            "accepted_role_correct": 12
+          },
+          "human/COLOR/light_id": {
+            "n": 67,
+            "raw_intent_match": 50,
+            "raw_role_correct": 48,
+            "accepted_intent_match": 12,
+            "accepted_role_correct": 12
+          },
+          "human/CREATE_REMINDER/task_id": {
+            "n": 18,
+            "raw_intent_match": 15,
+            "raw_role_correct": 14,
+            "accepted_intent_match": 10,
+            "accepted_role_correct": 10
+          },
+          "human/LIGHT_OFF/light_id": {
+            "n": 45,
+            "raw_intent_match": 26,
+            "raw_role_correct": 24,
+            "accepted_intent_match": 10,
+            "accepted_role_correct": 10
+          },
+          "human/LIGHT_ON/light_id": {
+            "n": 30,
+            "raw_intent_match": 12,
+            "raw_role_correct": 8,
+            "accepted_intent_match": 1,
+            "accepted_role_correct": 1
+          },
+          "human/TEMPERATURE/degrees": {
+            "n": 28,
+            "raw_intent_match": 21,
+            "raw_role_correct": 16,
+            "accepted_intent_match": 20,
+            "accepted_role_correct": 15
+          },
+          "human/TEMPERATURE/unit": {
+            "n": 28,
+            "raw_intent_match": 21,
+            "raw_role_correct": 21,
+            "accepted_intent_match": 20,
+            "accepted_role_correct": 20
+          },
+          "human/TIMER/duration_seconds": {
+            "n": 19,
+            "raw_intent_match": 12,
+            "raw_role_correct": 12,
+            "accepted_intent_match": 5,
+            "accepted_role_correct": 5
+          },
+          "human/VOLUME/operation": {
+            "n": 113,
+            "raw_intent_match": 84,
+            "raw_role_correct": 69,
+            "accepted_intent_match": 22,
+            "accepted_role_correct": 19
+          },
+          "human/VOLUME/percent": {
+            "n": 6,
+            "raw_intent_match": 2,
+            "raw_role_correct": 0,
+            "accepted_intent_match": 0,
+            "accepted_role_correct": 0
+          },
+          "synthetic/ALARM/time": {
+            "n": 372,
+            "raw_intent_match": 372,
+            "raw_role_correct": 371,
+            "accepted_intent_match": 344,
+            "accepted_role_correct": 344
+          },
+          "synthetic/ALARM/timezone": {
+            "n": 372,
+            "raw_intent_match": 372,
+            "raw_role_correct": 372,
+            "accepted_intent_match": 344,
+            "accepted_role_correct": 344
+          },
+          "synthetic/BRIGHTNESS/light_id": {
+            "n": 398,
+            "raw_intent_match": 396,
+            "raw_role_correct": 396,
+            "accepted_intent_match": 352,
+            "accepted_role_correct": 352
+          },
+          "synthetic/BRIGHTNESS/percent": {
+            "n": 398,
+            "raw_intent_match": 396,
+            "raw_role_correct": 390,
+            "accepted_intent_match": 352,
+            "accepted_role_correct": 352
+          },
+          "synthetic/CALL/contact_id": {
+            "n": 96,
+            "raw_intent_match": 96,
+            "raw_role_correct": 96,
+            "accepted_intent_match": 96,
+            "accepted_role_correct": 96
+          },
+          "synthetic/COLOR/color": {
+            "n": 305,
+            "raw_intent_match": 305,
+            "raw_role_correct": 302,
+            "accepted_intent_match": 271,
+            "accepted_role_correct": 271
+          },
+          "synthetic/COLOR/light_id": {
+            "n": 305,
+            "raw_intent_match": 305,
+            "raw_role_correct": 305,
+            "accepted_intent_match": 271,
+            "accepted_role_correct": 271
+          },
+          "synthetic/CREATE_REMINDER/task_id": {
+            "n": 405,
+            "raw_intent_match": 401,
+            "raw_role_correct": 398,
+            "accepted_intent_match": 395,
+            "accepted_role_correct": 394
+          },
+          "synthetic/LIGHT_OFF/light_id": {
+            "n": 69,
+            "raw_intent_match": 65,
+            "raw_role_correct": 65,
+            "accepted_intent_match": 54,
+            "accepted_role_correct": 54
+          },
+          "synthetic/LIGHT_ON/light_id": {
+            "n": 83,
+            "raw_intent_match": 80,
+            "raw_role_correct": 80,
+            "accepted_intent_match": 2,
+            "accepted_role_correct": 2
+          },
+          "synthetic/TEMPERATURE/degrees": {
+            "n": 395,
+            "raw_intent_match": 393,
+            "raw_role_correct": 391,
+            "accepted_intent_match": 366,
+            "accepted_role_correct": 365
+          },
+          "synthetic/TEMPERATURE/unit": {
+            "n": 395,
+            "raw_intent_match": 393,
+            "raw_role_correct": 393,
+            "accepted_intent_match": 366,
+            "accepted_role_correct": 366
+          },
+          "synthetic/TIMER/duration_seconds": {
+            "n": 404,
+            "raw_intent_match": 404,
+            "raw_role_correct": 396,
+            "accepted_intent_match": 360,
+            "accepted_role_correct": 357
+          },
+          "synthetic/VOLUME/operation": {
+            "n": 138,
+            "raw_intent_match": 137,
+            "raw_role_correct": 136,
+            "accepted_intent_match": 104,
+            "accepted_role_correct": 104
+          }
+        }
+      },
+      "holdout": {
+        "predictions_sha256": "96bf1559811e4383025aad0111c4e86188ce4b5baa7d7107533d1e1ac135dd58",
+        "groups": {
+          "human/ALARM/time": {
+            "n": 8,
+            "raw_intent_match": 7,
+            "raw_role_correct": 7,
+            "accepted_intent_match": 2,
+            "accepted_role_correct": 2
+          },
+          "human/ALARM/timezone": {
+            "n": 8,
+            "raw_intent_match": 7,
+            "raw_role_correct": 7,
+            "accepted_intent_match": 2,
+            "accepted_role_correct": 2
+          },
+          "human/BRIGHTNESS/light_id": {
+            "n": 6,
+            "raw_intent_match": 6,
+            "raw_role_correct": 6,
+            "accepted_intent_match": 4,
+            "accepted_role_correct": 4
+          },
+          "human/BRIGHTNESS/percent": {
+            "n": 6,
+            "raw_intent_match": 6,
+            "raw_role_correct": 4,
+            "accepted_intent_match": 4,
+            "accepted_role_correct": 4
+          },
+          "human/CALL/contact_id": {
+            "n": 3,
+            "raw_intent_match": 1,
+            "raw_role_correct": 1,
+            "accepted_intent_match": 1,
+            "accepted_role_correct": 1
+          },
+          "human/COLOR/color": {
+            "n": 6,
+            "raw_intent_match": 5,
+            "raw_role_correct": 5,
+            "accepted_intent_match": 2,
+            "accepted_role_correct": 2
+          },
+          "human/COLOR/light_id": {
+            "n": 6,
+            "raw_intent_match": 5,
+            "raw_role_correct": 5,
+            "accepted_intent_match": 2,
+            "accepted_role_correct": 2
+          },
+          "human/CREATE_REMINDER/task_id": {
+            "n": 9,
+            "raw_intent_match": 3,
+            "raw_role_correct": 3,
+            "accepted_intent_match": 1,
+            "accepted_role_correct": 1
+          },
+          "human/LIGHT_OFF/light_id": {
+            "n": 2,
+            "raw_intent_match": 0,
+            "raw_role_correct": 0,
+            "accepted_intent_match": 0,
+            "accepted_role_correct": 0
+          },
+          "human/LIGHT_ON/light_id": {
+            "n": 3,
+            "raw_intent_match": 2,
+            "raw_role_correct": 2,
+            "accepted_intent_match": 0,
+            "accepted_role_correct": 0
+          },
+          "human/TEMPERATURE/degrees": {
+            "n": 9,
+            "raw_intent_match": 8,
+            "raw_role_correct": 7,
+            "accepted_intent_match": 4,
+            "accepted_role_correct": 4
+          },
+          "human/TEMPERATURE/unit": {
+            "n": 9,
+            "raw_intent_match": 8,
+            "raw_role_correct": 8,
+            "accepted_intent_match": 4,
+            "accepted_role_correct": 4
+          },
+          "human/TIMER/duration_seconds": {
+            "n": 9,
+            "raw_intent_match": 8,
+            "raw_role_correct": 8,
+            "accepted_intent_match": 4,
+            "accepted_role_correct": 4
+          },
+          "human/VOLUME/operation": {
+            "n": 4,
+            "raw_intent_match": 4,
+            "raw_role_correct": 3,
+            "accepted_intent_match": 1,
+            "accepted_role_correct": 1
+          },
+          "synthetic/ALARM/time": {
+            "n": 10,
+            "raw_intent_match": 10,
+            "raw_role_correct": 10,
+            "accepted_intent_match": 9,
+            "accepted_role_correct": 9
+          },
+          "synthetic/ALARM/timezone": {
+            "n": 10,
+            "raw_intent_match": 10,
+            "raw_role_correct": 10,
+            "accepted_intent_match": 9,
+            "accepted_role_correct": 9
+          },
+          "synthetic/BRIGHTNESS/light_id": {
+            "n": 12,
+            "raw_intent_match": 12,
+            "raw_role_correct": 12,
+            "accepted_intent_match": 11,
+            "accepted_role_correct": 11
+          },
+          "synthetic/BRIGHTNESS/percent": {
+            "n": 12,
+            "raw_intent_match": 12,
+            "raw_role_correct": 11,
+            "accepted_intent_match": 11,
+            "accepted_role_correct": 11
+          },
+          "synthetic/CALL/contact_id": {
+            "n": 3,
+            "raw_intent_match": 3,
+            "raw_role_correct": 3,
+            "accepted_intent_match": 3,
+            "accepted_role_correct": 3
+          },
+          "synthetic/COLOR/color": {
+            "n": 12,
+            "raw_intent_match": 12,
+            "raw_role_correct": 12,
+            "accepted_intent_match": 11,
+            "accepted_role_correct": 11
+          },
+          "synthetic/COLOR/light_id": {
+            "n": 12,
+            "raw_intent_match": 12,
+            "raw_role_correct": 12,
+            "accepted_intent_match": 11,
+            "accepted_role_correct": 11
+          },
+          "synthetic/CREATE_REMINDER/task_id": {
+            "n": 9,
+            "raw_intent_match": 9,
+            "raw_role_correct": 9,
+            "accepted_intent_match": 9,
+            "accepted_role_correct": 9
+          },
+          "synthetic/LIGHT_OFF/light_id": {
+            "n": 3,
+            "raw_intent_match": 3,
+            "raw_role_correct": 3,
+            "accepted_intent_match": 3,
+            "accepted_role_correct": 3
+          },
+          "synthetic/LIGHT_ON/light_id": {
+            "n": 3,
+            "raw_intent_match": 3,
+            "raw_role_correct": 3,
+            "accepted_intent_match": 0,
+            "accepted_role_correct": 0
+          },
+          "synthetic/TEMPERATURE/degrees": {
+            "n": 9,
+            "raw_intent_match": 9,
+            "raw_role_correct": 9,
+            "accepted_intent_match": 9,
+            "accepted_role_correct": 9
+          },
+          "synthetic/TEMPERATURE/unit": {
+            "n": 9,
+            "raw_intent_match": 9,
+            "raw_role_correct": 9,
+            "accepted_intent_match": 9,
+            "accepted_role_correct": 9
+          },
+          "synthetic/TIMER/duration_seconds": {
+            "n": 9,
+            "raw_intent_match": 9,
+            "raw_role_correct": 9,
+            "accepted_intent_match": 9,
+            "accepted_role_correct": 9
+          },
+          "synthetic/VOLUME/operation": {
+            "n": 6,
+            "raw_intent_match": 6,
+            "raw_role_correct": 6,
+            "accepted_intent_match": 6,
+            "accepted_role_correct": 6
+          }
+        }
+      },
+      "personal-test": {
+        "predictions_sha256": "f3ce62d806fb27b08388ce3d0ac618476d3f88985c73285e90917466fc6e5275",
+        "groups": {
+          "synthetic/LIGHT_OFF/light_id": {
+            "n": 2,
+            "raw_intent_match": 0,
+            "raw_role_correct": 0,
+            "accepted_intent_match": 0,
+            "accepted_role_correct": 0
+          },
+          "synthetic/LIGHT_ON/light_id": {
+            "n": 2,
+            "raw_intent_match": 1,
+            "raw_role_correct": 1,
+            "accepted_intent_match": 0,
+            "accepted_role_correct": 0
+          },
+          "synthetic/PLAY_MUSIC/artist_id": {
+            "n": 16,
+            "raw_intent_match": 16,
+            "raw_role_correct": 15,
+            "accepted_intent_match": 16,
+            "accepted_role_correct": 15
+          },
+          "synthetic/PLAY_MUSIC/song_id": {
+            "n": 32,
+            "raw_intent_match": 32,
+            "raw_role_correct": 31,
+            "accepted_intent_match": 31,
+            "accepted_role_correct": 31
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,845 @@
+{
+  "slides": 2,
+  "original_template_available": false,
+  "pages": [
+    [
+      {
+        "kind": "text",
+        "x": 48,
+        "y": 32,
+        "text": "IRIS  |  Direct finite-command VCM",
+        "size": 34,
+        "color": "#e8eff6",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 48,
+        "y": 86,
+        "text": "Compact 969,928 parameters  \u00b7  Full comparison 2,118,280 parameters",
+        "size": 21,
+        "color": "#50d4bd",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 48,
+        "y": 126,
+        "text": "Complete utterance after endpointing; one acoustic class produces the entire typed command.",
+        "size": 18,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 48,
+        "y": 180,
+        "w": 205,
+        "h": 120,
+        "color": "#1a2a3b"
+      },
+      {
+        "kind": "text",
+        "x": 62,
+        "y": 195,
+        "text": "16 kHz mono",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 62,
+        "y": 225,
+        "text": "40 \u00d7 T log-mel",
+        "size": 17,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 62,
+        "y": 255,
+        "text": "25 ms / 10 ms",
+        "size": 17,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 285,
+        "y": 180,
+        "w": 218,
+        "h": 120,
+        "color": "#1a2a3b"
+      },
+      {
+        "kind": "text",
+        "x": 299,
+        "y": 195,
+        "text": "6 contextual blocks",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 299,
+        "y": 225,
+        "text": "width 128 / 192",
+        "size": 17,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 299,
+        "y": 255,
+        "text": "4 attention heads",
+        "size": 17,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 535,
+        "y": 180,
+        "w": 213,
+        "h": 120,
+        "color": "#1a2a3b"
+      },
+      {
+        "kind": "text",
+        "x": 549,
+        "y": 195,
+        "text": "Masked mean",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 549,
+        "y": 225,
+        "text": "full utterance",
+        "size": 17,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 549,
+        "y": 255,
+        "text": "no KV cache",
+        "size": 17,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 780,
+        "y": 180,
+        "w": 213,
+        "h": 120,
+        "color": "#1a2a3b"
+      },
+      {
+        "kind": "text",
+        "x": 794,
+        "y": 195,
+        "text": "328-way atomic head",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 794,
+        "y": 225,
+        "text": "117 trained outcomes",
+        "size": 17,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 794,
+        "y": 255,
+        "text": "UNKNOWN + guards",
+        "size": 17,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 1025,
+        "y": 180,
+        "w": 207,
+        "h": 120,
+        "color": "#1a2a3b"
+      },
+      {
+        "kind": "text",
+        "x": 1039,
+        "y": 195,
+        "text": "Typed validator",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 1039,
+        "y": 225,
+        "text": "command or OOV",
+        "size": 17,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 1039,
+        "y": 255,
+        "text": "actions disabled",
+        "size": 17,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 257,
+        "y": 218,
+        "text": "\u2192",
+        "size": 24,
+        "color": "#50d4bd",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 507,
+        "y": 218,
+        "text": "\u2192",
+        "size": 24,
+        "color": "#50d4bd",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 752,
+        "y": 218,
+        "text": "\u2192",
+        "size": 24,
+        "color": "#50d4bd",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 997,
+        "y": 218,
+        "text": "\u2192",
+        "size": 24,
+        "color": "#50d4bd",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 48,
+        "y": 330,
+        "w": 572,
+        "h": 237,
+        "color": "#1a2a3b"
+      },
+      {
+        "kind": "text",
+        "x": 68,
+        "y": 347,
+        "text": "AUDITED TRAINING INPUTS",
+        "size": 19,
+        "color": "#50d4bd",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 68,
+        "y": 387,
+        "text": "1,889 human clips  \u00b7  176 declared IDs  \u00b7  1.54 h",
+        "size": 19,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 68,
+        "y": 422,
+        "text": "21,850 synthetic clips  \u00b7  76 voices  \u00b7  12.73 h",
+        "size": 19,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 68,
+        "y": 459,
+        "text": "Dev 1,339  \u00b7  Calibration 1,495  \u00b7  Test 4,418",
+        "size": 18,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 68,
+        "y": 494,
+        "text": "Official 196 unchanged  \u00b7  Personal 36 positive + 52 negative",
+        "size": 16,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 68,
+        "y": 529,
+        "text": "Synthetic voices are not human participants.",
+        "size": 17,
+        "color": "#ffcf70",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 644,
+        "y": 330,
+        "w": 588,
+        "h": 237,
+        "color": "#1a2a3b"
+      },
+      {
+        "kind": "text",
+        "x": 664,
+        "y": 347,
+        "text": "TRAINING AND CONTROLLED REFINEMENT",
+        "size": 19,
+        "color": "#50d4bd",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 664,
+        "y": 387,
+        "text": "Our encoder continuation + atomic CE  \u00b7  seed 53",
+        "size": 19,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 664,
+        "y": 421,
+        "text": "A100 GPU 5  \u00b7  V2 fitting 129.30 s / 90.70 s",
+        "size": 19,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 664,
+        "y": 458,
+        "text": "V3: observed score intervals; a threshold per finite command.",
+        "size": 17,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 664,
+        "y": 491,
+        "text": "Same weights/data/328-way competition; zero new weight updates.",
+        "size": 16,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 664,
+        "y": 529,
+        "text": "Policies locked using dev/calibration before test replay.",
+        "size": 17,
+        "color": "#ffcf70",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 48,
+        "y": 595,
+        "text": "Wake is optional and measured separately: random-init Hey Iris, 82,114 parameters + local Silero VAD.",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 48,
+        "y": 630,
+        "text": "No ASR/STT, phonetic acoustic scorer, LLM, cloud inference or automatic fallback ships.",
+        "size": 18,
+        "color": "#50d4bd",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 48,
+        "y": 682,
+        "text": "Sources: AI231 dataset DOI 10.57967/hf/10723; Park et al., SpecAugment (Interspeech 2019).  |  17 Oct 2026",
+        "size": 12,
+        "color": "#acbbcb",
+        "bold": false
+      }
+    ],
+    [
+      {
+        "kind": "text",
+        "x": 48,
+        "y": 30,
+        "text": "Command-only target achieved; wider limits retained",
+        "size": 32,
+        "color": "#e8eff6",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 48,
+        "y": 78,
+        "text": "V3 compares frozen finite-command policies on the same recordings. Wake never enters these scores.",
+        "size": 18,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 48,
+        "y": 120,
+        "w": 742,
+        "h": 415,
+        "color": "#1a2a3b"
+      },
+      {
+        "kind": "text",
+        "x": 68,
+        "y": 136,
+        "text": "MEASURE",
+        "size": 18,
+        "color": "#50d4bd",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 464,
+        "y": 136,
+        "text": "COMPACT",
+        "size": 18,
+        "color": "#50d4bd",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 634,
+        "y": 136,
+        "text": "FULL",
+        "size": 18,
+        "color": "#50d4bd",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 68,
+        "y": 183,
+        "text": "Personal correct accepted /36",
+        "size": 16,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 464,
+        "y": 183,
+        "text": "31  (was 0)",
+        "size": 18,
+        "color": "#ffcf70",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 634,
+        "y": 183,
+        "text": "30  (was 23)",
+        "size": 18,
+        "color": "#ffcf70",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 68,
+        "y": 225,
+        "text": "Wrong accepted positive commands",
+        "size": 16,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 464,
+        "y": 225,
+        "text": "1",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 634,
+        "y": 225,
+        "text": "1",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 68,
+        "y": 267,
+        "text": "Personal negative accepts /52",
+        "size": 16,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 464,
+        "y": 267,
+        "text": "1",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 634,
+        "y": 267,
+        "text": "0",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 68,
+        "y": 309,
+        "text": "Official exact score /196\u00b9",
+        "size": 16,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 464,
+        "y": 309,
+        "text": "138",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 634,
+        "y": 309,
+        "text": "147",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 68,
+        "y": 351,
+        "text": "Original human correct accepts /636",
+        "size": 16,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 464,
+        "y": 351,
+        "text": "165",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 634,
+        "y": 351,
+        "text": "192",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 68,
+        "y": 393,
+        "text": "Original human UNKNOWN accepts /229",
+        "size": 16,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 464,
+        "y": 393,
+        "text": "12",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 634,
+        "y": 393,
+        "text": "15",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 68,
+        "y": 435,
+        "text": "VCM ncnn p95, desktop one thread\u00b2",
+        "size": 16,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 464,
+        "y": 435,
+        "text": "12.33 ms",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 634,
+        "y": 435,
+        "text": "20.12 ms",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 68,
+        "y": 477,
+        "text": "ZIP with UI, native + ORT, wake/VAD",
+        "size": 16,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 464,
+        "y": 477,
+        "text": "9.78 MiB",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 634,
+        "y": 477,
+        "text": "17.89 MiB",
+        "size": 18,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 814,
+        "y": 120,
+        "w": 418,
+        "h": 204,
+        "color": "#1a2a3b"
+      },
+      {
+        "kind": "text",
+        "x": 834,
+        "y": 137,
+        "text": "WHAT WAS VERIFIED",
+        "size": 18,
+        "color": "#50d4bd",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 834,
+        "y": 176,
+        "text": "124/124 extracted worker decisions per track",
+        "size": 15,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 834,
+        "y": 204,
+        "text": "Torch / ORT / ncnn real-audio parity",
+        "size": 15,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 834,
+        "y": 232,
+        "text": "Linux network syscalls blocked during replay",
+        "size": 15,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 834,
+        "y": 260,
+        "text": "63 Python tests; 89 UI tests; compiled UI",
+        "size": 15,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 834,
+        "y": 288,
+        "text": "Complete command and reject remain authoritative",
+        "size": 15,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "box",
+        "x": 814,
+        "y": 344,
+        "w": 418,
+        "h": 191,
+        "color": "#1a2a3b"
+      },
+      {
+        "kind": "text",
+        "x": 834,
+        "y": 361,
+        "text": "QUALIFICATION STILL FAILS",
+        "size": 18,
+        "color": "#ffcf70",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 834,
+        "y": 400,
+        "text": "Personal set: only two held-out synthetic voices.",
+        "size": 15,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 834,
+        "y": 425,
+        "text": "Broader human precision / unknown gates fail.",
+        "size": 15,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 834,
+        "y": 450,
+        "text": "Hey Iris: 12/16 synthetic wakes; separate test.",
+        "size": 15,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 834,
+        "y": 475,
+        "text": "Owner backend unavailable; actions locked off.",
+        "size": 15,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 834,
+        "y": 500,
+        "text": "No installed model or physical device changed.",
+        "size": 15,
+        "color": "#e8eff6",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 48,
+        "y": 562,
+        "text": "\u00b9 Official score includes 9/10 compact and 10/10 full correct UNKNOWN rejections.",
+        "size": 16,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 48,
+        "y": 591,
+        "text": "\u00b2 372 observations: frontend + VCM + validation; excludes disk, speech and 400 ms endpoint waiting.",
+        "size": 15,
+        "color": "#acbbcb",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 48,
+        "y": 628,
+        "text": "Physical Pi wake/intent accuracy, FAR, p95, RTF, RAM, CPU and thermals: NOT MEASURED.",
+        "size": 19,
+        "color": "#ffcf70",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 48,
+        "y": 679,
+        "text": "Evidence: docs/EXPERIMENT-vcm-mvp-hey-iris-v3.md \u00b7 experiments/vcm-mvp-hey-iris-v3/{results,verification}.json",
+        "size": 12,
+        "color": "#acbbcb",
+        "bold": false
+      }
+    ]
+  ],
+  "inputs": {
+    "results_sha256": "2857a044611fccfbd21db9a7630d0d217940c84d60fbddf92a9dc3a32c315c60",
+    "verification_sha256": "eb5d0d24570250863884abf872783f216bdb8268e025b21423e687a1671c3aae"
+  },
+  "files": {
+    "iris-command-only-results.pdf": {
+      "sha256": "895a1b7f5a2c75ac09bb1cf88bfdf65e2a6771d32feef72351b98957e8ddb17c",
+      "bytes": 54725
+    },
+    "iris-command-only-results.pptx": {
+      "sha256": "edc51a223d8b71f90ae329e5a3e0cf18b331ab7f67ad209d7220a8c2c5886e3d",
+      "bytes": 33608
+    }
+  },
+  "writer_sha256": "df1d06ecf3ed7dee87b27ab0afbfb390453b5fb60595b7a76719894b9769160c",
+  "previews": ".cache/vcm-mvp-hey-iris-v3/slides",
+  "all_text_within_page": true
+}

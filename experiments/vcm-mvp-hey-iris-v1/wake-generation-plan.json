@@ -1,0 +1,6526 @@
+[
+  {
+    "id": "iris1/ddaad0f151a6fb1369ed",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/ddaad0f151a6fb1369ed"
+  },
+  {
+    "id": "iris1/d998c9d8ab0c9a25ca8d",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/d998c9d8ab0c9a25ca8d"
+  },
+  {
+    "id": "iris1/74b651d3409a9bac1b31",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/74b651d3409a9bac1b31"
+  },
+  {
+    "id": "iris1/541602d88b05ebb75908",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/541602d88b05ebb75908"
+  },
+  {
+    "id": "iris1/6084012ddde1146777f1",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/6084012ddde1146777f1"
+  },
+  {
+    "id": "iris1/71cc61af8d9f3c4ef3ce",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/71cc61af8d9f3c4ef3ce"
+  },
+  {
+    "id": "iris1/cc4186eef514417e18dc",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/cc4186eef514417e18dc"
+  },
+  {
+    "id": "iris1/4595825595b21cae33ca",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/4595825595b21cae33ca"
+  },
+  {
+    "id": "iris1/b00835f12e778d3f9d3d",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/b00835f12e778d3f9d3d"
+  },
+  {
+    "id": "iris1/3a8a0022c93a274d933f",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/3a8a0022c93a274d933f"
+  },
+  {
+    "id": "iris1/2c08e07b6247b801391f",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/2c08e07b6247b801391f"
+  },
+  {
+    "id": "iris1/5a8150e3e3323b368862",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/5a8150e3e3323b368862"
+  },
+  {
+    "id": "iris1/b676cecd3eec5d09e3b8",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/b676cecd3eec5d09e3b8"
+  },
+  {
+    "id": "iris1/6c07635d04ac0abdfab3",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/6c07635d04ac0abdfab3"
+  },
+  {
+    "id": "iris1/237d5a58c3a72d2ac88a",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/237d5a58c3a72d2ac88a"
+  },
+  {
+    "id": "iris1/330efd58155259d0ee5e",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/330efd58155259d0ee5e"
+  },
+  {
+    "id": "iris1/e4d89104eb6297397064",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/e4d89104eb6297397064"
+  },
+  {
+    "id": "iris1/d2162cbe32323f7a70d0",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/d2162cbe32323f7a70d0"
+  },
+  {
+    "id": "iris1/9bd6ed02266e0ff2827d",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/9bd6ed02266e0ff2827d"
+  },
+  {
+    "id": "iris1/e683e02723cb10e7de39",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/e683e02723cb10e7de39"
+  },
+  {
+    "id": "iris1/e8dda197ccedcf894917",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/e8dda197ccedcf894917"
+  },
+  {
+    "id": "iris1/d47434b8937c8261a1ae",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/d47434b8937c8261a1ae"
+  },
+  {
+    "id": "iris1/8511246a555e3d39e7c1",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/8511246a555e3d39e7c1"
+  },
+  {
+    "id": "iris1/05b48a13906fdce68cc7",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/05b48a13906fdce68cc7"
+  },
+  {
+    "id": "iris1/7a41c440bb74ee2c4583",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Siri.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/7a41c440bb74ee2c4583"
+  },
+  {
+    "id": "iris1/8f487372fb82247085a9",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Irish.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/8f487372fb82247085a9"
+  },
+  {
+    "id": "iris1/1ec8a051d1475141d6a9",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Iris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/1ec8a051d1475141d6a9"
+  },
+  {
+    "id": "iris1/95e3548838953e30d61d",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/95e3548838953e30d61d"
+  },
+  {
+    "id": "iris1/8742a95a8a549433427b",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Jarvis.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/8742a95a8a549433427b"
+  },
+  {
+    "id": "iris1/f36c8abc7f37b2a23732",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Alice.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/f36c8abc7f37b2a23732"
+  },
+  {
+    "id": "iris1/19e4b73df7ea9bfa5c27",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Hey Paris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/19e4b73df7ea9bfa5c27"
+  },
+  {
+    "id": "iris1/2d6dbe888c98098045eb",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "They hire us.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/2d6dbe888c98098045eb"
+  },
+  {
+    "id": "iris1/6b2d2a4c10a124656d36",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "A virus.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/6b2d2a4c10a124656d36"
+  },
+  {
+    "id": "iris1/371fb098a815777aadad",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Here it is.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/371fb098a815777aadad"
+  },
+  {
+    "id": "iris1/6c3c4f9bcedd724b5a5b",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Good morning.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/6c3c4f9bcedd724b5a5b"
+  },
+  {
+    "id": "iris1/6baad2348621a1cc84a1",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Are you ready?",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/6baad2348621a1cc84a1"
+  },
+  {
+    "id": "iris1/9c4927ee0c788f996002",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Play Mystery Planet.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/9c4927ee0c788f996002"
+  },
+  {
+    "id": "iris1/50c2b3e0285f0cdbb4dd",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Turn on the attic light.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/50c2b3e0285f0cdbb4dd"
+  },
+  {
+    "id": "iris1/ced6ae53a617db7768c6",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Set brightness to 140 percent.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/ced6ae53a617db7768c6"
+  },
+  {
+    "id": "iris1/669faaf0947a5e9e58c0",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Set a timer for minus five seconds.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/669faaf0947a5e9e58c0"
+  },
+  {
+    "id": "iris1/67ef542c2ee4c53dbe2a",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Call a stranger.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/67ef542c2ee4c53dbe2a"
+  },
+  {
+    "id": "iris1/be7daacbd60161562fee",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "Set a timer.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/be7daacbd60161562fee"
+  },
+  {
+    "id": "iris1/f24f5300aab322368219",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "turn off the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_OFF",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/f24f5300aab322368219"
+  },
+  {
+    "id": "iris1/a346d23e288862e5b79b",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "turn on the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_ON",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/a346d23e288862e5b79b"
+  },
+  {
+    "id": "iris1/dc7a3b63bdf358e7e684",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "play Enemy by imagine dragons",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy",
+        "artist_id": "artist.imagine_dragons"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/dc7a3b63bdf358e7e684"
+  },
+  {
+    "id": "iris1/a66b08e6330e5d11eb18",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "play Basics by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/a66b08e6330e5d11eb18"
+  },
+  {
+    "id": "iris1/3852c08672abb6e7a06e",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "play Brave by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/3852c08672abb6e7a06e"
+  },
+  {
+    "id": "iris1/511da294182579acad21",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "play Gone by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/511da294182579acad21"
+  },
+  {
+    "id": "iris1/b0cab7fa548924c4baf4",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "play Queen of Hearts by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/b0cab7fa548924c4baf4"
+  },
+  {
+    "id": "iris1/9ac5888663075aeba121",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "play Talk that Talk by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/9ac5888663075aeba121"
+  },
+  {
+    "id": "iris1/b4de680a73eac65618c2",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "play Trouble by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/b4de680a73eac65618c2"
+  },
+  {
+    "id": "iris1/75597f70629e3c5f196d",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "play When We Were Kids by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/75597f70629e3c5f196d"
+  },
+  {
+    "id": "iris1/592ccf271dddac01e618",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "play Basics",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/592ccf271dddac01e618"
+  },
+  {
+    "id": "iris1/bb01250601d95bf18a3b",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "play Brave",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/bb01250601d95bf18a3b"
+  },
+  {
+    "id": "iris1/7797a4b89dfeab8222a9",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "play Enemy",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/7797a4b89dfeab8222a9"
+  },
+  {
+    "id": "iris1/29410646024ee8fcd31f",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "play Gone",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/29410646024ee8fcd31f"
+  },
+  {
+    "id": "iris1/3f1f1094b173e8d03860",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "play Queen of Hearts",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/3f1f1094b173e8d03860"
+  },
+  {
+    "id": "iris1/97a084637cdda91ebdb1",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "play Talk that Talk",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/97a084637cdda91ebdb1"
+  },
+  {
+    "id": "iris1/935721d36dc513f68ae5",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "play Trouble",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/935721d36dc513f68ae5"
+  },
+  {
+    "id": "iris1/703f4badb5557002b8a0",
+    "voice_id": "train-en",
+    "speaker": "train-en",
+    "split": "train",
+    "text": "play When We Were Kids",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/703f4badb5557002b8a0"
+  },
+  {
+    "id": "iris1/95d368a1c2d093c90d36",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/95d368a1c2d093c90d36"
+  },
+  {
+    "id": "iris1/97d3aa22f1b85c370b5f",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/97d3aa22f1b85c370b5f"
+  },
+  {
+    "id": "iris1/8eb35786e8b2fdb702bd",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/8eb35786e8b2fdb702bd"
+  },
+  {
+    "id": "iris1/6117d58e18b74bc0394a",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/6117d58e18b74bc0394a"
+  },
+  {
+    "id": "iris1/4b6cf98a4dd6157f1c93",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/4b6cf98a4dd6157f1c93"
+  },
+  {
+    "id": "iris1/ad2deb1eb7b903957f91",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/ad2deb1eb7b903957f91"
+  },
+  {
+    "id": "iris1/fdd74414485f309c4241",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/fdd74414485f309c4241"
+  },
+  {
+    "id": "iris1/0f96f903afbc22616825",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/0f96f903afbc22616825"
+  },
+  {
+    "id": "iris1/5324d64d575758203078",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/5324d64d575758203078"
+  },
+  {
+    "id": "iris1/b61d59756cc22be02008",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/b61d59756cc22be02008"
+  },
+  {
+    "id": "iris1/b1592a783ed600e4f936",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/b1592a783ed600e4f936"
+  },
+  {
+    "id": "iris1/7bcac829fb43744c92b7",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/7bcac829fb43744c92b7"
+  },
+  {
+    "id": "iris1/7a0bd76ec5b189e3c36a",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/7a0bd76ec5b189e3c36a"
+  },
+  {
+    "id": "iris1/71a247e475c08bafa57b",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/71a247e475c08bafa57b"
+  },
+  {
+    "id": "iris1/eca0449837e56a711728",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/eca0449837e56a711728"
+  },
+  {
+    "id": "iris1/30c8fb15e4a330d8a61c",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/30c8fb15e4a330d8a61c"
+  },
+  {
+    "id": "iris1/6ae4b6700c21e9b7a1df",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/6ae4b6700c21e9b7a1df"
+  },
+  {
+    "id": "iris1/cfd4a02b6afc65a91a9b",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/cfd4a02b6afc65a91a9b"
+  },
+  {
+    "id": "iris1/efa138fdd45b6034fd1c",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/efa138fdd45b6034fd1c"
+  },
+  {
+    "id": "iris1/73e08d7dc57b5cf4a5a7",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/73e08d7dc57b5cf4a5a7"
+  },
+  {
+    "id": "iris1/559caf117a190d80801c",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/559caf117a190d80801c"
+  },
+  {
+    "id": "iris1/f8e30341147f9db15f49",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/f8e30341147f9db15f49"
+  },
+  {
+    "id": "iris1/200ee43f6bfd31968376",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/200ee43f6bfd31968376"
+  },
+  {
+    "id": "iris1/b8cb9633844fba3ed070",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/b8cb9633844fba3ed070"
+  },
+  {
+    "id": "iris1/dfbbb4fa8391d6d0c11d",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Siri.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/dfbbb4fa8391d6d0c11d"
+  },
+  {
+    "id": "iris1/cac8cbdd2e6cecc7d0b8",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Irish.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/cac8cbdd2e6cecc7d0b8"
+  },
+  {
+    "id": "iris1/97519c1b260368fcc865",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Iris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/97519c1b260368fcc865"
+  },
+  {
+    "id": "iris1/98ce068ca8c5e26f0771",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/98ce068ca8c5e26f0771"
+  },
+  {
+    "id": "iris1/29ecd5988c1742009929",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Jarvis.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/29ecd5988c1742009929"
+  },
+  {
+    "id": "iris1/245c8f8e8827b186c132",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Alice.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/245c8f8e8827b186c132"
+  },
+  {
+    "id": "iris1/09b47d42d61462e3a9eb",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Hey Paris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/09b47d42d61462e3a9eb"
+  },
+  {
+    "id": "iris1/cd0839c69e9726651182",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "They hire us.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/cd0839c69e9726651182"
+  },
+  {
+    "id": "iris1/5305da0e73c642e2267c",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "A virus.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/5305da0e73c642e2267c"
+  },
+  {
+    "id": "iris1/1b70dcb15b779a16584a",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Here it is.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/1b70dcb15b779a16584a"
+  },
+  {
+    "id": "iris1/e85099f53ee444c0b883",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Good morning.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/e85099f53ee444c0b883"
+  },
+  {
+    "id": "iris1/6c22546d6c09d241148c",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Are you ready?",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/6c22546d6c09d241148c"
+  },
+  {
+    "id": "iris1/f1d1f27d58ea7d2dc001",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Play Mystery Planet.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/f1d1f27d58ea7d2dc001"
+  },
+  {
+    "id": "iris1/8fc46c94be6e45253cab",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Turn on the attic light.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/8fc46c94be6e45253cab"
+  },
+  {
+    "id": "iris1/83ad93711362e163e37e",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Set brightness to 140 percent.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/83ad93711362e163e37e"
+  },
+  {
+    "id": "iris1/44fdc2031eaf8809cc67",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Set a timer for minus five seconds.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/44fdc2031eaf8809cc67"
+  },
+  {
+    "id": "iris1/898ee762dafd4ed153b1",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Call a stranger.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/898ee762dafd4ed153b1"
+  },
+  {
+    "id": "iris1/26bd102a1c5875d39516",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "Set a timer.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/26bd102a1c5875d39516"
+  },
+  {
+    "id": "iris1/7e1320d72fa9a6556885",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "turn off the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_OFF",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/7e1320d72fa9a6556885"
+  },
+  {
+    "id": "iris1/51548865cccae9674040",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "turn on the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_ON",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/51548865cccae9674040"
+  },
+  {
+    "id": "iris1/e5b27f5bc365d7ebec92",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "play Enemy by imagine dragons",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy",
+        "artist_id": "artist.imagine_dragons"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/e5b27f5bc365d7ebec92"
+  },
+  {
+    "id": "iris1/64a626b921933c05878f",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "play Basics by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/64a626b921933c05878f"
+  },
+  {
+    "id": "iris1/2f0306de8409c23ed782",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "play Brave by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/2f0306de8409c23ed782"
+  },
+  {
+    "id": "iris1/b8a1771520057fa1675d",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "play Gone by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/b8a1771520057fa1675d"
+  },
+  {
+    "id": "iris1/dd9aaaaf0da26f1d65c9",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "play Queen of Hearts by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/dd9aaaaf0da26f1d65c9"
+  },
+  {
+    "id": "iris1/5eca7570675cde475ab2",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "play Talk that Talk by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/5eca7570675cde475ab2"
+  },
+  {
+    "id": "iris1/f48f7ed1288a916f7480",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "play Trouble by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/f48f7ed1288a916f7480"
+  },
+  {
+    "id": "iris1/b2810bb1117869a24a73",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "play When We Were Kids by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/b2810bb1117869a24a73"
+  },
+  {
+    "id": "iris1/47ae7202f428c151b255",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "play Basics",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/47ae7202f428c151b255"
+  },
+  {
+    "id": "iris1/c388b8d8b596df261277",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "play Brave",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/c388b8d8b596df261277"
+  },
+  {
+    "id": "iris1/ce48342e0082639d8e82",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "play Enemy",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/ce48342e0082639d8e82"
+  },
+  {
+    "id": "iris1/3cb879553925979d5f32",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "play Gone",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/3cb879553925979d5f32"
+  },
+  {
+    "id": "iris1/22508593d2e6215c2500",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "play Queen of Hearts",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/22508593d2e6215c2500"
+  },
+  {
+    "id": "iris1/77e77474a2defb0d9b0d",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "play Talk that Talk",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/77e77474a2defb0d9b0d"
+  },
+  {
+    "id": "iris1/a24742a3f124aed7aed7",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "play Trouble",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/a24742a3f124aed7aed7"
+  },
+  {
+    "id": "iris1/9a1b6400da6c166c3c3b",
+    "voice_id": "train-ph",
+    "speaker": "train-ph",
+    "split": "train",
+    "text": "play When We Were Kids",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/9a1b6400da6c166c3c3b"
+  },
+  {
+    "id": "iris1/a0eaea65d14edb4bcdf8",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/a0eaea65d14edb4bcdf8"
+  },
+  {
+    "id": "iris1/fc6c43c0c6c1429ca218",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/fc6c43c0c6c1429ca218"
+  },
+  {
+    "id": "iris1/889d0b50375c19c8f487",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/889d0b50375c19c8f487"
+  },
+  {
+    "id": "iris1/1509b0a6abf878c1beec",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/1509b0a6abf878c1beec"
+  },
+  {
+    "id": "iris1/4b2a5d9c5dedf12085cc",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/4b2a5d9c5dedf12085cc"
+  },
+  {
+    "id": "iris1/e04039949ff9cd57c167",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/e04039949ff9cd57c167"
+  },
+  {
+    "id": "iris1/aeb1538522e68350b30a",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/aeb1538522e68350b30a"
+  },
+  {
+    "id": "iris1/89473bd6d8f4c26b40ac",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/89473bd6d8f4c26b40ac"
+  },
+  {
+    "id": "iris1/6567d4539946829a8e8d",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Hey Siri.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/6567d4539946829a8e8d"
+  },
+  {
+    "id": "iris1/3f54bcfc8d1d53990a33",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Hey Irish.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/3f54bcfc8d1d53990a33"
+  },
+  {
+    "id": "iris1/386866f9b595df5f93fd",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Iris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/386866f9b595df5f93fd"
+  },
+  {
+    "id": "iris1/d96a57f6e0394e13ad36",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Hey.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/d96a57f6e0394e13ad36"
+  },
+  {
+    "id": "iris1/b72e68ff7ff7267905ad",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Hey Jarvis.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/b72e68ff7ff7267905ad"
+  },
+  {
+    "id": "iris1/c51b9d8548a33c0ee0b7",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Hey Alice.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/c51b9d8548a33c0ee0b7"
+  },
+  {
+    "id": "iris1/f4fb047de6de11befe31",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Hey Paris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/f4fb047de6de11befe31"
+  },
+  {
+    "id": "iris1/580674362509ba47eb55",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "They hire us.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/580674362509ba47eb55"
+  },
+  {
+    "id": "iris1/0880cb290d8cca71177b",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "A virus.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/0880cb290d8cca71177b"
+  },
+  {
+    "id": "iris1/68712acb3ecf3311a437",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Here it is.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/68712acb3ecf3311a437"
+  },
+  {
+    "id": "iris1/2e856ef3e7dc2ec73127",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Good morning.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/2e856ef3e7dc2ec73127"
+  },
+  {
+    "id": "iris1/3ad7cbe894047138caaf",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Are you ready?",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/3ad7cbe894047138caaf"
+  },
+  {
+    "id": "iris1/a871a978b0e4060078d5",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Play Mystery Planet.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/a871a978b0e4060078d5"
+  },
+  {
+    "id": "iris1/c98a7b71248e83a1c26d",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Turn on the attic light.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/c98a7b71248e83a1c26d"
+  },
+  {
+    "id": "iris1/f57c45ace8837cf5fed8",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Set brightness to 140 percent.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/f57c45ace8837cf5fed8"
+  },
+  {
+    "id": "iris1/ba1d0fce204994952e83",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Set a timer for minus five seconds.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/ba1d0fce204994952e83"
+  },
+  {
+    "id": "iris1/406b81e201c795dcd5be",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Call a stranger.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/406b81e201c795dcd5be"
+  },
+  {
+    "id": "iris1/5661e3e360a37cd038cb",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "Set a timer.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/5661e3e360a37cd038cb"
+  },
+  {
+    "id": "iris1/e3ed190509df5f0bb098",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "turn off the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_OFF",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/e3ed190509df5f0bb098"
+  },
+  {
+    "id": "iris1/803e9cc29bf081e95fd0",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "turn on the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_ON",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/803e9cc29bf081e95fd0"
+  },
+  {
+    "id": "iris1/7eeab5d37637813cbca6",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "play Enemy by imagine dragons",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy",
+        "artist_id": "artist.imagine_dragons"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/7eeab5d37637813cbca6"
+  },
+  {
+    "id": "iris1/3db22181f4c8a463faba",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "play Basics by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/3db22181f4c8a463faba"
+  },
+  {
+    "id": "iris1/d4576d6f7e83de926329",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "play Brave by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/d4576d6f7e83de926329"
+  },
+  {
+    "id": "iris1/5aaf56b98a42096f7aeb",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "play Gone by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/5aaf56b98a42096f7aeb"
+  },
+  {
+    "id": "iris1/854479c33f9f3fe33e41",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "play Queen of Hearts by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/854479c33f9f3fe33e41"
+  },
+  {
+    "id": "iris1/2bb3332fd098669b5db8",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "play Talk that Talk by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/2bb3332fd098669b5db8"
+  },
+  {
+    "id": "iris1/ac02ad88b4c47cef9169",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "play Trouble by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/ac02ad88b4c47cef9169"
+  },
+  {
+    "id": "iris1/886593b2ed0f4faf46d4",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "play When We Were Kids by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/886593b2ed0f4faf46d4"
+  },
+  {
+    "id": "iris1/75ed19ed565a5f82d978",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "play Basics",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/75ed19ed565a5f82d978"
+  },
+  {
+    "id": "iris1/182efd6e4d5a0e11ceaa",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "play Brave",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/182efd6e4d5a0e11ceaa"
+  },
+  {
+    "id": "iris1/04d2e22f4f5f204edf6a",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "play Enemy",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/04d2e22f4f5f204edf6a"
+  },
+  {
+    "id": "iris1/08a58b70a5b6c3c1d857",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "play Gone",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/08a58b70a5b6c3c1d857"
+  },
+  {
+    "id": "iris1/eab067e0322a3274e03a",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "play Queen of Hearts",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/eab067e0322a3274e03a"
+  },
+  {
+    "id": "iris1/ad6fd77beaa9c606c936",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "play Talk that Talk",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/ad6fd77beaa9c606c936"
+  },
+  {
+    "id": "iris1/18e7da4acdaa082eccc0",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "play Trouble",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/18e7da4acdaa082eccc0"
+  },
+  {
+    "id": "iris1/9252b40ee99526ab7197",
+    "voice_id": "dev-en",
+    "speaker": "dev-en",
+    "split": "dev",
+    "text": "play When We Were Kids",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/9252b40ee99526ab7197"
+  },
+  {
+    "id": "iris1/57c0f24e71e631650c2d",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/57c0f24e71e631650c2d"
+  },
+  {
+    "id": "iris1/b978a1300b1aa00a3282",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/b978a1300b1aa00a3282"
+  },
+  {
+    "id": "iris1/194a578acbfa1e9cfa29",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/194a578acbfa1e9cfa29"
+  },
+  {
+    "id": "iris1/d0d061e0a48df622102a",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/d0d061e0a48df622102a"
+  },
+  {
+    "id": "iris1/98f315bf0199cbe20a67",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/98f315bf0199cbe20a67"
+  },
+  {
+    "id": "iris1/a7808e33ef818e98e6b4",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/a7808e33ef818e98e6b4"
+  },
+  {
+    "id": "iris1/194d23a67908b876322d",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/194d23a67908b876322d"
+  },
+  {
+    "id": "iris1/16912c9500e3d0b387d0",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/16912c9500e3d0b387d0"
+  },
+  {
+    "id": "iris1/bfeabd7799145ff9b624",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Hey Siri.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/bfeabd7799145ff9b624"
+  },
+  {
+    "id": "iris1/17c57f7b120da035231e",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Hey Irish.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/17c57f7b120da035231e"
+  },
+  {
+    "id": "iris1/8d4023e9b21b3329ed02",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Iris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/8d4023e9b21b3329ed02"
+  },
+  {
+    "id": "iris1/20731d837d41d66ea650",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Hey.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/20731d837d41d66ea650"
+  },
+  {
+    "id": "iris1/b02f94e95a4cedeff9db",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Hey Jarvis.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/b02f94e95a4cedeff9db"
+  },
+  {
+    "id": "iris1/83d3bd7cc85d6052a599",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Hey Alice.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/83d3bd7cc85d6052a599"
+  },
+  {
+    "id": "iris1/c78412e2e582f06d7984",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Hey Paris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/c78412e2e582f06d7984"
+  },
+  {
+    "id": "iris1/3ba1f2b6766d1180786a",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "They hire us.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/3ba1f2b6766d1180786a"
+  },
+  {
+    "id": "iris1/fe4d2e66d04ea9c5196a",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "A virus.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/fe4d2e66d04ea9c5196a"
+  },
+  {
+    "id": "iris1/99988fd184fb352bdc61",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Here it is.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/99988fd184fb352bdc61"
+  },
+  {
+    "id": "iris1/4438925d153b0003d93c",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Good morning.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/4438925d153b0003d93c"
+  },
+  {
+    "id": "iris1/96bfdbf8eae71816c3e0",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Are you ready?",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/96bfdbf8eae71816c3e0"
+  },
+  {
+    "id": "iris1/6abb6d101bcd44201ff4",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Play Mystery Planet.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/6abb6d101bcd44201ff4"
+  },
+  {
+    "id": "iris1/b3cab6b0dd19b308c76d",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Turn on the attic light.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/b3cab6b0dd19b308c76d"
+  },
+  {
+    "id": "iris1/6a77dd811a61edb6106f",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Set brightness to 140 percent.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/6a77dd811a61edb6106f"
+  },
+  {
+    "id": "iris1/c894a92e20440f1aae5a",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Set a timer for minus five seconds.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/c894a92e20440f1aae5a"
+  },
+  {
+    "id": "iris1/0bcd2c416c82dd677a53",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Call a stranger.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/0bcd2c416c82dd677a53"
+  },
+  {
+    "id": "iris1/4bd797c2b3d07b7b804e",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "Set a timer.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/4bd797c2b3d07b7b804e"
+  },
+  {
+    "id": "iris1/982b07423a95f7727959",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "turn off the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_OFF",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/982b07423a95f7727959"
+  },
+  {
+    "id": "iris1/123d7c41408d9715bc65",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "turn on the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_ON",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/123d7c41408d9715bc65"
+  },
+  {
+    "id": "iris1/f7699ce1960f2b428181",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "play Enemy by imagine dragons",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy",
+        "artist_id": "artist.imagine_dragons"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/f7699ce1960f2b428181"
+  },
+  {
+    "id": "iris1/3497c5715db95a23f713",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "play Basics by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/3497c5715db95a23f713"
+  },
+  {
+    "id": "iris1/5625f4f67a02fec20ceb",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "play Brave by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/5625f4f67a02fec20ceb"
+  },
+  {
+    "id": "iris1/7374bef75d76e066ca16",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "play Gone by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/7374bef75d76e066ca16"
+  },
+  {
+    "id": "iris1/0d46fb96c9c6adbf055c",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "play Queen of Hearts by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/0d46fb96c9c6adbf055c"
+  },
+  {
+    "id": "iris1/7a777ccdf4c575abf49a",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "play Talk that Talk by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/7a777ccdf4c575abf49a"
+  },
+  {
+    "id": "iris1/443c12e7404cefc84ae1",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "play Trouble by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/443c12e7404cefc84ae1"
+  },
+  {
+    "id": "iris1/391345c516bc53e67ce6",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "play When We Were Kids by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/391345c516bc53e67ce6"
+  },
+  {
+    "id": "iris1/1fd69d77269902fb31c0",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "play Basics",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/1fd69d77269902fb31c0"
+  },
+  {
+    "id": "iris1/684adf4dfd68198c7f5d",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "play Brave",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/684adf4dfd68198c7f5d"
+  },
+  {
+    "id": "iris1/4e2ae4af43310c219196",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "play Enemy",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/4e2ae4af43310c219196"
+  },
+  {
+    "id": "iris1/282bfa8b365e68c5c14f",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "play Gone",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/282bfa8b365e68c5c14f"
+  },
+  {
+    "id": "iris1/d9e5f75066e90d0c1c47",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "play Queen of Hearts",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/d9e5f75066e90d0c1c47"
+  },
+  {
+    "id": "iris1/d76e0ee885b7d0756c79",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "play Talk that Talk",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/d76e0ee885b7d0756c79"
+  },
+  {
+    "id": "iris1/d2d32299eb1ba3f5bfad",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "play Trouble",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/d2d32299eb1ba3f5bfad"
+  },
+  {
+    "id": "iris1/5c973f9dfe2ed7d592ca",
+    "voice_id": "dev-ph",
+    "speaker": "dev-ph",
+    "split": "dev",
+    "text": "play When We Were Kids",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/5c973f9dfe2ed7d592ca"
+  },
+  {
+    "id": "iris1/ab73691290bf618fc11a",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/ab73691290bf618fc11a"
+  },
+  {
+    "id": "iris1/a790ca87cc93e9b6a68e",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/a790ca87cc93e9b6a68e"
+  },
+  {
+    "id": "iris1/3b97f12f1a6899bdd936",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/3b97f12f1a6899bdd936"
+  },
+  {
+    "id": "iris1/c82c5f5d470f52c8c3ce",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/c82c5f5d470f52c8c3ce"
+  },
+  {
+    "id": "iris1/99b839de662894b27ede",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/99b839de662894b27ede"
+  },
+  {
+    "id": "iris1/55c19ae018176701106b",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/55c19ae018176701106b"
+  },
+  {
+    "id": "iris1/15ae535fd2d856095e70",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/15ae535fd2d856095e70"
+  },
+  {
+    "id": "iris1/ed9f43c4570d74bd3b78",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/ed9f43c4570d74bd3b78"
+  },
+  {
+    "id": "iris1/7012613dcd815d6155dd",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Hey Siri.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/7012613dcd815d6155dd"
+  },
+  {
+    "id": "iris1/e69cedb6bff11ada0da8",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Hey Irish.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/e69cedb6bff11ada0da8"
+  },
+  {
+    "id": "iris1/513877dd24408a226e44",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Iris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/513877dd24408a226e44"
+  },
+  {
+    "id": "iris1/b2831227bd8c0d82c713",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Hey.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/b2831227bd8c0d82c713"
+  },
+  {
+    "id": "iris1/a2a306b8284d2e92cfa0",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Hey Jarvis.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/a2a306b8284d2e92cfa0"
+  },
+  {
+    "id": "iris1/79f8f1f8cd76077bcc01",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Hey Alice.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/79f8f1f8cd76077bcc01"
+  },
+  {
+    "id": "iris1/5676f4aa118064b45c65",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Hey Paris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/5676f4aa118064b45c65"
+  },
+  {
+    "id": "iris1/ae10bb271a0bd63161cf",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "They hire us.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/ae10bb271a0bd63161cf"
+  },
+  {
+    "id": "iris1/e83c828a9d49463ae319",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "A virus.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/e83c828a9d49463ae319"
+  },
+  {
+    "id": "iris1/e5a1012326185f5da34e",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Here it is.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/e5a1012326185f5da34e"
+  },
+  {
+    "id": "iris1/8fbb1fc2bec96a7188eb",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Good morning.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/8fbb1fc2bec96a7188eb"
+  },
+  {
+    "id": "iris1/a11291c38919a8d311f3",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Are you ready?",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/a11291c38919a8d311f3"
+  },
+  {
+    "id": "iris1/833db0954f9c3ab3c4fe",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Play Mystery Planet.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/833db0954f9c3ab3c4fe"
+  },
+  {
+    "id": "iris1/a5bae6a50b793557aab2",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Turn on the attic light.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/a5bae6a50b793557aab2"
+  },
+  {
+    "id": "iris1/46b270d6f0a2623e4290",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Set brightness to 140 percent.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/46b270d6f0a2623e4290"
+  },
+  {
+    "id": "iris1/c5819b31d92b81f2cb99",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Set a timer for minus five seconds.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/c5819b31d92b81f2cb99"
+  },
+  {
+    "id": "iris1/194840759bc034da8ede",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Call a stranger.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/194840759bc034da8ede"
+  },
+  {
+    "id": "iris1/a7d9e3c21e2975b98d29",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "Set a timer.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/a7d9e3c21e2975b98d29"
+  },
+  {
+    "id": "iris1/4142df4ee0824943238e",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "turn off the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_OFF",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/4142df4ee0824943238e"
+  },
+  {
+    "id": "iris1/182687cda937e6ac286d",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "turn on the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_ON",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/182687cda937e6ac286d"
+  },
+  {
+    "id": "iris1/b7194cd0840d16030a5a",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "play Enemy by imagine dragons",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy",
+        "artist_id": "artist.imagine_dragons"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/b7194cd0840d16030a5a"
+  },
+  {
+    "id": "iris1/f07b63bed0012509fa90",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "play Basics by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/f07b63bed0012509fa90"
+  },
+  {
+    "id": "iris1/f906ad4616e27810f5c4",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "play Brave by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/f906ad4616e27810f5c4"
+  },
+  {
+    "id": "iris1/10047d2cfe74119fe4a0",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "play Gone by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/10047d2cfe74119fe4a0"
+  },
+  {
+    "id": "iris1/c2a937fabfbaf05fb88d",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "play Queen of Hearts by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/c2a937fabfbaf05fb88d"
+  },
+  {
+    "id": "iris1/c33293868fd55fbcbf57",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "play Talk that Talk by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/c33293868fd55fbcbf57"
+  },
+  {
+    "id": "iris1/152a5a6e3e7a46c7b4eb",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "play Trouble by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/152a5a6e3e7a46c7b4eb"
+  },
+  {
+    "id": "iris1/380b67d18f4d79001786",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "play When We Were Kids by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/380b67d18f4d79001786"
+  },
+  {
+    "id": "iris1/4ca5a33c22d8930dd061",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "play Basics",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/4ca5a33c22d8930dd061"
+  },
+  {
+    "id": "iris1/0661bce56255331b8f0d",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "play Brave",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/0661bce56255331b8f0d"
+  },
+  {
+    "id": "iris1/05167476faf9fc4841bc",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "play Enemy",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/05167476faf9fc4841bc"
+  },
+  {
+    "id": "iris1/3ed754f2bbb4e1b187c7",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "play Gone",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/3ed754f2bbb4e1b187c7"
+  },
+  {
+    "id": "iris1/07257b6b3a9a511fa293",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "play Queen of Hearts",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/07257b6b3a9a511fa293"
+  },
+  {
+    "id": "iris1/45c5d06d4b11226a94b2",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "play Talk that Talk",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/45c5d06d4b11226a94b2"
+  },
+  {
+    "id": "iris1/c04cf7346c2978b37b2b",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "play Trouble",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/c04cf7346c2978b37b2b"
+  },
+  {
+    "id": "iris1/cc2da7203ffbff7daa86",
+    "voice_id": "cal-en",
+    "speaker": "cal-en",
+    "split": "calibration",
+    "text": "play When We Were Kids",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/cc2da7203ffbff7daa86"
+  },
+  {
+    "id": "iris1/a235ec054133822d6c76",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/a235ec054133822d6c76"
+  },
+  {
+    "id": "iris1/8bff0cf5346412c5bf5a",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/8bff0cf5346412c5bf5a"
+  },
+  {
+    "id": "iris1/a4e5e3c5965ca2862ce6",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/a4e5e3c5965ca2862ce6"
+  },
+  {
+    "id": "iris1/76b422ee0a0e6d9a3167",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/76b422ee0a0e6d9a3167"
+  },
+  {
+    "id": "iris1/0ae1e069fdc5da7303a4",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/0ae1e069fdc5da7303a4"
+  },
+  {
+    "id": "iris1/7984ce54dc987a996082",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/7984ce54dc987a996082"
+  },
+  {
+    "id": "iris1/7f3bf791c79ad5fb3729",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/7f3bf791c79ad5fb3729"
+  },
+  {
+    "id": "iris1/1ce09cf133b592a84847",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/1ce09cf133b592a84847"
+  },
+  {
+    "id": "iris1/20a0ade2e0f00913efe3",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Hey Siri.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/20a0ade2e0f00913efe3"
+  },
+  {
+    "id": "iris1/bffba44f844c60b5c362",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Hey Irish.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/bffba44f844c60b5c362"
+  },
+  {
+    "id": "iris1/93ad06c666490be775a5",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Iris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/93ad06c666490be775a5"
+  },
+  {
+    "id": "iris1/3939b681a062f6da5993",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Hey.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/3939b681a062f6da5993"
+  },
+  {
+    "id": "iris1/7923f904e304db7dc6d4",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Hey Jarvis.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/7923f904e304db7dc6d4"
+  },
+  {
+    "id": "iris1/573cdf4ab4e528a3e05f",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Hey Alice.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/573cdf4ab4e528a3e05f"
+  },
+  {
+    "id": "iris1/d1bfb4190ae30891e227",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Hey Paris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/d1bfb4190ae30891e227"
+  },
+  {
+    "id": "iris1/6b5698dfa68406565c03",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "They hire us.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/6b5698dfa68406565c03"
+  },
+  {
+    "id": "iris1/7f28ed418f60049915d1",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "A virus.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/7f28ed418f60049915d1"
+  },
+  {
+    "id": "iris1/76011b6092a2a4a564b5",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Here it is.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/76011b6092a2a4a564b5"
+  },
+  {
+    "id": "iris1/851eadcace6b76bc82b0",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Good morning.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/851eadcace6b76bc82b0"
+  },
+  {
+    "id": "iris1/8af18d6e53e01009efe0",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Are you ready?",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/8af18d6e53e01009efe0"
+  },
+  {
+    "id": "iris1/5e2db38b531bcf1746a1",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Play Mystery Planet.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/5e2db38b531bcf1746a1"
+  },
+  {
+    "id": "iris1/a96bb1f6418cad22da2c",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Turn on the attic light.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/a96bb1f6418cad22da2c"
+  },
+  {
+    "id": "iris1/91c9c730595f04bda413",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Set brightness to 140 percent.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/91c9c730595f04bda413"
+  },
+  {
+    "id": "iris1/3e3d2e98092328c3a025",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Set a timer for minus five seconds.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/3e3d2e98092328c3a025"
+  },
+  {
+    "id": "iris1/891ac97bb1382e52f388",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Call a stranger.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/891ac97bb1382e52f388"
+  },
+  {
+    "id": "iris1/3463e42bd706f16a21b8",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "Set a timer.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/3463e42bd706f16a21b8"
+  },
+  {
+    "id": "iris1/9b060df2da65ae43727e",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "turn off the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_OFF",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/9b060df2da65ae43727e"
+  },
+  {
+    "id": "iris1/39a1d3e9cc60a612150e",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "turn on the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_ON",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/39a1d3e9cc60a612150e"
+  },
+  {
+    "id": "iris1/0a7548558ee6b4c8cd40",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "play Enemy by imagine dragons",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy",
+        "artist_id": "artist.imagine_dragons"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/0a7548558ee6b4c8cd40"
+  },
+  {
+    "id": "iris1/71ec6cfaf6ce0c1a7c54",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "play Basics by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/71ec6cfaf6ce0c1a7c54"
+  },
+  {
+    "id": "iris1/3e004e11a9c680bff07b",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "play Brave by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/3e004e11a9c680bff07b"
+  },
+  {
+    "id": "iris1/c18cc337334b44b36727",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "play Gone by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/c18cc337334b44b36727"
+  },
+  {
+    "id": "iris1/5b2164b05767c9eafbd4",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "play Queen of Hearts by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/5b2164b05767c9eafbd4"
+  },
+  {
+    "id": "iris1/e8e9833b27c1a5dd77c0",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "play Talk that Talk by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/e8e9833b27c1a5dd77c0"
+  },
+  {
+    "id": "iris1/59a3b98949795e356cfb",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "play Trouble by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/59a3b98949795e356cfb"
+  },
+  {
+    "id": "iris1/0378174866d4ca257922",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "play When We Were Kids by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/0378174866d4ca257922"
+  },
+  {
+    "id": "iris1/d983b9c295970db38071",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "play Basics",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/d983b9c295970db38071"
+  },
+  {
+    "id": "iris1/4334a9ea8b56b122b9f2",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "play Brave",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/4334a9ea8b56b122b9f2"
+  },
+  {
+    "id": "iris1/a938a135dd5f520e7a11",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "play Enemy",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/a938a135dd5f520e7a11"
+  },
+  {
+    "id": "iris1/88e226baffe934db7b80",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "play Gone",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/88e226baffe934db7b80"
+  },
+  {
+    "id": "iris1/f923a9f64fe6d0409c6b",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "play Queen of Hearts",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/f923a9f64fe6d0409c6b"
+  },
+  {
+    "id": "iris1/1ed3368a087efc975074",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "play Talk that Talk",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/1ed3368a087efc975074"
+  },
+  {
+    "id": "iris1/92af96b34538eb32a617",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "play Trouble",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/92af96b34538eb32a617"
+  },
+  {
+    "id": "iris1/77f2309ee6f925a6f308",
+    "voice_id": "cal-ph",
+    "speaker": "cal-ph",
+    "split": "calibration",
+    "text": "play When We Were Kids",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/77f2309ee6f925a6f308"
+  },
+  {
+    "id": "iris1/3cd8206546a97241d085",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/3cd8206546a97241d085"
+  },
+  {
+    "id": "iris1/e42c21dee964bafa7905",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/e42c21dee964bafa7905"
+  },
+  {
+    "id": "iris1/3451a796d834c380677b",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/3451a796d834c380677b"
+  },
+  {
+    "id": "iris1/4d2177a8e5024c4c954d",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/4d2177a8e5024c4c954d"
+  },
+  {
+    "id": "iris1/1689dd26bbe4cb36514d",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/1689dd26bbe4cb36514d"
+  },
+  {
+    "id": "iris1/705124ec8aa34277a3b4",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/705124ec8aa34277a3b4"
+  },
+  {
+    "id": "iris1/9c4b5391e4a2d03a325a",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/9c4b5391e4a2d03a325a"
+  },
+  {
+    "id": "iris1/44cff1563a974012871c",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/44cff1563a974012871c"
+  },
+  {
+    "id": "iris1/7523ec6d44e99d1f79b3",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/7523ec6d44e99d1f79b3"
+  },
+  {
+    "id": "iris1/2c243f20a52d4feb4428",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/2c243f20a52d4feb4428"
+  },
+  {
+    "id": "iris1/e57afd0953f199cfe470",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/e57afd0953f199cfe470"
+  },
+  {
+    "id": "iris1/76f1387e7c2eaecc6f6b",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/76f1387e7c2eaecc6f6b"
+  },
+  {
+    "id": "iris1/b0d577ccb75a2bde9b13",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/b0d577ccb75a2bde9b13"
+  },
+  {
+    "id": "iris1/c1aa20ddbf531a719834",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/c1aa20ddbf531a719834"
+  },
+  {
+    "id": "iris1/1a425fb11eb40ca8b399",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/1a425fb11eb40ca8b399"
+  },
+  {
+    "id": "iris1/1335d2b2c205d33b5de4",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/1335d2b2c205d33b5de4"
+  },
+  {
+    "id": "iris1/1d0deeed53645be3f254",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/1d0deeed53645be3f254"
+  },
+  {
+    "id": "iris1/06426b7229b09a267cbb",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/06426b7229b09a267cbb"
+  },
+  {
+    "id": "iris1/4e7a6e1dd4cdb6d05bbf",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/4e7a6e1dd4cdb6d05bbf"
+  },
+  {
+    "id": "iris1/6f29fad0e1bd7caffd63",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/6f29fad0e1bd7caffd63"
+  },
+  {
+    "id": "iris1/79653b510687dec126e9",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/79653b510687dec126e9"
+  },
+  {
+    "id": "iris1/590dec795306bb5f1228",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/590dec795306bb5f1228"
+  },
+  {
+    "id": "iris1/5f2c252786aa1c38fe3f",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/5f2c252786aa1c38fe3f"
+  },
+  {
+    "id": "iris1/6757b637f03db593bcb7",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/6757b637f03db593bcb7"
+  },
+  {
+    "id": "iris1/04dd427b9328a768e7e2",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Siri.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/04dd427b9328a768e7e2"
+  },
+  {
+    "id": "iris1/7349eb37b616681ccb1e",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Irish.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/7349eb37b616681ccb1e"
+  },
+  {
+    "id": "iris1/81b9cc23f95edca3030f",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Iris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/81b9cc23f95edca3030f"
+  },
+  {
+    "id": "iris1/1aa18351cd26de5b275d",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/1aa18351cd26de5b275d"
+  },
+  {
+    "id": "iris1/91f4b1aff298dc7037e5",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Jarvis.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/91f4b1aff298dc7037e5"
+  },
+  {
+    "id": "iris1/693875bfb408a04b2b86",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Alice.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/693875bfb408a04b2b86"
+  },
+  {
+    "id": "iris1/144ed77b511b380c7ce4",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Hey Paris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/144ed77b511b380c7ce4"
+  },
+  {
+    "id": "iris1/e2bbc8c1b428abb02e33",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "They hire us.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/e2bbc8c1b428abb02e33"
+  },
+  {
+    "id": "iris1/2f20e900af0cd3524fd9",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "A virus.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/2f20e900af0cd3524fd9"
+  },
+  {
+    "id": "iris1/f00b90375bedd7f1b75b",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Here it is.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/f00b90375bedd7f1b75b"
+  },
+  {
+    "id": "iris1/7134850c3f749946c1f9",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Good morning.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/7134850c3f749946c1f9"
+  },
+  {
+    "id": "iris1/c99ac84653fd13683689",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Are you ready?",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/c99ac84653fd13683689"
+  },
+  {
+    "id": "iris1/77fc5fe9a78921aab2f1",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Play Mystery Planet.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/77fc5fe9a78921aab2f1"
+  },
+  {
+    "id": "iris1/22f43d4370cb4f8c4eb2",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Turn on the attic light.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/22f43d4370cb4f8c4eb2"
+  },
+  {
+    "id": "iris1/f497c94f0275cf9bd0d3",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Set brightness to 140 percent.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/f497c94f0275cf9bd0d3"
+  },
+  {
+    "id": "iris1/b8aa229687e127fa9b7a",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Set a timer for minus five seconds.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/b8aa229687e127fa9b7a"
+  },
+  {
+    "id": "iris1/65201828c9f3289d9e57",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Call a stranger.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/65201828c9f3289d9e57"
+  },
+  {
+    "id": "iris1/93866ceb331606124365",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "Set a timer.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/93866ceb331606124365"
+  },
+  {
+    "id": "iris1/4896e2f7442a1d058469",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "turn off the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_OFF",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/4896e2f7442a1d058469"
+  },
+  {
+    "id": "iris1/9a0f07d05cdf0e43c087",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "turn on the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_ON",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/9a0f07d05cdf0e43c087"
+  },
+  {
+    "id": "iris1/a484adb7e9d578844571",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "play Enemy by imagine dragons",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy",
+        "artist_id": "artist.imagine_dragons"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/a484adb7e9d578844571"
+  },
+  {
+    "id": "iris1/fe61df5c043b9d03cdd1",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "play Basics by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/fe61df5c043b9d03cdd1"
+  },
+  {
+    "id": "iris1/fb03d3b8ca37f2ec5019",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "play Brave by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/fb03d3b8ca37f2ec5019"
+  },
+  {
+    "id": "iris1/c17388754758a2d9e5c7",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "play Gone by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/c17388754758a2d9e5c7"
+  },
+  {
+    "id": "iris1/4db1e3d31f799dc5646b",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "play Queen of Hearts by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/4db1e3d31f799dc5646b"
+  },
+  {
+    "id": "iris1/e012bf58f35dbbc9e370",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "play Talk that Talk by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/e012bf58f35dbbc9e370"
+  },
+  {
+    "id": "iris1/e22374eb8a881c39b272",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "play Trouble by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/e22374eb8a881c39b272"
+  },
+  {
+    "id": "iris1/2e9c82ebf604a5416a50",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "play When We Were Kids by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/2e9c82ebf604a5416a50"
+  },
+  {
+    "id": "iris1/fa4d362d316b8723cdaa",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "play Basics",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/fa4d362d316b8723cdaa"
+  },
+  {
+    "id": "iris1/d7cdb84525f93fd3d6cb",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "play Brave",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/d7cdb84525f93fd3d6cb"
+  },
+  {
+    "id": "iris1/2b47734b8ed64f60e5b8",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "play Enemy",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/2b47734b8ed64f60e5b8"
+  },
+  {
+    "id": "iris1/d7ff9d4f903b00f71398",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "play Gone",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/d7ff9d4f903b00f71398"
+  },
+  {
+    "id": "iris1/cdb010f8a94aae33bce2",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "play Queen of Hearts",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/cdb010f8a94aae33bce2"
+  },
+  {
+    "id": "iris1/b2546802c5fa546ad7ee",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "play Talk that Talk",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/b2546802c5fa546ad7ee"
+  },
+  {
+    "id": "iris1/6ab424315bec56f25177",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "play Trouble",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/6ab424315bec56f25177"
+  },
+  {
+    "id": "iris1/b0d0b8ec845b4eb7b52c",
+    "voice_id": "train-in",
+    "speaker": "train-in",
+    "split": "train",
+    "text": "play When We Were Kids",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/b0d0b8ec845b4eb7b52c"
+  },
+  {
+    "id": "iris1/90dd89d1817d4f9194ea",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/90dd89d1817d4f9194ea"
+  },
+  {
+    "id": "iris1/ff27193ed160fcb71203",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/ff27193ed160fcb71203"
+  },
+  {
+    "id": "iris1/60d71daa11ad3b8de60e",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/60d71daa11ad3b8de60e"
+  },
+  {
+    "id": "iris1/731fa73de61554fca11f",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/731fa73de61554fca11f"
+  },
+  {
+    "id": "iris1/18614223444bcec25b70",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/18614223444bcec25b70"
+  },
+  {
+    "id": "iris1/6989e01eb11a7432e169",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/6989e01eb11a7432e169"
+  },
+  {
+    "id": "iris1/c22bae0c7df05a3faf93",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/c22bae0c7df05a3faf93"
+  },
+  {
+    "id": "iris1/3ad77b68c60cad492c5f",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/3ad77b68c60cad492c5f"
+  },
+  {
+    "id": "iris1/4b0493c62d94aae0a104",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/4b0493c62d94aae0a104"
+  },
+  {
+    "id": "iris1/c90e30e8d08e17be7a91",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/c90e30e8d08e17be7a91"
+  },
+  {
+    "id": "iris1/1cbdf6c1cd006368538f",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/1cbdf6c1cd006368538f"
+  },
+  {
+    "id": "iris1/0daf036c3461062cf504",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/0daf036c3461062cf504"
+  },
+  {
+    "id": "iris1/615a471cdd23fd7627f4",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/615a471cdd23fd7627f4"
+  },
+  {
+    "id": "iris1/195198d6310bb71c2ff8",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/195198d6310bb71c2ff8"
+  },
+  {
+    "id": "iris1/d3dcb92c6f95620792a6",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/d3dcb92c6f95620792a6"
+  },
+  {
+    "id": "iris1/7eda1259e9effe13f149",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/7eda1259e9effe13f149"
+  },
+  {
+    "id": "iris1/496232b3375a655d6546",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/496232b3375a655d6546"
+  },
+  {
+    "id": "iris1/89db5c741830d9cc00d6",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/89db5c741830d9cc00d6"
+  },
+  {
+    "id": "iris1/60d06a47d92b1e1825a2",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/60d06a47d92b1e1825a2"
+  },
+  {
+    "id": "iris1/4f59412695ea570a5263",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/4f59412695ea570a5263"
+  },
+  {
+    "id": "iris1/be4399bbfb11076e5203",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/be4399bbfb11076e5203"
+  },
+  {
+    "id": "iris1/9834d40ecd0258d05e85",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/9834d40ecd0258d05e85"
+  },
+  {
+    "id": "iris1/ca117c59c27aebd8f94a",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/ca117c59c27aebd8f94a"
+  },
+  {
+    "id": "iris1/ed3cbfa9c0a9c6b934b8",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/ed3cbfa9c0a9c6b934b8"
+  },
+  {
+    "id": "iris1/449dfde44113895d3659",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Siri.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/449dfde44113895d3659"
+  },
+  {
+    "id": "iris1/dfe6afad11679158bc90",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Irish.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/dfe6afad11679158bc90"
+  },
+  {
+    "id": "iris1/3c6da5d1088cb256794b",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Iris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/3c6da5d1088cb256794b"
+  },
+  {
+    "id": "iris1/4593e660b6a0246a3431",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/4593e660b6a0246a3431"
+  },
+  {
+    "id": "iris1/504f139a59d4ff8226ce",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Jarvis.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/504f139a59d4ff8226ce"
+  },
+  {
+    "id": "iris1/afc9971670fb2a1d8841",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Alice.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/afc9971670fb2a1d8841"
+  },
+  {
+    "id": "iris1/da6577dfeba4314b809d",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Hey Paris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/da6577dfeba4314b809d"
+  },
+  {
+    "id": "iris1/88a6ab3223043a4d30e5",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "They hire us.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/88a6ab3223043a4d30e5"
+  },
+  {
+    "id": "iris1/f094b16db2b214dbdc70",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "A virus.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/f094b16db2b214dbdc70"
+  },
+  {
+    "id": "iris1/6ef68027d87b00d7076e",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Here it is.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/6ef68027d87b00d7076e"
+  },
+  {
+    "id": "iris1/c2eb19178ffc8bae6f9a",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Good morning.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/c2eb19178ffc8bae6f9a"
+  },
+  {
+    "id": "iris1/3915cff0e897c1914240",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Are you ready?",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/3915cff0e897c1914240"
+  },
+  {
+    "id": "iris1/db739e8615f0ffb886d6",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Play Mystery Planet.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/db739e8615f0ffb886d6"
+  },
+  {
+    "id": "iris1/1419423a22d52bd3d7fd",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Turn on the attic light.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/1419423a22d52bd3d7fd"
+  },
+  {
+    "id": "iris1/f1b254f495808034dfda",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Set brightness to 140 percent.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/f1b254f495808034dfda"
+  },
+  {
+    "id": "iris1/ab7d7dab09d0a760a556",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Set a timer for minus five seconds.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/ab7d7dab09d0a760a556"
+  },
+  {
+    "id": "iris1/50f5224cf345759a3a43",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Call a stranger.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/50f5224cf345759a3a43"
+  },
+  {
+    "id": "iris1/e2b1a3b20cea02c0526f",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "Set a timer.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/e2b1a3b20cea02c0526f"
+  },
+  {
+    "id": "iris1/c0f8fddb1091dce5315a",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "turn off the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_OFF",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/c0f8fddb1091dce5315a"
+  },
+  {
+    "id": "iris1/9b9338e3247bedde0200",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "turn on the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_ON",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/9b9338e3247bedde0200"
+  },
+  {
+    "id": "iris1/6458a9a47987310c6336",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "play Enemy by imagine dragons",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy",
+        "artist_id": "artist.imagine_dragons"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/6458a9a47987310c6336"
+  },
+  {
+    "id": "iris1/e60baea58a4e44a48532",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "play Basics by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/e60baea58a4e44a48532"
+  },
+  {
+    "id": "iris1/dc2e76aafe3126066f47",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "play Brave by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/dc2e76aafe3126066f47"
+  },
+  {
+    "id": "iris1/871b4fb49a24188bd615",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "play Gone by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/871b4fb49a24188bd615"
+  },
+  {
+    "id": "iris1/76cfaf23d2d91fab6d47",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "play Queen of Hearts by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/76cfaf23d2d91fab6d47"
+  },
+  {
+    "id": "iris1/8474ebbb82094d4e1f46",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "play Talk that Talk by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/8474ebbb82094d4e1f46"
+  },
+  {
+    "id": "iris1/ac7197e00d48f732fb71",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "play Trouble by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/ac7197e00d48f732fb71"
+  },
+  {
+    "id": "iris1/853a93a275bec6d3102f",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "play When We Were Kids by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/853a93a275bec6d3102f"
+  },
+  {
+    "id": "iris1/4fbcca0fe39cd9d30ba9",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "play Basics",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/4fbcca0fe39cd9d30ba9"
+  },
+  {
+    "id": "iris1/8ae0c7cf4f682f5775de",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "play Brave",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/8ae0c7cf4f682f5775de"
+  },
+  {
+    "id": "iris1/5fa73f3e175c75cc4c5b",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "play Enemy",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/5fa73f3e175c75cc4c5b"
+  },
+  {
+    "id": "iris1/cdce597d9821dfd0c19e",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "play Gone",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/cdce597d9821dfd0c19e"
+  },
+  {
+    "id": "iris1/236a52e69652222b9036",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "play Queen of Hearts",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/236a52e69652222b9036"
+  },
+  {
+    "id": "iris1/06c3377d7b75624a38f8",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "play Talk that Talk",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/06c3377d7b75624a38f8"
+  },
+  {
+    "id": "iris1/bfee8e281f3d5629ba1f",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "play Trouble",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/bfee8e281f3d5629ba1f"
+  },
+  {
+    "id": "iris1/182e1251574ab58b02c2",
+    "voice_id": "train-scot",
+    "speaker": "train-scot",
+    "split": "train",
+    "text": "play When We Were Kids",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/182e1251574ab58b02c2"
+  },
+  {
+    "id": "iris1/208b0361645d056c3da9",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/208b0361645d056c3da9"
+  },
+  {
+    "id": "iris1/432cdab7acb5ae18ec67",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/432cdab7acb5ae18ec67"
+  },
+  {
+    "id": "iris1/2cc6bf8c3eb62317d2ba",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/2cc6bf8c3eb62317d2ba"
+  },
+  {
+    "id": "iris1/3531794be87017411de0",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/3531794be87017411de0"
+  },
+  {
+    "id": "iris1/ea2dde71ce7af1674e33",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/ea2dde71ce7af1674e33"
+  },
+  {
+    "id": "iris1/18492c0bb16b97ce0152",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/18492c0bb16b97ce0152"
+  },
+  {
+    "id": "iris1/3daf1e2ae07b1ab3c5e8",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/3daf1e2ae07b1ab3c5e8"
+  },
+  {
+    "id": "iris1/bd5488fe358a81c0f817",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/bd5488fe358a81c0f817"
+  },
+  {
+    "id": "iris1/4d23cec11ec5b352d35d",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Hey Siri.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/4d23cec11ec5b352d35d"
+  },
+  {
+    "id": "iris1/ff96460f4155d1f55dd0",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Hey Irish.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/ff96460f4155d1f55dd0"
+  },
+  {
+    "id": "iris1/eb6e903c534c3296e9d9",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Iris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/eb6e903c534c3296e9d9"
+  },
+  {
+    "id": "iris1/3053bed6688436786f92",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Hey.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/3053bed6688436786f92"
+  },
+  {
+    "id": "iris1/8c0894775aadd7896e37",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Hey Jarvis.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/8c0894775aadd7896e37"
+  },
+  {
+    "id": "iris1/7d0252bebd800fd870fd",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Hey Alice.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/7d0252bebd800fd870fd"
+  },
+  {
+    "id": "iris1/f9c0293c0b7179cd5392",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Hey Paris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/f9c0293c0b7179cd5392"
+  },
+  {
+    "id": "iris1/a06d685e4f59755e1986",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "They hire us.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/a06d685e4f59755e1986"
+  },
+  {
+    "id": "iris1/f3b7f6e6a7c2c1f6b892",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "A virus.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/f3b7f6e6a7c2c1f6b892"
+  },
+  {
+    "id": "iris1/3a1bb6f5f0342b274d41",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Here it is.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/3a1bb6f5f0342b274d41"
+  },
+  {
+    "id": "iris1/9ea984ac62023ab261a3",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Good morning.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/9ea984ac62023ab261a3"
+  },
+  {
+    "id": "iris1/0d075c96d7ef28f7a34b",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Are you ready?",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/0d075c96d7ef28f7a34b"
+  },
+  {
+    "id": "iris1/921c87afb173e04472b8",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Play Mystery Planet.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/921c87afb173e04472b8"
+  },
+  {
+    "id": "iris1/24ebc2085d2a89dd8d28",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Turn on the attic light.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/24ebc2085d2a89dd8d28"
+  },
+  {
+    "id": "iris1/00abefe2525552055164",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Set brightness to 140 percent.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/00abefe2525552055164"
+  },
+  {
+    "id": "iris1/3468ecd3731951839002",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Set a timer for minus five seconds.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/3468ecd3731951839002"
+  },
+  {
+    "id": "iris1/9745267155a581ee5e33",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Call a stranger.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/9745267155a581ee5e33"
+  },
+  {
+    "id": "iris1/81bb2231519903a93e2e",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "Set a timer.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/81bb2231519903a93e2e"
+  },
+  {
+    "id": "iris1/5b6936c05d99ad0f1c57",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "turn off the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_OFF",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/5b6936c05d99ad0f1c57"
+  },
+  {
+    "id": "iris1/e6f332af2f3d72da2793",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "turn on the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_ON",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/e6f332af2f3d72da2793"
+  },
+  {
+    "id": "iris1/c76da9c8fd40dcd0d9bd",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "play Enemy by imagine dragons",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy",
+        "artist_id": "artist.imagine_dragons"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/c76da9c8fd40dcd0d9bd"
+  },
+  {
+    "id": "iris1/7c94f357bcf21c5ebcef",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "play Basics by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/7c94f357bcf21c5ebcef"
+  },
+  {
+    "id": "iris1/e8707fc99f7189a21adf",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "play Brave by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/e8707fc99f7189a21adf"
+  },
+  {
+    "id": "iris1/7c3dd473ae9fe344bff0",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "play Gone by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/7c3dd473ae9fe344bff0"
+  },
+  {
+    "id": "iris1/bba7ec8f922829624b58",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "play Queen of Hearts by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/bba7ec8f922829624b58"
+  },
+  {
+    "id": "iris1/40aace8b8d8c21d1e190",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "play Talk that Talk by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/40aace8b8d8c21d1e190"
+  },
+  {
+    "id": "iris1/9d450ebc0cbe63c18f99",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "play Trouble by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/9d450ebc0cbe63c18f99"
+  },
+  {
+    "id": "iris1/3c6f316b8099ccfb8ac5",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "play When We Were Kids by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/3c6f316b8099ccfb8ac5"
+  },
+  {
+    "id": "iris1/c5c4b3fdacb942141b91",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "play Basics",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/c5c4b3fdacb942141b91"
+  },
+  {
+    "id": "iris1/4fb5953d286719b5e03d",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "play Brave",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/4fb5953d286719b5e03d"
+  },
+  {
+    "id": "iris1/971a9ed8973998f601b0",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "play Enemy",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/971a9ed8973998f601b0"
+  },
+  {
+    "id": "iris1/d0768d2a03cb9fd1da8c",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "play Gone",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/d0768d2a03cb9fd1da8c"
+  },
+  {
+    "id": "iris1/d78a1459e5bdade96181",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "play Queen of Hearts",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/d78a1459e5bdade96181"
+  },
+  {
+    "id": "iris1/93839716f82bbe3e7a6a",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "play Talk that Talk",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/93839716f82bbe3e7a6a"
+  },
+  {
+    "id": "iris1/290543689259652b1607",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "play Trouble",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/290543689259652b1607"
+  },
+  {
+    "id": "iris1/20da3ca44c85c9003b7f",
+    "voice_id": "test-ph",
+    "speaker": "test-ph",
+    "split": "test",
+    "text": "play When We Were Kids",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/20da3ca44c85c9003b7f"
+  },
+  {
+    "id": "iris1/f1e25dca1d71cb771876",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/f1e25dca1d71cb771876"
+  },
+  {
+    "id": "iris1/47f0149205050da56a92",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/47f0149205050da56a92"
+  },
+  {
+    "id": "iris1/fb1dfe618f985c144626",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/fb1dfe618f985c144626"
+  },
+  {
+    "id": "iris1/e9fe98812f9eef89848a",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/e9fe98812f9eef89848a"
+  },
+  {
+    "id": "iris1/97e207c8b25913376ade",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/97e207c8b25913376ade"
+  },
+  {
+    "id": "iris1/a5c65d3a24752b201aef",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/a5c65d3a24752b201aef"
+  },
+  {
+    "id": "iris1/b119032624bd71cdfd3e",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/b119032624bd71cdfd3e"
+  },
+  {
+    "id": "iris1/bce9d36a15f06c4a47b9",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Hey Iris.",
+    "wake_positive": true,
+    "command": null,
+    "role": "wake",
+    "pair_id": "iris1/bce9d36a15f06c4a47b9"
+  },
+  {
+    "id": "iris1/cc5bb032ef9dd993c178",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Hey Siri.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/cc5bb032ef9dd993c178"
+  },
+  {
+    "id": "iris1/bb7b54a857743544d9ac",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Hey Irish.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/bb7b54a857743544d9ac"
+  },
+  {
+    "id": "iris1/a4e3060a5c532195a186",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Iris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/a4e3060a5c532195a186"
+  },
+  {
+    "id": "iris1/15c2f246310f9717d940",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Hey.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/15c2f246310f9717d940"
+  },
+  {
+    "id": "iris1/ad6322b35f872d59f06f",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Hey Jarvis.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/ad6322b35f872d59f06f"
+  },
+  {
+    "id": "iris1/d3e3e27c8b219da96b1d",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Hey Alice.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/d3e3e27c8b219da96b1d"
+  },
+  {
+    "id": "iris1/58b28bbf84edcac9cf2a",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Hey Paris.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/58b28bbf84edcac9cf2a"
+  },
+  {
+    "id": "iris1/7cf7de8be3fbc4621601",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "They hire us.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/7cf7de8be3fbc4621601"
+  },
+  {
+    "id": "iris1/f10bef3c90562d417f74",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "A virus.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/f10bef3c90562d417f74"
+  },
+  {
+    "id": "iris1/ae8f2e98bd62e2c2485a",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Here it is.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/ae8f2e98bd62e2c2485a"
+  },
+  {
+    "id": "iris1/d94b0bef6d41d23c5016",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Good morning.",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/d94b0bef6d41d23c5016"
+  },
+  {
+    "id": "iris1/e9ced40eb0c949d16328",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Are you ready?",
+    "wake_positive": false,
+    "command": null,
+    "role": "wake_negative",
+    "pair_id": "iris1/e9ced40eb0c949d16328"
+  },
+  {
+    "id": "iris1/c1cded36124f7bcb3600",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Play Mystery Planet.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/c1cded36124f7bcb3600"
+  },
+  {
+    "id": "iris1/bde799c82d9fa8e3f92a",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Turn on the attic light.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/bde799c82d9fa8e3f92a"
+  },
+  {
+    "id": "iris1/e591f5c98d9f1c58e845",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Set brightness to 140 percent.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/e591f5c98d9f1c58e845"
+  },
+  {
+    "id": "iris1/409193a5f201c59231e3",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Set a timer for minus five seconds.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/409193a5f201c59231e3"
+  },
+  {
+    "id": "iris1/886c50921227f4ccaf98",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Call a stranger.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/886c50921227f4ccaf98"
+  },
+  {
+    "id": "iris1/31ffef7bc4168e2e5918",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "Set a timer.",
+    "wake_positive": false,
+    "command": null,
+    "role": "command",
+    "pair_id": "iris1/31ffef7bc4168e2e5918"
+  },
+  {
+    "id": "iris1/02a312d7b0c24931dc83",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "turn off the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_OFF",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/02a312d7b0c24931dc83"
+  },
+  {
+    "id": "iris1/9d4e1f46541561209da8",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "turn on the ceiling light",
+    "wake_positive": false,
+    "command": {
+      "intent": "LIGHT_ON",
+      "slots": {
+        "light_id": "light.ceiling"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/9d4e1f46541561209da8"
+  },
+  {
+    "id": "iris1/700b7e955b3cae5ceb64",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "play Enemy by imagine dragons",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy",
+        "artist_id": "artist.imagine_dragons"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/700b7e955b3cae5ceb64"
+  },
+  {
+    "id": "iris1/ba9aacadf29b6cf79947",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "play Basics by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/ba9aacadf29b6cf79947"
+  },
+  {
+    "id": "iris1/f9fd5ddf97021498ad97",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "play Brave by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/f9fd5ddf97021498ad97"
+  },
+  {
+    "id": "iris1/ebe454460be2c0bd9796",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "play Gone by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/ebe454460be2c0bd9796"
+  },
+  {
+    "id": "iris1/4193c53afd363902877d",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "play Queen of Hearts by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/4193c53afd363902877d"
+  },
+  {
+    "id": "iris1/a3e3f3c734e92160be06",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "play Talk that Talk by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/a3e3f3c734e92160be06"
+  },
+  {
+    "id": "iris1/e08bd8268ca875c833d9",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "play Trouble by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/e08bd8268ca875c833d9"
+  },
+  {
+    "id": "iris1/d71aae66c8fc8d49e19f",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "play When We Were Kids by twice",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids",
+        "artist_id": "artist.twice"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/d71aae66c8fc8d49e19f"
+  },
+  {
+    "id": "iris1/d6b9e530153e7a42c44c",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "play Basics",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.basics"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/d6b9e530153e7a42c44c"
+  },
+  {
+    "id": "iris1/f370674c9b3ad18131cd",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "play Brave",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.brave"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/f370674c9b3ad18131cd"
+  },
+  {
+    "id": "iris1/fb331b3d93277a912f8c",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "play Enemy",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.enemy"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/fb331b3d93277a912f8c"
+  },
+  {
+    "id": "iris1/b5387f8dcc896a79f8b5",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "play Gone",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.gone"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/b5387f8dcc896a79f8b5"
+  },
+  {
+    "id": "iris1/7980322a59f1b2108524",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "play Queen of Hearts",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.queen_of_hearts"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/7980322a59f1b2108524"
+  },
+  {
+    "id": "iris1/2421747adce790450878",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "play Talk that Talk",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.talk_that_talk"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/2421747adce790450878"
+  },
+  {
+    "id": "iris1/48fcae42d2601e0ab320",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "play Trouble",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.trouble"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/48fcae42d2601e0ab320"
+  },
+  {
+    "id": "iris1/6a8b3863868dd34cd3da",
+    "voice_id": "test-us",
+    "speaker": "test-us",
+    "split": "test",
+    "text": "play When We Were Kids",
+    "wake_positive": false,
+    "command": {
+      "intent": "PLAY_MUSIC",
+      "slots": {
+        "song_id": "song.when_we_were_kids"
+      }
+    },
+    "role": "command",
+    "pair_id": "iris1/6a8b3863868dd34cd3da"
+  }
+]

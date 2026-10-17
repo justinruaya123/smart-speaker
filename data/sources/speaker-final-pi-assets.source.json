@@ -1,0 +1,139 @@
+{
+  "files": [
+    {
+      "bytes": 222389,
+      "component": "cffi",
+      "license": "See pinned runtime THIRD_PARTY_NOTICES.txt",
+      "path": ".cache/phrase-contract-v1/dependencies/cp312-aarch64/cffi-2.1.1-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl",
+      "sha256": "68e62fe11f30d5ca8289242866f0a5291402d8529ca2178ab8afc5c9694ae890",
+      "url": "https://files.pythonhosted.org/packages/44/de/f98430906df1545ffde0d543dd124a7a439bc2cd32b36b9c53f805df7333/cffi-2.1.1-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl",
+      "version": "2.1.1"
+    },
+    {
+      "bytes": 65638,
+      "component": "einops",
+      "license": "See pinned runtime THIRD_PARTY_NOTICES.txt",
+      "path": ".cache/phrase-contract-v1/dependencies/cp312-aarch64/einops-0.8.2-py3-none-any.whl",
+      "sha256": "54058201ac7087911181bfec4af6091bb59380360f069276601256a76af08193",
+      "url": "https://files.pythonhosted.org/packages/2a/09/f8d8f8f31e4483c10a906437b4ce31bdf3d6d417b73fe33f1a8b59e34228/einops-0.8.2-py3-none-any.whl",
+      "version": "0.8.2"
+    },
+    {
+      "bytes": 26661,
+      "component": "flatbuffers",
+      "license": "See pinned runtime THIRD_PARTY_NOTICES.txt",
+      "path": ".cache/phrase-contract-v1/dependencies/cp312-aarch64/flatbuffers-25.12.19-py2.py3-none-any.whl",
+      "sha256": "7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4",
+      "url": "https://files.pythonhosted.org/packages/e8/2d/d2a548598be01649e2d46231d151a6c56d10b964d94043a335ae56ea2d92/flatbuffers-25.12.19-py2.py3-none-any.whl",
+      "version": "25.12.19"
+    },
+    {
+      "bytes": 15687872,
+      "component": "numpy",
+      "license": "See pinned runtime THIRD_PARTY_NOTICES.txt",
+      "path": ".cache/phrase-contract-v1/dependencies/cp312-aarch64/numpy-2.5.3-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+      "sha256": "76c2c1e6bfa5c84adc6434dfbf013aa92096a7985221762c8f11fedfd20fff58",
+      "url": "https://files.pythonhosted.org/packages/f1/32/84146fc020ad3c25f805f70ab60da46fe3c540a21369754a7e4369754b6f/numpy-2.5.3-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+      "version": "2.5.3"
+    },
+    {
+      "bytes": 21345202,
+      "component": "onnxruntime",
+      "license": "See pinned runtime THIRD_PARTY_NOTICES.txt",
+      "path": ".cache/phrase-contract-v1/dependencies/cp312-aarch64/onnxruntime-1.30.0-cp312-cp312-manylinux_2_28_aarch64.whl",
+      "sha256": "6c32a000d5139a38ba9349030b0032e3331acb559d596b22738d9d2b343a2b83",
+      "url": "https://files.pythonhosted.org/packages/16/bd/cbc5b8f91963689fdd622f463508c01d0aa95d3f944747b1e0b1eb2160b8/onnxruntime-1.30.0-cp312-cp312-manylinux_2_28_aarch64.whl",
+      "version": "1.30.0"
+    },
+    {
+      "bytes": 129956,
+      "component": "packaging",
+      "license": "See pinned runtime THIRD_PARTY_NOTICES.txt",
+      "path": ".cache/phrase-contract-v1/dependencies/cp312-aarch64/packaging-26.3-py3-none-any.whl",
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+      "url": "https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl",
+      "version": "26.3"
+    },
+    {
+      "bytes": 344226,
+      "component": "protobuf",
+      "license": "See pinned runtime THIRD_PARTY_NOTICES.txt",
+      "path": ".cache/phrase-contract-v1/dependencies/cp312-aarch64/protobuf-7.36.1-cp310-abi3-manylinux2014_aarch64.whl",
+      "sha256": "43d3d37b1eb24c113b9b7d02008cac44e423f00b611b7781ae998d7623972969",
+      "url": "https://files.pythonhosted.org/packages/6e/08/9f9548793c771095245c0eeaf0c84b76b16a5ef26158043d456f551344a0/protobuf-7.36.1-cp310-abi3-manylinux2014_aarch64.whl",
+      "version": "7.36.1"
+    },
+    {
+      "bytes": 48172,
+      "component": "pycparser",
+      "license": "See pinned runtime THIRD_PARTY_NOTICES.txt",
+      "path": ".cache/phrase-contract-v1/dependencies/cp312-aarch64/pycparser-3.0-py3-none-any.whl",
+      "sha256": "b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992",
+      "url": "https://files.pythonhosted.org/packages/0c/c3/44f3fbbfa403ea2a7c779186dc20772604442dde72947e7d01069cbe98e3/pycparser-3.0-py3-none-any.whl",
+      "version": "3.0"
+    },
+    {
+      "bytes": 32793,
+      "component": "sounddevice",
+      "license": "See pinned runtime THIRD_PARTY_NOTICES.txt",
+      "path": ".cache/phrase-contract-v1/dependencies/cp312-aarch64/sounddevice-0.5.6-py3-none-any.whl",
+      "sha256": "de099612311ad81e55d31ccbd83f43ea6bf4d87b48f9b6ea55a1fbcde0eee4e0",
+      "url": "https://files.pythonhosted.org/packages/72/1f/62eef605172bddc1017508469a12f75bc7c4194ece35c734f822795f53b1/sounddevice-0.5.6-py3-none-any.whl",
+      "version": "0.5.6"
+    },
+    {
+      "bytes": 26799,
+      "component": "soundfile",
+      "license": "See pinned runtime THIRD_PARTY_NOTICES.txt",
+      "path": ".cache/phrase-contract-v1/dependencies/cp312-aarch64/soundfile-0.14.0-py2.py3-none-any.whl",
+      "sha256": "8ba81ae3a89fd5ab3bef8a8eb481fbbe794e806309675a89b4df48b8d31908a8",
+      "url": "https://files.pythonhosted.org/packages/b1/d1/5e338af9ca6ed0786cd5bb03f6d60de1c325728c1189014f3b59aae7403c/soundfile-0.14.0-py2.py3-none-any.whl",
+      "version": "0.14.0"
+    },
+    {
+      "bytes": 45571,
+      "component": "typing-extensions",
+      "license": "See pinned runtime THIRD_PARTY_NOTICES.txt",
+      "path": ".cache/phrase-contract-v1/dependencies/cp312-aarch64/typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+      "version": "4.16.0"
+    },
+    {
+      "bytes": 1087958,
+      "component": "wake-melspectrogram.onnx",
+      "license": "CC-BY-NC-SA-4.0 (pretrained openWakeWord models)",
+      "path": ".cache/speaker-final-refinement-v1/wake/wake-melspectrogram.onnx",
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "url": "https://github.com/dscripka/openWakeWord/releases/download/v0.5.1/melspectrogram.onnx"
+    },
+    {
+      "bytes": 1326578,
+      "component": "wake-embedding.onnx",
+      "license": "CC-BY-NC-SA-4.0 (pretrained openWakeWord models)",
+      "path": ".cache/speaker-final-refinement-v1/wake/wake-embedding.onnx",
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "url": "https://github.com/dscripka/openWakeWord/releases/download/v0.5.1/embedding_model.onnx"
+    },
+    {
+      "bytes": 1271370,
+      "component": "wake-hey-jarvis.onnx",
+      "license": "CC-BY-NC-SA-4.0 (pretrained openWakeWord models)",
+      "path": ".cache/speaker-final-refinement-v1/wake/wake-hey-jarvis.onnx",
+      "sha256": "94a13cfe60075b132f6a472e7e462e8123ee70861bc3fb58434a73712ee0d2cb",
+      "url": "https://github.com/dscripka/openWakeWord/releases/download/v0.5.1/hey_jarvis_v0.1.onnx"
+    },
+    {
+      "bytes": 2327524,
+      "component": "silero-vad.onnx",
+      "license": "MIT",
+      "path": ".cache/speaker-final-refinement-v1/wake/silero-vad.onnx",
+      "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "url": "https://raw.githubusercontent.com/snakers4/silero-vad/v5.1/src/silero_vad/data/silero_vad.onnx"
+    }
+  ],
+  "license": "Per-file and bundled notices",
+  "revision": "existing exact wheel and wake receipts, verified 2026-10-16",
+  "scope": "Offline Pi4 ARM64 packaging only; no root installed-artifact changes",
+  "source": "Existing pinned Pi runtime and wake/VAD assets"
+}

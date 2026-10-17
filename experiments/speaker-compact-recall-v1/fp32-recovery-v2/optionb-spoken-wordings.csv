@@ -1,0 +1,187 @@
+id,verbatim,kind,n,untested,reference_conflicts,raw_correct,raw_wrong,raw_rejected,fixed_demo_correct,fixed_demo_wrong,fixed_demo_rejected,relaxed_demo_correct,relaxed_demo_wrong,relaxed_demo_rejected,qualified_correct,qualified_wrong,qualified_rejected
+B1-001,Play music,human,2,False,0,2,0,0,1,0,1,1,0,1,0,0,2
+B1-001,Play music,synthetic,23,False,0,23,0,0,19,0,4,19,0,4,0,0,23
+B1-002,Start music,human,1,False,0,0,1,0,0,0,1,0,0,1,0,0,1
+B1-002,Start music,synthetic,23,False,0,23,0,0,23,0,0,23,0,0,0,0,23
+B1-003,Play some music,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-003,Play some music,synthetic,23,False,0,23,0,0,23,0,0,23,0,0,0,0,23
+B1-004,Weather,human,11,False,0,7,4,0,2,0,9,3,0,8,0,0,11
+B1-004,Weather,synthetic,23,False,0,23,0,0,20,0,3,21,0,2,0,0,23
+B1-005,What's the weather?,human,3,False,0,2,0,1,0,0,3,0,0,3,0,0,3
+B1-005,What's the weather?,synthetic,23,False,0,23,0,0,20,0,3,22,0,1,0,0,23
+B1-006,Tell me the weather,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-006,Tell me the weather,synthetic,23,False,0,23,0,0,22,0,1,23,0,0,0,0,23
+B1-007,Time,human,1,False,0,1,0,0,0,0,1,1,0,0,0,0,1
+B1-007,Time,synthetic,38,False,0,38,0,0,31,0,7,37,0,1,0,0,38
+B1-008,What time is it?,human,14,False,0,14,0,0,7,0,7,10,0,4,0,0,14
+B1-008,What time is it?,synthetic,23,False,0,23,0,0,23,0,0,23,0,0,0,0,23
+B1-009,Tell me the time,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-009,Tell me the time,synthetic,23,False,0,22,1,0,21,0,2,22,0,1,0,0,23
+B1-010,Lights on,human,3,False,0,2,1,0,0,0,3,0,0,3,0,0,3
+B1-010,Lights on,synthetic,23,False,0,23,0,0,19,0,4,19,0,4,0,0,23
+B1-011,Power on the lights,human,4,False,0,4,0,0,1,0,3,1,0,3,0,0,4
+B1-011,Power on the lights,synthetic,37,False,0,37,0,0,36,0,1,36,0,1,0,0,37
+B1-012,Turn on the lights,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-012,Turn on the lights,synthetic,23,False,0,22,1,0,20,0,3,20,0,3,0,0,23
+B1-013,Lights out,human,4,False,0,3,1,0,0,0,4,0,0,4,0,0,4
+B1-013,Lights out,synthetic,23,False,0,22,1,0,19,0,4,19,0,4,0,0,23
+B1-014,Kill the lights,human,1,False,0,1,0,0,0,0,1,0,0,1,0,0,1
+B1-014,Kill the lights,synthetic,23,False,0,23,0,0,18,0,5,18,0,5,0,0,23
+B1-015,Shut off the lights,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-015,Shut off the lights,synthetic,23,False,0,21,1,1,20,0,3,20,0,3,0,0,23
+B1-016,Pause,human,22,False,0,21,1,0,20,1,1,21,1,0,0,0,22
+B1-016,Pause,synthetic,25,False,0,24,1,0,22,0,3,23,0,2,0,0,25
+B1-017,Pause audio,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-017,Pause audio,synthetic,23,False,0,23,0,0,23,0,0,23,0,0,0,0,23
+B1-018,Pause song,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-018,Pause song,synthetic,40,False,0,40,0,0,36,0,4,38,0,2,0,0,40
+B1-019,Stop,human,14,False,0,14,0,0,12,0,2,12,0,2,0,0,14
+B1-019,Stop,synthetic,23,False,0,22,1,0,19,0,4,19,0,4,0,0,23
+B1-020,Stop playing,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-020,Stop playing,synthetic,23,False,0,23,0,0,20,0,3,22,0,1,0,0,23
+B1-021,End playback,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-021,End playback,synthetic,23,False,0,22,1,0,17,0,6,19,0,4,0,0,23
+B1-022,Next song,human,13,False,0,12,1,0,12,0,1,12,0,1,0,0,13
+B1-022,Next song,synthetic,23,False,0,23,0,0,21,0,2,22,0,1,0,0,23
+B1-023,Skip song,human,2,False,0,2,0,0,1,0,1,2,0,0,0,0,2
+B1-023,Skip song,synthetic,40,False,0,39,1,0,37,0,3,39,0,1,0,0,40
+B1-024,Play next song,human,2,False,0,2,0,0,1,0,1,2,0,0,0,0,2
+B1-024,Play next song,synthetic,36,False,0,36,0,0,33,0,3,36,0,0,0,0,36
+B1-025,Volume up,human,4,False,0,3,0,1,1,0,3,1,0,3,0,0,4
+B1-025,Volume up,synthetic,23,False,0,23,0,0,23,0,0,23,0,0,0,0,23
+B1-026,Increase the volume,human,4,False,0,3,1,0,2,0,2,2,0,2,0,0,4
+B1-026,Increase the volume,synthetic,23,False,0,23,0,0,20,0,3,20,0,3,0,0,23
+B1-027,Turn the volume up,human,2,False,0,0,2,0,0,0,2,0,0,2,0,0,2
+B1-027,Turn the volume up,synthetic,23,False,0,23,0,0,22,0,1,22,0,1,0,0,23
+B1-028,Volume down,human,8,False,0,5,3,0,4,0,4,4,0,4,0,0,8
+B1-028,Volume down,synthetic,23,False,0,23,0,0,21,0,2,21,0,2,0,0,23
+B1-029,Lower the volume,human,4,False,0,2,2,0,0,0,4,0,0,4,0,0,4
+B1-029,Lower the volume,synthetic,23,False,0,22,1,0,19,0,4,19,0,4,0,0,23
+B1-030,Turn the volume down,human,8,False,0,6,2,0,2,0,6,2,0,6,0,0,8
+B1-030,Turn the volume down,synthetic,23,False,0,22,1,0,17,0,6,17,0,6,0,0,23
+B1-031,Call,human,2,False,0,2,0,0,2,0,0,2,0,0,0,0,2
+B1-031,Call,synthetic,23,False,0,23,0,0,22,0,1,22,0,1,0,0,23
+B1-032,Make a call,human,2,False,0,2,0,0,2,0,0,2,0,0,0,0,2
+B1-032,Make a call,synthetic,38,False,0,38,0,0,38,0,0,38,0,0,0,0,38
+B1-033,Make a phone call,human,2,False,0,2,0,0,2,0,0,2,0,0,0,0,2
+B1-033,Make a phone call,synthetic,35,False,0,35,0,0,33,0,2,33,0,2,0,0,35
+B1-034,Message,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-034,Message,synthetic,41,False,0,41,0,0,37,0,4,37,0,4,0,0,41
+B1-035,Send a message,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-035,Send a message,synthetic,37,False,0,37,0,0,35,0,2,35,0,2,0,0,37
+B1-036,Send my message,human,2,False,0,2,0,0,1,0,1,1,0,1,0,0,2
+B1-036,Send my message,synthetic,45,False,0,45,0,0,41,0,4,41,0,4,0,0,45
+B1-037,Reminders,human,3,False,0,3,0,0,0,0,3,0,0,3,0,0,3
+B1-037,Reminders,synthetic,44,False,0,44,0,0,36,0,8,36,0,8,0,0,44
+B1-038,Show my reminders,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-038,Show my reminders,synthetic,23,False,0,23,0,0,21,0,2,21,0,2,0,0,23
+B1-039,List my reminders,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-039,List my reminders,synthetic,35,False,0,35,0,0,34,0,1,34,0,1,0,0,35
+B1-040,Timer ten seconds,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-040,Timer ten seconds,synthetic,45,False,0,45,0,0,42,0,3,44,0,1,0,0,45
+B1-041,Timer thirty seconds,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-041,Timer thirty seconds,synthetic,45,False,0,44,1,0,40,1,4,40,1,4,0,0,45
+B1-042,Timer one minute,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-042,Timer one minute,synthetic,45,False,0,45,0,0,38,0,7,39,0,6,0,0,45
+B1-043,Countdown for ten seconds,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-043,Countdown for ten seconds,synthetic,45,False,0,45,0,0,30,0,15,41,0,4,0,0,45
+B1-044,Countdown for thirty seconds,human,2,False,0,2,0,0,1,0,1,1,0,1,0,0,2
+B1-044,Countdown for thirty seconds,synthetic,45,False,0,44,1,0,37,0,8,41,0,4,0,0,45
+B1-045,Countdown for one minute,human,2,False,0,1,1,0,1,0,1,1,0,1,0,0,2
+B1-045,Countdown for one minute,synthetic,45,False,0,45,0,0,37,0,8,41,0,4,0,0,45
+B1-046,Start a timer for ten seconds,human,2,False,0,2,0,0,0,0,2,1,0,1,0,0,2
+B1-046,Start a timer for ten seconds,synthetic,45,False,0,45,0,0,43,0,2,45,0,0,0,0,45
+B1-047,Start a timer for thirty seconds,human,2,False,0,2,0,0,1,0,1,1,0,1,0,0,2
+B1-047,Start a timer for thirty seconds,synthetic,45,False,0,44,1,0,40,0,5,44,0,1,0,0,45
+B1-048,Start a timer for one minute,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-048,Start a timer for one minute,synthetic,44,False,0,44,0,0,37,0,7,42,0,2,0,0,44
+B1-049,Alarm six a m,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-049,Alarm six a m,synthetic,45,False,0,45,0,0,42,0,3,45,0,0,0,0,45
+B1-050,Alarm eight a m,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-050,Alarm eight a m,synthetic,47,False,0,47,0,0,47,0,0,47,0,0,0,0,47
+B1-051,Alarm nine p m,human,2,False,0,0,2,0,0,1,1,0,1,1,0,0,2
+B1-051,Alarm nine p m,synthetic,45,False,0,45,0,0,41,0,4,45,0,0,0,0,45
+B1-052,Wake me up at six a m,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-052,Wake me up at six a m,synthetic,45,False,0,45,0,0,42,0,3,43,0,2,0,0,45
+B1-053,Wake me up at eight a m,human,1,False,0,1,0,0,0,0,1,0,0,1,0,0,1
+B1-053,Wake me up at eight a m,synthetic,44,False,0,44,0,0,37,0,7,42,0,2,0,0,44
+B1-054,Wake me up at nine p m,human,1,False,0,1,0,0,0,0,1,0,0,1,0,0,1
+B1-054,Wake me up at nine p m,synthetic,46,False,0,46,0,0,42,0,4,45,0,1,0,0,46
+B1-055,Set an alarm for six a m,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-055,Set an alarm for six a m,synthetic,23,False,0,23,0,0,17,0,6,21,0,2,0,0,23
+B1-056,Set an alarm for eight a m,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-056,Set an alarm for eight a m,synthetic,39,False,0,39,0,0,36,0,3,38,0,1,0,0,39
+B1-057,Set an alarm for nine p m,human,3,False,0,3,0,0,1,0,2,1,0,2,0,0,3
+B1-057,Set an alarm for nine p m,synthetic,38,False,0,38,0,0,34,0,4,37,0,1,0,0,38
+B1-058,Temperature eighteen degrees,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-058,Temperature eighteen degrees,synthetic,45,False,0,45,0,0,42,0,3,42,0,3,0,0,45
+B1-059,Temperature twenty two degrees,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-059,Temperature twenty two degrees,synthetic,45,False,0,45,0,0,43,0,2,43,0,2,0,0,45
+B1-060,Temperature twenty six degrees,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-060,Temperature twenty six degrees,synthetic,45,False,0,44,1,0,43,0,2,43,0,2,0,0,45
+B1-061,Change the temperature to eighteen degrees,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-061,Change the temperature to eighteen degrees,synthetic,45,False,0,45,0,0,42,0,3,42,0,3,0,0,45
+B1-062,Change the temperature to twenty two degrees,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-062,Change the temperature to twenty two degrees,synthetic,45,False,0,43,2,0,41,0,4,41,0,4,0,0,45
+B1-063,Change the temperature to twenty six degrees,human,4,False,0,4,0,0,1,0,3,1,0,3,0,0,4
+B1-063,Change the temperature to twenty six degrees,synthetic,43,False,0,38,4,1,33,1,9,33,1,9,0,0,43
+B1-064,Set the temperature to eighteen degrees,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-064,Set the temperature to eighteen degrees,synthetic,45,False,0,43,0,2,41,0,4,41,0,4,0,0,45
+B1-065,Set the temperature to twenty two degrees,human,4,False,0,3,1,0,0,0,4,0,0,4,0,0,4
+B1-065,Set the temperature to twenty two degrees,synthetic,39,False,0,39,0,0,35,0,4,35,0,4,0,0,39
+B1-066,Set the temperature to twenty six degrees,human,4,False,0,4,0,0,1,0,3,1,0,3,0,0,4
+B1-066,Set the temperature to twenty six degrees,synthetic,43,False,0,43,0,0,39,0,4,39,0,4,0,0,43
+B1-067,Brightness twenty percent,human,2,False,0,2,0,0,0,0,2,1,0,1,0,0,2
+B1-067,Brightness twenty percent,synthetic,45,False,0,44,1,0,42,0,3,44,0,1,0,0,45
+B1-068,Brightness sixty percent,human,2,False,0,2,0,0,0,0,2,1,0,1,0,0,2
+B1-068,Brightness sixty percent,synthetic,45,False,0,45,0,0,45,0,0,45,0,0,0,0,45
+B1-069,Brightness one hundred percent,human,2,False,0,1,1,0,0,1,1,1,1,0,0,0,2
+B1-069,Brightness one hundred percent,synthetic,45,False,0,29,16,0,28,10,7,29,12,4,0,0,45
+B1-070,Adjust brightness to twenty percent,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-070,Adjust brightness to twenty percent,synthetic,38,False,0,38,0,0,37,0,1,38,0,0,0,0,38
+B1-071,Adjust brightness to sixty percent,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-071,Adjust brightness to sixty percent,synthetic,43,False,0,42,1,0,42,0,1,42,0,1,0,0,43
+B1-072,Adjust brightness to one hundred percent,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-072,Adjust brightness to one hundred percent,synthetic,43,False,0,33,10,0,28,6,9,29,7,7,0,0,43
+B1-073,Brightness level twenty percent,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-073,Brightness level twenty percent,synthetic,45,False,0,42,2,1,42,0,3,42,0,3,0,0,45
+B1-074,Brightness level sixty percent,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-074,Brightness level sixty percent,synthetic,47,False,0,46,1,0,44,0,3,45,0,2,0,0,47
+B1-075,Brightness level one hundred percent,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-075,Brightness level one hundred percent,synthetic,47,False,0,44,3,0,40,1,6,40,2,5,0,0,47
+B1-076,Change color to red,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-076,Change color to red,synthetic,23,False,0,22,1,0,21,0,2,21,0,2,0,0,23
+B1-077,Change color to blue,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-077,Change color to blue,synthetic,23,False,0,23,0,0,22,0,1,22,0,1,0,0,23
+B1-078,Change color to green,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-078,Change color to green,synthetic,23,False,0,22,1,0,20,1,2,20,1,2,0,0,23
+B1-079,Switch color to red,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-079,Switch color to red,synthetic,47,False,0,47,0,0,46,0,1,46,0,1,0,0,47
+B1-080,Switch color to blue,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-080,Switch color to blue,synthetic,45,False,0,45,0,0,44,0,1,44,0,1,0,0,45
+B1-081,Switch color to green,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-081,Switch color to green,synthetic,43,False,0,41,2,0,39,2,2,39,2,2,0,0,43
+B1-082,Set color to red,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-082,Set color to red,synthetic,37,False,0,34,3,0,34,2,1,34,2,1,0,0,37
+B1-083,Set color to blue,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-083,Set color to blue,synthetic,25,False,0,25,0,0,22,0,3,22,0,3,0,0,25
+B1-084,Set color to green,human,0,True,0,0,0,0,0,0,0,0,0,0,0,0,0
+B1-084,Set color to green,synthetic,39,False,0,39,0,0,35,0,4,35,0,4,0,0,39
+B1-085,Reminder Drink water,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-085,Reminder Drink water,synthetic,45,False,0,44,1,0,41,0,4,41,0,4,0,0,45
+B1-086,Reminder Study,human,2,False,0,1,1,0,0,0,2,0,0,2,0,0,2
+B1-086,Reminder Study,synthetic,45,False,0,44,1,0,39,0,6,39,0,6,0,0,45
+B1-087,Reminder Exercise,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-087,Reminder Exercise,synthetic,45,False,0,42,3,0,33,0,12,33,0,12,0,0,45
+B1-088,Remind me to Drink water,human,2,False,0,1,0,1,0,0,2,0,0,2,0,0,2
+B1-088,Remind me to Drink water,synthetic,45,False,0,43,2,0,41,0,4,41,0,4,0,0,45
+B1-089,Remind me to Study,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-089,Remind me to Study,synthetic,45,False,0,45,0,0,45,0,0,45,0,0,0,0,45
+B1-090,Remind me to Exercise,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-090,Remind me to Exercise,synthetic,45,False,0,45,0,0,43,0,2,43,0,2,0,0,45
+B1-091,Create a reminder to Drink water,human,2,False,0,0,1,1,0,0,2,0,0,2,0,0,2
+B1-091,Create a reminder to Drink water,synthetic,45,False,0,44,1,0,37,0,8,37,0,8,0,0,45
+B1-092,Create a reminder to Study,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-092,Create a reminder to Study,synthetic,45,False,0,44,1,0,39,0,6,39,0,6,0,0,45
+B1-093,Create a reminder to Exercise,human,2,False,0,2,0,0,0,0,2,0,0,2,0,0,2
+B1-093,Create a reminder to Exercise,synthetic,45,False,0,45,0,0,40,0,5,40,0,5,0,0,45

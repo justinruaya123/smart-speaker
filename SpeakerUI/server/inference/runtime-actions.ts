@@ -19,7 +19,7 @@ export class RuntimeActions {
     const decision=event.application;
     const outcome=(status:string,detail:string,extra:Record<string,any>={})=>({status,detail,utterance_id:event.utterance_id,...extra});
     if(event.source!=='microphone')return outcome('preview','Recorded WAVs and fixtures do not execute actions.');
-    if(!this.config.enabled)return outcome('disabled','Actions are disabled in configuration.');
+    if(!this.config.enabled||event.actions_enabled===false)return outcome('disabled','Actions are disabled by configuration or the recognizer.');
     if(!decision?.accepted||!decision.command)return outcome('rejected',decision?.reason||'No accepted application command');
     const command=decision.command,slots=command.slots;
     if(!slots||typeof slots!=='object'||Array.isArray(slots))return outcome('rejected','Invalid command slots');

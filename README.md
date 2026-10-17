@@ -2,6 +2,10 @@
 
 ## Smart speaker publication
 
+Dataset shipping preparation is documented in the [final structure and Hugging Face plan](docs/PLAN-shipping-and-huggingface.md), [dataset citations and selection/mutation ledger](docs/DATASETS.md), and [local dataset-card draft](docs/HF-DATASET-CARD-DRAFT.md). No upload was performed. The recorded 2026-10-16 access check found the target dataset publicly readable and no Hugging Face token configured; authenticated write permission remains unverified. These documents distinguish the final control-arm experiment from the target's existing dataset snapshot and record unresolved source terms.
+
+For the submitted **935,567-parameter pipeline-repair** and **2,066,831-parameter final-refinement** models, start with the [reproducibility and slide field guide](docs/REPRODUCIBILITY-935k-2m.md), [verified source counts](docs/DATASETS.md#submitted-935k-and-2m-models-verified-input-membership), [publisher citations/DOIs](docs/DATASET-CITATIONS.md), [BibTeX](docs/dataset-citations.bib) and [hash-bound input/artifact audit](docs/model-dataset-usage.json). Their eligible fitting pools are 23,289 and 23,295 rows respectively; the auxiliary numeral pool is excluded. Public code/weight release, derivative DOI, source-specific recording inclusion, clean-clone reproduction and physical Pi evidence remain pending. Documentation and local integrity checks do not establish those publication results.
+
 Publish the selected model without training:
 
 ```sh

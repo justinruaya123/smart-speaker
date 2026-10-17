@@ -1,0 +1,7 @@
+{
+  "stage": "feature-loading-before-fitting",
+  "cause": "einops lazy backend registration race in concurrent first-use",
+  "reproduced": true,
+  "fix": "initialize the unchanged frontend before starting feature worker threads",
+  "gpu_optimizer_updates": 0
+}

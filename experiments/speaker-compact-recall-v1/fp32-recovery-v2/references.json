@@ -1,0 +1,58 @@
+{
+  "study": "speaker-compact-recall-v1",
+  "retrieved_date": "2026-10-16",
+  "sources": [
+    {
+      "id": "park2019",
+      "title": "SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition",
+      "authors": "Park et al.",
+      "year": 2019,
+      "url": "https://arxiv.org/abs/1904.08779",
+      "applied": "One compact control fit uses conservative time/frequency masking of training filterbank features only",
+      "limit": "Adapted policy, no time warping; published ASR scores do not establish this VCM result"
+    },
+    {
+      "id": "warden2018",
+      "title": "Speech Commands: A Dataset for Limited-Vocabulary Speech Recognition",
+      "authors": "Pete Warden",
+      "year": 2018,
+      "url": "https://arxiv.org/abs/1804.03209",
+      "applied": "Motivation for task-specific command evaluation and reproducible reporting",
+      "limit": "This project recognizes complete typed commands, not the isolated-word benchmark; no Speech Commands audio is added"
+    },
+    {
+      "id": "ort-quantization",
+      "title": "ONNX Runtime: Quantize ONNX models",
+      "url": "https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html",
+      "applied": "Existing dynamic INT8 constant-MatMul export, with numerical and typed development checks",
+      "limit": "Reduced graph bytes or desktop timings do not prove Pi4 speed or accuracy"
+    },
+    {
+      "id": "guo2017",
+      "title": "On Calibration of Modern Neural Networks",
+      "authors": "Guo et al.",
+      "year": 2017,
+      "url": "https://proceedings.mlr.press/v70/guo17a.html",
+      "applied": "Confidence scores require task-specific validation; preserve human calibration coverage failures",
+      "limit": "No new temperature-scaling component is added in this bounded pass; conditional CTC slot scores are not calibrated probabilities"
+    },
+    {
+      "id": "project-release-v1",
+      "path": "experiments/pcv-release-train-v1/runs/release-v1/results.json",
+      "applied": "Existing architecture and hard-label recipe; prior human/synthetic gap motivates data comparison",
+      "limit": "Historical tested data; different fitting membership prevents attributing a new-versus-historical difference to one cause"
+    },
+    {
+      "id": "project-synthetic-completion",
+      "path": "experiments/speaker-synthetic-completion-v1/results.json",
+      "applied": "Reuse frozen prepared features, human-only normalization and full catalog; all184newQwen training rows excluded from compact control",
+      "limit": "Earlier synthesis/preparation evidence; this run generates no audio and makes no synthetic completion effect claim"
+    },
+    {
+      "id": "project-final-refinement",
+      "path": "experiments/speaker-final-refinement-v1/results.json",
+      "applied": "Frozen balanced control recipe, original normalization, full catalog, regression comparison",
+      "limit": "Width and supervision exclusions differ; no isolated architecture effect; old scores are previously observed"
+    }
+  ]
+}

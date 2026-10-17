@@ -1,0 +1,63 @@
+{
+  "application": {
+    "each_required_slot": 0.9,
+    "intent": 0.95
+  },
+  "authorization": "User has no new human recordings and explicitly chose synthetic generation; SSH NVIDIA GPU execution confirmed.",
+  "bindings": {
+    ".cache/speaker-dataset-v1/verified/audit.json": "7e5164df17c24aaecea8d58991cd9c1da03d46010f584c519223dd0684457c8f",
+    "STT/alternatives/sources/cmudict.dict": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+    "data/sources/qwen-synthetic-completion.source.json": "cd3753dad2a43fcfa277e73908222994a56a9767883f8747954dc531ecfb33ac",
+    "experiments/pcv-b1-three-engine-v1/prompts.json": "9133e51e56a1a9227180706e3b2c5bdcaa2daf36e9abf7b386e299c9b3723b0f",
+    "experiments/pcv-release-train-v1/catalog.json": "45a848160d853833d83d832952e3ba411a1aea92db14e963c7d7409db83f2a1e",
+    "experiments/pcv-synthetic-v2/lexicon.json": "ea132cbd2bdcf3d66063d164674c64e071f4b551506995bd862ba5a35f38ba53",
+    "experiments/speaker-demo-v2/protocol.json": "9aa8fd8bb0468e34d96581f9b416a6fedcf259dd3d01afd26a5d2195db135e6f",
+    "experiments/speaker-synthetic-completion-v1/catalog.json": "429a15bc364d7fd9e723a2879c611472b5176de6cb3a2b54be7c137b050c985d",
+    "experiments/speaker-synthetic-completion-v1/generation-plan.json": "956278a5e05e76911dcffb7c770366f7431e31b4a0950beefddbc1271deb1cd3",
+    "experiments/speaker-synthetic-completion-v1/prompts.json": "d891549adfb8ba71c384f6a6558844bbd44ae76916fe3ac78ac615e6b26a4c4c",
+    "experiments/speaker-synthetic-completion-v1/requirements-synthesis.lock": "48d9e1efb2b518b9e56cd17b6de6cedb463df93a2d618ada05d0013d24023150",
+    "experiments/speaker-synthetic-completion-v1/voices.json": "08d5dd86f2d5a3d3d6c97ba93fddb2274b3ba32157b7783bddeecf7da1d7fdc4",
+    "scripts/runtime/pcv_schema.py": "603ec943eae1e7330dd2eb82f05bbd7c206382ecf13c0fb8f8801a7ecd0e134c",
+    "scripts/test/speaker_demo_suite.py": "4f6ff8ded5db2b9ed5f933a09dd2d9c8ecdd1eff1234175815837ccb6b6e52e2",
+    "scripts/train/speaker_dataset_install.py": "87f4fb4939d7903f4b14cc895708c660a488d05b6d8662f9cc7c0fcaa6c4d1e9",
+    "scripts/train/speaker_synthetic_data.py": "ea25228577b0219f796f6954fe3e384dd8190e459374992f7fbb07c6d7d18f84",
+    "vcm/catalog.py": "d7d8c2a4cb0a026e30c83e206213f165c7418c20d97ad9e29ce2dae43a518906",
+    "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+  },
+  "catalog_file": "experiments/speaker-synthetic-completion-v1/catalog.json",
+  "catalog_rule": "Existing 1031 entries preserved plus all declared light/color pairs; no individual test-derived addition.",
+  "date": "2026-10-16",
+  "experiment_id": "speaker-synthetic-completion-v1",
+  "generation": {
+    "anchor_max_new_tokens": 384,
+    "anchor_text": "Hello, I am ready to help. Please speak clearly and tell me what you would like to do today.",
+    "attempts": 3,
+    "attention": "sdpa",
+    "batch_size": 4,
+    "cuda_memory_fraction": 0.45,
+    "dtype": "bfloat16",
+    "max_new_tokens": 192,
+    "seed_rule": "SHA256([experiment,voice_id,batch_offset,attempt]) first 8 hex modulo 2**32",
+    "temperature": 0.75,
+    "top_p": 0.95
+  },
+  "generation_plan": "experiments/speaker-synthetic-completion-v1/generation-plan.json",
+  "human_qualification": false,
+  "hypothesis": "Additional designed synthetic voice conditions for sparse complete commands improve development recognition at fixed VCM architecture; no acoustic gain is presumed.",
+  "installation_allowed": false,
+  "parent_protocol": "experiments/speaker-demo-v2/protocol.json",
+  "planned": 552,
+  "prompts_per_voice": 92,
+  "quality": "Native and derived waveform, finite energy/duration and sufficient CTC frames only; not independent listening or accent verification.",
+  "requirements": [
+    "ME-01",
+    "ME-02",
+    "ME-03",
+    "ME-04",
+    "ME-07",
+    "ME-08"
+  ],
+  "scope": "Separate synthetic train/dev/calibration; existing human and published evaluation membership preserved. No TTS model ships.",
+  "voices": 6,
+  "voices_file": "experiments/speaker-synthetic-completion-v1/voices.json"
+}

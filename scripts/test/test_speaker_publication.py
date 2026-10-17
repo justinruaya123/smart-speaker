@@ -5,6 +5,15 @@ from pathlib import Path
 import pytest
 
 
+def test_candidate_deployment_cannot_enable_actions_through_config_or_environment(tmp_path):
+    from scripts.runtime.speaker_config import resolve_config
+    (tmp_path/'deployment.json').write_text('{"actions_enabled": false}')
+    (tmp_path/'config.toml').write_text('[actions]\nenabled=true\n')
+    cfg,env=resolve_config(tmp_path,environ={'ACTIONS_ENABLED':'true'})
+    assert cfg['actions']['enabled'] is False
+    assert env['ACTIONS_ENABLED']=='false'
+
+
 def test_configuration_defaults_and_precedence(tmp_path):
     from scripts.runtime.speaker_config import resolve_config
     (tmp_path/'config.toml').write_text('[inference]\nintent_threshold=0.96\nslot_threshold=0.91\n[server]\nport=3010\n')

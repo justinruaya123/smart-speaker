@@ -1,0 +1,230 @@
+{
+  "arms": {
+    "completion": {
+      "arm": "completion",
+      "checkpoint": ".cache/speaker-final-refinement-v1/training/mixed-completion/epoch-032.pt",
+      "checkpoint_sha256": "52af82b3caa8252f80393e7afd4f3c46115bae92c8598414d161733d2f32e47f",
+      "development": {
+        "human": {
+          "accepted": 113,
+          "exact": 106,
+          "false_accept_rate": 0.015873015873015872,
+          "macro_speaker_recall": 0.504320295932138,
+          "negative_errors": 1,
+          "negative_n": 63,
+          "positive_n": 193,
+          "positive_speakers": 32,
+          "precision": 0.9380530973451328,
+          "raw_exact": 161,
+          "raw_macro_speaker_recall": 0.7927937331309042,
+          "raw_negative_errors": 41,
+          "raw_recall": 0.8341968911917098,
+          "recall": 0.5492227979274611,
+          "rows": 256
+        },
+        "synthetic": {
+          "accepted": 925,
+          "exact": 924,
+          "false_accept_rate": 0.0,
+          "macro_speaker_recall": 0.94827847006231,
+          "negative_errors": 0,
+          "negative_n": 28,
+          "positive_n": 967,
+          "positive_speakers": 9,
+          "precision": 0.9989189189189189,
+          "raw_exact": 964,
+          "raw_macro_speaker_recall": 0.9966433496243794,
+          "raw_negative_errors": 0,
+          "raw_recall": 0.9968976215098242,
+          "recall": 0.9555325749741469,
+          "rows": 995
+        }
+      },
+      "epoch": 32,
+      "key": [
+        0,
+        0.504320295932138,
+        0.9380530973451328,
+        -1,
+        0.7927937331309042,
+        0.9555325749741469,
+        -32
+      ],
+      "phase": "mixed",
+      "test_used_for_selection": false
+    },
+    "control": {
+      "arm": "control",
+      "checkpoint": ".cache/speaker-final-refinement-v1/training/mixed-control/epoch-032.pt",
+      "checkpoint_sha256": "ff6a3af63115a8f92a0106b20a17ee57c3e84f263177b89aaedb9cce326fce9b",
+      "development": {
+        "human": {
+          "accepted": 115,
+          "exact": 108,
+          "false_accept_rate": 0.031746031746031744,
+          "macro_speaker_recall": 0.5385508542992096,
+          "negative_errors": 2,
+          "negative_n": 63,
+          "positive_n": 193,
+          "positive_speakers": 32,
+          "precision": 0.9391304347826087,
+          "raw_exact": 166,
+          "raw_macro_speaker_recall": 0.8130768628301523,
+          "raw_negative_errors": 39,
+          "raw_recall": 0.8601036269430051,
+          "recall": 0.5595854922279793,
+          "rows": 256
+        },
+        "synthetic": {
+          "accepted": 852,
+          "exact": 847,
+          "false_accept_rate": 0.10714285714285714,
+          "macro_speaker_recall": 0.8382329086278596,
+          "negative_errors": 3,
+          "negative_n": 28,
+          "positive_n": 967,
+          "positive_speakers": 9,
+          "precision": 0.994131455399061,
+          "raw_exact": 914,
+          "raw_macro_speaker_recall": 0.9248971193415636,
+          "raw_negative_errors": 12,
+          "raw_recall": 0.9451913133402275,
+          "recall": 0.8759048603929679,
+          "rows": 995
+        }
+      },
+      "epoch": 32,
+      "key": [
+        0,
+        0.5385508542992096,
+        0.9391304347826087,
+        -2,
+        0.8130768628301523,
+        0.8759048603929679,
+        -32
+      ],
+      "phase": "mixed",
+      "test_used_for_selection": false
+    }
+  },
+  "bindings": {
+    ".cache/speaker-final-refinement-v1/training/mixed-control/epoch-032.pt": "ff6a3af63115a8f92a0106b20a17ee57c3e84f263177b89aaedb9cce326fce9b",
+    "experiments/speaker-final-refinement-v1/protocol.json": "ac9b851b5bafb8bf38fc8db4f78228bafab2d16449f42e13a2c4d3248e49e945"
+  },
+  "cuda": "12.8",
+  "experiment_id": "speaker-final-refinement-v1",
+  "foundation": {
+    "arm": "shared",
+    "checkpoint": ".cache/speaker-final-refinement-v1/training/human-shared/epoch-020.pt",
+    "checkpoint_sha256": "9b590f6657539a9159c88e8c604020b92256eb73f513f2837abbf137023b75e0",
+    "development": {
+      "human": {
+        "accepted": 78,
+        "exact": 73,
+        "false_accept_rate": 0.015873015873015872,
+        "macro_speaker_recall": 0.389360119047619,
+        "negative_errors": 1,
+        "negative_n": 63,
+        "positive_n": 193,
+        "positive_speakers": 32,
+        "precision": 0.9358974358974359,
+        "raw_exact": 151,
+        "raw_macro_speaker_recall": 0.7303738613360324,
+        "raw_negative_errors": 35,
+        "raw_recall": 0.7823834196891192,
+        "recall": 0.37823834196891193,
+        "rows": 256
+      },
+      "synthetic": {
+        "accepted": 0,
+        "exact": 0,
+        "false_accept_rate": null,
+        "macro_speaker_recall": 0.0,
+        "negative_errors": 0,
+        "negative_n": 0,
+        "positive_n": 0,
+        "positive_speakers": 0,
+        "precision": null,
+        "raw_exact": 0,
+        "raw_macro_speaker_recall": 0.0,
+        "raw_negative_errors": 0,
+        "raw_recall": null,
+        "recall": null,
+        "rows": 0
+      }
+    },
+    "epoch": 20,
+    "key": [
+      0,
+      0.389360119047619,
+      0.9358974358974359,
+      -1,
+      0.7303738613360324,
+      0,
+      -20
+    ],
+    "phase": "human",
+    "test_used_for_selection": false
+  },
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "human_qualified": false,
+  "peak_cuda_allocated_bytes": 703036416,
+  "seconds": 1990.467459646985,
+  "seed": 53,
+  "selected": {
+    "arm": "control",
+    "checkpoint": ".cache/speaker-final-refinement-v1/training/mixed-control/epoch-032.pt",
+    "checkpoint_sha256": "ff6a3af63115a8f92a0106b20a17ee57c3e84f263177b89aaedb9cce326fce9b",
+    "development": {
+      "human": {
+        "accepted": 115,
+        "exact": 108,
+        "false_accept_rate": 0.031746031746031744,
+        "macro_speaker_recall": 0.5385508542992096,
+        "negative_errors": 2,
+        "negative_n": 63,
+        "positive_n": 193,
+        "positive_speakers": 32,
+        "precision": 0.9391304347826087,
+        "raw_exact": 166,
+        "raw_macro_speaker_recall": 0.8130768628301523,
+        "raw_negative_errors": 39,
+        "raw_recall": 0.8601036269430051,
+        "recall": 0.5595854922279793,
+        "rows": 256
+      },
+      "synthetic": {
+        "accepted": 852,
+        "exact": 847,
+        "false_accept_rate": 0.10714285714285714,
+        "macro_speaker_recall": 0.8382329086278596,
+        "negative_errors": 3,
+        "negative_n": 28,
+        "positive_n": 967,
+        "positive_speakers": 9,
+        "precision": 0.994131455399061,
+        "raw_exact": 914,
+        "raw_macro_speaker_recall": 0.9248971193415636,
+        "raw_negative_errors": 12,
+        "raw_recall": 0.9451913133402275,
+        "recall": 0.8759048603929679,
+        "rows": 995
+      }
+    },
+    "epoch": 32,
+    "key": [
+      0,
+      0.5385508542992096,
+      0.9391304347826087,
+      -2,
+      0.8130768628301523,
+      0.8759048603929679,
+      -32
+    ],
+    "phase": "mixed",
+    "test_used_for_selection": false
+  },
+  "test_used_for_selection": false,
+  "torch": "2.10.0+cu128",
+  "winner": "control"
+}

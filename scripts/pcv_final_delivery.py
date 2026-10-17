@@ -273,10 +273,32 @@ def add_extra_files(entries,extra_files):
         entries[name]=Path(path).read_bytes()
 
 
+def write_archive(entries,output,metadata):
+    """One checked ZIP writer shared by endpoint and direct-command packages."""
+    from scripts.runtime.speaker_package import safe_name
+    output=Path(output)
+    if output.exists():raise FileExistsError('ZIP outputs are immutable')
+    for name in entries:safe_name(name)
+    payload=dict(entries)
+    payload['MANIFEST.json']=(json.dumps({**metadata,'files':{n:hashlib.sha256(b).hexdigest() for n,b in entries.items()}},indent=2)+'\n').encode()
+    output.parent.mkdir(parents=True,exist_ok=True)
+    with zipfile.ZipFile(output,'x',compression=zipfile.ZIP_DEFLATED) as archive:
+        for name,data in sorted(payload.items()):
+            info=zipfile.ZipInfo(name,(2026,10,2,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED
+            info.external_attr=0o100644<<16;archive.writestr(info,data)
+    with zipfile.ZipFile(output) as archive:
+        if archive.testzip() is not None:raise ValueError('ZIP CRC failed')
+    return {'path':str(output),'sha256':sha(output),'bytes':output.stat().st_size}
+
+
 def package(bundle,output,*,diagnostic=False,portable_parity=None,sample_manifest=None,
             source_receipt=None,source_card=None,qualification_receipt=None,extra_files=None,
-            app_target=None,benchmarks='skip',benchmark_manifest=None,ncnn_folder=None):
+            app_target=None,benchmarks='skip',benchmark_manifest=None,ncnn_folder=None,wake_folder=None,vad_folder=None):
     bundle=Path(bundle);output=Path(output)
+    if (bundle/'bundle.json').exists() and read_json(bundle/'bundle.json').get('format')=='mvp-static-v1':
+        if not diagnostic:raise ValueError('Direct MVP is an unqualified candidate')
+        from scripts.mvp_delivery import package_candidate
+        return package_candidate(bundle,output,wake_folder=wake_folder,vad_folder=vad_folder,extra_files=extra_files)
     if output.exists():raise FileExistsError('ZIP outputs are immutable')
     recipe,policy,norm,catalog=verify_bundle(bundle,diagnostic=diagnostic)
     qualification=qualification_files(qualification_receipt,recipe['binding'],sha(bundle/'policy.json')) if policy['enabled'] else {}
@@ -343,17 +365,10 @@ def package(bundle,output,*,diagnostic=False,portable_parity=None,sample_manifes
         application={'target':app_target,'runtime_id':runtime_identity(entries),'startup_action':'install-model',
                      'bundle_id':sha(bundle/'recipe.json'),'output_schema_version':3,'runtime_api_version':2}
     # Explicit allowlist above excludes all trainers, feature caches and teacher artifacts.
-    file_hashes={name:hashlib.sha256(data).hexdigest() for name,data in entries.items()}
-    entries['MANIFEST.json']=(json.dumps({'format':'smart-speaker-v1' if app_target else 'pcv-endpoint-pi-v1','files':file_hashes,**application,
+    metadata={'format':'smart-speaker-v1' if app_target else 'pcv-endpoint-pi-v1',**application,
         'model_binding':recipe['binding'],'diagnostic':diagnostic,'acceptance_enabled':policy['enabled'],
-        'physical_pi_measured':False,'live_microphone_measured':False},indent=2)+'\n').encode()
-    output.parent.mkdir(parents=True,exist_ok=True)
-    with zipfile.ZipFile(output,'x',compression=zipfile.ZIP_DEFLATED) as archive:
-        for name,data in sorted(entries.items()):
-            info=zipfile.ZipInfo(name,(2026,10,2,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED
-            info.external_attr=0o100644<<16;archive.writestr(info,data)
-    with zipfile.ZipFile(output) as archive:
-        if archive.testzip() is not None:raise ValueError('ZIP CRC failed')
+        'physical_pi_measured':False,'live_microphone_measured':False}
+    write_archive(entries,output,metadata)
     receipt={'path':str(output),'sha256':sha(output),'bytes':output.stat().st_size,'model_binding':recipe['binding'],
              'diagnostic':diagnostic,'acceptance_enabled':policy['enabled'],'sample_count':len(rows),'defined_phrases':len(definitions),
              'catalog_entries':len(catalog),'runtime_load_ms':runtime.load_ms,'target':dependencies['target'],

@@ -1,0 +1,254 @@
+{
+  "complete-20261017": {
+    "compact": {
+      "selection": {
+        "epoch": 11,
+        "key": [
+          0.49916678716020824,
+          110,
+          774
+        ],
+        "checkpoint_sha256": "1af9a570fdb5517049e071a0c95bc40f06554078619a727f88aacc1ab2490011",
+        "parameters": 969928,
+        "training_seconds": 80.29427771223709,
+        "device": "cuda",
+        "gpu": "NVIDIA A100-SXM4-40GB",
+        "seed": 53,
+        "training_rows": 23499,
+        "test_used_for_selection": false
+      },
+      "small_slice": {
+        "rows": 24,
+        "steps": 3,
+        "accuracy": 1.0,
+        "passed": true,
+        "seconds": 4.216738766059279
+      }
+    },
+    "full": {
+      "selection": {
+        "epoch": 8,
+        "key": [
+          0.5659164437536148,
+          121,
+          845
+        ],
+        "checkpoint_sha256": "3a1cbdb423860571b9180a6925f7a23b8f090a0273d39c93357651bbc07050fa",
+        "parameters": 2118280,
+        "training_seconds": 69.00637579569593,
+        "device": "cuda",
+        "gpu": "NVIDIA A100-SXM4-40GB",
+        "seed": 53,
+        "training_rows": 23499,
+        "test_used_for_selection": false
+      },
+      "small_slice": {
+        "rows": 24,
+        "steps": 3,
+        "accuracy": 1.0,
+        "passed": true,
+        "seconds": 2.2896889969706535
+      }
+    }
+  },
+  "longer-v2-20261017": {
+    "compact": {
+      "selection": {
+        "epoch": 17,
+        "key": [
+          0.574225377144785,
+          130,
+          881
+        ],
+        "checkpoint_sha256": "8a8b18871ec15f1d3c1986c51c9a2aa495ad122ff1c1c573bc3ae8442bd16a89",
+        "parameters": 969928,
+        "training_seconds": 227.6586694517173,
+        "device": "cuda",
+        "gpu": "NVIDIA A100-SXM4-40GB",
+        "seed": 53,
+        "training_rows": 23499,
+        "test_used_for_selection": false
+      },
+      "small_slice": {
+        "rows": 24,
+        "steps": 3,
+        "accuracy": 1.0,
+        "passed": true,
+        "seconds": 3.9018224831670523
+      },
+      "results.json": {
+        "test": {
+          "human": {
+            "n": 1050,
+            "positive_n": 636,
+            "negative_n": 229,
+            "ambiguous_n": 185,
+            "raw_correct": 352,
+            "correct_accepts": 113,
+            "accepted": 128,
+            "wrong_accepted_positives": 9,
+            "unknown_accepts": 6,
+            "false_rejects": 514,
+            "recall": 0.17767295597484276,
+            "precision": 0.8828125
+          },
+          "synthetic": {
+            "n": 3368,
+            "positive_n": 3368,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "raw_correct": 3107,
+            "correct_accepts": 1666,
+            "accepted": 1676,
+            "wrong_accepted_positives": 10,
+            "unknown_accepts": 0,
+            "false_rejects": 1692,
+            "recall": 0.49465558194774345,
+            "precision": 0.9940334128878282
+          }
+        },
+        "holdout": {
+          "human": {
+            "n": 96,
+            "positive_n": 83,
+            "negative_n": 11,
+            "ambiguous_n": 2,
+            "raw_correct": 51,
+            "correct_accepts": 5,
+            "accepted": 6,
+            "wrong_accepted_positives": 1,
+            "unknown_accepts": 0,
+            "false_rejects": 77,
+            "recall": 0.060240963855421686,
+            "precision": 0.8333333333333334
+          },
+          "synthetic": {
+            "n": 100,
+            "positive_n": 100,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "raw_correct": 100,
+            "correct_accepts": 67,
+            "accepted": 67,
+            "wrong_accepted_positives": 0,
+            "unknown_accepts": 0,
+            "false_rejects": 33,
+            "recall": 0.67,
+            "precision": 1.0
+          }
+        }
+      },
+      "official-results.json": {
+        "accepted": {
+          "command_accuracy": 0.4744897959183674,
+          "unknown_accepts": 1,
+          "unknown_n": 10
+        },
+        "raw_diagnostic": {
+          "command_accuracy": 0.8673469387755102,
+          "unknown_accepts": 7,
+          "unknown_n": 10
+        }
+      }
+    },
+    "full": {
+      "selection": {
+        "epoch": 41,
+        "key": [
+          0.6783592093213804,
+          144,
+          939
+        ],
+        "checkpoint_sha256": "f907d806978b0d4d3b50865966d962d26ff9f9fd42bb7240ee9824da797d0cce",
+        "parameters": 2118280,
+        "training_seconds": 407.60403367411345,
+        "device": "cuda",
+        "gpu": "NVIDIA A100-SXM4-40GB",
+        "seed": 53,
+        "training_rows": 23499,
+        "test_used_for_selection": false
+      },
+      "small_slice": {
+        "rows": 24,
+        "steps": 3,
+        "accuracy": 1.0,
+        "passed": true,
+        "seconds": 3.575492121744901
+      },
+      "results.json": {
+        "test": {
+          "human": {
+            "n": 1050,
+            "positive_n": 636,
+            "negative_n": 229,
+            "ambiguous_n": 185,
+            "raw_correct": 439,
+            "correct_accepts": 160,
+            "accepted": 193,
+            "wrong_accepted_positives": 23,
+            "unknown_accepts": 10,
+            "false_rejects": 453,
+            "recall": 0.25157232704402516,
+            "precision": 0.8290155440414507
+          },
+          "synthetic": {
+            "n": 3368,
+            "positive_n": 3368,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "raw_correct": 3317,
+            "correct_accepts": 2576,
+            "accepted": 2580,
+            "wrong_accepted_positives": 4,
+            "unknown_accepts": 0,
+            "false_rejects": 788,
+            "recall": 0.7648456057007126,
+            "precision": 0.9984496124031008
+          }
+        },
+        "holdout": {
+          "human": {
+            "n": 96,
+            "positive_n": 83,
+            "negative_n": 11,
+            "ambiguous_n": 2,
+            "raw_correct": 59,
+            "correct_accepts": 16,
+            "accepted": 16,
+            "wrong_accepted_positives": 0,
+            "unknown_accepts": 0,
+            "false_rejects": 67,
+            "recall": 0.1927710843373494,
+            "precision": 1.0
+          },
+          "synthetic": {
+            "n": 100,
+            "positive_n": 100,
+            "negative_n": 0,
+            "ambiguous_n": 0,
+            "raw_correct": 99,
+            "correct_accepts": 80,
+            "accepted": 80,
+            "wrong_accepted_positives": 0,
+            "unknown_accepts": 0,
+            "false_rejects": 20,
+            "recall": 0.8,
+            "precision": 1.0
+          }
+        }
+      },
+      "official-results.json": {
+        "accepted": {
+          "command_accuracy": 0.6275510204081632,
+          "unknown_accepts": 1,
+          "unknown_n": 10
+        },
+        "raw_diagnostic": {
+          "command_accuracy": 0.923469387755102,
+          "unknown_accepts": 4,
+          "unknown_n": 10
+        }
+      }
+    }
+  }
+}

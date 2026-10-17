@@ -1,0 +1,133 @@
+{
+  "bindings": {
+    "experiments/speaker-synthetic-completion-v1/results.json": "f23e26d33802fdf0b4975843ed02a70dab94b5c465d6e1e47cd1b20931033c5f",
+    "scripts/test/test_speaker_synthetic_data.py": "16194a78e4ebab5790f0fcab1eaf6218ffb247f25db2fb817972798ea829675b",
+    "scripts/test/test_speaker_synthetic_prepare.py": "849c0c7f14ef7b15df63ef293440f3a3b885f8f2b9561777922aae08a3253402",
+    "scripts/test/test_speaker_synthetic_recovery.py": "55595922b7981b510c24b83cfbcdc27af2cb178197c1af421441a2e5d39368a8"
+  },
+  "date": "2026-10-16",
+  "eight_existing_dependency_versions_unchanged": true,
+  "experiment_id": "speaker-synthetic-completion-v1",
+  "final_static_checks": {
+    "durable_manifests_match_originals": true,
+    "git_diff_check_passed": true,
+    "installed_metadata_files_unchanged": 15,
+    "local_links_checked": 10,
+    "original_installation_bindings_unchanged": 7,
+    "previous_v2_outputs_unchanged": 4,
+    "research_only_module_entries": 3,
+    "result_and_verification_bindings_valid": true,
+    "staging_empty": true
+  },
+  "focused_suite": {
+    "command": ".venv/bin/python -m pytest -q scripts/test/test_speaker_synthetic_data.py scripts/test/test_speaker_synthetic_prepare.py scripts/test/test_speaker_synthetic_recovery.py scripts/test/test_speaker_demo_v2_data.py scripts/test/test_speaker_dataset_install.py scripts/test/test_speaker_demo_v1.py scripts/test/test_pcv_updated.py",
+    "failed": 0,
+    "log": ".cache/speaker-synthetic-completion-v1/final-focused-tests.log",
+    "new_tests": 36,
+    "passed": 125,
+    "seconds": 33.27
+  },
+  "no_commit_push_model_install_or_device_actions": true,
+  "preservation": {
+    "environment_versions": {
+      "einops": "0.8.1",
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.3.5",
+      "onnxruntime": "1.23.2",
+      "qwen-tts": "0.1.1",
+      "safetensors": "0.6.2",
+      "scipy": "1.17.0",
+      "soundfile": "0.13.1",
+      "torch": "2.10.0+cu128",
+      "torchaudio": "2.10.0+cu128",
+      "transformers": "4.57.3"
+    },
+    "generation_bound_inputs_unchanged": 18,
+    "generation_sha256": "eb03e87e0be2373c3e154ecd06c4882360f6467a4dcb9c8928400a0dc64a0d4f",
+    "implementation_and_source_bindings_valid": true,
+    "installed_metadata_unchanged": 15,
+    "native_waveform_hashes_verified": 558,
+    "original_installation_source_evidence_unchanged": 7,
+    "parent_catalog_entries_preserved": 1031,
+    "preparation_sha256": "6a3aa93a070b54d7eaa118607b7d7e05ea0f779da49ead0c5faa44e30a2f58ad",
+    "prepared_views": {
+      "evaluation/holdout": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-synthetic-completion-v1/prepared-v1/views/evaluation/holdout.jsonl",
+        "rows": 196,
+        "sha256": "a51e720b97f7b31e3e2f025c21bf679006ad444fd2d363916d9a11aa0f488b5b"
+      },
+      "evaluation/test": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-synthetic-completion-v1/prepared-v1/views/evaluation/test.jsonl",
+        "rows": 4418,
+        "sha256": "a4fdcedfc86efebb36414114887abdc4ee51eba102b0247740aef18d1ad15abc"
+      },
+      "human/calibration": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-synthetic-completion-v1/prepared-v1/views/human/calibration.jsonl",
+        "rows": 210,
+        "sha256": "af7858186f401f0c016cd930dd057c08c1e4d8552d7dc4179e489ca3e0c48253"
+      },
+      "human/dev": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-synthetic-completion-v1/prepared-v1/views/human/dev.jsonl",
+        "rows": 256,
+        "sha256": "9ce783bfc24086a12ed0e66bae348f903b438eea87f8788b1ec0c3529e3e485a"
+      },
+      "human/train": {
+        "path": "/mnt/jfs_hpc/home/justin.jose.ruaya/ME2/smart-speaker/.cache/speaker-synthetic-completion-v1/prepared-v1/views/human/train.jsonl",
+        "rows": 1895,
+        "sha256": "77ef84aa57260e4af9942fd3ee495b377bba4df295ba434d41ffa2cad495774e"
+      }
+    },
+    "previous_v2_output_bindings_unchanged": 4
+  },
+  "repository_suite": {
+    "collection_errors": 2,
+    "command": ".venv/bin/python -m pytest -q",
+    "exit_code": 2,
+    "log": ".cache/speaker-synthetic-completion-v1/final-repository-tests.log",
+    "unchanged_baseline_blockers": [
+      "experiments/pcv-synthetic-v1/tests/test_catalog.py: duplicate test_catalog module name",
+      "scripts/test_prototype.py: unavailable register_sources import"
+    ]
+  },
+  "review": {
+    "critical": 0,
+    "declined_to_judge": [
+      "Acoustic intended-text accuracy, accent authenticity and voice aliases",
+      "Recognition improvement and later export/calibration/wake/Pi qualification"
+    ],
+    "finding": "Frozen generator saves raw failure before attempt receipt, so interrupted direct resume could hit FileExistsError",
+    "fix_independently_rereviewed": false,
+    "important_found": 1,
+    "important_unaddressed_in_current_scope": 0,
+    "original_26_tests_independently_passed": true,
+    "original_generator_mocked_resume_integration_passed": true,
+    "recovery_applied_to_actual_run": false,
+    "recovery_tests": 10,
+    "resolution": "Separate speaker_synthetic_recovery v1 verifies and preserves unjournaled files as unaccepted evidence, atomically journals the consumed attempt, and lets the unchanged generator use its next predeclared attempt",
+    "status": "independent_read_only_review_complete"
+  },
+  "rulings": [
+    {
+      "cost_if_wrong": "CUDA stages require rerunning on explicitly available hardware",
+      "decision": "Use one A100 through approved host execution",
+      "reason": "SSH hardware was present but hidden by sandbox; actual CUDA allocation was verified"
+    },
+    {
+      "cost_if_wrong": "Synthetic success cannot establish unseen-human or Pi completion",
+      "decision": "Create a separate synthetic research version without clearing human qualification",
+      "reason": "User selected synthetic generation; old human-only studies and published evaluation stay fixed"
+    },
+    {
+      "cost_if_wrong": "Additional research-only interfaces remain to maintain",
+      "decision": "Keep preparation and recovery in separate research modules",
+      "reason": "Preserve frozen running/completed generator code and provenance"
+    }
+  ],
+  "tdd": {
+    "generation_tests": 19,
+    "preparation_tests": 7,
+    "recovery_initial_red": 9,
+    "recovery_red_log": ".cache/speaker-synthetic-completion-v1/recovery-red.log",
+    "recovery_tests": 10
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-14",
+  "new_installer_tests": {
+    "passed": 12,
+    "failed": 0
+  },
+  "existing_annotation_tests": {
+    "passed": 9,
+    "deselected_missing_torch": 2
+  },
+  "workspace_atomic_concurrent_writes": 8,
+  "independent_review": {
+    "important_findings_fixed": 4,
+    "remaining_important_findings": 0,
+    "actual_wav_concurrency_calls": 200,
+    "failures": 0
+  },
+  "complete_dataset_install_runs": 2,
+  "identical_inventory_and_view_hashes": true,
+  "recordings_decoded_each_run": 97659,
+  "source_shards_verified": 16,
+  "source_bytes": 4137836220,
+  "all_source_and_audio_hashes_verified": true,
+  "all_pcm_valid": true,
+  "full_repository_suite": {
+    "passed": false,
+    "collection_errors": 15,
+    "error_modules": [
+      "experiments/pcv-delivery-v1/tests/test_parler_weights.py",
+      "experiments/pcv-delivery-v1/tests/test_resume.py",
+      "experiments/pcv-synthetic-v1/tests/test_catalog.py",
+      "experiments/pcv-synthetic-v1/tests/test_stage_integration.py",
+      "experiments/phrase-contract-v1/tests/test_decoder_parity.py",
+      "scripts/test/test_pcv_contextual.py",
+      "scripts/test/test_pcv_distill_frames.py",
+      "scripts/test/test_pcv_distillation.py",
+      "scripts/test/test_pcv_final_delivery.py",
+      "scripts/test/test_pcv_public.py",
+      "scripts/test/test_pcv_release_pooling.py",
+      "scripts/test/test_pcv_release_qualification.py",
+      "scripts/test/test_pcv_teacher.py",
+      "scripts/test/test_pcv_teacher_train.py",
+      "scripts/test_prototype.py"
+    ],
+    "causes": [
+      "PyTorch unavailable",
+      "ONNX Runtime unavailable",
+      "existing test_catalog module-name collision",
+      "historical test_prototype imports register_sources from incompatible root train.py"
+    ],
+    "log": ".cache/speaker-dataset-v1/full-pytest.log"
+  },
+  "earlier_expanded_preparation_check": {
+    "passed": 27,
+    "failed": 11,
+    "failure_causes": [
+      "two tests require unavailable torch",
+      "nine tests use historical direct CRLF hash on the LF Git file"
+    ],
+    "failed_tests": [
+      "scripts/test/test_pcv_updated.py::test_source_guard_rejects_external_audio_and_cross_split_training",
+      "scripts/test/test_pcv_updated.py::test_balanced_sampling_does_not_let_numeral_pool_dominate",
+      "scripts/test/test_pcv_release_prepare.py::test_exact_overrides_preserve_typed_target_across_splits",
+      "scripts/test/test_pcv_release_prepare.py::test_uncertain_transcript_is_not_negative_ground_truth",
+      "scripts/test/test_pcv_release_prepare.py::test_unsupported_or_conflated_requests_never_promoted[make the attic light red-COLOR]",
+      "scripts/test/test_pcv_release_prepare.py::test_unsupported_or_conflated_requests_never_promoted[call Jane-CALL]",
+      "scripts/test/test_pcv_release_prepare.py::test_unsupported_or_conflated_requests_never_promoted[play Queen-PLAY_MUSIC]",
+      "scripts/test/test_pcv_release_prepare.py::test_unsupported_or_conflated_requests_never_promoted[turn volume down by twenty percent-VOLUME_DOWN]",
+      "scripts/test/test_pcv_release_prepare.py::test_unsupported_or_conflated_requests_never_promoted[set an alarm tomorrow at six a m-ALARM]",
+      "scripts/test/test_pcv_release_prepare.py::test_unsupported_or_conflated_requests_never_promoted[please switch to the green light-COLOR]",
+      "scripts/test/test_pcv_release_prepare.py::test_unsupported_or_conflated_requests_never_promoted[play it louder-VOLUME_UP]"
+    ]
+  },
+  "training_performed": false,
+  "models_installed": false,
+  "physical_pi_measured": false,
+  "accuracy_improvement": "not measured",
+  "human_coverage_gaps": {
+    "train": [
+      "MESSAGE"
+    ],
+    "dev": [
+      "CALL",
+      "MESSAGE"
+    ],
+    "calibration": [
+      "CALL",
+      "CREATE_REMINDER",
+      "LIST_REMINDERS",
+      "MESSAGE",
+      "TEMPERATURE"
+    ]
+  }
+}

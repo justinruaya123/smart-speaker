@@ -15,8 +15,6 @@ import numpy as np
 from einops import rearrange
 import soundfile as sf
 
-from scripts.runtime.pcv_final_runtime import Runtime, make_gate
-
 MAX_WAV_BYTES=4*1024*1024
 
 
@@ -41,8 +39,11 @@ class AudioService:
     def emit(self,value):
         self.sequence+=1
         if value.get('event')=='command' and self.settings:
-            from scripts.runtime.speaker_confidence import application_decision
-            value={**value,'application':application_decision(value,self.settings['inference'])}
+            if getattr(self.runtime,'decision_authority',None)=='atomic_command':
+                value={**value,'application':{'mode':self.settings['inference']['mode'],**value['output']}}
+            else:
+                from scripts.runtime.speaker_confidence import application_decision
+                value={**value,'application':application_decision(value,self.settings['inference'])}
         self.deliver({**value,'session_id':self.session,'sequence':self.sequence,'source':self.source,
                       'actions_enabled':bool(self.settings and self.settings['actions']['enabled'] and self.source=='microphone')})
 
@@ -59,6 +60,8 @@ class AudioService:
         class Observed:
             root=service.runtime.root
             def recognize(self,pcm):return service.recognize(pcm)
+        if hasattr(self.runtime,'make_gate'):return self.runtime.make_gate(Observed())
+        from scripts.runtime.pcv_final_runtime import make_gate
         return make_gate(Observed())
 
     def forward(self,event):
@@ -132,6 +135,7 @@ class AudioService:
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--bundle',type=Path,required=True)
     p.add_argument('--threads',type=int,default=1);p.add_argument('--diagnostic',action='store_true')
+    p.add_argument('--profile',choices=['benchmark-compatible','owner-protected'],default='benchmark-compatible')
     p.add_argument('--engine',choices=['ncnn','onnxruntime'])
     p.add_argument('--wav',type=Path);p.add_argument('--wake',action='store_true');p.add_argument('--list-mics',action='store_true')
     args=p.parse_args()
@@ -146,13 +150,23 @@ def main():
     settings,_=resolve_config(Path(os.environ.get('SMART_SPEAKER_ROOT',Path.cwd())),overrides={'engine':args.engine})
     if args.list_mics:
         emit({'event':'devices','devices':AudioService(None,emit).devices()});return
-    runtime=Runtime(args.bundle,diagnostic=args.diagnostic,threads=args.threads,engine=settings['inference']['engine'])
+    if (args.bundle/'bundle.json').exists() and json.loads((args.bundle/'bundle.json').read_text()).get('format')=='mvp-static-v1':
+        from scripts.runtime.mvp_static import Runtime as DirectRuntime
+        runtime=DirectRuntime(args.bundle,threads=args.threads,engine=settings['inference']['engine'],mode=settings['inference']['mode'],profile=args.profile)
+        settings['actions']['enabled']=False
+    else:
+        if args.profile!='benchmark-compatible':raise ValueError('Owner-protected backend is not qualified')
+        from scripts.runtime.pcv_final_runtime import Runtime
+        runtime=Runtime(args.bundle,diagnostic=args.diagnostic,threads=args.threads,engine=settings['inference']['engine'])
     service=AudioService(runtime,emit,settings)
     if args.list_mics:emit({'event':'devices','devices':service.devices()});return
     if args.wav:emit({'event':'done',**service.wav(args.wav.read_bytes(),wake=args.wake)});return
     service.emit({'event':'ready','engine':runtime.engine,'loaded':True,'nativeSession':True,'state':service.state,
+                  'profile':getattr(runtime,'profile','legacy-no-owner'),'owner_gating_enabled':False,
                   'application_config':settings['inference'],'ui':settings['ui'],
-                  'model_sha256':runtime.recipe['binding']['model_sha256'],'policy_enabled':runtime.policy['enabled'],
+                  'model_sha256':runtime.recipe['binding']['model_sha256'],
+                  'wake_phrase':'hey iris' if getattr(runtime,'decision_authority',None)=='atomic_command' else 'hey jarvis',
+                  'policy_enabled':runtime.policy['enabled'] and getattr(runtime,'mode','demo')=='demo',
                   'threads':args.threads,'session_load_ms':runtime.load_ms})
     incoming=queue.Queue(maxsize=8)
     def reader():

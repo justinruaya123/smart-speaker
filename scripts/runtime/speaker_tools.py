@@ -74,6 +74,7 @@ def node_tools(root):
     pnpm=pnpm_root/'node_modules/pnpm/bin/pnpm.mjs'
     env=os.environ.copy();env['PATH']=str(binary.parent)+os.pathsep+env.get('PATH','')
     if not pnpm.exists():run([binary,npm,'install','--prefix',pnpm_root,'--no-audit','--no-fund',f'pnpm@{PNPM_VERSION}'],env=env)
+    env['PATH']=str(pnpm_root/'node_modules/.bin')+os.pathsep+env['PATH']
     return binary,pnpm,env
 
 

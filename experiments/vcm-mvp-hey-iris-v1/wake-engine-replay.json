@@ -1,0 +1,38 @@
+{
+  "iris_sha256": "df61a27990d5ed089e19262ac8fb4d7a5753f7e9aaabb06a67737e1be8e0e4df",
+  "cpu": 1,
+  "threads": 1,
+  "measurement": "x86 HPC CPU replay; no real-person, microphone or Raspberry Pi test",
+  "engines": {
+    "ncnn": {
+      "positive_n": 16,
+      "detected": 12,
+      "duplicate_detections": 0,
+      "negative_n": 200,
+      "false_wakes": 0,
+      "negative_seconds": 421.5279375,
+      "score_step_ms": {
+        "n": 14844,
+        "p50": 1.7599074635654688,
+        "p95": 1.856013829819858
+      },
+      "session_load_ms": 197.34881166368723
+    },
+    "onnxruntime": {
+      "positive_n": 16,
+      "detected": 12,
+      "duplicate_detections": 0,
+      "negative_n": 200,
+      "false_wakes": 0,
+      "negative_seconds": 421.5279375,
+      "score_step_ms": {
+        "n": 14844,
+        "p50": 1.3772170059382915,
+        "p95": 1.512600900605321
+      },
+      "session_load_ms": 19.179651979357004
+    }
+  },
+  "all_event_counts_equal": true,
+  "negative_exposure": "clip duration only; silence padding and reset gaps excluded"
+}

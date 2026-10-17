@@ -1,0 +1,178 @@
+{
+  "note": "Duration from audited saved-PCM sample counts; declared identities are not verified people/demographics",
+  "splits": {
+    "train": {
+      "human": {
+        "rows": 1889,
+        "samples": 88821614,
+        "hours": 1.5420419097222222,
+        "declared_speakers_or_voices": 176,
+        "sources": {
+          "airimonda/ai231-me2-voice-commands": 1889
+        },
+        "distinct_positive_classes": 55,
+        "positive": 1416,
+        "negative": 473,
+        "ambiguous": 0
+      },
+      "synthetic": {
+        "rows": 21850,
+        "samples": 733209280,
+        "hours": 12.729327777777778,
+        "declared_speakers_or_voices": 76,
+        "sources": {
+          "airimonda/ai231-me2-voice-commands": 5982,
+          "martinnavs/ai231-fil-supplemental-data": 15444,
+          "Qwen3-designed-completion-v1": 184,
+          "Qwen3-original-designed-iris-v1": 240
+        },
+        "distinct_positive_classes": 95,
+        "positive": 21654,
+        "negative": 196,
+        "ambiguous": 0
+      }
+    },
+    "dev": {
+      "human": {
+        "rows": 256,
+        "samples": 11833228,
+        "hours": 0.2054379861111111,
+        "declared_speakers_or_voices": 36,
+        "sources": {
+          "airimonda/ai231-me2-voice-commands": 256
+        },
+        "distinct_positive_classes": 34,
+        "positive": 193,
+        "negative": 63,
+        "ambiguous": 0
+      },
+      "synthetic": {
+        "rows": 1083,
+        "samples": 30713601,
+        "hours": 0.5332222395833333,
+        "declared_speakers_or_voices": 11,
+        "sources": {
+          "airimonda/ai231-me2-voice-commands": 811,
+          "Qwen3-designed-completion-v1": 184,
+          "Qwen3-original-designed-iris-v1": 88
+        },
+        "distinct_positive_classes": 95,
+        "positive": 1003,
+        "negative": 80,
+        "ambiguous": 0
+      }
+    },
+    "calibration": {
+      "human": {
+        "rows": 210,
+        "samples": 10398096,
+        "hours": 0.1805225,
+        "declared_speakers_or_voices": 24,
+        "sources": {
+          "airimonda/ai231-me2-voice-commands": 210
+        },
+        "distinct_positive_classes": 23,
+        "positive": 122,
+        "negative": 88,
+        "ambiguous": 0
+      },
+      "synthetic": {
+        "rows": 1285,
+        "samples": 37446080,
+        "hours": 0.6501055555555556,
+        "declared_speakers_or_voices": 13,
+        "sources": {
+          "airimonda/ai231-me2-voice-commands": 1013,
+          "Qwen3-designed-completion-v1": 184,
+          "Qwen3-original-designed-iris-v1": 88
+        },
+        "distinct_positive_classes": 95,
+        "positive": 1205,
+        "negative": 80,
+        "ambiguous": 0
+      }
+    },
+    "test": {
+      "human": {
+        "rows": 1050,
+        "samples": 52092198,
+        "hours": 0.9043784374999999,
+        "declared_speakers_or_voices": 92,
+        "sources": {
+          "airimonda/ai231-me2-voice-commands": 1050
+        },
+        "distinct_positive_classes": 44,
+        "positive": 636,
+        "negative": 229,
+        "ambiguous": 185
+      },
+      "synthetic": {
+        "rows": 3368,
+        "samples": 95709440,
+        "hours": 1.6616222222222223,
+        "declared_speakers_or_voices": 29,
+        "sources": {
+          "airimonda/ai231-me2-voice-commands": 3368
+        },
+        "distinct_positive_classes": 31,
+        "positive": 3368,
+        "negative": 0,
+        "ambiguous": 0
+      }
+    },
+    "holdout": {
+      "human": {
+        "rows": 96,
+        "samples": 6910462,
+        "hours": 0.11997329861111111,
+        "declared_speakers_or_voices": 3,
+        "sources": {
+          "airimonda/ai231-me2-voice-commands": 96
+        },
+        "distinct_positive_classes": 33,
+        "positive": 83,
+        "negative": 11,
+        "ambiguous": 2
+      },
+      "synthetic": {
+        "rows": 100,
+        "samples": 2692800,
+        "hours": 0.04675,
+        "declared_speakers_or_voices": 2,
+        "sources": {
+          "airimonda/ai231-me2-voice-commands": 100
+        },
+        "distinct_positive_classes": 31,
+        "positive": 100,
+        "negative": 0,
+        "ambiguous": 0
+      }
+    },
+    "personal-test": {
+      "human": {
+        "rows": 0,
+        "samples": 0,
+        "hours": 0.0,
+        "declared_speakers_or_voices": 0,
+        "sources": {},
+        "distinct_positive_classes": 0,
+        "positive": 0,
+        "negative": 0,
+        "ambiguous": 0
+      },
+      "synthetic": {
+        "rows": 88,
+        "samples": 2334722,
+        "hours": 0.04053336805555556,
+        "declared_speakers_or_voices": 2,
+        "sources": {
+          "Qwen3-original-designed-iris-v1": 88
+        },
+        "distinct_positive_classes": 18,
+        "positive": 36,
+        "negative": 52,
+        "ambiguous": 0
+      }
+    }
+  }
+}

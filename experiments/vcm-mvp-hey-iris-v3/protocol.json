@@ -1,0 +1,78 @@
+{
+  "experiment": "vcm-mvp-hey-iris-v3",
+  "date": "2026-10-17",
+  "purpose": "Improve actual command-only correct acceptance; target at least 30/36 personal positives with unknown and wrong accepts reported separately",
+  "requirements": [
+    "ME-01",
+    "ME-02",
+    "ME-03",
+    "ME-04",
+    "ME-05",
+    "ME-06",
+    "ME-07",
+    "ME-08",
+    "UC-01",
+    "UC-02",
+    "UC-03",
+    "UC-04",
+    "UC-05",
+    "UC-06",
+    "UC-07",
+    "UC-08",
+    "UC-09",
+    "UC-10"
+  ],
+  "parent_protocol_sha256": "5ff12ab5183d5e3592c5ed6496a768c66b2b8273459928bfd514cc4cfe93aa84",
+  "hypothesis": "Coarse probability cutoffs and grouping errors across distinct finite commands suppress correct personal/benchmark outputs; finer observed score intervals and class-specific policies can improve acceptance with fixed weights and fitting-error limits",
+  "measured_trigger": {
+    "full_pause_max_wrong_fitting_score": 0.99611,
+    "full_pause_max_correct_fitting_score": 0.99789,
+    "old_grid_last_accepting_cutoff": 0.995,
+    "next_cutoff": 1.000001
+  },
+  "arms": [
+    "original_v2",
+    "observed_intent",
+    "observed_class_min2"
+  ],
+  "changed_factors": "original->observed_intent: threshold grid only; observed_intent->observed_class_min2: finite-command grouping with >=2 correct fitting positives",
+  "fixed": "All model weights, frontend, normalization, 328 commands and their competition, data membership, loss history, UNKNOWN constraints and known-error limits",
+  "fitting_splits": [
+    "dev",
+    "calibration"
+  ],
+  "selection": "Maximize correct human fitting accepts under the same empirical error bounds, then synthetic correct. Original policy wins a complete tie. No test/holdout/personal-test prediction used to choose an arm.",
+  "minimum_class_correct_positives": 2,
+  "probability_interval_min_gap": 1e-05,
+  "known_error_limits": {
+    "human": 0.03,
+    "synthetic": 0.01
+  },
+  "unknown_fitting_accepts": 0,
+  "qualification": "Unchanged; policies are empirically fitted and unqualified. No human support is invented for synthetic-only names.",
+  "historical_test_exposure": "v1/v2 tests have already been examined. New v3 comparisons are historical regressions, not blind tests; no further tuning after scoring.",
+  "primary_target": "30+ correct accepted out of the unchanged 36 synthetic personal command-only positives; wrong accepts/52 negatives and original official/project regressions also reported",
+  "wake": "Decoupled; preserve the selected Hey Iris model and its existing results",
+  "physical_pi_measured": false,
+  "actions_enabled": false,
+  "installed": false,
+  "bundles": {
+    "compact": {
+      "path": ".cache/vcm-mvp-hey-iris-v2/runs/augmented-20261017/compact/export",
+      "bundle_sha256": "627d0780ac22f302a198228217b9e6bff3be42b1e5e3416c741ce296a5a712c8",
+      "calibration_predictions_sha256": "6e4d2c702a758e91bbf27ff93318fc6581c78057ec4dff43c85e183611657658"
+    },
+    "full": {
+      "path": ".cache/vcm-mvp-hey-iris-v2/runs/augmented-20261017/full/export",
+      "bundle_sha256": "6411561159f33ea08f71eed26c6633fd5b11d691b2773b385a9dc9c5bc2957c6",
+      "calibration_predictions_sha256": "1942f27e2029fb521bfd202507527a26acf913b0ee2e3f4de44eb75235ee1c2f"
+    }
+  },
+  "skill_sources": {
+    "superpowers": "systematic-debugging, test-driven-development, verification-before-completion (installed 6.4.2)",
+    "training_reference": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/a1043ef544e3a100c28e70a736b6cf32554d0677/skills/pytorch-lightning/SKILL.md",
+    "design_reference": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/a1043ef544e3a100c28e70a736b6cf32554d0677/skills/experimental-design/SKILL.md",
+    "mlops_reference": "https://github.com/vaquarkhan/ml-ops-agent-skills/blob/main/skills/using-mlops-agent-skills/SKILL.md"
+  },
+  "environment": "Existing root .venv and local JSON receipts; no new tracking service, Lightning migration, skill installation or environment"
+}

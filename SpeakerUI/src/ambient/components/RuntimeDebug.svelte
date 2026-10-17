@@ -35,9 +35,9 @@
           <button disabled={busy || selected === ''} onclick={() => request('listen', { device: Number(selected) })}>Listen</button>
           <button disabled={busy} onclick={() => request('mute', {})}>Mute</button></div>
         {#if listed && !devices.length}<p>No input devices found on this host. Connect a microphone to the Pi and refresh.</p>{/if}
-        <label class="row"><input type="checkbox" bind:checked={wake}/> WAV includes “Hey Jarvis” and a command</label>
+        <label class="row"><input type="checkbox" bind:checked={wake}/> WAV includes the wake phrase and a command</label>
         <label class="row">Replay WAV (mono, 16 kHz)<input aria-label="Replay WAV" type="file" accept=".wav,audio/wav" disabled={busy} onchange={upload}/></label>
-        <p role="status">{busy ? 'Processing…' : error || m.runtimeError || 'Say Hey Jarvis, pause until command ready, then speak.'}</p>
+        <p role="status">{busy ? 'Processing…' : error || m.runtimeError || 'Say the wake phrase, pause until command ready, then speak.'}</p>
         {#if m.runtimeResult?.output}<p data-command-summary><strong>{m.runtimeResult.application?.accepted ? 'Application: '+m.runtimeResult.application.command.intent : 'Application rejected: '+(m.runtimeResult.application?.reason||m.runtimeResult.output.reason)}</strong>{#if m.runtimeResult.diagnostic_candidate?.candidate}<br/>Model policy: {m.runtimeResult.output.accepted?'accepted':m.runtimeResult.output.reason}<br/>Candidate: {m.runtimeResult.diagnostic_candidate.candidate.intent} · {JSON.stringify(m.runtimeResult.diagnostic_candidate.candidate.slots)}{/if}</p>{/if}
         <pre data-runtime-result>{JSON.stringify(m.runtimeResult || { state: m.runtimeState, actions_enabled: m.runtimeActions }, null, 2)}</pre>
       </div>

@@ -1,0 +1,217 @@
+{
+  "excluded": {
+    "ambiguous_reference": 504,
+    "missing_speaker": 11,
+    "failed_supplemental_qa": 529
+  },
+  "raw_cross_split_groups": {
+    "speaker_id": 0,
+    "pair_id": 0,
+    "pcm_sha256": 0
+  },
+  "conflicting_pcm_groups": 0,
+  "evaluation_membership_preserved": true,
+  "speaker_identity_scope": "Declared source IDs only; aliases and voice identity unverified",
+  "synthetic_reference_aliases": "unresolved; not proof of unseen human speakers",
+  "near_duplicate_audio": "not audited",
+  "independent_listening": "not performed",
+  "version": "speaker-dataset-v1",
+  "created_utc": "2026-10-13T16:12:37.701578+00:00",
+  "sources": {
+    "airimonda/ai231-me2-voice-commands/primary/holdout": 196,
+    "airimonda/ai231-me2-voice-commands/primary/numerals": 66390,
+    "airimonda/ai231-me2-voice-commands/primary/test": 4418,
+    "airimonda/ai231-me2-voice-commands/primary/train": 10682,
+    "martinnavs/ai231-fil-supplemental-data/default/train": 14120,
+    "martinnavs/ai231-fil-supplemental-data/gap_fill/train": 1849,
+    "martinnavs/ai231-fil-supplemental-data/numeral_wordings/train": 4
+  },
+  "recordings": 97659,
+  "kinds": {
+    "human": 70412,
+    "synthetic": 27247
+  },
+  "unique_audio_files": 97659,
+  "unique_pcm": 97659,
+  "audio_flags": {},
+  "reference_status": {
+    "supported": 29703,
+    "unsupported": 875,
+    "ambiguous": 691,
+    "auxiliary": 66390
+  },
+  "supplemental_qa": {
+    "True": 15444,
+    "False": 529
+  },
+  "inventory": ".cache/speaker-dataset-v1/verified/inventory.jsonl",
+  "inventory_sha256": "0c71cdc8347b8c9d01075f7cce6349c4eb4bfe2666653c4f149847ca8b2ded9a",
+  "views": {
+    "human/train": {
+      "path": ".cache/speaker-dataset-v1/verified/views/human/train.jsonl",
+      "rows": 1895,
+      "sha256": "77ef84aa57260e4af9942fd3ee495b377bba4df295ba434d41ffa2cad495774e"
+    },
+    "human/dev": {
+      "path": ".cache/speaker-dataset-v1/verified/views/human/dev.jsonl",
+      "rows": 256,
+      "sha256": "9ce783bfc24086a12ed0e66bae348f903b438eea87f8788b1ec0c3529e3e485a"
+    },
+    "human/calibration": {
+      "path": ".cache/speaker-dataset-v1/verified/views/human/calibration.jsonl",
+      "rows": 210,
+      "sha256": "af7858186f401f0c016cd930dd057c08c1e4d8552d7dc4179e489ca3e0c48253"
+    },
+    "synthetic/train": {
+      "path": ".cache/speaker-dataset-v1/verified/views/synthetic/train.jsonl",
+      "rows": 21426,
+      "sha256": "b711d4a8f7d9b29b7e1c19687e9d43f821e033ae01105ad52eae023498234dec"
+    },
+    "evaluation/test": {
+      "path": ".cache/speaker-dataset-v1/verified/views/evaluation/test.jsonl",
+      "rows": 4418,
+      "sha256": "a4fdcedfc86efebb36414114887abdc4ee51eba102b0247740aef18d1ad15abc"
+    },
+    "evaluation/holdout": {
+      "path": ".cache/speaker-dataset-v1/verified/views/evaluation/holdout.jsonl",
+      "rows": 196,
+      "sha256": "a51e720b97f7b31e3e2f025c21bf679006ad444fd2d363916d9a11aa0f488b5b"
+    },
+    "synthetic/diagnostic": {
+      "path": ".cache/speaker-dataset-v1/verified/views/synthetic/diagnostic.jsonl",
+      "rows": 1824,
+      "sha256": "93b4c9111fd7ce5006b18b6f20d9b1c6764a50cc5e322eaf2dc39c5b4190f322"
+    },
+    "auxiliary": {
+      "path": ".cache/speaker-dataset-v1/verified/views/auxiliary.jsonl",
+      "rows": 66390,
+      "sha256": "0dca5439d8ac063b207709ebfc2ff933ffbfa6e70feb18a6d81eaae2d52d4521"
+    },
+    "excluded": {
+      "path": ".cache/speaker-dataset-v1/verified/views/excluded.jsonl",
+      "rows": 1044,
+      "sha256": "d19b5d809ecc18e9372ae5a351e0daa4fa7af70a7ef907ce02f6934ec0fdd5af"
+    }
+  },
+  "source_receipts": {
+    "experiments/pcv-source-refresh-v1/acquisition-complete.json": "994798b431f9d376f70fc74f2e4758a2d5fa630d384200131f5481578955cb0a",
+    "data/sources/fil-supplemental.source.json": "41bc968e3e90d299c1aca11bdfe1345a2b6fec60676d9c6c75f2276da0788a23"
+  },
+  "source_payloads": {
+    ".cache/pcv-source-refresh-v1/source/data/holdout-00000-of-00001.parquet": "9917e336ec596eaaddb476e266f36451326e3f8e5a2cb3dafbb675c33be133aa",
+    ".cache/pcv-updated-voice-v1/source/data/numerals-00000-of-00006.parquet": "cefd4884acf3aec7c33625dc46a970d7b5b921d0507e7b6e41bd430a3eb87504",
+    ".cache/pcv-updated-voice-v1/source/data/numerals-00001-of-00006.parquet": "dcd8edade416bba1553d7d50db3bdfcacd8ac4aaad54b775316990741168a8a8",
+    ".cache/pcv-updated-voice-v1/source/data/numerals-00002-of-00006.parquet": "768f4d9c426668831ddbece9d496c161ac3149ba1ab16bec722d1d0fd35592c8",
+    ".cache/pcv-updated-voice-v1/source/data/numerals-00003-of-00006.parquet": "d9a58e4d10f625f170743f1623b7750f2933d8e6a2902ab99b634488a6041ec7",
+    ".cache/pcv-updated-voice-v1/source/data/numerals-00004-of-00006.parquet": "b057c8930fa00f52481007be50e15382c4b68b9044a46cda1e923b295235f281",
+    ".cache/pcv-updated-voice-v1/source/data/numerals-00005-of-00006.parquet": "aced4a5f0588d285df4155cb2da66ba327c1d35336079228a31f05a142bf315f",
+    ".cache/pcv-source-refresh-v1/source/data/test-00000-of-00001.parquet": "81794982a6b7fd8c75758ad5f4c0257abedea6c1c0575bbaaabcba8e0e0a43ea",
+    ".cache/pcv-source-refresh-v1/source/data/train-00000-of-00002.parquet": "977e6c6be208818a35496ac6e1a2b2da62f3387acba377664e0f48dbdc2cec9e",
+    ".cache/pcv-source-refresh-v1/source/data/train-00001-of-00002.parquet": "4c29353d0ab14bb27fd3af8b513c2b9dd41f7707e86fbaa55104bfe71a328674",
+    ".cache/fil-supplemental-v1/source/data/train-00000-of-00004.parquet": "01d32c3ed7b2e9a0ee131a1dad128c8e63e7b20a198ce1170625bd0940db0778",
+    ".cache/fil-supplemental-v1/source/data/train-00001-of-00004.parquet": "c66da6df2579243d27fb956ddbc413f2e2ed0a4c5acaa77c333e905f866d885a",
+    ".cache/fil-supplemental-v1/source/data/train-00002-of-00004.parquet": "8a7e0460893a97cb4e3ad4b3729ae781a277dcbccced7484898e2f5985122566",
+    ".cache/fil-supplemental-v1/source/data/train-00003-of-00004.parquet": "0d31aa80f447423413fa097567c8df9cbdaa70439774d43df209c8ffc47df257",
+    ".cache/fil-supplemental-v1/source/gap_fill/train-00000-of-00001.parquet": "1e229f67df1b539711886e01062dbc0309c58f38e739dad787b11c669d314512",
+    ".cache/fil-supplemental-v1/source/numeral_wordings/train-00000-of-00001.parquet": "9808c05811bc0e3bdd152c74c4473673b1355e2dc355873ceb8bb48936a5ac5a"
+  },
+  "implementation_sha256": "87f4fb4939d7903f4b14cc895708c660a488d05b6d8662f9cc7c0fcaa6c4d1e9",
+  "annotation_policy_sha256": "34dd479aaca93b761c1df787ad2cb9fd10cc6d4c43b6136bf057661264be0ae9",
+  "annotation_receipt_recovery": {
+    "disk_sha256": "70d40fe5f66b38141c6b745ca3c6eaf24eb87f2d7a56ad8df3762f99a25c32f8",
+    "verified_original_sha256": "e1c0fba7d11b87983aa0499669ec2f10c3949e3fdf9304c4c32484f69490a80d",
+    "representation": "verified CRLF recovery in memory"
+  },
+  "evaluation": "Every published test/holdout row retained, including ambiguity/errors; filter metric_eligible explicitly for labelled metrics",
+  "no_training_performed": true,
+  "features_extracted": false,
+  "coverage": {
+    "human/train": {
+      "intents": {
+        "PLAY_MUSIC": 42,
+        "UNKNOWN": 473,
+        "WEATHER": 47,
+        "TIME": 98,
+        "LIGHT_ON": 78,
+        "LIGHT_OFF": 92,
+        "PAUSE": 93,
+        "STOP": 135,
+        "NEXT": 89,
+        "VOLUME": 238,
+        "CALL": 10,
+        "LIST_REMINDERS": 37,
+        "TIMER": 60,
+        "ALARM": 117,
+        "TEMPERATURE": 72,
+        "BRIGHTNESS": 40,
+        "COLOR": 163,
+        "CREATE_REMINDER": 11
+      },
+      "declared_speakers": 182
+    },
+    "human/dev": {
+      "intents": {
+        "PLAY_MUSIC": 8,
+        "UNKNOWN": 63,
+        "WEATHER": 10,
+        "TIME": 16,
+        "LIGHT_ON": 7,
+        "LIGHT_OFF": 11,
+        "PAUSE": 16,
+        "STOP": 20,
+        "NEXT": 13,
+        "VOLUME": 27,
+        "LIST_REMINDERS": 5,
+        "TIMER": 11,
+        "ALARM": 9,
+        "TEMPERATURE": 20,
+        "BRIGHTNESS": 1,
+        "COLOR": 17,
+        "CREATE_REMINDER": 2
+      },
+      "declared_speakers": 36
+    },
+    "human/calibration": {
+      "intents": {
+        "PLAY_MUSIC": 4,
+        "UNKNOWN": 88,
+        "WEATHER": 2,
+        "TIME": 11,
+        "LIGHT_ON": 17,
+        "LIGHT_OFF": 14,
+        "PAUSE": 9,
+        "STOP": 13,
+        "NEXT": 8,
+        "VOLUME": 21,
+        "TIMER": 2,
+        "ALARM": 7,
+        "BRIGHTNESS": 4,
+        "COLOR": 10
+      },
+      "declared_speakers": 24
+    },
+    "synthetic/train": {
+      "intents": {
+        "PLAY_MUSIC": 699,
+        "WEATHER": 593,
+        "TIME": 676,
+        "LIGHT_ON": 641,
+        "LIGHT_OFF": 643,
+        "PAUSE": 431,
+        "STOP": 761,
+        "NEXT": 1454,
+        "VOLUME": 1358,
+        "CALL": 582,
+        "MESSAGE": 707,
+        "LIST_REMINDERS": 690,
+        "TIMER": 2136,
+        "ALARM": 2066,
+        "TEMPERATURE": 2232,
+        "BRIGHTNESS": 1921,
+        "COLOR": 1965,
+        "CREATE_REMINDER": 1871
+      },
+      "declared_speakers": 70
+    }
+  }
+}
