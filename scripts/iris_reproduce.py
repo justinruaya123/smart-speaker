@@ -26,6 +26,14 @@ HERE = 'experiments/iris-reproduction-v1'
 CACHE = '.cache/iris-reproduction-v1'
 
 
+def download_environment(root, directory):
+    # Thousands of small immutable files exhausted the Xet token API quota.
+    # The pinned Hub client supports ordinary HTTP with the same byte hashes.
+    return {'HF_HUB_DISABLE_XET': '1', 'HF_HUB_CACHE': str(Path(root) / CACHE / 'hub'),
+            'HF_XET_CACHE': str(Path(root) / CACHE / 'xet'),
+            'HF_DATASETS_CACHE': str(Path(directory) / 'datasets'), 'TORCH_HOME': str(Path(directory) / 'torch')}
+
+
 def training_inputs(base):
     """Keep project initialization, never hydrate a completed candidate fit."""
     result = deepcopy(base)
@@ -217,9 +225,7 @@ def run(*, root=ROOT, run_id=None, device='cpu', skip_train=False, preflight_onl
                 command.append(flag)
         record['command'] = command
         save(output, record)
-        environment = {**os.environ, 'PYTHONUNBUFFERED': '1', 'HF_HUB_CACHE': str(directory / 'hub'),
-                       'HF_XET_CACHE': str(directory / 'xet'), 'HF_DATASETS_CACHE': str(directory / 'datasets'),
-                       'TORCH_HOME': str(directory / 'torch'),
+        environment = {**os.environ, 'PYTHONUNBUFFERED': '1', **download_environment(root, directory),
                        'IRIS_REPRODUCTION_INPUTS': input_path.relative_to(workspace).as_posix()}
         subprocess.run(command, cwd=workspace, env=environment, check=True)
         workflow = read(workspace / 'experiments/iris-release-v1' / ('reproduction-run-' + token + '.json'))

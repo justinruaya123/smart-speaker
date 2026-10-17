@@ -1,0 +1,32 @@
+{
+  "cached_wheel_bootstrap_seconds": 186.47495339717716,
+  "cold_dependency_bootstrap_seconds": 556.0441570356488,
+  "completed_vcm_inputs_excluded": 52,
+  "completed_vcm_training_runs": 0,
+  "correction": "Use supported HF_HUB_DISABLE_XET=1 HTTP transfer, retaining identical immutable revisions and SHA-256; cache verified Hub objects within each clone, keeping fitted states isolated",
+  "designed_audio_files_restored": 1381,
+  "experiment": "iris-reproduction-v1",
+  "failure": {
+    "component": "huggingface_hub 0.36.2 Xet read-token refresh",
+    "http_status": 429,
+    "limit": "1000 API requests per 5 minutes"
+  },
+  "http_probe": {
+    "bytes": 38444,
+    "sha256": "50d4ffc0c1d4efa36ba464dce5026b500fb9dea51da3aadf30308b2a76220f45",
+    "status": "passed"
+  },
+  "run_id": "dgx-cpu-20261017",
+  "schema_version": 1,
+  "scientific_changes": false,
+  "source_commit": "3d17eddd79880d26e0c8eebe49d36fed02aaeb74",
+  "source_inputs_changed": false,
+  "source_tree": "4187ac63aa5454082c27fa359f81eee7181a2c0d",
+  "stage": "preflight-inputs",
+  "status": "failed_before_training",
+  "unmeasured": [
+    "fresh training completion in corrected workflow",
+    "physical Pi",
+    "original human wake-command pairs"
+  ]
+}

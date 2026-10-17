@@ -1,7 +1,10 @@
 """Fresh training must not hydrate completed VCM fits or mutate source evidence."""
 import hashlib
 import json
+import os
 from pathlib import Path
+import subprocess
+import sys
 import zipfile
 
 import pytest
@@ -16,6 +19,18 @@ def put(root, name, content):
 
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def test_bulk_download_uses_http_in_real_hub_client_and_one_cache_per_clone(tmp_path):
+    from scripts.iris_reproduce import download_environment
+    first = download_environment(tmp_path, tmp_path / 'run-1')
+    second = download_environment(tmp_path, tmp_path / 'run-2')
+    assert first['HF_HUB_CACHE'] == second['HF_HUB_CACHE']
+    assert first['HF_HUB_CACHE'] == str(tmp_path / '.cache/iris-reproduction-v1/hub')
+    actual = subprocess.check_output([sys.executable, '-c',
+        'from huggingface_hub.utils._runtime import is_xet_available; print(is_xet_available())'],
+        env={**os.environ, 'HF_HUB_DISABLE_XET': '0', **first}, text=True)
+    assert actual.strip() == 'False'
 
 
 def test_training_input_plan_keeps_initializer_but_excludes_completed_fits_and_scores(tmp_path):
