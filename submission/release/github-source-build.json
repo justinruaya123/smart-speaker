@@ -1,0 +1,19 @@
+{
+  "source_commit": "d42760911b32ba3349879d3fe6bdce4979c4eb64",
+  "release": "https://github.com/justinruaya123/smart-speaker/releases/tag/2m-inference-2-1",
+  "download": "https://github.com/justinruaya123/smart-speaker/releases/download/2m-inference-2-1/smart-speaker-inference-2m.zip",
+  "bytes": 13412589,
+  "sha256": "42ff3322e9af2815efecb5a816d3f69c868dddad9c434ec010da265171dd6354",
+  "verified_members": 1658,
+  "anonymous_download_verified": true,
+  "github_source_build": "success",
+  "workflow": "https://github.com/justinruaya123/smart-speaker/actions/runs/39010833830",
+  "source_files_verified": 114,
+  "ignore_first_commit": "4f3a22e6c69d9c7a209000e54cfe5953c80c5934",
+  "branch": "codex/final-submission",
+  "javascript_tests": 104,
+  "python_tests": 42,
+  "installed_artifacts_changed": false,
+  "physical_pi_tested": false,
+  "live_device_actions": false
+}
