@@ -246,7 +246,7 @@
     "data/sources/qwen-synthetic-completion.source.json": "cd3753dad2a43fcfa277e73908222994a56a9767883f8747954dc531ecfb33ac",
     "docs/DATASETS.md": "42f708b8c2a61b730756a0eadbf0eb6cdb55c16d66571391fe8315bb54e437c2",
     "docs/EXPERIMENT-iris-release-v1.md": "b2d33f1492696b17c4eef4202cf3e21d65cbbafa34bccb1d860d0f737006cec6",
-    "docs/EXPERIMENT-iris-reproduction-v1.md": "b3aa9c89826229b12cd5a5950766e9446ad78fe3e749f335762b6bb6cd4dac9d",
+    "docs/EXPERIMENT-iris-reproduction-v1.md": "7b2c93ad28d8adf138823277b732e02f53aa6b2f47372cf1d36affa8ca2c3b75",
     "docs/HANDOFF-iris-rpi-v1.md": "9585b445e67945d32b7bfee18b2a30c248a112be3fdc36125672ce62a9dd131d",
     "docs/assets/iris-benchmark-data.json": "4ff31e2b839983a9224c37852958ee48a70995acfd557baab4ebf45db1a23bdc",
     "docs/assets/iris-command-benchmarks.png": "ef9c023d9cfaa88c6be3ab9c876718b0a714a85a51a31f7cecde0957ea10df12",
@@ -299,6 +299,7 @@
     "experiments/iris-release-v1/wake-selection-before-test.json": "fb006eead2891578e6a66ed8cecd163d61ac5262a5eb96cdbb9666f622537907",
     "experiments/iris-release-v1/width-selection-before-repeat.json": "bd1213acdb91b52e2b6989551d3ea06e6fc09dc841951fd3a2ec6a67e4d4a98d",
     "experiments/iris-reproduction-v1/access-verification.json": "91ddd210dea0fb4f583bcfce386dbddcfc00ceb5e8a7081fc6bd0edbe24dba0b",
+    "experiments/iris-reproduction-v1/cold-ui-verification.json": "0a3f0101bff134adf89c771022ed01a60bbde7922582cbebc625c531c785ff1f",
     "experiments/iris-reproduction-v1/plot-requirements.txt": "1106e8dd12129d17eeb8277b16c9ec3a0d813e85498f9d2debfba4a05a711166",
     "experiments/iris-reproduction-v1/preflight-failure-xet.json": "d066eaee1ae15860dda6e07d403a1d79a915a0af03a051e6a6bc438d91968027",
     "experiments/iris-reproduction-v1/protocol.json": "6ed74a66bbd65c8f72db71ade1bc39fe243675f2ad103c2f5909b09af80cf5b7",
@@ -641,7 +642,7 @@
     "data/sources/qwen-synthetic-completion.source.json": "cd3753dad2a43fcfa277e73908222994a56a9767883f8747954dc531ecfb33ac",
     "docs/DATASETS.md": "42f708b8c2a61b730756a0eadbf0eb6cdb55c16d66571391fe8315bb54e437c2",
     "docs/EXPERIMENT-iris-release-v1.md": "b2d33f1492696b17c4eef4202cf3e21d65cbbafa34bccb1d860d0f737006cec6",
-    "docs/EXPERIMENT-iris-reproduction-v1.md": "b3aa9c89826229b12cd5a5950766e9446ad78fe3e749f335762b6bb6cd4dac9d",
+    "docs/EXPERIMENT-iris-reproduction-v1.md": "7b2c93ad28d8adf138823277b732e02f53aa6b2f47372cf1d36affa8ca2c3b75",
     "docs/HANDOFF-iris-rpi-v1.md": "9585b445e67945d32b7bfee18b2a30c248a112be3fdc36125672ce62a9dd131d",
     "docs/assets/iris-benchmark-data.json": "4ff31e2b839983a9224c37852958ee48a70995acfd557baab4ebf45db1a23bdc",
     "docs/assets/iris-command-benchmarks.png": "ef9c023d9cfaa88c6be3ab9c876718b0a714a85a51a31f7cecde0957ea10df12",
@@ -693,6 +694,7 @@
     "experiments/iris-release-v1/wake-selection-before-test.json": "fb006eead2891578e6a66ed8cecd163d61ac5262a5eb96cdbb9666f622537907",
     "experiments/iris-release-v1/width-selection-before-repeat.json": "bd1213acdb91b52e2b6989551d3ea06e6fc09dc841951fd3a2ec6a67e4d4a98d",
     "experiments/iris-reproduction-v1/access-verification.json": "91ddd210dea0fb4f583bcfce386dbddcfc00ceb5e8a7081fc6bd0edbe24dba0b",
+    "experiments/iris-reproduction-v1/cold-ui-verification.json": "0a3f0101bff134adf89c771022ed01a60bbde7922582cbebc625c531c785ff1f",
     "experiments/iris-reproduction-v1/plot-requirements.txt": "1106e8dd12129d17eeb8277b16c9ec3a0d813e85498f9d2debfba4a05a711166",
     "experiments/iris-reproduction-v1/preflight-failure-xet.json": "d066eaee1ae15860dda6e07d403a1d79a915a0af03a051e6a6bc438d91968027",
     "experiments/iris-reproduction-v1/protocol.json": "6ed74a66bbd65c8f72db71ade1bc39fe243675f2ad103c2f5909b09af80cf5b7",
@@ -772,9 +774,9 @@
     "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
   },
   "source_version": {
-    "commit": "3bceaba3ccd8392965d028243bdc399b14501215",
-    "source_diff_sha256": "06eaa4d7ca51ab234bd18b9550ebf71a8f0770f8f92eb3870dc5e83c684e0db0",
-    "tree": "4187ac63aa5454082c27fa359f81eee7181a2c0d"
+    "commit": "905068040a76b31bdc775c755915b8b83dbd0078",
+    "source_diff_sha256": "48dfb31ad4e64ab38c84ae1e24376774afb711964ccb3435fa9c9a60a5c74f28",
+    "tree": "dfb6502b11beab0b315d552cf913ca9399d25abd"
   },
   "study_kind": "continued",
   "vad_folder": ".cache/iris-release-v1/inputs/vad",

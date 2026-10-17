@@ -8,7 +8,24 @@ GitHub main owns the recipe, executable sources, reports and selected inference 
 
 The complete historical initializer chain has not been replayed. A test veto can retain the already trained baseline; that outcome must be reported separately from the newly trained candidate. No result here establishes fresh human ownership, microphone or physical Raspberry Pi acceptance.
 
-Execution, measured timings, artifact comparisons and fresh-clone evidence will be recorded below after the run.
+## Executed setup and data checks
+
+The independent checkout is GitHub commit `0692fb02750a9537198d7396da3bf701f8cc649c`, tree `dfb6502b11beab0b315d552cf913ca9399d25abd`. This host lacks native GitHub HTTPS credentials while the repository remains private. Authenticated GitHub Git-data APIs supplied the exact objects to a verified local mirror, followed by a native shallow Git clone and fast-forward. Commit/tree identities and `git fsck` matched. There are no object alternates or development model/audio-cache links. The initially empty clone created its own environment and input cache. Its Python bootstrap reused only dependency wheels newly downloaded by the separate cold bootstrap probe. Its first UI installation reused the global pnpm package store; the additional empty-store verification below measures that dependency path separately.
+
+```bash
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 CUDA_VISIBLE_DEVICES='' \
+python reproduce.py --device cpu --run-id dgx-cpu-http-20261017
+```
+
+This is a **CPU run on the DGX host**. All eight GPUs had active foreign jobs; none were used or interrupted. The independent environment is Python 3.13.9 with PyTorch/Torchaudio 2.10.0+cpu. GPU timings from the original experiment remain separate historical measurements.
+
+Preflight passed in **1,220.17 seconds**: 4,582 required input files verified, 52 completed VCM artifacts/evaluation inputs excluded, and 34,659 mapped recordings verified. Of these recordings, 30,219 were reconstructed from pinned upstream Parquet bytes. Designed recordings were independently downloaded from the project's pinned dataset revision. The original protocol, audio hashes, labels, splits and catalog remain unchanged. No online synthesis is required to repeat the fits.
+
+In the independently installed environment, the full source Python suite passed **219 tests** and the UI passed **99 tests**, type checking and its production build. These setup checks precede completion of the training workflow; they are not a claim that the six fits, locked evaluation or final artifact comparison have finished.
+
+An additional [empty-cache UI check](../experiments/iris-reproduction-v1/cold-ui-verification.json) copied the tracked source into another ignored workspace within this clone and used empty, dedicated npm/pnpm/XDG stores and freshly downloaded local Node tools. It downloaded all **170 packages**, reused zero packages, then passed all 99 UI tests, type checking and production compilation in **174.37 seconds**. It shared only this clone's new Python environment. This establishes the cold UI dependency path; it does not assert byte-identical CSS bundles across build contexts or measure browser/device performance.
+
+The six-fit workflow is running. Its first compact CE epoch completed in 125.81 seconds after feature preparation. Final selections, held-out results, complete pipeline timings and bundle comparisons remain pending.
 
 ## Download failure and correction
 
@@ -17,3 +34,5 @@ The first exact-main attempt at `3d17eddd79880d26e0c8eebe49d36fed02aaeb74` insta
 The corrected recipe sets the client's documented [HF_HUB_DISABLE_XET](https://huggingface.co/docs/huggingface_hub/en/package_reference/environment_variables#hfhubdisablexet) option before importing it. A real HTTP probe retrieved the same pinned 38,444-byte recording and matched its declared SHA-256. Immutable Hub objects are cached within a clone; run workspaces and VCM fitting states remain separate. Data, splits, normalizer, grammar, losses, seeds, selection and test gates are unchanged. The failed attempt remains preserved.
 
 The initial installer redirect failure was also corrected by installing the same checksum-pinned uv 0.12.5 wheel from official PyPI. A separate cold dependency probe took 556.04 seconds; the exact-main clone installed its own environment in 186.47 seconds using only that probe's newly downloaded dependency wheels. Neither used a development model/audio cache.
+
+The recorded training dependency set requires Python 3.13, including `audioop-lts==0.2.2`. The independent clone uses Python 3.13.9. The README now states this training prerequisite explicitly; the separate inference package retains its Python 3.11–3.13 runtime contract. No frozen dependency version was changed.

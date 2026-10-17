@@ -15,7 +15,7 @@ An offline, finite-command smart speaker for Raspberry Pi 4/5. Say **Hey Iris**,
 
 ## Reproduce on a DGX
 
-GitHub **main** is the source of truth for the recipe, dependencies, code, inference models and reports. Hugging Face holds the dataset and **private** model/checkpoint artifacts. Use Python 3.11–3.13, Git and an authorized Hugging Face login or an existing `HF_TOKEN` environment variable. Do not put credentials in the repository. Original restricted recordings are fetched from their pinned upstream sources under their source terms.
+GitHub **main** is the source of truth for the recipe, dependencies, code, inference models and reports. Hugging Face holds the dataset and **private** model/checkpoint artifacts. Use **Python 3.13** for the recorded training environment, Git and an authorized Hugging Face login or an existing `HF_TOKEN` environment variable. The separate Pi inference package supports Python 3.11–3.13. Do not put credentials in the repository. Original restricted recordings are fetched from their pinned upstream sources under their source terms.
 
 ```bash
 git clone https://github.com/justinruaya123/smart-speaker.git

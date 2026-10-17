@@ -1,0 +1,33 @@
+{
+  "cached_development_node_packages": false,
+  "checks": [
+    "frozen dependency install",
+    "Svelte/TypeScript check",
+    "99 UI tests",
+    "production build"
+  ],
+  "downloaded_packages": 170,
+  "elapsed_seconds": 174.36548858694732,
+  "environment": "Independent clone Python environment; empty dedicated npm/pnpm/XDG caches; newly downloaded local Node tools",
+  "experiment": "iris-reproduction-v1",
+  "fresh_root_environment": false,
+  "log_sha256": "2f82143aa2b44281a635ceaa2543f54da9cb6875b66ed3d9e58d52da2467f0d9",
+  "node": "v24.13.0",
+  "node_package_store": ".cache/pnpm-home/store/v11",
+  "passed": true,
+  "physical_pi_measured": false,
+  "pnpm": "12.5.1",
+  "reused_packages": 0,
+  "schema_version": 1,
+  "source_bindings": {
+    "SpeakerUI/package.json": "6e612d95fac6bb63c9d0328113520136123cac314c73da795abe08cb1e924ad8",
+    "SpeakerUI/pnpm-lock.yaml": "034cb8c0fb0dabd4fd711f7109437af91a06b074e1bc79ba5b4065846c36b2fb",
+    "SpeakerUI/scripts/build.mjs": "0cdf01508eb4b6f9d45a8ffeb99ca092cef2c6cc4a60c91a349eb2dc75956262",
+    "SpeakerUI/vite.config.ts": "b42ebebdd52fb0f66464192e4aca041f0396c57d8cfc4405eaeba18db0f0b1b2",
+    "scripts/runtime/speaker_tools.py": "7de690ba44d9253add292e2ddcf1d878d57706b166fd6e288507bf3a98910355"
+  },
+  "source_commit": "0692fb02750a9537198d7396da3bf701f8cc649c",
+  "source_tree": "dfb6502b11beab0b315d552cf913ca9399d25abd",
+  "tests": 99,
+  "ui_byte_identity_claimed": false
+}
