@@ -182,10 +182,13 @@ def main():
                 elif op=='listen':result={'microphone':service.listen(command.get('device'))}
                 elif op=='mute':service.stop();result={}
                 elif op=='wav':result=service.wav(base64.b64decode(command['data'],validate=True),wake=command.get('wake') is True)
+                elif op=='speak' and hasattr(service,'speak'):result=service.speak(command.get('text'))
+                elif op=='wake' and hasattr(service,'select_wake'):result=service.select_wake(command.get('mode'))
                 else:raise ValueError('Unknown runtime operation')
                 service.emit({'event':'reply','id':request,'ok':True,**result})
             except Exception as error:
-                service.set_state('capture_error' if command.get('op')=='listen' else 'runtime_error',message=str(error))
+                if command.get('op') not in ('speak','wake'):
+                    service.set_state('capture_error' if command.get('op')=='listen' else 'runtime_error',message=str(error))
                 service.emit({'event':'reply','id':request,'ok':False,'message':str(error)})
     finally:service.stop(announce=False)
 

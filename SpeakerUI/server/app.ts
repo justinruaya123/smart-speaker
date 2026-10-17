@@ -18,28 +18,57 @@ import { attachVoiceSession, type ActionResult, type RecordingLease } from './in
 import type { InferenceFactory } from './inference/adapter.js';
 import { PythonRuntime } from './inference/python-runtime.js';
 import { RuntimeActions } from './inference/runtime-actions.js';
+import { createOpenWeather } from './integrations/openweather.js';
+import { notifyDesktop } from './integrations/desktop-notification.js';
 
-interface Options { staticDir?: string; fetcher?: typeof fetch; inferenceFactory?: InferenceFactory }
+interface Options { staticDir?: string; fetcher?: typeof fetch; inferenceFactory?: InferenceFactory; runtimeFactory?:(config:NonNullable<Config['runtime']>)=>PythonRuntime }
 
 export async function createApp(config: Config, options: Options = {}) {
   const https = config.tls ? { cert: await readFile(config.tls.cert), key: await readFile(config.tls.key) } : undefined;
   const app = Fastify({ ...(https ? { https } : {}), bodyLimit: 4_096, requestTimeout: 10_000, logger: false });
   const dummyRuntime = loadDummyRuntime();
-  const runtime = config.runtime ? new PythonRuntime(config.runtime) : undefined;
+  const runtime = config.runtime ? (options.runtimeFactory?.(config.runtime)??new PythonRuntime(config.runtime)) : undefined;
   const local = await createLocalMedia(config.mediaDir);
   const fetcher = options.fetcher ?? fetch;
   const ha = createHomeAssistant(config.ha, fetcher);
   const spotify = createSpotify(config.spotify, config.dataDir, fetcher);
+  const weather=createOpenWeather(config.weather,fetcher);
+  let speechChain=Promise.resolve();
+  const speak=(text:string)=>{
+    if(!runtime||process.env.SUBMISSION_RESPONSE_PLAYBACK!=='true')return;
+    speechChain=speechChain.then(async()=>{await runtime.request('speak',{text});}).catch(()=>{
+      runtime.emit('action',{event:'speech_error',message:'Local speech playback failed. The result remains visible on screen.'});
+    });
+  };
   const actions=new RuntimeActions({enabled:config.actionsEnabled,bindings:config.bindings},{
     light:c=>ha.control(c),spotify:c=>spotify.control(c),song:uri=>spotify.playConfigured(uri),
     volume:async()=>{const state=await spotify.snapshot();return state.playback?.device?.volume??undefined;},
+    weather:()=>weather.current(),
+    temperature:config.thermostatEntity?degrees=>ha.setTemperature(config.thermostatEntity,degrees):undefined,
+    camera:async()=>{
+      const entityId=config.cameraEntity;const image=await ha.camera(entityId);await image.body.cancel();
+      return {entityId,name:ha.snapshot().entities.find(e=>e.id===entityId)?.name||'Home Assistant camera'};
+    },
+    message:async()=>{
+      const n=config.notification;await ha.notify(n.phoneEntity,n.message,n.title);
+      let macbook=' A remote MacBook notification target is not configured.';
+      try{
+        if(n.macbookEntity){await ha.notify(n.macbookEntity,n.message,n.title);macbook=' Home Assistant also accepted the MacBook notification.';}
+        else if(await notifyDesktop(n.message,n.title))macbook=' macOS also accepted a notification on this MacBook.';
+      }catch{macbook=' The phone notification was accepted, but the MacBook notification failed.';}
+      return 'Home Assistant accepted the phone notification.'+macbook;
+    },
+    notify:event=>{runtime?.emit('action',event);speak(event.text);},
   });
   let actionChain=Promise.resolve();
   runtime?.on('event',event=>{
     if(event.event!=='command')return;
     actionChain=actionChain.then(async()=>{
       const execution=await actions.handle(event);
-      if(execution)runtime.emit('action',{event:'execution',utterance_id:event.utterance_id,execution});
+      if(execution){
+        runtime.emit('action',{event:'execution',utterance_id:event.utterance_id,execution});
+        if(execution.status!=='preview'&&execution.status!=='rejected'&&execution.text)speak(execution.text);
+      }
     }).catch(()=>{});
   });
   const lease: RecordingLease = { owner: undefined };
@@ -104,6 +133,8 @@ export async function createApp(config: Config, options: Options = {}) {
     attachVoiceSession(socket, config, lease, dispatch, options.inferenceFactory);
   });
   app.get('/api/health', async () => ({ status: 'ok', inference: config.inferenceMode, instance: config.runtime?.token.slice(0,12), runtime: runtime?.status() ?? dummyRuntime.status(), actionsEnabled: config.actionsEnabled, audio: AUDIO, homeAssistant: ha.snapshot().status, spotify: config.spotify.enabled ? 'configured' : 'disabled', localMedia: local.status() }));
+  app.get('/api/weather',async()=>weather.current());
+  app.post('/api/runtime/local',{bodyLimit:65536},async req=>actions.syncLocal(req.body));
   if (runtime) {
     app.get('/ws/runtime', { websocket: true }, (socket, req) => {
       if (req.headers.origin !== config.origin || activeSockets.size >= 4) { socket.close(1008, 'Origin rejected or connection limit reached'); return; }
@@ -123,6 +154,9 @@ export async function createApp(config: Config, options: Options = {}) {
       catch(error){return reply.code(503).send({error:'microphone_capture',message:error instanceof Error?error.message.slice(0,500):'Microphone capture failed.'});}
     });
     app.post('/api/runtime/mute', async () => runtime.request('mute'));
+    app.post<{Body:{mode:string}}>('/api/runtime/wake',{
+      schema:{body:{type:'object',required:['mode'],additionalProperties:false,properties:{mode:{type:'string',enum:['iris_fallback','iris','jarvis']}}}},
+    },async req=>runtime.request('wake',{mode:req.body.mode}));
     app.addContentTypeParser('audio/wav', { parseAs: 'buffer', bodyLimit: 4*1024*1024 }, (_req, body, done) => done(null, body));
     app.post<{ Querystring: { wake?: string } }>('/api/runtime/wav', { bodyLimit: 4*1024*1024 }, async (req, reply) => {
       if (!Buffer.isBuffer(req.body)) return reply.code(400).send({ error: 'WAV body required' });
@@ -224,6 +258,6 @@ export async function createApp(config: Config, options: Options = {}) {
   }
   app.addHook('onReady', async () => { ha.start(); });
   app.addHook('preClose', async () => { for (const socket of activeSockets) socket.terminate(); for (const stream of cameraStreams.keys()) stream.abort(); });
-  app.addHook('onClose', async () => { ha.close(); dummyRuntime.close(); await runtime?.close(); });
+  app.addHook('onClose', async () => { actions.close();ha.close(); dummyRuntime.close(); await runtime?.close(); });
   return app;
 }

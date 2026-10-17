@@ -8,7 +8,7 @@
   import './screen.css';
   import './baked-motion.css';
   const screen=createAmbient(),m=screen.model;
-  let title=$derived(({lights:'Lights',timer:'Timer','new-reminder':m.editingReminder===null?'New reminder':'Reminder',reminders:'Reminders',contacts:m.haMode==='live'?'Cameras':'Calls',call:'Call',weather:'Manila · Demo weather',intent:'Request history',demo:'Debug'})[m.view]??'');
+  let title=$derived(({lights:'Lights',timer:'Timer','new-reminder':m.editingReminder===null?'New reminder':'Reminder',reminders:'Reminders',contacts:m.haMode==='live'?'Cameras':'Calls',call:'Call',weather:m.weather?`${m.weather.location} · OpenWeather`:'Weather',intent:'Request history',demo:'Debug'})[m.view]??'');
   function attachScreen(element){return untrack(()=>screen.mount(element));}
 </script>
 <main id="ambient-assistant" class="ambient-assistant" aria-label="Ambient voice assistant landscape" data-view={m.view} data-state={m.agent} data-muted={String(m.muted)} data-sound-muted={String(m.soundMuted)} data-reminder-editing={String(m.remindersExpanded)} {@attach attachScreen}>

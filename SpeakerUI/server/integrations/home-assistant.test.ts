@@ -16,6 +16,25 @@ class Socket extends EventEmitter implements HomeAssistantSocket {
 const config = { enabled: true as const, url: 'http://ha.invalid', token: 'fixture', entityIds: ['light.desk'] };
 const state = { entity_id: 'light.desk', state: 'on', last_updated: '2026-01-01T00:00:00Z', attributes: { friendly_name: 'Desk' } };
 
+test('notification matches the supplied notify.send_message action and does not retry failed mutations',async()=>{
+  const calls:{url:string;body:any}[]=[];
+  const ha=createHomeAssistant(config,async(url,init)=>{calls.push({url:String(url),body:JSON.parse(String(init?.body))});return new Response(null,{status:200});});
+  await ha.notify('notify.jus_phone','This works','Iris');
+  assert.deepEqual(calls,[{url:'http://ha.invalid/api/services/notify/send_message',body:{entity_id:'notify.jus_phone',message:'This works',title:'Iris'}}]);
+  await assert.rejects(createHomeAssistant({enabled:false,entityIds:[]},async()=>assert.fail('network')).notify('notify.jus_phone','This works','Iris'),/disabled/);
+});
+
+test('thermostat checks allowlist, native Celsius and device range before changing temperature',async()=>{
+  const calls:string[]=[];
+  const ha=createHomeAssistant({...config,entityIds:['climate.room']},async(url,init)=>{
+    calls.push(String(url));if(!init?.method)return Response.json({attributes:{temperature_unit:'°C',min_temp:16,max_temp:30}});
+    assert.deepEqual(JSON.parse(String(init.body)),{entity_id:'climate.room',temperature:24});return new Response(null,{status:200});
+  });
+  await ha.setTemperature('climate.room',24);assert.equal(calls.length,2);
+  await assert.rejects(ha.setTemperature('climate.room',4),/range/);assert.equal(calls.length,3);
+  await assert.rejects(ha.setTemperature('climate.other',24),/allowlisted/);assert.equal(calls.length,3);
+});
+
 test('camera streaming requires an enabled, allowlisted camera before outbound I/O', async () => {
   const forbidden = async () => { assert.fail('Unselected cameras must stay offline'); };
   const signal = new AbortController().signal;

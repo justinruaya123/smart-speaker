@@ -106,6 +106,9 @@ def ui_environment(root, model, threads, port, microphone, speaker):
     local = {'HOST':'127.0.0.1', 'PORT':str(port), 'APP_ORIGIN':f'http://127.0.0.1:{port}',
              'INFERENCE_ENGINE':'onnxruntime', 'EXECUTION_MODE':'demo'}
     _, env = resolve_config(root, profile='standalone', environ={**os.environ, **local})
+    bindings = json.loads(env['SMART_SPEAKER_BINDINGS'])
+    bindings['lights'].setdefault('light.all', 'light.hue_color_lamp_1')
+    env['SMART_SPEAKER_BINDINGS'] = json.dumps(bindings)
     env.update({
         'INFERENCE_MODE': 'onnx', 'INFERENCE_ENGINE': 'onnxruntime', 'EXECUTION_MODE': 'demo',
         'SMART_SPEAKER_PYTHON': sys.executable, 'SMART_SPEAKER_ROOT': str(Path(root).resolve()),
@@ -241,7 +244,7 @@ def main(argv=None):
     service = service_class(AudioService)(runtime, emit)
     if args.wav:
         service.wav(args.wav.read_bytes(), wake=True); return 0
-    print('Say "Hey Jarvis", pause briefly, then say a command. Ctrl+C stops. CLI audio playback is disabled.', flush=True)
+    print('Say "Hey Iris" (or "Hey Jarvis" in fallback mode), pause briefly, then say a command. Ctrl+C stops. CLI audio playback is disabled.', flush=True)
     try:
         service.listen(microphone)
         while True:

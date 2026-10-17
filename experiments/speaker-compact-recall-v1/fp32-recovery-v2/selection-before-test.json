@@ -1,0 +1,24 @@
+{
+  "model_binding": {
+    "catalog_sha256": "429a15bc364d7fd9e723a2879c611472b5176de6cb3a2b54be7c137b050c985d",
+    "custom_slots_sha256": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5",
+    "model_sha256": "61f639126d7226f17f4e94c970b2fb60f66182578c77238ff65ebaf4b5993be3",
+    "normalization_sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+    "schema_sha256": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c"
+  },
+  "policy_sha256": "5297b6398ddf89a7d0864dfd3810dd9dd357e23be75ab69ec92d9e43be59319b",
+  "protocol_sha256": "b2db6231ea297203f23c0a602dc135cf8f2e9c6802a8a63d13b56a442390962c",
+  "recall_policy_sha256": "9e25132f7bbde263abf1df7fd45ced570782c5525cbe38879dc3bf0f02a481d0",
+  "selected_export": {
+    "architecture_changed": false,
+    "graph_bytes": 3864875,
+    "int8_fidelity_passed": false,
+    "maximum_graph_bytes": 4194304,
+    "maximum_parameters": 1200000,
+    "parameters": 935567,
+    "precision": "fp32",
+    "reason": "Retain numerically verified full-precision graph; do not loosen the failed INT8 guard",
+    "retrained": false
+  },
+  "test_used_for_selection": false
+}

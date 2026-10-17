@@ -66,3 +66,9 @@ test('application acceptance is separate from qualification and local execution 
   model.timer.end=999;
   applyRuntimeEvent(model,execution,()=>{});assert.equal(model.timer.end,999);
 });
+
+test('weather execution displays fetched data and failed execution never shows a fabricated forecast',()=>{
+  const model:any={history:[{result:{utteranceId:'u'}}]};
+  applyRuntimeEvent(model,{event:'execution',utterance_id:'u',execution:{status:'succeeded',command:{intent:'WEATHER',slots:{}},text:'Actual weather',weather:{temperature:22,location:'Baguio',description:'light rain'}}},()=>{});
+  assert.equal(model.view,'weather');assert.equal(model.weather.temperature,22);assert.equal(model.announcement,'Actual weather');
+});

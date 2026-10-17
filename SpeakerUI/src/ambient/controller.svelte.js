@@ -9,6 +9,17 @@ export function createAmbient() {
     let root, aura, backend, providers, cameraBackground, disposed = false;
     const handlers = [], timeouts = new Set();
     let commandLifetime = new AbortController();
+    let localStateChain=Promise.resolve();
+    function syncLocalState(kind){
+        if(!model.runtimeMode||disposed)return;
+        const field=kind.startsWith('reminder')?'reminders':kind.startsWith('alarm')?'alarm':'timer';
+        const snapshot=JSON.parse(JSON.stringify({[field]:model[field]}));
+        localStateChain=localStateChain.then(async()=>{
+            if(disposed)return;
+            const response=await fetch('/api/runtime/local',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(snapshot),signal:AbortSignal.any([commandLifetime.signal,AbortSignal.timeout(5000)])});
+            if(!response.ok)throw new Error('Could not synchronize '+field+' with the voice service.');
+        }).catch(error=>{if(!disposed)model.runtimeError=error.message;});
+    }
     function on(event, handler, options) { handlers.push({ event, handler, options }); }
     function later(fn, ms) { const id = setTimeout(() => { timeouts.delete(id); if (!disposed)
         fn(); }, ms); timeouts.add(id); return id; }
@@ -24,9 +35,9 @@ export function createAmbient() {
     function setText(selector, text) { if (selector === '[data-announcement]')
         model.announcement = text; if (selector === '[data-auto-caption]')
         model.autoCaption = text; }
-    const model = $state({ now: Date.now(), closeProgress: null, auraError: null, announcement: "", autoCaption: "", draggingLight: null, backend: "connecting", runtimeMode: false, runtimeEngine: "", runtimeConfig: null, runtimeUI: null, runtimeActions: false, runtimeReady: false, runtimeState: 'starting', runtimePolicy: false, runtimeResult: null, runtimeError: '', runtimeSession: '', runtimeSequence: -1, view: 'home', agent: 'idle', muted: false, remindersExpanded: false, remindersEditUntil: 0, alarmPickerOpen: false, reminderMenuOpen: false, reminderAccordionOpen: true, soundMuted: false, pendingReminder: null, history: [], historyIndex: 0, lastInteraction: Date.now(), event: null, receiptAt: 0, selectedLight: 0,
+    const model = $state({ now: Date.now(), weather:null, weatherError:'', runtimeNotice:'', closeProgress: null, auraError: null, announcement: "", autoCaption: "", draggingLight: null, backend: "connecting", runtimeMode: false, runtimeEngine: "", runtimeConfig: null, runtimeUI: null, runtimeActions: false, runtimeReady: false, runtimeState: 'starting', runtimePolicy: false, runtimeResult: null, runtimeError: '', runtimeSession: '', runtimeSequence: -1, view: 'home', agent: 'idle', muted: false, remindersExpanded: false, remindersEditUntil: 0, alarmPickerOpen: false, reminderMenuOpen: false, reminderAccordionOpen: true, soundMuted: false, pendingReminder: null, history: [], historyIndex: 0, lastInteraction: Date.now(), event: null, receiptAt: 0, selectedLight: 0,
         lights: [{ id: 'light.living_room', name: 'Living room', room: 'Ceiling', on: true, brightness: 65, color: 'Warm white' }, { id: 'light.reading_lamp', name: 'Reading lamp', room: 'Living room', on: true, brightness: 35, color: 'Warm white' }, { id: 'light.kitchen', name: 'Kitchen', room: 'Pendant', on: false, brightness: 80, color: 'Cool white' }, { id: 'light.bedroom', name: 'Bedroom', room: 'Bedside', on: false, brightness: 25, color: 'Red' }],
-        haMode: 'loading', haStatus: 'loading', haActions: false, haPending: false, haLabel: 'Connecting to Home Assistant', spotifyMode: 'loading', spotifyActions: false, spotifyPending: false, spotifyLabel: 'Connecting to Spotify', spotifyStatus: 'loading', spotifyDevice: '', spotifyLastVolume: 40, spotifyProgress: null,
+        runtimeWake:null, haMode: 'loading', haStatus: 'loading', haActions: false, haPending: false, haLabel: 'Connecting to Home Assistant', spotifyMode: 'loading', spotifyActions: false, spotifyPending: false, spotifyLabel: 'Connecting to Spotify', spotifyStatus: 'loading', spotifyDevice: '', spotifyLastVolume: 40, spotifyProgress: null,
         tracks: [['Spotify', 'Connecting to Spotify', 0]], spotifyAlbum: null, spotifyArtworkUrl: null, spotifySeeking: false, spotifyActionLabel: '', sensors: [], cameras: [],
         target: 24, current: 26, temperatureSensor: 'sensor.living_room_temperature', timer: null, alarm: null, timerDraft: 300, alarmDraft: '07:00', reminderDraft: '', reminderDeadline: '', editingReminder: null,
         reminders: [{ id: 1, text: 'Water the plants', deadline: null, done: false, unread: true, nearShown: false, dueShown: false }, { id: 2, text: 'Pick up oat milk', deadline: null, done: false, unread: false, nearShown: false, dueShown: false }],
@@ -208,7 +219,7 @@ export function createAmbient() {
         if (settle)
             stateReturn = later(() => setAgent('idle'), 1900);
     }
-    function receipt(intent, parameters = {}, source = 'touch') { const timestamp = Date.now(), request = serviceRequest(intent, parameters); model.event = { type: source === 'onnx-simulated' ? 'inference' : 'interaction', simulated: true, source, timestamp: new Date(timestamp).toISOString(), result: { utteranceId: crypto.randomUUID(), revision: 0, final: true, intent, parameters, ...(source === 'onnx-simulated' ? { confidence: 1, latencyMs: 380 } : {}) }, ...(request ? { request } : {}) }; model.history.unshift(model.event); model.history = model.history.slice(0, 30); model.historyIndex = 0; model.receiptAt = timestamp; }
+    function receipt(intent, parameters = {}, source = 'touch') { const timestamp = Date.now(), request = serviceRequest(intent, parameters); model.event = { type: source === 'onnx-simulated' ? 'inference' : 'interaction', simulated: true, source, timestamp: new Date(timestamp).toISOString(), result: { utteranceId: crypto.randomUUID(), revision: 0, final: true, intent, parameters, ...(source === 'onnx-simulated' ? { confidence: 1, latencyMs: 380 } : {}) }, ...(request ? { request } : {}) }; model.history.unshift(model.event); model.history = model.history.slice(0, 30); model.historyIndex = 0; model.receiptAt = timestamp; if(source==='touch'&&/^(timer|alarm|reminder)\./.test(intent))syncLocalState(intent); }
     function autoStart(action) { model.auto = { action, remaining: 5000, last: performance.now(), paused: false }; updateAuto(); }
     function stopAuto() { if (model.auto) {
         model.auto = null;
@@ -231,6 +242,12 @@ export function createAmbient() {
         if (model.alarm && /^\d\d:\d\d$/.test(model.alarm.time))
             model.alarmDraft = model.alarm.time;
         view = 'control';
+    } if(view==='weather'){
+        model.weatherError='Loading current weather…';model.weather=null;
+        void fetch('/api/weather',{signal:AbortSignal.any([commandLifetime.signal,AbortSignal.timeout(7000)])}).then(async response=>{
+            const data=await response.json();if(!response.ok)throw new Error(data.message||'Weather unavailable');
+            if(!disposed){model.weather=data;model.weatherError='';}
+        }).catch(error=>{if(!disposed)model.weatherError=error.message;});
     } if (model.view === 'home')
         model.returnFocus = document.activeElement; stopAuto(); if (view !== 'control')
         closeToast(); model.lastInteraction = Date.now(); model.view = view; if (view === 'timer' && !model.timer)
@@ -276,7 +293,8 @@ export function createAmbient() {
             const deadline = Date.now() + 300000, d = new Date(deadline);
             model.alarm = { time: String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'), deadline };
         }
-    } if (a.reminder)
+    } if(snooze)syncLocalState(a.kind==='reminder'?'reminders':a.kind);
+    if (a.reminder)
         a.reminder.unread = false; model.alert = null; model.lastInteraction = Date.now(); if (model.alertQueue.length)
         alertNotification(model.alertQueue.shift());
     else {
@@ -880,6 +898,7 @@ export function createAmbient() {
                 }
                 else
                     model.timerDraft = Math.max(60, Math.min(86400, model.timerDraft + delta));
+                if(model.timer)syncLocalState('timer');
                 renderView();
                 break;
             }

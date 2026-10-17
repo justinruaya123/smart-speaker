@@ -33,6 +33,7 @@ export class PythonRuntime extends EventEmitter {
           return;
         }
         if (event.event === 'ready') { this.health = event; this.snapshot = event; }
+        if (event.event === 'wake_config') { this.health={...this.health,wake:event.wake};this.snapshot={...this.health,event:'ready'}; }
         if (event.event === 'state') { this.health = { ...this.health, state: event.state }; this.snapshot = { ...this.health, ...event, event: 'ready' }; }
         this.emit('event', event);
       } catch { this.fail('Invalid JSON from inference worker'); }

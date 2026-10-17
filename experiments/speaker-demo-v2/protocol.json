@@ -1,0 +1,75 @@
+{
+  "experiment_id": "speaker-demo-v2",
+  "date": "2026-10-16",
+  "phase": "preparation_adapter_and_metadata_readiness_only",
+  "baseline_commit": "5d872e3a249e5876aaa8130b76f6e3b31622355f",
+  "baseline_branch": "codex/speaker-demo-v1",
+  "requirement_ids": [
+    "ME-01",
+    "ME-03",
+    "ME-04",
+    "ME-07",
+    "ME-08"
+  ],
+  "purpose": "Make the existing v2 human-first comparison preparation executable without changing the shared command architecture or installing a candidate.",
+  "hypothesis_for_future_matched_comparison": "QA-eligible supplied synthetic training improves human accepted complete-command recall at fixed architecture, optimizer/update budget and gates; missing human coverage must be addressed first.",
+  "plan": "docs/PLAN-speaker-demo-v2.md",
+  "installation_audit_sha256": "7e5164df17c24aaecea8d58991cd9c1da03d46010f584c519223dd0684457c8f",
+  "required_intents": [
+    "PLAY_MUSIC",
+    "WEATHER",
+    "TIME",
+    "LIGHT_ON",
+    "LIGHT_OFF",
+    "PAUSE",
+    "STOP",
+    "NEXT",
+    "VOLUME",
+    "CALL",
+    "MESSAGE",
+    "LIST_REMINDERS",
+    "TIMER",
+    "ALARM",
+    "TEMPERATURE",
+    "BRIGHTNESS",
+    "COLOR",
+    "CREATE_REMINDER"
+  ],
+  "catalog": {
+    "path": "experiments/pcv-release-train-v1/catalog.json",
+    "sha256": "45a848160d853833d83d832952e3ba411a1aea92db14e963c7d7409db83f2a1e"
+  },
+  "definitions": {
+    "path": "experiments/pcv-b1-three-engine-v1/prompts.json",
+    "sha256": "9133e51e56a1a9227180706e3b2c5bdcaa2daf36e9abf7b386e299c9b3723b0f"
+  },
+  "bindings": {
+    "scripts/train/speaker_demo_v2_data.py": "7c2d349c501409289c86b2e05ce53cc4837b19747e9f36cfaa79d7811edab5ac",
+    "scripts/train/speaker_dataset_install.py": "87f4fb4939d7903f4b14cc895708c660a488d05b6d8662f9cc7c0fcaa6c4d1e9",
+    "scripts/runtime/pcv_schema.py": "603ec943eae1e7330dd2eb82f05bbd7c206382ecf13c0fb8f8801a7ecd0e134c",
+    "scripts/test/speaker_demo_suite.py": "4f6ff8ded5db2b9ed5f933a09dd2d9c8ecdd1eff1234175815837ccb6b6e52e2",
+    "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+  },
+  "rules": {
+    "catalog": "Preserve the complete existing 1031-entry release catalog and all 415 approved benchmark/superset definitions; no test-derived additions or invented defaults.",
+    "human_gate": "All 18 command intents plus true UNKNOWN required in human train, dev and calibration before features or fitting; class presence alone is not acoustic qualification or statistically sufficient sample size.",
+    "synthetic": "Separately labelled training view only; no synthetic in human train/dev/calibration; original mixed-origin published test/holdout retained byte for byte.",
+    "leakage": "Reject duplicate IDs/files/PCM and declared cross-split speaker/pair identities; do not claim to resolve acoustic aliases or near duplicates.",
+    "normalization": "Equal weight per eligible human training utterance with unchanged vcm.frontend; dev/synthetic/calibration/evaluation excluded from normalization.",
+    "features": "Only human/train, human/dev and synthetic/train; verify original file and decoded PCM hashes; record feature file hashes before any fitting.",
+    "failed_gate": "Write readiness.json then exit 2 before feature extraction; no preparation.json is issued.",
+    "claims": "Metadata/software evidence only. Existing test is historical. Fresh human holdout, wake ownership, overlap handling and Pi measurements remain open."
+  },
+  "application": {
+    "intent_threshold": 0.95,
+    "every_required_slot_threshold": 0.9
+  },
+  "qualification": {
+    "precision": 0.99,
+    "recall": 0.9,
+    "human_unknown_false_accept_rate_max": 0.01
+  },
+  "training_performed": false,
+  "installation_allowed": false,
+  "provider_actions_allowed": false
+}

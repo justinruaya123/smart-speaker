@@ -1,42 +1,59 @@
-name: Selected 2M submission release
+name: Build and release 2M inference from source
 
 on:
   push:
-    branches: [codex/final-submission]
-    paths:
-      - .github/workflows/final-submission-release.yml
-      - scripts/submission/github_release.py
-      - submission/release/downloads.json
+    branches: [codex/final-submission, main]
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: selected-2m-submission-release
+  group: selected-2m-source-release-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  release:
-    if: github.ref == 'refs/heads/codex/final-submission'
+  build:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 25
+    env:
+      UV_PROJECT_ENVIRONMENT: ${{ github.workspace }}/.venv
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
     steps:
-      - name: Check out the reviewed source and automation
+      - name: Check out the complete source and selected runtime assets
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          fetch-depth: 2
           persist-credentials: false
-      - name: Check archive-integrity failure paths
-        run: python3 -m unittest scripts.test.test_submission_github_release
-      - name: Download and verify the pinned release archives
-        run: python3 scripts/submission/github_release.py --verify-only
-      - name: Prepare, verify, and publish the task-specific release
+      - name: Set up Python 3.13
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13'
+      - name: Install the locked inference environment
+        run: |
+          python -m pip install uv==0.9.7
+          uv sync --locked --no-dev --project submission/environment --python 3.13
+      - name: Build, test and verify inference from this checkout
+        run: |
+          .venv/bin/python -m scripts.submission.build_inference
+          .venv/bin/python -m scripts.submission.package --verify-only dist/final-submission/smart-speaker-inference-2m.zip
+          cd dist/final-submission
+          sha256sum smart-speaker-inference-2m.zip > smart-speaker-inference-2m.zip.sha256
+      - name: Retain the source-built archive and integrity receipts
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: 2m-inference-${{ github.sha }}
+          path: |
+            dist/final-submission/smart-speaker-inference-2m.zip
+            dist/final-submission/smart-speaker-inference-2m.receipt.json
+            dist/final-submission/smart-speaker-inference-2m.zip.sha256
+          if-no-files-found: error
+      - name: Publish the verified source build on GitHub Releases
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: >-
-          python3 scripts/submission/github_release.py
-          --draft --publish
-          --target 111f73ce4fed27b0ef44916f7391e4b027e50e7d
-          --tag 2m-submission-v1
-          --status-branch codex/final-submission
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          tag="2m-inference-${GITHUB_RUN_NUMBER}-${GITHUB_RUN_ATTEMPT}"
+          printf 'Built from source commit %s by GitHub Actions run %s.\n\nIncludes the selected 2M command model, experimental Hey Iris with Jarvis fallback, SpeakerUI and local spoken tool results. Model qualification and physical Pi validation remain incomplete. Configure private .env settings after extraction.\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" > dist/final-submission/release-notes.txt
+          gh release create "$tag" --target "$GITHUB_SHA" --draft --title "2M inference — source build ${GITHUB_RUN_NUMBER}" --notes-file dist/final-submission/release-notes.txt dist/final-submission/smart-speaker-inference-2m.zip dist/final-submission/smart-speaker-inference-2m.receipt.json dist/final-submission/smart-speaker-inference-2m.zip.sha256
+          gh release edit "$tag" --draft=false --latest

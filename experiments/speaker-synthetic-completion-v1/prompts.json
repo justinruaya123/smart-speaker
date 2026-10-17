@@ -1,0 +1,1265 @@
+[
+  {
+    "case_ids": [
+      "B1-031"
+    ],
+    "command": {
+      "intent": "CALL",
+      "slots": {
+        "contact_id": "contact.home"
+      }
+    },
+    "id": "prompt-8c4452c29833a13a",
+    "spoken_text": "Call",
+    "text": "Call"
+  },
+  {
+    "case_ids": [
+      "B1-032"
+    ],
+    "command": {
+      "intent": "CALL",
+      "slots": {
+        "contact_id": "contact.home"
+      }
+    },
+    "id": "prompt-9e049c99019b9d5c",
+    "spoken_text": "Make a call",
+    "text": "Make a call"
+  },
+  {
+    "case_ids": [
+      "B1-033"
+    ],
+    "command": {
+      "intent": "CALL",
+      "slots": {
+        "contact_id": "contact.home"
+      }
+    },
+    "id": "prompt-b0dcd92aecee47f7",
+    "spoken_text": "Make a phone call",
+    "text": "Make a phone call"
+  },
+  {
+    "case_ids": [
+      "B1-034"
+    ],
+    "command": {
+      "intent": "MESSAGE",
+      "slots": {}
+    },
+    "id": "prompt-11355e422354828b",
+    "spoken_text": "Message",
+    "text": "Message"
+  },
+  {
+    "case_ids": [
+      "B1-035"
+    ],
+    "command": {
+      "intent": "MESSAGE",
+      "slots": {}
+    },
+    "id": "prompt-b11c63f21c87f69a",
+    "spoken_text": "Send a message",
+    "text": "Send a message"
+  },
+  {
+    "case_ids": [
+      "B1-036"
+    ],
+    "command": {
+      "intent": "MESSAGE",
+      "slots": {}
+    },
+    "id": "prompt-eb9bc01770a2d86b",
+    "spoken_text": "Send my message",
+    "text": "Send my message"
+  },
+  {
+    "case_ids": [
+      "B1-037"
+    ],
+    "command": {
+      "intent": "LIST_REMINDERS",
+      "slots": {}
+    },
+    "id": "prompt-650b136b0a283f98",
+    "spoken_text": "Reminders",
+    "text": "Reminders"
+  },
+  {
+    "case_ids": [
+      "B1-038"
+    ],
+    "command": {
+      "intent": "LIST_REMINDERS",
+      "slots": {}
+    },
+    "id": "prompt-3ba3a9f6215125b5",
+    "spoken_text": "Show my reminders",
+    "text": "Show my reminders"
+  },
+  {
+    "case_ids": [
+      "B1-039"
+    ],
+    "command": {
+      "intent": "LIST_REMINDERS",
+      "slots": {}
+    },
+    "id": "prompt-06f7637f13b13b5a",
+    "spoken_text": "List my reminders",
+    "text": "List my reminders"
+  },
+  {
+    "case_ids": [
+      "B1-058"
+    ],
+    "command": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 18,
+        "unit": "C"
+      }
+    },
+    "id": "prompt-be456cf16e124325",
+    "spoken_text": "Temperature eighteen degrees",
+    "text": "Temperature eighteen degrees"
+  },
+  {
+    "case_ids": [
+      "B1-059"
+    ],
+    "command": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 22,
+        "unit": "C"
+      }
+    },
+    "id": "prompt-6448e3e23ba37fd1",
+    "spoken_text": "Temperature twenty two degrees",
+    "text": "Temperature twenty two degrees"
+  },
+  {
+    "case_ids": [
+      "B1-060"
+    ],
+    "command": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 26,
+        "unit": "C"
+      }
+    },
+    "id": "prompt-dcaba986a40f3da4",
+    "spoken_text": "Temperature twenty six degrees",
+    "text": "Temperature twenty six degrees"
+  },
+  {
+    "case_ids": [
+      "B1-061"
+    ],
+    "command": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 18,
+        "unit": "C"
+      }
+    },
+    "id": "prompt-8668d84acfcc2c9e",
+    "spoken_text": "Change the temperature to eighteen degrees",
+    "text": "Change the temperature to eighteen degrees"
+  },
+  {
+    "case_ids": [
+      "B1-062"
+    ],
+    "command": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 22,
+        "unit": "C"
+      }
+    },
+    "id": "prompt-c2cad0b31bae6a2f",
+    "spoken_text": "Change the temperature to twenty two degrees",
+    "text": "Change the temperature to twenty two degrees"
+  },
+  {
+    "case_ids": [
+      "B1-063"
+    ],
+    "command": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 26,
+        "unit": "C"
+      }
+    },
+    "id": "prompt-42c5903734957486",
+    "spoken_text": "Change the temperature to twenty six degrees",
+    "text": "Change the temperature to twenty six degrees"
+  },
+  {
+    "case_ids": [
+      "B1-064"
+    ],
+    "command": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 18,
+        "unit": "C"
+      }
+    },
+    "id": "prompt-c1e72efe389da1e6",
+    "spoken_text": "Set the temperature to eighteen degrees",
+    "text": "Set the temperature to eighteen degrees"
+  },
+  {
+    "case_ids": [
+      "B1-065"
+    ],
+    "command": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 22,
+        "unit": "C"
+      }
+    },
+    "id": "prompt-fcd0bf6b28e0e771",
+    "spoken_text": "Set the temperature to twenty two degrees",
+    "text": "Set the temperature to twenty two degrees"
+  },
+  {
+    "case_ids": [
+      "B1-066"
+    ],
+    "command": {
+      "intent": "TEMPERATURE",
+      "slots": {
+        "degrees": 26,
+        "unit": "C"
+      }
+    },
+    "id": "prompt-ae6c1ba20bbb8f07",
+    "spoken_text": "Set the temperature to twenty six degrees",
+    "text": "Set the temperature to twenty six degrees"
+  },
+  {
+    "case_ids": [
+      "B1-085"
+    ],
+    "command": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.drink_water"
+      }
+    },
+    "id": "prompt-b89245ceef6e1915",
+    "spoken_text": "Reminder Drink water",
+    "text": "Reminder Drink water"
+  },
+  {
+    "case_ids": [
+      "B1-086"
+    ],
+    "command": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.study"
+      }
+    },
+    "id": "prompt-4fe9c8f119f5b67a",
+    "spoken_text": "Reminder Study",
+    "text": "Reminder Study"
+  },
+  {
+    "case_ids": [
+      "B1-087"
+    ],
+    "command": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.exercise"
+      }
+    },
+    "id": "prompt-a9970922058d90c0",
+    "spoken_text": "Reminder Exercise",
+    "text": "Reminder Exercise"
+  },
+  {
+    "case_ids": [
+      "B1-088"
+    ],
+    "command": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.drink_water"
+      }
+    },
+    "id": "prompt-b56f34cc1ad5e8cd",
+    "spoken_text": "Remind me to Drink water",
+    "text": "Remind me to Drink water"
+  },
+  {
+    "case_ids": [
+      "B1-089"
+    ],
+    "command": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.study"
+      }
+    },
+    "id": "prompt-eef48030a1527f78",
+    "spoken_text": "Remind me to Study",
+    "text": "Remind me to Study"
+  },
+  {
+    "case_ids": [
+      "B1-090"
+    ],
+    "command": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.exercise"
+      }
+    },
+    "id": "prompt-3336a39406e5a72f",
+    "spoken_text": "Remind me to Exercise",
+    "text": "Remind me to Exercise"
+  },
+  {
+    "case_ids": [
+      "B1-091"
+    ],
+    "command": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.drink_water"
+      }
+    },
+    "id": "prompt-5875b2a09ebdab51",
+    "spoken_text": "Create a reminder to Drink water",
+    "text": "Create a reminder to Drink water"
+  },
+  {
+    "case_ids": [
+      "B1-092"
+    ],
+    "command": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.study"
+      }
+    },
+    "id": "prompt-0dffde07395740d0",
+    "spoken_text": "Create a reminder to Study",
+    "text": "Create a reminder to Study"
+  },
+  {
+    "case_ids": [
+      "B1-093"
+    ],
+    "command": {
+      "intent": "CREATE_REMINDER",
+      "slots": {
+        "task_id": "task.exercise"
+      }
+    },
+    "id": "prompt-a3d1d89abc81d6d8",
+    "spoken_text": "Create a reminder to Exercise",
+    "text": "Create a reminder to Exercise"
+  },
+  {
+    "case_ids": [
+      "X-490c0e1a594e36"
+    ],
+    "command": {
+      "intent": "CALL",
+      "slots": {
+        "contact_id": "contact.home"
+      }
+    },
+    "id": "prompt-44c73e311824d88f",
+    "spoken_text": "call Home",
+    "text": "call Home"
+  },
+  {
+    "case_ids": [
+      "X-8bc1043131e7fd"
+    ],
+    "command": {
+      "intent": "CALL",
+      "slots": {
+        "contact_id": "contact.mom"
+      }
+    },
+    "id": "prompt-57210b4dc24c1c8f",
+    "spoken_text": "call Mom",
+    "text": "call Mom"
+  },
+  {
+    "case_ids": [
+      "X-8a9936e72fdb8e"
+    ],
+    "command": null,
+    "id": "prompt-c0dbaa824aafd52d",
+    "spoken_text": "turn on the mystery light",
+    "text": "turn on the mystery light"
+  },
+  {
+    "case_ids": [
+      "X-761867d8f816af"
+    ],
+    "command": null,
+    "id": "prompt-d4d9d414ba93b89d",
+    "spoken_text": "turn off the attic light",
+    "text": "turn off the attic light"
+  },
+  {
+    "case_ids": [
+      "X-77459401a01e31"
+    ],
+    "command": null,
+    "id": "prompt-97f50c1eaf22a122",
+    "spoken_text": "set brightness of garage light to twenty percent",
+    "text": "set brightness of garage light to twenty percent"
+  },
+  {
+    "case_ids": [
+      "X-97872b46582bc9"
+    ],
+    "command": null,
+    "id": "prompt-457793367ecbc1b7",
+    "spoken_text": "set brightness to one hundred and one percent",
+    "text": "set brightness to one hundred and one percent"
+  },
+  {
+    "case_ids": [
+      "X-4d157cd5ed8f85"
+    ],
+    "command": null,
+    "id": "prompt-f7f518df406210eb",
+    "spoken_text": "set volume to minus one percent",
+    "text": "set volume to minus one percent"
+  },
+  {
+    "case_ids": [
+      "X-f8456d26a3a4e1"
+    ],
+    "command": null,
+    "id": "prompt-c5006bd843f92b2d",
+    "spoken_text": "call unknown contact",
+    "text": "call unknown contact"
+  },
+  {
+    "case_ids": [
+      "X-b25c9564c4bf68"
+    ],
+    "command": null,
+    "id": "prompt-1381325795b38bdb",
+    "spoken_text": "play unknown song",
+    "text": "play unknown song"
+  },
+  {
+    "case_ids": [
+      "X-3bb8f71c8ae20f"
+    ],
+    "command": null,
+    "id": "prompt-14cf3b83f707604d",
+    "spoken_text": "remind me to unknown task",
+    "text": "remind me to unknown task"
+  },
+  {
+    "case_ids": [
+      "X-9137b89dde8882"
+    ],
+    "command": null,
+    "id": "prompt-b61c6caf79138742",
+    "spoken_text": "buy me a car",
+    "text": "buy me a car"
+  },
+  {
+    "case_ids": [
+      "X-eb5c10fe18d975"
+    ],
+    "command": null,
+    "id": "prompt-16b4784226abf98e",
+    "spoken_text": "tell me a joke",
+    "text": "tell me a joke"
+  },
+  {
+    "case_ids": [
+      "X-771e6dce37ea6c"
+    ],
+    "command": null,
+    "id": "prompt-e3901bdb2a08ca65",
+    "spoken_text": "this is not a command",
+    "text": "this is not a command"
+  },
+  {
+    "case_ids": [
+      "X-fe2ce1529edcf8"
+    ],
+    "command": null,
+    "id": "prompt-5464285fd5469da4",
+    "spoken_text": "do not turn on the lights",
+    "text": "do not turn on the lights"
+  },
+  {
+    "case_ids": [
+      "X-7c905bde69eb80"
+    ],
+    "command": null,
+    "id": "prompt-2b63d0e93c4011fa",
+    "spoken_text": "what is the population of mars",
+    "text": "what is the population of mars"
+  },
+  {
+    "case_ids": [
+      "X-f37edb5223929f"
+    ],
+    "command": null,
+    "id": "prompt-8ba418727942ca1d",
+    "spoken_text": "delete all my files",
+    "text": "delete all my files"
+  },
+  {
+    "case_ids": [
+      "CUSTOM-CALL-mother"
+    ],
+    "command": {
+      "intent": "CALL",
+      "slots": {
+        "contact_id": "contact.mom"
+      }
+    },
+    "id": "prompt-28b0b7725226f881",
+    "spoken_text": "call mother",
+    "text": "call mother"
+  },
+  {
+    "case_ids": [
+      "matrix-light.all-red"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "red",
+        "light_id": "light.all"
+      }
+    },
+    "id": "prompt-ceda5a2bbca21188",
+    "spoken_text": "Set the lights color to red",
+    "text": "Set the lights color to red"
+  },
+  {
+    "case_ids": [
+      "matrix-light.all-blue"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "blue",
+        "light_id": "light.all"
+      }
+    },
+    "id": "prompt-6af09d045d7c6a85",
+    "spoken_text": "Set the lights color to blue",
+    "text": "Set the lights color to blue"
+  },
+  {
+    "case_ids": [
+      "matrix-light.all-green"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "green",
+        "light_id": "light.all"
+      }
+    },
+    "id": "prompt-d17345b8d0408b9d",
+    "spoken_text": "Set the lights color to green",
+    "text": "Set the lights color to green"
+  },
+  {
+    "case_ids": [
+      "matrix-light.all-yellow"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "yellow",
+        "light_id": "light.all"
+      }
+    },
+    "id": "prompt-dfbb545739f1bb5f",
+    "spoken_text": "Set the lights color to yellow",
+    "text": "Set the lights color to yellow"
+  },
+  {
+    "case_ids": [
+      "matrix-light.all-white"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "white",
+        "light_id": "light.all"
+      }
+    },
+    "id": "prompt-10003b45d0883660",
+    "spoken_text": "Set the lights color to white",
+    "text": "Set the lights color to white"
+  },
+  {
+    "case_ids": [
+      "matrix-light.all-orange"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "orange",
+        "light_id": "light.all"
+      }
+    },
+    "id": "prompt-8bac014a00a8de42",
+    "spoken_text": "Set the lights color to orange",
+    "text": "Set the lights color to orange"
+  },
+  {
+    "case_ids": [
+      "matrix-light.all-purple"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "purple",
+        "light_id": "light.all"
+      }
+    },
+    "id": "prompt-06b699be48eca98d",
+    "spoken_text": "Set the lights color to purple",
+    "text": "Set the lights color to purple"
+  },
+  {
+    "case_ids": [
+      "matrix-light.all-pink"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "pink",
+        "light_id": "light.all"
+      }
+    },
+    "id": "prompt-84965c68d9afc5a2",
+    "spoken_text": "Set the lights color to pink",
+    "text": "Set the lights color to pink"
+  },
+  {
+    "case_ids": [
+      "matrix-light.all-cyan"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "cyan",
+        "light_id": "light.all"
+      }
+    },
+    "id": "prompt-214c3cea01c11137",
+    "spoken_text": "Set the lights color to cyan",
+    "text": "Set the lights color to cyan"
+  },
+  {
+    "case_ids": [
+      "matrix-light.all-magenta"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "magenta",
+        "light_id": "light.all"
+      }
+    },
+    "id": "prompt-8e1ce877fcec97bb",
+    "spoken_text": "Set the lights color to magenta",
+    "text": "Set the lights color to magenta"
+  },
+  {
+    "case_ids": [
+      "matrix-light.all-warm_white"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "warm white",
+        "light_id": "light.all"
+      }
+    },
+    "id": "prompt-37f14bd69d5b1a64",
+    "spoken_text": "Set the lights color to warm white",
+    "text": "Set the lights color to warm white"
+  },
+  {
+    "case_ids": [
+      "matrix-light.all-cool_white"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "cool white",
+        "light_id": "light.all"
+      }
+    },
+    "id": "prompt-98b751e1c874c051",
+    "spoken_text": "Set the lights color to cool white",
+    "text": "Set the lights color to cool white"
+  },
+  {
+    "case_ids": [
+      "matrix-light.kitchen-red"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "red",
+        "light_id": "light.kitchen"
+      }
+    },
+    "id": "prompt-64b00f94a9c10cba",
+    "spoken_text": "Set kitchen lamp color to red",
+    "text": "Set kitchen lamp color to red"
+  },
+  {
+    "case_ids": [
+      "matrix-light.kitchen-blue"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "blue",
+        "light_id": "light.kitchen"
+      }
+    },
+    "id": "prompt-69aee545bda03a57",
+    "spoken_text": "Set kitchen lamp color to blue",
+    "text": "Set kitchen lamp color to blue"
+  },
+  {
+    "case_ids": [
+      "matrix-light.kitchen-green"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "green",
+        "light_id": "light.kitchen"
+      }
+    },
+    "id": "prompt-1df221672706edca",
+    "spoken_text": "Set kitchen lamp color to green",
+    "text": "Set kitchen lamp color to green"
+  },
+  {
+    "case_ids": [
+      "matrix-light.kitchen-yellow"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "yellow",
+        "light_id": "light.kitchen"
+      }
+    },
+    "id": "prompt-3771f79e1e717491",
+    "spoken_text": "Set kitchen lamp color to yellow",
+    "text": "Set kitchen lamp color to yellow"
+  },
+  {
+    "case_ids": [
+      "matrix-light.kitchen-white"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "white",
+        "light_id": "light.kitchen"
+      }
+    },
+    "id": "prompt-53b2196bd58dd6a9",
+    "spoken_text": "Set kitchen lamp color to white",
+    "text": "Set kitchen lamp color to white"
+  },
+  {
+    "case_ids": [
+      "matrix-light.kitchen-orange"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "orange",
+        "light_id": "light.kitchen"
+      }
+    },
+    "id": "prompt-7bb705df27f977c2",
+    "spoken_text": "Set kitchen lamp color to orange",
+    "text": "Set kitchen lamp color to orange"
+  },
+  {
+    "case_ids": [
+      "matrix-light.kitchen-purple"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "purple",
+        "light_id": "light.kitchen"
+      }
+    },
+    "id": "prompt-53189ff0044f0ce3",
+    "spoken_text": "Set kitchen lamp color to purple",
+    "text": "Set kitchen lamp color to purple"
+  },
+  {
+    "case_ids": [
+      "matrix-light.kitchen-pink"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "pink",
+        "light_id": "light.kitchen"
+      }
+    },
+    "id": "prompt-ce07dfa4523e904b",
+    "spoken_text": "Set kitchen lamp color to pink",
+    "text": "Set kitchen lamp color to pink"
+  },
+  {
+    "case_ids": [
+      "matrix-light.kitchen-cyan"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "cyan",
+        "light_id": "light.kitchen"
+      }
+    },
+    "id": "prompt-ef5401d116f1bf3a",
+    "spoken_text": "Set kitchen lamp color to cyan",
+    "text": "Set kitchen lamp color to cyan"
+  },
+  {
+    "case_ids": [
+      "matrix-light.kitchen-magenta"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "magenta",
+        "light_id": "light.kitchen"
+      }
+    },
+    "id": "prompt-f0c314d46215a04d",
+    "spoken_text": "Set kitchen lamp color to magenta",
+    "text": "Set kitchen lamp color to magenta"
+  },
+  {
+    "case_ids": [
+      "matrix-light.kitchen-warm_white"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "warm white",
+        "light_id": "light.kitchen"
+      }
+    },
+    "id": "prompt-453985ab252afe97",
+    "spoken_text": "Set kitchen lamp color to warm white",
+    "text": "Set kitchen lamp color to warm white"
+  },
+  {
+    "case_ids": [
+      "matrix-light.kitchen-cool_white"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "cool white",
+        "light_id": "light.kitchen"
+      }
+    },
+    "id": "prompt-cf280bef6ee9c01f",
+    "spoken_text": "Set kitchen lamp color to cool white",
+    "text": "Set kitchen lamp color to cool white"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bedroom-red"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "red",
+        "light_id": "light.bedroom"
+      }
+    },
+    "id": "prompt-de5f5a82c5345fe5",
+    "spoken_text": "Set bedroom lamp color to red",
+    "text": "Set bedroom lamp color to red"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bedroom-blue"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "blue",
+        "light_id": "light.bedroom"
+      }
+    },
+    "id": "prompt-0bb7fbc61bfaca54",
+    "spoken_text": "Set bedroom lamp color to blue",
+    "text": "Set bedroom lamp color to blue"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bedroom-green"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "green",
+        "light_id": "light.bedroom"
+      }
+    },
+    "id": "prompt-3a2028b70eefcfd9",
+    "spoken_text": "Set bedroom lamp color to green",
+    "text": "Set bedroom lamp color to green"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bedroom-yellow"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "yellow",
+        "light_id": "light.bedroom"
+      }
+    },
+    "id": "prompt-0013123467818dd0",
+    "spoken_text": "Set bedroom lamp color to yellow",
+    "text": "Set bedroom lamp color to yellow"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bedroom-white"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "white",
+        "light_id": "light.bedroom"
+      }
+    },
+    "id": "prompt-ff52167ef8244051",
+    "spoken_text": "Set bedroom lamp color to white",
+    "text": "Set bedroom lamp color to white"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bedroom-orange"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "orange",
+        "light_id": "light.bedroom"
+      }
+    },
+    "id": "prompt-0bfdaf1548bb066d",
+    "spoken_text": "Set bedroom lamp color to orange",
+    "text": "Set bedroom lamp color to orange"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bedroom-purple"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "purple",
+        "light_id": "light.bedroom"
+      }
+    },
+    "id": "prompt-88143df22fc6a8ee",
+    "spoken_text": "Set bedroom lamp color to purple",
+    "text": "Set bedroom lamp color to purple"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bedroom-pink"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "pink",
+        "light_id": "light.bedroom"
+      }
+    },
+    "id": "prompt-2ccb46dc76cd71d9",
+    "spoken_text": "Set bedroom lamp color to pink",
+    "text": "Set bedroom lamp color to pink"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bedroom-cyan"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "cyan",
+        "light_id": "light.bedroom"
+      }
+    },
+    "id": "prompt-52a6606f2b295b13",
+    "spoken_text": "Set bedroom lamp color to cyan",
+    "text": "Set bedroom lamp color to cyan"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bedroom-magenta"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "magenta",
+        "light_id": "light.bedroom"
+      }
+    },
+    "id": "prompt-b6b513cf09bb91cb",
+    "spoken_text": "Set bedroom lamp color to magenta",
+    "text": "Set bedroom lamp color to magenta"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bedroom-warm_white"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "warm white",
+        "light_id": "light.bedroom"
+      }
+    },
+    "id": "prompt-461747b3eb69a746",
+    "spoken_text": "Set bedroom lamp color to warm white",
+    "text": "Set bedroom lamp color to warm white"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bedroom-cool_white"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "cool white",
+        "light_id": "light.bedroom"
+      }
+    },
+    "id": "prompt-a4c67b3e7263fba4",
+    "spoken_text": "Set bedroom lamp color to cool white",
+    "text": "Set bedroom lamp color to cool white"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bathroom-red"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "red",
+        "light_id": "light.bathroom"
+      }
+    },
+    "id": "prompt-400893d6287bee02",
+    "spoken_text": "Set bathroom light color to red",
+    "text": "Set bathroom light color to red"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bathroom-blue"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "blue",
+        "light_id": "light.bathroom"
+      }
+    },
+    "id": "prompt-9fe916867b55a669",
+    "spoken_text": "Set bathroom light color to blue",
+    "text": "Set bathroom light color to blue"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bathroom-green"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "green",
+        "light_id": "light.bathroom"
+      }
+    },
+    "id": "prompt-1a8dd0b73281b393",
+    "spoken_text": "Set bathroom light color to green",
+    "text": "Set bathroom light color to green"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bathroom-yellow"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "yellow",
+        "light_id": "light.bathroom"
+      }
+    },
+    "id": "prompt-b17ef5ffd6a048f6",
+    "spoken_text": "Set bathroom light color to yellow",
+    "text": "Set bathroom light color to yellow"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bathroom-white"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "white",
+        "light_id": "light.bathroom"
+      }
+    },
+    "id": "prompt-56b9fd3b4ad1a8f8",
+    "spoken_text": "Set bathroom light color to white",
+    "text": "Set bathroom light color to white"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bathroom-orange"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "orange",
+        "light_id": "light.bathroom"
+      }
+    },
+    "id": "prompt-2ebf67e13a977699",
+    "spoken_text": "Set bathroom light color to orange",
+    "text": "Set bathroom light color to orange"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bathroom-purple"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "purple",
+        "light_id": "light.bathroom"
+      }
+    },
+    "id": "prompt-9762e7ef016d62b9",
+    "spoken_text": "Set bathroom light color to purple",
+    "text": "Set bathroom light color to purple"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bathroom-pink"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "pink",
+        "light_id": "light.bathroom"
+      }
+    },
+    "id": "prompt-240ac3542a7afb84",
+    "spoken_text": "Set bathroom light color to pink",
+    "text": "Set bathroom light color to pink"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bathroom-cyan"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "cyan",
+        "light_id": "light.bathroom"
+      }
+    },
+    "id": "prompt-039ae86bf23e1a94",
+    "spoken_text": "Set bathroom light color to cyan",
+    "text": "Set bathroom light color to cyan"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bathroom-magenta"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "magenta",
+        "light_id": "light.bathroom"
+      }
+    },
+    "id": "prompt-96483d9c805c6985",
+    "spoken_text": "Set bathroom light color to magenta",
+    "text": "Set bathroom light color to magenta"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bathroom-warm_white"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "warm white",
+        "light_id": "light.bathroom"
+      }
+    },
+    "id": "prompt-0cf1c61d6736b880",
+    "spoken_text": "Set bathroom light color to warm white",
+    "text": "Set bathroom light color to warm white"
+  },
+  {
+    "case_ids": [
+      "matrix-light.bathroom-cool_white"
+    ],
+    "command": {
+      "intent": "COLOR",
+      "slots": {
+        "color": "cool white",
+        "light_id": "light.bathroom"
+      }
+    },
+    "id": "prompt-e376d3d214816c78",
+    "spoken_text": "Set bathroom light color to cool white",
+    "text": "Set bathroom light color to cool white"
+  }
+]

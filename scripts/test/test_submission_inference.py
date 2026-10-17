@@ -77,6 +77,7 @@ class InferenceTests(unittest.TestCase):
                          'light.hue_color_lamp_1,light.dining_light,camera.dining_area_main_camera_tc70_mainstream')
         for key in ('ACTIONS_ENABLED', 'HA_ENABLED', 'SPOTIFY_ENABLED'):
             self.assertEqual(env[key], 'false')
+        self.assertEqual(json.loads(env['SMART_SPEAKER_BINDINGS'])['lights']['light.all'],'light.hue_color_lamp_1')
 
     def test_ui_loads_private_root_env_and_shell_overrides_it(self):
         with tempfile.TemporaryDirectory() as temporary, patch.dict('os.environ', {'HA_TOKEN':'shell-token'}, clear=True):
@@ -99,7 +100,7 @@ class InferenceTests(unittest.TestCase):
                                           '[bindings.lights]\n"light.kitchen" = "light.custom"\n')
             env = self.module().ui_environment(root, ROOT/'submission/models/full', 1, 3000, None, None)
         self.assertEqual(env['HA_ENTITY_IDS'], 'light.custom')
-        self.assertEqual(json.loads(env['SMART_SPEAKER_BINDINGS'])['lights'], {'light.kitchen':'light.custom'})
+        self.assertEqual(json.loads(env['SMART_SPEAKER_BINDINGS'])['lights'], {'light.kitchen':'light.custom','light.all':'light.hue_color_lamp_1'})
         self.assertEqual(env['HA_ENABLED'], 'true')
         self.assertEqual(env['ACTIONS_ENABLED'], 'true')
 
@@ -201,7 +202,7 @@ class InferenceTests(unittest.TestCase):
              patch.object(module,'ensure_responses',side_effect=AssertionError('CLI attempted playback')):
             module.service_class(Base)().forward(accepted_event())
 
-    def test_ui_reply_uses_selected_host_speaker_and_restarts_capture(self):
+    def test_ui_rejection_uses_selected_host_speaker_and_restarts_capture(self):
         module=self.module('worker')
         class Base:
             def __init__(self):
@@ -212,9 +213,9 @@ class InferenceTests(unittest.TestCase):
         play=Mock();read=Mock(return_value=([.1,.2],24000))
         with patch.dict('os.environ',{'SUBMISSION_RESPONSE_PLAYBACK':'true','SUBMISSION_SPEAKER_INDEX':'7'}), \
              patch.dict('sys.modules',{'sounddevice':SimpleNamespace(play=play),'soundfile':SimpleNamespace(read=read)}), \
-             patch.object(module,'ensure_responses',return_value={'recognized_timer':Path('timer.wav')}):
+             patch.object(module,'ensure_responses',return_value={'not_recognized':Path('timer.wav')}):
             service=module.service_class(Base,playback=True)()
-            service.forward(accepted_event())
+            service.forward({'event':'command','output':{'accepted':False,'command':None,'reason':'OOV'}})
         read.assert_called_once_with(Path('timer.wav'),dtype='float32')
         play.assert_called_once_with([.1,.2],24000,device=7,blocking=True)
         service.stream.stop.assert_called_once();service.stream.start.assert_called_once()

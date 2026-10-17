@@ -20,6 +20,7 @@ export function readConfig(env: NodeJS.ProcessEnv, cwd: string) {
   for(const key of ['lights','songs'] as const){
     if(!bindings[key]||typeof bindings[key]!=='object'||Array.isArray(bindings[key])||Object.values(bindings[key]).some(v=>typeof v!=='string'))throw new Error('Invalid action bindings.');
   }
+  bindings.lights['light.all']??='light.hue_color_lamp_1';
   const port = Number(env.PORT || 3000);
   if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('Invalid PORT.');
   const origin = httpUrl(env.APP_ORIGIN || `http://127.0.0.1:${port}`, 'APP_ORIGIN');
@@ -37,8 +38,24 @@ export function readConfig(env: NodeJS.ProcessEnv, cwd: string) {
   if (threshold !== undefined && (!Number.isFinite(threshold) || threshold < 0 || threshold > 1)) throw new Error('INTENT_MIN_CONFIDENCE must be between 0 and 1.');
   const haEnabled = enabled(env.HA_ENABLED, 'HA_ENABLED');
   const spotifyEnabled = enabled(env.SPOTIFY_ENABLED, 'SPOTIFY_ENABLED');
+  const coordinate=(name:string,fallback:number,limit:number)=>{
+    const value=env[name]?.trim()?Number(env[name]):fallback;
+    if(!Number.isFinite(value)||Math.abs(value)>limit)throw new Error(`${name} is outside its coordinate range.`);
+    return value;
+  };
+  const weather={enabled:enabled(env.OPENWEATHER_ENABLED,'OPENWEATHER_ENABLED'),apiKey:env.OPENWEATHER_API_KEY?.trim()||'',
+    latitude:coordinate('OPENWEATHER_LAT',14.5995,90),longitude:coordinate('OPENWEATHER_LON',120.9842,180)};
+  const thermostatEntity=env.HA_THERMOSTAT_ENTITY?.trim()||'';
+  const cameraEntity=env.HA_CAMERA_ENTITY?.trim()||'camera.dining_area_main_camera_tc70_mainstream';
+  if(!/^camera\.[a-z0-9_]+$/.test(cameraEntity))throw new Error('HA_CAMERA_ENTITY must be a camera entity.');
+  const phoneNotifyEntity=env.HA_NOTIFY_ENTITY?.trim()||'notify.jus_phone';
+  const macbookNotifyEntity=env.HA_MACBOOK_NOTIFY_ENTITY?.trim()||'';
+  for(const entity of [phoneNotifyEntity,macbookNotifyEntity])if(entity&&!/^notify\.[a-z0-9_]+$/.test(entity))throw new Error('Notification targets must be notify.* entity IDs.');
+  const notification={phoneEntity:phoneNotifyEntity,macbookEntity:macbookNotifyEntity,title:env.HA_NOTIFY_TITLE||'Iris',message:env.HA_NOTIFY_MESSAGE||'This works'};
+  if(notification.title.length>100||notification.message.length>500)throw new Error('Notification title or message is too long.');
+  if(thermostatEntity&&!/^climate\.[a-z0-9_]+$/.test(thermostatEntity))throw new Error('HA_THERMOSTAT_ENTITY must be a climate entity.');
   const entityIds = [...new Set((env.HA_ENTITY_IDS || '').split(',').map((id) => id.trim()).filter(Boolean))];
-  if (entityIds.length > 100 || entityIds.some((id) => !/^(light|camera|sensor)\.[a-z0-9_]+$/.test(id))) throw new Error('HA_ENTITY_IDS supports at most 100 light/camera/sensor IDs.');
+  if (entityIds.length > 100 || entityIds.some((id) => !/^(light|camera|sensor|climate)\.[a-z0-9_]+$/.test(id))) throw new Error('HA_ENTITY_IDS supports at most 100 light/camera/sensor/climate IDs.');
   const tls = env.TLS_CERT_PATH || env.TLS_KEY_PATH ? { cert: required(env.TLS_CERT_PATH, 'TLS_CERT_PATH'), key: required(env.TLS_KEY_PATH, 'TLS_KEY_PATH') } : undefined;
   const ha = haEnabled ? { enabled: true as const, url: httpUrl(required(env.HA_URL, 'HA_URL'), 'HA_URL'), token: required(env.HA_TOKEN, 'HA_TOKEN'), entityIds } : { enabled: false as const, entityIds };
   let spotify;
@@ -49,6 +66,6 @@ export function readConfig(env: NodeJS.ProcessEnv, cwd: string) {
     if (redirect.origin !== origin || redirect.pathname !== '/auth/spotify/callback') throw new Error('Spotify redirect must be APP_ORIGIN + /auth/spotify/callback.');
     spotify = { enabled: true as const, clientId: required(env.SPOTIFY_CLIENT_ID, 'SPOTIFY_CLIENT_ID'), clientSecret: required(env.SPOTIFY_CLIENT_SECRET, 'SPOTIFY_CLIENT_SECRET'), redirectUri, deviceId: env.SPOTIFY_DEVICE_ID || undefined };
   } else spotify = { enabled: false as const };
-  return { host: env.HOST || '127.0.0.1', port, origin, tls, inferenceMode, runtime, threshold, bindings, actionsEnabled: enabled(env.ACTIONS_ENABLED, 'ACTIONS_ENABLED'), ha, spotify, mediaDir: resolve(cwd, env.LOCAL_MEDIA_DIR || 'media'), dataDir: resolve(cwd, env.DATA_DIR || 'data') };
+  return { host: env.HOST || '127.0.0.1', port, origin, tls, inferenceMode, runtime, threshold, bindings, weather, thermostatEntity, cameraEntity, notification, actionsEnabled: enabled(env.ACTIONS_ENABLED, 'ACTIONS_ENABLED'), ha, spotify, mediaDir: resolve(cwd, env.LOCAL_MEDIA_DIR || 'media'), dataDir: resolve(cwd, env.DATA_DIR || 'data') };
 }
 export type Config = ReturnType<typeof readConfig>;

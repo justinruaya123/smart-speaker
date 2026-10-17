@@ -1,0 +1,39 @@
+{
+  "declined_to_judge": [
+    "Empirical model quality/export/calibration outcomes pending; executor must verify",
+    "Actual archive/runtime/installation pending; executor verifies extracted host runtime, ARM install remains unmeasured",
+    "Physical Pi/microphone/wake measurements absent and remain unclaimed",
+    "Independent listening/voice authenticity/unseen-human generalization absent and remain unclaimed",
+    "Historical studies and unrelated collection errors preserved; executor reports current failures"
+  ],
+  "experiment_id": "speaker-compact-recall-v1",
+  "findings": [
+    {
+      "finding": "Exact OptionB wording counts absent",
+      "red_then_green": true,
+      "regression_tests": 1,
+      "resolution": "Join frozen source metadata/predictions by identity and bound93definitions, keeping zero cells and reference conflicts",
+      "severity": "Important"
+    },
+    {
+      "executor_severity": "Important",
+      "finding": "Unsupported NCNN advertised by ORT-only archive",
+      "reason": "An advertised engine fails for users of the shipped CLI",
+      "red_then_green": true,
+      "regression_tests": 2,
+      "resolution": "Only ONNX Runtime is selectable; reject inherited NCNN config clearly",
+      "reviewer_severity": "Minor"
+    }
+  ],
+  "fix_independently_rereviewed": false,
+  "fresh_context": true,
+  "independent_test_count": 17,
+  "model": "gpt-6-astra",
+  "read_only": true,
+  "reviewer": "review_compact_recall",
+  "suite_after_fix": {
+    "failed": 0,
+    "log": ".cache/speaker-compact-recall-v1/final-focused-tests.log",
+    "passed": 188
+  }
+}

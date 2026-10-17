@@ -1,0 +1,29 @@
+{
+  "filename": "smart-speaker-inference-2m-v7.zip",
+  "bytes": 13412580,
+  "sha256": "ad5d52eada25947c42c331e970e0c37aae61ad22fc95893849d179e71b3ca037",
+  "repository": "justinruaya123/ai231-smart-speaker",
+  "revision": "e5cf836b3d693d1bd459674aabcb14411bf6781c",
+  "branch": "inference",
+  "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/resolve/e5cf836b3d693d1bd459674aabcb14411bf6781c/releases/2m-submission-final/smart-speaker-inference-2m-v7.zip?download=true",
+  "scope": "Only new ZIP and its integrity receipt on existing inference branch; old releases, dataset main and private model repository unchanged.",
+  "anonymous_download_verified": true,
+  "zip_inventory_and_member_hashes_verified": true,
+  "verified_members": 1658,
+  "software_tests": {
+    "javascript": 104,
+    "python": 40,
+    "browser_layouts": [
+      [
+        800,
+        480
+      ],
+      [
+        1024,
+        600
+      ]
+    ]
+  },
+  "physical_pi_tested": false,
+  "live_devices_tested": false
+}

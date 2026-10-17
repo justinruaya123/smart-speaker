@@ -1,0 +1,13 @@
+{
+  "bindings": {
+    ".cache/speaker-compact-recall-v1/retry_fp32.py": "d81f15bebbf85a09cef17bb0c3bdc4d0cdb7903a5402eefa8c70dd74afd2f714",
+    "scripts/train/speaker_compact_fp32_release.py": "2c047c2083fd360a1d2aea2502842b2a5921836fda1ccf1d1d3a8e2ca23371ad"
+  },
+  "calibration_inference_completed": false,
+  "next_attempt": "fp32-recovery-v1",
+  "numerical_or_policy_changes": false,
+  "partial_attempt_preserved": true,
+  "previous_attempt": "fp32-fallback",
+  "reason": "einops lazy backend initialization raced in parallel feature preparation",
+  "test_read": false
+}

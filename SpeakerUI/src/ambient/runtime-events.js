@@ -17,18 +17,33 @@ export function describeCommand(command) {
 }
 
 export function applyRuntimeEvent(model, event, setAgent) {
+    if(event.event==='wake_config'||event.event==='ready'){if(event.wake)model.runtimeWake=event.wake;}
+    if(event.event==='notification'){model.announcement=event.text;model.runtimeNotice=event.text;setAgent('speaking');return;}
+    if(event.event==='speech_error'){model.runtimeError=event.message;return;}
+    if(event.event==='response'){model.announcement=event.text;setAgent('speaking');}
     if(event.event==='execution'){
         const item=(model.history||[]).find(item=>item.result.utteranceId===event.utterance_id);
         if(!item||item.execution)return;
         item.execution=event.execution;item.status=event.execution.status;
+        model.announcement=event.execution.text||event.execution.detail;
+        if(event.execution.command?.intent==='WEATHER'){
+            model.view='weather';model.weather=event.execution.weather||null;
+            model.weatherError=event.execution.weather?'':event.execution.detail;
+        }
+        if(event.execution.reminders)model.reminders=event.execution.reminders.map(r=>({...r,deadline:r.deadline??null,unread:!r.done,nearShown:false,dueShown:false}));
         if(model.event?.result.utteranceId===event.utterance_id)model.event={...item};
         if(event.execution.status==='local'){
             const command=event.execution.command,slots=command.slots;
+            if(command.intent==='CALL'&&event.execution.camera){
+                const camera=event.execution.camera;
+                model.call={kind:'camera',entityId:camera.entityId,name:camera.name,started:Date.now()};
+                model.cameraEnabled=true;model.view='call';
+            }
             if(command.intent==='TIMER')model.timer={total:slots.duration_seconds,remaining:slots.duration_seconds,end:event.execution.deadline};
             if(command.intent==='ALARM')model.alarm={time:slots.time,deadline:event.execution.deadline};
             if(command.intent==='LIST_REMINDERS')model.view='reminders';
-            if(command.intent==='TIME'){model.view='home';model.announcement=new Date().toLocaleTimeString();}
-            if(command.intent==='CREATE_REMINDER'){model.reminderDraft=({ 'task.drink_water':'Drink water','task.study':'Study','task.exercise':'Exercise' })[slots.task_id]||slots.task_id;model.reminderDeadline='';model.editingReminder=null;model.view='new-reminder';}
+            if(command.intent==='TIME')model.view='home';
+            if(command.intent==='CREATE_REMINDER')model.view='reminders';
         }
         return;
     }
@@ -38,7 +53,7 @@ export function applyRuntimeEvent(model, event, setAgent) {
     if (event.event === 'state' || event.event === 'ready') {
         model.runtimeState = event.state;
         model.muted = event.state === 'muted';
-        const state = ({ command_ready: 'listening', recording: 'listening', processing: 'thinking' })[event.state] ?? 'idle';
+        const state = ({ command_ready: 'listening', recording: 'listening', processing: 'thinking', responding:'speaking' })[event.state] ?? 'idle';
         setAgent(state);
         if (event.message) model.runtimeError = event.message;
         if (['wake_listening','processing'].includes(event.state)) model.runtimeError = '';

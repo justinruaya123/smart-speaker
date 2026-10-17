@@ -30,7 +30,7 @@ export function createHomeAssistant(config: Config['ha'], fetcher: typeof fetch,
     if (!config.enabled) throw new IntegrationError('disabled', 'Home Assistant is disabled.');
     return config;
   }
-  function checkEntity(id: string, domain: 'light' | 'camera') {
+  function checkEntity(id: string, domain: 'light' | 'camera' | 'climate') {
     if (!allowed.has(id) || !id.startsWith(`${domain}.`)) throw new IntegrationError('invalid_target', 'Entity is not allowlisted for this operation.');
   }
   function update(value: unknown) {
@@ -117,6 +117,24 @@ export function createHomeAssistant(config: Config['ha'], fetcher: typeof fetch,
     start() { if (!config.enabled || !stopped) return; stopped = false; if (allowed.size === 0) status = 'no_entities_selected'; else connect(); },
     close() { stopped = true; authenticated = false; clearTimeout(retry); socket?.terminate(); for (const entity of cache.values()) entity.stale = true; },
     snapshot() { return { enabled: config.enabled, status, entities: [...cache.values()].map((entity) => ({ ...entity, attributes: structuredClone(entity.attributes) })) }; },
+    async notify(entityId:string,message:string,title:string){
+      const cfg=enabledConfig();
+      if(!/^notify\.[a-z0-9_]+$/.test(entityId)||!message||message.length>500||title.length>100)throw new IntegrationError('invalid_request','Invalid notification target or content.');
+      const response=await request(fetcher,`${cfg.url}/api/services/notify/send_message`,{method:'POST',headers:{Authorization:`Bearer ${cfg.token}`,'Content-Type':'application/json'},body:JSON.stringify({entity_id:entityId,message,title})},true);
+      await requireSuccess(response);await response.body?.cancel();
+    },
+    async setTemperature(entityId:string,degrees:number){
+      const cfg=enabledConfig();checkEntity(entityId,'climate');
+      if(!Number.isInteger(degrees)||degrees < -50||degrees>60)throw new IntegrationError('invalid_request','Invalid thermostat temperature.');
+      // Confirm the entity's native unit and range before sending a setting.
+      const state=await request(fetcher,`${cfg.url}/api/states/${encodeURIComponent(entityId)}`,{headers:{Authorization:`Bearer ${cfg.token}`}});
+      await requireSuccess(state);const value:any=await state.json();
+      if(value?.attributes?.temperature_unit!=='°C')throw new IntegrationError('invalid_request','Configure a Celsius thermostat for this finite command model.');
+      if((Number.isFinite(value.attributes.min_temp)&&degrees<value.attributes.min_temp)||(Number.isFinite(value.attributes.max_temp)&&degrees>value.attributes.max_temp))
+        throw new IntegrationError('invalid_request','Requested temperature is outside the thermostat range.');
+      const response=await request(fetcher,`${cfg.url}/api/services/climate/set_temperature`,{method:'POST',headers:{Authorization:`Bearer ${cfg.token}`,'Content-Type':'application/json'},body:JSON.stringify({entity_id:entityId,temperature:degrees})},true);
+      await requireSuccess(response);await response.body?.cancel();
+    },
     async control(command: LightCommand) {
       const cfg = enabledConfig(); checkEntity(command.entityId, 'light');
       const body: Record<string, unknown> = { entity_id: command.entityId };

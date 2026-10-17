@@ -7,7 +7,7 @@ export function connectDummyBackend(model, dispatch, setAgent) {
     void fetch('/api/health', { signal: signal() }).then(response => { if (!response.ok)
         throw new Error('Unavailable'); return response.json(); }).then(health => { if (controller.signal.aborted)
         return;
-        if (health.inference === 'onnx') { model.runtimeMode = true; runtime = connectRuntime(model, setAgent); model.backend = 'Connecting to CPU ONNX'; }
+        if (health.inference === 'onnx') { model.runtimeMode = true; model.reminders=[]; runtime = connectRuntime(model, setAgent); model.backend = 'Connecting to CPU ONNX'; }
         else model.backend = health.runtime?.loaded && health.runtime.engine === 'dummy-onnx' ? 'Dummy backend ready' : 'Backend unavailable';
     }).catch(() => { if (!controller.signal.aborted) model.backend = 'Backend unavailable'; });
     return {

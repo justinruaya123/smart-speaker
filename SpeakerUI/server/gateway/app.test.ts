@@ -8,10 +8,53 @@ import { createApp } from '../app.js';
 import { readConfig } from '../config.js';
 import type { InferenceFactory } from '../inference/adapter.js';
 import type { ServerEvent } from '../../shared/protocol.js';
+import { EventEmitter } from 'node:events';
+import type { PythonRuntime } from '../inference/python-runtime.js';
 
 const config = () => readConfig({ APP_ORIGIN: 'http://127.0.0.1:3000', ACTIONS_ENABLED: 'true' }, '/tmp/speaker-fixtures-missing');
 const headers = { host: '127.0.0.1:3000', origin: 'http://127.0.0.1:3000' };
 const forbiddenFetch: typeof fetch = async () => { throw new Error('An offline test attempted outbound HTTP.'); };
+
+test('weather endpoint returns actual sanitized data, remains separate from device actions and has no startup fetch',async()=>{
+  let calls=0;
+  const app=await createApp({...config(),actionsEnabled:false,weather:{enabled:true,apiKey:'private-weather-key',latitude:14,longitude:120}},{fetcher:async()=>{
+    calls++;return Response.json({name:'Manila',main:{temp:29},weather:[{description:'clear sky'}]});
+  }});
+  try{
+    assert.equal(calls,0);const response=await app.inject({url:'/api/weather',headers});
+    assert.equal(response.statusCode,200);assert.equal(response.json().temperature,29);assert.equal(calls,1);
+    assert.ok(!response.body.includes('private-weather-key'));
+  }finally{await app.close();}
+});
+
+test('accepted voice weather and time reach TTS exactly once with the actual tool result; WAVs stay silent',async()=>{
+  const spoken:string[]=[],executions:any[]=[];
+  class Worker extends EventEmitter{
+    status(){return {loaded:true};} current(){return undefined;} async close(){}
+    async request(op:string,payload:any){assert.equal(op,'speak');spoken.push(payload.text);return {spoken:true};}
+  }
+  const worker=new Worker();worker.on('action',e=>executions.push(e));
+  const original=process.env.SUBMISSION_RESPONSE_PLAYBACK;process.env.SUBMISSION_RESPONSE_PLAYBACK='true';
+  const app=await createApp({...config(),actionsEnabled:false,runtime:{python:'unused',root:'unused',bundle:'unused',threads:1,token:'fixture'},weather:{enabled:true,apiKey:'private',latitude:14,longitude:120}},
+    {runtimeFactory:()=>worker as unknown as PythonRuntime,fetcher:async()=>Response.json({name:'Manila',main:{temp:28},weather:[{description:'light rain'}]})});
+  const emit=(intent:string,id:string,source='microphone')=>worker.emit('event',{event:'command',session_id:'s',utterance_id:id,source,application:{accepted:true,command:{intent,slots:{}}}});
+  try{
+    emit('WEATHER','weather');emit('WEATHER','weather');emit('TIME','time');emit('WEATHER','wav','wav');
+    for(let i=0;i<100&&executions.length<3;i++)await delay(5);
+    assert.equal(spoken.length,2);assert.equal(spoken[0],'In Manila, it is 28 degrees Celsius with light rain.');
+    assert.match(spoken[1]!,/time is .+Manila/);assert.equal(executions[2].execution.status,'preview');
+  }finally{await app.close();if(original===undefined)delete process.env.SUBMISSION_RESPONSE_PLAYBACK;else process.env.SUBMISSION_RESPONSE_PLAYBACK=original;}
+});
+
+test('wake selector forwards only declared detector modes to the native worker',async()=>{
+  const calls:any[]=[];class Worker extends EventEmitter{status(){return {};}current(){}async close(){}async request(op:string,data:any){calls.push({op,...data});return {wake:{selected:data.mode,active:data.mode}};}}
+  const worker=new Worker();const app=await createApp({...config(),runtime:{python:'unused',root:'unused',bundle:'unused',threads:1,token:'fixture'}},{runtimeFactory:()=>worker as unknown as PythonRuntime,fetcher:forbiddenFetch});
+  try{
+    for(const mode of ['iris_fallback','iris','jarvis'])assert.equal((await app.inject({method:'POST',url:'/api/runtime/wake',headers,payload:{mode}})).statusCode,200);
+    assert.equal((await app.inject({method:'POST',url:'/api/runtime/wake',headers,payload:{mode:'transcription'}})).statusCode,400);
+    assert.deepEqual(calls.map(c=>c.mode),['iris_fallback','iris','jarvis']);
+  }finally{await app.close();}
+});
 async function nextEvent(events: ServerEvent[], predicate: (event: ServerEvent) => boolean) {
   for (let i = 0; i < 100; i++) {
     const event = events.find(predicate);

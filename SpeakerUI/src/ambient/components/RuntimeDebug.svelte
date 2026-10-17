@@ -30,14 +30,22 @@
       <div class="panel">
         <p><strong>{m.runtimeEngine || 'Loading'} · Actions {m.runtimeActions?'enabled':'disabled'}</strong><br/>
           {m.runtimeConfig?.mode || 'demo'} · Intent ≥ {((m.runtimeConfig?.intent_threshold??.95)*100).toFixed(0)}% · Each slot ≥ {((m.runtimeConfig?.slot_threshold??.9)*100).toFixed(0)}%</p>
+        <label class="row">Wake word
+          <select aria-label="Wake word" disabled={busy} value={m.runtimeWake?.selected||'iris_fallback'} onchange={event=>request('wake',{mode:event.currentTarget.value})}>
+            <option value="iris_fallback">Hey Iris + Hey Jarvis fallback</option>
+            <option value="iris">Hey Iris only (experimental)</option>
+            <option value="jarvis">Hey Jarvis</option>
+          </select>
+        </label>
+        <p>{m.runtimeWake?.warning||`Wake word: ${({iris_fallback:'Hey Iris or Hey Jarvis',iris:'Hey Iris',jarvis:'Hey Jarvis'})[m.runtimeWake?.active]||'not listening yet'}`}. Hey Iris is experimental.</p>
         <div class="row"><button disabled={busy} onclick={refresh}>Refresh microphones</button>
           <select aria-label="Host microphone" bind:value={selected}><option value="">Choose microphone</option>{#each devices as device (device.index)}<option value={String(device.index)}>{device.index}: {device.name} ({device.hostapi})</option>{/each}</select>
           <button disabled={busy || selected === ''} onclick={() => request('listen', { device: Number(selected) })}>Listen</button>
           <button disabled={busy} onclick={() => request('mute', {})}>Mute</button></div>
         {#if listed && !devices.length}<p>No input devices found on this host. Connect a microphone to the Pi and refresh.</p>{/if}
-        <label class="row"><input type="checkbox" bind:checked={wake}/> WAV includes “Hey Jarvis” and a command</label>
+        <label class="row"><input type="checkbox" bind:checked={wake}/> WAV includes the selected wake word and a command</label>
         <label class="row">Replay WAV (mono, 16 kHz)<input aria-label="Replay WAV" type="file" accept=".wav,audio/wav" disabled={busy} onchange={upload}/></label>
-        <p role="status">{busy ? 'Processing…' : error || m.runtimeError || 'Say Hey Jarvis, pause until command ready, then speak.'}</p>
+        <p role="status">{busy ? 'Processing…' : error || m.runtimeError || (m.runtimeWake?.active==='jarvis'?'Say Hey Jarvis':m.runtimeWake?.selected==='iris'?'Say Hey Iris':'Say Hey Iris or Hey Jarvis')+', pause until command ready, then speak.'}</p>
         {#if m.runtimeResult?.output}<p data-command-summary><strong>{m.runtimeResult.application?.accepted ? 'Application: '+m.runtimeResult.application.command.intent : 'Application rejected: '+(m.runtimeResult.application?.reason||m.runtimeResult.output.reason)}</strong>{#if m.runtimeResult.diagnostic_candidate?.candidate}<br/>Model policy: {m.runtimeResult.output.accepted?'accepted':m.runtimeResult.output.reason}<br/>Candidate: {m.runtimeResult.diagnostic_candidate.candidate.intent} · {JSON.stringify(m.runtimeResult.diagnostic_candidate.candidate.slots)}{/if}</p>{/if}
         <pre data-runtime-result>{JSON.stringify(m.runtimeResult || { state: m.runtimeState, actions_enabled: m.runtimeActions }, null, 2)}</pre>
       </div>

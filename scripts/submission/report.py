@@ -480,13 +480,9 @@ def readme_section(summary):
                  'Typed scoring excludes two uncertain references, retaining their predictions.\n\n'
                  '| Portable desktop policy / group | Complete correct / positive references | UNKNOWN accepts / negatives |\n'
                  '| --- | ---: | ---: |\n'+'\n'.join(table))
-    release=''
-    if 'inference_release' in summary:
-        artifact=summary['inference_release']
-        label='Download 2M inference ZIP' if artifact.get('url') else 'Local 2M inference ZIP'
-        release=(f"[{label}]({artifact.get('url',artifact['path'])}): {artifact['bytes']:,} bytes; "
-                 f"SHA-256 `{artifact['sha256']}`. The [public checksum inventory](submission/release/inference.json) binds its files. "
-                 'The [pinned download receipt](submission/release/downloads.json) records inference and independent benchmark archives.')
+    release=('[Download source-built 2M inference ZIP](https://github.com/justinruaya123/smart-speaker/releases/latest/download/smart-speaker-inference-2m.zip). '
+             'GitHub Actions builds this ZIP from the checked-out source, selected model/wake graphs and fixed audio, and attaches a checksum and member-hash receipt. '
+             'To build locally with the locked inference dependencies: `python -m scripts.submission.build_inference`. No Hugging Face ZIP, model or audio download is used by this build.')
     return '\n'.join([START, '# Final submission: 2M direct VCM', '',
         'The primary model is **2,066,831 parameters, control mixed epoch 32** (`speaker-final-refinement-v1`); the 935,567-parameter pipeline-repair model is retained as comparison evidence. '
         'It encodes a complete utterance after the VAD endpoint and returns finite typed commands or rejection. The final submission uses ONNX Runtime CPU, one thread, pretrained Hey Jarvis/Silero activation and no transcription or cloud inference.', '',
@@ -536,7 +532,7 @@ def readme_section(summary):
         'It contains the selected graph, wake/VAD assets, minimal runtime lock, prebuilt UI and fixed acknowledgment audio. '
         'Training datasets, trainers, tests, recovery checkpoints and histories are excluded. '
         'Source-checkout GUI startup installs pinned Node/pnpm and builds missing UI assets automatically. '
-        'The workstation packaging helper `scripts.submission.package` consumes already built UI, separately staged locked production Node packages via `--node-modules`, and verified response WAVs; it is not a fresh-clone build command. '
+        'The source build command `python -m scripts.submission.build_inference` installs pinned Node/pnpm dependencies, checks/tests/builds SpeakerUI, verifies the repository model/audio assets and assembles the ZIP. '
         'Root code licensing does not grant rights to dataset recordings, trained weights or third-party wake assets; retain the source-specific notices.', '',
         release, '',
         'The earlier README is preserved below as historical context. Its model defaults, causal architecture and action integrations describe earlier workflows.', END, '', ''])

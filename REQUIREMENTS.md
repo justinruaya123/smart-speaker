@@ -74,6 +74,8 @@ All ten categories remain target requirements. Implemented subsets are milestone
 
 ## 5. Existing implementation to preserve
 
+**Final GUI actuation authorization, 2026-10-17:** the user explicitly requested useful spoken outputs for all supported finite commands, OpenWeather current weather, general lights defaulting to `light.hue_color_lamp_1`, calls represented by the dining Home Assistant camera, and the supplied phone notification action. SpeakerUI now dispatches those configured tools and speaks actual results through local OS TTS; local time/session timers/alarms/reminders work without cloud recognition. The existing Hey Iris candidate is selectable with explicit Jarvis fallback, but has only synthetic positive wake evidence. Weather's external data fetch and device-provider actions occur after finite recognition and do not add ASR/LLM/cloud recognition. Actions remain configuration-gated, CLI/WAV/benchmark paths remain non-actuating, the finite message command does not carry dictated text, and original acoustic/physical Pi quality gaps remain. See [final integration evidence](docs/EXPERIMENT-final-submission-v1.md#entry-points-and-evidence).
+
 | Component | Current source/evidence | Relationship to the requirement |
 | --- | --- | --- |
 | One workstation workflow | [train.py](train.py), [pipeline.toml](pipeline.toml), [requirements.lock](requirements.lock), root `.venv` | Reuse setup, fitting, validation and dependency management; do not duplicate them per experiment. |

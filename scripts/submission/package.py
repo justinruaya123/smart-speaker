@@ -28,8 +28,14 @@ On Windows: python inference.py
 On Raspberry Pi: python3 inference.py
 
 Choose CLI or UI, then actual microphone and speaker indexes. CLI is silent.
-UI serves localhost and plays fixed recognition acknowledgments from packaged WAVs.
-Say "Hey Jarvis", wait for command-ready, then speak the command.
+UI serves localhost and speaks actual tool results using local OS text-to-speech.
+Say "Hey Iris" or the "Hey Jarvis" fallback, wait for command-ready, then speak.
+In SpeakerUI open Debug > Inference and use the Wake word selector for Iris with
+Jarvis fallback (default), experimental Iris only, or Jarvis only. Selection
+resets capture; fallback accepts either actual phrase. If Iris cannot load,
+fallback mode explicitly reports Jarvis active. Iris was trained separately:
+82,114 wake parameters, 12/16 synthetic positive test streams, no real-human
+positive wake qualification. It does not change the selected 2M command model.
 
 For GUI integrations, copy SpeakerUI/.env.example to a private .env in the ZIP
 root and set HA_ENABLED / HA_URL / HA_TOKEN or Spotify credentials and flags.
@@ -46,7 +52,26 @@ Python 3.12/3.13 and a 64-bit OS are required. First setup uses the minimal uv l
 On Pi OS, install CPython venv support, libportaudio2 and libsndfile1 through your OS.
 First UI startup downloads pinned checksummed Node 24.13 only if absent. The UI
 and production JavaScript dependencies are already built: no pnpm or Pi compilation.
-There is no training corpus, training checkpoint, trainer, test suite or TTS model.
+There is no training corpus, training checkpoint, trainer, test suite or neural TTS model.
+macOS uses built-in say; Windows uses System.Speech. On Linux/Pi install espeak-ng.
+Copy SpeakerUI/.env.example to root .env and set OPENWEATHER_ENABLED=true and
+OPENWEATHER_API_KEY for live weather. OPENWEATHER_LAT/LON default to Manila.
+Weather needs internet; voice recognition, time, timers, alarms and reminders are local.
+Time and alarms use Asia/Manila. One timer and one alarm are active at a time;
+they and reminders last for this running session. Keep the server running for alerts.
+For thermostat control set HA_THERMOSTAT_ENTITY and include that climate.* entity
+in HA_ENTITY_IDS; the device must report Celsius and an allowed temperature range.
+General spoken lights default to light.hue_color_lamp_1; config.toml bindings may
+override that mapping. Calls open camera.dining_area_main_camera_tc70_mainstream
+(video only); override with HA_CAMERA_ENTITY. Targets must be allowlisted.
+Messages call notify.send_message on HA_NOTIFY_ENTITY (default notify.jus_phone),
+with HA_NOTIFY_TITLE=Iris and HA_NOTIFY_MESSAGE=This works. Configure these in .env.
+The model has no dictated-message content slot. Phone notification acceptance is
+not proof of delivery. On macOS the same message is also submitted as a local
+desktop notification; OS notification permission/settings control its display.
+For a remote MacBook, set HA_MACBOOK_NOTIFY_ENTITY to its notify.* entity.
+On python.org macOS Python, run /Applications/Python 3.13/Install Certificates.command
+if setup reports CERTIFICATE_VERIFY_FAILED. Certificate verification stays enabled.
 Recognition and reply playback run locally after setup. No physical Pi result is
 implied by this archive; evaluate on the actual device separately.
 
@@ -94,6 +119,12 @@ def validate_entries(entries):
         raise ValueError('Selected 2M model identity mismatch')
     if any(name.startswith('submission/models/') and not name.startswith(prefix) for name in entries):
         raise ValueError('Inference-only release must contain only the selected 2M model')
+    iris='submission/wake/hey-iris/'
+    if iris+'iris.onnx' in entries:
+        meta=json.loads(entries[iris+'iris.json'])
+        actual=hashlib.sha256(entries[iris+'iris.onnx']).hexdigest()
+        if actual!='4cc32fcb2cf20e7bf1310dcbe1d4f4ad0a9ad99d35575d0e31e3c5f5a4db95ac' or meta['files']['iris.onnx']!=actual:
+            raise ValueError('Hey Iris model identity mismatch')
     return {name:hashlib.sha256(data).hexdigest() for name,data in sorted(entries.items())}
 
 
@@ -125,10 +156,13 @@ def gather_entries(*, ui_root=None, node_modules=None):
     entries['submission/licenses/PROJECT-SCOPE-NOTICE.txt'] = (
         b'Source: docs/SUBMISSION-LICENSES.md in the reviewed source checkout.\n\n'+scope.read_bytes())
     sources = ('inference.py','scripts/submission/inference.py','scripts/submission/worker.py',
-               'scripts/submission/response_runtime.py','scripts/runtime/speaker_worker.py',
+               'scripts/submission/response_runtime.py','scripts/submission/speech.py','scripts/submission/wake.py','scripts/runtime/speaker_worker.py',
                'scripts/runtime/speaker_config.py','scripts/runtime/speaker_tools.py')
     for name in sources:
         entries[name] = (ROOT/name).read_bytes()
+    iris=ROOT/'submission/wake/hey-iris'
+    for name in ('iris.json','iris.onnx'):
+        entries['submission/wake/hey-iris/'+name]=(iris/name).read_bytes()
     ui = Path(ui_root or ROOT/'SpeakerUI')
     for name in ('package.json','pnpm-lock.yaml','UPSTREAM.json','.env.example'):
         entries['SpeakerUI/'+name] = (ui/name).read_bytes()
@@ -195,6 +229,7 @@ def main(argv=None):
     parser.add_argument('--ui-root',type=Path)
     parser.add_argument('--node-modules',type=Path)
     parser.add_argument('--verify-only',type=Path)
+    parser.add_argument('--no-update-inventory',action='store_true',help='Keep the checked-in historical inventory unchanged during source/CI builds')
     args = parser.parse_args(argv)
     if args.verify_only:
         manifest = verify_archive(args.verify_only)
@@ -216,8 +251,9 @@ def main(argv=None):
     save(args.output.with_suffix('.receipt.json'),receipt)
     inventory_path = ROOT/'submission/release/inference.json'
     # This generated inventory describes the latest reviewed build; ZIPs remain immutable.
-    inventory_path.parent.mkdir(parents=True,exist_ok=True)
-    inventory_path.write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n',encoding='utf-8')
+    if not args.no_update_inventory:
+        inventory_path.parent.mkdir(parents=True,exist_ok=True)
+        inventory_path.write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n',encoding='utf-8')
     print(json.dumps({k:v for k,v in receipt.items() if k != 'files'},indent=2))
 
 
