@@ -1,0 +1,331 @@
+{
+  "account": "justinruaya123",
+  "created_utc": "2026-10-17T06:40:12.780751+00:00",
+  "model_visibility": "private",
+  "receipt": "experiments/iris-release-v1/publication-hf-iris-github-verified.json",
+  "repositories": [
+    {
+      "files": [
+        {
+          "bytes": 25268,
+          "path": "README.md",
+          "sha256": "e5583951379e320c2ca5f7a84f888b4c29015ec4ee4ac3e661cf6791097cd113"
+        },
+        {
+          "bytes": 578,
+          "path": "iris-release-v1/NOTICES.md",
+          "sha256": "23762611122fe39fdc5dd306e76fe2505cef61eebb8640e5ab5612bdbdcd53eb"
+        },
+        {
+          "bytes": 5375554,
+          "path": "iris-release-v1/reproduction-inputs.json",
+          "sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945"
+        }
+      ],
+      "private": false,
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "dataset",
+      "revision": "44a1a23081a8b042c5d43a73cf233c03c8151049",
+      "verified": true
+    },
+    {
+      "files": [
+        {
+          "bytes": 14139859,
+          "path": "releases/iris-pi.zip",
+          "sha256": "2bf6a0969b84278c7ede3486dcb2e25153b3b1979714587a2a2fbdef85237bb7"
+        },
+        {
+          "bytes": 14609,
+          "path": "README.md",
+          "sha256": "b92c59c0c140e3fa17a783219c873e29dd228258d714e6b9aab801529cc890dd"
+        },
+        {
+          "bytes": 578,
+          "path": "NOTICES.md",
+          "sha256": "23762611122fe39fdc5dd306e76fe2505cef61eebb8640e5ab5612bdbdcd53eb"
+        },
+        {
+          "bytes": 89111,
+          "path": "reproduction/reproduction-release.json",
+          "sha256": "3136aabde8946f6ec50a2671e1f09b0c78bc820a757db496b0034c4424bc35a8"
+        },
+        {
+          "bytes": 5375554,
+          "path": "reproduction/reproduction-inputs.json",
+          "sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945"
+        },
+        {
+          "bytes": 671,
+          "path": "vcm/bundle.json",
+          "sha256": "d7671bb393f7a81b4a354e6922b8a469c76a57aec8264ba3ff030fbba1adaa03"
+        },
+        {
+          "bytes": 114053,
+          "path": "vcm/catalog.json",
+          "sha256": "f169f8b80be8a844de4fca1cfbe7ead9841d4165ec8ad748b0af9010c6c5e8b1"
+        },
+        {
+          "bytes": 3973147,
+          "path": "vcm/model.onnx",
+          "sha256": "9435099253a180bba6eec1f7d38311d84f52e6bb0795c834063e568901ba2c1a"
+        },
+        {
+          "bytes": 811,
+          "path": "vcm/ncnn/engine.json",
+          "sha256": "d4180c8657a9db0ae87f1384dbb43cf3caa6d8e54d8ec76f625a2e365a670f51"
+        },
+        {
+          "bytes": 3879960,
+          "path": "vcm/ncnn/model.ncnn.bin",
+          "sha256": "1eedc7438269e1c2c25ca63e472155a65363b036c96a625ed4402493e833b133"
+        },
+        {
+          "bytes": 8904,
+          "path": "vcm/ncnn/model.ncnn.param",
+          "sha256": "e7289f35da2cf35147d3b8833a4915b8e3a0520cc99573ebfffae07ec6da7998"
+        },
+        {
+          "bytes": 1515,
+          "path": "vcm/ncnn/position-frequency.json",
+          "sha256": "2cf4b7057c69f59eff846bf80903eb98f9ed17da9edd3ba0efb6f1940fa97605"
+        },
+        {
+          "bytes": 148035,
+          "path": "vcm/normalization.json",
+          "sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262"
+        },
+        {
+          "bytes": 31127,
+          "path": "vcm/policy.json",
+          "sha256": "77de4929939d618b84238f1c95e449eb8a3697c636c23a7861e72c0b52c5b13e"
+        },
+        {
+          "bytes": 152922,
+          "path": "wake/iris.json",
+          "sha256": "12d21a9460a2ac37582d28c0f31cb90f670b8bbc423f5c3bca664bb02d3d0922"
+        },
+        {
+          "bytes": 323904,
+          "path": "wake/iris.ncnn.bin",
+          "sha256": "f5608815519830107220939124abf65222dec6f159ed36ead1f50d124392da98"
+        },
+        {
+          "bytes": 2713,
+          "path": "wake/iris.ncnn.param",
+          "sha256": "43ce9accd880119cba8737365ef799280d22985dd69bc7d7940339ea5f88c067"
+        },
+        {
+          "bytes": 330103,
+          "path": "wake/iris.onnx",
+          "sha256": "22fc8b0c6a3c80e1d1686d321a6251957085216efaca1752eb22067064a4ea57"
+        },
+        {
+          "bytes": 4640,
+          "path": "owner/owner.json",
+          "sha256": "e2d531627fabf90453762cf17eb082b3f52f8922aa830e37a9202144b91fb310"
+        },
+        {
+          "bytes": 542023,
+          "path": "owner/owner.onnx",
+          "sha256": "84e860f814e248e793567b2f1c8fe83d24d82b9d58f5379e4da69eb7b78d0a3f"
+        },
+        {
+          "bytes": 2327524,
+          "path": "vad/silero-vad.onnx",
+          "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f"
+        },
+        {
+          "bytes": 381,
+          "path": "vad/wake-models.json",
+          "sha256": "9784dd9b5836cbaaf6a6fdb7912ae2baedde17e538befe2fe3d8c2b7c4b7dd6a"
+        },
+        {
+          "bytes": 2065,
+          "path": "evidence/selection-before-test.json",
+          "sha256": "006e795f976010ee070f853b6355339884e4e733e60d44757037a1d7094eb861"
+        },
+        {
+          "bytes": 4589,
+          "path": "evidence/protocol.json",
+          "sha256": "26851f20cc919812ff555eaf2b02ba4c0908338a148f2371176886a786a2f47a"
+        },
+        {
+          "bytes": 563,
+          "path": "evidence/wake-results.json",
+          "sha256": "1199d7c5b28e9dc3f1583b8db3824aabac1d21356f05361f36e5c11100bb9ba7"
+        },
+        {
+          "bytes": 3783,
+          "path": "evidence/owner-results.json",
+          "sha256": "4a6a9ae62d887a6498eeba862f7b325de4ee6abaaf0e65da22a69808c5147f11"
+        },
+        {
+          "bytes": 5235,
+          "path": "evidence/owner-export.json",
+          "sha256": "7c494f8e3e15e91e8db533375d21b616dd5b1f844096e002e36368fee6aff7c9"
+        },
+        {
+          "bytes": 654,
+          "path": "evidence/wake-selection-before-test.json",
+          "sha256": "fb006eead2891578e6a66ed8cecd163d61ac5262a5eb96cdbb9666f622537907"
+        },
+        {
+          "bytes": 2022,
+          "path": "evidence/wake-protocol.json",
+          "sha256": "6ed8ece2336ddabb858fe8839e6429b977a4d43e2e34f3dc896505f9675d0e5c"
+        },
+        {
+          "bytes": 6449,
+          "path": "evidence/owner-protocol.json",
+          "sha256": "174daed6764e00c4026e6a3be88231823b98967f22bec5ab393a05f686181c0a"
+        },
+        {
+          "bytes": 2954,
+          "path": "evidence/owner-base-view-equivalence.json",
+          "sha256": "a5a97d7d660b837e5eff3beb3733d620adf159ded2d4de71ebca99cad72ca5b5"
+        },
+        {
+          "bytes": 1604,
+          "path": "evidence/owner-execution.json",
+          "sha256": "468f1947652d60b5b35b63497b2715ab62e11d01d51d1955d61fe175e4c9247a"
+        },
+        {
+          "bytes": 4001,
+          "path": "evidence/owner-selection-before-test.json",
+          "sha256": "aee3f2d780d56552b3865a11e580598c86d6f5e7cbf8f6a0190668420c70c74c"
+        },
+        {
+          "bytes": 955,
+          "path": "evidence/owner-graph-before-test.json",
+          "sha256": "5e42385e0411b788c4165103077b40227d858f8ea0af4e5795631b61c813c9f1"
+        },
+        {
+          "bytes": 3148,
+          "path": "evidence/owner-runtime-checks.json",
+          "sha256": "241d991387ce1d33b01aa2daac6a2764d99bf6560ba838eac43866eaeeecf2be"
+        },
+        {
+          "bytes": 17785,
+          "path": "evidence/owner-wake-duration-diagnostic.json",
+          "sha256": "dafd7d152393acbf167b0eb458bed83066113736ac6600ac91cf960192429f5d"
+        },
+        {
+          "bytes": 794,
+          "path": "evidence/software-verification.json",
+          "sha256": "1f19718ed929ae6fa20615d7f786f61ddbf056c2bcb7b0052267911f676d5dbe"
+        },
+        {
+          "bytes": 78779,
+          "path": "evidence/pipeline-resources.json",
+          "sha256": "781470a7f1472c96aac129690830017f6f5d1a7d789b728cd3bab271a464fe3a"
+        },
+        {
+          "bytes": 745010,
+          "path": "evidence/recognition-results.json",
+          "sha256": "4ddbdb79bccdd1e88465f4aaeabe8d7da2fa90c8e4b9772217da9cafd7fdd7e8"
+        },
+        {
+          "bytes": 893,
+          "path": "evidence/release-choice.json",
+          "sha256": "eb65f0e586a1a93e6c941ee743e5b1c1005b97221cd6ebbe8eeb3b23b5bd6163"
+        },
+        {
+          "bytes": 2208,
+          "path": "evidence/width-selection-before-repeat.json",
+          "sha256": "bd1213acdb91b52e2b6989551d3ea06e6fc09dc841951fd3a2ec6a67e4d4a98d"
+        },
+        {
+          "bytes": 3228,
+          "path": "evidence/decision-parity.json",
+          "sha256": "4b8a6a01bd51fc9d3bdcaebe4b1319d107995bfc243014dcc0e1fe364e0f20a9"
+        },
+        {
+          "bytes": 5946,
+          "path": "evidence/training-execution.json",
+          "sha256": "eec6aba9139bfa02f8bcaf42201579bd6e1802d6068767a5afb87c7da3c27bb8"
+        },
+        {
+          "bytes": 5270,
+          "path": "evidence/reproduction-prefit-compatibility.json",
+          "sha256": "8ffa71b12bc1edfb300de90c1f78fed0798f2435d22ae0217109e3a6d79a2286"
+        },
+        {
+          "bytes": 89847,
+          "path": "evidence/ui-final-integration.json",
+          "sha256": "536dfc58a6f5390e80385081a1026502cb02ff72822ccce42255331c4b858902"
+        },
+        {
+          "bytes": 5340,
+          "path": "evidence/package-replay.json",
+          "sha256": "725abbee682a6ec50b3e2823eec03620f8e3b35530c7efa521c8c7234e183a07"
+        },
+        {
+          "bytes": 26423,
+          "path": "evidence/reproduction-fresh-clone-check.json",
+          "sha256": "1089b54ff760616a7f64ccc47d2b36de5c1294d69334359a7c6e5cd4c763149b"
+        },
+        {
+          "bytes": 18309,
+          "path": "evidence/reproduction-owner-fresh-preparation.json",
+          "sha256": "38845e893692c02cd9111f5293344555a86dc448977edcf0f9a8b2dea200eb92"
+        },
+        {
+          "bytes": 5375554,
+          "path": "evidence/reproduction-inputs.json",
+          "sha256": "4918dbe724911d4dd1ce7ce4d2f3466fe79386805d89b2a3f950f9bb4bd57945"
+        },
+        {
+          "bytes": 10304,
+          "path": "evidence/voices.json",
+          "sha256": "b3fb665c57ad5a4ea08272aa79b5b0ebd60ba9544210ae597c48141a66f0818d"
+        },
+        {
+          "bytes": 316,
+          "path": "evidence/generation-complete.json",
+          "sha256": "2574e74b85be8c39c336915d06038743da5d344cb564351df5913ff393801a8b"
+        },
+        {
+          "bytes": 1161,
+          "path": "evidence/audio-audit-before-fitting.json",
+          "sha256": "81335c1d16b97935638c7e8be05e047b4f3db0cf86b18b338574e75bdb8bd8f0"
+        },
+        {
+          "bytes": 4436,
+          "path": "evidence/data-audit.json",
+          "sha256": "ef73e38c90dcaf20432a227a0908d340c96b7a717a6ed988fbb649ded8f3fa63"
+        },
+        {
+          "bytes": 1043,
+          "path": "evidence/owner-dataset-audit.json",
+          "sha256": "711c5235ded035041a089e6bb9f6830f2fe7414e918014d724f99cb3912004a6"
+        },
+        {
+          "bytes": 573,
+          "path": "evidence/owner-readability-audit.json",
+          "sha256": "900d23b803ce2aeb0dc4b163053b5189643851b1257994d94c7eaaa8e0c9314b"
+        },
+        {
+          "bytes": 42227,
+          "path": "evidence/owner-reservations.json",
+          "sha256": "1b7208fbb66173d72c29f6e79312386b352e7e4f6c2e64b8569b9a1c7fe52897"
+        },
+        {
+          "bytes": 1224904,
+          "path": "reproduction/publication-inputs.json",
+          "sha256": "3d130f44d8d8b7ccc1c24924ed6a25c545e7b7e0392fc8d217cce48049da1f1c"
+        }
+      ],
+      "private": true,
+      "repo_id": "justinruaya123/ai231-smart-speaker",
+      "repo_type": "model",
+      "revision": "4ef8baa537604a329c4e5c6efcc26ea4238b7dbf",
+      "verified": true
+    }
+  ],
+  "schema_version": 1,
+  "source_ref": "main",
+  "source_repository": "https://github.com/justinruaya123/smart-speaker",
+  "source_visibility": "preserve_existing",
+  "status": "published_and_verified"
+}

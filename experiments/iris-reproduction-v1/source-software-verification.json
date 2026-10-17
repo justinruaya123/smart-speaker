@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "scope": "Full Git-owned Python source suite including offline replay guards and benchmark plots",
+  "passed_tests": 221,
+  "warnings": 17,
+  "elapsed_seconds": 72.82,
+  "log": ".cache/iris-reproduction-v1/offline-cli-standalone-v1/tests.log",
+  "log_sha256": "be39364732763c15821c6e84c7f0e15e5eb5503cfd0fcb3345e0f9f503747d72",
+  "audit_source": "scripts/test/iris_package_replay.py",
+  "audit_source_sha256": "55789e6308d05d8772e76a3f559d06e05e242e78e4cf7579710cf768a046811b",
+  "test_source_sha256": "f83fea10eb06954e59f8aca7b0f5b9e9c0ab010158e908b4206839c7b961fa65",
+  "physical_pi_measured": false,
+  "original_human_wake_pairs_measured": false,
+  "note": "Executed in release worktree root environment; cold independent-clone UI/environment evidence is separate."
+}

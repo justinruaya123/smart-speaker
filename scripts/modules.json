@@ -119,6 +119,10 @@
     "path": "test/iris_metrics.py",
     "runtime": false
   },
+  "iris.test.iris_package_replay": {
+    "path": "test/iris_package_replay.py",
+    "runtime": false
+  },
   "iris.test.iris_resources": {
     "path": "test/iris_resources.py",
     "runtime": false
@@ -149,6 +153,10 @@
   },
   "iris.test.test_iris_owner": {
     "path": "test/test_iris_owner.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_package_replay": {
+    "path": "test/test_iris_package_replay.py",
     "runtime": false
   },
   "iris.test.test_iris_pi_benchmark": {

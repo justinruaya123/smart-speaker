@@ -36,3 +36,21 @@ The corrected recipe sets the client's documented [HF_HUB_DISABLE_XET](https://h
 The initial installer redirect failure was also corrected by installing the same checksum-pinned uv 0.12.5 wheel from official PyPI. A separate cold dependency probe took 556.04 seconds; the exact-main clone installed its own environment in 186.47 seconds using only that probe's newly downloaded dependency wheels. Neither used a development model/audio cache.
 
 The recorded training dependency set requires Python 3.13, including `audioop-lts==0.2.2`. The independent clone uses Python 3.13.9. The README now states this training prerequisite explicitly; the separate inference package retains its Python 3.11–3.13 runtime contract. No frozen dependency version was changed.
+
+## Selected delivery and offline replay
+
+The selected-artifact workflow `python train.py --skip-train --publish --run-id iris-github-verified` completed separately from the fresh fitting experiment. Its [workflow receipt](../experiments/iris-release-v1/reproduction-run-iris-github-verified.json) records current Torch/ONNX/ncnn checks, resource measurement, 216 default workflow Python tests, all 99 UI tests, type checking, production build and package verification. The [private publication receipt](../experiments/iris-release-v1/publication-hf-iris-github-verified.json) verifies immutable downloaded hashes and model privacy. GitHub and dataset visibility were preserved.
+
+The [extracted-package replay](../experiments/iris-reproduction-v1/selected-package-replay.json) checks the selected 14,139,859-byte ZIP (`2bf6a0969b84278c7ede3486dcb2e25153b3b1979714587a2a2fbdef85237bb7`). All 215 manifest payload hashes survived extraction and replay; all 17 approved model payloads matched Git. The standalone audit installed its network-denial hook before importing runtime code, imported package modules from the extracted directory, and observed zero network attempts. Both engines agreed on PCM, raw commands and typed outputs for 88 packaged sources × three repeats = 264 observations. Each measured 31/36 correctly accepted personal positives and 1/52 negative accepts. Actions, wake and speaker ownership were disabled. These synthetic command diagnostics do not establish complete wake-to-action or human acceptance.
+
+The supported command is now in Git:
+
+```bash
+.venv/bin/python -m scripts.test.iris_package_replay \
+  --package /path/to/iris-pi.zip --sha256 PUBLISHED_SHA256 \
+  --output .cache/iris-reproduction-v1/offline-replay
+```
+
+It requires a new evidence directory and preserves partial/previous output. The two rejection guards were observed failing before implementation, then passing; the positive flow used the actual pinned ZIP. The expanded [source suite](../experiments/iris-reproduction-v1/source-software-verification.json) passed 221 tests (17 existing export warnings). This suite includes three plot checks and the two new offline guards in addition to the 216 default workflow checks. The standalone replay measured ncnn p50/p95 6.34/12.17 ms and ONNX Runtime 4.62/8.18 ms on the shared DGX CPU host during training; these are recorded-command processing times, not physical Pi measurements.
+
+Fresh-clone run receipts, this report and the central experiment directory are late verification evidence outside the frozen selected-component closure. Their Git commits preserve their identities. Training/runtime code, scientific protocols, data receipts, selected weights, acceptance policy and static model evidence remain hash-bound by the release receipt. Updating verification findings therefore does not change the model package being measured.

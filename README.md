@@ -97,7 +97,17 @@ The complete selected inference bundle, including ONNX graphs, frozen catalog, n
 .venv/bin/python -m scripts.runtime.speaker_worker --bundle artifacts/iris --wav /path/to/command.wav
 ```
 
-WAV replay and benchmarks never execute actions. For the full UI, extract the verified Pi ZIP produced by reproduction (or download it from the private model repository), then follow the [runbook](docs/HANDOFF-iris-rpi-v1.md). `python3 start.py --list-mics` selects the actual device; `python3 start.py --mode serve --mic INDEX --benchmarks skip` starts the product.
+WAV replay and benchmarks never execute actions. To audit a produced/downloaded ZIP from this checkout, use its published SHA-256 and a new evidence directory:
+
+```bash
+.venv/bin/python -m scripts.test.iris_package_replay \
+  --package /path/to/iris-pi.zip --sha256 PUBLISHED_SHA256 \
+  --output .cache/iris-reproduction-v1/offline-replay
+```
+
+This verifies the approved model hashes, extracts the package, installs a Python network-denial audit hook before runtime import and compares three replays under each engine. It checks PCM, raw decisions and typed outputs, preserves failures and never executes actions. It measures the current host, so DGX results are not Pi measurements.
+
+For the full UI, extract the verified Pi ZIP produced by reproduction (or download it from the private model repository), then follow the [runbook](docs/HANDOFF-iris-rpi-v1.md). `python3 start.py --list-mics` selects the actual device; `python3 start.py --mode serve --mic INDEX --benchmarks skip` starts the product.
 
 The main screen shows microphone/listening status, tentative intent/slots, final recognition and execution receipts. Tentative guesses are provisional and never execute. Only final accepted, speaker-checked, validated commands execute. Supply your HA entity/script bindings; missing mappings return **unconfigured**, without substituting another target. Receipts distinguish provider acceptance from observed state; unknown outcomes are not automatically retried. Timers, alarms, finite reminders and execution identifiers persist atomically across restarts.
 
