@@ -1,0 +1,14 @@
+{
+  "sha256": "5eb0ce77eec1499c7248fddb85563a29e4549de0629b417a55fdb6527bf584ba",
+  "bytes": 10923585,
+  "manifest_sha256": "23878c4c10ebcfd094157c2dd24f10116aa357b1e60ccb948753d41d31ab2c91",
+  "recordings": 196,
+  "source": {
+    "repository": "airimonda/ai231-me2-voice-commands",
+    "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+    "file": "data/holdout-00000-of-00001.parquet",
+    "sha256": "9917e336ec596eaaddb476e266f36451326e3f8e5a2cb3dafbb675c33be133aa"
+  },
+  "content": "Only original frozen benchmark WAV bytes. No executable, model, preprocessing or generated utterance.",
+  "original_paths_preserved": true
+}

@@ -535,6 +535,9 @@ def readme_section(summary):
         'The source build command `python -m scripts.submission.build_inference` installs pinned Node/pnpm dependencies, checks/tests/builds SpeakerUI, verifies the repository model/audio assets and assembles the ZIP. '
         'Root code licensing does not grant rights to dataset recordings, trained weights or third-party wake assets; retain the source-specific notices.', '',
         release, '',
+        '[Download standalone benchmark ZIP](https://github.com/justinruaya123/smart-speaker/releases/latest/download/smart-speaker-benchmark-2m.zip). '
+        'The same GitHub workflow builds it with all 196 original recordings; run `python benchmark.py --target pc` or select Pi over SSH. '
+        'Build locally with `python -m scripts.submission.build_benchmark`.', '',
         'The earlier README is preserved below as historical context. Its model defaults, causal architecture and action integrations describe earlier workflows.', END, '', ''])
 
 

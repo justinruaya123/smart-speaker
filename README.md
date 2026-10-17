@@ -69,6 +69,7 @@ Extract the prebuilt inference-only ZIP and run `python inference.py`; no pnpm b
 
 [Download source-built 2M inference ZIP](https://github.com/justinruaya123/smart-speaker/releases/latest/download/smart-speaker-inference-2m.zip). GitHub Actions builds this ZIP from this repository, including the selected model/wake graphs and 20 hash-verified fixed audio clips. The release includes its checksum and member-hash receipt. No prebuilt Hugging Face ZIP, graph or audio is downloaded by the build. With the locked inference dependencies installed, build locally using `python -m scripts.submission.build_inference`.
 
+[Download the standalone benchmark ZIP](https://github.com/justinruaya123/smart-speaker/releases/latest/download/smart-speaker-benchmark-2m.zip). GitHub builds it from this repository with the selected model and all 196 frozen recordings. Extract it and run `python benchmark.py --target pc`, or `python benchmark.py --target pi --host pi@raspberrypi.local`. It needs no training, microphone, playback or dataset download; initial Python setup still needs network access. Build locally with `python -m scripts.submission.build_benchmark`; see [benchmark instructions](docs/BENCHMARK-HANDOFF.md).
 The earlier README is preserved below as historical context. Its model defaults, causal architecture and action integrations describe earlier workflows.
 <!-- final-submission:end -->
 

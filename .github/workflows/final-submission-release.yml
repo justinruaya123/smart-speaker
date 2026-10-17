@@ -1,4 +1,4 @@
-name: Build and release 2M inference from source
+name: Build and release 2M inference and benchmark from source
 
 on:
   push:
@@ -39,21 +39,33 @@ jobs:
           .venv/bin/python -m scripts.submission.package --verify-only dist/final-submission/smart-speaker-inference-2m.zip
           cd dist/final-submission
           sha256sum smart-speaker-inference-2m.zip > smart-speaker-inference-2m.zip.sha256
-      - name: Retain the source-built archive and integrity receipts
+      - name: Build, verify and smoke-test the standalone benchmark
+        run: |
+          .venv/bin/python -m unittest scripts.test.test_submission_benchmark scripts.test.test_submission_benchmark_package
+          .venv/bin/python -m scripts.submission.build_benchmark
+          .venv/bin/python -m scripts.submission.build_benchmark --verify-only dist/final-submission/smart-speaker-benchmark-2m.zip
+          .venv/bin/python -c "import zipfile; zipfile.ZipFile('dist/final-submission/smart-speaker-benchmark-2m.zip').extractall('.cache/benchmark-smoke')"
+          .venv/bin/python .cache/benchmark-smoke/benchmark.py --target pc --worker --no-setup --limit 1 --repeats 1 --output "$PWD/.cache/benchmark-smoke-results"
+          cd dist/final-submission
+          sha256sum smart-speaker-benchmark-2m.zip > smart-speaker-benchmark-2m.zip.sha256
+      - name: Retain the source-built archives and integrity receipts
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: 2m-inference-${{ github.sha }}
+          name: 2m-submission-${{ github.sha }}
           path: |
             dist/final-submission/smart-speaker-inference-2m.zip
             dist/final-submission/smart-speaker-inference-2m.receipt.json
             dist/final-submission/smart-speaker-inference-2m.zip.sha256
+            dist/final-submission/smart-speaker-benchmark-2m.zip
+            dist/final-submission/smart-speaker-benchmark-2m.receipt.json
+            dist/final-submission/smart-speaker-benchmark-2m.zip.sha256
           if-no-files-found: error
       - name: Publish the verified source build on GitHub Releases
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
         run: |
-          tag="2m-inference-${GITHUB_RUN_NUMBER}-${GITHUB_RUN_ATTEMPT}"
-          printf 'Built from source commit %s by GitHub Actions run %s.\n\nIncludes the selected 2M command model, experimental Hey Iris with Jarvis fallback, SpeakerUI and local spoken tool results. Model qualification and physical Pi validation remain incomplete. Configure private .env settings after extraction.\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" > dist/final-submission/release-notes.txt
-          gh release create "$tag" --target "$GITHUB_SHA" --draft --title "2M inference — source build ${GITHUB_RUN_NUMBER}" --notes-file dist/final-submission/release-notes.txt dist/final-submission/smart-speaker-inference-2m.zip dist/final-submission/smart-speaker-inference-2m.receipt.json dist/final-submission/smart-speaker-inference-2m.zip.sha256
+          tag="2m-submission-${GITHUB_RUN_NUMBER}-${GITHUB_RUN_ATTEMPT}"
+          printf 'Built from source commit %s by GitHub Actions run %s.\n\nIncludes the selected 2M command model, experimental Hey Iris with Jarvis fallback, SpeakerUI, local spoken tool results, and a standalone silent PC/SSH benchmark with 196 frozen recordings. Model qualification and physical Pi validation remain incomplete. Configure private .env settings after extraction.\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" > dist/final-submission/release-notes.txt
+          gh release create "$tag" --target "$GITHUB_SHA" --draft --title "2M inference and benchmark — source build ${GITHUB_RUN_NUMBER}" --notes-file dist/final-submission/release-notes.txt dist/final-submission/smart-speaker-inference-2m.zip dist/final-submission/smart-speaker-inference-2m.receipt.json dist/final-submission/smart-speaker-inference-2m.zip.sha256 dist/final-submission/smart-speaker-benchmark-2m.zip dist/final-submission/smart-speaker-benchmark-2m.receipt.json dist/final-submission/smart-speaker-benchmark-2m.zip.sha256
           gh release edit "$tag" --draft=false --latest

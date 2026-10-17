@@ -1,5 +1,7 @@
 # Portable recorded benchmark
 
+[Download the GitHub-built benchmark ZIP](https://github.com/justinruaya123/smart-speaker/releases/latest/download/smart-speaker-benchmark-2m.zip). The source workflow builds it alongside inference and publishes a SHA-256 checksum and member-hash receipt. To build locally: `python -m scripts.submission.build_benchmark`. All 196 original WAVs are stored as the hash-bound source fixture `submission/benchmark/holdout-audio.zip`; the builder validates each recording against the frozen manifest and never fetches a prebuilt archive or dataset.
+
 Run `python benchmark.py` from a Git checkout or extracted benchmark ZIP. No
 `reproduce.py`, training checkpoint, PyTorch, microphone, audio playback or device
 action is needed. Choose Raspberry Pi and enter its SSH address, or choose this

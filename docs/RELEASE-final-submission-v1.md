@@ -15,7 +15,7 @@ The reproduction command installs its locked environment and writes to a new wor
 
 For inference, extract the [GitHub source-built ZIP](https://github.com/justinruaya123/smart-speaker/releases/latest/download/smart-speaker-inference-2m.zip) and run `python inference.py`. Choose CLI diagnostics or SpeakerUI; configure private credentials using `SpeakerUI/.env.example`. General lights default to the Hue lamp and calls open the dining camera. Named acoustic rooms still require explicit bindings. Spotify supports generic play/resume. The UI speaks actual tool results using local OS TTS; fixed rejection clips remain included. Debug > Inference selects experimental Hey Iris with Jarvis fallback, Iris only, or Jarvis. Recognition remains local and finite, without ASR or an LLM. Weather fetches external current conditions after recognition; device actions retain explicit configuration gates.
 
-The benchmark ZIP runs independently of reproduction. Extract it on the controlling PC, then run:
+The [GitHub-built benchmark ZIP](https://github.com/justinruaya123/smart-speaker/releases/latest/download/smart-speaker-benchmark-2m.zip) runs independently of reproduction and includes all 196 original held-out recordings. GitHub builds/verifies it from the repository code, selected model and hash-bound audio fixture alongside inference; `python -m scripts.submission.build_benchmark` performs the same assembly locally. Extract it on the controlling PC, then run:
 
 ```bash
 python benchmark.py --target pc
