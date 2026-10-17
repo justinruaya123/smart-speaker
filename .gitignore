@@ -63,6 +63,9 @@ Desktop.ini
 !/submission/models/full/model.onnx
 !/submission/models/full/wake/*.onnx
 !/submission/checkpoints/full-selected.pt
+!/submission/wake/hey-iris/iris.onnx
+# Only the verified fixed rejection/recognition clips are release source assets.
+!/submission/responses/audio/*.wav
 
 # Dataset row manifests and their large audio index stay local.
 /data/**/*.jsonl
