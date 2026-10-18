@@ -1,0 +1,45 @@
+{
+  "recipe_rows": 29370,
+  "source_shards": 10,
+  "auxiliary_clips": 184,
+  "all_download_hashes_ok": true,
+  "failed_downloads": [],
+  "assets": {
+    "normalization": true,
+    "catalog": true
+  },
+  "copied_source_files": 443,
+  "copied_source_hashes_ok": true,
+  "manifests": {
+    "calibration": {
+      "expected": 210,
+      "actual": 210,
+      "ids_match": true
+    },
+    "dev": {
+      "expected": 1251,
+      "actual": 1251,
+      "ids_match": true
+    },
+    "holdout": {
+      "expected": 196,
+      "actual": 196,
+      "ids_match": true
+    },
+    "normalization": {
+      "expected": 1869,
+      "actual": 1869,
+      "ids_match": true
+    },
+    "test": {
+      "expected": 4418,
+      "actual": 4418,
+      "ids_match": true
+    },
+    "train": {
+      "expected": 23295,
+      "actual": 23295,
+      "ids_match": true
+    }
+  }
+}
