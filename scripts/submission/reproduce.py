@@ -173,11 +173,10 @@ def fit(args,recipe,prepared):
     train=[prepared[i] for i in recipe['views']['train']];dev=[prepared[i] for i in recipe['views']['dev']]
     for r in train:
         if r['split']!='train' or not r['training_eligible']:raise ValueError('Non-fitting row entered training')
-    if not torch.cuda.is_available():raise RuntimeError('Full original recipe requires a CUDA GPU; inference and benchmark run on CPU.')
-    torch.set_num_threads(4);torch.cuda.set_per_process_memory_fraction(.45)
-    torch.backends.cuda.matmul.allow_tf32=True;torch.use_deterministic_algorithms(True,warn_only=True)
+    device=training.configure_training_device()
+    print('Training device:',device,flush=True)
     training.HERE=ROOT/'results';training.CACHE=ROOT/'.cache/reproduction';training.ARCHITECTURE=recipe['architecture']
-    cfg={**recipe,'training':{**recipe['training'],'seed':args.seed}}
+    cfg={**recipe,'device':device,'training':{**recipe['training'],'seed':args.seed}}
     save(training.HERE/'protocol.json',dict(cfg,requirements=['ME-01','ME-02','ME-03','ME-04','ME-06','ME-07','ME-08'],
         hypothesis='The frozen selected recipe reconstructs the selected numerical behavior from pinned recordings.',
         source_receipt_sha256=sha(ROOT/'source-receipt.json'), test_used_for_selection=False))
@@ -202,7 +201,8 @@ def fit(args,recipe,prepared):
     path=training.CACHE/'training/mixed-control'/f"reproduction-epoch-{chosen['epoch']:03d}.pt"
     selection=dict(foundation=foundation,mixed_acceptance_selection=mixed,recognition_epoch=chosen['epoch'],
                    checkpoint=str(path.relative_to(ROOT)),checkpoint_sha256=sha(path),
-                   seed=args.seed,seconds=time.perf_counter()-began,gpu=torch.cuda.get_device_name(0),
+                   seed=args.seed,seconds=time.perf_counter()-began,device=device,
+                   gpu=torch.cuda.get_device_name(0) if device=='cuda' else None,
                    torch=torch.__version__,cuda=torch.version.cuda,test_used_for_selection=False)
     save(ROOT/'results/selection-before-calibration.json',selection)
     return path,selection

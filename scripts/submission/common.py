@@ -60,6 +60,9 @@ def fetch(url, path, expected=None):
             with urllib.request.urlopen(url, timeout=60) as response:
                 shutil.copyfileobj(response, stream)
         except BaseException:
+            # Windows cannot unlink an open NamedTemporaryFile. Close first so
+            # cleanup does not mask the original download exception.
+            stream.close()
             temporary.unlink(missing_ok=True); raise
     try:
         if expected and sha(temporary) != expected:
