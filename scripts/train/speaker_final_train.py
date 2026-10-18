@@ -37,6 +37,17 @@ TRAINING = dict(seed=53, human_epochs=24, mixed_epochs=32, steps_per_epoch=96,
                 development_every=4, decoder_workers=6)
 
 
+def configure_training_device():
+    """Prefer CUDA; CPU-only hosts must not call CUDA configuration APIs."""
+    torch.set_num_threads(4)
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    if device == 'cuda':
+        torch.cuda.set_per_process_memory_fraction(.45)
+        torch.backends.cuda.matmul.allow_tf32 = True
+    torch.use_deterministic_algorithms(True, warn_only=True)
+    return device
+
+
 def seed_for(*values):
     return int(generation._hash(list(values))[:8], 16)
 
@@ -298,7 +309,8 @@ def fit_stage(phase, arm, initial, pools, dev, arrays, entries, scorer, cfg):
     output.mkdir(parents=True,exist_ok=False)
     seed=settings['seed']+(100 if phase=='mixed' else 0)
     random.seed(seed); np.random.seed(seed); torch.manual_seed(seed)
-    model=PooledContextVCM(**cfg['architecture']).cuda()
+    device=cfg.get('device') or ('cuda' if torch.cuda.is_available() else 'cpu')
+    model=PooledContextVCM(**cfg['architecture']).to(device)
     if sum(p.numel() for p in model.parameters())!=cfg['parameters']:
         raise ValueError('Architecture parameter count changed')
     if initial is not None:
@@ -311,23 +323,23 @@ def fit_stage(phase, arm, initial, pools, dev, arrays, entries, scorer, cfg):
         model.train(); began=time.perf_counter(); losses=np.zeros(3)
         for step in range(settings['steps_per_epoch']):
             batch=sample_batch(pools,seed=settings['seed'],phase=phase,epoch=epoch,step=step,arm=arm)
-            losses+=optimization_step(model,batch,arrays,optimizer,device='cuda',
+            losses+=optimization_step(model,batch,arrays,optimizer,device=device,
                 seed=seed_for(seed,phase,epoch,step,'augmentation'),microbatch=settings['microbatch'])
         scheduler.step()
         metric=dict(phase=phase,arm=arm,epoch=epoch,training_seconds=time.perf_counter()-began,
                     losses=(losses/settings['steps_per_epoch']).tolist(),learning_rate=scheduler.get_last_lr()[0])
         checkpoint=dict(weights=model.state_dict(),model_config=cfg['architecture'],architecture_class='PooledContextVCM',
-                        epoch=epoch,phase=phase,arm=arm,seed=seed,protocol_sha256=file_digest(HERE/'protocol.json'))
+                        epoch=epoch,phase=phase,arm=arm,seed=seed,device=device,protocol_sha256=file_digest(HERE/'protocol.json'))
         if epoch%settings['development_every']==0:
             selected_dev=[r for r in dev if not r['synthetic']] if phase=='human' else dev
-            predictions=score_model(model,selected_dev,arrays,entries,scorer)
+            predictions=score_model(model,selected_dev,arrays,entries,scorer,device=device)
             metrics=summarize(predictions); key=selection_key(metrics,epoch)
             write_new(output/f'dev-{epoch:03d}.json',predictions)
             metric.update(development=metrics,selection_key=list(key))
             if best_key is None or key>best_key:
                 path=output/f'epoch-{epoch:03d}.pt'; torch.save(checkpoint,path)
                 best_key=key; best=dict(checkpoint=str(path.relative_to(ROOT)),checkpoint_sha256=file_digest(path),
-                    epoch=epoch,arm=arm,phase=phase,development=metrics,key=list(key),test_used_for_selection=False)
+                    epoch=epoch,arm=arm,phase=phase,device=device,development=metrics,key=list(key),test_used_for_selection=False)
                 save_progress(output/'selection.json',best)
         temporary=output/'last.tmp.pt'; torch.save(checkpoint,temporary); os.replace(temporary,output/'last.pt')
         history.append(metric); save_progress(output/'history.json',history)
@@ -335,16 +347,15 @@ def fit_stage(phase, arm, initial, pools, dev, arrays, entries, scorer, cfg):
                                               stage_seconds=time.perf_counter()-stage_started))
         print('FINAL_TRAIN',json.dumps(metric),flush=True)
     write_new(output/'complete.json',best)
-    del model; torch.cuda.empty_cache()
+    del model
+    if device == 'cuda':
+        torch.cuda.empty_cache()
     return best
 
 
 def train():
-    if not torch.cuda.is_available():
-        raise RuntimeError('Use approved SSH host execution; the default sandbox hides CUDA')
-    cfg=freeze(); torch.set_num_threads(4); torch.cuda.set_per_process_memory_fraction(.45)
-    torch.backends.cuda.matmul.allow_tf32=True
-    torch.use_deterministic_algorithms(True,warn_only=True)
+    cfg=freeze(); device=configure_training_device()
+    cfg={**cfg, 'device':device}
     if (HERE/'selection-before-calibration.json').exists():
         receipt=read_json(HERE/'selection-before-calibration.json'); generation._verify(receipt['bindings']); return receipt
     if (CACHE/'training').exists():
@@ -361,8 +372,9 @@ def train():
     generation._verify(cfg['bindings']); generation._verify(cfg['installed_metadata'])
     receipt=dict(experiment_id=cfg['experiment_id'],winner=winner,selected=arms[winner],arms=arms,foundation=foundation,
         seconds=time.perf_counter()-began,seed=cfg['training']['seed'],human_qualified=False,test_used_for_selection=False,
-        gpu=torch.cuda.get_device_name(0),torch=torch.__version__,cuda=torch.version.cuda,
-        peak_cuda_allocated_bytes=torch.cuda.max_memory_allocated(),
+        device=device,gpu=torch.cuda.get_device_name(0) if device=='cuda' else None,
+        torch=torch.__version__,cuda=torch.version.cuda,
+        peak_cuda_allocated_bytes=torch.cuda.max_memory_allocated() if device=='cuda' else None,
         bindings={str(p.relative_to(ROOT)):file_digest(p) for p in (HERE/'protocol.json',ROOT/arms[winner]['checkpoint'])})
     write_new(HERE/'selection-before-calibration.json',receipt)
     print('FINAL_TRAINING_COMPLETE',json.dumps(receipt),flush=True)

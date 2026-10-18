@@ -89,6 +89,12 @@ OPENBLAS_CORETYPE=Haswell uv run --no-sync python reproduce.py --seed 53 --yes -
 
 It still fails on 26 frozen feature hashes. Do not describe it as a successful training command. The original Linux environment remains the demonstrated training path; a portable feature contract and any tolerance-based policy need investigation and explicit versioning before support is claimed.
 
+## User-authorized CPU training fallback
+
+After reviewing the Windows findings, the user requested merging this PR and relaxing PyTorch's CUDA-only requirement. The portable reproduction entry point and shared final-model fitting stages now select CUDA when available and CPU otherwise. Device selection is carried through model placement, optimization and development scoring; CUDA memory setup/cleanup and GPU receipt fields are conditional. The portable run's protocol, and both entry points' checkpoint metadata and selection receipts, record the selected device; the historical trainer keeps its frozen protocol unchanged. CPU GPU/memory fields are null rather than fabricated.
+
+Three added tests cover CPU configuration without CUDA setup, retained CUDA configuration, and an actual one-epoch/one-optimizer-update CPU smoke run of a reduced test architecture. The smoke run verifies changed weights, CPU tensors, checkpoint writing, CPU development dispatch and no CUDA cleanup. Together with the existing eight reproduction tests and download regression, all 12 focused tests pass. The expanded submission suite runs 88 tests: 86 pass and the same two Windows simulated-SSH cases fail (one error and one assertion failure on the latest run). This is real fitting-path evidence, not a full 2M training run or accuracy claim. macOS is untested; no MPS support is claimed. The exact-feature, source-audio, split and qualification guards remain unchanged, so the 26-feature Windows blocker is still present before a full fit can start.
+
 ## Decision
 
-PC benchmark execution is complete and measured. Setup works for CPU inference and CUDA allocation after the documented local torch override. Exact Windows training reproduction remains **blocked**, not complete. Preserve failed evidence and obtain a compatible numerical environment before fitting. Physical Pi and live microphone acceptance remain unmeasured.
+PC benchmark execution is complete and measured. Automatic CPU training fallback is regression-tested; CUDA configuration remains preferred when available. Exact Windows training reproduction remains **blocked**, not complete. Preserve failed evidence and obtain a compatible numerical environment before full fitting. Physical Pi and live microphone acceptance remain unmeasured.
