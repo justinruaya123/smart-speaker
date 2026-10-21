@@ -96,5 +96,6 @@
   "schema_version": 3,
   "state_shapes": [],
   "status": "unqualified_demo_candidate",
-  "teacher_shipped": false
+  "teacher_shipped": false,
+  "policy_sha256": "e3c819583bf852c67aea8f8ba3bac7ddb4aa27a844f3cf02fb85fd75f2e3a9b4"
 }
