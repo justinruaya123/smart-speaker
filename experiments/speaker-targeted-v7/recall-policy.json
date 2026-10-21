@@ -1,0 +1,70 @@
+{
+  "binding": {
+    "model_sha256": "e8a2c5aca69b03eacf1092a68b6b23a541c3a7f51fdc5a34a52214dc9ebe0017",
+    "catalog_sha256": "429a15bc364d7fd9e723a2879c611472b5176de6cb3a2b54be7c137b050c985d",
+    "normalization_sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+    "schema_sha256": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c",
+    "custom_slots_sha256": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5"
+  },
+  "format": "speaker-compact-recall-v1",
+  "intent_thresholds": {
+    "ALARM": 0.8,
+    "BRIGHTNESS": 0.5,
+    "CALL": 0.5,
+    "COLOR": 0.5,
+    "CREATE_REMINDER": 0.5,
+    "LIGHT_OFF": 0.6,
+    "LIGHT_ON": 0.6,
+    "LIST_REMINDERS": 0.5,
+    "MESSAGE": 0.5,
+    "NEXT": 0.5,
+    "PAUSE": 0.8,
+    "PLAY_MUSIC": 0.6,
+    "STOP": 0.7,
+    "TEMPERATURE": 0.5,
+    "TIME": 0.5,
+    "TIMER": 0.85,
+    "VOLUME": 0.5,
+    "WEATHER": 0.8
+  },
+  "qualified": false,
+  "selection": "Maximize correct accepts without additional wrong or UNKNOWN accepts on either human view; higher threshold on ties",
+  "slot_threshold": 0.9,
+  "synthetic_used": false,
+  "test_used": false,
+  "unrelaxed_missing_human_coverage": [
+    "CALL",
+    "MESSAGE",
+    "LIST_REMINDERS",
+    "TEMPERATURE",
+    "CREATE_REMINDER"
+  ],
+  "views": {
+    "calibration": {
+      "baseline": {
+        "correct": 32,
+        "false_accepts": 0,
+        "wrong": 0
+      },
+      "rows": 210,
+      "selected": {
+        "correct": 44,
+        "false_accepts": 0,
+        "wrong": 0
+      }
+    },
+    "development": {
+      "baseline": {
+        "correct": 80,
+        "false_accepts": 1,
+        "wrong": 5
+      },
+      "rows": 256,
+      "selected": {
+        "correct": 99,
+        "false_accepts": 1,
+        "wrong": 5
+      }
+    }
+  }
+}

@@ -98,3 +98,57 @@ Three added tests cover CPU configuration without CUDA setup, retained CUDA conf
 ## Decision
 
 PC benchmark execution is complete and measured. Automatic CPU training fallback is regression-tested; CUDA configuration remains preferred when available. Exact Windows training reproduction remains **blocked**, not complete. Preserve failed evidence and obtain a compatible numerical environment before full fitting. Physical Pi and live microphone acceptance remain unmeasured.
+
+## Frozen-input replay repair — 2026-10-19
+
+Follow-up authorization: address the preprocessing reproducibility issue. Baseline for this repair is `b6c1d09e58e008d4155aa4c61677fee5e1d11b80`, branch `codex/final-submission`, initially clean. Scope is reproduction source/tests, this existing report, README/experiment navigation, and separate ignored/external artifacts. Addresses ME-02/03/04/07/08. No repository reorganization, frozen-evidence rewrite, full-model fitting, installation, publishing, device action, commit or push is authorized by this repair. The historical failures and decision above remain evidence for source-only execution.
+
+### Measured cause and remaining uncertainty
+
+- The original six-recording loop fails on the default Windows stack. Haswell reproduces 24,520/24,546 bound feature images exactly, leaving 26.
+- Windows NumPy 2.3.5 bundles OpenBLAS 0.3.30 with `MAX_THREADS=24`; `threadpool_limits(limits=64)` actually reports 24. Tests at every available limit from 1 through 24 do not resolve the residuals. NumPy SIMD disabling, array-layout, FFT, magnitude and log probes did not establish a complete source-only solution.
+- An isolated, hash-verified conda-forge OpenBLAS 0.3.30 diagnostic DLL supports 64 requested threads (`MAX_THREADS=128`). Under Haswell, that actual 64-thread path reproduces all 25 long-recording residual hashes. It is not installed into NumPy, added to the lockfile, shipped in the feature archive, or used by production inference.
+- The final supplemental recording differs at exactly one float32 element: frame 206, channel 33, current `-5.161544322967529` versus frozen-image `-5.1615447998046875`. Searching neighboring single-element representations recovers an entire NPY payload with the **pre-existing** SHA-256 `424ebe460a9393141af02d3cab9db8ee3ce9f627f080ac94f566524786e59325`. This cryptographically verifies the recovered image, but does not establish the numerical cause. It is explicitly recorded as digest-verified reference-image recovery, **not source rederivation or a general frontend correction**. No row-specific correction exists in production code.
+
+### Implemented contract
+
+`--frozen-features ZIP` is opt-in; the default source-only path and its strict mismatch guard remain unchanged. Bound rows read `features/<original-features-sha256>.npy` from that archive. The original row map, not the archive's manifest, supplies the expected digest. Missing/corrupt images fail closed. Size is bounded before decompression; payload SHA-256, original PCM-derived shape, float32 dtype and finite values are required. No pickle loading, path extraction, numerical tolerance or expected-hash substitution is used.
+
+Original WAV and decoded PCM checks still run for every reconstructed recording, as do train/evaluation separation, ordered view reconstruction and the unchanged equal-human-utterance normalization check (`atol=1e-12`, `rtol=0`). Unbound external-evaluation features remain source-derived and the existing separate one-thread evaluation routine is unchanged. New preparation audits distinguish `frozen_hash_bound_replay` from `source_rederived`, record the archive hash and reused-row count, and are bound into new fitting protocols. No new fit is claimed here.
+
+The local archive contains 24,546 distinct original-hash images: 24,520 rederived under native Haswell/24-thread NumPy, 25 rederived under the isolated Haswell/64-thread diagnostic library, and the one disclosed digest-recovered image. Every image's full-file SHA-256 was checked while building and independently checked again after closing the archive. The archive is **773,356,621 bytes**, SHA-256 `f98dc02ff2296a649485bf1239c4b27e6026641f71886c0bcce081c1a324e0bf`. It is external, not committed and not public-hosted. Another computer needs this exact archive transferred separately; no automatic download endpoint is claimed.
+
+Local artifact directory: `C:/Users/Justin/AppData/Local/hermes/outputs/feature-replay-20261019/`. `archive-receipt.json`, `image-recovery.json`, `verification.json`, copied preparation audits, test records and the evidence bundle preserve the provenance. Diagnostic probes are under `.cache/frontend-repro-20261019/`; failed broad-auditor attempts are preserved, not reported as passes.
+
+### Executed acceptance checks
+
+Root environment was prepared through `uv sync --locked --inexact --python 3.13 --group training --group benchmark`; commands deliberately use `uv run --no-sync` and the existing root interpreter. These are dirty-source-copy replay runs with verified cache reuse, not new clean-clone or source-only acceptance claims.
+
+```sh
+uv run --no-sync python reproduce.py --prepare-only --yes --no-setup \
+  --model-choice full \
+  --frozen-features 'C:/Users/Justin/AppData/Local/hermes/outputs/feature-replay-20261019/frozen-training-features.zip' \
+  --source-cache '.cache/frontend-repro-20261019/source-view' \
+  --workspace '.cache/submission/reproductions/frozen-replay-full-01'
+```
+
+Exit 0. The compact command differs only in `--model-choice compact` and a new `frozen-replay-compact-01` workspace; it also exits 0. Existing destinations are never overwritten. The read-only source view hardlinks 10 independently hash-checked pinned Parquet shards and 184 verified auxiliary WAVs from the earlier downloaded cache; original source files were not modified. Without `--source-cache`, the existing downloader retrieves those pinned sources.
+
+| Check | Full replay | Compact replay |
+|---|---:|---:|
+| Original source/PCM rows verified | 29,370 | 29,370 |
+| Bound feature images matching original SHA-256 | 24,546 | 24,546 |
+| Feature hash mismatches | 0 | 0 |
+| Ordered fitting rows | 23,295 | 23,289 |
+| Development rows | 1,251 | 1,251 |
+| Parent human normalization rows | 1,869 | 1,869 |
+| Normalization check | pass | pass |
+| New full-model optimizer updates | 0 | 0 |
+
+Compact still retains the six training-excluded parent rows for normalization ancestry; neither recipe's membership or labels changed. Programmatic postchecks compare every view's ordered IDs and original hashes/labels/split metadata, verify complete image coverage for both row maps, and verify that selected checkpoints, ONNX graphs, catalogs and normalization files retain their expected hashes. Both `reproduce.py --verify` commands also exit 0.
+
+Fourteen reproduction tests pass, including six added replay tests. The full submission suite executes 94 tests: 92 pass, one existing simulated-SSH test fails and one errors because the Windows simulated remote home does not resolve to the intended disposable home (existing `test-corrupt`/`test-roundtrip` directories). These unrelated failures were not hidden or repaired in this task. The suite includes a tiny CPU optimizer/checkpoint smoke test; it is not a fit of either selected model. `git diff --check` passes. Full repository pytest, actual SSH/Pi execution and live microphone tests were not run.
+
+Two independent broad file-read audit attempts timed out at 180 seconds while run concurrently; their empty output folders remain preserved. Completed checks are the original source/PCM/per-file hash and normalization guards inside both CLI runs, all replay-manifest postchecks, and the independent sequential rehash of every archived image. Do not label those timeouts as completed dataset audits.
+
+**Current decision:** exact frozen training-input replay is verified on Windows for both submitted models and no mismatch guard is weakened. Source-only Windows numerical rederivation remains incomplete; the last one-ULP cause and a portable general frontend remain open. This removes the frozen-input preparation blocker in explicit replay mode, not the need to execute/measure a full Windows fit, compare resulting weights/metrics, or satisfy the existing quality and physical-Pi gates. No new quality gain or bitwise CPU/CUDA weight-equality claim exists.

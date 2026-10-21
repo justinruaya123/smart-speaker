@@ -24,6 +24,113 @@ class ReproduceTests(unittest.TestCase):
         self.assertEqual(cfg['training']['mixed_epochs'],32)
         self.assertEqual(len(cfg['views']['train']),23289)
 
+    def test_frozen_feature_replay_returns_exact_bound_bytes(self):
+        import hashlib
+        import io
+        import zipfile
+        import numpy as np
+        m=self.module()
+        self.assertTrue(hasattr(m,'frozen_feature_payload'),
+                        'Explicit frozen-feature replay must preserve original input bytes')
+        value=np.asfortranarray(np.arange(80,dtype='float32').reshape(40,2))
+        stream=io.BytesIO();np.save(stream,value,allow_pickle=False);payload=stream.getvalue()
+        expected=hashlib.sha256(payload).hexdigest()
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'features.zip'
+            with zipfile.ZipFile(path,'w') as archive:archive.writestr('features/'+expected+'.npy',payload)
+            with zipfile.ZipFile(path) as archive:
+                self.assertEqual(m.frozen_feature_payload(archive,{'id':'fixture','features_sha256':expected},560),payload)
+
+    def test_frozen_feature_replay_rejects_invalid_arrays_even_with_bound_hashes(self):
+        import hashlib
+        import io
+        import zipfile
+        import numpy as np
+        m=self.module()
+        for value in (np.zeros((40,3),dtype='float32'),np.zeros((40,2),dtype='float64'),
+                      np.full((40,2),np.nan,dtype='float32')):
+            with self.subTest(shape=value.shape,dtype=value.dtype):
+                payload_file=io.BytesIO();np.save(payload_file,value,allow_pickle=False);payload=payload_file.getvalue()
+                expected=hashlib.sha256(payload).hexdigest();container=io.BytesIO()
+                with zipfile.ZipFile(container,'w') as archive:archive.writestr('features/'+expected+'.npy',payload)
+                with zipfile.ZipFile(container) as archive,self.assertRaisesRegex(ValueError,'Invalid frozen feature array'):
+                    m.frozen_feature_payload(archive,{'id':'fixture','features_sha256':expected},560)
+
+    def test_frozen_feature_replay_is_explicit_and_forwarded_to_worker(self):
+        m=self.module();defaults=m.parser().parse_args([])
+        self.assertTrue(hasattr(defaults,'frozen_features'),'Frozen input replay must be an explicit CLI mode')
+        self.assertIsNone(defaults.frozen_features)
+        with tempfile.TemporaryDirectory() as directory:
+            archive=Path(directory)/'features.zip';archive.write_bytes(b'fixture')
+            destination=Path(directory)/'new-run'
+            with mock.patch.object(m,'copy_source'),mock.patch.object(m.subprocess,'run',return_value=mock.Mock(returncode=0)) as execute:
+                self.assertEqual(m.main(['--frozen-features',str(archive),'--workspace',str(destination),'--yes','--no-setup']),0)
+            command=execute.call_args.args[0]
+            self.assertEqual(command[command.index('--frozen-features')+1],str(archive.resolve()))
+
+    def test_reconstruction_replays_frozen_inputs_and_normalization_without_rederivation(self):
+        import gzip
+        import hashlib
+        import io
+        import types
+        import zipfile
+        import numpy as np
+        import soundfile as sf
+        from scripts.test.speaker_demo_suite import pcm_digest
+        m=self.module()
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);recipe_dir=root/'submission/reproduction-full';recipe_dir.mkdir(parents=True)
+            pcm=np.full(560,.25,dtype='float32');wav=io.BytesIO();sf.write(wav,pcm,16000,format='WAV',subtype='PCM_16')
+            payload=wav.getvalue();audio_sha=hashlib.sha256(payload).hexdigest()
+            values=np.asfortranarray(np.arange(80,dtype='float32').reshape(40,2));blob=io.BytesIO();np.save(blob,values,allow_pickle=False)
+            original=blob.getvalue();feature_sha=hashlib.sha256(original).hexdigest()
+            row=dict(id='fixture',speaker='speaker-a',pcm_sha256=pcm_digest(pcm),sha256=audio_sha,
+                     expected=None,features_sha256=feature_sha,location={'auxiliary_file':audio_sha+'.wav'})
+            rows=gzip.compress((json.dumps(row)+'\n').encode());(recipe_dir/'rows.jsonl.gz').write_bytes(rows)
+            (recipe_dir/'auxiliary-source.json').write_text(json.dumps(dict(repository='fixture',revision='pinned',prefix='audio')))
+            downloads=root/'.cache/reproduction/downloads';downloads.mkdir(parents=True);(downloads/(audio_sha+'.wav')).write_bytes(payload)
+            mean=values.astype('float64').mean(axis=1);square=(values.astype('float64')**2).mean(axis=1)
+            (root/'normalization.json').write_text(json.dumps(dict(mean=mean.tolist(),std=np.sqrt(np.maximum(square-mean**2,1e-6)).tolist())))
+            cache=root/'frozen.zip'
+            with zipfile.ZipFile(cache,'w') as archive:archive.writestr('features/'+feature_sha+'.npy',original)
+            views={key:[] for key in ('train','dev','calibration','test','holdout','normalization')}
+            views.update(train=['fixture'],normalization=['fixture'])
+            recipe=dict(rows_file='rows.jsonl.gz',rows_sha256=hashlib.sha256(rows).hexdigest(),views=views,normalization={'path':'normalization.json'})
+            args=types.SimpleNamespace(model_choice='full',source_cache=None,frozen_features=cache)
+            with mock.patch.object(m,'ROOT',root),mock.patch('vcm.frontend.features',side_effect=AssertionError('Frozen inputs were rederived')):
+                prepared,target=m.reconstruct(args,recipe)
+            self.assertEqual(Path(prepared['fixture']['features']).read_bytes(),original)
+            audit=json.loads((target/'audit.json').read_text())
+            self.assertEqual(audit['feature_input_mode'],'frozen_hash_bound_replay')
+            self.assertEqual(audit['frozen_feature_rows'],1)
+            self.assertEqual(audit['frozen_features_sha256'],hashlib.sha256(cache.read_bytes()).hexdigest())
+            self.assertTrue(audit['normalization_reconstructed'])
+            self.assertEqual(audit['feature_hash_mismatches'],[])
+            self.assertFalse((root/'results').exists())
+
+    def test_frozen_feature_replay_rejects_oversize_before_decompression(self):
+        import hashlib
+        import io
+        import zipfile
+        m=self.module();payload=b'oversized'*1000;expected=hashlib.sha256(payload).hexdigest()
+        container=io.BytesIO()
+        with zipfile.ZipFile(container,'w') as archive:archive.writestr('features/'+expected+'.npy',payload)
+        with zipfile.ZipFile(container) as archive,mock.patch.object(archive,'read',side_effect=AssertionError('Oversized image was decompressed')):
+            with self.assertRaisesRegex(ValueError,'Frozen feature image exceeds'):
+                m.frozen_feature_payload(archive,{'id':'fixture','features_sha256':expected},560)
+
+    def test_frozen_feature_replay_fails_closed_on_missing_or_corrupt_images(self):
+        import io
+        import zipfile
+        m=self.module();expected='0'*64
+        for entries in ({},{'features/'+expected+'.npy':b'changed'}):
+            with self.subTest(entries=len(entries)):
+                container=io.BytesIO()
+                with zipfile.ZipFile(container,'w') as archive:
+                    for name,payload in entries.items():archive.writestr(name,payload)
+                with zipfile.ZipFile(container) as archive,self.assertRaises((KeyError,ValueError)):
+                    m.frozen_feature_payload(archive,{'id':'fixture','features_sha256':expected},560)
+
     def test_existing_workspace_is_preserved(self):
         m=self.module()
         with tempfile.TemporaryDirectory() as d:

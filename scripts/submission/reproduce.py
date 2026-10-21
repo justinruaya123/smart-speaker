@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
+from contextlib import nullcontext
 import gzip
 import hashlib
 import io
@@ -14,6 +15,7 @@ import shutil
 import subprocess
 import sys
 import time
+import zipfile
 
 from .common import ROOT, bootstrap, fetch, read, run_id, save, sha
 
@@ -26,6 +28,7 @@ def parser():
     p.add_argument('--prepare-only',action='store_true',help='Download, verify and extract features without fitting')
     p.add_argument('--verify',action='store_true',help='Verify submitted recipe and model identities without fitting')
     p.add_argument('--source-cache',type=Path,help='Optional existing research checkout for hash-verified read-only input reuse')
+    p.add_argument('--frozen-features',type=Path,help='Explicit frozen-input replay from a ZIP of original hash-bound NPY images; not source-only numerical rederivation')
     p.add_argument('--gpu',type=int,help='Explicit CUDA device; otherwise use CUDA_VISIBLE_DEVICES/default device')
     p.add_argument('--no-benchmark',action='store_true');p.add_argument('--yes',action='store_true')
     p.add_argument('--no-setup',action='store_true',help='Use the current interpreter instead of uv setup')
@@ -66,6 +69,24 @@ def load_recipe_rows(recipe, directory):
     return rows
 
 
+def frozen_feature_payload(archive, row, samples):
+    """Read original NPY bytes; the frozen row map is the only hash authority."""
+    expected=row['features_sha256']
+    name='features/'+expected+'.npy'
+    frames=max(0,1+(samples-400)//160)
+    if archive.getinfo(name).file_size>40*frames*4+4096:
+        raise ValueError('Frozen feature image exceeds expected size: '+row['id'])
+    payload=archive.read(name)
+    if hashlib.sha256(payload).hexdigest()!=expected:
+        raise ValueError('Frozen feature checksum mismatch: '+row['id'])
+    import numpy as np
+    values=np.load(io.BytesIO(payload),allow_pickle=False)
+    shape=(40,max(0,1+(samples-400)//160))
+    if values.dtype!=np.dtype('<f4') or values.shape!=shape or not np.isfinite(values).all():
+        raise ValueError('Invalid frozen feature array: '+row['id'])
+    return payload
+
+
 def reconstruct(args, recipe):
     """Retrieve original WAV bytes and verify PCM, split and frontend identities."""
     import numpy as np
@@ -90,6 +111,8 @@ def reconstruct(args, recipe):
         if 'auxiliary_file' in row['location']:auxiliary.append(row)
         else:groups[row['location']['sha256']].append(row)
     prepared={}; feature_mismatches=[]; sources=[]
+    frozen_path=getattr(args,'frozen_features',None)
+    frozen_digest=sha(frozen_path) if frozen_path else None
 
     def extract(item):
         row,payload=item
@@ -102,15 +125,23 @@ def reconstruct(args, recipe):
         valid=400<=len(pcm)<=240000 and float(np.max(np.abs(pcm),initial=0))>=1e-6
         result={**row,'audio':str(audio),'command':row['expected'],'speaker_id':row['speaker'],'capture_fault':not valid}
         if valid:
-            values=features(pcm);path=feature_dir/(row['pcm_sha256']+'.npy')
-            with path.open('wb') as stream:np.save(stream,values,allow_pickle=False)
+            path=feature_dir/(row['pcm_sha256']+'.npy')
+            if frozen is not None and row.get('features_sha256'):
+                payload=frozen_feature_payload(frozen,row,len(pcm))
+                path.write_bytes(payload)
+                result['feature_origin']='frozen_hash_bound_replay'
+            else:
+                values=features(pcm)
+                with path.open('wb') as stream:np.save(stream,values,allow_pickle=False)
+                result['feature_origin']='source_rederived'
             actual=sha(path)
             if row.get('features_sha256') and actual!=row['features_sha256']:
                 feature_mismatches.append(row['id'])
             result.update(features=str(path),features_sha256=actual)
         return row['id'],result
 
-    with threadpool_limits(limits=64,user_api='blas'), ThreadPoolExecutor(max_workers=8) as pool:
+    with (zipfile.ZipFile(frozen_path) if frozen_path else nullcontext(None)) as frozen, \
+            threadpool_limits(limits=64,user_api='blas'), ThreadPoolExecutor(max_workers=8) as pool:
         for records in groups.values():
             loc=records[0]['location'];path=None
             if args.source_cache:
@@ -142,6 +173,8 @@ def reconstruct(args, recipe):
                            ROOT/'.cache/reproduction/downloads'/row['location']['auxiliary_file'],row['sha256'])
             tasks.append((row,path.read_bytes()))
         for key,result in pool.map(extract,tasks):prepared[key]=result
+    if frozen_path and sha(frozen_path)!=frozen_digest:
+        raise ValueError('Frozen feature archive changed during reconstruction')
     if len(prepared)!=len(rows):raise ValueError('Missing reconstructed source rows')
     for name,ids in recipe['views'].items():
         with (target/(name+'.jsonl')).open('x',encoding='utf-8') as stream:
@@ -159,6 +192,10 @@ def reconstruct(args, recipe):
     save(target/'audit.json',dict(rows=len(rows),counts={k:len(v) for k,v in recipe['views'].items()},
          source_shards=sources,feature_hash_mismatches=feature_mismatches,original_pcm_hashes_verified=True,
          normalization_reconstructed=True,speaker_ids_pseudonymized=True,fitting_frontend_blas_threads=64,
+         feature_input_mode='frozen_hash_bound_replay' if frozen_path else 'source_rederived',
+         frozen_features_sha256=frozen_digest,
+         frozen_feature_rows=sum(r.get('feature_origin')=='frozen_hash_bound_replay' for r in prepared.values()),
+         source_only_numerical_rederivation=not bool(frozen_path),
          source_cache=str(args.source_cache) if args.source_cache else None))
     return prepared,target
 
@@ -178,6 +215,8 @@ def fit(args,recipe,prepared):
     training.HERE=ROOT/'results';training.CACHE=ROOT/'.cache/reproduction';training.ARCHITECTURE=recipe['architecture']
     cfg={**recipe,'device':device,'training':{**recipe['training'],'seed':args.seed}}
     save(training.HERE/'protocol.json',dict(cfg,requirements=['ME-01','ME-02','ME-03','ME-04','ME-06','ME-07','ME-08'],
+        prepared_input_audit=read(ROOT/'.cache/reproduction/prepared/audit.json'),
+        prepared_input_audit_sha256=sha(ROOT/'.cache/reproduction/prepared/audit.json'),
         hypothesis='The frozen selected recipe reconstructs the selected numerical behavior from pinned recordings.',
         source_receipt_sha256=sha(ROOT/'source-receipt.json'), test_used_for_selection=False))
     # Preserve every development checkpoint while reusing the original fit loop.
@@ -365,6 +404,7 @@ def main(argv=None):
     if not 0<=args.seed<=2**32-101:
         raise ValueError('Seed must be 0..4294967195; the original mixed stage adds 100')
     if args.source_cache:args.source_cache=args.source_cache.resolve()
+    if args.frozen_features:args.frozen_features=args.frozen_features.resolve()
     if not args.worker:
         destination=(args.workspace or ROOT/'.cache/submission/reproductions'/run_id()).resolve()
         copy_source(destination)
@@ -372,6 +412,7 @@ def main(argv=None):
                  str(destination/'reproduce.py'),'--worker','--no-setup','--seed',str(args.seed),'--model-choice',args.model_choice]
         if args.prepare_only:command+=['--prepare-only']
         if args.source_cache:command+=['--source-cache',str(args.source_cache)]
+        if args.frozen_features:command+=['--frozen-features',str(args.frozen_features)]
         if args.no_benchmark:command+=['--no-benchmark']
         if args.yes:command+=['--yes']
         if args.gpu is not None:command+=['--gpu',str(args.gpu)]
@@ -382,7 +423,8 @@ def main(argv=None):
     if args.gpu is not None:os.environ['CUDA_VISIBLE_DEVICES']=str(args.gpu)
     prepared,_=reconstruct(args,recipe)
     if args.prepare_only:
-        print('Prepared pinned data and features; no training or model reproduction claim.');return 0
+        mode='frozen hash-bound replay' if args.frozen_features else 'source rederivation'
+        print(f'Prepared pinned data and features ({mode}); no training or model reproduction claim.');return 0
     checkpoint,selection=fit(args,recipe,prepared)
     comparison=export_and_test(args,recipe,prepared,checkpoint,selection)
     from .report import render_reproduction
