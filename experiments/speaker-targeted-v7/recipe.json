@@ -92,7 +92,7 @@
   "parameters": 935567,
   "policy_enabled": false,
   "precision": "fp32",
-  "recall_policy_sha256": "3a4f05aba8b2b7ff2912615441f1baafe6fa2a3255b33f17ab957a9a8aa3abc0",
+  "recall_policy_sha256": "0322a8a93876c09164f98c6c468e0808a9fd9209b8762a6c415c8b552e5deefc",
   "schema_version": 3,
   "state_shapes": [],
   "status": "unqualified_demo_candidate",

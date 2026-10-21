@@ -8,7 +8,7 @@
   },
   "format": "speaker-compact-recall-v1",
   "intent_thresholds": {
-    "ALARM": 0.8,
+    "ALARM": 0.7,
     "BRIGHTNESS": 0.5,
     "CALL": 0.5,
     "COLOR": 0.5,
@@ -23,9 +23,9 @@
     "STOP": 0.7,
     "TEMPERATURE": 0.5,
     "TIME": 0.5,
-    "TIMER": 0.85,
+    "TIMER": 0.8,
     "VOLUME": 0.5,
-    "WEATHER": 0.8
+    "WEATHER": 0.7
   },
   "qualified": false,
   "selection": "Maximize correct accepts without additional wrong or UNKNOWN accepts on either human view; higher threshold on ties",
