@@ -43,11 +43,11 @@
   ],
   "architecture_class": "PooledContextVCM",
   "binding": {
+    "model_sha256": "e8a2c5aca69b03eacf1092a68b6b23a541c3a7f51fdc5a34a52214dc9ebe0017",
     "catalog_sha256": "429a15bc364d7fd9e723a2879c611472b5176de6cb3a2b54be7c137b050c985d",
-    "custom_slots_sha256": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5",
-    "model_sha256": "fc87c98c242ccb6f37ed9fcd84bad3869b8c90eaae6267fdab2a1a5af2737f6d",
     "normalization_sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
-    "schema_sha256": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c"
+    "schema_sha256": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c",
+    "custom_slots_sha256": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5"
   },
   "feature_hop_ms": 10,
   "heads": [
@@ -92,7 +92,7 @@
   "parameters": 935567,
   "policy_enabled": false,
   "precision": "fp32",
-  "recall_policy_sha256": "02057ac95b37bc1fd011f5bce26f8216c97bea32cf9ee3edd2a300ac088c3fde",
+  "recall_policy_sha256": "3a4f05aba8b2b7ff2912615441f1baafe6fa2a3255b33f17ab957a9a8aa3abc0",
   "schema_version": 3,
   "state_shapes": [],
   "status": "unqualified_demo_candidate",
