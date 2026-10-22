@@ -1,0 +1,26 @@
+{
+  "bundle_name": "speaker-compact",
+  "model_type": "PooledContextVCM",
+  "files": {
+    "model.onnx": {
+      "path": "model.onnx",
+      "sha256": "eb8f0223f8271164f4067511c2c2ca51c43cc74d3b4da1cd5c167751b98a4c32"
+    },
+    "speaker-compact.onnx": {
+      "path": "speaker-compact.onnx",
+      "sha256": "eb8f0223f8271164f4067511c2c2ca51c43cc74d3b4da1cd5c167751b98a4c32"
+    },
+    "recall-policy.json": {
+      "path": "recall-policy.json",
+      "sha256": "88ca8b89261453fa46d18536f010b073e8d992ed6a87e2809760772b17cafa73"
+    },
+    "recipe.json": {
+      "path": "recipe.json",
+      "sha256": "70ffe462fd8fac25f5d288d41b7d66f619dd5ebad0c3ea50dc1fcce23a9ec678"
+    },
+    "policy.json": {
+      "path": "policy.json",
+      "sha256": "cb603c98cc3722a95c3c9312ce04afc4e2b55937f92ee2698db32a2a260a3ac3"
+    }
+  }
+}

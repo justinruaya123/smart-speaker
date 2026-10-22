@@ -1,0 +1,15 @@
+{
+  "review_id": "deleg_6b5748a5",
+  "scope": "Read-only versioned full-reference metadata wording addendum, seven fixtures and additive closure of the earlier missing-projected-text finding",
+  "source_transcript": "C:/Users/Justin/AppData/Local/hermes/cache/delegation/live/deleg_6b5748a5/task-0.log",
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [
+    "Nonblocking test hardening: scripts/test/test_speaker_optionb_tiny_demo_metadata.py:39-49 could additionally cover changed locator file, missing/null transcript without variation fallback, and the loader's path/digest/row-boundary guards at speaker_optionb_tiny_demo_metadata.py:65-74."
+  ],
+  "summary": "Read-only review completed; all 7 tests passed. Full pinned source identity, provenance checks, transcript-only enrichment, transitive input bindings and versioned report isolation are sound. No label, policy, model mutation or held-out fitting was found. Verified 372 unique wording/cohort cells, consistent denominators and receipt totals, human coverage 72/93 and all-origin coverage 93/93. The prior finding is closed additively: the module documentation and v2 receipt explicitly identify missing projected metadata, not corpus absence; v1 source, CSV and receipt remained unchanged. Results remain publisher-metadata matches, not independently listened truth. No repository files were modified or inference replayed.",
+  "core_training_or_policy_reselection": false,
+  "correction": "Use per-verbatim-cohorts-v2.csv and verification-wording-v2.json for wording claims; preserve the v1 report/source/receipt, whose projected references lacked text. Core canonical prediction/decision/digest verification remains applicable.",
+  "parent_verification": "Actual core and metadata verification entry points both exited zero after report generation; 161 tests across 12 focused modules passed. No acoustic/input/policy edits were made in response to review."
+}

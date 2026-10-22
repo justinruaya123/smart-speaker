@@ -1,0 +1,26 @@
+{
+  "files": [
+    {
+      "path": ".cache\\speaker-optionb-tiny-ft-v1\\reference-evidence\\0.html",
+      "sha256": "17a7c4d7383efe790c85cd2c8517de6f15e16358b905ae2abea7e938e8ba2df0",
+      "source_id": 1
+    },
+    {
+      "path": ".cache\\speaker-optionb-tiny-ft-v1\\reference-evidence\\0.txt",
+      "sha256": "93929912758818ecb150076d950280570173e8fe48b951f5421fb1c3e54c8e50",
+      "source_id": 1
+    },
+    {
+      "path": ".cache\\speaker-optionb-tiny-ft-v1\\reference-evidence\\1.html",
+      "sha256": "e9a4916bee191e232ae4148adfc27259254aa00bf661038b1162c60c729f593f",
+      "source_id": 2
+    },
+    {
+      "path": ".cache\\speaker-optionb-tiny-ft-v1\\reference-evidence\\1.txt",
+      "sha256": "baeb8a1bcaa3612720b6f1219fe29349971d3d3930539e7f856d809302cf8da7",
+      "source_id": 2
+    }
+  ],
+  "original_retrieval": "2026-10-22",
+  "reason": "Keep verified official-page evidence outside 24-hour scratch pruning; frozen ledger and quotes unchanged"
+}

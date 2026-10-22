@@ -1,0 +1,23 @@
+{
+  "best_epoch": 52,
+  "best_score": 1.7284151657208653,
+  "results": {
+    "human_exact": 452,
+    "human_total": 636,
+    "human_raw_accuracy": 0.710691823899371,
+    "human_accepted_demo": 199,
+    "human_accepted_recall_demo": 0.3128930817610063,
+    "human_accepted_qual": 0,
+    "human_accepted_recall_qual": 0.0,
+    "synthetic_exact": 2802,
+    "synthetic_total": 3368,
+    "synthetic_raw_accuracy": 0.8319477434679335,
+    "synthetic_accepted_demo": 1500,
+    "synthetic_accepted_recall_demo": 0.44536817102137766,
+    "negative_total": 414,
+    "negative_fa_demo": 10,
+    "negative_fa_rate_demo": 0.024154589371980676,
+    "negative_fa_qual": 0,
+    "negative_fa_rate_qual": 0.0
+  }
+}

@@ -1,0 +1,218 @@
+class_index,intent,command,cohort,n,raw_correct,tp,fp,fn,precision,recall,f1
+1,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""06:00"", ""timezone"": ""Asia/Manila""}}",holdout/human/original,3,3,3,0,0,1.0,1.0,1.0
+2,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""08:00"", ""timezone"": ""Asia/Manila""}}",holdout/human/original,3,3,3,0,0,1.0,1.0,1.0
+3,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""21:00"", ""timezone"": ""Asia/Manila""}}",holdout/human/original,2,2,2,0,0,1.0,1.0,1.0
+4,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 100}}",holdout/human/original,2,2,2,0,0,1.0,1.0,1.0
+5,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 20}}",holdout/human/original,2,2,2,0,0,1.0,1.0,1.0
+6,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 60}}",holdout/human/original,2,2,2,0,0,1.0,1.0,1.0
+7,CALL,"{""intent"": ""CALL"", ""slots"": {""contact_id"": ""contact.home""}}",holdout/human/original,3,3,3,0,0,1.0,1.0,1.0
+8,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""blue"", ""light_id"": ""light.all""}}",holdout/human/original,2,2,2,0,0,1.0,1.0,1.0
+9,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""green"", ""light_id"": ""light.all""}}",holdout/human/original,2,2,1,0,1,1.0,0.5,0.6666666666666666
+10,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""red"", ""light_id"": ""light.all""}}",holdout/human/original,2,2,2,0,0,1.0,1.0,1.0
+11,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.drink_water""}}",holdout/human/original,3,3,3,0,0,1.0,1.0,1.0
+12,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.exercise""}}",holdout/human/original,3,3,3,0,0,1.0,1.0,1.0
+13,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.study""}}",holdout/human/original,3,3,2,0,1,1.0,0.6666666666666666,0.8
+14,LIGHT_OFF,"{""intent"": ""LIGHT_OFF"", ""slots"": {""light_id"": ""light.all""}}",holdout/human/original,0,0,0,0,0,,,
+15,LIGHT_ON,"{""intent"": ""LIGHT_ON"", ""slots"": {""light_id"": ""light.all""}}",holdout/human/original,2,2,2,0,0,1.0,1.0,1.0
+16,LIST_REMINDERS,"{""intent"": ""LIST_REMINDERS"", ""slots"": {}}",holdout/human/original,3,3,3,0,0,1.0,1.0,1.0
+17,MESSAGE,"{""intent"": ""MESSAGE"", ""slots"": {}}",holdout/human/original,3,3,3,0,0,1.0,1.0,1.0
+18,NEXT,"{""intent"": ""NEXT"", ""slots"": {}}",holdout/human/original,3,3,3,1,0,0.75,1.0,0.8571428571428571
+19,PAUSE,"{""intent"": ""PAUSE"", ""slots"": {}}",holdout/human/original,3,3,3,1,0,0.75,1.0,0.8571428571428571
+20,PLAY_MUSIC,"{""intent"": ""PLAY_MUSIC"", ""slots"": {}}",holdout/human/original,3,1,1,0,2,1.0,0.3333333333333333,0.5
+21,STOP,"{""intent"": ""STOP"", ""slots"": {}}",holdout/human/original,3,3,3,0,0,1.0,1.0,1.0
+22,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 18, ""unit"": ""C""}}",holdout/human/original,3,2,0,0,3,,0.0,0.0
+23,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 22, ""unit"": ""C""}}",holdout/human/original,3,3,3,1,0,0.75,1.0,0.8571428571428571
+24,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 26, ""unit"": ""C""}}",holdout/human/original,3,3,3,0,0,1.0,1.0,1.0
+25,TIME,"{""intent"": ""TIME"", ""slots"": {}}",holdout/human/original,3,3,3,0,0,1.0,1.0,1.0
+26,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 10}}",holdout/human/original,3,3,3,0,0,1.0,1.0,1.0
+27,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 30}}",holdout/human/original,3,3,3,0,0,1.0,1.0,1.0
+28,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 60}}",holdout/human/original,3,3,3,0,0,1.0,1.0,1.0
+29,VOLUME,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""down""}}",holdout/human/original,1,1,1,0,0,1.0,1.0,1.0
+30,VOLUME,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""up""}}",holdout/human/original,3,2,2,0,1,1.0,0.6666666666666666,0.8
+31,WEATHER,"{""intent"": ""WEATHER"", ""slots"": {}}",holdout/human/original,3,3,3,0,0,1.0,1.0,1.0
+1,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""06:00"", ""timezone"": ""Asia/Manila""}}",holdout/human/silence_both_1s,3,3,3,0,0,1.0,1.0,1.0
+2,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""08:00"", ""timezone"": ""Asia/Manila""}}",holdout/human/silence_both_1s,3,3,3,0,0,1.0,1.0,1.0
+3,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""21:00"", ""timezone"": ""Asia/Manila""}}",holdout/human/silence_both_1s,2,2,2,0,0,1.0,1.0,1.0
+4,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 100}}",holdout/human/silence_both_1s,2,2,2,0,0,1.0,1.0,1.0
+5,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 20}}",holdout/human/silence_both_1s,2,2,2,0,0,1.0,1.0,1.0
+6,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 60}}",holdout/human/silence_both_1s,2,2,2,0,0,1.0,1.0,1.0
+7,CALL,"{""intent"": ""CALL"", ""slots"": {""contact_id"": ""contact.home""}}",holdout/human/silence_both_1s,3,3,3,0,0,1.0,1.0,1.0
+8,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""blue"", ""light_id"": ""light.all""}}",holdout/human/silence_both_1s,2,2,2,0,0,1.0,1.0,1.0
+9,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""green"", ""light_id"": ""light.all""}}",holdout/human/silence_both_1s,2,2,1,0,1,1.0,0.5,0.6666666666666666
+10,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""red"", ""light_id"": ""light.all""}}",holdout/human/silence_both_1s,2,2,2,0,0,1.0,1.0,1.0
+11,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.drink_water""}}",holdout/human/silence_both_1s,3,3,3,0,0,1.0,1.0,1.0
+12,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.exercise""}}",holdout/human/silence_both_1s,3,3,3,0,0,1.0,1.0,1.0
+13,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.study""}}",holdout/human/silence_both_1s,3,3,2,0,1,1.0,0.6666666666666666,0.8
+14,LIGHT_OFF,"{""intent"": ""LIGHT_OFF"", ""slots"": {""light_id"": ""light.all""}}",holdout/human/silence_both_1s,0,0,0,0,0,,,
+15,LIGHT_ON,"{""intent"": ""LIGHT_ON"", ""slots"": {""light_id"": ""light.all""}}",holdout/human/silence_both_1s,2,2,2,0,0,1.0,1.0,1.0
+16,LIST_REMINDERS,"{""intent"": ""LIST_REMINDERS"", ""slots"": {}}",holdout/human/silence_both_1s,3,3,3,0,0,1.0,1.0,1.0
+17,MESSAGE,"{""intent"": ""MESSAGE"", ""slots"": {}}",holdout/human/silence_both_1s,3,3,3,0,0,1.0,1.0,1.0
+18,NEXT,"{""intent"": ""NEXT"", ""slots"": {}}",holdout/human/silence_both_1s,3,3,3,1,0,0.75,1.0,0.8571428571428571
+19,PAUSE,"{""intent"": ""PAUSE"", ""slots"": {}}",holdout/human/silence_both_1s,3,3,3,1,0,0.75,1.0,0.8571428571428571
+20,PLAY_MUSIC,"{""intent"": ""PLAY_MUSIC"", ""slots"": {}}",holdout/human/silence_both_1s,3,1,1,0,2,1.0,0.3333333333333333,0.5
+21,STOP,"{""intent"": ""STOP"", ""slots"": {}}",holdout/human/silence_both_1s,3,3,3,0,0,1.0,1.0,1.0
+22,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 18, ""unit"": ""C""}}",holdout/human/silence_both_1s,3,2,0,0,3,,0.0,0.0
+23,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 22, ""unit"": ""C""}}",holdout/human/silence_both_1s,3,3,3,0,0,1.0,1.0,1.0
+24,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 26, ""unit"": ""C""}}",holdout/human/silence_both_1s,3,3,3,0,0,1.0,1.0,1.0
+25,TIME,"{""intent"": ""TIME"", ""slots"": {}}",holdout/human/silence_both_1s,3,3,3,0,0,1.0,1.0,1.0
+26,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 10}}",holdout/human/silence_both_1s,3,3,3,0,0,1.0,1.0,1.0
+27,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 30}}",holdout/human/silence_both_1s,3,3,3,0,0,1.0,1.0,1.0
+28,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 60}}",holdout/human/silence_both_1s,3,3,3,0,0,1.0,1.0,1.0
+29,VOLUME,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""down""}}",holdout/human/silence_both_1s,1,1,1,0,0,1.0,1.0,1.0
+30,VOLUME,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""up""}}",holdout/human/silence_both_1s,3,2,2,0,1,1.0,0.6666666666666666,0.8
+31,WEATHER,"{""intent"": ""WEATHER"", ""slots"": {}}",holdout/human/silence_both_1s,3,3,3,0,0,1.0,1.0,1.0
+1,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""06:00"", ""timezone"": ""Asia/Manila""}}",holdout/human/silence_prefix_1s,3,3,3,0,0,1.0,1.0,1.0
+2,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""08:00"", ""timezone"": ""Asia/Manila""}}",holdout/human/silence_prefix_1s,3,3,3,0,0,1.0,1.0,1.0
+3,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""21:00"", ""timezone"": ""Asia/Manila""}}",holdout/human/silence_prefix_1s,2,2,2,0,0,1.0,1.0,1.0
+4,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 100}}",holdout/human/silence_prefix_1s,2,2,2,0,0,1.0,1.0,1.0
+5,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 20}}",holdout/human/silence_prefix_1s,2,2,2,0,0,1.0,1.0,1.0
+6,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 60}}",holdout/human/silence_prefix_1s,2,2,2,0,0,1.0,1.0,1.0
+7,CALL,"{""intent"": ""CALL"", ""slots"": {""contact_id"": ""contact.home""}}",holdout/human/silence_prefix_1s,3,3,3,0,0,1.0,1.0,1.0
+8,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""blue"", ""light_id"": ""light.all""}}",holdout/human/silence_prefix_1s,2,2,2,0,0,1.0,1.0,1.0
+9,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""green"", ""light_id"": ""light.all""}}",holdout/human/silence_prefix_1s,2,2,1,0,1,1.0,0.5,0.6666666666666666
+10,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""red"", ""light_id"": ""light.all""}}",holdout/human/silence_prefix_1s,2,2,2,0,0,1.0,1.0,1.0
+11,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.drink_water""}}",holdout/human/silence_prefix_1s,3,3,3,0,0,1.0,1.0,1.0
+12,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.exercise""}}",holdout/human/silence_prefix_1s,3,3,3,0,0,1.0,1.0,1.0
+13,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.study""}}",holdout/human/silence_prefix_1s,3,3,2,0,1,1.0,0.6666666666666666,0.8
+14,LIGHT_OFF,"{""intent"": ""LIGHT_OFF"", ""slots"": {""light_id"": ""light.all""}}",holdout/human/silence_prefix_1s,0,0,0,0,0,,,
+15,LIGHT_ON,"{""intent"": ""LIGHT_ON"", ""slots"": {""light_id"": ""light.all""}}",holdout/human/silence_prefix_1s,2,2,2,0,0,1.0,1.0,1.0
+16,LIST_REMINDERS,"{""intent"": ""LIST_REMINDERS"", ""slots"": {}}",holdout/human/silence_prefix_1s,3,3,3,0,0,1.0,1.0,1.0
+17,MESSAGE,"{""intent"": ""MESSAGE"", ""slots"": {}}",holdout/human/silence_prefix_1s,3,3,3,0,0,1.0,1.0,1.0
+18,NEXT,"{""intent"": ""NEXT"", ""slots"": {}}",holdout/human/silence_prefix_1s,3,3,3,1,0,0.75,1.0,0.8571428571428571
+19,PAUSE,"{""intent"": ""PAUSE"", ""slots"": {}}",holdout/human/silence_prefix_1s,3,3,3,1,0,0.75,1.0,0.8571428571428571
+20,PLAY_MUSIC,"{""intent"": ""PLAY_MUSIC"", ""slots"": {}}",holdout/human/silence_prefix_1s,3,1,1,0,2,1.0,0.3333333333333333,0.5
+21,STOP,"{""intent"": ""STOP"", ""slots"": {}}",holdout/human/silence_prefix_1s,3,3,3,0,0,1.0,1.0,1.0
+22,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 18, ""unit"": ""C""}}",holdout/human/silence_prefix_1s,3,2,0,0,3,,0.0,0.0
+23,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 22, ""unit"": ""C""}}",holdout/human/silence_prefix_1s,3,3,3,0,0,1.0,1.0,1.0
+24,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 26, ""unit"": ""C""}}",holdout/human/silence_prefix_1s,3,3,3,0,0,1.0,1.0,1.0
+25,TIME,"{""intent"": ""TIME"", ""slots"": {}}",holdout/human/silence_prefix_1s,3,3,3,0,0,1.0,1.0,1.0
+26,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 10}}",holdout/human/silence_prefix_1s,3,3,3,0,0,1.0,1.0,1.0
+27,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 30}}",holdout/human/silence_prefix_1s,3,3,3,0,0,1.0,1.0,1.0
+28,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 60}}",holdout/human/silence_prefix_1s,3,3,3,0,0,1.0,1.0,1.0
+29,VOLUME,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""down""}}",holdout/human/silence_prefix_1s,1,1,1,0,0,1.0,1.0,1.0
+30,VOLUME,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""up""}}",holdout/human/silence_prefix_1s,3,2,2,0,1,1.0,0.6666666666666666,0.8
+31,WEATHER,"{""intent"": ""WEATHER"", ""slots"": {}}",holdout/human/silence_prefix_1s,3,3,3,0,0,1.0,1.0,1.0
+1,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""06:00"", ""timezone"": ""Asia/Manila""}}",holdout/human/silence_suffix_1s,3,3,3,0,0,1.0,1.0,1.0
+2,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""08:00"", ""timezone"": ""Asia/Manila""}}",holdout/human/silence_suffix_1s,3,3,3,0,0,1.0,1.0,1.0
+3,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""21:00"", ""timezone"": ""Asia/Manila""}}",holdout/human/silence_suffix_1s,2,2,2,0,0,1.0,1.0,1.0
+4,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 100}}",holdout/human/silence_suffix_1s,2,2,2,0,0,1.0,1.0,1.0
+5,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 20}}",holdout/human/silence_suffix_1s,2,2,2,0,0,1.0,1.0,1.0
+6,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 60}}",holdout/human/silence_suffix_1s,2,2,2,0,0,1.0,1.0,1.0
+7,CALL,"{""intent"": ""CALL"", ""slots"": {""contact_id"": ""contact.home""}}",holdout/human/silence_suffix_1s,3,3,3,0,0,1.0,1.0,1.0
+8,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""blue"", ""light_id"": ""light.all""}}",holdout/human/silence_suffix_1s,2,2,2,0,0,1.0,1.0,1.0
+9,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""green"", ""light_id"": ""light.all""}}",holdout/human/silence_suffix_1s,2,2,1,0,1,1.0,0.5,0.6666666666666666
+10,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""red"", ""light_id"": ""light.all""}}",holdout/human/silence_suffix_1s,2,2,2,0,0,1.0,1.0,1.0
+11,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.drink_water""}}",holdout/human/silence_suffix_1s,3,3,3,0,0,1.0,1.0,1.0
+12,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.exercise""}}",holdout/human/silence_suffix_1s,3,3,3,0,0,1.0,1.0,1.0
+13,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.study""}}",holdout/human/silence_suffix_1s,3,3,2,0,1,1.0,0.6666666666666666,0.8
+14,LIGHT_OFF,"{""intent"": ""LIGHT_OFF"", ""slots"": {""light_id"": ""light.all""}}",holdout/human/silence_suffix_1s,0,0,0,0,0,,,
+15,LIGHT_ON,"{""intent"": ""LIGHT_ON"", ""slots"": {""light_id"": ""light.all""}}",holdout/human/silence_suffix_1s,2,2,2,0,0,1.0,1.0,1.0
+16,LIST_REMINDERS,"{""intent"": ""LIST_REMINDERS"", ""slots"": {}}",holdout/human/silence_suffix_1s,3,3,3,0,0,1.0,1.0,1.0
+17,MESSAGE,"{""intent"": ""MESSAGE"", ""slots"": {}}",holdout/human/silence_suffix_1s,3,3,3,0,0,1.0,1.0,1.0
+18,NEXT,"{""intent"": ""NEXT"", ""slots"": {}}",holdout/human/silence_suffix_1s,3,3,3,1,0,0.75,1.0,0.8571428571428571
+19,PAUSE,"{""intent"": ""PAUSE"", ""slots"": {}}",holdout/human/silence_suffix_1s,3,3,3,1,0,0.75,1.0,0.8571428571428571
+20,PLAY_MUSIC,"{""intent"": ""PLAY_MUSIC"", ""slots"": {}}",holdout/human/silence_suffix_1s,3,1,1,0,2,1.0,0.3333333333333333,0.5
+21,STOP,"{""intent"": ""STOP"", ""slots"": {}}",holdout/human/silence_suffix_1s,3,3,3,0,0,1.0,1.0,1.0
+22,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 18, ""unit"": ""C""}}",holdout/human/silence_suffix_1s,3,2,0,0,3,,0.0,0.0
+23,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 22, ""unit"": ""C""}}",holdout/human/silence_suffix_1s,3,3,3,0,0,1.0,1.0,1.0
+24,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 26, ""unit"": ""C""}}",holdout/human/silence_suffix_1s,3,3,3,0,0,1.0,1.0,1.0
+25,TIME,"{""intent"": ""TIME"", ""slots"": {}}",holdout/human/silence_suffix_1s,3,3,3,0,0,1.0,1.0,1.0
+26,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 10}}",holdout/human/silence_suffix_1s,3,3,3,0,0,1.0,1.0,1.0
+27,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 30}}",holdout/human/silence_suffix_1s,3,3,3,0,0,1.0,1.0,1.0
+28,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 60}}",holdout/human/silence_suffix_1s,3,3,3,0,0,1.0,1.0,1.0
+29,VOLUME,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""down""}}",holdout/human/silence_suffix_1s,1,1,1,0,0,1.0,1.0,1.0
+30,VOLUME,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""up""}}",holdout/human/silence_suffix_1s,3,2,2,0,1,1.0,0.6666666666666666,0.8
+31,WEATHER,"{""intent"": ""WEATHER"", ""slots"": {}}",holdout/human/silence_suffix_1s,3,3,3,0,0,1.0,1.0,1.0
+1,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""06:00"", ""timezone"": ""Asia/Manila""}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+2,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""08:00"", ""timezone"": ""Asia/Manila""}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+3,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""21:00"", ""timezone"": ""Asia/Manila""}}",holdout/synthetic/original,4,4,4,0,0,1.0,1.0,1.0
+4,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 100}}",holdout/synthetic/original,4,3,3,0,1,1.0,0.75,0.8571428571428571
+5,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 20}}",holdout/synthetic/original,4,4,4,1,0,0.8,1.0,0.8888888888888888
+6,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 60}}",holdout/synthetic/original,4,4,4,0,0,1.0,1.0,1.0
+7,CALL,"{""intent"": ""CALL"", ""slots"": {""contact_id"": ""contact.home""}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+8,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""blue"", ""light_id"": ""light.all""}}",holdout/synthetic/original,4,4,4,0,0,1.0,1.0,1.0
+9,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""green"", ""light_id"": ""light.all""}}",holdout/synthetic/original,4,4,4,0,0,1.0,1.0,1.0
+10,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""red"", ""light_id"": ""light.all""}}",holdout/synthetic/original,4,4,4,0,0,1.0,1.0,1.0
+11,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.drink_water""}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+12,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.exercise""}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+13,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.study""}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+14,LIGHT_OFF,"{""intent"": ""LIGHT_OFF"", ""slots"": {""light_id"": ""light.all""}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+15,LIGHT_ON,"{""intent"": ""LIGHT_ON"", ""slots"": {""light_id"": ""light.all""}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+16,LIST_REMINDERS,"{""intent"": ""LIST_REMINDERS"", ""slots"": {}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+17,MESSAGE,"{""intent"": ""MESSAGE"", ""slots"": {}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+18,NEXT,"{""intent"": ""NEXT"", ""slots"": {}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+19,PAUSE,"{""intent"": ""PAUSE"", ""slots"": {}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+20,PLAY_MUSIC,"{""intent"": ""PLAY_MUSIC"", ""slots"": {}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+21,STOP,"{""intent"": ""STOP"", ""slots"": {}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+22,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 18, ""unit"": ""C""}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+23,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 22, ""unit"": ""C""}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+24,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 26, ""unit"": ""C""}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+25,TIME,"{""intent"": ""TIME"", ""slots"": {}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+26,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 10}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+27,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 30}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+28,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 60}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+29,VOLUME,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""down""}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+30,VOLUME,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""up""}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+31,WEATHER,"{""intent"": ""WEATHER"", ""slots"": {}}",holdout/synthetic/original,3,3,3,0,0,1.0,1.0,1.0
+1,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""06:00"", ""timezone"": ""Asia/Manila""}}",test/human/original,13,13,12,0,1,1.0,0.9230769230769231,0.96
+2,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""08:00"", ""timezone"": ""Asia/Manila""}}",test/human/original,9,8,7,0,2,1.0,0.7777777777777778,0.875
+3,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""21:00"", ""timezone"": ""Asia/Manila""}}",test/human/original,10,10,9,3,1,0.75,0.9,0.8181818181818182
+4,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 100}}",test/human/original,6,0,0,0,6,,0.0,0.0
+5,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 20}}",test/human/original,11,4,3,0,8,1.0,0.2727272727272727,0.42857142857142855
+6,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 60}}",test/human/original,6,5,5,0,1,1.0,0.8333333333333334,0.9090909090909091
+7,CALL,"{""intent"": ""CALL"", ""slots"": {""contact_id"": ""contact.home""}}",test/human/original,6,6,3,1,3,0.75,0.5,0.6
+8,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""blue"", ""light_id"": ""light.all""}}",test/human/original,24,9,5,1,19,0.8333333333333334,0.20833333333333334,0.3333333333333333
+9,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""green"", ""light_id"": ""light.all""}}",test/human/original,16,14,11,7,5,0.6111111111111112,0.6875,0.6470588235294118
+10,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""red"", ""light_id"": ""light.all""}}",test/human/original,23,18,15,1,8,0.9375,0.6521739130434783,0.7692307692307693
+11,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.drink_water""}}",test/human/original,6,5,5,0,1,1.0,0.8333333333333334,0.9090909090909091
+12,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.exercise""}}",test/human/original,6,6,6,0,0,1.0,1.0,1.0
+13,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.study""}}",test/human/original,6,6,3,0,3,1.0,0.5,0.6666666666666666
+14,LIGHT_OFF,"{""intent"": ""LIGHT_OFF"", ""slots"": {""light_id"": ""light.all""}}",test/human/original,37,27,22,5,15,0.8148148148148148,0.5945945945945946,0.6875
+15,LIGHT_ON,"{""intent"": ""LIGHT_ON"", ""slots"": {""light_id"": ""light.all""}}",test/human/original,21,12,7,7,14,0.5,0.3333333333333333,0.4
+16,LIST_REMINDERS,"{""intent"": ""LIST_REMINDERS"", ""slots"": {}}",test/human/original,18,17,12,3,6,0.8,0.6666666666666666,0.7272727272727273
+17,MESSAGE,"{""intent"": ""MESSAGE"", ""slots"": {}}",test/human/original,6,3,3,0,3,1.0,0.5,0.6666666666666666
+18,NEXT,"{""intent"": ""NEXT"", ""slots"": {}}",test/human/original,36,34,30,8,6,0.7894736842105263,0.8333333333333334,0.8108108108108109
+19,PAUSE,"{""intent"": ""PAUSE"", ""slots"": {}}",test/human/original,50,44,41,1,9,0.9761904761904762,0.82,0.8913043478260869
+20,PLAY_MUSIC,"{""intent"": ""PLAY_MUSIC"", ""slots"": {}}",test/human/original,8,5,4,2,4,0.6666666666666666,0.5,0.5714285714285714
+21,STOP,"{""intent"": ""STOP"", ""slots"": {}}",test/human/original,72,60,56,3,16,0.9491525423728814,0.7777777777777778,0.8549618320610687
+22,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 18, ""unit"": ""C""}}",test/human/original,6,5,3,0,3,1.0,0.5,0.6666666666666666
+23,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 22, ""unit"": ""C""}}",test/human/original,12,9,6,0,6,1.0,0.5,0.6666666666666666
+24,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 26, ""unit"": ""C""}}",test/human/original,10,9,8,0,2,1.0,0.8,0.8888888888888888
+25,TIME,"{""intent"": ""TIME"", ""slots"": {}}",test/human/original,49,43,37,2,12,0.9487179487179487,0.7551020408163265,0.8409090909090909
+26,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 10}}",test/human/original,6,6,4,0,2,1.0,0.6666666666666666,0.8
+27,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 30}}",test/human/original,6,6,5,0,1,1.0,0.8333333333333334,0.9090909090909091
+28,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 60}}",test/human/original,7,7,5,0,2,1.0,0.7142857142857143,0.8333333333333334
+29,VOLUME,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""down""}}",test/human/original,50,36,30,2,20,0.9375,0.6,0.7317073170731707
+30,VOLUME,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""up""}}",test/human/original,57,29,25,7,32,0.78125,0.43859649122807015,0.5617977528089888
+31,WEATHER,"{""intent"": ""WEATHER"", ""slots"": {}}",test/human/original,16,13,11,6,5,0.6470588235294118,0.6875,0.6666666666666666
+1,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""06:00"", ""timezone"": ""Asia/Manila""}}",test/synthetic/original,113,113,113,1,0,0.9912280701754386,1.0,0.9955947136563876
+2,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""08:00"", ""timezone"": ""Asia/Manila""}}",test/synthetic/original,130,130,130,0,0,1.0,1.0,1.0
+3,ALARM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""21:00"", ""timezone"": ""Asia/Manila""}}",test/synthetic/original,129,126,126,0,3,1.0,0.9767441860465116,0.9882352941176471
+4,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 100}}",test/synthetic/original,135,126,126,0,9,1.0,0.9333333333333333,0.9655172413793104
+5,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 20}}",test/synthetic/original,128,126,119,1,9,0.9916666666666667,0.9296875,0.9596774193548387
+6,BRIGHTNESS,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 60}}",test/synthetic/original,135,131,131,0,4,1.0,0.9703703703703703,0.9849624060150376
+7,CALL,"{""intent"": ""CALL"", ""slots"": {""contact_id"": ""contact.home""}}",test/synthetic/original,96,93,93,0,3,1.0,0.96875,0.9841269841269841
+8,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""blue"", ""light_id"": ""light.all""}}",test/synthetic/original,93,93,91,0,2,1.0,0.978494623655914,0.9891304347826086
+9,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""green"", ""light_id"": ""light.all""}}",test/synthetic/original,105,104,103,0,2,1.0,0.9809523809523809,0.9903846153846154
+10,COLOR,"{""intent"": ""COLOR"", ""slots"": {""color"": ""red"", ""light_id"": ""light.all""}}",test/synthetic/original,107,106,105,0,2,1.0,0.9813084112149533,0.9905660377358491
+11,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.drink_water""}}",test/synthetic/original,135,135,132,0,3,1.0,0.9777777777777777,0.9887640449438202
+12,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.exercise""}}",test/synthetic/original,135,132,132,0,3,1.0,0.9777777777777777,0.9887640449438202
+13,CREATE_REMINDER,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.study""}}",test/synthetic/original,135,135,135,1,0,0.9926470588235294,1.0,0.996309963099631
+14,LIGHT_OFF,"{""intent"": ""LIGHT_OFF"", ""slots"": {""light_id"": ""light.all""}}",test/synthetic/original,69,69,67,1,2,0.9852941176470589,0.9710144927536232,0.9781021897810219
+15,LIGHT_ON,"{""intent"": ""LIGHT_ON"", ""slots"": {""light_id"": ""light.all""}}",test/synthetic/original,83,81,79,2,4,0.9753086419753086,0.9518072289156626,0.9634146341463414
+16,LIST_REMINDERS,"{""intent"": ""LIST_REMINDERS"", ""slots"": {}}",test/synthetic/original,102,102,102,0,0,1.0,1.0,1.0
+17,MESSAGE,"{""intent"": ""MESSAGE"", ""slots"": {}}",test/synthetic/original,123,123,122,0,1,1.0,0.991869918699187,0.9959183673469387
+18,NEXT,"{""intent"": ""NEXT"", ""slots"": {}}",test/synthetic/original,99,99,99,1,0,0.99,1.0,0.9949748743718593
+19,PAUSE,"{""intent"": ""PAUSE"", ""slots"": {}}",test/synthetic/original,88,86,85,2,3,0.9770114942528736,0.9659090909090909,0.9714285714285714
+20,PLAY_MUSIC,"{""intent"": ""PLAY_MUSIC"", ""slots"": {}}",test/synthetic/original,69,68,66,2,3,0.9705882352941176,0.9565217391304348,0.9635036496350365
+21,STOP,"{""intent"": ""STOP"", ""slots"": {}}",test/synthetic/original,69,66,64,0,5,1.0,0.927536231884058,0.9624060150375939
+22,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 18, ""unit"": ""C""}}",test/synthetic/original,135,134,133,0,2,1.0,0.9851851851851852,0.9925373134328358
+23,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 22, ""unit"": ""C""}}",test/synthetic/original,129,129,129,3,0,0.9772727272727273,1.0,0.9885057471264368
+24,TEMPERATURE,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 26, ""unit"": ""C""}}",test/synthetic/original,131,129,129,0,2,1.0,0.9847328244274809,0.9923076923076923
+25,TIME,"{""intent"": ""TIME"", ""slots"": {}}",test/synthetic/original,84,83,82,0,2,1.0,0.9761904761904762,0.9879518072289156
+26,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 10}}",test/synthetic/original,135,135,134,0,1,1.0,0.9925925925925926,0.9962825278810409
+27,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 30}}",test/synthetic/original,135,134,134,0,1,1.0,0.9925925925925926,0.9962825278810409
+28,TIMER,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 60}}",test/synthetic/original,134,134,131,0,3,1.0,0.9776119402985075,0.9886792452830189
+29,VOLUME,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""down""}}",test/synthetic/original,69,66,62,0,7,1.0,0.8985507246376812,0.9465648854961832
+30,VOLUME,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""up""}}",test/synthetic/original,69,69,66,0,3,1.0,0.9565217391304348,0.9777777777777777
+31,WEATHER,"{""intent"": ""WEATHER"", ""slots"": {}}",test/synthetic/original,69,69,69,0,0,1.0,1.0,1.0

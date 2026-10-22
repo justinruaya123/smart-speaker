@@ -1,0 +1,108 @@
+{
+  "acoustic_parent": "speaker-optionb-tiny-v1/epoch44",
+  "archive_expected": "dist/optionb-tiny-review-v1/optionb-tiny-review.zip",
+  "cache_files": [
+    {
+      "bytes": 4812639,
+      "path": ".cache/speaker-optionb-tiny-demo-v1/review-01/full-reference-metadata.jsonl",
+      "sha256": "b90d7b632e93a1686fa13ac610f79b229592300018460f42dc1a70e5fa03dd8c"
+    },
+    {
+      "bytes": 2811,
+      "path": ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle/commands.json",
+      "sha256": "71017cf22366d15557e8878636135f5ff2d0ac81fc4dfd6f058fc88f0f2d4b5d"
+    },
+    {
+      "bytes": 1082940,
+      "path": ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle/model.onnx",
+      "sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce"
+    },
+    {
+      "bytes": 2098,
+      "path": ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle/normalization.json",
+      "sha256": "28f7ef1b2c926c587d611d17eef91184c2c7e2de66abe352d1fc2365e45d69ed"
+    },
+    {
+      "bytes": 74,
+      "path": ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle/policy.json",
+      "sha256": "b9242e46fb093642a41023e8ace3c0cadc2fe51ffede512aa09e399622f355f0"
+    },
+    {
+      "bytes": 759,
+      "path": ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle/recipe.json",
+      "sha256": "020c3deccb0f8cece0f23b8c016b6a63bdd0359321bb06cbd00e091966d46621"
+    },
+    {
+      "bytes": 348096,
+      "path": ".cache/speaker-optionb-tiny-demo-v1/run-01/calibration-predictions.jsonl",
+      "sha256": "5da5bac012289776b10d6ebb71a1093014c457bab95d023731b5f9094c48c920"
+    },
+    {
+      "bytes": 465761,
+      "path": ".cache/speaker-optionb-tiny-demo-v1/run-01/calibration.jsonl",
+      "sha256": "aa39c3432d36ce29b13d158c389a73d113501aee6f1e56e8b1b0f334f3f15779"
+    },
+    {
+      "bytes": 2426590,
+      "path": ".cache/speaker-optionb-tiny-demo-v1/run-01/dev.jsonl",
+      "sha256": "a35622f5579f7f31d2c180741ceaa7736908a0417d8fc0c89b091ab313ee3a65"
+    },
+    {
+      "bytes": 13756267,
+      "path": ".cache/speaker-optionb-tiny-demo-v1/run-01/final-predictions.jsonl",
+      "sha256": "27172b3510b876cbecf67a69a8042ab48e94c3af18e0c2e75373f6edb7d54058"
+    },
+    {
+      "bytes": 364079,
+      "path": ".cache/speaker-optionb-tiny-demo-v1/run-01/holdout.jsonl",
+      "sha256": "fd0f45e5ba596a976f20325a9e805630f030e92b62bf246635a5e2b3808f6aaa"
+    },
+    {
+      "bytes": 429040,
+      "path": ".cache/speaker-optionb-tiny-demo-v1/run-01/normalization.json",
+      "sha256": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09"
+    },
+    {
+      "bytes": 8159799,
+      "path": ".cache/speaker-optionb-tiny-demo-v1/run-01/test.jsonl",
+      "sha256": "4bc7edee154f72414ea4e05ee50305709d5d6e47431aada0aebf7f782baeec6a"
+    },
+    {
+      "bytes": 2326131,
+      "path": ".cache/speaker-optionb-tiny-v1/run-01/best.pt",
+      "sha256": "d45d71b3858b4182967d3f41dad8145150028ca17401c73d203fba75d6bda687"
+    },
+    {
+      "bytes": 429040,
+      "path": ".cache/speaker-optionb-tiny-v1/run-01/normalization.json",
+      "sha256": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09"
+    },
+    {
+      "bytes": 45491077,
+      "path": ".cache/speaker-optionb-tiny-v1/run-01/train.jsonl",
+      "sha256": "dbecaf5e729b307d4437f8c28147a0bf6f7d8a6ce705d9b43e1ab13d086189ce"
+    }
+  ],
+  "candidate": "speaker-optionb-tiny-demo-v1",
+  "committed_source_scope": "Audited nonignored source/tests/compact evidence and documentation; archive records actual commit after Git commit.",
+  "format": "optionb-tiny-independent-review-inputs-v1",
+  "metadata_not_independent_listening": true,
+  "no_fit_selection_relabel_install_or_device_action": true,
+  "parameters": 258912,
+  "payloads_excluded": [
+    "raw audio",
+    "feature arrays",
+    "raw source Parquet shards",
+    "credentials/private configuration",
+    "environment/dependency installs"
+  ],
+  "policy": {
+    "enabled": true,
+    "min_margin": 0.1,
+    "min_probability": 0.5
+  },
+  "purpose": "Exact local inputs copied separately into an ignored review archive; not admitted to Git/training or installed.",
+  "reference_snapshot_rows": 4614,
+  "reference_snapshot_scope": "reporting_only_original_test_and_holdout_metadata",
+  "source_metadata_shards": 2
+}

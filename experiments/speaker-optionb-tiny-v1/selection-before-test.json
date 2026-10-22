@@ -1,0 +1,43 @@
+{
+  "bindings": {
+    ".cache/speaker-optionb-tiny-v1/run-01/best.pt": "d45d71b3858b4182967d3f41dad8145150028ca17401c73d203fba75d6bda687",
+    ".cache/speaker-optionb-tiny-v1/run-01/bundle/commands.json": "71017cf22366d15557e8878636135f5ff2d0ac81fc4dfd6f058fc88f0f2d4b5d",
+    ".cache/speaker-optionb-tiny-v1/run-01/bundle/model.onnx": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+    ".cache/speaker-optionb-tiny-v1/run-01/bundle/normalization.json": "28f7ef1b2c926c587d611d17eef91184c2c7e2de66abe352d1fc2365e45d69ed",
+    ".cache/speaker-optionb-tiny-v1/run-01/bundle/policy.json": "496d4d56eb990fe5d6d71a24023315198bfb72cd788ac14448c686ceba34b5ac",
+    ".cache/speaker-optionb-tiny-v1/run-01/bundle/recipe.json": "c47810818dc67a67cf05e54be6931517f3433e5fdbe632e6cc77c95058a743a7",
+    ".cache/speaker-optionb-tiny-v1/run-01/calibration-predictions.jsonl": "5da5bac012289776b10d6ebb71a1093014c457bab95d023731b5f9094c48c920",
+    ".cache/speaker-optionb-tiny-v1/run-01/fit-verification.json": "d4ed6cc3bbfab8e3b29d20bcdad5a8f3f571d0035da565f64bd8d630128bb295",
+    ".cache/speaker-optionb-tiny-v1/run-01/normalization.json": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09",
+    ".cache/speaker-optionb-tiny-v1/run-01/raw-feature-inputs.jsonl": "c8383a0cf4f915dbf0969244af50da953cb4ddf9c0efe7575d6b515321fabe72",
+    ".cache/speaker-optionb-tiny-v1/run-01/training-curve.jsonl": "1b1eb7695a03a2a500c210f7032c93614e5971b097b3290476986e99ea000ba3",
+    ".cache/speaker-optionb-tiny-v1/run-01/training-result.json": "609e2c8e3d3a0bd2019b85a3bc216c1093a8ac7719e9598ffd51b0a495215b06",
+    "D:/School/AI231/.worktrees/me2/smart-speaker-fresh/scripts/test/test_speaker_optionb_tiny.py": "d023951c188e9a458c905b6cbc35a5f521484dfae30a91b79edf0d1e35ad2c0b",
+    "experiments/speaker-optionb-tiny-v1/data-freeze.json": "30cd2f0591d6e6306ae39f3af430e3fb80ee78865ae7b3fd302c6b477b0018b0",
+    "experiments/speaker-optionb-tiny-v1/export-verification.json": "1fecf13bf8033e66c6856f4fffee4475a1ff0734725df96dd94512caf0f69582",
+    "experiments/speaker-optionb-tiny-v1/policy-selection.json": "d2fed4f46d9568d09cca1aef55f887c3bac6d4d17d86b713bc29dd58ef5c73a4",
+    "experiments/speaker-optionb-tiny-v1/protocol.json": "e513f65f726203a3ff47c694dc43de3b29c6349f0ee98c3277feb807d59f4d4b",
+    "scripts/runtime/speaker_optionb_tiny.py": "2a2d9e0e18ab1531ead02fd66dcc1ffda1f25b04b040b03ce7588c9a7145d670"
+  },
+  "complete_command_classes": 32,
+  "exposed_regression_not_blind": true,
+  "fitting_splits": [
+    "train"
+  ],
+  "heldout_payload_bytes_hashed_for_integrity": true,
+  "heldout_pcm_decoded_or_inferred_before_selection": false,
+  "historical_fit_receipt_heldout_audio_read_means_no_decode_or_inference": true,
+  "normalization_split": "train",
+  "parameters": 258912,
+  "policy": {
+    "enabled": true,
+    "min_margin": 0.3,
+    "min_probability": 0.99
+  },
+  "selected_epoch": 44,
+  "selected_on": [
+    "dev",
+    "calibration"
+  ],
+  "test_holdout_used_for_selection": false
+}

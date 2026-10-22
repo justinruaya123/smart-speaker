@@ -1,0 +1,26 @@
+{
+  "csv_rows": {
+    "per-command": 217,
+    "per-intent": 126,
+    "per-verbatim": 93
+  },
+  "evaluation_membership_unchanged": true,
+  "exact_human_normalization_match": true,
+  "exposed_regression_not_blind": true,
+  "human_normalization_rows_reconstructed": 1889,
+  "independently_replayed_original_or_stress_rows": 32,
+  "inference_rows": 4896,
+  "installed": false,
+  "labels_changed": false,
+  "matched_smoothing_exposure": true,
+  "metadata_label_rechecks": 23315,
+  "optimizer_updates": 2304,
+  "original_historical_inputs": 289,
+  "parameters": 258912,
+  "predictions_sha256": "347870010e6c625612ff425b0e8130b207d8b3ac6f44005df6752707af87b7d0",
+  "protected_inputs_unchanged": 338,
+  "selected_arm": "smoothed_control",
+  "selected_epoch": 1,
+  "status": "verified",
+  "verifier_sha256": "95a2115ea39bc6467c0de9fdf5d0b8875673a64693007b1b558c3cd450951cc9"
+}

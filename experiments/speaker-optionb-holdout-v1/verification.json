@@ -1,0 +1,64 @@
+{
+  "artifacts": {
+    "docs/EXPERIMENT-speaker-optionb-holdout-v1.md": "63eab1ab25b920cb35039ebc79076bc189fbfd63d71ab89201b72448547cbdb5",
+    "experiments/speaker-optionb-holdout-v1/annotation-source-rebuild-check.json": "1e899cac6ccb3e51cb9e9008b6807f4ae05340e2b26bc016b60a4dc7c0f6a515",
+    "experiments/speaker-optionb-holdout-v1/audit-inputs.json": "b810fa21875b211f5932b22b799f02facbd765266efecd4ddff61ed3c36b4887",
+    "experiments/speaker-optionb-holdout-v1/cue-rule-tests.json": "e1b95f348e58007b70630ea0ea46c2b14dc56bb0dfde386d0e2a6c046bcdfeab",
+    "experiments/speaker-optionb-holdout-v1/data-audit-driver-v1.py": "85a8c38369d217e73dc5e97187353cc578d9237aee6bb68e2f9eacd1be813c14",
+    "experiments/speaker-optionb-holdout-v1/data-audit-results.json": "00cef084775377732867653682f7c13fc257684f01f3b0a22a40b93a31b60f4b",
+    "experiments/speaker-optionb-holdout-v1/format-results-driver.py": "34722656b6d50903668e7781c8959059d6a06cd341a9565359097722847b6cb5",
+    "experiments/speaker-optionb-holdout-v1/frozen-label-recheck-driver.py": "6f5f7192498d8b6d7001ba63a97fa21f2a9019c70f89d8ca2a04558d507c9aa3",
+    "experiments/speaker-optionb-holdout-v1/frozen-label-recheck-inputs.json": "2c8788c949e2237b3c30744969f6d7bcc7d0ac1a36f10fb86a1b51d68fe69235",
+    "experiments/speaker-optionb-holdout-v1/frozen-label-recheck.json": "d194af485cca1e49af31428e0f4ba0b9cb478a36ba5885a98dd8d3aaaab57909",
+    "experiments/speaker-optionb-holdout-v1/holdout-per-intent.csv": "ba209b41950ab73c94f7e4dff07db41918d28ed6b309311accfc74662e339827",
+    "experiments/speaker-optionb-holdout-v1/holdout-results.json": "0084c72ec4ea6996e1a4cd6bf906da7a358d27a82ab334076e7680a8e05659b9",
+    "experiments/speaker-optionb-holdout-v1/human-keyword-collection-plan.json": "3cd483de8a7be99e9593f456c13aa82c8797f30d68af6f048338f54f5286188a",
+    "experiments/speaker-optionb-holdout-v1/loader-label-findings.json": "ac1005a33d535133a93b82696b6389f0606910d0b28ae414cee638f4c73b8252",
+    "experiments/speaker-optionb-holdout-v1/optionb-cue-plan.json": "190ab2f83bd0b7ba62ad234ced3739d8b44bbef4f4c77a78331068455938cce2",
+    "experiments/speaker-optionb-holdout-v1/optionb-wording-data.csv": "34bfb5d8366c3df6e9493d360e279f1da6ee7d491cfd1dd2c45f67ac1105d053",
+    "experiments/speaker-optionb-holdout-v1/optionb-wording-data.json": "92b67ebdbec0518ceeab9761926015ee1ada0bbb544c94d942c4bd1bf6005607",
+    "experiments/speaker-optionb-holdout-v1/paired-padding-findings.json": "5d36b42d93dcaa701e963e949ce0ba188b2e3487e277ee33b46276bd8741e9b4",
+    "experiments/speaker-optionb-holdout-v1/preprocessing-findings.json": "e1346d887464a3cf3579b8599d4347428040bfa13c97679f4f7009dc7dfbbf1c",
+    "experiments/speaker-optionb-holdout-v1/replay-driver.py": "bd3f0b236154fcec7bd03ee60f38b424615afb5aecc4e942e3aee8564e1e9bb8",
+    "experiments/speaker-optionb-holdout-v1/selection-before-holdout.json": "2b52fb0dd906fad15240647c8c73df396f7c6868363a6e70c84a51491f67733e",
+    "experiments/speaker-optionb-holdout-v1/verified-human-loader.json": "ccc60554785bacf565972792d71640b9323f056f2589e2c214dee723f76e1ee0",
+    "experiments/speaker-optionb-holdout-v1/verify-results.py": "955a19587d9744244aa4a6cf7e4e9054a069ed5197248a4b1c67a2b85ec8bd19",
+    "scripts/test/speaker_optionb_holdout.py": "f26a18062c1721490a3bc0853e9624ba6b5cdceac205d12787a3910b9e5f49e3",
+    "scripts/test/test_speaker_optionb_holdout.py": "a6da9fc697469c13479d6ba9690e6d45106e66893f9caac778cb3fa7c9c8f2f6"
+  },
+  "blind_holdout": false,
+  "counts": {
+    "compact-v7": {
+      "ambiguous": 2,
+      "human_negative": 11,
+      "human_positive": 83,
+      "original": 196,
+      "stress": 282,
+      "synthetic_positive": 100
+    },
+    "full": {
+      "ambiguous": 2,
+      "human_negative": 11,
+      "human_positive": 83,
+      "original": 196,
+      "stress": 282,
+      "synthetic_positive": 100
+    }
+  },
+  "csv_rows": {
+    "optionb_wording": 930,
+    "positive_intent_metrics": 54
+  },
+  "earlier_base_rule_evidence_preserved": true,
+  "focused_tests": 108,
+  "format": "optionb-holdout-final-verification-v1",
+  "independent_listening": false,
+  "model_or_policy_changed": false,
+  "optionb_cases": 93,
+  "pass_": true,
+  "protected_inputs": 78,
+  "test_log_path": ".cache/speaker-optionb-holdout-v1/verification-01/focused-tests.log",
+  "test_log_sha256": "3eb5d9076ecea4c13553f69f3523bc7f77cb371570c699d9b4d6b2fec315ffbb",
+  "training": false,
+  "verified_frozen_label_semantic_disagreements": 0
+}

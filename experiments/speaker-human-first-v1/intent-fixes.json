@@ -1,0 +1,173 @@
+{
+  "format": "speaker-human-first-intent-fixes-v1",
+  "scope": "Original human recordings only; follow-up research, not installed-model changes",
+  "common": {
+    "segregation": "Reference-only views by split and intent; keep true UNKNOWN, ambiguous references, isolated tokens, synthetic and constructed speech separate",
+    "sampling": "75% human positives / 25% true human negatives; positive intent -> typed command -> source -> speaker -> recording; negative coarse family -> rejection reason -> source -> speaker -> recording",
+    "segmentation": "Preserve original audio; energy screens only propose outer boundaries with 150 ms context. Never concatenate words, remove internal pauses, or declare an energy threshold to be ground-truth VAD",
+    "preprocessing": "Verify WAV/PCM/feature hashes, mono 16 kHz, finite float32 40-bin features, runtime length and repeated-label CTC feasibility. Refit normalization on exactly admitted human train rows; reuse transforms in development/runtime",
+    "normalization_ablation": "Frozen train-only global normalization is the baseline. Per-utterance mean/variance normalization is a separately versioned train/dev ablation, never an untested inference-only replacement",
+    "pretraining": "Start from random acoustic weights for a genuine human-only baseline. Do not call synthetic-exposed targeted-v7 or v10 checkpoints human-only. Isolated original-human tokens may become a separately audited training-only auxiliary experiment; no concatenation or connected-command coverage claim",
+    "splits": "Preserve published membership. Audit every split pair for declared and source speaker, byte/PCM hash, paired recording, session and parent IDs. Physical-speaker aliases and perceptual near-duplicates need independent review. New blind evaluation requires new people/sessions",
+    "pilot_speaker_targets": {"train": 5, "dev": 3, "calibration": 3},
+    "speaker_target_interpretation": "Per typed command, disjoint speakers across splits; pilot collection floors only, not statistically sufficient quality certification. Repeated recordings and TTS voices do not increase human-speaker coverage",
+    "selection": "Human development complete-command macro-intent and macro-speaker recall with precision/FAR constraints; no mixed-phase bonus, pooled synthetic selection or test-driven threshold changes",
+    "calibration": "Fit only on original human dev/calibration; missing human evidence blocks an intent-specific readiness claim. Keep required-slot/target checks. Report raw recognition, accepted correct, wrong accepts, abstentions and true-negative FAR separately",
+    "evaluation": "All 18 finite intents plus UNKNOWN and ambiguous-reference counts; command, slot, source, speaker and acoustic-condition breakdowns. Existing published test/holdout are regression evidence, not a new blind test",
+    "annotation_review": "Publisher dataset labels, folder prompts and ASR-derived transcripts remain distinct provenance strata. Do not treat any as independently listened ground truth. Human reviewers verify command, all slots, boundaries, negation and uncertainty; hash-bind decisions and rebuild every dependent target together"
+  },
+  "intents": {
+    "PLAY_MUSIC": {
+      "priority": "P1",
+      "collection": "Record generic play/start/put-on variants from independent speakers. Collect complete title-only and title-plus-artist utterances for each approved catalog item before claiming named-music support",
+      "review": "Do not collapse unknown title/artist or incomplete play-song-number requests to generic playback. Keep arbitrary names out of scope",
+      "contrasts": ["PLAY_MUSIC vs NEXT: play music / play next song", "generic play vs known song vs unknown song", "playback vs volume change"],
+      "segmentation": "Retain utterance-final title and artist; score generic and named music separately",
+      "auxiliary": "Human name/token enrollment is training-only with independent command evaluation; it is not an ASR fallback"
+    },
+    "WEATHER": {
+      "priority": "P1",
+      "collection": "Add weather/query paraphrases across sources and household microphones, not repeated takes from one source speaker",
+      "review": "Weather intent detection does not establish arbitrary question-answering or external factual answers",
+      "contrasts": ["weather vs time", "weather vs thermostat temperature", "supported query vs negated or multi-action query"],
+      "segmentation": "Retain initial whats/how-is and final today/outside; compare complete waveform and actual neural endpoint without changing labels",
+      "auxiliary": "No threshold selected by inspecting weather test confidences"
+    },
+    "TIME": {
+      "priority": "P1",
+      "collection": "Record time/current-time paraphrases, short Time, and polite connected queries across speakers",
+      "review": "Review foreign-location/timezone and date requests against the fixed schema; never silently erase an unsupported qualifier",
+      "contrasts": ["time query vs timer duration", "time query vs alarm time", "supported local time vs unsupported date/location context"],
+      "segmentation": "Protect short Time and initial consonants; a global minimum-duration rule must not remove valid commands",
+      "auxiliary": "Time-word clips do not establish connected clock-time recognition"
+    },
+    "LIGHT_ON": {
+      "priority": "P1",
+      "collection": "Fill every generic/kitchen/bedroom/bathroom target with independent speakers and multiple turn-on/power-on/light-on phrasings",
+      "review": "Rebuild the binary target label as named=1, generic=0 from typed light_id. Do not use a generic-target prior to hide named-target failures",
+      "contrasts": ["on vs off for the same target", "known room vs unknown room", "turn on vs do not turn on"],
+      "segmentation": "Protect short on polarity and trailing room names; no polarity-token masking in the human-only baseline",
+      "auxiliary": "Balance target and source within intent; repeated generic-light clips are not named-light evidence"
+    },
+    "LIGHT_OFF": {
+      "priority": "P1",
+      "collection": "Fill generic and named targets with shut-off/lights-out/kill-lights variants from separate speakers",
+      "review": "Keep light-off distinct from stop/turn-off-the-music and unknown appliance control",
+      "contrasts": ["off vs on for each light target", "lights off vs music off", "explicit target vs missing/unknown referent"],
+      "segmentation": "Preserve final off and target words; inspect clipped trailing fricatives rather than aggressively trimming",
+      "auxiliary": "Use the same named/generic target mapping as LIGHT_ON and brightness/color"
+    },
+    "PAUSE": {
+      "priority": "P1",
+      "collection": "Record single-word Pause and pause-audio/song variants across speakers, rooms and distances",
+      "review": "Do not merge pause and stop solely because an action binding behaves similarly",
+      "contrasts": ["pause vs stop", "pause audio vs pause an unsupported operation", "command vs quoted conversational pause"],
+      "segmentation": "Keep brief utterances and onset consonants; review short clips with adequate CTC output frames",
+      "auxiliary": "Short-word auxiliary clips remain separate from connected commands"
+    },
+    "STOP": {
+      "priority": "P1",
+      "collection": "Add stop/end-playback/turn-off-music variants across sources and capture conditions",
+      "review": "Distinguish media stop from cancel-timer, stop-calling, negated stop and unrelated conversational stop",
+      "contrasts": ["stop vs pause", "stop music vs lights off", "stop command vs dont stop"],
+      "segmentation": "Protect a brief Stop; do not drop clips solely for duration",
+      "auxiliary": "Balance speakers and paraphrases so the largest source cannot determine checkpoint selection"
+    },
+    "NEXT": {
+      "priority": "P1",
+      "collection": "Record Next, Skip, Skip song and Play next song with distinct speakers and speaking rates",
+      "review": "Keep the next/skip cue in acoustic targets; do not relabel a next-song command as generic play",
+      "contrasts": ["next vs generic play", "next vs stop", "single next command vs multi-action sentence"],
+      "segmentation": "Retain the final consonant cluster in Next and the cue in Play next song",
+      "auxiliary": "Evaluate short and connected variants separately"
+    },
+    "VOLUME": {
+      "priority": "P0",
+      "collection": "Fill up/down/mute/set operations and approved numeric values with connected human utterances; oversample scarce typed cells rather than just the family",
+      "review": "Keep absolute to X distinct from relative by X. Review play-it-louder rather than blindly applying an unapproved color/volume proposal",
+      "contrasts": ["volume up vs down vs mute", "fifteen vs fifty; sixteen vs sixty", "volume percent vs brightness percent", "valid set value vs missing/negative/over-100 value"],
+      "segmentation": "Preserve the complete number and percent/unit; never construct commands by concatenating numeral clips",
+      "auxiliary": "Only original-human train-only number clips may support an explicit auxiliary ablation; they do not close connected percentage gaps"
+    },
+    "CALL": {
+      "priority": "P0",
+      "collection": "Add generic/default-home and mom/mother commands with disjoint train/dev/calibration speakers; review existing excluded human CALL metadata first",
+      "review": "Generic Call may use the approved Home default; explicit unknown contacts and incomplete Call to must reject. Do not invent a contact",
+      "contrasts": ["home vs mom/mother", "call vs message", "known vs unknown contact", "call vs dont call"],
+      "segmentation": "Retain utterance-final contact; a correct call family with the wrong person is a full-command failure",
+      "auxiliary": "Two training speakers are not broad contact generalization; no test-speaker enrollment"
+    },
+    "MESSAGE": {
+      "priority": "P0",
+      "collection": "Find or record original human Message/Send a message/Send my message utterances with empty slots and independent fitting/development/calibration speakers",
+      "review": "Existing recipient/body-bearing MESSAGE recordings are not automatically valid empty-slot positives. Missing eligible positives remains a blocker",
+      "contrasts": ["message vs call", "empty-slot request vs dictated body", "supported request vs unknown recipient or conflicting message content"],
+      "segmentation": "Preserve the send/message cue without discarding appended unsupported content",
+      "auxiliary": "No synthetic examples, label rewrites or decoder aliases may be counted as human coverage"
+    },
+    "LIST_REMINDERS": {
+      "priority": "P0",
+      "collection": "Add original human calibration positives and diversify list/show/read-my-reminders wording",
+      "review": "Keep listing distinct from creating or deleting reminders; arbitrary requested list scopes are not silently ignored",
+      "contrasts": ["list/show reminders vs remind me to task", "reminders vs reminder task", "supported query vs unsupported delete/edit"],
+      "segmentation": "Preserve list/show/read and terminal plural; noun-only Reminders remains a distinct acoustic stratum",
+      "auxiliary": "Do not fit a low threshold when this human calibration class is absent"
+    },
+    "TIMER": {
+      "priority": "P0",
+      "collection": "Fill connected duration cells, particularly baseline ten seconds, thirty seconds and one minute, across independent speakers; include seconds/minutes/hours only within the frozen catalog",
+      "review": "Adjudicate transcript versus slot_value conflicts by original-audio listening. Do not train six disputed duration labels or infer units from the coarse family",
+      "contrasts": ["ten vs thirty seconds", "one minute vs one second", "timer duration vs alarm clock time", "complete vs missing/conflicting/zero duration"],
+      "segmentation": "Retain units and pauses between number and unit; test the 400 ms endpoint on natural pauses before adopting a trim",
+      "auxiliary": "Train-only human duration/token auxiliaries require source/speaker/PCM exclusions and their own supervision mask"
+    },
+    "ALARM": {
+      "priority": "P0",
+      "collection": "Fill independent speakers for each approved clock cell, especially morning/evening contrasts and permitted non-hour times",
+      "review": "Keep explicit AM/PM and Asia/Manila semantics. Missing meridiem, conflicting time or unrepresented recurrence must not be defaulted",
+      "contrasts": ["six AM vs six PM", "eight AM vs nine PM", "alarm clock time vs timer duration", "noon/midnight only if approved and annotated"],
+      "segmentation": "Preserve quiet final A M/P M; review internal pauses before meridiem for premature endpointing",
+      "auxiliary": "Clock phoneme/token coverage does not equal complete typed alarm coverage"
+    },
+    "TEMPERATURE": {
+      "priority": "P0",
+      "collection": "Add train/development speakers beyond the few existing people and a separate human calibration population; fill baseline 18/22/26 C cells",
+      "review": "Verify degrees/unit and keep invalid bounds, missing values and Fahrenheit requests separate under the existing C-only contract",
+      "contrasts": ["eighteen vs eighty", "twenty two vs twenty six", "thermostat setting vs weather query", "valid Celsius vs unsupported unit/bounds"],
+      "segmentation": "Retain complete numeral and degree/unit suffix; do not rely on source microphone identity",
+      "auxiliary": "Report leave-source-out diagnostics on development; no synthetic accent label counts as a human accent"
+    },
+    "BRIGHTNESS": {
+      "priority": "P0",
+      "collection": "Expand the one-example human dev set and missing calibration values. Fill baseline 20/60/100 percent, then the approved target/value matrix with separate speakers",
+      "review": "Preserve absolute percent and named light jointly; review brightness/colour/power conflicts. 0-100 text support is not 101 spoken human values",
+      "contrasts": ["twenty vs sixty vs one hundred", "brightness percent vs volume percent", "generic vs named target", "absolute to vs unsupported relative by"],
+      "segmentation": "Keep the full number and target; screen long silence without truncating quiet initial brightness or final percent",
+      "auxiliary": "Connected percentage data takes precedence over isolated numbers; no word splicing"
+    },
+    "COLOR": {
+      "priority": "P0",
+      "collection": "Fill every approved color/light pair with independent speakers, including warm white versus cool white and scarce named targets",
+      "review": "Honor the parent's rejected annotation proposals. Blue lights please and similar activation-versus-color ambiguities require review, not unconditional relabeling",
+      "contrasts": ["set color vs turn on an already colored light", "warm white vs cool white", "known color/room vs unknown color/room"],
+      "segmentation": "Retain color adjectives and terminal target; never replace a two-word color by its final white token",
+      "auxiliary": "Balance the color-target joint cell and source, not marginal color counts alone"
+    },
+    "CREATE_REMINDER": {
+      "priority": "P0",
+      "collection": "Add separate speakers for drink-water, study and exercise and original human calibration positives; first review existing unsupported/ambiguous task metadata",
+      "review": "One training speaker/task cannot establish task recognition. Preserve the approved finite task scope; do not erase dictated content or pretend arbitrary reminders are supported",
+      "contrasts": ["create vs list reminders", "study vs exercise vs drink water", "known task vs unknown task", "task-only vs extra unsupported date/time"],
+      "segmentation": "Retain the entire task phrase after remind me to, including quiet utterance endings",
+      "auxiliary": "Independent enrollment/task recordings cannot share evaluation speakers, sessions or parent audio"
+    },
+    "UNKNOWN": {
+      "priority": "P0",
+      "collection": "Record human near-command negatives: negation, unknown names/targets, malformed numbers, unsupported units/content, multi-command requests, conversation and background/no-speech sessions",
+      "review": "Ambiguous/unintelligible references stay unscored quarantine, not true UNKNOWN. Distinguish unsupported semantics from capture faults and incomplete supervision",
+      "contrasts": ["near-command vs supported command", "ambiguous label vs verified unsupported", "capture fault vs intelligible out-of-scope speech"],
+      "segmentation": "Preserve negative qualifiers and all appended content. Silence/clipping screens do not create semantic negative labels",
+      "auxiliary": "Report false accepts with the true-negative denominator and confidence intervals. Use a new blind human population for acceptance claims"
+    }
+  }
+}

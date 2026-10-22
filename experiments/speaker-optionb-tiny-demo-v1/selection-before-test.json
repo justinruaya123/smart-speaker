@@ -1,0 +1,41 @@
+{
+  "bindings": {
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle/commands.json": "71017cf22366d15557e8878636135f5ff2d0ac81fc4dfd6f058fc88f0f2d4b5d",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle/model.onnx": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle/normalization.json": "28f7ef1b2c926c587d611d17eef91184c2c7e2de66abe352d1fc2365e45d69ed",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle/policy.json": "b9242e46fb093642a41023e8ace3c0cadc2fe51ffede512aa09e399622f355f0",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle/recipe.json": "020c3deccb0f8cece0f23b8c016b6a63bdd0359321bb06cbd00e091966d46621",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/calibration-predictions.jsonl": "5da5bac012289776b10d6ebb71a1093014c457bab95d023731b5f9094c48c920",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/calibration.jsonl": "aa39c3432d36ce29b13d158c389a73d113501aee6f1e56e8b1b0f334f3f15779",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/dev.jsonl": "a35622f5579f7f31d2c180741ceaa7736908a0417d8fc0c89b091ab313ee3a65",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/holdout.jsonl": "fd0f45e5ba596a976f20325a9e805630f030e92b62bf246635a5e2b3808f6aaa",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/normalization.json": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/test.jsonl": "4bc7edee154f72414ea4e05ee50305709d5d6e47431aada0aebf7f782baeec6a",
+    "D:/School/AI231/.worktrees/me2/smart-speaker-fresh/scripts/test/speaker_optionb_tiny_demo.py": "20939cda838045e30353d7d970669a75afebb0e89b1fa0fff8daa4095cd0d7cb",
+    "experiments/speaker-optionb-tiny-demo-v1/data-freeze.json": "0375679497cbcbd8b2eb061bb2a644e7d7ea36aeea7854828a2fda7739675e53",
+    "experiments/speaker-optionb-tiny-demo-v1/policy-selection.json": "f5c5bf9c3a7f7cb544af22ffad30cb9d9db3ea9816bc69ab38944280a06264b1",
+    "experiments/speaker-optionb-tiny-demo-v1/protocol.json": "0269edb4018c4bdfb02fc6297cff7c7e49f78b6e03eefc3555e1a796aa37cf40",
+    "scripts/test/test_speaker_optionb_tiny_demo.py": "624568c61ce1b572dcc642b23b978196b3bc459fda58ba8855352c320c82d5a8"
+  },
+  "cached_scores_reused": true,
+  "created_utc": "2026-10-22T17:56:44.109154+00:00",
+  "exposed_regression_not_blind": true,
+  "heldout_pcm_decoded_or_inferred_for_this_policy_selection": false,
+  "inherited_heldout_history_disclosed": true,
+  "model_weights_changed": false,
+  "normalization_split": "inherited_train_only",
+  "optimizer_updates": 0,
+  "parameters": 258912,
+  "policy": {
+    "enabled": true,
+    "min_margin": 0.1,
+    "min_probability": 0.5
+  },
+  "policy_only": true,
+  "selected_epoch": 44,
+  "selected_on": [
+    "dev",
+    "calibration"
+  ],
+  "test_holdout_used_for_selection": false
+}

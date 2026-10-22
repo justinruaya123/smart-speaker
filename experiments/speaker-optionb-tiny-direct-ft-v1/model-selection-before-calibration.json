@@ -1,0 +1,18 @@
+{
+  "bindings": {
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/best.pt": "348404ceb30f772d737303cdf52f193475754212b37f858f3f66d3f0374ea202",
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/fit-verification.json": "65bc0399c062ef4a41721dccb215812873e04c62cbc7394be8d08e7f5abfd27e",
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/normalization.json": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09",
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/training-result.json": "3d3e69a8fd6a4cd54c8b1265798a6c8eecffba0151d36cdfb05294c3176cd201",
+    "D:/School/AI231/.worktrees/me2/smart-speaker-fresh/scripts/test/speaker_optionb_tiny_ft_eval.py": "aa54f776baf2ab2fb3d6c986b0e91e2a3f885f81351771e05ef2883a14b333a7",
+    "experiments/speaker-optionb-tiny-direct-ft-v1/data-freeze.json": "8c067e06fe71275297dcfa2b3b19ef145c414b39030040af349db7d804ab50b5",
+    "experiments/speaker-optionb-tiny-direct-ft-v1/protocol.json": "1d73ac4fb2b7904aba90708eb06cf8d30506f67f492f656e93cca18a5af60a34"
+  },
+  "calibration_used_for_weights_or_arm": false,
+  "created_utc": "2026-10-22T16:33:55.899208+00:00",
+  "selected_arm": "direct",
+  "selected_epoch": 0,
+  "selected_on": [
+    "dev"
+  ]
+}

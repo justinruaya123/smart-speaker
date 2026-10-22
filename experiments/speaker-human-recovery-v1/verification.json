@@ -1,0 +1,26 @@
+{
+  "accuracy_gain_claimed": false,
+  "adjudication_guard": {
+    "awaiting_second_reviewer": 521
+  },
+  "admitted": 26,
+  "candidates": 547,
+  "files": {
+    "docs\\EXPERIMENT-speaker-human-recovery-v1.md": "b3d1a83199836c8010abe0e5e4e1e48059b704143114a35bf8ac0aa7aa88093a",
+    "experiments\\speaker-human-recovery-v1\\compatibility-findings.json": "72fc24ec61cc8a96fca9dc3409eee64dc2d59dd98d33aea830d5f432bc544ab8",
+    "experiments\\speaker-human-recovery-v1\\intent-fixes.json": "8162ebdf46b6a4b8cfd553cb20ba97243dd006ab2f78fd88a4c99c04fab4334e",
+    "experiments\\speaker-human-recovery-v1\\protocol.json": "f60553152a7b23225cfb3e977a57f6ad5f8aa8ec131e61ff107b4e815f12f30b",
+    "experiments\\speaker-human-recovery-v1\\results.json": "bfb615c4b100b7ef805022a0c3e9ef99bb5890acbe0ccd5a37aec83410115f87",
+    "experiments\\speaker-human-recovery-v1\\review-queue.jsonl": "25ff1382f8927361ce34549cd39319489a56ed1b352bfe54e18c3f6eea30a856",
+    "experiments\\speaker-human-recovery-v1\\review-template.jsonl": "b39c4c3d767e2ca8a2cbbd2b2866c30dff8a32ca4002771a513ec77a2b2cf831"
+  },
+  "focused_tests_passed": 94,
+  "format": "human-recovery-final-verification-v1",
+  "full_fit_run": false,
+  "intent_treatments": 19,
+  "local_report_links_verified": 8,
+  "nontraining_views_byte_equal": true,
+  "protected_bindings": 45,
+  "training_rows": 1889,
+  "untrained_review_rows": 521
+}

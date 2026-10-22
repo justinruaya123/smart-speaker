@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "sources": [
+    {"id": 1, "url": "https://docs.pytorch.org/docs/2.10/generated/torch.nn.CrossEntropyLoss.html", "title": "PyTorch 2.10 CrossEntropyLoss documentation", "accessed": "2026-10-22", "retrieval": "Official live HTTPS response200 via urllib after configured extraction backend failed", "quotes": [{"text": "The targets become a mixture of the original ground truth and a uniform distribution", "added": "2026-10-22"}], "evidence": "C:/Users/Justin/AppData/Local/hermes/cache/scratch/optionb-tiny-ft-reference-evidence/0.txt", "claim_scope": "Definition of label smoothing only; .980625 follows from32classes andepsilon.02. Not a hard confidence cap or proof smoothing caused this model's errors."},
+    {"id": 2, "url": "https://proceedings.mlr.press/v70/guo17a.html", "title": "On Calibration of Modern Neural Networks", "accessed": "2026-10-22", "retrieval": "Official live PMLR HTTPS response200 via urllib", "quotes": [{"text": "modern neural networks, unlike those from a decade ago, are poorly calibrated.", "added": "2026-10-22"}], "evidence": "C:/Users/Justin/AppData/Local/hermes/cache/scratch/optionb-tiny-ft-reference-evidence/1.txt", "claim_scope": "General distinction between softmax confidence and observed correctness. This project does not reproduce the paper, implement temperature scaling, or infer its own acoustic performance from that paper."}
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "feature_integrity_rows": 2145,
+  "files": {
+    "collection-priority.csv": "604085f0a86cdff4eaa7fc23096c0d956c0d35b3db26ff9dd602203e56e6d16c",
+    "command-coverage.csv": "ed2f18349be28dfbe6a752a0407699f4fd75854b6260ca36e811b3920d663451",
+    "confusion.csv": "650d97e30260369322bd5ed281ea7b3d41fffe8eec1e29f8d85cfeeb49b00054",
+    "data-per-intent.csv": "4d91f035b5f5ab2000a1e92a641cd4f5594dee5db0948b7ceed3baf98a503371",
+    "performance-per-intent.csv": "e24153beb689e896c52eced45541f712ab1f5eb1af9cacb9468b43a8ff333d42",
+    "performance-per-source.csv": "61a26d8d81dbad15c7ef6561981f23d43be62be7fa3a8cd923ab90335c61d3de",
+    "scorecard.json": "402e163c73fd600129b124bcd97631dde3d93f2a2af746ab891aa6c4bbbf63a3",
+    "slot-performance.csv": "67d9f1472ca43f6d0d92f1d2ac0dbd1f7e8a5b5c2a6f4318eb909148673a5cac",
+    "source-feature-shift.csv": "6acef337fb442665c7bab552659dd4e61d00b8b4deaa7fbcfead148300716d93",
+    "sources-per-intent.csv": "223dec852a208fe4981a5387d93070b7a0af2a2654de52d7008b2fee10b99248"
+  },
+  "format": "human-scorecard-artifact-receipt-v1",
+  "input_row_counts": {
+    "calibration": 210,
+    "dev": 256,
+    "holdout": 94,
+    "test": 865,
+    "train": 1889
+  },
+  "rows": {
+    "collection-priority.csv": 942,
+    "command-coverage.csv": 1700,
+    "confusion.csv": 3249,
+    "data-per-intent.csv": 19,
+    "performance-per-intent.csv": 57,
+    "performance-per-source.csv": 118,
+    "slot-performance.csv": 39,
+    "source-feature-shift.csv": 15,
+    "sources-per-intent.csv": 51
+  }
+}

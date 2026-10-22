@@ -1,0 +1,47 @@
+{
+  "scope": "Completed bounded OptionB tiny-model fine-tuning; not an installation or acoustic-quality pass",
+  "parameters": 258912,
+  "complete_commands": 31,
+  "verbatims": 93,
+  "studies": [
+    {
+      "id": "speaker-optionb-tiny-ft-v1",
+      "parent": "Verified human-only foundation epoch6",
+      "completed_arms": 3,
+      "epochs_per_arm": 8,
+      "updates_per_arm": 768,
+      "total_updates": 2304,
+      "sample_draws": 73728,
+      "selected_arm": "smoothed_control",
+      "selected_continuation_epoch": 1,
+      "outcome": "Regressed; no-smoothing and negative-focus arms did not beat control on development selection",
+      "result": "experiments/speaker-optionb-tiny-ft-v1/results.json"
+    },
+    {
+      "id": "speaker-optionb-tiny-direct-ft-v1",
+      "parent": "Actual original mixed checkpoint epoch44; inherited historical exposures disclosed",
+      "completed_arms": 1,
+      "epochs_per_arm": 4,
+      "total_updates": 384,
+      "sample_draws": 12288,
+      "selected_continuation_epoch": 0,
+      "selected_parent_unchanged": true,
+      "selected_graph_byte_identical_to_original": true,
+      "outcome": "No trained continuation beats parent development accepted recall; parent retained",
+      "result": "experiments/speaker-optionb-tiny-direct-ft-v1/results.json"
+    }
+  ],
+  "total_continuation_optimizer_updates": 2688,
+  "total_continuation_sample_draws": 86016,
+  "draws_are_not_independent_recordings": true,
+  "new_audio_created": false,
+  "labels_changed": false,
+  "current_reserved_data_used_for_fitting_or_normalization": false,
+  "historical_parent_provenance_caveats_preserved": true,
+  "test_holdout_fresh_blind": false,
+  "improved_replacement_established": false,
+  "research_policy_adopted": false,
+  "installed": false,
+  "device_actions": false,
+  "direct_verification_addendum": "Version2 full actual-corpus verification and independent code-review closure passed:4896 canonical rows,32 graph replays,1889-human normalization,395 protected inputs;137 focused tests pass. All3 original verifier findings closed; original verifier/receipt and failed review preserved"
+}

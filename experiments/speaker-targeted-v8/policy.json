@@ -1,0 +1,36 @@
+{
+  "binding": {
+    "model_sha256": "0618c373be9567c73c8dd4b76fea831e1c3e731cf61fe711e13a91047f03a9e1",
+    "catalog_sha256": "429a15bc364d7fd9e723a2879c611472b5176de6cb3a2b54be7c137b050c985d",
+    "normalization_sha256": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+    "schema_sha256": "bb1b5caf19d651f8dfb1adc134167bf68d7114584a68d5b03ef99b22c67cca2c",
+    "custom_slots_sha256": "646453fa1ea5f9cf4e8edf785ac4a17d2ed87f227cc575c644ca5e8b7a9f6fb5"
+  },
+  "calibration_kind": "original_human_only",
+  "calibration_metrics": {
+    "accepted": 37,
+    "exact": 37,
+    "false_accept_rate": 0.0,
+    "n": 210,
+    "negative_errors": 0,
+    "negative_n": 88,
+    "positive_n": 122,
+    "precision": 1.0,
+    "recall": 0.30327868852459017
+  },
+  "calibration_rows": 210,
+  "enabled": false,
+  "grid_size": 336,
+  "min_intent_probability": 0.9,
+  "min_margin": 0.02,
+  "min_score": -100.0,
+  "missing_positive_intents": [
+    "CALL",
+    "CREATE_REMINDER",
+    "LIST_REMINDERS",
+    "MESSAGE",
+    "TEMPERATURE"
+  ],
+  "reason": "human_calibration_gates_failed",
+  "test_used": false
+}

@@ -1,0 +1,52 @@
+{
+  "bindings": {
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/best.pt": "348404ceb30f772d737303cdf52f193475754212b37f858f3f66d3f0374ea202",
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/bundle/commands.json": "71017cf22366d15557e8878636135f5ff2d0ac81fc4dfd6f058fc88f0f2d4b5d",
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/bundle/model.onnx": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/bundle/normalization.json": "28f7ef1b2c926c587d611d17eef91184c2c7e2de66abe352d1fc2365e45d69ed",
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/bundle/policy.json": "37f044531a4e8d638dc76b70ce7bec2e7f00fe31dbf7b9d57588033887d49a13",
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/bundle/recipe.json": "f38147f6932d5d482e4ff0effa5ebe052e5e66656c60bab10032763a13ef51a2",
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/calibration-predictions.jsonl": "5da5bac012289776b10d6ebb71a1093014c457bab95d023731b5f9094c48c920",
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/fit-verification.json": "65bc0399c062ef4a41721dccb215812873e04c62cbc7394be8d08e7f5abfd27e",
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/hard-negative-pool.json": "36d7a9060c2a9aa124ac7b999723e216b9edeb7821f067b3a3c7a22ab2238285",
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/normalization.json": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09",
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/raw-feature-inputs.jsonl": "9dd8ec9c5fd6f570ea4ddc839ed6e9c7baa012893d1934f512b1cc7def1132d5",
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/training-curve.jsonl": "27a5242fa27e24a31c23cf1848c27c0948c8236bcce67ba4de43d157d5f41af9",
+    ".cache/speaker-optionb-tiny-direct-ft-v1/run-01/training-result.json": "3d3e69a8fd6a4cd54c8b1265798a6c8eecffba0151d36cdfb05294c3176cd201",
+    "D:/School/AI231/.worktrees/me2/smart-speaker-fresh/scripts/test/speaker_optionb_tiny_ft_eval.py": "aa54f776baf2ab2fb3d6c986b0e91e2a3f885f81351771e05ef2883a14b333a7",
+    "experiments/speaker-optionb-tiny-direct-ft-v1/data-freeze.json": "8c067e06fe71275297dcfa2b3b19ef145c414b39030040af349db7d804ab50b5",
+    "experiments/speaker-optionb-tiny-direct-ft-v1/export-verification.json": "f71a2f9a3af4c36e0e3e1027edd7a5dff7c373fbb241214aaf23d7de8477912d",
+    "experiments/speaker-optionb-tiny-direct-ft-v1/model-selection-before-calibration.json": "f14bd4d3f6c043201d69c465651b4574a3272ff75c2ba5e0ac2141c10c559c52",
+    "experiments/speaker-optionb-tiny-direct-ft-v1/policy-selection.json": "380dfa6a632674a4c1649d396f651dbb83cd930db34a2de3ff9447e3e83fbe44",
+    "experiments/speaker-optionb-tiny-direct-ft-v1/protocol.json": "1d73ac4fb2b7904aba90708eb06cf8d30506f67f492f656e93cca18a5af60a34"
+  },
+  "complete_command_classes": 32,
+  "created_utc": "2026-10-22T16:34:06.566690+00:00",
+  "exposed_regression_not_blind": true,
+  "fitting_splits": [
+    "train"
+  ],
+  "heldout_payload_bytes_hashed_for_integrity": true,
+  "heldout_pcm_decoded_or_inferred_before_selection": false,
+  "model_selected_on": [
+    "dev"
+  ],
+  "normalization_split": "train",
+  "parameters": 258912,
+  "policy": {
+    "enabled": true,
+    "min_margin": 0.3,
+    "min_probability": 0.985
+  },
+  "policy_selected_on": [
+    "dev",
+    "calibration"
+  ],
+  "selected_arm": "direct",
+  "selected_epoch": 0,
+  "selected_on": [
+    "dev",
+    "calibration"
+  ],
+  "test_holdout_used_for_selection": false
+}

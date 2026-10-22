@@ -1,0 +1,17 @@
+{
+  "actual_silence_normalized_max": -2.332310676574707,
+  "actual_silence_normalized_mean": -2.9312210083007812,
+  "actual_silence_normalized_min": -3.3114099502563477,
+  "batch_padding_fixture": {
+    "max_errors_by_head": [
+      9.5367431640625e-07,
+      2.384185791015625e-07,
+      2.9802322387695312e-08
+    ],
+    "pass_": true,
+    "weights": "random-init software fixture, not a recognition improvement"
+  },
+  "distinction": "Batch padding is masked and uses normalized zero; actual PCM silence becomes nonzero floor features and shifts absolute positions. No preprocessing change was applied.",
+  "original_augmentation": "SpecAugment only, no waveform prefix/suffix jitter/noise/reverb in the frozen full-model protocol",
+  "training_mask_fill": 0.0
+}

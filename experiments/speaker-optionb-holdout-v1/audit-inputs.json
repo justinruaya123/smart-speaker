@@ -1,0 +1,19 @@
+{
+  "bindings": {
+    ".cache/frontend-repro-20261019/source-view/.cache/pcv-source-refresh-v1/source/data/holdout-00000-of-00001.parquet": "9917e336ec596eaaddb476e266f36451326e3f8e5a2cb3dafbb675c33be133aa",
+    ".cache/frontend-repro-20261019/source-view/.cache/pcv-source-refresh-v1/source/data/test-00000-of-00001.parquet": "81794982a6b7fd8c75758ad5f4c0257abedea6c1c0575bbaaabcba8e0e0a43ea",
+    ".cache/frontend-repro-20261019/source-view/.cache/pcv-source-refresh-v1/source/data/train-00000-of-00002.parquet": "977e6c6be208818a35496ac6e1a2b2da62f3387acba377664e0f48dbdc2cec9e",
+    ".cache/frontend-repro-20261019/source-view/.cache/pcv-source-refresh-v1/source/data/train-00001-of-00002.parquet": "4c29353d0ab14bb27fd3af8b513c2b9dd41f7707e86fbaa55104bfe71a328674",
+    ".cache/speaker-human-recovery-v1/prepared-01/optimizer-smoke/normalization-human.json": "fcf0c0aa482bff53c3b2058a02bb33892a8e7e5b8b6344a3e50778fe49f980d1",
+    "experiments/speaker-optionb-holdout-v1/holdout-results.json": "0084c72ec4ea6996e1a4cd6bf906da7a358d27a82ab334076e7680a8e05659b9",
+    "experiments/speaker-optionb-holdout-v1/selection-before-holdout.json": "2b52fb0dd906fad15240647c8c73df396f7c6868363a6e70c84a51491f67733e",
+    "scripts/test/speaker_optionb_holdout.py": "6ad841994f4058b022dc7b0bed1cbf8529f2aed2cdb239f60ed3e997a039d733",
+    "scripts/test/test_speaker_optionb_holdout.py": "8158b1d4c8c15ae3bf9020d8ab6ace743ec31f1b83cf13ae14b46b294b93e4af"
+  },
+  "driver_sha256": "85a8c38369d217e73dc5e97187353cc578d9237aee6bb68e2f9eacd1be813c14",
+  "format": "optionb-data-audit-inputs-v1",
+  "independent_listening": false,
+  "post_holdout": true,
+  "purpose": "Diagnose data; cannot select a new holdout model/policy or change frozen references",
+  "training": false
+}

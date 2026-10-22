@@ -1,0 +1,11 @@
+{
+  "full_ctc_rows": 1863,
+  "normalization_membership_verified": true,
+  "normalized_dtype": "float32",
+  "reserved_rows_checked": 1427,
+  "rows": 1889,
+  "semantic_only_rows": 26,
+  "source_paths_used_exactly": true,
+  "target_rows": 373,
+  "training_performed": false
+}

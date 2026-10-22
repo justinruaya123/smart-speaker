@@ -1,0 +1,40 @@
+{
+  "bindings": {
+    "D:/School/AI231/.worktrees/me2/smart-speaker-fresh/.cache/speaker-optionb-tiny-direct-ft-v1/run-01/final-predictions.jsonl": "22046ba08294b076f4e02c381b745666275191d708513a68705dddf4b663a949",
+    "D:/School/AI231/.worktrees/me2/smart-speaker-fresh/experiments/speaker-optionb-tiny-direct-ft-v1/per-command.csv": "8df784ed7d0db8edadb6c5c1d2994dc919c22c0574cb99ac717804ea22b924f1",
+    "D:/School/AI231/.worktrees/me2/smart-speaker-fresh/experiments/speaker-optionb-tiny-direct-ft-v1/per-intent.csv": "d8a3752fee2c40143da8b658a0d06a2e1f85436f70efcbb201de15daea8c8e67",
+    "D:/School/AI231/.worktrees/me2/smart-speaker-fresh/experiments/speaker-optionb-tiny-direct-ft-v1/per-verbatim.csv": "a50c8328e486040641b64bf8d051e36873229c6665cfa8ade315ef7873367992",
+    "D:/School/AI231/.worktrees/me2/smart-speaker-fresh/experiments/speaker-optionb-tiny-direct-ft-v1/results.json": "6993a830803b7a059f5290909224016db568381d5aaf9eda8019216e212721df",
+    "D:/School/AI231/.worktrees/me2/smart-speaker-fresh/experiments/speaker-optionb-tiny-direct-ft-v1/selection-before-test.json": "909a9cdec6777c8636b781bc0fab986c3a46f2da36c680ab2b4d0ea3753b917e"
+  },
+  "csv_rows": {
+    "per_command": 217,
+    "per_intent": 126,
+    "per_verbatim": 93
+  },
+  "current_declared_parent_training_overlap": false,
+  "current_reserved_membership_unchanged": true,
+  "exact_canonical_prediction_coverage": true,
+  "exposed_regression_not_blind": true,
+  "human_normalization_rows_reconstructed": 1889,
+  "independently_replayed_rows": 32,
+  "inference_rows": 4896,
+  "inherited_historical_gap_recordings": 351,
+  "installed": false,
+  "labels_changed": false,
+  "optimizer_updates": 384,
+  "original_historical_inputs": 289,
+  "parameters": 258912,
+  "parent_epoch": 44,
+  "predictions_sha256": "22046ba08294b076f4e02c381b745666275191d708513a68705dddf4b663a949",
+  "preserved_original_receipt_sha256": "89b901e789cbc6fa1824c16d27412f135c316a5f310b1e766fc202b8ebd18be9",
+  "preserved_original_verifier_sha256": "037e2c7cef2c3dd0b4d385b33aebb90f77df9ed4963af0bb3aee8303441bd5c0",
+  "protected_inputs_unchanged": 395,
+  "sample_draws": 12288,
+  "selected_continuation_epoch": 0,
+  "selected_parent_unchanged": true,
+  "selection_sha256": "909a9cdec6777c8636b781bc0fab986c3a46f2da36c680ab2b4d0ea3753b917e",
+  "status": "verified",
+  "verification_version": 2,
+  "verifier_sha256": "0ceeafa541e75b8fe54b01bab8c17a15d69736e0ae8a566785c30d61aea2842e"
+}

@@ -1,0 +1,36 @@
+{
+  "findings": [
+    {
+      "error": "cannot import name 'load_corrections' from 'scripts.train.speaker_targeted_train' (D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh\\scripts\\train\\speaker_targeted_train.py)",
+      "issue": "The prototype imports a helper absent from the current targeted trainer.",
+      "path": "scripts/train/speaker_human_pipeline.py:45"
+    },
+    {
+      "input_phone_ids": [
+        1,
+        2
+      ],
+      "issue": "Integer phone targets from the prepared manifests are treated as string phone tokens.",
+      "output_phone_targets": [],
+      "path": "scripts/train/speaker_human_pipeline.py:219"
+    },
+    {
+      "error": "PooledContextVCM.__init__() got an unexpected keyword argument 'in_channels'",
+      "issue": "Constructor keywords do not match the imported PooledContextVCM.",
+      "path": "scripts/train/speaker_human_pipeline.py:388"
+    },
+    {
+      "issue": "Vocabulary keys are present in the current compact recipe; this check did not identify a gap.",
+      "is_gap": false,
+      "missing_keys": [],
+      "path": "scripts/train/speaker_human_pipeline.py:362"
+    }
+  ],
+  "format": "legacy-human-prototype-compatibility-probe-v1",
+  "full_trainer_executed": false,
+  "isolated_class_execution": "The unchanged Dataset class was loaded via AST because the complete module import fails; its full training loop was not run.",
+  "prototype_modified": false,
+  "prototype_sha256": "7196d88702966945d754e0af3059b6fef0802434cb85d54697276adb07f5eab9",
+  "remedy": "Keep historical prototype unchanged and out of the executed path. The new recovery path preserves integer phone IDs, uses the real constructor and tests head-masked optimization.",
+  "software_fixtures_not_speech_evidence": true
+}

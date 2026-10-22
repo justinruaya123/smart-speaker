@@ -1,0 +1,20 @@
+{
+  "bindings": {
+    "experiments/pcv-release-train-v1/annotation-approval.json": "33d1345c85f31eb1aaea223d791b61322abd7c593146aca008120788fff89c54",
+    "experiments/pcv-release-train-v1/data-freeze.json": "390c1ca93fbf2e8ffa0f685e839f32c0f84f2f3bf147d920ad827f081386646c",
+    "experiments/pcv-release-train-v1/training-label-review.json": "70d40fe5f66b38141c6b745ca3c6eaf24eb87f2d7a56ad8df3762f99a25c32f8",
+    "experiments/speaker-optionb-holdout-v1/data-audit-results.json": "00cef084775377732867653682f7c13fc257684f01f3b0a22a40b93a31b60f4b",
+    "experiments/speaker-optionb-holdout-v1/selection-before-holdout.json": "2b52fb0dd906fad15240647c8c73df396f7c6868363a6e70c84a51491f67733e",
+    "scripts/test/speaker_optionb_holdout.py": "f26a18062c1721490a3bc0853e9624ba6b5cdceac205d12787a3910b9e5f49e3",
+    "scripts/test/test_speaker_optionb_holdout.py": "a6da9fc697469c13479d6ba9690e6d45106e66893f9caac778cb3fa7c9c8f2f6",
+    "scripts/train/pcv_release_prepare.py": "4143d0618aa61afceec69be956949691792b3ed0f80e1f43e748f328e1420047"
+  },
+  "driver_sha256": "6f5f7192498d8b6d7001ba63a97fa21f2a9019c70f89d8ca2a04558d507c9aa3",
+  "explanation": "The first audit compared older base rules only. Its 258 disagreements are not 258 new labeling errors; all first-pass evidence remains preserved.",
+  "format": "optionb-frozen-label-audit-v2",
+  "frozen_approval_verified_against_data_freeze": true,
+  "reference_rule": "pcv-release-train-v1-annotation-1",
+  "regeneration_guard": "Default annotation_policy() fails the current proposal checksum; no guard is disabled. The archived approval is explicitly verified and passed to the existing replay API.",
+  "source_proposal_actual": "70d40fe5f66b38141c6b745ca3c6eaf24eb87f2d7a56ad8df3762f99a25c32f8",
+  "source_proposal_expected": "e1c0fba7d11b87983aa0499669ec2f10c3949e3fdf9304c4c32484f69490a80d"
+}

@@ -1,0 +1,44 @@
+{
+  "format": "speaker-optionb-acceptance-v1",
+  "date": "2026-10-22",
+  "requirements": ["ME-01", "ME-02", "ME-03", "ME-04", "ME-08"],
+  "purpose": "Explain the raw-versus-accepted complete-command recall/F1 gap under the user's OptionB-only command contract, without any fitting or evaluation-to-training reassignment.",
+  "parent": "experiments/speaker-optionb-holdout-v1/selection-before-holdout.json",
+  "baseline": "submission/models/full",
+  "scope": {
+    "definitions": "scripts.runtime.pcv_schema.baseline_cases",
+    "verbatims": 93,
+    "typed_commands": 31,
+    "membership": "Exact canonical complete typed command, not intent-only or a subset of keywords.",
+    "reference_projection": "Keep every original row and eligibility flag. A valid original positive outside the 31 typed commands is an explicitly identified outside-OptionB negative for this task; original UNKNOWNs remain separate; ambiguous references remain unscored.",
+    "wording": "Paraphrases remain positives whenever the reference typed command is in OptionB. Also report exact normalized verbatims separately; do not discard difficult wording."
+  },
+  "ranked_hypotheses": [
+    "The auxiliary intent head either disagrees with a correct finite-command candidate or matches it below the fixed .95 threshold; a first-rejection string alone conflates these cases.",
+    "Required-slot or target confidence gates discard otherwise correct candidates; test these independently, without rescuing rejected intents.",
+    "Removing extension-command competition may alter finite-command ranking and conditional slot confidence, but cannot itself repair the unchanged intent-head predictions.",
+    "Including extension references in the earlier denominator or a metric-accounting bug explains part of the reported recall/F1 gap; independently reconcile TP, FP and FN."
+  ],
+  "policy": {"mode": "demo", "intent_threshold": 0.95, "slot_threshold": 0.9},
+  "arms": [
+    {"id": "full_catalog_fixed", "catalog": "Unchanged full shipping catalog and fixed application policy; fresh replay must reproduce the stored original/stress baseline."},
+    {"id": "full_catalog_optionb_output_scope", "catalog": "Same inference as full_catalog_fixed; an explicit post-policy allowlist only rejects outputs outside all 31 OptionB commands. No command substitution or intent rescue."},
+    {"id": "optionb_catalog_fixed", "catalog": "One deterministic in-memory subset: retain every existing alias whose complete typed command is in the OptionB set and retain every existing null-command/negative competitor. Do not add aliases from holdout, restrict by a row's expected answer, remove negative competitors, or renormalize the semantic head."}
+  ],
+  "replay": {
+    "original": "All 196 frozen original holdout recordings; human and synthetic strata remain separate.",
+    "stress": "Repeat the parent's three predeclared silence probes on all 94 eligible original-human parents. These 282 dependent derived trials are not new recordings or spoken-word robustness evidence.",
+    "controls": "Identical model, frontend, normalization, PCM, confidence policy, semantic label order and CPU settings across inference arms. Bind the source, model, manifest and research catalog identities before any new inference."
+  },
+  "metrics": ["TP/FP/FN and exact complete-command precision/recall/F1", "original UNKNOWN and outside-OptionB false accepts separately", "per-intent and all-93-verbatim coverage with explicit zero-evidence cells", "intent-head agreement versus matched-head underconfidence versus slot/target losses", "paired catalog changes and paired silence changes"],
+  "holdout_exposure": "Previously examined regression corpus, including prior investigation and current read-only baseline accounting. This new bounded diagnostic is not blind qualification or a model/policy selection experiment.",
+  "training": false,
+  "threshold_search": false,
+  "checkpoint_selection": false,
+  "normalization_fit": false,
+  "new_aliases": false,
+  "installation": false,
+  "action_providers": false,
+  "allowed_paths": ["scripts/test/speaker_optionb_acceptance.py", "scripts/test/test_speaker_optionb_acceptance.py", "scripts/modules.json", "experiments/speaker-optionb-acceptance-v1/", ".cache/speaker-optionb-acceptance-v1/", "docs/EXPERIMENT-speaker-optionb-acceptance-v1.md", "EXPERIMENTS.md"],
+  "protected": "All parent protected identities plus the actual historical fitting/evaluation manifests, original cached replay, current bundle, normalization, recipes, frozen labels and new pre-replay bindings. Verify before and after. Do not modify any training row, label, split, installed asset or historical result."
+}

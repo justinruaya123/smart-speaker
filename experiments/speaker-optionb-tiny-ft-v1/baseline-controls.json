@@ -1,0 +1,248 @@
+{
+  "exposed_regression_not_blind": true,
+  "fitting_splits": [],
+  "parent_weights_unchanged": true,
+  "policies": {
+    "finer_grid": {
+      "enabled": true,
+      "min_margin": 0.3,
+      "min_probability": 0.985
+    },
+    "original": {
+      "enabled": true,
+      "min_margin": 0.3,
+      "min_probability": 0.99
+    }
+  },
+  "policy_selected_on": [
+    "dev",
+    "calibration"
+  ],
+  "results": {
+    "holdout/human/original": {
+      "finer_grid": {
+        "correct_accepted": 5,
+        "f1": 0.11764705882352941,
+        "fn": 75,
+        "fp": 0,
+        "negative_false_accept_rate": 0.0,
+        "negative_false_accepts": 0,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 1.0,
+        "recall": 0.0625,
+        "rows": 94,
+        "tp": 5,
+        "wrong_accepted": 0
+      },
+      "original": {
+        "correct_accepted": 3,
+        "f1": 0.07228915662650602,
+        "fn": 77,
+        "fp": 0,
+        "negative_false_accept_rate": 0.0,
+        "negative_false_accepts": 0,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 1.0,
+        "recall": 0.0375,
+        "rows": 94,
+        "tp": 3,
+        "wrong_accepted": 0
+      }
+    },
+    "holdout/human/silence_both_1s": {
+      "finer_grid": {
+        "correct_accepted": 5,
+        "f1": 0.11764705882352941,
+        "fn": 75,
+        "fp": 0,
+        "negative_false_accept_rate": 0.0,
+        "negative_false_accepts": 0,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 1.0,
+        "recall": 0.0625,
+        "rows": 94,
+        "tp": 5,
+        "wrong_accepted": 0
+      },
+      "original": {
+        "correct_accepted": 2,
+        "f1": 0.04878048780487805,
+        "fn": 78,
+        "fp": 0,
+        "negative_false_accept_rate": 0.0,
+        "negative_false_accepts": 0,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 1.0,
+        "recall": 0.025,
+        "rows": 94,
+        "tp": 2,
+        "wrong_accepted": 0
+      }
+    },
+    "holdout/human/silence_prefix_1s": {
+      "finer_grid": {
+        "correct_accepted": 5,
+        "f1": 0.11764705882352941,
+        "fn": 75,
+        "fp": 0,
+        "negative_false_accept_rate": 0.0,
+        "negative_false_accepts": 0,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 1.0,
+        "recall": 0.0625,
+        "rows": 94,
+        "tp": 5,
+        "wrong_accepted": 0
+      },
+      "original": {
+        "correct_accepted": 2,
+        "f1": 0.04878048780487805,
+        "fn": 78,
+        "fp": 0,
+        "negative_false_accept_rate": 0.0,
+        "negative_false_accepts": 0,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 1.0,
+        "recall": 0.025,
+        "rows": 94,
+        "tp": 2,
+        "wrong_accepted": 0
+      }
+    },
+    "holdout/human/silence_suffix_1s": {
+      "finer_grid": {
+        "correct_accepted": 4,
+        "f1": 0.09523809523809523,
+        "fn": 76,
+        "fp": 0,
+        "negative_false_accept_rate": 0.0,
+        "negative_false_accepts": 0,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 1.0,
+        "recall": 0.05,
+        "rows": 94,
+        "tp": 4,
+        "wrong_accepted": 0
+      },
+      "original": {
+        "correct_accepted": 3,
+        "f1": 0.07228915662650602,
+        "fn": 77,
+        "fp": 0,
+        "negative_false_accept_rate": 0.0,
+        "negative_false_accepts": 0,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 1.0,
+        "recall": 0.0375,
+        "rows": 94,
+        "tp": 3,
+        "wrong_accepted": 0
+      }
+    },
+    "holdout/synthetic/original": {
+      "finer_grid": {
+        "correct_accepted": 58,
+        "f1": 0.7341772151898734,
+        "fn": 42,
+        "fp": 0,
+        "negative_false_accept_rate": null,
+        "negative_false_accepts": 0,
+        "negatives": 0,
+        "positives": 100,
+        "precision": 1.0,
+        "recall": 0.58,
+        "rows": 100,
+        "tp": 58,
+        "wrong_accepted": 0
+      },
+      "original": {
+        "correct_accepted": 42,
+        "f1": 0.5915492957746479,
+        "fn": 58,
+        "fp": 0,
+        "negative_false_accept_rate": null,
+        "negative_false_accepts": 0,
+        "negatives": 0,
+        "positives": 100,
+        "precision": 1.0,
+        "recall": 0.42,
+        "rows": 100,
+        "tp": 42,
+        "wrong_accepted": 0
+      }
+    },
+    "test/human/original": {
+      "finer_grid": {
+        "correct_accepted": 59,
+        "f1": 0.17638266068759342,
+        "fn": 550,
+        "fp": 1,
+        "negative_false_accept_rate": 0.00390625,
+        "negative_false_accepts": 1,
+        "negatives": 256,
+        "positives": 609,
+        "precision": 0.9833333333333333,
+        "recall": 0.09688013136288999,
+        "rows": 865,
+        "tp": 59,
+        "wrong_accepted": 1
+      },
+      "original": {
+        "correct_accepted": 41,
+        "f1": 0.12615384615384614,
+        "fn": 568,
+        "fp": 0,
+        "negative_false_accept_rate": 0.0,
+        "negative_false_accepts": 0,
+        "negatives": 256,
+        "positives": 609,
+        "precision": 1.0,
+        "recall": 0.06732348111658457,
+        "rows": 865,
+        "tp": 41,
+        "wrong_accepted": 0
+      }
+    },
+    "test/synthetic/original": {
+      "finer_grid": {
+        "correct_accepted": 1715,
+        "f1": 0.6747983474326186,
+        "fn": 1653,
+        "fp": 0,
+        "negative_false_accept_rate": null,
+        "negative_false_accepts": 0,
+        "negatives": 0,
+        "positives": 3368,
+        "precision": 1.0,
+        "recall": 0.5092042755344418,
+        "rows": 3368,
+        "tp": 1715,
+        "wrong_accepted": 0
+      },
+      "original": {
+        "correct_accepted": 1317,
+        "f1": 0.5622198505869798,
+        "fn": 2051,
+        "fp": 0,
+        "negative_false_accept_rate": null,
+        "negative_false_accepts": 0,
+        "negatives": 0,
+        "positives": 3368,
+        "precision": 1.0,
+        "recall": 0.3910332541567696,
+        "rows": 3368,
+        "tp": 1317,
+        "wrong_accepted": 0
+      }
+    }
+  },
+  "scores_reused": true
+}

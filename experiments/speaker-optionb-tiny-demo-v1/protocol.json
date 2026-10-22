@@ -1,0 +1,24 @@
+{
+  "experiment_id": "speaker-optionb-tiny-demo-v1",
+  "date": "2026-10-23",
+  "baseline": {"git_head": "babf00329abd43cf81dea3ba4d117cae8e5c2f6a", "branch": "codex/final-submission", "worktree": "Inherited dirty research checkout; unrelated changes preserved, new source identities bound in data freeze"},
+  "authorization": "User: Proceed. 0.99 is too strict. I just want the OptionB verbatims to be good.",
+  "purpose": "A less conservative finite-OptionB demo acceptance policy, not99%-precision qualification or a new acoustic model.",
+  "requirements": ["ME-02", "ME-03", "ME-04", "ME-06", "ME-07", "ME-08"],
+  "scope": {"complete_commands": 31, "verbatims": 93, "parameters": 258912, "research_only": true, "no_installation_or_device_actions": true},
+  "parent": {"run": ".cache/speaker-optionb-tiny-v1/run-01", "epoch": 44, "bundle": ".cache/speaker-optionb-tiny-v1/run-01/bundle", "verification": "experiments/speaker-optionb-tiny-direct-ft-v1/verification-v2.json", "inheritance": "Original trained weights/ontology/frontend/train-only normalization unchanged. Original mixed-parent historical gap-fill exposures and unresolved synthetic voice aliases remain disclosed; no clean-lineage or fresh-blind claim."},
+  "selection": {
+    "probability_grid": [0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.925, 0.95, 0.975, 0.99],
+    "margin_grid": [0.0, 0.05, 0.1, 0.15, 0.2, 0.3],
+    "objective": "Maximize pooled HUMAN dev/calibration complete-command micro-F1. Ties prefer minimum split F1, pooled precision, pooled recall, higher probability then higher margin. No99% precision or fixed.99 posterior feasibility constraint. Wrong accepted slots count as both FP and FN; true UNKNOWN/outside-OptionB cases remain negatives, ambiguous references remain unscored.",
+    "policy_only": true,
+    "weights": "Only the already-selected original epoch44 model is eligible. No model or optimizer selection in this study.",
+    "splits": ["dev", "calibration"],
+    "reuse": "Use only hash-bound parent recorded ONNX logits with exact unique human dev/calibration reference membership, class/split agreement and32 finite logits.",
+    "exceptions": "One global probability/margin gate; UNKNOWN winner still rejects; no per-command thresholds, wording lookup, unsupported-slot coercion or case-specific rescue."
+  },
+  "fitting": {"optimizer_updates": 0, "new_recordings": 0, "label_changes": 0, "normalization_changes": 0, "reserved_rows_admitted": 0},
+  "evaluation": {"mode": "Fresh actual-graph original/silence replay after immutable policy lock", "membership": "Byte-identical parent dev/calibration/test/holdout manifests", "wording": "Report all93 definitions with original human/synthetic test/holdout exact-full-reference wording counts; category/prompt matches are not listened truth", "negative_reporting": "Report every wrong complete command, original UNKNOWN and outside-OptionB false accepts; no negative removal to make verbatim recall look better", "status": "Previously exposed regression evidence, not blind qualification or live actuation"},
+  "outputs": {"run": ".cache/speaker-optionb-tiny-demo-v1/run-01"},
+  "preserve": "All old studies/splits/models/policies/labels/source map/private settings stay unchanged. Candidate bundle is separate and non-actuating. No dependency installation, new training, microphone/Pi/device action, commit or push."
+}

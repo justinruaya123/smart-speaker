@@ -1,0 +1,65 @@
+{
+  "caveat": "Missing evaluation-only training-head integers are not mislabeled audio or wrong predicted heads. Evaluation uses frozen typed references and actual diagnostic head predictions.",
+  "changes_to_source_labels_or_fitting": false,
+  "driver_sha256": "98ff0ae976639e6424b393ea2cc80f59718beaf275d872e3a1ea327ad3d7d3f9",
+  "format": "optionb-reference-field-availability-v1",
+  "preserved_initial_audit_sha256": "a802c1fbf5a25036c2bc9a3273ed50f4678f72c3f4837021124229da15cddd10",
+  "selection_sha256": "16b5be08219add49bbc568046b04d81ca2fbb1e521540c098af78cb2c24ee1b6",
+  "views": {
+    "calibration": {
+      "fields": {
+        "intent_index": {
+          "not_supplied": 210
+        },
+        "target_index": {
+          "not_supplied": 210
+        }
+      },
+      "rows": 210
+    },
+    "dev": {
+      "fields": {
+        "intent_index": {
+          "present_consistent": 1251
+        },
+        "target_index": {
+          "present_consistent": 1251
+        }
+      },
+      "rows": 1251
+    },
+    "holdout": {
+      "fields": {
+        "intent_index": {
+          "not_supplied": 196
+        },
+        "target_index": {
+          "not_supplied": 196
+        }
+      },
+      "rows": 196
+    },
+    "test": {
+      "fields": {
+        "intent_index": {
+          "not_supplied": 4418
+        },
+        "target_index": {
+          "not_supplied": 4418
+        }
+      },
+      "rows": 4418
+    },
+    "train": {
+      "fields": {
+        "intent_index": {
+          "present_consistent": 23295
+        },
+        "target_index": {
+          "present_consistent": 23295
+        }
+      },
+      "rows": 23295
+    }
+  }
+}

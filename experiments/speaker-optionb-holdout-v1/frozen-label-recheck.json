@@ -1,0 +1,30 @@
+{
+  "annotation_rule_version": "pcv-release-train-v1-annotation-1",
+  "flag_counts": {
+    "asr_derived_not_independently_reviewed": 343,
+    "publisher_slot_or_family_conflict": 5
+  },
+  "flags_by_split": {
+    "calibration": {
+      "publisher_slot_or_family_conflict": 2
+    },
+    "dev": {
+      "asr_derived_not_independently_reviewed": 55,
+      "publisher_slot_or_family_conflict": 3
+    },
+    "holdout": {},
+    "test": {},
+    "train": {
+      "asr_derived_not_independently_reviewed": 288
+    }
+  },
+  "format": "optionb-frozen-label-audit-v2",
+  "frozen_approval_sha256": "33d1345c85f31eb1aaea223d791b61322abd7c593146aca008120788fff89c54",
+  "independent_listening": false,
+  "labels_changed": 0,
+  "new_train_admissions": 0,
+  "old_rule_audit": "data-audit-results.json is preserved as an older-base-rule comparison, not the authoritative frozen-label check",
+  "proposal_regeneration_blocked": true,
+  "rows": 3416,
+  "semantic_disagreements": []
+}

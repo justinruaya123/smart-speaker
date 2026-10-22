@@ -1,0 +1,116 @@
+{
+  "accuracy_improvement_claimed": false,
+  "acoustic_QA_rows": 2119,
+  "baseline_collection_cells": 55,
+  "catalog_collection_cells": 887,
+  "committed": false,
+  "development_endpoint_later_activity": {
+    "positive": 44,
+    "unknown": 13
+  },
+  "files": {
+    "EXPERIMENTS.md": "e543c150a6eaea50280fa374ab74d393b464773e79f645857f850c8d10655488",
+    "docs/EXPERIMENT-speaker-human-first-v1.md": "ffd18f626a642c578a89598f935081b8a80efa7719652c72ecca3e2b64cb84dc",
+    "experiments/speaker-human-first-v1/collection-queue.json": "f372b3d83a8dcbbeb4ba2e36bcad6c7e2b4baa1e9ae05ea558fd71c9a537c5f4",
+    "experiments/speaker-human-first-v1/intent-fixes.json": "b4d957d028c3257461316203868854334349aea32a16e82cd2e103017e837900",
+    "experiments/speaker-human-first-v1/protocol.json": "45b234e2d5213922b3df09ae97bbc9f3eb5907f5a73776ab961199895489da2e",
+    "experiments/speaker-human-first-v1/results.json": "2b66ca8f5c0c520eda260850a52e1fea4900eb9f3df3d8e777906d497a8e2801",
+    "scripts/test/test_speaker_human_data.py": "3993e9358d2c98208dbab56989359739e434e6c18af11a941aae2b5372a24ac9",
+    "scripts/train/speaker_human_data.py": "0b772b8b8eb554f0b89af34b91b0afc2102769c05b5adcd32dce98a4fc59a036"
+  },
+  "final_audit_equals_original_audit": true,
+  "focused_tests": {
+    "failed": 0,
+    "modules": [
+      "test_speaker_human_data",
+      "test_speaker_targeted_train",
+      "test_speaker_final_train",
+      "test_speaker_compact_policy",
+      "test_speaker_demo_v2_data",
+      "test_submission_training_device",
+      "test_submission_reproduce"
+    ],
+    "new_human_data_tests": 12,
+    "passed": 79
+  },
+  "format": "human-first-final-verification-v1",
+  "full_human_readiness": false,
+  "full_training": false,
+  "git_branch": "codex/final-submission",
+  "git_head": "babf00329abd43cf81dea3ba4d117cae8e5c2f6a",
+  "installed_artifacts_modified": false,
+  "optimizer_smoke": {
+    "accuracy_gain_claimed": false,
+    "architecture": {
+      "dropout": 0.1,
+      "feedforward": 256,
+      "heads": 4,
+      "layers": 6,
+      "width": 128
+    },
+    "augmentation": false,
+    "device": "cpu",
+    "evaluation_audio_opened": false,
+    "format": "human-optimizer-plumbing-smoke-v1",
+    "full_training_completed": false,
+    "losses": [
+      23.127933502197266,
+      2.7636427879333496,
+      0.8205381631851196
+    ],
+    "normalization_human_rows": 1863,
+    "normalization_sha256": "beec39532ae6a59cbffeca527e944374d114f7bbe7c530d43d90042723417109",
+    "optimizer_updates": 1,
+    "original_human_batch_ids": [
+      "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/004427",
+      "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001377",
+      "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001143",
+      "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/000702"
+    ],
+    "parameters": 935567,
+    "pretrained_weights": false,
+    "seed": 53,
+    "selected_model_modified": false,
+    "synthetic_rows": 0,
+    "training_manifest_sha256": "62d920eead9e806454ce818d5ea1aff1d15e004a3f8a5bd4db28085f82b017a4",
+    "weights_changed": true
+  },
+  "positive_rows": {
+    "calibration": 122,
+    "dev": 193,
+    "holdout": 83,
+    "test": 636,
+    "train": 1412
+  },
+  "protected_baseline_files_unchanged": {
+    "artifacts/bundle.json": "e1f9519400058b9fc5ebadcbb68f520a61faed93ff50eb528e530748e369ec85",
+    "experiments/speaker-human-first-v1/intent-fixes.json": "b4d957d028c3257461316203868854334349aea32a16e82cd2e103017e837900",
+    "scripts/train/speaker_synth_finetune.py": "305c9877ebd56654b09379b62549f8da06b59bf50a97277e5d3c860477b31dd6",
+    "scripts/train/speaker_targeted_train.py": "fd10e5182b38838a6885a905fdd870af0e7c7558af62e0aca222822f02025c33",
+    "submission/models/compact/catalog.json": "429a15bc364d7fd9e723a2879c611472b5176de6cb3a2b54be7c137b050c985d",
+    "submission/models/compact/model.onnx": "e8a2c5aca69b03eacf1092a68b6b23a541c3a7f51fdc5a34a52214dc9ebe0017",
+    "submission/models/compact/normalization.json": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+    "submission/models/compact/recall-policy.json": "0322a8a93876c09164f98c6c468e0808a9fd9209b8762a6c415c8b552e5deefc",
+    "submission/models/compact/recipe.json": "ff4de48b51f763e380047a8ff2388067f5cb3e1717050841748005ba50f0a17e",
+    "submission/reproduction/recipe.json": "9500f914bfd2145bd533e90582be8b2486fd8cec2352b021e325fe2add5cda9f"
+  },
+  "readiness_command_exit_code": 2,
+  "segregated_views": 95,
+  "split_rows": {
+    "calibration": 210,
+    "dev": 256,
+    "holdout": 94,
+    "test": 865,
+    "train": 1863
+  },
+  "syntax_compilation_passed": true,
+  "synthetic_injection": false,
+  "true_unknown_rows": {
+    "calibration": 88,
+    "dev": 63,
+    "holdout": 11,
+    "test": 229,
+    "train": 451
+  },
+  "unique_human_ids": 3288
+}

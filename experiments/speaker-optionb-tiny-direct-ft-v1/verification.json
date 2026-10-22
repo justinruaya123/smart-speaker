@@ -1,0 +1,21 @@
+{
+  "current_declared_parent_training_overlap": false,
+  "current_reserved_membership_unchanged": true,
+  "exposed_regression_not_blind": true,
+  "human_normalization_rows_reconstructed": 1889,
+  "independently_replayed_rows": 32,
+  "inference_rows": 4896,
+  "inherited_historical_gap_recordings": 351,
+  "installed": false,
+  "labels_changed": false,
+  "optimizer_updates": 384,
+  "original_historical_inputs": 289,
+  "parameters": 258912,
+  "parent_epoch": 44,
+  "protected_inputs_unchanged": 395,
+  "sample_draws": 12288,
+  "selected_continuation_epoch": 0,
+  "selected_parent_unchanged": true,
+  "status": "verified",
+  "verifier_sha256": "037e2c7cef2c3dd0b4d385b33aebb90f77df9ed4963af0bb3aee8303441bd5c0"
+}

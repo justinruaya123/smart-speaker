@@ -1,0 +1,65 @@
+{
+  "audio_decoded": false,
+  "bindings": {
+    ".cache/frontend-repro-20261019/source-view/.cache/pcv-source-refresh-v1/source/data/holdout-00000-of-00001.parquet": "9917e336ec596eaaddb476e266f36451326e3f8e5a2cb3dafbb675c33be133aa",
+    ".cache/frontend-repro-20261019/source-view/.cache/pcv-source-refresh-v1/source/data/test-00000-of-00001.parquet": "81794982a6b7fd8c75758ad5f4c0257abedea6c1c0575bbaaabcba8e0e0a43ea",
+    "experiments/speaker-optionb-tiny-demo-v1/per-verbatim-cohorts-v2.csv": "c622b51cd955c476dec33f33e4f7a7045d1a00eb3e1e7750e4397b28cd0c4780",
+    "experiments/speaker-optionb-tiny-demo-v1/verification.json": "163a666e66cdabf4f11da479596ec870651499a8d21e7fce03a5f4c55c0898af",
+    "scripts/test/speaker_optionb_tiny_demo_metadata.py": "1d2a340480b99d0ca4a77470254d84e021b32d94fd43f7154177508f11f2c655",
+    "scripts/test/test_speaker_optionb_tiny_demo_metadata.py": "1e3c50c06275b0f43474193333a7117b033d4d9ba5202236be582123ca7a4738"
+  },
+  "inference_or_training_performed": false,
+  "labels_or_policy_changed": false,
+  "no_inference_time_wording_lookup": true,
+  "original_reference_rows": 4614,
+  "original_v1_zero_text_table_and_receipt_preserved": true,
+  "projected_manifest_full_text_fields": "omitted, not absent corpus evidence",
+  "reporting_addendum_only": true,
+  "source_columns_read": [
+    "transcript",
+    "transcript_source",
+    "is_synthetic"
+  ],
+  "source_full_transcripts": {
+    "holdout/human": {
+      "correct_accepted": 58,
+      "definitions": 93,
+      "metadata_reference_matches": 62,
+      "raw_correct": 61,
+      "rejected": 3,
+      "represented": 62,
+      "wrong_accepted": 1
+    },
+    "holdout/synthetic": {
+      "correct_accepted": 89,
+      "definitions": 93,
+      "metadata_reference_matches": 90,
+      "raw_correct": 89,
+      "rejected": 0,
+      "represented": 84,
+      "wrong_accepted": 1
+    },
+    "test/human": {
+      "correct_accepted": 173,
+      "definitions": 93,
+      "metadata_reference_matches": 232,
+      "raw_correct": 205,
+      "rejected": 55,
+      "represented": 71,
+      "wrong_accepted": 4
+    },
+    "test/synthetic": {
+      "correct_accepted": 2920,
+      "definitions": 93,
+      "metadata_reference_matches": 2996,
+      "raw_correct": 2957,
+      "rejected": 64,
+      "represented": 84,
+      "wrong_accepted": 12
+    }
+  },
+  "source_metadata_not_independent_listener_truth": true,
+  "source_metadata_shards": 2,
+  "status": "verified",
+  "wording_rows": 372
+}

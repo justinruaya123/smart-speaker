@@ -1,0 +1,22 @@
+{
+  "review_id": "deleg_ba3be96e",
+  "scope": "First-study fine-tune training, data, sampling and development-selection workflow",
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "reviewer_software_tests_passed": 8,
+  "suggestions": [
+    {
+      "location": "scripts/test/test_speaker_optionb_tiny_ft.py:129-158; scripts/train/speaker_optionb_tiny_ft.py:287-341",
+      "suggestion": "Add bounded orchestration fixtures verifying that checksum drift aborts before feature extraction, whisper-derived references cannot enter the amplified hard pool, exact ties retain the earliest arm, and the copied checkpoint matches the selected arm/epoch. The existing optimizer fixture does not exercise fit_study."
+    },
+    {
+      "location": "experiments/speaker-optionb-tiny-ft-v1/protocol.json:7,15-17; experiments/speaker-optionb-tiny-ft-v1/data-freeze.json:43-101,457-470",
+      "suggestion": "Retain the disclosed research limits in subsequent reporting: six commands lack human training examples, 288 references remain ASR-derived without independent review, synthetic voice aliases are unresolved, and previously exposed test/holdout results are regression evidence only. These limitations are not confirmed leakage or software defects."
+    }
+  ],
+  "summary": "No confirmed security or logic defects found. All eight fixtures passed with two CPU threads. Verified frozen trainer/audit/protocol hashes, 1,889 human plus 20,770 synthetic training rows, all 31 positive classes, exact human normalizer membership, epoch-6 parent identity and human-only sample ledger, 656 preserved exclusions, unchanged reserved manifests, and no overlap on checked declared identities. No repository/artifact edits, long fit, preparation, corpus evaluation, or held-out payload access occurred. This is software approval, not acoustic qualification.",
+  "quality_passed": false,
+  "installed": false,
+  "does_not_supersede_later_direct_verifier_findings": true
+}

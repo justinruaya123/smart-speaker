@@ -1,0 +1,202 @@
+{
+  "format": "optionb-data-label-loader-audit-v1",
+  "holdout_original_wording_groups": {
+    "courtesy_function_word_variant": {
+      "fixed": {
+        "accepted": 0,
+        "exact": 0,
+        "false_accept_rate": null,
+        "n": 1,
+        "negative_errors": 0,
+        "negative_n": 0,
+        "positive_n": 1,
+        "precision": null,
+        "recall": 0.0
+      },
+      "n": 1,
+      "raw": {
+        "accepted": 1,
+        "exact": 1,
+        "false_accept_rate": null,
+        "n": 1,
+        "negative_errors": 0,
+        "negative_n": 0,
+        "positive_n": 1,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    "exact_optionb": {
+      "fixed": {
+        "accepted": 30,
+        "exact": 30,
+        "false_accept_rate": null,
+        "n": 62,
+        "negative_errors": 0,
+        "negative_n": 0,
+        "positive_n": 62,
+        "precision": 1.0,
+        "recall": 0.4838709677419355
+      },
+      "n": 62,
+      "raw": {
+        "accepted": 62,
+        "exact": 62,
+        "false_accept_rate": null,
+        "n": 62,
+        "negative_errors": 0,
+        "negative_n": 0,
+        "positive_n": 62,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    "other_wording_or_extension": {
+      "fixed": {
+        "accepted": 9,
+        "exact": 9,
+        "false_accept_rate": null,
+        "n": 20,
+        "negative_errors": 0,
+        "negative_n": 0,
+        "positive_n": 20,
+        "precision": 1.0,
+        "recall": 0.45
+      },
+      "n": 20,
+      "raw": {
+        "accepted": 20,
+        "exact": 18,
+        "false_accept_rate": null,
+        "n": 20,
+        "negative_errors": 0,
+        "negative_n": 0,
+        "positive_n": 20,
+        "precision": 0.9,
+        "recall": 0.9
+      }
+    }
+  },
+  "independently_listened": 0,
+  "label_flag_counts": {
+    "asr_derived_not_independently_reviewed": 343,
+    "publisher_slot_or_family_conflict": 5,
+    "semantic_reference_disagreement": 258,
+    "unresolved_reference_was_scored": 160
+  },
+  "label_flags_by_split": {
+    "calibration": {
+      "publisher_slot_or_family_conflict": 2,
+      "semantic_reference_disagreement": 11,
+      "unresolved_reference_was_scored": 10
+    },
+    "dev": {
+      "asr_derived_not_independently_reviewed": 55,
+      "publisher_slot_or_family_conflict": 3,
+      "semantic_reference_disagreement": 16,
+      "unresolved_reference_was_scored": 12
+    },
+    "holdout": {},
+    "test": {
+      "semantic_reference_disagreement": 35,
+      "unresolved_reference_was_scored": 29
+    },
+    "train": {
+      "asr_derived_not_independently_reviewed": 288,
+      "semantic_reference_disagreement": 196,
+      "unresolved_reference_was_scored": 109
+    }
+  },
+  "labels_changed": 0,
+  "loader": {
+    "full_ctc_rows": 1863,
+    "normalization_membership_verified": true,
+    "normalized_dtype": "float32",
+    "reserved_rows_checked": 1427,
+    "rows": 1889,
+    "semantic_only_rows": 26,
+    "source_paths_used_exactly": true,
+    "target_rows": 373,
+    "training_performed": false
+  },
+  "loader_findings": {
+    "basename_fixture": {
+      "actually_loaded_mean": 9.0,
+      "hash_checked": false,
+      "requested_mean": 1.0
+    },
+    "interpretation": "Existing implementation probes/constructed software fixtures, not proof of actual split contamination or wrong-file loading in the frozen full model. Historical code is unchanged.",
+    "legacy_human_rows": 1863,
+    "legacy_intent_mismatches": 0,
+    "legacy_target_mismatches": 118,
+    "old_pool_accepts_contrived_dev_row_if_eligibility_is_flipped": true,
+    "target_mismatches_by_intent": {
+      "BRIGHTNESS": 6,
+      "COLOR": 69,
+      "LIGHT_OFF": 11,
+      "LIGHT_ON": 32
+    }
+  },
+  "model_or_policy_changed": false,
+  "new_admissions": 0,
+  "post_holdout_diagnostic": true,
+  "preprocessing": {
+    "actual_silence_normalized_max": -2.332310676574707,
+    "actual_silence_normalized_mean": -2.9312210083007812,
+    "actual_silence_normalized_min": -3.3114099502563477,
+    "batch_padding_fixture": {
+      "max_errors_by_head": [
+        9.5367431640625e-07,
+        2.384185791015625e-07,
+        2.9802322387695312e-08
+      ],
+      "pass_": true,
+      "weights": "random-init software fixture, not a recognition improvement"
+    },
+    "distinction": "Batch padding is masked and uses normalized zero; actual PCM silence becomes nonzero floor features and shifts absolute positions. No preprocessing change was applied.",
+    "original_augmentation": "SpecAugment only, no waveform prefix/suffix jitter/noise/reverb in the frozen full-model protocol",
+    "training_mask_fill": 0.0
+  },
+  "recheck_records": 3416,
+  "text_metamorphics": {
+    "acoustic_word_injection_tested": false,
+    "benign_text_n": 279,
+    "benign_text_passed": 279,
+    "limitation": "No generated audio or transcripts reach runtime; these only validate annotation/collection cue contrasts.",
+    "new_human_recordings": 0,
+    "reject_context_n": 186,
+    "reject_context_passed": 186
+  },
+  "wording_coverage": {
+    "human/calibration": {
+      "cue_nonexact_cases": 5,
+      "exact_cases": 11,
+      "publisher_bucket_cases": 34,
+      "total_cases": 93
+    },
+    "human/dev": {
+      "cue_nonexact_cases": 8,
+      "exact_cases": 16,
+      "publisher_bucket_cases": 44,
+      "total_cases": 93
+    },
+    "human/holdout": {
+      "cue_nonexact_cases": 1,
+      "exact_cases": 62,
+      "publisher_bucket_cases": 80,
+      "total_cases": 93
+    },
+    "human/test": {
+      "cue_nonexact_cases": 9,
+      "exact_cases": 71,
+      "publisher_bucket_cases": 85,
+      "total_cases": 93
+    },
+    "human/train": {
+      "cue_nonexact_cases": 24,
+      "exact_cases": 31,
+      "publisher_bucket_cases": 59,
+      "total_cases": 93
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "compact-v7": {
+    "silence_both_1s": {
+      "gained_correct_accepts": 0,
+      "lost_correct_accepts": 13,
+      "lost_reasons": {
+        "intent_confidence": 13
+      },
+      "same_candidate_confidence_change_mean": -0.21461449422639828
+    },
+    "silence_prefix_1s": {
+      "gained_correct_accepts": 1,
+      "lost_correct_accepts": 13,
+      "lost_reasons": {
+        "intent_confidence": 13
+      },
+      "same_candidate_confidence_change_mean": -0.18185206747079868
+    },
+    "silence_suffix_1s": {
+      "gained_correct_accepts": 0,
+      "lost_correct_accepts": 5,
+      "lost_reasons": {
+        "intent_confidence": 5
+      },
+      "same_candidate_confidence_change_mean": -0.0809093302803898
+    }
+  },
+  "full": {
+    "silence_both_1s": {
+      "gained_correct_accepts": 1,
+      "lost_correct_accepts": 24,
+      "lost_reasons": {
+        "intent_confidence": 24
+      },
+      "same_candidate_confidence_change_mean": -0.2550254392590893
+    },
+    "silence_prefix_1s": {
+      "gained_correct_accepts": 1,
+      "lost_correct_accepts": 26,
+      "lost_reasons": {
+        "intent_confidence": 26
+      },
+      "same_candidate_confidence_change_mean": -0.227601291337798
+    },
+    "silence_suffix_1s": {
+      "gained_correct_accepts": 0,
+      "lost_correct_accepts": 5,
+      "lost_reasons": {
+        "intent_confidence": 5
+      },
+      "same_candidate_confidence_change_mean": -0.02041068758947525
+    }
+  }
+}

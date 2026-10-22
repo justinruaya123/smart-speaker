@@ -1,0 +1,12 @@
+{
+  "exact_train_normalization_recomputed": true,
+  "final_metric_groups": 7,
+  "historical_bindings_unchanged": 289,
+  "no_fitting_or_normalization_holdout_overlap": true,
+  "normalization_human_rows": 1889,
+  "parameters": 258912,
+  "prediction_rows": 4896,
+  "results_sha256": "b6ec78da752bbfa099ce4447799c83b496445ee9b242de77dad72832516bf8f5",
+  "selection_before_test_sha256": "2a30fcf56d85f7f4f2344b37d930859bc066c41b5385c09b9ae5eb0c9f552f2b",
+  "status": "verified"
+}

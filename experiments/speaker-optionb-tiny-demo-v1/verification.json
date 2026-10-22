@@ -1,0 +1,69 @@
+{
+  "actions_enabled": false,
+  "bindings": {
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/final-predictions.jsonl": "27172b3510b876cbecf67a69a8042ab48e94c3af18e0c2e75373f6edb7d54058",
+    "D:/School/AI231/.worktrees/me2/smart-speaker-fresh/scripts/test/speaker_optionb_tiny_demo_report.py": "eacf9a9cb481c3d7598cfe5940bc288d032c2d568b9561a1660ea816af6dcae7",
+    "experiments/speaker-optionb-tiny-demo-v1/per-command.csv": "245252acb04ca8487da660e62105da3fc46a8775a1a5e218bb21d1114cf9cc55",
+    "experiments/speaker-optionb-tiny-demo-v1/per-intent.csv": "46ee59feb11fb76dd24218a59351fe07fc2dfb62ab298b6e8e579f0a2502b7db",
+    "experiments/speaker-optionb-tiny-demo-v1/per-verbatim-cohorts.csv": "1ff8e25ed6d369e3726e2e2de5b240cf45d9b85fc422a41c13834a32722087e0",
+    "experiments/speaker-optionb-tiny-demo-v1/per-verbatim.csv": "a50c8328e486040641b64bf8d051e36873229c6665cfa8ade315ef7873367992",
+    "experiments/speaker-optionb-tiny-demo-v1/policy-selection.json": "f5c5bf9c3a7f7cb544af22ffad30cb9d9db3ea9816bc69ab38944280a06264b1",
+    "experiments/speaker-optionb-tiny-demo-v1/results.json": "535e1ff80f26a37bf0ee0de926ca77c9602c115410cfbbb61f6d8f3517496eb9",
+    "experiments/speaker-optionb-tiny-demo-v1/selection-before-test.json": "17de95d2a92e3cc5b82d854c5cf05af1d8f4f7590cc6d21c226679024cfe1b7e",
+    "scripts/test/test_speaker_optionb_tiny_demo_report.py": "defa1b1c65961a3f9f0ce9deaaa3440dad896b66b7d9b55bfbb67b70ee9ea577"
+  },
+  "current_reserved_membership_unchanged": true,
+  "exact_canonical_prediction_coverage": true,
+  "exposed_regression_not_blind": true,
+  "independent_actual_graph_spot_replays": 32,
+  "independently_reconstructed_policy_grid": 138,
+  "inference_rows": 4896,
+  "installed": false,
+  "model_normalizer_ontology_unchanged": true,
+  "optimizer_updates": 0,
+  "parameters": 258912,
+  "policy": {
+    "enabled": true,
+    "min_margin": 0.1,
+    "min_probability": 0.5
+  },
+  "protected_bindings": 399,
+  "status": "verified",
+  "waveform_metadata_labels_not_independently_listened": true,
+  "wording_is_full_reference_metadata_matching_not_inference_lookup": true,
+  "wording_rows": 372,
+  "wording_summary": {
+    "holdout/human": {
+      "correct_accepted": 0,
+      "definitions": 93,
+      "metadata_reference_matches": 0,
+      "rejected": 0,
+      "represented": 0,
+      "wrong_accepted": 0
+    },
+    "holdout/synthetic": {
+      "correct_accepted": 0,
+      "definitions": 93,
+      "metadata_reference_matches": 0,
+      "rejected": 0,
+      "represented": 0,
+      "wrong_accepted": 0
+    },
+    "test/human": {
+      "correct_accepted": 0,
+      "definitions": 93,
+      "metadata_reference_matches": 0,
+      "rejected": 0,
+      "represented": 0,
+      "wrong_accepted": 0
+    },
+    "test/synthetic": {
+      "correct_accepted": 0,
+      "definitions": 93,
+      "metadata_reference_matches": 0,
+      "rejected": 0,
+      "represented": 0,
+      "wrong_accepted": 0
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "acoustic_word_injection_tested": false,
+  "benign_text_n": 279,
+  "benign_text_passed": 279,
+  "limitation": "No generated audio or transcripts reach runtime; these only validate annotation/collection cue contrasts.",
+  "new_human_recordings": 0,
+  "reject_context_n": 186,
+  "reject_context_passed": 186
+}

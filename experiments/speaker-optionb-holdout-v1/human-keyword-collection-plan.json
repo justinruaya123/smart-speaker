@@ -1,0 +1,2780 @@
+{
+  "case_count": 93,
+  "cases": [
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "play",
+        "music"
+      ],
+      "command": {
+        "intent": "PLAY_MUSIC",
+        "slots": {}
+      },
+      "dev_exact": 3,
+      "id": "B1-001",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 2,
+      "train_exact": 14,
+      "train_typed_speakers": 11,
+      "verbatim": "Play music"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "start",
+        "music"
+      ],
+      "command": {
+        "intent": "PLAY_MUSIC",
+        "slots": {}
+      },
+      "dev_exact": 0,
+      "id": "B1-002",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 11,
+      "verbatim": "Start music"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "play",
+        "music"
+      ],
+      "command": {
+        "intent": "PLAY_MUSIC",
+        "slots": {}
+      },
+      "dev_exact": 0,
+      "id": "B1-003",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 1,
+      "train_exact": 1,
+      "train_typed_speakers": 11,
+      "verbatim": "Play some music"
+    },
+    {
+      "calibration_exact": 2,
+      "candidate_cue_tokens": [
+        "weather"
+      ],
+      "command": {
+        "intent": "WEATHER",
+        "slots": {}
+      },
+      "dev_exact": 0,
+      "id": "B1-004",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 11,
+      "train_typed_speakers": 19,
+      "verbatim": "Weather"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "weather"
+      ],
+      "command": {
+        "intent": "WEATHER",
+        "slots": {}
+      },
+      "dev_exact": 3,
+      "id": "B1-005",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 14,
+      "train_typed_speakers": 19,
+      "verbatim": "What's the weather?"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "tell",
+        "weather"
+      ],
+      "command": {
+        "intent": "WEATHER",
+        "slots": {}
+      },
+      "dev_exact": 1,
+      "id": "B1-006",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 2,
+      "train_exact": 3,
+      "train_typed_speakers": 19,
+      "verbatim": "Tell me the weather"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "time"
+      ],
+      "command": {
+        "intent": "TIME",
+        "slots": {}
+      },
+      "dev_exact": 0,
+      "id": "B1-007",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 9,
+      "train_exact": 0,
+      "train_typed_speakers": 39,
+      "verbatim": "Time"
+    },
+    {
+      "calibration_exact": 1,
+      "candidate_cue_tokens": [
+        "time"
+      ],
+      "command": {
+        "intent": "TIME",
+        "slots": {}
+      },
+      "dev_exact": 3,
+      "id": "B1-008",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 3,
+      "train_exact": 24,
+      "train_typed_speakers": 39,
+      "verbatim": "What time is it?"
+    },
+    {
+      "calibration_exact": 1,
+      "candidate_cue_tokens": [
+        "tell",
+        "time"
+      ],
+      "command": {
+        "intent": "TIME",
+        "slots": {}
+      },
+      "dev_exact": 1,
+      "id": "B1-009",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 2,
+      "train_exact": 4,
+      "train_typed_speakers": 39,
+      "verbatim": "Tell me the time"
+    },
+    {
+      "calibration_exact": 1,
+      "candidate_cue_tokens": [
+        "lights",
+        "on"
+      ],
+      "command": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-010",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 3,
+      "train_typed_speakers": 21,
+      "verbatim": "Lights on"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "power",
+        "on",
+        "lights"
+      ],
+      "command": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-011",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 21,
+      "verbatim": "Power on the lights"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "turn",
+        "on",
+        "lights"
+      ],
+      "command": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-012",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 16,
+      "train_exact": 0,
+      "train_typed_speakers": 21,
+      "verbatim": "Turn on the lights"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "lights",
+        "out"
+      ],
+      "command": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "dev_exact": 1,
+      "id": "B1-013",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 2,
+      "train_exact": 2,
+      "train_typed_speakers": 32,
+      "verbatim": "Lights out"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "kill",
+        "lights"
+      ],
+      "command": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-014",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 32,
+      "verbatim": "Kill the lights"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "shut",
+        "off",
+        "lights"
+      ],
+      "command": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-015",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 32,
+      "verbatim": "Shut off the lights"
+    },
+    {
+      "calibration_exact": 4,
+      "candidate_cue_tokens": [
+        "pause"
+      ],
+      "command": {
+        "intent": "PAUSE",
+        "slots": {}
+      },
+      "dev_exact": 10,
+      "id": "B1-016",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 35,
+      "train_typed_speakers": 46,
+      "verbatim": "Pause"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "pause",
+        "audio"
+      ],
+      "command": {
+        "intent": "PAUSE",
+        "slots": {}
+      },
+      "dev_exact": 0,
+      "id": "B1-017",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 5,
+      "train_exact": 0,
+      "train_typed_speakers": 46,
+      "verbatim": "Pause audio"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "pause",
+        "song"
+      ],
+      "command": {
+        "intent": "PAUSE",
+        "slots": {}
+      },
+      "dev_exact": 0,
+      "id": "B1-018",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 46,
+      "verbatim": "Pause song"
+    },
+    {
+      "calibration_exact": 2,
+      "candidate_cue_tokens": [
+        "stop"
+      ],
+      "command": {
+        "intent": "STOP",
+        "slots": {}
+      },
+      "dev_exact": 7,
+      "id": "B1-019",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 37,
+      "train_typed_speakers": 54,
+      "verbatim": "Stop"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "stop",
+        "playing"
+      ],
+      "command": {
+        "intent": "STOP",
+        "slots": {}
+      },
+      "dev_exact": 0,
+      "id": "B1-020",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 14,
+      "train_typed_speakers": 54,
+      "verbatim": "Stop playing"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "end",
+        "playback"
+      ],
+      "command": {
+        "intent": "STOP",
+        "slots": {}
+      },
+      "dev_exact": 0,
+      "id": "B1-021",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 54,
+      "verbatim": "End playback"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "next",
+        "song"
+      ],
+      "command": {
+        "intent": "NEXT",
+        "slots": {}
+      },
+      "dev_exact": 2,
+      "id": "B1-022",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 11,
+      "train_typed_speakers": 31,
+      "verbatim": "Next song"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "skip",
+        "song"
+      ],
+      "command": {
+        "intent": "NEXT",
+        "slots": {}
+      },
+      "dev_exact": 0,
+      "id": "B1-023",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 3,
+      "train_typed_speakers": 31,
+      "verbatim": "Skip song"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "play",
+        "next",
+        "song"
+      ],
+      "command": {
+        "intent": "NEXT",
+        "slots": {}
+      },
+      "dev_exact": 0,
+      "id": "B1-024",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 5,
+      "train_exact": 6,
+      "train_typed_speakers": 31,
+      "verbatim": "Play next song"
+    },
+    {
+      "calibration_exact": 1,
+      "candidate_cue_tokens": [
+        "volume",
+        "up"
+      ],
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "dev_exact": 4,
+      "id": "B1-025",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 17,
+      "train_typed_speakers": 37,
+      "verbatim": "Volume up"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "increase",
+        "volume"
+      ],
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-026",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 6,
+      "train_exact": 5,
+      "train_typed_speakers": 37,
+      "verbatim": "Increase the volume"
+    },
+    {
+      "calibration_exact": 1,
+      "candidate_cue_tokens": [
+        "turn",
+        "volume",
+        "up"
+      ],
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-027",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 1,
+      "train_exact": 0,
+      "train_typed_speakers": 37,
+      "verbatim": "Turn the volume up"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "volume",
+        "down"
+      ],
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "dev_exact": 2,
+      "id": "B1-028",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 26,
+      "train_typed_speakers": 47,
+      "verbatim": "Volume down"
+    },
+    {
+      "calibration_exact": 1,
+      "candidate_cue_tokens": [
+        "lower",
+        "volume"
+      ],
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "dev_exact": 1,
+      "id": "B1-029",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 4,
+      "train_exact": 8,
+      "train_typed_speakers": 47,
+      "verbatim": "Lower the volume"
+    },
+    {
+      "calibration_exact": 2,
+      "candidate_cue_tokens": [
+        "turn",
+        "volume",
+        "down"
+      ],
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-030",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 1,
+      "train_exact": 4,
+      "train_typed_speakers": 47,
+      "verbatim": "Turn the volume down"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "call"
+      ],
+      "command": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-031",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 3,
+      "train_typed_speakers": 1,
+      "verbatim": "Call"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "make",
+        "call"
+      ],
+      "command": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-032",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 3,
+      "train_typed_speakers": 1,
+      "verbatim": "Make a call"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "make",
+        "phone",
+        "call"
+      ],
+      "command": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-033",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 3,
+      "train_typed_speakers": 1,
+      "verbatim": "Make a phone call"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "message"
+      ],
+      "command": {
+        "intent": "MESSAGE",
+        "slots": {}
+      },
+      "dev_exact": 0,
+      "id": "B1-034",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Message"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "send",
+        "message"
+      ],
+      "command": {
+        "intent": "MESSAGE",
+        "slots": {}
+      },
+      "dev_exact": 0,
+      "id": "B1-035",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Send a message"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "send",
+        "message"
+      ],
+      "command": {
+        "intent": "MESSAGE",
+        "slots": {}
+      },
+      "dev_exact": 0,
+      "id": "B1-036",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Send my message"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "reminders"
+      ],
+      "command": {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      },
+      "dev_exact": 0,
+      "id": "B1-037",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 12,
+      "verbatim": "Reminders"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "show",
+        "reminders"
+      ],
+      "command": {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      },
+      "dev_exact": 0,
+      "id": "B1-038",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 2,
+      "train_exact": 0,
+      "train_typed_speakers": 12,
+      "verbatim": "Show my reminders"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "list",
+        "reminders"
+      ],
+      "command": {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      },
+      "dev_exact": 0,
+      "id": "B1-039",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 12,
+      "verbatim": "List my reminders"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "timer",
+        "ten",
+        "seconds"
+      ],
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-040",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Timer 10 seconds"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "timer",
+        "thirty",
+        "seconds"
+      ],
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-041",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 1,
+      "verbatim": "Timer 30 seconds"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "timer",
+        "one",
+        "minute"
+      ],
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-042",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 13,
+      "verbatim": "Timer 1 minute"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "countdown",
+        "ten",
+        "seconds"
+      ],
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-043",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Countdown for 10 seconds"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "countdown",
+        "thirty",
+        "seconds"
+      ],
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-044",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 1,
+      "verbatim": "Countdown for 30 seconds"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "countdown",
+        "one",
+        "minute"
+      ],
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-045",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 13,
+      "verbatim": "Countdown for 1 minute"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "start",
+        "timer",
+        "ten",
+        "seconds"
+      ],
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-046",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Start a timer for 10 seconds"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "start",
+        "timer",
+        "thirty",
+        "seconds"
+      ],
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-047",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 1,
+      "verbatim": "Start a timer for 30 seconds"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "start",
+        "timer",
+        "one",
+        "minute"
+      ],
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-048",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 6,
+      "train_exact": 2,
+      "train_typed_speakers": 13,
+      "verbatim": "Start a timer for 1 minute"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "alarm",
+        "six",
+        "a",
+        "m"
+      ],
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-049",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 9,
+      "verbatim": "Alarm 6:00 AM"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "alarm",
+        "eight",
+        "a",
+        "m"
+      ],
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-050",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 14,
+      "verbatim": "Alarm 8:00 AM"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "alarm",
+        "nine",
+        "p",
+        "m"
+      ],
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-051",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 7,
+      "verbatim": "Alarm 9:00 PM"
+    },
+    {
+      "calibration_exact": 3,
+      "candidate_cue_tokens": [
+        "wake",
+        "up",
+        "six",
+        "a",
+        "m"
+      ],
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-052",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 14,
+      "train_typed_speakers": 9,
+      "verbatim": "Wake me up at 6:00 AM"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "wake",
+        "up",
+        "eight",
+        "a",
+        "m"
+      ],
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-053",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 3,
+      "train_exact": 0,
+      "train_typed_speakers": 14,
+      "verbatim": "Wake me up at 8:00 AM"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "wake",
+        "up",
+        "nine",
+        "p",
+        "m"
+      ],
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-054",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 7,
+      "verbatim": "Wake me up at 9:00 PM"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "set",
+        "alarm",
+        "six",
+        "a",
+        "m"
+      ],
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "dev_exact": 1,
+      "id": "B1-055",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 1,
+      "train_exact": 2,
+      "train_typed_speakers": 9,
+      "verbatim": "Set an alarm for 6:00 AM"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "set",
+        "alarm",
+        "eight",
+        "a",
+        "m"
+      ],
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-056",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 12,
+      "train_exact": 2,
+      "train_typed_speakers": 14,
+      "verbatim": "Set an alarm for 8:00 AM"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "set",
+        "alarm",
+        "nine",
+        "p",
+        "m"
+      ],
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-057",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 1,
+      "train_exact": 3,
+      "train_typed_speakers": 7,
+      "verbatim": "Set an alarm for 9:00 PM"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "temperature",
+        "eighteen",
+        "degrees"
+      ],
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-058",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 1,
+      "verbatim": "Temperature 18 degrees"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "temperature",
+        "twenty",
+        "two",
+        "degrees"
+      ],
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-059",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 3,
+      "verbatim": "Temperature 22 degrees"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "temperature",
+        "twenty",
+        "six",
+        "degrees"
+      ],
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-060",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 3,
+      "verbatim": "Temperature 26 degrees"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "change",
+        "temperature",
+        "eighteen",
+        "degrees"
+      ],
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-061",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 1,
+      "verbatim": "Change the temperature to 18 degrees"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "change",
+        "temperature",
+        "twenty",
+        "two",
+        "degrees"
+      ],
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-062",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 3,
+      "verbatim": "Change the temperature to 22 degrees"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "change",
+        "temperature",
+        "twenty",
+        "six",
+        "degrees"
+      ],
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      },
+      "dev_exact": 1,
+      "id": "B1-063",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 2,
+      "train_typed_speakers": 3,
+      "verbatim": "Change the temperature to 26 degrees"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "set",
+        "temperature",
+        "eighteen",
+        "degrees"
+      ],
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-064",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 13,
+      "train_exact": 0,
+      "train_typed_speakers": 1,
+      "verbatim": "Set the temperature to 18 degrees"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "set",
+        "temperature",
+        "twenty",
+        "two",
+        "degrees"
+      ],
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      },
+      "dev_exact": 1,
+      "id": "B1-065",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 13,
+      "train_exact": 2,
+      "train_typed_speakers": 3,
+      "verbatim": "Set the temperature to 22 degrees"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "set",
+        "temperature",
+        "twenty",
+        "six",
+        "degrees"
+      ],
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      },
+      "dev_exact": 1,
+      "id": "B1-066",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 14,
+      "train_exact": 2,
+      "train_typed_speakers": 3,
+      "verbatim": "Set the temperature to 26 degrees"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "brightness",
+        "twenty",
+        "percent"
+      ],
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 20
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-067",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 9,
+      "verbatim": "Brightness 20 percent"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "brightness",
+        "sixty",
+        "percent"
+      ],
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-068",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Brightness 60 percent"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "brightness",
+        "one",
+        "hundred",
+        "percent"
+      ],
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-069",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Brightness 100 percent"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "adjust",
+        "brightness",
+        "twenty",
+        "percent"
+      ],
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 20
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-070",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 9,
+      "verbatim": "Adjust brightness to 20 percent"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "adjust",
+        "brightness",
+        "sixty",
+        "percent"
+      ],
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-071",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Adjust brightness to 60 percent"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "adjust",
+        "brightness",
+        "one",
+        "hundred",
+        "percent"
+      ],
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-072",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Adjust brightness to 100 percent"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "brightness",
+        "level",
+        "twenty",
+        "percent"
+      ],
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 20
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-073",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 9,
+      "verbatim": "Brightness level 20 percent"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "brightness",
+        "level",
+        "sixty",
+        "percent"
+      ],
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-074",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Brightness level 60 percent"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "brightness",
+        "level",
+        "one",
+        "hundred",
+        "percent"
+      ],
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-075",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Brightness level 100 percent"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "change",
+        "color",
+        "red"
+      ],
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "red",
+          "light_id": "light.all"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-076",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 17,
+      "verbatim": "Change color to Red"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "change",
+        "color",
+        "blue"
+      ],
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "blue",
+          "light_id": "light.all"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-077",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 1,
+      "train_exact": 0,
+      "train_typed_speakers": 20,
+      "verbatim": "Change color to Blue"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "change",
+        "color",
+        "green"
+      ],
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "green",
+          "light_id": "light.all"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-078",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 12,
+      "verbatim": "Change color to Green"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "switch",
+        "color",
+        "red"
+      ],
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "red",
+          "light_id": "light.all"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-079",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 17,
+      "verbatim": "Switch color to Red"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "switch",
+        "color",
+        "blue"
+      ],
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "blue",
+          "light_id": "light.all"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-080",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 20,
+      "verbatim": "Switch color to Blue"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "switch",
+        "color",
+        "green"
+      ],
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "green",
+          "light_id": "light.all"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-081",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 12,
+      "verbatim": "Switch color to Green"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "set",
+        "color",
+        "red"
+      ],
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "red",
+          "light_id": "light.all"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-082",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 17,
+      "verbatim": "Set color to Red"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "set",
+        "color",
+        "blue"
+      ],
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "blue",
+          "light_id": "light.all"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-083",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 20,
+      "verbatim": "Set color to Blue"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "set",
+        "color",
+        "green"
+      ],
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "green",
+          "light_id": "light.all"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-084",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 12,
+      "verbatim": "Set color to Green"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "reminder",
+        "drink",
+        "water"
+      ],
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-085",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Reminder Drink water"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "reminder",
+        "study"
+      ],
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-086",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 1,
+      "verbatim": "Reminder Study"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "reminder",
+        "exercise"
+      ],
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-087",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Reminder Exercise"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "remind",
+        "drink",
+        "water"
+      ],
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-088",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Remind me to Drink water"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "remind",
+        "study"
+      ],
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-089",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 1,
+      "verbatim": "Remind me to Study"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "remind",
+        "exercise"
+      ],
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-090",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Remind me to Exercise"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "create",
+        "reminder",
+        "drink",
+        "water"
+      ],
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-091",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Create a reminder to Drink water"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "create",
+        "reminder",
+        "study"
+      ],
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-092",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "diversify_speakers_and_wording",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 1,
+      "verbatim": "Create a reminder to Study"
+    },
+    {
+      "calibration_exact": 0,
+      "candidate_cue_tokens": [
+        "create",
+        "reminder",
+        "exercise"
+      ],
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      },
+      "dev_exact": 0,
+      "id": "B1-093",
+      "keyword_phone_targets_created": false,
+      "new_human_recordings": 0,
+      "priority": "missing_human_typed_training_cell",
+      "requested_evidence": [
+        "original connected verbatim",
+        "same-command minor wording/courtesy variant",
+        "bounded leading/trailing-context variation",
+        "negated/quoted/changed-value and extra-action contrast"
+      ],
+      "rule": "Same required slots and one intended command; unrelated content changing meaning is not benign padding",
+      "train_cue_nonexact": 0,
+      "train_exact": 0,
+      "train_typed_speakers": 0,
+      "verbatim": "Create a reminder to Exercise"
+    }
+  ],
+  "interpretation": "Coverage-driven collection prompts, not a manufactured acoustic dataset or new independent speakers. Holdout examples never enter training.",
+  "recordings_created": 0
+}

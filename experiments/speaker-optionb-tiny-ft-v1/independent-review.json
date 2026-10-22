@@ -1,0 +1,18 @@
+{
+  "review_id": "deleg_4b708667",
+  "status": "passed",
+  "scope": "First study export, evaluation, verifier and resource-probe code; does not cover the later direct-study verifier",
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [],
+  "summary": "No actual logic/security defects, heldout fitting/reselection, invalid metric formulas, or false quality claims found. Verified non-payload binding hashes, preservation of all 289 original binding entries, dev-only model locking before calibration, 258,912-parameter ONNX structure, saved-logit metric and baseline-control reconciliation, and Torch-free runtime dependencies. Four bounded software tests passed. Accepted recall of 4/171 dev and 3/100 calibration is a research-quality failure, not a code bug; reference and speaker-identity uncertainties remain explicit. Final replay, full verification, and resource measurements remain the parent's responsibility. No repository edits or audio decoding/inference performed.",
+  "reviewer_software_tests_passed": 4,
+  "reviewer_hashed_audio_payloads": false,
+  "reviewer_audio_decoding_or_inference": false,
+  "parent_actual_final_replay": "experiments/speaker-optionb-tiny-ft-v1/results.json",
+  "parent_actual_verification": "experiments/speaker-optionb-tiny-ft-v1/verification.json",
+  "parent_actual_resources": "experiments/speaker-optionb-tiny-ft-v1/desktop-resource-results.json",
+  "quality_passed": false,
+  "installed": false
+}

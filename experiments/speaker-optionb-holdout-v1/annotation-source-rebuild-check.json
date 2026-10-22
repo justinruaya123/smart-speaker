@@ -1,0 +1,19 @@
+{
+  "format": "annotation-source-rebuild-check-v1",
+  "default_regeneration": "blocked_by_existing_checksum_guard",
+  "proposal_expected_sha256": "e1c0fba7d11b87983aa0499669ec2f10c3949e3fdf9304c4c32484f69490a80d",
+  "proposal_actual_sha256": "70d40fe5f66b38141c6b745ca3c6eaf24eb87f2d7a56ad8df3762f99a25c32f8",
+  "crlf_count": 0,
+  "utf8_bom": false,
+  "lf_normalization_resolves_hash_mismatch": false,
+  "frozen_approval_sha256": "33d1345c85f31eb1aaea223d791b61322abd7c593146aca008120788fff89c54",
+  "frozen_approval_verified_against": "experiments/pcv-release-train-v1/data-freeze.json",
+  "current_supported_texts": 110,
+  "frozen_supported_texts": 110,
+  "projected_supported_maps_equal": true,
+  "projected_ambiguous_maps_equal": true,
+  "semantic_mapping_drift_demonstrated": false,
+  "source_of_hash_difference": "not fully isolated; not explained by CRLF or UTF-8 BOM",
+  "resolution_used_for_audit": "Explicitly pass the verified immutable approval to the existing release annotate API; do not modify the live proposal or disable its guard",
+  "source_files_changed": false
+}

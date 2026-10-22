@@ -1,0 +1,94 @@
+id,text,command,metadata_exact_human_references,raw_correct,correct_accepted
+B1-001,Play music,"{""intent"": ""PLAY_MUSIC"", ""slots"": {}}",0,0,0
+B1-002,Start music,"{""intent"": ""PLAY_MUSIC"", ""slots"": {}}",0,0,0
+B1-003,Play some music,"{""intent"": ""PLAY_MUSIC"", ""slots"": {}}",0,0,0
+B1-004,Weather,"{""intent"": ""WEATHER"", ""slots"": {}}",0,0,0
+B1-005,What's the weather?,"{""intent"": ""WEATHER"", ""slots"": {}}",0,0,0
+B1-006,Tell me the weather,"{""intent"": ""WEATHER"", ""slots"": {}}",0,0,0
+B1-007,Time,"{""intent"": ""TIME"", ""slots"": {}}",0,0,0
+B1-008,What time is it?,"{""intent"": ""TIME"", ""slots"": {}}",0,0,0
+B1-009,Tell me the time,"{""intent"": ""TIME"", ""slots"": {}}",0,0,0
+B1-010,Lights on,"{""intent"": ""LIGHT_ON"", ""slots"": {""light_id"": ""light.all""}}",0,0,0
+B1-011,Power on the lights,"{""intent"": ""LIGHT_ON"", ""slots"": {""light_id"": ""light.all""}}",0,0,0
+B1-012,Turn on the lights,"{""intent"": ""LIGHT_ON"", ""slots"": {""light_id"": ""light.all""}}",0,0,0
+B1-013,Lights out,"{""intent"": ""LIGHT_OFF"", ""slots"": {""light_id"": ""light.all""}}",0,0,0
+B1-014,Kill the lights,"{""intent"": ""LIGHT_OFF"", ""slots"": {""light_id"": ""light.all""}}",0,0,0
+B1-015,Shut off the lights,"{""intent"": ""LIGHT_OFF"", ""slots"": {""light_id"": ""light.all""}}",0,0,0
+B1-016,Pause,"{""intent"": ""PAUSE"", ""slots"": {}}",0,0,0
+B1-017,Pause audio,"{""intent"": ""PAUSE"", ""slots"": {}}",0,0,0
+B1-018,Pause song,"{""intent"": ""PAUSE"", ""slots"": {}}",0,0,0
+B1-019,Stop,"{""intent"": ""STOP"", ""slots"": {}}",0,0,0
+B1-020,Stop playing,"{""intent"": ""STOP"", ""slots"": {}}",0,0,0
+B1-021,End playback,"{""intent"": ""STOP"", ""slots"": {}}",0,0,0
+B1-022,Next song,"{""intent"": ""NEXT"", ""slots"": {}}",0,0,0
+B1-023,Skip song,"{""intent"": ""NEXT"", ""slots"": {}}",0,0,0
+B1-024,Play next song,"{""intent"": ""NEXT"", ""slots"": {}}",0,0,0
+B1-025,Volume up,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""up""}}",0,0,0
+B1-026,Increase the volume,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""up""}}",0,0,0
+B1-027,Turn the volume up,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""up""}}",0,0,0
+B1-028,Volume down,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""down""}}",0,0,0
+B1-029,Lower the volume,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""down""}}",0,0,0
+B1-030,Turn the volume down,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""down""}}",0,0,0
+B1-031,Call,"{""intent"": ""CALL"", ""slots"": {""contact_id"": ""contact.home""}}",0,0,0
+B1-032,Make a call,"{""intent"": ""CALL"", ""slots"": {""contact_id"": ""contact.home""}}",0,0,0
+B1-033,Make a phone call,"{""intent"": ""CALL"", ""slots"": {""contact_id"": ""contact.home""}}",0,0,0
+B1-034,Message,"{""intent"": ""MESSAGE"", ""slots"": {}}",0,0,0
+B1-035,Send a message,"{""intent"": ""MESSAGE"", ""slots"": {}}",0,0,0
+B1-036,Send my message,"{""intent"": ""MESSAGE"", ""slots"": {}}",0,0,0
+B1-037,Reminders,"{""intent"": ""LIST_REMINDERS"", ""slots"": {}}",0,0,0
+B1-038,Show my reminders,"{""intent"": ""LIST_REMINDERS"", ""slots"": {}}",0,0,0
+B1-039,List my reminders,"{""intent"": ""LIST_REMINDERS"", ""slots"": {}}",0,0,0
+B1-040,Timer 10 seconds,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 10}}",0,0,0
+B1-041,Timer 30 seconds,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 30}}",0,0,0
+B1-042,Timer 1 minute,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 60}}",0,0,0
+B1-043,Countdown for 10 seconds,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 10}}",0,0,0
+B1-044,Countdown for 30 seconds,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 30}}",0,0,0
+B1-045,Countdown for 1 minute,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 60}}",0,0,0
+B1-046,Start a timer for 10 seconds,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 10}}",0,0,0
+B1-047,Start a timer for 30 seconds,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 30}}",0,0,0
+B1-048,Start a timer for 1 minute,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 60}}",0,0,0
+B1-049,Alarm 6:00 AM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""06:00"", ""timezone"": ""Asia/Manila""}}",0,0,0
+B1-050,Alarm 8:00 AM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""08:00"", ""timezone"": ""Asia/Manila""}}",0,0,0
+B1-051,Alarm 9:00 PM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""21:00"", ""timezone"": ""Asia/Manila""}}",0,0,0
+B1-052,Wake me up at 6:00 AM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""06:00"", ""timezone"": ""Asia/Manila""}}",0,0,0
+B1-053,Wake me up at 8:00 AM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""08:00"", ""timezone"": ""Asia/Manila""}}",0,0,0
+B1-054,Wake me up at 9:00 PM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""21:00"", ""timezone"": ""Asia/Manila""}}",0,0,0
+B1-055,Set an alarm for 6:00 AM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""06:00"", ""timezone"": ""Asia/Manila""}}",0,0,0
+B1-056,Set an alarm for 8:00 AM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""08:00"", ""timezone"": ""Asia/Manila""}}",0,0,0
+B1-057,Set an alarm for 9:00 PM,"{""intent"": ""ALARM"", ""slots"": {""time"": ""21:00"", ""timezone"": ""Asia/Manila""}}",0,0,0
+B1-058,Temperature 18 degrees,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 18, ""unit"": ""C""}}",0,0,0
+B1-059,Temperature 22 degrees,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 22, ""unit"": ""C""}}",0,0,0
+B1-060,Temperature 26 degrees,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 26, ""unit"": ""C""}}",0,0,0
+B1-061,Change the temperature to 18 degrees,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 18, ""unit"": ""C""}}",0,0,0
+B1-062,Change the temperature to 22 degrees,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 22, ""unit"": ""C""}}",0,0,0
+B1-063,Change the temperature to 26 degrees,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 26, ""unit"": ""C""}}",0,0,0
+B1-064,Set the temperature to 18 degrees,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 18, ""unit"": ""C""}}",0,0,0
+B1-065,Set the temperature to 22 degrees,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 22, ""unit"": ""C""}}",0,0,0
+B1-066,Set the temperature to 26 degrees,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 26, ""unit"": ""C""}}",0,0,0
+B1-067,Brightness 20 percent,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 20}}",0,0,0
+B1-068,Brightness 60 percent,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 60}}",0,0,0
+B1-069,Brightness 100 percent,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 100}}",0,0,0
+B1-070,Adjust brightness to 20 percent,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 20}}",0,0,0
+B1-071,Adjust brightness to 60 percent,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 60}}",0,0,0
+B1-072,Adjust brightness to 100 percent,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 100}}",0,0,0
+B1-073,Brightness level 20 percent,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 20}}",0,0,0
+B1-074,Brightness level 60 percent,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 60}}",0,0,0
+B1-075,Brightness level 100 percent,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 100}}",0,0,0
+B1-076,Change color to Red,"{""intent"": ""COLOR"", ""slots"": {""color"": ""red"", ""light_id"": ""light.all""}}",0,0,0
+B1-077,Change color to Blue,"{""intent"": ""COLOR"", ""slots"": {""color"": ""blue"", ""light_id"": ""light.all""}}",0,0,0
+B1-078,Change color to Green,"{""intent"": ""COLOR"", ""slots"": {""color"": ""green"", ""light_id"": ""light.all""}}",0,0,0
+B1-079,Switch color to Red,"{""intent"": ""COLOR"", ""slots"": {""color"": ""red"", ""light_id"": ""light.all""}}",0,0,0
+B1-080,Switch color to Blue,"{""intent"": ""COLOR"", ""slots"": {""color"": ""blue"", ""light_id"": ""light.all""}}",0,0,0
+B1-081,Switch color to Green,"{""intent"": ""COLOR"", ""slots"": {""color"": ""green"", ""light_id"": ""light.all""}}",0,0,0
+B1-082,Set color to Red,"{""intent"": ""COLOR"", ""slots"": {""color"": ""red"", ""light_id"": ""light.all""}}",0,0,0
+B1-083,Set color to Blue,"{""intent"": ""COLOR"", ""slots"": {""color"": ""blue"", ""light_id"": ""light.all""}}",0,0,0
+B1-084,Set color to Green,"{""intent"": ""COLOR"", ""slots"": {""color"": ""green"", ""light_id"": ""light.all""}}",0,0,0
+B1-085,Reminder Drink water,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.drink_water""}}",0,0,0
+B1-086,Reminder Study,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.study""}}",0,0,0
+B1-087,Reminder Exercise,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.exercise""}}",0,0,0
+B1-088,Remind me to Drink water,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.drink_water""}}",0,0,0
+B1-089,Remind me to Study,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.study""}}",0,0,0
+B1-090,Remind me to Exercise,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.exercise""}}",0,0,0
+B1-091,Create a reminder to Drink water,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.drink_water""}}",0,0,0
+B1-092,Create a reminder to Study,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.study""}}",0,0,0
+B1-093,Create a reminder to Exercise,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.exercise""}}",0,0,0

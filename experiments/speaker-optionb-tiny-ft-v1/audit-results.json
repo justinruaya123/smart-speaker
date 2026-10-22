@@ -1,0 +1,950 @@
+{
+  "data": {
+    "all_declared_cross_split_groups_disjoint": true,
+    "counts": {
+      "human": {
+        "optionb": 1284,
+        "original_unknown": 473,
+        "outside_optionb": 132
+      },
+      "synthetic": {
+        "optionb": 21426
+      }
+    },
+    "independent_listening": false,
+    "labels_changed": false,
+    "missing_commands": {
+      "human": [
+        {
+          "class_index": 4,
+          "command": {
+            "intent": "BRIGHTNESS",
+            "slots": {
+              "light_id": "light.all",
+              "percent": 100
+            }
+          }
+        },
+        {
+          "class_index": 6,
+          "command": {
+            "intent": "BRIGHTNESS",
+            "slots": {
+              "light_id": "light.all",
+              "percent": 60
+            }
+          }
+        },
+        {
+          "class_index": 11,
+          "command": {
+            "intent": "CREATE_REMINDER",
+            "slots": {
+              "task_id": "task.drink_water"
+            }
+          }
+        },
+        {
+          "class_index": 12,
+          "command": {
+            "intent": "CREATE_REMINDER",
+            "slots": {
+              "task_id": "task.exercise"
+            }
+          }
+        },
+        {
+          "class_index": 17,
+          "command": {
+            "intent": "MESSAGE",
+            "slots": {}
+          }
+        },
+        {
+          "class_index": 26,
+          "command": {
+            "intent": "TIMER",
+            "slots": {
+              "duration_seconds": 10
+            }
+          }
+        }
+      ],
+      "synthetic": []
+    },
+    "reserved_metadata_rows_checked": 6075,
+    "rows": 23315,
+    "text_reference_conflicts": []
+  },
+  "decoded_splits": [
+    "train"
+  ],
+  "hard_negative_count": 152,
+  "hard_negative_ids": [
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/000049",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/000055",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/000114",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/000136",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/000138",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/000143",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/000160",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/000164",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/000165",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/000166",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/000242",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/000254",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/000270",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/000374",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/000598",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001050",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001110",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001116",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001120",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001123",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001151",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001243",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001253",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001345",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001357",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001359",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001369",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001374",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001377",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001467",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001475",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001575",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001580",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001596",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001604",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/002886",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003333",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003338",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003339",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003345",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003349",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003350",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003352",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003358",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003363",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003365",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003368",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003372",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003373",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003380",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003381",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003385",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003454",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003555",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003556",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003559",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003561",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003562",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003564",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003568",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003664",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003666",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003667",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003669",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003671",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003672",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003674",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003678",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003774",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003777",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003779",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003781",
+    "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003784",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/000668",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/000687",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/000697",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/000698",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/000701",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/000767",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/000772",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/000817",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/002343",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/002344",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/002346",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/002352",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/002358",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/002361",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/002366",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/002370",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/002999",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/003123",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/003133",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/003228",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/003230",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/003234",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/003235",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/003240",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/003433",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/003540",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/003549",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/003550",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/003559",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/003667",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/003676",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/003775",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/003776",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/004986",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/004987",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/004988",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/004992",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/004993",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/004996",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/004998",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005002",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005004",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005005",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005009",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005010",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005013",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005015",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005016",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005023",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005024",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005028",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005031",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005034",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005035",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005040",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005042",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005043",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005044",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005045",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005048",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005051",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005052",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005093",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005094",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005100",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005105",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005106",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005110",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005125",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005127",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005130",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005131",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005133",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005274",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005276",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005283",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005285",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005289",
+    "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005331"
+  ],
+  "heavy_clipping_recordings": 0,
+  "highest_confidence_train_wrong_proposals": [
+    {
+      "candidate": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      },
+      "class_index": 0,
+      "expected": null,
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00001-of-00002/005045",
+      "margin": 0.8985843397414269,
+      "probability": 0.9381478679460825,
+      "reference_reason": "temperature_outside_declared_unit_bounds",
+      "review_only": true,
+      "scope": "original_unknown",
+      "text": "set temperature to eighty degrees",
+      "transcript_source": "whisper"
+    },
+    {
+      "candidate": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "class_index": 14,
+      "expected": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001565",
+      "margin": 0.7041026083362001,
+      "probability": 0.842779245477364,
+      "reference_reason": "explicit_light_target",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "turn off lights",
+      "transcript_source": "whisper"
+    },
+    {
+      "candidate": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "class_index": 29,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003267",
+      "margin": 0.6740270863675502,
+      "probability": 0.763162543958054,
+      "reference_reason": "finite_definition",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "turn down the volume",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "TIME",
+        "slots": {}
+      },
+      "class_index": 30,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/002929",
+      "margin": 0.6040356194629937,
+      "probability": 0.74696301511984,
+      "reference_reason": "finite_definition",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "can you turn it up a little",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "class_index": 29,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003018",
+      "margin": 0.5953498333940053,
+      "probability": 0.6816569812435112,
+      "reference_reason": "finite_definition",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "quieter",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "class_index": 30,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/002923",
+      "margin": 0.5446551420791699,
+      "probability": 0.6598929806263958,
+      "reference_reason": "reviewed_exact_finite_metadata",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "make sound louder",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "class_index": 29,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003261",
+      "margin": 0.5000647428995001,
+      "probability": 0.6457195613710189,
+      "reference_reason": "finite_definition",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "turn down the volume",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "class_index": 14,
+      "expected": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/001564",
+      "margin": 0.271424549758985,
+      "probability": 0.6257634107915011,
+      "reference_reason": "explicit_light_target",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "turn off lights",
+      "transcript_source": "whisper"
+    },
+    {
+      "candidate": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "class_index": 29,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003263",
+      "margin": 0.3908448384024118,
+      "probability": 0.6012921198334245,
+      "reference_reason": "finite_definition",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "turn down the volume",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "class_index": 29,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003266",
+      "margin": 0.35448001320850975,
+      "probability": 0.5748885930040226,
+      "reference_reason": "finite_definition",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "turn down the volume",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "TIME",
+        "slots": {}
+      },
+      "class_index": 29,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003163",
+      "margin": 0.32334903636943746,
+      "probability": 0.5531275343390782,
+      "reference_reason": "reviewed_exact_finite_metadata",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "softer",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "class_index": 29,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003265",
+      "margin": 0.3524253002179465,
+      "probability": 0.540185026553602,
+      "reference_reason": "finite_definition",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "turn down the volume",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "PAUSE",
+        "slots": {}
+      },
+      "class_index": 29,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003141",
+      "margin": 0.3375933119457153,
+      "probability": 0.5285834477393112,
+      "reference_reason": "reviewed_exact_finite_metadata",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "lower speaker volume",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "class_index": 29,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003270",
+      "margin": 0.3286407700852021,
+      "probability": 0.5226376894394558,
+      "reference_reason": "reviewed_exact_finite_metadata",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "turn down volume",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "class_index": 29,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003259",
+      "margin": 0.3530303968170445,
+      "probability": 0.4987165572394618,
+      "reference_reason": "finite_definition",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "turn down the volume",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      },
+      "class_index": 21,
+      "expected": {
+        "intent": "STOP",
+        "slots": {}
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/002042",
+      "margin": 0.14139843474107777,
+      "probability": 0.49717392739265076,
+      "reference_reason": "finite_definition",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "stop",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "TIME",
+        "slots": {}
+      },
+      "class_index": 30,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/002893",
+      "margin": 0.16488516463419517,
+      "probability": 0.42729251102385124,
+      "reference_reason": "finite_definition",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "turn the sound up",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "STOP",
+        "slots": {}
+      },
+      "class_index": 30,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/002674",
+      "margin": 0.2638658469851979,
+      "probability": 0.4249924334486074,
+      "reference_reason": "finite_definition",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "louder",
+      "transcript_source": "whisper"
+    },
+    {
+      "candidate": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "class_index": 29,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003124",
+      "margin": 0.2406454953209201,
+      "probability": 0.3842986026537098,
+      "reference_reason": "finite_definition",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "decrease volume",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "STOP",
+        "slots": {}
+      },
+      "class_index": 30,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/002677",
+      "margin": 0.02816693355062816,
+      "probability": 0.38159688419430093,
+      "reference_reason": "finite_definition",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "louder",
+      "transcript_source": "folder_phrase"
+    },
+    {
+      "candidate": {
+        "intent": "STOP",
+        "slots": {}
+      },
+      "class_index": 30,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/002689",
+      "margin": 0.20920669173025183,
+      "probability": 0.344664114793842,
+      "reference_reason": "finite_definition",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "louder",
+      "transcript_source": "whisper"
+    },
+    {
+      "candidate": {
+        "intent": "TIME",
+        "slots": {}
+      },
+      "class_index": 29,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003030",
+      "margin": 0.11083921902722188,
+      "probability": 0.3416059245698703,
+      "reference_reason": "finite_definition",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "quieter",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      },
+      "class_index": 30,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/002891",
+      "margin": 0.11307217893227386,
+      "probability": 0.3152939343684042,
+      "reference_reason": "reviewed_exact_finite_metadata",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "turn up volume",
+      "transcript_source": "dataset"
+    },
+    {
+      "candidate": {
+        "intent": "TIME",
+        "slots": {}
+      },
+      "class_index": 29,
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "id": "airimonda/ai231-me2-voice-commands/primary/train-00000-of-00002/003019",
+      "margin": 0.09740742851491496,
+      "probability": 0.286752493384207,
+      "reference_reason": "finite_definition",
+      "review_only": true,
+      "scope": "optionb",
+      "text": "quieter",
+      "transcript_source": "dataset"
+    }
+  ],
+  "historical_bindings_checked": 289,
+  "human_train_by_scope": {
+    "optionb": {
+      "correct_accepted": 1249,
+      "f1": 0.975400234283483,
+      "fn": 35,
+      "fp": 28,
+      "negative_false_accept_rate": null,
+      "negative_false_accepts": 0,
+      "negatives": 0,
+      "positives": 1284,
+      "precision": 0.9780736100234926,
+      "recall": 0.9727414330218068,
+      "rows": 1284,
+      "tp": 1249,
+      "wrong_accepted": 28
+    },
+    "original_unknown": {
+      "correct_accepted": 0,
+      "f1": 0.0,
+      "fn": 0,
+      "fp": 1,
+      "negative_false_accept_rate": 0.0021141649048625794,
+      "negative_false_accepts": 1,
+      "negatives": 473,
+      "positives": 0,
+      "precision": 0.0,
+      "recall": null,
+      "rows": 473,
+      "tp": 0,
+      "wrong_accepted": 1
+    },
+    "outside_optionb": {
+      "correct_accepted": 0,
+      "f1": null,
+      "fn": 0,
+      "fp": 0,
+      "negative_false_accept_rate": 0.0,
+      "negative_false_accepts": 0,
+      "negatives": 132,
+      "positives": 0,
+      "precision": null,
+      "recall": null,
+      "rows": 132,
+      "tp": 0,
+      "wrong_accepted": 0
+    }
+  },
+  "human_train_raw": {
+    "correct_accepted": 1249,
+    "f1": 0.9750195160031225,
+    "fn": 35,
+    "fp": 29,
+    "negative_false_accept_rate": 0.001652892561983471,
+    "negative_false_accepts": 1,
+    "negatives": 605,
+    "positives": 1284,
+    "precision": 0.9773082942097027,
+    "recall": 0.9727414330218068,
+    "rows": 1889,
+    "tp": 1249,
+    "wrong_accepted": 29
+  },
+  "human_train_recordings_longer_than_receptive_field": 421,
+  "independent_listening": false,
+  "labels_changed": false,
+  "near_silent_recordings": 0,
+  "normalization_reconstructed_exactly": true,
+  "optimizer_updates": 0,
+  "parameters": 258912,
+  "parent_epoch": 44,
+  "parent_finer_grid_policy": {
+    "feasible": true,
+    "fitting_splits": [],
+    "holdout_used": false,
+    "metrics": {
+      "calibration": {
+        "correct_accepted": 6,
+        "f1": 0.11320754716981132,
+        "fn": 94,
+        "fp": 0,
+        "negative_false_accept_rate": 0.0,
+        "negative_false_accepts": 0,
+        "negatives": 110,
+        "positives": 100,
+        "precision": 1.0,
+        "recall": 0.06,
+        "rows": 210,
+        "tp": 6,
+        "wrong_accepted": 0
+      },
+      "dev": {
+        "correct_accepted": 35,
+        "f1": 0.33980582524271846,
+        "fn": 136,
+        "fp": 0,
+        "negative_false_accept_rate": 0.0,
+        "negative_false_accepts": 0,
+        "negatives": 85,
+        "positives": 171,
+        "precision": 1.0,
+        "recall": 0.2046783625730994,
+        "rows": 256,
+        "tp": 35,
+        "wrong_accepted": 0
+      }
+    },
+    "policy": {
+      "enabled": true,
+      "min_margin": 0.3,
+      "min_probability": 0.985
+    },
+    "selected_on": [
+      "dev",
+      "calibration"
+    ]
+  },
+  "parent_policy": {
+    "enabled": true,
+    "min_margin": 0.3,
+    "min_probability": 0.99
+  },
+  "parent_torch_onnx_parity": {
+    "max_abs_logit_error": 4.76837158203125e-06,
+    "recordings": 16
+  },
+  "policy_grid": {
+    "margin_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "probability_grid": [
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.85,
+      0.9,
+      0.92,
+      0.94,
+      0.95,
+      0.96,
+      0.97,
+      0.975,
+      0.98,
+      0.985,
+      0.99,
+      0.995,
+      0.999,
+      0.9995,
+      0.9999
+    ]
+  },
+  "receptive_field_encoded_frames": 185,
+  "receptive_field_seconds": 3.705,
+  "recording_duration_percentiles": {
+    "0": 0.5119375,
+    "100": 9.816,
+    "25": 1.92,
+    "50": 2.752,
+    "75": 3.5835,
+    "95": 5.020812499999997
+  },
+  "recordings_exceeding_runtime_15s": 0,
+  "reserved_parent_scores_reused_splits": [
+    "dev",
+    "calibration"
+  ],
+  "reserved_pcm_decoded_or_inferred": false,
+  "smoothing_not_a_hard_probability_ceiling": true,
+  "smoothing_target_correct_class": 0.980625,
+  "source_sha256": "e6d77fb68524cf819c0b6b2080ee5bc45e5c6e0c17b74f8598b94800a724dff9",
+  "transcript_source_counts": {
+    "dataset": 1451,
+    "folder_phrase": 78,
+    "prompt": 72,
+    "whisper": 288
+  },
+  "wrong_human_train_proposals": 29
+}

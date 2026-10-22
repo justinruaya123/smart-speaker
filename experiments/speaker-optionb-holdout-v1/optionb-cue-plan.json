@@ -1,0 +1,2675 @@
+{
+  "case_count": 93,
+  "cases": [
+    {
+      "benign_text_probe": [
+        "please Play music",
+        "could you Play music for me",
+        "Play music please"
+      ],
+      "candidate_cue_tokens": [
+        "play",
+        "music"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "PLAY_MUSIC",
+        "slots": {}
+      },
+      "id": "B1-001",
+      "reject_context_probe": [
+        "do not Play music",
+        "the phrase Play music is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Play music",
+      "verbatim": "Play music"
+    },
+    {
+      "benign_text_probe": [
+        "please Start music",
+        "could you Start music for me",
+        "Start music please"
+      ],
+      "candidate_cue_tokens": [
+        "start",
+        "music"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "PLAY_MUSIC",
+        "slots": {}
+      },
+      "id": "B1-002",
+      "reject_context_probe": [
+        "do not Start music",
+        "the phrase Start music is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Start music",
+      "verbatim": "Start music"
+    },
+    {
+      "benign_text_probe": [
+        "please Play some music",
+        "could you Play some music for me",
+        "Play some music please"
+      ],
+      "candidate_cue_tokens": [
+        "play",
+        "music"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "PLAY_MUSIC",
+        "slots": {}
+      },
+      "id": "B1-003",
+      "reject_context_probe": [
+        "do not Play some music",
+        "the phrase Play some music is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Play some music",
+      "verbatim": "Play some music"
+    },
+    {
+      "benign_text_probe": [
+        "please Weather",
+        "could you Weather for me",
+        "Weather please"
+      ],
+      "candidate_cue_tokens": [
+        "weather"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "WEATHER",
+        "slots": {}
+      },
+      "id": "B1-004",
+      "reject_context_probe": [
+        "do not Weather",
+        "the phrase Weather is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Weather",
+      "verbatim": "Weather"
+    },
+    {
+      "benign_text_probe": [
+        "please What's the weather?",
+        "could you What's the weather? for me",
+        "What's the weather? please"
+      ],
+      "candidate_cue_tokens": [
+        "weather"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "WEATHER",
+        "slots": {}
+      },
+      "id": "B1-005",
+      "reject_context_probe": [
+        "do not What's the weather?",
+        "the phrase What's the weather? is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "What's the weather?",
+      "verbatim": "What's the weather?"
+    },
+    {
+      "benign_text_probe": [
+        "please Tell me the weather",
+        "could you Tell me the weather for me",
+        "Tell me the weather please"
+      ],
+      "candidate_cue_tokens": [
+        "tell",
+        "weather"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "WEATHER",
+        "slots": {}
+      },
+      "id": "B1-006",
+      "reject_context_probe": [
+        "do not Tell me the weather",
+        "the phrase Tell me the weather is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Tell me the weather",
+      "verbatim": "Tell me the weather"
+    },
+    {
+      "benign_text_probe": [
+        "please Time",
+        "could you Time for me",
+        "Time please"
+      ],
+      "candidate_cue_tokens": [
+        "time"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TIME",
+        "slots": {}
+      },
+      "id": "B1-007",
+      "reject_context_probe": [
+        "do not Time",
+        "the phrase Time is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Time",
+      "verbatim": "Time"
+    },
+    {
+      "benign_text_probe": [
+        "please What time is it?",
+        "could you What time is it? for me",
+        "What time is it? please"
+      ],
+      "candidate_cue_tokens": [
+        "time"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TIME",
+        "slots": {}
+      },
+      "id": "B1-008",
+      "reject_context_probe": [
+        "do not What time is it?",
+        "the phrase What time is it? is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "What time is it?",
+      "verbatim": "What time is it?"
+    },
+    {
+      "benign_text_probe": [
+        "please Tell me the time",
+        "could you Tell me the time for me",
+        "Tell me the time please"
+      ],
+      "candidate_cue_tokens": [
+        "tell",
+        "time"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TIME",
+        "slots": {}
+      },
+      "id": "B1-009",
+      "reject_context_probe": [
+        "do not Tell me the time",
+        "the phrase Tell me the time is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Tell me the time",
+      "verbatim": "Tell me the time"
+    },
+    {
+      "benign_text_probe": [
+        "please Lights on",
+        "could you Lights on for me",
+        "Lights on please"
+      ],
+      "candidate_cue_tokens": [
+        "lights",
+        "on"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "id": "B1-010",
+      "reject_context_probe": [
+        "do not Lights on",
+        "the phrase Lights on is an example not a request"
+      ],
+      "required_slots": {
+        "light_id": "light.all"
+      },
+      "spoken": "Lights on",
+      "verbatim": "Lights on"
+    },
+    {
+      "benign_text_probe": [
+        "please Power on the lights",
+        "could you Power on the lights for me",
+        "Power on the lights please"
+      ],
+      "candidate_cue_tokens": [
+        "power",
+        "on",
+        "lights"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "id": "B1-011",
+      "reject_context_probe": [
+        "do not Power on the lights",
+        "the phrase Power on the lights is an example not a request"
+      ],
+      "required_slots": {
+        "light_id": "light.all"
+      },
+      "spoken": "Power on the lights",
+      "verbatim": "Power on the lights"
+    },
+    {
+      "benign_text_probe": [
+        "please Turn on the lights",
+        "could you Turn on the lights for me",
+        "Turn on the lights please"
+      ],
+      "candidate_cue_tokens": [
+        "turn",
+        "on",
+        "lights"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "id": "B1-012",
+      "reject_context_probe": [
+        "do not Turn on the lights",
+        "the phrase Turn on the lights is an example not a request"
+      ],
+      "required_slots": {
+        "light_id": "light.all"
+      },
+      "spoken": "Turn on the lights",
+      "verbatim": "Turn on the lights"
+    },
+    {
+      "benign_text_probe": [
+        "please Lights out",
+        "could you Lights out for me",
+        "Lights out please"
+      ],
+      "candidate_cue_tokens": [
+        "lights",
+        "out"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "id": "B1-013",
+      "reject_context_probe": [
+        "do not Lights out",
+        "the phrase Lights out is an example not a request"
+      ],
+      "required_slots": {
+        "light_id": "light.all"
+      },
+      "spoken": "Lights out",
+      "verbatim": "Lights out"
+    },
+    {
+      "benign_text_probe": [
+        "please Kill the lights",
+        "could you Kill the lights for me",
+        "Kill the lights please"
+      ],
+      "candidate_cue_tokens": [
+        "kill",
+        "lights"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "id": "B1-014",
+      "reject_context_probe": [
+        "do not Kill the lights",
+        "the phrase Kill the lights is an example not a request"
+      ],
+      "required_slots": {
+        "light_id": "light.all"
+      },
+      "spoken": "Kill the lights",
+      "verbatim": "Kill the lights"
+    },
+    {
+      "benign_text_probe": [
+        "please Shut off the lights",
+        "could you Shut off the lights for me",
+        "Shut off the lights please"
+      ],
+      "candidate_cue_tokens": [
+        "shut",
+        "off",
+        "lights"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "id": "B1-015",
+      "reject_context_probe": [
+        "do not Shut off the lights",
+        "the phrase Shut off the lights is an example not a request"
+      ],
+      "required_slots": {
+        "light_id": "light.all"
+      },
+      "spoken": "Shut off the lights",
+      "verbatim": "Shut off the lights"
+    },
+    {
+      "benign_text_probe": [
+        "please Pause",
+        "could you Pause for me",
+        "Pause please"
+      ],
+      "candidate_cue_tokens": [
+        "pause"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "PAUSE",
+        "slots": {}
+      },
+      "id": "B1-016",
+      "reject_context_probe": [
+        "do not Pause",
+        "the phrase Pause is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Pause",
+      "verbatim": "Pause"
+    },
+    {
+      "benign_text_probe": [
+        "please Pause audio",
+        "could you Pause audio for me",
+        "Pause audio please"
+      ],
+      "candidate_cue_tokens": [
+        "pause",
+        "audio"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "PAUSE",
+        "slots": {}
+      },
+      "id": "B1-017",
+      "reject_context_probe": [
+        "do not Pause audio",
+        "the phrase Pause audio is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Pause audio",
+      "verbatim": "Pause audio"
+    },
+    {
+      "benign_text_probe": [
+        "please Pause song",
+        "could you Pause song for me",
+        "Pause song please"
+      ],
+      "candidate_cue_tokens": [
+        "pause",
+        "song"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "PAUSE",
+        "slots": {}
+      },
+      "id": "B1-018",
+      "reject_context_probe": [
+        "do not Pause song",
+        "the phrase Pause song is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Pause song",
+      "verbatim": "Pause song"
+    },
+    {
+      "benign_text_probe": [
+        "please Stop",
+        "could you Stop for me",
+        "Stop please"
+      ],
+      "candidate_cue_tokens": [
+        "stop"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "STOP",
+        "slots": {}
+      },
+      "id": "B1-019",
+      "reject_context_probe": [
+        "do not Stop",
+        "the phrase Stop is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Stop",
+      "verbatim": "Stop"
+    },
+    {
+      "benign_text_probe": [
+        "please Stop playing",
+        "could you Stop playing for me",
+        "Stop playing please"
+      ],
+      "candidate_cue_tokens": [
+        "stop",
+        "playing"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "STOP",
+        "slots": {}
+      },
+      "id": "B1-020",
+      "reject_context_probe": [
+        "do not Stop playing",
+        "the phrase Stop playing is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Stop playing",
+      "verbatim": "Stop playing"
+    },
+    {
+      "benign_text_probe": [
+        "please End playback",
+        "could you End playback for me",
+        "End playback please"
+      ],
+      "candidate_cue_tokens": [
+        "end",
+        "playback"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "STOP",
+        "slots": {}
+      },
+      "id": "B1-021",
+      "reject_context_probe": [
+        "do not End playback",
+        "the phrase End playback is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "End playback",
+      "verbatim": "End playback"
+    },
+    {
+      "benign_text_probe": [
+        "please Next song",
+        "could you Next song for me",
+        "Next song please"
+      ],
+      "candidate_cue_tokens": [
+        "next",
+        "song"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "NEXT",
+        "slots": {}
+      },
+      "id": "B1-022",
+      "reject_context_probe": [
+        "do not Next song",
+        "the phrase Next song is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Next song",
+      "verbatim": "Next song"
+    },
+    {
+      "benign_text_probe": [
+        "please Skip song",
+        "could you Skip song for me",
+        "Skip song please"
+      ],
+      "candidate_cue_tokens": [
+        "skip",
+        "song"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "NEXT",
+        "slots": {}
+      },
+      "id": "B1-023",
+      "reject_context_probe": [
+        "do not Skip song",
+        "the phrase Skip song is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Skip song",
+      "verbatim": "Skip song"
+    },
+    {
+      "benign_text_probe": [
+        "please Play next song",
+        "could you Play next song for me",
+        "Play next song please"
+      ],
+      "candidate_cue_tokens": [
+        "play",
+        "next",
+        "song"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "NEXT",
+        "slots": {}
+      },
+      "id": "B1-024",
+      "reject_context_probe": [
+        "do not Play next song",
+        "the phrase Play next song is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Play next song",
+      "verbatim": "Play next song"
+    },
+    {
+      "benign_text_probe": [
+        "please Volume up",
+        "could you Volume up for me",
+        "Volume up please"
+      ],
+      "candidate_cue_tokens": [
+        "volume",
+        "up"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "id": "B1-025",
+      "reject_context_probe": [
+        "do not Volume up",
+        "the phrase Volume up is an example not a request"
+      ],
+      "required_slots": {
+        "operation": "up"
+      },
+      "spoken": "Volume up",
+      "verbatim": "Volume up"
+    },
+    {
+      "benign_text_probe": [
+        "please Increase the volume",
+        "could you Increase the volume for me",
+        "Increase the volume please"
+      ],
+      "candidate_cue_tokens": [
+        "increase",
+        "volume"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "id": "B1-026",
+      "reject_context_probe": [
+        "do not Increase the volume",
+        "the phrase Increase the volume is an example not a request"
+      ],
+      "required_slots": {
+        "operation": "up"
+      },
+      "spoken": "Increase the volume",
+      "verbatim": "Increase the volume"
+    },
+    {
+      "benign_text_probe": [
+        "please Turn the volume up",
+        "could you Turn the volume up for me",
+        "Turn the volume up please"
+      ],
+      "candidate_cue_tokens": [
+        "turn",
+        "volume",
+        "up"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "id": "B1-027",
+      "reject_context_probe": [
+        "do not Turn the volume up",
+        "the phrase Turn the volume up is an example not a request"
+      ],
+      "required_slots": {
+        "operation": "up"
+      },
+      "spoken": "Turn the volume up",
+      "verbatim": "Turn the volume up"
+    },
+    {
+      "benign_text_probe": [
+        "please Volume down",
+        "could you Volume down for me",
+        "Volume down please"
+      ],
+      "candidate_cue_tokens": [
+        "volume",
+        "down"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "id": "B1-028",
+      "reject_context_probe": [
+        "do not Volume down",
+        "the phrase Volume down is an example not a request"
+      ],
+      "required_slots": {
+        "operation": "down"
+      },
+      "spoken": "Volume down",
+      "verbatim": "Volume down"
+    },
+    {
+      "benign_text_probe": [
+        "please Lower the volume",
+        "could you Lower the volume for me",
+        "Lower the volume please"
+      ],
+      "candidate_cue_tokens": [
+        "lower",
+        "volume"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "id": "B1-029",
+      "reject_context_probe": [
+        "do not Lower the volume",
+        "the phrase Lower the volume is an example not a request"
+      ],
+      "required_slots": {
+        "operation": "down"
+      },
+      "spoken": "Lower the volume",
+      "verbatim": "Lower the volume"
+    },
+    {
+      "benign_text_probe": [
+        "please Turn the volume down",
+        "could you Turn the volume down for me",
+        "Turn the volume down please"
+      ],
+      "candidate_cue_tokens": [
+        "turn",
+        "volume",
+        "down"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "id": "B1-030",
+      "reject_context_probe": [
+        "do not Turn the volume down",
+        "the phrase Turn the volume down is an example not a request"
+      ],
+      "required_slots": {
+        "operation": "down"
+      },
+      "spoken": "Turn the volume down",
+      "verbatim": "Turn the volume down"
+    },
+    {
+      "benign_text_probe": [
+        "please Call",
+        "could you Call for me",
+        "Call please"
+      ],
+      "candidate_cue_tokens": [
+        "call"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      },
+      "id": "B1-031",
+      "reject_context_probe": [
+        "do not Call",
+        "the phrase Call is an example not a request"
+      ],
+      "required_slots": {
+        "contact_id": "contact.home"
+      },
+      "spoken": "Call",
+      "verbatim": "Call"
+    },
+    {
+      "benign_text_probe": [
+        "please Make a call",
+        "could you Make a call for me",
+        "Make a call please"
+      ],
+      "candidate_cue_tokens": [
+        "make",
+        "call"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      },
+      "id": "B1-032",
+      "reject_context_probe": [
+        "do not Make a call",
+        "the phrase Make a call is an example not a request"
+      ],
+      "required_slots": {
+        "contact_id": "contact.home"
+      },
+      "spoken": "Make a call",
+      "verbatim": "Make a call"
+    },
+    {
+      "benign_text_probe": [
+        "please Make a phone call",
+        "could you Make a phone call for me",
+        "Make a phone call please"
+      ],
+      "candidate_cue_tokens": [
+        "make",
+        "phone",
+        "call"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      },
+      "id": "B1-033",
+      "reject_context_probe": [
+        "do not Make a phone call",
+        "the phrase Make a phone call is an example not a request"
+      ],
+      "required_slots": {
+        "contact_id": "contact.home"
+      },
+      "spoken": "Make a phone call",
+      "verbatim": "Make a phone call"
+    },
+    {
+      "benign_text_probe": [
+        "please Message",
+        "could you Message for me",
+        "Message please"
+      ],
+      "candidate_cue_tokens": [
+        "message"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "MESSAGE",
+        "slots": {}
+      },
+      "id": "B1-034",
+      "reject_context_probe": [
+        "do not Message",
+        "the phrase Message is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Message",
+      "verbatim": "Message"
+    },
+    {
+      "benign_text_probe": [
+        "please Send a message",
+        "could you Send a message for me",
+        "Send a message please"
+      ],
+      "candidate_cue_tokens": [
+        "send",
+        "message"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "MESSAGE",
+        "slots": {}
+      },
+      "id": "B1-035",
+      "reject_context_probe": [
+        "do not Send a message",
+        "the phrase Send a message is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Send a message",
+      "verbatim": "Send a message"
+    },
+    {
+      "benign_text_probe": [
+        "please Send my message",
+        "could you Send my message for me",
+        "Send my message please"
+      ],
+      "candidate_cue_tokens": [
+        "send",
+        "message"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "MESSAGE",
+        "slots": {}
+      },
+      "id": "B1-036",
+      "reject_context_probe": [
+        "do not Send my message",
+        "the phrase Send my message is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Send my message",
+      "verbatim": "Send my message"
+    },
+    {
+      "benign_text_probe": [
+        "please Reminders",
+        "could you Reminders for me",
+        "Reminders please"
+      ],
+      "candidate_cue_tokens": [
+        "reminders"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      },
+      "id": "B1-037",
+      "reject_context_probe": [
+        "do not Reminders",
+        "the phrase Reminders is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Reminders",
+      "verbatim": "Reminders"
+    },
+    {
+      "benign_text_probe": [
+        "please Show my reminders",
+        "could you Show my reminders for me",
+        "Show my reminders please"
+      ],
+      "candidate_cue_tokens": [
+        "show",
+        "reminders"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      },
+      "id": "B1-038",
+      "reject_context_probe": [
+        "do not Show my reminders",
+        "the phrase Show my reminders is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "Show my reminders",
+      "verbatim": "Show my reminders"
+    },
+    {
+      "benign_text_probe": [
+        "please List my reminders",
+        "could you List my reminders for me",
+        "List my reminders please"
+      ],
+      "candidate_cue_tokens": [
+        "list",
+        "reminders"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      },
+      "id": "B1-039",
+      "reject_context_probe": [
+        "do not List my reminders",
+        "the phrase List my reminders is an example not a request"
+      ],
+      "required_slots": {},
+      "spoken": "List my reminders",
+      "verbatim": "List my reminders"
+    },
+    {
+      "benign_text_probe": [
+        "please Timer ten seconds",
+        "could you Timer ten seconds for me",
+        "Timer ten seconds please"
+      ],
+      "candidate_cue_tokens": [
+        "timer",
+        "ten",
+        "seconds"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      },
+      "id": "B1-040",
+      "reject_context_probe": [
+        "do not Timer ten seconds",
+        "the phrase Timer ten seconds is an example not a request"
+      ],
+      "required_slots": {
+        "duration_seconds": 10
+      },
+      "spoken": "Timer ten seconds",
+      "verbatim": "Timer 10 seconds"
+    },
+    {
+      "benign_text_probe": [
+        "please Timer thirty seconds",
+        "could you Timer thirty seconds for me",
+        "Timer thirty seconds please"
+      ],
+      "candidate_cue_tokens": [
+        "timer",
+        "thirty",
+        "seconds"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      },
+      "id": "B1-041",
+      "reject_context_probe": [
+        "do not Timer thirty seconds",
+        "the phrase Timer thirty seconds is an example not a request"
+      ],
+      "required_slots": {
+        "duration_seconds": 30
+      },
+      "spoken": "Timer thirty seconds",
+      "verbatim": "Timer 30 seconds"
+    },
+    {
+      "benign_text_probe": [
+        "please Timer one minute",
+        "could you Timer one minute for me",
+        "Timer one minute please"
+      ],
+      "candidate_cue_tokens": [
+        "timer",
+        "one",
+        "minute"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      },
+      "id": "B1-042",
+      "reject_context_probe": [
+        "do not Timer one minute",
+        "the phrase Timer one minute is an example not a request"
+      ],
+      "required_slots": {
+        "duration_seconds": 60
+      },
+      "spoken": "Timer one minute",
+      "verbatim": "Timer 1 minute"
+    },
+    {
+      "benign_text_probe": [
+        "please Countdown for ten seconds",
+        "could you Countdown for ten seconds for me",
+        "Countdown for ten seconds please"
+      ],
+      "candidate_cue_tokens": [
+        "countdown",
+        "ten",
+        "seconds"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      },
+      "id": "B1-043",
+      "reject_context_probe": [
+        "do not Countdown for ten seconds",
+        "the phrase Countdown for ten seconds is an example not a request"
+      ],
+      "required_slots": {
+        "duration_seconds": 10
+      },
+      "spoken": "Countdown for ten seconds",
+      "verbatim": "Countdown for 10 seconds"
+    },
+    {
+      "benign_text_probe": [
+        "please Countdown for thirty seconds",
+        "could you Countdown for thirty seconds for me",
+        "Countdown for thirty seconds please"
+      ],
+      "candidate_cue_tokens": [
+        "countdown",
+        "thirty",
+        "seconds"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      },
+      "id": "B1-044",
+      "reject_context_probe": [
+        "do not Countdown for thirty seconds",
+        "the phrase Countdown for thirty seconds is an example not a request"
+      ],
+      "required_slots": {
+        "duration_seconds": 30
+      },
+      "spoken": "Countdown for thirty seconds",
+      "verbatim": "Countdown for 30 seconds"
+    },
+    {
+      "benign_text_probe": [
+        "please Countdown for one minute",
+        "could you Countdown for one minute for me",
+        "Countdown for one minute please"
+      ],
+      "candidate_cue_tokens": [
+        "countdown",
+        "one",
+        "minute"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      },
+      "id": "B1-045",
+      "reject_context_probe": [
+        "do not Countdown for one minute",
+        "the phrase Countdown for one minute is an example not a request"
+      ],
+      "required_slots": {
+        "duration_seconds": 60
+      },
+      "spoken": "Countdown for one minute",
+      "verbatim": "Countdown for 1 minute"
+    },
+    {
+      "benign_text_probe": [
+        "please Start a timer for ten seconds",
+        "could you Start a timer for ten seconds for me",
+        "Start a timer for ten seconds please"
+      ],
+      "candidate_cue_tokens": [
+        "start",
+        "timer",
+        "ten",
+        "seconds"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      },
+      "id": "B1-046",
+      "reject_context_probe": [
+        "do not Start a timer for ten seconds",
+        "the phrase Start a timer for ten seconds is an example not a request"
+      ],
+      "required_slots": {
+        "duration_seconds": 10
+      },
+      "spoken": "Start a timer for ten seconds",
+      "verbatim": "Start a timer for 10 seconds"
+    },
+    {
+      "benign_text_probe": [
+        "please Start a timer for thirty seconds",
+        "could you Start a timer for thirty seconds for me",
+        "Start a timer for thirty seconds please"
+      ],
+      "candidate_cue_tokens": [
+        "start",
+        "timer",
+        "thirty",
+        "seconds"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      },
+      "id": "B1-047",
+      "reject_context_probe": [
+        "do not Start a timer for thirty seconds",
+        "the phrase Start a timer for thirty seconds is an example not a request"
+      ],
+      "required_slots": {
+        "duration_seconds": 30
+      },
+      "spoken": "Start a timer for thirty seconds",
+      "verbatim": "Start a timer for 30 seconds"
+    },
+    {
+      "benign_text_probe": [
+        "please Start a timer for one minute",
+        "could you Start a timer for one minute for me",
+        "Start a timer for one minute please"
+      ],
+      "candidate_cue_tokens": [
+        "start",
+        "timer",
+        "one",
+        "minute"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      },
+      "id": "B1-048",
+      "reject_context_probe": [
+        "do not Start a timer for one minute",
+        "the phrase Start a timer for one minute is an example not a request"
+      ],
+      "required_slots": {
+        "duration_seconds": 60
+      },
+      "spoken": "Start a timer for one minute",
+      "verbatim": "Start a timer for 1 minute"
+    },
+    {
+      "benign_text_probe": [
+        "please Alarm six a m",
+        "could you Alarm six a m for me",
+        "Alarm six a m please"
+      ],
+      "candidate_cue_tokens": [
+        "alarm",
+        "six",
+        "a",
+        "m"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "id": "B1-049",
+      "reject_context_probe": [
+        "do not Alarm six a m",
+        "the phrase Alarm six a m is an example not a request"
+      ],
+      "required_slots": {
+        "time": "06:00",
+        "timezone": "Asia/Manila"
+      },
+      "spoken": "Alarm six a m",
+      "verbatim": "Alarm 6:00 AM"
+    },
+    {
+      "benign_text_probe": [
+        "please Alarm eight a m",
+        "could you Alarm eight a m for me",
+        "Alarm eight a m please"
+      ],
+      "candidate_cue_tokens": [
+        "alarm",
+        "eight",
+        "a",
+        "m"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "id": "B1-050",
+      "reject_context_probe": [
+        "do not Alarm eight a m",
+        "the phrase Alarm eight a m is an example not a request"
+      ],
+      "required_slots": {
+        "time": "08:00",
+        "timezone": "Asia/Manila"
+      },
+      "spoken": "Alarm eight a m",
+      "verbatim": "Alarm 8:00 AM"
+    },
+    {
+      "benign_text_probe": [
+        "please Alarm nine p m",
+        "could you Alarm nine p m for me",
+        "Alarm nine p m please"
+      ],
+      "candidate_cue_tokens": [
+        "alarm",
+        "nine",
+        "p",
+        "m"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "id": "B1-051",
+      "reject_context_probe": [
+        "do not Alarm nine p m",
+        "the phrase Alarm nine p m is an example not a request"
+      ],
+      "required_slots": {
+        "time": "21:00",
+        "timezone": "Asia/Manila"
+      },
+      "spoken": "Alarm nine p m",
+      "verbatim": "Alarm 9:00 PM"
+    },
+    {
+      "benign_text_probe": [
+        "please Wake me up at six a m",
+        "could you Wake me up at six a m for me",
+        "Wake me up at six a m please"
+      ],
+      "candidate_cue_tokens": [
+        "wake",
+        "up",
+        "six",
+        "a",
+        "m"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "id": "B1-052",
+      "reject_context_probe": [
+        "do not Wake me up at six a m",
+        "the phrase Wake me up at six a m is an example not a request"
+      ],
+      "required_slots": {
+        "time": "06:00",
+        "timezone": "Asia/Manila"
+      },
+      "spoken": "Wake me up at six a m",
+      "verbatim": "Wake me up at 6:00 AM"
+    },
+    {
+      "benign_text_probe": [
+        "please Wake me up at eight a m",
+        "could you Wake me up at eight a m for me",
+        "Wake me up at eight a m please"
+      ],
+      "candidate_cue_tokens": [
+        "wake",
+        "up",
+        "eight",
+        "a",
+        "m"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "id": "B1-053",
+      "reject_context_probe": [
+        "do not Wake me up at eight a m",
+        "the phrase Wake me up at eight a m is an example not a request"
+      ],
+      "required_slots": {
+        "time": "08:00",
+        "timezone": "Asia/Manila"
+      },
+      "spoken": "Wake me up at eight a m",
+      "verbatim": "Wake me up at 8:00 AM"
+    },
+    {
+      "benign_text_probe": [
+        "please Wake me up at nine p m",
+        "could you Wake me up at nine p m for me",
+        "Wake me up at nine p m please"
+      ],
+      "candidate_cue_tokens": [
+        "wake",
+        "up",
+        "nine",
+        "p",
+        "m"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "id": "B1-054",
+      "reject_context_probe": [
+        "do not Wake me up at nine p m",
+        "the phrase Wake me up at nine p m is an example not a request"
+      ],
+      "required_slots": {
+        "time": "21:00",
+        "timezone": "Asia/Manila"
+      },
+      "spoken": "Wake me up at nine p m",
+      "verbatim": "Wake me up at 9:00 PM"
+    },
+    {
+      "benign_text_probe": [
+        "please Set an alarm for six a m",
+        "could you Set an alarm for six a m for me",
+        "Set an alarm for six a m please"
+      ],
+      "candidate_cue_tokens": [
+        "set",
+        "alarm",
+        "six",
+        "a",
+        "m"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "id": "B1-055",
+      "reject_context_probe": [
+        "do not Set an alarm for six a m",
+        "the phrase Set an alarm for six a m is an example not a request"
+      ],
+      "required_slots": {
+        "time": "06:00",
+        "timezone": "Asia/Manila"
+      },
+      "spoken": "Set an alarm for six a m",
+      "verbatim": "Set an alarm for 6:00 AM"
+    },
+    {
+      "benign_text_probe": [
+        "please Set an alarm for eight a m",
+        "could you Set an alarm for eight a m for me",
+        "Set an alarm for eight a m please"
+      ],
+      "candidate_cue_tokens": [
+        "set",
+        "alarm",
+        "eight",
+        "a",
+        "m"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "id": "B1-056",
+      "reject_context_probe": [
+        "do not Set an alarm for eight a m",
+        "the phrase Set an alarm for eight a m is an example not a request"
+      ],
+      "required_slots": {
+        "time": "08:00",
+        "timezone": "Asia/Manila"
+      },
+      "spoken": "Set an alarm for eight a m",
+      "verbatim": "Set an alarm for 8:00 AM"
+    },
+    {
+      "benign_text_probe": [
+        "please Set an alarm for nine p m",
+        "could you Set an alarm for nine p m for me",
+        "Set an alarm for nine p m please"
+      ],
+      "candidate_cue_tokens": [
+        "set",
+        "alarm",
+        "nine",
+        "p",
+        "m"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "id": "B1-057",
+      "reject_context_probe": [
+        "do not Set an alarm for nine p m",
+        "the phrase Set an alarm for nine p m is an example not a request"
+      ],
+      "required_slots": {
+        "time": "21:00",
+        "timezone": "Asia/Manila"
+      },
+      "spoken": "Set an alarm for nine p m",
+      "verbatim": "Set an alarm for 9:00 PM"
+    },
+    {
+      "benign_text_probe": [
+        "please Temperature eighteen degrees",
+        "could you Temperature eighteen degrees for me",
+        "Temperature eighteen degrees please"
+      ],
+      "candidate_cue_tokens": [
+        "temperature",
+        "eighteen",
+        "degrees"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      },
+      "id": "B1-058",
+      "reject_context_probe": [
+        "do not Temperature eighteen degrees",
+        "the phrase Temperature eighteen degrees is an example not a request"
+      ],
+      "required_slots": {
+        "degrees": 18,
+        "unit": "C"
+      },
+      "spoken": "Temperature eighteen degrees",
+      "verbatim": "Temperature 18 degrees"
+    },
+    {
+      "benign_text_probe": [
+        "please Temperature twenty two degrees",
+        "could you Temperature twenty two degrees for me",
+        "Temperature twenty two degrees please"
+      ],
+      "candidate_cue_tokens": [
+        "temperature",
+        "twenty",
+        "two",
+        "degrees"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      },
+      "id": "B1-059",
+      "reject_context_probe": [
+        "do not Temperature twenty two degrees",
+        "the phrase Temperature twenty two degrees is an example not a request"
+      ],
+      "required_slots": {
+        "degrees": 22,
+        "unit": "C"
+      },
+      "spoken": "Temperature twenty two degrees",
+      "verbatim": "Temperature 22 degrees"
+    },
+    {
+      "benign_text_probe": [
+        "please Temperature twenty six degrees",
+        "could you Temperature twenty six degrees for me",
+        "Temperature twenty six degrees please"
+      ],
+      "candidate_cue_tokens": [
+        "temperature",
+        "twenty",
+        "six",
+        "degrees"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      },
+      "id": "B1-060",
+      "reject_context_probe": [
+        "do not Temperature twenty six degrees",
+        "the phrase Temperature twenty six degrees is an example not a request"
+      ],
+      "required_slots": {
+        "degrees": 26,
+        "unit": "C"
+      },
+      "spoken": "Temperature twenty six degrees",
+      "verbatim": "Temperature 26 degrees"
+    },
+    {
+      "benign_text_probe": [
+        "please Change the temperature to eighteen degrees",
+        "could you Change the temperature to eighteen degrees for me",
+        "Change the temperature to eighteen degrees please"
+      ],
+      "candidate_cue_tokens": [
+        "change",
+        "temperature",
+        "eighteen",
+        "degrees"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      },
+      "id": "B1-061",
+      "reject_context_probe": [
+        "do not Change the temperature to eighteen degrees",
+        "the phrase Change the temperature to eighteen degrees is an example not a request"
+      ],
+      "required_slots": {
+        "degrees": 18,
+        "unit": "C"
+      },
+      "spoken": "Change the temperature to eighteen degrees",
+      "verbatim": "Change the temperature to 18 degrees"
+    },
+    {
+      "benign_text_probe": [
+        "please Change the temperature to twenty two degrees",
+        "could you Change the temperature to twenty two degrees for me",
+        "Change the temperature to twenty two degrees please"
+      ],
+      "candidate_cue_tokens": [
+        "change",
+        "temperature",
+        "twenty",
+        "two",
+        "degrees"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      },
+      "id": "B1-062",
+      "reject_context_probe": [
+        "do not Change the temperature to twenty two degrees",
+        "the phrase Change the temperature to twenty two degrees is an example not a request"
+      ],
+      "required_slots": {
+        "degrees": 22,
+        "unit": "C"
+      },
+      "spoken": "Change the temperature to twenty two degrees",
+      "verbatim": "Change the temperature to 22 degrees"
+    },
+    {
+      "benign_text_probe": [
+        "please Change the temperature to twenty six degrees",
+        "could you Change the temperature to twenty six degrees for me",
+        "Change the temperature to twenty six degrees please"
+      ],
+      "candidate_cue_tokens": [
+        "change",
+        "temperature",
+        "twenty",
+        "six",
+        "degrees"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      },
+      "id": "B1-063",
+      "reject_context_probe": [
+        "do not Change the temperature to twenty six degrees",
+        "the phrase Change the temperature to twenty six degrees is an example not a request"
+      ],
+      "required_slots": {
+        "degrees": 26,
+        "unit": "C"
+      },
+      "spoken": "Change the temperature to twenty six degrees",
+      "verbatim": "Change the temperature to 26 degrees"
+    },
+    {
+      "benign_text_probe": [
+        "please Set the temperature to eighteen degrees",
+        "could you Set the temperature to eighteen degrees for me",
+        "Set the temperature to eighteen degrees please"
+      ],
+      "candidate_cue_tokens": [
+        "set",
+        "temperature",
+        "eighteen",
+        "degrees"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      },
+      "id": "B1-064",
+      "reject_context_probe": [
+        "do not Set the temperature to eighteen degrees",
+        "the phrase Set the temperature to eighteen degrees is an example not a request"
+      ],
+      "required_slots": {
+        "degrees": 18,
+        "unit": "C"
+      },
+      "spoken": "Set the temperature to eighteen degrees",
+      "verbatim": "Set the temperature to 18 degrees"
+    },
+    {
+      "benign_text_probe": [
+        "please Set the temperature to twenty two degrees",
+        "could you Set the temperature to twenty two degrees for me",
+        "Set the temperature to twenty two degrees please"
+      ],
+      "candidate_cue_tokens": [
+        "set",
+        "temperature",
+        "twenty",
+        "two",
+        "degrees"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      },
+      "id": "B1-065",
+      "reject_context_probe": [
+        "do not Set the temperature to twenty two degrees",
+        "the phrase Set the temperature to twenty two degrees is an example not a request"
+      ],
+      "required_slots": {
+        "degrees": 22,
+        "unit": "C"
+      },
+      "spoken": "Set the temperature to twenty two degrees",
+      "verbatim": "Set the temperature to 22 degrees"
+    },
+    {
+      "benign_text_probe": [
+        "please Set the temperature to twenty six degrees",
+        "could you Set the temperature to twenty six degrees for me",
+        "Set the temperature to twenty six degrees please"
+      ],
+      "candidate_cue_tokens": [
+        "set",
+        "temperature",
+        "twenty",
+        "six",
+        "degrees"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      },
+      "id": "B1-066",
+      "reject_context_probe": [
+        "do not Set the temperature to twenty six degrees",
+        "the phrase Set the temperature to twenty six degrees is an example not a request"
+      ],
+      "required_slots": {
+        "degrees": 26,
+        "unit": "C"
+      },
+      "spoken": "Set the temperature to twenty six degrees",
+      "verbatim": "Set the temperature to 26 degrees"
+    },
+    {
+      "benign_text_probe": [
+        "please Brightness twenty percent",
+        "could you Brightness twenty percent for me",
+        "Brightness twenty percent please"
+      ],
+      "candidate_cue_tokens": [
+        "brightness",
+        "twenty",
+        "percent"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 20
+        }
+      },
+      "id": "B1-067",
+      "reject_context_probe": [
+        "do not Brightness twenty percent",
+        "the phrase Brightness twenty percent is an example not a request"
+      ],
+      "required_slots": {
+        "light_id": "light.all",
+        "percent": 20
+      },
+      "spoken": "Brightness twenty percent",
+      "verbatim": "Brightness 20 percent"
+    },
+    {
+      "benign_text_probe": [
+        "please Brightness sixty percent",
+        "could you Brightness sixty percent for me",
+        "Brightness sixty percent please"
+      ],
+      "candidate_cue_tokens": [
+        "brightness",
+        "sixty",
+        "percent"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      },
+      "id": "B1-068",
+      "reject_context_probe": [
+        "do not Brightness sixty percent",
+        "the phrase Brightness sixty percent is an example not a request"
+      ],
+      "required_slots": {
+        "light_id": "light.all",
+        "percent": 60
+      },
+      "spoken": "Brightness sixty percent",
+      "verbatim": "Brightness 60 percent"
+    },
+    {
+      "benign_text_probe": [
+        "please Brightness one hundred percent",
+        "could you Brightness one hundred percent for me",
+        "Brightness one hundred percent please"
+      ],
+      "candidate_cue_tokens": [
+        "brightness",
+        "one",
+        "hundred",
+        "percent"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      },
+      "id": "B1-069",
+      "reject_context_probe": [
+        "do not Brightness one hundred percent",
+        "the phrase Brightness one hundred percent is an example not a request"
+      ],
+      "required_slots": {
+        "light_id": "light.all",
+        "percent": 100
+      },
+      "spoken": "Brightness one hundred percent",
+      "verbatim": "Brightness 100 percent"
+    },
+    {
+      "benign_text_probe": [
+        "please Adjust brightness to twenty percent",
+        "could you Adjust brightness to twenty percent for me",
+        "Adjust brightness to twenty percent please"
+      ],
+      "candidate_cue_tokens": [
+        "adjust",
+        "brightness",
+        "twenty",
+        "percent"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 20
+        }
+      },
+      "id": "B1-070",
+      "reject_context_probe": [
+        "do not Adjust brightness to twenty percent",
+        "the phrase Adjust brightness to twenty percent is an example not a request"
+      ],
+      "required_slots": {
+        "light_id": "light.all",
+        "percent": 20
+      },
+      "spoken": "Adjust brightness to twenty percent",
+      "verbatim": "Adjust brightness to 20 percent"
+    },
+    {
+      "benign_text_probe": [
+        "please Adjust brightness to sixty percent",
+        "could you Adjust brightness to sixty percent for me",
+        "Adjust brightness to sixty percent please"
+      ],
+      "candidate_cue_tokens": [
+        "adjust",
+        "brightness",
+        "sixty",
+        "percent"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      },
+      "id": "B1-071",
+      "reject_context_probe": [
+        "do not Adjust brightness to sixty percent",
+        "the phrase Adjust brightness to sixty percent is an example not a request"
+      ],
+      "required_slots": {
+        "light_id": "light.all",
+        "percent": 60
+      },
+      "spoken": "Adjust brightness to sixty percent",
+      "verbatim": "Adjust brightness to 60 percent"
+    },
+    {
+      "benign_text_probe": [
+        "please Adjust brightness to one hundred percent",
+        "could you Adjust brightness to one hundred percent for me",
+        "Adjust brightness to one hundred percent please"
+      ],
+      "candidate_cue_tokens": [
+        "adjust",
+        "brightness",
+        "one",
+        "hundred",
+        "percent"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      },
+      "id": "B1-072",
+      "reject_context_probe": [
+        "do not Adjust brightness to one hundred percent",
+        "the phrase Adjust brightness to one hundred percent is an example not a request"
+      ],
+      "required_slots": {
+        "light_id": "light.all",
+        "percent": 100
+      },
+      "spoken": "Adjust brightness to one hundred percent",
+      "verbatim": "Adjust brightness to 100 percent"
+    },
+    {
+      "benign_text_probe": [
+        "please Brightness level twenty percent",
+        "could you Brightness level twenty percent for me",
+        "Brightness level twenty percent please"
+      ],
+      "candidate_cue_tokens": [
+        "brightness",
+        "level",
+        "twenty",
+        "percent"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 20
+        }
+      },
+      "id": "B1-073",
+      "reject_context_probe": [
+        "do not Brightness level twenty percent",
+        "the phrase Brightness level twenty percent is an example not a request"
+      ],
+      "required_slots": {
+        "light_id": "light.all",
+        "percent": 20
+      },
+      "spoken": "Brightness level twenty percent",
+      "verbatim": "Brightness level 20 percent"
+    },
+    {
+      "benign_text_probe": [
+        "please Brightness level sixty percent",
+        "could you Brightness level sixty percent for me",
+        "Brightness level sixty percent please"
+      ],
+      "candidate_cue_tokens": [
+        "brightness",
+        "level",
+        "sixty",
+        "percent"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      },
+      "id": "B1-074",
+      "reject_context_probe": [
+        "do not Brightness level sixty percent",
+        "the phrase Brightness level sixty percent is an example not a request"
+      ],
+      "required_slots": {
+        "light_id": "light.all",
+        "percent": 60
+      },
+      "spoken": "Brightness level sixty percent",
+      "verbatim": "Brightness level 60 percent"
+    },
+    {
+      "benign_text_probe": [
+        "please Brightness level one hundred percent",
+        "could you Brightness level one hundred percent for me",
+        "Brightness level one hundred percent please"
+      ],
+      "candidate_cue_tokens": [
+        "brightness",
+        "level",
+        "one",
+        "hundred",
+        "percent"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      },
+      "id": "B1-075",
+      "reject_context_probe": [
+        "do not Brightness level one hundred percent",
+        "the phrase Brightness level one hundred percent is an example not a request"
+      ],
+      "required_slots": {
+        "light_id": "light.all",
+        "percent": 100
+      },
+      "spoken": "Brightness level one hundred percent",
+      "verbatim": "Brightness level 100 percent"
+    },
+    {
+      "benign_text_probe": [
+        "please Change color to red",
+        "could you Change color to red for me",
+        "Change color to red please"
+      ],
+      "candidate_cue_tokens": [
+        "change",
+        "color",
+        "red"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "red",
+          "light_id": "light.all"
+        }
+      },
+      "id": "B1-076",
+      "reject_context_probe": [
+        "do not Change color to red",
+        "the phrase Change color to red is an example not a request"
+      ],
+      "required_slots": {
+        "color": "red",
+        "light_id": "light.all"
+      },
+      "spoken": "Change color to red",
+      "verbatim": "Change color to Red"
+    },
+    {
+      "benign_text_probe": [
+        "please Change color to blue",
+        "could you Change color to blue for me",
+        "Change color to blue please"
+      ],
+      "candidate_cue_tokens": [
+        "change",
+        "color",
+        "blue"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "blue",
+          "light_id": "light.all"
+        }
+      },
+      "id": "B1-077",
+      "reject_context_probe": [
+        "do not Change color to blue",
+        "the phrase Change color to blue is an example not a request"
+      ],
+      "required_slots": {
+        "color": "blue",
+        "light_id": "light.all"
+      },
+      "spoken": "Change color to blue",
+      "verbatim": "Change color to Blue"
+    },
+    {
+      "benign_text_probe": [
+        "please Change color to green",
+        "could you Change color to green for me",
+        "Change color to green please"
+      ],
+      "candidate_cue_tokens": [
+        "change",
+        "color",
+        "green"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "green",
+          "light_id": "light.all"
+        }
+      },
+      "id": "B1-078",
+      "reject_context_probe": [
+        "do not Change color to green",
+        "the phrase Change color to green is an example not a request"
+      ],
+      "required_slots": {
+        "color": "green",
+        "light_id": "light.all"
+      },
+      "spoken": "Change color to green",
+      "verbatim": "Change color to Green"
+    },
+    {
+      "benign_text_probe": [
+        "please Switch color to red",
+        "could you Switch color to red for me",
+        "Switch color to red please"
+      ],
+      "candidate_cue_tokens": [
+        "switch",
+        "color",
+        "red"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "red",
+          "light_id": "light.all"
+        }
+      },
+      "id": "B1-079",
+      "reject_context_probe": [
+        "do not Switch color to red",
+        "the phrase Switch color to red is an example not a request"
+      ],
+      "required_slots": {
+        "color": "red",
+        "light_id": "light.all"
+      },
+      "spoken": "Switch color to red",
+      "verbatim": "Switch color to Red"
+    },
+    {
+      "benign_text_probe": [
+        "please Switch color to blue",
+        "could you Switch color to blue for me",
+        "Switch color to blue please"
+      ],
+      "candidate_cue_tokens": [
+        "switch",
+        "color",
+        "blue"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "blue",
+          "light_id": "light.all"
+        }
+      },
+      "id": "B1-080",
+      "reject_context_probe": [
+        "do not Switch color to blue",
+        "the phrase Switch color to blue is an example not a request"
+      ],
+      "required_slots": {
+        "color": "blue",
+        "light_id": "light.all"
+      },
+      "spoken": "Switch color to blue",
+      "verbatim": "Switch color to Blue"
+    },
+    {
+      "benign_text_probe": [
+        "please Switch color to green",
+        "could you Switch color to green for me",
+        "Switch color to green please"
+      ],
+      "candidate_cue_tokens": [
+        "switch",
+        "color",
+        "green"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "green",
+          "light_id": "light.all"
+        }
+      },
+      "id": "B1-081",
+      "reject_context_probe": [
+        "do not Switch color to green",
+        "the phrase Switch color to green is an example not a request"
+      ],
+      "required_slots": {
+        "color": "green",
+        "light_id": "light.all"
+      },
+      "spoken": "Switch color to green",
+      "verbatim": "Switch color to Green"
+    },
+    {
+      "benign_text_probe": [
+        "please Set color to red",
+        "could you Set color to red for me",
+        "Set color to red please"
+      ],
+      "candidate_cue_tokens": [
+        "set",
+        "color",
+        "red"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "red",
+          "light_id": "light.all"
+        }
+      },
+      "id": "B1-082",
+      "reject_context_probe": [
+        "do not Set color to red",
+        "the phrase Set color to red is an example not a request"
+      ],
+      "required_slots": {
+        "color": "red",
+        "light_id": "light.all"
+      },
+      "spoken": "Set color to red",
+      "verbatim": "Set color to Red"
+    },
+    {
+      "benign_text_probe": [
+        "please Set color to blue",
+        "could you Set color to blue for me",
+        "Set color to blue please"
+      ],
+      "candidate_cue_tokens": [
+        "set",
+        "color",
+        "blue"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "blue",
+          "light_id": "light.all"
+        }
+      },
+      "id": "B1-083",
+      "reject_context_probe": [
+        "do not Set color to blue",
+        "the phrase Set color to blue is an example not a request"
+      ],
+      "required_slots": {
+        "color": "blue",
+        "light_id": "light.all"
+      },
+      "spoken": "Set color to blue",
+      "verbatim": "Set color to Blue"
+    },
+    {
+      "benign_text_probe": [
+        "please Set color to green",
+        "could you Set color to green for me",
+        "Set color to green please"
+      ],
+      "candidate_cue_tokens": [
+        "set",
+        "color",
+        "green"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "green",
+          "light_id": "light.all"
+        }
+      },
+      "id": "B1-084",
+      "reject_context_probe": [
+        "do not Set color to green",
+        "the phrase Set color to green is an example not a request"
+      ],
+      "required_slots": {
+        "color": "green",
+        "light_id": "light.all"
+      },
+      "spoken": "Set color to green",
+      "verbatim": "Set color to Green"
+    },
+    {
+      "benign_text_probe": [
+        "please Reminder Drink water",
+        "could you Reminder Drink water for me",
+        "Reminder Drink water please"
+      ],
+      "candidate_cue_tokens": [
+        "reminder",
+        "drink",
+        "water"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      },
+      "id": "B1-085",
+      "reject_context_probe": [
+        "do not Reminder Drink water",
+        "the phrase Reminder Drink water is an example not a request"
+      ],
+      "required_slots": {
+        "task_id": "task.drink_water"
+      },
+      "spoken": "Reminder Drink water",
+      "verbatim": "Reminder Drink water"
+    },
+    {
+      "benign_text_probe": [
+        "please Reminder Study",
+        "could you Reminder Study for me",
+        "Reminder Study please"
+      ],
+      "candidate_cue_tokens": [
+        "reminder",
+        "study"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      },
+      "id": "B1-086",
+      "reject_context_probe": [
+        "do not Reminder Study",
+        "the phrase Reminder Study is an example not a request"
+      ],
+      "required_slots": {
+        "task_id": "task.study"
+      },
+      "spoken": "Reminder Study",
+      "verbatim": "Reminder Study"
+    },
+    {
+      "benign_text_probe": [
+        "please Reminder Exercise",
+        "could you Reminder Exercise for me",
+        "Reminder Exercise please"
+      ],
+      "candidate_cue_tokens": [
+        "reminder",
+        "exercise"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      },
+      "id": "B1-087",
+      "reject_context_probe": [
+        "do not Reminder Exercise",
+        "the phrase Reminder Exercise is an example not a request"
+      ],
+      "required_slots": {
+        "task_id": "task.exercise"
+      },
+      "spoken": "Reminder Exercise",
+      "verbatim": "Reminder Exercise"
+    },
+    {
+      "benign_text_probe": [
+        "please Remind me to Drink water",
+        "could you Remind me to Drink water for me",
+        "Remind me to Drink water please"
+      ],
+      "candidate_cue_tokens": [
+        "remind",
+        "drink",
+        "water"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      },
+      "id": "B1-088",
+      "reject_context_probe": [
+        "do not Remind me to Drink water",
+        "the phrase Remind me to Drink water is an example not a request"
+      ],
+      "required_slots": {
+        "task_id": "task.drink_water"
+      },
+      "spoken": "Remind me to Drink water",
+      "verbatim": "Remind me to Drink water"
+    },
+    {
+      "benign_text_probe": [
+        "please Remind me to Study",
+        "could you Remind me to Study for me",
+        "Remind me to Study please"
+      ],
+      "candidate_cue_tokens": [
+        "remind",
+        "study"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      },
+      "id": "B1-089",
+      "reject_context_probe": [
+        "do not Remind me to Study",
+        "the phrase Remind me to Study is an example not a request"
+      ],
+      "required_slots": {
+        "task_id": "task.study"
+      },
+      "spoken": "Remind me to Study",
+      "verbatim": "Remind me to Study"
+    },
+    {
+      "benign_text_probe": [
+        "please Remind me to Exercise",
+        "could you Remind me to Exercise for me",
+        "Remind me to Exercise please"
+      ],
+      "candidate_cue_tokens": [
+        "remind",
+        "exercise"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      },
+      "id": "B1-090",
+      "reject_context_probe": [
+        "do not Remind me to Exercise",
+        "the phrase Remind me to Exercise is an example not a request"
+      ],
+      "required_slots": {
+        "task_id": "task.exercise"
+      },
+      "spoken": "Remind me to Exercise",
+      "verbatim": "Remind me to Exercise"
+    },
+    {
+      "benign_text_probe": [
+        "please Create a reminder to Drink water",
+        "could you Create a reminder to Drink water for me",
+        "Create a reminder to Drink water please"
+      ],
+      "candidate_cue_tokens": [
+        "create",
+        "reminder",
+        "drink",
+        "water"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      },
+      "id": "B1-091",
+      "reject_context_probe": [
+        "do not Create a reminder to Drink water",
+        "the phrase Create a reminder to Drink water is an example not a request"
+      ],
+      "required_slots": {
+        "task_id": "task.drink_water"
+      },
+      "spoken": "Create a reminder to Drink water",
+      "verbatim": "Create a reminder to Drink water"
+    },
+    {
+      "benign_text_probe": [
+        "please Create a reminder to Study",
+        "could you Create a reminder to Study for me",
+        "Create a reminder to Study please"
+      ],
+      "candidate_cue_tokens": [
+        "create",
+        "reminder",
+        "study"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      },
+      "id": "B1-092",
+      "reject_context_probe": [
+        "do not Create a reminder to Study",
+        "the phrase Create a reminder to Study is an example not a request"
+      ],
+      "required_slots": {
+        "task_id": "task.study"
+      },
+      "spoken": "Create a reminder to Study",
+      "verbatim": "Create a reminder to Study"
+    },
+    {
+      "benign_text_probe": [
+        "please Create a reminder to Exercise",
+        "could you Create a reminder to Exercise for me",
+        "Create a reminder to Exercise please"
+      ],
+      "candidate_cue_tokens": [
+        "create",
+        "reminder",
+        "exercise"
+      ],
+      "evidence": "Offline annotation/collection plan only; no acoustic labels, examples, runtime parser or acceptance override created",
+      "expected": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      },
+      "id": "B1-093",
+      "reject_context_probe": [
+        "do not Create a reminder to Exercise",
+        "the phrase Create a reminder to Exercise is an example not a request"
+      ],
+      "required_slots": {
+        "task_id": "task.exercise"
+      },
+      "spoken": "Create a reminder to Exercise",
+      "verbatim": "Create a reminder to Exercise"
+    }
+  ],
+  "contract": "Preserve full extension catalog and all typed slots; negation, changed values/targets and extra actions are not harmless padding.",
+  "new_human_recordings": 0
+}

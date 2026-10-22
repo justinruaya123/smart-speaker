@@ -1,0 +1,52 @@
+{
+  "bindings": {
+    ".cache/speaker-optionb-tiny-ft-v1/run-01/best.pt": "1706505dc3332992d76f0c5aad969306f0eaaace0d1c1b6f56c5c75d3a53c7a0",
+    ".cache/speaker-optionb-tiny-ft-v1/run-01/bundle/commands.json": "71017cf22366d15557e8878636135f5ff2d0ac81fc4dfd6f058fc88f0f2d4b5d",
+    ".cache/speaker-optionb-tiny-ft-v1/run-01/bundle/model.onnx": "e243830ccd6b43f5fe1e94f0f2f4ff7b8c544340892104d0a35ac21b6d9ce68f",
+    ".cache/speaker-optionb-tiny-ft-v1/run-01/bundle/normalization.json": "28f7ef1b2c926c587d611d17eef91184c2c7e2de66abe352d1fc2365e45d69ed",
+    ".cache/speaker-optionb-tiny-ft-v1/run-01/bundle/policy.json": "c46a049267066f7a51fc8ecad76f2fd3d700f9eab3d9e4a3c00faa59938f2b11",
+    ".cache/speaker-optionb-tiny-ft-v1/run-01/bundle/recipe.json": "3bc56e5e526f3a8c02c569740c614ba3c671a1a79139ac1b4af92f6440dc4ad9",
+    ".cache/speaker-optionb-tiny-ft-v1/run-01/calibration-predictions.jsonl": "4b239c80acc6f3619d5d6b3aa9d392fe0884fafb3952b5a2c3e212a4f760084f",
+    ".cache/speaker-optionb-tiny-ft-v1/run-01/fit-verification.json": "0d4eba13c54523b0243dd968366e5d09268f82b5ec6efc228cc3b09ec3c3aa1c",
+    ".cache/speaker-optionb-tiny-ft-v1/run-01/hard-negative-pool.json": "897001fe54d236a401301021df1a343020627330020712c97bd20b19caee0a2c",
+    ".cache/speaker-optionb-tiny-ft-v1/run-01/normalization.json": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09",
+    ".cache/speaker-optionb-tiny-ft-v1/run-01/raw-feature-inputs.jsonl": "51bea3959eb84de99db2ab64582cf0a3b2eaeabcf724e2a8bd9b9719045c639f",
+    ".cache/speaker-optionb-tiny-ft-v1/run-01/training-curve.jsonl": "2113b480dd2b6ef1bfd20c17d9e15e1f2751d35223d1bcc4c80470c8e02ddb81",
+    ".cache/speaker-optionb-tiny-ft-v1/run-01/training-result.json": "1ce1c46094f1cd9bea7c6a2f38ecc59bd1eb088cc8fdf1ae65f978add0ee1807",
+    "D:/School/AI231/.worktrees/me2/smart-speaker-fresh/scripts/test/speaker_optionb_tiny_ft_eval.py": "aa54f776baf2ab2fb3d6c986b0e91e2a3f885f81351771e05ef2883a14b333a7",
+    "experiments/speaker-optionb-tiny-ft-v1/data-freeze.json": "4eb69afcf18745f09551c4dadb6dbc6b57dedc39bc671d4ea6e1fdd0bfcbb40b",
+    "experiments/speaker-optionb-tiny-ft-v1/export-verification.json": "e71295929fb58ba64e2233562659d239bd1a7b4d6c8922c0bd797fd4096f9fb0",
+    "experiments/speaker-optionb-tiny-ft-v1/model-selection-before-calibration.json": "c1c66bd1312131ec0b2bb1209f22c1713221e1a738726857c1079d31019277a1",
+    "experiments/speaker-optionb-tiny-ft-v1/policy-selection.json": "c96bae9e06a1a658853b2401216e45f7c0e1ef7769a6e8efe65bca082e1ad1f8",
+    "experiments/speaker-optionb-tiny-ft-v1/protocol.json": "483ed59c7d0b4fc2f219165af37bdb464f3bb0422bc84ec9d127f99dec4aace3"
+  },
+  "complete_command_classes": 32,
+  "created_utc": "2026-10-22T16:01:14.964201+00:00",
+  "exposed_regression_not_blind": true,
+  "fitting_splits": [
+    "train"
+  ],
+  "heldout_payload_bytes_hashed_for_integrity": true,
+  "heldout_pcm_decoded_or_inferred_before_selection": false,
+  "model_selected_on": [
+    "dev"
+  ],
+  "normalization_split": "train",
+  "parameters": 258912,
+  "policy": {
+    "enabled": true,
+    "min_margin": 0.3,
+    "min_probability": 0.98
+  },
+  "policy_selected_on": [
+    "dev",
+    "calibration"
+  ],
+  "selected_arm": "smoothed_control",
+  "selected_epoch": 1,
+  "selected_on": [
+    "dev",
+    "calibration"
+  ],
+  "test_holdout_used_for_selection": false
+}

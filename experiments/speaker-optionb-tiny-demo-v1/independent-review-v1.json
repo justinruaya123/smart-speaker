@@ -1,0 +1,15 @@
+{
+  "review_id": "deleg_df83b377",
+  "verdict_passed": false,
+  "evidence_source": "C:/Users/Justin/AppData/Local/hermes/cache/delegation/live/deleg_df83b377/task-0.log",
+  "evidence_note": "The completed live transcript retains a truncated excerpt of the original verdict. This record preserves the known finding, not a fabricated reconstruction of the untruncated full review JSON.",
+  "verdict_excerpt_truncated": true,
+  "known_finding": {
+    "severity": "medium",
+    "location": "scripts/test/speaker_optionb_tiny_demo_report.py:19-20,94-106,128-139",
+    "description": "The wording report silently treats unavailable full-reference text as nonmatching evidence, then marks verification successful. All 4,418 test and 196 holdout references lack text, reference_text and spoken_text, so all 372 wording/cohort cells necessarily report zero matches. This establishes unavailable wording metadata, not that all 93 wordings lack recordings. Structural CSV reconciliation cannot validate wording coverage when references omit the required text."
+  },
+  "correction": "Preserve the original source, zero-text table and core receipt. Add a reporting-only exact-source-locator full-transcript enrichment and separately versioned table/receipt; no model, labels, predictions, normalization or gate changes.",
+  "closure_review": "independent-review-v2.json",
+  "preserved_transcript_copy": ".cache/speaker-optionb-tiny-demo-v1/run-01/logs/independent-review-v1.log"
+}

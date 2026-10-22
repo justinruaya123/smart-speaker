@@ -1,0 +1,23 @@
+{
+  "review_id": "deleg_df83b377",
+  "source_transcript": "C:/Users/Justin/AppData/Local/hermes/cache/delegation/live/deleg_df83b377/task-0.log",
+  "delivery_note": "The full original verdict arrived asynchronously after the additive metadata correction and passing follow-up review had already been completed. Preserve this original failed verdict; it is not a new regression.",
+  "current_finding_status": "closed_by_versioned_metadata_addendum",
+  "closure_review": "independent-review-v2.json",
+  "correction_receipt": "verification-wording-v2.json",
+  "passed": false,
+  "security_concerns": [],
+  "logic_errors": [
+    {
+      "severity": "medium",
+      "location": "scripts/test/speaker_optionb_tiny_demo_report.py:19-20,94-106,128-139",
+      "description": "The wording report silently treats unavailable full-reference text as nonmatching evidence, then marks verification successful. All 4,418 test and 196 holdout references lack text, reference_text and spoken_text, so all 372 wording/cohort cells necessarily report zero matches. This establishes unavailable wording metadata, not that all 93 wordings lack recordings. Structural CSV reconciliation cannot validate the intended wording coverage.",
+      "impact": "Metadata reporting only; this does not invalidate the selected .50/.10 policy or complete-command decisions."
+    }
+  ],
+  "suggestions": [
+    "Preserve the hash-bound report, CSV and receipt. Use a versioned addendum that either joins authoritative full-reference metadata by verified identity or explicitly reports wording coverage as unavailable.",
+    "Add a schema-boundary fixture using actual projected-reference fields, distinguishing missing wording metadata from available text with genuinely zero matches."
+  ],
+  "summary": "17 fixtures passed. Independently reconstructed all 138 policy points and 414 metric sets from 466 uniquely aligned, finite human DEV/calibration score vectors; F1 and every ranking tie-break correctly select .50/.10 without test/holdout selection. All 399 protected bindings match, and candidate graph, normalization, ontology and split manifests remain byte-identical to their parents. All 93 definitions are structurally retained across four cohorts, and wording matching is reporting-only, not inference-time rescue. Review fails solely on the confirmed missing-metadata reporting boundary. No source or receipt files were modified; no full verification or audio inference was rerun."
+}

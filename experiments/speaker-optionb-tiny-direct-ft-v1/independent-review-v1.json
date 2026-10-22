@@ -1,0 +1,38 @@
+{
+  "review_id": "deleg_a6cf4021",
+  "passed": false,
+  "security_concerns": [],
+  "logic_errors": [
+    {
+      "severity": "medium",
+      "location": "verify-results.py:120-129",
+      "finding": "Fixed_095 decisions and capture-fault fixed_index are trusted rather than independently reconstructed.",
+      "demonstration": "A software fixture passed a fixed-policy accepted index despite maximum posterior .90 below .95.",
+      "required_fix": "Reconstruct fixed decisions at .95/margin0 and require raw, accepted and fixed indices all0 on capture faults."
+    },
+    {
+      "severity": "medium",
+      "location": "verify-results.py:111-126",
+      "finding": "Total and unique output-ID checks do not establish exact parent/variant cohort coverage.",
+      "demonstration": "A software fixture substituted a second unique output ID for the same parent while another expected reference was absent.",
+      "required_fix": "Exact expected/observed split-parent-variant multiset, canonical output IDs, reference source audio/PCM hashes."
+    },
+    {
+      "severity": "medium",
+      "location": "verify-results.py:109-111,146-154",
+      "finding": "Declared predictions/selection digests are not validated, and final outputs are not bound by the receipt.",
+      "demonstration": "The reconciliation fixture accepted an invalid declared predictions digest.",
+      "required_fix": "Check predictions_sha256 and selection_sha256; bind final predictions, results, selection and all reported CSV hashes in the new immutable receipt."
+    }
+  ],
+  "nonblocking_suggestions": [
+    "Reconstruct complete ranking tuple and explicitly match selected checkpoint epoch to chosen curve epoch.",
+    "Add raw-human and synthetic retention-floor counterexample fixtures.",
+    "Retain historical gap-fill and unresolved voice-alias disclosures; do not call these demonstrated current-holdout leakage."
+  ],
+  "reviewer_tests_passed": 12,
+  "reviewer_heldout_pcm_access": false,
+  "trainer_evidence_checked": "6172 exact declared replay rows; all9 checked identity fields disjoint from6075 current reserved rows; metadata/fit hashes match; unchanged258912-parameter epoch44 parent correctly retained after384 updates",
+  "conclusion": "Three verifier fail-open defects, not observed training contamination. Old verifier and receipt preserved; additive v2 fix in progress. No model, policy, reference or membership reselection.",
+  "installed": false
+}

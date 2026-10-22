@@ -1,4 +1,8 @@
 {
+  "speaker.human_recovery": {
+    "path": "train/speaker_human_recovery.py",
+    "runtime": false
+  },
   "speaker.pipeline_repair": {
     "path": "train/speaker_pipeline_repair.py",
     "runtime": false

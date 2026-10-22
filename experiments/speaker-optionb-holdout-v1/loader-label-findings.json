@@ -1,0 +1,18 @@
+{
+  "basename_fixture": {
+    "actually_loaded_mean": 9.0,
+    "hash_checked": false,
+    "requested_mean": 1.0
+  },
+  "interpretation": "Existing implementation probes/constructed software fixtures, not proof of actual split contamination or wrong-file loading in the frozen full model. Historical code is unchanged.",
+  "legacy_human_rows": 1863,
+  "legacy_intent_mismatches": 0,
+  "legacy_target_mismatches": 118,
+  "old_pool_accepts_contrived_dev_row_if_eligibility_is_flipped": true,
+  "target_mismatches_by_intent": {
+    "BRIGHTNESS": 6,
+    "COLOR": 69,
+    "LIGHT_OFF": 11,
+    "LIGHT_ON": 32
+  }
+}

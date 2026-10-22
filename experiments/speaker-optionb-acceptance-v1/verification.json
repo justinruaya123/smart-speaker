@@ -1,0 +1,40 @@
+{
+  "archived_parent_inputs_unchanged": true,
+  "artifacts": {
+    "docs/EXPERIMENT-speaker-optionb-acceptance-v1.md": "817c80fc4a5322c749372b00113c4197137d8931c58a9b4ee4b054ebbc38d967",
+    "experiments/speaker-optionb-acceptance-v1/fit-reference-audit.json": "a802c1fbf5a25036c2bc9a3273ed50f4678f72c3f4837021124229da15cddd10",
+    "experiments/speaker-optionb-acceptance-v1/optionb-catalog.json": "0574553921eba99b9117304ea6ede43fda54e2c70573d1f06a4f0d54b7d30f2d",
+    "experiments/speaker-optionb-acceptance-v1/per-command.csv": "79781af64df64aadf2ee9da0f353b9b1fb140263a64376649905a1496faf6d24",
+    "experiments/speaker-optionb-acceptance-v1/per-intent.csv": "debc36924443f343a1e6b68880c652fbe5b5e3b5d485e490cf3e615547adceed",
+    "experiments/speaker-optionb-acceptance-v1/per-verbatim.csv": "f616710e9b792ab53e9b4b07ee0ea3b4fb089c08630ddd525b98833b2d6c3df2",
+    "experiments/speaker-optionb-acceptance-v1/protocol.json": "74d6d20cf7fd2d8a1da87845ffb00e532d0ca071b9f692f6c76b7aeea1f04861",
+    "experiments/speaker-optionb-acceptance-v1/reference-field-check.json": "494202e34cb23f5815e81748527d2a01429e65b9709ac3c05fc7cf4f93bd031a",
+    "experiments/speaker-optionb-acceptance-v1/reference-field-check.py": "98ff0ae976639e6424b393ea2cc80f59718beaf275d872e3a1ea327ad3d7d3f9",
+    "experiments/speaker-optionb-acceptance-v1/replay-driver.py": "14d1c98f4c7be80209932c5f67003f4a8b6b9ba174eaa7e9bfe2391754691df1",
+    "experiments/speaker-optionb-acceptance-v1/results.json": "72806623948d528eb35659dc790d880002812c2e70fd57bca71a389cb8dba377",
+    "experiments/speaker-optionb-acceptance-v1/selection-before-replay.json": "16b5be08219add49bbc568046b04d81ca2fbb1e521540c098af78cb2c24ee1b6",
+    "experiments/speaker-optionb-acceptance-v1/verify-results.py": "e625e507f9a2bf39b49b23f92c5a6c7cdece3196d7e134e633ebe96951871840",
+    "scripts/test/speaker_optionb_acceptance.py": "aaa1639f328dcf9edbb16d26315348a74166c2b2dd3f99f5aa32f5d09e0c27bf",
+    "scripts/test/test_speaker_optionb_acceptance.py": "7c433e93fe150af187e206e01e5759a08a76f3be43e21b085c831593cf79cf8f"
+  },
+  "csv_rows": {
+    "per-command.csv": 186,
+    "per-intent.csv": 108,
+    "per-verbatim.csv": 558
+  },
+  "dependent_stress_trials_per_arm": 282,
+  "deployment_changed": false,
+  "focused_tests": 122,
+  "format": "optionb-acceptance-verification-v1",
+  "fresh_blind_holdout": false,
+  "inference_arms": 2,
+  "optionb_commands": 31,
+  "optionb_verbatims": 93,
+  "original_recordings_per_inference_arm": 196,
+  "pass_": true,
+  "protected_inputs": 289,
+  "reported_arms": 3,
+  "test_log_sha256": "305845e41fa565709ebec89945279fac984ece3f57dd32b1551694e1ace40425",
+  "threshold_search": false,
+  "training": false
+}

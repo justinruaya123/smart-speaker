@@ -1,0 +1,15 @@
+{
+  "review_id": "deleg_b32a2c7e",
+  "scope": "Independent closure review of the additive direct-study v2 verifier and its60 software fixtures",
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [],
+  "summary": "All three original findings are closed: decisions are independently recomputed, including fixed0.95 acceptance and all-zero capture-fault indices; exact frozen(split,parent_id,variant)coverage, canonical IDs, and source audio/PCM hashes are enforced; declared prediction/selection digests are checked, and actual hashes of predictions, results, selection, and all three CSVs are bound into the receipt with pre/post verification. All29 inherited non-reconciliation assertions remain. Receipt writing is opt-in and exclusive to verification-v2.json. Original verifier and receipt hashes remained unchanged. All60 software tests passed. No repository, model, or data edits; no audio decoding, inference, or full-verifier execution by the reviewer.",
+  "reviewer_software_tests_passed": 60,
+  "reviewer_heldout_audio_or_inference": false,
+  "parent_actual_full_verification": "experiments/speaker-optionb-tiny-direct-ft-v1/verification-v2.json",
+  "parent_actual_focused_regression_tests_passed": 137,
+  "recognition_quality_passed": false,
+  "installed": false
+}

@@ -1,0 +1,32 @@
+{
+  "blas_threads": 1,
+  "excludes": [
+    "audio file loading",
+    "utterance speaking time",
+    "wake/VAD/endpoint wait",
+    "UI/TTS/device providers"
+  ],
+  "logical_cpu_count": 16,
+  "measured_original_human_dev_utterances": 256,
+  "memory_after_replay": {
+    "peak_private_commit_bytes": 601993216,
+    "peak_working_set_bytes": 83628032,
+    "private_commit_bytes": 590757888,
+    "working_set_bytes": 75190272
+  },
+  "memory_before_model": {
+    "peak_private_commit_bytes": 525426688,
+    "peak_working_set_bytes": 31547392,
+    "private_commit_bytes": 525426688,
+    "working_set_bytes": 31547392
+  },
+  "model_sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+  "p50_ms": 4.9111499974969774,
+  "p95_ms": 7.702249997237232,
+  "physical_pi_evidence": false,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.14",
+  "session_load_ms": 21.282200003042817,
+  "threads": 1,
+  "torch_imported": false
+}

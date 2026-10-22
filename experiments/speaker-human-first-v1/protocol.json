@@ -1,0 +1,83 @@
+{
+  "format": "speaker-human-first-v1",
+  "requirements": [
+    "ME-01",
+    "ME-02",
+    "ME-03",
+    "ME-04",
+    "ME-08",
+    "UC-01",
+    "UC-02",
+    "UC-03",
+    "UC-04",
+    "UC-05",
+    "UC-06",
+    "UC-07",
+    "UC-08",
+    "UC-09",
+    "UC-10"
+  ],
+  "scope": "Audit and repair original-human data admission, per-intent treatment and preparation. No full acoustic fit, synthetic injection, deployment, physical actions or installed-artifact replacement.",
+  "hypothesis": "Per-command/speaker/source coverage, correct supervision, leakage guards and matched preprocessing make a future human-only comparison interpretable; accuracy improvement must be measured, not inferred from this audit.",
+  "baseline": {
+    "git_head": "babf00329abd43cf81dea3ba4d117cae8e5c2f6a",
+    "dirty": true,
+    "inputs": {
+      "submission/models/compact/model.onnx": "e8a2c5aca69b03eacf1092a68b6b23a541c3a7f51fdc5a34a52214dc9ebe0017",
+      "submission/models/compact/recall-policy.json": "0322a8a93876c09164f98c6c468e0808a9fd9209b8762a6c415c8b552e5deefc",
+      "submission/models/compact/recipe.json": "ff4de48b51f763e380047a8ff2388067f5cb3e1717050841748005ba50f0a17e",
+      "submission/models/compact/catalog.json": "429a15bc364d7fd9e723a2879c611472b5176de6cb3a2b54be7c137b050c985d",
+      "submission/models/compact/normalization.json": "a247ba0c8d6957f05c0d493654009bcce968023c631de93bbaf613c77d05e262",
+      "submission/reproduction/recipe.json": "9500f914bfd2145bd533e90582be8b2486fd8cec2352b021e325fe2add5cda9f",
+      "scripts/train/speaker_targeted_train.py": "fd10e5182b38838a6885a905fdd870af0e7c7558af62e0aca222822f02025c33",
+      "scripts/train/speaker_synth_finetune.py": "305c9877ebd56654b09379b62549f8da06b59bf50a97277e5d3c860477b31dd6",
+      "artifacts/bundle.json": "e1f9519400058b9fc5ebadcbb68f520a61faed93ff50eb528e530748e369ec85",
+      "experiments/speaker-human-first-v1/intent-fixes.json": "b4d957d028c3257461316203868854334349aea32a16e82cd2e103017e837900"
+    }
+  },
+  "allowed_paths": [
+    "scripts/train/speaker_human_data.py",
+    "scripts/test/test_speaker_human_data.py",
+    "experiments/speaker-human-first-v1/",
+    "docs/EXPERIMENT-speaker-human-first-v1.md",
+    "EXPERIMENTS.md"
+  ],
+  "human_only": true,
+  "synthetic_injection": false,
+  "audio_augmentation": false,
+  "pretrained_or_warm_start_weights": false,
+  "audio_inspection_splits": [
+    "train",
+    "dev"
+  ],
+  "evaluation_metadata_only_splits": [
+    "calibration",
+    "test",
+    "holdout"
+  ],
+  "preserve_published_splits": true,
+  "use_test_for_selection": false,
+  "prior_test_exposure": "The existing targeted trainer repeatedly scores test; prior session also tuned WEATHER/ALARM/TIMER thresholds against test outcomes. Published test and holdout are regression only.",
+  "normalization": "Refit on exactly admitted human train; frozen global baseline, optional CMVN ablation separately versioned and deployment-matched.",
+  "pilot_speaker_floors_per_typed_command": {
+    "train": 5,
+    "dev": 3,
+    "calibration": 3
+  },
+  "floors_are_not_quality_certification": true,
+  "quality_claim_gate": "New blind human speakers/sessions, predeclared precision/recall/FAR targets, fixed catalog/preprocessing, development-only model selection, calibration-only policy fitting, then immutable selection-before-test receipt.",
+  "recording_review": "At least two independent reviewers for disputed transcripts/slots/boundaries; retain disagreements and evidence hashes; do not convert uncertainty to UNKNOWN.",
+  "fitting_status": "Not run. A single explicitly labelled CPU optimizer plumbing smoke may run, with no accuracy or model promotion claim.",
+  "future_comparison": {
+    "architecture": "Unchanged 935567-parameter PooledContextVCM",
+    "initialization": "random, human-only",
+    "sampling": "intent -> typed command -> source -> speaker -> recording with true-human negative strata",
+    "selection": "macro-intent and macro-speaker complete-command recall under fixed precision/FAR constraints; no mixed-phase bonus",
+    "seeds": [
+      53,
+      73,
+      97
+    ],
+    "blocked_until": "Missing original-human command/calibration cells and annotation review are addressed"
+  }
+}
