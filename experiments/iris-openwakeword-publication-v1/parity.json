@@ -1,0 +1,14 @@
+{
+  "chunk_samples": 731,
+  "frames": 150,
+  "max_absolute_error": 0.0,
+  "numpy": "2.5.3",
+  "onnxruntime": "1.30.0",
+  "python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+  "qualified": false,
+  "reference": "scripts/test/iris_openwakeword_reference.py: reviewed narrow transcription, not installed upstream package",
+  "samples": 192000,
+  "status": "reviewed_upstream_reference_numeric_parity",
+  "tolerance": 2e-06,
+  "upstream_revision": "368c03716d1e92591906a84949bc477f3a834455"
+}

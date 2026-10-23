@@ -1,0 +1,78 @@
+{
+  "embedding_model.onnx": {
+    "inputs": [
+      {
+        "name": "input_1",
+        "shape": [
+          "unk__314",
+          76,
+          32,
+          1
+        ],
+        "type": "tensor(float)"
+      }
+    ],
+    "metadata": {},
+    "outputs": [
+      {
+        "name": "conv2d_19",
+        "shape": [
+          "unk__315",
+          1,
+          1,
+          96
+        ],
+        "type": "tensor(float)"
+      }
+    ]
+  },
+  "hey_iris.onnx": {
+    "inputs": [
+      {
+        "name": "embeddings",
+        "shape": [
+          "batch",
+          16,
+          96
+        ],
+        "type": "tensor(float)"
+      }
+    ],
+    "metadata": {},
+    "outputs": [
+      {
+        "name": "score",
+        "shape": [
+          "batch",
+          1
+        ],
+        "type": "tensor(float)"
+      }
+    ]
+  },
+  "melspectrogram.onnx": {
+    "inputs": [
+      {
+        "name": "input",
+        "shape": [
+          "batch_size",
+          "samples"
+        ],
+        "type": "tensor(float)"
+      }
+    ],
+    "metadata": {},
+    "outputs": [
+      {
+        "name": "output",
+        "shape": [
+          "time",
+          1,
+          "Clipoutput_dim_2",
+          32
+        ],
+        "type": "tensor(float)"
+      }
+    ]
+  }
+}

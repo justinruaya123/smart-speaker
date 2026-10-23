@@ -1,0 +1,57 @@
+{
+  "cpu_threads": 1,
+  "gate_passed": false,
+  "installed": false,
+  "lock_sha256": "403b52c72c038e9bbea4f1787f4d875b891228ab7943606cb3eab4020361c265",
+  "no_environment_mutation": true,
+  "no_test_retuning": true,
+  "no_training": true,
+  "numpy": "2.5.3",
+  "onnxruntime": "1.30.0",
+  "panels": [
+    {
+      "cases_sha256": "7c4beb8ea6f2e9e755972c26e20b13f6327b781a6c1e0cf1d5e1e503fd2cbe2e",
+      "metrics": {
+        "confusable_n": 64,
+        "control_n": 4,
+        "detected": 23,
+        "duplicate_detections": 0,
+        "false_wakes": 16,
+        "missed": 9,
+        "negative_n": 68,
+        "negative_seconds": 167.20000000000002,
+        "positive_n": 32,
+        "recall": 0.71875,
+        "synthetic_smoke_pass": false
+      },
+      "name": "baseline",
+      "score_trace_sha256": "f78908c5cae09a40d8be19bcba974dda7b35060bf89fa46a74d941b41b7669c6"
+    },
+    {
+      "cases_sha256": "71ede02144ec4f2bc087c7ef804a606bf75733154b8a689014ab7ffde730794b",
+      "metrics": {
+        "confusable_n": 64,
+        "control_n": 4,
+        "detected": 22,
+        "duplicate_detections": 0,
+        "false_wakes": 16,
+        "missed": 10,
+        "negative_n": 68,
+        "negative_seconds": 166.696,
+        "positive_n": 32,
+        "recall": 0.6875,
+        "synthetic_smoke_pass": false
+      },
+      "name": "companion-test",
+      "score_trace_sha256": "c4ca7a977a3ffb0951755785cd79399e1944d44a0813948c7ad2d6963ace84c2"
+    }
+  ],
+  "platform": "Windows-11-10.0.26200-SP0",
+  "promoted": false,
+  "python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+  "qualified": false,
+  "schema_version": 1,
+  "scope": "Previously exposed synthetic regression; no independent humans/Pi/live microphone",
+  "status": "blocked_acoustic_gate",
+  "wall_seconds": 51.88955369999894
+}

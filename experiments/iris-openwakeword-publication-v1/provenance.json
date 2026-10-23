@@ -1,0 +1,132 @@
+[
+  {
+    "bytes": 1077,
+    "http_status": 200,
+    "local": ".cache\\iris-openwakeword-publication-v1\\source\\ASHR12\\iris\\LICENSE",
+    "path": "LICENSE",
+    "repository": "ASHR12/iris",
+    "revision": "b506100e2f3634fcdf8692b76ec8b8139231e9b7",
+    "sha256": "150853f1b6f5b4676ea2fff2493da50265ada13b117f1da19a1441ef6007e6f1",
+    "url": "https://raw.githubusercontent.com/ASHR12/iris/b506100e2f3634fcdf8692b76ec8b8139231e9b7/LICENSE"
+  },
+  {
+    "bytes": 26072,
+    "http_status": 200,
+    "local": ".cache\\iris-openwakeword-publication-v1\\source\\ASHR12\\iris\\README.md",
+    "path": "README.md",
+    "repository": "ASHR12/iris",
+    "revision": "b506100e2f3634fcdf8692b76ec8b8139231e9b7",
+    "sha256": "cf4628d9c89010e20b6ef20019723a65a6bfb5d28eecc3e4e0ccc393e9d58536",
+    "url": "https://raw.githubusercontent.com/ASHR12/iris/b506100e2f3634fcdf8692b76ec8b8139231e9b7/README.md"
+  },
+  {
+    "bytes": 125,
+    "http_status": 200,
+    "local": ".cache\\iris-openwakeword-publication-v1\\source\\ASHR12\\iris\\wakeword-models\\hey_iris-full-10k\\README.txt",
+    "path": "wakeword-models/hey_iris-full-10k/README.txt",
+    "repository": "ASHR12/iris",
+    "revision": "b506100e2f3634fcdf8692b76ec8b8139231e9b7",
+    "sha256": "bf811b2b00625670312028ef3b70c32fbb6715b0e4b289d5c4dacf94a1d41297",
+    "url": "https://raw.githubusercontent.com/ASHR12/iris/b506100e2f3634fcdf8692b76ec8b8139231e9b7/wakeword-models/hey_iris-full-10k/README.txt"
+  },
+  {
+    "bytes": 294,
+    "http_status": 200,
+    "local": ".cache\\iris-openwakeword-publication-v1\\source\\ASHR12\\iris\\wakeword-models\\hey_iris-full-10k\\hey_iris_full_eval.json",
+    "path": "wakeword-models/hey_iris-full-10k/hey_iris_full_eval.json",
+    "repository": "ASHR12/iris",
+    "revision": "b506100e2f3634fcdf8692b76ec8b8139231e9b7",
+    "sha256": "df1854b0c5e7e00b24ab1fe7d11c44f627cc03fae063941c3069bc27e84e0d94",
+    "url": "https://raw.githubusercontent.com/ASHR12/iris/b506100e2f3634fcdf8692b76ec8b8139231e9b7/wakeword-models/hey_iris-full-10k/hey_iris_full_eval.json"
+  },
+  {
+    "bytes": 173249,
+    "http_status": 200,
+    "local": ".cache\\iris-openwakeword-publication-v1\\models\\hey_iris.onnx",
+    "path": "public/wakeword/hey_iris.onnx",
+    "repository": "ASHR12/iris",
+    "revision": "b506100e2f3634fcdf8692b76ec8b8139231e9b7",
+    "sha256": "82f6e6ed82837400e0a12a6e6cf3a49bac7ff8181efbb965827f6e2a29961eda",
+    "url": "https://raw.githubusercontent.com/ASHR12/iris/b506100e2f3634fcdf8692b76ec8b8139231e9b7/public/wakeword/hey_iris.onnx"
+  },
+  {
+    "bytes": 1087958,
+    "http_status": 200,
+    "local": ".cache\\iris-openwakeword-publication-v1\\models\\melspectrogram.onnx",
+    "path": "public/wakeword/melspectrogram.onnx",
+    "repository": "ASHR12/iris",
+    "revision": "b506100e2f3634fcdf8692b76ec8b8139231e9b7",
+    "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+    "url": "https://raw.githubusercontent.com/ASHR12/iris/b506100e2f3634fcdf8692b76ec8b8139231e9b7/public/wakeword/melspectrogram.onnx"
+  },
+  {
+    "bytes": 1326578,
+    "http_status": 200,
+    "local": ".cache\\iris-openwakeword-publication-v1\\models\\embedding_model.onnx",
+    "path": "public/wakeword/embedding_model.onnx",
+    "repository": "ASHR12/iris",
+    "revision": "b506100e2f3634fcdf8692b76ec8b8139231e9b7",
+    "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+    "url": "https://raw.githubusercontent.com/ASHR12/iris/b506100e2f3634fcdf8692b76ec8b8139231e9b7/public/wakeword/embedding_model.onnx"
+  },
+  {
+    "bytes": 14911,
+    "http_status": 200,
+    "local": ".cache\\iris-openwakeword-publication-v1\\source\\ASHR12\\iris\\src\\hooks\\useWakeWord.ts",
+    "path": "src/hooks/useWakeWord.ts",
+    "repository": "ASHR12/iris",
+    "revision": "b506100e2f3634fcdf8692b76ec8b8139231e9b7",
+    "sha256": "4360413af9c98a25918849f65b541bce97511e471d755f60b167d45ee9c7bb61",
+    "url": "https://raw.githubusercontent.com/ASHR12/iris/b506100e2f3634fcdf8692b76ec8b8139231e9b7/src/hooks/useWakeWord.ts"
+  },
+  {
+    "bytes": 33068,
+    "http_status": 200,
+    "local": ".cache\\iris-openwakeword-publication-v1\\source\\dscripka\\openWakeWord\\openwakeword\\utils.py",
+    "path": "openwakeword/utils.py",
+    "repository": "dscripka/openWakeWord",
+    "revision": "368c03716d1e92591906a84949bc477f3a834455",
+    "sha256": "e74bb871e83201b1447292122544d0dfc4e900d96c1b68a626768e2f400d7df3",
+    "url": "https://raw.githubusercontent.com/dscripka/openWakeWord/368c03716d1e92591906a84949bc477f3a834455/openwakeword/utils.py"
+  },
+  {
+    "bytes": 26577,
+    "http_status": 200,
+    "local": ".cache\\iris-openwakeword-publication-v1\\source\\dscripka\\openWakeWord\\openwakeword\\model.py",
+    "path": "openwakeword/model.py",
+    "repository": "dscripka/openWakeWord",
+    "revision": "368c03716d1e92591906a84949bc477f3a834455",
+    "sha256": "f1ed03b4066d355f1a5b691360dd47f25b75207fec2c549ff537957993659a7d",
+    "url": "https://raw.githubusercontent.com/dscripka/openWakeWord/368c03716d1e92591906a84949bc477f3a834455/openwakeword/model.py"
+  },
+  {
+    "bytes": 3196,
+    "http_status": 200,
+    "local": ".cache\\iris-openwakeword-publication-v1\\source\\dscripka\\openWakeWord\\openwakeword\\__init__.py",
+    "path": "openwakeword/__init__.py",
+    "repository": "dscripka/openWakeWord",
+    "revision": "368c03716d1e92591906a84949bc477f3a834455",
+    "sha256": "b8f003c0ef84df66bc5dda4fa535a8d6ccb5d700eb29f9a7abd6f936febcab53",
+    "url": "https://raw.githubusercontent.com/dscripka/openWakeWord/368c03716d1e92591906a84949bc477f3a834455/openwakeword/__init__.py"
+  },
+  {
+    "bytes": 11357,
+    "http_status": 200,
+    "local": ".cache\\iris-openwakeword-publication-v1\\source\\dscripka\\openWakeWord\\LICENSE",
+    "path": "LICENSE",
+    "repository": "dscripka/openWakeWord",
+    "revision": "368c03716d1e92591906a84949bc477f3a834455",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "url": "https://raw.githubusercontent.com/dscripka/openWakeWord/368c03716d1e92591906a84949bc477f3a834455/LICENSE"
+  },
+  {
+    "bytes": 27414,
+    "http_status": 200,
+    "local": ".cache\\iris-openwakeword-publication-v1\\source\\dscripka\\openWakeWord\\README.md",
+    "path": "README.md",
+    "repository": "dscripka/openWakeWord",
+    "revision": "368c03716d1e92591906a84949bc477f3a834455",
+    "sha256": "00190089228bb85e6caf6d11708f0f75931b53b375a33f3bebfa01ee97d02692",
+    "url": "https://raw.githubusercontent.com/dscripka/openWakeWord/368c03716d1e92591906a84949bc477f3a834455/README.md"
+  }
+]

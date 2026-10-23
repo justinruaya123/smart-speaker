@@ -1,0 +1,21 @@
+{
+  "acoustic_environment": "Unchanged main runtime: NumPy2.5.3 ORT1.30.0",
+  "case_traces_reconstructed": 200,
+  "errors": 0,
+  "failed": 0,
+  "junit_sha256": "7fea3b8a531d7239cfbf9dc8ad6c03b0f1bb21144a0142245c3ee2848d7e43ce",
+  "results_sha256": "ca5c7870e450a9cae6255f0feda6002d107c37b479b0e8ef1683c4495549a67e",
+  "skipped": 0,
+  "status": "verified_failed_gate_not_promoted",
+  "test_environment": "Original unchanged .venv: NumPy2.3.5 ORT1.23.2",
+  "test_ids": [
+    "scripts.test.test_iris_openwakeword::test_additive_adapter_exists_and_cpu_loads",
+    "scripts.test.test_iris_openwakeword::test_invalid_pcm_is_rejected_without_advancing",
+    "scripts.test.test_iris_openwakeword::test_identity_fails_before_onnx_load",
+    "scripts.test.test_iris_openwakeword::test_upstream_reference_numeric_and_chunk_parity",
+    "scripts.test.test_iris_openwakeword::test_publication_gate_rejects_missing_or_duplicate_cases",
+    "scripts.test.test_iris_openwakeword::test_recorded_regression_is_bound_and_never_promoted",
+    "scripts.test.test_iris_openwakeword::test_real_score_traces_reconstruct_every_wake"
+  ],
+  "tests": 7
+}

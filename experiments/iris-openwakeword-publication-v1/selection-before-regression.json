@@ -1,0 +1,30 @@
+{
+  "candidate_pcm_decoded_or_inferred_before_lock": false,
+  "cohort_sha256": {
+    "baseline": "d2c1bcf175e15d90d540a8766acede6206ebd1f1efb7915c2f741e0d3adece72",
+    "companion-test": "7c79129b423c5e26cc4049068e93a752f0063d83f44417f99598200d715d3a40"
+  },
+  "exposed_regression_not_blind": true,
+  "frozen_at": "2026-10-23T22:53:14.636973+00:00",
+  "graph_sha256": {
+    "embedding_model.onnx": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+    "hey_iris.onnx": "82f6e6ed82837400e0a12a6e6cf3a49bac7ff8181efbb965827f6e2a29961eda",
+    "melspectrogram.onnx": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f"
+  },
+  "policy": {
+    "consecutive": 2,
+    "cooldown_samples": 16000,
+    "release": 0.3,
+    "threshold": 0.5
+  },
+  "protocol_sha256": "716f6c4c5661426d4024c6a68036c67eb4d785466b02d74ed5b417f94b7a9279",
+  "qualified": false,
+  "schema_version": 1,
+  "source_sha256": {
+    "scripts/iris_openwakeword_publication.py": "5d2e7d141eca1c92e049a4c10a3d1a5e20e4dcec3e5e4646e32e75c5ac3aca31",
+    "scripts/iris_wake_publication.py": "aac2e3b596984cd536a6853115b78a23e959eac98cd223c2b3c538b6ef328bf2",
+    "scripts/runtime/iris_openwakeword.py": "a50d6ab175b351ce9b04e9e1bbe76992ed6a1e0d49a2007f700ffa3d142c5e29",
+    "scripts/test/iris_openwakeword_reference.py": "503806526e3ec840b862768007be711db1d2f5af2ab2eef1d0bdb22888e5b1dd"
+  },
+  "training_performed": false
+}

@@ -1,0 +1,81 @@
+{
+  "blocking_reason": "The single pretrained candidate failed both predeclared acoustic regression gates. No threshold/candidate retuning and no model installation",
+  "boundary": {
+    "downloaded_weights_committed": false,
+    "frozen_environment_changed": false,
+    "frozen_vcm_changed": false,
+    "installed": false,
+    "native_wake_source_or_receipts_changed": false,
+    "promoted": false,
+    "qualified": false,
+    "raw_audio_redistributed": false,
+    "trained": false,
+    "ui_or_worker_changed": false
+  },
+  "decision": "DO_NOT_PROMOTE",
+  "license_assessment": {
+    "classifier": {
+      "declared_license": "MIT",
+      "license_file": "LICENSE-ASHR12-MIT.txt",
+      "license_sha256": "150853f1b6f5b4676ea2fff2493da50265ada13b117f1da19a1441ef6007e6f1",
+      "repository": "ASHR12/iris",
+      "revision": "b506100e2f3634fcdf8692b76ec8b8139231e9b7",
+      "scope_caveat": "Repository-declared license; source training data/voice rights not independently audited. Vendor provenance identifies full-10k, 50000-step training with ACAV negatives; vendor scores are not this regression"
+    },
+    "feature_and_reference": {
+      "code_license": "Apache-2.0",
+      "license_file": "LICENSE-openWakeWord-Apache-2.0.txt",
+      "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "weights_caveat": "Upstream describes Google embedding Apache-2.0 but also blanket pre-trained model CC-BY-NC-SA-4.0 restrictions in README. Retain upstream restrictions; ASHR12 root MIT cannot relicense third-party features. Redistribution not finalized because acoustic gate already failed"
+    }
+  },
+  "reproduction": {
+    "commands": [
+      "python -B -m scripts.iris_openwakeword_publication acquire",
+      "python -B -m scripts.iris_openwakeword_publication verify --corpus-root ../iris-wake-publication/.cache/iris-wake-publication-v1"
+    ],
+    "corpus_root": "../iris-wake-publication/.cache/iris-wake-publication-v1",
+    "fresh_run_note": "For a new source copy use a new output tree before creating lock/evaluate receipts. The committed failed source/lock/results are immutable; evaluator refuses overwriting completed results. Audio is existing private synthetic corpus, not bundled",
+    "interpreter": "Unchanged main runtime lock Python3.13.14 NumPy2.5.3 ORT1.30.0",
+    "scope": "200 previously exposed synthetic cases; no fresh-blind, human demographic, Pi or live microphone claims",
+    "test_command": "python -B -m pytest -p no:cacheprovider -q scripts/test/test_iris_openwakeword.py --basetemp APPROVED_SCRATCH/iris-openwakeword-tests",
+    "workdir": "iris-openwakeword-publication"
+  },
+  "results_sha256": "ca5c7870e450a9cae6255f0feda6002d107c37b479b0e8ef1683c4495549a67e",
+  "runtime": {
+    "adapter": "scripts/runtime/iris_openwakeword.py",
+    "cpu_only": true,
+    "dependencies": [
+      "NumPy",
+      "ONNX Runtime"
+    ],
+    "feature_parity": "parity.json: 150 frames, reviewed narrow transcription of pinned upstream, max absolute difference 0.0; not a claim of installed-package certification",
+    "integration_performed": false,
+    "interface": "Mono 16kHz finite float PCM [-1,1], at most16000 NEW samples/call, push returns None/0/1, reset deterministic. Never wrap this stateful adapter as a RollingWake callback. Push/reset seam is implemented, but full WakeGate/owner integration is unverified and intentionally stopped: WakeGate.on_wake reads wake.audio, which this experimental adapter does not yet expose. No usable runtime integration is claimed",
+    "no_new_runtime_imports": true
+  },
+  "schema_version": 1,
+  "source_register": [
+    {
+      "finding": "Actual Hey Iris July 19 2026 model exists, but download requires sign-in; default personal/non-commercial terms. Login wall respected; no direct-download guessing, account creation, private credentials or paid training",
+      "http_status": 200,
+      "sha256": "2ed425d0ecd2ebc8a9084b4823bc941a5c74126fb1ed6ec7e1ac123c71a0db5f",
+      "source_id": "library-2502",
+      "url": "https://openwakeword.com/library/2502"
+    }
+  ],
+  "upstream_release_feature_identity": [
+    {
+      "bytes": 1087958,
+      "http_status": 200,
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f",
+      "url": "https://github.com/dscripka/openWakeWord/releases/download/v0.5.1/melspectrogram.onnx"
+    },
+    {
+      "bytes": 1326578,
+      "http_status": 200,
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f",
+      "url": "https://github.com/dscripka/openWakeWord/releases/download/v0.5.1/embedding_model.onnx"
+    }
+  ]
+}
