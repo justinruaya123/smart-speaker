@@ -1,0 +1,35 @@
+{
+  "passed": false,
+  "reviewed_diff": "C:/Users/Justin/AppData/Local/hermes/cache/scratch/optionb-preparer-review.diff",
+  "reviewed_hash_manifest": "C:/Users/Justin/AppData/Local/hermes/cache/scratch/optionb-preparer-review-scan.json",
+  "delegation": "deleg_cca2bb49",
+  "security_concerns": [
+    {
+      "severity": "P2",
+      "location": "scripts/submission/optionb_reproduce.py:125-132,152-155",
+      "issue": "Manifest output paths are not containment-checked after appending prepared/canonical directories. Existing directory symlinks or junctions can redirect writes outside the checkout; exclusive file creation does not prevent this.",
+      "evidence": "An isolated fixture with .cache/run/prepared symlinked outside its checkout wrote train.jsonl to that external directory and successfully issued a preparation receipt.",
+      "recommendation": "Validate resolved parents of every derived output path before writing, rejecting paths that escape the permitted cache destination."
+    }
+  ],
+  "logic_errors": [
+    {
+      "severity": "P1",
+      "location": "scripts/submission/optionb_reproduce.py:81-85",
+      "issue": "Default preparation cannot hydrate the actual frozen training view: 26 hash-verified training records have repository/revision/file/row/SHA locators without a url field, but the source-group consistency check unconditionally indexes location['url'].",
+      "evidence": "Two exact frozen records from the same shard reproduced KeyError('url') at line 83 before any fetch occurred.",
+      "recommendation": "Resolve these locators through the pinned source_shards inventory or their frozen repository/revision/file fields, without modifying frozen row metadata."
+    },
+    {
+      "severity": "P2",
+      "location": "scripts/submission/optionb_reproduce.py:125-127,139",
+      "issue": "The accepted output value .cache places the download cache at checkout/downloads rather than beneath .cache, contradicting the output-containment guard.",
+      "evidence": "An isolated preparation with output='.cache' created downloads/<digest>.parquet outside .cache and returned source_download_cache='downloads'.",
+      "recommendation": "Reject .cache itself as a run destination or ensure the computed download directory remains beneath .cache."
+    }
+  ],
+  "suggestions": ["Optional coverage: negative WAV/PCM integrity, multi-shard ordering, duplicate-ID rejection and auxiliary-source hydration tests."],
+  "summary": "Blocked by three reproduced findings. All five reviewed-file hashes matched the scan manifest, actual snapshot verification succeeded, and the 10 added tests passed. Only approved scratch fixtures were created; no repository files modified, network requests made, real-source data downloaded or fits run.",
+  "model_or_policy_changes": false,
+  "original_failing_review_preserved": true
+}

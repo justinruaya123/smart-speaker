@@ -1,0 +1,12 @@
+{
+  "preserved_prior_review": "experiments/optionb-source-repro-v1/preparer-review-v1.json",
+  "prior_source_sha256": {
+    "scripts/submission/optionb_reproduce.py": "e26ed765ba2094fd9ccebff5edb1d9a7b339fc9b01f63b3f52f20a88ddaf7fcd",
+    "scripts/test/test_optionb_reproduction.py": "131a79581bfcb4460e4beee36b36d774cbe6e7f813377bd8b95e2df444cfd0ea"
+  },
+  "corrected_source_sha256": {
+    "scripts/submission/optionb_reproduce.py": "b76ffa39b07f4e745919f7b3f04dc207a08f889a73242e7eab0c24bd371743b5",
+    "scripts/test/test_optionb_reproduction.py": "9f7858131f39b9b49fab3e6e0ff79c7fa9c85b6ece2def05d83a694778e512ec"
+  },
+  "model_or_data_changes": false
+}

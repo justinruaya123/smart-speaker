@@ -1,0 +1,19 @@
+{
+  "passed": false,
+  "delegation": "deleg_64f196d4",
+  "reviewed_diff": "C:/Users/Justin/AppData/Local/hermes/cache/scratch/optionb-fit-independent-review.diff",
+  "reviewed_hash_manifest": "C:/Users/Justin/AppData/Local/hermes/cache/scratch/optionb-fit-independent-review-scan.json",
+  "security_concerns": [],
+  "logic_errors": [
+    {
+      "path": "scripts/submission/optionb_fit.py",
+      "line": 213,
+      "finding": "The production export path introduces an undeclared pytest runtime dependency, preventing completion in the locked training environment.",
+      "evidence": "This line imports export_cpu_model from scripts/test/test_speaker_optionb_tiny.py, whose line 6 unconditionally imports pytest. Neither pyproject.toml runtime/training dependencies nor uv.lock includes pytest. In an isolated subprocess with pytest imports blocked, the unchanged canonical fitter completed a real two-step CPU software fixture and _export_and_select then raised ModuleNotFoundError at this import.",
+      "impact": "Without explicit helper setup/preflight, a fresh locked environment can expend the full 4,608-step fit but cannot finish export, policy reconstruction or selection lock. Pytest-driven tests conceal the missing dependency."
+    }
+  ],
+  "suggestions": [],
+  "summary": "Failed for the reproduced runtime dependency defect. Otherwise the path genuinely trains from random initialization with the unchanged recipe, gates inputs before optimization, compares exact checkpoints and performs actual export/fresh policy reconstruction. Exact hashes and 74 focused tests passed. No repository edits, downloads, old audio reads or full-corpus fit by the reviewer.",
+  "parent_resolution_scope": "Keep immutable scientific manifest/lock and original exporter unchanged. Declare separately hashed export/test helper setup and fail before feature extraction/optimizer when unavailable. Verify the documented full setup in the new GitHub checkout."
+}

@@ -1,0 +1,4 @@
+# Required reproduction exporter/test helpers; scientific pyproject.toml/uv.lock stay frozen.
+pytest==8.4.2
+# Match packaging already pinned by the unchanged project lock.
+packaging==26.3

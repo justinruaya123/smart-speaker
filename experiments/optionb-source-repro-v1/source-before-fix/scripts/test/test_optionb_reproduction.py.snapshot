@@ -1,0 +1,121 @@
+"""Portable OptionB reproduction guards; generated audio is software-only evidence."""
+import hashlib
+import importlib
+import importlib.util
+import json
+import pytest
+
+
+def test_snapshot_verification_needs_only_tracked_files(tmp_path):
+    payload = tmp_path / 'bundle.json'
+    payload.write_bytes(b'{"fixture": true}\n')
+    source = tmp_path / 'source.py'
+    source.write_bytes(b'pass\n')
+    snapshot = {
+        'files': {'bundle.json': {'bytes': payload.stat().st_size,
+                                  'sha256': hashlib.sha256(payload.read_bytes()).hexdigest()}},
+        'source_bindings': {'source.py': hashlib.sha256(source.read_bytes()).hexdigest()},
+    }
+    (tmp_path / 'snapshot.json').write_text(json.dumps(snapshot), encoding='utf8')
+    assert importlib.util.find_spec('scripts.submission.optionb_reproduce') is not None, (
+        'Missing portable final-model reproduction module')
+    module = importlib.import_module('scripts.submission.optionb_reproduce')
+    assert module.verify_snapshot(tmp_path, 'snapshot.json') == snapshot
+    assert not (tmp_path / '.cache').exists()
+
+
+def test_hydration_reconstructs_parquet_wav_and_pcm_without_old_paths(tmp_path):
+    import io
+    import numpy as np
+    import pyarrow as pa
+    import pyarrow.parquet as pq
+    import soundfile as sf
+    from scripts.test.speaker_demo_suite import pcm_digest
+
+    wave = io.BytesIO()
+    sf.write(wave, np.sin(np.arange(1600)) * .2, 16000, format='WAV', subtype='PCM_16')
+    payload = wave.getvalue()
+    pcm, rate = sf.read(io.BytesIO(payload), dtype='float32')
+    shard = tmp_path / 'source.parquet'
+    pq.write_table(pa.table({'audio': [{'bytes': payload}]}), shard)
+    row = dict(id='software-fixture', sha256=hashlib.sha256(payload).hexdigest(),
+               pcm_sha256=pcm_digest(pcm, rate), split='train',
+               location=dict(row=0, sha256=hashlib.sha256(shard.read_bytes()).hexdigest(),
+                             url=shard.as_uri()))
+    module = importlib.import_module('scripts.submission.optionb_reproduce')
+    assert hasattr(module, 'hydrate_rows'), 'Missing source-only WAV/PCM reconstruction'
+    hydrated = module.hydrate_rows(tmp_path, [row], '.cache/downloads', '.cache/audio', {})
+    assert hydrated == [{**row, 'audio': f".cache/audio/{row['sha256']}.wav"}]
+    assert (tmp_path / hydrated[0]['audio']).read_bytes() == payload
+    assert not (tmp_path / 'features').exists()
+
+
+def test_prepare_preserves_frozen_membership_in_new_manifests(tmp_path):
+    import gzip
+    import io
+    import numpy as np
+    import pyarrow as pa
+    import pyarrow.parquet as pq
+    import soundfile as sf
+    from scripts.test.speaker_demo_suite import pcm_digest, read_jsonl
+
+    wave = io.BytesIO()
+    sf.write(wave, np.sin(np.arange(1600)) * .2, 16000, format='WAV', subtype='PCM_16')
+    payload = wave.getvalue()
+    pcm, rate = sf.read(io.BytesIO(payload), dtype='float32')
+    shard = tmp_path / 'source.parquet'
+    pq.write_table(pa.table({'audio': [{'bytes': payload}]}), shard)
+    row = dict(id='software-fixture', sha256=hashlib.sha256(payload).hexdigest(),
+               pcm_sha256=pcm_digest(pcm, rate), split='train', kind='human',
+               location=dict(row=0, sha256=hashlib.sha256(shard.read_bytes()).hexdigest(),
+                             url=shard.as_uri()))
+    archive = tmp_path / 'train.jsonl.gz'
+    archive.write_bytes(gzip.compress((json.dumps(row) + '\n').encode(), mtime=0))
+    record = dict(path='train.jsonl.gz', sha256=hashlib.sha256(archive.read_bytes()).hexdigest(), rows=1)
+    snapshot = dict(files={'train.jsonl.gz': dict(bytes=archive.stat().st_size, sha256=record['sha256'])},
+                    source_bindings={}, views={'train': record}, auxiliary_source={})
+    path = tmp_path / 'submission/optionb-tiny/snapshot.json'
+    path.parent.mkdir(parents=True)
+    path.write_text(json.dumps(snapshot), encoding='utf8')
+    module = importlib.import_module('scripts.submission.optionb_reproduce')
+    assert hasattr(module, 'prepare_source'), 'Missing portable manifest reconstruction'
+    receipt = module.prepare_source(tmp_path, '.cache/run-01', ('train',))
+    actual = read_jsonl(tmp_path / '.cache/run-01/prepared/train.jsonl')
+    assert actual == [{**row, 'audio': f".cache/run-01/audio/{row['sha256']}.wav"}]
+    assert read_jsonl(tmp_path / '.cache/run-01/canonical/train.jsonl') == actual
+    assert receipt['counts'] == {'train': 1}
+    assert receipt['wav_and_pcm_verified'] is True
+    assert receipt['old_audio_or_features_copied'] is False
+
+
+def test_verify_cli_checks_actual_tracked_bytes(tmp_path, capsys):
+    payload = tmp_path / 'fixture.json'
+    payload.write_bytes(b'{}\n')
+    snapshot = dict(files={'fixture.json': dict(bytes=payload.stat().st_size,
+                        sha256=hashlib.sha256(payload.read_bytes()).hexdigest())}, source_bindings={})
+    path = tmp_path / 'submission/optionb-tiny/snapshot.json'
+    path.parent.mkdir(parents=True)
+    path.write_text(json.dumps(snapshot), encoding='utf8')
+    module = importlib.import_module('scripts.submission.optionb_reproduce')
+    assert hasattr(module, 'main'), 'Missing executable portable reproduction CLI'
+    module.main(['verify'], root=tmp_path)
+    assert json.loads(capsys.readouterr().out)['tracked_snapshot_files_verified'] == 1
+
+
+@pytest.mark.parametrize('relative', ('../outside', '/outside', 'C:/outside', 'a\\outside', '.'))
+def test_snapshot_paths_cannot_escape_checkout(tmp_path, relative):
+    module = importlib.import_module('scripts.submission.optionb_reproduce')
+    with pytest.raises(ValueError, match='snapshot path'):
+        module.pinned_path(tmp_path, relative)
+
+
+def test_corrupted_tracked_payload_does_not_verify(tmp_path):
+    payload = tmp_path / 'fixture.json'
+    payload.write_bytes(b'{}\n')
+    snapshot = dict(files={'fixture.json': dict(bytes=payload.stat().st_size,
+                        sha256=hashlib.sha256(payload.read_bytes()).hexdigest())}, source_bindings={})
+    (tmp_path / 'snapshot.json').write_text(json.dumps(snapshot), encoding='utf8')
+    payload.write_bytes(b'[]\n')
+    module = importlib.import_module('scripts.submission.optionb_reproduce')
+    with pytest.raises(ValueError, match='Snapshot identity changed'):
+        module.verify_snapshot(tmp_path, 'snapshot.json')

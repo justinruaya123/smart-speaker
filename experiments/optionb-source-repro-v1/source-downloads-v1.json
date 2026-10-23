@@ -1,0 +1,97 @@
+{
+  "format": "optionb-fresh-github-source-download-v1",
+  "created_utc": "2026-10-23T13:11:47.051624+00:00",
+  "clone_revision": "0591fbe2c3ed7349d5f4c12aa31ed0c0845322e9",
+  "clone_path": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe",
+  "source_shards": [
+    {
+      "repository": "airimonda/ai231-me2-voice-commands",
+      "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+      "file": "data/train-00000-of-00002.parquet",
+      "path": ".cache/optionb-source-repro-v1/downloads/977e6c6be208818a35496ac6e1a2b2da62f3387acba377664e0f48dbdc2cec9e.parquet",
+      "bytes": 315293385,
+      "sha256": "977e6c6be208818a35496ac6e1a2b2da62f3387acba377664e0f48dbdc2cec9e"
+    },
+    {
+      "repository": "airimonda/ai231-me2-voice-commands",
+      "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+      "file": "data/train-00001-of-00002.parquet",
+      "path": ".cache/optionb-source-repro-v1/downloads/4c29353d0ab14bb27fd3af8b513c2b9dd41f7707e86fbaa55104bfe71a328674.parquet",
+      "bytes": 397331137,
+      "sha256": "4c29353d0ab14bb27fd3af8b513c2b9dd41f7707e86fbaa55104bfe71a328674"
+    },
+    {
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "file": "data/train-00000-of-00004.parquet",
+      "path": ".cache/optionb-source-repro-v1/downloads/01d32c3ed7b2e9a0ee131a1dad128c8e63e7b20a198ce1170625bd0940db0778.parquet",
+      "bytes": 244957155,
+      "sha256": "01d32c3ed7b2e9a0ee131a1dad128c8e63e7b20a198ce1170625bd0940db0778"
+    },
+    {
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "file": "data/train-00001-of-00004.parquet",
+      "path": ".cache/optionb-source-repro-v1/downloads/c66da6df2579243d27fb956ddbc413f2e2ed0a4c5acaa77c333e905f866d885a.parquet",
+      "bytes": 276168578,
+      "sha256": "c66da6df2579243d27fb956ddbc413f2e2ed0a4c5acaa77c333e905f866d885a"
+    },
+    {
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "file": "data/train-00002-of-00004.parquet",
+      "path": ".cache/optionb-source-repro-v1/downloads/8a7e0460893a97cb4e3ad4b3729ae781a277dcbccced7484898e2f5985122566.parquet",
+      "bytes": 235971285,
+      "sha256": "8a7e0460893a97cb4e3ad4b3729ae781a277dcbccced7484898e2f5985122566"
+    },
+    {
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "file": "data/train-00003-of-00004.parquet",
+      "path": ".cache/optionb-source-repro-v1/downloads/0d31aa80f447423413fa097567c8df9cbdaa70439774d43df209c8ffc47df257.parquet",
+      "bytes": 235454295,
+      "sha256": "0d31aa80f447423413fa097567c8df9cbdaa70439774d43df209c8ffc47df257"
+    },
+    {
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "file": "gap_fill/train-00000-of-00001.parquet",
+      "path": ".cache/optionb-source-repro-v1/downloads/1e229f67df1b539711886e01062dbc0309c58f38e739dad787b11c669d314512.parquet",
+      "bytes": 118240931,
+      "sha256": "1e229f67df1b539711886e01062dbc0309c58f38e739dad787b11c669d314512"
+    },
+    {
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "file": "numeral_wordings/train-00000-of-00001.parquet",
+      "path": ".cache/optionb-source-repro-v1/downloads/9808c05811bc0e3bdd152c74c4473673b1355e2dc355873ceb8bb48936a5ac5a.parquet",
+      "bytes": 411129,
+      "sha256": "9808c05811bc0e3bdd152c74c4473673b1355e2dc355873ceb8bb48936a5ac5a"
+    },
+    {
+      "repository": "airimonda/ai231-me2-voice-commands",
+      "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+      "file": "data/test-00000-of-00001.parquet",
+      "path": ".cache/optionb-source-repro-v1/downloads/81794982a6b7fd8c75758ad5f4c0257abedea6c1c0575bbaaabcba8e0e0a43ea.parquet",
+      "bytes": 284419574,
+      "sha256": "81794982a6b7fd8c75758ad5f4c0257abedea6c1c0575bbaaabcba8e0e0a43ea"
+    },
+    {
+      "repository": "airimonda/ai231-me2-voice-commands",
+      "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+      "file": "data/holdout-00000-of-00001.parquet",
+      "path": ".cache/optionb-source-repro-v1/downloads/9917e336ec596eaaddb476e266f36451326e3f8e5a2cb3dafbb675c33be133aa.parquet",
+      "bytes": 14553313,
+      "sha256": "9917e336ec596eaaddb476e266f36451326e3f8e5a2cb3dafbb675c33be133aa"
+    }
+  ],
+  "verified_shards": 10,
+  "verified_bytes": 2122800782,
+  "download_process": "proc_99f59a3bb941",
+  "exit_code": 0,
+  "all_expected_sources_present": true,
+  "old_source_audio_features_or_environment_copied": false,
+  "heldout_payload_bytes_downloaded": true,
+  "heldout_pcm_decoded": false,
+  "optimizer_updates": 0
+}

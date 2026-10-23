@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "delegation": "deleg_edf08822",
+  "scope": "Bounded independent closure of the three reproduced preparer findings",
+  "reviewed_diff": "C:/Users/Justin/AppData/Local/hermes/cache/scratch/optionb-preparer-correction-review.diff",
+  "reviewed_diff_bytes": 29503,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [],
+  "summary": "All three findings closed. Exact correction diff matched preserved originals/current files and before/after hash manifests. All78focused tests passed in3.26s, including conflicts/malformed identity rejection, real symlink/junction containment, derived filenames/nested auxiliary guards, late manifest/receipt rechecks and cache-root destination rejection. Every frozen-view Parquet locator resolved to its exact pinned source inventory without record modification, including26 URL-less training records. All15snapshot assets and10source identities unchanged. Only isolated scratch software fixtures; no repository/Git writes, downloads, corpus hydration or fitting. This is not full reproduction.",
+  "reviewed_files": {
+    "scripts/submission/optionb_reproduce.py": "b76ffa39b07f4e745919f7b3f04dc207a08f889a73242e7eab0c24bd371743b5",
+    "scripts/test/test_optionb_reproduction.py": "9f7858131f39b9b49fab3e6e0ff79c7fa9c85b6ece2def05d83a694778e512ec"
+  },
+  "original_failed_review": "experiments/optionb-source-repro-v1/preparer-review-v1.json",
+  "parent_regression": {"tests_passed": 156, "seconds": 17.75},
+  "model_policy_or_data_changed": false
+}

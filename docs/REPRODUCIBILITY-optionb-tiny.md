@@ -25,7 +25,30 @@ uv run --no-sync python -m scripts.runtime.optionb_worker --bundle submission/mo
 
 The second command verifies the exact tracked candidate and loads CPU ONNX without operating a microphone or providers. The older root `reproduce.py`, `benchmark.py` and submission package builders still target the historical2M/935k workflows; they are not evidence of tiny-model reproduction.
 
+### Required setup for source fitting/export and tests
+
+Model loading needs only the first locked setup above. **Full CPU fitting/export additionally requires the separately hashed reproduction helpers:** the preserved canonical exporter lives in the original model-test module and imports pytest. Installing only the scientific training group is not sufficient for export. Keep the original scientific `pyproject.toml`/`uv.lock` unchanged; install the declared helper lock into the **same new root environment** before any fit:
+
+```sh
+uv sync --locked --python 3.13.14 --group training --group benchmark
+uv pip install --python .venv/Scripts/python.exe --require-hashes --no-deps --requirement submission/optionb-tiny/testing.lock
+```
+
+The explicit interpreter path shown is for the currently tested Windows checkout. Use `uv run --no-sync` for subsequent stage commands so a scientific-only sync does not remove these separately declared helpers. Their lock includes the complete dependency closure with hashes and pins packaging to the already-installed scientific version. The fit entry point must reject missing export helpers **before** feature extraction or optimizer work; it must not fit for48epochs and discover this import at export time. The production helper-dependency gate and full source run are being verified, not claimed passed by this setup description.
+
 **Full tiny-model clean-clone reproduction is not yet verified at this snapshot.** The old tiny research CLIs refer to ignored study caches and immutable historical source locks. Running them from a clean checkout is an acceptance test, not permission to silently copy those caches, weaken hashes or overwrite their receipts. The requested GitHub experiment must record the original failing command/stage before any portable follow-up fix. Later reconstruction must download exact public source bytes, verify original WAV/PCM identities, regenerate the tiny TRAIN/DEV features and normalizer, and compare actual fresh inference/metrics with the golden expectations. A training reproduction must perform all4,608 updates and compare selected epoch/tensors separately from source/model inference replay. Elapsed time and latency need not be bitwise equal.
+
+## Actual GitHub baseline — 2026-10-23
+
+The dedicated branch was pushed and freshly cloned at **`0591fbe2c3ed7349d5f4c12aa31ed0c0845322e9`**. A new root environment installed the unchanged scientific lock with CPython3.13.14, PyTorch2.10.0+cpu and NumPy2.3.5. The tracked five-file candidate loaded successfully with the exact graph hash and disabled qualification/actions. No old environment, recordings or derived features were copied into this acceptance run.
+
+Eight original invocations were actually attempted: tiny preparation/fitting, demo selection, release replay, PC timing, report verification, metadata verification and pytest. [The preserved baseline receipt](../experiments/optionb-source-repro-v1/baseline.json) records their actual failures: historical ignored-cache bindings, immutable old study output/selection locks and pytest absent from the scientific environment. These are not successful full reproduction runs. Test tooling is now separately pinned in `submission/optionb-tiny/testing.lock`; the original scientific manifest and lock stay untouched.
+
+The fresh checkout downloaded and independently rehashed **ten pinned Parquet shards /2,122,800,782 bytes**; see [source-download evidence](../experiments/optionb-source-repro-v1/source-downloads-v1.json). This accessed held-out payload bytes inside the public sources, but did not decode/infer their PCM. Auxiliary DEV WAV retrieval and the full source-derived fitting/evaluation pipeline remain separate stages.
+
+[UI software evidence](../experiments/optionb-source-repro-v1/ui-software-v1.json) records fresh pinned Node24.13.0/pnpm12.5.1 dependencies, **117 passing tests**, clean Svelte/server checks and the ordinary `check`, `test` and `build` wrappers, all exit0 with a clean source tree. All three compiled adapters match the earlier frozen hashes. The initial child subtask used a no-write bake adaptation; the parent then exercised the literal build wrapper and verified its two generated tracked files remained byte-identical.
+
+The first independent preparer review [failed on three reproduced issues](../experiments/optionb-source-repro-v1/preparer-review-v1.json):26 frozen training locators omit URL fields, derived writer paths could traverse symlinks/junctions, and `.cache` alone was incorrectly accepted as a run. A separate correction passes156 focused/original regression tests and [independent closure](../experiments/optionb-source-repro-v1/preparer-review-v2.json). The corrected `python -m scripts.submission.optionb_reproduce prepare --output .cache/optionb-source-repro-v1/run-01` reconstructs TRAIN/DEV/calibration from the frozen public locators; it does not consume old feature caches. Fitting/replay stages are separate subsequent commits and remain unverified on the complete corpus. The new CPU fitting/export comparison stage separately passed74 bounded software tests, including real two-step CPU optimizer fixtures and exact original-checkpoint re-export; [independent fit review](../experiments/optionb-source-repro-v1/fit-review-v1.json) then reproduced the missing-pytest export prerequisite. The declaration/early-preflight correction is being verified. These software checks are **not** a completed48-epoch corpus fit or new acoustic-quality result. Full-corpus optimization has not started in the fresh checkout.
 
 ## What stays unqualified
 

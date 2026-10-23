@@ -1,4 +1,8 @@
 {
+  "speaker.optionb_reproduction": {
+    "path": "submission/optionb_reproduce.py",
+    "runtime": false
+  },
   "speaker.human_recovery": {
     "path": "train/speaker_human_recovery.py",
     "runtime": false

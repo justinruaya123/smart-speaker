@@ -1,0 +1,116 @@
+{
+  "baseline_commit": "0591fbe2c3ed7349d5f4c12aa31ed0c0845322e9",
+  "clean_clone_locked_setup_passed": true,
+  "snapshot_model_load_passed": true,
+  "unmodified_legacy_commands": [
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "scripts.train.speaker_optionb_tiny",
+        "prepare"
+      ],
+      "exit_code": 1,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-source-repro-baseline-logs\\00-scripts-train-speaker_optionb_tiny.log",
+      "last_line": "ValueError: Frozen input identity changed: .cache/frontend-repro-20261019/source-view/.cache/pcv-source-refresh-v1/source/data/holdout-00000-of-00001.parquet, .cache/speaker-human-first-v1/audit-02/audio-audit.jsonl, .cache/speaker-human-first-v1/audit-02/audit.json, .cache/speaker-human-recovery-v1/prepared-01/audio-audit.jsonl, .cache/speaker-human-recovery-v1/prepared-01/calibration.jsonl, .cache/speaker-human-recovery-v1/prepared-01/dev.jsonl, .cache/speaker-human-recovery-v1/prepared-01/holdout.jsonl, .cache/speaker-human-recovery-v1/prepared-01/recovery.json",
+      "log_sha256": "fbf5731883b9528e2e9e9d1d72ee8d28eeb6938ea41f3106a022b0909a907018"
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "scripts.train.speaker_optionb_tiny",
+        "fit"
+      ],
+      "exit_code": 1,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-source-repro-baseline-logs\\01-scripts-train-speaker_optionb_tiny.log",
+      "last_line": "ValueError: Frozen input identity changed: .cache/speaker-human-recovery-v1/prepared-01/calibration.jsonl, .cache/speaker-human-recovery-v1/prepared-01/dev.jsonl, .cache/speaker-human-recovery-v1/prepared-01/holdout.jsonl, .cache/speaker-human-recovery-v1/prepared-01/test.jsonl, .cache/speaker-human-recovery-v1/prepared-01/train.jsonl, .cache/speaker-optionb-tiny-v1/run-01/calibration.jsonl, .cache/speaker-optionb-tiny-v1/run-01/dev.jsonl, .cache/speaker-optionb-tiny-v1/run-01/holdout.jsonl",
+      "log_sha256": "04f66915a419b8fcaa308e56c395b8c53f2a2b295711a4388757972f827fb42b"
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "scripts.test.speaker_optionb_tiny_demo",
+        "select"
+      ],
+      "exit_code": 1,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-source-repro-baseline-logs\\02-scripts-test-speaker_optionb_tiny_demo.log",
+      "last_line": "FileExistsError: Preserve the earlier demo selection/run",
+      "log_sha256": "61572525ba64553d85a8e85f70e66c161ffdcd074e0f2269c830ada5d5858dda"
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "scripts.test.optionb_release_check",
+        "--output",
+        ".cache/optionb-source-repro-v1/baseline-release-02"
+      ],
+      "exit_code": 1,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-source-repro-baseline-logs\\03-scripts-test-optionb_release_check.log",
+      "last_line": "ValueError: Frozen input identity changed: .cache/speaker-optionb-tiny-demo-v1/review-01/full-reference-metadata.jsonl, .cache/speaker-optionb-tiny-demo-v1/run-01/bundle/commands.json, .cache/speaker-optionb-tiny-demo-v1/run-01/bundle/model.onnx, .cache/speaker-optionb-tiny-demo-v1/run-01/bundle/normalization.json, .cache/speaker-optionb-tiny-demo-v1/run-01/bundle/policy.json, .cache/speaker-optionb-tiny-demo-v1/run-01/bundle/recipe.json, .cache/speaker-optionb-tiny-demo-v1/run-01/calibration-predictions.jsonl, .cache/speaker-optionb-tiny-demo-v1/run-01/calibration.jsonl",
+      "log_sha256": "b1123efbb775056e3d25834721e124b8bc94b143c785be1fc7e43aacecf8b08e"
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "scripts.test.optionb_pc_benchmark",
+        "--output",
+        ".cache/optionb-source-repro-v1/baseline-benchmark"
+      ],
+      "exit_code": 1,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-source-repro-baseline-logs\\04-scripts-test-optionb_pc_benchmark.log",
+      "last_line": "FileNotFoundError: [Errno 2] No such file or directory: '.cache\\\\speaker-optionb-tiny-demo-v1\\\\review-01\\\\full-reference-metadata.jsonl'",
+      "log_sha256": "f09502e1c7ef742026f59595022424ac28f602463721a67c8269ee450dca3f86"
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "scripts.test.speaker_optionb_tiny_demo_report",
+        "verify"
+      ],
+      "exit_code": 1,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-source-repro-baseline-logs\\05-scripts-test-speaker_optionb_tiny_demo_report.log",
+      "last_line": "ValueError: Frozen input identity changed: .cache/speaker-optionb-tiny-demo-v1/run-01/calibration-predictions.jsonl, .cache/speaker-optionb-tiny-demo-v1/run-01/calibration.jsonl, .cache/speaker-optionb-tiny-demo-v1/run-01/dev.jsonl, .cache/speaker-optionb-tiny-demo-v1/run-01/holdout.jsonl, .cache/speaker-optionb-tiny-demo-v1/run-01/normalization.json, .cache/speaker-optionb-tiny-demo-v1/run-01/test.jsonl",
+      "log_sha256": "12d7f0b2bb3510ae0adfa1f52fd8e149f2173d7f32f102540a23e59592f216e3"
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "scripts.test.speaker_optionb_tiny_demo_metadata",
+        "verify"
+      ],
+      "exit_code": 1,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-source-repro-baseline-logs\\06-scripts-test-speaker_optionb_tiny_demo_metadata.log",
+      "last_line": "ValueError: Frozen input identity changed: .cache/speaker-optionb-tiny-demo-v1/run-01/final-predictions.jsonl",
+      "log_sha256": "bd6f9302aabcaa5f8b2b87252e6fc8d52cff9252a065c6dcdbe11bc77440c8f9"
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-m",
+        "pytest",
+        "scripts/test/test_speaker_optionb_tiny.py",
+        "-k",
+        "not optimizer",
+        "-q"
+      ],
+      "exit_code": 1,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-source-repro-baseline-logs\\07-pytest.log",
+      "last_line": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.venv\\Scripts\\python.exe: No module named pytest",
+      "log_sha256": "8da2a600ea6dba52a9441f127cbe6986dc64e3a3e13bf51926d43986fb4dd35d"
+    }
+  ],
+  "optimizer_updates": 0,
+  "snapshot_commit": "0591fbe2c3ed7349d5f4c12aa31ed0c0845322e9",
+  "fresh_environment_matches_original": {
+    "python": "3.13.14",
+    "torch": "2.10.0+cpu",
+    "numpy": "2.3.5",
+    "os": "Windows11"
+  }
+}

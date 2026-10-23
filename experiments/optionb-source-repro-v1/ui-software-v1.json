@@ -1,0 +1,73 @@
+{
+  "format": "optionb-fresh-github-ui-software-v1",
+  "clone_revision": "0591fbe2c3ed7349d5f4c12aa31ed0c0845322e9",
+  "child_receipt_path": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-ui-github-repro\\receipt.json",
+  "child_receipt_sha256": "458280cdfb616c7d61cd677d7fb5ed85931c692c3a41a51a7e1f5ec734336a34",
+  "parent_literal_commands": [
+    {
+      "name": "check",
+      "command": [
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.runtime\\tools\\node-v24.13.0-win-x64\\node.exe",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.runtime\\tools\\pnpm-12.5.1\\node_modules\\pnpm\\bin\\pnpm.mjs",
+        "run",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 6.350553200001741,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-ui-github-repro\\literal-check-wrapper.log",
+      "log_sha256": "5353a1e357648a22bd051b1d6d8427dd2a0e1386b05724d6c1b9f7ee2f107290",
+      "node_test_summary": {}
+    },
+    {
+      "name": "test",
+      "command": [
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.runtime\\tools\\node-v24.13.0-win-x64\\node.exe",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.runtime\\tools\\pnpm-12.5.1\\node_modules\\pnpm\\bin\\pnpm.mjs",
+        "run",
+        "test"
+      ],
+      "exit_code": 0,
+      "seconds": 2.2319855999994616,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-ui-github-repro\\literal-test-wrapper.log",
+      "log_sha256": "1e6cd3546b34f75cc81cd2340fe7a6882891e82e6726065a3422f3b143a39669",
+      "node_test_summary": {
+        "tests": 117,
+        "pass": 117,
+        "fail": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "parent_literal_build": {
+    "command": [
+      "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.runtime\\tools\\node-v24.13.0-win-x64\\node.exe",
+      "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.runtime\\tools\\pnpm-12.5.1\\node_modules\\pnpm\\bin\\pnpm.mjs",
+      "run",
+      "build"
+    ],
+    "cwd": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\SpeakerUI",
+    "exit_code": 0,
+    "seconds": 4.568924100000004,
+    "literal_pnpm_build_wrapper_invoked": true,
+    "generated_tracked_files_before": {
+      "SpeakerUI/src/ambient/baked-motion.css": "6280b37f942ebd9c6533d49df03c7e9b0123666ff885b8ac2ae86a2fcaeac781",
+      "SpeakerUI/public/ambient/camera-grid.svg": "2cd05db8ee2b299fd988e4bd8f3cc4b51831a1cbe80f98896f0a42d208bb1a1d"
+    },
+    "generated_tracked_files_after": {
+      "SpeakerUI/src/ambient/baked-motion.css": "6280b37f942ebd9c6533d49df03c7e9b0123666ff885b8ac2ae86a2fcaeac781",
+      "SpeakerUI/public/ambient/camera-grid.svg": "2cd05db8ee2b299fd988e4bd8f3cc4b51831a1cbe80f98896f0a42d208bb1a1d"
+    },
+    "meaningful_source_changes": false,
+    "git_status": "",
+    "head": "0591fbe2c3ed7349d5f4c12aa31ed0c0845322e9",
+    "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-ui-github-repro\\literal-build-wrapper.log",
+    "log_sha256": "e54ad73f8b7c052abd30a77b70f212024fe0c14cc670bbf845df5944c434f07b",
+    "note": "Parent invoked ordinary build wrapper, closing the child subtask's narrower no-source-write adaptation. No model/data/config/default changes."
+  },
+  "typechecks_and_117_tests_and_literal_build_passed": true,
+  "compiled_adapter_hashes_match_original": true,
+  "git_status_clean": true,
+  "software_only": true,
+  "model_or_data_inputs_changed": false,
+  "pi_microphone_provider_calls": false
+}
