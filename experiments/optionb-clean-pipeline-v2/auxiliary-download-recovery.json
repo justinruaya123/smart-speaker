@@ -1,0 +1,452 @@
+{
+  "format": "optionb-pinned-auxiliary-download-recovery-v2",
+  "created_utc": "2026-10-23T18:07:51.565992+00:00",
+  "source": {
+    "branch": "reproduction-v1",
+    "bytes": 12820896,
+    "files": 184,
+    "prefix": "reproduction/auxiliary",
+    "public": true,
+    "purpose": "Exact synthetic development audio required by selected seed-53 compact recipe; no training or evaluation humans",
+    "repo_type": "dataset",
+    "repository": "justinruaya123/ai231-smart-speaker",
+    "revision": "0fc3ac3ff257838d02000b6a8ce78225c262b9fa"
+  },
+  "client": "authenticated huggingface_hub Requests session",
+  "reason": "Two preserved urllib WinError10054 connection-reset attempts",
+  "expected": 184,
+  "missing_at_start": 61,
+  "new_downloads": [
+    {
+      "file": "0466c2882a5c2c075fcc5ab5e5b691b92675b8d73323a366aec4aa2fb743e1f5.wav",
+      "sha256": "0466c2882a5c2c075fcc5ab5e5b691b92675b8d73323a366aec4aa2fb743e1f5",
+      "attempts": 1,
+      "bytes": 61484,
+      "prior_failures": []
+    },
+    {
+      "file": "05641c09a305452c706dec4ff1c7d72a9587d585ab2a2be5a45749995f7fd4ed.wav",
+      "sha256": "05641c09a305452c706dec4ff1c7d72a9587d585ab2a2be5a45749995f7fd4ed",
+      "attempts": 1,
+      "bytes": 38444,
+      "prior_failures": []
+    },
+    {
+      "file": "0710706563b1cace6724047494314b668ea02e4d84c477824363b1bc0f7194cb.wav",
+      "sha256": "0710706563b1cace6724047494314b668ea02e4d84c477824363b1bc0f7194cb",
+      "attempts": 1,
+      "bytes": 79404,
+      "prior_failures": []
+    },
+    {
+      "file": "087238a0ccc436afb34ecc035b798d92f4f6254dd96c65607a534f99c3de4612.wav",
+      "sha256": "087238a0ccc436afb34ecc035b798d92f4f6254dd96c65607a534f99c3de4612",
+      "attempts": 1,
+      "bytes": 66604,
+      "prior_failures": []
+    },
+    {
+      "file": "19a26d82ca6dd502341d391594852e2b0c5d4f124c43374c1527a7818510d6ad.wav",
+      "sha256": "19a26d82ca6dd502341d391594852e2b0c5d4f124c43374c1527a7818510d6ad",
+      "attempts": 1,
+      "bytes": 81964,
+      "prior_failures": []
+    },
+    {
+      "file": "21381fb95145742b91eaabf6722b09261f0757cfd043094216242dcc074b111a.wav",
+      "sha256": "21381fb95145742b91eaabf6722b09261f0757cfd043094216242dcc074b111a",
+      "attempts": 1,
+      "bytes": 61484,
+      "prior_failures": []
+    },
+    {
+      "file": "26905c90520237267e4added3ecdbfbbb5420016359985c8d40ad8f9d74ca4cb.wav",
+      "sha256": "26905c90520237267e4added3ecdbfbbb5420016359985c8d40ad8f9d74ca4cb",
+      "attempts": 1,
+      "bytes": 79404,
+      "prior_failures": []
+    },
+    {
+      "file": "2d08161d97f6769a4a0a8c43ddab9c3a2571a5fce52fafda2144378b03d96aeb.wav",
+      "sha256": "2d08161d97f6769a4a0a8c43ddab9c3a2571a5fce52fafda2144378b03d96aeb",
+      "attempts": 1,
+      "bytes": 64044,
+      "prior_failures": []
+    },
+    {
+      "file": "315ebf782c4e4373c3a39684128b8385e820a59178c15da0b1f7873d3aecf7ca.wav",
+      "sha256": "315ebf782c4e4373c3a39684128b8385e820a59178c15da0b1f7873d3aecf7ca",
+      "attempts": 1,
+      "bytes": 69164,
+      "prior_failures": []
+    },
+    {
+      "file": "33550f929a0f20b20303200ddd367fe93f65bfa3a0ca508986dcfaab8fc3b808.wav",
+      "sha256": "33550f929a0f20b20303200ddd367fe93f65bfa3a0ca508986dcfaab8fc3b808",
+      "attempts": 1,
+      "bytes": 61484,
+      "prior_failures": []
+    },
+    {
+      "file": "3bab484e21646869fb6689bb8a61a57b2d39fa5494b4491243bcc3d34fceb1fa.wav",
+      "sha256": "3bab484e21646869fb6689bb8a61a57b2d39fa5494b4491243bcc3d34fceb1fa",
+      "attempts": 1,
+      "bytes": 61484,
+      "prior_failures": []
+    },
+    {
+      "file": "3bc04879d51814ae51a7dad4708272b43d23c821759d46246e42afbc86df8518.wav",
+      "sha256": "3bc04879d51814ae51a7dad4708272b43d23c821759d46246e42afbc86df8518",
+      "attempts": 1,
+      "bytes": 61484,
+      "prior_failures": []
+    },
+    {
+      "file": "43b38594a51500653ac2cae818486e85d9ee1a92f1752674e4b89e20d94cc41c.wav",
+      "sha256": "43b38594a51500653ac2cae818486e85d9ee1a92f1752674e4b89e20d94cc41c",
+      "attempts": 1,
+      "bytes": 46124,
+      "prior_failures": []
+    },
+    {
+      "file": "4e82df58bf7be38d6f66867f95420a97898a7038a51e79b12e27e8301db03d0a.wav",
+      "sha256": "4e82df58bf7be38d6f66867f95420a97898a7038a51e79b12e27e8301db03d0a",
+      "attempts": 1,
+      "bytes": 46124,
+      "prior_failures": []
+    },
+    {
+      "file": "501866d2e7b543b4f58cc32f13da4bd7ab5837398e86036b6da28c1781cb0e8a.wav",
+      "sha256": "501866d2e7b543b4f58cc32f13da4bd7ab5837398e86036b6da28c1781cb0e8a",
+      "attempts": 1,
+      "bytes": 74284,
+      "prior_failures": []
+    },
+    {
+      "file": "502463aa2a56740319ad5670e13129fb9f2e6d8d9e602e53b701002a79847d9c.wav",
+      "sha256": "502463aa2a56740319ad5670e13129fb9f2e6d8d9e602e53b701002a79847d9c",
+      "attempts": 1,
+      "bytes": 58924,
+      "prior_failures": []
+    },
+    {
+      "file": "55d78dcd3e5148cafe332b0e80abba353d91b4f58cbf679516f4935e8b87a7d2.wav",
+      "sha256": "55d78dcd3e5148cafe332b0e80abba353d91b4f58cbf679516f4935e8b87a7d2",
+      "attempts": 1,
+      "bytes": 71724,
+      "prior_failures": []
+    },
+    {
+      "file": "5875f850feaaaa06148a8dce2aa73a97be54468576ee55b07127b881f7d41890.wav",
+      "sha256": "5875f850feaaaa06148a8dce2aa73a97be54468576ee55b07127b881f7d41890",
+      "attempts": 1,
+      "bytes": 76844,
+      "prior_failures": []
+    },
+    {
+      "file": "5bc94d0e3cf0095835b1a9ec884794c851f21fc7ca23338a166b53b86063392a.wav",
+      "sha256": "5bc94d0e3cf0095835b1a9ec884794c851f21fc7ca23338a166b53b86063392a",
+      "attempts": 1,
+      "bytes": 53804,
+      "prior_failures": []
+    },
+    {
+      "file": "5cedf6c5dce032cecc39361b6b97c6b91a7913e67bef67c3f827378e77edec00.wav",
+      "sha256": "5cedf6c5dce032cecc39361b6b97c6b91a7913e67bef67c3f827378e77edec00",
+      "attempts": 1,
+      "bytes": 33324,
+      "prior_failures": []
+    },
+    {
+      "file": "5ffd8909a47d67dd6ed202b1230c39db713a5b97a1f331733c4665879d528074.wav",
+      "sha256": "5ffd8909a47d67dd6ed202b1230c39db713a5b97a1f331733c4665879d528074",
+      "attempts": 1,
+      "bytes": 61484,
+      "prior_failures": []
+    },
+    {
+      "file": "6676a7adf81a0719f0ff7c3f7d1d4ef577f3257c6a8f1eadfc0f2697ed07f73c.wav",
+      "sha256": "6676a7adf81a0719f0ff7c3f7d1d4ef577f3257c6a8f1eadfc0f2697ed07f73c",
+      "attempts": 1,
+      "bytes": 76844,
+      "prior_failures": []
+    },
+    {
+      "file": "6a408a147f54f61b7306c834cc5bd792ce6ae9cbd371c0ab535f5e1a365ac4c7.wav",
+      "sha256": "6a408a147f54f61b7306c834cc5bd792ce6ae9cbd371c0ab535f5e1a365ac4c7",
+      "attempts": 1,
+      "bytes": 71724,
+      "prior_failures": []
+    },
+    {
+      "file": "73eb54f7982acc07e4c17d5817f4b140c92e05f96dc79e122b3a8b087b62cb83.wav",
+      "sha256": "73eb54f7982acc07e4c17d5817f4b140c92e05f96dc79e122b3a8b087b62cb83",
+      "attempts": 1,
+      "bytes": 64044,
+      "prior_failures": []
+    },
+    {
+      "file": "76e016fd6f301a93a989481a3f1556b1885e3e9a5f52c8d3956d56a339d98f23.wav",
+      "sha256": "76e016fd6f301a93a989481a3f1556b1885e3e9a5f52c8d3956d56a339d98f23",
+      "attempts": 1,
+      "bytes": 69164,
+      "prior_failures": []
+    },
+    {
+      "file": "7bbde3e51faa83cde8d2ee0aa4df0f3e1c2bfeeff2251f53f0637a8f5f9342d5.wav",
+      "sha256": "7bbde3e51faa83cde8d2ee0aa4df0f3e1c2bfeeff2251f53f0637a8f5f9342d5",
+      "attempts": 1,
+      "bytes": 61484,
+      "prior_failures": []
+    },
+    {
+      "file": "7e3387522b1773e30801a273932880ee8ac53b8a7ae899245352c4db98ac716f.wav",
+      "sha256": "7e3387522b1773e30801a273932880ee8ac53b8a7ae899245352c4db98ac716f",
+      "attempts": 1,
+      "bytes": 66604,
+      "prior_failures": []
+    },
+    {
+      "file": "7fcaad30aa028c752a86af5604e62f16d6d70a43335b65c78356e00f6d8109d3.wav",
+      "sha256": "7fcaad30aa028c752a86af5604e62f16d6d70a43335b65c78356e00f6d8109d3",
+      "attempts": 1,
+      "bytes": 74284,
+      "prior_failures": []
+    },
+    {
+      "file": "80d2fc6e713d8904a4df02f11dd12066abbb4b1df3ae6430c6b6c860d93fd00e.wav",
+      "sha256": "80d2fc6e713d8904a4df02f11dd12066abbb4b1df3ae6430c6b6c860d93fd00e",
+      "attempts": 1,
+      "bytes": 66604,
+      "prior_failures": []
+    },
+    {
+      "file": "835392e4416d2b1645f80f8cef43e3a5ddc2ddc0c84e1d4ede68cfcdb28561fd.wav",
+      "sha256": "835392e4416d2b1645f80f8cef43e3a5ddc2ddc0c84e1d4ede68cfcdb28561fd",
+      "attempts": 1,
+      "bytes": 69164,
+      "prior_failures": []
+    },
+    {
+      "file": "83fe74b58a874935fa881a52eac6f9225a380f1a1a89efc6a7ca9f69761f2e08.wav",
+      "sha256": "83fe74b58a874935fa881a52eac6f9225a380f1a1a89efc6a7ca9f69761f2e08",
+      "attempts": 1,
+      "bytes": 74284,
+      "prior_failures": []
+    },
+    {
+      "file": "8770a8e2f134a5eaf92e691e0b64098568959b343751b1c68f8f755ab37d5667.wav",
+      "sha256": "8770a8e2f134a5eaf92e691e0b64098568959b343751b1c68f8f755ab37d5667",
+      "attempts": 1,
+      "bytes": 74284,
+      "prior_failures": []
+    },
+    {
+      "file": "888af18d5a47e723233210a80ce38856c0636d4390ad516f01502f187542657b.wav",
+      "sha256": "888af18d5a47e723233210a80ce38856c0636d4390ad516f01502f187542657b",
+      "attempts": 1,
+      "bytes": 87084,
+      "prior_failures": []
+    },
+    {
+      "file": "899f04049f7097386de0fa3c090042c5777810f4a5433f2d411c161598d2e9e2.wav",
+      "sha256": "899f04049f7097386de0fa3c090042c5777810f4a5433f2d411c161598d2e9e2",
+      "attempts": 1,
+      "bytes": 58924,
+      "prior_failures": []
+    },
+    {
+      "file": "8afdb2fa08deee05ad0c02b97c7121b93515c6f6ad21ae03f4cd78ff9400538a.wav",
+      "sha256": "8afdb2fa08deee05ad0c02b97c7121b93515c6f6ad21ae03f4cd78ff9400538a",
+      "attempts": 1,
+      "bytes": 71724,
+      "prior_failures": []
+    },
+    {
+      "file": "9664818aeba137b5cb284d9d2e64bdd52b33621f4fe915034aac18d9d5047b8a.wav",
+      "sha256": "9664818aeba137b5cb284d9d2e64bdd52b33621f4fe915034aac18d9d5047b8a",
+      "attempts": 1,
+      "bytes": 71724,
+      "prior_failures": []
+    },
+    {
+      "file": "9718f0a99e6e090231264895d97cd04d5d420e9e255a6d578a805a10b5de16ce.wav",
+      "sha256": "9718f0a99e6e090231264895d97cd04d5d420e9e255a6d578a805a10b5de16ce",
+      "attempts": 1,
+      "bytes": 66604,
+      "prior_failures": []
+    },
+    {
+      "file": "a2e088da9da7a54a812610450ca8e4dd8c0751df04e9af7afb76697fe932e20b.wav",
+      "sha256": "a2e088da9da7a54a812610450ca8e4dd8c0751df04e9af7afb76697fe932e20b",
+      "attempts": 1,
+      "bytes": 69164,
+      "prior_failures": []
+    },
+    {
+      "file": "a54a2267f2ae891c000cf2dc72e95a9679fc69a13ce286e846a1f12baf35bb13.wav",
+      "sha256": "a54a2267f2ae891c000cf2dc72e95a9679fc69a13ce286e846a1f12baf35bb13",
+      "attempts": 1,
+      "bytes": 71724,
+      "prior_failures": []
+    },
+    {
+      "file": "aa153996a9cce8e5c4f42288348e6ec551fbf8555bc2f01c00b5dad7452f5944.wav",
+      "sha256": "aa153996a9cce8e5c4f42288348e6ec551fbf8555bc2f01c00b5dad7452f5944",
+      "attempts": 1,
+      "bytes": 69164,
+      "prior_failures": []
+    },
+    {
+      "file": "aadd9ff5dab4d023cb0b068af1a3b5bdf3aa5b3a68e2269bcb3b9fe453253cda.wav",
+      "sha256": "aadd9ff5dab4d023cb0b068af1a3b5bdf3aa5b3a68e2269bcb3b9fe453253cda",
+      "attempts": 1,
+      "bytes": 66604,
+      "prior_failures": []
+    },
+    {
+      "file": "aef703f8bd0b0a4850cf3df3c2dfcf38e35e265ef9502de3b1baafb03170db87.wav",
+      "sha256": "aef703f8bd0b0a4850cf3df3c2dfcf38e35e265ef9502de3b1baafb03170db87",
+      "attempts": 1,
+      "bytes": 69164,
+      "prior_failures": []
+    },
+    {
+      "file": "c04665646d86bf4c769c94560bc0794ea346c0c01aab7f8eef14e6daf7b40697.wav",
+      "sha256": "c04665646d86bf4c769c94560bc0794ea346c0c01aab7f8eef14e6daf7b40697",
+      "attempts": 1,
+      "bytes": 87084,
+      "prior_failures": []
+    },
+    {
+      "file": "c436d66ad6d822c02a4b0bde64d7c96a50ea0ec1b3aff5a1332e46da48fd7fa5.wav",
+      "sha256": "c436d66ad6d822c02a4b0bde64d7c96a50ea0ec1b3aff5a1332e46da48fd7fa5",
+      "attempts": 1,
+      "bytes": 69164,
+      "prior_failures": []
+    },
+    {
+      "file": "c538140e11dddf875fe0f69e867b6fdd22688c318e1ab6da3095fa7b844ce36e.wav",
+      "sha256": "c538140e11dddf875fe0f69e867b6fdd22688c318e1ab6da3095fa7b844ce36e",
+      "attempts": 1,
+      "bytes": 48684,
+      "prior_failures": []
+    },
+    {
+      "file": "c8ea8d4f34405fa6fb28f56a8f3bb5988bab4ddaf2fc3fb63c366e2063e59564.wav",
+      "sha256": "c8ea8d4f34405fa6fb28f56a8f3bb5988bab4ddaf2fc3fb63c366e2063e59564",
+      "attempts": 1,
+      "bytes": 69164,
+      "prior_failures": []
+    },
+    {
+      "file": "c9ff46aae3344e21c299ab9a0e90d7389cc416c7193946409fd8e67cd4919e97.wav",
+      "sha256": "c9ff46aae3344e21c299ab9a0e90d7389cc416c7193946409fd8e67cd4919e97",
+      "attempts": 1,
+      "bytes": 87084,
+      "prior_failures": []
+    },
+    {
+      "file": "cebf5def7ef28f80731a186ab30da47cb8dcf07a91ad9b947dcfb6fd4b374bac.wav",
+      "sha256": "cebf5def7ef28f80731a186ab30da47cb8dcf07a91ad9b947dcfb6fd4b374bac",
+      "attempts": 1,
+      "bytes": 58924,
+      "prior_failures": []
+    },
+    {
+      "file": "cec546d5917b54d0580790b91826f4e5d898da4a95c1af91804b76fef08449dc.wav",
+      "sha256": "cec546d5917b54d0580790b91826f4e5d898da4a95c1af91804b76fef08449dc",
+      "attempts": 1,
+      "bytes": 38444,
+      "prior_failures": []
+    },
+    {
+      "file": "cf0a5b5480424bc05270e2f133d8898f76546c41ffabadda3ddfb07d5db2bea5.wav",
+      "sha256": "cf0a5b5480424bc05270e2f133d8898f76546c41ffabadda3ddfb07d5db2bea5",
+      "attempts": 1,
+      "bytes": 61484,
+      "prior_failures": []
+    },
+    {
+      "file": "d306635755c5ad9c857bddf1b0489dc3710b98a8ac40f5f12044c8be2a204bfc.wav",
+      "sha256": "d306635755c5ad9c857bddf1b0489dc3710b98a8ac40f5f12044c8be2a204bfc",
+      "attempts": 1,
+      "bytes": 53804,
+      "prior_failures": []
+    },
+    {
+      "file": "d97edd0b66fd62de184ff8edea1d4c80a230ee5810131b515827deaa801e2b8e.wav",
+      "sha256": "d97edd0b66fd62de184ff8edea1d4c80a230ee5810131b515827deaa801e2b8e",
+      "attempts": 1,
+      "bytes": 76844,
+      "prior_failures": []
+    },
+    {
+      "file": "da85259ddeb9eb6cc0538dacbad011c6f8c78c92b252ca7144483320f256ce57.wav",
+      "sha256": "da85259ddeb9eb6cc0538dacbad011c6f8c78c92b252ca7144483320f256ce57",
+      "attempts": 1,
+      "bytes": 64044,
+      "prior_failures": []
+    },
+    {
+      "file": "db319baff08cae585dd9905e1d91b591912453802e911a653782adafeca91b45.wav",
+      "sha256": "db319baff08cae585dd9905e1d91b591912453802e911a653782adafeca91b45",
+      "attempts": 1,
+      "bytes": 69164,
+      "prior_failures": []
+    },
+    {
+      "file": "dcb727e5254f88945245744cf3a40c860cc80643d6b46edf5347efcf6480f6f4.wav",
+      "sha256": "dcb727e5254f88945245744cf3a40c860cc80643d6b46edf5347efcf6480f6f4",
+      "attempts": 1,
+      "bytes": 51244,
+      "prior_failures": []
+    },
+    {
+      "file": "e4e702eabcaeafd1a88433a8205b2376ec09b258f7a999e89751d211288b1223.wav",
+      "sha256": "e4e702eabcaeafd1a88433a8205b2376ec09b258f7a999e89751d211288b1223",
+      "attempts": 1,
+      "bytes": 66604,
+      "prior_failures": []
+    },
+    {
+      "file": "e88f59f25b47caaf256c373ef95318e849bb7dc0b6b28f4ec6c34a5b2e74e43c.wav",
+      "sha256": "e88f59f25b47caaf256c373ef95318e849bb7dc0b6b28f4ec6c34a5b2e74e43c",
+      "attempts": 1,
+      "bytes": 76844,
+      "prior_failures": []
+    },
+    {
+      "file": "efc9212d2b552deaaec44b05d7a9976313ccd8c91b569ffe2973cb66a95b5582.wav",
+      "sha256": "efc9212d2b552deaaec44b05d7a9976313ccd8c91b569ffe2973cb66a95b5582",
+      "attempts": 1,
+      "bytes": 56364,
+      "prior_failures": []
+    },
+    {
+      "file": "f48f24a3a0bed14f75d9513a6ec86c85d46ac3eee22e67db200d780aa71e3c8b.wav",
+      "sha256": "f48f24a3a0bed14f75d9513a6ec86c85d46ac3eee22e67db200d780aa71e3c8b",
+      "attempts": 1,
+      "bytes": 71724,
+      "prior_failures": []
+    },
+    {
+      "file": "fad19a13dac1946691ede1c8077e22c46a286d68247e31569eada92da22ba583.wav",
+      "sha256": "fad19a13dac1946691ede1c8077e22c46a286d68247e31569eada92da22ba583",
+      "attempts": 1,
+      "bytes": 56364,
+      "prior_failures": []
+    },
+    {
+      "file": "fe029950f52b0036f88afed8d0d03b10351912f037920cecb60ef35d27443c05.wav",
+      "sha256": "fe029950f52b0036f88afed8d0d03b10351912f037920cecb60ef35d27443c05",
+      "attempts": 1,
+      "bytes": 64044,
+      "prior_failures": []
+    }
+  ],
+  "all_expected_SHA256_verified": true,
+  "copied_from_prior_checkout": false,
+  "PCM_decoded_by_this_download_helper": false,
+  "project_source_modified": false
+}

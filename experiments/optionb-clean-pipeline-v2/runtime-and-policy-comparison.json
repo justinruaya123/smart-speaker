@@ -1,0 +1,26 @@
+{
+  "general_runtime_load_and_forward_passed": true,
+  "providers": [
+    "CPUExecutionProvider"
+  ],
+  "output_shape": [
+    1,
+    32
+  ],
+  "software_fixture_not_acoustic_quality": true,
+  "all_466_real_DEV_calibration_prediction_records_exact_bytes": true,
+  "fresh_policy_selection_and_full_grid_exact_bytes": true,
+  "fresh_DEV_selected_policy": {
+    "enabled": true,
+    "min_margin": 0.3,
+    "min_probability": 0.55
+  },
+  "comparison_bundle_preserved_original_policy": {
+    "enabled": true,
+    "min_margin": 0.1,
+    "min_probability": 0.5
+  },
+  "frozen_epoch44_adapter_intentionally_rejects_this_GPU_comparison_bundle": true,
+  "actions_enabled": false,
+  "qualified": false
+}

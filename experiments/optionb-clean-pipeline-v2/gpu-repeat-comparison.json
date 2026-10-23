@@ -1,0 +1,428 @@
+{
+  "format": "optionb-independent-clean-GPU-build-comparison-v2",
+  "scope": "same pinned GPU backend/software/recipe; independent Git checkout/environment/public-source acquisition",
+  "status": "verified_same_GPU_model_build",
+  "passed": true,
+  "checks": {
+    "all_checkpoint_tensors_exact": true,
+    "selected_epoch_equal": true,
+    "training_config_equal": true,
+    "selected_sample_counts_equal": true,
+    "all_48_epoch_losses_DEV_metrics_and_selection_equal_ignoring_timing": true,
+    "full_final_sample_counts_equal": true,
+    "full_optimizer_steps_equal": true,
+    "GPU_training_both": true,
+    "original_features_equal": true,
+    "normalization_equal": true,
+    "ONNX_graph_bytes_equal": true,
+    "policy_bytes_equal": true,
+    "class_order_bytes_equal": true,
+    "recipe_bytes_equal": true
+  },
+  "tensor_count": 37,
+  "tensors": {
+    "network.blocks.0.depthwise.0.conv.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        1,
+        7
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.0.depthwise.1.conv.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        1,
+        7
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.0.norms.0.norm.bias": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.0.norms.0.norm.weight": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.0.norms.1.norm.bias": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.0.norms.1.norm.weight": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.0.pointwise.0.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        160,
+        1
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.0.pointwise.1.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        160,
+        1
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.1.depthwise.0.conv.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        1,
+        7
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.1.depthwise.1.conv.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        1,
+        7
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.1.norms.0.norm.bias": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.1.norms.0.norm.weight": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.1.norms.1.norm.bias": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.1.norms.1.norm.weight": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.1.pointwise.0.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        160,
+        1
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.1.pointwise.1.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        160,
+        1
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.2.depthwise.0.conv.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        1,
+        7
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.2.depthwise.1.conv.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        1,
+        7
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.2.norms.0.norm.bias": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.2.norms.0.norm.weight": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.2.norms.1.norm.bias": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.2.norms.1.norm.weight": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.2.pointwise.0.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        160,
+        1
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.2.pointwise.1.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        160,
+        1
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.3.depthwise.0.conv.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        1,
+        7
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.3.depthwise.1.conv.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        1,
+        7
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.3.norms.0.norm.bias": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.3.norms.0.norm.weight": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.3.norms.1.norm.bias": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.3.norms.1.norm.weight": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.3.pointwise.0.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        160,
+        1
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.blocks.3.pointwise.1.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        160,
+        1
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.head.bias": {
+      "exact": true,
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.head.weight": {
+      "exact": true,
+      "shape": [
+        32,
+        320
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.stem.conv.weight": {
+      "exact": true,
+      "shape": [
+        160,
+        40,
+        5
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.stem_norm.norm.bias": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    },
+    "network.stem_norm.norm.weight": {
+      "exact": true,
+      "shape": [
+        160
+      ],
+      "dtype": "torch.float32",
+      "max_abs_difference": 0.0
+    }
+  },
+  "artifacts": {
+    "best.pt": {
+      "exact_bytes": true,
+      "first_sha256": "c879e4491acf5bf1058f9850e1bf49badaf781f6361ef196843f3f9565b293a4",
+      "second_sha256": "c879e4491acf5bf1058f9850e1bf49badaf781f6361ef196843f3f9565b293a4"
+    },
+    "human-foundation.pt": {
+      "exact_bytes": true,
+      "first_sha256": "8992d080db1f61d214cb554caa56611f83fa547744f8569afaf191caecbf64c7",
+      "second_sha256": "8992d080db1f61d214cb554caa56611f83fa547744f8569afaf191caecbf64c7"
+    },
+    "normalization.json": {
+      "exact_bytes": true,
+      "first_sha256": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09",
+      "second_sha256": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09"
+    },
+    "recomputed-normalization.json": {
+      "exact_bytes": true,
+      "first_sha256": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09",
+      "second_sha256": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09"
+    },
+    "raw-feature-inputs.jsonl": {
+      "exact_bytes": true,
+      "first_sha256": "c8383a0cf4f915dbf0969244af50da953cb4ddf9c0efe7575d6b515321fabe72",
+      "second_sha256": "c8383a0cf4f915dbf0969244af50da953cb4ddf9c0efe7575d6b515321fabe72"
+    },
+    "bundle/model.onnx": {
+      "exact_bytes": true,
+      "first_sha256": "8e32c7a8cc49d5090ed2bd3198de5fa94450ec6536e2e82504fd0ee67f9ca0cb",
+      "second_sha256": "8e32c7a8cc49d5090ed2bd3198de5fa94450ec6536e2e82504fd0ee67f9ca0cb"
+    },
+    "bundle/normalization.json": {
+      "exact_bytes": true,
+      "first_sha256": "28f7ef1b2c926c587d611d17eef91184c2c7e2de66abe352d1fc2365e45d69ed",
+      "second_sha256": "28f7ef1b2c926c587d611d17eef91184c2c7e2de66abe352d1fc2365e45d69ed"
+    },
+    "bundle/commands.json": {
+      "exact_bytes": true,
+      "first_sha256": "71017cf22366d15557e8878636135f5ff2d0ac81fc4dfd6f058fc88f0f2d4b5d",
+      "second_sha256": "71017cf22366d15557e8878636135f5ff2d0ac81fc4dfd6f058fc88f0f2d4b5d"
+    },
+    "bundle/policy.json": {
+      "exact_bytes": true,
+      "first_sha256": "b9242e46fb093642a41023e8ace3c0cadc2fe51ffede512aa09e399622f355f0",
+      "second_sha256": "b9242e46fb093642a41023e8ace3c0cadc2fe51ffede512aa09e399622f355f0"
+    },
+    "bundle/recipe.json": {
+      "exact_bytes": true,
+      "first_sha256": "b10553f9001076b1cef5528e101cda3e7e079f881177490c21636cc467a00178",
+      "second_sha256": "b10553f9001076b1cef5528e101cda3e7e079f881177490c21636cc467a00178"
+    }
+  },
+  "first_execution_device": "cuda:0",
+  "second_execution_device": "cuda:0",
+  "optimizer_steps_each": 4608,
+  "epochs_each": 48,
+  "selected_epoch_each": 28,
+  "phase_counts": {
+    "human": 6,
+    "mixed": 42
+  },
+  "first_GPU_training_seconds": 135.19326899999578,
+  "second_GPU_training_seconds": 142.02438499999698,
+  "original_CPU_epoch44_comparison_passed": false,
+  "actual_fit_CLI_exit_code_each": 1,
+  "original_CPU_comparison_failure_preserved": true,
+  "tolerances_or_source_code_changed": false,
+  "heldout_PCM_inferred": false,
+  "qualified": false,
+  "actions_enabled": false,
+  "first_fit": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.cache\\optionb-source-repro-v1\\run-01\\fit-gpu-01",
+  "second_fit": "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh\\.cache\\optionb-clean-pipeline-ad4d626-v2\\.cache\\optionb-source-repro-v1\\run-01\\fit"
+}

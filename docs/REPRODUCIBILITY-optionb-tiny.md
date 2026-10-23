@@ -1,5 +1,23 @@
 # OptionB tiny snapshot and GitHub reproduction
 
+## Independent GPU rebuild and HF publication — 2026-10-24
+
+**PASS: the same GPU model was rebuilt independently on the pinned CUDA stack. This is not a pass against the original CPU epoch44 reference.** A second new GitHub checkout at `ad4d6262e7f91b2cb4cb4f75a1b1b082d6b088f3` started without an environment, audio, feature cache or checkpoints. Its own CPython3.13.14/scientific/helper/CUDA environment was installed from the existing locks. No application source or new reproducibility framework was added for this run.
+
+[The operational receipt](../experiments/optionb-clean-pipeline-v2/summary.json) records eight required TRAIN/DEV Parquet downloads plus184 auxiliary files,23,315TRAIN/1,251DEV/210calibration reconstructed rows with exact WAV/PCM,24,566 exact feature hashes and the1,889-human normalizer. Two preparer attempts hit remote WinError10054; only61 missing auxiliary files were then downloaded through an authenticated client and all pinned hashes checked before resuming the unchanged preparer. This disclosed recovery is not an untouched one-command success.
+
+The second full required-CUDA run completed48epochs/4,608updates and selected epoch28, just like the first. [The comparison](../experiments/optionb-clean-pipeline-v2/gpu-repeat-comparison.json) verifies **all37 tensors, selected/foundation checkpoint bytes, all five exported bundle files, all48 epochs' losses/DEV results excluding timing, and final draw counts exactly**. [Fresh prediction/policy verification](../experiments/optionb-clean-pipeline-v2/runtime-and-policy-comparison.json) additionally verifies byte-identical466 DEV/calibration prediction records and the complete policy-selection grid. The passing claim is limited to the tested Windows/Torch2.10.0+cu128/CUDA12.8/RTX3080 recipe, not other GPUs/platforms.
+
+Both stock fit commands still exit1 at `exact_comparison_and_lock` because neither reproduces the original CPU epoch44 model. The frozen preview adapter intentionally rejects the new comparison graph, while the existing general tiny Runtime loads and executes it. The comparison bundle retains the original `.50/.10` policy; fresh selection chooses `.55/.30` but is not applied or installed. Original exact-fit replay/native/PC acceptance remains blocked, no lock is forged, and the original best model remains unchanged.
+
+**Published to the existing HF dataset** `justinruaya123/ai231-smart-speaker`, new branch `optionb-tiny-reproduction-v1`, immutable revision **`009b87cb6cb2297073797b8c9571925f70fe92dd`**, folder `reproduction/optionb-tiny-v1/`:
+
+- `frozen/`:26 exact original Git model/source/snapshot payloads, including the original epoch44 checkpoint and bundle.
+- `gpu-rebuild/`: the independently identical, non-promoted epoch28 comparison checkpoint and five-file bundle.
+- `rebuild-evidence/`, `manifest.json` and `gpu-rebuild-manifest.json`: source, numerical and scope evidence.
+
+[Publication readback](../experiments/optionb-clean-pipeline-v2/hf-publication.json) verifies all49 files by anonymous re-download and SHA256, unchanged original dataset branches, and unchanged frozen model bytes. [The pulled-artifact runtime check](../experiments/optionb-clean-pipeline-v2/HF-pulled-runtime-proof.json) loads the downloaded original through the unmodified frozen worker and executes the downloaded GPU comparison graph through the general Runtime; this is software loading, not acoustic qualification. The second checkout also passes463 selected CUDA Python cases without failures/skips and verifies all15+10 original scientific identities. No held-out PCM inference, new native/PC timing, Pi, live microphone/provider execution, installed-default change or qualification is claimed.
+
 ## Frozen model
 
 The selected finite OptionB candidate is the original **width160 /258,912-parameter epoch44** atomic-command CNN, with its exact 16kHz/40-bin frontend, human-TRAIN normalizer, 32-class order and separate **.50 posterior /.10 margin** demo policy. No failed fine-tune, larger encoder, ASR, transcript parser or independent intent/slot acceptance gate replaces it.

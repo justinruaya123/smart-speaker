@@ -1,0 +1,45 @@
+{
+  "format": "optionb-anonymously-pulled-HF-runtime-proof-v2",
+  "HF_revision": "009b87cb6cb2297073797b8c9571925f70fe92dd",
+  "all49_downloaded_file_hashes_verified": true,
+  "frozen_original_worker_check": {
+    "event": "ready",
+    "engine": "onnx-cpu",
+    "loaded": true,
+    "nativeSession": true,
+    "state": "awaiting_microphone",
+    "model_sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+    "bundle_sha256": {
+      "model.onnx": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+      "normalization.json": "28f7ef1b2c926c587d611d17eef91184c2c7e2de66abe352d1fc2365e45d69ed",
+      "commands.json": "71017cf22366d15557e8878636135f5ff2d0ac81fc4dfd6f058fc88f0f2d4b5d",
+      "policy.json": "b9242e46fb093642a41023e8ace3c0cadc2fe51ffede512aa09e399622f355f0",
+      "recipe.json": "020c3deccb0f8cece0f23b8c016b6a63bdd0359321bb06cbd00e091966d46621"
+    },
+    "parameters": 258912,
+    "selected_epoch": 44,
+    "policy_enabled": true,
+    "application_config": {
+      "mode": "joint_complete_command",
+      "enabled": true,
+      "min_margin": 0.1,
+      "min_probability": 0.5
+    },
+    "inference_contract": "audio_to_atomic_complete_optionb_command",
+    "session_load_ms": 22.99979999952484,
+    "threads": 1,
+    "session_id": "a16389f9c1cc45adadeeea9346e7718d",
+    "sequence": 1,
+    "source": "microphone",
+    "actions_enabled": false,
+    "model_qualified": false
+  },
+  "downloaded_GPU_general_runtime_load_and_forward": true,
+  "GPU_fixture_is_not_acoustic_quality": true,
+  "training_was_CUDA_but_this_inference_provider": [
+    "CPUExecutionProvider"
+  ],
+  "frozen_worker_not_weakened_to_accept_GPU_comparison": true,
+  "qualified": false,
+  "actions_enabled": false
+}

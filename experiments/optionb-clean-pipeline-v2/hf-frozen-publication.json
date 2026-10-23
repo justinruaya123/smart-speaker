@@ -1,0 +1,165 @@
+{
+  "format": "optionb-HF-frozen-publication-readback-v2",
+  "repo_id": "justinruaya123/ai231-smart-speaker",
+  "repo_type": "dataset",
+  "branch": "optionb-tiny-reproduction-v1",
+  "commit": "74d134a3258f97ab269b47653210c1e4c61482ce",
+  "base_commit": "0fc3ac3ff257838d02000b6a8ce78225c262b9fa",
+  "prefix": "reproduction/optionb-tiny-v1/",
+  "published_files": {
+    "manifest.json": {
+      "sha256": "65e2b410078d8e8296afbe64bb1f091dde85b167f6f6ae40d9e5d732990cdfa5",
+      "bytes": 7303
+    },
+    "README.md": {
+      "sha256": "fa6445c5fcbce6a10de82063ac753e5ce774669793149ea779845e6a50485bf6",
+      "bytes": 2507
+    },
+    "frozen/pyproject.toml": {
+      "sha256": "5823355fb7a1f083a0d88536098a55496bcf6c61568bd5880cf373c5722d094a",
+      "bytes": 470
+    },
+    "frozen/uv.lock": {
+      "sha256": "c24ebb9579b75f06970e130d9a1a6026bff8778d7bb95232da339f6d155d1362",
+      "bytes": 163665
+    },
+    "frozen/vcm/frontend.py": {
+      "sha256": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a",
+      "bytes": 2206
+    },
+    "frozen/submission/checkpoints/optionb-tiny-selected.pt": {
+      "sha256": "d45d71b3858b4182967d3f41dad8145150028ca17401c73d203fba75d6bda687",
+      "bytes": 2326131
+    },
+    "frozen/submission/optionb-tiny/snapshot.json": {
+      "sha256": "d0ac31ea3d5f771cbe983e2ae9bd06303267c4b68723870c28b9904b17d74a21",
+      "bytes": 17374
+    },
+    "frozen/submission/optionb-tiny/inputs/calibration.jsonl.gz": {
+      "sha256": "d74ffa0ad02641cac9b2073d95a15fb73a896fb87d29c245c40db166f430eb41",
+      "bytes": 34957
+    },
+    "frozen/submission/optionb-tiny/inputs/dev.jsonl.gz": {
+      "sha256": "286192c9a4ae2522c0dacfd43d0d789c2e6d01b4e58f95fe4b6f436f19b1884e",
+      "bytes": 152072
+    },
+    "frozen/submission/optionb-tiny/inputs/golden-evaluation-predictions.jsonl.gz": {
+      "sha256": "c41061e8698b970c24e3e1fdbb2ebcf2ea6a1b433ce5087ee258bc3421aae873",
+      "bytes": 3859670
+    },
+    "frozen/submission/optionb-tiny/inputs/holdout.jsonl.gz": {
+      "sha256": "5eda0c581eae1fba7460ac0275cc0a206babc591507239d62d3c8c797391682a",
+      "bytes": 20336
+    },
+    "frozen/submission/optionb-tiny/inputs/raw-feature-inputs.jsonl.gz": {
+      "sha256": "43641aabbffb3edd70fdd775968b1d650686af980c19158bf2217ca101005789",
+      "bytes": 3048999
+    },
+    "frozen/submission/optionb-tiny/inputs/references.jsonl.gz": {
+      "sha256": "d9eef20cdb08e2afb05d8bafeaa5d9961b803346c648da274ee2c9bed859fa89",
+      "bytes": 436022
+    },
+    "frozen/submission/optionb-tiny/inputs/test.jsonl.gz": {
+      "sha256": "946b87436e467430a965b3b926b18f4b003b7c8544693b5a880f1b57946025c3",
+      "bytes": 484254
+    },
+    "frozen/submission/optionb-tiny/inputs/train.jsonl.gz": {
+      "sha256": "169a6c09daf7843d0cc97c33d84030bf82fc2a6415bebf932c5b281919428be5",
+      "bytes": 2761176
+    },
+    "frozen/submission/optionb-tiny/inputs/training-normalization.json": {
+      "sha256": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09",
+      "bytes": 429040
+    },
+    "frozen/submission/models/optionb-tiny/commands.json": {
+      "sha256": "71017cf22366d15557e8878636135f5ff2d0ac81fc4dfd6f058fc88f0f2d4b5d",
+      "bytes": 2811
+    },
+    "frozen/submission/models/optionb-tiny/model.onnx": {
+      "sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+      "bytes": 1082940
+    },
+    "frozen/submission/models/optionb-tiny/normalization.json": {
+      "sha256": "28f7ef1b2c926c587d611d17eef91184c2c7e2de66abe352d1fc2365e45d69ed",
+      "bytes": 2098
+    },
+    "frozen/submission/models/optionb-tiny/policy.json": {
+      "sha256": "b9242e46fb093642a41023e8ace3c0cadc2fe51ffede512aa09e399622f355f0",
+      "bytes": 74
+    },
+    "frozen/submission/models/optionb-tiny/recipe.json": {
+      "sha256": "020c3deccb0f8cece0f23b8c016b6a63bdd0359321bb06cbd00e091966d46621",
+      "bytes": 759
+    },
+    "frozen/scripts/models/speaker_optionb_tiny.py": {
+      "sha256": "563c13da8009e92200b679f1722c4cf61195e40d82b6623cb959ea4a77c0729c",
+      "bytes": 1318
+    },
+    "frozen/scripts/models/vcm.py": {
+      "sha256": "48e85eaee92bd0383bf3ee05bc347eec0390f802a0711fcf7aeac8d0b085e162",
+      "bytes": 11501
+    },
+    "frozen/scripts/runtime/optionb_contract.py": {
+      "sha256": "72aad2fbdbaf7505fefdb35f1a7ea340ec84f41264ad427eba7bff472c9f3a2b",
+      "bytes": 887
+    },
+    "frozen/scripts/runtime/optionb_worker.py": {
+      "sha256": "97055fd22e0213fc38aeb455d4279a9504a44ed0f7b8ea9d7686ddbbe1181151",
+      "bytes": 7834
+    },
+    "frozen/scripts/runtime/pcv_schema.py": {
+      "sha256": "603ec943eae1e7330dd2eb82f05bbd7c206382ecf13c0fb8f8801a7ecd0e134c",
+      "bytes": 11918
+    },
+    "frozen/scripts/runtime/speaker_optionb_tiny.py": {
+      "sha256": "2a2d9e0e18ab1531ead02fd66dcc1ffda1f25b04b040b03ce7588c9a7145d670",
+      "bytes": 6463
+    },
+    "frozen/scripts/train/speaker_optionb_tiny.py": {
+      "sha256": "d18e39384afdd43a2b0b569a79365672949234876b9b78a2e58acc071e8c9b45",
+      "bytes": 19146
+    }
+  },
+  "old_branch_refs": {
+    "main": "44a1a23081a8b042c5d43a73cf233c03c8151049",
+    "inference": "e5cf836b3d693d1bd459674aabcb14411bf6781c",
+    "reproduction-v1": "0fc3ac3ff257838d02000b6a8ce78225c262b9fa"
+  },
+  "all_anonymous_downloads_verified": true,
+  "verified_files": [
+    "README.md",
+    "frozen/pyproject.toml",
+    "frozen/scripts/models/speaker_optionb_tiny.py",
+    "frozen/scripts/models/vcm.py",
+    "frozen/scripts/runtime/optionb_contract.py",
+    "frozen/scripts/runtime/optionb_worker.py",
+    "frozen/scripts/runtime/pcv_schema.py",
+    "frozen/scripts/runtime/speaker_optionb_tiny.py",
+    "frozen/scripts/train/speaker_optionb_tiny.py",
+    "frozen/submission/checkpoints/optionb-tiny-selected.pt",
+    "frozen/submission/models/optionb-tiny/commands.json",
+    "frozen/submission/models/optionb-tiny/model.onnx",
+    "frozen/submission/models/optionb-tiny/normalization.json",
+    "frozen/submission/models/optionb-tiny/policy.json",
+    "frozen/submission/models/optionb-tiny/recipe.json",
+    "frozen/submission/optionb-tiny/inputs/calibration.jsonl.gz",
+    "frozen/submission/optionb-tiny/inputs/dev.jsonl.gz",
+    "frozen/submission/optionb-tiny/inputs/golden-evaluation-predictions.jsonl.gz",
+    "frozen/submission/optionb-tiny/inputs/holdout.jsonl.gz",
+    "frozen/submission/optionb-tiny/inputs/raw-feature-inputs.jsonl.gz",
+    "frozen/submission/optionb-tiny/inputs/references.jsonl.gz",
+    "frozen/submission/optionb-tiny/inputs/test.jsonl.gz",
+    "frozen/submission/optionb-tiny/inputs/train.jsonl.gz",
+    "frozen/submission/optionb-tiny/inputs/training-normalization.json",
+    "frozen/submission/optionb-tiny/snapshot.json",
+    "frozen/uv.lock",
+    "frozen/vcm/frontend.py",
+    "manifest.json"
+  ],
+  "existing_files_unchanged": true,
+  "existing_branch_refs_unchanged": true,
+  "source_audio_features_or_credentials_uploaded": false,
+  "actions_enabled": false,
+  "qualified": false,
+  "installed_defaults_changed": false
+}

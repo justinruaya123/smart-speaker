@@ -1,0 +1,46 @@
+{
+  "format": "optionb-second-clean-environment-software-v2",
+  "tested_source_revision": "ad4d6262e7f91b2cb4cb4f75a1b1b082d6b088f3",
+  "counts": {
+    "tests": 463,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "seconds": 128.936,
+  "selected_test_files": [
+    "scripts/test/test_optionb_handoff_defaults.py",
+    "scripts/test/test_optionb_pc_benchmark.py",
+    "scripts/test/test_optionb_release.py",
+    "scripts/test/test_optionb_release_integrity.py",
+    "scripts/test/test_optionb_replay.py",
+    "scripts/test/test_optionb_reproduction.py",
+    "scripts/test/test_optionb_reproduction_fit.py",
+    "scripts/test/test_speaker_optionb_acceptance.py",
+    "scripts/test/test_speaker_optionb_holdout.py",
+    "scripts/test/test_speaker_optionb_tiny.py",
+    "scripts/test/test_speaker_optionb_tiny_accelerated.py",
+    "scripts/test/test_speaker_optionb_tiny_demo.py",
+    "scripts/test/test_speaker_optionb_tiny_demo_metadata.py",
+    "scripts/test/test_speaker_optionb_tiny_demo_report.py",
+    "scripts/test/test_speaker_optionb_tiny_direct_ft.py",
+    "scripts/test/test_speaker_optionb_tiny_direct_verification.py",
+    "scripts/test/test_speaker_optionb_tiny_ft.py"
+  ],
+  "same_checkout_own_environment_as_actual_GPU_rebuild": true,
+  "working_tree_clean_before_and_after_tests": true,
+  "installed_packages_compatible": 49,
+  "snapshot_assets_verified": 15,
+  "scientific_sources_verified": 10,
+  "JUnit": {
+    "file": "software-tests.xml.gz",
+    "gzip_sha256": "07f9baabe90e48418ff7a843c60b62e4934ae13182a5c6e88e43681225be4ad1",
+    "uncompressed_sha256": "2078b4e4fb800e90a7c7020dcf4bfe6aeca6686b948f0caba7f41323e03380be"
+  },
+  "test_output_log_sha256": "5b60d13279642a09168f9b0ef7b5c0ba4cd44919f0ced28d2218e43838910236",
+  "final_dependency_and_integrity_log_sha256": "4c66354f68c1165a6543054b59669ba29cc5065258291a6a79ebe12758c95f85",
+  "original_CPU_checkpoint_comparison_passed": false,
+  "actual_full_fit_CLI_exit_code": 1,
+  "qualified": false,
+  "actions_enabled": false
+}

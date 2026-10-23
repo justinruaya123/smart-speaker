@@ -1,0 +1,24 @@
+{
+  "actions_enabled": false,
+  "bindings": {
+    ".cache/optionb-source-repro-v1/run-01/canonical/calibration.jsonl": "059aeac153a58e1b1bf9eb291bac83f0ee886fe4b48e92bbc68f46c66fb80d6c",
+    ".cache/optionb-source-repro-v1/run-01/canonical/dev.jsonl": "91b72b446c93e432568fb10d5440ee62edf01a95453332d25b93283babb5a5ec",
+    ".cache/optionb-source-repro-v1/run-01/canonical/train.jsonl": "e1b0203947f873d137981d376d093315df0e82c79e377cba365e6cc3219fc357",
+    ".cache/optionb-source-repro-v1/run-01/prepared/calibration.jsonl": "059aeac153a58e1b1bf9eb291bac83f0ee886fe4b48e92bbc68f46c66fb80d6c",
+    ".cache/optionb-source-repro-v1/run-01/prepared/dev.jsonl": "91b72b446c93e432568fb10d5440ee62edf01a95453332d25b93283babb5a5ec",
+    ".cache/optionb-source-repro-v1/run-01/prepared/train.jsonl": "e1b0203947f873d137981d376d093315df0e82c79e377cba365e6cc3219fc357"
+  },
+  "counts": {
+    "calibration": 210,
+    "dev": 1251,
+    "train": 23315
+  },
+  "derived_feature_cache_reused": false,
+  "format": "optionb-source-preparation-v1",
+  "heldout_pcm_decoded": false,
+  "old_audio_or_features_copied": false,
+  "original_reference_order_and_labels_preserved": true,
+  "snapshot_sha256": "d0ac31ea3d5f771cbe983e2ae9bd06303267c4b68723870c28b9904b17d74a21",
+  "source_download_cache": ".cache/optionb-source-repro-v1/downloads",
+  "wav_and_pcm_verified": true
+}

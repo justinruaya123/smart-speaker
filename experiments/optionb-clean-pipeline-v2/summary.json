@@ -1,0 +1,207 @@
+{
+  "format": "optionb-clean-pipeline-operational-rebuild-v2",
+  "created_utc": "2026-10-23T18:25:58.977158+00:00",
+  "status": "PASS_same_GPU_model_independently_rebuilt",
+  "passing_scope": "Pinned Windows/CPython3.13.14/Torch2.10cu128/CUDA12.8/RTX3080 recipe rebuilt in another clean Git clone and environment from public source downloads; not equality to the original CPU epoch44 model",
+  "git_revision": "ad4d6262e7f91b2cb4cb4f75a1b1b082d6b088f3",
+  "application_source_changed": false,
+  "new_reproducibility_framework_added": false,
+  "new_checkout_started_without_environment_runtime_audio_features_or_checkpoints": true,
+  "pinned_environment_installed": true,
+  "training_source_shards_downloaded_and_independently_rehashed": [
+    {
+      "sha256": "01d32c3ed7b2e9a0ee131a1dad128c8e63e7b20a198ce1170625bd0940db0778",
+      "bytes": 244957155,
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "file": "data/train-00000-of-00004.parquet"
+    },
+    {
+      "sha256": "0d31aa80f447423413fa097567c8df9cbdaa70439774d43df209c8ffc47df257",
+      "bytes": 235454295,
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "file": "data/train-00003-of-00004.parquet"
+    },
+    {
+      "sha256": "1e229f67df1b539711886e01062dbc0309c58f38e739dad787b11c669d314512",
+      "bytes": 118240931,
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "file": "gap_fill/train-00000-of-00001.parquet"
+    },
+    {
+      "sha256": "4c29353d0ab14bb27fd3af8b513c2b9dd41f7707e86fbaa55104bfe71a328674",
+      "bytes": 397331137,
+      "repository": "airimonda/ai231-me2-voice-commands",
+      "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+      "file": "data/train-00001-of-00002.parquet"
+    },
+    {
+      "sha256": "8a7e0460893a97cb4e3ad4b3729ae781a277dcbccced7484898e2f5985122566",
+      "bytes": 235971285,
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "file": "data/train-00002-of-00004.parquet"
+    },
+    {
+      "sha256": "977e6c6be208818a35496ac6e1a2b2da62f3387acba377664e0f48dbdc2cec9e",
+      "bytes": 315293385,
+      "repository": "airimonda/ai231-me2-voice-commands",
+      "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+      "file": "data/train-00000-of-00002.parquet"
+    },
+    {
+      "sha256": "9808c05811bc0e3bdd152c74c4473673b1355e2dc355873ceb8bb48936a5ac5a",
+      "bytes": 411129,
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "file": "numeral_wordings/train-00000-of-00001.parquet"
+    },
+    {
+      "sha256": "c66da6df2579243d27fb956ddbc413f2e2ed0a4c5acaa77c333e905f866d885a",
+      "bytes": 276168578,
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "file": "data/train-00001-of-00004.parquet"
+    }
+  ],
+  "source_rows": {
+    "calibration": 210,
+    "dev": 1251,
+    "train": 23315
+  },
+  "source_row_total": 24776,
+  "auxiliary_files": 184,
+  "download_recovery": {
+    "published_prepare_attempts_failed": 2,
+    "cause": "remote WinError10054 during auxiliary DEV retrieval",
+    "already_verified_files": 123,
+    "only_missing_files_downloaded_with_authenticated_client": 61,
+    "all_hashes_unchanged": true,
+    "network_workaround_disclosed": true
+  },
+  "feature_rows": 24566,
+  "exact_feature_and_normalization_reconstruction": true,
+  "human_normalization_rows": 1889,
+  "training": {
+    "epochs": 48,
+    "optimizer_steps": 4608,
+    "execution_device": "cuda:0",
+    "parameters": 258912,
+    "selected_epoch": 28,
+    "phase_counts": {
+      "human": 6,
+      "mixed": 42
+    },
+    "seconds": 142.02438499999698
+  },
+  "GPU_repeatability": {
+    "passed": true,
+    "checkpoint_tensors_exact": 37,
+    "full_checkpoint_and_foundation_bytes_identical": true,
+    "all_five_bundle_files_identical": true,
+    "all48_epoch_losses_and_DEV_metrics_identical_ignoring_timing": true,
+    "all466_fresh_DEV_calibration_prediction_records_identical": true,
+    "fresh_policy_selection_grid_identical": true,
+    "graph_sha256": "8e32c7a8cc49d5090ed2bd3198de5fa94450ec6536e2e82504fd0ee67f9ca0cb"
+  },
+  "policy_semantics": {
+    "general_runtime_load_and_forward_passed": true,
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "output_shape": [
+      1,
+      32
+    ],
+    "software_fixture_not_acoustic_quality": true,
+    "all_466_real_DEV_calibration_prediction_records_exact_bytes": true,
+    "fresh_policy_selection_and_full_grid_exact_bytes": true,
+    "fresh_DEV_selected_policy": {
+      "enabled": true,
+      "min_margin": 0.3,
+      "min_probability": 0.55
+    },
+    "comparison_bundle_preserved_original_policy": {
+      "enabled": true,
+      "min_margin": 0.1,
+      "min_probability": 0.5
+    },
+    "frozen_epoch44_adapter_intentionally_rejects_this_GPU_comparison_bundle": true,
+    "actions_enabled": false,
+    "qualified": false
+  },
+  "original_CPU_reference": {
+    "epoch": 44,
+    "GPU_to_original_CPU_exact_comparison_passed": false,
+    "stock_fit_CLI_exit_code": 1,
+    "failure_stage": "exact_comparison_and_lock",
+    "comparison_gate_and_frozen_worker_unchanged": true,
+    "frozen_original_model_preserved": true,
+    "frozen_preview_adapter_accepts_GPU_comparison_model": false
+  },
+  "heldout_or_Pi_or_live_microphone_provider_execution": false,
+  "installed_defaults_changed": false,
+  "actions_enabled": false,
+  "qualified": false,
+  "metadata_files": {
+    "gpu-repeat-comparison.json": {
+      "sha256": "f3f452f12b01caeadcef78ff1678c604afff552175b03247018a8b91e0b827a4",
+      "bytes": 11519
+    },
+    "runtime-and-policy-comparison.json": {
+      "sha256": "66437760d97573675346ef947c7700c8d3a2f67625b29ee275da174f37817fc1",
+      "bytes": 716
+    },
+    "preparation.json": {
+      "sha256": "69a870402e748519fd0eb149497f6ed58bc490c6427d16c6d16296ee6a7f5acf",
+      "bytes": 1377
+    },
+    "auxiliary-download-recovery.json": {
+      "sha256": "1a4a6a6e9fe7c3b0822f18f6b9e67a4776850f7124acabb1f1ec4ef906ee4b92",
+      "bytes": 16797
+    },
+    "hf-frozen-publication.json": {
+      "sha256": "635162c0cc78eb8e890942f29da435992a430eeb9c291e1fd9a9a7d5f69b4fa6",
+      "bytes": 7155
+    },
+    "input-comparison.json": {
+      "sha256": "cc966af7880e4dc8a544871a3c5318f7f7369ba6bcba311c5343b3b458a69b3f",
+      "bytes": 407
+    },
+    "export-comparison.json": {
+      "sha256": "3640cb323014f7218bb3d4aec9e8a794a6c4033db90c696c3bc8f55d3705685f",
+      "bytes": 1975
+    },
+    "original-CPU-comparison-failure.json": {
+      "sha256": "c0ad8dcc5886ed3a55b6c35b77a5f74819a94128f355b88f0496d32d9f59d057",
+      "bytes": 3460
+    },
+    "training-curve.jsonl.gz": {
+      "sha256": "7aa879a9075501d55fff7aef6e5c8862bd5a3f4aeac3e3894c9f84066e5f051a",
+      "uncompressed_sha256": "a201f51d75c85dd7542438ada4c99f797dc31bb340ad26e21163f37d52a93c15",
+      "uncompressed_bytes": 37727
+    },
+    "training-result.json.gz": {
+      "sha256": "5df3e0b675b45ad1a7f3d834f597482ea1b477e3f4e2d8a90a2eefde397c321c",
+      "uncompressed_sha256": "840116744df1abfd4ebcf04f37e571b467ddc59d204d225660247c5ab9a709b3",
+      "uncompressed_bytes": 1476616
+    },
+    "training-comparison.json.gz": {
+      "sha256": "fd659f52ff9485bf836307ab4b5aa69bca4adadc012a51fa75850a8a6396441a",
+      "uncompressed_sha256": "1db007a94a2df0720807606b77537b52995f38bfdbee3239b24cfa7a4dff5dd4",
+      "uncompressed_bytes": 1534080
+    },
+    "fit-comparison.json.gz": {
+      "sha256": "bffc06976ddab7ab7239d26955ebc26b5da60680d0dff3485875016b93fa1c22",
+      "uncompressed_sha256": "2b4b0271e90e92d3beb8fcd11d1158e4941ebffa3a564ad48aa67e0ee5dac4c5",
+      "uncompressed_bytes": 1625331
+    },
+    "policy-selection.json.gz": {
+      "sha256": "c4548c231cfc06043578696253b5703163875f1b2b8ae4c41db47e73975e70d4",
+      "uncompressed_sha256": "da67cd9171cb4a4d4632d9b41d62a303f01fd225d992176fce96c60a546cbd72",
+      "uncompressed_bytes": 237790
+    }
+  }
+}
