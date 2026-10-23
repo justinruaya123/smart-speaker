@@ -1,0 +1,12 @@
+{
+  "prior_review": "experiments/optionb-source-repro-v1/fit-review-v1.json",
+  "before": {
+    "scripts/submission/optionb_fit.py": "84a2dcd5a5861ede6026115134c1937bbf7465947827fdc1a2d64fc72432075d",
+    "scripts/test/test_optionb_reproduction_fit.py": "2d4ae32ce50f58a04d769853363af4eccbf0dfa8ed2b70ee8ab8895d8e4df9cc"
+  },
+  "after": {
+    "scripts/submission/optionb_fit.py": "44c0bc01d9f3c4f600ecc6fcb2ca41f246d4134b0db767036dd21b33a8aba753",
+    "scripts/test/test_optionb_reproduction_fit.py": "bb873269c3ce7640aae80f9ff05f6d7bbd58ea82a2213f1aa565850a7672e6d7"
+  },
+  "science_locks_and_exporter_unchanged": true
+}

@@ -1,0 +1,78 @@
+{
+  "format": "optionb-fresh-github-preparation-v1",
+  "run_source_commit": "7c50fea332a4f32d6fc282aa69eb4a3d562fb760",
+  "process": "proc_d958446276af",
+  "exit_code": 0,
+  "prepared_receipt_sha256": "69a870402e748519fd0eb149497f6ed58bc490c6427d16c6d16296ee6a7f5acf",
+  "receipt": {
+    "actions_enabled": false,
+    "bindings": {
+      ".cache/optionb-source-repro-v1/run-01/canonical/calibration.jsonl": "059aeac153a58e1b1bf9eb291bac83f0ee886fe4b48e92bbc68f46c66fb80d6c",
+      ".cache/optionb-source-repro-v1/run-01/canonical/dev.jsonl": "91b72b446c93e432568fb10d5440ee62edf01a95453332d25b93283babb5a5ec",
+      ".cache/optionb-source-repro-v1/run-01/canonical/train.jsonl": "e1b0203947f873d137981d376d093315df0e82c79e377cba365e6cc3219fc357",
+      ".cache/optionb-source-repro-v1/run-01/prepared/calibration.jsonl": "059aeac153a58e1b1bf9eb291bac83f0ee886fe4b48e92bbc68f46c66fb80d6c",
+      ".cache/optionb-source-repro-v1/run-01/prepared/dev.jsonl": "91b72b446c93e432568fb10d5440ee62edf01a95453332d25b93283babb5a5ec",
+      ".cache/optionb-source-repro-v1/run-01/prepared/train.jsonl": "e1b0203947f873d137981d376d093315df0e82c79e377cba365e6cc3219fc357"
+    },
+    "counts": {
+      "calibration": 210,
+      "dev": 1251,
+      "train": 23315
+    },
+    "derived_feature_cache_reused": false,
+    "format": "optionb-source-preparation-v1",
+    "heldout_pcm_decoded": false,
+    "old_audio_or_features_copied": false,
+    "original_reference_order_and_labels_preserved": true,
+    "snapshot_sha256": "d0ac31ea3d5f771cbe983e2ae9bd06303267c4b68723870c28b9904b17d74a21",
+    "source_download_cache": ".cache/optionb-source-repro-v1/downloads",
+    "wav_and_pcm_verified": true
+  },
+  "frozen_rows_prepared": 24776,
+  "environment": {
+    "python": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.venv\\Scripts\\python.exe",
+    "python_version": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+    "pythonpath": null,
+    "modules": {
+      "torch": {
+        "version": "2.10.0+cpu",
+        "file": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.venv\\Lib\\site-packages\\torch\\__init__.py"
+      },
+      "numpy": {
+        "version": "2.3.5",
+        "file": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.venv\\Lib\\site-packages\\numpy\\__init__.py"
+      },
+      "onnx": {
+        "version": "1.20.1",
+        "file": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.venv\\Lib\\site-packages\\onnx\\__init__.py"
+      },
+      "onnxruntime": {
+        "version": "1.23.2",
+        "file": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.venv\\Lib\\site-packages\\onnxruntime\\__init__.py"
+      },
+      "packaging": {
+        "version": "26.3",
+        "file": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.venv\\Lib\\site-packages\\packaging\\__init__.py"
+      },
+      "pytest": {
+        "version": "8.4.2",
+        "file": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.venv\\Lib\\site-packages\\pytest\\__init__.py"
+      },
+      "pyarrow": {
+        "version": "23.0.1",
+        "file": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.venv\\Lib\\site-packages\\pyarrow\\__init__.py"
+      },
+      "soundfile": {
+        "version": "0.13.1",
+        "file": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.venv\\Lib\\site-packages\\soundfile.py"
+      },
+      "threadpoolctl": {
+        "version": "3.6.0",
+        "file": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.venv\\Lib\\site-packages\\threadpoolctl.py"
+      }
+    },
+    "cuda_build": null
+  },
+  "initial_kernel_metadata_probe_caveat": "The scratch-only initial ready probe inherited tool PYTHONPATH and saw an agent packaging module; it is not the scientific environment. All actual project setup/tests/model loading/preparation ran through clean terminal tools; this actual module-path probe supersedes it.",
+  "corpus_optimizer_steps": 0
+}

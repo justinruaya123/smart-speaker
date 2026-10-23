@@ -1,4 +1,8 @@
 {
+  "speaker.optionb_fit": {
+    "path": "submission/optionb_fit.py",
+    "runtime": false
+  },
   "speaker.optionb_reproduction": {
     "path": "submission/optionb_reproduce.py",
     "runtime": false

@@ -34,7 +34,17 @@ uv sync --locked --python 3.13.14 --group training --group benchmark
 uv pip install --python .venv/Scripts/python.exe --require-hashes --no-deps --requirement submission/optionb-tiny/testing.lock
 ```
 
-The explicit interpreter path shown is for the currently tested Windows checkout. Use `uv run --no-sync` for subsequent stage commands so a scientific-only sync does not remove these separately declared helpers. Their lock includes the complete dependency closure with hashes and pins packaging to the already-installed scientific version. The fit entry point must reject missing export helpers **before** feature extraction or optimizer work; it must not fit for48epochs and discover this import at export time. The production helper-dependency gate and full source run are being verified, not claimed passed by this setup description.
+The explicit interpreter path shown is for the currently tested Windows checkout. Use `uv run --no-sync` for subsequent stage commands so a scientific-only sync does not remove these separately declared helpers. Their lock includes the complete dependency closure with hashes and pins packaging to the already-installed scientific version. The fit entry point rejects missing export helpers **before** feature extraction or optimizer work; it does not discover this import after48epochs. [Independent correction closure](../experiments/optionb-source-repro-v1/fit-review-v2.json) and75parent-owned/canonical software tests pass. The full corpus fit remains a separate acceptance run, not a result inferred from those tests.
+
+For a new immutable run directory, execute the portable source stages in order:
+
+```sh
+uv run --no-sync python -m scripts.submission.optionb_reproduce verify
+uv run --no-sync python -m scripts.submission.optionb_reproduce prepare --output .cache/optionb-source-repro-v1/run-01
+uv run --no-sync python -m scripts.submission.optionb_fit --output .cache/optionb-source-repro-v1/run-01
+```
+
+The fit uses only original TRAIN/DEV for extraction/fitting and human DEV/calibration for policy reconstruction; reserved test/holdout metadata checks do not decode their PCM. It verifies all24,566 freshly extracted TRAIN/DEV tensor hashes and the exact original1,889-human normalizer before entering the unchanged four-thread CPU fit. It then compares selected epoch44, configuration, draw counters, every tensor, original graph bytes and the138-point policy grid. A mismatch leaves failure/comparison artifacts and cannot create a successful selection lock or replace the published model. The original measured fit took49.8minutes; actual rerun duration can vary. Choose a new run ID after any failed attempt, preserving earlier outputs.
 
 **Full tiny-model clean-clone reproduction is not yet verified at this snapshot.** The old tiny research CLIs refer to ignored study caches and immutable historical source locks. Running them from a clean checkout is an acceptance test, not permission to silently copy those caches, weaken hashes or overwrite their receipts. The requested GitHub experiment must record the original failing command/stage before any portable follow-up fix. Later reconstruction must download exact public source bytes, verify original WAV/PCM identities, regenerate the tiny TRAIN/DEV features and normalizer, and compare actual fresh inference/metrics with the golden expectations. A training reproduction must perform all4,608 updates and compare selected epoch/tensors separately from source/model inference replay. Elapsed time and latency need not be bitwise equal.
 
