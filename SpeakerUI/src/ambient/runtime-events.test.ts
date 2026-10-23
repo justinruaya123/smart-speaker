@@ -133,3 +133,12 @@ test('an execution delivered before its runtime frame is reconciled into history
   assert.deepEqual(model.event.execution,execution);
   assert.equal(applyRuntimeEvent(model,receipt,()=>{}),false);
 });
+
+test('a late receipt for a reused utterance ID cannot overwrite the current session display',()=>{
+  const model:any={history:[]},command={intent:'TIME',slots:{}};
+  for(const session_id of ['old','current'])applyRuntimeEvent(model,{event:'command',session_id,sequence:1,utterance_id:'same-id',source:'microphone',actions_enabled:true,
+    output:{schema_version:3,accepted:true,command},application:{accepted:true,command}},()=>{});
+  applyRuntimeEvent(model,{event:'execution',session_id:'old',utterance_id:'same-id',execution:{id:'old:same-id',status:'local',command}},()=>{});
+  assert.equal(model.event.raw.session_id,'current');
+  assert.equal(model.history.find((item:any)=>item.raw.session_id==='old').status,'local');
+});

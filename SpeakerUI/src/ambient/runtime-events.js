@@ -30,7 +30,7 @@ export function applyRuntimeEvent(model, event, setAgent) {
         if(!item)return true;
         if(item.execution && !['pending','requested'].includes(item.execution.status))return false;
         item.execution=event.execution;item.status=event.execution.status;
-        if(model.event?.result.utteranceId===event.utterance_id)model.event={...item};
+        if(model.event?.result.utteranceId===event.utterance_id&&model.event.raw?.session_id===item.raw?.session_id)model.event={...item};
         if(event.execution.status==='local'){
             const command=event.execution.command,slots=command.slots;
             if(command.intent==='TIMER')model.timer={total:slots.duration_seconds,remaining:slots.duration_seconds,end:event.execution.deadline};

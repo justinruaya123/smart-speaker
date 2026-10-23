@@ -130,6 +130,7 @@ test('actual gateway local-player confirmation publishes its final receipt befor
     const owner=received.find(e=>e.event==='action_state').client_id;
     const responses=await Promise.all([0,1].map(()=>app.inject({method:'POST',url:'/api/actions/local-receipt',headers,payload:{id:'session:u',client_id:owner,status:'succeeded'}})));
     assert.deepEqual(responses.map(r=>r.statusCode).sort(),[200,409]);
+    assert.equal(responses.find(r=>r.statusCode===200)!.json().session_id,'session','Final local receipts preserve their source session');
     await until(()=>order.includes('success'));
     assert.deepEqual(order,['intent','receipt:requested','receipt:succeeded','success']);
     assert.equal((await app.inject({method:'POST',url:'/api/actions/local-receipt',headers,payload:{id:'session:u',client_id:owner,status:'succeeded'}})).statusCode,409);

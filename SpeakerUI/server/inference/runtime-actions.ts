@@ -36,7 +36,7 @@ export class RuntimeActions {
     return this.dispatch(`${event.session_id}:${event.utterance_id}`, event.utterance_id,
       event.source === 'microphone', event.actions_enabled !== false && profile !== 'benchmark-compatible',
       profile === 'owner-protected' && event.owner_result?.accepted !== true
-        ? { accepted:false,reason:event.owner_result?.reason || 'owner_check_required' } : event.application, beforeDispatch);
+        ? { accepted:false,reason:event.owner_result?.reason || 'owner_check_required' } : event.application, beforeDispatch,event.session_id);
   }
 
   /** Explicit same-origin touch requests use this entry point, never a client-provided inference event. */
@@ -47,8 +47,8 @@ export class RuntimeActions {
     return result ?? (previous ? { ...previous, replayed: true } : undefined);
   }
 
-  private async dispatch(id: string, utteranceId: string, live: boolean, runtimeEnabled: boolean, decision: any, beforeDispatch?: () => Promise<void>): Promise<Execution | undefined> {
-    const outcome = (status: string, detail: string, extra: Record<string, any> = {}): Execution => ({ id, status, detail, utterance_id: utteranceId, ...extra });
+  private async dispatch(id: string, utteranceId: string, live: boolean, runtimeEnabled: boolean, decision: any, beforeDispatch?: () => Promise<void>,sessionId?: string): Promise<Execution | undefined> {
+    const outcome = (status: string, detail: string, extra: Record<string, any> = {}): Execution => ({ id, status, detail, utterance_id: utteranceId,...(sessionId?{session_id:sessionId}:{}), ...extra });
     if (!live) return outcome('preview', 'Recorded WAVs and fixtures do not execute actions.');
     if (!this.config.enabled || !runtimeEnabled) return outcome('disabled', 'Actions are disabled by configuration or the recognizer.');
     if (!decision?.accepted || !decision.command) return outcome('rejected', decision?.reason || 'No accepted application command.');
