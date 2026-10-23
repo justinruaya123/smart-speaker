@@ -221,6 +221,13 @@ class AudioService:
         self.set_state('wake_listening',microphone=selected)
         return selected
 
+    def output_devices(self):
+        import sounddevice as sd
+        hosts=sd.query_hostapis()
+        return [{'index':i,'name':d['name'],'hostapi':hosts[d['hostapi']]['name'],
+                 'channels':d['max_output_channels'],'default_sample_rate':d['default_samplerate']}
+                for i,d in enumerate(sd.query_devices()) if d['max_output_channels']>0]
+
     def tick(self):
         pcm,overflow=self.stream.read(512);pcm=rearrange(pcm,'t 1 -> t')
         if np.max(np.abs(pcm))>1e-5:self.last_signal=time.monotonic();self.warned_silent=False
@@ -279,9 +286,11 @@ def main():
     p.add_argument('--threads',type=int,default=1);p.add_argument('--diagnostic',action='store_true')
     p.add_argument('--profile',choices=['benchmark-compatible','owner-protected'])
     p.add_argument('--engine',choices=['ncnn','onnxruntime'])
+    p.add_argument('--wake-root',type=Path,help='Explicit independent Hey Iris companion override')
     p.add_argument('--no-audio',action='store_true',help='Disable feedback and actions, even with inherited flags')
     p.add_argument('--check',action='store_true',help='Load and verify command, wake, VAD and owner assets; no capture')
     p.add_argument('--wav',type=Path);p.add_argument('--wake',action='store_true');p.add_argument('--list-mics',action='store_true')
+    p.add_argument('--list-devices',action='store_true')
     args=p.parse_args()
     benchmark_log = None
     if os.environ.get('PCV_BENCHMARK_LOG'):
@@ -293,10 +302,13 @@ def main():
     from scripts.runtime.speaker_config import resolve_config
     settings,_=resolve_config(Path(os.environ.get('SMART_SPEAKER_ROOT',Path.cwd())),overrides={'engine':args.engine})
     profile=args.profile or settings['inference'].get('profile','benchmark-compatible')
-    if args.list_mics:
-        emit({'event':'devices','devices':AudioService(None,emit).devices()});return
+    if args.list_mics or args.list_devices:
+        discovery=AudioService(None,emit)
+        emit({'event':'devices','devices':discovery.devices(),
+              **({'outputs':discovery.output_devices()} if args.list_devices else {})});return
     engine=args.engine or ('onnxruntime' if is_epoch44(args.bundle) else settings['inference']['engine'])
     runtime=load_runtime(args.bundle,threads=args.threads,engine=engine,mode=settings['inference']['mode'],profile=profile)
+    if args.wake_root is not None:runtime.wake_root=args.wake_root.resolve()
     if profile=='benchmark-compatible' or args.no_audio:settings['actions']['enabled']=False
     owner=None
     if profile=='owner-protected':

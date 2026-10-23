@@ -9,6 +9,7 @@ from __future__ import annotations
 from copy import deepcopy
 import hashlib
 import json
+import os
 from pathlib import Path
 import time
 
@@ -71,7 +72,7 @@ class Runtime:
             raise ValueError('Unknown recognition profile')
         self.root = Path(bundle).resolve()
         self.engine, self.mode, self.profile = engine, mode, profile
-        self.wake_root = ROOT / 'artifacts/iris/wake'
+        self.wake_root = Path(os.environ.get('IRIS_WAKE_ROOT') or ROOT / 'artifacts/iris/wake').resolve()
         self.owner_root = ROOT / 'artifacts/iris/owner'
         for name, expected in FROZEN_HASHES.items():
             path = self.root / name
