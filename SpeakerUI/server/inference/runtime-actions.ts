@@ -25,9 +25,9 @@ const colors: Record<string, number[]> = { red: [255, 0, 0], blue: [0, 0, 255], 
 
 /** One dispatcher per server. Tentative/recorded events never enter dispatch. */
 export class RuntimeActions {
-  private synthetic = new SyntheticOutcomes();
+  private synthetic: SyntheticOutcomes;
   constructor(private config: { enabled: boolean; bindings: ActionBindings; profile?: string; timezone?: string; publication?: boolean }, private providers: Providers,
-    readonly store = ActionStore.memory(), private now = Date.now) {}
+    readonly store = ActionStore.memory(), private now = Date.now) { this.synthetic = new SyntheticOutcomes(store.syntheticState()); }
   syntheticState() { return this.synthetic.snapshot(); }
 
   async handle(event: Record<string, any>, beforeDispatch?: () => Promise<void>): Promise<Execution | undefined> {

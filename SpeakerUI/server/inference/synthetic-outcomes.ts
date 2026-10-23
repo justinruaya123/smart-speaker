@@ -17,7 +17,7 @@ export function provenance(source: ResultSource, accepted = false, confirmed = f
 
 /** Targets are simulated state, never observations or provider acknowledgments. */
 export class SyntheticOutcomes {
-  private state: Record<string, any> = {};
+  constructor(private state: Record<string, any> = {}) { this.state = structuredClone(state); }
   snapshot() { return structuredClone(this.state); }
   complete(command: CanonicalCommand, reason: string): Execution {
     const { intent, slots } = command;

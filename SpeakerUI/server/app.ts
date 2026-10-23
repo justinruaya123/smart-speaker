@@ -59,6 +59,7 @@ export async function createApp(config: Config, options: Options = {}) {
   };
   const broadcast = (event: object) => { for (const socket of actionClients.keys()) send(socket, event); };
   const actionState = () => ({ ...store.snapshot(), actions_enabled: actionsEnabled(), timezone:config.timezone, publication: config.publication,
+    ...(config.publication?{synthetic_state:actions.syntheticState()}:{}),
     bindings: { lights: config.publication ? { 'light.all': 'light.hue_color_lamp_1' } : config.bindings.lights, songs: Object.keys(config.bindings.songs),
       climate: config.bindings.climate?.default || null, weather: config.bindings.weather?.default || null,
       media_player: config.bindings.media_player || {}, contacts: config.publication ? ['contact.home'] : Object.keys(config.bindings.contacts || {}), messages: Boolean(config.bindings.messages?.default) } });

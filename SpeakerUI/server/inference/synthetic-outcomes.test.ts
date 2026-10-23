@@ -8,6 +8,7 @@ import { EventEmitter } from 'node:events';
 import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { ActionStore } from './action-store.js';
 
 const bindings = { lights: {}, songs: {}, climate: { default: 'climate.real_device' } };
 const event = (intent: string, slots: Record<string, any>, id = intent) => ({ event: 'command', is_final: true, session_id: 's', utterance_id: id,
@@ -103,4 +104,19 @@ test('real accepted requests retain provider provenance without claiming an obse
   assert.equal(receipt?.status, 'succeeded');
   assert.deepEqual(receipt?.provenance, { source: 'home_assistant', synthetic: false, provider_accepted: true, device_state_confirmed: false });
   assert.deepEqual(actions.syntheticState(), {});
+});
+
+test('synthetic target state hydrates from durable receipts after restart without creating an observation or replaying an action', async () => {
+  const directory=await mkdtemp(join(tmpdir(),'iris-synthetic-restart-'));
+  const cfg={enabled:true,publication:true,bindings};
+  const providers={light:forbidden,spotify:forbidden,song:forbidden,climate:forbidden};
+  try {
+    const first=new RuntimeActions(cfg,providers,await ActionStore.open(directory));
+    await first.handle(event('TEMPERATURE',{degrees:22,unit:'C'}));
+    for(let i=0;i<32;i++)await first.handle(event('TIME',{},'time-'+i));
+    const second=new RuntimeActions(cfg,providers,await ActionStore.open(directory));
+    assert.deepEqual(second.syntheticState().thermostat,{target:22,unit:'C'});
+    assert.equal(second.syntheticState().observed_temperature,undefined);
+    assert.equal(await second.handle(event('TEMPERATURE',{degrees:22,unit:'C'})),undefined);
+  }finally{await rm(directory,{recursive:true,force:true});}
 });
