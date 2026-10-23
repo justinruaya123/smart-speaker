@@ -1,0 +1,5 @@
+# Preserve exact imported historical receipt bytes, including original CRLF.
+# cr-at-eol recognizes CR as a line ending; real trailing spaces still fail.
+training-curve.json -text whitespace=cr-at-eol
+training-summary.json -text whitespace=cr-at-eol
+source-ledger.json -text whitespace=cr-at-eol

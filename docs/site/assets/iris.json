@@ -2505,7 +2505,103 @@
         "worker/gateway/UI/TTS/provider overhead"
       ]
     },
-    "desktop": null,
+    "desktop": {
+      "schema_version": 1,
+      "format": "iris-publication-measurement-v1",
+      "target": "desktop",
+      "label": "2026-10-24 product-lock adapter / not quiesced",
+      "hashes": {
+        "model.onnx": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+        "policy.json": "b9242e46fb093642a41023e8ace3c0cadc2fe51ffede512aa09e399622f355f0"
+      },
+      "hardware": {
+        "cpu_count": 16,
+        "device_model": null,
+        "machine": "AMD64",
+        "measurement_host": "desktop_host",
+        "physical_pi_measured": false,
+        "platform": "Windows-11-10.0.26200-SP0",
+        "processor": "Intel64 Family 6 Model 167 Stepping 1, GenuineIntel",
+        "python": "3.13.14",
+        "cpu": "Intel64 Family 6 Model 167 Stepping 1, GenuineIntel"
+      },
+      "timing_scope": "recognize_pcm",
+      "timing_excludes": [
+        "file reads and hashes",
+        "audio decoding",
+        "utterance duration",
+        "wake/VAD and endpoint waits",
+        "telemetry and report writing"
+      ],
+      "model_scope": "Direct VCM session only; wake/VAD, owner sessions, UI and action providers are excluded.",
+      "latency": {
+        "p50_ms": 5.3902499967080075,
+        "p95_ms": 10.56562999983725
+      },
+      "original_recordings": 1146,
+      "timed_calls": 3438,
+      "repeats": 3,
+      "receipt_path": "presentation/evidence/desktop-product.json",
+      "receipt_sha256": "181e0c489f8c695d9d4dd520524a42faf09db40df6fb0d0b95104e008a2ead21",
+      "measured_at": "2026-10-23T23:04:24.116804+00:00",
+      "measurement_not_quiesced": true,
+      "environment": {
+        "numpy": "2.5.3",
+        "onnxruntime": "1.30.0",
+        "python": "3.13.14",
+        "soundfile": "0.14.0",
+        "source": "unchanged main runtime lock; original snapshot environment not modified"
+      },
+      "accepted": {
+        "complete_command_accuracy": 0.7403545359749739,
+        "complete_command_recall": 0.6748911465892597,
+        "emitted_n": 527,
+        "exact_n": 710,
+        "exact_positive_n": 465,
+        "false_accept_n": 25,
+        "false_accept_rate": 0.09259259259259259,
+        "negative_abstention_n": 245,
+        "negative_n": 270,
+        "positive_n": 689,
+        "precision": 0.8823529411764706,
+        "reference_n": 959,
+        "rejected_positive_n": 187,
+        "scored_n": 959,
+        "unavailable_n": 0,
+        "wrong_positive_n": 37
+      },
+      "ambiguous_unscored": 187,
+      "independent_parity": {
+        "actions_enabled": false,
+        "all_recording_repeat_pairs_verified": 3438,
+        "ambiguous_references_unscored": 187,
+        "candidate_revision": "a6d9325f015872f81d7697eb6213c7d789e68d73",
+        "decoded_pcm_verified": 1146,
+        "full_typed_outputs_match_frozen_gold": true,
+        "independently_pinned_original_humans": 1146,
+        "measurement_not_quiesced": true,
+        "metrics_sha256": "e97d32799c8ba9d749706de02dc19b7d5784592ab1511ea9be57973babef21a2",
+        "model_sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+        "pcm_hash_conventions": {
+          "new_trial": "SHA256(float32le bytes), independently reconciled to original header-bound hash",
+          "original": "SHA256(ASCII pcm:f32le:16000:<samples> NUL + float32le bytes)"
+        },
+        "pi_measured": false,
+        "purpose": "Independent original-byte, decoded-PCM, cohort and frozen-decision reconciliation of the new adapter",
+        "raw_and_accepted_decisions_match_frozen_gold": true,
+        "schema_version": 1,
+        "source_revision": "3c05b3beb46f06c3108089e0d8c79474670c6cb7",
+        "trials_sha256": "cc1d8916df570ed911832c39f83cfbd0fdb900a89086ed00849dd4ac51ed5eb8",
+        "verified_at_utc": "2026-10-23T23:07:50.311633+00:00",
+        "verifier_sha256": "7e097e47ec89f0650380db8552125024f4cca13babb3693033ee84aed3f34c73",
+        "wake_or_owner_quality_claim": false,
+        "wav_bytes_verified": 1146
+      },
+      "peak_process_rss_mib": 84.6796875,
+      "resource_scope": "Whole benchmark Python process, including libraries, result storage and runtime; lifetime RSS peak is not model-only memory.",
+      "candidate_revision": "a6d9325f015872f81d7697eb6213c7d789e68d73",
+      "policy_identity_evidence": "Exact core policy bytes verified at import; the hash-bound actual adapter source pins this policy. The incoming wrapper does not itself contain a policy hash."
+    },
     "pi": null,
     "timing_scope": "recognize(PCM): validation + frontend + normalization + CPU ONNX + finite decision",
     "excludes": [

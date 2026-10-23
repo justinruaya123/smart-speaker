@@ -84,10 +84,10 @@
   function benchmark(container,run,compact=false){
     const box=document.createElement('div');box.className='benchmark-run'+(compact?' compact':'');
     box.append(text('p',run.label||'Current desktop receipt','run-label'));
-    box.append(text('p',`${run.latency.p50_ms.toFixed(2)} / ${run.latency.p95_ms.toFixed(2)} ms`,'latency'));
+    box.append(text('p',`${run.latency.p50_ms.toFixed(run.independent_parity?5:2)} / ${run.latency.p95_ms.toFixed(run.independent_parity?5:2)} ms`,'latency'));
     if(!compact&&!run.measurement_not_quiesced)box.append(text('p',`p50 / p95 · ${number(run.original_recordings)} originals · ${number(run.timed_calls)} calls`));
     if(!compact&&!run.measurement_not_quiesced&&run.hardware)box.append(text('p',`${run.hardware.cpu.replace('11th Gen Intel(R) Core(TM) ','')} · CPU / one thread`));
-    if(run.measurement_not_quiesced)box.append(text('p','Not new adapter / idle-host / end-to-end.'));
+    if(!compact&&run.measurement_not_quiesced)box.append(text('p',run.independent_parity?'Direct VCM only · not quiesced; gold parity verified.':'Not new adapter / idle-host / end-to-end.'));
     container.append(box);
   }
   function fill(){
@@ -100,12 +100,21 @@
     for(const split of ['train','dev','calibration','test','holdout'])row('#split-table',[split.toUpperCase(),number(data.datasets.splits[split].human),number(data.datasets.splits[split].synthetic)]);
     $('#recipe-line').textContent=`Seed ${data.training.recipe.seed} · 6 + 42 epochs · AdamW · ${number(data.training.optimizer_steps)} updates · ${data.training.wall_seconds.toFixed(2)} s. Normalizer: ${number(data.datasets.normalization_human_train)} human TRAIN recordings.`;
     for(const split of ['holdout','test']){const c=data.cohorts[split];row('#cohort-table',[split,`${c.selected.correct_accepted}/${c.selected.positives}`,c.selected.wrong_accepted,`${c.selected.negative_false_accepts}/${c.selected.negatives}`]);}
-    benchmark($('#desktop-results'),data.benchmarks.reference_desktop);
-    data.benchmarks.historical_desktop.forEach(r=>benchmark($('#desktop-results'),r,true));
-    if(data.benchmarks.desktop)benchmark($('#desktop-results'),data.benchmarks.desktop);
+    const current=data.benchmarks.desktop;
+    if(current){
+      benchmark($('#desktop-results'),current);
+      benchmark($('#desktop-results'),data.benchmarks.reference_desktop,true);
+      const history=document.createElement('div');history.className='history-compact';
+      data.benchmarks.historical_desktop.forEach((r,i)=>history.append(text('p',`${i===0?'Historical original':'Historical repeat v2'}: ${r.latency.p50_ms.toFixed(2)} / ${r.latency.p95_ms.toFixed(2)} ms`)));
+      $('#desktop-results').append(history);
+    }else{
+      benchmark($('#desktop-results'),data.benchmarks.reference_desktop);
+      data.benchmarks.historical_desktop.forEach(r=>benchmark($('#desktop-results'),r,true));
+    }
     if(data.benchmarks.pi)$('#pi-result').textContent=`${data.benchmarks.pi.latency.p50_ms.toFixed(2)} / ${data.benchmarks.pi.latency.p95_ms.toFixed(2)} ms · ${data.benchmarks.pi.hardware.device}`;
     const reference=data.benchmarks.reference_desktop;
-    $('#evidence-foot').textContent=`PC: i7-11700 / Windows 11 / Python ${reference.hardware.python} / one thread · ${number(reference.original_recordings)} originals × ${reference.repeats} = ${number(reference.timed_calls)} calls. Excludes speech/decode/wake/VAD/UI/audio/providers. Ambiguous 2/185 unscored; exact wording 58/62 and 173/232; 21 definitions lack exact human references.`;
+    const environment=current?`Product: Windows 11 / Python ${current.environment.python} / NumPy ${current.environment.numpy} / ORT ${current.environment.onnxruntime} · peak process RSS ${current.peak_process_rss_mib} MiB.`:`Reference PC: i7-11700 / Windows 11 / Python ${reference.hardware.python}.`;
+    $('#evidence-foot').textContent=`${environment} One thread · ${number(reference.original_recordings)} originals × ${reference.repeats} = ${number(reference.timed_calls)} calls. Excludes speech/decode/wake/VAD/owner/UI/audio/providers. Ambiguous 187 unscored; exact wording 58/62 and 173/232; 21 definitions lack exact human references.`;
     chart();useCases();
   }
   $$('[data-go]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();go(chapters.findIndex(s=>s.id===a.dataset.go));}));

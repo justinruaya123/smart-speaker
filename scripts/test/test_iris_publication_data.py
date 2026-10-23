@@ -35,7 +35,10 @@ class PublicationDataTests(unittest.TestCase):
         self.assertEqual(data['datasets']['splits']['train'], {'human': 1889, 'synthetic': 21426})
         self.assertEqual(data['datasets']['normalization_human_train'], 1889)
         self.assertIsNone(data['benchmarks']['pi'])
-        self.assertIsNone(data['benchmarks']['desktop'])
+        self.assertIsNotNone(data['benchmarks']['desktop'], 'attach actual current product receipt')
+        self.assertTrue(data['benchmarks']['desktop']['independent_parity']['full_typed_outputs_match_frozen_gold'])
+        self.assertEqual(data['benchmarks']['desktop']['original_recordings'], 1146)
+        self.assertEqual(data['benchmarks']['desktop']['timed_calls'], 3438)
         self.assertFalse(data['model']['qualified'])
         commands = [r['command'] for r in data['commands']]
         for case in data['use_cases']:

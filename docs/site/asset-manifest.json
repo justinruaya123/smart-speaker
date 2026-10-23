@@ -110,12 +110,12 @@
       "sha256": "44e57167536d68989c39ed6fe9e655e233d203def27d0bbda2c028cdeee302b1"
     },
     "assets/deck.css": {
-      "bytes": 11276,
-      "sha256": "854c07724ca56a8404fc52f6458fe472c04add5ab2858fde75da6094ae02ab68"
+      "bytes": 11475,
+      "sha256": "9f46342cfd5d1041e9ab611932d3f83b579f2ecc32c5e3bb207618bd4f05694a"
     },
     "assets/deck.js": {
-      "bytes": 11740,
-      "sha256": "9475ad6e0c551f5e3557a76f4481fcdbd560d1f17c5ef9d8a6dff1e1ea514802"
+      "bytes": 12596,
+      "sha256": "3ec1d5c35b85813ffa6d068bacbd77d4250797c19bd5b869cf15ec9b71764168"
     },
     "assets/iris-mark.svg": {
       "bytes": 244,
@@ -130,8 +130,8 @@
       "sha256": "f6c5c7f8551e26745c24dc847be0b989eb39f1dccef9803700e27f6103dfacaf"
     },
     "assets/iris.json": {
-      "bytes": 60910,
-      "sha256": "f74af5a424a565a2f6ed69812bbde49eafde408d7fbc5c6eea5f9f9353321461"
+      "bytes": 65330,
+      "sha256": "158ff0dfa969e9ef79b42297889814d9ed97ecc42cdff0930104ff068c852f00"
     },
     "assets/notices/reveal-LICENSE.txt": {
       "bytes": 1109,
@@ -146,8 +146,8 @@
       "sha256": "4ed6fa8e987e58df2727c42641639282f88b65a009234cf74779a83489b00cf9"
     },
     "index.html": {
-      "bytes": 12778,
-      "sha256": "e41378bb112b9ccab4ddc0abec9f42a5bd554e3833f8d7a2c973080d236b70ab"
+      "bytes": 12713,
+      "sha256": "0bd82e1bc883c37a6ebb879b831e0631496a9d85646859d6fb3d7beb3e47dce3"
     }
   }
 }

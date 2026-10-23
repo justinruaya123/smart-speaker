@@ -203,9 +203,14 @@ def build_publication(root: Path = ROOT, desktop: Path | None = None, pi: Path |
                        'pi_attachment': 'Same graph/policy, named Pi hardware, actual receipt and matching timing scope required.'},
     }
     # Optional current receipts use a strict versioned bridge, not fuzzy field inference.
+    if desktop is None and (root / 'presentation/evidence/desktop-measurement.json').is_file():
+        desktop = root / 'presentation/evidence/desktop-measurement.json'
     for target, receipt_path in [('desktop', desktop), ('pi', pi)]:
         if receipt_path is not None:
-            result['benchmarks'][target] = validate_measurement(load(receipt_path), target)
+            measurement = load(receipt_path)
+            if measurement.get('receipt_sha256'):
+                checked(root / measurement['receipt_path'], measurement['receipt_sha256'])
+            result['benchmarks'][target] = validate_measurement(measurement, target)
     return result
 
 

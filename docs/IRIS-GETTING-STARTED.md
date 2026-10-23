@@ -87,7 +87,7 @@ python benchmark.py --model-choice epoch44 \
 
 `PATH`, `ROOT` and `NEWDIR` are placeholders to replace with actual paths. The output directory must not already exist. Three timing repeats do not triple acoustic denominators. The driver uses the original graph/policy; it must emit metrics/trials with source/model/policy hashes, hardware, timing scope, raw/accepted complete commands, wrong/negative accepts and ambiguous exclusions. It never captures, plays audio, calls providers, chooses thresholds or fits a model.
 
-The original preserved PC repeat is historical 5.36/8.69 ms p50/p95, not the current runtime latency. The separately measured2026-10-24 reference-driver run is 9.34/15.34 ms **under unquiesced publication load**, not a new-adapter, idle-host or end-to-end result. Current adapter measurements require their own receipt. Pi remains unmeasured.
+The original preserved PC repeat is historical 5.36/8.69 ms p50/p95, not the current runtime latency. The separately measured2026-10-24 reference-driver run is 9.34/15.34 ms **under unquiesced publication load**, not a new-adapter, idle-host or end-to-end result. Current adapter timing has its own [audited product-lock receipt](../presentation/evidence/desktop-product.json): p50 **5.3902499967080075 ms**, p95 **10.56562999983725 ms**, peak whole-process RSS **84.6796875 MiB**, NumPy2.5.3 / ORT1.30.0. It was not quiesced and measures direct VCM only, not wake/owner/UI/providers or human interaction latency. All1,146 WAV/PCM identities and3,438 typed decisions matched frozen gold in the independent receipt. This does not pass the failed wake gate. Pi remains unmeasured.
 
 ## Reproduce a fit: separate scientific task
 

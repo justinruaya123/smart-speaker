@@ -121,7 +121,7 @@ Exact metadata-wording subsets:58/62 and 173/232, not full 93-wording human cove
 | Final integrated adapter / idle-host interaction |Separate receipt required; not inferred here|
 | Raspberry Pi |**Not measured — `pi:null`**|
 
-The three named runs use Intel Core i7-11700/Windows 11/Python 3.13.14, CPUExecutionProvider, one ONNX/frontend BLAS thread,1,146 original human recordings ×3 =3,438 calls. Repeats do not inflate accuracy denominators. Scope: PCM validation, frontend, normalization, ONNX and finite decision; **excludes** speech, decode, wake/VAD waiting, worker/gateway/UI, audio and providers. The new reference run is not quiesced, not the new adapter and not end-to-end latency. No unrelated256-DEV memory probe is called full-PC memory. [Receipts/hashes](docs/site/assets/iris.json).
+The historical and original-reference runs use Intel Core i7-11700/Windows 11/Python 3.13.14, CPUExecutionProvider, one ONNX/frontend BLAS thread; all named runs use 1,146 original human recordings ×3 =3,438 calls. Repeats do not inflate accuracy denominators. Scope: PCM validation, frontend, normalization, ONNX and finite decision; **excludes** speech, decode, wake/VAD waiting, worker/gateway/UI, audio and providers. The new reference run is not quiesced, not the new adapter and not end-to-end latency. No unrelated256-DEV memory probe is called full-PC memory. [Receipts/hashes](docs/site/assets/iris.json).
 
 ## Limits and real versus synthetic
 
@@ -170,7 +170,16 @@ def render(data):
         output = item['output']
         parts.append(f"{commands} → **{output['badge']}: {output['headline']}.** {output['detail']}\n\n")
     parts.append('</details>\n')
-    parts.append(SUFFIX)
+    suffix = SUFFIX
+    desktop = data['benchmarks']['desktop']
+    if desktop:
+        latency = desktop['latency']
+        current = f"| Current adapter, product lock (**not quiesced**) | {latency['p50_ms']} / {latency['p95_ms']} ms |"
+        description = f"\n\nCurrent environment: NumPy {desktop['environment']['numpy']} / ONNX Runtime {desktop['environment']['onnxruntime']}; peak whole-process RSS **{desktop['peak_process_rss_mib']} MiB**, not model-only RAM. [Actual audited receipt](presentation/evidence/desktop-product.json): all 1,146 WAV/decoded-PCM identities and 3,438 complete typed outputs independently matched frozen gold. Direct VCM only; wake/owner/UI/providers and speaking time excluded. This does not improve the failed wake gate."
+        suffix = suffix.replace('| Final integrated adapter / idle-host interaction |Separate receipt required; not inferred here|', current)
+        pi_row = '| Raspberry Pi |**Not measured — `pi:null`**|'
+        suffix = suffix.replace(pi_row, pi_row + description)
+    parts.append(suffix)
     return ''.join(parts)
 
 
