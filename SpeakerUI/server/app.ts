@@ -24,8 +24,16 @@ import { isRecord } from '../shared/protocol.js';
 import { randomUUID } from 'node:crypto';
 import { provenance } from './inference/synthetic-outcomes.js';
 import { createOpenWeather } from './integrations/openweather.js';
+import { ActionFeedback } from './inference/feedback.js';
+import type { EventEmitter } from 'node:events';
 
-interface Options { staticDir?: string; fetcher?: typeof fetch; inferenceFactory?: InferenceFactory; haSocketFactory?: (url: URL) => HomeAssistantSocket }
+export interface RuntimeHost extends EventEmitter {
+  status(): Record<string, any>;
+  current(): Record<string, any> | undefined;
+  request(op: string, payload?: Record<string, any>): Promise<Record<string, any>>;
+  close(): Promise<void>;
+}
+interface Options { staticDir?: string; fetcher?: typeof fetch; inferenceFactory?: InferenceFactory; haSocketFactory?: (url: URL) => HomeAssistantSocket; runtimeFactory?: (config: NonNullable<Config['runtime']>) => RuntimeHost }
 
 export async function createApp(config: Config, options: Options = {}) {
   const https = config.tls ? { cert: await readFile(config.tls.cert), key: await readFile(config.tls.key) } : undefined;
@@ -37,7 +45,7 @@ export async function createApp(config: Config, options: Options = {}) {
   const spotify = createSpotify(config.spotify, config.dataDir, fetcher);
   const openweather = createOpenWeather(config.openweather, fetcher);
   const store = await ActionStore.open(config.dataDir);
-  const runtime = config.runtime ? new PythonRuntime(config.runtime) : undefined;
+  const runtime = config.runtime ? (options.runtimeFactory ? options.runtimeFactory(config.runtime) : new PythonRuntime(config.runtime)) : undefined;
   const actionClients = new Map<import('ws').default, string>();
   const localPending = new Map<string,{owner:string;timer:NodeJS.Timeout}>();
   let localOwner: string | undefined, localCurrent: string | undefined;
@@ -57,11 +65,11 @@ export async function createApp(config: Config, options: Options = {}) {
   const publishExecution = (execution: Execution, sessionId?: string) => {
     if (execution.local_media && execution.status==='requested' && localOwner && !localPending.has(execution.id)) {
       const timer=setTimeout(()=>{localPending.delete(execution.id);const previous=store.receipt(execution.id);
-        if(previous?.status==='requested')void store.finish(execution.id,{...previous,status:'unknown',detail:'The local player did not confirm playback. This action will not be retried.'}).then(value=>publishExecution(value)).catch(()=>{});
+        if(previous?.status==='requested')void store.finish(execution.id,{...previous,status:'unknown',detail:'The local player did not confirm playback. This action will not be retried.'}).then(async value=>{publishExecution(value);await feedback?.complete(value);}).catch(()=>{});
       },15000);timer.unref();localPending.set(execution.id,{owner:localOwner,timer});
     }
     if (execution.status!=='requested') {clearTimeout(localPending.get(execution.id)?.timer);localPending.delete(execution.id);}
-    const event = { event: 'execution', session_id: sessionId, utterance_id: execution.utterance_id, execution };
+    const event = { event: 'execution', session_id: sessionId || execution.session_id, utterance_id: execution.utterance_id, execution };
     broadcast(event); runtime?.emit('action', event);
   };
   const actions=new RuntimeActions({enabled:config.actionsEnabled,bindings:config.bindings,profile:config.runtime?.profile,timezone:config.timezone,publication:config.publication},{
@@ -90,11 +98,20 @@ export async function createApp(config: Config, options: Options = {}) {
       return { action: command.intent, slots: command.slots, ...(localCurrent ? { track: local.find(localCurrent), url: `/api/media/local/${localCurrent}` } : {}) };
     },
   },store);
+  const feedback = config.publication && runtime ? new ActionFeedback(actions,{
+    play:async(cue_id,utterance_id)=>{
+      if(runtime.status().capabilities?.feedback===true)await runtime.request('feedback',{cue_id,utterance_id});
+    },
+    publish:publishExecution,
+    audioError:message=>{const event={event:'feedback_error',message};broadcast(event);runtime.emit('action',event);},
+  }) : undefined;
   let actionChain=Promise.resolve();
   runtime?.on('event',event=>{
     if(event.event!=='command')return;
     actionChain=actionChain.then(async()=>{
-      const execution=await actions.handle(event);
+      const guarded=config.publication?{...event,actions_enabled:event.actions_enabled===true&&runtimeEnabled()}:event;
+      if(feedback){await feedback.run(guarded);return;}
+      const execution=await actions.handle(guarded);
       if(execution)publishExecution(execution,event.session_id);
     }).catch(()=>broadcast({event:'action_error',message:'The action could not be safely recorded. It was not dispatched or retried.'}));
   });
@@ -170,7 +187,7 @@ export async function createApp(config: Config, options: Options = {}) {
       actionClients.delete(socket);
       if (localOwner === clientId) {
         for(const [id,pending] of localPending)if(pending.owner===clientId){clearTimeout(pending.timer);localPending.delete(id);const previous=store.receipt(id);
-          if(previous?.status==='requested')void store.finish(id,{...previous,status:'unknown',detail:'The local player disconnected before confirming playback. This action will not be retried.'}).then(value=>publishExecution(value)).catch(()=>{});
+          if(previous?.status==='requested')void store.finish(id,{...previous,status:'unknown',detail:'The local player disconnected before confirming playback. This action will not be retried.'}).then(async value=>{publishExecution(value);await feedback?.complete(value);}).catch(()=>{});
         }
         localOwner = config.bindings.media_player?.provider === 'local' ? actionClients.values().next().value : undefined;
         for (const [other, id] of actionClients) send(other, { event: 'player_role', local_player: id === localOwner });
@@ -195,7 +212,7 @@ export async function createApp(config: Config, options: Options = {}) {
     const existing = store.receipt(req.body.id);
     if (!existing?.local_media || existing.status !== 'requested') return reply.code(409).send({ error:'playback_already_resolved' });
     const execution = await store.finish(req.body.id,{ ...existing,status:String(req.body.status),detail:req.body.status==='succeeded'?'The local browser confirmed the playback action.':'The browser could not complete playback. Enable browser audio and choose the song again explicitly.' });
-    publishExecution(execution); return execution;
+    publishExecution(execution); await feedback?.complete(execution); return execution;
   });
   if (runtime) {
     app.get('/ws/runtime', { websocket: true }, (socket, req) => {

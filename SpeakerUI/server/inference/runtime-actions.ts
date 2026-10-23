@@ -30,13 +30,13 @@ export class RuntimeActions {
     readonly store = ActionStore.memory(), private now = Date.now) {}
   syntheticState() { return this.synthetic.snapshot(); }
 
-  async handle(event: Record<string, any>): Promise<Execution | undefined> {
+  async handle(event: Record<string, any>, beforeDispatch?: () => Promise<void>): Promise<Execution | undefined> {
     if (event.event !== 'command' || event.is_final === false || event.final === false || !event.utterance_id) return;
     const profile=this.config.profile || event.profile;
     return this.dispatch(`${event.session_id}:${event.utterance_id}`, event.utterance_id,
       event.source === 'microphone', event.actions_enabled !== false && profile !== 'benchmark-compatible',
       profile === 'owner-protected' && event.owner_result?.accepted !== true
-        ? { accepted:false,reason:event.owner_result?.reason || 'owner_check_required' } : event.application);
+        ? { accepted:false,reason:event.owner_result?.reason || 'owner_check_required' } : event.application, beforeDispatch);
   }
 
   /** Explicit same-origin touch requests use this entry point, never a client-provided inference event. */
@@ -47,7 +47,7 @@ export class RuntimeActions {
     return result ?? (previous ? { ...previous, replayed: true } : undefined);
   }
 
-  private async dispatch(id: string, utteranceId: string, live: boolean, runtimeEnabled: boolean, decision: any): Promise<Execution | undefined> {
+  private async dispatch(id: string, utteranceId: string, live: boolean, runtimeEnabled: boolean, decision: any, beforeDispatch?: () => Promise<void>): Promise<Execution | undefined> {
     const outcome = (status: string, detail: string, extra: Record<string, any> = {}): Execution => ({ id, status, detail, utterance_id: utteranceId, ...extra });
     if (!live) return outcome('preview', 'Recorded WAVs and fixtures do not execute actions.');
     if (!this.config.enabled || !runtimeEnabled) return outcome('disabled', 'Actions are disabled by configuration or the recognizer.');
@@ -55,6 +55,7 @@ export class RuntimeActions {
     const command = canonicalCommand(decision.command);
     if (!command) return outcome('rejected', 'Invalid canonical command or slots.');
     if (!await this.store.claim(id, command)) return;
+    await beforeDispatch?.();
     let result: Execution;
     const canSimulate = ['LIGHT_ON','LIGHT_OFF','BRIGHTNESS','COLOR','PLAY_MUSIC','PAUSE','STOP','NEXT','VOLUME','CALL','MESSAGE'].includes(command.intent);
     try {
