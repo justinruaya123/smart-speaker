@@ -39,3 +39,8 @@ submission/models/optionb-tiny/** -text
 submission/checkpoints/optionb-tiny-selected.pt -text
 submission/optionb-tiny/** -text
 experiments/optionb-epoch44-main-v1/** -text
+
+# Pre-baked host cues are byte-bound; never normalize PCM/MP3 or the manifest.
+submission/feedback/*.mp3 binary
+submission/feedback/*.wav binary
+submission/feedback/manifest.json -text

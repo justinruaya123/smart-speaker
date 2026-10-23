@@ -1,0 +1,219 @@
+{
+  "build": {
+    "edge_tts_version": "7.3.1",
+    "ffmpeg_version": "ffmpeg version 4.2.11 Copyright (c) 2000-2025 the FFmpeg developers",
+    "source": "scripts/build_iris_feedback.py",
+    "source_sha256": "e9c4592ef8169ed0c71a5ccda98da4c4ad681ea05277ebbfd86776c4482a3cfb",
+    "speech_service": "Microsoft Edge online TTS (build time only)",
+    "voice_available_at_build": "en-US-AriaNeural"
+  },
+  "channels": 1,
+  "created_utc": "2026-10-23T22:27:38.834753+00:00",
+  "cues": {
+    "failure": {
+      "duration_seconds": 0.23,
+      "generator": {
+        "amplitude": 0.1,
+        "fade_ms": 10,
+        "gap_ms": 30,
+        "name": "iris_tone",
+        "tones_hz_ms": [
+          [
+            440,
+            100
+          ],
+          [
+            220,
+            100
+          ]
+        ],
+        "version": "1"
+      },
+      "mp3": {
+        "bytes": 2925,
+        "path": "failure.mp3",
+        "sha256": "1d818a4c11338f56a625e02c7bfa642a465f8b76dcc78067f6bc5306c77701b4"
+      },
+      "pcm_format": "s16le",
+      "pcm_sha256": "33267eb9e008d3491d2d59498d11801fa7e5a663c01c93868c23ddd61acfde38",
+      "peak": 0.095001220703125,
+      "samples": 3680,
+      "wav": {
+        "bytes": 7438,
+        "path": "failure.wav",
+        "sha256": "c9e2a7441e19c45421eae3fcfe93b09b83e6aaabedccf43c18145f3dd271c354"
+      }
+    },
+    "intent": {
+      "duration_seconds": 0.08,
+      "generator": {
+        "amplitude": 0.1,
+        "fade_ms": 10,
+        "gap_ms": 0,
+        "name": "iris_tone",
+        "tones_hz_ms": [
+          [
+            880,
+            80
+          ]
+        ],
+        "version": "1"
+      },
+      "mp3": {
+        "bytes": 1773,
+        "path": "intent.mp3",
+        "sha256": "31716783630e5c8038f6e5242fdb9d87eec8bfbe9b18cfa397fa16f1b50df6a5"
+      },
+      "pcm_format": "s16le",
+      "pcm_sha256": "cfca663e4c10fe14b77d44fbda7a4d0f326575014a6a52bd6acb88330e00c233",
+      "peak": 0.095001220703125,
+      "samples": 1280,
+      "wav": {
+        "bytes": 2638,
+        "path": "intent.wav",
+        "sha256": "6790423256e8e309d792bfed0198355b3ef984b216ff5c67a9b68a5f5c7208ad"
+      }
+    },
+    "success": {
+      "duration_seconds": 0.19,
+      "generator": {
+        "amplitude": 0.1,
+        "fade_ms": 10,
+        "gap_ms": 30,
+        "name": "iris_tone",
+        "tones_hz_ms": [
+          [
+            660,
+            80
+          ],
+          [
+            990,
+            80
+          ]
+        ],
+        "version": "1"
+      },
+      "mp3": {
+        "bytes": 2637,
+        "path": "success.mp3",
+        "sha256": "c8ba4e6fbf353c0c3f4f81e0298310b5f0c9418ed0ed8177f00ab56fdcb4be6d"
+      },
+      "pcm_format": "s16le",
+      "pcm_sha256": "c719f75cfb24bf6f752b5d855e8b2ec8068ede70890a6ee80ce12012f197a6d9",
+      "peak": 0.09503173828125,
+      "samples": 3040,
+      "wav": {
+        "bytes": 6158,
+        "path": "success.wav",
+        "sha256": "7a44fb4f38913ed4f6c685e08d8a367a159eb5769f9509aa35c9f14d7a76c6b0"
+      }
+    },
+    "wake_here": {
+      "duration_seconds": 1.872,
+      "generator": {
+        "name": "edge-tts",
+        "non_cloned_voice": true,
+        "rate": "-10%",
+        "version": "7.3.1",
+        "volume": "-20%"
+      },
+      "mp3": {
+        "bytes": 15885,
+        "path": "wake_here.mp3",
+        "sha256": "1fa06ce7960997e1d29bec31ce7683bb66079d54c703000c38abbbbdd6738e51"
+      },
+      "pcm_format": "s16le",
+      "pcm_sha256": "5b210c9c9a46883f982b56b0b69e64b2041579273da8cc3ef192cbe13b8ac9eb",
+      "peak": 0.20977783203125,
+      "samples": 29952,
+      "text": "Here",
+      "voice": "en-US-AriaNeural",
+      "wav": {
+        "bytes": 59982,
+        "path": "wake_here.wav",
+        "sha256": "2689fa079d25d4a8fbf54b8e2bf10a5037ea9f6d935008fcb3df5fcb65f32273"
+      }
+    },
+    "wake_hmm": {
+      "duration_seconds": 1.872,
+      "generator": {
+        "name": "edge-tts",
+        "non_cloned_voice": true,
+        "rate": "-10%",
+        "version": "7.3.1",
+        "volume": "-20%"
+      },
+      "mp3": {
+        "bytes": 15885,
+        "path": "wake_hmm.mp3",
+        "sha256": "5367309bf63e8a545d773ac5a5fdb15e93acb0f8899b7469d00d030140510be2"
+      },
+      "pcm_format": "s16le",
+      "pcm_sha256": "b2cc7d6da5c5b0bfcb3342c57b71ed7573fe4a265c11614ffe8eb97bdcba13fe",
+      "peak": 0.1602783203125,
+      "samples": 29952,
+      "text": "Hmm",
+      "voice": "en-US-AriaNeural",
+      "wav": {
+        "bytes": 59982,
+        "path": "wake_hmm.wav",
+        "sha256": "e315bee5441464c14c7dbf928383235e15d7369d8609d4fed1515f477e998d3e"
+      }
+    },
+    "wake_yeah": {
+      "duration_seconds": 1.872,
+      "generator": {
+        "name": "edge-tts",
+        "non_cloned_voice": true,
+        "rate": "-10%",
+        "version": "7.3.1",
+        "volume": "-20%"
+      },
+      "mp3": {
+        "bytes": 15885,
+        "path": "wake_yeah.mp3",
+        "sha256": "27159ab8e494a0e6ca556cbb90d094316e982aaa5cec69b0b46bb84459fdda0d"
+      },
+      "pcm_format": "s16le",
+      "pcm_sha256": "bd9ceb19ceef7c2020c5bc5582beb70d9da88a811ba2cf4503e6f0df3458049c",
+      "peak": 0.19586181640625,
+      "samples": 29952,
+      "text": "Yeah",
+      "voice": "en-US-AriaNeural",
+      "wav": {
+        "bytes": 59982,
+        "path": "wake_yeah.wav",
+        "sha256": "a41e99e5c6fdcabb752aa7c80947d701eaec889c39d5660e1a54eb82a56368ef"
+      }
+    },
+    "wake_yes": {
+      "duration_seconds": 1.872,
+      "generator": {
+        "name": "edge-tts",
+        "non_cloned_voice": true,
+        "rate": "-10%",
+        "version": "7.3.1",
+        "volume": "-20%"
+      },
+      "mp3": {
+        "bytes": 15885,
+        "path": "wake_yes.mp3",
+        "sha256": "354f3dde1e65c4a9fb89e2d54e66a4669770a26109ca0d5d0d1827688954c21a"
+      },
+      "pcm_format": "s16le",
+      "pcm_sha256": "4b47821744cb79ea3f4e1d5cde6b18770a7b834572deb130e19246d344f09c0d",
+      "peak": 0.27008056640625,
+      "samples": 29952,
+      "text": "Yes",
+      "voice": "en-US-AriaNeural",
+      "wav": {
+        "bytes": 59982,
+        "path": "wake_yes.wav",
+        "sha256": "8c213d1b1f8717b8820556bfce8187bffdd5aa8401778d47cd7ba690136654b9"
+      }
+    }
+  },
+  "playback_format": "predecoded_pcm16_wav",
+  "sample_rate": 16000,
+  "schema_version": 1
+}
