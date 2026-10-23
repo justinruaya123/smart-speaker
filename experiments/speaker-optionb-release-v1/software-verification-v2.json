@@ -1,0 +1,31 @@
+{
+  "actions_enabled": false,
+  "committed": false,
+  "format": "optionb-scoped-software-verification-v2",
+  "four_review_findings": "R1-R4 corrected, regression-tested and independently closed; see independent-review-v2.json",
+  "fresh_unseen_speaker_check_completed": false,
+  "frozen_input_bindings": 51,
+  "installed": false,
+  "live_microphone_completed": false,
+  "native_ui_original_human_replays": 96,
+  "original_human_adapter_replays": 1146,
+  "original_v1_source_protocol_and_receipts_preserved": true,
+  "physical_pi_completed": false,
+  "production_frontend_backend_build": "passed",
+  "promoted": false,
+  "pushed": false,
+  "python_tests": {
+    "deselected": 1,
+    "passed": 68,
+    "reason": "No model fitting in scope; existing optimizer fixture deselected"
+  },
+  "speakerui_tests": {
+    "failed": 0,
+    "passed": 115
+  },
+  "speakerui_typecheck": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "supersedes_for_verification": "software-verification.json"
+}

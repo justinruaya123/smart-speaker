@@ -1,0 +1,107 @@
+case_id,prompt,purpose,prompt_command,audio_gold_status
+B1-001,Play music,supported_wording,"{""intent"": ""PLAY_MUSIC"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-002,Start music,supported_wording,"{""intent"": ""PLAY_MUSIC"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-003,Play some music,supported_wording,"{""intent"": ""PLAY_MUSIC"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-004,Weather,supported_wording,"{""intent"": ""WEATHER"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-005,What's the weather?,supported_wording,"{""intent"": ""WEATHER"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-006,Tell me the weather,supported_wording,"{""intent"": ""WEATHER"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-007,Time,supported_wording,"{""intent"": ""TIME"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-008,What time is it?,supported_wording,"{""intent"": ""TIME"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-009,Tell me the time,supported_wording,"{""intent"": ""TIME"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-010,Lights on,supported_wording,"{""intent"": ""LIGHT_ON"", ""slots"": {""light_id"": ""light.all""}}",not_recorded_not_adjudicated
+B1-011,Power on the lights,supported_wording,"{""intent"": ""LIGHT_ON"", ""slots"": {""light_id"": ""light.all""}}",not_recorded_not_adjudicated
+B1-012,Turn on the lights,supported_wording,"{""intent"": ""LIGHT_ON"", ""slots"": {""light_id"": ""light.all""}}",not_recorded_not_adjudicated
+B1-013,Lights out,supported_wording,"{""intent"": ""LIGHT_OFF"", ""slots"": {""light_id"": ""light.all""}}",not_recorded_not_adjudicated
+B1-014,Kill the lights,supported_wording,"{""intent"": ""LIGHT_OFF"", ""slots"": {""light_id"": ""light.all""}}",not_recorded_not_adjudicated
+B1-015,Shut off the lights,supported_wording,"{""intent"": ""LIGHT_OFF"", ""slots"": {""light_id"": ""light.all""}}",not_recorded_not_adjudicated
+B1-016,Pause,supported_wording,"{""intent"": ""PAUSE"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-017,Pause audio,supported_wording,"{""intent"": ""PAUSE"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-018,Pause song,supported_wording,"{""intent"": ""PAUSE"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-019,Stop,supported_wording,"{""intent"": ""STOP"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-020,Stop playing,supported_wording,"{""intent"": ""STOP"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-021,End playback,supported_wording,"{""intent"": ""STOP"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-022,Next song,supported_wording,"{""intent"": ""NEXT"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-023,Skip song,supported_wording,"{""intent"": ""NEXT"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-024,Play next song,supported_wording,"{""intent"": ""NEXT"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-025,Volume up,supported_wording,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""up""}}",not_recorded_not_adjudicated
+B1-026,Increase the volume,supported_wording,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""up""}}",not_recorded_not_adjudicated
+B1-027,Turn the volume up,supported_wording,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""up""}}",not_recorded_not_adjudicated
+B1-028,Volume down,supported_wording,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""down""}}",not_recorded_not_adjudicated
+B1-029,Lower the volume,supported_wording,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""down""}}",not_recorded_not_adjudicated
+B1-030,Turn the volume down,supported_wording,"{""intent"": ""VOLUME"", ""slots"": {""operation"": ""down""}}",not_recorded_not_adjudicated
+B1-031,Call,supported_wording,"{""intent"": ""CALL"", ""slots"": {""contact_id"": ""contact.home""}}",not_recorded_not_adjudicated
+B1-032,Make a call,supported_wording,"{""intent"": ""CALL"", ""slots"": {""contact_id"": ""contact.home""}}",not_recorded_not_adjudicated
+B1-033,Make a phone call,supported_wording,"{""intent"": ""CALL"", ""slots"": {""contact_id"": ""contact.home""}}",not_recorded_not_adjudicated
+B1-034,Message,supported_wording,"{""intent"": ""MESSAGE"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-035,Send a message,supported_wording,"{""intent"": ""MESSAGE"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-036,Send my message,supported_wording,"{""intent"": ""MESSAGE"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-037,Reminders,supported_wording,"{""intent"": ""LIST_REMINDERS"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-038,Show my reminders,supported_wording,"{""intent"": ""LIST_REMINDERS"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-039,List my reminders,supported_wording,"{""intent"": ""LIST_REMINDERS"", ""slots"": {}}",not_recorded_not_adjudicated
+B1-040,Timer ten seconds,supported_wording,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 10}}",not_recorded_not_adjudicated
+B1-041,Timer thirty seconds,supported_wording,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 30}}",not_recorded_not_adjudicated
+B1-042,Timer one minute,supported_wording,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 60}}",not_recorded_not_adjudicated
+B1-043,Countdown for ten seconds,supported_wording,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 10}}",not_recorded_not_adjudicated
+B1-044,Countdown for thirty seconds,supported_wording,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 30}}",not_recorded_not_adjudicated
+B1-045,Countdown for one minute,supported_wording,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 60}}",not_recorded_not_adjudicated
+B1-046,Start a timer for ten seconds,supported_wording,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 10}}",not_recorded_not_adjudicated
+B1-047,Start a timer for thirty seconds,supported_wording,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 30}}",not_recorded_not_adjudicated
+B1-048,Start a timer for one minute,supported_wording,"{""intent"": ""TIMER"", ""slots"": {""duration_seconds"": 60}}",not_recorded_not_adjudicated
+B1-049,Alarm six a m,supported_wording,"{""intent"": ""ALARM"", ""slots"": {""time"": ""06:00"", ""timezone"": ""Asia/Manila""}}",not_recorded_not_adjudicated
+B1-050,Alarm eight a m,supported_wording,"{""intent"": ""ALARM"", ""slots"": {""time"": ""08:00"", ""timezone"": ""Asia/Manila""}}",not_recorded_not_adjudicated
+B1-051,Alarm nine p m,supported_wording,"{""intent"": ""ALARM"", ""slots"": {""time"": ""21:00"", ""timezone"": ""Asia/Manila""}}",not_recorded_not_adjudicated
+B1-052,Wake me up at six a m,supported_wording,"{""intent"": ""ALARM"", ""slots"": {""time"": ""06:00"", ""timezone"": ""Asia/Manila""}}",not_recorded_not_adjudicated
+B1-053,Wake me up at eight a m,supported_wording,"{""intent"": ""ALARM"", ""slots"": {""time"": ""08:00"", ""timezone"": ""Asia/Manila""}}",not_recorded_not_adjudicated
+B1-054,Wake me up at nine p m,supported_wording,"{""intent"": ""ALARM"", ""slots"": {""time"": ""21:00"", ""timezone"": ""Asia/Manila""}}",not_recorded_not_adjudicated
+B1-055,Set an alarm for six a m,supported_wording,"{""intent"": ""ALARM"", ""slots"": {""time"": ""06:00"", ""timezone"": ""Asia/Manila""}}",not_recorded_not_adjudicated
+B1-056,Set an alarm for eight a m,supported_wording,"{""intent"": ""ALARM"", ""slots"": {""time"": ""08:00"", ""timezone"": ""Asia/Manila""}}",not_recorded_not_adjudicated
+B1-057,Set an alarm for nine p m,supported_wording,"{""intent"": ""ALARM"", ""slots"": {""time"": ""21:00"", ""timezone"": ""Asia/Manila""}}",not_recorded_not_adjudicated
+B1-058,Temperature eighteen degrees,supported_wording,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 18, ""unit"": ""C""}}",not_recorded_not_adjudicated
+B1-059,Temperature twenty two degrees,supported_wording,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 22, ""unit"": ""C""}}",not_recorded_not_adjudicated
+B1-060,Temperature twenty six degrees,supported_wording,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 26, ""unit"": ""C""}}",not_recorded_not_adjudicated
+B1-061,Change the temperature to eighteen degrees,supported_wording,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 18, ""unit"": ""C""}}",not_recorded_not_adjudicated
+B1-062,Change the temperature to twenty two degrees,supported_wording,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 22, ""unit"": ""C""}}",not_recorded_not_adjudicated
+B1-063,Change the temperature to twenty six degrees,supported_wording,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 26, ""unit"": ""C""}}",not_recorded_not_adjudicated
+B1-064,Set the temperature to eighteen degrees,supported_wording,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 18, ""unit"": ""C""}}",not_recorded_not_adjudicated
+B1-065,Set the temperature to twenty two degrees,supported_wording,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 22, ""unit"": ""C""}}",not_recorded_not_adjudicated
+B1-066,Set the temperature to twenty six degrees,supported_wording,"{""intent"": ""TEMPERATURE"", ""slots"": {""degrees"": 26, ""unit"": ""C""}}",not_recorded_not_adjudicated
+B1-067,Brightness twenty percent,supported_wording,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 20}}",not_recorded_not_adjudicated
+B1-068,Brightness sixty percent,supported_wording,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 60}}",not_recorded_not_adjudicated
+B1-069,Brightness one hundred percent,supported_wording,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 100}}",not_recorded_not_adjudicated
+B1-070,Adjust brightness to twenty percent,supported_wording,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 20}}",not_recorded_not_adjudicated
+B1-071,Adjust brightness to sixty percent,supported_wording,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 60}}",not_recorded_not_adjudicated
+B1-072,Adjust brightness to one hundred percent,supported_wording,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 100}}",not_recorded_not_adjudicated
+B1-073,Brightness level twenty percent,supported_wording,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 20}}",not_recorded_not_adjudicated
+B1-074,Brightness level sixty percent,supported_wording,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 60}}",not_recorded_not_adjudicated
+B1-075,Brightness level one hundred percent,supported_wording,"{""intent"": ""BRIGHTNESS"", ""slots"": {""light_id"": ""light.all"", ""percent"": 100}}",not_recorded_not_adjudicated
+B1-076,Change color to red,supported_wording,"{""intent"": ""COLOR"", ""slots"": {""color"": ""red"", ""light_id"": ""light.all""}}",not_recorded_not_adjudicated
+B1-077,Change color to blue,supported_wording,"{""intent"": ""COLOR"", ""slots"": {""color"": ""blue"", ""light_id"": ""light.all""}}",not_recorded_not_adjudicated
+B1-078,Change color to green,supported_wording,"{""intent"": ""COLOR"", ""slots"": {""color"": ""green"", ""light_id"": ""light.all""}}",not_recorded_not_adjudicated
+B1-079,Switch color to red,supported_wording,"{""intent"": ""COLOR"", ""slots"": {""color"": ""red"", ""light_id"": ""light.all""}}",not_recorded_not_adjudicated
+B1-080,Switch color to blue,supported_wording,"{""intent"": ""COLOR"", ""slots"": {""color"": ""blue"", ""light_id"": ""light.all""}}",not_recorded_not_adjudicated
+B1-081,Switch color to green,supported_wording,"{""intent"": ""COLOR"", ""slots"": {""color"": ""green"", ""light_id"": ""light.all""}}",not_recorded_not_adjudicated
+B1-082,Set color to red,supported_wording,"{""intent"": ""COLOR"", ""slots"": {""color"": ""red"", ""light_id"": ""light.all""}}",not_recorded_not_adjudicated
+B1-083,Set color to blue,supported_wording,"{""intent"": ""COLOR"", ""slots"": {""color"": ""blue"", ""light_id"": ""light.all""}}",not_recorded_not_adjudicated
+B1-084,Set color to green,supported_wording,"{""intent"": ""COLOR"", ""slots"": {""color"": ""green"", ""light_id"": ""light.all""}}",not_recorded_not_adjudicated
+B1-085,Reminder Drink water,supported_wording,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.drink_water""}}",not_recorded_not_adjudicated
+B1-086,Reminder Study,supported_wording,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.study""}}",not_recorded_not_adjudicated
+B1-087,Reminder Exercise,supported_wording,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.exercise""}}",not_recorded_not_adjudicated
+B1-088,Remind me to Drink water,supported_wording,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.drink_water""}}",not_recorded_not_adjudicated
+B1-089,Remind me to Study,supported_wording,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.study""}}",not_recorded_not_adjudicated
+B1-090,Remind me to Exercise,supported_wording,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.exercise""}}",not_recorded_not_adjudicated
+B1-091,Create a reminder to Drink water,supported_wording,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.drink_water""}}",not_recorded_not_adjudicated
+B1-092,Create a reminder to Study,supported_wording,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.study""}}",not_recorded_not_adjudicated
+B1-093,Create a reminder to Exercise,supported_wording,"{""intent"": ""CREATE_REMINDER"", ""slots"": {""task_id"": ""task.exercise""}}",not_recorded_not_adjudicated
+reject-unsupported_brightness,Set brightness to twenty-one percent,rejection_prompt,null,not_recorded_not_adjudicated
+reject-unsupported_volume,Set volume to thirty-one percent,rejection_prompt,null,not_recorded_not_adjudicated
+reject-unsupported_timer,Set a timer for eleven seconds,rejection_prompt,null,not_recorded_not_adjudicated
+reject-unsupported_temperature,Set the temperature to nineteen degrees,rejection_prompt,null,not_recorded_not_adjudicated
+reject-unsupported_alarm,Set an alarm for seven AM,rejection_prompt,null,not_recorded_not_adjudicated
+reject-unsupported_target,Turn on the bedroom lights,rejection_prompt,null,not_recorded_not_adjudicated
+reject-unsupported_contact,Call Mom,rejection_prompt,null,not_recorded_not_adjudicated
+reject-unsupported_task,Remind me to buy milk,rejection_prompt,null,not_recorded_not_adjudicated
+reject-dictated_message,Send the message I will be late,rejection_prompt,null,not_recorded_not_adjudicated
+reject-conflicting_command,Turn on and turn off the lights,rejection_prompt,null,not_recorded_not_adjudicated
+reject-missing_slot,Set brightness,rejection_prompt,null,not_recorded_not_adjudicated
+reject-negated_command,Do not turn on the lights,rejection_prompt,null,not_recorded_not_adjudicated
+reject-unrelated_speech,The kettle is on the table,rejection_prompt,null,not_recorded_not_adjudicated

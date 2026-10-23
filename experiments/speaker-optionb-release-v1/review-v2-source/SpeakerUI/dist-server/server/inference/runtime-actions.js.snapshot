@@ -1,0 +1,190 @@
+import { lightCommand, spotifyCommand } from '../integrations/commands.js';
+import { IntegrationError } from '../integrations/http.js';
+const colors = { red: [255, 0, 0], blue: [0, 0, 255], green: [0, 255, 0], yellow: [255, 255, 0], white: [255, 255, 255], orange: [255, 165, 0], purple: [128, 0, 128], pink: [255, 192, 203], cyan: [0, 255, 255], magenta: [255, 0, 255] };
+/** One dispatcher per server, independent of how many browsers subscribe. */
+export class RuntimeActions {
+    config;
+    providers;
+    seen = new Set();
+    reminders = [];
+    scheduled = new Map();
+    constructor(config, providers) {
+        this.config = config;
+        this.providers = providers;
+    }
+    close() { for (const timer of this.scheduled.values())
+        clearTimeout(timer); this.scheduled.clear(); }
+    syncLocal(value) {
+        if (!value || typeof value !== 'object' || Array.isArray(value) || Object.keys(value).some(k => !['timer', 'alarm', 'reminders'].includes(k)))
+            throw new IntegrationError('invalid_request', 'Invalid local state update.');
+        // Validate the entire patch before applying any part of it.
+        for (const kind of ['timer', 'alarm'])
+            if (kind in value) {
+                const deadline = kind === 'timer' ? value[kind]?.end : value[kind]?.deadline;
+                if (value[kind] !== null && (typeof value[kind] !== 'object' || (deadline !== null && (!Number.isFinite(deadline) || deadline <= Date.now() || deadline > Date.now() + 86400000))))
+                    throw new IntegrationError('invalid_request', 'Invalid alert deadline.');
+            }
+        if ('reminders' in value && (!Array.isArray(value.reminders) || value.reminders.length > 100 || value.reminders.some((r) => !r || !['string', 'number'].includes(typeof r.id) || typeof r.text !== 'string' || !r.text.trim() || r.text.length > 500 || typeof r.done !== 'boolean')))
+            throw new IntegrationError('invalid_request', 'Invalid reminder list.');
+        if ('reminders' in value && value.reminders.some((r) => r.deadline != null && (!Number.isFinite(r.deadline) || r.deadline < 0)))
+            throw new IntegrationError('invalid_request', 'Invalid reminder deadline.');
+        if ('reminders' in value)
+            this.reminders = value.reminders.map((r) => ({ id: String(r.id), text: r.text, done: r.done, deadline: r.deadline ?? null, pinned: r.pinned === true }));
+        for (const kind of ['timer', 'alarm'])
+            if (kind in value) {
+                const timer = this.scheduled.get(kind);
+                if (timer)
+                    clearTimeout(timer);
+                this.scheduled.delete(kind);
+                const deadline = kind === 'timer' ? value[kind]?.end : value[kind]?.deadline;
+                if (deadline)
+                    this.schedule(kind, deadline, kind === 'timer' ? 'Your timer is finished.' : 'Your alarm is ringing.');
+            }
+        return { ok: true };
+    }
+    schedule(kind, deadline, text) {
+        const previous = this.scheduled.get(kind);
+        if (previous)
+            clearTimeout(previous);
+        const timer = setTimeout(() => { this.scheduled.delete(kind); this.providers.notify?.({ event: 'notification', kind, text }); }, Math.max(0, deadline - Date.now()));
+        timer.unref();
+        this.scheduled.set(kind, timer);
+    }
+    async handle(event) {
+        if (event.event !== 'command')
+            return;
+        const id = event.session_id + ':' + event.utterance_id;
+        if (!event.utterance_id || this.seen.has(id))
+            return;
+        this.seen.add(id);
+        // Worker utterance IDs are unique. Bound memory without allowing old sessions to replay through the API.
+        if (this.seen.size > 10000)
+            this.seen.delete(this.seen.values().next().value);
+        const decision = event.application;
+        const outcome = (status, detail, extra = {}) => ({ status, detail, text: detail, utterance_id: event.utterance_id, ...extra });
+        if (event.source !== 'microphone')
+            return outcome('preview', 'Recorded WAVs and fixtures do not execute actions.');
+        if (!decision?.accepted || !decision.command)
+            return outcome('rejected', decision?.reason || 'No accepted application command');
+        const command = decision.command, slots = command.slots;
+        // Only the explicit OptionB preview contract vetoes all local/provider effects.
+        // Legacy flags describe device permission; local/read-only commands retain their semantics.
+        if (event.inference_contract === 'audio_to_atomic_complete_optionb_command' && event.actions_enabled === false)
+            return outcome('disabled', 'This recognition path is preview-only.', { command });
+        if (!slots || typeof slots !== 'object' || Array.isArray(slots))
+            return outcome('rejected', 'Invalid command slots');
+        try {
+            if (command.intent === 'TIME') {
+                const time = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Manila', hour: 'numeric', minute: '2-digit' }).format(new Date());
+                return outcome('local', `The time is ${time} in Manila.`, { command });
+            }
+            if (command.intent === 'WEATHER') {
+                if (!this.providers.weather)
+                    return outcome('not_configured', 'OpenWeather is not configured.', { command });
+                const weather = await this.providers.weather();
+                return outcome('succeeded', weather.text, { command, weather });
+            }
+            if (command.intent === 'TIMER') {
+                if (!Number.isInteger(slots.duration_seconds) || slots.duration_seconds < 1 || slots.duration_seconds > 86400)
+                    return outcome('rejected', 'Invalid timer duration');
+                const seconds = slots.duration_seconds, minutes = Math.floor(seconds / 60), remainder = seconds % 60;
+                const duration = [minutes ? `${minutes} minute${minutes === 1 ? '' : 's'}` : '', remainder ? `${remainder} second${remainder === 1 ? '' : 's'}` : ''].filter(Boolean).join(' and ');
+                const deadline = Date.now() + seconds * 1000;
+                this.schedule('timer', deadline, 'Your timer is finished.');
+                return outcome('local', `Timer set for ${duration}. Keep SpeakerUI running for the alert.`, { command, deadline });
+            }
+            if (command.intent === 'ALARM') {
+                if (!/^([01]\d|2[0-3]):[0-5]\d$/.test(slots.time) || slots.timezone !== 'Asia/Manila')
+                    return outcome('rejected', 'Invalid alarm');
+                const now = Date.now(), day = Math.floor((now + 8 * 3600000) / 86400000) * 86400000 - 8 * 3600000;
+                const [h, m] = slots.time.split(':').map(Number);
+                let deadline = day + (h * 60 + m) * 60000;
+                if (deadline <= now)
+                    deadline += 86400000;
+                this.schedule('alarm', deadline, 'Your alarm is ringing.');
+                const time = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Manila', hour: 'numeric', minute: '2-digit' }).format(deadline);
+                return outcome('local', `Alarm set for ${time} in Manila. Keep SpeakerUI running for the alert.`, { command, deadline });
+            }
+            if (command.intent === 'CREATE_REMINDER') {
+                const task = { 'task.drink_water': 'Drink water', 'task.study': 'Study', 'task.exercise': 'Exercise' }[slots.task_id];
+                if (!task)
+                    return outcome('rejected', 'That reminder task is not supported.', { command });
+                if (this.reminders.length >= 100)
+                    return outcome('rejected', 'The session reminder list is full.', { command });
+                this.reminders.push({ id: event.utterance_id, text: task, done: false });
+                return outcome('local', `Reminder added: ${task}. Reminders last for this session.`, { command, reminders: [...this.reminders] });
+            }
+            if (command.intent === 'LIST_REMINDERS') {
+                const active = this.reminders.filter(r => !r.done);
+                const spoken = active.slice(0, 5).map(r => r.text.slice(0, 100)).join('; ');
+                return outcome('local', active.length ? `Your reminders are: ${spoken}.${active.length > 5 ? ` And ${active.length - 5} more shown on screen.` : ''}` : 'You have no reminders in this session.', { command, reminders: [...this.reminders] });
+            }
+            if (command.intent === 'CALL' && this.providers.camera) {
+                const camera = await this.providers.camera();
+                return outcome('local', `Opening ${camera.name}. This is camera video only.`, { command, camera });
+            }
+            if (command.intent === 'CALL')
+                return outcome('not_configured', 'The Home Assistant camera is not configured. No call was placed.', { command });
+            if (command.intent === 'MESSAGE' && !this.providers.message)
+                return outcome('not_configured', 'Messaging is not configured. No message was sent.', { command });
+            if (!this.config.enabled)
+                return outcome('disabled', 'Device actions are disabled in configuration.', { command });
+            if (command.intent === 'MESSAGE')
+                return outcome('succeeded', await this.providers.message(), { command });
+            if (command.intent === 'TEMPERATURE') {
+                if (!Number.isInteger(slots.degrees) || slots.degrees < -50 || slots.degrees > 60 || slots.unit !== 'C')
+                    return outcome('rejected', 'Invalid temperature');
+                if (!this.providers.temperature)
+                    return outcome('not_configured', 'A Home Assistant thermostat is not configured.', { command });
+                await this.providers.temperature(slots.degrees);
+                return outcome('succeeded', `Home Assistant accepted a thermostat setting of ${slots.degrees} degrees Celsius.`, { command });
+            }
+            if (['LIGHT_ON', 'LIGHT_OFF', 'BRIGHTNESS', 'COLOR'].includes(command.intent)) {
+                const entityId = this.config.bindings.lights[slots.light_id];
+                if (!entityId)
+                    return outcome('not_configured', 'Map ' + slots.light_id + ' in config.toml [bindings.lights].');
+                let action = { entityId, action: command.intent === 'LIGHT_ON' ? 'on' : 'off' };
+                if (command.intent === 'BRIGHTNESS')
+                    action = { entityId, action: 'brightness', value: slots.percent };
+                if (command.intent === 'COLOR')
+                    action = slots.color === 'warm white' || slots.color === 'cool white'
+                        ? { entityId, action: 'temperature', value: slots.color === 'warm white' ? 2700 : 6500 }
+                        : { entityId, action: 'color', rgb: colors[slots.color] };
+                await this.providers.light(lightCommand(action));
+                const target = slots.light_id === 'light.all' ? 'the configured lights' : slots.light_id.replace(/^light\./, '').replaceAll('_', ' ');
+                const detail = command.intent === 'BRIGHTNESS' ? `${target} brightness to ${slots.percent} percent` : command.intent === 'COLOR' ? `${target} color to ${slots.color}` : `${target} ${command.intent === 'LIGHT_ON' ? 'on' : 'off'}`;
+                return outcome('succeeded', `Home Assistant accepted the request to set ${detail}.`, { command });
+            }
+            if (['PLAY_MUSIC', 'PAUSE', 'STOP', 'NEXT', 'VOLUME'].includes(command.intent)) {
+                if (command.intent === 'PLAY_MUSIC' && slots.song_id) {
+                    const uri = this.config.bindings.songs[slots.song_id];
+                    if (!uri)
+                        return outcome('not_configured', 'Map ' + slots.song_id + ' in config.toml [bindings.songs].');
+                    await this.providers.song(uri);
+                }
+                else {
+                    let action = { action: { PLAY_MUSIC: 'play', PAUSE: 'pause', STOP: 'pause', NEXT: 'next' }[command.intent] };
+                    if (command.intent === 'VOLUME') {
+                        let value = slots.operation === 'mute' ? 0 : slots.percent;
+                        if (slots.operation === 'up' || slots.operation === 'down') {
+                            const current = await this.providers.volume?.();
+                            if (current === undefined)
+                                return outcome('not_configured', 'Current playback volume is unavailable.');
+                            value = Math.max(0, Math.min(100, current + (slots.operation === 'up' ? 10 : -10)));
+                        }
+                        action = { action: 'volume', value };
+                    }
+                    await this.providers.spotify(spotifyCommand(action));
+                }
+                const detail = command.intent === 'VOLUME' ? `volume ${slots.operation === 'set' ? `to ${slots.percent} percent` : slots.operation}` : { PLAY_MUSIC: 'playback', PAUSE: 'pause', STOP: 'stop playback', NEXT: 'the next track' }[command.intent];
+                return outcome('succeeded', `Spotify accepted ${detail}.`, { command });
+            }
+            return outcome('unsupported', 'No action implementation for ' + command.intent + '.', { command });
+        }
+        catch (error) {
+            if (error instanceof IntegrationError)
+                return outcome(error.outcomeUnknown ? 'unknown' : error.code === 'disabled' ? 'not_configured' : 'failed', error.message, { command });
+            return outcome('unknown', 'Action outcome could not be confirmed; it will not be retried.', { command });
+        }
+    }
+}

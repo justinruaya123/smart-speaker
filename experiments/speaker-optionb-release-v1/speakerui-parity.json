@@ -1,0 +1,18 @@
+{
+  "format": "optionb-native-speakerui-parity-v1",
+  "status": "verified",
+  "source_commit": "a130ce88a6c76fda7ba6cfb6f54d940d2336b558",
+  "parameters": 258912,
+  "selected_epoch": 44,
+  "path": "FP32 ONNX -> JSONL worker -> compiled gateway HTTP WAV route -> actual UI event reducer",
+  "original_human_holdout_rows": 96,
+  "accepted": 77,
+  "rejected": 19,
+  "exact_output_application_and_slot_parity": true,
+  "actions_enabled": false,
+  "qualified": false,
+  "decisions_sha256": "d26a458bcacac48a4bb8f985434d5aa6bc4e2ad69e8962c0c2f1ef4a42b07821",
+  "physical_pi": false,
+  "live_microphone": false,
+  "browser_layout_test": false
+}

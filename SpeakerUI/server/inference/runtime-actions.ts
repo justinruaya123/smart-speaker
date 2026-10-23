@@ -48,6 +48,9 @@ export class RuntimeActions {
     if(event.source!=='microphone')return outcome('preview','Recorded WAVs and fixtures do not execute actions.');
     if(!decision?.accepted||!decision.command)return outcome('rejected',decision?.reason||'No accepted application command');
     const command=decision.command,slots=command.slots;
+    // Only the explicit OptionB preview contract vetoes all local/provider effects.
+    // Legacy flags describe device permission; local/read-only commands retain their semantics.
+    if(event.inference_contract==='audio_to_atomic_complete_optionb_command'&&event.actions_enabled===false)return outcome('preview','This recognition path is preview-only.',{command});
     if(!slots||typeof slots!=='object'||Array.isArray(slots))return outcome('rejected','Invalid command slots');
     try{
       if(command.intent==='TIME'){

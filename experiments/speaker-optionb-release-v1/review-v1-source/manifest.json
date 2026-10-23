@@ -1,0 +1,54 @@
+{
+  "files": [
+    {
+      "bytes": 7287,
+      "original_path": "scripts/runtime/optionb_worker.py",
+      "sha256": "538f787eb21339effb0afc4f562e59164bf9594b28694ef7a88f74239d91c938",
+      "snapshot": "experiments/speaker-optionb-release-v1/review-v1-source/scripts/runtime/optionb_worker.py.snapshot"
+    },
+    {
+      "bytes": 10087,
+      "original_path": "scripts/test/optionb_release_check.py",
+      "sha256": "55d1fe35fc568bafd20f4240ab8b8324f9f5faf4a7b6ba671028c72211f4a0cb",
+      "snapshot": "experiments/speaker-optionb-release-v1/review-v1-source/scripts/test/optionb_release_check.py.snapshot"
+    },
+    {
+      "bytes": 4289,
+      "original_path": "scripts/test/test_optionb_release.py",
+      "sha256": "753edbbda36b89ba658c17f1e4e694d40558bd7c35a48c40f06c5848d6bacf7b",
+      "snapshot": "experiments/speaker-optionb-release-v1/review-v1-source/scripts/test/test_optionb_release.py.snapshot"
+    },
+    {
+      "bytes": 5961,
+      "original_path": "SpeakerUI/scripts/optionb-parity.mjs",
+      "sha256": "9cecd9ed99e1a456b65bd7a5b16e77a3d2a25c217adfd1dc6e9c01ff1e815eb0",
+      "snapshot": "experiments/speaker-optionb-release-v1/review-v1-source/SpeakerUI/scripts/optionb-parity.mjs.snapshot"
+    },
+    {
+      "bytes": 12064,
+      "original_path": "SpeakerUI/server/inference/runtime-actions.ts",
+      "sha256": "400942ad0564f71449f32d4f4efb1cceb7c1025d127c3b55967dbd52a7f83c52",
+      "snapshot": "experiments/speaker-optionb-release-v1/review-v1-source/SpeakerUI/server/inference/runtime-actions.ts.snapshot"
+    },
+    {
+      "bytes": 1660,
+      "original_path": "SpeakerUI/server/inference/optionb-boundary.test.ts",
+      "sha256": "9a21421db7fc826c5a63c5b510f45ec484f0ed1fabbe03ec8f292d3db4365672",
+      "snapshot": "experiments/speaker-optionb-release-v1/review-v1-source/SpeakerUI/server/inference/optionb-boundary.test.ts.snapshot"
+    },
+    {
+      "bytes": 4255,
+      "original_path": "SpeakerUI/server/inference/python-runtime.ts",
+      "sha256": "d7841aa8c49e984b1d01b199507594b8959811d7df0c51298ff1b04026b372a5",
+      "snapshot": "experiments/speaker-optionb-release-v1/review-v1-source/SpeakerUI/server/inference/python-runtime.ts.snapshot"
+    },
+    {
+      "bytes": 7546,
+      "original_path": "experiments/speaker-optionb-release-v1/protocol.json",
+      "sha256": "5eca4a802ad788e15e32949794ec9c0abbf14eb19a92902e43c79c53189d2436",
+      "snapshot": "experiments/speaker-optionb-release-v1/review-v1-source/experiments/speaker-optionb-release-v1/protocol.json.snapshot"
+    }
+  ],
+  "format": "optionb-review-v1-preserved-source",
+  "reason": "Preserve first verifier/adapter/gateway bytes and receipts before correcting independent-review defects. Not promoted."
+}

@@ -1,0 +1,30 @@
+{
+  "format": "optionb-independent-review-v1",
+  "logic_errors": [
+    {
+      "finding": "Python verifier consumed unbound parent manifest counterparts and compared cohort to itself.",
+      "id": "R1",
+      "severity": "high"
+    },
+    {
+      "finding": "Native UI harness did not verify input/WAV/PCM bindings and could pass with shortened or empty cohort.",
+      "id": "R2",
+      "severity": "high"
+    },
+    {
+      "finding": "Unconditional all-action veto regressed legacy local TIME/weather/timer/reminder semantics when device actions disabled.",
+      "id": "R3",
+      "severity": "medium"
+    },
+    {
+      "finding": "Control failure returned only failed reply, leaving capture/UI state stale after re-listen failure.",
+      "id": "R4",
+      "severity": "medium"
+    }
+  ],
+  "passed": false,
+  "recorded_facts": "The original counterpart bytes currently match; review found verifier defects, not evidence of altered results. Fresh blind and actual Pi still pending.",
+  "security_concerns": [],
+  "snapshot_manifest": "experiments/speaker-optionb-release-v1/review-v1-source/manifest.json",
+  "status": "correction_required"
+}

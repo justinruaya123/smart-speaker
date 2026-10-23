@@ -1,0 +1,148 @@
+"""Frozen OptionB PC accuracy and complete-utterance CPU latency; no actuation."""
+from pathlib import Path
+import numpy as np
+
+
+def timing_summary(times_ms, audio_seconds):
+    times = np.asarray(times_ms, dtype=np.float64)
+    durations = np.asarray(audio_seconds, dtype=np.float64)
+    if (times.ndim != 1 or not times.size or durations.shape != times.shape
+            or not np.isfinite(times).all() or not np.isfinite(durations).all()
+            or np.any(times < 0) or np.any(durations <= 0)):
+        raise ValueError('Timing requires aligned nonempty finite latency/duration observations')
+    return dict(observations=len(times), p50_ms=float(np.percentile(times, 50)),
+                p95_ms=float(np.percentile(times, 95)),
+                rtf_p95=float(np.percentile(times / 1000 / durations, 95)))
+
+
+def run_benchmark(protocol_path, destination):
+    destination = Path(destination)
+    if destination.exists():
+        raise FileExistsError('Preserve previous PC measurements; choose a new output directory')
+    import csv
+    import importlib.util
+    import json
+    import os
+    import platform
+    import sys
+    import time
+    from collections import Counter
+    from scripts.runtime.optionb_worker import FrozenOptionBRuntime
+    from scripts.test.optionb_release_check import validate_inputs
+    from scripts.test.speaker_demo_suite import read_json, read_audio, file_digest, write_new
+    from scripts.test.speaker_optionb_tiny_demo_report import wording_rows
+
+    protocol_path = Path(protocol_path)
+    protocol = read_json(protocol_path)
+    if (protocol['format'] != 'optionb-pc-benchmark-v1' or protocol['target'] != 'pc'
+            or protocol['threads'] != 1 or protocol['repeats'] != 3 or protocol['warmup_calls'] != 10):
+        raise ValueError('PC measurement protocol changed')
+    for path, expected in protocol['bindings'].items():
+        if file_digest(Path(path)) != expected:
+            raise ValueError('PC input identity mismatch: ' + path)
+    if protocol['release_protocol'] not in protocol['bindings'] or protocol['metric_helper'] not in protocol['bindings']:
+        raise ValueError('Unbound PC benchmark dependency')
+    release = read_json(Path(protocol['release_protocol']))
+    checked = validate_inputs(release)
+    # Reuse the independently reviewed, torch-free complete-command scorer.
+    spec = importlib.util.spec_from_file_location('optionb_pc_frozen_metrics', protocol['metric_helper'])
+    if spec is None or spec.loader is None:
+        raise ImportError('Pinned complete-command metric helper is unavailable')
+    helper = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(helper)
+    rows = [r for split in ('test', 'holdout') for r in checked['data'][split] if r['kind'] == 'human']
+    expected = Counter(checked['expected_human_keys'])
+    if Counter((r['split'], r['id']) for r in rows) != expected:
+        raise ValueError('PC cohort differs from pinned original humans')
+    inputs = [(row, read_audio(row)) for row in rows]
+    started = time.perf_counter()
+    runtime = FrozenOptionBRuntime(release['bundle'], threads=1)
+    cold_init_ms = (time.perf_counter() - started) * 1000
+    if runtime.session.get_providers() != ['CPUExecutionProvider']:
+        raise ValueError('PC benchmark must use the CPU provider only')
+    for index in range(protocol['warmup_calls']):
+        runtime.recognize(inputs[index % len(inputs)][1])
+    destination.mkdir(parents=True)
+    observations, records = [], []
+    rng = np.random.default_rng(53)
+    with (destination / 'observations.jsonl').open('x', encoding='utf8') as stream:
+        for repeat in range(protocol['repeats']):
+            for index in rng.permutation(len(inputs)):
+                row, pcm = inputs[int(index)]
+                start = time.perf_counter()
+                event = runtime.recognize(pcm)
+                elapsed = (time.perf_counter() - start) * 1000
+                previous = checked['cached'][row['split'], row['id']]
+                if (event['output'] != previous['event']['output']
+                        or event['application'] != previous['event']['application']
+                        or int(event.get('command_index', 0)) != previous['raw_index']):
+                    raise ValueError('PC replay changed a frozen decision: ' + row['id'])
+                if event['actions_enabled'] or event['qualified_output']['accepted']:
+                    raise ValueError('PC benchmark crossed the preview boundary')
+                observation = dict(id=row['id'], split=row['split'], repeat=repeat,
+                    latency_ms=elapsed, audio_seconds=len(pcm) / 16000,
+                    graph_inferred='logits' in event)
+                observations.append(observation)
+                stream.write(json.dumps(observation, allow_nan=False, sort_keys=True) + '\n')
+                if repeat == 0:
+                    records.append(dict(id=row['id'], parent_id=row['id'], split=row['split'], kind='human',
+                        variant='original', metric_eligible=row['metric_eligible'], class_index=row['class_index'],
+                        raw_index=int(event.get('command_index', 0)),
+                        accepted_index=int(event.get('command_index', 0)) if event['output']['accepted'] else 0))
+            stream.flush()
+            print('Completed PC repeat', repeat + 1, 'of', protocol['repeats'], flush=True)
+    if (Counter((r['split'], r['id']) for r in records) != expected
+            or Counter((r['split'], r['id']) for r in observations) != Counter({k: v * protocol['repeats'] for k, v in expected.items()})):
+        raise ValueError('PC cohort/observation multiplicity changed')
+    wording = [r for r in wording_rows(records, checked['metadata']) if r['kind'] == 'human']
+    with (destination / 'per-wording.csv').open('x', encoding='utf8', newline='') as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(wording[0])); writer.writeheader(); writer.writerows(wording)
+    cohorts = {}
+    for split in ('test', 'holdout'):
+        all_rows = [r for r in records if r['split'] == split]
+        eligible = [r for r in all_rows if r['metric_eligible']]
+        measured = [r for r in observations if r['split'] == split]
+        words = [r for r in wording if r['split'] == split]
+        cohorts[split] = dict(original_rows=len(all_rows), ambiguous_unscored=len(all_rows) - len(eligible),
+            raw=helper.metrics(eligible, 'raw_index'), selected=helper.metrics(eligible, 'accepted_index'),
+            exact_wording={k: sum(r[k] for r in words) for k in ('metadata_exact_references','correct_accepted','wrong_accepted','rejected')},
+            latency=timing_summary([r['latency_ms'] for r in measured], [r['audio_seconds'] for r in measured]))
+    cpu_name = platform.processor() or 'unknown'
+    if sys.platform == 'win32':
+        import winreg
+        with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, r'HARDWARE\DESCRIPTION\System\CentralProcessor\0') as key:
+            cpu_name = winreg.QueryValueEx(key, 'ProcessorNameString')[0].strip()
+    if 'torch' in sys.modules:
+        raise ValueError('Torch must not be loaded into the measured inference process')
+    validate_inputs(release)
+    for path, expected_hash in protocol['bindings'].items():
+        if file_digest(Path(path)) != expected_hash:
+            raise ValueError('PC input changed during measurement: ' + path)
+    result = dict(format='optionb-pc-benchmark-results-v1', target='pc',
+        protocol_sha256=file_digest(protocol_path), release_protocol_sha256=file_digest(Path(protocol['release_protocol'])),
+        hardware=dict(cpu=cpu_name, logical_cpus=os.cpu_count(), platform=platform.platform(), python=platform.python_version(),
+                      provider=runtime.session.get_providers(), onnx_threads=1, blas_threads=1, affinity='unchanged'),
+        model=dict(parameters=258912, epoch=44, policy=runtime.policy, binding=runtime.recipe['binding']),
+        independent_original_human_recordings=len(records), warmup_calls=protocol['warmup_calls'],
+        repeats=protocol['repeats'], observations=len(observations), cohorts=cohorts,
+        latency_all=timing_summary([r['latency_ms'] for r in observations], [r['audio_seconds'] for r in observations]),
+        cold_runtime_init_ms=cold_init_ms, onnx_session_load_ms=runtime.load_ms,
+        timing_includes=['PCM validation','frozen frontend/normalization','FP32 CPU ONNX','softmax/margin and complete-command validation'],
+        timing_excludes=['WAV loading/decoding/hash checks','speaking time','wake/VAD/endpoint waiting','worker/gateway/UI/TTS/provider overhead'],
+        torch_imported=False, source_decisions_unchanged=True, exposed_regression_not_fresh_blind=True,
+        fresh_human_check='pending_no_new_recordings', pi_validation='deferred_not_a_current_pc_benchmark_blocker',
+        optimizer_updates=0, policy_changes=0, actions_enabled=False,
+        observations_sha256=file_digest(destination / 'observations.jsonl'),
+        wording_sha256=file_digest(destination / 'per-wording.csv'))
+    write_new(destination / 'results.json', result)
+    print(json.dumps(result, indent=2), flush=True)
+    return result
+
+
+if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--protocol', type=Path, default=Path('experiments/speaker-optionb-release-v1/pc-benchmark-protocol-v2.json'))
+    parser.add_argument('--output', type=Path, required=True)
+    args = parser.parse_args()
+    run_benchmark(args.protocol, args.output)

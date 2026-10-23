@@ -11,3 +11,6 @@ test('submission module is an explicit validated worker override', () => {
     assert.throws(() => workerModule({ SMART_SPEAKER_WORKER_MODULE:name }), /worker module/);
   }
 });
+test('OptionB atomic worker is an explicit validated override, not the default', () => {
+  assert.equal(workerModule({ SMART_SPEAKER_WORKER_MODULE:'scripts.runtime.optionb_worker' }), 'scripts.runtime.optionb_worker');
+});

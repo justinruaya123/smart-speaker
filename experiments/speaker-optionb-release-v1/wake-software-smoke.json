@@ -1,0 +1,14 @@
+{
+  "format": "optionb-wake-load-software-smoke-v1",
+  "status": "verified",
+  "wake_root": "submission/models/full",
+  "wake_manifest_sha256": "9bc153473704dd425961ac0d4cc2f3b5607a8a35601a0bb5d687082651788c9e",
+  "zero_pcm_blocks": 96,
+  "block_samples": 512,
+  "commands": 0,
+  "claim": "real wake/VAD graph loading and silence-only software fixture, not live wake recognition",
+  "physical_pi": false,
+  "live_microphone": false,
+  "speaker_owner_verified": false,
+  "actions_enabled": false
+}

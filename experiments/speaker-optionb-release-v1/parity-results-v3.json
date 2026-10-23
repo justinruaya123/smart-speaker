@@ -1,0 +1,164 @@
+{
+  "actions_enabled": false,
+  "bundle_sha256": {
+    "commands.json": "71017cf22366d15557e8878636135f5ff2d0ac81fc4dfd6f058fc88f0f2d4b5d",
+    "model.onnx": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+    "normalization.json": "28f7ef1b2c926c587d611d17eef91184c2c7e2de66abe352d1fc2365e45d69ed",
+    "policy.json": "b9242e46fb093642a41023e8ace3c0cadc2fe51ffede512aa09e399622f355f0",
+    "recipe.json": "020c3deccb0f8cece0f23b8c016b6a63bdd0359321bb06cbd00e091966d46621"
+  },
+  "canonical_manifest_bindings": {
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/calibration.jsonl": "aa39c3432d36ce29b13d158c389a73d113501aee6f1e56e8b1b0f334f3f15779",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/dev.jsonl": "a35622f5579f7f31d2c180741ceaa7736908a0417d8fc0c89b091ab313ee3a65",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/holdout.jsonl": "fd0f45e5ba596a976f20325a9e805630f030e92b62bf246635a5e2b3808f6aaa",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/test.jsonl": "4bc7edee154f72414ea4e05ee50305709d5d6e47431aada0aebf7f782baeec6a",
+    ".cache/speaker-optionb-tiny-v1/run-01/train.jsonl": "dbecaf5e729b307d4437f8c28147a0bf6f7d8a6ce705d9b43e1ab13d086189ce"
+  },
+  "capture_fault_cases": 6,
+  "checkpoint_export_parity": [
+    {
+      "batch": 1,
+      "frames": 1,
+      "lengths": [
+        1
+      ],
+      "max_abs_logit_error": 9.5367431640625e-07
+    },
+    {
+      "batch": 1,
+      "frames": 97,
+      "lengths": [
+        97
+      ],
+      "max_abs_logit_error": 1.430511474609375e-06
+    },
+    {
+      "batch": 2,
+      "frames": 258,
+      "lengths": [
+        258,
+        245
+      ],
+      "max_abs_logit_error": 3.814697265625e-06
+    },
+    {
+      "batch": 1,
+      "frames": 401,
+      "lengths": [
+        401
+      ],
+      "max_abs_logit_error": 2.86102294921875e-06
+    }
+  ],
+  "cohorts": {
+    "holdout": {
+      "ambiguous_unscored": 2,
+      "holdout_mistakes": [
+        {
+          "accepted_class": 18,
+          "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000000",
+          "reference_class": 20,
+          "reference_text": "Play a song"
+        },
+        {
+          "accepted_class": 23,
+          "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000126",
+          "reference_class": 22,
+          "reference_text": "Set the temperature to 18 degrees"
+        },
+        {
+          "accepted_class": 19,
+          "id": "airimonda/ai231-me2-voice-commands/primary/holdout-00000-of-00001/000195",
+          "reference_class": 0,
+          "reference_text": "More heat"
+        }
+      ],
+      "metrics": {
+        "correct_accepted": 72,
+        "f1": 0.9290322580645162,
+        "fn": 8,
+        "fp": 3,
+        "negative_false_accept_rate": 0.07142857142857142,
+        "negative_false_accepts": 1,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 0.96,
+        "recall": 0.9,
+        "rows": 94,
+        "tp": 72,
+        "wrong_accepted": 3
+      },
+      "original_human_rows": 96,
+      "wording": {
+        "correct_accepted": 58,
+        "metadata_exact_references": 62,
+        "rejected": 3,
+        "wrong_accepted": 1
+      }
+    },
+    "test": {
+      "ambiguous_unscored": 185,
+      "holdout_mistakes": [],
+      "metrics": {
+        "correct_accepted": 393,
+        "f1": 0.7408105560791706,
+        "fn": 216,
+        "fp": 59,
+        "negative_false_accept_rate": 0.09375,
+        "negative_false_accepts": 24,
+        "negatives": 256,
+        "positives": 609,
+        "precision": 0.8694690265486725,
+        "recall": 0.645320197044335,
+        "rows": 865,
+        "tp": 393,
+        "wrong_accepted": 59
+      },
+      "original_human_rows": 1050,
+      "wording": {
+        "correct_accepted": 173,
+        "metadata_exact_references": 232,
+        "rejected": 55,
+        "wrong_accepted": 4
+      }
+    }
+  },
+  "consumed_manifest_bindings": {
+    ".cache/speaker-optionb-tiny-v1/run-01/calibration.jsonl": "aa39c3432d36ce29b13d158c389a73d113501aee6f1e56e8b1b0f334f3f15779",
+    ".cache/speaker-optionb-tiny-v1/run-01/dev.jsonl": "a35622f5579f7f31d2c180741ceaa7736908a0417d8fc0c89b091ab313ee3a65",
+    ".cache/speaker-optionb-tiny-v1/run-01/holdout.jsonl": "fd0f45e5ba596a976f20325a9e805630f030e92b62bf246635a5e2b3808f6aaa",
+    ".cache/speaker-optionb-tiny-v1/run-01/test.jsonl": "4bc7edee154f72414ea4e05ee50305709d5d6e47431aada0aebf7f782baeec6a",
+    ".cache/speaker-optionb-tiny-v1/run-01/train.jsonl": "dbecaf5e729b307d4437f8c28147a0bf6f7d8a6ce705d9b43e1ab13d086189ce"
+  },
+  "exact_original_cohort_and_decisions_preserved": true,
+  "exposed_regression_not_fresh_blind": true,
+  "format": "optionb-release-parity-v2",
+  "fresh_unseen_speaker_check_completed": false,
+  "holdout_declared_speakers": 3,
+  "holdout_train_development_overlap": {
+    "id": 0,
+    "pcm_sha256": 0,
+    "sha256": 0,
+    "speaker": 0
+  },
+  "independent_listening_completed": false,
+  "independently_pinned_canonical_cohort": true,
+  "live_microphone_completed": false,
+  "optimizer_updates": 0,
+  "original_human_adapter_replays": 1146,
+  "parameters": 258912,
+  "physical_pi_completed": false,
+  "policy": {
+    "enabled": true,
+    "min_margin": 0.1,
+    "min_probability": 0.5
+  },
+  "predictions_sha256": "fb86778b1d9dc2975e44d1c3271b2f5e42239afa37dbb232cd10c528870b34bc",
+  "promoted": false,
+  "protocol_sha256": "9a08cddff6af4656993dbc881d7c3717e1bfe92d15c54e681d448650fcd29bce",
+  "selected_epoch": 44,
+  "selection_changes": 0,
+  "source_commit": "a130ce88a6c76fda7ba6cfb6f54d940d2336b558",
+  "width320_count_only": 927392,
+  "wording_table_sha256": "b88ca5be536b275fb5cc0fabf0f6aa3fe17c7535e59c1bff870c57178e764f22"
+}

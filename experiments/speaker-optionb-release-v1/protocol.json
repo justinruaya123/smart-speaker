@@ -1,0 +1,140 @@
+{
+  "allowed_confirmation": {
+    "actual_pi_microphone": "explicit target and connected microphone; offline CPU recognition, wake/endpoint/capture failures and named-device resource measurements; no actuation",
+    "artifact_adapter_parity": "original checkpoint/ONNX variable-length batches, capture faults, native worker, gateway and UI event reducer",
+    "fresh_unseen_speakers": "new recordings and independently reviewed full-reference labels, manifest frozen before inference, no threshold changes",
+    "frozen_regression": "all original HUMAN test/holdout rows, exact IDs/WAV/PCM, exposed/not blind; ambiguous references remain unscored"
+  },
+  "architecture": {
+    "activation": "SiLU",
+    "dilations": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "feature_stride": 2,
+    "frontend": {
+      "centered": false,
+      "fft_size": 512,
+      "floor": 1e-08,
+      "high_hz": 7600,
+      "hop_samples": 160,
+      "low_hz": 20,
+      "mel_bins": 40,
+      "sample_rate": 16000,
+      "window_samples": 400
+    },
+    "head": "one 32-way complete-command/UNKNOWN linear softmax head",
+    "norm": "per-frame LayerNorm",
+    "pooling": "valid-length masked mean and max",
+    "residual_blocks": 4,
+    "residual_kernel": 7,
+    "stages_per_block": 2,
+    "stem_kernel": 5,
+    "training_dropout": 0.1,
+    "unknown_index": 0,
+    "width": 160
+  },
+  "bindings": {
+    ".cache/speaker-optionb-tiny-demo-v1/review-01/full-reference-metadata.jsonl": "b90d7b632e93a1686fa13ac610f79b229592300018460f42dc1a70e5fa03dd8c",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle/commands.json": "71017cf22366d15557e8878636135f5ff2d0ac81fc4dfd6f058fc88f0f2d4b5d",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle/model.onnx": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle/normalization.json": "28f7ef1b2c926c587d611d17eef91184c2c7e2de66abe352d1fc2365e45d69ed",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle/policy.json": "b9242e46fb093642a41023e8ace3c0cadc2fe51ffede512aa09e399622f355f0",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle/recipe.json": "020c3deccb0f8cece0f23b8c016b6a63bdd0359321bb06cbd00e091966d46621",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/calibration-predictions.jsonl": "5da5bac012289776b10d6ebb71a1093014c457bab95d023731b5f9094c48c920",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/calibration.jsonl": "aa39c3432d36ce29b13d158c389a73d113501aee6f1e56e8b1b0f334f3f15779",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/dev.jsonl": "a35622f5579f7f31d2c180741ceaa7736908a0417d8fc0c89b091ab313ee3a65",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/final-predictions.jsonl": "27172b3510b876cbecf67a69a8042ab48e94c3af18e0c2e75373f6edb7d54058",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/holdout.jsonl": "fd0f45e5ba596a976f20325a9e805630f030e92b62bf246635a5e2b3808f6aaa",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/normalization.json": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09",
+    ".cache/speaker-optionb-tiny-demo-v1/run-01/test.jsonl": "4bc7edee154f72414ea4e05ee50305709d5d6e47431aada0aebf7f782baeec6a",
+    ".cache/speaker-optionb-tiny-v1/run-01/best.pt": "d45d71b3858b4182967d3f41dad8145150028ca17401c73d203fba75d6bda687",
+    ".cache/speaker-optionb-tiny-v1/run-01/normalization.json": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09",
+    ".cache/speaker-optionb-tiny-v1/run-01/train.jsonl": "dbecaf5e729b307d4437f8c28147a0bf6f7d8a6ce705d9b43e1ab13d086189ce",
+    "experiments/speaker-optionb-tiny-demo-v1/per-command.csv": "245252acb04ca8487da660e62105da3fc46a8775a1a5e218bb21d1114cf9cc55",
+    "experiments/speaker-optionb-tiny-demo-v1/per-verbatim-cohorts-v2.csv": "c622b51cd955c476dec33f33e4f7a7045d1a00eb3e1e7750e4397b28cd0c4780",
+    "experiments/speaker-optionb-tiny-demo-v1/selection-before-test.json": "17de95d2a92e3cc5b82d854c5cf05af1d8f4f7590cc6d21c226679024cfe1b7e",
+    "experiments/speaker-optionb-tiny-demo-v1/verification-wording-v2.json": "c5943e0aa623c1231e960d4ad871c890a97d9a82642ad86a87a1a2930f31bb84",
+    "experiments/speaker-optionb-tiny-demo-v1/verification.json": "163a666e66cdabf4f11da479596ec870651499a8d21e7fce03a5f4c55c0898af",
+    "experiments/speaker-optionb-tiny-direct-ft-v1/results.json": "6993a830803b7a059f5290909224016db568381d5aaf9eda8019216e212721df",
+    "experiments/speaker-optionb-tiny-ft-v1/results.json": "20f84b6d0a47f85d64ad0fc80f0e070c619c16c393340cd8939f7c4d4c453c48",
+    "scripts/models/speaker_optionb_tiny.py": "563c13da8009e92200b679f1722c4cf61195e40d82b6623cb959ea4a77c0729c",
+    "scripts/models/vcm.py": "48e85eaee92bd0383bf3ee05bc347eec0390f802a0711fcf7aeac8d0b085e162",
+    "scripts/runtime/optionb_contract.py": "72aad2fbdbaf7505fefdb35f1a7ea340ec84f41264ad427eba7bff472c9f3a2b",
+    "scripts/runtime/optionb_worker.py": "538f787eb21339effb0afc4f562e59164bf9594b28694ef7a88f74239d91c938",
+    "scripts/runtime/pcv_schema.py": "603ec943eae1e7330dd2eb82f05bbd7c206382ecf13c0fb8f8801a7ecd0e134c",
+    "scripts/runtime/speaker_optionb_tiny.py": "2a2d9e0e18ab1531ead02fd66dcc1ffda1f25b04b040b03ce7588c9a7145d670",
+    "scripts/runtime/speaker_worker.py": "889cdaad0953e1bdb49b57fd4dc3a74d2000f3ec5422df28fc425ca0f437437c",
+    "scripts/train/speaker_optionb_tiny.py": "d18e39384afdd43a2b0b569a79365672949234876b9b78a2e58acc071e8c9b45",
+    "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+  },
+  "bundle": ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle",
+  "cached_predictions": ".cache/speaker-optionb-tiny-demo-v1/run-01/final-predictions.jsonl",
+  "checkpoint": ".cache/speaker-optionb-tiny-v1/run-01/best.pt",
+  "data_contract": {
+    "ambiguity_relabeled": false,
+    "command_speaker_balance_preserved": true,
+    "evaluation_negatives_imported": false,
+    "failed_finetunes_preserved_not_selected": true,
+    "fitting_changes": false,
+    "human_phase_quotas": {
+      "human_negative": 8,
+      "human_positive": 24
+    },
+    "mixed_phase_quotas": {
+      "human_negative": 8,
+      "human_positive": 12,
+      "synthetic_positive": 12
+    },
+    "normalizer_refit": false,
+    "sample_order": [
+      "command_or_negative_scope",
+      "declared_speaker",
+      "recording_with_replacement"
+    ],
+    "unsupported_slots_rounded": false
+  },
+  "format": "optionb-release-freeze-v1",
+  "larger_alternative": {
+    "measured_advantage": null,
+    "parameters": 927392,
+    "ship": false,
+    "train": false,
+    "width": 320
+  },
+  "parameters": 258912,
+  "parent_run": ".cache/speaker-optionb-tiny-v1/run-01",
+  "policy": {
+    "enabled": true,
+    "min_margin": 0.1,
+    "min_probability": 0.5
+  },
+  "promotion": {
+    "actions_enabled": false,
+    "automatic": false,
+    "blocked_until": [
+      "artifact_and_adapter_parity_verified",
+      "fresh_frozen_unseen_speaker_wording_and_rejection_check",
+      "physical_pi_and_live_microphone_validation"
+    ],
+    "qualified": false,
+    "unchanged_project_quality_requirements": true
+  },
+  "requirement_ids": [
+    "ME-02",
+    "ME-03",
+    "ME-04",
+    "ME-05",
+    "ME-06",
+    "ME-07",
+    "ME-08"
+  ],
+  "scope": "Final architecture and action-free adapter verification only; no fitting/reselection/install/push",
+  "selected_epoch": 44,
+  "source_commit": "a130ce88a6c76fda7ba6cfb6f54d940d2336b558",
+  "status": "release_candidate_not_promoted",
+  "study": "speaker-optionb-release-v1",
+  "wording_metadata": ".cache/speaker-optionb-tiny-demo-v1/review-01/full-reference-metadata.jsonl"
+}

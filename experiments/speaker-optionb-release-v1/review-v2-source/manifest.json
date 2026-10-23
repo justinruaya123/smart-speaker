@@ -1,0 +1,36 @@
+{
+  "format": "optionb-v2-preserved-source-before-preview-playback-fix",
+  "reason": "Preserve the previously verified v2 source and PC driver before additive correction of the independent handoff-review finding",
+  "files": [
+    {
+      "original_path": "SpeakerUI/server/inference/runtime-actions.ts",
+      "snapshot": "experiments/speaker-optionb-release-v1/review-v2-source/SpeakerUI/server/inference/runtime-actions.ts.snapshot",
+      "bytes": 12141,
+      "sha256": "dc84568f4326bceaddb1f6b1dd6735485a646d24fe5befa9f430779ad341b896"
+    },
+    {
+      "original_path": "SpeakerUI/server/inference/optionb-boundary.test.ts",
+      "snapshot": "experiments/speaker-optionb-release-v1/review-v2-source/SpeakerUI/server/inference/optionb-boundary.test.ts.snapshot",
+      "bytes": 6267,
+      "sha256": "b47dbc2928f30ba2655a2cb4643a7b6ac7bdd70b78957f854aeff8c400686628"
+    },
+    {
+      "original_path": "SpeakerUI/dist-server/server/inference/runtime-actions.js",
+      "snapshot": "experiments/speaker-optionb-release-v1/review-v2-source/SpeakerUI/dist-server/server/inference/runtime-actions.js.snapshot",
+      "bytes": 13761,
+      "sha256": "eb31270375c4ad442fdd94cfb45a026a2a99bf714da29100189a21e1552035ec"
+    },
+    {
+      "original_path": "scripts/test/optionb_release_check.py",
+      "snapshot": "experiments/speaker-optionb-release-v1/review-v2-source/scripts/test/optionb_release_check.py.snapshot",
+      "bytes": 15476,
+      "sha256": "515a783c0443ba07667d74fcf9ee4610511b8c981b3fddb16d08aadb95902680"
+    },
+    {
+      "original_path": "scripts/test/optionb_pc_benchmark.py",
+      "snapshot": "experiments/speaker-optionb-release-v1/review-v2-source/scripts/test/optionb_pc_benchmark.py.snapshot",
+      "bytes": 9572,
+      "sha256": "aa70a0758ec49fd39edef81a7e6153e8f7118760cec7821282be6e51208d2175"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "committed": false,
+  "format": "optionb-scoped-software-verification-v1",
+  "fresh_blind_recordings": "not_provided",
+  "fresh_prompt_rows": 106,
+  "installed": false,
+  "live_microphone": "not_run_missing_pi_and_operator",
+  "original_verifiers": {
+    "speaker_optionb_tiny_demo_metadata": {
+      "bindings": 6,
+      "status": "verified"
+    },
+    "speaker_optionb_tiny_demo_report": {
+      "bindings": 10,
+      "status": "verified"
+    }
+  },
+  "physical_pi": "not_run_missing_target",
+  "pinned_inputs_verified": 32,
+  "production_frontend_backend_build": "passed",
+  "promoted": false,
+  "pushed": false,
+  "python_tests": {
+    "deselected": 1,
+    "passed": 41,
+    "reason": "optimizer smoke outside no-fit scope"
+  },
+  "release_doc_local_links_checked": 6,
+  "source_baseline": "a130ce88a6c76fda7ba6cfb6f54d940d2336b558",
+  "speakerui_tests": {
+    "failed": 0,
+    "passed": 106
+  },
+  "speakerui_typecheck": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "staged_paths": [],
+  "static_scan_note": "Initial lexical eval scan matched torch model.eval(); attribute calls excluded from builtin eval/exec scan. No production code changed for this false positive.",
+  "static_security_findings": []
+}

@@ -1,0 +1,36 @@
+{
+  "format": "optionb-independent-review-v2",
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "closed_findings": [
+    {
+      "id": "R1",
+      "evidence": "Independently verified all 51 protocol bindings, including actual consumed manifests and canonical counterparts. Full manifest membership matches the pinned originals; expected evaluation membership derives from those originals. Missing, changed, empty, dropped and duplicate inputs fail closed."
+    },
+    {
+      "id": "R2",
+      "evidence": "Native harness invokes the real Python WAV/decoded-PCM preflight, verifies nonempty canonical membership, hashes the exact Buffer submitted to the gateway and repeats preflight before its receipt. Both v2 receipts match the current protocol and canonical cohort."
+    },
+    {
+      "id": "R3",
+      "evidence": "All-action veto is restricted to the explicit OptionB preview contract. Legacy TIME/weather/timer/alarm/reminder and configured device-action semantics remain intact and have explicit regression fixtures."
+    },
+    {
+      "id": "R4",
+      "evidence": "Failed capture/control operations publish capture_error/runtime_error before the failed reply. Stream/gate cleanup is attempted, secondary cleanup failure is visible, and failed re-listen, recovery and EOF/shutdown are covered by regressions."
+    }
+  ],
+  "suggestions": [],
+  "review_scope": "Focused independent read-only closure: corrective diff, current source, tests, protocol, receipts and actual hash/cohort consistency checks.",
+  "reviewer_ran_new_tests_or_experiments": false,
+  "reviewer_modified_files": false,
+  "original_review_and_evidence_preserved": true,
+  "protocol": "experiments/speaker-optionb-release-v1/protocol-v2.json",
+  "protocol_sha256": "1e8cfbf8c922183b0732189462c58b13e95c28d070369dc193ffa05185f15a60",
+  "fresh_blind_completed": false,
+  "physical_pi_completed": false,
+  "live_microphone_completed": false,
+  "promoted": false,
+  "summary": "R1-R4 closed within scope. Independent human and actual Pi/microphone evidence remain mandatory pending promotion gates; architecture, model and policy are unchanged."
+}

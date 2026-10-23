@@ -1,0 +1,38 @@
+{
+  "format": "optionb-non-pi-handoff-independent-review-v1",
+  "passed": false,
+  "security_concerns": [],
+  "logic_errors": [
+    {
+      "id": "H1",
+      "severity": "P2",
+      "location": "SpeakerUI/server/inference/runtime-actions.ts:53; SpeakerUI/server/app.ts:70; scripts/runtime/optionb_worker.py:172-174",
+      "issue": "The OptionB preview guard returns disabled, which the gateway treats as speech-eligible. If SUBMISSION_RESPONSE_PLAYBACK=true is inherited, an accepted microphone preview sends an unsupported speak request to the OptionB worker. The failure handler stops capture and resets the gate.",
+      "reviewer_reported_evidence": "An in-memory Node gateway probe emitted speak and speech_error; a real worker-loop probe with model/hardware doubles transitioned from wake_listening to runtime_error and cleaned up capture. No physical microphone, playback or providers were used.",
+      "minimal_correction": "Suppress speech specifically for the explicit OptionB preview contract, or return the existing no-speech preview status. Preserve legacy response playback. Add a gateway regression with playback=true asserting zero speak requests and no capture-failure transition."
+    }
+  ],
+  "suggestions": [
+    "Nonblocking: route JSONL parser/queue errors through the service event metadata path, define cleanup semantics and drain oversized logical lines; test malformed input while listening.",
+    "Nonblocking: retain and verify the exact WAV byte buffer submitted by the Python adapter verifier, avoiding the local replacement window between read_audio and a second read_bytes call.",
+    "Nonblocking: add mocked whole-PC-driver decision/boundary/provider/input-change failure tests."
+  ],
+  "reviewer_reported_checks": {
+    "release_bindings": 51,
+    "pc_bindings": 4,
+    "holdout_wav_pcm_identities": 96,
+    "stored_adapter_decisions": 1146,
+    "timing_observations": 3438,
+    "javascript_tests": 13,
+    "adapter_lifecycle_cases": 20,
+    "timing_cases": 6
+  },
+  "model_policy_and_pc_measurements_invalidated": false,
+  "fresh_human_completed": false,
+  "live_microphone_completed": false,
+  "physical_pi_completed": false,
+  "reviewer_modified_files": false,
+  "review_diff": "C:/Users/Justin/AppData/Local/hermes/cache/scratch/optionb-handoff-precommit-review.txt",
+  "review_transcript": "C:/Users/Justin/AppData/Local/hermes/cache/delegation/live/deleg_be1e481d/task-0.log",
+  "summary": "Approval blocked by H1 preview/playback capture interruption; preserve this failed review and close it with a separate correction and verification."
+}

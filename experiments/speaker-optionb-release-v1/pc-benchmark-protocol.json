@@ -1,0 +1,30 @@
+{
+  "accuracy": "one count per original recording; raw and accepted complete-command metrics; ambiguity kept separate; exact wording reported separately",
+  "actions_enabled": false,
+  "bindings": {
+    "experiments/speaker-optionb-release-v1/protocol-v2.json": "1e8cfbf8c922183b0732189462c58b13e95c28d070369dc193ffa05185f15a60",
+    "experiments/speaker-optionb-tiny-ft-v1/verify-results.py": "95a2115ea39bc6467c0de9fdf5d0b8875673a64693007b1b558c3cd450951cc9",
+    "scripts/test/optionb_pc_benchmark.py": "aa70a0758ec49fd39edef81a7e6153e8f7118760cec7821282be6e51208d2175",
+    "scripts/test/test_optionb_pc_benchmark.py": "5bf19d64dd2aa83262f12065a2898edcaaab82005a09e4ffa37f38ed86ff3ef1"
+  },
+  "format": "optionb-pc-benchmark-v1",
+  "fresh_blind_human_check": "pending_no_new_recordings",
+  "latency": "external wall-clock runtime.recognize on preloaded verified PCM, one CPU ONNX thread and existing one-thread frontend BLAS; 3 repetitions after 10 warmups; no process affinity change",
+  "metric_helper": "experiments/speaker-optionb-tiny-ft-v1/verify-results.py",
+  "model_policy_data_or_fitting_changes": false,
+  "order_seed": 53,
+  "pi_validation": "deferred_not_a_current_pc_benchmark_blocker",
+  "release_protocol": "experiments/speaker-optionb-release-v1/protocol-v2.json",
+  "repeats": 3,
+  "scope": "Current benchmark prioritizes PC complete-command accuracy/rejection and recognition latency; Pi work deferred by user, not a blocker for this PC benchmark.",
+  "source_cohort": "all independently pinned original HUMAN test and holdout rows, including unscored ambiguity",
+  "target": "pc",
+  "threads": 1,
+  "timing_excludes": [
+    "WAV loading/decoding/hash checks",
+    "speaking time",
+    "wake/VAD/endpoint waiting",
+    "worker/gateway/UI/TTS/provider overhead"
+  ],
+  "warmup_calls": 10
+}

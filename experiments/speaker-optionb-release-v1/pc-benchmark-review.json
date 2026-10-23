@@ -1,0 +1,27 @@
+{
+  "format": "optionb-pc-benchmark-independent-review-v1",
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [
+    "Non-blocking hardening: add mocked decision-mismatch, cohort/multiplicity and binding-failure cases to the PC driver tests. Existing tests cover timing summaries, invalid observations and overwrite protection; shared release guards have separate tamper regressions."
+  ],
+  "review_scope": "Read-only source, protocol, result, raw timing/cohort and hash consistency review; no new benchmark or tests run by reviewer.",
+  "canonical_original_human_recordings": 1146,
+  "observations": 3438,
+  "observations_per_recording": 3,
+  "independently_recomputed_p50_ms": 4.820250000193482,
+  "independently_recomputed_p95_ms": 8.406129999457331,
+  "pc_bindings_verified": 4,
+  "release_bindings_verified": 51,
+  "protocol_observation_and_wording_hashes_verified": true,
+  "accuracy_matches_frozen_references": true,
+  "ambiguity_unscored": {"test": 185, "holdout": 2},
+  "timing_scope_verified": "External full recognize call in milliseconds, after preload and warmup; CPU-only ONNX/one-thread frontend; no fitting/actions/Torch loaded.",
+  "pc_protocol": "experiments/speaker-optionb-release-v1/pc-benchmark-protocol.json",
+  "pc_protocol_sha256": "fc74af51f8c05c29d48f35571e99b96864ce86d7d899ba196d051e8191cbffa9",
+  "result": "experiments/speaker-optionb-release-v1/pc-benchmark-results.json",
+  "fresh_blind_evidence": "pending_no_new_recordings",
+  "pi_validation": "deferred_not_a_current_pc_benchmark_blocker",
+  "summary": "PC timing, cohort/ambiguity denominators, frozen complete-command metrics and all referenced bindings reconcile. No blocking correctness/security issue found; no model, policy or data changes."
+}

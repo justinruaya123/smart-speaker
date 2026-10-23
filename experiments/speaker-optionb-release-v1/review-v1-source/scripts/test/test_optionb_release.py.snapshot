@@ -1,0 +1,91 @@
+"""Release adapter contracts, not recognition-quality or physical-device evidence."""
+from copy import deepcopy
+import importlib
+
+import numpy as np
+import pytest
+
+
+def adapter():
+    try:
+        return importlib.import_module('scripts.runtime.optionb_worker')
+    except ModuleNotFoundError as exc:
+        if exc.name != 'scripts.runtime.optionb_worker':
+            raise
+        pytest.fail('Pinned OptionB SpeakerUI worker is missing')
+
+
+def test_atomic_decision_survives_old_independent_gates_without_enabling_actions():
+    from scripts.runtime.speaker_optionb_tiny import decision
+    logits = np.zeros(32)
+    logits[1] = 4.
+    event = decision(logits, dict(enabled=True, min_probability=.50, min_margin=.10))
+    assert event['output']['accepted'] and event['command_probability'] < .95
+    before = deepcopy(event)
+    delivered = []
+    service = adapter().OptionBAudioService(None, delivered.append,
+        settings={'inference': {'intent_threshold': .99, 'slot_threshold': .99},
+                  'actions': {'enabled': True}})
+    service.emit(event)
+    actual = delivered[-1]
+    assert event == before
+    assert actual['output'] == before['output']
+    assert actual['application'] == before['application']
+    assert actual['qualified_output']['accepted'] is False
+    assert actual['actions_enabled'] is False
+    assert actual['inference_contract'] == 'audio_to_atomic_complete_optionb_command'
+    assert actual['source'] == 'microphone'
+
+
+def test_gate_capture_rejection_is_forwarded_without_rescuing_a_command():
+    from scripts.runtime.pcv_schema import output
+    delivered = []
+    service = adapter().OptionBAudioService(None, delivered.append)
+    service.forward({'output': output(None, 'capture_fault'), 'reason': 'capture_fault'})
+    event = next(e for e in delivered if e['event'] == 'command')
+    assert event['application'] == {**event['output'], 'mode': 'joint_complete_command'}
+    assert event['application']['accepted'] is False
+    assert event['application']['reason'] == 'capture_fault'
+    assert event['actions_enabled'] is False
+
+
+def test_inconsistent_or_missing_accepted_application_fails_closed():
+    from scripts.runtime.speaker_optionb_tiny import decision
+    logits = np.zeros(32); logits[1] = 8.
+    event = decision(logits, dict(enabled=True, min_probability=.50, min_margin=.10))
+    service = adapter().OptionBAudioService(None, lambda _: pytest.fail('invalid event delivered'))
+    for changed in ({'application': {}}, {'application': {**event['application'], 'accepted': False}},
+                    {'application': {**event['application'], 'command': {'intent': 'TIME', 'slots': {}}}}):
+        with pytest.raises(ValueError, match='atomic decision'):
+            service.emit({**event, **changed})
+
+
+def test_pinned_bundle_rejects_a_self_consistent_substitute_before_inference(tmp_path):
+    import json
+    for name in ('model.onnx', 'commands.json', 'normalization.json', 'policy.json', 'recipe.json'):
+        (tmp_path / name).write_text('{}' if name.endswith('.json') else 'not the epoch44 graph')
+    with pytest.raises(ValueError, match='Frozen OptionB identity'):
+        adapter().FrozenOptionBRuntime(tmp_path)
+
+
+def test_worker_accepts_only_wav_controls_and_never_executes_provider_operations():
+    module = adapter()
+    class Service:
+        def wav(self, data, *, wake=False): return {'bytes': len(data), 'wake': wake}
+    assert module.control(Service(), {'op': 'wav', 'data': 'YWJj', 'wake': False}) == {'bytes': 3, 'wake': False}
+    for op in ('speak', 'execute', 'fit', 'update_policy'):
+        with pytest.raises(ValueError, match='Unknown runtime operation'):
+            module.control(Service(), {'op': op})
+
+
+def test_release_check_refuses_to_overwrite_any_prior_evidence(tmp_path):
+    try:
+        module = importlib.import_module('scripts.test.optionb_release_check')
+    except ModuleNotFoundError as exc:
+        if exc.name != 'scripts.test.optionb_release_check':
+            raise
+        pytest.fail('Read-only frozen release checker is missing')
+    (tmp_path / 'sentinel').write_text('preserve')
+    with pytest.raises(FileExistsError, match='Preserve'):
+        module.run_check(tmp_path / 'no-protocol.json', tmp_path)
+    assert (tmp_path / 'sentinel').read_text() == 'preserve'

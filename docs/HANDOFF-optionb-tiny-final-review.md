@@ -1,5 +1,7 @@
 # Independent review handoff: final OptionB tiny candidate
 
+**Follow-up, 2026-10-23:** the architecture is now frozen and an explicit action-free SpeakerUI adapter and PC benchmark have been verified. Start with [the current release/PC handoff](RELEASE-optionb-tiny-v1.md#non-pi-handoff-completion--2026-10-23) for those additive changes and their reproduction commands. The original review context below remains historical evidence. Fresh independent-speaker recordings are still unavailable; Pi tests are explicitly excluded from the current continuation. Neither omission is a passing test or permission to promote/install the model.
+
 Date: 2026-10-23. Start here for the user's request to read the final small model and criticize its flow. This is a review handoff, not a new fit, release approval or installation.
 
 ## 1. Exactly which model is under review?

@@ -7,7 +7,7 @@ type RuntimeEvent = Record<string, any>;
 
 export function workerModule(env: NodeJS.ProcessEnv): string {
   const name = env.SMART_SPEAKER_WORKER_MODULE || 'scripts.runtime.speaker_worker';
-  if (!['scripts.runtime.speaker_worker', 'scripts.submission.worker'].includes(name)) throw new Error('Unsupported worker module.');
+  if (!['scripts.runtime.speaker_worker', 'scripts.submission.worker', 'scripts.runtime.optionb_worker'].includes(name)) throw new Error('Unsupported worker module.');
   return name;
 }
 

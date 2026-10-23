@@ -1,0 +1,30 @@
+{
+  "actions_enabled": false,
+  "before_inference": [
+    "record original mono16kHz WAV and immutable audio/PCM hashes",
+    "independently listen and adjudicate full reference/complete command without seeing predictions",
+    "do not use prompt text as proof of what was spoken",
+    "freeze exact speaker/session/source/recording/reference manifest and quality criteria",
+    "keep ambiguous/unverified labels in a separate unscored review denominator"
+  ],
+  "cases_file": "experiments/speaker-optionb-release-v1/fresh-check-prompts.csv",
+  "cases_sha256": "741bd9475366af6444a4017b825b25ba2fd969494cdbd57bd2fb036abbb33fac",
+  "evaluation": [
+    "run unchanged .50/.10 policy once, no training or threshold changes",
+    "report each of93 wordings, typed command and speaker with zero-support cells retained",
+    "report correct/wrong accepts/rejections, true-negative false accepts and capture faults separately",
+    "wrong slots are a false accepted command and a missed true command",
+    "report coverage, denominators and uncertainty; do not infer fresh blindness from speaker-disjointness alone"
+  ],
+  "format": "optionb-fresh-unseen-speaker-check-v1",
+  "model_policy_protocol": "experiments/speaker-optionb-release-v1/protocol.json",
+  "must_be_disjoint_from": "all prior fitting, normalization, model/policy selection and recorded evaluation speakers/recordings; retain alias uncertainty",
+  "physical_pi_live_check": "separate mandatory evidence; no desktop surrogate",
+  "planned_new_independent_human_speakers": 3,
+  "planned_one_take_each_prompt_per_speaker": 318,
+  "promotion": false,
+  "recordings_available": 0,
+  "rejection_prompts": 13,
+  "status": "frozen_prompt_plan_no_recordings",
+  "supported_wordings": 93
+}

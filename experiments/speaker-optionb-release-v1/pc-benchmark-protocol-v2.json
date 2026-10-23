@@ -1,0 +1,35 @@
+{
+  "accuracy": "one count per original recording; raw and accepted complete-command metrics; ambiguity kept separate; exact wording reported separately",
+  "actions_enabled": false,
+  "bindings": {
+    "experiments/speaker-optionb-release-v1/protocol-v3.json": "9a08cddff6af4656993dbc881d7c3717e1bfe92d15c54e681d448650fcd29bce",
+    "experiments/speaker-optionb-tiny-ft-v1/verify-results.py": "95a2115ea39bc6467c0de9fdf5d0b8875673a64693007b1b558c3cd450951cc9",
+    "scripts/test/optionb_pc_benchmark.py": "78c24f55b2770ea199d54bf6cd7606a3b71e7c276f71f678b58a869c1506e032",
+    "scripts/test/test_optionb_handoff_defaults.py": "fec2e9d6121eff7daa13b5f54c68938b914aefb3d8be6e438e400416f563431e",
+    "scripts/test/test_optionb_pc_benchmark.py": "5bf19d64dd2aa83262f12065a2898edcaaab82005a09e4ffa37f38ed86ff3ef1"
+  },
+  "format": "optionb-pc-benchmark-v1",
+  "fresh_blind_human_check": "pending_no_new_recordings",
+  "latency": "external wall-clock runtime.recognize on preloaded verified PCM, one CPU ONNX thread and existing one-thread frontend BLAS; 3 repetitions after 10 warmups; no process affinity change",
+  "metric_helper": "experiments/speaker-optionb-tiny-ft-v1/verify-results.py",
+  "model_policy_data_or_fitting_changes": false,
+  "order_seed": 53,
+  "pi_validation": "deferred_not_a_current_pc_benchmark_blocker",
+  "predecessor": {
+    "path": "experiments/speaker-optionb-release-v1/pc-benchmark-protocol.json",
+    "sha256": "fc74af51f8c05c29d48f35571e99b96864ce86d7d899ba196d051e8191cbffa9"
+  },
+  "release_protocol": "experiments/speaker-optionb-release-v1/protocol-v3.json",
+  "repeats": 3,
+  "scope": "Current benchmark prioritizes PC complete-command accuracy/rejection and recognition latency; Pi work deferred by user, not a blocker for this PC benchmark.",
+  "source_cohort": "all independently pinned original HUMAN test and holdout rows, including unscored ambiguity",
+  "target": "pc",
+  "threads": 1,
+  "timing_excludes": [
+    "WAV loading/decoding/hash checks",
+    "speaking time",
+    "wake/VAD/endpoint waiting",
+    "worker/gateway/UI/TTS/provider overhead"
+  ],
+  "warmup_calls": 10
+}

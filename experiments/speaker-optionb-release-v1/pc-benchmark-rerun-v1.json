@@ -1,0 +1,161 @@
+{
+  "actions_enabled": false,
+  "cohorts": {
+    "holdout": {
+      "ambiguous_unscored": 2,
+      "exact_wording": {
+        "correct_accepted": 58,
+        "metadata_exact_references": 62,
+        "rejected": 3,
+        "wrong_accepted": 1
+      },
+      "latency": {
+        "observations": 288,
+        "p50_ms": 7.20764999914536,
+        "p95_ms": 8.190464999188407,
+        "rtf_p95": 0.0019443719852317725
+      },
+      "original_rows": 96,
+      "raw": {
+        "correct_accepted": 76,
+        "f1": 0.9047619047619048,
+        "fn": 4,
+        "fp": 12,
+        "negative_false_accept_rate": 0.5714285714285714,
+        "negative_false_accepts": 8,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 0.8636363636363636,
+        "recall": 0.95,
+        "rows": 94,
+        "tp": 76,
+        "wrong_accepted": 12
+      },
+      "selected": {
+        "correct_accepted": 72,
+        "f1": 0.9290322580645162,
+        "fn": 8,
+        "fp": 3,
+        "negative_false_accept_rate": 0.07142857142857142,
+        "negative_false_accepts": 1,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 0.96,
+        "recall": 0.9,
+        "rows": 94,
+        "tp": 72,
+        "wrong_accepted": 3
+      }
+    },
+    "test": {
+      "ambiguous_unscored": 185,
+      "exact_wording": {
+        "correct_accepted": 173,
+        "metadata_exact_references": 232,
+        "rejected": 55,
+        "wrong_accepted": 4
+      },
+      "latency": {
+        "observations": 3150,
+        "p50_ms": 4.789449999407225,
+        "p95_ms": 7.970205001129214,
+        "rtf_p95": 0.0027980858644726108
+      },
+      "original_rows": 1050,
+      "raw": {
+        "correct_accepted": 469,
+        "f1": 0.741501976284585,
+        "fn": 140,
+        "fp": 187,
+        "negative_false_accept_rate": 0.33984375,
+        "negative_false_accepts": 87,
+        "negatives": 256,
+        "positives": 609,
+        "precision": 0.7149390243902439,
+        "recall": 0.7701149425287356,
+        "rows": 865,
+        "tp": 469,
+        "wrong_accepted": 187
+      },
+      "selected": {
+        "correct_accepted": 393,
+        "f1": 0.7408105560791706,
+        "fn": 216,
+        "fp": 59,
+        "negative_false_accept_rate": 0.09375,
+        "negative_false_accepts": 24,
+        "negatives": 256,
+        "positives": 609,
+        "precision": 0.8694690265486725,
+        "recall": 0.645320197044335,
+        "rows": 865,
+        "tp": 393,
+        "wrong_accepted": 59
+      }
+    }
+  },
+  "cold_runtime_init_ms": 24.178599998776917,
+  "exposed_regression_not_fresh_blind": true,
+  "format": "optionb-pc-benchmark-results-v1",
+  "fresh_human_check": "pending_no_new_recordings",
+  "hardware": {
+    "affinity": "unchanged",
+    "blas_threads": 1,
+    "cpu": "11th Gen Intel(R) Core(TM) i7-11700 @ 2.50GHz",
+    "logical_cpus": 16,
+    "onnx_threads": 1,
+    "platform": "Windows-11-10.0.26200-SP0",
+    "provider": [
+      "CPUExecutionProvider"
+    ],
+    "python": "3.13.14"
+  },
+  "independent_original_human_recordings": 1146,
+  "latency_all": {
+    "observations": 3438,
+    "p50_ms": 4.960850000315986,
+    "p95_ms": 8.021415000348497,
+    "rtf_p95": 0.002764950285236913
+  },
+  "model": {
+    "binding": {
+      "commands.json": "71017cf22366d15557e8878636135f5ff2d0ac81fc4dfd6f058fc88f0f2d4b5d",
+      "model.onnx": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+      "normalization.json": "28f7ef1b2c926c587d611d17eef91184c2c7e2de66abe352d1fc2365e45d69ed",
+      "policy.json": "b9242e46fb093642a41023e8ace3c0cadc2fe51ffede512aa09e399622f355f0"
+    },
+    "epoch": 44,
+    "parameters": 258912,
+    "policy": {
+      "enabled": true,
+      "min_margin": 0.1,
+      "min_probability": 0.5
+    }
+  },
+  "observations": 3438,
+  "observations_sha256": "aeafca59635405f16884e5adb3d580d77b8129fb5800b6dce13ff9d3c9759037",
+  "onnx_session_load_ms": 20.382900000186055,
+  "optimizer_updates": 0,
+  "pi_validation": "deferred_not_a_current_pc_benchmark_blocker",
+  "policy_changes": 0,
+  "protocol_sha256": "fc74af51f8c05c29d48f35571e99b96864ce86d7d899ba196d051e8191cbffa9",
+  "release_protocol_sha256": "1e8cfbf8c922183b0732189462c58b13e95c28d070369dc193ffa05185f15a60",
+  "repeats": 3,
+  "source_decisions_unchanged": true,
+  "target": "pc",
+  "timing_excludes": [
+    "WAV loading/decoding/hash checks",
+    "speaking time",
+    "wake/VAD/endpoint waiting",
+    "worker/gateway/UI/TTS/provider overhead"
+  ],
+  "timing_includes": [
+    "PCM validation",
+    "frozen frontend/normalization",
+    "FP32 CPU ONNX",
+    "softmax/margin and complete-command validation"
+  ],
+  "torch_imported": false,
+  "warmup_calls": 10,
+  "wording_sha256": "b88ca5be536b275fb5cc0fabf0f6aa3fe17c7535e59c1bff870c57178e764f22"
+}
