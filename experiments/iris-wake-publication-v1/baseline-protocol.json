@@ -1,0 +1,1435 @@
+{
+  "base_revision": "c0628940400642f204ff98e26908549b1c07e41c",
+  "baseline_policy": {
+    "consecutive": 2,
+    "cooldown_samples": 16000,
+    "release": 0.3,
+    "threshold": 0.9999
+  },
+  "cases": [
+    {
+      "id": "baseline-000",
+      "kind": "positive",
+      "rate": "-10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Iris",
+      "voice": "en-US-AndrewNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-US"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-001",
+      "kind": "positive",
+      "rate": "+10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Iris",
+      "voice": "en-US-AndrewNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-US"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-002",
+      "kind": "positive",
+      "rate": "-10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey, Iris",
+      "voice": "en-US-AndrewNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-US"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-003",
+      "kind": "positive",
+      "rate": "+10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey, Iris",
+      "voice": "en-US-AndrewNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-US"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-004",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Siri",
+      "voice": "en-US-AndrewNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-US"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-005",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Jarvis",
+      "voice": "en-US-AndrewNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-US"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-006",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hi Iris",
+      "voice": "en-US-AndrewNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-US"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-007",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Irish",
+      "voice": "en-US-AndrewNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-US"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-008",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Alice",
+      "voice": "en-US-AndrewNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-US"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-009",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Iris flower",
+      "voice": "en-US-AndrewNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-US"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-010",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "turn on the lights",
+      "voice": "en-US-AndrewNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-US"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-011",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "ordinary conversation",
+      "voice": "en-US-AndrewNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-US"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-012",
+      "kind": "positive",
+      "rate": "-10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Iris",
+      "voice": "en-US-JennyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-US"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-013",
+      "kind": "positive",
+      "rate": "+10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Iris",
+      "voice": "en-US-JennyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-US"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-014",
+      "kind": "positive",
+      "rate": "-10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey, Iris",
+      "voice": "en-US-JennyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-US"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-015",
+      "kind": "positive",
+      "rate": "+10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey, Iris",
+      "voice": "en-US-JennyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-US"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-016",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Siri",
+      "voice": "en-US-JennyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-US"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-017",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Jarvis",
+      "voice": "en-US-JennyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-US"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-018",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hi Iris",
+      "voice": "en-US-JennyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-US"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-019",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Irish",
+      "voice": "en-US-JennyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-US"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-020",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Alice",
+      "voice": "en-US-JennyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-US"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-021",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Iris flower",
+      "voice": "en-US-JennyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-US"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-022",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "turn on the lights",
+      "voice": "en-US-JennyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-US"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-023",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "ordinary conversation",
+      "voice": "en-US-JennyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-US"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-024",
+      "kind": "positive",
+      "rate": "-10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Iris",
+      "voice": "en-GB-RyanNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-GB"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-025",
+      "kind": "positive",
+      "rate": "+10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Iris",
+      "voice": "en-GB-RyanNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-GB"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-026",
+      "kind": "positive",
+      "rate": "-10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey, Iris",
+      "voice": "en-GB-RyanNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-GB"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-027",
+      "kind": "positive",
+      "rate": "+10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey, Iris",
+      "voice": "en-GB-RyanNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-GB"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-028",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Siri",
+      "voice": "en-GB-RyanNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-GB"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-029",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Jarvis",
+      "voice": "en-GB-RyanNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-GB"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-030",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hi Iris",
+      "voice": "en-GB-RyanNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-GB"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-031",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Irish",
+      "voice": "en-GB-RyanNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-GB"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-032",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Alice",
+      "voice": "en-GB-RyanNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-GB"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-033",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Iris flower",
+      "voice": "en-GB-RyanNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-GB"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-034",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "turn on the lights",
+      "voice": "en-GB-RyanNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-GB"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-035",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "ordinary conversation",
+      "voice": "en-GB-RyanNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-GB"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-036",
+      "kind": "positive",
+      "rate": "-10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Iris",
+      "voice": "en-GB-LibbyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-GB"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-037",
+      "kind": "positive",
+      "rate": "+10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Iris",
+      "voice": "en-GB-LibbyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-GB"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-038",
+      "kind": "positive",
+      "rate": "-10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey, Iris",
+      "voice": "en-GB-LibbyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-GB"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-039",
+      "kind": "positive",
+      "rate": "+10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey, Iris",
+      "voice": "en-GB-LibbyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-GB"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-040",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Siri",
+      "voice": "en-GB-LibbyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-GB"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-041",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Jarvis",
+      "voice": "en-GB-LibbyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-GB"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-042",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hi Iris",
+      "voice": "en-GB-LibbyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-GB"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-043",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Irish",
+      "voice": "en-GB-LibbyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-GB"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-044",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Alice",
+      "voice": "en-GB-LibbyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-GB"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-045",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Iris flower",
+      "voice": "en-GB-LibbyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-GB"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-046",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "turn on the lights",
+      "voice": "en-GB-LibbyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-GB"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-047",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "ordinary conversation",
+      "voice": "en-GB-LibbyNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-GB"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-048",
+      "kind": "positive",
+      "rate": "-10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Iris",
+      "voice": "en-PH-JamesNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-PH"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-049",
+      "kind": "positive",
+      "rate": "+10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Iris",
+      "voice": "en-PH-JamesNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-PH"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-050",
+      "kind": "positive",
+      "rate": "-10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey, Iris",
+      "voice": "en-PH-JamesNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-PH"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-051",
+      "kind": "positive",
+      "rate": "+10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey, Iris",
+      "voice": "en-PH-JamesNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-PH"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-052",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Siri",
+      "voice": "en-PH-JamesNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-053",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Jarvis",
+      "voice": "en-PH-JamesNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-054",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hi Iris",
+      "voice": "en-PH-JamesNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-055",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Irish",
+      "voice": "en-PH-JamesNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-056",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Alice",
+      "voice": "en-PH-JamesNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-057",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Iris flower",
+      "voice": "en-PH-JamesNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-058",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "turn on the lights",
+      "voice": "en-PH-JamesNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-059",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "ordinary conversation",
+      "voice": "en-PH-JamesNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "en-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-060",
+      "kind": "positive",
+      "rate": "-10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Iris",
+      "voice": "en-PH-RosaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-PH"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-061",
+      "kind": "positive",
+      "rate": "+10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Iris",
+      "voice": "en-PH-RosaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-PH"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-062",
+      "kind": "positive",
+      "rate": "-10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey, Iris",
+      "voice": "en-PH-RosaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-PH"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-063",
+      "kind": "positive",
+      "rate": "+10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey, Iris",
+      "voice": "en-PH-RosaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-PH"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-064",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Siri",
+      "voice": "en-PH-RosaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-065",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Jarvis",
+      "voice": "en-PH-RosaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-066",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hi Iris",
+      "voice": "en-PH-RosaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-067",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Irish",
+      "voice": "en-PH-RosaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-068",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Alice",
+      "voice": "en-PH-RosaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-069",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Iris flower",
+      "voice": "en-PH-RosaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-070",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "turn on the lights",
+      "voice": "en-PH-RosaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-071",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "ordinary conversation",
+      "voice": "en-PH-RosaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "en-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-072",
+      "kind": "positive",
+      "rate": "-10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Iris",
+      "voice": "fil-PH-AngeloNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-073",
+      "kind": "positive",
+      "rate": "+10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Iris",
+      "voice": "fil-PH-AngeloNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-074",
+      "kind": "positive",
+      "rate": "-10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey, Iris",
+      "voice": "fil-PH-AngeloNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-075",
+      "kind": "positive",
+      "rate": "+10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey, Iris",
+      "voice": "fil-PH-AngeloNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-076",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Siri",
+      "voice": "fil-PH-AngeloNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-077",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Jarvis",
+      "voice": "fil-PH-AngeloNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-078",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hi Iris",
+      "voice": "fil-PH-AngeloNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-079",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Irish",
+      "voice": "fil-PH-AngeloNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-080",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Alice",
+      "voice": "fil-PH-AngeloNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-081",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Iris flower",
+      "voice": "fil-PH-AngeloNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-082",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "turn on the lights",
+      "voice": "fil-PH-AngeloNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-083",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "ordinary conversation",
+      "voice": "fil-PH-AngeloNeural",
+      "voice_metadata": {
+        "Gender": "Male",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-084",
+      "kind": "positive",
+      "rate": "-10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Iris",
+      "voice": "fil-PH-BlessicaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-085",
+      "kind": "positive",
+      "rate": "+10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Iris",
+      "voice": "fil-PH-BlessicaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-086",
+      "kind": "positive",
+      "rate": "-10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey, Iris",
+      "voice": "fil-PH-BlessicaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-087",
+      "kind": "positive",
+      "rate": "+10%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey, Iris",
+      "voice": "fil-PH-BlessicaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": true
+    },
+    {
+      "id": "baseline-088",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Siri",
+      "voice": "fil-PH-BlessicaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-089",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Jarvis",
+      "voice": "fil-PH-BlessicaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-090",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hi Iris",
+      "voice": "fil-PH-BlessicaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-091",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Irish",
+      "voice": "fil-PH-BlessicaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-092",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Hey Alice",
+      "voice": "fil-PH-BlessicaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-093",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "Iris flower",
+      "voice": "fil-PH-BlessicaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-094",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "turn on the lights",
+      "voice": "fil-PH-BlessicaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "id": "baseline-095",
+      "kind": "negative",
+      "rate": "+0%",
+      "split": "baseline",
+      "synthetic": true,
+      "text": "ordinary conversation",
+      "voice": "fil-PH-BlessicaNeural",
+      "voice_metadata": {
+        "Gender": "Female",
+        "Locale": "fil-PH"
+      },
+      "wake_positive": false
+    },
+    {
+      "amplitude": 0,
+      "control": "silence",
+      "id": "baseline-control-silence",
+      "kind": "control",
+      "seconds": 10,
+      "seed": 731,
+      "split": "baseline",
+      "synthetic": true,
+      "text": null,
+      "voice": null,
+      "wake_positive": false
+    },
+    {
+      "amplitude": 0.001,
+      "control": "white_quiet",
+      "id": "baseline-control-white_quiet",
+      "kind": "control",
+      "seconds": 10,
+      "seed": 731,
+      "split": "baseline",
+      "synthetic": true,
+      "text": null,
+      "voice": null,
+      "wake_positive": false
+    },
+    {
+      "amplitude": 0.04,
+      "control": "white_loud",
+      "id": "baseline-control-white_loud",
+      "kind": "control",
+      "seconds": 10,
+      "seed": 731,
+      "split": "baseline",
+      "synthetic": true,
+      "text": null,
+      "voice": null,
+      "wake_positive": false
+    },
+    {
+      "amplitude": 0.02,
+      "control": "pink",
+      "id": "baseline-control-pink",
+      "kind": "control",
+      "seconds": 10,
+      "seed": 731,
+      "split": "baseline",
+      "synthetic": true,
+      "text": null,
+      "voice": null,
+      "wake_positive": false
+    }
+  ],
+  "duplicate_wakes_maximum": 0,
+  "experiment": "iris-wake-publication-v1-baseline",
+  "false_wakes_maximum": 0,
+  "generation": {
+    "codec": "ffmpeg PCM16 mono 16000Hz",
+    "concurrency": 3,
+    "maximum_attempts": 4,
+    "provider": "Microsoft Edge TTS via edge-tts",
+    "version": "7.3.1"
+  },
+  "hypothesis": "The unchanged native graph/gate passes a diverse synthetic smoke panel",
+  "model_sha256": "22fc8b0c6a3c80e1d1686d321a6251957085216efaca1752eb22067064a4ea57",
+  "negative_exposure": "Only original clip duration; padding excluded; not continuous household audio",
+  "original_human_positive_n": 0,
+  "policy_sha256": "12d21a9460a2ac37582d28c0f31cb90f670b8bbc423f5c3bca664bb02d3d0922",
+  "positive_recall_minimum": 0.9,
+  "qualified": false,
+  "rights": "No raw TTS corpus redistribution. Voice metadata is not human demographic evidence.",
+  "schema_version": 1,
+  "source_bindings": {
+    "scripts/models/mvp_wake.py": "57372639b362da85301aafb1bd4f5e8c1dfce3a512009e7f70f444459a02dccd",
+    "scripts/runtime/mvp_wake.py": "234013fc78aa1ab1f30854e38bd3b5eb73651a8100df2db9bde1c91c45ccaca9",
+    "scripts/train/iris_wake_helpers.py": "10cf4a75f746085a376cc74c9eabda2aed8bbc79c250c679678b7f4cfab8948a",
+    "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+  },
+  "step_samples": 1280,
+  "stream": "Reset each clip; 32000 leading and 48000 trailing zero samples; feed 640 samples; actual HeyIris CPU ONNX",
+  "window_samples": 25600
+}
