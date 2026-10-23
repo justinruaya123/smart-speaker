@@ -1,0 +1,38 @@
+{
+  "best_pt_sha256": "d45d71b3858b4182967d3f41dad8145150028ca17401c73d203fba75d6bda687",
+  "elapsed_seconds": 2987.9094288999986,
+  "epochs_completed": 48,
+  "fitting_splits": [
+    "train"
+  ],
+  "last_loss": 0.21045124530792236,
+  "normalization_sha256": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09",
+  "optimizer_steps": 4608,
+  "parameters": 258912,
+  "sample_draws": 147456,
+  "selected_checkpoint_draws": 135168,
+  "selected_checkpoint_unique_by_kind": {
+    "human": 1868,
+    "synthetic": 13336
+  },
+  "selected_epoch": 44,
+  "selected_on": "dev",
+  "training_config": {
+    "batch_size": 32,
+    "context_max_frames": 120,
+    "human_epochs": 6,
+    "label_smoothing": 0.02,
+    "learning_rate": 0.002,
+    "mixed_epochs": 42,
+    "seed": 53,
+    "steps_per_epoch": 96,
+    "threads": 4,
+    "weight_decay": 0.0001
+  },
+  "training_result_sha256": "609e2c8e3d3a0bd2019b85a3bc216c1093a8ac7719e9598ffd51b0a495215b06",
+  "unique_sampled_by_kind": {
+    "human": 1872,
+    "synthetic": 13865
+  },
+  "weights_changed": true
+}

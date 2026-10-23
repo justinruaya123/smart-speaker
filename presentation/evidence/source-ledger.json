@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://arxiv.org/abs/1711.07128",
+      "title": "Hello Edge: Keyword Spotting on Microcontrollers",
+      "accessed": "2026-10-22",
+      "quotes": [
+        {
+          "text": "depthwise separable convolutional neural network (DS-CNN) and compare it against other neural network",
+          "added": "2026-10-22"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://download.pytorch.org/whl/cu128/torch",
+      "title": "Official PyTorch CUDA 12.8 wheel index",
+      "accessed": "2026-10-22"
+    },
+    {
+      "id": 3,
+      "url": "https://docs.astral.sh/uv/concepts/cache",
+      "title": "Official uv cache documentation",
+      "accessed": "2026-10-22"
+    },
+    {
+      "id": 4,
+      "url": "https://docs.pytorch.org/docs/2.10/onnx.html",
+      "title": "PyTorch 2.10 ONNX export documentation",
+      "accessed": "2026-10-22"
+    },
+    {
+      "id": 5,
+      "url": "https://registry.npmjs.org/typescript/5.9.3",
+      "title": "npm registry metadata for pinned TypeScript 5.9.3 boundary-test compiler",
+      "accessed": "2026-10-22"
+    }
+  ]
+}
