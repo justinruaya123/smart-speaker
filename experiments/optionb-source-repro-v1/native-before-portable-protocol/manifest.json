@@ -1,0 +1,9 @@
+{
+  "scope": "Before the additive optional portable-protocol native-verifier argument; no production inference or gateway behavior change",
+  "predecessor_protocol": "experiments/speaker-optionb-release-v1/protocol-v3.json",
+  "files": {
+    "SpeakerUI/scripts/optionb-parity.mjs": "798d0d3997b78eeb67d949847c176f20771461086a5d96d162b748a67b154cd1",
+    "SpeakerUI/scripts/optionb-parity-inputs.mjs": "5496e944195b8f1d79c1d4443e718dcf85e5e122ee4b066aa5a3483a2868a84d",
+    "SpeakerUI/server/inference/optionb-inputs.test.ts": "ac7ea71731d69152818989d0589cb5fd6e1124040c9bc08fca16afa64bbf7067"
+  }
+}

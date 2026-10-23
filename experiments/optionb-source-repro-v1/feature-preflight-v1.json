@@ -1,0 +1,38 @@
+{
+  "format": "optionb-source-feature-preflight-evidence-v1",
+  "scientific_git_commit": "d00a3c40a26dc4fa1076d38923ae832dfa4058ae",
+  "actual_background_fit_process": "proc_62eab8ab1e60",
+  "actual_log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-fresh-full-fit-run-01.log",
+  "fresh_published_source_tests": {
+    "tests": 299,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_log_sha256": "52031fa64fca3087aac2a550a816706d75209e5ec8a47d00f798cf5ec5e855c4",
+  "test_junit_sha256": "a8d5a5e3127bfe33be1ab529adc7926e034d29a0699baff4a303a410c16f79f3",
+  "actual_input_comparison": {
+    "differences": [],
+    "exact": true,
+    "extraction": "canonical_extract_arrays_BLAS1",
+    "feature_rows": 24566,
+    "fitting_splits": [
+      "train"
+    ],
+    "golden_rows": 24566,
+    "heldout_pcm_decoded_or_inferred_before_selection": false,
+    "normalization_different_fields": [],
+    "normalization_equal": true,
+    "normalization_split": "human_train_only",
+    "optimizer_steps_before_gate": 0
+  },
+  "input_comparison_sha256": "cc966af7880e4dc8a544871a3c5318f7f7369ba6bcba311c5343b3b458a69b3f",
+  "original_human_normalization_rows": 1889,
+  "full_fit_status": "running_not_yet_accepted",
+  "old_frozen_or_derived_features_copied": false,
+  "source_wave_and_pcm_preparation": "experiments/optionb-source-repro-v1/preparation-v1.json",
+  "actions_enabled": false,
+  "qualified": false,
+  "installed": false,
+  "physical_pi": false
+}

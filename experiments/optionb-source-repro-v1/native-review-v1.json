@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "delegation": "deleg_8db60ab9",
+  "scope": "Independent review of the additive native source-reproduction parity harness",
+  "reviewed_diff_bytes": 8035,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [],
+  "summary": "Independently parsed the exact three-file diff and matched supplied file hashes. Literal optional protocol argv passthrough and unchanged defaults, canonical/WAV/decoded-PCM proof checks, exact submitted WAV verification, real worker/compiled gateway/UI reducer wiring and preview/action/qualification boundaries are preserved. Five focused software tests passed; subprocess argv and Windows/POSIX receipt fixtures checked containment and exclusive creation. Historical/scientific/default-protocol/compiled-adapter bytes remain unchanged. No corpus/model inference or repository/Git writes by the reviewer. Full source-native replay is not yet verified.",
+  "reviewed_files": {
+    "SpeakerUI/scripts/optionb-source-inputs.mjs": "de4169ab850ca1a2bfa5324d2201dcde3c893dcc11b9aae3b7f3e0956ba0afbd",
+    "SpeakerUI/scripts/optionb-source-parity.mjs": "f52b20254a0535882eac027ddbdb7716b0d0e39e36f378f296219f5a5882c57d",
+    "SpeakerUI/server/inference/optionb-source-inputs.test.ts": "45e11e200073d3bd854f7cc9d2d01b285c0e6c92ee4dcb83b87cacb69af870e9"
+  },
+  "parent_ui_tests": {"passed": 119, "failed": 0, "skipped": 0},
+  "parent_typecheck": {"exit_code": 0, "errors": 0, "warnings": 0},
+  "parent_literal_build": {"exit_code": 0, "node": "24.13.0", "pnpm": "12.5.1"},
+  "parent_build_harness_caveat": "The first top-level pinned pnpm launcher still found global pnpm8.11.0 in nested scripts; that diagnostic log is retained. Corrected v2 prepends both executable directories, verifies versions and passes the ordinary fully pinned recursive build.",
+  "historical_sources": "experiments/optionb-source-repro-v1/native-before-portable-protocol/manifest.json",
+  "scientific_model_policy_dependency_or_default_changes": false,
+  "actual_source_native_replay": "pending_after_successful_exact_full_fit_selection_lock",
+  "actions_enabled": false,
+  "qualified": false,
+  "installed": false,
+  "physical_pi": false
+}
