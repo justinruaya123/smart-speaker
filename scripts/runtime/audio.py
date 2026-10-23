@@ -8,7 +8,7 @@ from pathlib import Path
 from tempfile import NamedTemporaryFile
 import numpy as np
 from einops import rearrange, reduce
-from scipy.signal import resample_poly
+
 import soundfile as sf
 
 
@@ -52,6 +52,7 @@ def resample_audio(pcm, rate, target=16000):
     if pcm.ndim != 1:
         raise ValueError("Choose a microphone channel before resampling")
     if rate != target:
+        from scipy.signal import resample_poly
         common = gcd(int(rate), target)
         pcm = resample_poly(pcm, target // common, int(rate) // common).astype(np.float32)
     return pcm

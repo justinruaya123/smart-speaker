@@ -74,7 +74,7 @@ def make_gate(runtime,observed=None):
     from scripts.runtime.wake_models import SileroProbability,SileroVAD
     from scripts.runtime.pcv_schema import output
     from scripts.runtime.wake_gate import WakeGate
-    folder=runtime.root/'wake';recognizer=observed or runtime
+    folder=getattr(runtime,'wake_root',runtime.root/'wake');recognizer=observed or runtime
     class Endpoint:
         def __init__(self):
             self.vad=SileroVAD(folder,{'silence_ms':400,'max_utterance_seconds':15,'preroll_ms':128,'speech_threshold':.5})

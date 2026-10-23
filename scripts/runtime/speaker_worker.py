@@ -1,6 +1,7 @@
 """Resident CPU inference worker. JSONL controls/events; never executes actions."""
 import argparse
 import base64
+from copy import deepcopy
 import io
 import json
 import os
@@ -10,6 +11,10 @@ import sys
 import threading
 import time
 import uuid
+
+# Bound numeric-library defaults before the first NumPy/frontend import.
+for _key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','VECLIB_MAXIMUM_THREADS','NUMEXPR_NUM_THREADS'):
+    os.environ.setdefault(_key, '1')
 
 import numpy as np
 from einops import rearrange
@@ -98,7 +103,8 @@ class AudioService:
         with self.emission_lock:
             self.sequence+=1
             if value.get('event')=='command' and self.settings:
-                value={**value,'application':{'mode':self.settings['inference']['mode'],**value['output']}}
+                mode=value.get('application',{}).get('mode',self.settings['inference']['mode'])
+                value={**value,'application':{'mode':mode,**value['output']}}
             self.deliver({**value,'session_id':self.session,'sequence':self.sequence,'source':self.source,
                 'profile':self.profile,'owner_gating_enabled':self.owner_session is not None,
                 'ownership_experimental':self.owner_session is not None,
@@ -112,6 +118,7 @@ class AudioService:
         if self.previews:self.previews.clear()
         self.set_state('processing')
         with self.inference_lock:event=self.runtime.recognize(pcm)
+        event={**event,'model_output':deepcopy(event.get('model_output',event['output']))}
         if self.owner_session:
             from scripts.runtime.speaker_session import gate_application
             verdict=self.owner_session.finish(self.utterance,self.owner.evidence(pcm),
@@ -233,11 +240,46 @@ class AudioService:
         if announce:self.set_state('muted')
 
 
+def is_epoch44(bundle):
+    recipe=Path(bundle)/'recipe.json'
+    return recipe.is_file() and json.loads(recipe.read_bytes()).get('architecture')=='OptionBTinyVCM-1'
+
+
+def load_runtime(bundle,*,threads=1,engine=None,mode='demo',profile='benchmark-compatible'):
+    if is_epoch44(bundle):
+        from scripts.runtime.iris_epoch44 import Runtime
+        return Runtime(bundle,threads=threads,engine=engine or 'onnxruntime',mode=mode,profile=profile)
+    from scripts.runtime.mvp_static import Runtime
+    return Runtime(bundle,threads=threads,engine=engine or 'ncnn',mode=mode)
+
+
+def runtime_identity(runtime,owner=None):
+    from scripts.runtime.mvp_static import digest
+    result={'model_sha256':getattr(runtime,'model_sha256',runtime.recipe['binding'].get('model_sha256')),
+            'model_qualified':False}
+    if hasattr(runtime,'parameters'):
+        result.update(parameters=runtime.parameters,selected_epoch=runtime.selected_epoch)
+    wake=getattr(runtime,'wake_root',runtime.root/'wake')
+    result['companions']={
+        'wake':{'model_sha256':digest(wake/'iris.onnx'),'included_in_vcm_parameters':False},
+        'vad':{'model_sha256':digest(wake/'silero-vad.onnx'),'included_in_vcm_parameters':False},
+        'owner':{'model_sha256':owner.model_id,'included_in_vcm_parameters':False} if owner else None}
+    return result
+
+
+def application_config(runtime,settings):
+    if hasattr(runtime,'parameters'):
+        return {'mode':'joint_complete_command','engine':runtime.engine,
+                'min_probability':runtime.policy['min_probability'],'min_margin':runtime.policy['min_margin']}
+    return settings['inference']
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--bundle',type=Path,required=True)
     p.add_argument('--threads',type=int,default=1);p.add_argument('--diagnostic',action='store_true')
     p.add_argument('--profile',choices=['benchmark-compatible','owner-protected'])
     p.add_argument('--engine',choices=['ncnn','onnxruntime'])
+    p.add_argument('--no-audio',action='store_true',help='Disable feedback and actions, even with inherited flags')
     p.add_argument('--check',action='store_true',help='Load and verify command, wake, VAD and owner assets; no capture')
     p.add_argument('--wav',type=Path);p.add_argument('--wake',action='store_true');p.add_argument('--list-mics',action='store_true')
     args=p.parse_args()
@@ -253,25 +295,26 @@ def main():
     profile=args.profile or settings['inference'].get('profile','benchmark-compatible')
     if args.list_mics:
         emit({'event':'devices','devices':AudioService(None,emit).devices()});return
-    from scripts.runtime.mvp_static import Runtime as DirectRuntime
-    runtime=DirectRuntime(args.bundle,threads=args.threads,engine=settings['inference']['engine'],mode=settings['inference']['mode'])
-    if profile=='benchmark-compatible':settings['actions']['enabled']=False
+    engine=args.engine or ('onnxruntime' if is_epoch44(args.bundle) else settings['inference']['engine'])
+    runtime=load_runtime(args.bundle,threads=args.threads,engine=engine,mode=settings['inference']['mode'],profile=profile)
+    if profile=='benchmark-compatible' or args.no_audio:settings['actions']['enabled']=False
     owner=None
     if profile=='owner-protected':
         from scripts.runtime.iris_owner import OwnerBackend
-        owner=OwnerBackend(args.bundle/'owner',threads=args.threads)
+        owner=OwnerBackend(getattr(runtime,'owner_root',args.bundle/'owner'),threads=args.threads)
     service=AudioService(runtime,emit,settings,owner=owner,profile=profile)
     if args.check:
         service.new_gate()
-        emit({'event':'checked','profile':profile,'owner_gating_enabled':owner is not None,'actions_executed':False})
+        emit({'event':'checked','profile':profile,'owner_gating_enabled':owner is not None,'actions_executed':False,
+              **runtime_identity(runtime,owner)})
         return
     if args.list_mics:emit({'event':'devices','devices':service.devices()});return
     if args.wav:emit({'event':'done',**service.wav(args.wav.read_bytes(),wake=args.wake)});return
     service.emit({'event':'ready','engine':runtime.engine,'loaded':True,'nativeSession':True,'state':service.state,
                   'profile':profile,'owner_gating_enabled':owner is not None,
                   'ownership_experimental':owner is not None,
-                  'application_config':settings['inference'],'ui':settings['ui'],
-                  'model_sha256':runtime.recipe['binding']['model_sha256'],
+                  'application_config':application_config(runtime,settings),'ui':settings['ui'],
+                  **runtime_identity(runtime,owner),
                   'wake_phrase':'hey iris',
                   'policy_enabled':runtime.policy['enabled'] and getattr(runtime,'mode','demo')=='demo',
                   'threads':args.threads,'session_load_ms':runtime.load_ms})
