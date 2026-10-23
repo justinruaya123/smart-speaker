@@ -63,6 +63,9 @@ Desktop.ini
 !/submission/models/full/model.onnx
 !/submission/models/full/wake/*.onnx
 !/submission/checkpoints/full-selected.pt
+# Explicit user-requested frozen OptionB epoch44 snapshot; other candidates remain local.
+!/submission/models/optionb-tiny/model.onnx
+!/submission/checkpoints/optionb-tiny-selected.pt
 !/submission/wake/hey-iris/iris.onnx
 # Only the verified fixed rejection/recognition clips are release source assets.
 !/submission/responses/audio/*.wav
