@@ -1,0 +1,36 @@
+{
+  "format": "iris-manim-render-v1",
+  "renderer": "cairo",
+  "quality": "production",
+  "versions": {
+    "manim": "0.20.1",
+    "manim-slides": "5.7.0",
+    "manimpango": "0.7.0"
+  },
+  "source_sha256": "68cbcbd0947122efbcd1b496359c2e77954616f61262720857935230813b82cd",
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "assets": {
+    "pipeline": {
+      "video": "pipeline.mp4",
+      "poster": "pipeline-poster.png",
+      "html": "pipeline.html",
+      "duration_seconds": 10.6,
+      "video_bytes": 694164,
+      "codec": "h264",
+      "sha256": "20f04f9093edc395375e67eda51e3591f06d349baa17c5f83e472d13307f790b"
+    },
+    "model": {
+      "video": "model.mp4",
+      "poster": "model-poster.png",
+      "html": "model.html",
+      "duration_seconds": 9.7,
+      "video_bytes": 565628,
+      "codec": "h264",
+      "sha256": "de0a5cf6d8c7d7138c13c0afda15452288cf70618bca5cbc73889305c715ff52"
+    }
+  }
+}

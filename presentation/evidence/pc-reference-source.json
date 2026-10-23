@@ -1,0 +1,6 @@
+{
+  "source_path": "experiments/iris-publication-v1/reference-pc-under-load-20261024.json",
+  "sha256": "75fe34e2daa49affc8c9170ccbe78e0754735af1b9e9f3ebf065c6a50cb3627f",
+  "bytes": 5408,
+  "note": "Actual release-owner reference-driver measurement, not the new adapter or an idle-host/end-to-end result."
+}

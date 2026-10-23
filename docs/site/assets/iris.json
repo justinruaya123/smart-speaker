@@ -1,5 +1,61 @@
 {
   "schema_version": 1,
+  "wake": {
+    "experiment": "iris-wake-publication-v1",
+    "baseline": {
+      "confusable_n": 64,
+      "control_n": 4,
+      "detected": 1,
+      "duplicate_detections": 0,
+      "false_wakes": 0,
+      "missed": 31,
+      "negative_n": 68,
+      "negative_seconds": 167.20000000000002,
+      "positive_n": 32,
+      "recall": 0.03125,
+      "synthetic_smoke_pass": false
+    },
+    "companion_test": {
+      "confusable_n": 64,
+      "control_n": 4,
+      "detected": 21,
+      "duplicate_detections": 0,
+      "false_wakes": 2,
+      "missed": 11,
+      "negative_n": 68,
+      "negative_seconds": 166.696,
+      "positive_n": 32,
+      "recall": 0.65625,
+      "synthetic_smoke_pass": false
+    },
+    "candidate_artifact_publication": "NOT PROMOTED: the predeclared test smoke gate failed",
+    "candidate_parameters": 82114,
+    "verdict": {
+      "baseline_pass": false,
+      "companion_pass": false,
+      "live_microphone_measured": false,
+      "publish_companion": false,
+      "qualified": false,
+      "real_human_positive_n": 0,
+      "release_blocker": true,
+      "synthetic_acceptance_pass": false,
+      "test_reselection_permitted": false
+    },
+    "release_disposition": "Do not auto-merge a release requiring the synthetic wake gate. Do not lower frozen or candidate thresholds using these tests.",
+    "limitations": [
+      "Entire cohort is synthesized/provider-labelled speech or seeded software controls, not humans or live microphone recordings.",
+      "Synthesis decodes MP3 to PCM16 during generation; no numeric heldout PCM/features/model calls are made for fit/selection before the test lock.",
+      "Training helper excluded 3 overlong/silent train and 2 DEV positives; all TEST positives remain in the denominator.",
+      "Normalization lists admitted train source IDs and separately records exclusions; excluded positives do not contribute statistic windows.",
+      "Deterministic silence/noise controls can share PCM across partitions; speech PCM hashes and voice IDs are cross-partition disjoint.",
+      "Provider output is not byte-repeatable by guarantee; raw corpus is not redistributed. Frozen local receipts are auditable; regenerations are new runs.",
+      "Native HeyIris RollingWake CPU ONNX was executed; this is not full owner/live-microphone/provider or physical-device qualification.",
+      "No new runtime default or public companion artifact is selected after the failed test."
+    ],
+    "source_revision": "d1c13920f0b6a34fafb6cc9c0c45dce503721be8",
+    "source_path": "experiments/iris-wake-publication-v1/study-results.json",
+    "source_sha256": "cba398cff655cf3f849cb4171161ff174008eef531e08b67d0748680d1daf54d"
+  },
   "product": {
     "id": "iris-epoch44",
     "name": "Iris",
@@ -11,6 +67,7 @@
     "selected_epoch": 44,
     "precision": "FP32",
     "graph_bytes": 1082940,
+    "bundle_bytes": 1088682,
     "hashes": {
       "model.onnx": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
       "commands.json": "71017cf22366d15557e8878636135f5ff2d0ac81fc4dfd6f058fc88f0f2d4b5d",
@@ -2406,6 +2463,48 @@
         "onnx_session_load_ms": 64.34649999937392
       }
     ],
+    "reference_desktop": {
+      "label": "2026-10-24 reference driver / under publication load",
+      "historical": false,
+      "receipt": "presentation/evidence/pc-reference-under-load.json",
+      "receipt_sha256": "75fe34e2daa49affc8c9170ccbe78e0754735af1b9e9f3ebf065c6a50cb3627f",
+      "original_recordings": 1146,
+      "timed_calls": 3438,
+      "repeats": 3,
+      "hardware": {
+        "affinity": "unchanged",
+        "blas_threads": 1,
+        "cpu": "11th Gen Intel(R) Core(TM) i7-11700 @ 2.50GHz",
+        "logical_cpus": 16,
+        "onnx_threads": 1,
+        "platform": "Windows-11-10.0.26200-SP0",
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "python": "3.13.14"
+      },
+      "latency": {
+        "observations": 3438,
+        "p50_ms": 9.338649997516768,
+        "p95_ms": 15.34297999969567,
+        "rtf_p95": 0.005407563686207054
+      },
+      "measurement_not_quiesced": true,
+      "context": "Fresh frozen-reference measurement; publication subprocesses were not paused. Not the new adapter, not idle-host or end-to-end latency.",
+      "measured_at": "2026-10-23T22:31:58.346098+00:00",
+      "timing_includes": [
+        "PCM validation",
+        "frozen frontend/normalization",
+        "FP32 CPU ONNX",
+        "softmax/margin and complete-command validation"
+      ],
+      "timing_excludes": [
+        "WAV loading/decoding/hash checks",
+        "speaking time",
+        "wake/VAD/endpoint waiting",
+        "worker/gateway/UI/TTS/provider overhead"
+      ]
+    },
     "desktop": null,
     "pi": null,
     "timing_scope": "recognize(PCM): validation + frontend + normalization + CPU ONNX + finite decision",

@@ -153,10 +153,32 @@ def build_publication(root: Path = ROOT, desktop: Path | None = None, pi: Path |
         companions.append({'component': component, 'parameters': info.get('parameters', info.get('model', {}).get('runtime_parameters')),
                            'graph_bytes': (root / graph).stat().st_size, 'graph_sha256': digest(root / graph),
                            'source': metadata, 'included_in_vcm_count': False})
+    reference_binding = load(root / 'presentation/evidence/pc-reference-source.json')
+    reference_path = checked(root / 'presentation/evidence/pc-reference-under-load.json', reference_binding['sha256'])
+    reference = load(reference_path)
+    if reference['format'] != 'optionb-pc-benchmark-results-v1' or reference['model']['binding'] != {k: v for k, v in MODEL_HASHES.items() if k != 'recipe.json'}:
+        raise ValueError('reference benchmark identity mismatch')
+    if reference['cohorts'] != snapshot['expected_pc_metrics']:
+        # Latencies are measured afresh; only acoustic outcomes must remain frozen.
+        for split in ('test', 'holdout'):
+            for field in ('selected', 'raw', 'exact_wording', 'original_rows', 'ambiguous_unscored'):
+                if reference['cohorts'][split][field] != snapshot['expected_pc_metrics'][split][field]:
+                    raise ValueError('reference benchmark cohort mismatch')
+    reference_run = {'label': '2026-10-24 reference driver / under publication load', 'historical': False,
+                     'receipt': 'presentation/evidence/pc-reference-under-load.json', 'receipt_sha256': digest(reference_path),
+                     'original_recordings': reference['independent_original_human_recordings'],
+                     'timed_calls': reference['observations'], 'repeats': reference['repeats'],
+                     'hardware': reference['hardware'], 'latency': reference['latency_all'],
+                     'measurement_not_quiesced': reference['publication_provenance']['measurement_not_quiesced'],
+                     'context': reference['publication_provenance']['context'],
+                     'measured_at': reference['publication_provenance']['measured_at_utc'],
+                     'timing_includes': reference['timing_includes'], 'timing_excludes': reference['timing_excludes']}
+    wake = load(checked(root / 'presentation/evidence/wake-smoke-status.json', '8f3e9fc933721d8b63ef5cb346b4ae6ee086a73c9bd6b769b676db5375891f46'))
     result = {
-        'schema_version': 1, 'product': {'id': 'iris-epoch44', 'name': 'Iris', 'wake_phrase': 'Hey Iris'},
+        'schema_version': 1, 'wake': wake, 'product': {'id': 'iris-epoch44', 'name': 'Iris', 'wake_phrase': 'Hey Iris'},
         'model': {'id': 'OptionBTinyVCM-1', 'parameters': recipe['parameters'], 'selected_epoch': recipe['selected_epoch'],
                   'precision': 'FP32', 'graph_bytes': (folder / 'model.onnx').stat().st_size,
+                  'bundle_bytes': sum((folder / name).stat().st_size for name in MODEL_HASHES),
                   'hashes': MODEL_HASHES, 'command_count': len(commands) - 1, 'definition_count': len(definitions),
                   'intent_count': len({c['intent'] for c in commands if c}), 'unknown_index': 0,
                   'policy': policy, 'qualified': False, 'architecture': snapshot['architecture'],
@@ -173,7 +195,7 @@ def build_publication(root: Path = ROOT, desktop: Path | None = None, pi: Path |
                      'artifact_loading': 'PASS (separate verifier)', 'original_cpu_exact_retraining': 'NOT VERIFIED / comparison failed',
                      'gpu_repeatability': 'Two historical CUDA runs matched each other; selected epoch28, not original epoch44'},
         'cohorts': snapshot['expected_pc_metrics'],
-        'benchmarks': {'historical_desktop': runs, 'desktop': None, 'pi': None,
+        'benchmarks': {'historical_desktop': runs, 'reference_desktop': reference_run, 'desktop': None, 'pi': None,
                        'timing_scope': 'recognize(PCM): validation + frontend + normalization + CPU ONNX + finite decision',
                        'excludes': runs[-1]['timing_excludes']},
         'provenance': {'snapshot': 'submission/optionb-tiny/snapshot.json', 'evidence': evidence,
@@ -188,6 +210,8 @@ def build_publication(root: Path = ROOT, desktop: Path | None = None, pi: Path |
 
 
 def validate_measurement(receipt, target):
+    if target not in {'desktop', 'pi'}:
+        raise ValueError('unsupported measurement target')
     if receipt.get('schema_version') != 1 or receipt.get('format') != 'iris-publication-measurement-v1':
         raise ValueError('unsupported measurement receipt')
     if receipt.get('target') != target:

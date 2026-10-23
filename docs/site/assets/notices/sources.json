@@ -1,0 +1,19 @@
+{
+  "format": "iris-viewer-notices-v1",
+  "sources": {
+    "reveal-LICENSE.txt": {
+      "url": "https://raw.githubusercontent.com/hakimel/reveal.js/6.0.1/LICENSE",
+      "download_sha256": "b2883e4b610bfa1b4d8fff84c4d4b825cc7d553cbd9fec4777c04068a2859dc0",
+      "sha256": "bb23cf5723a08d95ed0cd294e082735765d308f9894d1062f0a1732bad4884fb",
+      "bytes": 1109,
+      "normalization": "LF and trailing-whitespace only; license wording unchanged"
+    },
+    "source-sans-LICENSE.md": {
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-sans/release/LICENSE.md",
+      "download_sha256": "56af9b9c6715597e458284a474dc118a50a4150e9d547c70f7b4a33c3e6a9328",
+      "sha256": "f9e57d28452ab6162c7fc0d248b5a5e81bf64676a6950d56b2e137c1253f79e8",
+      "bytes": 4485,
+      "normalization": "LF and trailing-whitespace only; license wording unchanged"
+    }
+  }
+}

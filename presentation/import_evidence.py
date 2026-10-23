@@ -35,7 +35,7 @@ def main():
             raise ValueError(f'dirty historical receipt: {relative}')
         shutil.copyfile(original, destination / name)
         manifest['files'][name] = {'source_path': relative, 'sha256': hashlib.sha256(payload).hexdigest(), 'bytes': len(payload)}
-    (destination / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
+    (destination / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8', newline='\n')
     print(json.dumps(manifest, indent=2))
 
 
