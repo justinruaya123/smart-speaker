@@ -1,128 +1,253 @@
 # Iris
 
-An offline, finite-command smart speaker for Raspberry Pi 4/5. Say **Hey Iris**, then one supported command. A compact neural network predicts a complete command and its fixed slot values directly from audio. No transcription, LLM or remote recognition service runs in the product.
+**Say Hey Iris. Give a supported command. Iris recognizes it locally and shows what happened.**
 
-| Component | Release |
-|---|---|
-| Command model | 969,928 parameters, width 128, 328 frozen acoustic outputs, 3.97 MB ONNX |
-| Wake | Own Hey Iris network, 82,114 parameters |
-| Voice ownership | Separate 129,985-parameter encoder and overlap head; experimental |
-| Runtime | ncnn CPU by default; explicit ONNX Runtime comparison |
-| Product | Microphone capture, Svelte/Fastify UI, provisional guesses, validated actions and persistent jobs |
-| Platform evidence | DGX/Linux software and recorded-audio checks; physical Pi qualification remains unmeasured |
+A finite voice-command model: **258,912 parameters · original epoch 44 · FP32 · 31 commands + UNKNOWN**. Recognition is local; optional services supply actions and external data. No transcript, ASR or LLM runs in the product. **Wake smoke gate FAILED; no replacement was promoted. This is an unqualified research build, not a working-acoustic-release claim.** Pi and fresh human live-microphone reliability remain unmeasured.
 
-[Model card](MODEL_CARD.md) · [Experiment evidence](EXPERIMENTS.md) · [Pi setup](docs/HANDOFF-iris-rpi-v1.md) · [Dataset provenance](docs/DATASETS.md) · [Reproduction report](docs/EXPERIMENT-iris-reproduction-v1.md)
+[Presentation](docs/site/index.html) · [Getting started](docs/IRIS-GETTING-STARTED.md) · [Model card](docs/MODEL-CARD-iris-epoch44.md) · [Verified JSON](docs/site/assets/iris.json)
 
-## Reproduce on a DGX
+## Quickstart
 
-GitHub **main** is the source of truth for the recipe, dependencies, code, inference models and reports. Hugging Face holds the dataset and **private** model/checkpoint artifacts. Use **Python 3.13** for the recorded training environment, Git and an authorized Hugging Face login or an existing `HF_TOKEN` environment variable. The separate Pi inference package supports Python 3.11–3.13. Do not put credentials in the repository. Original restricted recordings are fetched from their pinned upstream sources under their source terms.
-
-```bash
-git clone https://github.com/justinruaya123/smart-speaker.git
-cd smart-speaker
-CUDA_VISIBLE_DEVICES=0 python reproduce.py --device cuda --run-id dgx-reproduce
-```
-
-Replace `0` with one available GPU. CPU is the default: `python reproduce.py`. The entry point installs the pinned root environment and local UI toolchain, verifies source/data hashes, pulls the permitted dataset, performs **six actual VCM continuation fits**, calibrates and exports, evaluates the fixed benchmarks, checks Torch/ONNX/ncnn decisions, tests/builds the UI and packages the delivery. It does not download completed VCM runs to stand in for fitting. One GPU is used; other jobs are never stopped.
-
-Each run has an isolated `.cache/iris-reproduction-v1/<run-id>/work` workspace with model/data caches independent of the development checkout. Immutable Hub downloads may be reused within the same clone; completed VCM fitting states are never reused for a new run. The original checkout and historical receipts stay unchanged. The outer `reproduction.json` records commands, source identity, timings, actual training selections, promotion gates, package location and comparison with the shipped inference bundle. Raw logs/checkpoints remain ignored. Choose a new run ID for another run. The bulk downloader uses the pinned Hub client’s supported HTTP transport to avoid per-file Xet token API exhaustion.
-
-```bash
-python reproduce.py --preflight-only        # install and verify/download inputs
-python reproduce.py --skip-train            # selected-artifact evaluation/rebuild; no fitting
-python reproduce.py --skip-train --publish  # verified artifacts to the private HF model
-.venv/bin/python scripts/plot_benchmarks.py  # regenerate published figures from Git-owned evidence
-```
-
-The recipe continues our own pinned project initializers. Wake and owner fits are verified project companions. A candidate that fails promotion retains the predeclared baseline. This is not a claim of random-init, bit-identical reconstruction of the complete historical initializer chain; that chain has not been replayed. The lower-level `train.py` and final publication implementation in `scripts/iris_publish.py` are also in this repository. Publishing does not change GitHub or dataset visibility.
-
-## Original epoch44 model (opt-in)
-
-The original **258,912-parameter OptionB epoch44** model and recovery checkpoint are also published on main, separately from the default Iris release. Verify their exact bytes without training or third-party dependencies:
+Use Python 3.13, uv and the pinned runtime. First use `python inference.py --check` for the launcher's setup path; setup may access the network. Once installed:
 
 ```sh
-python -m scripts.optionb_epoch44 verify
+python inference.py --check --no-setup
+python inference.py --mode ui --no-setup
+python inference.py --wav /absolute/path/to/mono16k.wav --no-setup
 ```
 
-Add `--load` with NumPy/ONNX Runtime installed to execute the original graph as an action-free software check. [Epoch44 reproduction commands and evidence](docs/REPRODUCIBILITY-optionb-epoch44.md) keep its pinned original source/environment and GPU-repeatability check separate from Iris. GPU training reproducibly selects epoch28, not the original CPU epoch44; those are explicitly different acceptance results. This does not change `reproduce.py`, the Iris model, runtime defaults or action permissions.
+Use your environment's Python explicitly (`.venv/Scripts/python.exe` on Windows, `.venv/bin/python` on POSIX). The default is `submission/models/optionb-tiny`, ONNX CPU. Checks/WAVs stay silent and action-free; microphone actions require explicit enablement and guards. Optional providers can require network access even though recognition is local.
 
-## Architecture and fixed commands
+Prepare actual evaluation audio **without fitting**, using the [pinned original source/environment](docs/IRIS-GETTING-STARTED.md#prepare-original-evaluation-inputs-without-fitting). From this publication checkout, the wrapper delegates to the unchanged original preparer and exports portable manifests:
+
+```sh
+python -B reproduce.py prepare-evaluation \
+  --source-checkout PINNED_SOURCE --source-python PINNED_PYTHON \
+  --output .cache/iris-publication-evaluation/run-01
+python benchmark.py --model-choice epoch44 \
+  --manifest PATH --data-root PINNED_SOURCE --output NEWDIR --repeats 3
+```
+
+Use the actual pinned source revision `3c05b3beb46f06c3108089e0d8c79474670c6cb7` and its Python for `PINNED_SOURCE`/`PINNED_PYTHON`. Set `PATH` to `PINNED_SOURCE/.cache/iris-publication-evaluation/run-01/portable/human-test-holdout.jsonl`; `NEWDIR` must be new. Metadata alone is not audio. [Full setup, exact original prepare command and action boundaries](docs/IRIS-GETTING-STARTED.md).
+
+## Pipeline
 
 ```mermaid
 flowchart LR
-    MIC[Microphone] --> WAKE[Hey Iris]
-    WAKE --> VAD[Command capture / VAD]
-    VAD --> VCM[Finite command classifier]
-    VAD --> OWNER[Wake-speaker / overlap check]
-    VCM --> VALID[Typed intent and slot validation]
-    OWNER --> VALID
-    VALID --> ACT[Configured action executor]
-    ACT --> UI[Execution receipt]
-    VCM -. provisional only .-> UI
+  MIC[Host microphone PCM] --> WAKE[Native Hey Iris]
+  WAKE --> CAP[One command / VAD]
+  CAP --> VCM[Epoch44 atomic VCM]
+  WAKE -. wake reference .-> OWNER[Independent owner / overlap]
+  CAP --> OWNER
+  VCM --> GUARD[Final acceptance + typed slots]
+  OWNER --> GUARD
+  GUARD --> ACT[One persistent dispatcher]
+  ACT --> RECEIPT[Source-tagged result / UI]
+  VCM -. tentative / never actuates .-> RECEIPT
+  WAV[WAV / benchmark] --> VCM
+  WAV -. non-actuating / silent .-> RECEIPT
 ```
 
-The VCM uses 40-bin log-mel features, a stride-two convolution, six contextual attention/depthwise-convolution blocks, masked mean pooling and one whole-command classifier. Each accepted acoustic ID maps to a fixed intent and fixed slots. There is **no dynamic slotting**, arbitrary-name enrollment or text decoder. The 31 baseline intent/slot outcomes and 93 wordings remain covered by the finite contract; personal commands add explicitly trained values. Configuration binds these recognized IDs to your entities and cannot teach a new spoken name.
+One wake owns one command. The acoustic decision, owner veto and action outcome are separate. One host-owned playback path provides wake acknowledgment, intent beep and completion cue only after the final result. Unknown provider outcomes remain unknown and are not retried automatically.
 
-| Area | Finite behavior |
-|---|---|
-| Music and media | Supported play/song/artist IDs, pause/stop/next/volume; configured HA player or explicit local playback |
-| Time and weather | Local clock and supplied HA weather entity |
-| Lights | On/off, supported brightness/color values and finite target IDs; supplied HA lights/groups |
-| Temperature | Supported Celsius values to a configured climate entity |
-| Timers and alarms | Recognized finite durations/times; persistent local scheduler |
-| Reminders | Recognized finite tasks and reminder list |
-| Calls and messages | Finite contacts/preset messages through supplied HA scripts |
+## Model
 
-A wake owns one subsequent command, then resets. Missing speaker evidence, another speaker or overlap rejects the session. It requires no persistent enrollment and does not separate overlapping voices. Original human wake-to-command qualification remains unmeasured.
+```mermaid
+flowchart LR
+  PCM[Mono16kHz] --> MEL[40-bin causal log-mel]
+  MEL --> NORM[Human TRAIN-only normalization]
+  NORM --> STRIDE[Feature stride2]
+  STRIDE --> STEM[Causal stem / kernel5]
+  STEM --> BLOCKS[Four width160 residual blocks]
+  BLOCKS --> POOL[Valid-length masked mean + max]
+  POOL --> HEAD[320 features / one32-way head]
+  HEAD --> POLICY[Non-UNKNOWN / posterior at least .50 / margin at least .10]
+  POLICY --> CMD[Complete intent + fixed slots]
+```
 
-## Training and measured results
+Two depthwise/pointwise stages per block; kernel 7, dilation 1/2/4/8, LayerNorm and SiLU. Class 0 is UNKNOWN. **18 intent families and 93 wording definitions are not 93 transcript outputs.** Graph:1,082,940 bytes; five-file bundle:1,088,682 bytes. Native wake82,114 parameters, owner129,985 runtime parameters and separate 2.33 MB VAD graph are **additional** costs. [Exact hashes, architecture and limits](docs/MODEL-CARD-iris-epoch44.md).
 
-The frozen comparison uses compact/full widths, CE versus CE plus 0.1 cross-speaker contrastive loss at temperature 0.1, seed 53, then both objectives at the development-selected width with seed 67. Fits use balanced human/synthetic, command/speaker batches, UNKNOWN speech, bounded masking and training-only gain. Development chooses weights and thresholds before tests.
+## Ten use cases
 
-| Command-only cohort | Shipped raw / policy | Candidate raw / policy |
+All31 positive classes are assigned exactly once by the [generator/tests](scripts/iris_publication_data.py). The [deck](docs/site/index.html#uses) shows ten selectors in one pipeline/JSON/output frame. These are **supported wording definitions and illustrated outputs**, not observed recognition/provider results.
+
+| ID | Category | Output/source boundary |
+|---|---|---|
+| UC-01 | Music | Synthetic playback / Playing · demonstration only |
+| UC-02 | Questions | Synthetic weather / Weather unavailable |
+| UC-03 | Lights | Synthetic light / Lamp on · simulated |
+| UC-04 | Dim / color | Synthetic light / 20% · red · simulated |
+| UC-05 | Timer | Local job example / 0:10 |
+| UC-06 | Alarm | Local job example / 06:00 · Asia/Manila |
+| UC-07 | Temperature | Synthetic target / 22°C target |
+| UC-08 | Media | Synthetic playback / Paused · simulated |
+| UC-09 | Reminders | Local job example / Study |
+| UC-10 | Calls / messages | Synthetic camera / notice / Home camera · video only |
+
+<details>
+<summary>Ten mini diagrams, exact JSON and honest example outputs</summary>
+
+**UC-01 · Music — “Play music”**
+
+```mermaid
+flowchart LR
+  A["Typed PLAY_MUSIC"] --> B["Configured player"] --> C["Playback receipt"]
+```
+
+`{"intent":"PLAY_MUSIC","slots":{}}` → **Synthetic playback: Playing · demonstration only.** No audio is playing. A configured provider must supply its actual result.
+
+**UC-02 · Questions — “Weather” / “Time”**
+
+```mermaid
+flowchart LR
+  A["Typed WEATHER / TIME"] --> B["OpenWeather / clock"] --> C["Answer + source"]
+```
+
+`{"intent":"WEATHER","slots":{}}`; `{"intent":"TIME","slots":{}}` → **Synthetic weather: Weather unavailable.** No current observation. OpenWeather → honestly dated cache → labeled synthetic fallback. Time uses the local Manila clock.
+
+**UC-03 · Lights — “Turn on the lights”**
+
+```mermaid
+flowchart LR
+  A["Typed LIGHT_ON"] --> B["Hue lamp binding"] --> C["Receipt / observation"]
+```
+
+`{"intent":"LIGHT_ON","slots":{"light_id":"light.all"}}` → **Synthetic light: Lamp on · simulated.** Target light.hue_color_lamp_1. No device changed; a provider acknowledgment is not an observed state.
+
+**UC-04 · Dim / color — “Brightness 20 percent” / “Change color to Red”**
+
+```mermaid
+flowchart LR
+  A["Typed percent / color"] --> B["Hue lamp binding"] --> C["Value + source"]
+```
+
+`{"intent":"BRIGHTNESS","slots":{"light_id":"light.all","percent":20}}`; `{"intent":"COLOR","slots":{"light_id":"light.all","color":"red"}}` → **Synthetic light: 20% · red · simulated.** Finite brightness 20 / 60 / 100%; colors red / blue / green. No device changed.
+
+**UC-05 · Timer — “Timer 10 seconds”**
+
+```mermaid
+flowchart LR
+  A["Typed TIMER"] --> B["Persistent local job"] --> C["Countdown → due alert"]
+```
+
+`{"intent":"TIMER","slots":{"duration_seconds":10}}` → **Local job example: 0:10.** Example of a saved ten-second countdown. This static deck starts no job; the application persists jobs and due alerts.
+
+**UC-06 · Alarm — “Alarm 6:00 AM”**
+
+```mermaid
+flowchart LR
+  A["Typed ALARM"] --> B["Next Manila deadline"] --> C["Saved alarm → alert"]
+```
+
+`{"intent":"ALARM","slots":{"time":"06:00","timezone":"Asia/Manila"}}` → **Local job example: 06:00 · Asia/Manila.** Next matching Manila deadline, not a fixed UTC offset guessed by the deck. No alarm is scheduled here.
+
+**UC-07 · Temperature — “Temperature 22 degrees”**
+
+```mermaid
+flowchart LR
+  A["Typed TEMPERATURE"] --> B["Synthetic target only"] --> C["Separate sensor view"]
+```
+
+`{"intent":"TEMPERATURE","slots":{"degrees":22,"unit":"C"}}` → **Synthetic target: 22°C target.** Observed home sensor: unavailable. No climate service is called. Target and real measured temperature stay separate.
+
+**UC-08 · Media — “Pause” / “Next song” / “Volume up”**
+
+```mermaid
+flowchart LR
+  A["Typed media command"] --> B["Configured player"] --> C["Final result + source"]
+```
+
+`{"intent":"PAUSE","slots":{}}`; `{"intent":"NEXT","slots":{}}`; `{"intent":"VOLUME","slots":{"operation":"up"}}` → **Synthetic playback: Paused · simulated.** Provider semantics apply: Spotify STOP is pause, not a claimed device stop. No playback changed here.
+
+**UC-09 · Reminders — “Remind me to Study” / “List my reminders”**
+
+```mermaid
+flowchart LR
+  A["Typed task ID"] --> B["Persistent local store"] --> C["Saved task / list"]
+```
+
+`{"intent":"CREATE_REMINDER","slots":{"task_id":"task.study"}}`; `{"intent":"LIST_REMINDERS","slots":{}}` → **Local job example: Study.** Finite tasks: drink water / study / exercise. The application persists the list; this example writes nothing.
+
+**UC-10 · Calls / messages — “Call” / “Message”**
+
+```mermaid
+flowchart LR
+  A["Typed CALL / MESSAGE"] --> B["Camera / preset notice"] --> C["Video / delivery receipt"]
+```
+
+`{"intent":"CALL","slots":{"contact_id":"contact.home"}}`; `{"intent":"MESSAGE","slots":{}}` → **Synthetic camera / notice: Home camera · video only.** Target camera.dining_area_main_camera_tc70_mainstream. No telephone call, stream or notification is started by this deck.
+
+</details>
+
+Voice values stay finite: timers10/30/60s; alarms06:00/08:00/21:00 Manila; temperatures18/22/26°C; brightness20/60/100%; red/blue/green; drink water/study/exercise. Broader touch/configuration controls do not create acoustic recognition.
+
+## Data, training and testing
+
+| Split | Human | Synthetic |
 |---|---:|---:|
-| Official 196-row scorer | 172 / 138 | 174 / 147 |
-| Personal, 36 synthetic positives | 33 / 31 | 36 / 35 |
-| Original human, 636 positives | 387 / 165 | 384 / 171 |
-| Fresh designed voices, 444 positives | 387 / 259 | 419 / 320 |
+| TRAIN |1,889|21,426|
+| DEV |256|995|
+| Calibration |210|0|
+| TEST |1,050|3,368|
+| HOLDOUT |96|100|
 
-Official policy scores include correct rejections; the other policy columns count correctly accepted complete positive commands. Denominators and negative populations are distinct. The candidate was **not promoted**: original-human UNKNOWN accepts increased from 12/229 to 14/229, failing the frozen guard. The release retains the baseline. Synthetic voice prompts do not establish human demographic coverage. See the [model card](MODEL_CARD.md) for wrong accepts, intent/slot/speaker results and failed gates.
+TRAIN uses 1,889 human +5,982 synthetic primary rows and 15,444 supplemental synthetic rows; [exact revisions/terms](docs/IRIS-CITATIONS.md). Only human TRAIN fits normalization. Original recipe: seed 53, CPU/four Torch threads,6 human +42 mixed epochs,96 batches/epoch,32 samples/batch, AdamW,4,608 updates,2,987.91s fit. [Actual curve/summary](presentation/evidence/manifest.json).
 
-![Command benchmark results](docs/assets/iris-command-benchmarks.png)
+| Reproducibility statement | Status |
+|---|---|
+| Exact original artifact verification/loading | PASS: `python -m scripts.optionb_epoch44 verify --load` |
+| Original source/features | Hash-bound pinned-source reconstruction evidence |
+| GPU-to-GPU repeatability | Two historical full fits matched; selected epoch 28 |
+| Exact original CPU epoch 44 retraining | **Not verified; comparison failed. No success lock is invented.** |
 
-![Negative accepts with separate denominators](docs/assets/iris-negative-accepts.png)
+The [original-source runbook](docs/REPRODUCIBILITY-optionb-epoch44.md) preserves failures; benchmarking is a separate lane. No model/policy is retuned for these exposed cohorts:
 
-![Six actual training curves](docs/assets/iris-training-curves.png)
+| Cohort | Correct accepts / positives | Wrong accepts, including negatives | Negative false accepts | Ambiguous, unscored |
+|---|---:|---:|---:|---:|
+| HOLDOUT |72/80|3|1/14|2|
+| TEST |393/609|59|24/256|185|
 
-![Desktop resource measurements, not Pi measurements](docs/assets/iris-desktop-resources.png)
+Exact metadata-wording subsets:58/62 and 173/232, not full 93-wording human coverage;21 definitions lack exact human references. Fresh human wake/command, ownership and Pi qualification remain unmeasured. **New synthetic wake study failed:** existing native wake detected 1/32 positives with 0/68 false wakes; the separately trained same-size companion detected 21/32 with 2/68 false wakes. **Neither passed; no replacement was promoted.** [Actual wake receipt](presentation/evidence/wake-smoke-status.json). Historical17/32 calibration is a different cohort, not the new gate. Static-site/software checks cannot turn this into an acoustic release pass.
 
-The [plot data](docs/assets/iris-benchmark-data.json) links exact receipts and hashes. Wake recall, duplicate/false wakes, speaker errors and full-pipeline failures are reported separately; command-only scores do not imply successful live ownership.
+## Desktop benchmark
 
-## Run inference and the UI
+| Actual run | p50 / p95 recognition latency |
+|---|---:|
+| Historical original PC |4.82 /8.41 ms|
+| Historical later repeat v2 |5.36 /8.69 ms|
+| 2026-10-24 reference driver, **under publication load** |9.34 /15.34 ms|
+| Final integrated adapter / idle-host interaction |Separate receipt required; not inferred here|
+| Raspberry Pi |**Not measured — `pi:null`**|
 
-The complete selected inference bundle, including ONNX graphs, frozen catalog, normalization, policy and ncnn comparison files, is in [artifacts/iris](artifacts/iris). Its [integrity receipt](artifacts/iris/integrity.json) pins every payload. With the runtime environment installed:
+The three named runs use Intel Core i7-11700/Windows 11/Python 3.13.14, CPUExecutionProvider, one ONNX/frontend BLAS thread,1,146 original human recordings ×3 =3,438 calls. Repeats do not inflate accuracy denominators. Scope: PCM validation, frontend, normalization, ONNX and finite decision; **excludes** speech, decode, wake/VAD waiting, worker/gateway/UI, audio and providers. The new reference run is not quiesced, not the new adapter and not end-to-end latency. No unrelated256-DEV memory probe is called full-PC memory. [Receipts/hashes](docs/site/assets/iris.json).
 
-```bash
-.venv/bin/python -m scripts.runtime.speaker_worker --bundle artifacts/iris --check
-.venv/bin/python -m scripts.runtime.speaker_worker --bundle artifacts/iris --wav /path/to/command.wav
+## Limits and real versus synthetic
+
+Only enabled final live microphone commands may actuate after guards. Tentative previews, WAVs, checks and benchmarks never do. Missing providers show **Synthetic — no device changed**, not a real acknowledgment. Unknown outcomes remain unknown. OpenWeather caches keep honest timestamps; thermostat targets are synthetic only, separate from observed sensors. Recognized lights bind to the Hue lamp; CALL opens the dining camera **video only**, not telephony.
+
+No arbitrary names, songs, numbers, dictation or general search. Setup/providers are not an offline/privacy absolute. Data-specific research, non-commercial and consent restrictions remain; no blanket MIT license is claimed for weights/recordings.
+
+## Development and rollback
+
+[Render/source instructions](presentation/README.md) · [Citation audit](docs/IRIS-CITATIONS.md) · [Release log](docs/RELEASE-iris-publication-v1.md) · [Revert guide](docs/REVERT-iris-publication-v1.md). Historical [root model card](MODEL_CARD.md), [dataset directory](docs/DATASETS.md) and [experiment index](EXPERIMENTS.md) are preserved; their969k/2M results do not describe this VCM.
+
+```sh
+python -B scripts/iris_publication_data.py --check
+python -B -m unittest scripts.test.test_iris_publication_data -v
+python -B presentation/validate.py
 ```
 
-WAV replay and benchmarks never execute actions. To audit a produced/downloaded ZIP from this checkout, use its published SHA-256 and a new evidence directory:
+## Citation
 
-```bash
-.venv/bin/python -m scripts.test.iris_package_replay \
-  --package /path/to/iris-pi.zip --sha256 PUBLISHED_SHA256 \
-  --output .cache/iris-reproduction-v1/offline-replay
+Cite the exact repository revision and frozen model hash. Primary dataset: **DOI[10.57967/hf/10723](https://doi.org/10.57967/hf/10723)**, revision `25111444af3adff7588d86ab27c304bb080895cf`. Supplemental:[`martinnavs/ai231-fil-supplemental-data`](https://huggingface.co/datasets/martinnavs/ai231-fil-supplemental-data/tree/230c8b8d58caf78e4bc90886d9c6fa77fe6024b8), revision `230c8b8d58caf78e4bc90886d9c6fa77fe6024b8`. Retain original-source attribution, consent and research-use restrictions; the [audit](docs/IRIS-CITATIONS.md) distinguishes actual membership from wider sources.
+
+```bibtex
+@software{iris_epoch44_2026,
+  author = {{Iris project contributors}},
+  title = {Iris: Original OptionB Epoch44 Finite-Command Smart Speaker},
+  year = {2026},
+  url = {https://github.com/justinruaya123/smart-speaker},
+  version = {OptionBTinyVCM-1 epoch44},
+  note = {258912 parameters; FP32; graph SHA256 c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce; cite exact source revision used}
+}
 ```
-
-This verifies the approved model hashes, extracts the package, installs a Python network-denial audit hook before runtime import and compares three replays under each engine. It checks PCM, raw decisions and typed outputs, preserves failures and never executes actions. It measures the current host, so DGX results are not Pi measurements.
-
-For the full UI, extract the verified Pi ZIP produced by reproduction (or download it from the private model repository), then follow the [runbook](docs/HANDOFF-iris-rpi-v1.md). `python3 start.py --list-mics` selects the actual device; `python3 start.py --mode serve --mic INDEX --benchmarks skip` starts the product.
-
-The main screen shows microphone/listening status, tentative intent/slots, final recognition and execution receipts. Tentative guesses are provisional and never execute. Only final accepted, speaker-checked, validated commands execute. Supply your HA entity/script bindings; missing mappings return **unconfigured**, without substituting another target. Receipts distinguish provider acceptance from observed state; unknown outcomes are not automatically retried. Timers, alarms, finite reminders and execution identifiers persist atomically across restarts.
-
-## Evidence and limits
-
-The unchanged benchmark scorer is fetched from a pinned upstream GitHub commit and verified by SHA-256; its license is recorded as unknown rather than assumed to be our code. Restricted recordings are not included in Git or newly uploaded. Third-party component and dataset terms are documented with [source receipts](docs/DATASETS.md).
-
-Fresh human microphone/ownership tests, physical Pi latency/RAM/thermals and observed real device actions remain assigned operator acceptance steps. Desktop replay, software tests and a packaged ZIP do not establish those results.
