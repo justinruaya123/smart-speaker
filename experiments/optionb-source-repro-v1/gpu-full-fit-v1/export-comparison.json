@@ -1,0 +1,51 @@
+{
+  "actions_enabled": false,
+  "cached_scores_reused": false,
+  "checkpoint_parity": {
+    "atol": 3e-05,
+    "class_equality_required": true,
+    "max_abs_logit_difference": 5.125999450683594e-06,
+    "passed": true,
+    "rows": 466,
+    "rtol": 3e-05
+  },
+  "exact": false,
+  "export": {
+    "export_warnings": [
+      "Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\torch\\csrc\\jit\\passes\\onnx\\constant_fold.cpp:180.)",
+      "Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\torch\\csrc\\jit\\passes\\onnx\\constant_fold.cpp:180.)",
+      "Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\torch\\csrc\\jit\\passes\\onnx\\constant_fold.cpp:180.)"
+    ],
+    "initializer_elements": 258912
+  },
+  "frozen_graph_sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+  "frozen_policy": {
+    "enabled": true,
+    "min_margin": 0.1,
+    "min_probability": 0.5
+  },
+  "graph_bytes_equal": false,
+  "graph_sha256": "8e32c7a8cc49d5090ed2bd3198de5fa94450ec6536e2e82504fd0ee67f9ca0cb",
+  "installed": false,
+  "parameters": 258912,
+  "policy_equal": false,
+  "policy_grid_points": 138,
+  "qualified": false,
+  "selected_on": [
+    "dev",
+    "calibration"
+  ],
+  "selected_policy": {
+    "enabled": true,
+    "min_margin": 0.3,
+    "min_probability": 0.55
+  },
+  "tracked_graph_parity": {
+    "atol": 3e-05,
+    "class_equality_required": true,
+    "max_abs_logit_difference": 6.6499481201171875,
+    "passed": false,
+    "rows": 466,
+    "rtol": 3e-05
+  }
+}

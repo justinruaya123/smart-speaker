@@ -1,0 +1,29 @@
+{
+  "cuda_device_name": "NVIDIA GeForce RTX 3080",
+  "device": "cuda:0",
+  "probe": {
+    "finite_loss": true,
+    "gradient_devices": [
+      "cuda:0"
+    ],
+    "input_devices": [
+      "cuda:0"
+    ],
+    "model_devices": [
+      "cuda:0"
+    ],
+    "optimizer_moment_devices": [
+      "cuda:0"
+    ],
+    "optimizer_step_devices": [
+      "cpu"
+    ],
+    "optimizer_steps": 1,
+    "passed": true,
+    "synchronized": true,
+    "target_device": "cuda:0",
+    "weights_changed": true
+  },
+  "reason": "cuda_probe_passed",
+  "requested": "cuda"
+}

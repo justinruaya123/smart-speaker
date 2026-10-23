@@ -1,0 +1,17 @@
+{
+  "canonical_training_view_checked": true,
+  "checkpoint_selection_split": "dev",
+  "fitting_splits": [
+    "train"
+  ],
+  "inherited_history": "Frozen historical gap-fill exposures and synthetic voice-alias caveats are not erased",
+  "normalization_split": "human_train_only",
+  "reserved_metadata_counts": {
+    "calibration": 210,
+    "dev": 1251,
+    "holdout": 196,
+    "test": 4418
+  },
+  "reserved_pcm_decoded": false,
+  "training_rows": 23315
+}

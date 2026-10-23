@@ -1,0 +1,15 @@
+{
+  "differences": [],
+  "exact": true,
+  "extraction": "canonical_extract_arrays_BLAS1",
+  "feature_rows": 24566,
+  "fitting_splits": [
+    "train"
+  ],
+  "golden_rows": 24566,
+  "heldout_pcm_decoded_or_inferred_before_selection": false,
+  "normalization_different_fields": [],
+  "normalization_equal": true,
+  "normalization_split": "human_train_only",
+  "optimizer_steps_before_gate": 0
+}

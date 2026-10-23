@@ -1,0 +1,8 @@
+{
+  "checked_before_feature_extraction": true,
+  "exporter": "scripts.test.test_speaker_optionb_tiny.export_cpu_model",
+  "helper_requirements": "submission/optionb-tiny/testing.lock",
+  "helper_requirements_sha256": "950d9d5056b36a755cac815266a96035f2e318321a5c060db066b14d0525c625",
+  "import_verified": true,
+  "optimizer_steps": 0
+}

@@ -1,0 +1,242 @@
+{
+  "format": "optionb-fresh-GitHub-full-GPU-fit-v1",
+  "status": "full_GPU_training_and_export_completed_exact_frozen_reproduction_failed",
+  "fresh_GitHub_revision": "d675f7c2d06541701bbdfd1f632079f9c30ee2cc",
+  "fresh_checkout_clean_after_run": true,
+  "command": "uv run --no-sync python -u -m scripts.submission.optionb_fit --output .cache/optionb-source-repro-v1/run-01 --device cuda --fit-name fit-gpu-01",
+  "process_id": "proc_917fb5928113",
+  "exit_code": 1,
+  "failure_stage": "exact_comparison_and_lock",
+  "error": "Fit/export/policy comparison mismatch; preserve this run, never replace the snapshot",
+  "started_utc": "2026-10-23T16:52:47.605235+00:00",
+  "comparison_written_utc": "2026-10-23T16:58:55.434107+00:00",
+  "execution_device": "cuda:0",
+  "device_selection": {
+    "cuda_device_name": "NVIDIA GeForce RTX 3080",
+    "device": "cuda:0",
+    "probe": {
+      "finite_loss": true,
+      "gradient_devices": [
+        "cuda:0"
+      ],
+      "input_devices": [
+        "cuda:0"
+      ],
+      "model_devices": [
+        "cuda:0"
+      ],
+      "optimizer_moment_devices": [
+        "cuda:0"
+      ],
+      "optimizer_step_devices": [
+        "cpu"
+      ],
+      "optimizer_steps": 1,
+      "passed": true,
+      "synchronized": true,
+      "target_device": "cuda:0",
+      "weights_changed": true
+    },
+    "reason": "cuda_probe_passed",
+    "requested": "cuda"
+  },
+  "device_placement": {
+    "dev_input_devices": [
+      "cuda:0"
+    ],
+    "dev_model_devices": [
+      "cuda:0"
+    ],
+    "dev_output_device": "cuda:0",
+    "gradient_devices": [
+      "cuda:0"
+    ],
+    "input_devices": [
+      "cuda:0"
+    ],
+    "model_devices": [
+      "cuda:0"
+    ],
+    "optimizer_moment_devices": [
+      "cuda:0"
+    ],
+    "optimizer_step_devices": [
+      "cpu"
+    ],
+    "target_device": "cuda:0"
+  },
+  "optimizer_step_scalar_note": "AdamW non-capturable step counters reside on CPU; gradients and optimizer moments/update tensor arithmetic execute on CUDA. CPU checkpoint/export handoff does not imply CPU training.",
+  "training": {
+    "from_random_initialization": true,
+    "epochs": 48,
+    "human_epochs": 6,
+    "mixed_epochs": 42,
+    "optimizer_steps": 4608,
+    "batch_size": 32,
+    "sample_draws": 147456,
+    "final_draw_counts": {
+      "human_negative": 36864,
+      "human_positive": 62208,
+      "synthetic_positive": 48384
+    },
+    "final_draw_counts_equal_to_frozen_recipe": true,
+    "actual_selected_epoch": 28,
+    "frozen_selected_epoch": 44,
+    "parameters": 258912,
+    "weights_changed": true,
+    "optimizer_and_DEV_seconds": 135.19326899999578,
+    "full_preflight_fit_export_comparison_seconds": 367.1213108000011,
+    "exact_training_config": true
+  },
+  "exact_input_reproduction": {
+    "feature_rows": 24566,
+    "all_raw_feature_hashes_equal": true,
+    "normalization_equal": true,
+    "human_normalization_rows": 1889
+  },
+  "strict_comparison": {
+    "exact": false,
+    "selected_epoch_equal": false,
+    "checkpoint_state_dict_equal": false,
+    "max_abs_checkpoint_tensor_difference": 0.794976931065321,
+    "gpu_model_own_CPU_export_parity": {
+      "atol": 3e-05,
+      "class_equality_required": true,
+      "max_abs_logit_difference": 5.125999450683594e-06,
+      "passed": true,
+      "rows": 466,
+      "rtol": 3e-05
+    },
+    "frozen_graph_parity": {
+      "atol": 3e-05,
+      "class_equality_required": true,
+      "max_abs_logit_difference": 6.6499481201171875,
+      "passed": false,
+      "rows": 466,
+      "rtol": 3e-05
+    },
+    "graph_bytes_equal": false,
+    "new_graph_sha256": "8e32c7a8cc49d5090ed2bd3198de5fa94450ec6536e2e82504fd0ee67f9ca0cb",
+    "frozen_graph_sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+    "policy_equal": false,
+    "selected_GPU_policy": {
+      "enabled": true,
+      "min_margin": 0.3,
+      "min_probability": 0.55
+    },
+    "frozen_policy": {
+      "enabled": true,
+      "min_margin": 0.1,
+      "min_probability": 0.5
+    },
+    "selection_lock_written": false,
+    "not_classified_as_benign_rounding_or_a_CUDA_execution_failure": true
+  },
+  "environment": {
+    "export_torch_threads": 1,
+    "fit_torch_threads": 4,
+    "frontend_blas_threads": 1,
+    "numpy": "2.3.5",
+    "onnx": "1.20.1",
+    "onnxruntime": "1.23.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.14",
+    "torch": "2.10.0+cu128"
+  },
+  "all15_snapshot_assets10_scientific_sources_and4_reviewed_fitter_files_unchanged": true,
+  "original_published_best_model_replaced": false,
+  "heldout_pcm_decoded_or_inferred": false,
+  "full_retraining_to_replay_native_PC_pipeline": "blocked_by_expected_exact_comparison_gate_not_claimed_passed",
+  "reused_inputs": "Only original WAV/PCM prepared from hash-pinned downloaded public shards in this same new checkout; raw features and human normalization extracted again, no old tensors or checkpoints loaded to avoid training",
+  "CPU_interrupted_fit_preserved": true,
+  "full_log_sha256": "f521772d38cab1bf5d9745cc23082cb193ac35ca2c2799305bf810a2221b9908",
+  "local_binary_artifact_hashes": {
+    ".cache/optionb-source-repro-v1/run-01/fit-gpu-01/best.pt": "c879e4491acf5bf1058f9850e1bf49badaf781f6361ef196843f3f9565b293a4",
+    ".cache/optionb-source-repro-v1/run-01/fit-gpu-01/bundle/model.onnx": "8e32c7a8cc49d5090ed2bd3198de5fa94450ec6536e2e82504fd0ee67f9ca0cb",
+    ".cache/optionb-source-repro-v1/run-01/fit-gpu-01/human-foundation.pt": "8992d080db1f61d214cb554caa56611f83fa547744f8569afaf191caecbf64c7"
+  },
+  "durable_metadata": {
+    "failure.json": {
+      "original_run_path": ".cache/optionb-source-repro-v1/run-01/fit-gpu-01/failure.json",
+      "uncompressed_sha256": "78948fd30410a88474166ee38d91ed49eb08afedeebec460b24fcd42c70892bc",
+      "bytes": 3621,
+      "stored_bytes": 3621,
+      "sha256": "78948fd30410a88474166ee38d91ed49eb08afedeebec460b24fcd42c70892bc"
+    },
+    "input-comparison.json": {
+      "original_run_path": ".cache/optionb-source-repro-v1/run-01/fit-gpu-01/input-comparison.json",
+      "uncompressed_sha256": "cc966af7880e4dc8a544871a3c5318f7f7369ba6bcba311c5343b3b458a69b3f",
+      "bytes": 407,
+      "stored_bytes": 407,
+      "sha256": "cc966af7880e4dc8a544871a3c5318f7f7369ba6bcba311c5343b3b458a69b3f"
+    },
+    "training-device.json": {
+      "original_run_path": ".cache/optionb-source-repro-v1/run-01/fit-gpu-01/training-device.json",
+      "uncompressed_sha256": "56f0e33f6cc2e2b82e0e7b9551e66e052a12f9ac730b423b05d8b31e5b413a4b",
+      "bytes": 578,
+      "stored_bytes": 578,
+      "sha256": "56f0e33f6cc2e2b82e0e7b9551e66e052a12f9ac730b423b05d8b31e5b413a4b"
+    },
+    "training-admission.json": {
+      "original_run_path": ".cache/optionb-source-repro-v1/run-01/fit-gpu-01/training-admission.json",
+      "uncompressed_sha256": "fe9e9e2c985f7068b71f6a46851ea5c25ebb1c626fedf944a8ca13732675b794",
+      "bytes": 472,
+      "stored_bytes": 472,
+      "sha256": "fe9e9e2c985f7068b71f6a46851ea5c25ebb1c626fedf944a8ca13732675b794"
+    },
+    "export-dependency-preflight.json": {
+      "original_run_path": ".cache/optionb-source-repro-v1/run-01/fit-gpu-01/export-dependency-preflight.json",
+      "uncompressed_sha256": "da3ffdd63eeab485d029a5c947fbf1d2b5da36693309dcae9cfe04d00fecccfa",
+      "bytes": 345,
+      "stored_bytes": 345,
+      "sha256": "da3ffdd63eeab485d029a5c947fbf1d2b5da36693309dcae9cfe04d00fecccfa"
+    },
+    "training-result.json.gz": {
+      "original_run_path": ".cache/optionb-source-repro-v1/run-01/fit-gpu-01/training-result.json",
+      "uncompressed_sha256": "cb7a3b312e1d2961f11de96b0dc8f685b8d92d0c5ecb71809ad6c865976fbc27",
+      "bytes": 1476616,
+      "stored_bytes": 60509,
+      "sha256": "957b0956ab5a3d6d21e0e25a565538d4964858c32f874f1eaab0df641cbb39ea"
+    },
+    "training-comparison.json.gz": {
+      "original_run_path": ".cache/optionb-source-repro-v1/run-01/fit-gpu-01/training-comparison.json",
+      "uncompressed_sha256": "1db007a94a2df0720807606b77537b52995f38bfdbee3239b24cfa7a4dff5dd4",
+      "bytes": 1534080,
+      "stored_bytes": 50408,
+      "sha256": "fd659f52ff9485bf836307ab4b5aa69bca4adadc012a51fa75850a8a6396441a"
+    },
+    "fit-comparison.json.gz": {
+      "original_run_path": ".cache/optionb-source-repro-v1/run-01/fit-gpu-01/fit-comparison.json",
+      "uncompressed_sha256": "2479df51d3564bd777db593eb8b6ebaa6c53dca89d01edab433f116bbb9fd210",
+      "bytes": 1625332,
+      "stored_bytes": 52064,
+      "sha256": "79898f9e9d74416a11e7994f7ebd8c93193672996034b2059e82e1aad902a3fc"
+    },
+    "export-comparison.json": {
+      "original_run_path": ".cache/optionb-source-repro-v1/run-01/fit-gpu-01/export-comparison.json",
+      "uncompressed_sha256": "3640cb323014f7218bb3d4aec9e8a794a6c4033db90c696c3bc8f55d3705685f",
+      "bytes": 1975,
+      "stored_bytes": 1975,
+      "sha256": "3640cb323014f7218bb3d4aec9e8a794a6c4033db90c696c3bc8f55d3705685f"
+    },
+    "training-curve.jsonl.gz": {
+      "original_run_path": ".cache/optionb-source-repro-v1/run-01/fit-gpu-01/training-curve.jsonl",
+      "uncompressed_sha256": "c276956233b6ad7fec38630cffcdc97b924f283dd1fa0be3549a24c87fee56b0",
+      "bytes": 37736,
+      "stored_bytes": 6199,
+      "sha256": "a67efac0547d364378eb01c10e24fd92d337d93786de4cfd57da804fdf841fe8"
+    },
+    "policy-selection.json.gz": {
+      "original_run_path": ".cache/optionb-source-repro-v1/run-01/fit-gpu-01/policy-selection.json",
+      "uncompressed_sha256": "da67cd9171cb4a4d4632d9b41d62a303f01fd225d992176fce96c60a546cbd72",
+      "bytes": 237790,
+      "stored_bytes": 8076,
+      "sha256": "c4548c231cfc06043578696253b5703163875f1b2b8ae4c41db47e73975e70d4"
+    }
+  },
+  "metadata_includes_no_WAV_PCM_features_checkpoint_tensors_or_ONNX_payloads": true,
+  "actions_enabled": false,
+  "qualified": false,
+  "installed": false,
+  "physical_pi": false
+}

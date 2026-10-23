@@ -1,0 +1,52 @@
+{
+  "format": "optionb-fresh-published-software-v2",
+  "tested_revision": "d675f7c2d06541701bbdfd1f632079f9c30ee2cc",
+  "scope": "fresh_checkout_CUDA_python_UI_software_and_frozen_model_load_not_complete_corpus_replay",
+  "source_checkout": "original_new_GitHub_clone_with_its_own_environment_tools_and_dependencies",
+  "cuda_python": {
+    "tests": 336,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "python_seconds": 49.39,
+  "ui": {
+    "tests": 119,
+    "passed": 119,
+    "failed": 0,
+    "skipped": 0
+  },
+  "node": "24.13.0",
+  "pnpm": "12.5.1",
+  "recursive_Node_and_pnpm_PATH_pinned": true,
+  "literal_pnpm_check_test_build_exit_codes": [
+    0,
+    0,
+    0
+  ],
+  "types": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "frozen_model_worker_check": {
+    "loaded": true,
+    "graph_sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+    "epoch": 44,
+    "posterior": 0.5,
+    "margin": 0.1,
+    "actions_enabled": false,
+    "qualified": false
+  },
+  "fresh_checkout_clean_after_tests_and_build": true,
+  "replay_correction_127_tests_not_yet_in_published_revision": "uncommitted_pending_independent_closure; precommit_combined463_test_evidence_separate",
+  "logs_sha256": {
+    "optionb-fresh-published-all-tests-v2.xml": "96542dfc13d3b16d3af44dfd94eef1736d9abcc7c217f54644385c2ccafe9df4",
+    "optionb-fresh-published-all-tests-v2.log": "6763199b7a81a99670cbb4d5070fd8675d57de1d5be35eaa946919235f8560b5",
+    "optionb-fresh-published-UI-v2.log": "b17535c32ffff1a5f5cf0fcb5c1f404172809811bcd8104f59737433fbe8e525"
+  },
+  "scientific_GPU_fit_result": "full48epochs_completed_but_exact_frozen_comparison_failed; see gpu-full-fit-v1.json",
+  "actions_enabled": false,
+  "qualified": false,
+  "installed": false,
+  "physical_pi": false
+}
