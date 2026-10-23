@@ -1,0 +1,186 @@
+"""Opt-in original epoch44 verification; never changes the Iris default."""
+from pathlib import Path, PurePosixPath
+import hashlib
+import json
+
+ROOT = Path(__file__).resolve().parents[1]
+SNAPSHOT = 'submission/optionb-tiny/snapshot.json'
+SNAPSHOT_SHA256 = 'd0ac31ea3d5f771cbe983e2ae9bd06303267c4b68723870c28b9904b17d74a21'
+SOURCE_REVISION = '3c05b3beb46f06c3108089e0d8c79474670c6cb7'
+GPU_REFERENCE = 'submission/optionb-tiny/gpu-reference.json'
+GPU_REFERENCE_SHA256 = '8aacc8b04a1a23186dd0502e9901fb38fab55cb8422dfa4f2ae419b5b69e4894'
+
+
+def checked_path(root, relative):
+    root = Path(root).absolute()
+    if (root.resolve() != root or not isinstance(relative, str) or not relative
+            or ':' in relative or '\\' in relative):
+        raise ValueError('Unsafe publication path')
+    parts = PurePosixPath(relative)
+    if parts.is_absolute() or '..' in parts.parts or parts.as_posix() != relative:
+        raise ValueError('Unsafe publication path: ' + relative)
+    path = root
+    for part in parts.parts:
+        path = path / part
+        if path.is_symlink() or getattr(path, 'is_junction', lambda: False)():
+            raise ValueError('Linked publication path: ' + relative)
+    if path.resolve() != path or not path.is_relative_to(root):
+        raise ValueError('Publication path leaves root: ' + relative)
+    return path
+
+
+def digest(path):
+    with Path(path).open('rb') as stream:
+        return hashlib.file_digest(stream, 'sha256').hexdigest()
+
+
+def verify_frozen(root=ROOT, *, load=False):
+    """Verify only original distributed bytes, not a claim of fresh training."""
+    path = checked_path(root, SNAPSHOT)
+    if digest(path) != SNAPSHOT_SHA256:
+        raise ValueError('Frozen snapshot identity changed')
+    snapshot = json.loads(path.read_bytes())
+    for name, expected in snapshot['files'].items():
+        target = checked_path(root, name)
+        if target.stat().st_size != expected['bytes'] or digest(target) != expected['sha256']:
+            raise ValueError('Frozen payload identity changed: ' + name)
+    report = {'status': 'frozen_epoch44_verified', 'verified_payloads': len(snapshot['files']),
+            'selected_epoch': snapshot['selected_epoch'], 'parameters': snapshot['parameters'],
+            'model_sha256': snapshot['files'][snapshot['bundle'] + '/model.onnx']['sha256'],
+            'original_source_revision': SOURCE_REVISION,
+            'source_bindings_apply_to': 'the original snapshot checkout, not current Iris main',
+            'optimizer_updates': 0, 'inference_checked': False,
+            'original_CPU_model_retrained': False, 'actions_enabled': False, 'qualified': False}
+    if load:
+        import numpy as np
+        import onnxruntime as ort
+        options = ort.SessionOptions()
+        options.intra_op_num_threads = 1
+        options.inter_op_num_threads = 1
+        session = ort.InferenceSession(str(checked_path(root, snapshot['bundle'] + '/model.onnx')),
+                                       sess_options=options, providers=['CPUExecutionProvider'])
+        logits = session.run(['logits'], {'features': np.zeros((1, 40, 97), dtype=np.float32),
+                              'lengths': np.asarray([97], dtype=np.int64)})[0]
+        if logits.shape != (1, 32) or not np.isfinite(logits).all():
+            raise ValueError('Original epoch44 graph output contract changed')
+        report.update(inference_checked=True, output_shape=list(logits.shape),
+                      providers=session.get_providers(), acoustic_quality_claimed=False,
+                      live_capture_opened=False)
+    return report
+
+
+def verify_source_checkout(source):
+    """Current Iris modules must never masquerade as the frozen fitting source."""
+    import subprocess
+    source = Path(source).absolute()
+    head = subprocess.check_output(['git', '-C', str(source), 'rev-parse', 'HEAD'], text=True).strip()
+    if head != SOURCE_REVISION:
+        raise ValueError('Wrong original source revision; use the pinned snapshot checkout')
+    top = subprocess.check_output(['git', '-C', str(source), 'rev-parse', '--show-toplevel'], text=True).strip()
+    if Path(top).resolve() != source or source.resolve() != source:
+        raise ValueError('Original source checkout root changed')
+    if subprocess.check_output(['git', '-C', str(source), 'status', '--porcelain']):
+        raise ValueError('Original source checkout is dirty; preserve it and use a clean checkout')
+    verify_frozen(source)
+    snapshot = json.loads(checked_path(source, SNAPSHOT).read_bytes())
+    for name, expected in snapshot['source_bindings'].items():
+        if digest(checked_path(source, name)) != expected:
+            raise ValueError('Original source identity changed: ' + name)
+
+
+def verify_gpu_fit(source, fit, *, root=ROOT):
+    """Verify retained full GPU evidence against an independently pinned reference.
+
+    This reads results; it never trains, replaces epoch44 or writes its success lock.
+    The original fitter's final CPU comparison failure must remain explicit.
+    """
+    verify_frozen(root)
+    reference_path = checked_path(root, GPU_REFERENCE)
+    if digest(reference_path) != GPU_REFERENCE_SHA256:
+        raise ValueError('GPU reference identity changed')
+    reference = json.loads(reference_path.read_bytes())
+    source = Path(source).absolute()
+    verify_source_checkout(source)
+    fit = Path(fit)
+    if not fit.is_absolute():
+        fit = source / fit
+    try:
+        relative = fit.relative_to(source).as_posix()
+    except ValueError as error:
+        raise ValueError('GPU fit path must be under the selected source cache') from error
+    if not relative.startswith('.cache/') or len(PurePosixPath(relative).parts) < 3:
+        raise ValueError('GPU fit path must name a run under .cache/')
+    fit = checked_path(source, relative)
+
+    def target(name):
+        return checked_path(source, relative + '/' + name)
+
+    failure = json.loads(target('failure.json').read_bytes())
+    if failure.get('stage') != 'exact_comparison_and_lock':
+        raise ValueError('GPU fitting/export did not reach the final original-CPU comparison stage')
+    if failure.get('selection_lock_written') is not False or target('selection-before-test.json').exists():
+        raise ValueError('Original CPU success lock must remain absent for this GPU reference')
+    expected_bindings = {relative + '/' + name for name in reference['required_failure_bindings']}
+    if set(failure.get('bindings', {})) != expected_bindings:
+        raise ValueError('Incomplete GPU fit failure bindings')
+    for name, expected in failure['bindings'].items():
+        if digest(checked_path(source, name)) != expected:
+            raise ValueError('GPU fit evidence identity changed: ' + name)
+    hashes = {**reference['artifact_sha256'], **reference['additional_artifact_sha256']}
+    for name, expected in hashes.items():
+        if digest(target(name)) != expected:
+            raise ValueError('GPU reference mismatch: ' + name)
+    result = json.loads(target('training-result.json').read_bytes())
+    if result.get('execution_device') != reference['execution_device']:
+        raise ValueError('GPU training evidence is not the required CUDA backend')
+    if type(result.get('optimizer_steps')) is not int or result['optimizer_steps'] != reference['optimizer_steps']:
+        raise ValueError('GPU optimizer step count changed')
+    if type(result.get('selected_epoch')) is not int or result['selected_epoch'] != reference['selected_epoch']:
+        raise ValueError('GPU selected epoch changed')
+    inputs = json.loads(target('input-comparison.json').read_bytes())
+    if (inputs.get('exact') is not True or inputs.get('normalization_equal') is not True
+            or inputs.get('feature_rows') != 24566):
+        raise ValueError('GPU original feature/normalization gate did not pass')
+    curve = [{key: value for key, value in json.loads(line).items() if key != 'elapsed_seconds'}
+             for line in target('training-curve.jsonl').read_text().splitlines()]
+
+    def canonical_hash(value):
+        return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':'),
+                                         allow_nan=False).encode()).hexdigest()
+
+    if (len(curve) != reference['epoch_count'] or canonical_hash(curve)
+            != reference['epoch_curve_without_elapsed_seconds_sha256']):
+        raise ValueError('GPU full epoch curve changed (timing excluded)')
+    if canonical_hash(result['sample_counts']) != reference['final_sample_counts_sha256']:
+        raise ValueError('GPU final sample/draw counts changed')
+    return {'status': 'GPU_repeatability_verified', 'reference_scope': reference['scope'],
+            'source_revision': SOURCE_REVISION, 'verified_model_and_prediction_files': len(hashes),
+            'verified_failure_bindings': len(expected_bindings), 'epochs': len(curve),
+            'optimizer_steps': result['optimizer_steps'], 'execution_device': result['execution_device'],
+            'selected_GPU_epoch': result['selected_epoch'], 'original_CPU_epoch44_exact': False,
+            'original_success_lock_written': False, 'this_command_performed_training': False,
+            'actions_enabled': False, 'qualified': False}
+
+
+def main(argv=None, *, root=ROOT):
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('operation', choices=('verify', 'verify-gpu'))
+    parser.add_argument('--load', action='store_true', help='Load CPU ONNX; no audio or actions')
+    parser.add_argument('--source-checkout', type=Path, help='Clean pinned original training checkout')
+    parser.add_argument('--fit', type=Path, help='Existing full GPU fit, absolute or relative to that checkout')
+    args = parser.parse_args(argv)
+    if args.operation == 'verify':
+        if args.source_checkout or args.fit:
+            parser.error('GPU source/fit arguments apply only to verify-gpu')
+        report = verify_frozen(root, load=args.load)
+    else:
+        if args.load or args.source_checkout is None or args.fit is None:
+            parser.error('verify-gpu requires --source-checkout and --fit, without --load')
+        report = verify_gpu_fit(args.source_checkout, args.fit, root=root)
+    print(json.dumps(report, indent=2, allow_nan=False))
+    return 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

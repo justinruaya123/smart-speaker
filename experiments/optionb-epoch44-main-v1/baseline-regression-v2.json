@@ -1,0 +1,74 @@
+{
+  "format": "optionb-epoch44-main-baseline-aware-regression-v2",
+  "scope": "post-P2-correction full Windows QA run; no new failures, NOT an all-green Iris suite",
+  "baseline_commit": "2c669589229619d0e282ebda621dc9ae3002951e",
+  "baseline_counts": {
+    "failed": 37,
+    "passed": 185
+  },
+  "candidate_counts": {
+    "failed": 37,
+    "passed": 412
+  },
+  "epoch44_focused_counts": {
+    "passed": 227
+  },
+  "new_failed_or_changed_existing_outcomes": [],
+  "same_existing_failed_test_ids": [
+    "scripts.test.test_iris_configuration::test_profile_inventory_no_ui_or_benchmark_leaks",
+    "scripts.test.test_iris_models::test_ncnn_preserves_selected_model_on_variable_lengths",
+    "scripts.test.test_iris_pi_benchmark::test_arm_machine_without_raspberry_pi_model_is_never_labelled_pi",
+    "scripts.test.test_iris_plots::test_changed_official_population_rejects_mislabelled_plot",
+    "scripts.test.test_iris_plots::test_fresh_checkout_regenerates_from_receipts_without_cache",
+    "scripts.test.test_iris_publish_privacy::test_pinned_source_input_evidence_can_be_published_privately[reproduction/inputs/official-benchmark/scorer.py]",
+    "scripts.test.test_iris_publish_privacy::test_pinned_source_input_evidence_can_be_published_privately[reproduction/inputs/provenance/diversity-prefit-trainer.py]",
+    "scripts.test.test_iris_release::test_absent_restricted_input_reports_requirement_without_substitution",
+    "scripts.test.test_iris_release::test_audio_map_resolves_original_immutable_row_and_checks_hash[.cache/test-inputs.json]",
+    "scripts.test.test_iris_release::test_audio_map_resolves_original_immutable_row_and_checks_hash[experiments/iris-release-v1/reproduction-inputs.json]",
+    "scripts.test.test_iris_release::test_changed_present_input_is_never_replaced_by_download",
+    "scripts.test.test_iris_release::test_completed_diversity_allows_only_evaluation_source_amendment",
+    "scripts.test.test_iris_release::test_completed_owner_reuse_allows_unrelated_driver_change_without_raw_data",
+    "scripts.test.test_iris_release::test_failed_software_stage_records_failure_and_never_packages",
+    "scripts.test.test_iris_release::test_final_publication_references_verified_input_capsule_without_reupload",
+    "scripts.test.test_iris_release::test_from_scratch_creates_separate_release_without_published_initializer",
+    "scripts.test.test_iris_release::test_input_capsule_reuse_rejects_changed_identity_before_network[input]",
+    "scripts.test.test_iris_release::test_input_capsule_reuse_rejects_changed_identity_before_network[proof]",
+    "scripts.test.test_iris_release::test_input_capsule_reuses_verified_immutable_preupload_and_pins_new_files",
+    "scripts.test.test_iris_release::test_missing_input_uses_exact_published_revision",
+    "scripts.test.test_iris_release::test_normal_schedule_runs_four_primary_and_two_dev_selected_repeat_fits",
+    "scripts.test.test_iris_release::test_pinned_parquet_restores_original_embedded_bytes_without_relabeling",
+    "scripts.test.test_iris_release::test_profiler_thread_defaults_respect_overrides_without_changing_training",
+    "scripts.test.test_iris_release::test_publish_requires_explicit_audio_redistribution_and_bound_notice",
+    "scripts.test.test_iris_release::test_reports_render_after_acoustics_and_software_before_final_freeze",
+    "scripts.test.test_iris_release::test_skip_evaluates_rebuilds_and_hash_verifies_final_archive",
+    "scripts.test.test_iris_release::test_skip_restores_missing_selected_export_from_pinned_input_alias",
+    "scripts.test.test_iris_release::test_source_change_during_build_prevents_packaging",
+    "scripts.test.test_iris_release::test_standard_publication_closes_card_linked_late_evidence[False]",
+    "scripts.test.test_iris_release::test_standard_publication_closes_card_linked_late_evidence[True]",
+    "scripts.test.test_iris_release::test_unpinned_remote_input_revision_is_rejected_before_download",
+    "scripts.test.test_iris_reproduce::test_changed_recipe_cache_is_never_overwritten",
+    "scripts.test.test_iris_resources::test_frozen_receipt_verifies_bindings_and_does_not_load_or_remeasure",
+    "scripts.test.test_iris_resources::test_real_cpu_components_include_every_owner_window_and_prefix_without_embeddings",
+    "scripts.test.test_iris_resources::test_shared_cache_mount_preserves_protocol_model_and_frozen_binding_paths",
+    "scripts.test.test_iris_resources::test_unapproved_audio_cannot_enter_a_resource_receipt",
+    "scripts.test.test_iris_wake_models::test_wake_export_preserves_ort_ncnn_logits"
+  ],
+  "unchanged_existing_files_compared": 445,
+  "prior_application_files_byte_unchanged": true,
+  "current_verifier_sha256": "9ae86dcadef8d8763987b2a35c6f71bca98c28131ed2d21a50fb247e2181c864",
+  "current_tests_sha256": "e37b0dcea42605a1ad52b3243cb9a9a1ea14aaf97073e59b031b17f172f63d62",
+  "test_archives": {
+    "baseline-tests-v1.xml.gz": {
+      "compressed_sha256": "f92228f29ef67c3e8a5e99458cdfd8059627076721c5d19e1e96b70ff81804dc",
+      "uncompressed_sha256": "b59b83f3151217a050507784663990de9bf3c02c79059bdfec7e03d9d80be83a",
+      "bytes": 9945
+    },
+    "software-tests-v3.xml.gz": {
+      "compressed_sha256": "acac7f4f1738858919f9892114cbc00bde76001bd221897a5274d83a7ffd6727",
+      "uncompressed_sha256": "0f14e91e010c133f08bdd54739de0adfc5ee94fa72c2037139411185a2a30b7a",
+      "bytes": 12408
+    }
+  },
+  "original_CPU_epoch44_exact_gate": "failed; not bypassed or relabelled",
+  "new_training_performed": false
+}

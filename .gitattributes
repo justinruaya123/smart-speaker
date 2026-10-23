@@ -31,3 +31,11 @@ experiments/pcv-synthetic-v3/tests/*.py -text
 experiments/pcv-delivery-v1/verification-v3-execution-20261001.json -text
 scripts/pcv_study_context.py -text
 experiments/pcv-delivery-v1/tests/test_study_context.py -text
+
+# Original epoch44 payloads and contracts must survive Windows/LF checkouts exactly.
+scripts/optionb_epoch44.py -text
+scripts/test/test_optionb_epoch44.py -text
+submission/models/optionb-tiny/** -text
+submission/checkpoints/optionb-tiny-selected.pt -text
+submission/optionb-tiny/** -text
+experiments/optionb-epoch44-main-v1/** -text

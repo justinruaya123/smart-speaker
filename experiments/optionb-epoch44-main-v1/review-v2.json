@@ -1,0 +1,29 @@
+{
+  "format": "optionb-epoch44-main-independent-review-v2",
+  "delegation": "deleg_0d4722f5",
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [
+    "Fresh pushed-remote-clone verification is outside this read-only review and must be completed after publication."
+  ],
+  "summary": "P2 closed: rebound CPU-placement evidence fails closed; valid CUDA records, CPU scalar counters and checkpoint/export handoff pass; frozen CPU44 and GPU28 repeatability stay distinct; original CPU exact gate remains failed with no success lock; Iris preserved.",
+  "reviewed_staged_diff_sha256": "2ddbabf234eb274d10bf31dcb5dee6589ed0cb5df1227bf4a9db3e9e81841861",
+  "verifier_sha256": "9ae86dcadef8d8763987b2a35c6f71bca98c28131ed2d21a50fb247e2181c864",
+  "tests_sha256": "e37b0dcea42605a1ad52b3243cb9a9a1ea14aaf97073e59b031b17f172f63d62",
+  "independent_checks": {
+    "reviewed_staged_files": 32,
+    "original_payloads_verified": 15,
+    "prior_application_files_byte_unchanged": 445,
+    "representative_pytest_passed": 6,
+    "contradictory_or_missing_provenance_overlays_rejected": 43,
+    "valid_actual_frozen_load_passed": true,
+    "valid_actual_retained_GPU_fit_passed": true,
+    "coherent_auto_CUDA_passed": true,
+    "baseline_and_candidate_XML_archives_parsed": true,
+    "all227_epoch44_cases_passed": true,
+    "same37_existing_Iris_failures": true,
+    "actual_evidence_bytes_unchanged": true
+  },
+  "new_training_or_external_writes_by_reviewer": false
+}

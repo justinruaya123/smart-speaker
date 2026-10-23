@@ -1,0 +1,185 @@
+[
+  null,
+  {
+    "intent": "ALARM",
+    "slots": {
+      "time": "06:00",
+      "timezone": "Asia/Manila"
+    }
+  },
+  {
+    "intent": "ALARM",
+    "slots": {
+      "time": "08:00",
+      "timezone": "Asia/Manila"
+    }
+  },
+  {
+    "intent": "ALARM",
+    "slots": {
+      "time": "21:00",
+      "timezone": "Asia/Manila"
+    }
+  },
+  {
+    "intent": "BRIGHTNESS",
+    "slots": {
+      "light_id": "light.all",
+      "percent": 100
+    }
+  },
+  {
+    "intent": "BRIGHTNESS",
+    "slots": {
+      "light_id": "light.all",
+      "percent": 20
+    }
+  },
+  {
+    "intent": "BRIGHTNESS",
+    "slots": {
+      "light_id": "light.all",
+      "percent": 60
+    }
+  },
+  {
+    "intent": "CALL",
+    "slots": {
+      "contact_id": "contact.home"
+    }
+  },
+  {
+    "intent": "COLOR",
+    "slots": {
+      "color": "blue",
+      "light_id": "light.all"
+    }
+  },
+  {
+    "intent": "COLOR",
+    "slots": {
+      "color": "green",
+      "light_id": "light.all"
+    }
+  },
+  {
+    "intent": "COLOR",
+    "slots": {
+      "color": "red",
+      "light_id": "light.all"
+    }
+  },
+  {
+    "intent": "CREATE_REMINDER",
+    "slots": {
+      "task_id": "task.drink_water"
+    }
+  },
+  {
+    "intent": "CREATE_REMINDER",
+    "slots": {
+      "task_id": "task.exercise"
+    }
+  },
+  {
+    "intent": "CREATE_REMINDER",
+    "slots": {
+      "task_id": "task.study"
+    }
+  },
+  {
+    "intent": "LIGHT_OFF",
+    "slots": {
+      "light_id": "light.all"
+    }
+  },
+  {
+    "intent": "LIGHT_ON",
+    "slots": {
+      "light_id": "light.all"
+    }
+  },
+  {
+    "intent": "LIST_REMINDERS",
+    "slots": {}
+  },
+  {
+    "intent": "MESSAGE",
+    "slots": {}
+  },
+  {
+    "intent": "NEXT",
+    "slots": {}
+  },
+  {
+    "intent": "PAUSE",
+    "slots": {}
+  },
+  {
+    "intent": "PLAY_MUSIC",
+    "slots": {}
+  },
+  {
+    "intent": "STOP",
+    "slots": {}
+  },
+  {
+    "intent": "TEMPERATURE",
+    "slots": {
+      "degrees": 18,
+      "unit": "C"
+    }
+  },
+  {
+    "intent": "TEMPERATURE",
+    "slots": {
+      "degrees": 22,
+      "unit": "C"
+    }
+  },
+  {
+    "intent": "TEMPERATURE",
+    "slots": {
+      "degrees": 26,
+      "unit": "C"
+    }
+  },
+  {
+    "intent": "TIME",
+    "slots": {}
+  },
+  {
+    "intent": "TIMER",
+    "slots": {
+      "duration_seconds": 10
+    }
+  },
+  {
+    "intent": "TIMER",
+    "slots": {
+      "duration_seconds": 30
+    }
+  },
+  {
+    "intent": "TIMER",
+    "slots": {
+      "duration_seconds": 60
+    }
+  },
+  {
+    "intent": "VOLUME",
+    "slots": {
+      "operation": "down"
+    }
+  },
+  {
+    "intent": "VOLUME",
+    "slots": {
+      "operation": "up"
+    }
+  },
+  {
+    "intent": "WEATHER",
+    "slots": {}
+  }
+]

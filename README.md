@@ -36,6 +36,16 @@ python reproduce.py --skip-train --publish  # verified artifacts to the private 
 
 The recipe continues our own pinned project initializers. Wake and owner fits are verified project companions. A candidate that fails promotion retains the predeclared baseline. This is not a claim of random-init, bit-identical reconstruction of the complete historical initializer chain; that chain has not been replayed. The lower-level `train.py` and final publication implementation in `scripts/iris_publish.py` are also in this repository. Publishing does not change GitHub or dataset visibility.
 
+## Original epoch44 model (opt-in)
+
+The original **258,912-parameter OptionB epoch44** model and recovery checkpoint are also published on main, separately from the default Iris release. Verify their exact bytes without training or third-party dependencies:
+
+```sh
+python -m scripts.optionb_epoch44 verify
+```
+
+Add `--load` with NumPy/ONNX Runtime installed to execute the original graph as an action-free software check. [Epoch44 reproduction commands and evidence](docs/REPRODUCIBILITY-optionb-epoch44.md) keep its pinned original source/environment and GPU-repeatability check separate from Iris. GPU training reproducibly selects epoch28, not the original CPU epoch44; those are explicitly different acceptance results. This does not change `reproduce.py`, the Iris model, runtime defaults or action permissions.
+
 ## Architecture and fixed commands
 
 ```mermaid

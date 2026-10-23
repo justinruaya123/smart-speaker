@@ -1,0 +1,16 @@
+{
+  "format": "optionb-epoch44-main-publication-v1",
+  "base_main_revision": "2c669589229619d0e282ebda621dc9ae3002951e",
+  "original_snapshot_git_revision": "3c05b3beb46f06c3108089e0d8c79474670c6cb7",
+  "snapshot_sha256": "d0ac31ea3d5f771cbe983e2ae9bd06303267c4b68723870c28b9904b17d74a21",
+  "gpu_reference_sha256": "8aacc8b04a1a23186dd0502e9901fb38fab55cb8422dfa4f2ae419b5b69e4894",
+  "source_bindings_apply_to": "the pinned original snapshot checkout; current Iris source must not be overwritten to satisfy them",
+  "model": "original epoch44 /258912parameters /width160 /FP32ONNX /0.50posterior /0.10margin",
+  "source_file_closure_not_merged_into_Iris": true,
+  "Iris_default_preserved": true,
+  "GPU_retraining_target_is_separate_epoch28_reference": true,
+  "raw_audio_or_feature_arrays_added": false,
+  "CPU_training_run_authorized": false,
+  "qualified": false,
+  "actions_enabled": false
+}

@@ -1,0 +1,68 @@
+{
+  "stdlib_artifact": {
+    "command": "python -m scripts.optionb_epoch44 verify",
+    "exit_code": 0,
+    "report": {
+      "status": "frozen_epoch44_verified",
+      "verified_payloads": 15,
+      "selected_epoch": 44,
+      "parameters": 258912,
+      "model_sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+      "original_source_revision": "3c05b3beb46f06c3108089e0d8c79474670c6cb7",
+      "source_bindings_apply_to": "the original snapshot checkout, not current Iris main",
+      "optimizer_updates": 0,
+      "inference_checked": false,
+      "original_CPU_model_retrained": false,
+      "actions_enabled": false,
+      "qualified": false
+    }
+  },
+  "frozen_load": {
+    "command": ".venv/Scripts/python.exe -m scripts.optionb_epoch44 verify --load",
+    "exit_code": 0,
+    "report": {
+      "status": "frozen_epoch44_verified",
+      "verified_payloads": 15,
+      "selected_epoch": 44,
+      "parameters": 258912,
+      "model_sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+      "original_source_revision": "3c05b3beb46f06c3108089e0d8c79474670c6cb7",
+      "source_bindings_apply_to": "the original snapshot checkout, not current Iris main",
+      "optimizer_updates": 0,
+      "inference_checked": true,
+      "original_CPU_model_retrained": false,
+      "actions_enabled": false,
+      "qualified": false,
+      "output_shape": [
+        1,
+        32
+      ],
+      "providers": [
+        "CPUExecutionProvider"
+      ],
+      "acoustic_quality_claimed": false,
+      "live_capture_opened": false
+    }
+  },
+  "GPU_retained_fit": {
+    "command": ".venv/Scripts/python.exe -m scripts.optionb_epoch44 verify-gpu --source-checkout D:/School/AI231/.worktrees/me2/smart-speaker-fresh/.cache/optionb-clean-pipeline-ad4d626-v2 --fit .cache/optionb-source-repro-v1/run-01/fit",
+    "exit_code": 0,
+    "report": {
+      "status": "GPU_repeatability_verified",
+      "reference_scope": "tested Windows/CPython3.13.14/Torch2.10.0+cu128/CUDA12.8/RTX3080 recipe, not CPU44 equivalence",
+      "source_revision": "3c05b3beb46f06c3108089e0d8c79474670c6cb7",
+      "verified_model_and_prediction_files": 12,
+      "verified_failure_bindings": 21,
+      "epochs": 48,
+      "optimizer_steps": 4608,
+      "execution_device": "cuda:0",
+      "selected_GPU_epoch": 28,
+      "original_CPU_epoch44_exact": false,
+      "original_success_lock_written": false,
+      "this_command_performed_training": false,
+      "actions_enabled": false,
+      "qualified": false
+    }
+  },
+  "observed_local_time": "2026-10-24T04:12:39+08:00"
+}

@@ -1,5 +1,13 @@
 # Experiment directory
 
+## Original OptionB epoch44 on main
+
+Scope: user-authorized additive publication for ME-02/04/07/08; preserve the current Iris default and keep GPU training separate from frozen epoch44 artifact verification. The exact original258,912-parameter/width160/FP32 epoch44 bundle, checkpoint and fifteen-payload snapshot are restored from immutable Git revision `3c05b3beb46f06c3108089e0d8c79474670c6cb7`, not refitted, relabelled or promoted. [Opt-in commands](docs/REPRODUCIBILITY-optionb-epoch44.md), [publication provenance](submission/optionb-tiny/main-publication.json), [original snapshot](submission/optionb-tiny/snapshot.json), [separate pinned GPU reference](submission/optionb-tiny/gpu-reference.json).
+
+`python -m scripts.optionb_epoch44 verify` checks exact original bytes; optional `--load` executes a finite CPU ONNX feature fixture without audio, capture, fitting or actions. `verify-gpu` independently checks a completed full GPU fit against the published same-backend reference, including source/asset identities, all required diagnostic bindings, checkpoint/bundle/prediction hashes,48epoch curves excluding timing, sample draws and4,608 CUDA updates. The original CPU comparison failure and missing success lock remain mandatory and explicit. Negative regressions reject substituted/rehashed artifacts, incomplete/CPU fits, changed references and forged locks; scoped Git attributes preserve bytes under CRLF settings.
+
+Two earlier independent CUDA source builds selected epoch28 and matched all37 tensors, checkpoints, five-file bundle,466 DEV/calibration records and policy grid; their original-source suite passed463 cases. That is prior actual GPU fitting, not newly performed by the main-branch verifier. Frozen `.50/.10` policy and fresh GPU-selected `.55/.30` remain separate. Original source lives on the pinned snapshot checkout because Iris's newer shared schema, worker and dependencies must not be replaced to satisfy old hashes. The opt-in helper is outside Iris's frozen runtime/publication registry. No CPU retraining, held-out/native/PC repeat, fresh acoustic qualification, Pi/live microphone/provider execution, Iris-default replacement or action enablement is claimed.
+
 ## Iris release v1
 
 Status: the six-fit acoustic comparison and locked evaluation are closed. The release retains the predeclared compact V3 VCM after the new candidate failed its UNKNOWN nonregression guard. The release addresses ME-01–08 and UC-01–10 with a finite direct VCM, Hey Iris wake, independent experimental speaker gate, UI/actions, reproducible workflow and Pi package. Strict acoustic qualification has not passed. Original human wake-pair validation and physical Pi qualification remain operator work.
