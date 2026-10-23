@@ -165,6 +165,12 @@ export function createHomeAssistant(config: Config['ha'], fetcher: typeof fetch,
     close() { stopped = true; authenticated = false; clearTimeout(retry); socket?.terminate(); for (const entity of cache.values()) entity.stale = true; },
     snapshot() { return { enabled: config.enabled, status, entities: [...cache.values()].map((entity) => ({ ...entity, attributes: structuredClone(entity.attributes) })) }; },
     controlLights,
+    async temperature(id: string) {
+      const value = await observe(id, 'sensor');
+      const temperature = Number(value.state), unit = value.attributes.unit_of_measurement;
+      if (!value.state.trim() || !Number.isFinite(temperature) || value.attributes.device_class !== 'temperature' || !['°C','C','°F','F'].includes(String(unit))) throw new IntegrationError('invalid_response', 'The configured sensor did not report a temperature.');
+      return { entity_id:id, temperature, unit, observed_at:value.observed_at };
+    },
     async climate(id: string, degrees: number) {
       const { attributes: a } = await observe(id, 'climate');
       if (!supports(a, 1)) throw unsupported();

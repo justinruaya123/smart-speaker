@@ -91,3 +91,54 @@ test('a reconnect snapshot of a failed worker cannot display a ready microphone'
   assert.equal(model.runtimeReady,false);
   assert.equal(model.runtimeState,'runtime_error');
 });
+
+test('atomic epoch44 diagnostics retain actual posterior, margin, identity and latency without independent-head defaults',()=>{
+  const model:any={history:[]};
+  const identity={parameters:258912,selected_epoch:44,model_sha256:'c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce'};
+  applyRuntimeEvent(model,{event:'ready',session_id:'atomic',sequence:0,...identity,wake_phrase:'hey iris',model_qualified:false,
+    application_config:{mode:'joint_complete_command',min_probability:.5,min_margin:.1}},()=>{});
+  assert.deepEqual(model.runtimeIdentity,{...identity,wake_phrase:'hey iris',model_qualified:false});
+  const command={intent:'TEMPERATURE',slots:{degrees:22,unit:'C'}};
+  applyRuntimeEvent(model,{event:'command',session_id:'atomic',sequence:1,utterance_id:'u',source:'microphone',actions_enabled:true,
+    output:{schema_version:3,accepted:true,command},application:{accepted:true,command},latency_ms:7.25,
+    timing:{total_ms:999},command_probability:.625,command_margin:.125},()=>{});
+  assert.equal(model.event.result.latencyMs,7.25);
+  assert.equal(model.event.result.commandPosterior,.625);
+  assert.equal(model.event.result.commandMargin,.125);
+});
+
+test('execution transport dedupes touch and voice terminal receipts, while requested can advance to the real final result',()=>{
+  const model:any={history:[]};
+  const first={event:'execution',session_id:'s',utterance_id:'u',execution:{id:'s:u',status:'requested',command:{intent:'PLAY_MUSIC',slots:{}}}};
+  assert.equal(applyRuntimeEvent(model,first,()=>{}),true);
+  assert.equal(applyRuntimeEvent(model,first,()=>{}),false);
+  const done={...first,execution:{...first.execution,status:'succeeded'}};
+  assert.equal(applyRuntimeEvent(model,done,()=>{}),true);
+  assert.equal(applyRuntimeEvent(model,done,()=>{}),false);
+  assert.equal(applyRuntimeEvent(model,{...first,execution:{...first.execution,status:'unknown'}},()=>{}),false);
+  const touch={event:'execution',execution:{id:'touch:request',status:'synthetic',command:{intent:'TEMPERATURE',slots:{degrees:22,unit:'C'}}}};
+  assert.equal(applyRuntimeEvent(model,touch,()=>{}),true);
+  assert.equal(applyRuntimeEvent(model,touch,()=>{}),false);
+});
+
+test('an execution delivered before its runtime frame is reconciled into history without replaying its effects',()=>{
+  const model:any={history:[]};
+  const command={intent:'TEMPERATURE',slots:{degrees:22,unit:'C'}};
+  const execution={id:'s:u',status:'synthetic',command,provenance:{source:'synthetic',synthetic:true}};
+  const receipt={event:'execution',session_id:'s',utterance_id:'u',execution};
+  assert.equal(applyRuntimeEvent(model,receipt,()=>{}),true);
+  applyRuntimeEvent(model,{event:'command',session_id:'s',sequence:1,utterance_id:'u',source:'microphone',actions_enabled:true,
+    output:{schema_version:3,accepted:true,command},application:{accepted:true,command}},()=>{});
+  assert.equal(model.event.status,'synthetic');
+  assert.deepEqual(model.event.execution,execution);
+  assert.equal(applyRuntimeEvent(model,receipt,()=>{}),false);
+});
+
+test('a late receipt for a reused utterance ID cannot overwrite the current session display',()=>{
+  const model:any={history:[]},command={intent:'TIME',slots:{}};
+  for(const session_id of ['old','current'])applyRuntimeEvent(model,{event:'command',session_id,sequence:1,utterance_id:'same-id',source:'microphone',actions_enabled:true,
+    output:{schema_version:3,accepted:true,command},application:{accepted:true,command}},()=>{});
+  applyRuntimeEvent(model,{event:'execution',session_id:'old',utterance_id:'same-id',execution:{id:'old:same-id',status:'local',command}},()=>{});
+  assert.equal(model.event.raw.session_id,'current');
+  assert.equal(model.history.find((item:any)=>item.raw.session_id==='old').status,'local');
+});

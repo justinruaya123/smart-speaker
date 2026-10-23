@@ -1,6 +1,19 @@
 import { isRecord } from './protocol.js';
 
 export interface CanonicalCommand { intent: string; slots: Record<string, string | number> }
+/** Presentation groups for the frozen 31 complete commands, not a speech parser or new classes. */
+export const irisUseCases: ReadonlyArray<{ id:string; view:string; icon:string; title:string; intents:readonly string[] }> = [
+  {id:'UC-01',view:'music',icon:'music-2',title:'Music',intents:['PLAY_MUSIC']},
+  {id:'UC-02',view:'weather',icon:'cloud-sun',title:'Questions',intents:['WEATHER','TIME']},
+  {id:'UC-03',view:'lights',icon:'lightbulb',title:'Lights',intents:['LIGHT_ON','LIGHT_OFF']},
+  {id:'UC-04',view:'dim',icon:'sliders-horizontal',title:'Dim / color',intents:['BRIGHTNESS','COLOR']},
+  {id:'UC-05',view:'timer',icon:'timer',title:'Timer',intents:['TIMER']},
+  {id:'UC-06',view:'alarm',icon:'alarm-clock',title:'Alarm',intents:['ALARM']},
+  {id:'UC-07',view:'climate',icon:'thermometer',title:'Temperature',intents:['TEMPERATURE']},
+  {id:'UC-08',view:'volume',icon:'volume-2',title:'Media',intents:['PAUSE','STOP','NEXT','VOLUME']},
+  {id:'UC-09',view:'reminders',icon:'list-checks',title:'Reminders',intents:['CREATE_REMINDER','LIST_REMINDERS']},
+  {id:'UC-10',view:'calls',icon:'phone',title:'Calls / messages',intents:['CALL','MESSAGE']},
+];
 export const taskLabels: Record<string, string> = { 'task.drink_water': 'Drink water', 'task.study': 'Study', 'task.exercise': 'Exercise' };
 const required: Record<string, string[]> = {
   PLAY_MUSIC: [], WEATHER: [], TIME: [], LIGHT_ON: ['light_id'], LIGHT_OFF: ['light_id'],

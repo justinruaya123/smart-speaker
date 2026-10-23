@@ -9,7 +9,7 @@ import { resolve } from 'node:path';
 import type { Config } from './config.js';
 import { AUDIO, Intent, MediaSource, type Command, type Track } from '../shared/protocol.js';
 import { createLocalMedia, parseRange } from './media/local.js';
-import { createHomeAssistant } from './integrations/home-assistant.js';
+import { createHomeAssistant, type HomeAssistantSocket } from './integrations/home-assistant.js';
 import { createSpotify } from './integrations/spotify.js';
 import { IntegrationError } from './integrations/http.js';
 import { lightCommand, spotifyCommand } from './integrations/commands.js';
@@ -22,8 +22,18 @@ import { ActionStore, type Execution } from './inference/action-store.js';
 import { canonicalCommand } from '../shared/canonical-command.js';
 import { isRecord } from '../shared/protocol.js';
 import { randomUUID } from 'node:crypto';
+import { provenance } from './inference/synthetic-outcomes.js';
+import { createOpenWeather } from './integrations/openweather.js';
+import { ActionFeedback } from './inference/feedback.js';
+import type { EventEmitter } from 'node:events';
 
-interface Options { staticDir?: string; fetcher?: typeof fetch; inferenceFactory?: InferenceFactory }
+export interface RuntimeHost extends EventEmitter {
+  status(): Record<string, any>;
+  current(): Record<string, any> | undefined;
+  request(op: string, payload?: Record<string, any>): Promise<Record<string, any>>;
+  close(): Promise<void>;
+}
+interface Options { staticDir?: string; fetcher?: typeof fetch; inferenceFactory?: InferenceFactory; haSocketFactory?: (url: URL) => HomeAssistantSocket; runtimeFactory?: (config: NonNullable<Config['runtime']>) => RuntimeHost }
 
 export async function createApp(config: Config, options: Options = {}) {
   const https = config.tls ? { cert: await readFile(config.tls.cert), key: await readFile(config.tls.key) } : undefined;
@@ -31,12 +41,14 @@ export async function createApp(config: Config, options: Options = {}) {
   const dummyRuntime = loadDummyRuntime();
   const local = await createLocalMedia(config.mediaDir);
   const fetcher = options.fetcher ?? fetch;
-  const ha = createHomeAssistant(config.ha, fetcher);
+  const ha = createHomeAssistant(config.ha, fetcher, options.haSocketFactory);
   const spotify = createSpotify(config.spotify, config.dataDir, fetcher);
+  const openweather = createOpenWeather(config.openweather, fetcher);
   const store = await ActionStore.open(config.dataDir);
-  const runtime = config.runtime ? new PythonRuntime(config.runtime) : undefined;
+  const runtime = config.runtime ? (options.runtimeFactory ? options.runtimeFactory(config.runtime) : new PythonRuntime(config.runtime)) : undefined;
   const actionClients = new Map<import('ws').default, string>();
   const localPending = new Map<string,{owner:string;timer:NodeJS.Timeout}>();
+  const cameraAdmissions = new Map<string,{entity:string;expires:number}>();
   let localOwner: string | undefined, localCurrent: string | undefined;
   const runtimeEnabled = () => !runtime || config.runtime?.profile !== 'benchmark-compatible' && runtime.status().loaded === true && runtime.status().actions_enabled === true;
   const actionsEnabled = () => config.actionsEnabled && runtimeEnabled();
@@ -46,25 +58,34 @@ export async function createApp(config: Config, options: Options = {}) {
     else socket.send(JSON.stringify(event));
   };
   const broadcast = (event: object) => { for (const socket of actionClients.keys()) send(socket, event); };
-  const actionState = () => ({ ...store.snapshot(), actions_enabled: actionsEnabled(), timezone:config.timezone,
-    bindings: { lights: config.bindings.lights, songs: Object.keys(config.bindings.songs),
+  const actionState = () => ({ ...store.snapshot(), actions_enabled: actionsEnabled(), timezone:config.timezone, publication: config.publication,
+    ...(config.publication?{synthetic_state:actions.syntheticState()}:{}),
+    bindings: { lights: config.publication ? { 'light.all': 'light.hue_color_lamp_1' } : config.bindings.lights, songs: Object.keys(config.bindings.songs),
       climate: config.bindings.climate?.default || null, weather: config.bindings.weather?.default || null,
-      media_player: config.bindings.media_player || {}, contacts: Object.keys(config.bindings.contacts || {}), messages: Boolean(config.bindings.messages?.default) } });
+      media_player: config.bindings.media_player || {}, contacts: config.publication ? ['contact.home'] : Object.keys(config.bindings.contacts || {}), messages: Boolean(config.bindings.messages?.default) } });
   store.on('change', () => broadcast({ event: 'action_state', ...actionState() }));
   const publishExecution = (execution: Execution, sessionId?: string) => {
     if (execution.local_media && execution.status==='requested' && localOwner && !localPending.has(execution.id)) {
       const timer=setTimeout(()=>{localPending.delete(execution.id);const previous=store.receipt(execution.id);
-        if(previous?.status==='requested')void store.finish(execution.id,{...previous,status:'unknown',detail:'The local player did not confirm playback. This action will not be retried.'}).then(value=>publishExecution(value)).catch(()=>{});
+        if(previous?.status==='requested')void store.finish(execution.id,{...previous,status:'unknown',detail:'The local player did not confirm playback. This action will not be retried.'}).then(async value=>{publishExecution(value);await feedback?.complete(value);}).catch(()=>{});
       },15000);timer.unref();localPending.set(execution.id,{owner:localOwner,timer});
     }
     if (execution.status!=='requested') {clearTimeout(localPending.get(execution.id)?.timer);localPending.delete(execution.id);}
-    const event = { event: 'execution', session_id: sessionId, utterance_id: execution.utterance_id, execution };
+    const event = { event: 'execution', session_id: sessionId || execution.session_id, utterance_id: execution.utterance_id, execution };
     broadcast(event); runtime?.emit('action', event);
   };
-  const actions=new RuntimeActions({enabled:config.actionsEnabled,bindings:config.bindings,profile:config.runtime?.profile,timezone:config.timezone},{
+  const actions=new RuntimeActions({enabled:config.actionsEnabled,bindings:config.bindings,profile:config.runtime?.profile,timezone:config.timezone,publication:config.publication},{
     light:c=>ha.control(c),lights:commands=>ha.controlLights(commands),spotify:c=>spotify.control(c),song:uri=>spotify.playConfigured(uri),
     volume:async()=>{const state=await spotify.snapshot();return state.playback?.device?.volume??undefined;},
     climate:(entity,degrees)=>ha.climate(entity,degrees), weather:entity=>ha.weather(entity), script:entity=>ha.script(entity),
+    openweather:()=>openweather.read(),
+    camera:async entity=>{
+      const frame=await ha.camera(entity); await frame.body.cancel();
+      for(const [key,value] of cameraAdmissions)if(value.expires<=Date.now())cameraAdmissions.delete(key);
+      if(cameraAdmissions.size>=4)cameraAdmissions.delete(cameraAdmissions.keys().next().value!);
+      const admission=randomUUID(),expires=Date.now()+300000;cameraAdmissions.set(admission,{entity,expires});
+      return { entity_id:entity,video_only:true,admission_expires_at:new Date(expires).toISOString(),stream_url:`/api/home-assistant/camera/${entity}/stream?admission=${admission}`,snapshot_url:`/api/home-assistant/camera/${entity}?admission=${admission}` };
+    },
     media:(entity,command,content)=>ha.media(entity,command,content),
     local:async(command,content)=>{
       if (!localOwner) throw new IntegrationError('disabled','Open the configured local player in Iris before controlling playback.');
@@ -82,17 +103,26 @@ export async function createApp(config: Config, options: Options = {}) {
       return { action: command.intent, slots: command.slots, ...(localCurrent ? { track: local.find(localCurrent), url: `/api/media/local/${localCurrent}` } : {}) };
     },
   },store);
+  const feedback = config.publication && runtime ? new ActionFeedback(actions,{
+    play:async(cue_id,utterance_id)=>{
+      if(runtime.status().capabilities?.feedback===true)await runtime.request('feedback',{cue_id,utterance_id});
+    },
+    publish:publishExecution,
+    audioError:message=>{const event={event:'feedback_error',message};broadcast(event);runtime.emit('action',event);},
+  }) : undefined;
   let actionChain=Promise.resolve();
   runtime?.on('event',event=>{
     if(event.event!=='command')return;
     actionChain=actionChain.then(async()=>{
-      const execution=await actions.handle(event);
+      const guarded=config.publication?{...event,actions_enabled:event.actions_enabled===true&&runtimeEnabled()}:event;
+      if(feedback){await feedback.run(guarded);return;}
+      const execution=await actions.handle(guarded);
       if(execution)publishExecution(execution,event.session_id);
     }).catch(()=>broadcast({event:'action_error',message:'The action could not be safely recorded. It was not dispatched or retried.'}));
   });
   const lease: RecordingLease = { owner: undefined };
   const activeSockets = new Set<import('ws').default>();
-  const cameraStreams = new Map<AbortController, { entityId: string; session?: string }>();
+  const cameraStreams = new Map<AbortController, { entityId: string; session?: string; admission?: string }>();
 
   app.addHook('onRequest', async (req, reply) => {
     reply.header('X-Content-Type-Options', 'nosniff').header('Referrer-Policy', 'no-referrer');
@@ -162,7 +192,7 @@ export async function createApp(config: Config, options: Options = {}) {
       actionClients.delete(socket);
       if (localOwner === clientId) {
         for(const [id,pending] of localPending)if(pending.owner===clientId){clearTimeout(pending.timer);localPending.delete(id);const previous=store.receipt(id);
-          if(previous?.status==='requested')void store.finish(id,{...previous,status:'unknown',detail:'The local player disconnected before confirming playback. This action will not be retried.'}).then(value=>publishExecution(value)).catch(()=>{});
+          if(previous?.status==='requested')void store.finish(id,{...previous,status:'unknown',detail:'The local player disconnected before confirming playback. This action will not be retried.'}).then(async value=>{publishExecution(value);await feedback?.complete(value);}).catch(()=>{});
         }
         localOwner = config.bindings.media_player?.provider === 'local' ? actionClients.values().next().value : undefined;
         for (const [other, id] of actionClients) send(other, { event: 'player_role', local_player: id === localOwner });
@@ -187,7 +217,7 @@ export async function createApp(config: Config, options: Options = {}) {
     const existing = store.receipt(req.body.id);
     if (!existing?.local_media || existing.status !== 'requested') return reply.code(409).send({ error:'playback_already_resolved' });
     const execution = await store.finish(req.body.id,{ ...existing,status:String(req.body.status),detail:req.body.status==='succeeded'?'The local browser confirmed the playback action.':'The browser could not complete playback. Enable browser audio and choose the song again explicitly.' });
-    publishExecution(execution); return execution;
+    publishExecution(execution); await feedback?.complete(execution); return execution;
   });
   if (runtime) {
     app.get('/ws/runtime', { websocket: true }, (socket, req) => {
@@ -225,7 +255,14 @@ export async function createApp(config: Config, options: Options = {}) {
     if (fixture === undefined) return reply.code(400).send({ error: 'invalid_fixture' });
     return dummyRuntime.infer(fixture);
   });
-  app.get('/api/home-assistant/entities', async () => ({ ...ha.snapshot(), actionsEnabled: actionsEnabled() }));
+  app.get('/api/home-assistant/entities', async () => {
+    let observed_temperature: Record<string, unknown> = { status:'not_configured',temperature:null,unit:null,observed_at:null };
+    if (config.publication && config.temperatureSensor) {
+      try { observed_temperature={status:'observed',...await ha.temperature(config.temperatureSensor),provenance:provenance('home_assistant',false,true)}; }
+      catch { observed_temperature={status:'unavailable',temperature:null,unit:null,observed_at:null}; }
+    }
+    return { ...ha.snapshot(), actionsEnabled:actionsEnabled(), ...(config.publication?{observed_temperature}:{}) };
+  });
   app.get('/api/spotify/state', async () => ({ ...await spotify.snapshot(), actionsEnabled: actionsEnabled() }));
   app.post('/api/home-assistant/control', async (req, reply) => {
     if (!actionsEnabled()) return reply.code(409).send({ error: 'actions_disabled', message: 'Device actions are disabled.' });
@@ -237,16 +274,23 @@ export async function createApp(config: Config, options: Options = {}) {
     await spotify.control(spotifyCommand(req.body));
     return { ...await spotify.snapshot(), actionsEnabled: config.actionsEnabled };
   });
-  app.get<{ Params: { id: string } }>('/api/home-assistant/camera/:id', async (req, reply) => {
+  const cameraAdmitted=(id:string,admission:unknown)=>{
+    if(!config.publication)return true;
+    const grant=typeof admission==='string'?cameraAdmissions.get(admission):undefined;
+    return actionsEnabled()&&grant?.entity===id&&grant.expires>Date.now();
+  };
+  app.get<{ Params: { id: string }; Querystring: { admission?: string } }>('/api/home-assistant/camera/:id', async (req, reply) => {
+    if(!cameraAdmitted(req.params.id,req.query.admission))return reply.code(409).send({error:'camera_admission_required',message:'Enable actions and explicitly open the camera through Iris. Historical or synthetic receipts do not grant camera access.'});
     const camera = await ha.camera(req.params.id);
     return reply.type(camera.contentType).send(Readable.fromWeb(camera.body as NodeReadableStream<Uint8Array>));
   });
-  app.get<{ Params: { id: string }; Querystring: { session?: string } }>('/api/home-assistant/camera/:id/stream', {
-    schema: { querystring: { type: 'object', properties: { session: { type: 'string', pattern: '^[a-zA-Z0-9-]{1,64}$' } }, additionalProperties: false } },
+  app.get<{ Params: { id: string }; Querystring: { session?: string; admission?: string } }>('/api/home-assistant/camera/:id/stream', {
+    schema: { querystring: { type: 'object', properties: { session: { type: 'string', pattern: '^[a-zA-Z0-9-]{1,64}$' }, admission:{type:'string',pattern:'^[a-zA-Z0-9-]{1,64}$'} }, additionalProperties: false } },
   }, async (req, reply) => {
+    if(!cameraAdmitted(req.params.id,req.query.admission))return reply.code(409).send({error:'camera_admission_required',message:'Explicit camera admission is required.'});
     if (cameraStreams.size >= 2) return reply.code(429).send({ error: 'camera_busy', message: 'Close another camera view and try again.' });
     const lifetime = new AbortController();
-    cameraStreams.set(lifetime, { entityId: req.params.id, session: req.query.session });
+    cameraStreams.set(lifetime, { entityId: req.params.id, session: req.query.session, admission:req.query.admission });
     const close = () => {
       lifetime.abort(); cameraStreams.delete(lifetime);
       req.raw.off('aborted', close); reply.raw.off('close', close);
@@ -307,7 +351,10 @@ export async function createApp(config: Config, options: Options = {}) {
   if (options.staticDir) {
     await app.register(staticFiles, { root: resolve(options.staticDir), index: ['index.html'], cacheControl: true, maxAge: 0 });
   }
-  const clock = setInterval(() => { void store.expire().catch(()=>broadcast({event:'action_error',message:'Scheduled job state could not be saved. Check DATA_DIR access.'})); }, 500); clock.unref();
+  const clock = setInterval(() => {
+    if(config.publication)for(const [lifetime,stream] of cameraStreams)if(!cameraAdmitted(stream.entityId,stream.admission)){lifetime.abort();cameraStreams.delete(lifetime);}
+    void store.expire().catch(()=>broadcast({event:'action_error',message:'Scheduled job state could not be saved. Check DATA_DIR access.'}));
+  }, 500); clock.unref();
   app.addHook('onReady', async () => { ha.start(); });
   app.addHook('preClose', async () => { clearInterval(clock); for(const pending of localPending.values())clearTimeout(pending.timer); for (const socket of activeSockets) socket.terminate(); for (const socket of actionClients.keys()) socket.terminate(); for (const stream of cameraStreams.keys()) stream.abort(); });
   app.addHook('onClose', async () => { ha.close(); dummyRuntime.close(); await runtime?.close(); await actionChain; await store.flush(); });

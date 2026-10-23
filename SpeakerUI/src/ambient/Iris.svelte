@@ -4,14 +4,14 @@
   import RuntimeDebug from './components/RuntimeDebug.svelte';
   import { applyRuntimeEvent } from './runtime-events.js';
   import { createLocalPlayer } from './local-player.js';
-  import { taskLabels } from '../../shared/canonical-command.js';
+  import { taskLabels, irisUseCases } from '../../shared/canonical-command.js';
 
   const m = $state({ history: [], runtimeMode: false, runtimeReady: false, runtimeState: 'starting', runtimeEngine: '',
     runtimeActions: false, runtimeResult: null, runtimeError: '', runtimeSession: '', runtimeSequence: -1,
-    runtimeConfig: null, runtimeUI: null, event: null, tentative: null, ownership: null, muted: false, view: 'home', announcement: '' });
+    runtimeConfig: null, runtimeUI: null, runtimeIdentity:null, runtimeAudioError:'', event: null, tentative: null, ownership: null, muted: false, view: 'home', announcement: '' });
   let view = $state('home'), now = $state(Date.now()), busy = $state(false), error = $state('');
   let profile = $state(''), ownerGating = $state(false), connected = $state(false);
-  let state = $state({ revision: -1, jobs: [], receipts: [], actions_enabled: false, timezone:'Asia/Manila',
+  let state = $state({ revision: -1, jobs: [], receipts: [], actions_enabled: false, timezone:'Asia/Manila', publication:false,synthetic_state:{},
     bindings: { lights: {}, songs: [], climate: null, weather: null, media_player: {}, contacts: [], messages: false } });
   let entities = $state([]), haStatus = $state('connecting'), execution = $state(null), weather = $state(null);
   let selectedLight = $state(''), selectedSong = $state(''), selectedContact = $state(''), selectedTask = $state('');
@@ -19,11 +19,21 @@
   let seconds = $state(300), alarm = $state('07:00'), clientId = '', localOwner = false, player;
   let closedAlert = $state(''), soundEnabled = $state(false), alertAudio;
   let pageLifetime;
-  const surfaces = [['music','music-2','Music'], ['lights','lightbulb','Lights'], ['climate','thermometer','Temperature'],
+  let observedTemperature=$state(null),toast=$state(null),cameraView=$state(null),cameraError=$state(false),cameraLoaded=$state(false),cameraSession=$state('');
+  const legacySurfaces = [['music','music-2','Music'], ['lights','lightbulb','Lights'], ['climate','thermometer','Temperature'],
     ['timer','timer','Timer'], ['alarm','alarm-clock','Alarm'], ['reminders','list-checks','Reminders'],
     ['calls','phone','Call'], ['message','bell','Message'], ['weather','cloud-sun','Weather'],
     ['time','clock-3','Time'], ['volume','volume-2','Volume'], ['history','clock-3','History']];
-  const titles = Object.fromEntries(surfaces.map(([key,,title])=>[key,title]));
+  let surfaces=$derived(state.publication?irisUseCases.map(category=>[category.view,category.icon,category.title]):legacySurfaces);
+  let titles=$derived({...Object.fromEntries(legacySurfaces.map(([key,,title])=>[key,title])),...Object.fromEntries(surfaces.map(([key,,title])=>[key,title]))});
+  const sourceLabel = value => ({home_assistant:'Home Assistant',spotify:'Spotify',openweather:'OpenWeather',local:'Local',cached:'Cached',synthetic:'Synthetic'})[value?.provenance?.source] || 'Source unavailable';
+  const categoryReceipt = panel => {
+    const category=irisUseCases.find(category=>category.view===panel || panel==='time'&&category.id==='UC-02' || panel==='message'&&category.id==='UC-10');
+    const intents=panel==='weather'?['WEATHER']:panel==='time'?['TIME']:category?.intents;
+    return [...state.receipts].reverse().find(receipt=>intents?.includes(receipt.command?.intent) && !['pending','requested'].includes(receipt.status));
+  };
+  const percentage=value=>Number.isFinite(value)?(value*100).toFixed(1)+'%':'not reported';
+  let panelReceipt=$derived(state.publication?categoryReceipt(view):null);
   const pretty = id => String(id || '').split('.').at(-1).replaceAll('_',' ').replace(/\b\w/g, value=>value.toUpperCase());
   const duration = milliseconds => { const total = Math.max(0, Math.ceil(milliseconds/1000)); return `${Math.floor(total/60)}:${String(total%60).padStart(2,'0')}`; };
   const clockTime = (value,timezone=state.timezone) => new Intl.DateTimeFormat('en-PH',{hour:'numeric',minute:'2-digit',timeZone:timezone}).format(value);
@@ -73,14 +83,17 @@
   function snapshot(value) {
     if (typeof value.revision !== 'number' || value.revision < state.revision || !Array.isArray(value.jobs)) return;
     state = { ...state, ...value };
+    if(!execution&&value.receipts?.length)execution=value.receipts.at(-1);
+    const snapshotWeather=[...(value.receipts||[])].reverse().find(receipt=>receipt.weather);
+    if(snapshotWeather)weather=snapshotWeather.weather;
     if (typeof value.client_id === 'string') { clientId = value.client_id; localOwner = value.local_player === true; }
   }
   async function receiveExecution(event) {
-    applyRuntimeEvent(m,event,()=>{});
+    if(!applyRuntimeEvent(m,event,()=>{}))return;
     execution = event.execution;
     const intent = execution.command?.intent, slots=execution.command?.slots || {};
-    if (['succeeded','observed','local','requested'].includes(execution.status)) {
-      view=({PLAY_MUSIC:'music',PAUSE:'music',STOP:'music',NEXT:'music',VOLUME:'volume',LIGHT_ON:'lights',LIGHT_OFF:'lights',BRIGHTNESS:'lights',COLOR:'lights',
+    if (['succeeded','observed','local','requested','synthetic','cached'].includes(execution.status)) {
+      view=(state.publication?irisUseCases.find(category=>category.intents.includes(intent))?.view:undefined)||({PLAY_MUSIC:'music',PAUSE:'music',STOP:'music',NEXT:'music',VOLUME:'volume',LIGHT_ON:'lights',LIGHT_OFF:'lights',BRIGHTNESS:'lights',COLOR:'lights',
         WEATHER:'weather',TIME:'time',TEMPERATURE:'climate',TIMER:'timer',ALARM:'alarm',LIST_REMINDERS:'reminders',CREATE_REMINDER:'reminders',CALL:'calls',MESSAGE:'message'})[intent] || view;
       if(slots.light_id)selectedLight=slots.light_id;
       if(slots.song_id)selectedSong=slots.song_id;
@@ -89,6 +102,10 @@
       if(intent==='COLOR')color=slots.color;
       if(intent==='TEMPERATURE')degrees=slots.degrees;
     }
+    if(execution.status==='synthetic')toast={message:'Synthetic — no device changed',until:Date.now()+3500,id:execution.id};
+    if(execution.status==='cached')toast={message:'Cached weather — original observation time retained',until:Date.now()+3500,id:execution.id};
+    if(!['synthetic','cached'].includes(execution.status))toast=null;
+    if(intent==='CALL'&&['observed','synthetic'].includes(execution.status)&&execution.camera){cameraView=execution.camera;cameraError=false;cameraLoaded=false;cameraSession=crypto.randomUUID();}
     if (execution.weather) { weather = execution.weather; view = 'weather'; }
     if (execution.status === 'local' && intent === 'LIST_REMINDERS') view = 'reminders';
     if (execution.status === 'local' && intent === 'TIME') view = 'time';
@@ -103,7 +120,7 @@
     busy = true; error = '';
     if(['TIMER','ALARM'].includes(intent))void enableAlertSound();
     const request_id = crypto.randomUUID();
-    try { execution = await request('/api/actions',{request_id,command:{intent,slots}}); }
+    try { const value=await request('/api/actions',{request_id,command:{intent,slots}}); await receiveExecution({event:'execution',execution:value,utterance_id:value.utterance_id,session_id:value.session_id}); }
     catch (failure) { error = failure.message + '. This request will not be retried automatically.'; }
     finally { busy = false; }
   }
@@ -132,7 +149,11 @@
     async function poll() {
       try {
         const [actions,ha] = await Promise.all([request('/api/actions/state'),request('/api/home-assistant/entities')]);
-        snapshot(actions); entities=ha.entities;haStatus=ha.status;
+        snapshot(actions); entities=ha.entities;haStatus=ha.status;observedTemperature=ha.observed_temperature||null;
+        if(cameraView?.stream_url&&cameraLoaded&&!cameraError&&view==='calls'){
+          const stream=await request(`/api/home-assistant/camera/${cameraView.entity_id}/stream-status/${cameraSession}`);
+          if(!stream.active)cameraError=true;
+        }
       } catch (failure) { if(!closed) { error=failure.message;haStatus='disconnected'; } }
       finally { if(!closed)pollTimer=setTimeout(poll,2000); }
     }
@@ -141,6 +162,7 @@
       if(event.event==='player_role')localOwner=event.local_player===true;
       if(event.event==='execution')void receiveExecution(event);
       if(event.event==='action_error')error=event.message;
+      if(event.event==='feedback_error')applyRuntimeEvent(m,event,()=>{});
     },()=>{localOwner=false;});
     void request('/api/health').then(health=>{
       if(closed)return;
@@ -157,7 +179,7 @@
   });
 </script>
 
-<main class="iris" aria-label="Iris smart speaker" inert={!!due}>
+<main class="iris" class:publication={state.publication} aria-label="Iris smart speaker" inert={!!due}>
   <div class="identity"><span class="wordmark">iris<span aria-hidden="true">·</span></span><span class="connection" class:online={m.runtimeReady}>{m.runtimeReady?'Local voice assistant':'Local speaker'}</span></div>
   <div class="corner-controls"><time>{clock}</time><button aria-label="Microphone settings" onclick={()=>view='settings'}><Icon name="sliders-horizontal" /></button><button aria-label={m.muted?'Choose microphone':'Mute microphone'} aria-pressed={m.muted} onclick={mute}><Icon name={m.muted?'mic-off':'mic'}/></button></div>
 
@@ -168,32 +190,39 @@
       <span class="phase">{phase}</span>
       {#if latest}<strong>{latest.intent}</strong><code>{Object.entries(latest.slots || {}).map(([key,value])=>`${key}=${JSON.stringify(value)}`).join(' · ') || '{}'}</code>
       {:else if m.event?.reason}<span>{m.event.reason}</span>{:else}<span class="empty">Your intent and parameters will appear here.</span>{/if}
+      {#if m.event&&!m.tentative&&Number.isFinite(m.event.result.commandPosterior)}<span class="scores">Posterior {percentage(m.event.result.commandPosterior)} · Margin {percentage(m.event.result.commandMargin)}{Number.isFinite(m.event.result.latencyMs)?` · ${m.event.result.latencyMs.toFixed(2)} ms`:''}</span>{/if}
     </div>
     {#if m.runtimeError}<p class="error" role="status">{m.runtimeError}</p>{/if}
   </section>
 
   <section class="controls" aria-label={view==='home'?'Use cases':titles[view] || 'Settings'}>
-    {#if view!=='home'}<div class="panel-heading"><button aria-label="Back to home" onclick={()=>view='home'}><Icon name="arrow-left"/></button><h2>{titles[view] || 'Microphone & diagnostics'}</h2><span>{state.actions_enabled?'Actions enabled':'Actions disabled'}</span></div>{/if}
-    <div class="panel-body">
+    {#if view!=='home'}<div class="panel-heading"><button aria-label="Back to home" onclick={()=>view='home'}><Icon name="arrow-left"/></button><h2>{titles[view] || 'Microphone & diagnostics'}</h2>{#if panelReceipt?.provenance&&!(view==='calls'&&cameraView?.stream_url&&!cameraError)}<div><span class="source-badge" data-source={panelReceipt.provenance.source}>{sourceLabel(panelReceipt)}</span></div>{/if}<span>{state.actions_enabled?'Actions enabled':'Actions disabled'}</span></div>{/if}
+    <div class="panel-body" class:camera-active={view==='calls'&&cameraView?.stream_url&&!cameraError}>
+
+
     {#if view==='home'}
       <div class="use-cases">{#each surfaces as [key,icon,title] (key)}<button onclick={()=>view=key}><Icon name={icon}/><span>{title}</span></button>{/each}</div>
       <div class="home-summary"><span>{activeJobs.length?`${activeJobs.length} saved timer, alarm or reminder${activeJobs.length===1?'':'s'}`:'No active timers, alarms or reminders'}</span><span>{state.actions_enabled?'Actions enabled':'Actions disabled'}</span></div>
-    {:else if view==='lights'}
+    {:else if view==='lights'||view==='dim'}
       <div class="form-row"><label>Lights<select bind:value={selectedLight}><option value="">Choose lights</option>{#each Object.keys(state.bindings.lights) as id (id)}<option value={id}>{pretty(id)}</option>{/each}</select></label><button disabled={!enabled()||!selectedLight} onclick={()=>run('LIGHT_ON',{light_id:selectedLight})}>On</button><button disabled={!enabled()||!selectedLight} onclick={()=>run('LIGHT_OFF',{light_id:selectedLight})}>Off</button></div>
       <div class="form-row"><label>Brightness <input type="number" min="0" max="100" step="1" bind:value={brightness}/></label><button disabled={!enabled()||!selectedLight} onclick={()=>run('BRIGHTNESS',{light_id:selectedLight,percent:brightness})}>Set %</button><label>Color<select bind:value={color}>{#each ['red','blue','green','yellow','white','orange','purple','pink','cyan','magenta','warm white','cool white'] as name (name)}<option value={name}>{pretty(name)}</option>{/each}</select></label><button disabled={!enabled()||!selectedLight} onclick={()=>run('COLOR',{light_id:selectedLight,color})}>Set color</button></div>
       {#each observedLights as entity (entity.id)}<p class="observed">Observed: {entity.name} · {entity.stale||haStatus!=='connected'?'State unavailable':entity.state}{typeof entity.attributes.brightness==='number'?` · ${Math.round(entity.attributes.brightness/255*100)}%`:''}</p>{:else}<p class="hint">{Object.keys(state.bindings.lights).length?'Choose a configured light or group.':'Lights are not configured.'}</p>{/each}
+      {#if state.publication&&state.synthetic_state.lights?.['light.hue_color_lamp_1']}<p class="hint">Synthetic light state · {JSON.stringify(state.synthetic_state.lights['light.hue_color_lamp_1'])} · not an observation</p>{/if}
     {:else if view==='music'}
-      <div class="form-row"><label>Song<select bind:value={selectedSong}><option value="">Choose a song</option>{#each state.bindings.songs as id (id)}<option value={id}>{pretty(id)}</option>{/each}</select></label><button disabled={!enabled()||!selectedSong} onclick={()=>run('PLAY_MUSIC',{song_id:selectedSong})}><Icon name="play"/>Play song</button><button disabled={!enabled()||!state.bindings.media_player.provider} onclick={()=>run('PLAY_MUSIC')}>Resume</button></div>
-      <div class="form-row"><button disabled={!enabled()||!state.bindings.media_player.provider} onclick={()=>run('PAUSE')}><Icon name="pause"/>Pause</button><button disabled={!enabled()||!state.bindings.media_player.provider} onclick={()=>run('STOP')}>Stop</button><button disabled={!enabled()||!state.bindings.media_player.provider} onclick={()=>run('NEXT')}><Icon name="skip-forward"/>Next</button></div>
+      <div class="form-row"><label>Song<select bind:value={selectedSong}><option value="">Choose a song</option>{#each state.bindings.songs as id (id)}<option value={id}>{pretty(id)}</option>{/each}</select></label><button disabled={!enabled()||!selectedSong} onclick={()=>run('PLAY_MUSIC',{song_id:selectedSong})}><Icon name="play"/>Play song</button><button disabled={!enabled()||(!state.publication&&!state.bindings.media_player.provider)} onclick={()=>run('PLAY_MUSIC')}>{state.publication?'Play music':'Resume'}</button></div>
+      <div class="form-row"><button disabled={!enabled()||(!state.publication&&!state.bindings.media_player.provider)} onclick={()=>run('PAUSE')}><Icon name="pause"/>Pause</button><button disabled={!enabled()||(!state.publication&&!state.bindings.media_player.provider)} onclick={()=>run('STOP')}>Stop</button><button disabled={!enabled()||(!state.publication&&!state.bindings.media_player.provider)} onclick={()=>run('NEXT')}><Icon name="skip-forward"/>Next</button></div>
       <p class="observed">{state.bindings.media_player.provider?`Playback: ${state.bindings.media_player.provider.replaceAll('_',' ')}`:'Playback is not configured.'}{media?` · Observed ${media.stale?'unavailable':media.state}${media.attributes.media_title?' · '+media.attributes.media_title:''}`:''}</p>
       {#if state.bindings.media_player.provider==='local'}<p class="hint">Local playback uses one connected browser. If browser audio is blocked, select the song again explicitly after enabling audio.</p>{/if}
+      {#if state.publication&&state.synthetic_state.playback}<p class="hint">Synthetic playback · {state.synthetic_state.playback.state||'control only'} · no audio provider changed</p>{/if}
     {:else if view==='volume'}
+      {#if state.publication}<div class="form-row"><button disabled={!enabled()} onclick={()=>run('PAUSE')}>Pause</button><button disabled={!enabled()} onclick={()=>run('STOP')}>Stop</button><button disabled={!enabled()} onclick={()=>run('NEXT')}>Next</button></div><p class="hint">{state.bindings.media_player.provider==='spotify'?'Spotify has no stop action. STOP is a labeled synthetic stop, not a pause request.':'Provider stop is used only when supported; unavailable controls are labeled Synthetic.'}</p>{/if}
       <div class="form-row"><button disabled={!enabled()} onclick={()=>run('VOLUME',{operation:'down'})}><Icon name="volume-2"/>Lower</button><label>Volume %<input type="number" min="0" max="100" step="1" bind:value={volume}/></label><button disabled={!enabled()} onclick={()=>run('VOLUME',{operation:'set',percent:volume})}>Set volume</button><button disabled={!enabled()} onclick={()=>run('VOLUME',{operation:'up'})}><Icon name="volume-2"/>Louder</button><button disabled={!enabled()} onclick={()=>run('VOLUME',{operation:'mute'})}>Mute audio</button></div><p class="hint">{state.bindings.media_player.provider?'Uses the configured music player.':'Playback is not configured.'}</p>
     {:else if view==='climate'}
-      <div class="form-row"><label>Temperature °C<input type="number" min="-50" max="60" step="1" bind:value={degrees}/></label><button disabled={!enabled()||!state.bindings.climate} onclick={()=>run('TEMPERATURE',{degrees,unit:'C'})}>Set temperature</button></div>
-      <p class="observed">{!state.bindings.climate?'Climate is not configured.':!climate||climate.stale||haStatus!=='connected'?'Observed temperature unavailable':`Observed ${climate.attributes.current_temperature??'—'}${climate.attributes.temperature_unit||''} · Target ${climate.attributes.temperature??'—'}${climate.attributes.temperature_unit||''}`}</p>
+      <div class="form-row"><label>{state.publication?'Synthetic target °C':'Temperature °C'}<input type="number" min="-50" max="60" step="1" bind:value={degrees}/></label><button disabled={!enabled()||(!state.publication&&!state.bindings.climate)} onclick={()=>run('TEMPERATURE',{degrees,unit:'C'})}>{state.publication?'Set synthetic target':'Set temperature'}</button></div>
+      {#if state.publication}<p class="observed" data-synthetic-target>Synthetic target · {state.synthetic_state.thermostat?state.synthetic_state.thermostat.target+'°C':'Not set'} · no climate device changed</p><p class="observed" data-observed-temperature>Observed home sensor · {observedTemperature?.status==='observed'?`${observedTemperature.temperature}${observedTemperature.unit}`:'Unavailable'+(observedTemperature?.status==='not_configured'?' — not configured':'')} {observedTemperature?.status==='observed'?'· Home Assistant · '+(observedTemperature.observed_at?new Date(observedTemperature.observed_at).toLocaleString():'observation time unavailable'):''}</p>
+      {:else}<p class="observed">{!state.bindings.climate?'Climate is not configured.':!climate||climate.stale||haStatus!=='connected'?'Observed temperature unavailable':`Observed ${climate.attributes.current_temperature??'—'}${climate.attributes.temperature_unit||''} · Target ${climate.attributes.temperature??'—'}${climate.attributes.temperature_unit||''}`}</p>{/if}
     {:else if view==='weather'}
-      <div class="form-row"><button disabled={!enabled()||!state.bindings.weather} onclick={()=>run('WEATHER')}><Icon name="cloud-sun"/>Read current weather</button>{#if weather}<strong class="answer">{weather.temperature??'—'}{weather.unit||''} · {pretty(weather.state)}</strong>{/if}</div><p class="hint">{weather?`Observed ${weather.observed_at?new Date(weather.observed_at).toLocaleString():'time unavailable'}`:state.bindings.weather?'Read the configured weather entity.':'Weather is not configured.'}</p>
+      <div class="form-row"><button disabled={!enabled()||(!state.publication&&!state.bindings.weather)} onclick={()=>run('WEATHER')}><Icon name="cloud-sun"/>Read weather</button>{#if state.publication}<button disabled={!enabled()} onclick={()=>run('TIME')}>Read time</button><span>{clock} · {state.timezone}</span>{/if}{#if weather}<strong class="answer">{weather.temperature??'—'}{weather.unit||''} · {pretty(weather.state)}</strong>{/if}</div><p class="hint">{weather?`${weather.location||''} · Observed ${weather.observed_at?new Date(weather.observed_at).toLocaleString():'unavailable — synthetic sample'}`:state.publication?'OpenWeather first; unavailable data is explicitly cached or synthetic.':state.bindings.weather?'Read the configured weather entity.':'Weather is not configured.'}</p>{#if weather?.fetched_at}<p class="hint">Retrieved {new Date(weather.fetched_at).toLocaleString()} · {Math.max(0,Math.floor((now-Date.parse(weather.fetched_at))/60000))} minutes ago{weather.stale?' · stale cached snapshot':''}</p>{/if}
     {:else if view==='time'}
       <div class="form-row"><strong class="answer">{clock}</strong><span>{state.timezone}</span><button disabled={!enabled()} onclick={()=>run('TIME')}>Read time</button></div>
     {:else if view==='timer'||view==='alarm'}
@@ -203,29 +232,36 @@
       <div class="form-row"><label>Reminder<select aria-label="Reminder task" bind:value={selectedTask}><option value="">Choose a task</option>{#each Object.entries(taskLabels) as [id,label] (id)}<option value={id}>{label}</option>{/each}</select></label><button disabled={!enabled()||!selectedTask} onclick={()=>run('CREATE_REMINDER',{task_id:selectedTask})}>Save reminder</button><button disabled={!enabled()} onclick={()=>run('LIST_REMINDERS')}>Refresh list</button></div>
       <div class="jobs">{#each activeJobs.filter(job=>job.kind==='reminder') as job (job.id)}<div class="job"><strong>{job.label}</strong><button disabled={!enabled()} onclick={()=>jobAction(job,'complete')}>Done</button></div>{:else}<p class="hint">No saved reminders.</p>{/each}</div>
     {:else if view==='calls'}
-      <div class="form-row"><label>Contact<select bind:value={selectedContact}><option value="">Choose a contact</option>{#each state.bindings.contacts as id (id)}<option value={id}>{pretty(id)}</option>{/each}</select></label><button disabled={!enabled()||!selectedContact} onclick={()=>run('CALL',{contact_id:selectedContact})}><Icon name="phone"/>Call</button></div><p class="hint">{state.bindings.contacts.length?'Runs your configured contact script. The receipt reports provider acceptance.':'Calls are not configured.'}</p>
+      {#if state.publication}<div class="form-row camera-controls"><strong>Home camera • video only</strong>{#if cameraView?.stream_url&&!cameraError}<span class="source-badge" data-source="home_assistant">Home Assistant</span>{:else}<button disabled={!enabled()} onclick={()=>run('CALL',{contact_id:'contact.home'})}>Open home camera</button><button disabled={!enabled()} onclick={()=>run('MESSAGE')}>Send configured preset</button>{/if}{#if cameraView}<button onclick={()=>cameraView=null}>Close camera</button>{/if}</div>
+        {#if cameraView?.stream_url&&state.actions_enabled&&!cameraError}<img class="home-camera" data-home-camera src={cameraView.stream_url+'&session='+cameraSession} alt="Home camera video; no audio" onload={()=>cameraLoaded=true} onerror={()=>cameraError=true}/>{:else if cameraView}<p class="hint">{cameraError?'Camera stream unavailable — no live frame.':cameraView.stream_url?'Camera admission inactive.':'Synthetic camera view — no camera activated.'}</p>{/if}
+        {#if !cameraView?.stream_url||cameraError}<p class="hint">CALL opens the dining camera. No telephone call, microphone or two-way audio. MESSAGE uses a configured preset or a labeled synthetic notification.</p>{/if}
+      {:else}<div class="form-row"><label>Contact<select bind:value={selectedContact}><option value="">Choose a contact</option>{#each state.bindings.contacts as id (id)}<option value={id}>{pretty(id)}</option>{/each}</select></label><button disabled={!enabled()||!selectedContact} onclick={()=>run('CALL',{contact_id:selectedContact})}><Icon name="phone"/>Call</button></div><p class="hint">{state.bindings.contacts.length?'Runs your configured contact script. The receipt reports provider acceptance.':'Calls are not configured.'}</p>{/if}
     {:else if view==='message'}
       <button disabled={!enabled()||!state.bindings.messages} onclick={()=>run('MESSAGE')}><Icon name="bell"/>Send configured preset</button><p class="hint">{state.bindings.messages?'The destination and message are defined in your Home Assistant script.':'A preset message script is not configured.'}</p>
     {:else if view==='settings'}
-      <div class="form-row"><button onclick={enableAlertSound}>{soundEnabled?'Alert sound enabled':'Enable alert sound'}</button><span class="hint">Visual alerts also appear on this display.</span></div><RuntimeDebug {screen}/><a class="diagnostics-link" href="?diagnostics">Open audio diagnostics</a>
+      <div class="form-row"><button onclick={enableAlertSound}>{soundEnabled?'Alert sound enabled':'Enable alert sound'}</button><span class="hint">Visual alerts also appear on this display.</span>{#if state.publication}<button onclick={()=>view='history'}>History</button>{/if}</div><RuntimeDebug {screen}/><a class="diagnostics-link" href="?diagnostics">Open audio diagnostics</a>
     {:else if view==='history'}
-      <div class="history">{#each m.history as item (item.result.utteranceId)}<details><summary>{item.result.modelIntent||item.result.intent} · {item.status} · {item.raw.source}</summary><pre>{JSON.stringify(item.raw,null,2)}</pre></details>{/each}{#each [...state.receipts].reverse() as item (item.id)}<details><summary>{item.command?.intent||'Action'} · {item.status}</summary><p>{item.detail}</p><pre>{JSON.stringify(item.command,null,2)}</pre></details>{/each}{#if !m.history.length&&!state.receipts.length}<p class="hint">No requests yet.</p>{/if}</div>
+      <div class="history">{#each m.history as item (item.raw?.session_id+':'+item.result.utteranceId)}<details><summary>{item.result.modelIntent||item.result.intent} · {item.status} · {item.raw.source} {#if item.execution?.provenance}<span class="source-badge" data-source={item.execution.provenance.source}>{sourceLabel(item.execution)}</span>{/if}</summary><pre>{JSON.stringify(item.raw,null,2)}</pre></details>{/each}{#each [...state.receipts].reverse() as item (item.id)}<details><summary>{item.command?.intent||'Action'} · {item.status} {#if item.provenance}<span class="source-badge" data-source={item.provenance.source}>{sourceLabel(item)}</span>{/if}</summary><p>{item.detail}</p><pre>{JSON.stringify(item.command,null,2)}</pre></details>{/each}{#if !m.history.length&&!state.receipts.length}<p class="hint">No requests yet.</p>{/if}</div>
     {/if}
     </div>
   </section>
 
-  <section class="execution" aria-label="Execution receipt" aria-live="polite" data-execution-status={execution?.status||'none'}>
+  <section class="execution" aria-label="Execution receipt" aria-live="polite" data-execution-status={execution?.status||'none'} data-execution-id={execution?.id}>
     {#if error}<strong>Attention</strong><p class="error">{error}</p>
-    {:else if execution}<strong>{execution.status==='local'&&execution.command?.intent==='TIME'?'Local time':({succeeded:'Request accepted',observed:'Observed result',local:'Saved locally',requested:'Waiting for player',not_configured:'Not configured',unknown:'Outcome unknown',failed:'Action failed',disabled:'Actions disabled',preview:'Replay preview',rejected:'Rejected',pending:'Dispatching'})[execution.status]||execution.status}</strong><p>{execution.detail}</p>
+    {:else if execution}<strong>{execution.status==='local'&&execution.command?.intent==='TIME'?'Local time':({succeeded:'Request accepted',observed:'Observed result',local:'Saved locally',requested:'Waiting for player',synthetic:'Synthetic result',cached:'Cached snapshot',not_configured:'Not configured',unknown:'Outcome unknown',failed:'Action failed',disabled:'Actions disabled',preview:'Replay preview',rejected:'Rejected',pending:'Dispatching'})[execution.status]||execution.status}</strong><p>{execution.detail}</p>{#if execution.provenance}<span class="source-badge" data-source={execution.provenance.source}>{sourceLabel(execution)}</span>{/if}
     {:else}<strong>Ready when you are</strong><p>{state.actions_enabled?'Accepted live commands use your configured actions.':'Actions are disabled for this configuration.'}</p>{/if}
   </section>
 
 </main>
+{#if toast&&toast.until>now}<div class="provenance-toast" role="status">{toast.message}</div>{/if}
 {#if due}<div class="alert-backdrop"><div class="due-alert" tabindex="-1" role="alertdialog" aria-modal="true" aria-label={due.label} onkeydown={trapAlert} {@attach focusAlert}><Icon name={due.kind==='timer'?'timer':'alarm-clock'}/><h2>{due.label}</h2><p>{due.kind==='timer'?'Time is up.':'Your alarm is due.'}</p><div class="form-row">{#if state.actions_enabled}<button disabled={!enabled()} onclick={()=>jobAction(due,'snooze')}>Snooze 5 minutes</button><button class="primary" disabled={!enabled()} onclick={()=>jobAction(due,'complete')}>Dismiss</button>{:else}<button onclick={()=>closedAlert=due.id}>Close alert</button>{/if}</div></div></div>{/if}
 
 <style>
   :global(body){font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:#e2ecef;background:#090d11}button,input,select{font:inherit;color:inherit}button,a,input,select{touch-action:manipulation}button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:9px 15px;border:1px solid #30444e;background:#14212a;border-radius:13px;cursor:pointer}button:disabled{opacity:.4;cursor:default}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #9ce8d3;outline-offset:3px}button:hover:not(:disabled){background:#20333e}button :global(svg){width:19px;height:19px}input,select{max-width:100%;min-height:40px;padding:8px 10px;border:1px solid #3a505a;background:#0c151c;border-radius:9px;box-sizing:border-box}input[type=number]{width:100px}.iris{height:100dvh;box-sizing:border-box;max-width:1280px;margin:auto;padding:18px 24px 14px;display:grid;grid-template-columns:1fr auto;grid-template-rows:38px minmax(110px,1fr) minmax(152px,1.5fr) auto;gap:12px;overflow:hidden}.identity{display:flex;align-items:center;gap:16px}.wordmark{font-size:31px;font-weight:600;letter-spacing:-2px}.wordmark>span{color:#9ce8d3}.connection,.profile,.hint,.observed{font-size:12px;color:#96adb7}.online{color:#a9cebf}.corner-controls{display:flex;align-items:center;gap:8px}.corner-controls time{font-size:14px;margin-right:6px;font-variant-numeric:tabular-nums}.corner-controls button{background:none;min-height:38px;padding:8px}.voice{grid-column:1/-1;display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:0}.voice-heading{display:flex;align-items:center;gap:12px}h1{margin:0;font-size:clamp(25px,3.5vw,42px);font-weight:500;letter-spacing:-1px}.state-dot{width:10px;height:10px;border-radius:50%;background:#657985;box-shadow:none;flex-shrink:0}.state-dot.listening{background:#9ce8d3}.state-dot.muted{background:#b98078}.profile{margin:0 0 3px 22px}.recognition{display:flex;align-items:baseline;flex-wrap:wrap;gap:7px 12px;min-height:30px;font-size:12px;color:#b9cbd2}.recognition strong{color:#e2ecef;letter-spacing:.05em}.recognition code{overflow-wrap:anywhere}.recognition.tentative{color:#b8baa4}.phase{font-size:10px;text-transform:uppercase;letter-spacing:.08em;min-width:130px}.empty{opacity:.65}.controls{grid-column:1/-1;border:1px solid #233641;border-radius:18px;background:#101a22;min-height:0;display:flex;flex-direction:column;overflow:hidden}.panel-heading{display:flex;gap:10px;align-items:center;padding:8px 14px 0}.panel-heading h2{font-size:16px;font-weight:500;margin:0}.panel-heading button{min-height:30px;padding:3px;background:none;border:0}.panel-heading>span{font-size:10px;color:#8099a5;margin-left:auto}.panel-body{padding:14px 18px;overflow:auto;min-height:0;flex:1}.use-cases{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:9px}.use-cases button{display:flex;flex-direction:column;gap:8px;padding:12px 5px;background:#15232c;font-size:12px;min-height:65px}.use-cases button :global(svg){color:#a7c8ca}.home-summary{display:flex;justify-content:space-between;gap:10px;font-size:10px;color:#829aa6;margin-top:12px}.form-row{display:flex;align-items:flex-end;flex-wrap:wrap;gap:9px;margin-bottom:10px}label{display:flex;flex-direction:column;gap:5px;font-size:11px;color:#acc0c9}select{min-width:150px;max-width:250px}.hint,.observed{line-height:1.5;margin:8px 0}.observed{color:#c1d1d7}.answer{font-size:32px;font-weight:400}.execution{grid-column:1/-1;border-top:1px solid #233641;padding-top:10px;display:flex;align-items:baseline;gap:15px;min-height:32px}.execution strong{font-size:11px;letter-spacing:.03em;white-space:nowrap;color:#a9d8ca}.execution p{font-size:11px;line-height:1.4;margin:0;color:#9bb1bd}.error{color:#e4b1a9!important;font-size:12px;margin:0}.jobs{display:flex;flex-direction:column;gap:8px}.job{display:flex;align-items:center;gap:8px;border-top:1px solid #233641;padding-top:8px}.job>div,.job>strong{margin-right:auto;font-size:13px}.job>div{display:flex;align-items:center;gap:16px}.job span{font-size:12px;color:#a9c2cc}.job button{min-height:30px;padding:5px 10px;font-size:11px}.history{font-size:12px}.history details{border-bottom:1px solid #233641;padding:8px 0}.history summary{cursor:pointer}.history pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:11px}.diagnostics-link{color:#a9d8ca;font-size:12px;display:inline-block;margin-top:12px}.alert-backdrop{position:fixed;inset:0;z-index:20;background:#080d12ed;display:grid;place-items:center;padding:20px}.due-alert{padding:26px;background:#14232d;border:1px solid #536c70;border-radius:22px;text-align:center;max-width:90vw}.due-alert> :global(svg){width:40px;height:40px;color:#b9eddc}.due-alert h2{font-weight:500;font-size:28px}.due-alert p{color:#b4c9d0}.due-alert .form-row{justify-content:center;margin:20px 0 0}.primary{background:#a8ddcc;color:#101e24;border-color:#a8ddcc}
   @media(min-height:580px){.iris{padding:24px 32px;gap:18px;grid-template-rows:44px minmax(150px,1fr) minmax(205px,1.4fr) auto}.use-cases button{min-height:78px}.panel-body{padding:20px 22px}}
   @media(max-width:650px){.iris{padding:14px;height:100dvh;grid-template-rows:38px minmax(120px,auto) minmax(180px,1fr) auto;gap:12px}.connection{display:none}.corner-controls time{font-size:12px}.voice-heading h1{font-size:26px}.profile{font-size:11px}.use-cases{grid-template-columns:repeat(3,minmax(0,1fr))}.use-cases button{min-height:62px}.panel-body{padding:12px}.phase{min-width:0;width:100%}.execution{display:block;min-height:44px}.execution p{margin-top:5px}.home-summary{font-size:9px}.panel-heading>span{display:none}.form-row{gap:8px}.form-row button{padding:8px 10px;font-size:12px}select{max-width:200px;min-width:130px}}
+  .scores{width:100%;color:#96adb7;font-variant-numeric:tabular-nums;font-size:11px}.source-badge{display:inline-block;flex-shrink:0;white-space:nowrap;padding:3px 7px;border:1px solid #30444e;border-radius:13px;font-size:10px;color:#9ce8d3;background:#14212a}.source-badge[data-source=synthetic],.source-badge[data-source=cached]{color:#d7cfac}.provenance-toast{position:fixed;z-index:15;right:24px;bottom:70px;max-width:calc(100vw - 64px);padding:9px 13px;border:1px solid #4a5a52;border-radius:13px;background:#14212af5;color:#e2ecef;font-size:11px;pointer-events:none}.publication .use-cases{grid-template-columns:repeat(5,minmax(0,1fr))}.execution p{flex:1;min-width:0}.home-camera{display:block;max-width:100%;width:100%;max-height:150px;object-fit:contain;border-radius:13px;background:#090d11}
+  .camera-controls{align-items:center}.camera-controls strong{font-size:12px}.camera-controls button{font-size:11px;padding:7px 10px;min-height:34px}.camera-active{padding-top:6px;padding-bottom:6px}.camera-active .home-camera{max-height:100px}
+  @media(max-width:650px){.publication .use-cases{grid-template-columns:repeat(3,minmax(0,1fr))}.provenance-toast{right:14px;bottom:100px}.camera-active .home-camera{max-height:200px}}
   @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 </style>
