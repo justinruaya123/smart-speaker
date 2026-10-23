@@ -8,6 +8,7 @@ import { EventEmitter } from 'node:events';
 import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { irisUseCases } from '../../shared/canonical-command.js';
 
 const inventory = JSON.parse(readFileSync(new URL('../../../submission/models/optionb-tiny/commands.json', import.meta.url), 'utf8')).slice(1);
 const lamp = 'light.hue_color_lamp_1';
@@ -114,6 +115,8 @@ test('the actual gateway uses HA light capability checks and same-origin dining 
 test('all 31 frozen commands have real local or explicit synthetic completions across the ten categories', async () => {
   assert.equal(inventory.length, 31);
   assert.equal(new Set(inventory.map((c: unknown) => JSON.stringify(c))).size, 31);
+  assert.equal(irisUseCases.length,10);
+  for(const command of inventory)assert.equal(irisUseCases.filter(category=>category.intents.includes(command.intent as never)).length,1,JSON.stringify(command));
   const unavailable = async () => { throw new (await import('../integrations/http.js')).IntegrationError('disabled', 'Offline integration fixture.'); };
   const actions = new RuntimeActions({ ...config, bindings: { lights: {}, songs: {} } }, { light: unavailable, spotify: unavailable, song: unavailable });
   const local = new Set(['TIME', 'TIMER', 'ALARM', 'CREATE_REMINDER', 'LIST_REMINDERS']);

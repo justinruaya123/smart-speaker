@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   let { screen } = $props();
   let m = $derived(screen.model);
+  const percent=value=>Number.isFinite(value)?(value*100).toFixed(0)+'%':'not reported';
   let devices = $state([]), selected = $state(''), error = $state(''), busy = $state(false), wake = $state(false);
   let expanded = $state(true), listed = $state(false);
   async function request(path, body, type = 'application/json') {
@@ -29,7 +30,10 @@
     {#if expanded}
       <div class="panel">
         <p><strong>{m.runtimeEngine || 'Loading'} · Actions {m.runtimeActions?'enabled':'disabled'}</strong><br/>
-          {m.runtimeConfig?.mode || 'demo'} · Intent ≥ {((m.runtimeConfig?.intent_threshold??.95)*100).toFixed(0)}% · Each slot ≥ {((m.runtimeConfig?.slot_threshold??.9)*100).toFixed(0)}%</p>
+          {#if m.runtimeConfig?.mode==='joint_complete_command'}{m.runtimeConfig.mode} · Posterior ≥ {percent(m.runtimeConfig.min_probability)} · Margin ≥ {percent(m.runtimeConfig.min_margin)}
+          {:else}{m.runtimeConfig?.mode || 'demo'} · Intent ≥ {((m.runtimeConfig?.intent_threshold??.95)*100).toFixed(0)}% · Each slot ≥ {((m.runtimeConfig?.slot_threshold??.9)*100).toFixed(0)}%{/if}</p>
+        {#if m.runtimeIdentity?.parameters}<p>{m.runtimeIdentity.parameters.toLocaleString('en-US')} parameters · epoch {m.runtimeIdentity.selected_epoch??'not reported'} · {m.runtimeIdentity.wake_phrase?.toLowerCase()==='hey iris'?'Hey Iris':m.runtimeIdentity.wake_phrase||'Wake phrase not reported'}<br/>Qualification {m.runtimeIdentity.model_qualified===true?'passed':'not passed'} · ownership remains experimental</p>{/if}
+        {#if m.runtimeAudioError}<p role="status">{m.runtimeAudioError}</p>{/if}
         <div class="row"><button disabled={busy} onclick={refresh}>Refresh microphones</button>
           <select aria-label="Host microphone" bind:value={selected}><option value="">Choose microphone</option>{#each devices as device (device.index)}<option value={String(device.index)}>{device.index}: {device.name} ({device.hostapi})</option>{/each}</select>
           <button disabled={busy || selected === ''} onclick={() => request('listen', { device: Number(selected) })}>Listen</button>
