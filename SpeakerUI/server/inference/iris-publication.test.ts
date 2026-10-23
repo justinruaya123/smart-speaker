@@ -100,3 +100,39 @@ test('the actual gateway uses HA light capability checks and same-origin dining 
     assert.equal((await app.inject({ url: '/api/home-assistant/camera/camera.not_allowed', headers })).statusCode, 400);
   } finally { await app.close(); await rm(directory, { recursive: true, force: true }); }
 });
+
+test('all 31 frozen commands have real local or explicit synthetic completions across the ten categories', async () => {
+  assert.equal(inventory.length, 31);
+  assert.equal(new Set(inventory.map((c: unknown) => JSON.stringify(c))).size, 31);
+  const unavailable = async () => { throw new (await import('../integrations/http.js')).IntegrationError('disabled', 'Offline integration fixture.'); };
+  const actions = new RuntimeActions({ ...config, bindings: { lights: {}, songs: {} } }, { light: unavailable, spotify: unavailable, song: unavailable });
+  const local = new Set(['TIME', 'TIMER', 'ALARM', 'CREATE_REMINDER', 'LIST_REMINDERS']);
+  for (const [index, command] of inventory.entries()) {
+    const result = await actions.handle(event(command, 'catalog-' + index));
+    assert.equal(result?.status, local.has(command.intent) ? 'local' : 'synthetic', JSON.stringify(command));
+    assert.equal(result?.provenance.source, local.has(command.intent) ? 'local' : 'synthetic');
+  }
+  assert.equal(actions.store.snapshot().jobs.length, 9, 'three real timers, three alarms and three reminders');
+  assert.equal(actions.store.snapshot().jobs.filter(j => j.kind === 'alarm').every(j => j.timezone === 'Asia/Manila'), true);
+});
+
+test('publication WEATHER selects OpenWeather before HA and keeps private API configuration out of action state', async () => {
+  const directory = await mkdtemp(join(tmpdir(), 'iris-weather-route-'));
+  const cfg = readConfig({ IRIS_PUBLICATION: 'true', ACTIONS_ENABLED: 'true', DATA_DIR: directory,
+    OPENWEATHER_ENABLED: 'true', OPENWEATHER_API_KEY: 'offline-secret-fixture', OPENWEATHER_LATITUDE: '14.6', OPENWEATHER_LONGITUDE: '121.1', OPENWEATHER_LOCATION: 'Metro Manila',
+    SMART_SPEAKER_BINDINGS: JSON.stringify({ weather: { default: 'weather.not_used' } }) }, directory);
+  let calls = 0;
+  const app = await createApp(cfg, { fetcher: async url => {
+    calls++; assert.equal(new URL(String(url)).hostname, 'api.openweathermap.org');
+    return Response.json({ dt: Math.floor(Date.now() / 1000), main: { temp: 29 }, weather: [{ description: 'light rain' }] });
+  } });
+  const headers = { host: '127.0.0.1:3000', origin: 'http://127.0.0.1:3000' };
+  try {
+    const result = (await app.inject({ method: 'POST', url: '/api/actions', headers, payload: { request_id: 'weather', command: { intent: 'WEATHER', slots: {} } } })).json();
+    assert.equal(result.status, 'observed'); assert.equal(result.provenance.source, 'openweather');
+    assert.equal(calls, 1);
+    const state = (await app.inject({ url: '/api/actions/state', headers })).json();
+    assert.equal(JSON.stringify(state).includes('offline-secret-fixture'), false);
+    assert.equal(JSON.stringify(state).includes('14.6'), false);
+  } finally { await app.close(); await rm(directory, { recursive: true, force: true }); }
+});

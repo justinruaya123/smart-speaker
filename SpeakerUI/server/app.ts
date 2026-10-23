@@ -23,6 +23,7 @@ import { canonicalCommand } from '../shared/canonical-command.js';
 import { isRecord } from '../shared/protocol.js';
 import { randomUUID } from 'node:crypto';
 import { provenance } from './inference/synthetic-outcomes.js';
+import { createOpenWeather } from './integrations/openweather.js';
 
 interface Options { staticDir?: string; fetcher?: typeof fetch; inferenceFactory?: InferenceFactory; haSocketFactory?: (url: URL) => HomeAssistantSocket }
 
@@ -34,6 +35,7 @@ export async function createApp(config: Config, options: Options = {}) {
   const fetcher = options.fetcher ?? fetch;
   const ha = createHomeAssistant(config.ha, fetcher, options.haSocketFactory);
   const spotify = createSpotify(config.spotify, config.dataDir, fetcher);
+  const openweather = createOpenWeather(config.openweather, fetcher);
   const store = await ActionStore.open(config.dataDir);
   const runtime = config.runtime ? new PythonRuntime(config.runtime) : undefined;
   const actionClients = new Map<import('ws').default, string>();
@@ -66,6 +68,7 @@ export async function createApp(config: Config, options: Options = {}) {
     light:c=>ha.control(c),lights:commands=>ha.controlLights(commands),spotify:c=>spotify.control(c),song:uri=>spotify.playConfigured(uri),
     volume:async()=>{const state=await spotify.snapshot();return state.playback?.device?.volume??undefined;},
     climate:(entity,degrees)=>ha.climate(entity,degrees), weather:entity=>ha.weather(entity), script:entity=>ha.script(entity),
+    openweather:()=>openweather.read(),
     camera:async entity=>{
       const frame=await ha.camera(entity); await frame.body.cancel();
       return { entity_id:entity,video_only:true,stream_url:`/api/home-assistant/camera/${entity}/stream`,snapshot_url:`/api/home-assistant/camera/${entity}` };

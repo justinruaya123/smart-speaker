@@ -4,7 +4,8 @@ import { IntegrationError } from '../integrations/http.js';
 import { canonicalCommand, taskLabels, type CanonicalCommand } from '../../shared/canonical-command.js';
 import type { ActionBindings } from '../config.js';
 import { ActionStore, type Execution } from './action-store.js';
-import { SyntheticOutcomes } from './synthetic-outcomes.js';
+import { SyntheticOutcomes, provenance, type ResultSource } from './synthetic-outcomes.js';
+import { syntheticWeather } from '../integrations/openweather.js';
 
 type Providers = {
   light: (command: LightCommand) => Promise<unknown>;
@@ -18,6 +19,7 @@ type Providers = {
   media?: (entity: string, command: CanonicalCommand, content?: string) => Promise<unknown>;
   local?: (command: CanonicalCommand, content?: string) => Promise<Record<string, unknown>>;
   camera?: (entity: string) => Promise<Record<string, unknown>>;
+  openweather?: () => Promise<Execution>;
 };
 const colors: Record<string, number[]> = { red: [255, 0, 0], blue: [0, 0, 255], green: [0, 255, 0], yellow: [255, 255, 0], white: [255, 255, 255], orange: [255, 165, 0], purple: [128, 0, 128], pink: [255, 192, 203], cyan: [0, 255, 255], magenta: [255, 0, 255] };
 
@@ -26,6 +28,7 @@ export class RuntimeActions {
   private synthetic = new SyntheticOutcomes();
   constructor(private config: { enabled: boolean; bindings: ActionBindings; profile?: string; timezone?: string; publication?: boolean }, private providers: Providers,
     readonly store = ActionStore.memory(), private now = Date.now) {}
+  syntheticState() { return this.synthetic.snapshot(); }
 
   async handle(event: Record<string, any>): Promise<Execution | undefined> {
     if (event.event !== 'command' || event.is_final === false || event.final === false || !event.utterance_id) return;
@@ -53,11 +56,22 @@ export class RuntimeActions {
     if (!command) return outcome('rejected', 'Invalid canonical command or slots.');
     if (!await this.store.claim(id, command)) return;
     let result: Execution;
-    try { result = await this.execute(command, outcome); }
+    const canSimulate = ['LIGHT_ON','LIGHT_OFF','BRIGHTNESS','COLOR','PLAY_MUSIC','PAUSE','STOP','NEXT','VOLUME','CALL','MESSAGE'].includes(command.intent);
+    try {
+      result = await this.execute(command, outcome);
+      if (this.config.publication && canSimulate && result.status === 'not_configured') result = outcome('synthetic', '', this.synthetic.complete(command, result.detail));
+    }
     catch (error) {
-      result = error instanceof IntegrationError
+      result = this.config.publication && canSimulate && error instanceof IntegrationError && !error.outcomeUnknown &&
+        ['disabled','unavailable','authentication','not_authorized','no_device','not_found','unsupported_capability','rate_limited','quota_exceeded'].includes(error.code)
+        ? outcome('synthetic', '', this.synthetic.complete(command, error.message)) : error instanceof IntegrationError
         ? outcome(error.outcomeUnknown ? 'unknown' : ['disabled', 'invalid_target', 'unsupported_capability'].includes(error.code) ? 'not_configured' : 'failed', error.message)
         : outcome('unknown', 'Action outcome could not be confirmed; it will not be retried.');
+    }
+    if (this.config.publication && !result.provenance) {
+      const media = ['PLAY_MUSIC','PAUSE','STOP','NEXT','VOLUME'].includes(command.intent);
+      const source: ResultSource = media ? this.config.bindings.media_player?.provider || 'local' : ['TIME','TIMER','ALARM','CREATE_REMINDER','LIST_REMINDERS'].includes(command.intent) ? 'local' : 'home_assistant';
+      result = { ...result, command, provenance:provenance(source,result.provider_accepted === true,result.status === 'observed') };
     }
     try { return await this.store.finish(id, result); }
     catch { return outcome('unknown', 'The action was dispatched but its receipt could not be saved. It will not be retried.', { command }); }
@@ -90,6 +104,7 @@ export class RuntimeActions {
       await this.providers.climate(target, Number(slots.degrees)); return accepted('Home Assistant');
     }
     if (intent === 'WEATHER') {
+      if (this.config.publication) return outcome('observed', '', { command, ...(this.providers.openweather ? await this.providers.openweather() : syntheticWeather()) });
       const target = bindings.weather?.default;
       if (!target || !this.providers.weather) return missing('bindings.weather.default');
       const weather = await this.providers.weather(target);

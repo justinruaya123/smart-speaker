@@ -20,9 +20,27 @@ export class SyntheticOutcomes {
   private state: Record<string, any> = {};
   snapshot() { return structuredClone(this.state); }
   complete(command: CanonicalCommand, reason: string): Execution {
+    const { intent, slots } = command;
+    if (['LIGHT_ON','LIGHT_OFF','BRIGHTNESS','COLOR'].includes(intent)) {
+      this.state.lights ??= {};
+      const light = this.state.lights['light.hue_color_lamp_1'] ??= {};
+      if (intent === 'LIGHT_ON' || intent === 'LIGHT_OFF') light.on = intent === 'LIGHT_ON';
+      if (intent === 'BRIGHTNESS') { light.percent = slots.percent; light.on = Number(slots.percent) > 0; }
+      if (intent === 'COLOR') { light.color = slots.color; light.on = true; }
+    }
+    if (['PLAY_MUSIC','PAUSE','STOP','NEXT','VOLUME'].includes(intent)) {
+      const playback = this.state.playback ??= {};
+      if (intent === 'PLAY_MUSIC') playback.state = 'playing';
+      if (intent === 'PAUSE') playback.state = 'paused';
+      if (intent === 'STOP') playback.state = 'stopped';
+      if (intent === 'NEXT') playback.next_requests = (playback.next_requests || 0) + 1;
+      if (intent === 'VOLUME') playback.volume_operation = { ...slots };
+    }
     if (command.intent === 'TEMPERATURE') this.state.thermostat = { target: command.slots.degrees, unit: 'C' };
     const source = provenance('synthetic');
     return { status: 'synthetic', detail: `Synthetic — no device changed. ${reason}`, command,
-      ...source, provenance: source, synthetic_state: this.snapshot() };
+      ...source, provenance: source, synthetic_state: this.snapshot(),
+      ...(intent === 'CALL' ? { camera: { entity_id:'camera.dining_area_main_camera_tc70_mainstream',video_only:true,stream_url:null,available:false } } : {}),
+      ...(intent === 'MESSAGE' ? { notification: { preset:true,delivered:false } } : {}) };
   }
 }

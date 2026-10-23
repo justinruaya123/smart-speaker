@@ -58,3 +58,49 @@ test('the configured observed home sensor stays read-only and independent of a s
     assert.equal(calls.length, 1);
   } finally { await app.close(); await rm(directory, { recursive: true, force: true }); }
 });
+
+test('known unavailable integrations complete labeled simulations, never provider acknowledgments or observations', async () => {
+  const unavailable = async () => { throw new IntegrationError('disabled', 'Integration is not configured.'); };
+  const actions = new RuntimeActions({ enabled: true, publication: true, bindings: { lights: {}, songs: {} } },
+    { light: unavailable, spotify: unavailable, song: unavailable, camera: unavailable });
+  for (const [intent, slots] of [['LIGHT_ON', { light_id: 'light.all' }], ['PLAY_MUSIC', {}], ['MESSAGE', {}], ['CALL', { contact_id: 'contact.home' }]] as const) {
+    const result = await actions.handle(event(intent, slots));
+    assert.equal(result?.status, 'synthetic');
+    assert.equal(result?.provenance.source, 'synthetic');
+    assert.equal(result?.provider_accepted, false);
+    assert.equal(result?.device_state_confirmed, false);
+    assert.match(result!.detail, /Synthetic — no device changed/);
+  }
+  assert.equal(actions.syntheticState().lights['light.hue_color_lamp_1'].on, true);
+  assert.equal(actions.syntheticState().playback.state, 'playing');
+  const result = actions.store.receipt('s:CALL');
+  assert.equal(result?.camera.video_only, true);
+  assert.equal(result?.camera.stream_url, null);
+  assert.equal(result?.camera.available, false);
+  assert.equal(actions.store.receipt('s:MESSAGE')?.notification.delivered, false);
+});
+
+test('unknown outcomes never fall back, retry or replace separately observed/synthetic state', async () => {
+  let calls = 0;
+  const actions = new RuntimeActions({ enabled: true, publication: true, bindings: { lights: {}, songs: {} } }, {
+    light: async () => { calls++; throw new IntegrationError('unavailable', 'Outcome unknown.', true); }, spotify: forbidden, song: forbidden });
+  const command = event('LIGHT_ON', { light_id: 'light.all' });
+  assert.equal((await actions.handle(command))?.status, 'unknown');
+  assert.equal(await actions.handle(command), undefined);
+  assert.equal(calls, 1);
+  assert.deepEqual(actions.syntheticState(), {});
+  for (const patch of [{ source: 'wav' }, { actions_enabled: false }, { application: { accepted: false, command: null } }])
+    await actions.handle({ ...event('TEMPERATURE', { degrees: 22, unit: 'C' }, JSON.stringify(patch)), ...patch });
+  assert.deepEqual(actions.syntheticState(), {});
+  const disabled = new RuntimeActions({ enabled: false, publication: true, bindings }, { light: forbidden, spotify: forbidden, song: forbidden });
+  assert.equal((await disabled.handle(event('TEMPERATURE', { degrees: 22, unit: 'C' })))?.status, 'disabled');
+  assert.deepEqual(disabled.syntheticState(), {});
+});
+
+test('real accepted requests retain provider provenance without claiming an observed device state', async () => {
+  const actions = new RuntimeActions({ enabled: true, publication: true, bindings: { lights: {}, songs: {} } }, { light: async () => {}, spotify: forbidden, song: forbidden });
+  const receipt = await actions.handle(event('LIGHT_ON', { light_id: 'light.all' }));
+  assert.equal(receipt?.status, 'succeeded');
+  assert.deepEqual(receipt?.provenance, { source: 'home_assistant', synthetic: false, provider_accepted: true, device_state_confirmed: false });
+  assert.deepEqual(actions.syntheticState(), {});
+});
