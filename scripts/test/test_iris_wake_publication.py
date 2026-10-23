@@ -138,6 +138,80 @@ def test_training_inputs_cannot_admit_other_splits():
             m.assert_fit_membership([row], 'train')
 
 
+def test_train_only_normalization_rejects_test_before_reader():
+    m = publication()
+    assert hasattr(m, 'fit_normalization'), 'Missing train-only normalization'
+    import numpy as np
+    rows = [{'id': 'train', 'split': 'train', 'wake_positive': True, 'synthetic': True}]
+    rng = np.random.default_rng(12)
+    norm = m.fit_normalization(rows, lambda row: rng.normal(0, .01, 12000).astype('float32'))
+    assert len(norm['mean']) == len(norm['std']) == 40
+    assert norm['source_ids'] == ['train']
+    assert min(norm['std']) >= .1
+    with pytest.raises(ValueError, match='fit membership'):
+        m.fit_normalization([{**rows[0], 'split': 'test'}], lambda row: pytest.fail('leaked reader'))
+
+
+def test_recipe_rejects_unbounded_training_before_importing_optimizer():
+    m = publication()
+    assert hasattr(m, 'validate_recipe'), 'Missing bounded training validator'
+    cfg = dict(epochs=30, cpu_threads=4, steps_per_epoch=64, batch_size=64, parameters=82114)
+    m.validate_recipe(cfg)
+    for change in ({'epochs': 31}, {'cpu_threads': 8}, {'parameters': 258912}, {'steps_per_epoch': 1000}):
+        with pytest.raises(ValueError, match='bounded'):
+            m.validate_recipe({**cfg, **change})
+
+
+def test_development_selection_key_never_uses_test():
+    m = publication()
+    assert hasattr(m, 'development_key'), 'Missing development-only selection objective'
+    import numpy as np
+    logits = np.asarray([[4., 0.], [0., 4.], [1., 2.]])
+    target = np.asarray([0, 1, 1])
+    key, metric = m.development_key(logits, target)
+    assert key[0] == 1.
+    assert metric['recall'] == metric['specificity'] == 1.
+    assert key[1] < 0.
+
+
+def test_calibration_grid_uses_no_test_rows_and_preserves_native_policy():
+    m = publication()
+    assert hasattr(m, 'select_calibration'), 'Missing calibration-only threshold selection'
+    records = [dict(id='p', split='calibration', positive=True, synthetic=True, seconds=1., scores=[0., .96, .96, 0.]),
+               dict(id='n', split='calibration', positive=False, synthetic=True, seconds=1., scores=[0., .7, .7, 0.])]
+    selected = m.select_calibration(records, [.5, .8, .9, 1.])
+    assert selected['threshold'] == .8
+    assert selected['metrics']['detected'] == 1
+    assert selected['metrics']['false_wakes'] == 0
+    with pytest.raises(ValueError, match='calibration'):
+        m.select_calibration([{**records[0], 'split': 'test'}], [.5, 1.])
+
+
+def test_test_lock_rejects_dropped_cases_and_changed_inputs(tmp_path):
+    m = publication()
+    assert hasattr(m, 'validate_test_lock'), 'Missing once-only heldout lock validation'
+    cases = [{'id': 't', 'split': 'test'}]
+    inputs = [{'id': 't', 'wav_sha256': 'fixed'}]
+    path = tmp_path / 'protocol.json'
+    m.write_once(path, {'cases': cases})
+    lock = dict(protocol_sha256=m.digest(path), test_cases_sha256=m.object_digest(cases),
+                test_inputs_sha256=m.object_digest(inputs))
+    m.validate_test_lock(path, cases, inputs, lock)
+    with pytest.raises(ValueError, match='locked test'):
+        m.validate_test_lock(path, [], [], lock)
+    with pytest.raises(ValueError, match='locked test'):
+        m.validate_test_lock(path, cases, [{'id': 't', 'wav_sha256': 'changed'}], lock)
+
+
+def test_cli_has_no_implicit_generation_or_fit(monkeypatch):
+    m = publication()
+    assert hasattr(m, 'main'), 'Missing explicit opt-in CLI'
+    monkeypatch.setattr(m, 'fit_companion', lambda *a, **k: pytest.fail('implicit fit'))
+    with pytest.raises(SystemExit) as error:
+        m.main([])
+    assert error.value.code == 2
+
+
 def publication():
     assert importlib.util.find_spec('scripts.iris_wake_publication') is not None, 'Missing publication acceptance helper'
     return importlib.import_module('scripts.iris_wake_publication')

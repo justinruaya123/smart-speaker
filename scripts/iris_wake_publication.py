@@ -278,6 +278,294 @@ async def generate_cases(cases, cache, protocol_sha256, *, synthesizer=None, dec
     return records
 
 
+def fit_normalization(rows, reader):
+    import numpy as np
+    from vcm.frontend import SPEC
+    from scripts.train.iris_wake_helpers import training_arrays
+    assert_fit_membership(rows, 'train')
+    raw, _, excluded = training_arrays(rows, {'mean': [0.] * 40, 'std': [1.] * 40},
+                                      training=False, reader=reader)
+    values = raw.astype('float64')
+    return dict(frontend=SPEC, mean=values.mean(axis=(0, 2)).tolist(),
+                std=np.maximum(values.std(axis=(0, 2)), .1).tolist(),
+                source_ids=[r['id'] for r in rows], fit_split='train',
+                source_n=len(rows), statistic_windows=len(raw), excluded=excluded,
+                original_human_positive_n=0)
+
+
+def validate_recipe(cfg):
+    if (not 1 <= cfg['epochs'] <= 30 or not 1 <= cfg['cpu_threads'] <= 4 or
+            not 1 <= cfg['steps_per_epoch'] <= 64 or not 2 <= cfg['batch_size'] <= 64 or
+            cfg['batch_size'] % 2 or cfg['parameters'] != 82114):
+        raise ValueError('Refusing unbounded or different-architecture companion training')
+
+
+def development_key(logits, labels):
+    import numpy as np
+    values = np.asarray(logits, dtype='float64')
+    labels = np.asarray(labels)
+    pred = values.argmax(1)
+    recall = float(np.mean(pred[labels == 1] == 1))
+    specificity = float(np.mean(pred[labels == 0] == 0))
+    shifted = values - values.max(1, keepdims=True)
+    loss = float(np.mean(np.log(np.exp(shifted).sum(1)) - shifted[np.arange(len(labels)), labels]))
+    return ((recall + specificity) / 2, -loss), dict(recall=recall, specificity=specificity, cross_entropy=loss)
+
+
+def fit_companion(protocol_path=None, cache=None, out=EXPERIMENT):
+    """Bounded random-initialized CPU wake fit. Never call the legacy trainer."""
+    import time
+    import sys
+    import platform
+    import numpy as np
+    import torch
+    from scripts.models.mvp_wake import WakeNet
+    from scripts.train.iris_wake_helpers import training_arrays
+    protocol_path = Path(protocol_path or EXPERIMENT / 'companion-protocol.json')
+    cache = Path(cache or CACHE / 'companion')
+    out = Path(out)
+    cfg = json.loads(protocol_path.read_text())
+    validate_recipe(cfg)
+    for path, expected in cfg['source_bindings'].items():
+        if digest(ROOT / path) != expected:
+            raise ValueError('Changed frozen source ' + path)
+    if (out / 'fit-results.json').exists():
+        raise ValueError('Completed companion fit exists: do not refit/reselect')
+    rows = cfg['cases']
+    receipts = json.loads((cache / 'generation-complete.json').read_text())
+    if [r['id'] for r in receipts] != [r['id'] for r in rows]:
+        raise ValueError('Incomplete generated cohort')
+    by_id = {r['id']: r for r in receipts}
+    split_rows = {s: [r for r in rows if r['split'] == s] for s in ADAPTATION_VOICES}
+    # Reading headers/hashes is not feature extraction or heldout model scoring.
+    speech_hash_groups = {}
+    for row in rows:
+        receipt = by_id[row['id']]
+        if receipt['protocol_sha256'] != digest(protocol_path) or receipt['case_sha256'] != object_digest(row):
+            raise ValueError('Changed frozen input bindings')
+        if row['voice']:
+            speech_hash_groups.setdefault(receipt['decoded_pcm_s16le_sha256'], set()).add(row['split'])
+    if any(len(groups) > 1 for groups in speech_hash_groups.values()):
+        raise ValueError('Speech PCM crosses declared voice-disjoint partitions')
+    inputs = dict(protocol_sha256=digest(protocol_path), trainer_source_sha256=digest(__file__),
+                  generation_sha256=digest(cache / 'generation-complete.json'),
+                  partition_sha256={s: object_digest([dict(case=r, receipt=by_id[r['id']]) for r in rs])
+                                    for s, rs in split_rows.items()},
+                  source_bindings=cfg['source_bindings'], python=sys.version,
+                  torch=torch.__version__, numpy=np.__version__, platform=platform.platform(),
+                  test_numeric_pcm_loaded_before_fit=False, test_used_for_selection=False,
+                  note='Deterministic software controls may share PCM; no speech PCM cross-split overlap')
+    write_once(out / 'fit-inputs.json', inputs)
+    work = cache / 'training'
+    work.mkdir(exist_ok=True)
+    loaded = {}
+
+    def reader(row):
+        if row['split'] not in ('train', 'dev'):
+            raise ValueError('Attempted heldout PCM access in fit')
+        if row['id'] not in loaded:
+            loaded[row['id']] = read_case_pcm(row, by_id[row['id']], cache)
+        return loaded[row['id']]
+
+    train, dev = split_rows['train'], split_rows['dev']
+    assert_fit_membership(train, 'train')
+    assert_fit_membership(dev, 'dev')
+    norm = fit_normalization(train, reader)
+    write_once(work / 'normalization.json', norm)
+    x, y, excluded = training_arrays(train, norm, training=True, hard=True, reader=reader)
+    dx, dy, dev_excluded = training_arrays(dev, norm, training=False, reader=reader)
+    audit = dict(training_windows=len(y), positive_windows=int(y.sum()), development_windows=len(dy),
+                 excluded_training=excluded, excluded_development=dev_excluded,
+                 normalization_sha256=digest(work / 'normalization.json'),
+                 feature_sha256=hashlib.sha256(x.tobytes()).hexdigest(),
+                 dev_feature_sha256=hashlib.sha256(dx.tobytes()).hexdigest(),
+                 decoded_numeric_splits=sorted({r['split'] for r in rows if r['id'] in loaded}),
+                 data_counts=cfg['splits'], human_positive_n=0)
+    write_once(out / 'fit-data-audit.json', audit)
+    np.savez(work / 'features.npz', x=x, y=y, dx=dx, dy=dy)
+    torch.set_num_threads(cfg['cpu_threads'])
+    torch.manual_seed(cfg['seed'])
+    torch.use_deterministic_algorithms(True)
+    model = WakeNet()
+    if sum(p.numel() for p in model.parameters()) != cfg['parameters']:
+        raise ValueError('Changed wake architecture')
+    optimizer = torch.optim.AdamW(model.parameters(), lr=.001, weight_decay=.001)
+    rng = np.random.default_rng(cfg['seed'])
+    groups = [np.flatnonzero(y == label) for label in (0, 1)]
+    history, best, first = [], None, 1
+    if (work / 'last.pt').exists():
+        saved = torch.load(work / 'last.pt', map_location='cpu', weights_only=True)
+        if saved['input_sha256'] != digest(out / 'fit-inputs.json'):
+            raise ValueError('Changed resume inputs')
+        model.load_state_dict(saved['weights'])
+        optimizer.load_state_dict(saved['optimizer'])
+        torch.set_rng_state(saved['torch_rng'])
+        rng.bit_generator.state = saved['numpy_rng']
+        history, best, first = saved['history'], saved['best'], saved['epoch'] + 1
+    began = time.perf_counter()
+    for epoch in range(first, cfg['epochs'] + 1):
+        model.train()
+        losses = []
+        for _ in range(cfg['steps_per_epoch']):
+            indices = np.concatenate([rng.choice(group, cfg['batch_size'] // 2) for group in groups])
+            optimizer.zero_grad(set_to_none=True)
+            logits = model(torch.from_numpy(x[indices]))
+            loss = torch.nn.functional.cross_entropy(logits, torch.from_numpy(y[indices]))
+            if not torch.isfinite(loss):
+                raise ValueError('Nonfinite companion training loss')
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 5., error_if_nonfinite=True)
+            optimizer.step()
+            losses.append(float(loss.detach()))
+        model.eval()
+        with torch.no_grad():
+            values = np.concatenate([model(torch.from_numpy(dx[k:k + 64])).numpy()
+                                     for k in range(0, len(dx), 64)])
+        key, metric = development_key(values, dy)
+        record = dict(epoch=epoch, loss=float(np.mean(losses)), development=metric,
+                      seconds=time.perf_counter() - began)
+        history.append(record)
+        if best is None or key > tuple(best['key']):
+            torch.save(dict(weights={k: v.detach().cpu() for k, v in model.state_dict().items()},
+                            config=model.config, epoch=epoch), work / 'best.pt')
+            best = dict(epoch=epoch, key=list(key), checkpoint_sha256=digest(work / 'best.pt'))
+        torch.save(dict(weights=model.state_dict(), optimizer=optimizer.state_dict(),
+                        torch_rng=torch.get_rng_state(), numpy_rng=rng.bit_generator.state,
+                        input_sha256=digest(out / 'fit-inputs.json'), epoch=epoch,
+                        history=history, best=best), work / 'last.tmp')
+        (work / 'last.tmp').replace(work / 'last.pt')
+        print('COMPANION_TRAIN', json.dumps(record), flush=True)
+    result = dict(**best, history=history, parameters=cfg['parameters'], seed=cfg['seed'],
+                  optimizer_updates=cfg['epochs'] * cfg['steps_per_epoch'], cpu_threads=cfg['cpu_threads'],
+                  normalization_sha256=digest(work / 'normalization.json'),
+                  inputs_sha256=digest(out / 'fit-inputs.json'), protocol_sha256=digest(protocol_path),
+                  test_numeric_pcm_loaded=False, calibration_numeric_pcm_loaded=False,
+                  test_used_for_selection=False, qualified=False, real_human_positive_n=0)
+    write_once(out / 'fit-results.json', result)
+    return result
+
+
+def select_calibration(records, thresholds):
+    from scripts.train.iris_wake_helpers import stream_metrics
+    if not records or any(r.get('split') != 'calibration' for r in records):
+        raise ValueError('Threshold selection requires calibration records only')
+    grid = []
+    for threshold in thresholds:
+        metric = stream_metrics(records, threshold)
+        grid.append(dict(threshold=threshold, metrics=metric))
+    feasible = [r for r in grid if not r['metrics']['false_wakes'] and not r['metrics']['duplicate_detections']]
+    if not feasible:
+        raise ValueError('No feasible calibration threshold')
+    selected = max(feasible, key=lambda r: (r['metrics']['detected'], -r['threshold']))
+    return dict(**selected, grid=grid, test_used_for_selection=False)
+
+
+def calibrate_export(protocol_path=None, cache=None, out=EXPERIMENT):
+    """Select on calibration using actual exported ONNX scores, lock before TEST."""
+    import shutil
+    import warnings
+    import numpy as np
+    import torch
+    import onnxruntime as ort
+    from scripts.models.mvp_wake import WakeNet
+    from scripts.runtime.mvp_wake import HeyIris
+    protocol_path = Path(protocol_path or EXPERIMENT / 'companion-protocol.json')
+    cache = Path(cache or CACHE / 'companion')
+    out = Path(out)
+    if (out / 'selection-before-test.json').exists():
+        raise ValueError('Selection already locked; no reselection')
+    cfg = json.loads(protocol_path.read_text())
+    fit = json.loads((out / 'fit-results.json').read_text())
+    if fit['protocol_sha256'] != digest(protocol_path):
+        raise ValueError('Changed fit protocol')
+    checkpoint = cache / 'training/best.pt'
+    if digest(checkpoint) != fit['checkpoint_sha256']:
+        raise ValueError('Changed DEV-selected checkpoint')
+    norm_path = cache / 'training/normalization.json'
+    if digest(norm_path) != fit['normalization_sha256']:
+        raise ValueError('Changed train-only normalization')
+    norm = json.loads(norm_path.read_text())
+    torch.set_num_threads(1)
+    saved = torch.load(checkpoint, map_location='cpu', weights_only=True)
+    model = WakeNet(**saved['config']).eval()
+    model.load_state_dict(saved['weights'])
+    if sum(p.numel() for p in model.parameters()) != 82114:
+        raise ValueError('Different wake architecture')
+    export = cache / 'export-calibration'
+    export.mkdir(exist_ok=True)
+    torch.manual_seed(cfg['seed'])
+    with warnings.catch_warnings(record=True) as caught:
+        warnings.simplefilter('always')
+        torch.onnx.export(model, (torch.randn(1, 40, 158),), str(export / 'iris.onnx'),
+                          input_names=['features'], output_names=['wake'], opset_version=17, dynamo=False)
+    options = ort.SessionOptions()
+    options.intra_op_num_threads = options.inter_op_num_threads = 1
+    session = ort.InferenceSession(str(export / 'iris.onnx'), options, providers=['CPUExecutionProvider'])
+    errors = []
+    for _ in range(5):
+        x = torch.randn(1, 40, 158)
+        with torch.no_grad():
+            expected = model(x).numpy()
+        actual = session.run(None, {'features': x.numpy()})[0]
+        errors.append(float(np.abs(expected - actual).max()))
+    if max(errors) > 2e-5:
+        raise ValueError('Wake CPU ONNX parity failed')
+    probe_meta = dict(files={'iris.onnx': digest(export / 'iris.onnx')}, normalization=norm,
+                      threshold=1., **cfg['policy'], qualified=False, parameters=82114,
+                      real_wake_positive_recordings=0, supported_engines=['onnxruntime'])
+    write_once(export / 'iris.json', probe_meta)
+    detector = HeyIris(export)
+    cases = [r for r in cfg['cases'] if r['split'] == 'calibration']
+    assert_fit_membership(cases, 'calibration')
+    records, receipts = [], []
+    for case in cases:
+        receipt = json.loads((cache / 'receipts' / (case['id'] + '.json')).read_text())
+        if receipt['protocol_sha256'] != digest(protocol_path):
+            raise ValueError('Changed calibration protocol')
+        result = stream_pcm(detector, read_case_pcm(case, receipt, cache))
+        records.append(dict(id=case['id'], split='calibration', positive=case['wake_positive'],
+                            synthetic=True, seconds=result['seconds'], scores=result['scores']))
+        receipts.append(receipt)
+    selected = select_calibration(records, cfg['threshold_grid'])
+    write_once(cache / 'calibration-stream-scores.json', records)
+    selected_dir = cache / 'selected'
+    selected_dir.mkdir(exist_ok=True)
+    shutil.copyfile(export / 'iris.onnx', selected_dir / 'iris.onnx')
+    meta = {**probe_meta, 'threshold': selected['threshold'], 'epoch': saved['epoch'],
+            'initialization': 'random seed731; independent wake-only study',
+            'experiment': cfg['experiment'], 'protocol_sha256': digest(protocol_path),
+            'calibration': selected['metrics'], 'engine_parity_max_error': max(errors)}
+    write_once(selected_dir / 'iris.json', meta)
+    calibration = dict(**selected, inputs=receipts,
+                       checkpoint_sha256=digest(checkpoint), protocol_sha256=digest(protocol_path),
+                       onnx_parity=dict(max_absolute_error=max(errors), trials=len(errors),
+                                        exporter='torch.onnx.export dynamo=False opset17',
+                                        warnings=[str(w.message) for w in caught]))
+    write_once(out / 'calibration-results.json', calibration)
+    test_cases = [r for r in cfg['cases'] if r['split'] == 'test']
+    lock = dict(protocol_sha256=digest(protocol_path), model_sha256=digest(selected_dir / 'iris.onnx'),
+                policy_sha256=digest(selected_dir / 'iris.json'), checkpoint_sha256=digest(checkpoint),
+                normalization_sha256=digest(norm_path), source_sha256=digest(__file__),
+                fit_result_sha256=digest(out / 'fit-results.json'),
+                calibration_sha256=digest(out / 'calibration-results.json'),
+                test_cases_sha256=object_digest(test_cases),
+                test_inputs_sha256=object_digest([json.loads((cache / 'receipts' / (r['id'] + '.json')).read_text())
+                                                 for r in test_cases]),
+                test_features_or_inference_before_lock=False, qualified=False,
+                selected_folder=str(selected_dir.relative_to(ROOT)).replace('\\', '/'))
+    write_once(out / 'selection-before-test.json', lock)
+    return lock
+
+
+def validate_test_lock(protocol_path, cases, receipts, lock):
+    canonical = [r for r in json.loads(Path(protocol_path).read_text())['cases'] if r['split'] == 'test']
+    if (digest(protocol_path) != lock['protocol_sha256'] or cases != canonical or
+            object_digest(cases) != lock['test_cases_sha256'] or
+            [r['id'] for r in receipts] != [r['id'] for r in cases] or
+            object_digest(receipts) != lock['test_inputs_sha256']):
+        raise ValueError('Changed locked test cohort/inputs')
+
+
 def read_case_pcm(case, receipt, cache):
     import numpy as np
     import wave
@@ -359,6 +647,14 @@ def evaluate_panel(protocol_path, folder, cache, result_path, *, cases=None, loc
         raise ValueError('Changed locked model/policy')
     detector = HeyIris(folder)
     receipts = [json.loads((cache / 'receipts' / (c['id'] + '.json')).read_text()) for c in cases]
+    if lock is not None:
+        validate_test_lock(protocol_path, cases, receipts, lock)
+        marker = cache / 'test-evaluation-started.json'
+        if marker.exists():
+            raise ValueError('Locked test was already started: no repeat or reselection')
+        write_once(marker, dict(selection_sha256=object_digest(lock), evaluator_sha256=digest(__file__)))
+    elif cases != protocol['cases']:
+        raise ValueError('Baseline evaluation requires complete canonical cohort')
     predictions, raw = [], []
     began = time.perf_counter()
     for case, receipt in zip(cases, receipts):
@@ -382,3 +678,41 @@ def evaluate_panel(protocol_path, folder, cache, result_path, *, cases=None, loc
     write_once(result_path, result)
     print('RESULT', json.dumps(result['metrics'], sort_keys=True), flush=True)
     return result
+
+
+def main(argv=None):
+    import argparse
+    import asyncio
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('stage', choices=(
+        'baseline-freeze', 'baseline-generate', 'baseline-evaluate', 'companion-freeze',
+        'companion-generate', 'companion-fit', 'companion-lock', 'companion-test'))
+    parser.add_argument('--output', type=Path, default=EXPERIMENT, help='New immutable receipt directory')
+    parser.add_argument('--cache', type=Path, default=CACHE, help='Ignored raw audio/intermediate root, preferably D:')
+    args = parser.parse_args(argv)
+    prefix = 'baseline' if args.stage.startswith('baseline') else 'companion'
+    protocol = args.output / (prefix + '-protocol.json')
+    if args.stage.endswith('-freeze'):
+        available = json.loads((args.cache / 'available-voices.json').read_text())
+        result = freeze_baseline(available, out=args.output) if prefix == 'baseline' else freeze_adaptation(available, out=args.output)
+        print('FROZEN', digest(protocol), len(result['cases']))
+    elif args.stage.endswith('-generate'):
+        cfg = json.loads(protocol.read_text())
+        asyncio.run(generate_cases(cfg['cases'], args.cache / prefix, digest(protocol)))
+    elif args.stage == 'baseline-evaluate':
+        evaluate_panel(protocol, ROOT / 'artifacts/iris/wake', args.cache / prefix,
+                       args.output / 'baseline-results.json')
+    elif args.stage == 'companion-fit':
+        fit_companion(protocol, args.cache / prefix, args.output)
+    elif args.stage == 'companion-lock':
+        print(json.dumps(calibrate_export(protocol, args.cache / prefix, args.output), indent=2))
+    else:
+        lock = json.loads((args.output / 'selection-before-test.json').read_text())
+        cfg = json.loads(protocol.read_text())
+        evaluate_panel(protocol, args.cache / prefix / 'selected', args.cache / prefix,
+                       args.output / 'companion-test-results.json',
+                       cases=[r for r in cfg['cases'] if r['split'] == 'test'], lock=lock)
+
+
+if __name__ == '__main__':
+    main()
