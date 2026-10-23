@@ -9,7 +9,7 @@ import { resolve } from 'node:path';
 import type { Config } from './config.js';
 import { AUDIO, Intent, MediaSource, type Command, type Track } from '../shared/protocol.js';
 import { createLocalMedia, parseRange } from './media/local.js';
-import { createHomeAssistant } from './integrations/home-assistant.js';
+import { createHomeAssistant, type HomeAssistantSocket } from './integrations/home-assistant.js';
 import { createSpotify } from './integrations/spotify.js';
 import { IntegrationError } from './integrations/http.js';
 import { lightCommand, spotifyCommand } from './integrations/commands.js';
@@ -23,7 +23,7 @@ import { canonicalCommand } from '../shared/canonical-command.js';
 import { isRecord } from '../shared/protocol.js';
 import { randomUUID } from 'node:crypto';
 
-interface Options { staticDir?: string; fetcher?: typeof fetch; inferenceFactory?: InferenceFactory }
+interface Options { staticDir?: string; fetcher?: typeof fetch; inferenceFactory?: InferenceFactory; haSocketFactory?: (url: URL) => HomeAssistantSocket }
 
 export async function createApp(config: Config, options: Options = {}) {
   const https = config.tls ? { cert: await readFile(config.tls.cert), key: await readFile(config.tls.key) } : undefined;
@@ -31,7 +31,7 @@ export async function createApp(config: Config, options: Options = {}) {
   const dummyRuntime = loadDummyRuntime();
   const local = await createLocalMedia(config.mediaDir);
   const fetcher = options.fetcher ?? fetch;
-  const ha = createHomeAssistant(config.ha, fetcher);
+  const ha = createHomeAssistant(config.ha, fetcher, options.haSocketFactory);
   const spotify = createSpotify(config.spotify, config.dataDir, fetcher);
   const store = await ActionStore.open(config.dataDir);
   const runtime = config.runtime ? new PythonRuntime(config.runtime) : undefined;
@@ -46,10 +46,10 @@ export async function createApp(config: Config, options: Options = {}) {
     else socket.send(JSON.stringify(event));
   };
   const broadcast = (event: object) => { for (const socket of actionClients.keys()) send(socket, event); };
-  const actionState = () => ({ ...store.snapshot(), actions_enabled: actionsEnabled(), timezone:config.timezone,
-    bindings: { lights: config.bindings.lights, songs: Object.keys(config.bindings.songs),
+  const actionState = () => ({ ...store.snapshot(), actions_enabled: actionsEnabled(), timezone:config.timezone, publication: config.publication,
+    bindings: { lights: config.publication ? { 'light.all': 'light.hue_color_lamp_1' } : config.bindings.lights, songs: Object.keys(config.bindings.songs),
       climate: config.bindings.climate?.default || null, weather: config.bindings.weather?.default || null,
-      media_player: config.bindings.media_player || {}, contacts: Object.keys(config.bindings.contacts || {}), messages: Boolean(config.bindings.messages?.default) } });
+      media_player: config.bindings.media_player || {}, contacts: config.publication ? ['contact.home'] : Object.keys(config.bindings.contacts || {}), messages: Boolean(config.bindings.messages?.default) } });
   store.on('change', () => broadcast({ event: 'action_state', ...actionState() }));
   const publishExecution = (execution: Execution, sessionId?: string) => {
     if (execution.local_media && execution.status==='requested' && localOwner && !localPending.has(execution.id)) {
@@ -61,10 +61,14 @@ export async function createApp(config: Config, options: Options = {}) {
     const event = { event: 'execution', session_id: sessionId, utterance_id: execution.utterance_id, execution };
     broadcast(event); runtime?.emit('action', event);
   };
-  const actions=new RuntimeActions({enabled:config.actionsEnabled,bindings:config.bindings,profile:config.runtime?.profile,timezone:config.timezone},{
+  const actions=new RuntimeActions({enabled:config.actionsEnabled,bindings:config.bindings,profile:config.runtime?.profile,timezone:config.timezone,publication:config.publication},{
     light:c=>ha.control(c),lights:commands=>ha.controlLights(commands),spotify:c=>spotify.control(c),song:uri=>spotify.playConfigured(uri),
     volume:async()=>{const state=await spotify.snapshot();return state.playback?.device?.volume??undefined;},
     climate:(entity,degrees)=>ha.climate(entity,degrees), weather:entity=>ha.weather(entity), script:entity=>ha.script(entity),
+    camera:async entity=>{
+      const frame=await ha.camera(entity); await frame.body.cancel();
+      return { entity_id:entity,video_only:true,stream_url:`/api/home-assistant/camera/${entity}/stream`,snapshot_url:`/api/home-assistant/camera/${entity}` };
+    },
     media:(entity,command,content)=>ha.media(entity,command,content),
     local:async(command,content)=>{
       if (!localOwner) throw new IntegrationError('disabled','Open the configured local player in Iris before controlling playback.');

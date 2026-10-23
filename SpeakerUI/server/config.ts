@@ -92,6 +92,6 @@ export function readConfig(env: NodeJS.ProcessEnv, cwd: string) {
     if (redirect.origin !== origin || redirect.pathname !== '/auth/spotify/callback') throw new Error('Spotify redirect must be APP_ORIGIN + /auth/spotify/callback.');
     spotify = { enabled: true as const, clientId: required(env.SPOTIFY_CLIENT_ID, 'SPOTIFY_CLIENT_ID'), clientSecret: required(env.SPOTIFY_CLIENT_SECRET, 'SPOTIFY_CLIENT_SECRET'), redirectUri, deviceId: env.SPOTIFY_DEVICE_ID || undefined };
   } else spotify = { enabled: false as const };
-  return { host: env.HOST || '127.0.0.1', port, origin, tls, inferenceMode, runtime, threshold, bindings, timezone, actionsEnabled: enabled(env.ACTIONS_ENABLED, 'ACTIONS_ENABLED'), ha, spotify, mediaDir: resolve(cwd, env.LOCAL_MEDIA_DIR || 'media'), dataDir: resolve(cwd, env.DATA_DIR || 'data') };
+  return { host: env.HOST || '127.0.0.1', port, origin, tls, inferenceMode, runtime, threshold, bindings, timezone, publication: enabled(env.IRIS_PUBLICATION, 'IRIS_PUBLICATION'), actionsEnabled: enabled(env.ACTIONS_ENABLED, 'ACTIONS_ENABLED'), ha, spotify, mediaDir: resolve(cwd, env.LOCAL_MEDIA_DIR || 'media'), dataDir: resolve(cwd, env.DATA_DIR || 'data') };
 }
 export type Config = ReturnType<typeof readConfig>;

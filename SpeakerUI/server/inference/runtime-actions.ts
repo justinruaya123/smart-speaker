@@ -16,12 +16,13 @@ type Providers = {
   script?: (entity: string) => Promise<unknown>;
   media?: (entity: string, command: CanonicalCommand, content?: string) => Promise<unknown>;
   local?: (command: CanonicalCommand, content?: string) => Promise<Record<string, unknown>>;
+  camera?: (entity: string) => Promise<Record<string, unknown>>;
 };
 const colors: Record<string, number[]> = { red: [255, 0, 0], blue: [0, 0, 255], green: [0, 255, 0], yellow: [255, 255, 0], white: [255, 255, 255], orange: [255, 165, 0], purple: [128, 0, 128], pink: [255, 192, 203], cyan: [0, 255, 255], magenta: [255, 0, 255] };
 
 /** One dispatcher per server. Tentative/recorded events never enter dispatch. */
 export class RuntimeActions {
-  constructor(private config: { enabled: boolean; bindings: ActionBindings; profile?: string; timezone?: string }, private providers: Providers,
+  constructor(private config: { enabled: boolean; bindings: ActionBindings; profile?: string; timezone?: string; publication?: boolean }, private providers: Providers,
     readonly store = ActionStore.memory(), private now = Date.now) {}
 
   async handle(event: Record<string, any>): Promise<Execution | undefined> {
@@ -65,7 +66,7 @@ export class RuntimeActions {
     const missing = (name: string) => outcome('not_configured', `Configure ${name} before using this command.`, { command });
     const accepted = (provider: string) => outcome('succeeded', `${provider} accepted the service request. Observed device state updates separately.`, { command, provider, provider_accepted: true, device_state_confirmed: false });
     if (['LIGHT_ON', 'LIGHT_OFF', 'BRIGHTNESS', 'COLOR'].includes(intent)) {
-      const target = bindings.lights[String(slots.light_id)];
+      const target = this.config.publication ? 'light.hue_color_lamp_1' : bindings.lights[String(slots.light_id)];
       if (!target) return missing('bindings.lights.' + slots.light_id);
       const targets = Array.isArray(target) ? target : [target];
       const commands = targets.map(entityId => {
@@ -92,6 +93,11 @@ export class RuntimeActions {
       return outcome('observed', 'Current weather read from the configured Home Assistant entity.', { command, weather });
     }
     if (intent === 'CALL' || intent === 'MESSAGE') {
+      if (intent === 'CALL' && this.config.publication) {
+        if (!this.providers.camera) return missing('the dining camera');
+        const camera = await this.providers.camera('camera.dining_area_main_camera_tc70_mainstream');
+        return outcome('observed', 'Home camera • video only. No telephone call or microphone audio.', { command, camera });
+      }
       const target = intent === 'CALL' ? bindings.contacts?.[String(slots.contact_id)] : bindings.messages?.default;
       if (!target || !this.providers.script) return missing(intent === 'CALL' ? 'bindings.contacts.' + slots.contact_id : 'bindings.messages.default (a user-defined preset script)');
       await this.providers.script(target); return accepted('Home Assistant script');
