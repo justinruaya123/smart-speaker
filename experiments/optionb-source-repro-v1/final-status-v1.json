@@ -1,0 +1,123 @@
+{
+  "format": "optionb-GitHub-reproduction-final-status-v1",
+  "created_utc": "2026-10-23T17:23:01.015825+00:00",
+  "tested_published_code_revision": "c09e745ae94277edb40bcefc6d113b9393f2c074",
+  "publication_branch": "snapshot/optionb-tiny-epoch44",
+  "overall": "GPU_execution_requirement_verified_exact_original_results_not_reproduced",
+  "frozen_model": {
+    "published_snapshot_revision": "0591fbe2c3ed7349d5f4c12aa31ed0c0845322e9",
+    "graph_sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+    "unchanged": true,
+    "all15_assets10_scientific_sources_verified": true,
+    "parameters": 258912,
+    "epoch": 44,
+    "policy": {
+      "enabled": true,
+      "min_margin": 0.1,
+      "min_probability": 0.5
+    }
+  },
+  "source_and_features": {
+    "public_shards_independently_verified": 10,
+    "same_fresh_checkout_WAV_PCM_reconstructed_rows": 24776,
+    "old_audio_features_or_environment_copied": false,
+    "feature_rows_regenerated_exactly": 24566,
+    "human_normalization_rows_regenerated_exactly": 1889,
+    "metadata_access_distinct_from_PCM_inference": true
+  },
+  "GPU_training": {
+    "backend": "cuda:0",
+    "GPU": "NVIDIA GeForce RTX 3080",
+    "CPU_fallback_in_this_explicit_CUDA_run": false,
+    "from_random_initialization": true,
+    "completed_epochs": 48,
+    "optimizer_steps": 4608,
+    "draws": 147456,
+    "final_recipe_draw_counts_equal": true,
+    "own_GPU_checkpoint_to_CPU_ONNX_export_parity_passed": true,
+    "original_frozen_checkpoint_graph_policy_equality": false,
+    "selected_epoch": 28,
+    "expected_epoch": 44,
+    "selected_policy": {
+      "enabled": true,
+      "min_margin": 0.3,
+      "min_probability": 0.55
+    },
+    "expected_policy": {
+      "enabled": true,
+      "min_margin": 0.1,
+      "min_probability": 0.5
+    },
+    "actual_fit_CLI_exit_code": 1,
+    "failure_stage": "exact_comparison_and_lock",
+    "successful_exact_selection_lock_written": false,
+    "full_result_receipt": "experiments/optionb-source-repro-v1/gpu-full-fit-v1.json"
+  },
+  "software": {
+    "final_fresh_published_CUDA_python": {
+      "tests": 463,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    },
+    "seconds": 124.34,
+    "UI_passed": 119,
+    "UI_literal_check_test_build_exit_codes": [
+      0,
+      0,
+      0
+    ],
+    "UI_tested_revision": "d675f7c2d06541701bbdfd1f632079f9c30ee2cc",
+    "UI_source_unchanged_through_final_tested_revision": true,
+    "CPU_integrated": {
+      "passed": 458,
+      "CUDA_only_skipped": 5
+    },
+    "dependency_check": "49 installed packages compatible",
+    "replay_CLI_help_exit_code": 0,
+    "independent_GPU_review_passed": true,
+    "independent_replay_review_closed": [
+      "R1",
+      "R2",
+      "R3"
+    ],
+    "independent_replay_baseline_missing_rejection_failures": 42,
+    "independent_replay_corrected_passed": 127,
+    "independent_native_harness_review_passed": true
+  },
+  "exact_pipeline_gate": {
+    "actual_default_run_selection_CLI_exit": 1,
+    "actual_error": "FileNotFoundError: fit/selection-before-test.json",
+    "gate_probe_note": "The replay CLI consumes default fit/; the interrupted CPU fit has no success lock. Completed fit-gpu-01 likewise has no success lock because numerical comparison failed. Alternate fit-name selection is not implemented; no directories or locks were substituted.",
+    "source_heldout_replay": "not_run_blocked",
+    "native_original_WAV_replay": "not_run_blocked",
+    "PC_timing_repeat": "not_run_blocked",
+    "heldout_PCM_decoded_or_inferred": false,
+    "all_original_scripts_reproduced_same_results": false,
+    "no_tolerances_or_frozen_expectations_weakened": true
+  },
+  "evidence_sha256": {
+    "experiments/optionb-source-repro-v1/gpu-full-fit-v1.json": "a308def0e629084b5e72c4d97797fe809d997fecc044e8c5964015ea9bf327f7",
+    "experiments/optionb-source-repro-v1/fresh-published-software-v2.json": "06f5cef64181b8477252e50e73a615a82c9ea5d2fe881152c27ce16a6096423e",
+    "experiments/optionb-source-repro-v1/replay-review-v1.json": "b3003c3f8810c6f368dc1cb893b9b043cd643c99de3ed880bdaedd7040b85d22",
+    "experiments/optionb-source-repro-v1/replay-review-v2.json": "54b981f1f598e7f19393875f984a9f638c2bb142b424a2122fde9888e0591d99",
+    "experiments/optionb-source-repro-v1/replay-correction-tests-v2.json": "80b12ed4c7f7a956f3bf14c3e1a4dc77b87a2ae520228c512fdbdf41ab68f080",
+    "experiments/optionb-source-repro-v1/preparation-v1.json": "0c82b941dbf2e7fdcbb34cce180ad83fde18074678abeee986b6d130fbee2f2d",
+    "experiments/optionb-source-repro-v1/feature-preflight-v1.json": "b1f29733bea3363a00367a32e9a2875123a146d153f18bd01271b74aa8d66b7a",
+    "experiments/optionb-source-repro-v1/source-downloads-v1.json": "60bc54550f6869a949072ed5184c68ced6df25a3aa01afa9a391694dfdde94be",
+    "experiments/optionb-source-repro-v1/accelerator-review-v1.json": "76d733d95f5b0bedcb2125257ffb9f79c3921d1af500f821364701abdf26e88b",
+    "experiments/optionb-source-repro-v1/native-review-v1.json": "044c4a7037defff69a7de9ff3792d511fa511fb675d0dfef6773ae01c6a11bd2"
+  },
+  "final_logs_sha256": {
+    "optionb-final-published-all-tests-v3.log": "cff298dce834f9ac0cfe24932c18e6bf0bcd94dae39f1284c17780497ceee657",
+    "optionb-final-published-all-tests-v3.xml": "3d0f676670ee0a978fc5caed134114a1992c79db4fbe20ac6b09abb800adb201",
+    "optionb-final-real-selection-gate-v1.log": "9db745e85129b077d1e196876b6407b3f938e51877070d02f1e35ed7bb96369f"
+  },
+  "tested_checkout_clean": true,
+  "recommendation": "Keep the exact published epoch44 model unchanged. Classify real GPU training as a separate nonexact result. Do not report complete same-result reproduction or bypass the dependent selection gate.",
+  "actions_enabled": false,
+  "qualified": false,
+  "installed_defaults_changed": false,
+  "live_microphone_or_provider_execution": false,
+  "physical_Pi_testing": false
+}
