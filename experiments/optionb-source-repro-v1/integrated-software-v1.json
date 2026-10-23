@@ -1,0 +1,45 @@
+{
+  "format": "optionb-integrated-accelerator-replay-software-v1",
+  "scope": "combined_software_fixtures_not_fresh_Git_corpus_training_or_inference",
+  "source_checkout": "D:/School/AI231/.worktrees/me2/smart-speaker-fresh",
+  "test_file_count": 17,
+  "source_hashes": {
+    "scripts/train/speaker_optionb_tiny_accelerated.py": "f7c2e8e3b8dd42569eafc1727321b9b309a715ee2d3cb4e8857a0bb1d3010b15",
+    "scripts/test/test_speaker_optionb_tiny_accelerated.py": "7da5cffac3fec59a6c314d62a75dee9eb7027b7b3e58778b7c70e3f4d5af9bb8",
+    "scripts/submission/optionb_fit.py": "270f112bfb3ff54a6660bd3618c6bb305ab51d03b8e1c29fffcefc59d4a41251",
+    "scripts/test/test_optionb_reproduction_fit.py": "d7fd44afc42749205e1f046dcfcc962f661e35e6df07be0707ac597e504b3871",
+    "scripts/submission/optionb_replay.py": "65c9835facd95f97b8b73aa3753f61efcf07fb7e6b523a7d838827e2dd145e84",
+    "scripts/test/test_optionb_replay.py": "c17739f570892c491c3f01292dab9c4b22467c9e71fc302610399ee30c82d58e"
+  },
+  "results": {
+    "cuda": {
+      "tests": 463,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 463,
+      "junit_sha256": "4aec772774621a2bc95cfc8a0c820e1f5b3542032ebf1fd62688a8fa1186a23c",
+      "log_sha256": "2c568d7e47466a5d0e9fa0c2ad73b7b248f47b87949ac48f4111d1755e7a9501"
+    },
+    "cpu": {
+      "tests": 463,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 5,
+      "passed": 458,
+      "junit_sha256": "55f67dcd6072756a9124c4ee832477f5d880b2c4127165a79d33055ccddcd533",
+      "log_sha256": "5b4698b14820bf5f78c034b294b0f021ba978afc3138ca25312b40c7fd3b21e0"
+    }
+  },
+  "cuda_interpreter": "C:/Users/Justin/AppData/Local/hermes/cache/scratch/optionb-github-repro-0591fbe/.venv/Scripts/python.exe",
+  "cuda_test_sources": "D-root_working_source_precommit_only_not_Git_pulled_scientific_run",
+  "cpu_interpreter": "D:/School/AI231/.worktrees/me2/smart-speaker-fresh/.venv/Scripts/python.exe",
+  "prior_34_concurrent_replay_RED_cases": "preserved_in_accelerator_agent_evidence; corrected_integrated_suite_now_green",
+  "independent_GPU_review": "passed_experiments/optionb-source-repro-v1/accelerator-review-v1.json",
+  "independent_replay_R1_R3_closure": "pending",
+  "full_GPU_corpus_training": "not_started",
+  "actions_enabled": false,
+  "qualified": false,
+  "installed": false,
+  "physical_pi": false
+}

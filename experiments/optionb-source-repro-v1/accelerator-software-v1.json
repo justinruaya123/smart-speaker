@@ -1,0 +1,178 @@
+{
+  "format": "optionb-accelerator-software-evidence-v1",
+  "scope": "real_GPU_and_CPU_software_fixtures_not_full_corpus_reproduction",
+  "source_hashes": {
+    "scripts/train/speaker_optionb_tiny_accelerated.py": "f7c2e8e3b8dd42569eafc1727321b9b309a715ee2d3cb4e8857a0bb1d3010b15",
+    "scripts/test/test_speaker_optionb_tiny_accelerated.py": "7da5cffac3fec59a6c314d62a75dee9eb7027b7b3e58778b7c70e3f4d5af9bb8",
+    "scripts/submission/optionb_fit.py": "270f112bfb3ff54a6660bd3618c6bb305ab51d03b8e1c29fffcefc59d4a41251",
+    "scripts/test/test_optionb_reproduction_fit.py": "d7fd44afc42749205e1f046dcfcc962f661e35e6df07be0707ac597e504b3871"
+  },
+  "parent_real_cuda_tests": {
+    "tests": 88,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "parent_seconds": 34.83,
+  "child_CPU_tests": {
+    "passed": 83,
+    "CUDA_only_skips": 5
+  },
+  "CPU_port_canonical_five_step_parity": {
+    "tensors": true,
+    "sample_draws": true,
+    "losses": true,
+    "cosine_schedule": true
+  },
+  "real_cuda_placement": [
+    {
+      "path": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-accelerator-agent-tdd\\cuda-final-v2\\test_real_cuda_fit_places_trai0\\gpu-fit\\training-result.json",
+      "execution_device": "cuda:0",
+      "checkpoint_tensor_device": "cpu",
+      "optimizer_steps": 2,
+      "weights_changed": true,
+      "device_placement": {
+        "dev_input_devices": [
+          "cuda:0"
+        ],
+        "dev_model_devices": [
+          "cuda:0"
+        ],
+        "dev_output_device": "cuda:0",
+        "gradient_devices": [
+          "cuda:0"
+        ],
+        "input_devices": [
+          "cuda:0"
+        ],
+        "model_devices": [
+          "cuda:0"
+        ],
+        "optimizer_moment_devices": [
+          "cuda:0"
+        ],
+        "optimizer_step_devices": [
+          "cpu"
+        ],
+        "target_device": "cuda:0"
+      },
+      "device_selection": {
+        "cuda_device_name": "NVIDIA GeForce RTX 3080",
+        "device": "cuda:0",
+        "probe": {
+          "finite_loss": true,
+          "gradient_devices": [
+            "cuda:0"
+          ],
+          "input_devices": [
+            "cuda:0"
+          ],
+          "model_devices": [
+            "cuda:0"
+          ],
+          "optimizer_moment_devices": [
+            "cuda:0"
+          ],
+          "optimizer_step_devices": [
+            "cpu"
+          ],
+          "optimizer_steps": 1,
+          "passed": true,
+          "synchronized": true,
+          "target_device": "cuda:0",
+          "weights_changed": true
+        },
+        "reason": "cuda_probe_passed",
+        "requested": "auto"
+      }
+    },
+    {
+      "path": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-accelerator-agent-tdd\\cuda-final-v2\\test_real_cuda_cpu_reference_m0\\.cache\\fixture\\fit-gpu-01\\training-result.json",
+      "execution_device": "cuda:0",
+      "checkpoint_tensor_device": "cpu",
+      "optimizer_steps": 2,
+      "weights_changed": true,
+      "device_placement": {
+        "dev_input_devices": [
+          "cuda:0"
+        ],
+        "dev_model_devices": [
+          "cuda:0"
+        ],
+        "dev_output_device": "cuda:0",
+        "gradient_devices": [
+          "cuda:0"
+        ],
+        "input_devices": [
+          "cuda:0"
+        ],
+        "model_devices": [
+          "cuda:0"
+        ],
+        "optimizer_moment_devices": [
+          "cuda:0"
+        ],
+        "optimizer_step_devices": [
+          "cpu"
+        ],
+        "target_device": "cuda:0"
+      },
+      "device_selection": {
+        "cuda_device_name": "NVIDIA GeForce RTX 3080",
+        "device": "cuda:0",
+        "probe": {
+          "finite_loss": true,
+          "gradient_devices": [
+            "cuda:0"
+          ],
+          "input_devices": [
+            "cuda:0"
+          ],
+          "model_devices": [
+            "cuda:0"
+          ],
+          "optimizer_moment_devices": [
+            "cuda:0"
+          ],
+          "optimizer_step_devices": [
+            "cpu"
+          ],
+          "optimizer_steps": 1,
+          "passed": true,
+          "synchronized": true,
+          "target_device": "cuda:0",
+          "weights_changed": true
+        },
+        "reason": "cuda_probe_passed",
+        "requested": "cuda"
+      }
+    }
+  ],
+  "comparison_mismatches_retained": [
+    {
+      "path": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-accelerator-agent-tdd\\cuda-final-v2\\test_real_cuda_cpu_reference_m0\\.cache\\fixture\\fit-gpu-01\\fit-comparison.json",
+      "exact": false,
+      "execution_device": "cuda:0",
+      "checkpoint_tensor_device": "cpu",
+      "max_abs_tensor_difference": 0.00800514779984951,
+      "state_dict_equal": false,
+      "draw_counts_equal": false,
+      "checkpoint_export_parity": {
+        "atol": 3e-05,
+        "class_equality_required": true,
+        "max_abs_logit_difference": 9.5367431640625e-07,
+        "passed": true,
+        "rows": 4,
+        "rtol": 3e-05
+      },
+      "selection_lock_written": false
+    }
+  ],
+  "original15assets10sources_export_and_selection_unchanged": true,
+  "independent_review": "passed_experiments/optionb-source-repro-v1/accelerator-review-v1.json",
+  "full_corpus_GPU_fit": "not_started",
+  "replay_regressions_in_concurrent_red_phase": true,
+  "actions_enabled": false,
+  "qualified": false,
+  "installed": false
+}

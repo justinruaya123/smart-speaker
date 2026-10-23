@@ -192,7 +192,7 @@ def test_two_step_real_cpu_optimizer_fixture_matches_an_independent_canonical_fi
     fit.mkdir()
     stage = module()
     assert hasattr(stage, '_fit_and_compare'), 'Missing unchanged canonical CPU fitting stage'
-    result, checkpoint, comparison = stage._fit_and_compare(tmp_path, fit, views, arrays, norm, fixture_snapshot)
+    result, checkpoint, comparison = stage._fit_and_compare(tmp_path, fit, views, arrays, norm, fixture_snapshot, device='cpu')
     assert result['optimizer_steps'] == 2 and result['weights_changed'] is True
     assert checkpoint['config'] == config
     assert comparison['exact'] is True
@@ -261,6 +261,8 @@ def snapshot_checkout(tmp_path):
              'scripts/submission/optionb_fit.py', 'scripts/submission/optionb_reproduce.py',
              'scripts/test/speaker_demo_suite.py', 'scripts/train/speaker_human_data.py',
              'scripts/test/test_optionb_reproduction_fit.py', 'scripts/test/test_speaker_optionb_tiny.py',
+             'scripts/train/speaker_optionb_tiny_accelerated.py',
+             'scripts/test/test_speaker_optionb_tiny_accelerated.py',
              'scripts/test/speaker_optionb_tiny_demo.py', 'scripts/test/speaker_optionb_tiny_ft_audit.py',
              'submission/optionb-tiny/testing.lock',
              'experiments/speaker-optionb-tiny-demo-v1/protocol.json',
@@ -399,15 +401,16 @@ def test_missing_pytest_export_dependency_fails_in_a_fresh_process_before_featur
         module().fit_source(tmp_path, '.cache/fixture')
 
 
-def test_fit_source_reaches_only_the_canonical_fitter_after_real_preflight_and_reserved_metadata_audit(tmp_path, monkeypatch):
+def test_fit_source_reaches_only_the_same_recipe_port_after_real_preflight_and_reserved_metadata_audit(tmp_path, monkeypatch):
     """Only the expensive full fit is stopped; WAV/PCM/extraction gates really run."""
-    from scripts.train import speaker_optionb_tiny as training
+    from scripts.train import speaker_optionb_tiny_accelerated as training
     from scripts.test.speaker_demo_suite import read_jsonl
     snapshot, views, _, norm = source_fixture_checkout(tmp_path)
     seen = []
     class FixtureOptimizerStop(RuntimeError):
         pass
-    def stop_full_fit(rows, dev, arrays, output, config):
+    def stop_full_fit(rows, dev, arrays, output, config, *, device):
+        assert device == 'auto'
         assert config == json.loads(SNAPSHOT_PATH.read_text())['training']
         assert {r['split'] for r in rows} == {'train'}
         assert {r['split'] for r in dev} == {'dev'}
@@ -426,7 +429,7 @@ def test_fit_source_reaches_only_the_canonical_fitter_after_real_preflight_and_r
         module().fit_source(tmp_path, '.cache/fixture')
     assert len(seen) == 1
     failure = json.loads((tmp_path / '.cache/fixture/fit/failure.json').read_text())
-    assert failure['stage'] == 'canonical_cpu_fit'
+    assert failure['stage'] == 'device_explicit_fit'
     assert not (tmp_path / '.cache/fixture/fit/selection-before-test.json').exists()
 
 
@@ -478,8 +481,8 @@ def test_fit_source_returns_a_hash_sealed_receipt_after_a_real_two_step_fixture_
     snapshot = completed_fixture_checkout(tmp_path)
     stage = module()
     assert hasattr(stage, entrypoint), 'Missing source-fit command entry point'
-    receipt = (stage.fit_source(tmp_path, '.cache/fixture') if entrypoint == 'fit_source'
-               else stage.main(['--output', '.cache/fixture'], root=tmp_path))
+    receipt = (stage.fit_source(tmp_path, '.cache/fixture', device='cpu') if entrypoint == 'fit_source'
+               else stage.main(['--output', '.cache/fixture', '--device', 'cpu'], root=tmp_path))
     assert isinstance(receipt, dict), 'Missing completed fit/export/selection receipt'
     fit = tmp_path / '.cache/fixture/fit'
     assert receipt == json.loads((fit / 'selection-before-test.json').read_text())
@@ -583,7 +586,7 @@ def test_real_fixture_draw_mismatch_is_sealed_failed_and_never_replaces_the_snap
     (tmp_path / SNAPSHOT_PATH.relative_to(ROOT)).write_text(json.dumps(snapshot), encoding='utf8')
     expected_reference_hash = file_digest(reference_path)
     with pytest.raises(ValueError, match='comparison mismatch'):
-        module().fit_source(tmp_path, '.cache/fixture')
+        module().fit_source(tmp_path, '.cache/fixture', device='cpu')
     fit = tmp_path / '.cache/fixture/fit'
     comparison = json.loads((fit / 'fit-comparison.json').read_text())
     assert comparison['exact'] is False
@@ -596,6 +599,131 @@ def test_real_fixture_draw_mismatch_is_sealed_failed_and_never_replaces_the_snap
     assert failure['selection_lock_written'] is False
     assert failure['bindings']['.cache/fixture/fit/fit-comparison.json'] == file_digest(fit / 'fit-comparison.json')
     assert '.cache/fixture/fit/best.pt' in failure['bindings']
+
+
+def test_false_execution_placement_cannot_pass_an_otherwise_exact_cpu_fit(tmp_path, monkeypatch):
+    """Adversarial SOFTWARE FIXTURE: corrupt provenance, not fitted tensor values."""
+    from scripts.train import speaker_optionb_tiny as canonical
+    from scripts.train import speaker_optionb_tiny_accelerated as accelerated
+    views, arrays, _, norm = real_audio_fixture(tmp_path)
+    snapshot = json.loads(SNAPSHOT_PATH.read_text())
+    config = {**snapshot['training'], 'human_epochs': 1, 'mixed_epochs': 1, 'steps_per_epoch': 1}
+    result = canonical.fit_model(views['train'], views['dev'], arrays, tmp_path / 'reference', config)
+    snapshot.update(training=config, checkpoint='reference/best.pt', selected_epoch=result['selected_epoch'])
+    original_fit = accelerated.fit_model
+
+    def corrupt_placement(*args, **kwargs):
+        result = original_fit(*args, **kwargs)
+        result['device_placement']['gradient_devices'] = ['meta']
+        (Path(args[3]) / 'training-result.json').write_text(json.dumps(result), encoding='utf8')
+        return result
+
+    monkeypatch.setattr(accelerated, 'fit_model', corrupt_placement)
+    fit = tmp_path / 'candidate'
+    fit.mkdir()
+    _, _, comparison = module()._fit_and_compare(tmp_path, fit, views, arrays, norm, snapshot, device='cpu')
+    assert comparison['checkpoint']['exact'] is True
+    assert comparison['exact'] is False
+    assert comparison['checks']['execution_placement_equal'] is False
+
+
+def test_required_cuda_unavailable_is_sealed_with_requested_device_before_recipe_steps(tmp_path, monkeypatch):
+    import torch
+    from scripts.train import speaker_optionb_tiny_accelerated as accelerated
+    source_fixture_checkout(tmp_path)
+    monkeypatch.setattr(torch.cuda, 'is_available', lambda: False)
+    monkeypatch.setattr(accelerated, '_probe_device', lambda device: pytest.fail('No CPU probe for required CUDA'))
+    with pytest.raises(RuntimeError, match='Required CUDA'):
+        module().fit_source(tmp_path, '.cache/fixture', device='cuda', fit_name='fit-gpu-01')
+    fit = tmp_path / '.cache/fixture/fit-gpu-01'
+    failure = json.loads((fit / 'failure.json').read_text())
+    assert failure['stage'] == 'device_explicit_fit'
+    assert failure['requested_device'] == 'cuda' and failure['fit_name'] == 'fit-gpu-01'
+    assert failure['selection_lock_written'] is False
+    assert not (fit / 'best.pt').exists() and not (fit / 'training-curve.jsonl').exists()
+
+
+def test_real_cuda_cpu_reference_mismatch_preserves_comparison_and_never_locks(tmp_path):
+    """Conditional two-step GPU SOFTWARE FIXTURE with a deliberately bad draw reference."""
+    import torch
+    from scripts.test.speaker_demo_suite import file_digest
+    if not torch.cuda.is_available():
+        pytest.skip('CUDA unavailable; this GPU comparison fixture did not execute')
+    snapshot = completed_fixture_checkout(tmp_path)
+    reference_path = tmp_path / snapshot['checkpoint']
+    reference = torch.load(reference_path, map_location='cpu', weights_only=True)
+    reference['sample_counts'][next(iter(reference['sample_counts']))] += 1
+    torch.save(reference, reference_path)
+    snapshot['files'][snapshot['checkpoint']] = dict(bytes=reference_path.stat().st_size, sha256=file_digest(reference_path))
+    (tmp_path / SNAPSHOT_PATH.relative_to(ROOT)).write_text(json.dumps(snapshot), encoding='utf8')
+    reference_hash = file_digest(reference_path)
+    with pytest.raises(ValueError, match='comparison mismatch'):
+        module().fit_source(tmp_path, '.cache/fixture', device='cuda', fit_name='fit-gpu-01')
+    fit = tmp_path / '.cache/fixture/fit-gpu-01'
+    comparison = json.loads((fit / 'fit-comparison.json').read_text())
+    assert comparison['exact'] is False and comparison['execution_device'] == 'cuda:0'
+    training = comparison['training']
+    assert training['execution_device'] == 'cuda:0' and training['checkpoint_tensor_device'] == 'cpu'
+    assert training['cpu_only'] is True  # Not a claim that the optimizer ran on CPU.
+    assert training['device_placement']['optimizer_moment_devices'] == ['cuda:0']
+    actual = torch.load(fit / 'best.pt', weights_only=True)
+    assert all(value.device.type == 'cpu' for value in actual['state_dict'].values())
+    independent = module()._compare_checkpoints(actual, reference, snapshot)
+    assert independent == training['checkpoint']
+    assert training['checkpoint']['sample_counts_equal'] is False
+    assert comparison['export']['checkpoint_parity']['passed'] is True
+    assert file_digest(reference_path) == reference_hash
+    assert not (fit / 'selection-before-test.json').exists()
+    failure = json.loads((fit / 'failure.json').read_text())
+    assert failure['selection_lock_written'] is False
+    assert failure['comparison_receipt'] == '.cache/fixture/fit-gpu-01/fit-comparison.json'
+    assert failure['qualified'] is False and failure['actions_enabled'] is False and failure['installed'] is False
+
+
+@pytest.mark.parametrize('fit_name', ['', '.', '..', '../escaped', 'fit/new', 'fit\\new',
+                                     'C:escape', '/absolute', 'fit:stream', 'fit.', ' fit', 'fit ',
+                                     'CON', 'nul.txt', 'COM1', 'LPT9', 'audio', 'prepared', 'x' * 65])
+def test_fit_name_is_one_safe_nonreserved_directory_component_before_any_write(tmp_path, fit_name):
+    with pytest.raises(ValueError, match='fit.name'):
+        module().fit_source(tmp_path, '.cache/fixture', fit_name=fit_name, device='cpu')
+    assert list(tmp_path.iterdir()) == []
+
+
+def test_named_fit_rejects_a_real_symlink_or_junction_before_writing(tmp_path):
+    run, outside = tmp_path / '.cache/fixture', tmp_path / 'outside'
+    run.mkdir(parents=True)
+    outside.mkdir()
+    make_directory_link(run / 'fit-gpu-01', outside)
+    with pytest.raises(ValueError, match='containment'):
+        module().fit_source(tmp_path, '.cache/fixture', fit_name='fit-gpu-01', device='cpu')
+    assert list(outside.iterdir()) == []
+    assert not (run / 'fit').exists()
+
+
+def test_named_cpu_fit_reuses_prepared_source_run_without_touching_the_interrupted_fit(tmp_path):
+    """Real two-step tone fixture and original CPU exporter, not corpus evidence."""
+    snapshot = completed_fixture_checkout(tmp_path)
+    old_fit = tmp_path / '.cache/fixture/fit'
+    old_fit.mkdir()
+    marker = old_fit / 'interrupted.json'
+    marker.write_bytes(b'{"software_fixture":true,"preserve":true}\n')
+    receipt = module().main(['--output', '.cache/fixture', '--device', 'cpu',
+                             '--fit-name', 'fit-gpu-01'], root=tmp_path)
+    fit = tmp_path / '.cache/fixture/fit-gpu-01'
+    assert marker.read_bytes() == b'{"software_fixture":true,"preserve":true}\n'
+    assert sorted(p.name for p in old_fit.iterdir()) == ['interrupted.json']
+    assert receipt == json.loads((fit / 'selection-before-test.json').read_text())
+    assert receipt['execution_device'] == 'cpu' and receipt['checkpoint_tensor_device'] == 'cpu'
+    comparison = json.loads((fit / 'fit-comparison.json').read_text())
+    assert comparison['training']['execution_device'] == 'cpu'
+    assert comparison['training']['checkpoint_tensor_device'] == 'cpu'
+    assert comparison['training']['device_selection']['reason'] == 'explicit_cpu'
+    assert comparison['exact'] is True and receipt['optimizer_steps'] == 2
+    assert receipt['qualified'] is False and receipt['actions_enabled'] is False and receipt['installed'] is False
+    assert '.cache/fixture/prepared/train.jsonl' in receipt['bindings']
+    for name in ('scripts/train/speaker_optionb_tiny_accelerated.py',
+                 'scripts/test/test_speaker_optionb_tiny_accelerated.py'):
+        assert name in receipt['bindings']
 
 
 @pytest.mark.parametrize('changed_default', ['float64', 'meta'])

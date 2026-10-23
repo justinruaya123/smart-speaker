@@ -1,0 +1,5 @@
+# Tested accelerator override: Windows x86_64, CPython3.13, CUDA12.8.
+# Install the unchanged scientific lock and hashed test helpers first, then this same-root override.
+# This is not the original CPU numerical environment.
+torch @ https://download-r2.pytorch.org/whl/cu128/torch-2.10.0%2Bcu128-cp313-cp313-win_amd64.whl \
+    --hash=sha256:4d1b0b49c54223c7c04050b49eac141d77b6edbc34aea1dfc74a6fdb661baa8c

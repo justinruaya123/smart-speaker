@@ -1,0 +1,7 @@
+{
+  "scope": "Reviewed exact CPU fit source before user-authorized GPU-preferred/CPU-fallback extension",
+  "files": {
+    "scripts/submission/optionb_fit.py": "44c0bc01d9f3c4f600ecc6fcb2ca41f246d4134b0db767036dd21b33a8aba753",
+    "scripts/test/test_optionb_reproduction_fit.py": "bb873269c3ce7640aae80f9ff05f6d7bbd58ea82a2213f1aa565850a7672e6d7"
+  }
+}

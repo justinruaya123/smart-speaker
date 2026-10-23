@@ -1,0 +1,113 @@
+{
+  "format": "optionb-accelerator-reproduction-protocol-v1",
+  "user_authorization": "GPU-preferred actual working accelerator; CPU fallback only",
+  "baseline_snapshot": "submission/optionb-tiny/snapshot.json",
+  "snapshot_sha256": "d0ac31ea3d5f771cbe983e2ae9bd06303267c4b68723870c28b9904b17d74a21",
+  "immutable_scientific_sources": {
+    "pyproject.toml": "5823355fb7a1f083a0d88536098a55496bcf6c61568bd5880cf373c5722d094a",
+    "scripts/models/speaker_optionb_tiny.py": "563c13da8009e92200b679f1722c4cf61195e40d82b6623cb959ea4a77c0729c",
+    "scripts/models/vcm.py": "48e85eaee92bd0383bf3ee05bc347eec0390f802a0711fcf7aeac8d0b085e162",
+    "scripts/runtime/optionb_contract.py": "72aad2fbdbaf7505fefdb35f1a7ea340ec84f41264ad427eba7bff472c9f3a2b",
+    "scripts/runtime/optionb_worker.py": "97055fd22e0213fc38aeb455d4279a9504a44ed0f7b8ea9d7686ddbbe1181151",
+    "scripts/runtime/pcv_schema.py": "603ec943eae1e7330dd2eb82f05bbd7c206382ecf13c0fb8f8801a7ecd0e134c",
+    "scripts/runtime/speaker_optionb_tiny.py": "2a2d9e0e18ab1531ead02fd66dcc1ffda1f25b04b040b03ce7588c9a7145d670",
+    "scripts/train/speaker_optionb_tiny.py": "d18e39384afdd43a2b0b569a79365672949234876b9b78a2e58acc071e8c9b45",
+    "uv.lock": "c24ebb9579b75f06970e130d9a1a6026bff8778d7bb95232da339f6d155d1362",
+    "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+  },
+  "training": {
+    "batch_size": 32,
+    "context_max_frames": 120,
+    "human_epochs": 6,
+    "label_smoothing": 0.02,
+    "learning_rate": 0.002,
+    "mixed_epochs": 42,
+    "seed": 53,
+    "steps_per_epoch": 96,
+    "threads": 4,
+    "weight_decay": 0.0001
+  },
+  "architecture": {
+    "activation": "SiLU",
+    "dilations": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "feature_stride": 2,
+    "frontend": {
+      "centered": false,
+      "fft_size": 512,
+      "floor": 1e-08,
+      "high_hz": 7600,
+      "hop_samples": 160,
+      "low_hz": 20,
+      "mel_bins": 40,
+      "sample_rate": 16000,
+      "window_samples": 400
+    },
+    "head": "one 32-way complete-command/UNKNOWN linear softmax head",
+    "norm": "per-frame LayerNorm",
+    "pooling": "valid-length masked mean and max",
+    "residual_blocks": 4,
+    "residual_kernel": 7,
+    "stages_per_block": 2,
+    "stem_kernel": 5,
+    "training_dropout": 0.1,
+    "unknown_index": 0,
+    "width": 160
+  },
+  "parameters": 258912,
+  "policy": {
+    "enabled": true,
+    "min_margin": 0.1,
+    "min_probability": 0.5
+  },
+  "device_selection": {
+    "default": "auto",
+    "preference": "working_CUDA_then_CPU_on_the_tested_platform",
+    "other_native_GPU_backends": "not_implemented_or_qualified_by_this_CUDA_CPU_port",
+    "require_actual_forward_backward_optimizer_preflight": true,
+    "explicit_cuda_unavailable": "fail_closed",
+    "cpu_fallback": "only_if_no_accelerator_can_pass_initial_compute_probe",
+    "training_exception": "preserve_failure_do_not_silently_restart_on_CPU"
+  },
+  "precision": {
+    "dtype": "float32",
+    "mixed_precision": false,
+    "tf32": false,
+    "deterministic_algorithms": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "cublas_workspace_config": ":4096:8",
+    "precision_control_family": "PyTorch2.10_fp32_precision_ieee_not_mixed_with_allow_tf32"
+  },
+  "provenance": {
+    "actual_device_name_and_build": true,
+    "model_batch_targets_gradients_optimizer_moments_on_selected_device": true,
+    "CPU_checkpoint_or_export_handoff_does_not_imply_CPU_training": true,
+    "same_fresh_checkout_verified_source_WAVs_reused_not_old_external_cache": true,
+    "raw_features_reextracted_and_hash_checked": true
+  },
+  "acceptance": {
+    "frozen_feature_hash_rows": 24566,
+    "human_normalization_rows": 1889,
+    "full_optimizer_updates_required": 4608,
+    "compare_original_epoch_state_tensors_draws_graph_policy_and_metrics": true,
+    "GPU_CPU_byte_identity_guaranteed": false,
+    "retain_comparison_mismatches_without_replacing_frozen_artifacts": true,
+    "original_selection_lock_requires_exact_comparison": true,
+    "no_test_holdout_PCM_before_valid_selection": true,
+    "all_device_qualification_claims_require_actual_platform_probe": true
+  },
+  "cpu_partial_run": "experiments/optionb-source-repro-v1/cpu-fit-interrupted-v1.json",
+  "real_cuda_probe": "experiments/optionb-source-repro-v1/cuda-compute-probe-v1.json",
+  "windows_cuda_setup_lock": "submission/optionb-tiny/accelerator-windows-cu128.lock",
+  "runtime_override": "Declared_and_hash-pinned_separate_from_original_scientific_CPU_lock",
+  "new_GPU_corpus_fit_status": "not_started_device_aware_fitting_integration_under_test",
+  "installed_defaults_changed": false,
+  "actions_enabled": false,
+  "qualified": false,
+  "physical_pi": false
+}

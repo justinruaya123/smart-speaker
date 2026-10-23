@@ -1,0 +1,37 @@
+{
+  "format": "optionb-cpu-fit-interruption-v1",
+  "status": "interrupted_by_explicit_user_device_requirement",
+  "process": "proc_62eab8ab1e60",
+  "process_termination_verified": "killed",
+  "user_requirement": "GPU-preferred training; CPU fallback only",
+  "last_completed_epoch": 39,
+  "optimizer_steps_at_least": 3744,
+  "additional_mid_epoch_steps_unknown": true,
+  "selected_epoch_at_last_completed_epoch": 39,
+  "full_48_epoch_fit_completed": false,
+  "successful_selection_lock_written": false,
+  "heldout_pcm_decoded_or_inferred": false,
+  "retained_partial_artifacts": {
+    ".cache/optionb-source-repro-v1/run-01/fit/best.pt": "89a7874dda617992c219d2eb5be7473779129c6ba7b142cb0283c47eb44b8319",
+    ".cache/optionb-source-repro-v1/run-01/fit/export-dependency-preflight.json": "da3ffdd63eeab485d029a5c947fbf1d2b5da36693309dcae9cfe04d00fecccfa",
+    ".cache/optionb-source-repro-v1/run-01/fit/human-foundation.pt": "3619998562ae176a67369438838f9d77b5625f1d6fe973c594f61cdedbe47e0d",
+    ".cache/optionb-source-repro-v1/run-01/fit/input-comparison.json": "cc966af7880e4dc8a544871a3c5318f7f7369ba6bcba311c5343b3b458a69b3f",
+    ".cache/optionb-source-repro-v1/run-01/fit/normalization.json": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09",
+    ".cache/optionb-source-repro-v1/run-01/fit/raw-feature-inputs.jsonl": "c8383a0cf4f915dbf0969244af50da953cb4ddf9c0efe7575d6b515321fabe72",
+    ".cache/optionb-source-repro-v1/run-01/fit/recomputed-normalization.json": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09",
+    ".cache/optionb-source-repro-v1/run-01/fit/training-admission.json": "fe9e9e2c985f7068b71f6a46851ea5c25ebb1c626fedf944a8ca13732675b794",
+    ".cache/optionb-source-repro-v1/run-01/fit/training-curve.jsonl": "9085ab5d65c20837bef04ab3c1be9b8036317842d27daff994a3c298327b27eb"
+  },
+  "actual_hardware_probe": {
+    "gpu": "NVIDIA GeForce RTX3080",
+    "nvidia_driver": "591.59",
+    "vram_mib": 10240,
+    "torch_before_override": "2.10.0+cpu",
+    "cuda_available_before_override": false
+  },
+  "features_and_normalizer_already_verified": "experiments/optionb-source-repro-v1/feature-preflight-v1.json",
+  "frozen_model_or_policy_replaced": false,
+  "actions_enabled": false,
+  "qualified": false,
+  "installed": false
+}

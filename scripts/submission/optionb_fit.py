@@ -1,7 +1,11 @@
-"""Additive source-only CPU fit comparison for the frozen tiny OptionB model.
+"""Additive GPU-preferred source fit comparison for the frozen tiny OptionB model.
 
 Nothing here installs a model or reads test/holdout PCM. Failed attempts are
-preserved in the requested run's fit/ directory; use a new run ID to retry.
+preserved in the requested run's fit directory; use --fit-name to retry safely
+against the same verified prepared source inputs without changing an earlier fit.
+Auto probes CUDA before preferring it; CPU fallback occurs only at preflight.
+GPU arithmetic is not assumed identical to the frozen CPU checkpoint. All exact
+comparison gates remain mandatory; mismatches never produce a selection lock.
 
 Fitting requires the locked training+benchmark environment AND the hashed
 export/test helpers: the unchanged canonical exporter imports pytest.
@@ -124,20 +128,22 @@ def _compare_checkpoints(actual, reference, snapshot):
                                        if t['max_abs_difference'] is not None), default=None))
 
 
-def _fit_and_compare(root, fit, views, arrays, norm, snapshot):
+def _fit_and_compare(root, fit, views, arrays, norm, snapshot, *, device='auto'):
     import torch
     from copy import deepcopy
     from scripts.submission.optionb_reproduce import pinned_path
-    from scripts.train import speaker_optionb_tiny as training
+    from scripts.train import speaker_optionb_tiny_accelerated as training
 
     if torch.get_default_device().type != 'cpu' or torch.get_default_dtype() != torch.float32:
         raise ValueError('Canonical fitting requires untouched CPU/FP32 Torch defaults')
     _fit_files(fit)
-    for name in ('best.pt', 'human-foundation.pt', 'normalization.json', 'training-curve.jsonl', 'training-result.json'):
+    for name in ('best.pt', 'human-foundation.pt', 'normalization.json', 'training-curve.jsonl',
+                 'training-result.json', 'training-device.json'):
         _fit_target(fit, name)
     config = deepcopy(snapshot['training'])
-    # This is the only optimizer entry point. No recipe/device/thread overrides.
-    result = training.fit_model(views['train'], views['dev'], arrays, fit, config)
+    # Only device placement changes. The snapshot recipe is passed verbatim to
+    # the versioned additive port; the immutable CPU trainer/exporter are intact.
+    result = training.fit_model(views['train'], views['dev'], arrays, fit, config, device=device)
     actual = torch.load(_fit_target(fit, 'best.pt'), map_location='cpu', weights_only=True)
     reference = torch.load(pinned_path(root, snapshot['checkpoint']), map_location='cpu', weights_only=True)
     checkpoint = _compare_checkpoints(actual, reference, snapshot)
@@ -158,6 +164,12 @@ def _fit_and_compare(root, fit, views, arrays, norm, snapshot):
             'human_positive' if row['class_index'] else 'human_negative')
         draws[group] += count
     cpu_only = all(t.device.type == 'cpu' for t in actual['state_dict'].values())
+    executed, placement = result['execution_device'], result['device_placement']
+    placement_equal = (all(placement.get(key) == [executed] for key in
+        ('model_devices', 'input_devices', 'gradient_devices', 'optimizer_moment_devices',
+         'dev_model_devices', 'dev_input_devices'))
+        and placement.get('target_device') == placement.get('dev_output_device') == executed
+        and placement.get('optimizer_step_devices') == ['cpu'])
     checks = dict(checkpoint_exact=checkpoint['exact'],
         full_optimizer_steps=result['optimizer_steps'] == (human + mixed) * steps,
         exact_training_config=result['training_config'] == snapshot['training'],
@@ -171,11 +183,24 @@ def _fit_and_compare(root, fit, views, arrays, norm, snapshot):
         normalization_ids_equal=result['normalization_ids'] == norm['ids'],
         parameters_equal=result['parameters'] == snapshot['parameters'],
         weights_changed=result['weights_changed'] is True,
-        cpu_only=cpu_only, threads_equal=torch.get_num_threads() == config['threads'])
+        cpu_only=cpu_only, threads_equal=torch.get_num_threads() == config['threads'],
+        device_provenance_equal=read_json(_fit_target(fit, 'training-device.json')) == result['device_selection'],
+        working_device_probe=result['device_selection']['probe']['passed'] is True
+                             and result['device_selection']['probe']['weights_changed'] is True,
+        requested_device_equal=result['device_selection']['requested'] == device,
+        execution_device_equal=result['execution_device'] == result['device_selection']['device'],
+        execution_placement_equal=placement_equal,
+        requested_device_honored=executed in ('cpu', 'cuda:0')
+            and (device == 'auto' or torch.device(executed).type == device),
+        checkpoint_handoff_cpu=result['checkpoint_tensor_device'] == 'cpu' and cpu_only)
     comparison = dict(exact=all(checks.values()), checks=checks, checkpoint=checkpoint,
         optimizer_steps=result['optimizer_steps'], expected_optimizer_steps=(human + mixed) * steps,
         final_draw_counts=draws, expected_final_draw_counts=expected_draws,
-        cpu_only=cpu_only, torch_threads=torch.get_num_threads())
+        cpu_only=cpu_only, checkpoint_tensor_device='cpu',
+        cpu_only_describes='loaded_checkpoint_tensors_not_optimizer_execution',
+        execution_device=result['execution_device'], device_selection=result['device_selection'],
+        device_placement=result['device_placement'], port_version=result['port_version'],
+        torch_threads=torch.get_num_threads())
     _write_new(fit, 'training-comparison.json', comparison)
     return result, actual, comparison
 
@@ -329,13 +354,23 @@ def _assert_bindings(root, bindings):
         raise ValueError('Consumed input/output identity changed: ' + ', '.join(changed[:8]))
 
 
-def fit_source(root, output):
+def fit_source(root, output, *, device='auto', fit_name='fit'):
     """Fit prepared .cache/... inputs; require locked science + hashed export/test helpers."""
     from datetime import datetime, timezone
     import platform
+    import re
     import time
     from scripts.submission.optionb_reproduce import SNAPSHOT, pinned_path, read_snapshot_rows, verify_snapshot
 
+    # One portable directory component, never a Windows device/ADS or a source
+    # directory. Validate before creating anything, including a failure receipt.
+    reserved = {'con', 'prn', 'aux', 'nul', 'audio', 'prepared',
+                *(f'com{i}' for i in range(1, 10)), *(f'lpt{i}' for i in range(1, 10))}
+    if (not isinstance(fit_name, str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]{0,63}', fit_name)
+            or fit_name.endswith('.') or fit_name.split('.')[0].lower() in reserved):
+        raise ValueError('fit-name must be one safe nonreserved directory component (1-64 characters)')
+    if device not in ('auto', 'cuda', 'cpu'):
+        raise ValueError('Device must be auto, cuda or cpu')
     root = Path(root).resolve()
     run = pinned_path(root, output)
     parts = run.relative_to(root).parts
@@ -343,9 +378,9 @@ def fit_source(root, output):
         raise ValueError('Fit outputs must be a named run under .cache/')
     if run != root / output:
         raise ValueError('Run containment changed by a symlink/junction')
-    fit = _fit_target(run, 'fit')
+    fit = _fit_target(run, fit_name)
     if fit.exists():
-        raise FileExistsError('Preserve the earlier fit; choose a new run ID')
+        raise FileExistsError('Preserve the earlier fit; choose a new --fit-name or run ID')
     fit.mkdir(parents=True)
     started = time.perf_counter()
     stage = 'snapshot_verification'
@@ -356,7 +391,9 @@ def fit_source(root, output):
         protected[SNAPSHOT] = file_digest(pinned_path(root, SNAPSHOT))
         for name in ('scripts/submission/optionb_fit.py', 'scripts/submission/optionb_reproduce.py',
                      'scripts/test/test_optionb_reproduction_fit.py', 'scripts/test/speaker_demo_suite.py',
-                     'scripts/train/speaker_human_data.py'):
+                     'scripts/train/speaker_human_data.py',
+                     'scripts/train/speaker_optionb_tiny_accelerated.py',
+                     'scripts/test/test_speaker_optionb_tiny_accelerated.py'):
             protected[name] = file_digest(pinned_path(root, name))
         stage = 'prepared_inputs'
         for split in ('train', 'dev', 'calibration'):
@@ -401,8 +438,8 @@ def fit_source(root, output):
         arrays, norm = _feature_preflight(views['train'], views['dev'], golden,
             read_json(pinned_path(root, snapshot['training_normalization'])), fit)
         _assert_bindings(root, protected)
-        stage = 'canonical_cpu_fit'
-        result, checkpoint, fit_comparison = _fit_and_compare(root, fit, views, arrays, norm, snapshot)
+        stage = 'device_explicit_fit'
+        result, checkpoint, fit_comparison = _fit_and_compare(root, fit, views, arrays, norm, snapshot, device=device)
         stage = 'cpu_export_and_fresh_demo_selection'
         export_comparison, export_sources = _export_and_select(root, fit, views, arrays, norm, checkpoint, snapshot)
         if export_sources != selection_sources:
@@ -423,6 +460,7 @@ def fit_source(root, output):
             snapshot_sha256=protected[SNAPSHOT], protected_inputs_unchanged=True,
             feature_rows=len(golden), human_normalization_rows=len(norm['ids']),
             optimizer_steps=result['optimizer_steps'], original_training_config=snapshot['training'],
+            execution_device=result['execution_device'], checkpoint_tensor_device='cpu',
             created_utc=datetime.now(timezone.utc).isoformat(), elapsed_seconds=time.perf_counter() - started,
             environment=dict(python=platform.python_version(), platform=platform.platform(),
                              torch=torch.__version__, numpy=np.__version__, onnx=onnx.__version__,
@@ -443,6 +481,7 @@ def fit_source(root, output):
             evidence_scope=scope, bindings=bindings, snapshot_sha256=protected[SNAPSHOT],
             selected_epoch=checkpoint['epoch'], policy=snapshot['policy'], parameters=snapshot['parameters'],
             optimizer_steps=result['optimizer_steps'], fitting_splits=['train'],
+            execution_device=result['execution_device'], checkpoint_tensor_device='cpu',
             checkpoint_selected_on='dev', selected_on=['dev', 'calibration'],
             normalization_split='original_human_train_only', feature_rows=len(golden),
             source_preparation_receipt=preparation_path.relative_to(root).as_posix() if preparation_path.exists() else None,
@@ -464,7 +503,7 @@ def fit_source(root, output):
         preserved = {path.relative_to(root).as_posix(): file_digest(path) for path in _fit_files(fit)}
         comparison_path = _fit_target(fit, 'fit-comparison.json')
         _write_new(fit, 'failure.json', dict(stage=stage, error_type=type(exc).__name__, error=str(exc),
-            bindings=preserved,
+            bindings=preserved, requested_device=device, fit_name=fit_name,
             comparison_receipt=comparison_path.relative_to(root).as_posix() if comparison_path.exists() else None,
             selection_lock_written=_fit_target(fit, 'selection-before-test.json').exists(),
             actions_enabled=False, qualified=False, installed=False,
@@ -479,9 +518,14 @@ def main(argv=None, *, root=None):
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', default='.cache/optionb-source-repro-v1/run-01',
-                        help='prepared source run under .cache/; fit/ must not already exist')
+                        help='prepared source run under .cache/; the selected fit-name must not already exist')
+    parser.add_argument('--device', choices=('auto', 'cuda', 'cpu'), default='auto',
+                        help='auto prefers CUDA only after a real compute probe; cuda fails closed; cpu never probes CUDA')
+    parser.add_argument('--fit-name', default='fit',
+                        help='new safe directory component in the same run, e.g. fit-gpu-01; never overwrites a prior fit')
     arguments = parser.parse_args(argv)
-    receipt = fit_source(ROOT if root is None else root, arguments.output)
+    receipt = fit_source(ROOT if root is None else root, arguments.output,
+                         device=arguments.device, fit_name=arguments.fit_name)
     print(json.dumps(receipt, indent=2, allow_nan=False), flush=True)
     return receipt
 

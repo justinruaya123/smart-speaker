@@ -1,0 +1,51 @@
+{
+  "format": "optionb-real-cuda-compute-probe-v1",
+  "status": "verified",
+  "scope": "synthetic_software_forward_backward_optimizer_not_corpus_fit",
+  "python": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.venv\\Scripts\\python.exe",
+  "torch": "2.10.0+cu128",
+  "torch_file": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-github-repro-0591fbe\\.venv\\Lib\\site-packages\\torch\\__init__.py",
+  "cuda_build": "12.8",
+  "gpu": "NVIDIA GeForce RTX 3080",
+  "compute_capability": [
+    8,
+    6
+  ],
+  "model_parameter_devices": [
+    "cuda:0"
+  ],
+  "parameters": 258912,
+  "features_device": "cuda:0",
+  "lengths_device": "cuda:0",
+  "targets_device": "cuda:0",
+  "logits_device": "cuda:0",
+  "loss_device": "cuda:0",
+  "gradient_devices": [
+    "cuda:0"
+  ],
+  "optimizer_moment_devices": [
+    "cuda:0"
+  ],
+  "finite_loss": 2.9729089736938477,
+  "weights_changed": true,
+  "optimizer_steps": 1,
+  "ieee_fp32": true,
+  "mixed_precision": false,
+  "deterministic_algorithms": true,
+  "cublas_workspace_config": ":4096:8",
+  "cudnn_benchmark": false,
+  "cudnn_deterministic": true,
+  "elapsed_seconds": 0.7617376999987755,
+  "peak_cuda_memory_bytes": 73410560,
+  "canonical_model_source_sha256": "563c13da8009e92200b679f1722c4cf61195e40d82b6623cb959ea4a77c0729c",
+  "corpus_training_completed": false,
+  "actions_enabled": false,
+  "qualified": false,
+  "installed": false,
+  "probe_script_sha256": "47168ab51bb0d78c601626371ff07b8ea79fcd8b5153dfdf5a2b035a43bb7570",
+  "probe_log_sha256": "588e23aadbb3eaf804760d3b8693d3106445f7e8448f24a61cbb3f9a6b73867c",
+  "installer_log_sha256": "645077f669c895d82f28104ee25ef33eabdf91cc00dbaf0a677762f7c60fe59a",
+  "accelerator_requirement": "submission/optionb-tiny/accelerator-windows-cu128.lock",
+  "accelerator_requirement_sha256": "eaa4e1d0b4431efa3c1e6d020be4e79bc900bbe985560bf2e4a41a66eabc7170",
+  "canonical_cpu_lock_unchanged": true
+}

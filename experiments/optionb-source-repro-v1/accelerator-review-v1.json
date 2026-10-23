@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "delegation": "deleg_7a463b2d",
+  "scope": "Independent four-file GPU-preferred fitter review",
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": ["Nonblocking: some forbidden-optimizer spies still target the canonical CPU fit_model rather than the accelerated production entry point; retarget in a later bounded test-hardening change."],
+  "summary": "Verified diff and four source hashes, syntax and every hunk. No blocking defects in real-compute GPU preference, initial-only CPU fallback, explicit CUDA failure, training exception propagation, model/batch/targets/gradients/optimizer/DEV placement, CPU checkpoint/export handoff, deterministic IEEE FP32 settings/seeds or fit-name containment/preservation. The minimal port retains the original recipe and CPU parity. Frozen comparison/export helpers remain AST-identical. CPU/GPU mismatches preserve diagnostics and cannot produce a successful exact-fit lock. Independently ran 88 focused software cases in35.10seconds, zero skips, including five real CUDA cases. No corpus work, Git, installs, downloads or source edits.",
+  "reviewed_diff_sha256": "36e8b124fc737da8f35d3b28bca2b9207d0105ad13d9f98ffae01d3463453d1e",
+  "reviewed_files": {
+    "scripts/train/speaker_optionb_tiny_accelerated.py": "f7c2e8e3b8dd42569eafc1727321b9b309a715ee2d3cb4e8857a0bb1d3010b15",
+    "scripts/test/test_speaker_optionb_tiny_accelerated.py": "7da5cffac3fec59a6c314d62a75dee9eb7027b7b3e58778b7c70e3f4d5af9bb8",
+    "scripts/submission/optionb_fit.py": "270f112bfb3ff54a6660bd3618c6bb305ab51d03b8e1c29fffcefc59d4a41251",
+    "scripts/test/test_optionb_reproduction_fit.py": "d7fd44afc42749205e1f046dcfcc962f661e35e6df07be0707ac597e504b3871"
+  },
+  "independent_tests": {"passed": 88, "skipped": 0, "seconds": 35.10},
+  "parent_tests": {"CUDA_focused_passed": 88, "CUDA_integrated_passed": 463, "CPU_integrated_passed": 458, "CPU_CUDA_only_skips": 5},
+  "frozen_assets_scientific_sources_exporter_or_installed_defaults_changed": false,
+  "full_GPU_corpus_training": "not_started_at_review",
+  "actions_enabled": false,
+  "qualified": false,
+  "installed": false
+}
