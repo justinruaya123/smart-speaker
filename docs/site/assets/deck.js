@@ -84,7 +84,7 @@
   function benchmark(container,run,compact=false){
     const box=document.createElement('div');box.className='benchmark-run'+(compact?' compact':'');
     box.append(text('p',run.label||'Current desktop receipt','run-label'));
-    box.append(text('p',`${run.latency.p50_ms.toFixed(run.independent_parity?5:2)} / ${run.latency.p95_ms.toFixed(run.independent_parity?5:2)} ms`,'latency'));
+    box.append(text('p',`${run.latency.p50_ms.toFixed(2)} / ${run.latency.p95_ms.toFixed(2)} ms`,'latency'));
     if(!compact&&!run.measurement_not_quiesced)box.append(text('p',`p50 / p95 · ${number(run.original_recordings)} originals · ${number(run.timed_calls)} calls`));
     if(!compact&&!run.measurement_not_quiesced&&run.hardware)box.append(text('p',`${run.hardware.cpu.replace('11th Gen Intel(R) Core(TM) ','')} · CPU / one thread`));
     if(!compact&&run.measurement_not_quiesced)box.append(text('p',run.independent_parity?'Direct VCM only · not quiesced; gold parity verified.':'Not new adapter / idle-host / end-to-end.'));
@@ -113,7 +113,7 @@
     }
     if(data.benchmarks.pi)$('#pi-result').textContent=`${data.benchmarks.pi.latency.p50_ms.toFixed(2)} / ${data.benchmarks.pi.latency.p95_ms.toFixed(2)} ms · ${data.benchmarks.pi.hardware.device}`;
     const reference=data.benchmarks.reference_desktop;
-    const environment=current?`Product: Windows 11 / Python ${current.environment.python} / NumPy ${current.environment.numpy} / ORT ${current.environment.onnxruntime} · peak process RSS ${current.peak_process_rss_mib} MiB.`:`Reference PC: i7-11700 / Windows 11 / Python ${reference.hardware.python}.`;
+    const environment=current?`Product: Windows 11 / Python ${current.environment.python} / NumPy ${current.environment.numpy} / ORT ${current.environment.onnxruntime} · peak process RSS ${current.peak_process_rss_mib.toFixed(2)} MiB.`:`Reference PC: i7-11700 / Windows 11 / Python ${reference.hardware.python}.`;
     $('#evidence-foot').textContent=`${environment} One thread · ${number(reference.original_recordings)} originals × ${reference.repeats} = ${number(reference.timed_calls)} calls. Excludes speech/decode/wake/VAD/owner/UI/audio/providers. Ambiguous 187 unscored; exact wording 58/62 and 173/232; 21 definitions lack exact human references.`;
     chart();useCases();
   }

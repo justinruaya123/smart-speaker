@@ -78,20 +78,32 @@ try {
           const r=e.getBoundingClientRect();return r.width&&r.height&&(r.right>box.right+3||r.bottom>box.bottom+3||r.left<box.left-3||r.top<box.top-3);
         }).map(e=>e.id||e.tagName+':'+e.textContent.slice(0,40));
       });
-      if(id==='evidence') {
-        const collisions=await page.evaluate(()=>{
-          const end=document.querySelector('#evidence-foot').getBoundingClientRect().top;
-          const margin=4*document.querySelector('#stage').getBoundingClientRect().width/1920;
-          return [...document.querySelectorAll('.evidence-grid p,.evidence-grid figcaption,.evidence-grid caption,.evidence-grid span')].filter(e=>e.getBoundingClientRect().bottom>end-margin).map(e=>e.id||e.textContent.slice(0,50));
-        });
-        assert.deepEqual(collisions,[],`${viewport.width} evidence/footer collisions`);
-      }
       await page.screenshot({path:resolve(output,`${viewport.width}-${id}.png`)});
+      if(id==='model'||id==='evidence') {
+        const collisions=await page.evaluate(()=>{
+          const panel=document.querySelector('[data-chapter]:not([hidden])');
+          const end=panel.querySelector('.chapter-foot').getBoundingClientRect().top;
+          const margin=4*document.querySelector('#stage').getBoundingClientRect().width/1920;
+          const content=panel.querySelector('.inspector,.evidence-grid');
+          return [...content.querySelectorAll('h3,p,dl,figcaption,caption,span')].filter(e=>e.getBoundingClientRect().bottom>end-margin).map(e=>({text:e.id||e.textContent.slice(0,100),bottom:e.getBoundingClientRect().bottom,footer_top:end}));
+        });
+        assert.deepEqual(collisions,[],`${viewport.width} ${id}/footer collisions`);
+      }
       assert.deepEqual(violations,[],`${viewport.width} ${id} overflow`);
     }
     report.viewports.push(viewport);
   }
   await page.setViewportSize({width:1280,height:720});
+  const publication=JSON.parse(await readFile(resolve(site,'assets/iris.json'),'utf8'));
+  const desktop=publication.benchmarks.desktop;
+  if(desktop) {
+    await page.locator('[data-go="evidence"]').click();
+    assert.equal(await page.locator('#desktop-results .latency').first().textContent(),`${desktop.latency.p50_ms.toFixed(2)} / ${desktop.latency.p95_ms.toFixed(2)} ms`,'current desktop latency displays two decimals without changing the receipt');
+    assert.ok((await page.locator('#evidence-foot').textContent()).includes(`peak process RSS ${desktop.peak_process_rss_mib.toFixed(2)} MiB`),'desktop RSS displays two decimals without changing the receipt');
+    const readme=await readFile(resolve(root,'README.md'),'utf8');
+    assert.ok(readme.includes(`| Current adapter, product lock (**not quiesced**) | ${desktop.latency.p50_ms.toFixed(2)} / ${desktop.latency.p95_ms.toFixed(2)} ms |`),'README current desktop latency displays two decimals from the same receipt');
+    assert.ok(readme.includes(`peak whole-process RSS **${desktop.peak_process_rss_mib.toFixed(2)} MiB**`),'README desktop RSS displays two decimals from the same receipt');
+  }
   await page.locator('[data-go="model"]').click();await page.reload();
   await page.waitForSelector('html[data-ready="true"]');assert.equal(new URL(page.url()).hash,'#model');
   await page.locator('#fullscreen').click();

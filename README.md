@@ -216,10 +216,10 @@ Exact metadata-wording subsets:58/62 and 173/232, not full 93-wording human cove
 | Historical original PC |4.82 /8.41 ms|
 | Historical later repeat v2 |5.36 /8.69 ms|
 | 2026-10-24 reference driver, **under publication load** |9.34 /15.34 ms|
-| Current adapter, product lock (**not quiesced**) | 5.3902499967080075 / 10.56562999983725 ms |
+| Current adapter, product lock (**not quiesced**) | 5.39 / 10.57 ms |
 | Raspberry Pi |**Not measured — `pi:null`**|
 
-Current environment: NumPy 2.5.3 / ONNX Runtime 1.30.0; peak whole-process RSS **84.6796875 MiB**, not model-only RAM. [Actual audited receipt](presentation/evidence/desktop-product.json): all 1,146 WAV/decoded-PCM identities and 3,438 complete typed outputs independently matched frozen gold. Direct VCM only; wake/owner/UI/providers and speaking time excluded. This does not improve the failed wake gate.
+Current environment: NumPy 2.5.3 / ONNX Runtime 1.30.0; peak whole-process RSS **84.68 MiB**, not model-only RAM. [Actual audited receipt](presentation/evidence/desktop-product.json): all 1,146 WAV/decoded-PCM identities and 3,438 complete typed outputs independently matched frozen gold. Direct VCM only; wake/owner/UI/providers and speaking time excluded. This does not improve the failed wake gate.
 
 The historical and original-reference runs use Intel Core i7-11700/Windows 11/Python 3.13.14, CPUExecutionProvider, one ONNX/frontend BLAS thread; all named runs use 1,146 original human recordings ×3 =3,438 calls. Repeats do not inflate accuracy denominators. Scope: PCM validation, frontend, normalization, ONNX and finite decision; **excludes** speech, decode, wake/VAD waiting, worker/gateway/UI, audio and providers. The new reference run is not quiesced, not the new adapter and not end-to-end latency. No unrelated256-DEV memory probe is called full-PC memory. [Receipts/hashes](docs/site/assets/iris.json).
 

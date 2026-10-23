@@ -174,8 +174,8 @@ def render(data):
     desktop = data['benchmarks']['desktop']
     if desktop:
         latency = desktop['latency']
-        current = f"| Current adapter, product lock (**not quiesced**) | {latency['p50_ms']} / {latency['p95_ms']} ms |"
-        description = f"\n\nCurrent environment: NumPy {desktop['environment']['numpy']} / ONNX Runtime {desktop['environment']['onnxruntime']}; peak whole-process RSS **{desktop['peak_process_rss_mib']} MiB**, not model-only RAM. [Actual audited receipt](presentation/evidence/desktop-product.json): all 1,146 WAV/decoded-PCM identities and 3,438 complete typed outputs independently matched frozen gold. Direct VCM only; wake/owner/UI/providers and speaking time excluded. This does not improve the failed wake gate."
+        current = f"| Current adapter, product lock (**not quiesced**) | {latency['p50_ms']:.2f} / {latency['p95_ms']:.2f} ms |"
+        description = f"\n\nCurrent environment: NumPy {desktop['environment']['numpy']} / ONNX Runtime {desktop['environment']['onnxruntime']}; peak whole-process RSS **{desktop['peak_process_rss_mib']:.2f} MiB**, not model-only RAM. [Actual audited receipt](presentation/evidence/desktop-product.json): all 1,146 WAV/decoded-PCM identities and 3,438 complete typed outputs independently matched frozen gold. Direct VCM only; wake/owner/UI/providers and speaking time excluded. This does not improve the failed wake gate."
         suffix = suffix.replace('| Final integrated adapter / idle-host interaction |Separate receipt required; not inferred here|', current)
         pi_row = '| Raspberry Pi |**Not measured — `pi:null`**|'
         suffix = suffix.replace(pi_row, pi_row + description)
