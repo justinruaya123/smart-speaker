@@ -183,3 +183,109 @@ async def generate_cases(cases, cache, protocol_sha256, *, synthesizer=None, dec
     records = await asyncio.gather(*(one(case) for case in cases))
     write_once(cache / 'generation-complete.json', records)
     return records
+
+
+def read_case_pcm(case, receipt, cache):
+    import numpy as np
+    import wave
+    wav = Path(cache) / 'audio' / (case['id'] + '.wav')
+    verify_generated(case, receipt, wav)
+    with wave.open(str(wav), 'rb') as f:
+        if (f.getnchannels(), f.getsampwidth(), f.getframerate()) != (1, 2, 16000):
+            raise ValueError('Invalid generated PCM format')
+        data = f.readframes(f.getnframes())
+    if hashlib.sha256(data).hexdigest() != receipt['decoded_pcm_s16le_sha256']:
+        raise ValueError('Changed decoded PCM identity')
+    return np.frombuffer(data, dtype='<i2').astype('float32') / 32768
+
+
+def stream_pcm(detector, pcm):
+    """Run the real RollingWake instance, not a threshold-only approximation."""
+    import numpy as np
+    scores = []
+    score = detector.score
+    detector.reset()
+
+    def observed(window):
+        value = score(window)
+        scores.append(value)
+        return value
+
+    detector.score = observed
+    padded = np.concatenate((np.zeros(32000, dtype='float32'), pcm,
+                             np.zeros(48000, dtype='float32')))
+    hits = []
+    try:
+        for offset in range(0, len(padded), 640):
+            if detector.push(padded[offset:offset + 640]) == 1.:
+                hits.append((offset + min(640, len(padded) - offset) - 32000) / 16000)
+    finally:
+        detector.score = score
+    return dict(hits=len(hits), hit_seconds=hits, max_score=max(scores, default=0.),
+                score_count=len(scores), scores=scores, seconds=len(pcm) / 16000)
+
+
+def panel_metrics(cases, records):
+    expected = [r['id'] for r in cases]
+    observed = [r['id'] for r in records]
+    if not expected or len(set(expected)) != len(expected) or observed != expected:
+        raise ValueError('Incomplete/repeated/reordered cohort')
+    pairs = list(zip(cases, records))
+    positives = [(c, r) for c, r in pairs if c['wake_positive']]
+    negatives = [(c, r) for c, r in pairs if not c['wake_positive']]
+    detected = sum(r['hits'] > 0 for _, r in positives)
+    duplicates = sum(max(0, r['hits'] - 1) for _, r in positives)
+    false_wakes = sum(r['hits'] for _, r in negatives)
+    negative_seconds = sum(r['seconds'] for _, r in negatives)
+    recall = detected / len(positives) if positives else None
+    return dict(positive_n=len(positives), detected=detected, missed=len(positives) - detected,
+                recall=recall, duplicate_detections=duplicates, negative_n=len(negatives),
+                negative_seconds=negative_seconds, false_wakes=false_wakes,
+                confusable_n=sum(c['kind'] == 'negative' for c, _ in negatives),
+                control_n=sum(c['kind'] == 'control' for c, _ in negatives),
+                synthetic_smoke_pass=bool(recall is not None and recall >= .9 and not false_wakes and not duplicates))
+
+
+def evaluate_panel(protocol_path, folder, cache, result_path, *, cases=None, lock=None):
+    """A fresh single-thread CPU ONNX pass; existing results cannot be replaced."""
+    import time
+    import platform
+    import sys
+    import onnxruntime as ort
+    from scripts.runtime.mvp_wake import HeyIris
+    protocol_path, folder, cache, result_path = map(Path, (protocol_path, folder, cache, result_path))
+    if result_path.exists():
+        raise ValueError('Evaluation already exists: refusing test reselection/rerun')
+    protocol = json.loads(protocol_path.read_text())
+    cases = protocol['cases'] if cases is None else cases
+    for source, expected in protocol['source_bindings'].items():
+        if digest(ROOT / source) != expected:
+            raise ValueError('Changed frozen source: ' + source)
+    expected = lock or protocol
+    if digest(folder / 'iris.onnx') != expected['model_sha256'] or digest(folder / 'iris.json') != expected['policy_sha256']:
+        raise ValueError('Changed locked model/policy')
+    detector = HeyIris(folder)
+    receipts = [json.loads((cache / 'receipts' / (c['id'] + '.json')).read_text()) for c in cases]
+    predictions, raw = [], []
+    began = time.perf_counter()
+    for case, receipt in zip(cases, receipts):
+        if receipt['protocol_sha256'] != digest(protocol_path):
+            raise ValueError('Generation did not use frozen protocol')
+        pcm = read_case_pcm(case, receipt, cache)
+        row = dict(id=case['id'], **stream_pcm(detector, pcm))
+        raw.append(row)
+        predictions.append({k: v for k, v in row.items() if k != 'scores'})
+        print('NATIVE_STREAM', row['id'], row['hits'], row['max_score'], flush=True)
+    result = dict(schema_version=1, protocol_sha256=digest(protocol_path),
+                  source_sha256=digest(__file__), model_sha256=digest(folder / 'iris.onnx'),
+                  policy_sha256=digest(folder / 'iris.json'),
+                  actual_engine='onnxruntime CPUExecutionProvider, threads=1',
+                  ort_version=ort.__version__, python=sys.version, platform=platform.platform(),
+                  metrics=panel_metrics(cases, predictions), predictions=predictions,
+                  inputs=receipts, evaluation_seconds=time.perf_counter() - began,
+                  qualified=False, real_human_positive_n=0, live_microphone_measured=False,
+                  negative_exposure='Original clip durations only; no padding; not household continuous audio')
+    write_once(cache / (result_path.stem + '-scores.json'), raw)
+    write_once(result_path, result)
+    print('RESULT', json.dumps(result['metrics'], sort_keys=True), flush=True)
+    return result

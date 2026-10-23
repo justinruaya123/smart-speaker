@@ -77,6 +77,35 @@ def test_synthesis_receipt_is_verified_not_reused_blindly(tmp_path):
         asyncio.run(m.generate_cases(cases, tmp_path, 'frozen', synthesizer=synth, decoder=decode))
 
 
+def test_streaming_uses_exact_native_hysteresis():
+    m = publication()
+    assert hasattr(m, 'stream_pcm'), 'Missing actual native stream replay'
+    import numpy as np
+    from scripts.runtime.mvp_wake import RollingWake
+    values = iter([0., .99, .99] + [0.] * 200)
+    gate = RollingWake(lambda pcm: next(values), threshold=.9)
+    result = m.stream_pcm(gate, np.zeros(1280, dtype='float32'))
+    assert result['hits'] == 1
+    assert result['score_count'] > 3
+
+
+def test_panel_metrics_reject_incomplete_or_repeated_membership():
+    m = publication()
+    assert hasattr(m, 'panel_metrics'), 'Missing exact-cohort acceptance scorer'
+    cases = [{'id': 'p', 'wake_positive': True, 'kind': 'positive'},
+             {'id': 'n', 'wake_positive': False, 'kind': 'negative'}]
+    records = [{'id': 'p', 'hits': 1, 'seconds': 1.}, {'id': 'n', 'hits': 0, 'seconds': 2.}]
+    metric = m.panel_metrics(cases, records)
+    assert metric['synthetic_smoke_pass'] is True
+    assert metric['positive_n'] == metric['detected'] == 1
+    assert metric['negative_seconds'] == 2.
+    for invalid in ([], records[:1], records + records[:1]):
+        with pytest.raises(ValueError, match='cohort'):
+            m.panel_metrics(cases, invalid)
+    records[1]['hits'] = 1
+    assert m.panel_metrics(cases, records)['synthetic_smoke_pass'] is False
+
+
 def publication():
     assert importlib.util.find_spec('scripts.iris_wake_publication') is not None, 'Missing publication acceptance helper'
     return importlib.import_module('scripts.iris_wake_publication')
