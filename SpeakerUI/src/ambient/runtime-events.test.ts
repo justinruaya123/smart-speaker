@@ -120,3 +120,16 @@ test('execution transport dedupes touch and voice terminal receipts, while reque
   assert.equal(applyRuntimeEvent(model,touch,()=>{}),true);
   assert.equal(applyRuntimeEvent(model,touch,()=>{}),false);
 });
+
+test('an execution delivered before its runtime frame is reconciled into history without replaying its effects',()=>{
+  const model:any={history:[]};
+  const command={intent:'TEMPERATURE',slots:{degrees:22,unit:'C'}};
+  const execution={id:'s:u',status:'synthetic',command,provenance:{source:'synthetic',synthetic:true}};
+  const receipt={event:'execution',session_id:'s',utterance_id:'u',execution};
+  assert.equal(applyRuntimeEvent(model,receipt,()=>{}),true);
+  applyRuntimeEvent(model,{event:'command',session_id:'s',sequence:1,utterance_id:'u',source:'microphone',actions_enabled:true,
+    output:{schema_version:3,accepted:true,command},application:{accepted:true,command}},()=>{});
+  assert.equal(model.event.status,'synthetic');
+  assert.deepEqual(model.event.execution,execution);
+  assert.equal(applyRuntimeEvent(model,receipt,()=>{}),false);
+});

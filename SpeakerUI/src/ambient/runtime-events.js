@@ -25,6 +25,7 @@ export function applyRuntimeEvent(model, event, setAgent) {
         const previous=received[key];
         if(previous && (previous===event.execution.status || !['pending','requested'].includes(previous)))return false;
         received[key]=event.execution.status;
+        (model.executionReceipts??={})[key]=structuredClone(event.execution);
         const item=(model.history||[]).find(item=>item.result.utteranceId===event.utterance_id && (!event.session_id || item.raw?.session_id === event.session_id));
         if(!item)return true;
         if(item.execution && !['pending','requested'].includes(item.execution.status))return false;
@@ -85,6 +86,8 @@ export function applyRuntimeEvent(model, event, setAgent) {
             ...mapped, latencyMs: Number.isFinite(event.latency_ms)?event.latency_ms:event.timing?.total_ms,
             commandPosterior:event.command_probability??event.diagnostic_candidate?.class_probability,
             commandMargin:event.command_margin??event.diagnostic_candidate?.margin } };
+    const earlierReceipt=model.executionReceipts?.[`${event.session_id}:${event.utterance_id}`];
+    if(earlierReceipt){model.event.execution=earlierReceipt;model.event.status=earlierReceipt.status;}
     model.history = [model.event, ...(model.history || [])].slice(0, 30);
     model.historyIndex = 0; model.receiptAt = Date.now();
     // Stop simulator auto-actions when displaying real inference.

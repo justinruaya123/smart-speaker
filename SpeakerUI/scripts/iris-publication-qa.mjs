@@ -24,7 +24,7 @@ const checks=[],errors=[];
 try {
   for(const [width,height] of [[800,480],[1024,600],[390,844]]) {
     const directory=await mkdtemp(join(process.env.TMPDIR||tmpdir(),'iris-publication-ui-'));
-    let sequence=0,cameraAvailable=false,cameraReads=0,providerWrites=0;
+    let sequence=0,cameraAvailable=false,cameraReads=0,providerWrites=0,weatherOnline=false;
     const ready={event:'ready',session_id:'offline-contract',sequence:0,loaded:true,state:'wake_listening',actions_enabled:true,profile:'owner-protected',
       owner_gating_enabled:true,ownership_experimental:true,parameters:258912,selected_epoch:44,model_qualified:false,wake_phrase:'hey iris',
       model_sha256:'c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce',
@@ -33,6 +33,7 @@ try {
     const socket=Object.assign(new EventEmitter(),{send(){},close(){},terminate(){},ping(){}});
     const config=readConfig({IRIS_PUBLICATION:'true',ACTIONS_ENABLED:'true',INFERENCE_MODE:'onnx',SMART_SPEAKER_PYTHON:'offline-never-spawn',
       SMART_SPEAKER_ROOT:'.',SMART_SPEAKER_BUNDLE:'.',SMART_SPEAKER_TOKEN:'offline-fixture',DATA_DIR:directory,
+      OPENWEATHER_ENABLED:'true',OPENWEATHER_API_KEY:'offline-fixture-key',OPENWEATHER_LATITUDE:'0',OPENWEATHER_LONGITUDE:'0',OPENWEATHER_LOCATION:'Offline coarse region',
       HA_ENABLED:'true',HA_URL:'http://offline.invalid',HA_TOKEN:'not-a-real-secret',HA_ENTITY_IDS:`light.hue_color_lamp_1,light.dining_light,${camera},sensor.offline_fixture_temperature`,
       HA_TEMPERATURE_SENSOR_ID:'sensor.offline_fixture_temperature'},process.cwd());
     const imagePage=await browser.newPage();
@@ -42,6 +43,10 @@ try {
     const app=await createApp(config,{staticDir:resolve('dist'),runtimeFactory:()=>host,haSocketFactory:()=>socket,fetcher:async(input,init)=>{
       const url=String(input);
       if(init?.method&&init.method!=='GET'){providerWrites++;assert.fail('No real provider mutation in browser QA');}
+      if(new URL(url).hostname==='api.openweathermap.org'){
+        if(!weatherOnline)throw new Error('Offline weather unavailable');
+        return Response.json({dt:Math.floor(Date.now()/1000)-3600,main:{temp:27.5},weather:[{description:'offline weather fixture'}]});
+      }
       if(url.endsWith('/api/states/sensor.offline_fixture_temperature'))return Response.json({entity_id:'sensor.offline_fixture_temperature',state:'29.5',last_updated:'2026-10-23T09:00:00Z',attributes:{device_class:'temperature',unit_of_measurement:'°C'}});
       if(url.includes('/api/states/light.'))return Response.json({entity_id:'light.hue_color_lamp_1',state:'unavailable',attributes:{}});
       if(url.includes('/api/camera_proxy')){
@@ -66,6 +71,11 @@ try {
       for(const [title] of groups)await page.getByRole('button',{name:title,exact:true}).waitFor();
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
       await page.screenshot({path:resolve(output,`home-${width}x${height}.png`)});
+      await page.getByRole('button',{name:'Music',exact:true}).click();
+      assert.equal(await page.getByRole('button',{name:'Play music',exact:true}).isEnabled(),true,'Unavailable music remains explicitly usable as a labeled synthetic action');
+      await page.getByRole('button',{name:'Play music',exact:true}).click();
+      await page.locator('[data-execution-status=synthetic]').waitFor();
+      await page.getByRole('button',{name:'Back to home'}).click();
       const captured=new Set();
       for(const [index,command] of inventory.entries()) {
         const id=`v${width}-c${index}`;
@@ -114,6 +124,25 @@ try {
       assert.equal(await page.locator('audio[autoplay],video[autoplay]').count(),0);
       await page.getByRole('button',{name:'Close camera',exact:true}).click();
       assert.equal(await page.locator('img[data-home-camera]').count(),0);
+      weatherOnline=true;
+      for(const suffix of ['observation','cache']){
+        const id=`weather-${width}-${suffix}`;
+        host.emit('event',{event:'command',session_id:ready.session_id,sequence:++sequence,utterance_id:id,source:'microphone',actions_enabled:true,owner_result:{accepted:true},
+          output:{schema_version:3,accepted:true,command:{intent:'WEATHER',slots:{}}},application:{accepted:true,command:{intent:'WEATHER',slots:{}}}});
+        await page.locator(`[data-execution-id="${ready.session_id}:${id}"][data-execution-status=${suffix==='cache'?'cached':'observed'}]`).waitFor();
+      }
+      await page.getByRole('status').filter({hasText:'Cached weather — original observation time retained'}).waitFor();
+      assert.match(await page.locator('.controls').innerText(),/Retrieved.*minutes ago/);
+      assert.equal(await page.locator('.controls [data-source=cached]').count(),1);
+      assert.doesNotMatch(await page.locator('.controls').innerText(),/today/i);
+      await page.screenshot({path:resolve(output,`cached-weather-${width}x${height}.png`)});
+      host.emit('event',{event:'command',session_id:ready.session_id,sequence:++sequence,utterance_id:`time-after-weather-${width}`,source:'microphone',actions_enabled:true,owner_result:{accepted:true},
+        output:{schema_version:3,accepted:true,command:{intent:'TIME',slots:{}}},application:{accepted:true,command:{intent:'TIME',slots:{}}}});
+      await page.getByRole('heading',{name:'Time',exact:true}).waitFor();
+      await page.getByRole('button',{name:'Back to home'}).click();await page.getByRole('button',{name:'Questions',exact:true}).click();
+      assert.equal(await page.locator('.controls [data-source=cached]').count(),1,'Weather provenance must not be replaced by a later local TIME receipt');
+      await page.getByRole('button',{name:'Microphone settings'}).click();await page.getByRole('button',{name:'History',exact:true}).click();
+      assert.ok(await page.locator('.history .source-badge[data-source=cached]').count()>0,'Durable history retains per-result source badges');
       await page.reload();await page.getByRole('heading',{name:'Say “Hey Iris”'}).waitFor();
       await page.getByRole('button',{name:'Reminders',exact:true}).click();
       await page.locator('.job').filter({hasText:'Study'}).waitFor();
