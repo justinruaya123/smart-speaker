@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "experiment": "iris-wake-publication-v1",
+  "status": "completed_bounded_study_both_acoustic_smoke_gates_failed",
+  "software_verification": {
+    "command": "python -B -m pytest -p no:cacheprovider -q scripts/test/test_iris_wake_publication.py scripts/test/test_iris_wake_release.py scripts/test/test_iris_wake_models.py -k 'not export_preserves_ort_ncnn' --basetemp <approved-task-scratch>/iris-wake-publication-tests",
+    "actual_result": "26 passed, 1 deselected in 5.60s",
+    "deselected_test": "test_wake_export_preserves_ort_ncnn_logits",
+    "deselection_reason": "Legacy dual-engine NCNN export is outside this authorized ONNX-only companion lane; no environment or dependency changes were made for it.",
+    "actual_new_onnx_export": "torch.onnx.export with dynamo=False, opset17; five actual CPU parity trials; maximum absolute logit error 4.291534423828125e-06",
+    "receipt_verifier_command": "python -B -m scripts.iris_wake_publication verify",
+    "receipt_verifier_exit_code": 0,
+    "receipt_verifier_meaning": "Complete cohort, hash/partition and receipt-chain reconciliation, NOT acoustic acceptance",
+    "acceptance_command": "python -B -m scripts.iris_wake_publication summary",
+    "acceptance_exit_code": 2,
+    "acceptance_meaning": "Expected nonzero result because both real synthetic acoustic evaluations failed",
+    "diff_check": "git diff --check passed",
+    "protected_path_comparison": "git diff --exit-code c0628940400642f204ff98e26908549b1c07e41c -- artifacts/iris/wake submission/models/optionb-tiny submission/checkpoints/optionb-tiny-selected.pt submission/optionb-tiny vcm/frontend.py scripts/models/mvp_wake.py scripts/train/iris_wake.py scripts/train/iris_wake_helpers.py requirements.lock scripts/runtime/pyproject.toml scripts/runtime/uv.lock SpeakerUI/pnpm-lock.yaml MODEL_CARD.md docs/DATASETS.md",
+    "protected_path_comparison_exit_code": 0,
+    "source_history_checks": {
+      "baseline_receipt_source_matches_git_952d784": true,
+      "fit_selection_test_source_matches_git_ce1a0d5": true
+    },
+    "tdd": "Observed feature-specific RED failures before baseline writer, immutable bindings, native stream/scorer, voice-disjoint cases, normalization/recipe guards, calibration/test lock, opt-in CLI and no-failed-promotion behavior; corresponding tests subsequently GREEN. Saved-receipt tests are characterization coverage."
+  },
+  "execution": {
+    "scientific_python": "Existing approved Python 3.13.14 environment, torch2.10.0+cpu, numpy2.3.5, onnxruntime1.23.2; not modified",
+    "tts": "Actual online Microsoft Edge TTS generation using isolated edge-tts==7.3.1, bounded concurrency3 and at most4 attempts; ffmpeg decoded mono PCM16 at16000Hz",
+    "live_voice_inventory": ".cache/iris-wake-publication-v1/available-voices.json",
+    "baseline_generation_cases": 100,
+    "companion_generation_cases": 648,
+    "training": "Actually ran30 CPU epochs,64 steps/epoch,batch64,four Torch threads,1920 optimizer updates; DEV selected epoch3",
+    "calibration": "Only selected DEV checkpoint; actual ONNX streaming scores over calibration; frozen grid selected threshold.995,consecutive2,release.3,cooldown16000",
+    "test": "Exactly one actual native HeyIris/RollingWake CPU ONNX streaming pass after committed selection lock123455d; no threshold or checkpoint reselection",
+    "native_api": "Current scripts.runtime.mvp_wake defines HeyIris and make_gate; there is no MvpWake class. Acceptance exercises actual HeyIris/RollingWake; full Silero/VAD/owner/VCM/application and live microphone qualification are not claimed.",
+    "test_access_clarification": "Synthesis necessarily converted TEST provider MP3 to PCM16 before selection. Byte/header hashing is recorded. No TEST numerical array loading, features, scores or fitting occurred before the model/policy lock. Calibration numerical arrays/scores were used only at the declared calibration-selection stage.",
+    "artifact_disposition": "No public companion bundle and no runtime-default change. Failed candidate graph/policy/checkpoint remain diagnostic intermediates in the task-owned ignored D: cache.",
+    "raw_intermediate_cache_bytes_at_verification": 288376671,
+    "qualified": false,
+    "real_human_positive_n": 0,
+    "live_capture_or_device_actions": false
+  },
+  "reproduction": {
+    "warning": "Do not overwrite the recorded experiment or rerun its heldout TEST. An independent regeneration is a NEW run; the provider does not guarantee byte-identical TTS. Use a new ignored cache and new receipt output, and preserve failed outcomes.",
+    "voice_discovery": "uv run --isolated --no-project --python 3.13 --with edge-tts==7.3.1 python -B -c \"import asyncio,json,pathlib,edge_tts;p=pathlib.Path('.cache/iris-wake-publication-v1/replay-01/available-voices.json');p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(asyncio.run(edge_tts.list_voices()),sort_keys=True,indent=2)+'\\n')\"",
+    "common_flags": "--output .cache/iris-wake-publication-v1/replay-01/receipts --cache .cache/iris-wake-publication-v1/replay-01",
+    "stages_in_order": [
+      "Existing scientific Python: python -B -m scripts.iris_wake_publication baseline-freeze <common_flags>",
+      "Isolated TTS Python: uv run --isolated --no-project --python 3.13 --with edge-tts==7.3.1 python -B -m scripts.iris_wake_publication baseline-generate <common_flags>",
+      "Existing scientific Python: python -B -m scripts.iris_wake_publication baseline-evaluate <common_flags>",
+      "Only if the new run's baseline fails: python -B -m scripts.iris_wake_publication companion-freeze <common_flags>",
+      "Isolated TTS Python: uv run --isolated --no-project --python 3.13 --with edge-tts==7.3.1 python -B -m scripts.iris_wake_publication companion-generate <common_flags>",
+      "Existing scientific Python: python -B -m scripts.iris_wake_publication companion-inputs <common_flags>",
+      "Existing scientific Python, OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=4: python -B -m scripts.iris_wake_publication companion-fit <common_flags>",
+      "Existing scientific Python: python -B -m scripts.iris_wake_publication companion-lock <common_flags>",
+      "Commit or otherwise immutably preserve the new selection-before-test.json before TEST; do not copy a completed fit or selection from the old cache.",
+      "Existing scientific Python: python -B -m scripts.iris_wake_publication companion-test <common_flags>",
+      "Existing scientific Python: python -B -m scripts.iris_wake_publication verify <common_flags>",
+      "Existing scientific Python: python -B -m scripts.iris_wake_publication summary <common_flags> (nonzero on failed acoustic smoke gate)"
+    ],
+    "provider_audio_redistributed": false,
+    "test_data_reselection_permitted": false,
+    "no_ci_network_or_training": "Default unit tests use local software fixtures and compact saved receipts. Provider generation and fitting require explicit CLI stages."
+  }
+}

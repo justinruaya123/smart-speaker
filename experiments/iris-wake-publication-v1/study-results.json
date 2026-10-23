@@ -1,0 +1,154 @@
+{
+  "actual_fit_epochs": 30,
+  "baseline": {
+    "confusable_n": 64,
+    "control_n": 4,
+    "detected": 1,
+    "duplicate_detections": 0,
+    "false_wakes": 0,
+    "missed": 31,
+    "negative_n": 68,
+    "negative_seconds": 167.20000000000002,
+    "positive_n": 32,
+    "recall": 0.03125,
+    "synthetic_smoke_pass": false
+  },
+  "baseline_evaluation_source_commit": "952d784",
+  "calibration": {
+    "metrics": {
+      "detected": 15,
+      "duplicate_detections": 0,
+      "false_wakes": 0,
+      "false_wakes_per_hour": 0.0,
+      "missed": 1,
+      "negative_exposure": "separate clips; resets and synthetic silence padding excluded from exposure; not household continuous audio",
+      "negative_n": 36,
+      "negative_seconds": 107.56,
+      "positive_n": 16,
+      "recall": 0.9375
+    },
+    "threshold": 0.995
+  },
+  "candidate_artifact_publication": "NOT PROMOTED: the predeclared test smoke gate failed",
+  "candidate_checkpoint_sha256": "7b2569ee6fea3f47f1200fcf6967ee80428d1c5b7490b9403bae4a8dca74fd33",
+  "candidate_model_sha256": "259f67a118d1c71f1b5adc18dcd459f3170e00ac668c02b191445f5a2c08d7fd",
+  "candidate_parameters": 82114,
+  "candidate_policy_sha256": "71cc714c9922addf09e04abf160a8f4f79f392ea1b2cf5e829e0ab8bfd545234",
+  "candidate_test_false_wakes": [
+    {
+      "hits": 1,
+      "id": "test-0007",
+      "text": "Hey Irish",
+      "voice": "en-US-EricNeural"
+    },
+    {
+      "hits": 1,
+      "id": "test-0030",
+      "text": "Hi Iris",
+      "voice": "en-US-SteffanNeural"
+    }
+  ],
+  "candidate_test_per_voice": {
+    "en-GB-MaisieNeural": {
+      "detected": 1,
+      "false_wakes": 0,
+      "positive_n": 4
+    },
+    "en-NZ-MitchellNeural": {
+      "detected": 4,
+      "false_wakes": 0,
+      "positive_n": 4
+    },
+    "en-NZ-MollyNeural": {
+      "detected": 4,
+      "false_wakes": 0,
+      "positive_n": 4
+    },
+    "en-US-AvaNeural": {
+      "detected": 0,
+      "false_wakes": 0,
+      "positive_n": 4
+    },
+    "en-US-EricNeural": {
+      "detected": 4,
+      "false_wakes": 1,
+      "positive_n": 4
+    },
+    "en-US-SteffanNeural": {
+      "detected": 4,
+      "false_wakes": 1,
+      "positive_n": 4
+    },
+    "en-ZA-LeahNeural": {
+      "detected": 1,
+      "false_wakes": 0,
+      "positive_n": 4
+    },
+    "en-ZA-LukeNeural": {
+      "detected": 3,
+      "false_wakes": 0,
+      "positive_n": 4
+    }
+  },
+  "companion_test": {
+    "confusable_n": 64,
+    "control_n": 4,
+    "detected": 21,
+    "duplicate_detections": 0,
+    "false_wakes": 2,
+    "missed": 11,
+    "negative_n": 68,
+    "negative_seconds": 166.696,
+    "positive_n": 32,
+    "recall": 0.65625,
+    "synthetic_smoke_pass": false
+  },
+  "cpu_threads": 4,
+  "dev_selected_epoch": 3,
+  "execution_source_sha256": {
+    "baseline": "08864a69a12125a498b0bfe3d2ad596b92013aaca15a67a4cc3367b4a5548706",
+    "fitting": "94785841421f111a053d6649877695bff9ec0d45c2553651ecb7702b03920958",
+    "selection": "94785841421f111a053d6649877695bff9ec0d45c2553651ecb7702b03920958",
+    "test": "94785841421f111a053d6649877695bff9ec0d45c2553651ecb7702b03920958"
+  },
+  "experiment": "iris-wake-publication-v1",
+  "limitations": [
+    "Entire cohort is synthesized/provider-labelled speech or seeded software controls, not humans or live microphone recordings.",
+    "Synthesis decodes MP3 to PCM16 during generation; no numeric heldout PCM/features/model calls are made for fit/selection before the test lock.",
+    "Training helper excluded 3 overlong/silent train and 2 DEV positives; all TEST positives remain in the denominator.",
+    "Normalization lists admitted train source IDs and separately records exclusions; excluded positives do not contribute statistic windows.",
+    "Deterministic silence/noise controls can share PCM across partitions; speech PCM hashes and voice IDs are cross-partition disjoint.",
+    "Provider output is not byte-repeatable by guarantee; raw corpus is not redistributed. Frozen local receipts are auditable; regenerations are new runs.",
+    "Native HeyIris RollingWake CPU ONNX was executed; this is not full owner/live-microphone/provider or physical-device qualification.",
+    "No new runtime default or public companion artifact is selected after the failed test."
+  ],
+  "optimizer_updates": 1920,
+  "preserved": "Existing Iris wake, frozen VCM/frontend/architecture/trainers, normalization/policy and dependency locks unchanged",
+  "raw_and_intermediate_location": ".cache/iris-wake-publication-v1 on D:; excluded from Git",
+  "receipt_bindings": {
+    "baseline-protocol.json": "7de025d6159634659a591857ade090c88971703b619ced221a1ba2b48ac236e1",
+    "baseline-results.json": "98cdfae019c56018557d113648b4ef4fd4d9a0346807691b4e8662c3c7f24f62",
+    "calibration-results.json": "aff406d4ddae00d96551c9b6c7cb8019c553be44170b724a69d18ab358bb4abb",
+    "companion-inputs.json": "cfa02fddba0907a75af99e0b6f149c6db055f64b2e362c3edd7635704f9579cd",
+    "companion-protocol.json": "e4ae7a783d9168a514e09aa0709ae6f7f0cfb6c413c2be0e1263a0c05a77cdbf",
+    "companion-test-results.json": "0bc7a86e9b636bb35f1adeb87043b8f867654fff6ca0170d768f54cab8d1d54c",
+    "fit-data-audit.json": "2404835d654e4843a642cf14b68eac984ffeda2eae6c2fdb43b089732172a54b",
+    "fit-inputs.json": "ef40c21c45a3c619648313b7b88f7fc069fde95bd772f234786a3c8ef6b54111",
+    "fit-results.json": "f0dff4968e737032db43980c1a0d784494527a35e0778e80a1a28aaa2be36d28",
+    "selection-before-test.json": "651f4110e25146c63e6d1fbeadf978037c6306ac969acd8736361c92a5672552"
+  },
+  "release_disposition": "Do not auto-merge a release requiring the synthetic wake gate. Do not lower frozen or candidate thresholds using these tests.",
+  "schema_version": 1,
+  "training_source_commit": "ce1a0d5",
+  "verdict": {
+    "baseline_pass": false,
+    "companion_pass": false,
+    "live_microphone_measured": false,
+    "publish_companion": false,
+    "qualified": false,
+    "real_human_positive_n": 0,
+    "release_blocker": true,
+    "synthetic_acceptance_pass": false,
+    "test_reselection_permitted": false
+  }
+}

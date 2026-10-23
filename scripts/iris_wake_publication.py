@@ -680,16 +680,123 @@ def evaluate_panel(protocol_path, folder, cache, result_path, *, cases=None, loc
     return result
 
 
+def publication_verdict(baseline, companion):
+    def passes(metric):
+        return (metric['positive_n'] > 0 and metric['detected'] / metric['positive_n'] >= .9
+                and metric['false_wakes'] == 0 and metric['duplicate_detections'] == 0)
+    baseline_pass, companion_pass = passes(baseline), passes(companion)
+    return dict(baseline_pass=baseline_pass, companion_pass=companion_pass,
+                synthetic_acceptance_pass=baseline_pass or companion_pass,
+                publish_companion=not baseline_pass and companion_pass,
+                release_blocker=not (baseline_pass or companion_pass), qualified=False,
+                real_human_positive_n=0, live_microphone_measured=False,
+                test_reselection_permitted=False)
+
+
+def study_summary(out=EXPERIMENT):
+    """Reconstruct decisions from complete published cohorts, not stored green flags."""
+    out = Path(out)
+    names = ('baseline-protocol.json', 'baseline-results.json', 'companion-protocol.json',
+             'companion-inputs.json', 'fit-inputs.json', 'fit-data-audit.json', 'fit-results.json',
+             'calibration-results.json', 'selection-before-test.json', 'companion-test-results.json')
+    data = {name: json.loads((out / name).read_text()) for name in names}
+    bp, br = data['baseline-protocol.json'], data['baseline-results.json']
+    cp, cr = data['companion-protocol.json'], data['companion-test-results.json']
+    lock = data['selection-before-test.json']
+    all_inputs = data['companion-inputs.json']
+    if [r['id'] for r in all_inputs] != [r['id'] for r in cp['cases']]:
+        raise ValueError('Incomplete input receipt cohort')
+    input_by_id = {r['id']: r for r in all_inputs}
+    for case in cp['cases']:
+        row = input_by_id[case['id']]
+        if row['case_sha256'] != object_digest(case) or row['protocol_sha256'] != digest(out / 'companion-protocol.json'):
+            raise ValueError('Changed input case/partition')
+    fit_inputs = data['fit-inputs.json']
+    if fit_inputs['generation_sha256'] != digest(out / 'companion-inputs.json'):
+        raise ValueError('Changed frozen generation manifest')
+    for split, expected in fit_inputs['partition_sha256'].items():
+        actual = object_digest([dict(case=r, receipt=input_by_id[r['id']]) for r in cp['cases'] if r['split'] == split])
+        if actual != expected:
+            raise ValueError('Changed immutable partition binding')
+    test = [r for r in cp['cases'] if r['split'] == 'test']
+    baseline = panel_metrics(bp['cases'], br['predictions'])
+    companion = panel_metrics(test, cr['predictions'])
+    if baseline != br['metrics'] or companion != cr['metrics']:
+        raise ValueError('Stored metrics differ from exact cohort reconstruction')
+    validate_test_lock(out / 'companion-protocol.json', test, cr['inputs'], lock)
+    for field in ('model_sha256', 'policy_sha256'):
+        if br[field] != bp[field] or cr[field] != lock[field]:
+            raise ValueError('Result model/policy identity mismatch')
+    if (lock['fit_result_sha256'] != digest(out / 'fit-results.json') or
+            lock['calibration_sha256'] != digest(out / 'calibration-results.json') or
+            cp['failed_baseline_sha256'] != digest(out / 'baseline-results.json')):
+        raise ValueError('Changed fit/calibration/baseline receipt chain')
+    per_voice = {}
+    false_wakes = []
+    for case, record in zip(test, cr['predictions']):
+        if case['voice']:
+            cell = per_voice.setdefault(case['voice'], dict(positive_n=0, detected=0, false_wakes=0))
+            if case['wake_positive']:
+                cell['positive_n'] += 1
+                cell['detected'] += int(record['hits'] > 0)
+            else:
+                cell['false_wakes'] += record['hits']
+        if not case['wake_positive'] and record['hits']:
+            false_wakes.append(dict(id=case['id'], voice=case['voice'], text=case['text'], hits=record['hits']))
+    fit = data['fit-results.json']
+    calibration = data['calibration-results.json']
+    audit = data['fit-data-audit.json']
+    verdict = publication_verdict(baseline, companion)
+    return dict(schema_version=1, experiment='iris-wake-publication-v1',
+                verdict=verdict, baseline=baseline, companion_test=companion,
+                candidate_model_sha256=lock['model_sha256'], candidate_policy_sha256=lock['policy_sha256'],
+                candidate_checkpoint_sha256=lock['checkpoint_sha256'], candidate_parameters=fit['parameters'],
+                dev_selected_epoch=fit['epoch'], actual_fit_epochs=len(fit['history']),
+                optimizer_updates=fit['optimizer_updates'], cpu_threads=fit['cpu_threads'],
+                calibration=dict(threshold=calibration['threshold'], metrics=calibration['metrics']),
+                candidate_test_per_voice=per_voice, candidate_test_false_wakes=false_wakes,
+                candidate_artifact_publication='NOT PROMOTED: the predeclared test smoke gate failed' if not verdict['companion_pass'] else 'Synthetic gate passed; any distribution still needs an explicit artifact manifest',
+                release_disposition='Do not auto-merge a release requiring the synthetic wake gate. Do not lower frozen or candidate thresholds using these tests.' if verdict['release_blocker'] else 'Synthetic smoke only; qualification remains false',
+                raw_and_intermediate_location='.cache/iris-wake-publication-v1 on D:; excluded from Git',
+                training_source_commit='ce1a0d5', baseline_evaluation_source_commit='952d784',
+                execution_source_sha256=dict(baseline=br['source_sha256'],
+                    fitting=data['fit-inputs.json']['trainer_source_sha256'],
+                    selection=lock['source_sha256'], test=cr['source_sha256']),
+                preserved='Existing Iris wake, frozen VCM/frontend/architecture/trainers, normalization/policy and dependency locks unchanged',
+                limitations=[
+                    'Entire cohort is synthesized/provider-labelled speech or seeded software controls, not humans or live microphone recordings.',
+                    'Synthesis decodes MP3 to PCM16 during generation; no numeric heldout PCM/features/model calls are made for fit/selection before the test lock.',
+                    f"Training helper excluded {len(audit['excluded_training'])} overlong/silent train and {len(audit['excluded_development'])} DEV positives; all TEST positives remain in the denominator.",
+                    'Normalization lists admitted train source IDs and separately records exclusions; excluded positives do not contribute statistic windows.',
+                    'Deterministic silence/noise controls can share PCM across partitions; speech PCM hashes and voice IDs are cross-partition disjoint.',
+                    'Provider output is not byte-repeatable by guarantee; raw corpus is not redistributed. Frozen local receipts are auditable; regenerations are new runs.',
+                    'Native HeyIris RollingWake CPU ONNX was executed; this is not full owner/live-microphone/provider or physical-device qualification.',
+                    'No new runtime default or public companion artifact is selected after the failed test.',
+                ], receipt_bindings={name: digest(out / name) for name in names})
+
+
 def main(argv=None):
     import argparse
     import asyncio
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('stage', choices=(
         'baseline-freeze', 'baseline-generate', 'baseline-evaluate', 'companion-freeze',
-        'companion-generate', 'companion-fit', 'companion-lock', 'companion-test'))
+        'companion-generate', 'companion-inputs', 'companion-fit', 'companion-lock', 'companion-test',
+        'summary', 'verify'))
     parser.add_argument('--output', type=Path, default=EXPERIMENT, help='New immutable receipt directory')
     parser.add_argument('--cache', type=Path, default=CACHE, help='Ignored raw audio/intermediate root, preferably D:')
     args = parser.parse_args(argv)
+    if args.stage in ('summary', 'verify'):
+        result = study_summary(args.output)
+        if args.stage == 'summary':
+            write_once(args.output / 'study-results.json', result)
+            print(json.dumps(result, indent=2, allow_nan=False))
+            if result['verdict']['release_blocker']:
+                raise SystemExit(2)
+        else:
+            print(json.dumps(dict(receipt_chain_verified=True, acoustic_acceptance_pass=result['verdict']['synthetic_acceptance_pass'],
+                                  qualified=False, baseline=result['baseline'], companion=result['companion_test']), sort_keys=True))
+        return
     prefix = 'baseline' if args.stage.startswith('baseline') else 'companion'
     protocol = args.output / (prefix + '-protocol.json')
     if args.stage.endswith('-freeze'):
@@ -702,6 +809,10 @@ def main(argv=None):
     elif args.stage == 'baseline-evaluate':
         evaluate_panel(protocol, ROOT / 'artifacts/iris/wake', args.cache / prefix,
                        args.output / 'baseline-results.json')
+    elif args.stage == 'companion-inputs':
+        records = json.loads((args.cache / prefix / 'generation-complete.json').read_text())
+        write_once(args.output / 'companion-inputs.json', records)
+        print('INPUT_MANIFEST', digest(args.output / 'companion-inputs.json'), len(records))
     elif args.stage == 'companion-fit':
         fit_companion(protocol, args.cache / prefix, args.output)
     elif args.stage == 'companion-lock':

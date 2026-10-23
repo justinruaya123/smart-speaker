@@ -212,6 +212,57 @@ def test_cli_has_no_implicit_generation_or_fit(monkeypatch):
     assert error.value.code == 2
 
 
+def test_publication_verdict_cannot_promote_a_failed_smoke_gate():
+    m = publication()
+    assert hasattr(m, 'publication_verdict'), 'Missing honest publication verdict'
+    baseline = dict(positive_n=32, detected=1, false_wakes=0, duplicate_detections=0, synthetic_smoke_pass=False)
+    failed = dict(positive_n=32, detected=21, false_wakes=2, duplicate_detections=0, synthetic_smoke_pass=True)
+    verdict = m.publication_verdict(baseline, failed)
+    assert verdict['synthetic_acceptance_pass'] is False
+    assert verdict['publish_companion'] is False
+    assert verdict['qualified'] is False
+    assert verdict['release_blocker'] is True
+    passed = {**failed, 'detected': 30, 'false_wakes': 0}
+    assert m.publication_verdict(baseline, passed)['publish_companion'] is True
+    assert m.publication_verdict(baseline, passed)['qualified'] is False
+
+
+def test_published_receipts_reconcile_but_do_not_imply_acceptance():
+    m = publication()
+    summary = m.study_summary()
+    assert summary['baseline']['positive_n'] == 32
+    assert summary['baseline']['detected'] == 1
+    assert summary['companion_test']['positive_n'] == 32
+    assert summary['companion_test']['detected'] == 21
+    assert summary['companion_test']['false_wakes'] == 2
+    assert summary['verdict']['release_blocker'] is True
+    assert summary['verdict']['qualified'] is False
+
+
+def test_summary_rejects_changed_training_input_receipt(tmp_path):
+    m = publication()
+    import shutil
+    out = tmp_path / 'receipts'
+    shutil.copytree(m.EXPERIMENT, out)
+    target = out / 'companion-inputs.json'
+    rows = json.loads(target.read_text())
+    rows[0]['wav_sha256'] = '0' * 64
+    target.write_text(json.dumps(rows))
+    with pytest.raises(ValueError, match='generation manifest'):
+        m.study_summary(out)
+
+
+def test_summary_cli_exits_nonzero_for_real_failed_acceptance(tmp_path, capsys):
+    m = publication()
+    import shutil
+    out = tmp_path / 'receipts'
+    shutil.copytree(m.EXPERIMENT, out)
+    with pytest.raises(SystemExit) as error:
+        m.main(['summary', '--output', str(out)])
+    assert error.value.code == 2
+    assert json.loads(capsys.readouterr().out)['verdict']['synthetic_acceptance_pass'] is False
+
+
 def publication():
     assert importlib.util.find_spec('scripts.iris_wake_publication') is not None, 'Missing publication acceptance helper'
     return importlib.import_module('scripts.iris_wake_publication')
