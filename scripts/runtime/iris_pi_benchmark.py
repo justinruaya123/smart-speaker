@@ -248,8 +248,12 @@ def accuracy(rows, key):
     exact = sum(row[key] is not None and canonical(row[key]) == canonical(row['expected']) for row in positives)
     emitted = sum(row[key] is not None for row in measured)
     false = sum(row[key] is not None for row in negatives)
+    positive_emitted = sum(row[key] is not None for row in positives)
+    exact_all = exact + len(negatives) - false
     return dict(reference_n=len(references), scored_n=len(measured), unavailable_n=len(references)-len(measured),
         positive_n=len(positives), negative_n=len(negatives), exact_positive_n=exact, emitted_n=emitted,
+        wrong_positive_n=positive_emitted-exact,rejected_positive_n=len(positives)-positive_emitted,
+        exact_n=exact_all,complete_command_accuracy=exact_all/len(measured) if measured else None,
         negative_abstention_n=len(negatives)-false, false_accept_n=false,
         complete_command_recall=exact/len(positives) if positives else None,
         precision=exact/emitted if emitted else None, false_accept_rate=false/len(negatives) if negatives else None)

@@ -76,3 +76,17 @@ def test_explicit_legacy_benchmark_remains_accessible(monkeypatch):
     importlib.reload(launcher)
     assert launcher.main(['--model-choice','legacy','--threads','2']) == 17
     assert seen == [['--threads','2']]
+
+
+def test_scorer_explicitly_separates_wrong_positive_accepts_and_negative_accepts():
+    from scripts.runtime.iris_pi_benchmark import accuracy
+    command={'intent':'TIME','slots':{}}
+    wrong={'intent':'WEATHER','slots':{}}
+    rows=[dict(scored=True,raw_available=True,expected=expected,accepted=actual)
+          for expected,actual in [(command,command),(command,wrong),(command,None),(None,None),(None,wrong)]]
+    rows.append(dict(scored=False,raw_available=True,expected=None,accepted=wrong))
+    result=accuracy(rows,'accepted')
+    assert result['wrong_positive_n']==1 and result['rejected_positive_n']==1
+    assert result['false_accept_n']==1 and result['exact_positive_n']==1
+    assert result['exact_n']==2 and result['scored_n']==5
+    assert result['complete_command_accuracy']==.4
