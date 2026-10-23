@@ -1,8 +1,10 @@
 """Resident CPU inference worker. JSONL controls/events; never executes actions."""
 import argparse
 import base64
+from collections import OrderedDict
 from copy import deepcopy
 import io
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -86,11 +88,12 @@ def decode_wav(data, *, wake=False):
 
 
 class AudioService:
-    def __init__(self,runtime,emit,settings=None,*,owner=None,profile=None):
+    def __init__(self,runtime,emit,settings=None,*,owner=None,profile=None,feedback=None):
         self.runtime=runtime;self.deliver=emit;self.sequence=0;self.session=uuid.uuid4().hex
         self.state='awaiting_microphone';self.stream=None;self.gate=None;self.offset=0;self.source='microphone'
         self.last_signal=time.monotonic();self.warned_silent=False
         self.settings=settings
+        self.feedback=feedback;self.feedback_utterances=OrderedDict();self.wake_feedback_index=0
         self.profile=profile or getattr(runtime,'profile','benchmark-compatible')
         self.owner=owner;self.owner_session=None;self.utterance=uuid.uuid4().hex
         self.inference_lock=threading.Lock();self.emission_lock=threading.RLock();self.previews=None
@@ -133,6 +136,60 @@ class AudioService:
         if self.owner_session:
             verdict=self.owner_session.arm(self.utterance,reference or self.owner.evidence(pcm),now=time.monotonic())
             self.emit({'event':'ownership','accepted':verdict.accepted,'reason':verdict.reason})
+        if self.feedback and self.feedback.enabled and self.stream is not None and self.source=='microphone' and self.profile=='owner-protected':
+            from scripts.runtime.iris_feedback import WAKE_CUES
+            cue=WAKE_CUES[self.wake_feedback_index%len(WAKE_CUES)];self.wake_feedback_index+=1
+            try:self.play_feedback(cue,self.utterance)
+            except Exception as error:
+                self.emit({'event':'feedback','cue_id':cue,'utterance_id':self.utterance,
+                           'played':False,'reason':'playback_error','message':str(error)[:200]})
+
+    def play_feedback(self,cue_id,utterance_id):
+        if not self.feedback or not self.feedback.enabled or self.source!='microphone' or self.stream is None or self.profile!='owner-protected':
+            return {'cue_id':cue_id,'played':False,'reason':'feedback_disabled'}
+        stream=self.stream
+        try:stream.abort()  # Suspend/discard input without resetting gate or wake ownership.
+        except Exception:
+            try:self.stop(announce=False)
+            finally:self.set_state('capture_error',message='Unable to suspend capture for feedback')
+            raise
+        try:
+            result=self.feedback.play(cue_id)
+        finally:
+            # Keep capture off through a short room/driver tail; never feed our cue to Iris.
+            time.sleep(.08)
+            try:stream.start()
+            except Exception:
+                try:self.stop(announce=False)
+                finally:self.set_state('capture_error',message='Capture could not resume after feedback')
+                raise
+        self.emit({'event':'feedback','utterance_id':utterance_id,**result})
+        return result
+
+    def feedback_control(self,cue_id,utterance_id,*,session_id=None):
+        from scripts.runtime.iris_feedback import CONTROL_CUES
+        if session_id is not None and session_id!=self.session:raise ValueError('Feedback session mismatch')
+        if not isinstance(cue_id,str) or cue_id not in CONTROL_CUES:raise ValueError('Unknown closed feedback cue ID')
+        if (not isinstance(utterance_id,str) or not 1<=len(utterance_id)<=128
+                or any(ord(c)<32 for c in utterance_id) or utterance_id not in self.feedback_utterances):
+            raise ValueError('Feedback requires a known final microphone utterance')
+        record=self.feedback_utterances[utterance_id]
+        if record['source']!='microphone':raise ValueError('Feedback cannot play for WAV/replay utterances')
+        if cue_id=='intent':
+            if not record['accepted']:raise ValueError('Intent feedback requires final accepted recognition')
+            if record['intent']:return {'cue_id':cue_id,'played':False,'duplicate':True}
+            if record['completion'] is not None:raise ValueError('Feedback completion already consumed')
+        else:
+            if record['completion'] is not None:
+                if record['completion']!=cue_id:raise ValueError('Feedback completion already consumed')
+                return {'cue_id':cue_id,'played':False,'duplicate':True}
+            if record['accepted'] and not record['intent']:raise ValueError('Completion feedback requires intent phase first')
+            if cue_id=='success' and not record['accepted']:raise ValueError('Success requires final accepted recognition')
+        if self.gate and self.gate.state!='wake':raise ValueError('Feedback deferred: active command capture must not be interrupted')
+        # Consume even if output fails: no retry can replay a phase or affect an action.
+        if cue_id=='intent':record['intent']=True
+        else:record['completion']=cue_id
+        return self.play_feedback(cue_id,utterance_id)
 
     def reset_command(self):
         if self.previews:self.previews.clear()
@@ -166,6 +223,9 @@ class AudioService:
         elif event.get('status')=='command_ready':self.set_state('command_ready')
         if 'output' in event:
             if self.previews:self.previews.clear()
+            self.feedback_utterances.setdefault(self.utterance,{'source':self.source,
+                'accepted':event['output'].get('accepted') is True,'intent':False,'completion':None})
+            while len(self.feedback_utterances)>128:self.feedback_utterances.popitem(last=False)
             self.emit({**event,'event':'command','utterance_id':self.utterance})
             self.utterance=uuid.uuid4().hex
             self.set_state('wake_listening' if self.stream else 'awaiting_microphone')
@@ -238,13 +298,17 @@ class AudioService:
         self.offset+=len(pcm)
 
     def stop(self,*,announce=True):
-        if self.stream is not None:
-            stream=self.stream;self.stream=None
-            try:stream.abort()
-            finally:stream.close()
-        if self.gate:self.gate.reset()
-        self.reset_command()
-        if announce:self.set_state('muted')
+        try:
+            if self.stream is not None:
+                stream=self.stream;self.stream=None
+                try:stream.abort()
+                finally:stream.close()
+        finally:
+            try:
+                if self.gate:self.gate.reset()
+            finally:
+                self.reset_command()
+                if announce:self.set_state('muted')
 
 
 def is_epoch44(bundle):
@@ -314,7 +378,12 @@ def main():
     if profile=='owner-protected':
         from scripts.runtime.iris_owner import OwnerBackend
         owner=OwnerBackend(getattr(runtime,'owner_root',args.bundle/'owner'),threads=args.threads)
-    service=AudioService(runtime,emit,settings,owner=owner,profile=profile)
+    from scripts.runtime.iris_feedback import FeedbackPlayer
+    enabled=(os.environ.get('IRIS_FEEDBACK_ENABLED')=='true' and profile=='owner-protected'
+             and not (args.no_audio or args.wav or args.check))
+    speaker=int(os.environ.get('IRIS_SPEAKER_INDEX','-1')) if enabled else None
+    feedback=FeedbackPlayer(speaker_index=speaker,enabled=enabled)
+    service=AudioService(runtime,emit,settings,owner=owner,profile=profile,feedback=feedback)
     if args.check:
         service.new_gate()
         emit({'event':'checked','profile':profile,'owner_gating_enabled':owner is not None,'actions_executed':False,
@@ -327,6 +396,7 @@ def main():
                   'ownership_experimental':owner is not None,
                   'application_config':application_config(runtime,settings),'ui':settings['ui'],
                   **runtime_identity(runtime,owner),
+                  'capabilities':{'feedback':True},'feedback_enabled':feedback.enabled,
                   'wake_phrase':'hey iris',
                   'policy_enabled':runtime.policy['enabled'] and getattr(runtime,'mode','demo')=='demo',
                   'threads':args.threads,'session_load_ms':runtime.load_ms})
@@ -342,6 +412,7 @@ def main():
                 incoming.put(item,timeout=1)
             except Exception as error:emit({'event':'error','message':str(error)})
     threading.Thread(target=reader,daemon=True).start()
+    recent_requests=OrderedDict()
     try:
         while True:
             try:command=incoming.get(timeout=0 if service.stream else .1)
@@ -351,19 +422,39 @@ def main():
                     except Exception as error:service.stop(announce=False);service.set_state('capture_error',message=str(error))
                 continue
             request=command.get('id')
+            cache_key=None;fingerprint=None
             try:
+                if request is not None:
+                    if type(request) not in (int,str) or isinstance(request,str) and not 1<=len(request)<=128:
+                        raise ValueError('Invalid runtime request ID')
+                    cache_key=(type(request).__name__,request)
+                    fingerprint=hashlib.sha256(json.dumps(command,sort_keys=True,allow_nan=False).encode()).hexdigest()
+                    if cache_key in recent_requests:
+                        prior_hash,prior_reply=recent_requests[cache_key]
+                        if fingerprint!=prior_hash:raise ValueError('Conflicting duplicate runtime request ID')
+                        service.emit(prior_reply);continue
                 op=command.get('op')
                 if op=='shutdown':break
                 if op=='devices':result={'devices':service.devices()}
                 elif op=='listen':result={'microphone':service.listen(command.get('device'))}
                 elif op=='mute':service.stop();result={}
                 elif op=='wav':result=service.wav(base64.b64decode(command['data'],validate=True),wake=command.get('wake') is True)
+                elif op=='feedback':
+                    if set(command)-{'id','op','cue_id','utterance_id','session_id'}:raise ValueError('Unsupported feedback control fields')
+                    result=service.feedback_control(command.get('cue_id'),command.get('utterance_id'),session_id=command.get('session_id'))
                 else:raise ValueError('Unknown runtime operation')
-                service.emit({'event':'reply','id':request,'ok':True,**result})
+                reply={'event':'reply','id':request,'ok':True,**result}
             except Exception as error:
-                service.set_state('capture_error' if command.get('op')=='listen' else 'runtime_error',message=str(error))
-                service.emit({'event':'reply','id':request,'ok':False,'message':str(error)})
-    finally:service.stop(announce=False)
+                if command.get('op')!='feedback':
+                    service.set_state('capture_error' if command.get('op')=='listen' else 'runtime_error',message=str(error))
+                reply={'event':'reply','id':request,'ok':False,'message':str(error)}
+            if cache_key is not None and cache_key not in recent_requests:
+                recent_requests[cache_key]=(fingerprint,reply)
+                while len(recent_requests)>128:recent_requests.popitem(last=False)
+            service.emit(reply)
+    finally:
+        service.stop(announce=False)
+        if service.previews:service.previews.close()
 
 
 if __name__=='__main__':main()

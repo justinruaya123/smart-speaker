@@ -40,6 +40,7 @@ def test_worker_ready_eof_identifies_selected_model_policy_and_actual_actions():
     assert ready['wake_phrase'] == 'hey iris'
     assert ready['actions_enabled'] is False  # benchmark-compatible profile
     assert ready['model_qualified'] is False
+    assert ready['capabilities']['feedback'] is True and ready['feedback_enabled'] is False
 
 
 def test_frozen_check_loads_wake_vad_owner_companions_without_microphone():
@@ -98,3 +99,27 @@ def test_runtime_factory_keeps_legacy_loader(monkeypatch):
     sentinel = object()
     monkeypatch.setattr(mvp_static, 'Runtime', lambda *a, **k: sentinel)
     assert speaker_worker.load_runtime(ROOT / 'artifacts/iris', engine='ncnn') is sentinel
+
+
+def test_duplicate_jsonl_request_ids_do_not_reinfer_wav():
+    stream=io.BytesIO();sf.write(stream,np.zeros(16000),16000,format='WAV',subtype='PCM_16')
+    command={'id':'same-id','op':'wav','data':base64.b64encode(stream.getvalue()).decode()}
+    result=worker(command,command,{'id':'same-id','op':'mute'},args=('--no-audio',))
+    assert result.returncode==0,result.stderr
+    events=[json.loads(line) for line in result.stdout.splitlines()]
+    assert sum(e['event']=='command' for e in events)==1
+    replies=[e for e in events if e.get('event')=='reply']
+    assert [e['ok'] for e in replies]==[True,True,False]
+    assert 'duplicate' in replies[-1]['message'].lower()
+
+
+def test_feedback_jsonl_rejects_paths_unknown_utterances_and_surplus_fields_without_capture():
+    result=worker({'id':'path','op':'feedback','cue_id':'../intent.wav','utterance_id':'forged'},
+        {'id':'unknown','op':'feedback','cue_id':'intent','utterance_id':'forged'},
+        {'id':'extra','op':'feedback','cue_id':'intent','utterance_id':'forged','path':'arbitrary'},
+        args=('--no-audio',))
+    assert result.returncode==0,result.stderr
+    events=[json.loads(line) for line in result.stdout.splitlines()]
+    assert all(e['ok'] is False for e in events if e['event']=='reply')
+    assert not any(e.get('played') is True for e in events)
+    assert not any(e.get('state')=='runtime_error' for e in events)
