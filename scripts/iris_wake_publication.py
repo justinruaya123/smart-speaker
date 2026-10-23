@@ -48,6 +48,99 @@ def baseline_cases(available):
     return rows
 
 
+ADAPTATION_VOICES = {
+    'train': ('en-US-GuyNeural', 'en-US-AriaNeural', 'en-US-ChristopherNeural',
+              'en-US-MichelleNeural', 'en-US-BrianNeural', 'en-US-EmmaNeural',
+              'en-GB-ThomasNeural', 'en-GB-SoniaNeural', 'en-AU-WilliamMultilingualNeural',
+              'en-AU-NatashaNeural', 'en-CA-ClaraNeural', 'en-CA-LiamNeural'),
+    'dev': ('en-IE-ConnorNeural', 'en-IE-EmilyNeural', 'en-IN-PrabhatNeural', 'en-IN-NeerjaNeural'),
+    'calibration': ('en-HK-SamNeural', 'en-HK-YanNeural', 'en-SG-WayneNeural', 'en-SG-LunaNeural'),
+    'test': ('en-US-EricNeural', 'en-US-AvaNeural', 'en-US-SteffanNeural', 'en-GB-MaisieNeural',
+             'en-NZ-MitchellNeural', 'en-NZ-MollyNeural', 'en-ZA-LukeNeural', 'en-ZA-LeahNeural'),
+}
+TRAIN_EXTRA_NEGATIVES = (
+    'Hey Cyrus', 'Hey Ibis', 'Hey Eros', 'Hey Paris', 'Hey Irish!', 'Hi, Iris',
+    'Hello Iris', 'Iris', 'Hey', 'I rate this', 'The iris flower is purple',
+    'Could you play some music', 'Set a timer for ten seconds', 'The weather is warm',
+    'Please stop the music', 'We are having a normal conversation.',
+)
+
+
+def adaptation_cases(available):
+    inventory = {v['ShortName']: v for v in available}
+    voices = [v for group in ADAPTATION_VOICES.values() for v in group]
+    if len(set(voices)) != len(voices) or set(voices).intersection(BASELINE_VOICES):
+        raise ValueError('Voice split overlap')
+    if set(voices) - inventory.keys():
+        raise ValueError('Required adaptation voices unavailable')
+    rows = []
+    for split, group in ADAPTATION_VOICES.items():
+        texts = ('Hey Iris', 'Hey, Iris', 'Hey Iris!', 'Hey, Iris.') if split == 'train' else ('Hey Iris', 'Hey, Iris')
+        rates = {'train': ('-15%', '+0%', '+15%'), 'dev': ('-5%', '+5%'),
+                 'calibration': ('-12%', '+12%'), 'test': ('-7%', '+7%')}[split]
+        if split == 'test':
+            texts = ('Hey Iris.', 'Hey, Iris!')
+        negatives = NEGATIVES + TRAIN_EXTRA_NEGATIVES if split == 'train' else NEGATIVES
+        index = 0
+        for voice in group:
+            for kind, phrases, speeds in (('positive', texts, rates), ('negative', negatives, ('+0%',))):
+                for text in phrases:
+                    for rate in speeds:
+                        rows.append(dict(id=f'{split}-{index:04d}', split=split, kind=kind,
+                                         role='wake_positive' if kind == 'positive' else 'wake_negative',
+                                         voice=voice, speaker=voice, text=text, rate=rate,
+                                         wake_positive=kind == 'positive', synthetic=True,
+                                         voice_metadata={k: inventory[voice][k] for k in ('Gender', 'Locale')}))
+                        index += 1
+        for seed in range(3 if split == 'train' else 1):
+            for name, amplitude in (('silence', 0), ('white_quiet', .001), ('white_loud', .04), ('pink', .02)):
+                rows.append(dict(id=f'{split}-control-{seed}-{name}', split=split, kind='control',
+                                 role='control', voice=None, speaker=None, text=None, wake_positive=False,
+                                 synthetic=True, control=name, amplitude=amplitude, seconds=10, seed=873 + seed))
+    return rows
+
+
+def assert_fit_membership(rows, split):
+    if not rows or any(r['split'] != split or not r['synthetic'] for r in rows):
+        raise ValueError('Invalid fit membership: only newly generated declared split may be decoded')
+
+
+def freeze_adaptation(available, *, out=EXPERIMENT):
+    baseline_path = Path(out) / 'baseline-results.json'
+    baseline = json.loads(baseline_path.read_text())
+    if baseline['metrics']['synthetic_smoke_pass']:
+        raise ValueError('No adaptation needed: baseline passed')
+    rows = adaptation_cases(available)
+    result = dict(schema_version=1, experiment='iris-wake-publication-v1-companion',
+                  hypothesis='A separately trained same-architecture wake-only companion can pass unseen-voice synthetic smoke',
+                  failed_baseline_sha256=digest(baseline_path),
+                  architecture='scripts.models.mvp_wake.WakeNet(width=64)', parameters=82114,
+                  initialization='random seed 731; no pretrained checkpoint; no VCM data/model/normalizer changes',
+                  seed=731, cpu_threads=4, epochs=30, steps_per_epoch=64, batch_size=64,
+                  optimizer='AdamW lr=.001 weight_decay=.001; CE; balanced labels; clip_grad_norm=5',
+                  training_arrays='Reuse iris_wake_helpers.training_arrays training=True hard=True, seed61, unchanged augmentation/trim; retain exclusions',
+                  normalization='TRAIN only: helper training=False windows, unnormalized logmel; binwise mean/std over all frames, std floor .1',
+                  dev_selection='Maximize (dev balanced accuracy, -dev cross entropy); strict improvement only, earliest exact tie; no calibration/test PCM decoded',
+                  calibration_selection='Selected DEV checkpoint only; maximize detected wakes with zero false/duplicates, lower threshold tie; fixed grid; TEST exactly once after hash lock',
+                  threshold_grid=[.5, .6, .7, .8, .85, .9, .95, .98, .995, .999, .9999, 1.],
+                  policy=dict(release=.3, consecutive=2, cooldown_samples=16000),
+                  window_samples=25600, step_samples=1280,
+                  source_bindings={p: digest(ROOT / p) for p in (
+                      'scripts/runtime/mvp_wake.py', 'scripts/models/mvp_wake.py',
+                      'scripts/train/iris_wake_helpers.py', 'vcm/frontend.py')},
+                  positive_recall_minimum=.9, false_wakes_maximum=0, duplicate_wakes_maximum=0,
+                  splits={s: dict(voices=list(v), positive=sum(r['split'] == s and r['wake_positive'] for r in rows),
+                                   negative=sum(r['split'] == s and not r['wake_positive'] for r in rows))
+                          for s, v in ADAPTATION_VOICES.items()},
+                  first_panel_usage='Regression only, completely excluded from companion data and selection',
+                  corpus='Entirely new opt-in Edge TTS generation; no old VCM heldout or other corpus audio in any split',
+                  test_access='Generation converts provider MP3 to PCM16 and hashes bytes/headers; no test numerical PCM loading, feature extraction or model inference before selection lock',
+                  rights='Raw synthesized corpus is not redistributed; synthesis voice IDs are not people/demographics.',
+                  original_human_positive_n=0, qualified=False, cases=rows)
+    write_once(Path(out) / 'companion-protocol.json', result)
+    return result
+
+
 def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 

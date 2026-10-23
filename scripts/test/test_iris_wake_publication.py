@@ -106,6 +106,38 @@ def test_panel_metrics_reject_incomplete_or_repeated_membership():
     assert m.panel_metrics(cases, records)['synthetic_smoke_pass'] is False
 
 
+def test_adaptation_panel_is_voice_disjoint_with_unseen_test_renderings():
+    m = publication()
+    assert hasattr(m, 'adaptation_cases'), 'Missing independent companion protocol'
+    names = set(m.BASELINE_VOICES)
+    names.update(v for group in m.ADAPTATION_VOICES.values() for v in group)
+    available = [{'ShortName': v, 'Gender': 'metadata-only', 'Locale': v[:5]} for v in names]
+    rows = m.adaptation_cases(available)
+    assert len({r['id'] for r in rows}) == len(rows)
+    groups = {s: {r['voice'] for r in rows if r['split'] == s and r['voice']} for s in m.ADAPTATION_VOICES}
+    for split, voices in groups.items():
+        assert voices.isdisjoint(m.BASELINE_VOICES)
+        for other in groups:
+            if split != other:
+                assert voices.isdisjoint(groups[other])
+    train = [r for r in rows if r['split'] == 'train' and r['wake_positive']]
+    test = [r for r in rows if r['split'] == 'test' and r['wake_positive']]
+    assert len(test) == 32
+    assert {r['text'] for r in test}.isdisjoint(r['text'] for r in train)
+    assert {r['rate'] for r in test}.isdisjoint(r['rate'] for r in train)
+    assert all(r['synthetic'] for r in rows)
+
+
+def test_training_inputs_cannot_admit_other_splits():
+    m = publication()
+    assert hasattr(m, 'assert_fit_membership'), 'Missing split isolation guard'
+    m.assert_fit_membership([{'split': 'train', 'synthetic': True, 'voice': 'new'}], 'train')
+    for row in ({'split': 'test', 'synthetic': True, 'voice': 'new'},
+                {'split': 'train', 'synthetic': False, 'voice': 'new'}):
+        with pytest.raises(ValueError, match='fit membership'):
+            m.assert_fit_membership([row], 'train')
+
+
 def publication():
     assert importlib.util.find_spec('scripts.iris_wake_publication') is not None, 'Missing publication acceptance helper'
     return importlib.import_module('scripts.iris_wake_publication')
