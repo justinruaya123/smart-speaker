@@ -6,6 +6,7 @@ flags. UI uses the existing combined gateway and explicit private action setting
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -188,6 +189,11 @@ def main(argv=None,*,root=ROOT):
         parser.error('Microphone/speaker indices must be nonnegative')
     if not (args.check or args.wav or args.list_devices or args.mode=='ui' or args.mic is not None):
         parser.error('Choose --check, --wav PATH, --mode ui, --list-devices, or --mic INDEX for silent nonactuating CLI')
+    if not args.list_devices:
+        recipe=args.bundle/'recipe.json'
+        if (not recipe.is_file() or hashlib.sha256(recipe.read_bytes()).hexdigest()!=
+                '020c3deccb0f8cece0f23b8c016b6a63bdd0359321bb06cbd00e091966d46621'):
+            parser.error('inference.py requires the pinned epoch44 bundle; use start.py for explicitly legacy inference')
     settings,runtime_env=resolve_settings(root,args)
     python=Path(sys.executable)
     if not args.no_setup:

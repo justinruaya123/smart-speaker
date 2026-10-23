@@ -13,6 +13,10 @@ def test_default_reproduction_only_verifies_frozen_artifacts(capsys, monkeypatch
     import reproduce
     from scripts import optionb_epoch44
     seen = []
+    from scripts import iris_release
+    def forbidden(*a, **k):
+        pytest.fail('Default verification must never bootstrap or fit')
+    monkeypatch.setattr(iris_release, 'ensure_source_environment', forbidden)
     monkeypatch.setattr(optionb_epoch44, 'main', lambda argv, **kw: seen.append(argv) or 0)
     assert reproduce.main([]) == 0
     assert seen == [['verify']]

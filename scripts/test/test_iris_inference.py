@@ -79,3 +79,11 @@ def test_wake_root_is_an_explicit_companion_override(tmp_path):
     settings, env = resolve_settings(tmp_path,args,environ={})
     output = launch_environment(tmp_path,Path(sys.executable),args,settings,env,token='test')
     assert output['IRIS_WAKE_ROOT'] == str((tmp_path/'wake').resolve())
+
+
+def test_public_inference_cannot_report_check_success_for_legacy_bundle():
+    result=subprocess.run([sys.executable,'-B',str(ROOT/'inference.py'),'--check','--no-setup',
+        '--bundle',str(ROOT/'artifacts/iris')],cwd=ROOT,capture_output=True,text=True,timeout=30)
+    assert result.returncode==2
+    assert 'epoch44' in result.stderr and 'start.py' in result.stderr
+    assert not result.stdout
