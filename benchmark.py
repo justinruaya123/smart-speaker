@@ -6,7 +6,9 @@ import sys
 for _key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','VECLIB_MAXIMUM_THREADS','NUMEXPR_NUM_THREADS'):
     os.environ.setdefault(_key, '1')
 
-from scripts.iris_epoch44_benchmark import benchmark
+def benchmark(*args,**kwargs):
+    from scripts.iris_epoch44_benchmark import benchmark as replay
+    return replay(*args,**kwargs)
 
 
 def main(argv=None):

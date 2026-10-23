@@ -67,8 +67,12 @@ def test_public_benchmark_defaults_to_epoch44_and_requires_explicit_audio(tmp_pa
 
 def test_explicit_legacy_benchmark_remains_accessible(monkeypatch):
     import benchmark as launcher
+    import importlib
     from scripts.runtime import iris_pi_benchmark
     seen = []
     monkeypatch.setattr(iris_pi_benchmark, 'main', lambda argv: seen.append(argv) or 17)
+    # Historical packages do not contain the source-only epoch44 facade.
+    monkeypatch.setitem(sys.modules,'scripts.iris_epoch44_benchmark',None)
+    importlib.reload(launcher)
     assert launcher.main(['--model-choice','legacy','--threads','2']) == 17
     assert seen == [['--threads','2']]

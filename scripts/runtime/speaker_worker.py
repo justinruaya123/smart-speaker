@@ -219,6 +219,9 @@ class AudioService:
         return self.runtime.make_gate(Observed())
 
     def forward(self,event):
+        if self.state=='capture_error' and self.source=='microphone' and self.stream is None and event.get('stage')=='wake':
+            self.emit({'event':'capture_warning','reason':'capture_fault','message':'Wake invalidated by capture failure'})
+            return
         if event.get('status')=='detected':self.set_state('wake_detected')
         elif event.get('status')=='command_ready':self.set_state('command_ready')
         if 'output' in event:
@@ -331,9 +334,10 @@ def runtime_identity(runtime,owner=None):
     if hasattr(runtime,'parameters'):
         result.update(parameters=runtime.parameters,selected_epoch=runtime.selected_epoch)
     wake=getattr(runtime,'wake_root',runtime.root/'wake')
+    vad=getattr(runtime,'vad_root',wake)
     result['companions']={
         'wake':{'model_sha256':digest(wake/'iris.onnx'),'included_in_vcm_parameters':False},
-        'vad':{'model_sha256':digest(wake/'silero-vad.onnx'),'included_in_vcm_parameters':False},
+        'vad':{'model_sha256':digest(vad/'silero-vad.onnx'),'included_in_vcm_parameters':False},
         'owner':{'model_sha256':owner.model_id,'included_in_vcm_parameters':False} if owner else None}
     return result
 
@@ -378,11 +382,13 @@ def main():
     if profile=='owner-protected':
         from scripts.runtime.iris_owner import OwnerBackend
         owner=OwnerBackend(getattr(runtime,'owner_root',args.bundle/'owner'),threads=args.threads)
-    from scripts.runtime.iris_feedback import FeedbackPlayer
-    enabled=(os.environ.get('IRIS_FEEDBACK_ENABLED')=='true' and profile=='owner-protected'
-             and not (args.no_audio or args.wav or args.check))
-    speaker=int(os.environ.get('IRIS_SPEAKER_INDEX','-1')) if enabled else None
-    feedback=FeedbackPlayer(speaker_index=speaker,enabled=enabled)
+    feedback=None
+    if is_epoch44(args.bundle):
+        from scripts.runtime.iris_feedback import FeedbackPlayer
+        enabled=(os.environ.get('IRIS_FEEDBACK_ENABLED')=='true' and profile=='owner-protected'
+                 and not (args.no_audio or args.wav or args.check))
+        speaker=int(os.environ.get('IRIS_SPEAKER_INDEX','-1')) if enabled else None
+        feedback=FeedbackPlayer(speaker_index=speaker,enabled=enabled)
     service=AudioService(runtime,emit,settings,owner=owner,profile=profile,feedback=feedback)
     if args.check:
         service.new_gate()
@@ -396,7 +402,7 @@ def main():
                   'ownership_experimental':owner is not None,
                   'application_config':application_config(runtime,settings),'ui':settings['ui'],
                   **runtime_identity(runtime,owner),
-                  'capabilities':{'feedback':True},'feedback_enabled':feedback.enabled,
+                  'capabilities':{'feedback':feedback is not None},'feedback_enabled':bool(feedback and feedback.enabled),
                   'wake_phrase':'hey iris',
                   'policy_enabled':runtime.policy['enabled'] and getattr(runtime,'mode','demo')=='demo',
                   'threads':args.threads,'session_load_ms':runtime.load_ms})

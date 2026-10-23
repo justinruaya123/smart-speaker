@@ -73,6 +73,7 @@ class Runtime:
         self.root = Path(bundle).resolve()
         self.engine, self.mode, self.profile = engine, mode, profile
         self.wake_root = Path(os.environ.get('IRIS_WAKE_ROOT') or ROOT / 'artifacts/iris/wake').resolve()
+        self.vad_root = ROOT / 'artifacts/iris/wake'
         self.owner_root = ROOT / 'artifacts/iris/owner'
         for name, expected in FROZEN_HASHES.items():
             path = self.root / name

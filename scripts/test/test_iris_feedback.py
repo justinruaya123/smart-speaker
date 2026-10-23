@@ -144,3 +144,12 @@ def test_native_playback_drains_and_closes_its_own_output_before_return(monkeypa
     monkeypatch.setitem(sys.modules,'sounddevice',SimpleNamespace(OutputStream=Stream))
     module.SounddevicePlayback()(np.zeros(800,dtype='float32'),16000,7)
     assert order==['start','write','drained','closed']
+
+
+def test_failed_wake_capture_resume_cannot_claim_listening_again():
+    service,events,order=service_fixture(lambda *a:None)
+    service.stream.start=lambda:(_ for _ in ()).throw(RuntimeError('cannot restart'))
+    service.gate.state='release'
+    service.arm_owner(np.ones(16000)*.1)
+    service.forward({'stage':'wake','status':'detected','wake_phrase':'hey iris'})
+    assert service.stream is None and service.state=='capture_error'

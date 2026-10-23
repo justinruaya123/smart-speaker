@@ -123,3 +123,25 @@ def test_feedback_jsonl_rejects_paths_unknown_utterances_and_surplus_fields_with
     assert all(e['ok'] is False for e in events if e['event']=='reply')
     assert not any(e.get('played') is True for e in events)
     assert not any(e.get('state')=='runtime_error' for e in events)
+
+
+def test_explicit_wake_override_keeps_original_vad_companion(tmp_path):
+    import shutil
+    wake=ROOT/'artifacts/iris/wake'
+    meta=json.loads((wake/'iris.json').read_bytes())
+    target=tmp_path/'wake';target.mkdir()
+    for name in ['iris.json',*meta['files']]:shutil.copyfile(wake/name,target/name)
+    assert not (target/'silero-vad.onnx').exists()
+    result=worker(args=('--check','--wake-root',str(target),'--profile','owner-protected'))
+    assert result.returncode==0,result.stderr
+    assert json.loads(result.stdout)['companions']['vad']['model_sha256']
+
+
+def test_legacy_check_does_not_require_publication_feedback_assets(monkeypatch,capsys):
+    from scripts.runtime import speaker_worker
+    monkeypatch.setitem(sys.modules,'scripts.runtime.iris_feedback',None)
+    monkeypatch.setattr(sys,'argv',['speaker_worker','--bundle',str(ROOT/'artifacts/iris'),
+        '--engine','onnxruntime','--check','--profile','owner-protected','--no-audio'])
+    monkeypatch.setenv('SMART_SPEAKER_ROOT',str(ROOT))
+    speaker_worker.main()
+    assert json.loads(capsys.readouterr().out)['actions_executed'] is False
