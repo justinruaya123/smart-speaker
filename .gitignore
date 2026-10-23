@@ -176,3 +176,19 @@ Desktop.ini
 # Explicitly published original epoch44 comparison model; Iris stays the default.
 !/submission/models/optionb-tiny/model.onnx
 !/submission/checkpoints/optionb-tiny-selected.pt
+
+# Deliberate pre-baked Iris feedback only; recordings/render intermediates stay local.
+!/submission/feedback/wake_yes.mp3
+!/submission/feedback/wake_yes.wav
+!/submission/feedback/wake_hmm.mp3
+!/submission/feedback/wake_hmm.wav
+!/submission/feedback/wake_yeah.mp3
+!/submission/feedback/wake_yeah.wav
+!/submission/feedback/wake_here.mp3
+!/submission/feedback/wake_here.wav
+!/submission/feedback/intent.mp3
+!/submission/feedback/intent.wav
+!/submission/feedback/success.mp3
+!/submission/feedback/success.wav
+!/submission/feedback/failure.mp3
+!/submission/feedback/failure.wav
