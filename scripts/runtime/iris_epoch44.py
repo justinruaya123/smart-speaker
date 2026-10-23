@@ -56,6 +56,9 @@ def decision(logits, policy):
 
 class Runtime:
     decision_authority = 'atomic_command'
+    identity_filename = 'recipe.json'
+    artifact_provenance = 'frozen_published_epoch44'
+    source_path = Path(__file__)
 
     def __init__(self, bundle, threads=1, engine='onnxruntime', mode='demo', profile='benchmark-compatible'):
         if engine != 'onnxruntime':

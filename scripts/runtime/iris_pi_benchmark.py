@@ -343,7 +343,8 @@ def benchmark(bundle, manifest, output, *, threads=1, engine='ncnn', repeats=3, 
         hardware=host, physical_pi_measured=host['physical_pi_measured'], physical_microphone_measured=False,
         actions_enabled=False, profile='benchmark-compatible', owner_gating_enabled=False, wake_tested=False, qualified=False,
         model_scope='Direct VCM session only; wake/VAD, owner sessions, UI and action providers are excluded.',
-        bundle=str(bundle), bundle_sha256=digest(bundle/'bundle.json'), model_sha256=runtime.meta['files']['model.onnx'],
+        bundle=str(bundle), bundle_identity_file=getattr(runtime,'identity_filename','bundle.json'),
+        bundle_sha256=digest(bundle/getattr(runtime,'identity_filename','bundle.json')), model_sha256=runtime.meta['files']['model.onnx'],
         engine_model_sha256=runtime.engine_model_sha256, engine=engine, threads=threads, sample_rate=SAMPLE_RATE,
         manifest=str(manifest), manifest_sha256=manifest_hash, preflight_ms=preflight_ms,
         repeats=repeats, source_n=len(sources), excluded_reference_n=sum(not row['scored'] for row in sources),
@@ -370,7 +371,10 @@ def benchmark(bundle, manifest, output, *, threads=1, engine='ncnn', repeats=3, 
             ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','VECLIB_MAXIMUM_THREADS','NUMEXPR_NUM_THREADS')},
         thread_scope='--threads controls the inference engine; unset frontend BLAS variables mean library defaults.',
         benchmark_source_sha256=digest(Path(__file__)),
-        runtime_source_sha256=digest(Path(__file__).with_name('mvp_static.py')))
+        runtime_source_sha256=digest(getattr(runtime,'source_path',Path(__file__).with_name('mvp_static.py'))))
+    if hasattr(runtime,'artifact_provenance'):
+        result.update(artifact_provenance=runtime.artifact_provenance,
+                      parameters=runtime.parameters,selected_epoch=runtime.selected_epoch)
     from importlib.metadata import PackageNotFoundError, version
     for package in ('numpy', 'soundfile', engine):
         try:
