@@ -1,0 +1,45 @@
+{
+  "passed": false,
+  "delegation": "deleg_0470f39a",
+  "scope": "Independent review of the delivered exact-fit-gated portable replay stage",
+  "security_concerns": [],
+  "logic_errors": [
+    {
+      "id": "R1",
+      "priority": "P2",
+      "location": "scripts/submission/optionb_replay.py:456-460",
+      "finding": "Established frozen scientific reader digests can be overwritten by current hashes after protocol sealing.",
+      "reproduction": "A software probe appended a comment to METRIC_HELPER immediately after protocol sealing. Replay returned verified with conflicting helper hashes in the release protocol and final replay receipt.",
+      "required_fix": "Preserve established hashes, reject conflicting binding merges, and validate original release/preparation bindings before loading helpers."
+    },
+    {
+      "id": "R2",
+      "priority": "P2",
+      "location": "scripts/submission/optionb_replay.py:648-670",
+      "finding": "Stored verification accepts contradictory result/provenance metadata or a missing evidence set when receipt hashes are recomputed.",
+      "reproduction": "Software fixtures accepted selected_epoch=0, parameters=1, policy={}, qualified/installed=true and wrong prediction/selection hashes after updating receipt bindings. Changed listening/completeness/output flags also passed. Deleting comparison.json, staged selection, data-freeze, protocol and evaluator log with corresponding bindings still passed.",
+      "required_fix": "Require a fixed nonempty artifact set and reapply the fresh replay's full result/provenance contracts."
+    },
+    {
+      "id": "R3",
+      "priority": "P2",
+      "location": "scripts/submission/optionb_replay.py:245-260",
+      "finding": "Audio containment checks are skipped when reusing an existing preparation receipt.",
+      "reproduction": "Replacing run/audio with an escaping directory symlink after preparation still allowed verified replay with synthetic WAVs, the unchanged WAV/PCM reader and software runtime. WAV/PCM identity checks worked but run containment did not.",
+      "required_fix": "Repeat no-PCM directory and per-file audio containment/link checks on reuse before evaluation."
+    }
+  ],
+  "suggestions": ["Focused negative fixtures suffice; no environment framework or numerical retuning is needed."],
+  "verified_delivered_tests": {"passed": 84, "seconds": 29.43},
+  "reviewed_files": {
+    "scripts/submission/optionb_replay.py": "023cd41a59969a33caa367a5eb9e60c507c169a3bac1d9807959b4a3f84f4db7",
+    "scripts/test/test_optionb_replay.py": "68f83181055c382cd8079eecb847e7d055f7c7635c55e78fe0a3f42d00071c98"
+  },
+  "evidence_files_rehashed": 37,
+  "actual_corpus_or_model_inference": false,
+  "repository_or_git_changes_by_reviewer": false,
+  "strict_exact_fit_gate_is_intentional": true,
+  "actions_enabled": false,
+  "qualified": false,
+  "installed": false
+}

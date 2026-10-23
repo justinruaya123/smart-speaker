@@ -1,0 +1,321 @@
+{
+  "scope": "R1-R3 only; software fixtures, synthetic WAVs, unchanged WAV/PCM reader and software runtime; not corpus/model evidence",
+  "root": "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh",
+  "evidence_directory": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1",
+  "owned_files": {
+    "scripts/submission/optionb_replay.py": {
+      "before_lines": 706,
+      "after_lines": 791,
+      "added": 98,
+      "removed": 13,
+      "before_sha256": "023cd41a59969a33caa367a5eb9e60c507c169a3bac1d9807959b4a3f84f4db7",
+      "after_sha256": "65c9835facd95f97b8b73aa3753f61efcf07fb7e6b523a7d838827e2dd145e84"
+    },
+    "scripts/test/test_optionb_replay.py": {
+      "before_lines": 765,
+      "after_lines": 981,
+      "added": 222,
+      "removed": 6,
+      "before_sha256": "68f83181055c382cd8079eecb847e7d055f7c7635c55e78fe0a3f42d00071c98",
+      "after_sha256": "c17739f570892c491c3f01292dab9c4b22467c9e71fc302610399ee30c82d58e"
+    }
+  },
+  "preserved_baseline_cases": 84,
+  "new_cases": 43,
+  "protected_file_count": 153,
+  "protected_changes": {},
+  "snapshot_files_unchanged": 15,
+  "snapshot_source_bindings_unchanged": 10,
+  "correction_diff": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\minimal-correction.diff",
+  "correction_diff_sha256": "e0c56b674010aeee608ce71cd8cd79b949e81629b48d4511dc9c8bdfd7f7ec1c",
+  "commands_and_results": {
+    "baseline-84": {
+      "command": [
+        "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "scripts/test/test_optionb_replay.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-baseline-84",
+        "--junitxml",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\baseline-84.xml"
+      ],
+      "cwd": "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh",
+      "exit_code": 0,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\baseline-84.log",
+      "log_sha256": "71bc16e361796e2e114d83d3aa34e1a69f8674a9a9b86f8dac120b4f4d108d53",
+      "xml": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\baseline-84.xml",
+      "basetemp": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-baseline-84",
+      "test_results": {
+        "total": 84,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 84
+      },
+      "xml_sha256": "7208689a9f89902d9bf4d53b4bd30a4f60509b28cff6e30c77b8a82678800681"
+    },
+    "r1-red": {
+      "command": [
+        "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "scripts/test/test_optionb_replay.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-red",
+        "--junitxml",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r1-red.xml",
+        "-k",
+        "sealed_scientific_reader"
+      ],
+      "cwd": "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh",
+      "exit_code": 1,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r1-red.log",
+      "log_sha256": "01215ffb46739176f22992226b6df13f50c7862644dc9ffe5a53352561836e63",
+      "xml": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r1-red.xml",
+      "basetemp": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-red",
+      "test_results": {
+        "total": 2,
+        "failed": 2,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 0
+      },
+      "xml_sha256": "3b1f4e9086cf8fe5386546f1e3cabd5ab898f30ab65474c51014f38090939d14"
+    },
+    "r1-green": {
+      "command": [
+        "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "scripts/test/test_optionb_replay.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-green",
+        "--junitxml",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r1-green.xml",
+        "-k",
+        "sealed_scientific_reader"
+      ],
+      "cwd": "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh",
+      "exit_code": 0,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r1-green.log",
+      "log_sha256": "3ef37a6b613877a5001f75541d2da3d2c07523132a9cd97611e3909abb036e0b",
+      "xml": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r1-green.xml",
+      "basetemp": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-green",
+      "test_results": {
+        "total": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 2
+      },
+      "xml_sha256": "cc5bdd27d7b9294bc59927d661e1b7a69b2b855de24bd3bb797d01f40fe035b5"
+    },
+    "r2-red": {
+      "command": [
+        "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "scripts/test/test_optionb_replay.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r2-red",
+        "--junitxml",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r2-red.xml",
+        "-k",
+        "stored_replay_",
+        "--tb=short"
+      ],
+      "cwd": "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh",
+      "exit_code": 1,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r2-red.log",
+      "log_sha256": "8d92992ceee2ccaa90295fb43fbb47c85fb48a94cd79f0c133fb6a0879ad7e01",
+      "xml": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r2-red.xml",
+      "basetemp": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r2-red",
+      "test_results": {
+        "total": 34,
+        "failed": 34,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 0
+      },
+      "xml_sha256": "d87cde4c335245f251d8a6b72466b9257f706abfeaf37df09f82f9b64af29186"
+    },
+    "r2-green": {
+      "command": [
+        "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "scripts/test/test_optionb_replay.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r2-green",
+        "--junitxml",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r2-green.xml",
+        "-k",
+        "stored_replay_ or readonly_verification",
+        "--tb=short"
+      ],
+      "cwd": "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh",
+      "exit_code": 0,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r2-green.log",
+      "log_sha256": "df793750746f51c6d070e98be3906860f326357a00e076b10ff52105c0eaf794",
+      "xml": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r2-green.xml",
+      "basetemp": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r2-green",
+      "test_results": {
+        "total": 35,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 35
+      },
+      "xml_sha256": "40dd84c946c70ba2dc216b6ca623585f75f79a1f25de2cd5a755faa4c74d9efc"
+    },
+    "r3-red": {
+      "command": [
+        "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "scripts/test/test_optionb_replay.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r3-red",
+        "--junitxml",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r3-red.xml",
+        "-k",
+        "reused_preparation_rejects_audio_links or prepared_synthetic_wavs",
+        "--tb=short"
+      ],
+      "cwd": "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh",
+      "exit_code": 1,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r3-red.log",
+      "log_sha256": "646d59b76d954f52c854c928c00f24b970734a102faeea5c367a597e8f25dcfc",
+      "xml": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r3-red.xml",
+      "basetemp": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r3-red",
+      "test_results": {
+        "total": 7,
+        "failed": 6,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 1
+      },
+      "xml_sha256": "39b82ca593abf6c674509221d20f2cf9264e23cf0fef334aa1fff1dd964b8476"
+    },
+    "r3-red-deterministic": {
+      "command": [
+        "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "scripts/test/test_optionb_replay.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r3-red-deterministic",
+        "--junitxml",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r3-red-deterministic.xml",
+        "-k",
+        "reused_preparation_rejects_audio_links or prepared_synthetic_wavs",
+        "--tb=short"
+      ],
+      "cwd": "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh",
+      "exit_code": 1,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r3-red-deterministic.log",
+      "log_sha256": "2a209757dd9fad23135a93cd4b8623ebf01adcaa341183c82f5eb4082b1066c3",
+      "xml": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r3-red-deterministic.xml",
+      "basetemp": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r3-red-deterministic",
+      "test_results": {
+        "total": 7,
+        "failed": 6,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 1
+      },
+      "xml_sha256": "53f735d7834f039743be4725c2d8b460d1d3e24848fc6d1b8eee9b5a6491a29f"
+    },
+    "r3-green": {
+      "command": [
+        "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "scripts/test/test_optionb_replay.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r3-green",
+        "--junitxml",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r3-green.xml",
+        "-k",
+        "reused_preparation_rejects_audio_links or prepared_synthetic_wavs",
+        "--tb=short"
+      ],
+      "cwd": "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh",
+      "exit_code": 0,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r3-green.log",
+      "log_sha256": "8648c0229e43ed12cd6d4d7dc2066fbc274b19982db593aa1f3040c2dd1cbb66",
+      "xml": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\r3-green.xml",
+      "basetemp": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r3-green",
+      "test_results": {
+        "total": 7,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 7
+      },
+      "xml_sha256": "a9993e73e96d84aca7df30c55f20462c25a90aa40fb96ff71165b2d0a5808cc3"
+    },
+    "full-owned-127": {
+      "command": [
+        "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "scripts/test/test_optionb_replay.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-full-owned-127",
+        "--junitxml",
+        "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\full-owned-127.xml",
+        "--tb=short"
+      ],
+      "cwd": "D:\\School\\AI231\\.worktrees\\me2\\smart-speaker-fresh",
+      "exit_code": 0,
+      "log": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\full-owned-127.log",
+      "log_sha256": "c9787d4f6bf0ebc1f16060af7b381583483b03906f2188610785fa302d11cc28",
+      "xml": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-r1-r3-v1\\full-owned-127.xml",
+      "basetemp": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\optionb-replay-fix-full-owned-127",
+      "test_results": {
+        "total": 127,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 127
+      },
+      "xml_sha256": "56b089d292586761a640aaa72a6d9dba0ea38478ad55187e456ea8c145ae2b02"
+    }
+  },
+  "note": "Initial r3-red also preserved two WAV-header fixture setup failures; deterministic PCM16 replacement was rerun red before the R3 production fix.",
+  "actual_corpus_pcm_or_model_inference": false,
+  "install_or_download": false,
+  "git_access": false,
+  "actions_enabled": false,
+  "qualified": false,
+  "installed": false
+}

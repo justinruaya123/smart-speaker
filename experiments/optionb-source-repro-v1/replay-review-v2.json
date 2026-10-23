@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "delegation": "deleg_d2f0bb67",
+  "scope": "Independent bounded closure of replay verification R1-R3",
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [],
+  "summary": "The exact hash-verified correction closes original R1-R3. Independently reproduced42 genuine baseline failures (R1:2,R2:34,R3:6), all for missing rejection rather than fixture errors; both positive controls passed. Corrected suite127 passed, zero failures/errors/skips. Verified pre-load digest validation, complete stored evidence/provenance contracts and reused internal/external directory symlink/junction/per-file link rejection before PCM access. All153 protected files unchanged, including15 snapshot assets and10 sources. Strict fit/numerical gates remain unchanged. No forced success or environment framework, repository/Git changes, downloads or corpus/model inference.",
+  "reviewed_correction_sha256": "e0c56b674010aeee608ce71cd8cd79b949e81629b48d4511dc9c8bdfd7f7ec1c",
+  "reviewed_files": {
+    "scripts/submission/optionb_replay.py": "65c9835facd95f97b8b73aa3753f61efcf07fb7e6b523a7d838827e2dd145e84",
+    "scripts/test/test_optionb_replay.py": "c17739f570892c491c3f01292dab9c4b22467c9e71fc302610399ee30c82d58e"
+  },
+  "independent_tests": {"original_missing_rejection_failures":42,"positive_controls":2,"corrected_passed":127,"failed":0,"errors":0,"skipped":0},
+  "preserved_failed_review": "experiments/optionb-source-repro-v1/replay-review-v1.json",
+  "preserved_failed_sources": "experiments/optionb-source-repro-v1/replay-before-review-fix-v1/manifest.json",
+  "parent_integrated_CUDA_tests_passed":463,
+  "parent_integrated_CPU_tests_passed":458,
+  "parent_integrated_CPU_CUDA_only_skips":5,
+  "actual_corpus_inference": false,
+  "full_GPU_training_comparison": "completed_but_not_exact; no successful fit lock; dependent corpus replay/native/PC still blocked",
+  "actions_enabled": false,
+  "qualified": false,
+  "installed": false,
+  "physical_pi": false
+}

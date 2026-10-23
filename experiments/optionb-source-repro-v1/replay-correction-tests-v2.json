@@ -1,0 +1,26 @@
+{
+  "format": "optionb-replay-correction-software-v2",
+  "closed_by_third_agent": [
+    "R1",
+    "R2",
+    "R3"
+  ],
+  "independent_closure": "passed_experiments/optionb-source-repro-v1/replay-review-v2.json",
+  "parent_test_results": {
+    "tests": 127,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "parent_seconds": 78.29,
+  "source_hashes": {
+    "scripts/submission/optionb_replay.py": "65c9835facd95f97b8b73aa3753f61efcf07fb7e6b523a7d838827e2dd145e84",
+    "scripts/test/test_optionb_replay.py": "c17739f570892c491c3f01292dab9c4b22467c9e71fc302610399ee30c82d58e"
+  },
+  "evidence_index_sha256": "1ad3dbc1b19ea37880b45851ddfd7d3b3fd2029c398722b0b5a568f810b4a83a",
+  "minimal_correction_sha256": "e0c56b674010aeee608ce71cd8cd79b949e81629b48d4511dc9c8bdfd7f7ec1c",
+  "actual_corpus_inference": false,
+  "actions_enabled": false,
+  "qualified": false,
+  "installed": false
+}

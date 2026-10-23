@@ -1,4 +1,8 @@
 {
+  "speaker.optionb_replay": {
+    "path": "submission/optionb_replay.py",
+    "runtime": false
+  },
   "speaker.optionb_tiny_accelerated": {
     "path": "train/speaker_optionb_tiny_accelerated.py",
     "runtime": false

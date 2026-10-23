@@ -1,0 +1,765 @@
+"""Software-only fixtures for portable release/PC protocol sealing."""
+import gzip
+import hashlib
+import importlib
+import importlib.util
+import json
+from typing import Any
+import pytest
+
+
+def protocol_fixture(tmp_path, monkeypatch):
+    from scripts.test.speaker_demo_suite import write_new
+    assert importlib.util.find_spec('scripts.submission.optionb_replay') is not None, (
+        'Missing portable protocol/replay stage')
+    module = importlib.import_module('scripts.submission.optionb_replay')
+    monkeypatch.setattr(module, 'REPLAY_SOURCES', ())
+    run = '.cache/run-01'
+    snapshot: dict[str, Any] = dict(files={}, source_bindings={}, views={}, parameters=258912, selected_epoch=44,
+                    bundle='submission/models/optionb-tiny', checkpoint='submission/checkpoints/fixture.pt',
+                    architecture={'fixture': True}, policy=dict(enabled=True, min_probability=.5, min_margin=.1))
+
+    def freeze(name, rows):
+        path = tmp_path / ('inputs/' + name + '.jsonl.gz')
+        path.parent.mkdir(exist_ok=True)
+        path.write_bytes(gzip.compress(('\n'.join(json.dumps(row) for row in rows) + '\n').encode(), mtime=0))
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        snapshot['files'][path.relative_to(tmp_path).as_posix()] = dict(bytes=path.stat().st_size, sha256=digest)
+        return dict(path=path.relative_to(tmp_path).as_posix(), rows=len(rows), sha256=digest)
+
+    references, predictions = [], []
+    for split in ('train', 'dev', 'calibration', 'test', 'holdout'):
+        row = dict(id='software-fixture/' + split, split=split, kind='human', expected=None,
+                   class_index=0, scope='original_unknown', metric_eligible=True,
+                   sha256=hashlib.sha256(('wav/' + split).encode()).hexdigest(),
+                   pcm_sha256=hashlib.sha256(('pcm/' + split).encode()).hexdigest(),
+                   location={'fixture': split, 'sha256': hashlib.sha256(('shard/' + split).encode()).hexdigest()})
+        snapshot['views'][split] = {**freeze(split, [row]), 'kinds': {'human': 1}}
+        for role in ('prepared', 'canonical'):
+            write_new(tmp_path / run / role / (split + '.jsonl'),
+                      [{**row, 'audio': f"{run}/audio/{row['sha256']}.wav"}], jsonl=True)
+        if split in ('test', 'holdout'):
+            references.append(row)
+            predictions.append(dict(id=row['id'], parent_id=row['id'], split=split, kind='human',
+                                    variant='original', class_index=0, metric_eligible=True))
+    snapshot['references'] = freeze('references', references)
+    snapshot['golden_evaluation_predictions'] = freeze('predictions', predictions)
+    for name in ('model.onnx', 'normalization.json', 'policy.json', 'commands.json', 'recipe.json'):
+        path = tmp_path / snapshot['bundle'] / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(b'SOFTWARE FIXTURE, NOT AN ONNX MODEL OR SCIENTIFIC RESULT\n')
+        snapshot['files'][path.relative_to(tmp_path).as_posix()] = dict(bytes=path.stat().st_size,
+                                    sha256=hashlib.sha256(path.read_bytes()).hexdigest())
+    checkpoint = tmp_path / snapshot['checkpoint']
+    checkpoint.parent.mkdir(parents=True)
+    checkpoint.write_bytes(b'SOFTWARE FIXTURE, NOT A CHECKPOINT\n')
+    snapshot['files'][snapshot['checkpoint']] = dict(bytes=checkpoint.stat().st_size,
+                                    sha256=hashlib.sha256(checkpoint.read_bytes()).hexdigest())
+    path = tmp_path / 'submission/optionb-tiny/snapshot.json'
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(snapshot), encoding='utf8')
+    helper = tmp_path / module.METRIC_HELPER
+    helper.parent.mkdir(parents=True)
+    helper.write_bytes(b'# SOFTWARE FIXTURE; no acoustic metrics executed\n')
+    return module, snapshot, run
+
+
+def test_portable_protocols_bind_independent_frozen_views(tmp_path, monkeypatch):
+    module, snapshot, run, _ = selection_fixture(tmp_path, monkeypatch)
+    result = module.write_replay_protocols(tmp_path, run, source_commit='software-fixture')
+    release = json.loads((tmp_path / result['release_protocol']).read_text())
+    pc = json.loads((tmp_path / result['pc_protocol']).read_text())
+    assert release['bundle'] == snapshot['bundle']
+    assert release['canonical_manifests'] != release['manifest_files']
+    assert set(release['manifest_files']) == set(snapshot['views'])
+    assert release['canonical_human_counts'] == {'test': 1, 'holdout': 1}
+    assert pc['threads'] == 1 and pc['repeats'] == 3 and pc['warmup_calls'] == 10
+    assert pc['bindings'][result['release_protocol']] == hashlib.sha256((tmp_path / result['release_protocol']).read_bytes()).hexdigest()
+    assert all(path in release['bindings'] for path in snapshot['files'])
+
+
+def test_protocols_require_a_named_cache_run(tmp_path, monkeypatch):
+    module, _, _ = protocol_fixture(tmp_path, monkeypatch)
+    with pytest.raises(ValueError, match='named run'):
+        module.write_replay_protocols(tmp_path, '.cache', source_commit='software-fixture')
+
+
+def test_protocol_writer_never_writes_through_an_escaping_locks_link(tmp_path, monkeypatch):
+    module, _, run = protocol_fixture(tmp_path, monkeypatch)
+    outside = tmp_path.parent / (tmp_path.name + '-outside')
+    outside.mkdir()
+    try:
+        (tmp_path / run / 'locks').symlink_to(outside, target_is_directory=True)
+    except OSError:
+        pytest.skip('Directory symlinks unavailable to this test account')
+    with pytest.raises(ValueError):
+        module.write_replay_protocols(tmp_path, run, source_commit='software-fixture')
+    assert list(outside.iterdir()) == [], 'No partial lock/metadata writes may escape the selected run'
+
+
+def selection_fixture(tmp_path, monkeypatch):
+    """Hash-bound software receipt; never fitting or acoustic evidence."""
+    from scripts.test.speaker_demo_suite import write_new, file_digest
+    module, snapshot, run = protocol_fixture(tmp_path, monkeypatch)
+    snapshot.update(training=dict(human_epochs=6, mixed_epochs=42, steps_per_epoch=96),
+                    auxiliary_source={'software_fixture': True},
+                    software_fixture_not_corpus_evidence=True)
+    snapshot_path = tmp_path / module.SNAPSHOT
+    snapshot_path.write_text(json.dumps(snapshot), encoding='utf8')
+    fit = tmp_path / run / 'fit'
+    comparison = dict(exact=True, protected_inputs_unchanged=True,
+        snapshot_sha256=file_digest(snapshot_path), optimizer_steps=4608,
+        original_training_config=snapshot['training'],
+        heldout_pcm_decoded_or_inferred_before_selection=False,
+        test_holdout_used_for_selection=False, actions_enabled=False, qualified=False, installed=False,
+        training=dict(exact=True, checks={'software_fixture': True}),
+        export=dict(exact=True, graph_bytes_equal=True, policy_equal=True,
+                    graph_sha256=snapshot['files'][snapshot['bundle'] + '/model.onnx']['sha256'],
+                    selected_policy=snapshot['policy'], cached_scores_reused=False))
+    write_new(fit / 'input-comparison.json', dict(exact=True))
+    comparison['input_comparison_sha256'] = file_digest(fit / 'input-comparison.json')
+    write_new(fit / 'fit-comparison.json', comparison)
+    for name in ('scripts/submission/optionb_fit.py', 'scripts/submission/optionb_reproduce.py'):
+        path = tmp_path / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text('# SOFTWARE FIXTURE\n')
+    bindings = {name: file_digest(tmp_path / name) for name in
+                (module.SNAPSHOT, *snapshot['files'], *snapshot['source_bindings'],
+                 'scripts/submission/optionb_fit.py', 'scripts/submission/optionb_reproduce.py',
+                 run + '/fit/input-comparison.json', run + '/fit/fit-comparison.json')}
+    lock: dict[str, Any] = dict(format='optionb-source-fit-selection-before-test-v1', status='selection_locked',
+        evidence_scope='software_fixture_not_corpus_reproduction', bindings=bindings,
+        snapshot_sha256=file_digest(snapshot_path), selected_epoch=44, policy=snapshot['policy'],
+        parameters=snapshot['parameters'], optimizer_steps=4608, fitting_splits=['train'],
+        checkpoint_selected_on='dev', selected_on=['dev', 'calibration'],
+        normalization_split='original_human_train_only',
+        fit_comparison=run + '/fit/fit-comparison.json',
+        test_holdout_used_for_selection=False, cached_scores_reused=False,
+        heldout_pcm_decoded_or_inferred_before_selection=False, exposed_regression_not_blind=True,
+        installed_defaults_changed=False, actions_enabled=False, qualified=False, installed=False)
+    write_new(fit / 'selection-before-test.json', lock)
+    return module, snapshot, run, lock
+
+
+def test_successful_exact_fit_selection_is_independently_bound(tmp_path, monkeypatch):
+    module, snapshot, run, lock = selection_fixture(tmp_path, monkeypatch)
+    assert hasattr(module, 'validate_selection'), 'Missing exact-fit gate before evaluation'
+    checked = module.validate_selection(tmp_path, run)
+    assert checked['lock'] == lock and checked['snapshot'] == snapshot
+    name = run + '/fit/selection-before-test.json'
+    assert checked['bindings'][name] == hashlib.sha256((tmp_path / name).read_bytes()).hexdigest()
+    assert set(lock['bindings']) <= checked['bindings'].keys()
+
+
+@pytest.mark.parametrize('field,value', [
+    ('format', 'legacy-policy-only'), ('status', 'failed'), ('selected_epoch', 43),
+    ('parameters', True), ('optimizer_steps', 1), ('policy', {}),
+    ('fitting_splits', ['train', 'test']), ('checkpoint_selected_on', 'test'),
+    ('selected_on', ['test']), ('normalization_split', 'all_rows'),
+    ('fit_comparison', '.cache/elsewhere/fit-comparison.json'),
+    ('test_holdout_used_for_selection', True), ('cached_scores_reused', True),
+    ('heldout_pcm_decoded_or_inferred_before_selection', True),
+    ('exposed_regression_not_blind', False), ('actions_enabled', True),
+    ('qualified', True), ('installed', True), ('installed_defaults_changed', True),
+    ('snapshot_sha256', '0' * 64), ('evidence_scope', 'fresh_blind_qualification'),
+])
+def test_gate_rejects_nonexact_or_leaky_selection(tmp_path, monkeypatch, field, value):
+    module, _, run, lock = selection_fixture(tmp_path, monkeypatch)
+    lock[field] = value
+    (tmp_path / run / 'fit/selection-before-test.json').write_text(json.dumps(lock))
+    with pytest.raises(ValueError, match='selection|Exact-fit'):
+        module.validate_selection(tmp_path, run)
+
+
+@pytest.mark.parametrize('attack', ['comparison', 'training', 'export', 'checks', 'input', 'missing_binding'])
+def test_gate_rejects_failed_or_unbound_fit_evidence(tmp_path, monkeypatch, attack):
+    from scripts.test.speaker_demo_suite import file_digest
+    module, _, run, lock = selection_fixture(tmp_path, monkeypatch)
+    name = run + '/fit/fit-comparison.json'
+    comparison = json.loads((tmp_path / name).read_text())
+    if attack == 'comparison':
+        comparison['exact'] = False
+    elif attack in ('training', 'export'):
+        comparison[attack]['exact'] = False
+    elif attack == 'checks':
+        comparison['training']['checks']['software_fixture'] = False
+    elif attack == 'input':
+        path = tmp_path / run / 'fit/input-comparison.json'
+        path.write_text(json.dumps(dict(exact=False)))
+        lock['bindings'][path.relative_to(tmp_path).as_posix()] = file_digest(path)
+        comparison['input_comparison_sha256'] = file_digest(path)
+    else:
+        del lock['bindings'][name]
+    (tmp_path / name).write_text(json.dumps(comparison))
+    if attack != 'missing_binding':
+        lock['bindings'][name] = file_digest(tmp_path / name)
+    (tmp_path / run / 'fit/selection-before-test.json').write_text(json.dumps(lock))
+    with pytest.raises(ValueError, match='Exact-fit|selection'):
+        module.validate_selection(tmp_path, run)
+
+
+def test_portable_protocols_reuse_exact_bytes_and_bind_current_native_closure(tmp_path, monkeypatch):
+    module, _, run, _ = selection_fixture(tmp_path, monkeypatch)
+    legacy = 'experiments/speaker-optionb-release-v1/protocol-v3.json'
+    native = ('SpeakerUI/scripts/optionb-parity.mjs',
+              'SpeakerUI/dist-server/server/inference/python-runtime.js',
+              'SpeakerUI/src/ambient/runtime-events.js')
+    for name in native:
+        path = tmp_path / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text('// CURRENT SOFTWARE FIXTURE, not predecessor bytes\n')
+    path = tmp_path / legacy
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(dict(bindings={name: '0' * 64 for name in native})))
+    monkeypatch.setattr(module, 'REPLAY_SOURCES', (legacy,))
+    first = module.write_replay_protocols(tmp_path, run, source_commit='software-fixture')
+    image = (tmp_path / first['release_protocol']).read_bytes()
+    release = json.loads(image)
+    assert run + '/fit/selection-before-test.json' in release['bindings'], 'Selection must be sealed'
+    assert set(native) <= release['bindings'].keys(), 'Actual native/UI consumed paths must be bound'
+    second = module.write_replay_protocols(tmp_path, run, source_commit='software-fixture', reuse=True)
+    assert second == first and (tmp_path / first['release_protocol']).read_bytes() == image
+    (tmp_path / native[0]).write_text('// drift after sealing\n')
+    with pytest.raises(ValueError, match='identity|changed|binding'):
+        module.write_replay_protocols(tmp_path, run, source_commit='software-fixture', reuse=True)
+
+
+@pytest.mark.parametrize('attack', ['empty', 'duplicate', 'substitute'])
+def test_protocol_membership_is_independent_of_both_mutable_views(tmp_path, monkeypatch, attack):
+    module, _, run, _ = selection_fixture(tmp_path, monkeypatch)
+    for role in ('prepared', 'canonical'):
+        path = tmp_path / run / role / 'test.jsonl'
+        row = json.loads(path.read_text())
+        values = [] if attack == 'empty' else [row, row] if attack == 'duplicate' else [{**row, 'id': 'substitute'}]
+        path.write_text('\n'.join(json.dumps(r) for r in values) + '\n')
+    with pytest.raises(ValueError, match='membership'):
+        module.write_replay_protocols(tmp_path, run, source_commit='software-fixture')
+
+
+def test_reserved_preparation_is_after_selection_and_calls_only_reviewed_eval_splits(tmp_path, monkeypatch):
+    from scripts.submission import optionb_reproduce as source
+    from scripts.test.speaker_demo_suite import read_json
+    module, _, run, _ = selection_fixture(tmp_path, monkeypatch)
+    for role in ('prepared', 'canonical'):
+        for split in ('test', 'holdout'):
+            (tmp_path / run / role / (split + '.jsonl')).unlink()
+    called = []
+
+    def software_hydrate(root, rows, downloads, audio, auxiliary, **kwargs):
+        # No WAV bytes, corpus PCM, network or feature extraction in this fixture.
+        gate = read_json(tmp_path / run / 'evaluation-selection-gate.json')
+        assert gate['heldout_pcm_decoded_or_inferred_before_selection'] is False
+        assert gate['bindings'][run + '/fit/selection-before-test.json']
+        assert {row['split'] for row in rows} == {'test', 'holdout'}
+        called.append([row['id'] for row in rows])
+        return [{**row, 'audio': f"{audio}/{row['sha256']}.wav"} for row in rows]
+
+    monkeypatch.setattr(source, 'hydrate_rows', software_hydrate)
+    assert hasattr(module, 'prepare_evaluation'), 'Missing selection-gated reserved source preparation'
+    result = module.prepare_evaluation(tmp_path, run)
+    assert len(called) == 1 and result['counts'] == {'test': 1, 'holdout': 1}
+    assert result['cached_scores_reused'] is False
+    assert module.prepare_evaluation(tmp_path, run) == result and len(called) == 1
+
+
+def test_missing_selection_cannot_prepare_any_pcm(tmp_path, monkeypatch):
+    from scripts.submission import optionb_reproduce as source
+    module, _, run = protocol_fixture(tmp_path, monkeypatch)
+    monkeypatch.setattr(source, 'prepare_source', lambda *a, **kw: pytest.fail('PCM preparation before gate'))
+    assert hasattr(module, 'prepare_evaluation'), 'Missing selection-gated reserved source preparation'
+    with pytest.raises(FileNotFoundError):
+        module.prepare_evaluation(tmp_path, run)
+
+
+def prediction_fixture(tmp_path, monkeypatch):
+    """In-memory waveforms and canned logits: software only, NOT corpus evidence."""
+    from copy import deepcopy
+    import numpy as np
+    from scripts.runtime.speaker_optionb_tiny import decision
+    from scripts.submission.common import ROOT
+    from scripts.test.speaker_demo_suite import pcm_digest
+    module, snapshot, run, lock = selection_fixture(tmp_path, monkeypatch)
+    pcms, goldens, references = {}, [], []
+    for split in ('test', 'holdout'):
+        path = tmp_path / snapshot['views'][split]['path']
+        row = json.loads(gzip.decompress(path.read_bytes()))
+        row['optionb_command'] = None
+        payload = gzip.compress((json.dumps(row) + '\n').encode(), mtime=0)
+        path.write_bytes(payload)
+        digest = hashlib.sha256(payload).hexdigest()
+        snapshot['files'][path.relative_to(tmp_path).as_posix()].update(bytes=len(payload), sha256=digest)
+        snapshot['views'][split]['sha256'] = digest
+        pcm = np.full(800 if split == 'test' else 1200, .1, dtype=np.float32)
+        pcms[row['id']] = pcm
+        row['pcm_sha256'] = pcm_digest(pcm)
+        # Freeze again with the synthetic waveform identity (there are no WAV files).
+        payload = gzip.compress((json.dumps(row) + '\n').encode(), mtime=0)
+        path.write_bytes(payload)
+        digest = hashlib.sha256(payload).hexdigest()
+        snapshot['files'][path.relative_to(tmp_path).as_posix()].update(bytes=len(payload), sha256=digest)
+        snapshot['views'][split]['sha256'] = digest
+        for role in ('prepared', 'canonical'):
+            (tmp_path / run / role / (split + '.jsonl')).write_text(json.dumps({**row, 'audio': f"{run}/audio/{row['sha256']}.wav"}) + '\n')
+        references.append({**row, 'reference_text': 'software non-command fixture'})
+        variants = ('original',) if split == 'test' else ('original', 'silence_prefix_1s', 'silence_suffix_1s', 'silence_both_1s')
+        for variant in variants:
+            actual = pcm
+            if variant in ('silence_prefix_1s', 'silence_both_1s'):
+                actual = np.concatenate([np.zeros(16000, dtype=np.float32), actual])
+            if variant in ('silence_suffix_1s', 'silence_both_1s'):
+                actual = np.concatenate([actual, np.zeros(16000, dtype=np.float32)])
+            logits = [-4.] * 32
+            logits[1] = 4.
+            event = decision(logits, snapshot['policy'])
+            event.update(logits=logits, latency_ms=0.)
+            goldens.append(dict(id=row['id'] if variant == 'original' else row['id'] + '::' + variant,
+                parent_id=row['id'], split=split, kind=row['kind'], variant=variant,
+                metric_eligible=True, class_index=0, expected=None, optionb_command=None, scope=row['scope'],
+                source_audio_sha256=row['sha256'], source_pcm_sha256=row['pcm_sha256'],
+                actual_input_pcm_sha256=pcm_digest(actual), raw_index=1, accepted_index=1, fixed_index=1,
+                latency_ms=0., event=event))
+    for record, values in ((snapshot['golden_evaluation_predictions'], goldens), (snapshot['references'], references)):
+        path = tmp_path / record['path']
+        payload = gzip.compress(('\n'.join(json.dumps(r) for r in values) + '\n').encode(), mtime=0)
+        path.write_bytes(payload)
+        digest = hashlib.sha256(payload).hexdigest()
+        record.update(rows=len(values), sha256=digest)
+        snapshot['files'][record['path']].update(bytes=len(payload), sha256=digest)
+    for name in ('experiments/speaker-optionb-tiny-ft-v1/verify-results.py',
+                 'experiments/speaker-optionb-tiny-direct-ft-v1/verify-results-v2.py'):
+        path = tmp_path / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes((ROOT / name).read_bytes())
+    (tmp_path / module.SNAPSHOT).write_text(json.dumps(snapshot))
+    lock['snapshot_sha256'] = hashlib.sha256((tmp_path / module.SNAPSHOT).read_bytes()).hexdigest()
+    for name in lock['bindings']:
+        lock['bindings'][name] = hashlib.sha256((tmp_path / name).read_bytes()).hexdigest()
+    lock['bindings'][module.SNAPSHOT] = lock['snapshot_sha256']
+    comparison_path = tmp_path / run / 'fit/fit-comparison.json'
+    comparison = json.loads(comparison_path.read_text())
+    comparison['snapshot_sha256'] = lock['snapshot_sha256']
+    comparison_path.write_text(json.dumps(comparison))
+    lock['bindings'][run + '/fit/fit-comparison.json'] = hashlib.sha256(comparison_path.read_bytes()).hexdigest()
+    (tmp_path / run / 'fit/selection-before-test.json').write_text(json.dumps(lock))
+    return module, snapshot, run, goldens, pcms, deepcopy(goldens)
+
+
+def test_full_decision_comparison_uses_independent_frozen_cohort_and_declared_tolerance(tmp_path, monkeypatch):
+    module, snapshot, _, goldens, _, actual = prediction_fixture(tmp_path, monkeypatch)
+    assert hasattr(module, 'compare_predictions'), 'Missing independent complete-cohort reconciliation'
+    actual[0]['latency_ms'] = actual[0]['event']['latency_ms'] = 100.
+    actual[0]['event']['logits'][0] += 1e-6
+    result = module.compare_predictions(tmp_path, snapshot, actual)
+    assert result['exact'] is True and result['prediction_rows'] == len(goldens) == 5
+    assert result['tolerance'] == {'atol': 3e-5, 'rtol': 3e-5, 'decisions': 'exact', 'metrics': 'exact'}
+    assert result['cached_scores_reused'] is False
+
+
+@pytest.mark.parametrize('attack', [
+    'empty', 'missing', 'duplicate', 'substitute', 'order', 'stress_id', 'reference',
+    'decision', 'application', 'qualification', 'actions', 'logit', 'nan', 'pcm', 'extra', 'missing_logit',
+])
+def test_complete_prediction_comparison_preserves_every_mismatch(tmp_path, monkeypatch, attack):
+    module, snapshot, _, _, _, actual = prediction_fixture(tmp_path, monkeypatch)
+    if attack == 'empty':
+        actual.clear()
+    elif attack == 'missing':
+        actual.pop()
+    elif attack == 'duplicate':
+        actual[-1] = actual[0]
+    elif attack == 'substitute':
+        actual[0]['parent_id'] = 'substitute'
+    elif attack == 'order':
+        actual.reverse()
+    elif attack == 'stress_id':
+        actual[-1]['id'] = 'wrong::silence_both_1s'
+    elif attack == 'reference':
+        actual[0]['class_index'] = True
+    elif attack == 'decision':
+        actual[0]['accepted_index'] = 0
+    elif attack == 'application':
+        actual[0]['event']['application']['reason'] = 'forged'
+    elif attack == 'qualification':
+        actual[0]['event']['qualified_output']['accepted'] = True
+    elif attack == 'actions':
+        actual[0]['event']['actions_enabled'] = True
+    elif attack == 'logit':
+        actual[0]['event']['logits'][0] += .1
+    elif attack == 'nan':
+        actual[0]['event']['logits'][0] = float('nan')
+    elif attack == 'pcm':
+        actual[-1]['actual_input_pcm_sha256'] = '0' * 64
+    elif attack == 'extra':
+        actual[0]['event']['unreviewed'] = True
+    else:
+        del actual[0]['event']['logits']
+    assert hasattr(module, 'compare_predictions'), 'Missing independent complete-cohort reconciliation'
+    result = module.compare_predictions(tmp_path, snapshot, actual)
+    assert result['exact'] is False and result['differences']
+    json.dumps(result, allow_nan=False)  # Failure evidence must remain serializable.
+
+
+def source_replay_fixture(tmp_path, monkeypatch):
+    from scripts.submission import optionb_reproduce as source
+    from scripts.submission.common import ROOT
+    from scripts.runtime import speaker_optionb_tiny as runtime
+    from scripts.test import speaker_demo_suite as suite
+    # The canonical trainer caches read_audio at import time. Import it before
+    # replacing suite.read_audio so this fixture cannot poison later fit tests.
+    importlib.import_module('scripts.train.speaker_optionb_tiny')
+    module, snapshot, run, goldens, pcms, _ = prediction_fixture(tmp_path, monkeypatch)
+    for name in ('scripts/test/test_speaker_optionb_tiny.py', 'scripts/test/speaker_optionb_tiny_demo_report.py'):
+        path = tmp_path / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes((ROOT / name).read_bytes())
+    calls = []
+    for role in ('prepared', 'canonical'):
+        for split in ('test', 'holdout'):
+            (tmp_path / run / role / (split + '.jsonl')).unlink()
+
+    def hydrate(root, rows, downloads, audio, auxiliary, **kwargs):
+        calls.append(('prepare', tuple(r['split'] for r in rows)))
+        return [{**row, 'audio': f"{audio}/{row['sha256']}.wav"} for row in rows]
+
+    def read_audio(row, root=None):
+        calls.append(('read_audio', row['id']))
+        return pcms[row['id']].copy()
+
+    class SoftwareRuntime:
+        def __init__(self, bundle, threads=1):
+            assert threads == 1
+            assert (bundle / 'model.onnx').read_bytes() == (tmp_path / snapshot['bundle'] / 'model.onnx').read_bytes()
+            self.policy = snapshot['policy']
+
+        def recognize(self, pcm):
+            # This fixture produces new decisions; it never reads the golden rows.
+            calls.append(('infer', len(pcm)))
+            logits = [-4.] * 32
+            logits[1] = 4.
+            event = runtime.decision(logits, self.policy)
+            event.update(logits=logits, latency_ms=1.25)
+            return event
+
+    monkeypatch.setattr(source, 'hydrate_rows', hydrate)
+    monkeypatch.setattr(suite, 'read_audio', read_audio)
+    monkeypatch.setattr(runtime, 'Runtime', SoftwareRuntime)
+    freeze_software_exports(tmp_path, goldens)
+    return module, snapshot, run, goldens, calls
+
+
+def freeze_software_exports(root, goldens):
+    """Explicit all-negative software table expectations, independent of replay."""
+    import csv
+    from scripts.runtime.optionb_contract import COMMANDS
+    from scripts.runtime.pcv_schema import baseline_cases, INTENTS
+    study = root / 'experiments/speaker-optionb-tiny-demo-v1'
+    study.mkdir(parents=True, exist_ok=True)
+    command_rows, intent_rows, verbatim, wording = [], [], [], []
+    cohorts = sorted({'/'.join((r['split'], r['kind'], r['variant'])) for r in goldens})
+    for cohort in cohorts:
+        def cell(false_positive):
+            return dict(cohort=cohort, n=0, raw_correct=0, tp=0, fp=int(false_positive), fn=0,
+                precision=0. if false_positive else None, recall=None, f1=0. if false_positive else None)
+        for index, command in enumerate(COMMANDS[1:], 1):
+            command_rows.append(dict(class_index=index, intent=command['intent'], command=json.dumps(command, sort_keys=True), **cell(index == 1)))
+        for intent in INTENTS:
+            intent_rows.append(dict(intent=intent, **cell(intent == COMMANDS[1]['intent'])))
+    for definition in baseline_cases():
+        base = dict(id=definition['id'], text=definition['text'], command=json.dumps(definition['command'], sort_keys=True))
+        verbatim.append(dict(**base, metadata_exact_human_references=0, raw_correct=0, correct_accepted=0))
+        for split, kind in (('test', 'human'), ('test', 'synthetic'), ('holdout', 'human'), ('holdout', 'synthetic')):
+            wording.append(dict(**base, split=split, kind=kind, metadata_exact_references=0,
+                raw_correct=0, correct_accepted=0, wrong_accepted=0, rejected=0, accepted_recall=None))
+    bindings = {}
+    for name, rows in (('per-command.csv', command_rows), ('per-intent.csv', intent_rows),
+                       ('per-verbatim.csv', verbatim), ('per-verbatim-cohorts-v2.csv', wording)):
+        path = study / name
+        with path.open('x', newline='', encoding='utf8') as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+            writer.writeheader()
+            writer.writerows(rows)
+        bindings[path.relative_to(root).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
+    historical = {}
+    for name in ('verification.json', 'verification-wording-v2.json'):
+        path = study / name
+        subset = {p: d for p, d in bindings.items() if ('cohorts-v2' in p) == ('wording' in name)}
+        path.write_text(json.dumps(dict(bindings=subset, software_fixture_not_corpus_evidence=True)))
+        historical[path.relative_to(root).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
+    path = root / 'experiments/speaker-optionb-release-v1/protocol-v3.json'
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(dict(bindings=historical, software_fixture_not_corpus_evidence=True)))
+
+
+def test_portable_pipeline_executes_original_case_writer_and_seals_actual_outputs(tmp_path, monkeypatch):
+    from scripts.test.speaker_demo_suite import read_json, file_digest
+    module, _, run, _, calls = source_replay_fixture(tmp_path, monkeypatch)
+    assert hasattr(module, 'replay_evaluation'), 'Missing usable canonical inference replay API'
+    result = module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
+    assert result['exact'] is True and result['inference_rows'] == 5
+    assert len([c for c in calls if c[0] == 'infer']) == 5
+    assert len([c for c in calls if c[0] == 'read_audio']) == 2
+    assert result['evidence_scope'] == 'software_fixture_not_corpus_reproduction'
+    assert result['cached_scores_reused'] is False and result['optimizer_updates'] == 0
+    assert result['heldout_pcm_decoded_or_inferred_before_selection'] is False
+    assert result['exposed_regression_not_blind'] is True
+    assert result['actions_enabled'] is result['qualified'] is result['installed'] is False
+    assert result['native_js_executed'] is result['pc_benchmark_executed'] is result['release_check_executed'] is False
+    assert result['pi_validation'] == 'excluded_by_user'
+    for name in ('final-predictions.jsonl', 'results.json', 'per-command.csv', 'per-intent.csv',
+                 'per-verbatim.csv', 'per-verbatim-cohorts-v2.csv', 'comparison.json'):
+        path = tmp_path / run / 'replay' / name
+        assert result['bindings'][path.relative_to(tmp_path).as_posix()] == file_digest(path)
+    receipt = tmp_path / run / 'replay/verification.json'
+    assert read_json(receipt) == result
+    with pytest.raises(FileExistsError, match='Preserve'):
+        module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
+
+
+@pytest.mark.parametrize('attack,stage', [
+    ('no_lock', 'selection_gate'), ('prepare', 'source_preparation'),
+    ('runtime', 'canonical_inference'), ('mismatch', 'reconciliation'),
+    ('binding_drift', 'canonical_inference'),
+])
+def test_replay_failures_are_immutable_and_never_issue_verified_receipts(tmp_path, monkeypatch, attack, stage):
+    from scripts.submission import optionb_reproduce as source
+    from scripts.runtime import speaker_optionb_tiny as runtime
+    from scripts.test.speaker_demo_suite import read_json
+    module, _, run, _, calls = source_replay_fixture(tmp_path, monkeypatch)
+    recognize = runtime.Runtime.recognize
+    if attack == 'no_lock':
+        (tmp_path / run / 'fit/selection-before-test.json').unlink()
+    elif attack == 'prepare':
+        def fail_prepare(*args, **kwargs):
+            raise RuntimeError('deliberate software source failure')
+        monkeypatch.setattr(source, 'hydrate_rows', fail_prepare)
+    else:
+        def failing_recognize(self, pcm):
+            if attack == 'runtime':
+                raise RuntimeError('deliberate software inference failure')
+            event = recognize(self, pcm)
+            if attack == 'mismatch':
+                event['logits'][0] += .1
+            else:
+                path = tmp_path / run / 'fit/input-comparison.json'
+                path.write_text('{"exact":false}')
+            return event
+        monkeypatch.setattr(runtime.Runtime, 'recognize', failing_recognize)
+    assert hasattr(module, 'replay_evaluation'), 'Missing portable replay API'
+    with pytest.raises((ValueError, RuntimeError, FileNotFoundError)):
+        module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
+    failure_path = tmp_path / run / 'replay/failure.json'
+    assert failure_path.exists(), 'Preserve the actual failing stage and produced evidence'
+    failure = read_json(failure_path)
+    assert failure['stage'] == stage and failure['error']
+    assert failure['actions_enabled'] is False and failure['qualified'] is False
+    assert not (tmp_path / run / 'replay/verification.json').exists()
+    if attack == 'mismatch':
+        comparison = read_json(tmp_path / run / 'replay/comparison.json')
+        assert comparison['exact'] is False and comparison['differences']
+        assert (tmp_path / run / 'replay/final-predictions.jsonl').exists()
+    if attack in ('no_lock', 'prepare'):
+        assert not any(c[0] in ('read_audio', 'infer') for c in calls)
+    original = failure_path.read_bytes()
+    with pytest.raises(FileExistsError, match='Preserve'):
+        module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
+    assert failure_path.read_bytes() == original
+
+
+def test_partial_reserved_preparation_is_preserved_with_failure_evidence(tmp_path, monkeypatch):
+    from scripts.submission import optionb_reproduce as source
+    from scripts.test.speaker_demo_suite import read_json
+    module, _, run, _, _ = source_replay_fixture(tmp_path, monkeypatch)
+    def fail(*args, **kwargs):
+        raise RuntimeError('software hydration failed, not a corpus attempt')
+    monkeypatch.setattr(source, 'hydrate_rows', fail)
+    with pytest.raises(RuntimeError, match='software hydration'):
+        module.prepare_evaluation(tmp_path, run)
+    path = tmp_path / run / 'evaluation-preparation-failure.json'
+    assert path.exists(), 'Source preparation failures must preserve their gate/error'
+    assert read_json(path)['error_type'] == 'RuntimeError'
+    with pytest.raises(FileExistsError, match='Preserve'):
+        module.prepare_evaluation(tmp_path, run)
+
+
+@pytest.mark.parametrize('target', ['locks', 'audio', 'fit', 'downloads'])
+def test_writer_paths_reject_even_internal_directory_links_before_access(tmp_path, monkeypatch, target):
+    module, _, run, _ = selection_fixture(tmp_path, monkeypatch)
+    linked = tmp_path / run / target if target != 'downloads' else tmp_path / '.cache/downloads'
+    moved = tmp_path / run / ('internal-' + target)
+    if linked.exists():
+        linked.rename(moved)
+    else:
+        moved.mkdir(parents=True)
+    try:
+        linked.symlink_to(moved, target_is_directory=True)
+    except OSError:
+        pytest.skip('Directory symlinks unavailable to this test account')
+    if target in ('locks', 'fit'):
+        with pytest.raises(ValueError, match='containment|link'):
+            module.write_replay_protocols(tmp_path, run, source_commit='software-fixture')
+    else:
+        for role in ('prepared', 'canonical'):
+            for split in ('test', 'holdout'):
+                (tmp_path / run / role / (split + '.jsonl')).unlink()
+        from scripts.submission import optionb_reproduce as source
+        called = []
+        def hydrate(root, rows, downloads, audio, auxiliary, **kwargs):
+            called.append(True)
+            return [{**r, 'audio': f"{audio}/{r['sha256']}.wav"} for r in rows]
+        monkeypatch.setattr(source, 'hydrate_rows', hydrate)
+        with pytest.raises(ValueError, match='containment|link'):
+            module.prepare_evaluation(tmp_path, run)
+        assert not called
+
+
+def test_independently_frozen_helper_drift_blocks_source_preparation(tmp_path, monkeypatch):
+    from scripts.submission import optionb_reproduce as source
+    from scripts.test.speaker_demo_suite import file_digest
+    module, _, run, lock = selection_fixture(tmp_path, monkeypatch)
+    name = 'experiments/speaker-optionb-tiny-demo-v1/data-freeze.json'
+    path = tmp_path / name
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(dict(historical_bindings={module.METRIC_HELPER: file_digest(tmp_path / module.METRIC_HELPER)})))
+    lock['bindings'][name] = file_digest(path)
+    (tmp_path / run / 'fit/selection-before-test.json').write_text(json.dumps(lock))
+    monkeypatch.setattr(module, 'REPLAY_SOURCES', (module.METRIC_HELPER, name))
+    (tmp_path / module.METRIC_HELPER).write_text('# altered after historical freeze\n')
+    for role in ('prepared', 'canonical'):
+        for split in ('test', 'holdout'):
+            (tmp_path / run / role / (split + '.jsonl')).unlink()
+    called = []
+    def hydrate(root, rows, downloads, audio, auxiliary, **kwargs):
+        called.append(True)
+        return [{**r, 'audio': f"{audio}/{r['sha256']}.wav"} for r in rows]
+    monkeypatch.setattr(source, 'hydrate_rows', hydrate)
+    with pytest.raises(ValueError, match='Frozen replay helper'):
+        module.prepare_evaluation(tmp_path, run)
+    assert not called
+
+
+def test_gate_requires_named_cache_run(tmp_path, monkeypatch):
+    module, _, _, _ = selection_fixture(tmp_path, monkeypatch)
+    with pytest.raises(ValueError, match='named run'):
+        module.validate_selection(tmp_path, '.cache')
+
+
+def test_default_reader_closure_names_original_and_additive_native_sources():
+    module = importlib.import_module('scripts.submission.optionb_replay')
+    assert {'SpeakerUI/scripts/optionb-source-parity.mjs', 'SpeakerUI/scripts/optionb-source-inputs.mjs',
+            'SpeakerUI/scripts/optionb-parity-inputs.mjs',
+            'scripts/test/test_speaker_optionb_tiny.py',
+            'experiments/speaker-optionb-tiny-direct-ft-v1/verify-results-v2.py'} <= set(module.REPLAY_SOURCES)
+
+
+def test_all_csv_cells_reconcile_to_independently_frozen_tables(tmp_path, monkeypatch):
+    from scripts.test.speaker_demo_suite import read_json
+    module, _, run, _, _ = source_replay_fixture(tmp_path, monkeypatch)
+    result = module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
+    comparison = read_json(tmp_path / run / 'replay/comparison.json')
+    assert comparison.get('csv_comparisons') == {
+        'per-command.csv': True, 'per-intent.csv': True,
+        'per-verbatim.csv': True, 'per-verbatim-cohorts-v2.csv': True}, 'Row counts alone do not verify exported cells'
+    gate = read_json(tmp_path / run / 'evaluation-selection-gate.json')
+    assert gate['tolerance'] == result['tolerance']
+
+
+@pytest.mark.parametrize('name', ['per-command.csv', 'per-intent.csv', 'per-verbatim.csv'])
+def test_same_count_csv_cell_substitution_fails_with_comparison_evidence(tmp_path, monkeypatch, name):
+    from scripts.test.speaker_demo_suite import read_json
+    module, _, run, _, _ = source_replay_fixture(tmp_path, monkeypatch)
+    load = module._load_module
+    def intercept(root, relative):
+        loaded = load(root, relative)
+        if relative == 'scripts/test/test_speaker_optionb_tiny.py':
+            evaluate = loaded.evaluate_candidate
+            def corrupt(study):
+                result = evaluate(study)
+                path = study / name
+                image = path.read_text()
+                path.write_text(image.replace(',0,', ',999,', 1))
+                return result
+            loaded.evaluate_candidate = corrupt
+        return loaded
+    monkeypatch.setattr(module, '_load_module', intercept)
+    with pytest.raises(ValueError, match='comparison mismatch'):
+        module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
+    comparison = read_json(tmp_path / run / 'replay/comparison.json')
+    assert comparison['csv_comparisons'][name] is False and comparison['exact'] is False
+    assert not (tmp_path / run / 'replay/verification.json').exists()
+
+
+def test_cli_runs_selected_pipeline_and_prints_its_actual_receipt(tmp_path, monkeypatch, capsys):
+    module, _, run, _, _ = source_replay_fixture(tmp_path, monkeypatch)
+    assert hasattr(module, 'main'), 'Missing portable replay CLI'
+    result = module.main(['replay', '--output', run, '--source-commit', 'software-fixture'], root=tmp_path)
+    assert json.loads(capsys.readouterr().out) == result
+    assert result['exact'] is True and result['inference_rows'] == 5
+
+
+def test_readonly_verification_reconciles_existing_outputs_without_new_inference(tmp_path, monkeypatch):
+    module, _, run, _, calls = source_replay_fixture(tmp_path, monkeypatch)
+    module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
+    before = list(calls)
+    assert hasattr(module, 'verify_replay'), 'Missing immutable replay readback verifier'
+    result = module.verify_replay(tmp_path, run)
+    assert result['status'] == 'verified_existing_replay' and result['inference_rows'] == 5
+    assert result['fresh_inference_performed'] is False and result['cached_scores_read_for_reconciliation'] is True
+    assert calls == before
+    path = tmp_path / run / 'replay/final-predictions.jsonl'
+    path.write_text('')
+    with pytest.raises(ValueError, match='identity|changed'):
+        module.verify_replay(tmp_path, run)
+    assert calls == before
+
+
+@pytest.mark.parametrize('field,value', [
+    ('parameters', 1), ('selected_epoch', 0), ('policy', {}),
+    ('prediction_rows', 0), ('predictions_sha256', '0' * 64),
+    ('selection_sha256', '0' * 64), ('installed', True), ('qualified', True),
+])
+def test_canonical_result_contract_cannot_drift_even_with_matching_csv_counts(tmp_path, monkeypatch, field, value):
+    module, _, run, _, _ = source_replay_fixture(tmp_path, monkeypatch)
+    load = module._load_module
+    def intercept(root, relative):
+        loaded = load(root, relative)
+        if relative == 'scripts/test/test_speaker_optionb_tiny.py':
+            evaluate = loaded.evaluate_candidate
+            def corrupt(study):
+                result = evaluate(study)
+                result[field] = value
+                (study / 'results.json').write_text(json.dumps(result))
+                return result
+            loaded.evaluate_candidate = corrupt
+        return loaded
+    monkeypatch.setattr(module, '_load_module', intercept)
+    with pytest.raises(ValueError, match='comparison mismatch'):
+        module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
+    comparison = json.loads((tmp_path / run / 'replay/comparison.json').read_text())
+    assert comparison['exact'] is False
+
+
+def test_portable_evaluator_selection_copy_is_bound_before_inference(tmp_path, monkeypatch):
+    module, _, run, _, _ = source_replay_fixture(tmp_path, monkeypatch)
+    load = module._load_module
+    def intercept(root, relative):
+        loaded = load(root, relative)
+        if relative == 'scripts/test/test_speaker_optionb_tiny.py':
+            path = tmp_path / run / 'replay/selection-before-test.json'
+            selection = json.loads(path.read_text())
+            selection['optimizer_steps'] = 1
+            path.write_text(json.dumps(selection))
+        return loaded
+    monkeypatch.setattr(module, '_load_module', intercept)
+    with pytest.raises(ValueError, match='identity changed|comparison mismatch'):
+        module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
+    assert not (tmp_path / run / 'replay/verification.json').exists()
+
+
+def test_software_runtime_fixture_does_not_leak_cached_reader_aliases(tmp_path, monkeypatch):
+    from scripts.test import speaker_demo_suite as suite
+    original_reader = suite.read_audio
+    with monkeypatch.context() as isolated:
+        module, _, run, _, _ = source_replay_fixture(tmp_path, isolated)
+        module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
+    from scripts.train import speaker_optionb_tiny as training
+    assert training.read_audio is original_reader, 'Canonical trainer must not retain the software reader after fixture cleanup'

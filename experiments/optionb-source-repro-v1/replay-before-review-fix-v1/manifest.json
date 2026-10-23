@@ -1,0 +1,8 @@
+{
+  "failed_review": "experiments/optionb-source-repro-v1/replay-review-v1.json",
+  "source_hashes": {
+    "scripts/submission/optionb_replay.py": "023cd41a59969a33caa367a5eb9e60c507c169a3bac1d9807959b4a3f84f4db7",
+    "scripts/test/test_optionb_replay.py": "68f83181055c382cd8079eecb847e7d055f7c7635c55e78fe0a3f42d00071c98"
+  },
+  "not_corpus_evidence": true
+}

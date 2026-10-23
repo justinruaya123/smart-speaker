@@ -1,0 +1,30 @@
+{
+  "format": "optionb-replay-implementation-software-evidence-v1",
+  "scope": "software_and_frozen_expectation_metadata_not_acoustic_reproduction",
+  "reviewed_source_hashes": {
+    "scripts/submission/optionb_replay.py": "023cd41a59969a33caa367a5eb9e60c507c169a3bac1d9807959b4a3f84f4db7",
+    "scripts/test/test_optionb_replay.py": "68f83181055c382cd8079eecb847e7d055f7c7635c55e78fe0a3f42d00071c98"
+  },
+  "parent_owned_tests": {
+    "passed": 84,
+    "seconds": 27.97
+  },
+  "child_combined_regressions": {
+    "passed": 383,
+    "seconds": 86.94
+  },
+  "metadata_only": {
+    "frozen_prediction_rows": 4896,
+    "metric_groups": 7,
+    "wording_rows": 372,
+    "fresh_inference": false
+  },
+  "test_evidence_manifest_sha256": "6a9988611c7501af93de7ada66394fa0ca231727b9f181ea72d5d209759eacbc",
+  "all_declared_evidence_files_independently_rehashed": true,
+  "independent_review": "pending",
+  "actual_corpus_replay": "not_run",
+  "native_pc_or_release_executed_by_this_stage": false,
+  "actions_enabled": false,
+  "qualified": false,
+  "installed": false
+}

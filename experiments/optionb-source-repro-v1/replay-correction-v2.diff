@@ -1,0 +1,463 @@
+--- before/scripts/submission/optionb_replay.py
++++ after/scripts/submission/optionb_replay.py
+@@ -197,6 +197,16 @@
+     return result
+ 
+ 
++def _merge_bindings(*groups) -> dict[str, str]:
++    bindings = {}
++    for group in groups:
++        for name, digest in group.items():
++            if name in bindings and bindings[name] != digest:
++                raise ValueError('Conflicting replay binding: ' + name)
++            bindings[name] = digest
++    return bindings
++
++
+ def prepare_evaluation(root, output) -> dict[str, Any]:
+     """Preserve a failed hydration attempt; retry only with another source run."""
+     from scripts.submission.optionb_fit import _fit_target
+@@ -227,7 +237,7 @@
+     gate_path = _fit_target(run, 'evaluation-selection-gate.json')
+     source_path = _fit_target(run, 'prepare-test-holdout.json')
+     receipt_path = _fit_target(run, 'evaluation-preparation.json')
+-    bindings = {**checked['bindings'], **_reader_bindings(root, checked)}
++    bindings = _merge_bindings(checked['bindings'], _reader_bindings(root, checked))
+     gate = dict(format='optionb-evaluation-selection-gate-v1', bindings=bindings, tolerance=dict(TOLERANCE),
+         snapshot_sha256=bindings[SNAPSHOT], selected_epoch=snapshot['selected_epoch'], policy=snapshot['policy'],
+         heldout_pcm_decoded_or_inferred_before_selection=False, cached_scores_reused=False,
+@@ -242,14 +252,18 @@
+         _write_checked(run, 'evaluation-selection-gate.json', gate)
+     _assert_bindings(root, bindings)
+     bindings[gate_path.relative_to(root).as_posix()] = sha(gate_path)
++    # A reused receipt does not establish current audio path containment.
++    # Check both directory and individual links without opening WAV/PCM.
++    _fit_target(run, 'audio')
++    for split in ('test', 'holdout'):
++        for row in read_snapshot_rows(root, snapshot['views'][split]):
++            _fit_target(run, 'audio/' + row['sha256'] + '.wav')
+     if not receipt_path.exists():
+         # The reviewed preparer owns hydration and puts its shard download cache
+         # beside this run. Preflight every eventual writer target without PCM I/O.
+         downloads = _fit_target(root, (run.parent / 'downloads').relative_to(root).as_posix())
+-        _fit_target(run, 'audio')
+         for split in ('test', 'holdout'):
+             for row in read_snapshot_rows(root, snapshot['views'][split]):
+-                _fit_target(run, 'audio/' + row['sha256'] + '.wav')
+                 location = row['location']
+                 if 'auxiliary_file' in location:
+                     name = 'auxiliary/' + location['auxiliary_file']
+@@ -453,11 +467,13 @@
+     protocols = write_replay_protocols(root, output, source_commit=source_commit, reuse=True)
+     snapshot = checked['snapshot']
+     release = read_json(pinned_path(root, protocols['release_protocol']))
+-    bindings = {**release['bindings'], **preparation['bindings'], **expected_exports}
++    pc = read_json(pinned_path(root, protocols['pc_protocol']))
++    bindings = _merge_bindings(release['bindings'], preparation['bindings'], pc['bindings'], expected_exports)
++    _assert_bindings(root, bindings)  # Validate the sealed digests before adding current readers.
+     for name in (protocols['release_protocol'], protocols['pc_protocol'], output + '/evaluation-preparation.json',
+                  METRIC_HELPER, COHORT_HELPER, 'scripts/test/test_speaker_optionb_tiny.py',
+                  'scripts/test/speaker_optionb_tiny_demo_report.py'):
+-        bindings[name] = sha(pinned_path(root, name))
++        bindings = _merge_bindings(bindings, {name: sha(pinned_path(root, name))})
+     _assert_bindings(root, bindings)
+     for split in ('test', 'holdout'):
+         values = read_jsonl(pinned_path(root, release['manifest_files'][split]))
+@@ -589,8 +605,8 @@
+     predictions_relative = predictions.relative_to(root).as_posix()
+     bound = {SNAPSHOT, *snapshot['files'], *snapshot['source_bindings'], *REPLAY_SOURCES,
+              *manifests.values(), *originals.values(), metadata_relative, predictions_relative}
+-    bindings = {**checked['bindings'], **_reader_bindings(root, checked),
+-                **{path: sha(pinned_path(root, path)) for path in sorted(bound)}}
++    bindings = _merge_bindings(checked['bindings'], _reader_bindings(root, checked),
++                              {path: sha(pinned_path(root, path)) for path in sorted(bound)})
+     if existing and source_commit is None:
+         source_commit = read(release_path)['source_commit']
+     if source_commit is None:
+@@ -645,30 +661,99 @@
+         raise ValueError('A failed replay cannot be verified; preserve its evidence')
+     receipt_path = _fit_target(replay, 'verification.json')
+     receipt = read_json(receipt_path)
++    required = {output + '/replay/' + name for name in (
++        'test.jsonl', 'holdout.jsonl', 'protocol.json', 'data-freeze.json', 'selection-before-test.json',
++        'canonical-evaluator.log', 'final-predictions.jsonl', 'results.json', 'comparison.json',
++        'per-command.csv', 'per-intent.csv', 'per-verbatim.csv', 'per-verbatim-cohorts-v2.csv',
++        'bundle/model.onnx', 'bundle/commands.json', 'bundle/normalization.json', 'bundle/policy.json', 'bundle/recipe.json')}
++    required.update(output + '/' + name for name in (
++        'evaluation-preparation.json', 'evaluation-selection-gate.json', 'prepare-test-holdout.json',
++        'locks/release.json', 'locks/pc.json', 'locks/full-reference-metadata.jsonl',
++        'locks/golden-evaluation-predictions.jsonl'))
++    required.update(checked['bindings'])
++    required.update(p.relative_to(root).as_posix() for p in _fit_files(replay) if p != receipt_path)
++    if required - receipt['bindings'].keys():
++        raise ValueError('Replay verification has unbound required evidence artifacts')
++    for name in required:
++        if not _fit_target(root, name).is_file():
++            raise ValueError('Missing required replay evidence artifact: ' + name)
+     contract = dict(format='optionb-source-inference-replay-v1', exact=True, status='verified',
+         evidence_scope=checked['lock']['evidence_scope'], cached_scores_reused=False,
++        canonical_case_feature_and_decision_path_reused=True, complete_original_and_stress_cohort=True,
+         golden_scores_used_for_inference=False, heldout_pcm_decoded_or_inferred_before_selection=False,
+         test_holdout_used_for_selection=False, exposed_regression_not_blind=True,
++        independent_listening_completed=False, fresh_blind_human_check='pending_no_new_recordings',
+         optimizer_updates=0, selection_changes=0, actions_enabled=False, qualified=False, installed=False,
+         installed_defaults_changed=False, pi_validation='excluded_by_user', tolerance=dict(TOLERANCE),
+         native_js_executed=False, pc_benchmark_executed=False, release_check_executed=False,
+-        release_protocol=output + '/locks/release.json', pc_protocol=output + '/locks/pc.json')
++        release_protocol=output + '/locks/release.json', pc_protocol=output + '/locks/pc.json', output=output + '/replay')
+     if any(canonical(receipt.get(k)) != canonical(v) for k, v in contract.items()):
+         raise ValueError('Replay verification contract changed')
+-    required = {p.relative_to(root).as_posix() for p in _fit_files(replay) if p != receipt_path}
+-    if required - receipt['bindings'].keys():
+-        raise ValueError('Replay verification has unbound output artifacts')
+     _assert_bindings(root, receipt['bindings'])
+     write_replay_protocols(root, output, reuse=True)
++    # All preparation/lock artifacts were required above: these reuse checks
++    # cannot hydrate, write missing evidence, or decode WAV/PCM.
++    preparation = _prepare_evaluation(root, output)
++    release = read_json(_fit_target(root, receipt['release_protocol']))
++    pc = read_json(_fit_target(root, receipt['pc_protocol']))
++    expected_bindings = _merge_bindings(release['bindings'], preparation['bindings'], pc['bindings'],
++                                        _expected_export_bindings(root))
++    for name in (receipt['release_protocol'], receipt['pc_protocol'], output + '/evaluation-preparation.json',
++                 METRIC_HELPER, COHORT_HELPER, 'scripts/test/test_speaker_optionb_tiny.py',
++                 'scripts/test/speaker_optionb_tiny_demo_report.py'):
++        expected_bindings = _merge_bindings(expected_bindings, {name: sha(_fit_target(root, name))})
++    for split in ('test', 'holdout'):
++        name = output + '/replay/' + split + '.jsonl'
++        original = release['manifest_files'][split]
++        if read_jsonl(_fit_target(root, name)) != read_jsonl(_fit_target(root, original)):
++            raise ValueError('Stored replay manifest provenance changed: ' + split)
++        expected_bindings[name] = release['bindings'][original]
++    snapshot = checked['snapshot']
++    for name in ('model.onnx', 'commands.json', 'normalization.json', 'policy.json', 'recipe.json'):
++        expected_bindings[output + '/replay/bundle/' + name] = snapshot['files'][snapshot['bundle'] + '/' + name]['sha256']
++    protocol = dict(outputs=dict(run=output + '/replay'), tolerance=dict(TOLERANCE),
++        scope='Unchanged canonical evaluator, portable exact-byte inputs; no old cache dependencies')
++    if canonical(read_json(_fit_target(replay, 'protocol.json'))) != canonical(protocol):
++        raise ValueError('Stored replay protocol provenance changed')
++    expected_bindings[output + '/replay/protocol.json'] = sha(_fit_target(replay, 'protocol.json'))
++    freeze = dict(bindings=dict(expected_bindings), historical_bindings={},
++        original_historical_locks_unchanged=True, portable_bindings_replace_only_consumed_paths=True)
++    if canonical(read_json(_fit_target(replay, 'data-freeze.json'))) != canonical(freeze):
++        raise ValueError('Stored replay data-freeze provenance changed')
++    expected_bindings[output + '/replay/data-freeze.json'] = sha(_fit_target(replay, 'data-freeze.json'))
++    selection = {**checked['lock'], 'bindings': dict(expected_bindings),
++                 'source_fit_selection_lock': output + '/fit/selection-before-test.json'}
++    if canonical(read_json(_fit_target(replay, 'selection-before-test.json'))) != canonical(selection):
++        raise ValueError('Stored replay selection provenance changed')
++    expected_bindings[output + '/replay/selection-before-test.json'] = sha(_fit_target(replay, 'selection-before-test.json'))
++    if any(receipt['bindings'].get(name) != digest for name, digest in expected_bindings.items()):
++        raise ValueError('Stored replay binding provenance changed')
++    _assert_bindings(root, expected_bindings)
+     records = read_jsonl(_fit_target(replay, 'final-predictions.jsonl'))
+-    comparison = compare_predictions(root, checked['snapshot'], records)
++    comparison = compare_predictions(root, snapshot, records)
+     exports = _compare_csv_exports(root, replay)
+     final = read_json(_fit_target(replay, 'results.json'))
++    result_contract = dict(parameters=snapshot['parameters'], selected_epoch=snapshot['selected_epoch'],
++        policy=snapshot['policy'], prediction_rows=len(records),
++        predictions_sha256=sha(_fit_target(replay, 'final-predictions.jsonl')),
++        selection_sha256=sha(_fit_target(replay, 'selection-before-test.json')),
++        frozen_inputs_unchanged=True, exposed_regression_not_blind=True,
++        independent_human_rows_are_original_only=True, installed=False, qualified=False)
++    if any(canonical(final.get(k)) != canonical(v) for k, v in result_contract.items()):
++        raise ValueError('Stored replay result contract changed')
+     stable = {key: {k: v for k, v in value.items() if k != 'timing'} for key, value in final['results'].items()}
+     differences = _differences(comparison['results'], stable, '/canonical_results')
++    comparison.update(csv_comparisons=exports['csv_comparisons'], timing_values_compared_to_historical=False)
++    import csv
++    with _fit_target(replay, 'per-verbatim-cohorts-v2.csv').open(encoding='utf8', newline='') as stream:
++        wording_rows = len(list(csv.DictReader(stream)))
+     if (not comparison['exact'] or exports['differences'] or differences
+-            or receipt['inference_rows'] != len(records)):
++            or canonical(receipt.get('inference_rows')) != canonical(len(records))
++            or canonical(receipt.get('wording_rows')) != canonical(wording_rows)
++            or canonical(read_json(_fit_target(replay, 'comparison.json'))) != canonical(comparison)):
+         raise ValueError('Stored replay comparison changed')
++    guards = _load_module(root, COHORT_HELPER)
++    guards.verify_csv_counts(replay, final, group_count=len(comparison['expected_results']))
+     _assert_bindings(root, receipt['bindings'])
+     return dict(status='verified_existing_replay', inference_rows=len(records),
+         fresh_inference_performed=False, cached_scores_read_for_reconciliation=True,
+--- before/scripts/test/test_optionb_replay.py
++++ after/scripts/test/test_optionb_replay.py
+@@ -271,7 +271,7 @@
+         module.prepare_evaluation(tmp_path, run)
+ 
+ 
+-def prediction_fixture(tmp_path, monkeypatch):
++def prediction_fixture(tmp_path, monkeypatch, *, real_wav=False):
+     """In-memory waveforms and canned logits: software only, NOT corpus evidence."""
+     from copy import deepcopy
+     import numpy as np
+@@ -289,10 +289,12 @@
+         digest = hashlib.sha256(payload).hexdigest()
+         snapshot['files'][path.relative_to(tmp_path).as_posix()].update(bytes=len(payload), sha256=digest)
+         snapshot['views'][split]['sha256'] = digest
+-        pcm = np.full(800 if split == 'test' else 1200, .1, dtype=np.float32)
++        pcm = np.full(800 if split == 'test' else 1200, .125 if real_wav else .1, dtype=np.float32)
+         pcms[row['id']] = pcm
+         row['pcm_sha256'] = pcm_digest(pcm)
+-        # Freeze again with the synthetic waveform identity (there are no WAV files).
++        if real_wav:
++            row['sha256'] = hashlib.sha256(software_wav_bytes(pcm)).hexdigest()
++        # Freeze the synthetic waveform identity, optionally backed by real WAV bytes.
+         payload = gzip.compress((json.dumps(row) + '\n').encode(), mtime=0)
+         path.write_bytes(payload)
+         digest = hashlib.sha256(payload).hexdigest()
+@@ -399,7 +401,7 @@
+     json.dumps(result, allow_nan=False)  # Failure evidence must remain serializable.
+ 
+ 
+-def source_replay_fixture(tmp_path, monkeypatch):
++def source_replay_fixture(tmp_path, monkeypatch, *, real_wav=False):
+     from scripts.submission import optionb_reproduce as source
+     from scripts.submission.common import ROOT
+     from scripts.runtime import speaker_optionb_tiny as runtime
+@@ -407,7 +409,7 @@
+     # The canonical trainer caches read_audio at import time. Import it before
+     # replacing suite.read_audio so this fixture cannot poison later fit tests.
+     importlib.import_module('scripts.train.speaker_optionb_tiny')
+-    module, snapshot, run, goldens, pcms, _ = prediction_fixture(tmp_path, monkeypatch)
++    module, snapshot, run, goldens, pcms, _ = prediction_fixture(tmp_path, monkeypatch, real_wav=real_wav)
+     for name in ('scripts/test/test_speaker_optionb_tiny.py', 'scripts/test/speaker_optionb_tiny_demo_report.py'):
+         path = tmp_path / name
+         path.parent.mkdir(parents=True, exist_ok=True)
+@@ -419,6 +421,12 @@
+ 
+     def hydrate(root, rows, downloads, audio, auxiliary, **kwargs):
+         calls.append(('prepare', tuple(r['split'] for r in rows)))
++        if real_wav:
++            (root / audio).mkdir(parents=True, exist_ok=True)
++            for row in rows:
++                payload = software_wav_bytes(pcms[row['id']])
++                assert hashlib.sha256(payload).hexdigest() == row['sha256']
++                (root / audio / (row['sha256'] + '.wav')).write_bytes(payload)
+         return [{**row, 'audio': f"{audio}/{row['sha256']}.wav"} for row in rows]
+ 
+     def read_audio(row, root=None):
+@@ -441,10 +449,25 @@
+             return event
+ 
+     monkeypatch.setattr(source, 'hydrate_rows', hydrate)
+-    monkeypatch.setattr(suite, 'read_audio', read_audio)
++    if not real_wav:
++        monkeypatch.setattr(suite, 'read_audio', read_audio)
+     monkeypatch.setattr(runtime, 'Runtime', SoftwareRuntime)
+     freeze_software_exports(tmp_path, goldens)
+     return module, snapshot, run, goldens, calls
++
++
++def software_wav_bytes(pcm):
++    """Deterministic synthetic WAV; the real reader checks WAV and PCM hashes."""
++    from io import BytesIO
++    import wave
++    import numpy as np
++    stream = BytesIO()
++    with wave.open(stream, 'wb') as writer:
++        writer.setnchannels(1)
++        writer.setsampwidth(2)
++        writer.setframerate(16000)
++        writer.writeframes(np.asarray(pcm * 32768, dtype='<i2').tobytes())
++    return stream.getvalue()
+ 
+ 
+ def freeze_software_exports(root, goldens):
+@@ -763,3 +786,196 @@
+         module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
+     from scripts.train import speaker_optionb_tiny as training
+     assert training.read_audio is original_reader, 'Canonical trainer must not retain the software reader after fixture cleanup'
++
++
++@pytest.mark.parametrize('attack', ['post_seal_reader_drift', 'conflicting_preparation_binding'])
++def test_sealed_scientific_reader_bindings_cannot_be_replaced(tmp_path, monkeypatch, attack):
++    from scripts.test.speaker_demo_suite import file_digest, read_json
++    module, _, run, _, calls = source_replay_fixture(tmp_path, monkeypatch)
++    freeze_name = 'experiments/speaker-optionb-tiny-demo-v1/data-freeze.json'
++    scientific = (module.METRIC_HELPER, module.COHORT_HELPER, 'scripts/test/test_speaker_optionb_tiny.py')
++    freeze = tmp_path / freeze_name
++    freeze.write_text(json.dumps(dict(historical_bindings={name: file_digest(tmp_path / name) for name in scientific})))
++    selection = tmp_path / run / 'fit/selection-before-test.json'
++    lock = read_json(selection)
++    lock['bindings'][freeze_name] = file_digest(freeze)
++    selection.write_text(json.dumps(lock))
++    monkeypatch.setattr(module, 'REPLAY_SOURCES', (*scientific, freeze_name))
++    seal, prepare, load = module.write_replay_protocols, module.prepare_evaluation, module._load_module
++    loaded = []
++
++    def after_seal(*args, **kwargs):
++        result = seal(*args, **kwargs)
++        if attack == 'post_seal_reader_drift':
++            with (tmp_path / module.METRIC_HELPER).open('a') as stream:
++                stream.write('\n# software probe: drift immediately after protocol sealing\n')
++        return result
++
++    def conflicting_preparation(*args, **kwargs):
++        receipt = prepare(*args, **kwargs)
++        if attack == 'conflicting_preparation_binding':
++            receipt['bindings'][module.METRIC_HELPER] = '0' * 64
++        return receipt
++
++    def record_load(*args, **kwargs):
++        loaded.append(args[1])
++        return load(*args, **kwargs)
++
++    monkeypatch.setattr(module, 'write_replay_protocols', after_seal)
++    monkeypatch.setattr(module, 'prepare_evaluation', conflicting_preparation)
++    monkeypatch.setattr(module, '_load_module', record_load)
++    with pytest.raises(ValueError, match='binding|identity changed|conflict'):
++        module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
++    assert loaded == [] and not any(call[0] in ('read_audio', 'infer') for call in calls)
++    assert read_json(tmp_path / run / 'replay/failure.json')['stage'] == 'portable_protocols'
++    assert not (tmp_path / run / 'replay/verification.json').exists()
++
++
++@pytest.mark.parametrize('field,value', [
++    ('parameters', 1), ('selected_epoch', 0), ('policy', {}),
++    ('prediction_rows', 0), ('predictions_sha256', '0' * 64), ('selection_sha256', '0' * 64),
++    ('frozen_inputs_unchanged', False), ('exposed_regression_not_blind', False),
++    ('independent_human_rows_are_original_only', False), ('installed', True), ('qualified', True),
++])
++def test_stored_replay_rejects_rebound_result_contradictions(tmp_path, monkeypatch, field, value):
++    from scripts.test.speaker_demo_suite import file_digest, read_json
++    module, _, run, _, calls = source_replay_fixture(tmp_path, monkeypatch)
++    receipt = module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
++    path = tmp_path / run / 'replay/results.json'
++    result = read_json(path)
++    result[field] = value
++    path.write_text(json.dumps(result))
++    receipt['bindings'][path.relative_to(tmp_path).as_posix()] = file_digest(path)
++    (tmp_path / run / 'replay/verification.json').write_text(json.dumps(receipt))
++    before = list(calls)
++    with pytest.raises(ValueError, match='result|comparison|contract'):
++        module.verify_replay(tmp_path, run)
++    assert calls == before, 'Stored verification must not read PCM or infer'
++
++
++@pytest.mark.parametrize('field,value', [
++    ('canonical_case_feature_and_decision_path_reused', False),
++    ('complete_original_and_stress_cohort', False), ('independent_listening_completed', True),
++    ('fresh_blind_human_check', 'passed'), ('output', '.cache/another-run/replay'),
++    ('wording_rows', 0), ('inference_rows', 5.0),
++])
++def test_stored_replay_rejects_rebound_provenance_claims(tmp_path, monkeypatch, field, value):
++    module, _, run, _, calls = source_replay_fixture(tmp_path, monkeypatch)
++    receipt = module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
++    receipt[field] = value
++    (tmp_path / run / 'replay/verification.json').write_text(json.dumps(receipt))
++    before = list(calls)
++    with pytest.raises(ValueError, match='contract|comparison'):
++        module.verify_replay(tmp_path, run)
++    assert calls == before
++
++
++@pytest.mark.parametrize('name', [
++    'comparison.json', 'selection-before-test.json', 'data-freeze.json', 'protocol.json',
++    'canonical-evaluator.log', 'test.jsonl', 'holdout.jsonl',
++    'bundle/model.onnx', 'bundle/commands.json', 'bundle/normalization.json',
++    'bundle/policy.json', 'bundle/recipe.json',
++])
++def test_stored_replay_requires_evidence_even_when_its_binding_is_removed(tmp_path, monkeypatch, name):
++    module, _, run, _, calls = source_replay_fixture(tmp_path, monkeypatch)
++    receipt = module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
++    path = tmp_path / run / 'replay' / name
++    path.unlink()
++    del receipt['bindings'][path.relative_to(tmp_path).as_posix()]
++    (tmp_path / run / 'replay/verification.json').write_text(json.dumps(receipt))
++    before = list(calls)
++    with pytest.raises(ValueError, match='required|evidence|artifact'):
++        module.verify_replay(tmp_path, run)
++    assert calls == before and not path.exists(), 'Verification must not recreate missing evidence'
++
++
++@pytest.mark.parametrize('name,field,value', [
++    ('comparison.json', 'exact', False),
++    ('selection-before-test.json', 'optimizer_steps', 1),
++    ('data-freeze.json', 'original_historical_locks_unchanged', False),
++    ('protocol.json', 'outputs', {'run': '.cache/another-run/replay'}),
++])
++def test_stored_replay_rejects_rebound_staged_provenance(tmp_path, monkeypatch, name, field, value):
++    from scripts.test.speaker_demo_suite import file_digest, read_json
++    module, _, run, _, calls = source_replay_fixture(tmp_path, monkeypatch)
++    receipt = module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
++    path = tmp_path / run / 'replay' / name
++    artifact = read_json(path)
++    artifact[field] = value
++    path.write_text(json.dumps(artifact))
++    receipt['bindings'][path.relative_to(tmp_path).as_posix()] = file_digest(path)
++    # Keep the evaluator's selection reference coherent too; semantic checks are required.
++    if name == 'selection-before-test.json':
++        result_path = tmp_path / run / 'replay/results.json'
++        result = read_json(result_path)
++        result['selection_sha256'] = file_digest(path)
++        result_path.write_text(json.dumps(result))
++        receipt['bindings'][result_path.relative_to(tmp_path).as_posix()] = file_digest(result_path)
++    (tmp_path / run / 'replay/verification.json').write_text(json.dumps(receipt))
++    before = list(calls)
++    with pytest.raises(ValueError, match='provenance|comparison|contract|identity|binding'):
++        module.verify_replay(tmp_path, run)
++    assert calls == before
++
++
++def test_prepared_synthetic_wavs_replay_through_unchanged_wav_pcm_reader(tmp_path, monkeypatch):
++    from scripts.test import speaker_demo_suite as suite
++    reader = suite.read_audio
++    module, _, run, _, calls = source_replay_fixture(tmp_path, monkeypatch, real_wav=True)
++    preparation = module.prepare_evaluation(tmp_path, run)
++    assert suite.read_audio is reader
++    assert module.prepare_evaluation(tmp_path, run) == preparation
++    result = module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
++    assert result['status'] == 'verified' and result['inference_rows'] == 5
++    assert len([call for call in calls if call[0] == 'infer']) == 5
++    assert len([call for call in calls if call[0] == 'prepare']) == 1
++
++
++@pytest.mark.parametrize('kind', ['directory_symlink', 'directory_junction', 'file_symlink'])
++@pytest.mark.parametrize('destination', ['inside_run', 'outside_root'])
++def test_reused_preparation_rejects_audio_links_before_wav_pcm_access(tmp_path, monkeypatch, kind, destination):
++    import os
++    import subprocess
++    from scripts.submission import optionb_reproduce as source
++    from scripts.test import speaker_demo_suite as suite
++    module, _, run, _, calls = source_replay_fixture(tmp_path, monkeypatch, real_wav=True)
++    module.prepare_evaluation(tmp_path, run)
++    audio = tmp_path / run / 'audio'
++    # Establish genuine WAV/decoded-PCM identity before moving the exact bytes.
++    for split in ('test', 'holdout'):
++        row = json.loads((tmp_path / run / 'prepared' / (split + '.jsonl')).read_text())
++        assert suite.read_audio(row, root=tmp_path).size > 0
++    outside = tmp_path.parent / (tmp_path.name + '-outside-audio')
++    target = (tmp_path / run / 'moved-audio') if destination == 'inside_run' else outside
++    if kind == 'file_symlink':
++        target.mkdir()
++        link = next(audio.glob('*.wav'))
++        moved = target / link.name
++        link.rename(moved)
++    else:
++        link, moved = audio, target
++        audio.rename(moved)
++    if kind == 'directory_junction':
++        if os.name != 'nt':
++            pytest.skip('Junction fixture requires Windows')
++        created = subprocess.run(['cmd', '/c', 'mklink', '/J', str(link), str(moved)],
++                                 capture_output=True, text=True)
++        assert created.returncode == 0, created.stdout + created.stderr
++        assert os.path.isjunction(link)
++    else:
++        try:
++            link.symlink_to(moved, target_is_directory=kind == 'directory_symlink')
++        except OSError:
++            pytest.skip('Symlinks unavailable to this test account')
++    reader, reads = suite.read_audio, []
++    def tracked_read(*args, **kwargs):
++        reads.append(True)
++        return reader(*args, **kwargs)
++    monkeypatch.setattr(suite, 'read_audio', tracked_read)
++    monkeypatch.setattr(source, 'prepare_source', lambda *a, **kw: pytest.fail('Reused receipt must not hydrate'))
++    with pytest.raises(ValueError, match='containment|link'):
++        module.replay_evaluation(tmp_path, run, source_commit='software-fixture')
++    assert reads == [] and not any(call[0] == 'infer' for call in calls)
++    assert not (tmp_path / run / 'replay/verification.json').exists()
++    failure = json.loads((tmp_path / run / 'replay/failure.json').read_text())
++    assert failure['stage'] == 'source_preparation'
