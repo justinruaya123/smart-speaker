@@ -48,6 +48,7 @@ export async function createApp(config: Config, options: Options = {}) {
   const runtime = config.runtime ? (options.runtimeFactory ? options.runtimeFactory(config.runtime) : new PythonRuntime(config.runtime)) : undefined;
   const actionClients = new Map<import('ws').default, string>();
   const localPending = new Map<string,{owner:string;timer:NodeJS.Timeout}>();
+  const cameraAdmissions = new Map<string,{entity:string;expires:number}>();
   let localOwner: string | undefined, localCurrent: string | undefined;
   const runtimeEnabled = () => !runtime || config.runtime?.profile !== 'benchmark-compatible' && runtime.status().loaded === true && runtime.status().actions_enabled === true;
   const actionsEnabled = () => config.actionsEnabled && runtimeEnabled();
@@ -79,7 +80,10 @@ export async function createApp(config: Config, options: Options = {}) {
     openweather:()=>openweather.read(),
     camera:async entity=>{
       const frame=await ha.camera(entity); await frame.body.cancel();
-      return { entity_id:entity,video_only:true,stream_url:`/api/home-assistant/camera/${entity}/stream`,snapshot_url:`/api/home-assistant/camera/${entity}` };
+      for(const [key,value] of cameraAdmissions)if(value.expires<=Date.now())cameraAdmissions.delete(key);
+      if(cameraAdmissions.size>=4)cameraAdmissions.delete(cameraAdmissions.keys().next().value!);
+      const admission=randomUUID(),expires=Date.now()+300000;cameraAdmissions.set(admission,{entity,expires});
+      return { entity_id:entity,video_only:true,admission_expires_at:new Date(expires).toISOString(),stream_url:`/api/home-assistant/camera/${entity}/stream?admission=${admission}`,snapshot_url:`/api/home-assistant/camera/${entity}?admission=${admission}` };
     },
     media:(entity,command,content)=>ha.media(entity,command,content),
     local:async(command,content)=>{
@@ -269,13 +273,20 @@ export async function createApp(config: Config, options: Options = {}) {
     await spotify.control(spotifyCommand(req.body));
     return { ...await spotify.snapshot(), actionsEnabled: config.actionsEnabled };
   });
-  app.get<{ Params: { id: string } }>('/api/home-assistant/camera/:id', async (req, reply) => {
+  const cameraAdmitted=(id:string,admission:unknown)=>{
+    if(!config.publication)return true;
+    const grant=typeof admission==='string'?cameraAdmissions.get(admission):undefined;
+    return actionsEnabled()&&grant?.entity===id&&grant.expires>Date.now();
+  };
+  app.get<{ Params: { id: string }; Querystring: { admission?: string } }>('/api/home-assistant/camera/:id', async (req, reply) => {
+    if(!cameraAdmitted(req.params.id,req.query.admission))return reply.code(409).send({error:'camera_admission_required',message:'Enable actions and explicitly open the camera through Iris. Historical or synthetic receipts do not grant camera access.'});
     const camera = await ha.camera(req.params.id);
     return reply.type(camera.contentType).send(Readable.fromWeb(camera.body as NodeReadableStream<Uint8Array>));
   });
-  app.get<{ Params: { id: string }; Querystring: { session?: string } }>('/api/home-assistant/camera/:id/stream', {
-    schema: { querystring: { type: 'object', properties: { session: { type: 'string', pattern: '^[a-zA-Z0-9-]{1,64}$' } }, additionalProperties: false } },
+  app.get<{ Params: { id: string }; Querystring: { session?: string; admission?: string } }>('/api/home-assistant/camera/:id/stream', {
+    schema: { querystring: { type: 'object', properties: { session: { type: 'string', pattern: '^[a-zA-Z0-9-]{1,64}$' }, admission:{type:'string',pattern:'^[a-zA-Z0-9-]{1,64}$'} }, additionalProperties: false } },
   }, async (req, reply) => {
+    if(!cameraAdmitted(req.params.id,req.query.admission))return reply.code(409).send({error:'camera_admission_required',message:'Explicit camera admission is required.'});
     if (cameraStreams.size >= 2) return reply.code(429).send({ error: 'camera_busy', message: 'Close another camera view and try again.' });
     const lifetime = new AbortController();
     cameraStreams.set(lifetime, { entityId: req.params.id, session: req.query.session });

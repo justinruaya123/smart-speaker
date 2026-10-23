@@ -84,9 +84,13 @@ test('the actual gateway uses HA light capability checks and same-origin dining 
     const light = await app.inject({ method: 'POST', url: '/api/actions', headers, payload: { request_id: 'hue', command: { intent: 'BRIGHTNESS', slots: { light_id: 'light.all', percent: 20 } } } });
     assert.equal(light.json().status, 'succeeded');
     assert.deepEqual(calls.find(c => c.url.includes('/api/services/'))?.body, { entity_id: lamp, brightness_pct: 20 });
+    const beforeCamera = calls.length;
+    assert.equal((await app.inject({ url: `/api/home-assistant/camera/${camera}`, headers })).statusCode, 409, 'Direct camera reads need explicit canonical CALL admission');
+    assert.equal((await app.inject({ url: `/api/home-assistant/camera/${camera}/stream`, headers })).statusCode, 409);
+    assert.equal(calls.length, beforeCamera);
     const view = (await app.inject({ method: 'POST', url: '/api/actions', headers, payload: { request_id: 'camera', command: { intent: 'CALL', slots: { contact_id: 'contact.home' } } } })).json();
     assert.equal(view.status, 'observed');
-    assert.equal(view.camera.stream_url, `/api/home-assistant/camera/${camera}/stream`);
+    assert.ok(view.camera.stream_url.startsWith(`/api/home-assistant/camera/${camera}/stream?admission=`));
     assert.equal(view.camera.video_only, true);
     assert.equal(JSON.stringify(view).includes('offline-test-token'), false);
     assert.ok(calls.some(c => c.url.endsWith('/api/camera_proxy/' + camera)));
@@ -97,7 +101,13 @@ test('the actual gateway uses HA light capability checks and same-origin dining 
     const before = calls.length;
     assert.equal((await app.inject({ method: 'POST', url: '/api/actions', headers: { ...headers, origin: 'https://other.invalid' }, payload: { request_id: 'foreign', command: { intent: 'LIGHT_ON', slots: { light_id: 'light.all' } } } })).statusCode, 403);
     assert.equal(calls.length, before);
-    assert.equal((await app.inject({ url: '/api/home-assistant/camera/camera.not_allowed', headers })).statusCode, 400);
+    assert.equal((await app.inject({ url: '/api/home-assistant/camera/camera.not_allowed', headers })).statusCode, 409);
+    const frame = await app.inject({ url: view.camera.snapshot_url, headers });
+    assert.equal(frame.statusCode, 200);
+    cfg.actionsEnabled = false;
+    const beforeDisabled = calls.length;
+    assert.equal((await app.inject({ url: view.camera.snapshot_url, headers })).statusCode, 409);
+    assert.equal(calls.length, beforeDisabled);
   } finally { await app.close(); await rm(directory, { recursive: true, force: true }); }
 });
 
