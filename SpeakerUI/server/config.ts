@@ -82,6 +82,8 @@ export function readConfig(env: NodeJS.ProcessEnv, cwd: string) {
   const spotifyEnabled = enabled(env.SPOTIFY_ENABLED, 'SPOTIFY_ENABLED');
   const entityIds = [...new Set((env.HA_ENTITY_IDS || '').split(',').map((id) => id.trim()).filter(Boolean))];
   if (entityIds.length > 100 || entityIds.some((id) => !/^(light|camera|sensor|climate|weather|media_player|script)\.[a-z0-9_]+$/.test(id))) throw new Error('HA_ENTITY_IDS supports at most 100 light/camera/sensor/climate/weather/media_player/script IDs.');
+  const temperatureSensor = env.HA_TEMPERATURE_SENSOR_ID?.trim() || undefined;
+  if (temperatureSensor && (!/^sensor\.[a-z0-9_]+$/.test(temperatureSensor) || !entityIds.includes(temperatureSensor))) throw new Error('HA_TEMPERATURE_SENSOR_ID must be an explicitly allowlisted sensor entity.');
   const tls = env.TLS_CERT_PATH || env.TLS_KEY_PATH ? { cert: required(env.TLS_CERT_PATH, 'TLS_CERT_PATH'), key: required(env.TLS_KEY_PATH, 'TLS_KEY_PATH') } : undefined;
   const ha = haEnabled ? { enabled: true as const, url: httpUrl(required(env.HA_URL, 'HA_URL'), 'HA_URL'), token: required(env.HA_TOKEN, 'HA_TOKEN'), entityIds } : { enabled: false as const, entityIds };
   let spotify;
@@ -92,6 +94,6 @@ export function readConfig(env: NodeJS.ProcessEnv, cwd: string) {
     if (redirect.origin !== origin || redirect.pathname !== '/auth/spotify/callback') throw new Error('Spotify redirect must be APP_ORIGIN + /auth/spotify/callback.');
     spotify = { enabled: true as const, clientId: required(env.SPOTIFY_CLIENT_ID, 'SPOTIFY_CLIENT_ID'), clientSecret: required(env.SPOTIFY_CLIENT_SECRET, 'SPOTIFY_CLIENT_SECRET'), redirectUri, deviceId: env.SPOTIFY_DEVICE_ID || undefined };
   } else spotify = { enabled: false as const };
-  return { host: env.HOST || '127.0.0.1', port, origin, tls, inferenceMode, runtime, threshold, bindings, timezone, publication: enabled(env.IRIS_PUBLICATION, 'IRIS_PUBLICATION'), actionsEnabled: enabled(env.ACTIONS_ENABLED, 'ACTIONS_ENABLED'), ha, spotify, mediaDir: resolve(cwd, env.LOCAL_MEDIA_DIR || 'media'), dataDir: resolve(cwd, env.DATA_DIR || 'data') };
+  return { host: env.HOST || '127.0.0.1', port, origin, tls, inferenceMode, runtime, threshold, bindings, timezone, temperatureSensor, publication: enabled(env.IRIS_PUBLICATION, 'IRIS_PUBLICATION'), actionsEnabled: enabled(env.ACTIONS_ENABLED, 'ACTIONS_ENABLED'), ha, spotify, mediaDir: resolve(cwd, env.LOCAL_MEDIA_DIR || 'media'), dataDir: resolve(cwd, env.DATA_DIR || 'data') };
 }
 export type Config = ReturnType<typeof readConfig>;

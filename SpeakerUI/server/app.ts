@@ -22,6 +22,7 @@ import { ActionStore, type Execution } from './inference/action-store.js';
 import { canonicalCommand } from '../shared/canonical-command.js';
 import { isRecord } from '../shared/protocol.js';
 import { randomUUID } from 'node:crypto';
+import { provenance } from './inference/synthetic-outcomes.js';
 
 interface Options { staticDir?: string; fetcher?: typeof fetch; inferenceFactory?: InferenceFactory; haSocketFactory?: (url: URL) => HomeAssistantSocket }
 
@@ -229,7 +230,14 @@ export async function createApp(config: Config, options: Options = {}) {
     if (fixture === undefined) return reply.code(400).send({ error: 'invalid_fixture' });
     return dummyRuntime.infer(fixture);
   });
-  app.get('/api/home-assistant/entities', async () => ({ ...ha.snapshot(), actionsEnabled: actionsEnabled() }));
+  app.get('/api/home-assistant/entities', async () => {
+    let observed_temperature: Record<string, unknown> = { status:'not_configured',temperature:null,unit:null,observed_at:null };
+    if (config.publication && config.temperatureSensor) {
+      try { observed_temperature={status:'observed',...await ha.temperature(config.temperatureSensor),provenance:provenance('home_assistant',false,true)}; }
+      catch { observed_temperature={status:'unavailable',temperature:null,unit:null,observed_at:null}; }
+    }
+    return { ...ha.snapshot(), actionsEnabled:actionsEnabled(), ...(config.publication?{observed_temperature}:{}) };
+  });
   app.get('/api/spotify/state', async () => ({ ...await spotify.snapshot(), actionsEnabled: actionsEnabled() }));
   app.post('/api/home-assistant/control', async (req, reply) => {
     if (!actionsEnabled()) return reply.code(409).send({ error: 'actions_disabled', message: 'Device actions are disabled.' });

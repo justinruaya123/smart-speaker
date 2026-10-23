@@ -4,6 +4,7 @@ import { IntegrationError } from '../integrations/http.js';
 import { canonicalCommand, taskLabels, type CanonicalCommand } from '../../shared/canonical-command.js';
 import type { ActionBindings } from '../config.js';
 import { ActionStore, type Execution } from './action-store.js';
+import { SyntheticOutcomes } from './synthetic-outcomes.js';
 
 type Providers = {
   light: (command: LightCommand) => Promise<unknown>;
@@ -22,6 +23,7 @@ const colors: Record<string, number[]> = { red: [255, 0, 0], blue: [0, 0, 255], 
 
 /** One dispatcher per server. Tentative/recorded events never enter dispatch. */
 export class RuntimeActions {
+  private synthetic = new SyntheticOutcomes();
   constructor(private config: { enabled: boolean; bindings: ActionBindings; profile?: string; timezone?: string; publication?: boolean }, private providers: Providers,
     readonly store = ActionStore.memory(), private now = Date.now) {}
 
@@ -82,6 +84,7 @@ export class RuntimeActions {
       return accepted('Home Assistant');
     }
     if (intent === 'TEMPERATURE') {
+      if (this.config.publication) return outcome('synthetic', '', this.synthetic.complete(command, 'Thermostat target is simulated; no climate service was called.'));
       const target = bindings.climate?.default;
       if (!target || !this.providers.climate) return missing('bindings.climate.default');
       await this.providers.climate(target, Number(slots.degrees)); return accepted('Home Assistant');
