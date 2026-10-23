@@ -88,6 +88,10 @@ try {
         const badge=page.locator('[aria-label="Execution receipt"] [data-source]');
         assert.equal(await badge.getAttribute('data-source'),local.has(command.intent)?'local':'synthetic');
         if(expected==='synthetic')await page.getByRole('status').filter({hasText:'Synthetic — no device changed'}).waitFor();
+        if(['LIGHT_ON','LIGHT_OFF','BRIGHTNESS','COLOR','VOLUME'].includes(command.intent)){
+          const clipped=await page.locator('.panel-body').evaluate(panel=>{const bounds=panel.getBoundingClientRect();return [...panel.querySelectorAll('.form-row button')].some(button=>button.getBoundingClientRect().bottom>bounds.bottom+1);});
+          assert.equal(clipped,false,'Primary touch controls must not be clipped below the use-case panel');
+        }
         if(command.intent==='TEMPERATURE'){
           await page.locator('[data-synthetic-target]').waitFor();
           await page.locator('[data-observed-temperature]').filter({hasText:'29.5°C'}).waitFor();
