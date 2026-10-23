@@ -1,3 +1,18 @@
+<!-- optionb-tiny-snapshot:start -->
+# Current OptionB tiny-model snapshot
+
+The current finite OptionB candidate is **258,912 parameters /width160 /original epoch44 /FP32 ONNX**, with the frozen **.50 posterior /.10 margin** demo policy. It covers31 complete commands plus UNKNOWN and targets93 wording definitions. The exact bundle and selected checkpoint are now tracked under `submission/models/optionb-tiny/` and `submission/checkpoints/optionb-tiny-selected.pt`; `submission/optionb-tiny/snapshot.json` binds model, source and metadata-only input membership.
+
+Use branch **`snapshot/optionb-tiny-epoch44`** for this candidate. [Snapshot and clean-clone reproduction guide](docs/REPRODUCIBILITY-optionb-tiny.md). With a new checkout/environment:
+
+```sh
+uv sync --locked --python 3.13.14 --group training --group benchmark
+uv run --no-sync python -m scripts.runtime.optionb_worker --bundle submission/models/optionb-tiny --check
+```
+
+This verifies/loads the tracked candidate without `.cache` model payloads, microphone capture or actions. Full source-only training/evaluation reproduction is being tested separately, not claimed complete by this snapshot. Existing tiny research verifiers depend on ignored study inputs. **Do not use the older root2M reproduction/benchmark commands below as a tiny-model test.** The historical2M/935k entry points, artifacts and evidence remain preserved; installed defaults and disabled tiny-model qualification/actions are unchanged.
+<!-- optionb-tiny-snapshot:end -->
+
 <!-- final-submission:start -->
 # Final submission: 2M direct VCM
 

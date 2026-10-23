@@ -1,0 +1,5 @@
+{
+  "enabled": true,
+  "min_margin": 0.1,
+  "min_probability": 0.5
+}

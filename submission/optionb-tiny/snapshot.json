@@ -1,0 +1,418 @@
+{
+  "actions_enabled": false,
+  "architecture": {
+    "activation": "SiLU",
+    "dilations": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "feature_stride": 2,
+    "frontend": {
+      "centered": false,
+      "fft_size": 512,
+      "floor": 1e-08,
+      "high_hz": 7600,
+      "hop_samples": 160,
+      "low_hz": 20,
+      "mel_bins": 40,
+      "sample_rate": 16000,
+      "window_samples": 400
+    },
+    "head": "one 32-way complete-command/UNKNOWN linear softmax head",
+    "norm": "per-frame LayerNorm",
+    "pooling": "valid-length masked mean and max",
+    "residual_blocks": 4,
+    "residual_kernel": 7,
+    "stages_per_block": 2,
+    "stem_kernel": 5,
+    "training_dropout": 0.1,
+    "unknown_index": 0,
+    "width": 160
+  },
+  "auxiliary_source": {
+    "branch": "reproduction-v1",
+    "bytes": 12820896,
+    "files": 184,
+    "prefix": "reproduction/auxiliary",
+    "public": true,
+    "purpose": "Exact synthetic development audio required by selected seed-53 compact recipe; no training or evaluation humans",
+    "repo_type": "dataset",
+    "repository": "justinruaya123/ai231-smart-speaker",
+    "revision": "0fc3ac3ff257838d02000b6a8ce78225c262b9fa"
+  },
+  "bundle": "submission/models/optionb-tiny",
+  "candidate": "speaker-optionb-tiny-demo-v1",
+  "checkpoint": "submission/checkpoints/optionb-tiny-selected.pt",
+  "expected_pc_metrics": {
+    "holdout": {
+      "ambiguous_unscored": 2,
+      "exact_wording": {
+        "correct_accepted": 58,
+        "metadata_exact_references": 62,
+        "rejected": 3,
+        "wrong_accepted": 1
+      },
+      "latency": {
+        "observations": 288,
+        "p50_ms": 7.708299999649171,
+        "p95_ms": 8.883529999638993,
+        "rtf_p95": 0.0021069284453450114
+      },
+      "original_rows": 96,
+      "raw": {
+        "correct_accepted": 76,
+        "f1": 0.9047619047619048,
+        "fn": 4,
+        "fp": 12,
+        "negative_false_accept_rate": 0.5714285714285714,
+        "negative_false_accepts": 8,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 0.8636363636363636,
+        "recall": 0.95,
+        "rows": 94,
+        "tp": 76,
+        "wrong_accepted": 12
+      },
+      "selected": {
+        "correct_accepted": 72,
+        "f1": 0.9290322580645162,
+        "fn": 8,
+        "fp": 3,
+        "negative_false_accept_rate": 0.07142857142857142,
+        "negative_false_accepts": 1,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 0.96,
+        "recall": 0.9,
+        "rows": 94,
+        "tp": 72,
+        "wrong_accepted": 3
+      }
+    },
+    "test": {
+      "ambiguous_unscored": 185,
+      "exact_wording": {
+        "correct_accepted": 173,
+        "metadata_exact_references": 232,
+        "rejected": 55,
+        "wrong_accepted": 4
+      },
+      "latency": {
+        "observations": 3150,
+        "p50_ms": 5.211200000303506,
+        "p95_ms": 8.672360000400655,
+        "rtf_p95": 0.0030823628245596475
+      },
+      "original_rows": 1050,
+      "raw": {
+        "correct_accepted": 469,
+        "f1": 0.741501976284585,
+        "fn": 140,
+        "fp": 187,
+        "negative_false_accept_rate": 0.33984375,
+        "negative_false_accepts": 87,
+        "negatives": 256,
+        "positives": 609,
+        "precision": 0.7149390243902439,
+        "recall": 0.7701149425287356,
+        "rows": 865,
+        "tp": 469,
+        "wrong_accepted": 187
+      },
+      "selected": {
+        "correct_accepted": 393,
+        "f1": 0.7408105560791706,
+        "fn": 216,
+        "fp": 59,
+        "negative_false_accept_rate": 0.09375,
+        "negative_false_accepts": 24,
+        "negatives": 256,
+        "positives": 609,
+        "precision": 0.8694690265486725,
+        "recall": 0.645320197044335,
+        "rows": 865,
+        "tp": 393,
+        "wrong_accepted": 59
+      }
+    }
+  },
+  "files": {
+    "submission/checkpoints/optionb-tiny-selected.pt": {
+      "bytes": 2326131,
+      "sha256": "d45d71b3858b4182967d3f41dad8145150028ca17401c73d203fba75d6bda687"
+    },
+    "submission/models/optionb-tiny/commands.json": {
+      "bytes": 2811,
+      "sha256": "71017cf22366d15557e8878636135f5ff2d0ac81fc4dfd6f058fc88f0f2d4b5d"
+    },
+    "submission/models/optionb-tiny/model.onnx": {
+      "bytes": 1082940,
+      "sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce"
+    },
+    "submission/models/optionb-tiny/normalization.json": {
+      "bytes": 2098,
+      "sha256": "28f7ef1b2c926c587d611d17eef91184c2c7e2de66abe352d1fc2365e45d69ed"
+    },
+    "submission/models/optionb-tiny/policy.json": {
+      "bytes": 74,
+      "sha256": "b9242e46fb093642a41023e8ace3c0cadc2fe51ffede512aa09e399622f355f0"
+    },
+    "submission/models/optionb-tiny/recipe.json": {
+      "bytes": 759,
+      "sha256": "020c3deccb0f8cece0f23b8c016b6a63bdd0359321bb06cbd00e091966d46621"
+    },
+    "submission/optionb-tiny/inputs/calibration.jsonl.gz": {
+      "bytes": 34957,
+      "sha256": "d74ffa0ad02641cac9b2073d95a15fb73a896fb87d29c245c40db166f430eb41"
+    },
+    "submission/optionb-tiny/inputs/dev.jsonl.gz": {
+      "bytes": 152072,
+      "sha256": "286192c9a4ae2522c0dacfd43d0d789c2e6d01b4e58f95fe4b6f436f19b1884e"
+    },
+    "submission/optionb-tiny/inputs/golden-evaluation-predictions.jsonl.gz": {
+      "bytes": 3859670,
+      "sha256": "c41061e8698b970c24e3e1fdbb2ebcf2ea6a1b433ce5087ee258bc3421aae873"
+    },
+    "submission/optionb-tiny/inputs/holdout.jsonl.gz": {
+      "bytes": 20336,
+      "sha256": "5eda0c581eae1fba7460ac0275cc0a206babc591507239d62d3c8c797391682a"
+    },
+    "submission/optionb-tiny/inputs/raw-feature-inputs.jsonl.gz": {
+      "bytes": 3048999,
+      "sha256": "43641aabbffb3edd70fdd775968b1d650686af980c19158bf2217ca101005789"
+    },
+    "submission/optionb-tiny/inputs/references.jsonl.gz": {
+      "bytes": 436022,
+      "sha256": "d9eef20cdb08e2afb05d8bafeaa5d9961b803346c648da274ee2c9bed859fa89"
+    },
+    "submission/optionb-tiny/inputs/test.jsonl.gz": {
+      "bytes": 484254,
+      "sha256": "946b87436e467430a965b3b926b18f4b003b7c8544693b5a880f1b57946025c3"
+    },
+    "submission/optionb-tiny/inputs/train.jsonl.gz": {
+      "bytes": 2761176,
+      "sha256": "169a6c09daf7843d0cc97c33d84030bf82fc2a6415bebf932c5b281919428be5"
+    },
+    "submission/optionb-tiny/inputs/training-normalization.json": {
+      "bytes": 429040,
+      "sha256": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09"
+    }
+  },
+  "format": "optionb-tiny-frozen-snapshot-v1",
+  "fresh_human_check": "pending_no_new_recordings",
+  "github_branch": "snapshot/optionb-tiny-epoch44",
+  "golden_evaluation_predictions": {
+    "bytes": 3859670,
+    "local_cache_paths_removed": false,
+    "path": "submission/optionb-tiny/inputs/golden-evaluation-predictions.jsonl.gz",
+    "rows": 4896,
+    "sha256": "c41061e8698b970c24e3e1fdbb2ebcf2ea6a1b433ce5087ee258bc3421aae873",
+    "source_sha256": "27172b3510b876cbecf67a69a8042ab48e94c3af18e0c2e75373f6edb7d54058"
+  },
+  "input_metadata_is_not_independent_listener_truth": true,
+  "installed_defaults_changed": false,
+  "legacy_cache_paths_are_not_portable_dependencies": true,
+  "notice": "Preserve dataset/source-specific terms. This metadata/model snapshot is not release qualification or a new dataset/audio publication.",
+  "parameters": 258912,
+  "pi_test": "excluded_by_user",
+  "policy": {
+    "enabled": true,
+    "min_margin": 0.1,
+    "min_probability": 0.5
+  },
+  "qualified": false,
+  "raw_audio_or_feature_tensors_in_snapshot": false,
+  "raw_feature_inputs": {
+    "bytes": 3048999,
+    "local_cache_paths_removed": false,
+    "path": "submission/optionb-tiny/inputs/raw-feature-inputs.jsonl.gz",
+    "rows": 24566,
+    "sha256": "43641aabbffb3edd70fdd775968b1d650686af980c19158bf2217ca101005789",
+    "source_sha256": "c8383a0cf4f915dbf0969244af50da953cb4ddf9c0efe7575d6b515321fabe72"
+  },
+  "references": {
+    "bytes": 436022,
+    "local_cache_paths_removed": true,
+    "path": "submission/optionb-tiny/inputs/references.jsonl.gz",
+    "rows": 4614,
+    "sha256": "d9eef20cdb08e2afb05d8bafeaa5d9961b803346c648da274ee2c9bed859fa89",
+    "source_sha256": "b90d7b632e93a1686fa13ac610f79b229592300018460f42dc1a70e5fa03dd8c"
+  },
+  "selected_epoch": 44,
+  "snapshot_parent_commit": "1d67db2095c0cca89090863f63c39760331f026a",
+  "source_baseline_commit": "d72decbaf197ca32e4d4d177968efd92f0c6415e",
+  "source_bindings": {
+    "pyproject.toml": "5823355fb7a1f083a0d88536098a55496bcf6c61568bd5880cf373c5722d094a",
+    "scripts/models/speaker_optionb_tiny.py": "563c13da8009e92200b679f1722c4cf61195e40d82b6623cb959ea4a77c0729c",
+    "scripts/models/vcm.py": "48e85eaee92bd0383bf3ee05bc347eec0390f802a0711fcf7aeac8d0b085e162",
+    "scripts/runtime/optionb_contract.py": "72aad2fbdbaf7505fefdb35f1a7ea340ec84f41264ad427eba7bff472c9f3a2b",
+    "scripts/runtime/optionb_worker.py": "97055fd22e0213fc38aeb455d4279a9504a44ed0f7b8ea9d7686ddbbe1181151",
+    "scripts/runtime/pcv_schema.py": "603ec943eae1e7330dd2eb82f05bbd7c206382ecf13c0fb8f8801a7ecd0e134c",
+    "scripts/runtime/speaker_optionb_tiny.py": "2a2d9e0e18ab1531ead02fd66dcc1ffda1f25b04b040b03ce7588c9a7145d670",
+    "scripts/train/speaker_optionb_tiny.py": "d18e39384afdd43a2b0b569a79365672949234876b9b78a2e58acc071e8c9b45",
+    "uv.lock": "c24ebb9579b75f06970e130d9a1a6026bff8778d7bb95232da339f6d155d1362",
+    "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+  },
+  "source_only_full_reproduction": "not_yet_tested_from_GitHub",
+  "source_shards": [
+    {
+      "bytes": 315293385,
+      "file": "data/train-00000-of-00002.parquet",
+      "repository": "airimonda/ai231-me2-voice-commands",
+      "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+      "sha256": "977e6c6be208818a35496ac6e1a2b2da62f3387acba377664e0f48dbdc2cec9e",
+      "url": "https://huggingface.co/datasets/airimonda/ai231-me2-voice-commands/resolve/25111444af3adff7588d86ab27c304bb080895cf/data/train-00000-of-00002.parquet?download=true"
+    },
+    {
+      "bytes": 397331137,
+      "file": "data/train-00001-of-00002.parquet",
+      "repository": "airimonda/ai231-me2-voice-commands",
+      "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+      "sha256": "4c29353d0ab14bb27fd3af8b513c2b9dd41f7707e86fbaa55104bfe71a328674",
+      "url": "https://huggingface.co/datasets/airimonda/ai231-me2-voice-commands/resolve/25111444af3adff7588d86ab27c304bb080895cf/data/train-00001-of-00002.parquet?download=true"
+    },
+    {
+      "bytes": 244957155,
+      "file": "data/train-00000-of-00004.parquet",
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "sha256": "01d32c3ed7b2e9a0ee131a1dad128c8e63e7b20a198ce1170625bd0940db0778",
+      "url": "https://huggingface.co/datasets/martinnavs/ai231-fil-supplemental-data/resolve/230c8b8d58caf78e4bc90886d9c6fa77fe6024b8/data/train-00000-of-00004.parquet?download=true"
+    },
+    {
+      "bytes": 276168578,
+      "file": "data/train-00001-of-00004.parquet",
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "sha256": "c66da6df2579243d27fb956ddbc413f2e2ed0a4c5acaa77c333e905f866d885a",
+      "url": "https://huggingface.co/datasets/martinnavs/ai231-fil-supplemental-data/resolve/230c8b8d58caf78e4bc90886d9c6fa77fe6024b8/data/train-00001-of-00004.parquet?download=true"
+    },
+    {
+      "bytes": 235971285,
+      "file": "data/train-00002-of-00004.parquet",
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "sha256": "8a7e0460893a97cb4e3ad4b3729ae781a277dcbccced7484898e2f5985122566",
+      "url": "https://huggingface.co/datasets/martinnavs/ai231-fil-supplemental-data/resolve/230c8b8d58caf78e4bc90886d9c6fa77fe6024b8/data/train-00002-of-00004.parquet?download=true"
+    },
+    {
+      "bytes": 235454295,
+      "file": "data/train-00003-of-00004.parquet",
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "sha256": "0d31aa80f447423413fa097567c8df9cbdaa70439774d43df209c8ffc47df257",
+      "url": "https://huggingface.co/datasets/martinnavs/ai231-fil-supplemental-data/resolve/230c8b8d58caf78e4bc90886d9c6fa77fe6024b8/data/train-00003-of-00004.parquet?download=true"
+    },
+    {
+      "bytes": 118240931,
+      "file": "gap_fill/train-00000-of-00001.parquet",
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "sha256": "1e229f67df1b539711886e01062dbc0309c58f38e739dad787b11c669d314512",
+      "url": "https://huggingface.co/datasets/martinnavs/ai231-fil-supplemental-data/resolve/230c8b8d58caf78e4bc90886d9c6fa77fe6024b8/gap_fill/train-00000-of-00001.parquet?download=true"
+    },
+    {
+      "bytes": 411129,
+      "file": "numeral_wordings/train-00000-of-00001.parquet",
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "sha256": "9808c05811bc0e3bdd152c74c4473673b1355e2dc355873ceb8bb48936a5ac5a",
+      "url": "https://huggingface.co/datasets/martinnavs/ai231-fil-supplemental-data/resolve/230c8b8d58caf78e4bc90886d9c6fa77fe6024b8/numeral_wordings/train-00000-of-00001.parquet?download=true"
+    },
+    {
+      "bytes": 284419574,
+      "file": "data/test-00000-of-00001.parquet",
+      "repository": "airimonda/ai231-me2-voice-commands",
+      "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+      "sha256": "81794982a6b7fd8c75758ad5f4c0257abedea6c1c0575bbaaabcba8e0e0a43ea",
+      "url": "https://huggingface.co/datasets/airimonda/ai231-me2-voice-commands/resolve/25111444af3adff7588d86ab27c304bb080895cf/data/test-00000-of-00001.parquet?download=true"
+    },
+    {
+      "bytes": 14553313,
+      "file": "data/holdout-00000-of-00001.parquet",
+      "repository": "airimonda/ai231-me2-voice-commands",
+      "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+      "sha256": "9917e336ec596eaaddb476e266f36451326e3f8e5a2cb3dafbb675c33be133aa",
+      "url": "https://huggingface.co/datasets/airimonda/ai231-me2-voice-commands/resolve/25111444af3adff7588d86ab27c304bb080895cf/data/holdout-00000-of-00001.parquet?download=true"
+    }
+  ],
+  "training": {
+    "batch_size": 32,
+    "context_max_frames": 120,
+    "human_epochs": 6,
+    "label_smoothing": 0.02,
+    "learning_rate": 0.002,
+    "mixed_epochs": 42,
+    "seed": 53,
+    "steps_per_epoch": 96,
+    "threads": 4,
+    "weight_decay": 0.0001
+  },
+  "training_device": "CPU, four Torch threads, original deterministic seed53 recipe; no GPU substitution",
+  "training_frontend": "Fresh 40-bin features with BLAS one thread; legacy 2M feature paths/hashes are not tiny-model fitting inputs",
+  "training_normalization": "submission/optionb-tiny/inputs/training-normalization.json",
+  "views": {
+    "calibration": {
+      "bytes": 34957,
+      "kinds": {
+        "human": 210
+      },
+      "local_cache_paths_removed": true,
+      "path": "submission/optionb-tiny/inputs/calibration.jsonl.gz",
+      "rows": 210,
+      "sha256": "d74ffa0ad02641cac9b2073d95a15fb73a896fb87d29c245c40db166f430eb41",
+      "source_sha256": "aa39c3432d36ce29b13d158c389a73d113501aee6f1e56e8b1b0f334f3f15779"
+    },
+    "dev": {
+      "bytes": 152072,
+      "kinds": {
+        "human": 256,
+        "synthetic": 995
+      },
+      "local_cache_paths_removed": true,
+      "path": "submission/optionb-tiny/inputs/dev.jsonl.gz",
+      "rows": 1251,
+      "sha256": "286192c9a4ae2522c0dacfd43d0d789c2e6d01b4e58f95fe4b6f436f19b1884e",
+      "source_sha256": "a35622f5579f7f31d2c180741ceaa7736908a0417d8fc0c89b091ab313ee3a65"
+    },
+    "holdout": {
+      "bytes": 20336,
+      "kinds": {
+        "human": 96,
+        "synthetic": 100
+      },
+      "local_cache_paths_removed": true,
+      "path": "submission/optionb-tiny/inputs/holdout.jsonl.gz",
+      "rows": 196,
+      "sha256": "5eda0c581eae1fba7460ac0275cc0a206babc591507239d62d3c8c797391682a",
+      "source_sha256": "fd0f45e5ba596a976f20325a9e805630f030e92b62bf246635a5e2b3808f6aaa"
+    },
+    "test": {
+      "bytes": 484254,
+      "kinds": {
+        "human": 1050,
+        "synthetic": 3368
+      },
+      "local_cache_paths_removed": true,
+      "path": "submission/optionb-tiny/inputs/test.jsonl.gz",
+      "rows": 4418,
+      "sha256": "946b87436e467430a965b3b926b18f4b003b7c8544693b5a880f1b57946025c3",
+      "source_sha256": "4bc7edee154f72414ea4e05ee50305709d5d6e47431aada0aebf7f782baeec6a"
+    },
+    "train": {
+      "bytes": 2761176,
+      "kinds": {
+        "human": 1889,
+        "synthetic": 21426
+      },
+      "local_cache_paths_removed": true,
+      "path": "submission/optionb-tiny/inputs/train.jsonl.gz",
+      "rows": 23315,
+      "sha256": "169a6c09daf7843d0cc97c33d84030bf82fc2a6415bebf932c5b281919428be5",
+      "source_sha256": "dbecaf5e729b307d4437f8c28147a0bf6f7d8a6ce705d9b43e1ab13d086189ce"
+    }
+  }
+}
