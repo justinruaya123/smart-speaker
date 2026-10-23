@@ -1,0 +1,322 @@
+{
+  "calibration_numeric_pcm_loaded": false,
+  "checkpoint_sha256": "7b2569ee6fea3f47f1200fcf6967ee80428d1c5b7490b9403bae4a8dca74fd33",
+  "cpu_threads": 4,
+  "epoch": 3,
+  "history": [
+    {
+      "development": {
+        "cross_entropy": 0.08720874991364726,
+        "recall": 0.9285714285714286,
+        "specificity": 1.0
+      },
+      "epoch": 1,
+      "loss": 0.20253621751908213,
+      "seconds": 4.683534900002996
+    },
+    {
+      "development": {
+        "cross_entropy": 0.29494964486205766,
+        "recall": 0.7380952380952381,
+        "specificity": 1.0
+      },
+      "epoch": 2,
+      "loss": 0.014091759392613312,
+      "seconds": 9.69924390000233
+    },
+    {
+      "development": {
+        "cross_entropy": 0.06866096558261167,
+        "recall": 0.9523809523809523,
+        "specificity": 1.0
+      },
+      "epoch": 3,
+      "loss": 0.0028601323620023322,
+      "seconds": 15.236429399999906
+    },
+    {
+      "development": {
+        "cross_entropy": 0.12540492385836186,
+        "recall": 0.8571428571428571,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 4,
+      "loss": 0.0010560063483353588,
+      "seconds": 20.320973800000502
+    },
+    {
+      "development": {
+        "cross_entropy": 0.10388959981512572,
+        "recall": 0.9523809523809523,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 5,
+      "loss": 0.0005730035807118838,
+      "seconds": 25.48614870000165
+    },
+    {
+      "development": {
+        "cross_entropy": 0.22715596287552609,
+        "recall": 0.8095238095238095,
+        "specificity": 1.0
+      },
+      "epoch": 6,
+      "loss": 0.00038513203071488533,
+      "seconds": 31.03980859999865
+    },
+    {
+      "development": {
+        "cross_entropy": 0.16003956450284407,
+        "recall": 0.9047619047619048,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 7,
+      "loss": 0.0002898507212876211,
+      "seconds": 35.629494100001466
+    },
+    {
+      "development": {
+        "cross_entropy": 0.1393656790857439,
+        "recall": 0.9047619047619048,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 8,
+      "loss": 0.00021609092584640166,
+      "seconds": 40.93585050000547
+    },
+    {
+      "development": {
+        "cross_entropy": 0.16424095856872453,
+        "recall": 0.8809523809523809,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 9,
+      "loss": 0.0001588987645391171,
+      "seconds": 46.12874290000036
+    },
+    {
+      "development": {
+        "cross_entropy": 0.11509264923948365,
+        "recall": 0.9285714285714286,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 10,
+      "loss": 0.00014363988753984813,
+      "seconds": 51.54529810000531
+    },
+    {
+      "development": {
+        "cross_entropy": 0.09746351349698876,
+        "recall": 0.9523809523809523,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 11,
+      "loss": 0.00014469985134724084,
+      "seconds": 57.71732699999848
+    },
+    {
+      "development": {
+        "cross_entropy": 0.09296718700649365,
+        "recall": 0.9523809523809523,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 12,
+      "loss": 0.00010640605921707902,
+      "seconds": 62.36166320000484
+    },
+    {
+      "development": {
+        "cross_entropy": 0.1158669888601673,
+        "recall": 0.9523809523809523,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 13,
+      "loss": 0.00010327990747782678,
+      "seconds": 67.46986010000546
+    },
+    {
+      "development": {
+        "cross_entropy": 0.10548364383910942,
+        "recall": 0.9523809523809523,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 14,
+      "loss": 7.456139908867954e-05,
+      "seconds": 72.37489370000549
+    },
+    {
+      "development": {
+        "cross_entropy": 0.12857223779533994,
+        "recall": 0.9523809523809523,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 15,
+      "loss": 6.670805674957592e-05,
+      "seconds": 77.66699900000094
+    },
+    {
+      "development": {
+        "cross_entropy": 0.1475897713844886,
+        "recall": 0.8809523809523809,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 16,
+      "loss": 6.18428476570898e-05,
+      "seconds": 82.16576570000325
+    },
+    {
+      "development": {
+        "cross_entropy": 0.1291964709713074,
+        "recall": 0.9047619047619048,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 17,
+      "loss": 5.983273845799886e-05,
+      "seconds": 86.9436932000026
+    },
+    {
+      "development": {
+        "cross_entropy": 0.11300467478637781,
+        "recall": 0.9523809523809523,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 18,
+      "loss": 5.461270981754751e-05,
+      "seconds": 92.1783185000022
+    },
+    {
+      "development": {
+        "cross_entropy": 0.115652105163789,
+        "recall": 0.9523809523809523,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 19,
+      "loss": 3.559920206441802e-05,
+      "seconds": 98.37355110000499
+    },
+    {
+      "development": {
+        "cross_entropy": 0.12263995528422474,
+        "recall": 0.9047619047619048,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 20,
+      "loss": 3.664986313367535e-05,
+      "seconds": 104.12048720000166
+    },
+    {
+      "development": {
+        "cross_entropy": 0.11245077006954837,
+        "recall": 0.9285714285714286,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 21,
+      "loss": 3.613446395434039e-05,
+      "seconds": 110.608988400003
+    },
+    {
+      "development": {
+        "cross_entropy": 0.1327337603840821,
+        "recall": 0.9047619047619048,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 22,
+      "loss": 3.082937570297872e-05,
+      "seconds": 115.76349480000499
+    },
+    {
+      "development": {
+        "cross_entropy": 0.11110401631035796,
+        "recall": 0.9047619047619048,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 23,
+      "loss": 2.5974917924997953e-05,
+      "seconds": 121.34427330000472
+    },
+    {
+      "development": {
+        "cross_entropy": 0.0939175007876439,
+        "recall": 0.9285714285714286,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 24,
+      "loss": 2.1840582839161016e-05,
+      "seconds": 126.99009410000144
+    },
+    {
+      "development": {
+        "cross_entropy": 0.11892136518525433,
+        "recall": 0.9047619047619048,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 25,
+      "loss": 3.1571389996543076e-05,
+      "seconds": 132.75481080000463
+    },
+    {
+      "development": {
+        "cross_entropy": 0.0993624069127491,
+        "recall": 0.9523809523809523,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 26,
+      "loss": 2.2206302020322255e-05,
+      "seconds": 138.8320101999998
+    },
+    {
+      "development": {
+        "cross_entropy": 0.12186879336138406,
+        "recall": 0.9047619047619048,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 27,
+      "loss": 2.2809639318666086e-05,
+      "seconds": 144.16037560000404
+    },
+    {
+      "development": {
+        "cross_entropy": 0.11566416137856855,
+        "recall": 0.9047619047619048,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 28,
+      "loss": 2.1812715360169932e-05,
+      "seconds": 149.76072189999832
+    },
+    {
+      "development": {
+        "cross_entropy": 0.11283216153259747,
+        "recall": 0.9523809523809523,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 29,
+      "loss": 1.7911598561681785e-05,
+      "seconds": 155.9288846000054
+    },
+    {
+      "development": {
+        "cross_entropy": 0.10843176223711982,
+        "recall": 0.9047619047619048,
+        "specificity": 0.9722222222222222
+      },
+      "epoch": 30,
+      "loss": 1.5545123233096092e-05,
+      "seconds": 160.46950720000314
+    }
+  ],
+  "inputs_sha256": "ef40c21c45a3c619648313b7b88f7fc069fde95bd772f234786a3c8ef6b54111",
+  "key": [
+    0.9761904761904762,
+    -0.06866096558261167
+  ],
+  "normalization_sha256": "1cb038f3c46385f7a8dda5ecead6460e11e1a15239539781160d1fb2127daf50",
+  "optimizer_updates": 1920,
+  "parameters": 82114,
+  "protocol_sha256": "e4ae7a783d9168a514e09aa0709ae6f7f0cfb6c413c2be0e1263a0c05a77cdbf",
+  "qualified": false,
+  "real_human_positive_n": 0,
+  "seed": 731,
+  "test_numeric_pcm_loaded": false,
+  "test_used_for_selection": false
+}

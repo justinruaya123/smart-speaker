@@ -1,0 +1,15 @@
+{
+  "calibration_sha256": "aff406d4ddae00d96551c9b6c7cb8019c553be44170b724a69d18ab358bb4abb",
+  "checkpoint_sha256": "7b2569ee6fea3f47f1200fcf6967ee80428d1c5b7490b9403bae4a8dca74fd33",
+  "fit_result_sha256": "f0dff4968e737032db43980c1a0d784494527a35e0778e80a1a28aaa2be36d28",
+  "model_sha256": "259f67a118d1c71f1b5adc18dcd459f3170e00ac668c02b191445f5a2c08d7fd",
+  "normalization_sha256": "1cb038f3c46385f7a8dda5ecead6460e11e1a15239539781160d1fb2127daf50",
+  "policy_sha256": "71cc714c9922addf09e04abf160a8f4f79f392ea1b2cf5e829e0ab8bfd545234",
+  "protocol_sha256": "e4ae7a783d9168a514e09aa0709ae6f7f0cfb6c413c2be0e1263a0c05a77cdbf",
+  "qualified": false,
+  "selected_folder": ".cache/iris-wake-publication-v1/companion/selected",
+  "source_sha256": "94785841421f111a053d6649877695bff9ec0d45c2553651ecb7702b03920958",
+  "test_cases_sha256": "4073273244b188dc58a86a4172ec606247de21a0b40c4c086effc7bb59cb8aba",
+  "test_features_or_inference_before_lock": false,
+  "test_inputs_sha256": "f6db64233d50a46fc5bae67e2d03943532ee5c5efbb418f7c63843a98f9b4aaf"
+}

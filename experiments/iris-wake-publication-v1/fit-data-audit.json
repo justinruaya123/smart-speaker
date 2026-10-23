@@ -1,0 +1,91 @@
+{
+  "data_counts": {
+    "calibration": {
+      "negative": 36,
+      "positive": 16,
+      "voices": [
+        "en-HK-SamNeural",
+        "en-HK-YanNeural",
+        "en-SG-WayneNeural",
+        "en-SG-LunaNeural"
+      ]
+    },
+    "dev": {
+      "negative": 36,
+      "positive": 16,
+      "voices": [
+        "en-IE-ConnorNeural",
+        "en-IE-EmilyNeural",
+        "en-IN-PrabhatNeural",
+        "en-IN-NeerjaNeural"
+      ]
+    },
+    "test": {
+      "negative": 68,
+      "positive": 32,
+      "voices": [
+        "en-US-EricNeural",
+        "en-US-AvaNeural",
+        "en-US-SteffanNeural",
+        "en-GB-MaisieNeural",
+        "en-NZ-MitchellNeural",
+        "en-NZ-MollyNeural",
+        "en-ZA-LukeNeural",
+        "en-ZA-LeahNeural"
+      ]
+    },
+    "train": {
+      "negative": 300,
+      "positive": 144,
+      "voices": [
+        "en-US-GuyNeural",
+        "en-US-AriaNeural",
+        "en-US-ChristopherNeural",
+        "en-US-MichelleNeural",
+        "en-US-BrianNeural",
+        "en-US-EmmaNeural",
+        "en-GB-ThomasNeural",
+        "en-GB-SoniaNeural",
+        "en-AU-WilliamMultilingualNeural",
+        "en-AU-NatashaNeural",
+        "en-CA-ClaraNeural",
+        "en-CA-LiamNeural"
+      ]
+    }
+  },
+  "decoded_numeric_splits": [
+    "dev",
+    "train"
+  ],
+  "dev_feature_sha256": "5dfb54efdaf3cf06567ee3c47a0bb7b402ac88b50d8c72af0a5116f580d9c4e3",
+  "development_windows": 78,
+  "excluded_development": [
+    {
+      "id": "dev-0014",
+      "reason": "phrase_exceeds_window"
+    },
+    {
+      "id": "dev-0015",
+      "reason": "phrase_exceeds_window"
+    }
+  ],
+  "excluded_training": [
+    {
+      "id": "train-0255",
+      "reason": "phrase_exceeds_window"
+    },
+    {
+      "id": "train-0261",
+      "reason": "phrase_exceeds_window"
+    },
+    {
+      "id": "train-0297",
+      "reason": "phrase_exceeds_window"
+    }
+  ],
+  "feature_sha256": "5e678cbceae2bfe2dd0c358143d5767375dc762519ea36c08f76524353fd14c0",
+  "human_positive_n": 0,
+  "normalization_sha256": "1cb038f3c46385f7a8dda5ecead6460e11e1a15239539781160d1fb2127daf50",
+  "positive_windows": 1692,
+  "training_windows": 8628
+}

@@ -1,0 +1,24 @@
+{
+  "generation_sha256": "cfa02fddba0907a75af99e0b6f149c6db055f64b2e362c3edd7635704f9579cd",
+  "note": "Deterministic software controls may share PCM; no speech PCM cross-split overlap",
+  "numpy": "2.3.5",
+  "partition_sha256": {
+    "calibration": "e468ab1d439da06ad68f6f880a78f4a8a25c22d65e8f892621b0533f380e0e50",
+    "dev": "52e8d126ab3f45d092fab034417bbf7ea6436ea78c1f6fdba04b6ebf4a6e93e8",
+    "test": "9b6ff03486ac3878664bceb7ff7980fce628d78d48d66e5db99c57721ab22ed1",
+    "train": "880d1d82ed26f470548b18fdc17ceeaa094d8e12dffefd80638509fa8a4a87a3"
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "protocol_sha256": "e4ae7a783d9168a514e09aa0709ae6f7f0cfb6c413c2be0e1263a0c05a77cdbf",
+  "python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+  "source_bindings": {
+    "scripts/models/mvp_wake.py": "57372639b362da85301aafb1bd4f5e8c1dfce3a512009e7f70f444459a02dccd",
+    "scripts/runtime/mvp_wake.py": "234013fc78aa1ab1f30854e38bd3b5eb73651a8100df2db9bde1c91c45ccaca9",
+    "scripts/train/iris_wake_helpers.py": "10cf4a75f746085a376cc74c9eabda2aed8bbc79c250c679678b7f4cfab8948a",
+    "vcm/frontend.py": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a"
+  },
+  "test_numeric_pcm_loaded_before_fit": false,
+  "test_used_for_selection": false,
+  "torch": "2.10.0+cpu",
+  "trainer_source_sha256": "94785841421f111a053d6649877695bff9ec0d45c2553651ecb7702b03920958"
+}
