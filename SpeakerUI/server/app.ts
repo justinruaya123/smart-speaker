@@ -122,7 +122,7 @@ export async function createApp(config: Config, options: Options = {}) {
   });
   const lease: RecordingLease = { owner: undefined };
   const activeSockets = new Set<import('ws').default>();
-  const cameraStreams = new Map<AbortController, { entityId: string; session?: string }>();
+  const cameraStreams = new Map<AbortController, { entityId: string; session?: string; admission?: string }>();
 
   app.addHook('onRequest', async (req, reply) => {
     reply.header('X-Content-Type-Options', 'nosniff').header('Referrer-Policy', 'no-referrer');
@@ -290,7 +290,7 @@ export async function createApp(config: Config, options: Options = {}) {
     if(!cameraAdmitted(req.params.id,req.query.admission))return reply.code(409).send({error:'camera_admission_required',message:'Explicit camera admission is required.'});
     if (cameraStreams.size >= 2) return reply.code(429).send({ error: 'camera_busy', message: 'Close another camera view and try again.' });
     const lifetime = new AbortController();
-    cameraStreams.set(lifetime, { entityId: req.params.id, session: req.query.session });
+    cameraStreams.set(lifetime, { entityId: req.params.id, session: req.query.session, admission:req.query.admission });
     const close = () => {
       lifetime.abort(); cameraStreams.delete(lifetime);
       req.raw.off('aborted', close); reply.raw.off('close', close);
@@ -351,7 +351,10 @@ export async function createApp(config: Config, options: Options = {}) {
   if (options.staticDir) {
     await app.register(staticFiles, { root: resolve(options.staticDir), index: ['index.html'], cacheControl: true, maxAge: 0 });
   }
-  const clock = setInterval(() => { void store.expire().catch(()=>broadcast({event:'action_error',message:'Scheduled job state could not be saved. Check DATA_DIR access.'})); }, 500); clock.unref();
+  const clock = setInterval(() => {
+    if(config.publication)for(const [lifetime,stream] of cameraStreams)if(!cameraAdmitted(stream.entityId,stream.admission)){lifetime.abort();cameraStreams.delete(lifetime);}
+    void store.expire().catch(()=>broadcast({event:'action_error',message:'Scheduled job state could not be saved. Check DATA_DIR access.'}));
+  }, 500); clock.unref();
   app.addHook('onReady', async () => { ha.start(); });
   app.addHook('preClose', async () => { clearInterval(clock); for(const pending of localPending.values())clearTimeout(pending.timer); for (const socket of activeSockets) socket.terminate(); for (const socket of actionClients.keys()) socket.terminate(); for (const stream of cameraStreams.keys()) stream.abort(); });
   app.addHook('onClose', async () => { ha.close(); dummyRuntime.close(); await runtime?.close(); await actionChain; await store.flush(); });

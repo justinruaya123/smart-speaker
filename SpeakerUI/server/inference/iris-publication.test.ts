@@ -9,6 +9,7 @@ import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { irisUseCases } from '../../shared/canonical-command.js';
+import { setTimeout as delay } from 'node:timers/promises';
 
 const inventory = JSON.parse(readFileSync(new URL('../../../submission/models/optionb-tiny/commands.json', import.meta.url), 'utf8')).slice(1);
 const lamp = 'light.hue_color_lamp_1';
@@ -148,4 +149,31 @@ test('publication WEATHER selects OpenWeather before HA and keeps private API co
     assert.equal(JSON.stringify(state).includes('offline-secret-fixture'), false);
     assert.equal(JSON.stringify(state).includes('14.6'), false);
   } finally { await app.close(); await rm(directory, { recursive: true, force: true }); }
+});
+
+test('an admitted video stream is revoked when actions are disabled, without any provider mutation', async () => {
+  const directory=await mkdtemp(join(tmpdir(),'iris-camera-revocation-'));
+  const cfg=readConfig({IRIS_PUBLICATION:'true',ACTIONS_ENABLED:'true',HA_ENABLED:'true',HA_URL:'http://offline.invalid',HA_TOKEN:'offline-fixture',HA_ENTITY_IDS:camera,DATA_DIR:directory},directory);
+  let upstreamAborted=false;
+  const socket=Object.assign(new EventEmitter(),{send(){},close(){},terminate(){},ping(){}});
+  const app=await createApp(cfg,{haSocketFactory:()=>socket,fetcher:async(url,init)=>{
+    assert.equal(init?.method,undefined,'Camera admission is read-only');
+    if(String(url).includes('/api/camera_proxy_stream/'))return new Response(new ReadableStream({start(controller){
+      controller.enqueue(new TextEncoder().encode('--fixture\r\n'));
+      init?.signal?.addEventListener('abort',()=>{upstreamAborted=true;try{controller.close();}catch{}},{once:true});
+    }}),{headers:{'Content-Type':'multipart/x-mixed-replace; boundary=fixture'}});
+    return new Response(new Uint8Array([255,216,255]),{headers:{'Content-Type':'image/jpeg'}});
+  }});
+  const cancel=new AbortController();
+  try{
+    await app.listen({host:'127.0.0.1',port:0});cfg.port=(app.server.address() as any).port;cfg.origin=`http://127.0.0.1:${cfg.port}`;
+    const headers={host:new URL(cfg.origin).host,origin:cfg.origin};
+    const receipt=(await app.inject({method:'POST',url:'/api/actions',headers,payload:{request_id:'admit',command:{intent:'CALL',slots:{contact_id:'contact.home'}}}})).json();
+    const stream=await fetch(cfg.origin+receipt.camera.stream_url,{headers:{origin:cfg.origin},signal:cancel.signal});
+    const reader=stream.body!.getReader();await reader.read();
+    cfg.actionsEnabled=false;
+    for(let i=0;i<150&&!upstreamAborted;i++)await delay(10);
+    assert.equal(upstreamAborted,true,'Disabling actions must close the existing upstream video, not merely reject new views');
+    await reader.cancel().catch(()=>{});
+  }finally{cancel.abort();await app.close();await rm(directory,{recursive:true,force:true});}
 });
