@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Iris: a local finite-command smart speaker. Original 258,912-parameter epoch44 model, traceable evidence, explicit result provenance.">
+  <meta name="color-scheme" content="dark">
+  <title>Iris — finite commands, visible outcomes</title>
+  <link rel="icon" href="assets/iris-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/deck.css">
+  <script defer src="assets/deck.js"></script>
+</head>
+<body>
+  <a class="skip" href="#chapter-content">Skip to chapter</a>
+  <div id="viewport"><main id="stage" aria-label="Iris publication presentation">
+    <header class="deck-header">
+      <a class="wordmark" href="#iris" aria-label="Iris first chapter">iris<span aria-hidden="true">·</span></a>
+      <nav aria-label="Chapters">
+        <a href="#iris" data-go="iris" aria-current="page">Iris</a>
+        <a href="#pipeline" data-go="pipeline">Pipeline</a>
+        <a href="#model" data-go="model">Model</a>
+        <a href="#uses" data-go="uses">Use cases</a>
+        <a href="#evidence" data-go="evidence">Evidence</a>
+        <a href="#run" data-go="run">Run it</a>
+      </nav>
+      <span class="edition">EPOCH 44 / FP32</span>
+    </header>
+    <div id="chapter-content" tabindex="-1">
+      <section class="chapter intro" id="iris" data-chapter aria-labelledby="iris-title">
+        <div class="intro-copy">
+          <p class="eyebrow">A LOCAL, FINITE VOICE ASSISTANT</p>
+          <h1 id="iris-title">Say Hey Iris.<br>See the result.</h1>
+          <p class="lede">Give a supported command. Iris recognizes it locally and shows the result — including when it is only synthetic.</p>
+          <div class="badges" id="hero-badges"><span>Loading verified model data…</span></div>
+          <p class="quiet">No transcript. No LLM.<br>Optional services for actions and external data.</p>
+        </div>
+        <figure class="product-shot">
+          <img src="assets/iris-ui.png" width="1024" height="600" alt="Actual compiled Iris SpeakerUI with a labeled non-actuating UI fixture. Not a live microphone or device result.">
+          <figcaption>Actual SpeakerUI · software fixture · no live microphone or physical-device claim</figcaption>
+        </figure>
+        <p class="chapter-foot">Finite scope is a feature boundary, not a promise of human reliability.</p>
+      </section>
+      <section class="chapter" id="pipeline" data-chapter hidden aria-labelledby="pipeline-title">
+        <div class="chapter-heading"><div><p class="eyebrow">02 / FROM SOUND TO A RECEIPT</p><h2 id="pipeline-title">Recognition is not an action.</h2></div><span class="source-tag">Local model / explicit providers</span></div>
+        <div class="animation-layout">
+          <div class="animation" data-animation="pipeline">
+            <div class="animation-frame">
+              <img class="poster" src="animations/pipeline-poster.png" alt="Hey Iris, PCM and VAD capture, whole-command VCM, owner and slot guard, one action dispatcher, receipt. Owner/overlap is a separate companion.">
+              <video hidden controls preload="none" poster="animations/pipeline-poster.png" aria-label="Manim pipeline animation"><source src="animations/pipeline.mp4" type="video/mp4"></video>
+              <iframe hidden title="Interactive real Manim Slides pipeline export" data-src="animations/pipeline.html" allowfullscreen></iframe>
+            </div>
+            <div class="animation-controls"><button data-play>Play animation</button><button data-inspect>Inspect stages</button><button data-still>Still view</button><a href="animations/pipeline.mp4" download>MP4 ↓</a></div>
+          </div>
+          <aside class="inspector">
+            <h3>One authoritative path</h3>
+            <ol><li>One wake, one command.</li><li>Atomic command + existing owner/overlap veto.</li><li>Typed validation and one persistent dispatcher.</li><li>Receipt first; completion cue after final result.</li></ol>
+            <p>WAVs, tentative previews and benchmarks never actuate.</p>
+            <p class="mint">Synthetic — no device changed.</p>
+            <p class="quiet">A provider acknowledgment is not an observed device state. Unknown outcomes are not retried.</p>
+          </aside>
+        </div>
+        <p class="chapter-foot">Wake acknowledgments: Yes / Hmm / Yeah / Here. Host-owned playback; replays stay silent.</p>
+      </section>
+      <section class="chapter" id="model" data-chapter hidden aria-labelledby="model-title">
+        <div class="chapter-heading"><div><p class="eyebrow">03 / THE ORIGINAL OPTIONB MODEL</p><h2 id="model-title">One head. Complete commands.</h2></div><span class="source-tag">Frozen bytes, not a refit</span></div>
+        <div class="animation-layout">
+          <div class="animation" data-animation="model">
+            <div class="animation-frame">
+              <img class="poster" src="animations/model-poster.png" alt="40-bin log-mel time features, stride two, causal kernel-five stem, four width160 two-stage depthwise/pointwise residual blocks with dilations1/2/4/8, valid-length mean/max pooling and one32-way head.">
+              <video hidden controls preload="none" poster="animations/model-poster.png" aria-label="Manim model architecture animation"><source src="animations/model.mp4" type="video/mp4"></video>
+              <iframe hidden title="Interactive real Manim Slides model export" data-src="animations/model.html" allowfullscreen></iframe>
+            </div>
+            <div class="animation-controls"><button data-play>Play animation</button><button data-inspect>Inspect stages</button><button data-still>Still view</button><a href="animations/model.mp4" download>MP4 ↓</a></div>
+          </div>
+          <aside class="inspector">
+            <h3>Model card</h3><dl id="model-facts"></dl>
+            <p class="quiet">31 complete commands / 18 intent families / 93 wording definitions. No dynamic slot composition.</p>
+            <p class="mint">Qualification: not passed.</p>
+          </aside>
+        </div>
+        <p class="chapter-foot" id="companion-foot">Loading companion footprints…</p>
+      </section>
+      <section class="chapter" id="uses" data-chapter hidden aria-labelledby="uses-title">
+        <div class="chapter-heading"><div><p class="eyebrow">04 / FINITE VALUES, USEFUL SURFACES</p><h2 id="uses-title">Ten use cases. One contract.</h2></div><span class="source-tag">Illustrated outputs, not live results</span></div>
+        <div class="use-layout">
+          <div id="case-tabs" role="tablist" aria-label="Use-case categories" aria-orientation="vertical"></div>
+          <div class="case-body" id="case-panel" role="tabpanel" tabindex="0" aria-live="polite">
+            <div class="case-heading"><span class="eyebrow" id="case-id"></span><h3 id="case-title"></h3><span id="case-count" class="quiet"></span></div>
+            <p class="spoken" id="case-wording"></p>
+            <div class="mini-flow" id="case-diagram" aria-label="Selected use-case pipeline"></div>
+            <div class="case-detail"><div><span class="eyebrow">EXACT TYPED COMMAND</span><pre id="case-json"></pre></div><div class="output-surface"><span class="source-tag" id="case-source"></span><h3 id="case-output"></h3><p id="case-detail"></p></div></div>
+            <p class="quiet case-disclaimer" id="case-disclaimer">Static storyboard example only. No recognition, request, job or device change occurs in this deck.</p>
+          </div>
+        </div>
+        <details class="summary"><summary>All ten categories / complete 31-command coverage</summary><table id="use-summary"><caption>Every positive acoustic class is assigned exactly once.</caption><thead><tr><th>Category</th><th>Complete commands</th><th>Source boundary</th></tr></thead><tbody></tbody></table></details>
+      </section>
+      <section class="chapter evidence" id="evidence" data-chapter hidden aria-labelledby="evidence-title">
+        <div class="chapter-heading"><div><p class="eyebrow">05 / MEASURED, NOT IMPLIED</p><h2 id="evidence-title">Keep the denominators visible.</h2></div><span class="source-tag">Exposed regression, not fresh blind</span></div>
+        <div class="evidence-grid">
+          <div><h3>Frozen data</h3><table id="split-table"><caption>Normalizer: human TRAIN only.</caption><thead><tr><th>Split</th><th>Human</th><th>Synthetic</th></tr></thead><tbody></tbody></table><p class="quiet" id="recipe-line"></p></div>
+          <div><h3>Original fit</h3><figure class="loss-figure"><svg id="loss-chart" viewBox="0 0 700 220" role="img" aria-label="Actual48-epoch training loss from historical receipt"></svg><figcaption>Actual CPU loss · selected epoch44<br>Exact CPU refit unverified; CUDA epoch28.</figcaption></figure><h3 class="subhead">Human command policy</h3><table id="cohort-table"><caption>Correct / positives. Wrong includes negative accepts.</caption><thead><tr><th>Cohort</th><th>Correct</th><th>Wrong</th><th>Negatives</th></tr></thead><tbody></tbody></table></div>
+          <div class="benchmark"><h3>Desktop · p50 / p95</h3><div id="desktop-results"></div><div class="pi-slot"><span class="eyebrow">RASPBERRY PI</span><p id="pi-result">Not measured</p></div></div>
+        </div>
+        <p class="chapter-foot" id="evidence-foot">Timing excludes speaking, file decode, wake/VAD waiting, gateway, UI, feedback and providers.</p>
+      </section>
+      <section class="chapter run" id="run" data-chapter hidden aria-labelledby="run-title">
+        <div class="chapter-heading"><div><p class="eyebrow">06 / RUN THE ARTIFACT. READ THE LIMITS.</p><h2 id="run-title">A small model, an explicit boundary.</h2></div><a class="source-tag" href="https://github.com/justinruaya123/smart-speaker">Source repository ↗</a></div>
+        <div class="run-grid"><div><h3>Check → infer → measure</h3><pre class="commands">python inference.py --check --no-setup
+
+python inference.py --mode ui --no-setup
+
+python benchmark.py --model-choice epoch44 \
+  --manifest PATH --data-root ROOT \
+  --output NEWDIR --repeats 3</pre><p class="quiet">Install the pinned runtime first. Setup may use the network; recognition is local. Online providers remain optional.</p><p class="quiet">Full input-preparation and pinned original-source reproduction instructions are linked below. A published-artifact benchmark does not prove exact retraining.</p></div><div><h3>Before you rely on it</h3><ul class="limits"><li>Finite wording/value scope, not arbitrary speech.</li><li>Synthetic wake smoke gate failed; no replacement promoted. Human live-microphone and Pi qualification remain unmeasured.</li><li>Thermostat targets are synthetic; observed sensors stay separate.</li><li>External failures must retain provenance; no invented current weather.</li></ul><h3 class="subhead">Sources &amp; rights</h3><p>Composite dataset DOI <a href="https://doi.org/10.57967/hf/10723">10.57967/hf/10723</a>; exact primary and supplemental revisions in the source audit. Consent and research-use restrictions remain.</p><div class="source-links"><a href="https://github.com/justinruaya123/smart-speaker/blob/main/docs/IRIS-GETTING-STARTED.md">Getting started ↗</a><a href="https://github.com/justinruaya123/smart-speaker/blob/main/docs/MODEL-CARD-iris-epoch44.md">Model card ↗</a><a href="https://github.com/justinruaya123/smart-speaker/blob/main/docs/IRIS-CITATIONS.md">Citation audit ↗</a><a href="assets/iris.json" download>Verified publication JSON ↓</a></div></div></div>
+        <p class="chapter-foot">Native HTML + pre-rendered Manim / manim-slides. All viewer assets local. No microphone, backend, Python or GPU required.</p>
+      </section>
+    </div>
+    <footer class="deck-footer"><span id="chapter-count" aria-live="polite">01 / 06</span><span class="keyboard-hint">← → chapters · 1–6 jump · F fullscreen</span><div class="footer-controls"><button id="previous" aria-label="Previous chapter">←</button><button id="next" aria-label="Next chapter">→</button><button id="fullscreen" aria-label="Toggle fullscreen">Fullscreen</button><button id="motion" aria-pressed="false">Motion off</button></div></footer>
+    <p id="load-error" hidden role="alert"></p>
+    <noscript><p class="no-script">This interactive deck needs JavaScript. Download <a href="assets/iris.json">the source JSON</a>, view the <a href="animations/model-poster.png">model poster</a>, or read the repository README.</p></noscript>
+  </main></div>
+</body>
+</html>

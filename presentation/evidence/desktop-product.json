@@ -1,0 +1,397 @@
+{
+  "candidate_revision": "a6d9325f015872f81d7697eb6213c7d789e68d73",
+  "detail": {
+    "benchmark_source_sha256": "483b1793108895f65edc5746ccdd8c7362b02db3a8ae23eb7c4272a9ce22fd7c",
+    "capture_fault_source_n": 0,
+    "engine_threads": 1,
+    "frontend_thread_environment": {
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    },
+    "latency_ms": {
+      "after_frontend": {
+        "mean": 2.494328330421917,
+        "n": 3438,
+        "p50": 2.330400006030686,
+        "p95": 4.097654998986398
+      },
+      "end_to_end": {
+        "mean": 5.914313903455839,
+        "n": 3438,
+        "p50": 5.3902499967080075,
+        "p95": 10.56562999983725
+      },
+      "frontend": {
+        "mean": 3.4199855730339217,
+        "n": 3438,
+        "p50": 3.0598999983340036,
+        "p95": 6.35466000057931
+      }
+    },
+    "resource_samples": [
+      {
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 37.984375,
+        "rss_mib": 37.1796875,
+        "stage": "before_load",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 63.0,
+        "rss_mib": 63.0,
+        "stage": "after_load",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 1,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 69.88671875,
+        "rss_mib": 65.37109375,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 58,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 72.89453125,
+        "rss_mib": 67.71484375,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 115,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 74.71484375,
+        "rss_mib": 67.5234375,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 172,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 74.71484375,
+        "rss_mib": 67.046875,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 229,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 75.23828125,
+        "rss_mib": 67.5390625,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 286,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 75.23828125,
+        "rss_mib": 67.140625,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 343,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 75.23828125,
+        "rss_mib": 67.734375,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 400,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 75.23828125,
+        "rss_mib": 68.11328125,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 457,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 75.23828125,
+        "rss_mib": 68.3671875,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 514,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 75.23828125,
+        "rss_mib": 68.578125,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 571,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 75.23828125,
+        "rss_mib": 69.453125,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 628,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 75.23828125,
+        "rss_mib": 69.03125,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 685,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 77.765625,
+        "rss_mib": 69.08203125,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 742,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 77.765625,
+        "rss_mib": 69.50390625,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 799,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 77.765625,
+        "rss_mib": 70.57421875,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 856,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 77.765625,
+        "rss_mib": 70.921875,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 913,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 77.765625,
+        "rss_mib": 70.3828125,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 970,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 77.765625,
+        "rss_mib": 70.84765625,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 1027,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 78.734375,
+        "rss_mib": 71.44921875,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 1084,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 78.734375,
+        "rss_mib": 71.5859375,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "completed_sources": 1141,
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 78.734375,
+        "rss_mib": 70.84375,
+        "stage": "replay",
+        "temperature_c": null,
+        "throttled": null
+      },
+      {
+        "cpu0_mhz": null,
+        "method": "GetProcessMemoryInfo working set",
+        "peak_rss_mib": 84.6796875,
+        "rss_mib": 75.5625,
+        "stage": "after_replay",
+        "temperature_c": null,
+        "throttled": null
+      }
+    ],
+    "resource_scope": "Whole benchmark Python process, including libraries, result storage and runtime; lifetime RSS peak is not model-only memory.",
+    "runtime_reported_load_ms": 30.077999996137805,
+    "runtime_source_sha256": "cae5f5e138b5aa0d8b125a6aacf634c158e131d4ba02577480ec72924dcfb5dc",
+    "session_load_ms": 153.84020000055898,
+    "source_n": 1146,
+    "thread_scope": "--threads controls the inference engine; unset frontend BLAS variables mean library defaults.",
+    "threads": 1,
+    "timing_components": "after_frontend includes engine inference, finite decision and wrapper overhead; no unmeasured model/decision split is invented.",
+    "timing_excludes": [
+      "file reads and hashes",
+      "audio decoding",
+      "utterance duration",
+      "wake/VAD and endpoint waits",
+      "telemetry and report writing"
+    ],
+    "timing_includes": [
+      "PCM validation/conversion",
+      "normalization/frontend",
+      "CPU engine inference",
+      "finite decision and typed output"
+    ],
+    "unstable_output_source_n": 0
+  },
+  "environment": {
+    "numpy": "2.5.3",
+    "onnxruntime": "1.30.0",
+    "python": "3.13.14",
+    "soundfile": "0.14.0",
+    "source": "unchanged main runtime lock; original snapshot environment not modified"
+  },
+  "evidence_kind": "new_adapter_desktop_original_audio",
+  "independent_parity": {
+    "actions_enabled": false,
+    "all_recording_repeat_pairs_verified": 3438,
+    "ambiguous_references_unscored": 187,
+    "candidate_revision": "a6d9325f015872f81d7697eb6213c7d789e68d73",
+    "decoded_pcm_verified": 1146,
+    "full_typed_outputs_match_frozen_gold": true,
+    "independently_pinned_original_humans": 1146,
+    "measurement_not_quiesced": true,
+    "metrics_sha256": "e97d32799c8ba9d749706de02dc19b7d5784592ab1511ea9be57973babef21a2",
+    "model_sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+    "pcm_hash_conventions": {
+      "new_trial": "SHA256(float32le bytes), independently reconciled to original header-bound hash",
+      "original": "SHA256(ASCII pcm:f32le:16000:<samples> NUL + float32le bytes)"
+    },
+    "pi_measured": false,
+    "purpose": "Independent original-byte, decoded-PCM, cohort and frozen-decision reconciliation of the new adapter",
+    "raw_and_accepted_decisions_match_frozen_gold": true,
+    "schema_version": 1,
+    "source_revision": "3c05b3beb46f06c3108089e0d8c79474670c6cb7",
+    "trials_sha256": "cc1d8916df570ed911832c39f83cfbd0fdb900a89086ed00849dd4ac51ed5eb8",
+    "verified_at_utc": "2026-10-23T23:07:50.311633+00:00",
+    "verifier_sha256": "7e097e47ec89f0650380db8552125024f4cca13babb3693033ee84aed3f34c73",
+    "wake_or_owner_quality_claim": false,
+    "wav_bytes_verified": 1146
+  },
+  "measurement": {
+    "accepted": {
+      "complete_command_accuracy": 0.7403545359749739,
+      "complete_command_recall": 0.6748911465892597,
+      "emitted_n": 527,
+      "exact_n": 710,
+      "exact_positive_n": 465,
+      "false_accept_n": 25,
+      "false_accept_rate": 0.09259259259259259,
+      "negative_abstention_n": 245,
+      "negative_n": 270,
+      "positive_n": 689,
+      "precision": 0.8823529411764706,
+      "reference_n": 959,
+      "rejected_positive_n": 187,
+      "scored_n": 959,
+      "unavailable_n": 0,
+      "wrong_positive_n": 37
+    },
+    "accuracy_unit": "First measured pass per source recording; repeats do not increase accuracy denominators.",
+    "actions_enabled": false,
+    "engine": "onnxruntime",
+    "engine_model_sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+    "excluded_reference_n": 187,
+    "hardware": {
+      "cpu_count": 16,
+      "device_model": null,
+      "machine": "AMD64",
+      "measurement_host": "desktop_host",
+      "physical_pi_measured": false,
+      "platform": "Windows-11-10.0.26200-SP0",
+      "processor": "Intel64 Family 6 Model 167 Stepping 1, GenuineIntel",
+      "python": "3.13.14"
+    },
+    "manifest_sha256": "3decdc2e414cc5280c47f7ff6892773f33ffeb5c0f6448c90c1462a6def0dba2",
+    "model_scope": "Direct VCM session only; wake/VAD, owner sessions, UI and action providers are excluded.",
+    "model_sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+    "observation_n": 3438,
+    "physical_microphone_measured": false,
+    "physical_pi_measured": false,
+    "profile": "benchmark-compatible",
+    "qualified": false,
+    "raw": {
+      "complete_command_accuracy": 0.7507820646506778,
+      "complete_command_recall": 0.7910014513788098,
+      "emitted_n": 744,
+      "exact_n": 720,
+      "exact_positive_n": 545,
+      "false_accept_n": 95,
+      "false_accept_rate": 0.35185185185185186,
+      "negative_abstention_n": 175,
+      "negative_n": 270,
+      "positive_n": 689,
+      "precision": 0.7325268817204301,
+      "reference_n": 959,
+      "rejected_positive_n": 40,
+      "scored_n": 959,
+      "unavailable_n": 0,
+      "wrong_positive_n": 104
+    },
+    "schema_version": 1,
+    "source_n": 1146,
+    "threads": 1,
+    "utc": "2026-10-23T23:04:24.116804+00:00"
+  },
+  "measurement_not_quiesced": true,
+  "schema_version": 1
+}

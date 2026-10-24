@@ -1,0 +1,33 @@
+{
+  "browser": "151.0.7922.34",
+  "playwright": "1.62.1",
+  "viewports": [
+    {
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "use_cases": [
+    "UC-01",
+    "UC-02",
+    "UC-03",
+    "UC-04",
+    "UC-05",
+    "UC-06",
+    "UC-07",
+    "UC-08",
+    "UC-09",
+    "UC-10"
+  ],
+  "reduced_motion": true,
+  "offline": true,
+  "errors": []
+}

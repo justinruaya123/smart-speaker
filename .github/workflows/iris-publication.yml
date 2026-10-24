@@ -1,0 +1,108 @@
+name: Iris publication
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: iris-publication-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Static data, frozen artifact and browser validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Read reviewed source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, official ref readback
+        with:
+          persist-credentials: false
+          lfs: false
+      - name: Python for stdlib validators only
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.13'
+      - name: Verify all original frozen payload bytes without installing science packages
+        run: python -B -m scripts.optionb_epoch44 verify
+      - name: Validate source-backed data, README, assets, links and finite contract
+        run: |
+          python -B scripts/iris_publication_data.py --check
+          python -B presentation/build_readme.py --check
+          python -B -m unittest scripts.test.test_iris_publication_data -v
+          python -B presentation/validate.py --require-integration
+          git diff --check
+      - name: Pinned UI/browser tooling
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6, official ref readback
+        with:
+          node-version: '24.13.0'
+      - name: Install unchanged UI lock and browser
+        run: |
+          npm install --global pnpm@12.5.1
+          pnpm --dir SpeakerUI install --frozen-lockfile
+          pnpm --dir SpeakerUI exec playwright install --with-deps chromium
+      - name: Exercise six chapters, ten selectors, local Manim export and reduced motion
+        run: node presentation/qa.mjs
+      - name: Anonymous exact-commit ONNX readback before public publication
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: python -B presentation/validate.py --remote --require-integration
+      - name: Upload only the static public site
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
+        with:
+          name: github-pages
+          path: docs/site
+          include-hidden-files: 'false'
+          retention-days: '1'
+
+  acoustic-release:
+    name: Acoustic release gate — separate from static-site QA
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Read reviewed source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          lfs: false
+      - name: Python for receipt gate
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.13'
+      - name: Fail closed on the actual failed or missing wake acceptance receipt
+        run: python -B presentation/validate.py --release-gate
+
+  deploy:
+    name: Deploy verified Iris Pages
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [validate, acoustic-release]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Read Pages metadata; do not enable or reconfigure the repository
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
+        with:
+          enablement: false
+      - name: Deploy the validated site artifact
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
+        with:
+          artifact_name: github-pages
+          preview: false

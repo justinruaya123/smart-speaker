@@ -1,0 +1,2649 @@
+{
+  "schema_version": 1,
+  "wake": {
+    "experiment": "iris-wake-publication-v1",
+    "baseline": {
+      "confusable_n": 64,
+      "control_n": 4,
+      "detected": 1,
+      "duplicate_detections": 0,
+      "false_wakes": 0,
+      "missed": 31,
+      "negative_n": 68,
+      "negative_seconds": 167.20000000000002,
+      "positive_n": 32,
+      "recall": 0.03125,
+      "synthetic_smoke_pass": false
+    },
+    "companion_test": {
+      "confusable_n": 64,
+      "control_n": 4,
+      "detected": 21,
+      "duplicate_detections": 0,
+      "false_wakes": 2,
+      "missed": 11,
+      "negative_n": 68,
+      "negative_seconds": 166.696,
+      "positive_n": 32,
+      "recall": 0.65625,
+      "synthetic_smoke_pass": false
+    },
+    "candidate_artifact_publication": "NOT PROMOTED: the predeclared test smoke gate failed",
+    "candidate_parameters": 82114,
+    "verdict": {
+      "baseline_pass": false,
+      "companion_pass": false,
+      "live_microphone_measured": false,
+      "publish_companion": false,
+      "qualified": false,
+      "real_human_positive_n": 0,
+      "release_blocker": true,
+      "synthetic_acceptance_pass": false,
+      "test_reselection_permitted": false
+    },
+    "release_disposition": "Do not auto-merge a release requiring the synthetic wake gate. Do not lower frozen or candidate thresholds using these tests.",
+    "limitations": [
+      "Entire cohort is synthesized/provider-labelled speech or seeded software controls, not humans or live microphone recordings.",
+      "Synthesis decodes MP3 to PCM16 during generation; no numeric heldout PCM/features/model calls are made for fit/selection before the test lock.",
+      "Training helper excluded 3 overlong/silent train and 2 DEV positives; all TEST positives remain in the denominator.",
+      "Normalization lists admitted train source IDs and separately records exclusions; excluded positives do not contribute statistic windows.",
+      "Deterministic silence/noise controls can share PCM across partitions; speech PCM hashes and voice IDs are cross-partition disjoint.",
+      "Provider output is not byte-repeatable by guarantee; raw corpus is not redistributed. Frozen local receipts are auditable; regenerations are new runs.",
+      "Native HeyIris RollingWake CPU ONNX was executed; this is not full owner/live-microphone/provider or physical-device qualification.",
+      "No new runtime default or public companion artifact is selected after the failed test."
+    ],
+    "source_revision": "d1c13920f0b6a34fafb6cc9c0c45dce503721be8",
+    "source_path": "experiments/iris-wake-publication-v1/study-results.json",
+    "source_sha256": "cba398cff655cf3f849cb4171161ff174008eef531e08b67d0748680d1daf54d"
+  },
+  "product": {
+    "id": "iris-epoch44",
+    "name": "Iris",
+    "wake_phrase": "Hey Iris"
+  },
+  "model": {
+    "id": "OptionBTinyVCM-1",
+    "parameters": 258912,
+    "selected_epoch": 44,
+    "precision": "FP32",
+    "graph_bytes": 1082940,
+    "bundle_bytes": 1088682,
+    "hashes": {
+      "model.onnx": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+      "commands.json": "71017cf22366d15557e8878636135f5ff2d0ac81fc4dfd6f058fc88f0f2d4b5d",
+      "normalization.json": "28f7ef1b2c926c587d611d17eef91184c2c7e2de66abe352d1fc2365e45d69ed",
+      "policy.json": "b9242e46fb093642a41023e8ace3c0cadc2fe51ffede512aa09e399622f355f0",
+      "recipe.json": "020c3deccb0f8cece0f23b8c016b6a63bdd0359321bb06cbd00e091966d46621"
+    },
+    "command_count": 31,
+    "definition_count": 93,
+    "intent_count": 18,
+    "unknown_index": 0,
+    "policy": {
+      "enabled": true,
+      "min_margin": 0.1,
+      "min_probability": 0.5
+    },
+    "qualified": false,
+    "architecture": {
+      "activation": "SiLU",
+      "dilations": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "feature_stride": 2,
+      "frontend": {
+        "centered": false,
+        "fft_size": 512,
+        "floor": 1e-08,
+        "high_hz": 7600,
+        "hop_samples": 160,
+        "low_hz": 20,
+        "mel_bins": 40,
+        "sample_rate": 16000,
+        "window_samples": 400
+      },
+      "head": "one 32-way complete-command/UNKNOWN linear softmax head",
+      "norm": "per-frame LayerNorm",
+      "pooling": "valid-length masked mean and max",
+      "residual_blocks": 4,
+      "residual_kernel": 7,
+      "stages_per_block": 2,
+      "stem_kernel": 5,
+      "training_dropout": 0.1,
+      "unknown_index": 0,
+      "width": 160
+    },
+    "snapshot_sha256": "d0ac31ea3d5f771cbe983e2ae9bd06303267c4b68723870c28b9904b17d74a21"
+  },
+  "commands": [
+    {
+      "class_index": 1,
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "class_index": 2,
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "class_index": 3,
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "class_index": 4,
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      }
+    },
+    {
+      "class_index": 5,
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 20
+        }
+      }
+    },
+    {
+      "class_index": 6,
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      }
+    },
+    {
+      "class_index": 7,
+      "command": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      }
+    },
+    {
+      "class_index": 8,
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "blue",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "class_index": 9,
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "green",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "class_index": 10,
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "color": "red",
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "class_index": 11,
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      }
+    },
+    {
+      "class_index": 12,
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      }
+    },
+    {
+      "class_index": 13,
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      }
+    },
+    {
+      "class_index": 14,
+      "command": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "class_index": 15,
+      "command": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      }
+    },
+    {
+      "class_index": 16,
+      "command": {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      }
+    },
+    {
+      "class_index": 17,
+      "command": {
+        "intent": "MESSAGE",
+        "slots": {}
+      }
+    },
+    {
+      "class_index": 18,
+      "command": {
+        "intent": "NEXT",
+        "slots": {}
+      }
+    },
+    {
+      "class_index": 19,
+      "command": {
+        "intent": "PAUSE",
+        "slots": {}
+      }
+    },
+    {
+      "class_index": 20,
+      "command": {
+        "intent": "PLAY_MUSIC",
+        "slots": {}
+      }
+    },
+    {
+      "class_index": 21,
+      "command": {
+        "intent": "STOP",
+        "slots": {}
+      }
+    },
+    {
+      "class_index": 22,
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "class_index": 23,
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "class_index": 24,
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      }
+    },
+    {
+      "class_index": 25,
+      "command": {
+        "intent": "TIME",
+        "slots": {}
+      }
+    },
+    {
+      "class_index": 26,
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      }
+    },
+    {
+      "class_index": 27,
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      }
+    },
+    {
+      "class_index": 28,
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      }
+    },
+    {
+      "class_index": 29,
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      }
+    },
+    {
+      "class_index": 30,
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      }
+    },
+    {
+      "class_index": 31,
+      "command": {
+        "intent": "WEATHER",
+        "slots": {}
+      }
+    }
+  ],
+  "definitions": [
+    {
+      "id": "B1-001",
+      "text": "Play music",
+      "spoken_text": "Play music",
+      "command": {
+        "intent": "PLAY_MUSIC",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-002",
+      "text": "Start music",
+      "spoken_text": "Start music",
+      "command": {
+        "intent": "PLAY_MUSIC",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-003",
+      "text": "Play some music",
+      "spoken_text": "Play some music",
+      "command": {
+        "intent": "PLAY_MUSIC",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-004",
+      "text": "Weather",
+      "spoken_text": "Weather",
+      "command": {
+        "intent": "WEATHER",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-005",
+      "text": "What's the weather?",
+      "spoken_text": "What's the weather?",
+      "command": {
+        "intent": "WEATHER",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-006",
+      "text": "Tell me the weather",
+      "spoken_text": "Tell me the weather",
+      "command": {
+        "intent": "WEATHER",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-007",
+      "text": "Time",
+      "spoken_text": "Time",
+      "command": {
+        "intent": "TIME",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-008",
+      "text": "What time is it?",
+      "spoken_text": "What time is it?",
+      "command": {
+        "intent": "TIME",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-009",
+      "text": "Tell me the time",
+      "spoken_text": "Tell me the time",
+      "command": {
+        "intent": "TIME",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-010",
+      "text": "Lights on",
+      "spoken_text": "Lights on",
+      "command": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-011",
+      "text": "Power on the lights",
+      "spoken_text": "Power on the lights",
+      "command": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-012",
+      "text": "Turn on the lights",
+      "spoken_text": "Turn on the lights",
+      "command": {
+        "intent": "LIGHT_ON",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-013",
+      "text": "Lights out",
+      "spoken_text": "Lights out",
+      "command": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-014",
+      "text": "Kill the lights",
+      "spoken_text": "Kill the lights",
+      "command": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-015",
+      "text": "Shut off the lights",
+      "spoken_text": "Shut off the lights",
+      "command": {
+        "intent": "LIGHT_OFF",
+        "slots": {
+          "light_id": "light.all"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-016",
+      "text": "Pause",
+      "spoken_text": "Pause",
+      "command": {
+        "intent": "PAUSE",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-017",
+      "text": "Pause audio",
+      "spoken_text": "Pause audio",
+      "command": {
+        "intent": "PAUSE",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-018",
+      "text": "Pause song",
+      "spoken_text": "Pause song",
+      "command": {
+        "intent": "PAUSE",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-019",
+      "text": "Stop",
+      "spoken_text": "Stop",
+      "command": {
+        "intent": "STOP",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-020",
+      "text": "Stop playing",
+      "spoken_text": "Stop playing",
+      "command": {
+        "intent": "STOP",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-021",
+      "text": "End playback",
+      "spoken_text": "End playback",
+      "command": {
+        "intent": "STOP",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-022",
+      "text": "Next song",
+      "spoken_text": "Next song",
+      "command": {
+        "intent": "NEXT",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-023",
+      "text": "Skip song",
+      "spoken_text": "Skip song",
+      "command": {
+        "intent": "NEXT",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-024",
+      "text": "Play next song",
+      "spoken_text": "Play next song",
+      "command": {
+        "intent": "NEXT",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-025",
+      "text": "Volume up",
+      "spoken_text": "Volume up",
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-026",
+      "text": "Increase the volume",
+      "spoken_text": "Increase the volume",
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-027",
+      "text": "Turn the volume up",
+      "spoken_text": "Turn the volume up",
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "up"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-028",
+      "text": "Volume down",
+      "spoken_text": "Volume down",
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-029",
+      "text": "Lower the volume",
+      "spoken_text": "Lower the volume",
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-030",
+      "text": "Turn the volume down",
+      "spoken_text": "Turn the volume down",
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "down"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-031",
+      "text": "Call",
+      "spoken_text": "Call",
+      "command": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-032",
+      "text": "Make a call",
+      "spoken_text": "Make a call",
+      "command": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-033",
+      "text": "Make a phone call",
+      "spoken_text": "Make a phone call",
+      "command": {
+        "intent": "CALL",
+        "slots": {
+          "contact_id": "contact.home"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-034",
+      "text": "Message",
+      "spoken_text": "Message",
+      "command": {
+        "intent": "MESSAGE",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-035",
+      "text": "Send a message",
+      "spoken_text": "Send a message",
+      "command": {
+        "intent": "MESSAGE",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-036",
+      "text": "Send my message",
+      "spoken_text": "Send my message",
+      "command": {
+        "intent": "MESSAGE",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-037",
+      "text": "Reminders",
+      "spoken_text": "Reminders",
+      "command": {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-038",
+      "text": "Show my reminders",
+      "spoken_text": "Show my reminders",
+      "command": {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-039",
+      "text": "List my reminders",
+      "spoken_text": "List my reminders",
+      "command": {
+        "intent": "LIST_REMINDERS",
+        "slots": {}
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-040",
+      "text": "Timer 10 seconds",
+      "spoken_text": "Timer ten seconds",
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-041",
+      "text": "Timer 30 seconds",
+      "spoken_text": "Timer thirty seconds",
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-042",
+      "text": "Timer 1 minute",
+      "spoken_text": "Timer one minute",
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-043",
+      "text": "Countdown for 10 seconds",
+      "spoken_text": "Countdown for ten seconds",
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-044",
+      "text": "Countdown for 30 seconds",
+      "spoken_text": "Countdown for thirty seconds",
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-045",
+      "text": "Countdown for 1 minute",
+      "spoken_text": "Countdown for one minute",
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-046",
+      "text": "Start a timer for 10 seconds",
+      "spoken_text": "Start a timer for ten seconds",
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 10
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-047",
+      "text": "Start a timer for 30 seconds",
+      "spoken_text": "Start a timer for thirty seconds",
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 30
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-048",
+      "text": "Start a timer for 1 minute",
+      "spoken_text": "Start a timer for one minute",
+      "command": {
+        "intent": "TIMER",
+        "slots": {
+          "duration_seconds": 60
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-049",
+      "text": "Alarm 6:00 AM",
+      "spoken_text": "Alarm six a m",
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-050",
+      "text": "Alarm 8:00 AM",
+      "spoken_text": "Alarm eight a m",
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-051",
+      "text": "Alarm 9:00 PM",
+      "spoken_text": "Alarm nine p m",
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-052",
+      "text": "Wake me up at 6:00 AM",
+      "spoken_text": "Wake me up at six a m",
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-053",
+      "text": "Wake me up at 8:00 AM",
+      "spoken_text": "Wake me up at eight a m",
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-054",
+      "text": "Wake me up at 9:00 PM",
+      "spoken_text": "Wake me up at nine p m",
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-055",
+      "text": "Set an alarm for 6:00 AM",
+      "spoken_text": "Set an alarm for six a m",
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-056",
+      "text": "Set an alarm for 8:00 AM",
+      "spoken_text": "Set an alarm for eight a m",
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "08:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-057",
+      "text": "Set an alarm for 9:00 PM",
+      "spoken_text": "Set an alarm for nine p m",
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:00",
+          "timezone": "Asia/Manila"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-058",
+      "text": "Temperature 18 degrees",
+      "spoken_text": "Temperature eighteen degrees",
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-059",
+      "text": "Temperature 22 degrees",
+      "spoken_text": "Temperature twenty two degrees",
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-060",
+      "text": "Temperature 26 degrees",
+      "spoken_text": "Temperature twenty six degrees",
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-061",
+      "text": "Change the temperature to 18 degrees",
+      "spoken_text": "Change the temperature to eighteen degrees",
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-062",
+      "text": "Change the temperature to 22 degrees",
+      "spoken_text": "Change the temperature to twenty two degrees",
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-063",
+      "text": "Change the temperature to 26 degrees",
+      "spoken_text": "Change the temperature to twenty six degrees",
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-064",
+      "text": "Set the temperature to 18 degrees",
+      "spoken_text": "Set the temperature to eighteen degrees",
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 18,
+          "unit": "C"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-065",
+      "text": "Set the temperature to 22 degrees",
+      "spoken_text": "Set the temperature to twenty two degrees",
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 22,
+          "unit": "C"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-066",
+      "text": "Set the temperature to 26 degrees",
+      "spoken_text": "Set the temperature to twenty six degrees",
+      "command": {
+        "intent": "TEMPERATURE",
+        "slots": {
+          "degrees": 26,
+          "unit": "C"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-067",
+      "text": "Brightness 20 percent",
+      "spoken_text": "Brightness twenty percent",
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 20
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-068",
+      "text": "Brightness 60 percent",
+      "spoken_text": "Brightness sixty percent",
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-069",
+      "text": "Brightness 100 percent",
+      "spoken_text": "Brightness one hundred percent",
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-070",
+      "text": "Adjust brightness to 20 percent",
+      "spoken_text": "Adjust brightness to twenty percent",
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 20
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-071",
+      "text": "Adjust brightness to 60 percent",
+      "spoken_text": "Adjust brightness to sixty percent",
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-072",
+      "text": "Adjust brightness to 100 percent",
+      "spoken_text": "Adjust brightness to one hundred percent",
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-073",
+      "text": "Brightness level 20 percent",
+      "spoken_text": "Brightness level twenty percent",
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 20
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-074",
+      "text": "Brightness level 60 percent",
+      "spoken_text": "Brightness level sixty percent",
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 60
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-075",
+      "text": "Brightness level 100 percent",
+      "spoken_text": "Brightness level one hundred percent",
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-076",
+      "text": "Change color to Red",
+      "spoken_text": "Change color to red",
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "light_id": "light.all",
+          "color": "red"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-077",
+      "text": "Change color to Blue",
+      "spoken_text": "Change color to blue",
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "light_id": "light.all",
+          "color": "blue"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-078",
+      "text": "Change color to Green",
+      "spoken_text": "Change color to green",
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "light_id": "light.all",
+          "color": "green"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-079",
+      "text": "Switch color to Red",
+      "spoken_text": "Switch color to red",
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "light_id": "light.all",
+          "color": "red"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-080",
+      "text": "Switch color to Blue",
+      "spoken_text": "Switch color to blue",
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "light_id": "light.all",
+          "color": "blue"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-081",
+      "text": "Switch color to Green",
+      "spoken_text": "Switch color to green",
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "light_id": "light.all",
+          "color": "green"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-082",
+      "text": "Set color to Red",
+      "spoken_text": "Set color to red",
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "light_id": "light.all",
+          "color": "red"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-083",
+      "text": "Set color to Blue",
+      "spoken_text": "Set color to blue",
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "light_id": "light.all",
+          "color": "blue"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-084",
+      "text": "Set color to Green",
+      "spoken_text": "Set color to green",
+      "command": {
+        "intent": "COLOR",
+        "slots": {
+          "light_id": "light.all",
+          "color": "green"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-085",
+      "text": "Reminder Drink water",
+      "spoken_text": "Reminder Drink water",
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-086",
+      "text": "Reminder Study",
+      "spoken_text": "Reminder Study",
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-087",
+      "text": "Reminder Exercise",
+      "spoken_text": "Reminder Exercise",
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-088",
+      "text": "Remind me to Drink water",
+      "spoken_text": "Remind me to Drink water",
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-089",
+      "text": "Remind me to Study",
+      "spoken_text": "Remind me to Study",
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-090",
+      "text": "Remind me to Exercise",
+      "spoken_text": "Remind me to Exercise",
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-091",
+      "text": "Create a reminder to Drink water",
+      "spoken_text": "Create a reminder to Drink water",
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.drink_water"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-092",
+      "text": "Create a reminder to Study",
+      "spoken_text": "Create a reminder to Study",
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.study"
+        }
+      },
+      "tier": "baseline"
+    },
+    {
+      "id": "B1-093",
+      "text": "Create a reminder to Exercise",
+      "spoken_text": "Create a reminder to Exercise",
+      "command": {
+        "intent": "CREATE_REMINDER",
+        "slots": {
+          "task_id": "task.exercise"
+        }
+      },
+      "tier": "baseline"
+    }
+  ],
+  "use_cases": [
+    {
+      "id": "UC-01",
+      "title": "Music",
+      "intents": [
+        "PLAY_MUSIC"
+      ],
+      "class_indices": [
+        20
+      ],
+      "examples": [
+        {
+          "wording": "Play music",
+          "command": {
+            "intent": "PLAY_MUSIC",
+            "slots": {}
+          }
+        }
+      ],
+      "diagram": [
+        "Typed PLAY_MUSIC",
+        "Configured player",
+        "Playback receipt"
+      ],
+      "output": {
+        "badge": "Synthetic playback",
+        "headline": "Playing · demonstration only",
+        "detail": "No audio is playing. A configured provider must supply its actual result.",
+        "example_only": true,
+        "source": "synthetic",
+        "provider_accepted": false,
+        "device_state_confirmed": false,
+        "observed_at": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "id": "UC-02",
+      "title": "Questions",
+      "intents": [
+        "WEATHER",
+        "TIME"
+      ],
+      "class_indices": [
+        25,
+        31
+      ],
+      "examples": [
+        {
+          "wording": "Weather",
+          "command": {
+            "intent": "WEATHER",
+            "slots": {}
+          }
+        },
+        {
+          "wording": "Time",
+          "command": {
+            "intent": "TIME",
+            "slots": {}
+          }
+        }
+      ],
+      "diagram": [
+        "Typed WEATHER / TIME",
+        "OpenWeather / clock",
+        "Answer + source"
+      ],
+      "output": {
+        "badge": "Synthetic weather",
+        "headline": "Weather unavailable",
+        "detail": "No current observation. OpenWeather → honestly dated cache → labeled synthetic fallback. Time uses the local Manila clock.",
+        "example_only": true,
+        "source": "synthetic",
+        "provider_accepted": false,
+        "device_state_confirmed": false,
+        "observed_at": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "id": "UC-03",
+      "title": "Lights",
+      "intents": [
+        "LIGHT_ON",
+        "LIGHT_OFF"
+      ],
+      "class_indices": [
+        14,
+        15
+      ],
+      "examples": [
+        {
+          "wording": "Turn on the lights",
+          "command": {
+            "intent": "LIGHT_ON",
+            "slots": {
+              "light_id": "light.all"
+            }
+          }
+        }
+      ],
+      "diagram": [
+        "Typed LIGHT_ON",
+        "Hue lamp binding",
+        "Receipt / observation"
+      ],
+      "output": {
+        "badge": "Synthetic light",
+        "headline": "Lamp on · simulated",
+        "detail": "Target light.hue_color_lamp_1. No device changed; a provider acknowledgment is not an observed state.",
+        "example_only": true,
+        "source": "synthetic",
+        "provider_accepted": false,
+        "device_state_confirmed": false,
+        "observed_at": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "id": "UC-04",
+      "title": "Dim / color",
+      "intents": [
+        "BRIGHTNESS",
+        "COLOR"
+      ],
+      "class_indices": [
+        4,
+        5,
+        6,
+        8,
+        9,
+        10
+      ],
+      "examples": [
+        {
+          "wording": "Brightness 20 percent",
+          "command": {
+            "intent": "BRIGHTNESS",
+            "slots": {
+              "light_id": "light.all",
+              "percent": 20
+            }
+          }
+        },
+        {
+          "wording": "Change color to Red",
+          "command": {
+            "intent": "COLOR",
+            "slots": {
+              "light_id": "light.all",
+              "color": "red"
+            }
+          }
+        }
+      ],
+      "diagram": [
+        "Typed percent / color",
+        "Hue lamp binding",
+        "Value + source"
+      ],
+      "output": {
+        "badge": "Synthetic light",
+        "headline": "20% · red · simulated",
+        "detail": "Finite brightness 20 / 60 / 100%; colors red / blue / green. No device changed.",
+        "example_only": true,
+        "source": "synthetic",
+        "provider_accepted": false,
+        "device_state_confirmed": false,
+        "observed_at": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "id": "UC-05",
+      "title": "Timer",
+      "intents": [
+        "TIMER"
+      ],
+      "class_indices": [
+        26,
+        27,
+        28
+      ],
+      "examples": [
+        {
+          "wording": "Timer 10 seconds",
+          "command": {
+            "intent": "TIMER",
+            "slots": {
+              "duration_seconds": 10
+            }
+          }
+        }
+      ],
+      "diagram": [
+        "Typed TIMER",
+        "Persistent local job",
+        "Countdown → due alert"
+      ],
+      "output": {
+        "badge": "Local job example",
+        "headline": "0:10",
+        "detail": "Example of a saved ten-second countdown. This static deck starts no job; the application persists jobs and due alerts.",
+        "example_only": true,
+        "source": "local",
+        "provider_accepted": false,
+        "device_state_confirmed": false,
+        "observed_at": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "id": "UC-06",
+      "title": "Alarm",
+      "intents": [
+        "ALARM"
+      ],
+      "class_indices": [
+        1,
+        2,
+        3
+      ],
+      "examples": [
+        {
+          "wording": "Alarm 6:00 AM",
+          "command": {
+            "intent": "ALARM",
+            "slots": {
+              "time": "06:00",
+              "timezone": "Asia/Manila"
+            }
+          }
+        }
+      ],
+      "diagram": [
+        "Typed ALARM",
+        "Next Manila deadline",
+        "Saved alarm → alert"
+      ],
+      "output": {
+        "badge": "Local job example",
+        "headline": "06:00 · Asia/Manila",
+        "detail": "Next matching Manila deadline, not a fixed UTC offset guessed by the deck. No alarm is scheduled here.",
+        "example_only": true,
+        "source": "local",
+        "provider_accepted": false,
+        "device_state_confirmed": false,
+        "observed_at": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "id": "UC-07",
+      "title": "Temperature",
+      "intents": [
+        "TEMPERATURE"
+      ],
+      "class_indices": [
+        22,
+        23,
+        24
+      ],
+      "examples": [
+        {
+          "wording": "Temperature 22 degrees",
+          "command": {
+            "intent": "TEMPERATURE",
+            "slots": {
+              "degrees": 22,
+              "unit": "C"
+            }
+          }
+        }
+      ],
+      "diagram": [
+        "Typed TEMPERATURE",
+        "Synthetic target only",
+        "Separate sensor view"
+      ],
+      "output": {
+        "badge": "Synthetic target",
+        "headline": "22°C target",
+        "detail": "Observed home sensor: unavailable. No climate service is called. Target and real measured temperature stay separate.",
+        "example_only": true,
+        "source": "synthetic",
+        "provider_accepted": false,
+        "device_state_confirmed": false,
+        "observed_at": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "id": "UC-08",
+      "title": "Media",
+      "intents": [
+        "PAUSE",
+        "STOP",
+        "NEXT",
+        "VOLUME"
+      ],
+      "class_indices": [
+        18,
+        19,
+        21,
+        29,
+        30
+      ],
+      "examples": [
+        {
+          "wording": "Pause",
+          "command": {
+            "intent": "PAUSE",
+            "slots": {}
+          }
+        },
+        {
+          "wording": "Next song",
+          "command": {
+            "intent": "NEXT",
+            "slots": {}
+          }
+        },
+        {
+          "wording": "Volume up",
+          "command": {
+            "intent": "VOLUME",
+            "slots": {
+              "operation": "up"
+            }
+          }
+        }
+      ],
+      "diagram": [
+        "Typed media command",
+        "Configured player",
+        "Final result + source"
+      ],
+      "output": {
+        "badge": "Synthetic playback",
+        "headline": "Paused · simulated",
+        "detail": "Provider semantics apply: Spotify STOP is pause, not a claimed device stop. No playback changed here.",
+        "example_only": true,
+        "source": "synthetic",
+        "provider_accepted": false,
+        "device_state_confirmed": false,
+        "observed_at": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "id": "UC-09",
+      "title": "Reminders",
+      "intents": [
+        "CREATE_REMINDER",
+        "LIST_REMINDERS"
+      ],
+      "class_indices": [
+        11,
+        12,
+        13,
+        16
+      ],
+      "examples": [
+        {
+          "wording": "Remind me to Study",
+          "command": {
+            "intent": "CREATE_REMINDER",
+            "slots": {
+              "task_id": "task.study"
+            }
+          }
+        },
+        {
+          "wording": "List my reminders",
+          "command": {
+            "intent": "LIST_REMINDERS",
+            "slots": {}
+          }
+        }
+      ],
+      "diagram": [
+        "Typed task ID",
+        "Persistent local store",
+        "Saved task / list"
+      ],
+      "output": {
+        "badge": "Local job example",
+        "headline": "Study",
+        "detail": "Finite tasks: drink water / study / exercise. The application persists the list; this example writes nothing.",
+        "example_only": true,
+        "source": "local",
+        "provider_accepted": false,
+        "device_state_confirmed": false,
+        "observed_at": null,
+        "fetched_at": null
+      }
+    },
+    {
+      "id": "UC-10",
+      "title": "Calls / messages",
+      "intents": [
+        "CALL",
+        "MESSAGE"
+      ],
+      "class_indices": [
+        7,
+        17
+      ],
+      "examples": [
+        {
+          "wording": "Call",
+          "command": {
+            "intent": "CALL",
+            "slots": {
+              "contact_id": "contact.home"
+            }
+          }
+        },
+        {
+          "wording": "Message",
+          "command": {
+            "intent": "MESSAGE",
+            "slots": {}
+          }
+        }
+      ],
+      "diagram": [
+        "Typed CALL / MESSAGE",
+        "Camera / preset notice",
+        "Video / delivery receipt"
+      ],
+      "output": {
+        "badge": "Synthetic camera / notice",
+        "headline": "Home camera · video only",
+        "detail": "Target camera.dining_area_main_camera_tc70_mainstream. No telephone call, stream or notification is started by this deck.",
+        "example_only": true,
+        "source": "synthetic",
+        "provider_accepted": false,
+        "device_state_confirmed": false,
+        "observed_at": null,
+        "fetched_at": null
+      }
+    }
+  ],
+  "companions": [
+    {
+      "component": "Hey Iris wake",
+      "parameters": 82114,
+      "graph_bytes": 330103,
+      "graph_sha256": "22fc8b0c6a3c80e1d1686d321a6251957085216efaca1752eb22067064a4ea57",
+      "source": "artifacts/iris/wake/iris.json",
+      "included_in_vcm_count": false
+    },
+    {
+      "component": "Owner / overlap",
+      "parameters": 129985,
+      "graph_bytes": 542023,
+      "graph_sha256": "84e860f814e248e793567b2f1c8fe83d24d82b9d58f5379e4da69eb7b78d0a3f",
+      "source": "artifacts/iris/owner/owner.json",
+      "included_in_vcm_count": false
+    },
+    {
+      "component": "Silero VAD",
+      "parameters": null,
+      "graph_bytes": 2327524,
+      "graph_sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+      "source": "artifacts/iris/wake/wake-models.json",
+      "included_in_vcm_count": false
+    }
+  ],
+  "datasets": {
+    "splits": {
+      "calibration": {
+        "human": 210,
+        "synthetic": 0
+      },
+      "dev": {
+        "human": 256,
+        "synthetic": 995
+      },
+      "holdout": {
+        "human": 96,
+        "synthetic": 100
+      },
+      "test": {
+        "human": 1050,
+        "synthetic": 3368
+      },
+      "train": {
+        "human": 1889,
+        "synthetic": 21426
+      }
+    },
+    "normalization_human_train": 1889,
+    "training_sources": [
+      {
+        "repository": "airimonda/ai231-me2-voice-commands",
+        "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+        "kind": "human",
+        "rows": 1889
+      },
+      {
+        "repository": "airimonda/ai231-me2-voice-commands",
+        "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+        "kind": "synthetic",
+        "rows": 5982
+      },
+      {
+        "repository": "martinnavs/ai231-fil-supplemental-data",
+        "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+        "kind": "synthetic",
+        "rows": 15444
+      }
+    ],
+    "source_terms": "Source-specific research/education and consent restrictions remain; not a blanket MIT dataset."
+  },
+  "training": {
+    "recipe": {
+      "batch_size": 32,
+      "context_max_frames": 120,
+      "human_epochs": 6,
+      "label_smoothing": 0.02,
+      "learning_rate": 0.002,
+      "mixed_epochs": 42,
+      "seed": 53,
+      "steps_per_epoch": 96,
+      "threads": 4,
+      "weight_decay": 0.0001
+    },
+    "device": "CPU, four Torch threads, original deterministic seed53 recipe; no GPU substitution",
+    "optimizer": "AdamW",
+    "optimizer_steps": 4608,
+    "wall_seconds": 2987.9094288999986,
+    "curve": [
+      {
+        "epoch": 1,
+        "loss": 2.7075360057254634,
+        "phase": "human"
+      },
+      {
+        "epoch": 2,
+        "loss": 2.0337384504576526,
+        "phase": "human"
+      },
+      {
+        "epoch": 3,
+        "loss": 1.4295178595930338,
+        "phase": "human"
+      },
+      {
+        "epoch": 4,
+        "loss": 1.000274645164609,
+        "phase": "human"
+      },
+      {
+        "epoch": 5,
+        "loss": 0.7194673003007969,
+        "phase": "human"
+      },
+      {
+        "epoch": 6,
+        "loss": 0.5654104755570492,
+        "phase": "human"
+      },
+      {
+        "epoch": 7,
+        "loss": 1.2118478268384933,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 8,
+        "loss": 0.7753291198362907,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 9,
+        "loss": 0.6054557937507828,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 10,
+        "loss": 0.4964360250160098,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 11,
+        "loss": 0.49916325851033133,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 12,
+        "loss": 0.4663485673566659,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 13,
+        "loss": 0.38113981516410905,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 14,
+        "loss": 0.3673675336564581,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 15,
+        "loss": 0.35671941361700493,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 16,
+        "loss": 0.3485865465675791,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 17,
+        "loss": 0.344443809085836,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 18,
+        "loss": 0.3272905107587576,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 19,
+        "loss": 0.32942012573281926,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 20,
+        "loss": 0.30691458052024245,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 21,
+        "loss": 0.2809513860071699,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 22,
+        "loss": 0.2732571306017538,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 23,
+        "loss": 0.2712316056713462,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 24,
+        "loss": 0.25843150168657303,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 25,
+        "loss": 0.25361353686700266,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 26,
+        "loss": 0.24879446734363833,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 27,
+        "loss": 0.24901343090459704,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 28,
+        "loss": 0.24546850503732762,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 29,
+        "loss": 0.24456265879174074,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 30,
+        "loss": 0.24859176964188615,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 31,
+        "loss": 0.23609258886426687,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 32,
+        "loss": 0.2333335376655062,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 33,
+        "loss": 0.22694800980389118,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 34,
+        "loss": 0.22712610087667903,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 35,
+        "loss": 0.23047113387535015,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 36,
+        "loss": 0.22817662668724856,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 37,
+        "loss": 0.21914286011209091,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 38,
+        "loss": 0.21520627258966366,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 39,
+        "loss": 0.2151740176292757,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 40,
+        "loss": 0.2193475135912498,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 41,
+        "loss": 0.21489898643145958,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 42,
+        "loss": 0.21711496993278465,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 43,
+        "loss": 0.2143216789700091,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 44,
+        "loss": 0.21202766227846345,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 45,
+        "loss": 0.2147663477808237,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 46,
+        "loss": 0.20866522565484047,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 47,
+        "loss": 0.2141350982710719,
+        "phase": "mixed"
+      },
+      {
+        "epoch": 48,
+        "loss": 0.21184134498859444,
+        "phase": "mixed"
+      }
+    ],
+    "curve_source": "presentation/evidence/training-curve.json",
+    "artifact_loading": "PASS (separate verifier)",
+    "original_cpu_exact_retraining": "NOT VERIFIED / comparison failed",
+    "gpu_repeatability": "Two historical CUDA runs matched each other; selected epoch28, not original epoch44"
+  },
+  "cohorts": {
+    "holdout": {
+      "ambiguous_unscored": 2,
+      "exact_wording": {
+        "correct_accepted": 58,
+        "metadata_exact_references": 62,
+        "rejected": 3,
+        "wrong_accepted": 1
+      },
+      "latency": {
+        "observations": 288,
+        "p50_ms": 7.708299999649171,
+        "p95_ms": 8.883529999638993,
+        "rtf_p95": 0.0021069284453450114
+      },
+      "original_rows": 96,
+      "raw": {
+        "correct_accepted": 76,
+        "f1": 0.9047619047619048,
+        "fn": 4,
+        "fp": 12,
+        "negative_false_accept_rate": 0.5714285714285714,
+        "negative_false_accepts": 8,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 0.8636363636363636,
+        "recall": 0.95,
+        "rows": 94,
+        "tp": 76,
+        "wrong_accepted": 12
+      },
+      "selected": {
+        "correct_accepted": 72,
+        "f1": 0.9290322580645162,
+        "fn": 8,
+        "fp": 3,
+        "negative_false_accept_rate": 0.07142857142857142,
+        "negative_false_accepts": 1,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 0.96,
+        "recall": 0.9,
+        "rows": 94,
+        "tp": 72,
+        "wrong_accepted": 3
+      }
+    },
+    "test": {
+      "ambiguous_unscored": 185,
+      "exact_wording": {
+        "correct_accepted": 173,
+        "metadata_exact_references": 232,
+        "rejected": 55,
+        "wrong_accepted": 4
+      },
+      "latency": {
+        "observations": 3150,
+        "p50_ms": 5.211200000303506,
+        "p95_ms": 8.672360000400655,
+        "rtf_p95": 0.0030823628245596475
+      },
+      "original_rows": 1050,
+      "raw": {
+        "correct_accepted": 469,
+        "f1": 0.741501976284585,
+        "fn": 140,
+        "fp": 187,
+        "negative_false_accept_rate": 0.33984375,
+        "negative_false_accepts": 87,
+        "negatives": 256,
+        "positives": 609,
+        "precision": 0.7149390243902439,
+        "recall": 0.7701149425287356,
+        "rows": 865,
+        "tp": 469,
+        "wrong_accepted": 187
+      },
+      "selected": {
+        "correct_accepted": 393,
+        "f1": 0.7408105560791706,
+        "fn": 216,
+        "fp": 59,
+        "negative_false_accept_rate": 0.09375,
+        "negative_false_accepts": 24,
+        "negatives": 256,
+        "positives": 609,
+        "precision": 0.8694690265486725,
+        "recall": 0.645320197044335,
+        "rows": 865,
+        "tp": 393,
+        "wrong_accepted": 59
+      }
+    }
+  },
+  "benchmarks": {
+    "historical_desktop": [
+      {
+        "label": "Historical original PC run",
+        "historical": true,
+        "receipt": "presentation/evidence/pc-original.json",
+        "receipt_sha256": "65d676b73534a29f1746e20c35df9d83ea104052fb3e67b1d509dcad6b37b6f9",
+        "source_revision": "3c05b3beb46f06c3108089e0d8c79474670c6cb7",
+        "original_recordings": 1146,
+        "timed_calls": 3438,
+        "repeats": 3,
+        "hardware": {
+          "affinity": "unchanged",
+          "blas_threads": 1,
+          "cpu": "11th Gen Intel(R) Core(TM) i7-11700 @ 2.50GHz",
+          "logical_cpus": 16,
+          "onnx_threads": 1,
+          "platform": "Windows-11-10.0.26200-SP0",
+          "provider": [
+            "CPUExecutionProvider"
+          ],
+          "python": "3.13.14"
+        },
+        "latency": {
+          "observations": 3438,
+          "p50_ms": 4.820250000193482,
+          "p95_ms": 8.406129999457331,
+          "rtf_p95": 0.002695214844194993
+        },
+        "timing_includes": [
+          "PCM validation",
+          "frozen frontend/normalization",
+          "FP32 CPU ONNX",
+          "softmax/margin and complete-command validation"
+        ],
+        "timing_excludes": [
+          "WAV loading/decoding/hash checks",
+          "speaking time",
+          "wake/VAD/endpoint waiting",
+          "worker/gateway/UI/TTS/provider overhead"
+        ],
+        "cold_runtime_init_ms": 26.044999998703133,
+        "onnx_session_load_ms": 20.43250000133412
+      },
+      {
+        "label": "Historical later PC repeat v2",
+        "historical": true,
+        "receipt": "presentation/evidence/pc-repeat-v2.json",
+        "receipt_sha256": "d63cdc85805681426c6897f97f4e36fcc8dc60b8724cd4a33b187b249e429171",
+        "source_revision": "3c05b3beb46f06c3108089e0d8c79474670c6cb7",
+        "original_recordings": 1146,
+        "timed_calls": 3438,
+        "repeats": 3,
+        "hardware": {
+          "affinity": "unchanged",
+          "blas_threads": 1,
+          "cpu": "11th Gen Intel(R) Core(TM) i7-11700 @ 2.50GHz",
+          "logical_cpus": 16,
+          "onnx_threads": 1,
+          "platform": "Windows-11-10.0.26200-SP0",
+          "provider": [
+            "CPUExecutionProvider"
+          ],
+          "python": "3.13.14"
+        },
+        "latency": {
+          "observations": 3438,
+          "p50_ms": 5.35665000006702,
+          "p95_ms": 8.691979999730393,
+          "rtf_p95": 0.0030419887909873206
+        },
+        "timing_includes": [
+          "PCM validation",
+          "frozen frontend/normalization",
+          "FP32 CPU ONNX",
+          "softmax/margin and complete-command validation"
+        ],
+        "timing_excludes": [
+          "WAV loading/decoding/hash checks",
+          "speaking time",
+          "wake/VAD/endpoint waiting",
+          "worker/gateway/UI/TTS/provider overhead"
+        ],
+        "cold_runtime_init_ms": 75.03360000009707,
+        "onnx_session_load_ms": 64.34649999937392
+      }
+    ],
+    "reference_desktop": {
+      "label": "2026-10-24 reference driver / under publication load",
+      "historical": false,
+      "receipt": "presentation/evidence/pc-reference-under-load.json",
+      "receipt_sha256": "75fe34e2daa49affc8c9170ccbe78e0754735af1b9e9f3ebf065c6a50cb3627f",
+      "original_recordings": 1146,
+      "timed_calls": 3438,
+      "repeats": 3,
+      "hardware": {
+        "affinity": "unchanged",
+        "blas_threads": 1,
+        "cpu": "11th Gen Intel(R) Core(TM) i7-11700 @ 2.50GHz",
+        "logical_cpus": 16,
+        "onnx_threads": 1,
+        "platform": "Windows-11-10.0.26200-SP0",
+        "provider": [
+          "CPUExecutionProvider"
+        ],
+        "python": "3.13.14"
+      },
+      "latency": {
+        "observations": 3438,
+        "p50_ms": 9.338649997516768,
+        "p95_ms": 15.34297999969567,
+        "rtf_p95": 0.005407563686207054
+      },
+      "measurement_not_quiesced": true,
+      "context": "Fresh frozen-reference measurement; publication subprocesses were not paused. Not the new adapter, not idle-host or end-to-end latency.",
+      "measured_at": "2026-10-23T22:31:58.346098+00:00",
+      "timing_includes": [
+        "PCM validation",
+        "frozen frontend/normalization",
+        "FP32 CPU ONNX",
+        "softmax/margin and complete-command validation"
+      ],
+      "timing_excludes": [
+        "WAV loading/decoding/hash checks",
+        "speaking time",
+        "wake/VAD/endpoint waiting",
+        "worker/gateway/UI/TTS/provider overhead"
+      ]
+    },
+    "desktop": {
+      "schema_version": 1,
+      "format": "iris-publication-measurement-v1",
+      "target": "desktop",
+      "label": "2026-10-24 product-lock adapter / not quiesced",
+      "hashes": {
+        "model.onnx": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+        "policy.json": "b9242e46fb093642a41023e8ace3c0cadc2fe51ffede512aa09e399622f355f0"
+      },
+      "hardware": {
+        "cpu_count": 16,
+        "device_model": null,
+        "machine": "AMD64",
+        "measurement_host": "desktop_host",
+        "physical_pi_measured": false,
+        "platform": "Windows-11-10.0.26200-SP0",
+        "processor": "Intel64 Family 6 Model 167 Stepping 1, GenuineIntel",
+        "python": "3.13.14",
+        "cpu": "Intel64 Family 6 Model 167 Stepping 1, GenuineIntel"
+      },
+      "timing_scope": "recognize_pcm",
+      "timing_excludes": [
+        "file reads and hashes",
+        "audio decoding",
+        "utterance duration",
+        "wake/VAD and endpoint waits",
+        "telemetry and report writing"
+      ],
+      "model_scope": "Direct VCM session only; wake/VAD, owner sessions, UI and action providers are excluded.",
+      "latency": {
+        "p50_ms": 5.3902499967080075,
+        "p95_ms": 10.56562999983725
+      },
+      "original_recordings": 1146,
+      "timed_calls": 3438,
+      "repeats": 3,
+      "receipt_path": "presentation/evidence/desktop-product.json",
+      "receipt_sha256": "181e0c489f8c695d9d4dd520524a42faf09db40df6fb0d0b95104e008a2ead21",
+      "measured_at": "2026-10-23T23:04:24.116804+00:00",
+      "measurement_not_quiesced": true,
+      "environment": {
+        "numpy": "2.5.3",
+        "onnxruntime": "1.30.0",
+        "python": "3.13.14",
+        "soundfile": "0.14.0",
+        "source": "unchanged main runtime lock; original snapshot environment not modified"
+      },
+      "accepted": {
+        "complete_command_accuracy": 0.7403545359749739,
+        "complete_command_recall": 0.6748911465892597,
+        "emitted_n": 527,
+        "exact_n": 710,
+        "exact_positive_n": 465,
+        "false_accept_n": 25,
+        "false_accept_rate": 0.09259259259259259,
+        "negative_abstention_n": 245,
+        "negative_n": 270,
+        "positive_n": 689,
+        "precision": 0.8823529411764706,
+        "reference_n": 959,
+        "rejected_positive_n": 187,
+        "scored_n": 959,
+        "unavailable_n": 0,
+        "wrong_positive_n": 37
+      },
+      "ambiguous_unscored": 187,
+      "independent_parity": {
+        "actions_enabled": false,
+        "all_recording_repeat_pairs_verified": 3438,
+        "ambiguous_references_unscored": 187,
+        "candidate_revision": "a6d9325f015872f81d7697eb6213c7d789e68d73",
+        "decoded_pcm_verified": 1146,
+        "full_typed_outputs_match_frozen_gold": true,
+        "independently_pinned_original_humans": 1146,
+        "measurement_not_quiesced": true,
+        "metrics_sha256": "e97d32799c8ba9d749706de02dc19b7d5784592ab1511ea9be57973babef21a2",
+        "model_sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+        "pcm_hash_conventions": {
+          "new_trial": "SHA256(float32le bytes), independently reconciled to original header-bound hash",
+          "original": "SHA256(ASCII pcm:f32le:16000:<samples> NUL + float32le bytes)"
+        },
+        "pi_measured": false,
+        "purpose": "Independent original-byte, decoded-PCM, cohort and frozen-decision reconciliation of the new adapter",
+        "raw_and_accepted_decisions_match_frozen_gold": true,
+        "schema_version": 1,
+        "source_revision": "3c05b3beb46f06c3108089e0d8c79474670c6cb7",
+        "trials_sha256": "cc1d8916df570ed911832c39f83cfbd0fdb900a89086ed00849dd4ac51ed5eb8",
+        "verified_at_utc": "2026-10-23T23:07:50.311633+00:00",
+        "verifier_sha256": "7e097e47ec89f0650380db8552125024f4cca13babb3693033ee84aed3f34c73",
+        "wake_or_owner_quality_claim": false,
+        "wav_bytes_verified": 1146
+      },
+      "peak_process_rss_mib": 84.6796875,
+      "resource_scope": "Whole benchmark Python process, including libraries, result storage and runtime; lifetime RSS peak is not model-only memory.",
+      "candidate_revision": "a6d9325f015872f81d7697eb6213c7d789e68d73",
+      "policy_identity_evidence": "Exact core policy bytes verified at import; the hash-bound actual adapter source pins this policy. The incoming wrapper does not itself contain a policy hash."
+    },
+    "pi": null,
+    "timing_scope": "recognize(PCM): validation + frontend + normalization + CPU ONNX + finite decision",
+    "excludes": [
+      "WAV loading/decoding/hash checks",
+      "speaking time",
+      "wake/VAD/endpoint waiting",
+      "worker/gateway/UI/TTS/provider overhead"
+    ]
+  },
+  "provenance": {
+    "snapshot": "submission/optionb-tiny/snapshot.json",
+    "evidence": {
+      "source_revision": "3c05b3beb46f06c3108089e0d8c79474670c6cb7",
+      "files": {
+        "pc-original.json": {
+          "source_path": "experiments/speaker-optionb-release-v1/pc-benchmark-results.json",
+          "sha256": "65d676b73534a29f1746e20c35df9d83ea104052fb3e67b1d509dcad6b37b6f9",
+          "bytes": 4745
+        },
+        "pc-repeat-v2.json": {
+          "source_path": "experiments/speaker-optionb-release-v1/pc-benchmark-rerun-v2.json",
+          "sha256": "d63cdc85805681426c6897f97f4e36fcc8dc60b8724cd4a33b187b249e429171",
+          "bytes": 4746
+        },
+        "training-curve.json": {
+          "source_path": "experiments/speaker-optionb-tiny-v1/training-curve.json",
+          "sha256": "71dd63663d5fe01df80af337cea2be8c53177888df82571a6fe5eb37b8d2f56a",
+          "bytes": 52859
+        },
+        "training-summary.json": {
+          "source_path": "experiments/speaker-optionb-tiny-v1/training-summary.json",
+          "sha256": "c14351b6d731a0fd048a2b2d5732c59fa3dcee4126a1a6529d1a5423b3f51619",
+          "bytes": 1091
+        },
+        "source-ledger.json": {
+          "source_path": "experiments/speaker-optionb-tiny-v1/references-ledger.json",
+          "sha256": "fc3a4983a6bcb8ef5dc048c5905e9636bee065401bae4002c58b8b0ab2fb09ac",
+          "bytes": 1186
+        }
+      }
+    },
+    "examples": "Static storyboard only: no recognition, provider request or state mutation.",
+    "pi_attachment": "Same graph/policy, named Pi hardware, actual receipt and matching timing scope required."
+  }
+}

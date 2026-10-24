@@ -1,0 +1,19 @@
+{
+  "browser": "151.0.7922.34",
+  "playwright": "1.62.1",
+  "format": "iris-ui-screenshot-v1",
+  "source_revision": "c0628940400642f204ff98e26908549b1c07e41c",
+  "source_path": "SpeakerUI/src/ambient/Iris.svelte",
+  "source_sha256": "9ef85c2affe34c79de381b8c323d997761af3f81c20a59fd65263217ccf2a25a",
+  "screenshot_sha256": "f6c5c7f8551e26745c24dc847be0b989eb39f1dccef9803700e27f6103dfacaf",
+  "viewport": [
+    1024,
+    600
+  ],
+  "fixture": true,
+  "inference": "disabled",
+  "actions_enabled": false,
+  "live_microphone": false,
+  "physical_device_evidence": false,
+  "note": "Actual compiled base-main Iris UI. Health/action/entity routes are local software fixtures; no synthetic recognition score or provider result is shown."
+}

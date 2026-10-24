@@ -1,0 +1,30 @@
+{
+  "source_revision": "3c05b3beb46f06c3108089e0d8c79474670c6cb7",
+  "files": {
+    "pc-original.json": {
+      "source_path": "experiments/speaker-optionb-release-v1/pc-benchmark-results.json",
+      "sha256": "65d676b73534a29f1746e20c35df9d83ea104052fb3e67b1d509dcad6b37b6f9",
+      "bytes": 4745
+    },
+    "pc-repeat-v2.json": {
+      "source_path": "experiments/speaker-optionb-release-v1/pc-benchmark-rerun-v2.json",
+      "sha256": "d63cdc85805681426c6897f97f4e36fcc8dc60b8724cd4a33b187b249e429171",
+      "bytes": 4746
+    },
+    "training-curve.json": {
+      "source_path": "experiments/speaker-optionb-tiny-v1/training-curve.json",
+      "sha256": "71dd63663d5fe01df80af337cea2be8c53177888df82571a6fe5eb37b8d2f56a",
+      "bytes": 52859
+    },
+    "training-summary.json": {
+      "source_path": "experiments/speaker-optionb-tiny-v1/training-summary.json",
+      "sha256": "c14351b6d731a0fd048a2b2d5732c59fa3dcee4126a1a6529d1a5423b3f51619",
+      "bytes": 1091
+    },
+    "source-ledger.json": {
+      "source_path": "experiments/speaker-optionb-tiny-v1/references-ledger.json",
+      "sha256": "fc3a4983a6bcb8ef5dc048c5905e9636bee065401bae4002c58b8b0ab2fb09ac",
+      "bytes": 1186
+    }
+  }
+}
