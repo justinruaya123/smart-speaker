@@ -524,14 +524,18 @@ def verify_completed_diversity(root, input_receipt, model, arm, seed):
 
 
 def ensure_source_environment(root=ROOT, *, device='cpu', runner=subprocess.run):
-    """Bootstrap one root environment only when it does not already exist.
+    """Prepare research packages for a new or explicitly runtime-managed root.
 
-    An active research environment is never synchronized or changed by this
-    helper. Recorded training pins are separate from the portable runtime lock.
+    An unmanaged active research environment is never synchronized or changed.
+    Recorded training pins are separate from the portable runtime lock.
     """
     root = Path(root)
     python = root / ('.venv/Scripts/python.exe' if os.name == 'nt' else '.venv/bin/python')
-    if python.is_file():
+    existing = python.is_file()
+    runtime_marker = root / '.runtime/python-epoch44.json'
+    runtime_pending = root / '.runtime/python-epoch44-pending.json'
+    pending = root / '.runtime/python-training-pending.json'
+    if existing and not (runtime_marker.is_file() or runtime_pending.is_file() or pending.is_file()):
         return python
     began = time.perf_counter()
     from scripts.runtime.speaker_tools import find_uv
@@ -541,7 +545,12 @@ def ensure_source_environment(root=ROOT, *, device='cpu', runner=subprocess.run)
     if not pins:
         raise ValueError('Missing recorded training environment bootstrap profile: ' + profile)
     uv = find_uv(root)
-    runner([str(uv), 'venv', str(root / '.venv'), '--python', sys.executable], cwd=root, check=True)
+    pending.parent.mkdir(parents=True, exist_ok=True)
+    pending.write_text('{}\n', encoding='utf-8')
+    runtime_marker.unlink(missing_ok=True)
+    runtime_pending.unlink(missing_ok=True)
+    if not existing:
+        runner([str(uv), 'venv', str(root / '.venv'), '--python', sys.executable], cwd=root, check=True)
     if not python.is_file():
         raise ValueError('Root environment bootstrap did not create its interpreter')
     # Verify the repository's hash-pinned runtime prerequisites first, then
@@ -564,8 +573,9 @@ def ensure_source_environment(root=ROOT, *, device='cpu', runner=subprocess.run)
          'environment_receipt_sha256': sha(root / HERE / 'reproduction-environment.json'),
          'runtime_lock_sha256': sha(root / 'requirements.lock'), 'training_requirements_sha256': sha(path),
          'elapsed_seconds': time.perf_counter() - began,
-         'python': name_under(root, python), 'existing_environment_modified': False,
+         'python': name_under(root, python), 'existing_environment_modified': existing,
          'wheel_hash_lock': 'portable runtime only; research versions are pinned in recorded environment metadata'})
+    pending.unlink()
     return python
 
 

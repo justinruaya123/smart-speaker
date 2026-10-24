@@ -183,6 +183,8 @@ def microphone_cli(command,root,env,mic):
 
 def main(argv=None,*,root=ROOT):
     root=Path(root).resolve();parser=make_parser(root);args=parser.parse_args(argv)
+    if args.list_devices and args.wav is not None:
+        parser.error('--list-devices cannot be combined with --wav')
     if args.wake_wav and args.wav is None:
         parser.error('--wake-wav requires --wav PATH')
     if any(index is not None and index<0 for index in (args.mic,args.speaker)):
@@ -197,8 +199,9 @@ def main(argv=None,*,root=ROOT):
     settings,runtime_env=resolve_settings(root,args)
     python=Path(sys.executable)
     if not args.no_setup:
-        from scripts.runtime.speaker_tools import sync_python
-        python=sync_python(root,source=True)  # Existing frozen runtime lock, never training requirements.
+        from scripts.runtime.epoch44_setup import sync_epoch44
+        needs_audio = not (args.check or args.wav) and (args.list_devices or args.mode=='ui' or args.mic is not None)
+        python=sync_epoch44(root,extras=('audio',) if needs_audio else ())
     if args.mode=='ui' and not (args.check or args.wav or args.list_devices):
         return serve_ui(root,python,args,settings,runtime_env)
     env=launch_environment(root,python,args,settings,runtime_env,token='')

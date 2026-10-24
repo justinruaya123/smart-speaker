@@ -14,27 +14,39 @@ A finite voice-command model: **258,912 parameters · original epoch 44 · FP32 
 
 ## Quickstart
 
-No release ZIP is required. Start with Git and Python (3.13 recommended); the launchers provision a local locked runtime and reuse it on later calls. First setup needs network access. The UI additionally provisions its pinned Node/pnpm tools and builds its dependencies.
+No release ZIP or large dataset is required. Start with Git and Python 3.11+; the launchers prepare a local Python 3.12 runtime when needed and reuse it. First setup needs network access. The ONNX models remain in Git; recognition never downloads a training corpus or runs fitting.
 
 ```sh
-git clone --branch main --single-branch https://github.com/justinruaya123/smart-speaker.git
+git clone --depth 1 --branch main --single-branch https://github.com/justinruaya123/smart-speaker.git
 cd smart-speaker
 python inference.py --check
+python benchmark.py --output .cache/benchmark-run-01
 python inference.py --mode ui --no-audio
 python inference.py --wav /absolute/path/to/hey-iris-and-command.wav --wake-wav
 ```
 
-`inference.py` and `benchmark.py` install/reuse the committed deployment lock, never the training requirements or a fitted model. Advanced `--no-setup` requires the compatible environment's Python explicitly (`.venv/Scripts/python.exe` on Windows, `.venv/bin/python` on POSIX); a system Python is not made compatible by a previous setup call. The default is `submission/models/optionb-tiny`, ONNX CPU. Checks/WAVs stay silent and action-free; the wake-WAV CLI explicitly uses the non-owner benchmark profile. Guarded microphone actions require explicit enablement and owner acceptance. Optional providers can require network access even though recognition is local.
+`inference.py` and `benchmark.py` use the separate minimal lock at `scripts/runtime/epoch44/`, never training requirements. Core inference installs ten packages, not NCNN/OpenCV/SciPy/Torch. The default benchmark adds PyArrow only when called; device/audio modes add SoundDevice. Node24.13.0/pnpm12.5.1 and UI dependencies are fetched only for `--mode ui`. Advanced `--no-setup` uses the compatible environment's Python explicitly (`.venv/Scripts/python.exe` on Windows, `.venv/bin/python` on POSIX) and forbids dependency/benchmark-asset downloads.
 
-With your own permitted original mono16kHz audio and hash-bound manifest, benchmarking also works directly from the clone and prepares its runtime automatically:
+The default benchmark downloads only the fixed **196-recording holdout, 14.55 MB**, from its original immutable source, verifies SHA-256 and reuses its local cache. It does not fetch the full TEST, training, supplemental or owner corpora. Original human and synthetic provenance and ambiguous exclusions are retained. This already-exposed regression is not fresh blind qualification or a Pi performance result until run on that Pi. For your own permitted mono16kHz audio, the explicit-manifest path does not download benchmark recordings:
 
 ```sh
 python benchmark.py --manifest MANIFEST.jsonl --data-root ORIGINAL_AUDIO_ROOT --output NEW_RESULTS
 ```
 
-Recordings are separate inputs, not embedded in Git or the ZIPs. Metadata alone cannot run an acoustic benchmark. No recognition or benchmark command launches fitting.
+The output must be a new directory. Recordings remain in ignored caches, not Git. The model stays `submission/models/optionb-tiny`, ONNX CPU. Checks/WAVs/benchmarks stay silent and action-free; owner-protected actions retain their independent veto. No recognition or benchmark command launches fitting.
 
-Prepare actual evaluation audio **without fitting**, using the [pinned original source/environment](docs/IRIS-GETTING-STARTED.md#prepare-original-evaluation-inputs-without-fitting). From this publication checkout, the wrapper delegates to the unchanged original preparer and exports portable manifests:
+### Raspberry Pi 4 (64-bit)
+
+Use 64-bit Raspberry Pi OS (Bookworm/Trixie, aarch64). From the clone:
+
+```sh
+python3 inference.py --check
+python3 benchmark.py --output .cache/pi-benchmark-01
+```
+
+Microphone/speaker access additionally needs the OS PortAudio library (`sudo apt install libportaudio2`); it is not needed for the model check or recorded-audio benchmark. The pinned SoundFile ARM64 wheel includes libsndfile. Physical Pi/live-microphone qualification remains unmeasured; Linux ARM64 CI is software compatibility, not Pi 4 hardware performance. Optional UI/providers remain separate from these two commands.
+
+For an **optional full-corpus replay**, prepare actual evaluation audio without fitting using the [pinned original source/environment](docs/IRIS-GETTING-STARTED.md#prepare-original-evaluation-inputs-without-fitting). This is not required for the default small benchmark:
 
 ```sh
 python -B reproduce.py prepare-evaluation \

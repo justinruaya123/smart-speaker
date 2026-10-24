@@ -4,7 +4,14 @@ This publication uses the **original 258,912-parameter, width 160, epoch 44 FP32
 
 ## Install and check
 
-Use a clean clone of `main`, Git and Python (3.13 recommended); no release ZIP is needed. Both public launchers prepare/reuse the committed local deployment environment, provisioning uv locally if unavailable. The UI additionally provisions Node24.13.0/pnpm12.5.1 and installs/builds with the committed UI lock. Do not put keys in command history or Git. First-time setup/downloads require the network; the command recognizer itself uses local CPU models.
+Use a clean, preferably shallow clone of `main`, Git and Python 3.11+; no release ZIP or full dataset is needed. Both public launchers prepare/reuse a local Python 3.12 environment from `scripts/runtime/epoch44/`, provisioning uv locally if unavailable. The original full runtime/scientific locks remain separate and unchanged. The UI provisions Node24.13.0/pnpm12.5.1 only when `--mode ui` is called. Do not put keys in command history or Git. First-time setup/downloads require the network; recognition itself uses the CPU ONNX models already in Git.
+
+```sh
+git clone --depth 1 --branch main --single-branch https://github.com/justinruaya123/smart-speaker.git
+cd smart-speaker
+```
+
+On Raspberry Pi 4 use **64-bit Raspberry Pi OS Bookworm/Trixie (aarch64)**. The launcher may use the OS's Python 3.11/3.13 to bootstrap its compatible local environment. On Pi use `python3` in the examples; on Windows use `python`. A 32-bit OS is not supported by the pinned ARM64 wheels. Base setup installs ten packages, without NCNN, OpenCV, SciPy, Torch or a dataset. Microphone/device/UI modes add SoundDevice; actual Linux microphone/playback access needs `sudo apt install libportaudio2`. The pinned ARM64 SoundFile wheel bundles libsndfile, so that OS package is not an unconditional check/benchmark prerequisite.
 
 The inference launcher owns its setup path. For an already installed pinned runtime, use that environment's Python explicitly (`.venv/Scripts/python.exe` on Windows, `.venv/bin/python` on POSIX):
 
@@ -83,7 +90,17 @@ python -B reproduce.py export-evaluation --source-checkout PINNED_SOURCE \
 
 ## Benchmark the published artifact
 
-Once you have a real validated manifest and its source root, from the publication checkout:
+The default requires **no external source checkout, user manifest or full dataset**:
+
+```sh
+python benchmark.py --output .cache/benchmark-run-01
+```
+
+On first use this installs PyArrow as a benchmark-only extra, downloads the **14,553,313-byte (14.55 MB) official holdout** from `airimonda/ai231-me2-voice-commands` at immutable revision `25111444af3adff7588d86ab27c304bb080895cf`, and verifies SHA-256 `9917e336ec596eaaddb476e266f36451326e3f8e5a2cb3dafbb675c33be133aa`. Only its 196 original recordings are cached; no full TEST, training, supplemental, LibriSpeech or private model inputs are requested. Original WAV bytes and frozen epoch44 references are preserved, including ambiguous unscored rows. Human and synthetic inputs remain distinct in trials. This holdout is already exposed regression evidence, not fresh blind accuracy or acoustic qualification. Upstream research/consent restrictions still apply; no restricted audio is republished.
+
+Later calls reuse and verify the cache. `--no-setup` forbids both installing dependencies and downloading missing default benchmark assets; use `.venv/bin/python` (POSIX) or `.venv/Scripts/python.exe` (Windows) for this cached/offline path. Missing/corrupted inputs fail rather than silently replacing identities.
+
+For a separately supplied validated manifest and original source root, the existing explicit path remains available without automatic recording downloads:
 
 ```sh
 python benchmark.py --model-choice epoch44 \
@@ -92,7 +109,7 @@ python benchmark.py --model-choice epoch44 \
 
 `PATH`, `ROOT` and `NEWDIR` are placeholders to replace with actual paths. The output directory must not already exist. Three timing repeats do not triple acoustic denominators. The driver uses the original graph/policy; it must emit metrics/trials with source/model/policy hashes, hardware, timing scope, raw/accepted complete commands, wrong/negative accepts and ambiguous exclusions. It never captures, plays audio, calls providers, chooses thresholds or fits a model.
 
-The default CLI prepares the same local locked deployment runtime used by inference before importing scientific libraries. It does not require the inference command or a ZIP to have run first. `--no-setup` is an explicit advanced path using the current compatible interpreter; it never installs. Missing manifests reject before setup. Setup downloads libraries, not benchmark recordings: supply permitted original audio and its validated manifest, or use the separate original-input preparation above.
+The CLI prepares the appropriate minimal locked runtime before importing scientific libraries. It does not require inference or a ZIP to have run first. An explicit missing manifest rejects before setup or downloads. Supplying `--manifest` does not install PyArrow or fetch a recording corpus; only the default bounded-holdout path needs the Arrow extra. The separate full original-input preparation above is optional and can require larger downloads.
 
 The original preserved PC repeat is historical 5.36/8.69 ms p50/p95, not the current runtime latency. The separately measured2026-10-24 reference-driver run is 9.34/15.34 ms **under unquiesced publication load**, not a new-adapter, idle-host or end-to-end result. Current adapter timing has its own [audited product-lock receipt](../presentation/evidence/desktop-product.json): p50 **5.3902499967080075 ms**, p95 **10.56562999983725 ms**, peak whole-process RSS **84.6796875 MiB**, NumPy2.5.3 / ORT1.30.0. It was not quiesced and measures direct VCM only, not wake/owner/UI/providers or human interaction latency. All1,146 WAV/PCM identities and3,438 typed decisions matched frozen gold in the independent receipt. This does not pass the failed wake gate. Pi remains unmeasured.
 
@@ -101,6 +118,8 @@ The original preserved PC repeat is historical 5.36/8.69 ms p50/p95, not the cur
 Do not use benchmarking as a claim that the selected weights were independently refitted. [The pinned reproduction runbook](REPRODUCIBILITY-optionb-epoch44.md) records two repeatable CUDA fits that selected epoch 28, not original CPU epoch 44. Their exact comparison to the original failed; the absent success lock is preserved. Artifact verification, source reconstruction, GPU repeatability and original CPU exact retraining are four distinct statements.
 
 The previous `start.py`, older root model card and historical continuation workflow describe earlier product defaults. They remain evidence, not the quickstart for the selected 258k release. Do not copy their969k/2M numbers or promote their models into this launch.
+
+`python train.py` still invokes the **separate historical Iris continuation/reproduction workflow**, not a refit or automatic replacement of the frozen Tiny epoch44 model. It is the only one of these entrypoints that prepares research dependencies and may download the much larger training inputs/private project initializers. Access requirements and actual training/export failures remain visible. Running inference first no longer makes a minimal `.venv` falsely count as training-ready: training upgrades an explicitly runtime-managed environment when requested, but leaves an existing unmanaged research environment alone. Never use `--skip-train` to claim a new fit or `--publish` unless publication is separately intended.
 
 ## Presentation and developer checks
 

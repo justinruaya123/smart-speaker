@@ -1,0 +1,74 @@
+name: Iris source on Linux ARM64
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iris-source-arm64.yml'
+      - 'inference.py'
+      - 'benchmark.py'
+      - 'scripts/iris_inference.py'
+      - 'scripts/iris_epoch44_benchmark.py'
+      - 'scripts/runtime/**'
+      - 'vcm/frontend.py'
+      - 'submission/models/optionb-tiny/**'
+      - 'submission/feedback/**'
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  source-entrypoints:
+    # This is native ARM64 software compatibility, NOT physical Pi qualification.
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 15
+    steps:
+      - name: Fresh main source, no persisted credentials
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          lfs: false
+      - name: Inference first; no capture, actions, UI install or benchmark data
+        run: |
+          mkdir -p .cache/iris-arm64
+          python3 -B inference.py --check | tee .cache/iris-arm64/inference.log
+          .venv/bin/python - <<'PY'
+          from importlib.metadata import distributions
+          from pathlib import Path
+          names = {d.metadata['Name'].lower() for d in distributions()}
+          assert not names & {'torch', 'ncnn', 'opencv-python', 'scipy', 'pyarrow', 'sounddevice'}
+          assert not list(Path('.cache').rglob('*.parquet'))
+          assert not list(Path('.runtime/tools').glob('node-*'))
+          PY
+      - name: Bounded original holdout benchmark; never the full corpus
+        run: |
+          python3 -B benchmark.py --output .cache/iris-arm64/benchmark --repeats 1
+          .venv/bin/python - <<'PY'
+          import json
+          from pathlib import Path
+          result = json.loads(Path('.cache/iris-arm64/benchmark/metrics.json').read_bytes())
+          assert result['source_n'] == 196 and result['observation_n'] == 196
+          assert result['parameters'] == 258912 and result['selected_epoch'] == 44
+          assert result['model_sha256'] == 'c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce'
+          assert result['actions_enabled'] is False and result['qualified'] is False
+          assert result['physical_pi_measured'] is False
+          assert not Path('.cache/iris-release-v1/inputs').exists()
+          PY
+      - name: Retain metadata only, never downloaded audio/data caches
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2, official ref readback
+        with:
+          name: iris-linux-arm64-command-replay
+          path: |
+            .cache/iris-arm64/inference.log
+            .cache/iris-arm64/benchmark/metrics.json
+            .cache/iris-arm64/benchmark/trials.jsonl
+          include-hidden-files: true
+          retention-days: 7
+          if-no-files-found: error
