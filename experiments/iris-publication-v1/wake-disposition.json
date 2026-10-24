@@ -1,0 +1,88 @@
+{
+  "disposition": "No automatic main merge or production Pages release as a working Hey Iris product. Preserve reviewable code/docs and exact failed evidence; do not tune thresholds on exposed tests.",
+  "evidence_storage": "Native and external diagnostic studies remain on their own versioned Git branches; only this compact disposition enters product branch. Failed diagnostic weights and unused experimental adapters are not product dependencies.",
+  "external": {
+    "evidence_path": "experiments/iris-openwakeword-publication-v1/results.json",
+    "evidence_revision": "c770e15e806aed63c9954a1b8f62844fa37ae965",
+    "evidence_sha256": "ca5c7870e450a9cae6255f0feda6002d107c37b479b0e8ef1683c4495549a67e",
+    "panels": [
+      {
+        "metrics": {
+          "confusable_n": 64,
+          "control_n": 4,
+          "detected": 23,
+          "duplicate_detections": 0,
+          "false_wakes": 16,
+          "missed": 9,
+          "negative_n": 68,
+          "negative_seconds": 167.20000000000002,
+          "positive_n": 32,
+          "recall": 0.71875,
+          "synthetic_smoke_pass": false
+        },
+        "name": "baseline"
+      },
+      {
+        "metrics": {
+          "confusable_n": 64,
+          "control_n": 4,
+          "detected": 22,
+          "duplicate_detections": 0,
+          "false_wakes": 16,
+          "missed": 10,
+          "negative_n": 68,
+          "negative_seconds": 166.696,
+          "positive_n": 32,
+          "recall": 0.6875,
+          "synthetic_smoke_pass": false
+        },
+        "name": "companion-test"
+      }
+    ],
+    "policy": {
+      "consecutive": 2,
+      "cooldown_samples": 16000,
+      "release": 0.3,
+      "threshold": 0.5
+    },
+    "status": "blocked_acoustic_gate"
+  },
+  "frozen_vcm_changed": false,
+  "live_human_positive_recordings": 0,
+  "model_promoted": false,
+  "native": {
+    "evidence_path": "experiments/iris-wake-publication-v1/study-results.json",
+    "evidence_revision": "d1c13920f0b6a34fafb6cc9c0c45dce503721be8",
+    "evidence_sha256": "cba398cff655cf3f849cb4171161ff174008eef531e08b67d0748680d1daf54d",
+    "separate_unpromoted_companion": {
+      "confusable_n": 64,
+      "control_n": 4,
+      "detected": 21,
+      "duplicate_detections": 0,
+      "false_wakes": 2,
+      "missed": 11,
+      "negative_n": 68,
+      "negative_seconds": 166.696,
+      "positive_n": 32,
+      "recall": 0.65625,
+      "synthetic_smoke_pass": false
+    },
+    "unchanged_detector": {
+      "confusable_n": 64,
+      "control_n": 4,
+      "detected": 1,
+      "duplicate_detections": 0,
+      "false_wakes": 0,
+      "missed": 31,
+      "negative_n": 68,
+      "negative_seconds": 167.20000000000002,
+      "positive_n": 32,
+      "recall": 0.03125,
+      "synthetic_smoke_pass": false
+    }
+  },
+  "release_blocker": true,
+  "schema_version": 1,
+  "software_not_acoustic": "Passing software tests and model loading does not supersede the failed acoustic gate.",
+  "wake_qualified": false
+}

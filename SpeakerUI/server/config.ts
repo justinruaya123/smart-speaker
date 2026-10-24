@@ -1,5 +1,6 @@
 import { resolve } from 'node:path';
 import { isRecord } from '../shared/protocol.js';
+import type { OpenWeatherConfig } from './integrations/openweather.js';
 
 export interface ActionBindings {
   lights: Record<string, string | string[]>;
@@ -80,8 +81,20 @@ export function readConfig(env: NodeJS.ProcessEnv, cwd: string) {
   if (threshold !== undefined && (!Number.isFinite(threshold) || threshold < 0 || threshold > 1)) throw new Error('INTENT_MIN_CONFIDENCE must be between 0 and 1.');
   const haEnabled = enabled(env.HA_ENABLED, 'HA_ENABLED');
   const spotifyEnabled = enabled(env.SPOTIFY_ENABLED, 'SPOTIFY_ENABLED');
+  let openweather: OpenWeatherConfig = { enabled:false };
+  if (enabled(env.OPENWEATHER_ENABLED, 'OPENWEATHER_ENABLED')) {
+    const apiKey = required(env.OPENWEATHER_API_KEY, 'OPENWEATHER_API_KEY');
+    const latitude = Number(required(env.OPENWEATHER_LATITUDE, 'OPENWEATHER_LATITUDE'));
+    const longitude = Number(required(env.OPENWEATHER_LONGITUDE, 'OPENWEATHER_LONGITUDE'));
+    if (!Number.isFinite(latitude) || Math.abs(latitude) > 90 || !Number.isFinite(longitude) || Math.abs(longitude) > 180) throw new Error('OPENWEATHER coordinates are invalid.');
+    const location = (env.OPENWEATHER_LOCATION || 'Configured region').trim();
+    if (!location || location.length > 80 || /[\r\n]/.test(location)) throw new Error('OPENWEATHER_LOCATION must be a short coarse region label.');
+    openweather = { enabled:true,apiKey,latitude,longitude,location };
+  }
   const entityIds = [...new Set((env.HA_ENTITY_IDS || '').split(',').map((id) => id.trim()).filter(Boolean))];
   if (entityIds.length > 100 || entityIds.some((id) => !/^(light|camera|sensor|climate|weather|media_player|script)\.[a-z0-9_]+$/.test(id))) throw new Error('HA_ENTITY_IDS supports at most 100 light/camera/sensor/climate/weather/media_player/script IDs.');
+  const temperatureSensor = env.HA_TEMPERATURE_SENSOR_ID?.trim() || undefined;
+  if (temperatureSensor && (!/^sensor\.[a-z0-9_]+$/.test(temperatureSensor) || !entityIds.includes(temperatureSensor))) throw new Error('HA_TEMPERATURE_SENSOR_ID must be an explicitly allowlisted sensor entity.');
   const tls = env.TLS_CERT_PATH || env.TLS_KEY_PATH ? { cert: required(env.TLS_CERT_PATH, 'TLS_CERT_PATH'), key: required(env.TLS_KEY_PATH, 'TLS_KEY_PATH') } : undefined;
   const ha = haEnabled ? { enabled: true as const, url: httpUrl(required(env.HA_URL, 'HA_URL'), 'HA_URL'), token: required(env.HA_TOKEN, 'HA_TOKEN'), entityIds } : { enabled: false as const, entityIds };
   let spotify;
@@ -92,6 +105,6 @@ export function readConfig(env: NodeJS.ProcessEnv, cwd: string) {
     if (redirect.origin !== origin || redirect.pathname !== '/auth/spotify/callback') throw new Error('Spotify redirect must be APP_ORIGIN + /auth/spotify/callback.');
     spotify = { enabled: true as const, clientId: required(env.SPOTIFY_CLIENT_ID, 'SPOTIFY_CLIENT_ID'), clientSecret: required(env.SPOTIFY_CLIENT_SECRET, 'SPOTIFY_CLIENT_SECRET'), redirectUri, deviceId: env.SPOTIFY_DEVICE_ID || undefined };
   } else spotify = { enabled: false as const };
-  return { host: env.HOST || '127.0.0.1', port, origin, tls, inferenceMode, runtime, threshold, bindings, timezone, actionsEnabled: enabled(env.ACTIONS_ENABLED, 'ACTIONS_ENABLED'), ha, spotify, mediaDir: resolve(cwd, env.LOCAL_MEDIA_DIR || 'media'), dataDir: resolve(cwd, env.DATA_DIR || 'data') };
+  return { host: env.HOST || '127.0.0.1', port, origin, tls, inferenceMode, runtime, threshold, bindings, timezone, temperatureSensor, openweather, publication: enabled(env.IRIS_PUBLICATION, 'IRIS_PUBLICATION'), actionsEnabled: enabled(env.ACTIONS_ENABLED, 'ACTIONS_ENABLED'), ha, spotify, mediaDir: resolve(cwd, env.LOCAL_MEDIA_DIR || 'media'), dataDir: resolve(cwd, env.DATA_DIR || 'data') };
 }
 export type Config = ReturnType<typeof readConfig>;

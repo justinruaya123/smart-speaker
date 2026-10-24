@@ -46,6 +46,10 @@ export class ActionStore extends EventEmitter {
   }
   snapshot() { return structuredClone({ revision: this.state.revision, jobs: this.state.jobs, receipts: Object.entries(this.state.executions).slice(-30).map(([id, receipt]) => ({ ...receipt, id })) }); }
   receipt(id: string) { const value = this.state.executions[id]; return value ? structuredClone(value) : undefined; }
+  syntheticState(): Record<string, any> {
+    const latest = Object.values(this.state.executions).reverse().find(receipt => receipt.status === 'synthetic' && isRecord(receipt.synthetic_state));
+    return structuredClone(latest?.synthetic_state || {});
+  }
   private async save() {
     this.state.revision++;
     if (this.directory) {

@@ -17,11 +17,20 @@ export function describeCommand(command) {
 }
 
 export function applyRuntimeEvent(model, event, setAgent) {
+    if(event.event==='feedback_error'){model.runtimeAudioError=event.message;return;}
     if(event.event==='execution'){
+        if(!event.execution || event.execution.replayed)return false;
+        const key=event.execution.id || `${event.session_id || model.runtimeSession}:${event.utterance_id}`;
+        const received=model.receivedExecutions ??= {};
+        const previous=received[key];
+        if(previous && (previous===event.execution.status || !['pending','requested'].includes(previous)))return false;
+        received[key]=event.execution.status;
+        (model.executionReceipts??={})[key]=structuredClone(event.execution);
         const item=(model.history||[]).find(item=>item.result.utteranceId===event.utterance_id && (!event.session_id || item.raw?.session_id === event.session_id));
-        if(!item || item.execution && item.execution.status !== 'requested')return;
+        if(!item)return true;
+        if(item.execution && !['pending','requested'].includes(item.execution.status))return false;
         item.execution=event.execution;item.status=event.execution.status;
-        if(model.event?.result.utteranceId===event.utterance_id)model.event={...item};
+        if(model.event?.result.utteranceId===event.utterance_id&&model.event.raw?.session_id===item.raw?.session_id)model.event={...item};
         if(event.execution.status==='local'){
             const command=event.execution.command,slots=command.slots;
             if(command.intent==='TIMER')model.timer={total:slots.duration_seconds,remaining:slots.duration_seconds,end:event.execution.deadline};
@@ -30,7 +39,7 @@ export function applyRuntimeEvent(model, event, setAgent) {
             if(command.intent==='TIME'){model.view='home';model.announcement=event.execution.detail;}
             if(command.intent==='CREATE_REMINDER'){model.reminderDraft=({ 'task.drink_water':'Drink water','task.study':'Study','task.exercise':'Exercise' })[slots.task_id]||slots.task_id;model.reminderDeadline='';model.editingReminder=null;model.view='new-reminder';}
         }
-        return;
+        return true;
     }
     if (event.event === 'command' && (event.is_final === false || event.final === false)) return;
     if (model.runtimeSession === event.session_id && event.sequence <= (model.runtimeSequence ?? -1)) return;
@@ -44,7 +53,10 @@ export function applyRuntimeEvent(model, event, setAgent) {
     if (['ready', 'reset', 'command', 'error', 'capture_warning'].includes(event.event) ||
         event.event === 'state' && ['completed','muted','wake_listening','cancel','reset','capture_error'].includes(event.state)) model.tentative = null;
     if (event.event === 'ownership') model.ownership = { accepted:event.accepted===true, reason:event.reason, experimental:event.ownership_experimental===true };
-    if (event.event === 'ready') { model.runtimeReady = event.loaded !== false; model.runtimeError = event.loaded === false ? 'Inference worker is unavailable.' : ''; model.runtimeEngine=event.engine||'onnxruntime';model.backend = model.runtimeEngine+(model.runtimeReady?' ready':' unavailable'); model.runtimePolicy = event.policy_enabled;model.runtimeConfig=event.application_config;model.runtimeUI=event.ui;model.runtimeActions=event.actions_enabled===true; }
+    if (event.event === 'ready') {
+        model.runtimeReady = event.loaded !== false; model.runtimeError = event.loaded === false ? 'Inference worker is unavailable.' : ''; model.runtimeEngine=event.engine||'onnxruntime';model.backend = model.runtimeEngine+(model.runtimeReady?' ready':' unavailable'); model.runtimePolicy = event.policy_enabled;model.runtimeConfig=event.application_config;model.runtimeUI=event.ui;model.runtimeActions=event.actions_enabled===true;
+        model.runtimeIdentity={parameters:event.parameters,selected_epoch:event.selected_epoch,model_sha256:event.model_sha256,wake_phrase:event.wake_phrase,model_qualified:event.model_qualified};
+    }
     if (event.event === 'state' || event.event === 'ready') {
         model.runtimeState = event.state;
         model.muted = event.state === 'muted';
@@ -71,7 +83,11 @@ export function applyRuntimeEvent(model, event, setAgent) {
         timestamp: new Date().toISOString(), actionsEnabled: event.actions_enabled===true, status: accepted ? (event.actions_enabled?'pending':'accepted-preview') : 'rejected',
         reason: event.application?.reason||output.reason, raw: structuredClone(event),
         result: { utteranceId: event.utterance_id || `${event.session_id}-${event.sequence}`, final: true,
-            ...mapped, latencyMs: event.timing?.total_ms } };
+            ...mapped, latencyMs: Number.isFinite(event.latency_ms)?event.latency_ms:event.timing?.total_ms,
+            commandPosterior:event.command_probability??event.diagnostic_candidate?.class_probability,
+            commandMargin:event.command_margin??event.diagnostic_candidate?.margin } };
+    const earlierReceipt=model.executionReceipts?.[`${event.session_id}:${event.utterance_id}`];
+    if(earlierReceipt){model.event.execution=earlierReceipt;model.event.status=earlierReceipt.status;}
     model.history = [model.event, ...(model.history || [])].slice(0, 30);
     model.historyIndex = 0; model.receiptAt = Date.now();
     // Stop simulator auto-actions when displaying real inference.
