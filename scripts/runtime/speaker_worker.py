@@ -248,10 +248,10 @@ class AudioService:
             self.profile='benchmark-compatible';self.owner_session=None
         try:
             if wake:
+                from scripts.runtime.wake_gate import iter_replay_pcm
                 gate=self.new_gate();self.set_state('wake_listening')
-                for offset in range(0,len(pcm),512):
-                    for event in gate.feed(pcm[offset:offset+512],offset):
-                        commands+=int('output' in event);wake_detected|=event.get('status')=='detected';self.forward(event)
+                for event in iter_replay_pcm(gate,pcm):
+                    commands+=int('output' in event);wake_detected|=event.get('status')=='detected';self.forward(event)
                 if not commands:self.emit({'event':'wake_result','wake_detected':wake_detected,**gate.eof()})
             else:
                 self.forward(self.recognize(pcm));commands=1

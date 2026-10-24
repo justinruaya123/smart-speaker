@@ -141,3 +141,48 @@ def test_active_command_capture_cannot_wait_forever_for_second_vad():
     gate=WakeGate(Command(),Wake(),Voice(),release_ms=32)
     events=gate.feed(np.ones(16000*16,dtype='float32')*.1,0)
     assert any(e.get('reason')=='command_capture_timeout' for e in events)
+
+
+def test_wake_wav_warms_detector_and_flushes_endpoint_in_event_order():
+    """Software markers exercise the real rolling/gate path, not acoustic quality."""
+    import io
+    import soundfile as sf
+    from scripts.runtime.mvp_wake import RollingWake
+    from scripts.runtime.wake_gate import WakeGate
+    command={'intent':'TIME','slots':{}}
+    runtime=SimpleNamespace(root=None,profile='benchmark-compatible',
+        recognize=lambda pcm:{'output':{'accepted':True,'command':command,'reason':None}})
+    class Voice:
+        def reset(self):pass
+        def __call__(self,pcm):return float(np.max(pcm)>.1)
+    def make_gate(observed):
+        class Endpoint:
+            def reset(self):
+                self.finalized=False;self.audio=[];self.samples=0;self.started=False;self.silence=0
+            def feed(self,pcm,sequence):
+                assert sequence==self.samples
+                self.samples+=len(pcm);self.audio.append(pcm.copy())
+                if np.max(pcm)>.3:self.started=True;self.silence=0
+                elif self.started:self.silence+=len(pcm)
+                if self.started and self.silence>=1024:
+                    self.finalized=True
+                    return observed.recognize(np.concatenate(self.audio))
+                return {'reason':None}
+        wake=RollingWake(lambda pcm:float(np.any((pcm>.1)&(pcm<.3))),threshold=.9)
+        gate=WakeGate(Endpoint(),wake,Voice())
+        gate.on_wake=observed.on_wake;gate.on_reset=observed.on_reset
+        return gate
+    runtime.make_gate=make_gate
+    events=[];settings={'inference':{'mode':'demo'},'actions':{'enabled':True}}
+    service=AudioService(runtime,events.append,settings)
+    # No caller-supplied warmup or trailing silence: a normal finite audio file.
+    pcm=np.concatenate((np.full(4096,.2),np.zeros(8000),np.full(6144,.4))).astype('float32')
+    stream=io.BytesIO();sf.write(stream,pcm,16000,format='WAV',subtype='PCM_16')
+    result=service.wav(stream.getvalue(),wake=True)
+    assert result['wake_detected'] is True
+    assert result['commands']==1
+    final=next(event for event in events if event.get('event')=='command')
+    assert final['output']['command']==command and final['actions_enabled'] is False
+    states=[event['state'] for event in events if event.get('event')=='state']
+    assert states.index('wake_detected')<states.index('command_ready')<states.index('processing')
+    assert result['audio_seconds']==len(pcm)/16000

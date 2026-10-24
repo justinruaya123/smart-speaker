@@ -4,7 +4,7 @@ This publication uses the **original 258,912-parameter, width 160, epoch 44 FP32
 
 ## Install and check
 
-Use a clean project checkout, Git, Python 3.13 and uv. The UI toolchain is Node24.13+/pnpm12.5.1 with the committed lock. Do not put keys in command history or Git. First-time setup/downloads may require the network; the command recognizer itself uses local CPU models.
+Use a clean clone of `main`, Git and Python (3.13 recommended); no release ZIP is needed. Both public launchers prepare/reuse the committed local deployment environment, provisioning uv locally if unavailable. The UI additionally provisions Node24.13.0/pnpm12.5.1 and installs/builds with the committed UI lock. Do not put keys in command history or Git. First-time setup/downloads require the network; the command recognizer itself uses local CPU models.
 
 The inference launcher owns its setup path. For an already installed pinned runtime, use that environment's Python explicitly (`.venv/Scripts/python.exe` on Windows, `.venv/bin/python` on POSIX):
 
@@ -19,13 +19,18 @@ The first command may prepare the environment. `--no-setup` forbids setup rather
 ## UI and silent recorded audio
 
 ```sh
-python inference.py --mode ui --no-setup
-python inference.py --wav /absolute/path/to/mono16k.wav --no-setup
+python inference.py --mode ui --no-audio
+python inference.py --wav /absolute/path/to/mono16k.wav
+python inference.py --wav /absolute/path/to/hey-iris-and-command.wav --wake-wav
 ```
 
 Use the actual UI microphone settings to select an input; supported device/audio controls are discoverable with `python inference.py --help`. The UI uses the combined gateway so `/ws/runtime` stays on the same origin. CLI/WAV/checks are always action-free and silent; an inherited playback flag cannot make benchmark/replay audio actuate or speak.
 
 The sequence is **Hey Iris → one supported command → guarded action → visible receipt**. The VCM selects one complete class, then the existing experimental owner/overlap gate may veto the application. An accepted raw command and a successful action are not interchangeable. Tentative guesses never execute. A rejected capture/ownership/slot decision must remain rejected.
+
+For full wake-and-request file injection, use a mono 16 kHz WAV containing **“Hey Iris”, a separating pause, then one supported command** and pass `--wake-wav`. Without that flag, `--wav` is command-only recognition and does not test wake detection. The file path uses the same native rolling wake detector, command VAD and frozen Tiny decision as the worker. It supplies two seconds of silent detector warm-up and six seconds of silent endpoint/timeout flush; original speech samples and reported input duration are unchanged. Events must show `wake_detected`, `command_ready`, then a final accepted typed command. Merely exiting successfully or loading the models is not a successful injection.
+
+The public CLI file path explicitly declares `benchmark-compatible`, `owner_gating_enabled=false` and `actions_enabled=false`. It is a silent recognition test, not proof of ownership, playback or device actuation. The UI's owner-protected profile retains the independent speaker veto; do not bypass that veto or call one successful software injection acoustic qualification. The failed wake-release gate remains in force.
 
 Start with actions disabled. Copy [the root example](../config.example.toml) only to your ignored private `config.toml` and inspect the current launcher/config help before explicitly enabling microphone actions. Provider keys, tokens and precise home data stay server-side and outside published assets. The user-authorized HA allowlist is literally:
 
@@ -86,6 +91,8 @@ python benchmark.py --model-choice epoch44 \
 ```
 
 `PATH`, `ROOT` and `NEWDIR` are placeholders to replace with actual paths. The output directory must not already exist. Three timing repeats do not triple acoustic denominators. The driver uses the original graph/policy; it must emit metrics/trials with source/model/policy hashes, hardware, timing scope, raw/accepted complete commands, wrong/negative accepts and ambiguous exclusions. It never captures, plays audio, calls providers, chooses thresholds or fits a model.
+
+The default CLI prepares the same local locked deployment runtime used by inference before importing scientific libraries. It does not require the inference command or a ZIP to have run first. `--no-setup` is an explicit advanced path using the current compatible interpreter; it never installs. Missing manifests reject before setup. Setup downloads libraries, not benchmark recordings: supply permitted original audio and its validated manifest, or use the separate original-input preparation above.
 
 The original preserved PC repeat is historical 5.36/8.69 ms p50/p95, not the current runtime latency. The separately measured2026-10-24 reference-driver run is 9.34/15.34 ms **under unquiesced publication load**, not a new-adapter, idle-host or end-to-end result. Current adapter timing has its own [audited product-lock receipt](../presentation/evidence/desktop-product.json): p50 **5.3902499967080075 ms**, p95 **10.56562999983725 ms**, peak whole-process RSS **84.6796875 MiB**, NumPy2.5.3 / ORT1.30.0. It was not quiesced and measures direct VCM only, not wake/owner/UI/providers or human interaction latency. All1,146 WAV/PCM identities and3,438 typed decisions matched frozen gold in the independent receipt. This does not pass the failed wake gate. Pi remains unmeasured.
 

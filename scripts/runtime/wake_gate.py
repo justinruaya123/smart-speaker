@@ -86,11 +86,16 @@ class WakeGate:
         return self.reject('wake_required' if self.state=='wake' else 'incomplete')
 
 
-def replay_pcm(gate,pcm):
-    """File replay uses the same detector warmup and timeout flush as acceptance."""
+def iter_replay_pcm(gate,pcm):
+    """Deliver bounded file warmup/flush while forwarding events immediately."""
     pcm=np.asarray(pcm,dtype=np.float32)
     if pcm.ndim!=1 or not np.isfinite(pcm).all():raise ValueError('Requires finite mono PCM')
     delivered,_=pack([np.zeros(32000,dtype=np.float32),pcm,np.zeros(96000,dtype=np.float32)],'*')
-    gate.reset();events=[]
-    for offset in range(0,len(delivered),640):events.extend(gate.feed(delivered[offset:offset+640],offset))
-    return events
+    gate.reset()
+    for offset in range(0,len(delivered),640):
+        yield from gate.feed(delivered[offset:offset+640],offset)
+
+
+def replay_pcm(gate,pcm):
+    """File replay uses the same detector warmup and timeout flush as acceptance."""
+    return list(iter_replay_pcm(gate,pcm))

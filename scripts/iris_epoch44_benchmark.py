@@ -10,6 +10,7 @@ from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
+import subprocess
 
 for _key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','VECLIB_MAXIMUM_THREADS','NUMEXPR_NUM_THREADS'):
     os.environ.setdefault(_key, '1')
@@ -37,8 +38,22 @@ def main(argv=None, *, root=ROOT):
     parser.add_argument('--threads', type=int, choices=range(1,9), default=1)
     parser.add_argument('--engine', choices=['onnxruntime'], default='onnxruntime')
     parser.add_argument('--repeats', type=int, default=3)
+    parser.add_argument('--no-setup', action='store_true', help='Use this interpreter without installing dependencies')
     args = parser.parse_args(argv)
+    if not args.manifest.is_file():
+        parser.error('Original-audio manifest file not found: ' + str(args.manifest))
     output = args.output or root/'.cache/iris-publication-v1'/datetime.now(timezone.utc).strftime('pc-%Y%m%dT%H%M%S.%fZ')
+    if not args.no_setup:
+        from scripts.runtime.speaker_tools import sync_python
+        python = sync_python(root, source=True)
+        env = os.environ.copy()
+        env.pop('PYTHONPATH', None)
+        env.update(ACTIONS_ENABLED='false', IRIS_FEEDBACK_ENABLED='false')
+        return subprocess.call([str(python), '-B', str(root/'benchmark.py'), '--no-setup',
+            '--bundle', str(args.bundle.resolve()), '--manifest', str(args.manifest.resolve()),
+            '--data-root', str(args.data_root.resolve()), '--output', str(output.resolve()),
+            '--threads', str(args.threads), '--engine', args.engine, '--repeats', str(args.repeats)],
+            cwd=root, env=env)
     try:
         result = benchmark(args.bundle, args.manifest, output, threads=args.threads,
                            engine=args.engine, repeats=args.repeats, root=args.data_root)
@@ -54,4 +69,5 @@ def main(argv=None, *, root=ROOT):
 
 
 if __name__ == '__main__':
-    main()
+    outcome = main()
+    raise SystemExit(outcome if isinstance(outcome, int) else 0)

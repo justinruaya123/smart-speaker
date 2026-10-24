@@ -90,3 +90,51 @@ def test_scorer_explicitly_separates_wrong_positive_accepts_and_negative_accepts
     assert result['false_accept_n']==1 and result['exact_positive_n']==1
     assert result['exact_n']==2 and result['scored_n']==5
     assert result['complete_command_accuracy']==.4
+
+
+def test_benchmark_first_use_bootstraps_before_scientific_imports(tmp_path,monkeypatch):
+    from scripts import iris_epoch44_benchmark as entry
+    from scripts.runtime import speaker_tools
+    calls=[]
+    def sync(root,*,source):
+        calls.append(('setup',root,source))
+        return tmp_path/'managed-python'
+    def execute(argv,*,cwd,env):
+        calls.append(('child',argv,cwd,env))
+        return 17
+    monkeypatch.setattr(speaker_tools,'sync_python',sync)
+    monkeypatch.setattr(subprocess,'call',execute)
+    monkeypatch.setattr(entry,'benchmark',lambda *a,**k:pytest.fail('Scientific runtime imported before first-use setup'))
+    monkeypatch.setenv('PYTHONPATH','unrelated-source')
+    manifest=tmp_path/'originals.jsonl';manifest.write_text('{}\n')
+    result=entry.main(['--manifest',str(manifest),'--output',str(tmp_path/'results')],root=ROOT)
+    assert result==17
+    assert calls[0]==('setup',ROOT,True)
+    _,argv,cwd,env=calls[1]
+    assert argv[:3]==[str(tmp_path/'managed-python'),'-B',str(ROOT/'benchmark.py')]
+    assert '--no-setup' in argv and '--manifest' in argv
+    assert argv[argv.index('--manifest')+1]==str(manifest)
+    assert cwd==ROOT and 'PYTHONPATH' not in env
+    assert env['ACTIONS_ENABLED']=='false' and env['IRIS_FEEDBACK_ENABLED']=='false'
+
+
+def test_benchmark_no_setup_uses_current_interpreter_without_installing(tmp_path,monkeypatch):
+    from scripts import iris_epoch44_benchmark as entry
+    from scripts.runtime import speaker_tools
+    monkeypatch.setattr(speaker_tools,'sync_python',lambda *a,**k:pytest.fail('Explicit no-setup must not install'))
+    expected=dict(artifact_provenance='frozen_published_epoch44',model_sha256='bound',parameters=258912,
+        selected_epoch=44,hardware={'measurement_host':'fixture'},physical_pi_measured=False,
+        source_n=1,observation_n=1,excluded_reference_n=0,raw={},accepted={},latency_ms={'end_to_end':{}})
+    monkeypatch.setattr(entry,'benchmark',lambda *a,**k:expected)
+    manifest=tmp_path/'originals.jsonl';manifest.write_text('{}\n')
+    assert entry.main(['--manifest',str(manifest),'--no-setup'],root=ROOT)==expected
+
+
+def test_public_benchmark_propagates_managed_child_failure(monkeypatch):
+    import runpy
+    from scripts import iris_epoch44_benchmark as entry
+    monkeypatch.setattr(entry,'main',lambda argv:17)
+    monkeypatch.setattr(sys,'argv',['benchmark.py','--manifest','originals.jsonl'])
+    with pytest.raises(SystemExit) as stopped:
+        runpy.run_path(str(ROOT/'benchmark.py'),run_name='__main__')
+    assert stopped.value.code==17

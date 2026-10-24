@@ -1,0 +1,7 @@
+# Exercised Python3.12 handout-build/verification dependencies.
+# Manim scene/export dependencies are separately pinned in presentation/requirements.txt.
+python-pptx==0.6.23
+pillow==13.0.0
+reportlab==5.1.0
+pypdf==6.21.2
+pypdfium2==5.14.0

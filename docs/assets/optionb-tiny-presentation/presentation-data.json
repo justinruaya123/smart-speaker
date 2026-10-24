@@ -1,0 +1,462 @@
+{
+  "format": "optionb-tiny-2minute-presentation-v1",
+  "repository": "justinruaya123/smart-speaker",
+  "release_tag": "optionb-tiny-v1.0.0-rc.1",
+  "model_source_commit": "ad4d6262e7f91b2cb4cb4f75a1b1b082d6b088f3",
+  "model": {
+    "bindings": {
+      "commands.json": "71017cf22366d15557e8878636135f5ff2d0ac81fc4dfd6f058fc88f0f2d4b5d",
+      "model.onnx": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+      "normalization.json": "28f7ef1b2c926c587d611d17eef91184c2c7e2de66abe352d1fc2365e45d69ed",
+      "policy.json": "b9242e46fb093642a41023e8ace3c0cadc2fe51ffede512aa09e399622f355f0",
+      "recipe.json": "020c3deccb0f8cece0f23b8c016b6a63bdd0359321bb06cbd00e091966d46621"
+    },
+    "bundle": ".cache/speaker-optionb-tiny-demo-v1/run-01/bundle",
+    "bundle_asset_bytes": 1088682,
+    "epoch": 44,
+    "graph_bytes": 1082940,
+    "parameters": 258912,
+    "policy": {
+      "enabled": true,
+      "min_margin": 0.1,
+      "min_probability": 0.5
+    }
+  },
+  "architecture": {
+    "activation": "SiLU",
+    "dilations": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "feature_stride": 2,
+    "frontend": {
+      "centered": false,
+      "fft_size": 512,
+      "floor": 1e-08,
+      "high_hz": 7600,
+      "hop_samples": 160,
+      "low_hz": 20,
+      "mel_bins": 40,
+      "sample_rate": 16000,
+      "window_samples": 400
+    },
+    "head": "one 32-way complete-command/UNKNOWN linear softmax head",
+    "norm": "per-frame LayerNorm",
+    "pooling": "valid-length masked mean and max",
+    "residual_blocks": 4,
+    "residual_kernel": 7,
+    "stages_per_block": 2,
+    "stem_kernel": 5,
+    "training_dropout": 0.1,
+    "unknown_index": 0,
+    "width": 160
+  },
+  "illustrative_command": {
+    "intent": "BRIGHTNESS",
+    "slots": {
+      "light_id": "light.all",
+      "percent": 60
+    }
+  },
+  "training": {
+    "selected_epoch": 44,
+    "selected_on": "dev",
+    "epochs_completed": 48,
+    "training_config": {
+      "batch_size": 32,
+      "context_max_frames": 120,
+      "human_epochs": 6,
+      "label_smoothing": 0.02,
+      "learning_rate": 0.002,
+      "mixed_epochs": 42,
+      "seed": 53,
+      "steps_per_epoch": 96,
+      "threads": 4,
+      "weight_decay": 0.0001
+    }
+  },
+  "cohorts": {
+    "holdout/human": {
+      "ambiguous_unscored": 2,
+      "capture_faults": 0,
+      "declared_speakers": 3,
+      "latency_ms": {
+        "max": 12.95620000018971,
+        "mean": 8.180934375332072,
+        "n": 288,
+        "p50": 8.529349997843383,
+        "p95": 10.108315004617907,
+        "p99": 10.826685001084114
+      },
+      "negative_groups": {
+        "original_unknown": {
+          "accepted": 1,
+          "n": 11
+        },
+        "outside_optionb": {
+          "accepted": 0,
+          "n": 3
+        }
+      },
+      "original_recordings": 96,
+      "raw": {
+        "correct_accepted": 76,
+        "f1": 0.9047619047619048,
+        "fn": 4,
+        "fp": 12,
+        "negative_false_accept_rate": 0.5714285714285714,
+        "negative_false_accepts": 8,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 0.8636363636363636,
+        "recall": 0.95,
+        "rows": 94,
+        "tp": 76,
+        "wrong_accepted": 12
+      },
+      "rtf": {
+        "max": 0.0030497172848208726,
+        "mean": 0.001860251192041394,
+        "n": 288,
+        "p50": 0.0017967899999348446,
+        "p95": 0.002373366137875702,
+        "p99": 0.002592350235103958
+      },
+      "selected": {
+        "correct_accepted": 72,
+        "f1": 0.9290322580645162,
+        "fn": 8,
+        "fp": 3,
+        "negative_false_accept_rate": 0.07142857142857142,
+        "negative_false_accepts": 1,
+        "negatives": 14,
+        "positives": 80,
+        "precision": 0.96,
+        "recall": 0.9,
+        "rows": 94,
+        "tp": 72,
+        "wrong_accepted": 3
+      }
+    },
+    "holdout/synthetic": {
+      "ambiguous_unscored": 0,
+      "capture_faults": 0,
+      "declared_speakers": 2,
+      "latency_ms": {
+        "max": 7.448399999702815,
+        "mean": 4.537000000200351,
+        "n": 300,
+        "p50": 4.379599999083439,
+        "p95": 6.235799998103176,
+        "p99": 7.002530000463593
+      },
+      "negative_groups": {
+        "original_unknown": {
+          "accepted": 0,
+          "n": 0
+        },
+        "outside_optionb": {
+          "accepted": 0,
+          "n": 0
+        }
+      },
+      "original_recordings": 100,
+      "raw": {
+        "correct_accepted": 99,
+        "f1": 0.99,
+        "fn": 1,
+        "fp": 1,
+        "negative_false_accept_rate": null,
+        "negative_false_accepts": 0,
+        "negatives": 0,
+        "positives": 100,
+        "precision": 0.99,
+        "recall": 0.99,
+        "rows": 100,
+        "tp": 99,
+        "wrong_accepted": 1
+      },
+      "rtf": {
+        "max": 0.006472586204020853,
+        "mean": 0.0029377305156362563,
+        "n": 300,
+        "p50": 0.002765338707675216,
+        "p95": 0.004559278569753848,
+        "p99": 0.00580550217401831
+      },
+      "selected": {
+        "correct_accepted": 99,
+        "f1": 0.99,
+        "fn": 1,
+        "fp": 1,
+        "negative_false_accept_rate": null,
+        "negative_false_accepts": 0,
+        "negatives": 0,
+        "positives": 100,
+        "precision": 0.99,
+        "recall": 0.99,
+        "rows": 100,
+        "tp": 99,
+        "wrong_accepted": 1
+      }
+    },
+    "test/human": {
+      "ambiguous_unscored": 185,
+      "capture_faults": 0,
+      "declared_speakers": 89,
+      "latency_ms": {
+        "max": 15.421000003698282,
+        "mean": 6.363586254024302,
+        "n": 3150,
+        "p50": 5.852400001458591,
+        "p95": 9.664899998824692,
+        "p99": 12.11384000009274
+      },
+      "negative_groups": {
+        "original_unknown": {
+          "accepted": 18,
+          "n": 229
+        },
+        "outside_optionb": {
+          "accepted": 6,
+          "n": 27
+        }
+      },
+      "original_recordings": 1050,
+      "raw": {
+        "correct_accepted": 469,
+        "f1": 0.741501976284585,
+        "fn": 140,
+        "fp": 187,
+        "negative_false_accept_rate": 0.33984375,
+        "negative_false_accepts": 87,
+        "negatives": 256,
+        "positives": 609,
+        "precision": 0.7149390243902439,
+        "recall": 0.7701149425287356,
+        "rows": 865,
+        "tp": 469,
+        "wrong_accepted": 187
+      },
+      "rtf": {
+        "max": 0.009986249998898227,
+        "mean": 0.0022553843899170063,
+        "n": 3150,
+        "p50": 0.002124479584307782,
+        "p95": 0.003373827194880482,
+        "p99": 0.0040712362640413615
+      },
+      "selected": {
+        "correct_accepted": 393,
+        "f1": 0.7408105560791706,
+        "fn": 216,
+        "fp": 59,
+        "negative_false_accept_rate": 0.09375,
+        "negative_false_accepts": 24,
+        "negatives": 256,
+        "positives": 609,
+        "precision": 0.8694690265486725,
+        "recall": 0.645320197044335,
+        "rows": 865,
+        "tp": 393,
+        "wrong_accepted": 59
+      }
+    },
+    "test/synthetic": {
+      "ambiguous_unscored": 0,
+      "capture_faults": 0,
+      "declared_speakers": 29,
+      "latency_ms": {
+        "max": 58.44280000019353,
+        "mean": 4.659670575997088,
+        "n": 10104,
+        "p50": 4.5222999979159795,
+        "p95": 6.20457000186434,
+        "p99": 7.173549996368816
+      },
+      "negative_groups": {
+        "original_unknown": {
+          "accepted": 0,
+          "n": 0
+        },
+        "outside_optionb": {
+          "accepted": 0,
+          "n": 0
+        }
+      },
+      "original_recordings": 3368,
+      "raw": {
+        "correct_accepted": 3326,
+        "f1": 0.9879697014703698,
+        "fn": 42,
+        "fp": 39,
+        "negative_false_accept_rate": null,
+        "negative_false_accepts": 0,
+        "negatives": 0,
+        "positives": 3368,
+        "precision": 0.9884101040118871,
+        "recall": 0.9875296912114014,
+        "rows": 3368,
+        "tp": 3326,
+        "wrong_accepted": 39
+      },
+      "rtf": {
+        "max": 0.03520650602421297,
+        "mean": 0.0028017790154033838,
+        "n": 10104,
+        "p50": 0.0026219250796016124,
+        "p95": 0.004172149890554627,
+        "p99": 0.005252818425441004
+      },
+      "selected": {
+        "correct_accepted": 3289,
+        "f1": 0.9860590616099535,
+        "fn": 79,
+        "fp": 14,
+        "negative_false_accept_rate": null,
+        "negative_false_accepts": 0,
+        "negatives": 0,
+        "positives": 3368,
+        "precision": 0.9957614290039358,
+        "recall": 0.9765439429928741,
+        "rows": 3368,
+        "tp": 3289,
+        "wrong_accepted": 14
+      }
+    }
+  },
+  "original_recordings": 4614,
+  "scored_original_recordings": 4427,
+  "ambiguous_original_recordings": 187,
+  "timing_observations": 13842,
+  "hardware": {
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "blas_threads": 1,
+    "cpu": "11th Gen Intel(R) Core(TM) i7-11700 @ 2.50GHz",
+    "logical_cpus": 16,
+    "numpy": "2.3.5",
+    "onnx_threads": 1,
+    "onnxruntime": "1.23.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "provider": [
+      "CPUExecutionProvider"
+    ],
+    "python": "3.13.14"
+  },
+  "human_latency_ms": {
+    "n": 3438,
+    "p50": 6.021249999321299,
+    "p95": 9.748475004380452
+  },
+  "all_recordings_latency_ms": {
+    "max": 58.44280000019353,
+    "mean": 5.118033326123888,
+    "n": 13842,
+    "p50": 4.693849998147925,
+    "p95": 8.62470500069321,
+    "p99": 10.02849499716831
+  },
+  "resource_probe": {
+    "actual_recognition_calls": 39,
+    "baseline_process_peak_mib": 50.55078125,
+    "blas_threads": 1,
+    "graph_sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+    "longest_original_audio_seconds": 9.375,
+    "onnx_session_load_ms": 21.719900003517978,
+    "onnx_threads": 1,
+    "peak_process_working_set_mib": 73.609375,
+    "probe_recordings": 13,
+    "runtime_initialization_ms": 28.135000000474975,
+    "scope": "isolated CPU runtime, benchmark imports, bounded metadata and preloaded verified clips; excludes ONNX inspection and complete corpus arrays",
+    "status": "measured",
+    "torch_imported": false
+  },
+  "timing_excludes": [
+    "WAV reading/decoding/hash checks",
+    "speaking duration",
+    "wake/VAD/endpoint wait",
+    "worker/gateway/UI/TTS/providers"
+  ],
+  "exposed_regression_not_blind": true,
+  "actions_enabled": false,
+  "fresh_blind_human_pi_or_microphone_qualification": false,
+  "source_sha256": {
+    "results.json": "ef0a0efde91368843efb010520356973b7e1316334fdcae829e2ceb8c32c740b",
+    "resource-results.json": "053ca1bde00f9c8d32c293efacf45f5352e1b48da8cd0f2270a8618716a95075",
+    "protocol.json": "8ea0427d5c075af7c651375a87bbbf7e2944d3f0725a588dff6e65a373eaefae",
+    "observations.jsonl": "e776e734f2a116c4c99786e6dc2413aa33bed78cde13841564b32fc4e9b13268"
+  },
+  "architecture_protocol_sha256": "9a08cddff6af4656993dbc881d7c3717e1bfe92d15c54e681d448650fcd29bce",
+  "inference": {
+    "publication_branch": "main",
+    "openwakeword": {
+      "role": "wake_detection",
+      "runtime_module": "scripts/runtime/iris_openwakeword.py",
+      "integration_performed": false,
+      "promoted": false,
+      "qualified": false,
+      "findings_sha256": "a7ae1f433d0c73c3a806da628050a20c269f77f6c1fd768567a44eb30b0b3dbb",
+      "status": "Rejected experimental alternative; existing native wake remains unchanged"
+    },
+    "flow": [
+      "microphone",
+      "wake detection",
+      "command VAD",
+      "command model and independent ownership",
+      "typed validation",
+      "configured action and receipt"
+    ]
+  },
+  "benchmark_scope": {
+    "stage": "frozen_epoch44_command_only",
+    "excludes": [
+      "wake",
+      "VAD/capture",
+      "owner",
+      "UI",
+      "providers",
+      "speaking",
+      "file I/O"
+    ]
+  },
+  "architecture_media_sha256": {
+    "presentation/iris_scenes.py": "68cbcbd0947122efbcd1b496359c2e77954616f61262720857935230813b82cd",
+    "docs/site/animations/pipeline.mp4": "20f04f9093edc395375e67eda51e3591f06d349baa17c5f83e472d13307f790b",
+    "docs/site/animations/model.mp4": "de0a5cf6d8c7d7138c13c0afda15452288cf70618bca5cbc73889305c715ff52"
+  },
+  "slides": [
+    {
+      "number": 1,
+      "target_seconds": 65,
+      "script": "Wake detection belongs inside inference. OpenWakeWord is an experimental wake adapter here, not installed or promoted because its regression failed. The native wake backend stays unchanged.\n\nAfter a wake, VAD captures one command. An independent speaker and overlap check guards ownership. The command model is the original epoch 44 Tiny graph: 40 log-mel bins, frozen normalization, stride two, 160 channels and four causal residual blocks with dilations one, two, four and eight.\n\nMasked mean and max pooling feed 32 logits: 31 complete intent-and-slot tuples plus UNKNOWN. The probability and margin thresholds are 0.50 and 0.10. A brightness 60 class already fixes light.all and percent 60: no transcript or slot decoder. Ownership and typed validation still guard any action. The animation is a schematic, not a live recognition trace.",
+      "script_word_count": 128
+    },
+    {
+      "number": 2,
+      "target_seconds": 55,
+      "script": "These figures measure the frozen command stage, not OpenWakeWord, VAD, ownership, UI or actions. Of 4,614 replayed originals, 187 ambiguous references stay unscored; timing repetitions do not add accuracy samples.\n\nCorrect accepted recall is 64.53 percent on human TEST and 90 percent on the smaller, exposed HOLDOUT. TEST negatives produce 24 false accepts out of 256. Synthetic TEST recall is 97.65 percent, not proof of human reliability.\n\nOn an i7 CPU, the command stage takes six milliseconds median and under ten at the 95th percentile. The isolated process peaks at 73.61 mebibytes.\n\nThis is a research prerelease. Wake qualification failed; fresh blind-human, live-microphone and Raspberry Pi qualification remain future work. Default actions stay off.",
+      "script_word_count": 114
+    }
+  ],
+  "suggested_total_seconds": 120,
+  "timing_note": "A suggested speaking budget, not a measured human delivery or voice recording."
+}

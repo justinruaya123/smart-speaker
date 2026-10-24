@@ -24,4 +24,5 @@ def main(argv=None):
 
 
 if __name__ == '__main__':
-    main()
+    outcome = main()
+    raise SystemExit(outcome if isinstance(outcome, int) else 0)

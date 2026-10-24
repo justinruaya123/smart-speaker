@@ -10,19 +10,29 @@ PREFIX = r'''# Iris
 
 A finite voice-command model: **258,912 parameters · original epoch 44 · FP32 · 31 commands + UNKNOWN**. Recognition is local; optional services supply actions and external data. No transcript, ASR or LLM runs in the product. **Wake smoke gate FAILED; no replacement was promoted. This is an unqualified research build, not a working-acoustic-release claim.** Pi and fresh human live-microphone reliability remain unmeasured.
 
-[Presentation](docs/site/index.html) · [Getting started](docs/IRIS-GETTING-STARTED.md) · [Model card](docs/MODEL-CARD-iris-epoch44.md) · [Verified JSON](docs/site/assets/iris.json)
+[Two-minute slides and script](docs/PRESENTATION-optionb-tiny-2minute.md) · [Detailed animated presentation](docs/site/index.html) · [Getting started](docs/IRIS-GETTING-STARTED.md) · [Model card](docs/MODEL-CARD-iris-epoch44.md) · [Verified JSON](docs/site/assets/iris.json)
 
 ## Quickstart
 
-Use Python 3.13, uv and the pinned runtime. First use `python inference.py --check` for the launcher's setup path; setup may access the network. Once installed:
+No release ZIP is required. Start with Git and Python (3.13 recommended); the launchers provision a local locked runtime and reuse it on later calls. First setup needs network access. The UI additionally provisions its pinned Node/pnpm tools and builds its dependencies.
 
 ```sh
-python inference.py --check --no-setup
-python inference.py --mode ui --no-setup
-python inference.py --wav /absolute/path/to/mono16k.wav --no-setup
+git clone --branch main --single-branch https://github.com/justinruaya123/smart-speaker.git
+cd smart-speaker
+python inference.py --check
+python inference.py --mode ui --no-audio
+python inference.py --wav /absolute/path/to/hey-iris-and-command.wav --wake-wav
 ```
 
-Use your environment's Python explicitly (`.venv/Scripts/python.exe` on Windows, `.venv/bin/python` on POSIX). The default is `submission/models/optionb-tiny`, ONNX CPU. Checks/WAVs stay silent and action-free; microphone actions require explicit enablement and guards. Optional providers can require network access even though recognition is local.
+`inference.py` and `benchmark.py` install/reuse the committed deployment lock, never the training requirements or a fitted model. Advanced `--no-setup` requires the compatible environment's Python explicitly (`.venv/Scripts/python.exe` on Windows, `.venv/bin/python` on POSIX); a system Python is not made compatible by a previous setup call. The default is `submission/models/optionb-tiny`, ONNX CPU. Checks/WAVs stay silent and action-free; the wake-WAV CLI explicitly uses the non-owner benchmark profile. Guarded microphone actions require explicit enablement and owner acceptance. Optional providers can require network access even though recognition is local.
+
+With your own permitted original mono16kHz audio and hash-bound manifest, benchmarking also works directly from the clone and prepares its runtime automatically:
+
+```sh
+python benchmark.py --manifest MANIFEST.jsonl --data-root ORIGINAL_AUDIO_ROOT --output NEW_RESULTS
+```
+
+Recordings are separate inputs, not embedded in Git or the ZIPs. Metadata alone cannot run an acoustic benchmark. No recognition or benchmark command launches fitting.
 
 Prepare actual evaluation audio **without fitting**, using the [pinned original source/environment](docs/IRIS-GETTING-STARTED.md#prepare-original-evaluation-inputs-without-fitting). From this publication checkout, the wrapper delegates to the unchanged original preparer and exports portable manifests:
 
@@ -55,6 +65,8 @@ flowchart LR
 ```
 
 One wake owns one command. The acoustic decision, owner veto and action outcome are separate. One host-owned playback path provides wake acknowledgment, intent beep and completion cue only after the final result. Unknown provider outcomes remain unknown and are not retried automatically.
+
+OpenWakeWord belongs to this **inference wake stage**, not the command classifier or a separate product. The [experimental adapter](scripts/runtime/iris_openwakeword.py) and [source/evaluation record](experiments/iris-openwakeword-publication-v1/findings.json) live on **main** with the inference code. That candidate failed its acoustic gates and was not installed, promoted or wired into the live worker; the existing native wake default remains unchanged. Publishing source is not acoustic qualification.
 
 ## Model
 
