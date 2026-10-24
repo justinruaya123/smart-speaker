@@ -5,7 +5,7 @@ import json
 import hashlib
 import os
 import uuid
-from scripts.runtime.mvp_static import digest
+from scripts.train.iris_validation import digest
 ROOT=Path(__file__).resolve().parents[2]
 
 def count_metrics(records):
@@ -93,8 +93,8 @@ def replay_rows(runtime, rows, path):
     ids=[row['id'] for row in rows]
     if len(set(ids))!=len(ids):raise ValueError('Replay source contains duplicate sample IDs')
     code_root=Path(__file__).resolve().parents[2]
-    source_names=('scripts/test/iris_metrics.py','scripts/runtime/mvp_static.py',
-                  'scripts/runtime/pcv_schema.py','vcm/frontend.py')
+    source_names=('scripts/test/iris_metrics.py','scripts/train/iris_validation.py',
+                  'scripts/train/iris_schema.py','vcm/frontend.py')
     files={'bundle.json':digest(runtime.root/'bundle.json')}
     files.update({name:digest(runtime.root/name) for name in runtime.meta['files']})
     if runtime.engine=='ncnn':

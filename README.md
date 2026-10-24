@@ -6,51 +6,36 @@ A finite voice-command model: **258,912 parameters · original epoch 44 · FP32 
 
 [Two-minute slides and script](docs/PRESENTATION-optionb-tiny-2minute.md) · [Detailed animated presentation](docs/site/index.html) · [Getting started](docs/IRIS-GETTING-STARTED.md) · [Model card](docs/MODEL-CARD-iris-epoch44.md) · [Verified JSON](docs/site/assets/iris.json)
 
-## Quickstart
+## Repositories and quickstart
 
-No release ZIP or large dataset is required. Start with Git and Python 3.11+; the launchers prepare a local Python 3.12 runtime when needed and reuse it. First setup needs network access. The ONNX models remain in Git; recognition never downloads a training corpus or runs fitting.
+**smart-speaker owns training, model verification, provenance and model distribution.** [SpeakerUI](https://github.com/justinruaya123/SpeakerUI) owns the complete application: inference, Ambient display, gateway, wake/owner sessions, integrations, runtime benchmarks and device deployment. Neither checkout imports the other or shares its environment.
+
+Verify the original model without fitting or installing the application:
 
 ```sh
-git clone --depth 1 --branch main --single-branch https://github.com/justinruaya123/smart-speaker.git
+git clone https://github.com/justinruaya123/smart-speaker.git
 cd smart-speaker
+python -B -m scripts.optionb_epoch44 verify
+python -B reproduce.py
+```
+
+Both commands verify the original frozen bytes; they do **not** train. Explicit fitting and permitted evaluation-data preparation use the [pinned original-source workflow](docs/REPRODUCIBILITY-optionb-epoch44.md). Existing failed exact-CPU reconstruction and acoustic gates remain failures. Training-time calibration/export scoring remains here; standalone inference and hardware benchmarks do not.
+
+Run the application from its own repository (GitHub access to SpeakerUI is required):
+
+```sh
+git clone https://github.com/justinruaya123/SpeakerUI.git
+cd SpeakerUI
+python -m scripts.model_assets
 python inference.py --check
-python benchmark.py --output .cache/benchmark-run-01
 python inference.py --mode ui --no-audio
-python inference.py --wav /absolute/path/to/hey-iris-and-command.wav --wake-wav
+python -m scripts.model_assets --evaluation
+python benchmark.py --output .cache/benchmark-run-01
 ```
 
-`inference.py` and `benchmark.py` use the separate minimal lock at `scripts/runtime/epoch44/`, never training requirements. Core inference installs ten packages, not NCNN/OpenCV/SciPy/Torch. The default benchmark adds PyArrow only when called; device/audio modes add SoundDevice. Node24.13.0/pnpm12.5.1 and UI dependencies are fetched only for `--mode ui`. Advanced `--no-setup` uses the compatible environment's Python explicitly (`.venv/Scripts/python.exe` on Windows, `.venv/bin/python` on POSIX) and forbids dependency/benchmark-asset downloads.
+SpeakerUI pins model/companion bytes to an exact producer Git revision, verifies sizes/SHA-256, and prepares its own locked local environments. No sibling smart-speaker checkout is required. Model-only archives exclude the application, runtime processes, private state, audio corpora and training checkpoints. [Migration and producer operations](docs/REPOSITORY-BOUNDARY.md) · [Application operations](https://github.com/justinruaya123/SpeakerUI/blob/main/docs/OPERATIONS.md).
 
-The default benchmark downloads only the fixed **196-recording holdout, 14.55 MB**, from its original immutable source, verifies SHA-256 and reuses its local cache. It does not fetch the full TEST, training, supplemental or owner corpora. Original human and synthetic provenance and ambiguous exclusions are retained. This already-exposed regression is not fresh blind qualification or a Pi performance result until run on that Pi. For your own permitted mono16kHz audio, the explicit-manifest path does not download benchmark recordings:
-
-```sh
-python benchmark.py --manifest MANIFEST.jsonl --data-root ORIGINAL_AUDIO_ROOT --output NEW_RESULTS
-```
-
-The output must be a new directory. Recordings remain in ignored caches, not Git. The model stays `submission/models/optionb-tiny`, ONNX CPU. Checks/WAVs/benchmarks stay silent and action-free; owner-protected actions retain their independent veto. No recognition or benchmark command launches fitting.
-
-### Raspberry Pi 4 (64-bit)
-
-Use 64-bit Raspberry Pi OS (Bookworm/Trixie, aarch64). From the clone:
-
-```sh
-python3 inference.py --check
-python3 benchmark.py --output .cache/pi-benchmark-01
-```
-
-Microphone/speaker access additionally needs the OS PortAudio library (`sudo apt install libportaudio2`); it is not needed for the model check or recorded-audio benchmark. The pinned SoundFile ARM64 wheel includes libsndfile. Physical Pi/live-microphone qualification remains unmeasured; Linux ARM64 CI is software compatibility, not Pi 4 hardware performance. Optional UI/providers remain separate from these two commands.
-
-For an **optional full-corpus replay**, prepare actual evaluation audio without fitting using the [pinned original source/environment](docs/IRIS-GETTING-STARTED.md#prepare-original-evaluation-inputs-without-fitting). This is not required for the default small benchmark:
-
-```sh
-python -B reproduce.py prepare-evaluation \
-  --source-checkout PINNED_SOURCE --source-python PINNED_PYTHON \
-  --output .cache/iris-publication-evaluation/run-01
-python benchmark.py --model-choice epoch44 \
-  --manifest PATH --data-root PINNED_SOURCE --output NEWDIR --repeats 3
-```
-
-Use the actual pinned source revision `3c05b3beb46f06c3108089e0d8c79474670c6cb7` and its Python for `PINNED_SOURCE`/`PINNED_PYTHON`. Set `PATH` to `PINNED_SOURCE/.cache/iris-publication-evaluation/run-01/portable/human-test-holdout.jsonl`; `NEWDIR` must be new. Metadata alone is not audio. [Full setup, exact original prepare command and action boundaries](docs/IRIS-GETTING-STARTED.md).
+The application default benchmark remains the original exposed **196-recording holdout**, not a new blind qualification set. Software checks, desktop replay, physical Pi performance, fresh human wake/command evidence and actual provider outcomes remain distinct. No model/policy/wake upgrade or action enablement is part of this repository split.
 
 ## Pipeline
 
@@ -72,7 +57,7 @@ flowchart LR
 
 One wake owns one command. The acoustic decision, owner veto and action outcome are separate. One host-owned playback path provides wake acknowledgment, intent beep and completion cue only after the final result. Unknown provider outcomes remain unknown and are not retried automatically.
 
-OpenWakeWord belongs to this **inference wake stage**, not the command classifier or a separate product. The [experimental adapter](scripts/runtime/iris_openwakeword.py) and [source/evaluation record](experiments/iris-openwakeword-publication-v1/findings.json) live on **main** with the inference code. That candidate failed its acoustic gates and was not installed, promoted or wired into the live worker; the existing native wake default remains unchanged. Publishing source is not acoustic qualification.
+OpenWakeWord belongs to this **inference wake stage**, not the command classifier or a separate product. The [experimental application adapter](https://github.com/justinruaya123/SpeakerUI/blob/main/scripts/runtime/iris_openwakeword.py) and [source/evaluation record](experiments/iris-openwakeword-publication-v1/findings.json) retain their respective application/research owners. The application adapter lives in **SpeakerUI**; immutable evaluation evidence remains here. That candidate failed its acoustic gates and was not installed, promoted or wired into the live worker; the existing native wake default remains unchanged. Publishing source is not acoustic qualification.
 
 ## Model
 

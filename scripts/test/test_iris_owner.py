@@ -14,7 +14,7 @@ import torch
 import soundfile as sf
 
 from scripts.models.iris_owner import OwnerEncoder, speaker_metric_loss
-from scripts.runtime.iris_owner import continuity_spans, owner_features, speech_mask
+from scripts.train.iris_owner_reference import continuity_spans, owner_features, speech_mask
 from scripts.train.iris_owner import (
     _base_view_receipts, _canonical_rows_digest, _ensure_audio_inputs,
     base_view_directory, calibrate, configure_training_device, digest, historical_installed_integrity,

@@ -14,7 +14,7 @@ def load(name):
 
 @pytest.fixture
 def owner():
-    return load("scripts.runtime.speaker_session")
+    return load("scripts.train.iris_session")
 
 
 

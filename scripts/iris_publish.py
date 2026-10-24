@@ -23,7 +23,7 @@ MODEL_REPO = 'justinruaya123/ai231-smart-speaker'
 DATASET_REPO = MODEL_REPO
 SOURCE_REPO = 'https://github.com/justinruaya123/smart-speaker'
 ROOT_SOURCE_FILES = {'AGENTS.md', 'REQUIREMENTS.md', 'EXPERIMENTS.md', 'README.md', 'MODEL_CARD.md',
-                     'train.py', 'reproduce.py', 'publish.py', 'start.py', 'pipeline.toml', 'requirements.lock'}
+                     'train.py', 'reproduce.py', 'publish.py', 'pipeline.toml', 'requirements.lock'}
 AUDIO_SUFFIXES = {'.wav', '.flac', '.mp3', '.ogg', '.opus', '.m4a'}
 
 
@@ -108,17 +108,20 @@ def published_links(markdown):
     """Keep model evidence on Hugging Face and source/documentation on GitHub main."""
     base = 'https://huggingface.co/' + MODEL_REPO + '/blob/main/'
     source = SOURCE_REPO + '/blob/main/'
+    application = 'https://github.com/justinruaya123/SpeakerUI/blob/main/'
     old_tree = 'https://huggingface.co/' + MODEL_REPO + '/tree/main/reproduction/source'
     def target(match):
         original = match.group(1)
         path = original.removeprefix('../').removeprefix('./')
         if path.startswith(base + 'reproduction/source/'):
-            return '](' + source + path.removeprefix(base + 'reproduction/source/') + ')'
+            path = path.removeprefix(base + 'reproduction/source/')
         if path == old_tree or path.startswith(old_tree + '/'):
             return '](' + SOURCE_REPO + '/tree/main' + path.removeprefix(old_tree) + ')'
         if path.startswith('experiments/iris-release-v1/'):
             path = 'evidence/' + path.split('/')[-1]
-        elif (path.startswith(('docs/', 'data/sources/', 'scripts/', 'SpeakerUI/'))
+        elif path.startswith('SpeakerUI/'):
+            return '](' + application + path.removeprefix('SpeakerUI/') + ')'
+        elif (path.startswith(('docs/', 'data/sources/', 'scripts/'))
               or path.split('#', 1)[0].split('?', 1)[0] in ROOT_SOURCE_FILES):
             return '](' + source + path + ')'
         else:
@@ -154,10 +157,14 @@ Runtime inference uses the local command network, our Hey Iris wake network,
 Silero VAD and the local owner embedding model. It has no ASR/STT transcription,
 LLM, cloud inference or TTS model in its recognition path.
 
-The Raspberry Pi archive contains the compiled local interface, ncnn and ONNX
-assets, integrity manifest and software evidence. Extract it into a new folder,
-run `python3 start.py --list-mics`, then use an actual listed microphone index.
-Initial dependency setup needs network access; recognition operates locally.
+The model-only archive contains verified exported model/companion assets,
+integrity metadata and declared scientific evidence. It does not contain an
+application, runtime process, UI, device launcher or private settings. Inference,
+benchmarks, application packaging and Pi deployment belong to
+[SpeakerUI](https://github.com/justinruaya123/SpeakerUI), which verifies exact
+producer asset pins and uses its own environment. Historical complete Pi
+archives are reconstructed from their immutable original source, not relabelled
+as this model-only distribution.
 
 Live actions require explicit trusted configuration and provider credentials.
 WAV uploads, benchmark replay and recorded fixtures never execute actions.

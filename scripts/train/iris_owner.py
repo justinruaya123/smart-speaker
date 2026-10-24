@@ -25,8 +25,8 @@ import time
 import numpy as np
 import soundfile as sf
 
-from scripts.runtime.audio import DEFAULT, features, load_audio
-from scripts.runtime.iris_owner import PCM_NORMALIZATION, continuity_spans, owner_features, voiced_seconds
+from scripts.train.iris_audio import DEFAULT, features, load_audio
+from scripts.train.iris_owner_reference import PCM_NORMALIZATION, continuity_spans, owner_features, voiced_seconds
 
 ROOT = Path(__file__).resolve().parents[2]
 EXPERIMENT = 'iris-release-v1'
@@ -138,8 +138,8 @@ def _verify_prepared(root, cache, prepared):
 
 def _bind_implementation(root, cache, prepared, protocol, view_receipts):
     """Append a source lock without rewriting the original experimental lock."""
-    names = ('scripts/models/iris_owner.py', 'scripts/runtime/iris_owner.py', 'scripts/train/iris_owner.py',
-             'scripts/runtime/audio.py', 'scripts/runtime/speaker_session.py', 'scripts/iris_release.py',
+    names = ('scripts/models/iris_owner.py', 'scripts/train/iris_owner_reference.py', 'scripts/train/iris_owner.py',
+             'scripts/train/iris_audio.py', 'scripts/train/iris_session.py', 'scripts/iris_release.py',
              'pipeline.toml', 'requirements.lock')
     current = {name: digest(root / name) for name in names}
     normalization = cache / 'normalization.json'
@@ -535,9 +535,9 @@ def prepare(root: Path, cache: Path, *, per_speaker: int = 24, max_hours: float 
                 'source_revision': subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=root, text=True,
                                                   stdout=subprocess.PIPE, stderr=subprocess.DEVNULL).stdout.strip() or 'not_a_git_checkout',
                 'source_files': {relative: digest(root / relative) for relative in
-                                 ('scripts/models/iris_owner.py', 'scripts/runtime/iris_owner.py',
-                                  'scripts/train/iris_owner.py', 'scripts/runtime/audio.py',
-                                  'scripts/runtime/speaker_session.py', 'pipeline.toml', 'requirements.lock')},
+                                 ('scripts/models/iris_owner.py', 'scripts/train/iris_owner_reference.py',
+                                  'scripts/train/iris_owner.py', 'scripts/train/iris_audio.py',
+                                  'scripts/train/iris_session.py', 'pipeline.toml', 'requirements.lock')},
                 'installed_preserved': historical_installed_integrity(root),
                 'environment': {'python': platform.python_version(), 'platform': platform.platform()},
                 'ignore_gate': 'committed /.cache and /data/audio match positive examples; owner source/compact JSON remain visible; no new rules needed'}
@@ -887,7 +887,7 @@ def train(root: Path, cache: Path, *, device='cpu', epochs=20, steps=160):
     execution = {'experiment_id': EXPERIMENT, 'component': 'owner',
                  'protocol_sha256': prepared['protocol_sha256'], 'manifest_sha256': prepared['manifest_sha256'],
                  'source_files': {relative: digest(root / relative) for relative in
-                                  ('scripts/models/iris_owner.py', 'scripts/runtime/iris_owner.py', 'scripts/train/iris_owner.py')},
+                                  ('scripts/models/iris_owner.py', 'scripts/train/iris_owner_reference.py', 'scripts/train/iris_owner.py')},
                  'amendment': 'Portable single-GPU selection, boundary stop/resume, portable reservation loading and conservative full-PCM continuity coverage added after data freeze, before fitting; acoustic data/model/frontend/loss/selection unchanged.',
                  'device_selection': device_selection, 'max_cuda_memory_fraction': .12,
                  'development_inference_device': 'separate CPU mirror; GPU used only for optimizer batches; optimizer parameter identities preserved',
@@ -1104,7 +1104,7 @@ def evaluate(root: Path, cache: Path):
 
 def _runtime_proxy_report(root, cache, backend, *, limit=80):
     """Exercise real ORT evidence and the unchanged session policy after lock."""
-    from scripts.runtime.speaker_session import SpeakerSession
+    from scripts.train.iris_session import SpeakerSession
     manifest = [row for row in rows(cache / 'manifest.jsonl') if row['split'] == 'test']
     synthetic = [row for row in rows(cache / 'synthetic-proxies.jsonl') if row['split'] == 'test']
     summary = {}
@@ -1244,7 +1244,7 @@ def export(root: Path, cache: Path):
         parity.append({'audio_sha256': row['sha256'], 'samples': len(pcm), 'maximum_absolute_errors': errors})
         if max(errors) > 2e-5:
             raise ValueError('Real PCM Torch/ORT owner parity failed')
-    from scripts.runtime.iris_owner import OwnerBackend
+    from scripts.train.iris_owner_reference import OwnerBackend
     backend = OwnerBackend(destination, threads=1)
     runtime_proxies = _runtime_proxy_report(root, cache, backend)
     report = {'experiment_id': EXPERIMENT, 'component': 'owner', 'model': metadata['model'],

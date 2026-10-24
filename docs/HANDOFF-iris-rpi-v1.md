@@ -1,5 +1,7 @@
 # Iris Raspberry Pi handoff
 
+> **Historical monorepo operations.** Current inference, application configuration, runtime benchmarks, packaging and Pi deployment belong to [SpeakerUI](https://github.com/justinruaya123/SpeakerUI/blob/main/docs/OPERATIONS.md). This retained document describes the earlier combined source/evidence, not current launch commands for smart-speaker. See [repository boundary](REPOSITORY-BOUNDARY.md).
+
 This package supplies local finite-command recognition, an experimental wake-speaker check, a compiled product UI and executable configured actions. Physical Raspberry Pi performance and original human wake/command quality have **not been measured**. Software replay results belong in the [model card](../MODEL_CARD.md) and [release experiment](EXPERIMENT-iris-release-v1.md); they do not certify a microphone, room or owner gate.
 
 ## Obtain and verify

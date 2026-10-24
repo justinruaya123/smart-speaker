@@ -1,0 +1,113 @@
+{
+  "boundaries": {
+    "deployment_runtime_absent": true,
+    "embedded_speakerui_absent": true,
+    "frozen_protocols_and_historical_payloads_not_rewritten": true,
+    "protected_root_instructions_unchanged": true
+  },
+  "consumer_main_verified_before_removal": "fbc3daeeb30d061829157ee1736c114efeb1d863",
+  "evidence_kind": "repository_decoupling_engineering_verification",
+  "frozen_epoch44": {
+    "cpu_onnx_validation_exercised": true,
+    "graph_normalization_commands_policy_recipe_unchanged": true,
+    "model_sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+    "output_shape": [
+      1,
+      32
+    ],
+    "parameters": 258912,
+    "selected_epoch": 44
+  },
+  "limitations": {
+    "archive_smoke_revision_is_precommit_base_not_new_publication": true,
+    "live_capture": false,
+    "original_cpu_epoch44_retrained": false,
+    "physical_pi_acceptance": false,
+    "provider_actions": false,
+    "qualified": false,
+    "separate_acoustic_release_gate_remains_closed": true
+  },
+  "model_only_archive_smoke": {
+    "application_and_runtime_absent": true,
+    "archives": {
+      "epoch44-model.zip": {
+        "bytes": 972070,
+        "members": [
+          "MANIFEST.json",
+          "model/commands.json",
+          "model/model.onnx",
+          "model/normalization.json",
+          "model/policy.json",
+          "model/recipe.json"
+        ],
+        "sha256": "cc90b23c3ca93d129d4f0493828f5ff2e72c34708b5b2ef9da76a994f5724b03"
+      },
+      "iris-model.zip": {
+        "bytes": 10254754,
+        "members": [
+          "MANIFEST.json",
+          "licenses/silero-LICENSE.txt",
+          "models/default/bundle.json",
+          "models/default/catalog.json",
+          "models/default/model.onnx",
+          "models/default/ncnn/engine.json",
+          "models/default/ncnn/model.ncnn.bin",
+          "models/default/ncnn/model.ncnn.param",
+          "models/default/ncnn/position-frequency.json",
+          "models/default/normalization.json",
+          "models/default/owner/owner.json",
+          "models/default/owner/owner.onnx",
+          "models/default/policy.json",
+          "models/default/wake/iris.json",
+          "models/default/wake/iris.ncnn.bin",
+          "models/default/wake/iris.ncnn.param",
+          "models/default/wake/iris.onnx",
+          "models/default/wake/silero-vad.onnx",
+          "models/default/wake/wake-models.json"
+        ],
+        "sha256": "5dafd8c84a6782cf96c28f57f5b81c6f2c6adaf75a2205b33233d2ec192bacb0"
+      }
+    },
+    "evidence_kind": "precommit_engineering_package_smoke",
+    "external_calls_forbidden": true,
+    "legacy_frozen_payloads_matched": 17,
+    "qualified": false
+  },
+  "producer_base_revision": "94c0021d7e22c9aa719246ac97105d7140a9f2a2",
+  "producer_tests": {
+    "environment_is_repository_local": true,
+    "errors": 0,
+    "failures": 0,
+    "junit_sha256": "3bbbc8198b07d907ecb180e5b34ec17122b878d6121bee93d29f01dc598cbe7d",
+    "passed": 225,
+    "skipped": [
+      "test_optional_non_native_resampling_matches_git_baseline[32000]",
+      "test_optional_non_native_resampling_matches_git_baseline[44100]",
+      "test_optional_non_native_resampling_matches_git_baseline[48000]",
+      "test_optional_real_openwakeword_graphs_match_git_baseline"
+    ],
+    "tests": 229,
+    "versions": {
+      "huggingface-hub": "0.36.2",
+      "numpy": "2.5.3",
+      "onnxruntime": "1.30.0",
+      "pyarrow": "23.0.1",
+      "pytest": "8.4.2",
+      "python": "3.13.14",
+      "torch": "2.10.0+cpu"
+    }
+  },
+  "recorded_at_utc": "2026-10-24T17:41:00.107648+00:00",
+  "training_environment_relocations": {
+    "scripts/train/pyproject.toml": {
+      "bytes": 579,
+      "original_git_bytes_preserved": true,
+      "sha256": "bf7fd31f052f96c30bce539a7bbe3502fbe69d706828f20ea36fa54ce8c0d6dc"
+    },
+    "scripts/train/uv.lock": {
+      "bytes": 124634,
+      "original_git_bytes_preserved": true,
+      "sha256": "8c0a9d98063b4f858018e3fd2875632f98b7fb9be5c91ec7736fdb4620686399"
+    }
+  }
+}

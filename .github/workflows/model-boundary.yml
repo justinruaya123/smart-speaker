@@ -1,0 +1,41 @@
+name: Model-only repository boundary
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  model-boundary:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      ACTIONS_ENABLED: 'false'
+      IRIS_FEEDBACK_ENABLED: 'false'
+    steps:
+      - name: Source and immutable pre-migration Git oracle
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+          lfs: false
+          fetch-depth: 0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.13'
+      - name: Verify frozen original payloads before test dependencies
+        run: python -B -m scripts.optionb_epoch44 verify
+      - name: Pinned CPU model/export unit-test dependencies, not application tooling
+        run: |
+          python -m pip install --only-binary=:all: pytest==8.4.2 numpy==2.5.3 onnxruntime==1.30.0 soundfile==0.14.0 einops==0.8.2 pyarrow==23.0.1 huggingface-hub==0.36.2
+          python -m pip install --only-binary=:all: --index-url https://download.pytorch.org/whl/cpu torch==2.10.0
+      - name: Model-only ownership, exact archives and unchanged reference math
+        run: |
+          mkdir -p .cache/tests
+          python -B -m pytest -p no:cacheprovider scripts/test/test_model_only_boundary.py scripts/test/test_model_training_bootstrap.py scripts/test/test_model_package.py scripts/test/test_model_reference_boundary.py scripts/test/test_model_evaluation_audio.py scripts/test/test_model_publication_boundary.py scripts/test/test_iris_release.py scripts/test/test_iris_archive.py --basetemp=.cache/tests/ci-model-boundary -q
+          python -B -m scripts.optionb_epoch44 verify
+          git diff --check

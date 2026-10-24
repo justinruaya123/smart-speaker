@@ -29,10 +29,10 @@ DEFAULT_INPUTS = HERE + '/reproduction-inputs.json'
 DEFAULT_RELEASE = HERE + '/reproduction-release.json'
 DEFAULT_TESTS = tuple('scripts/test/' + name + '.py' for name in (
     'test_iris_models', 'test_iris_wake_models', 'test_iris_archive',
-    'test_iris_configuration', 'test_iris_session', 'test_iris_worker',
-    'test_iris_wake_release', 'test_iris_pi_benchmark', 'test_iris_diversity',
-    'test_iris_owner', 'test_iris_resources', 'test_iris_metrics', 'test_iris_release',
-    'test_iris_reproduce', 'test_iris_publish_privacy', 'test_iris_bootstrap'))
+    'test_iris_session', 'test_iris_wake_release', 'test_iris_diversity',
+    'test_iris_owner', 'test_iris_metrics', 'test_iris_release',
+    'test_iris_reproduce', 'test_iris_publish_privacy', 'test_iris_bootstrap',
+    'test_model_package', 'test_model_only_boundary', 'test_model_reference_boundary'))
 SHA256 = re.compile(r'[0-9a-f]{64}')
 
 
@@ -509,7 +509,7 @@ def verify_completed_diversity(root, input_receipt, model, arm, seed):
              'initializer_sha256': CACHE + '/inputs/' + model + '-initializer.pt',
              'model_source_sha256': 'scripts/models/mvp_static.py',
              'contrastive_source_sha256': 'scripts/models/speaker_demo.py',
-             'frontend_sha256': 'vcm/frontend.py', 'policy_source_sha256': 'scripts/runtime/mvp_static.py'}
+             'frontend_sha256': 'vcm/frontend.py', 'policy_source_sha256': 'scripts/train/iris_validation.py'}
     verify_bindings(root, {name: binding.get(key) for key, name in paths.items()})
     prefit = root / CACHE / 'inputs/provenance/diversity-prefit-trainer.py'
     pinned(prefit)
@@ -538,7 +538,7 @@ def ensure_source_environment(root=ROOT, *, device='cpu', runner=subprocess.run)
     if existing and not (runtime_marker.is_file() or runtime_pending.is_file() or pending.is_file()):
         return python
     began = time.perf_counter()
-    from scripts.runtime.speaker_tools import find_uv
+    from scripts.training_tools import find_uv
     environment = read(root / HERE / 'reproduction-environment.json')
     profile = 'cuda' if str(device).startswith('cuda') else 'cpu'
     pins = environment.get('bootstrap_profiles', {}).get(profile)
@@ -788,7 +788,7 @@ def run_from_scratch(*, root=ROOT, run_id, device='cpu'):
     import soundfile as sf
     import torch
     from scripts.models.mvp_static import StaticCommandNet
-    from scripts.runtime.mvp_static import Runtime, fit_policy, decide
+    from scripts.train.iris_validation import Runtime, fit_policy, decide
     from scripts.train.iris_export import export_onnx, export_ncnn
     from scripts.test.iris_metrics import summarize
     from vcm.frontend import features
@@ -965,7 +965,11 @@ def freeze_release(*, root=ROOT, bundle=None, wake_folder=None, owner_folder=Non
             raise ValueError('Missing pinned VAD source/license metadata: ' + name)
         files.append(root / name)
     input_document = read(input_receipt)
-    source_files = list(source_files or input_document.get('source_files', []))
+    from scripts.repository_boundary import model_source_files
+    declared_sources = list(source_files or input_document.get('source_files', []))
+    source_files = model_source_files([
+        name_under(root, path) if isinstance(path, Path) or Path(path).is_absolute() else path
+        for path in declared_sources])
     publication_proof = input_document.get('input_publication_receipt')
     if publication_proof:
         proof = relative_path(root, publication_proof['path'])
@@ -973,7 +977,7 @@ def freeze_release(*, root=ROOT, bundle=None, wake_folder=None, owner_folder=Non
             raise ValueError('Pinned input publication receipt identity changed')
         if publication_proof['path'] not in source_files:
             source_files.append(publication_proof['path'])
-    source_files = [p if Path(p).is_absolute() else root / p for p in source_files]
+    source_files = [root / p for p in source_files]
     if not source_files:
         raise ValueError('Release must bind the canonical training/runtime source closure')
     for path in (input_receipt, selection, protocol, *source_files):
@@ -1000,8 +1004,8 @@ def freeze_release(*, root=ROOT, bundle=None, wake_folder=None, owner_folder=Non
             raise ValueError('Missing selected-study evaluation evidence: ' + name)
         files.append(path)
         evidence.append(name)
-    for name in ('requirements.lock', 'pipeline.toml', 'scripts/runtime/pyproject.toml',
-                 'scripts/runtime/uv.lock', 'SpeakerUI/pnpm-lock.yaml', 'SpeakerUI/package.json'):
+    for name in ('requirements.lock', 'pipeline.toml', 'scripts/model_package.py',
+                 'scripts/repository_boundary.py', 'scripts/training_tools.py'):
         if (root / name).is_file():
             files.append(root / name)
     bindings = {name_under(root, p): sha(p) for p in sorted(set(files))}
@@ -1236,28 +1240,14 @@ def run_workflow(*, root=ROOT, skip_train=False, publish=False, from_scratch=Fal
                 record['decision_parity'] = {'path': parity_receipt,
                     'sha256': sha(relative_path(root, parity_receipt)),
                     'historical_release_parity_unchanged': True}
-        resource_command = [python, '-m', 'scripts.test.iris_resources']
-        if from_scratch:
-            resource_receipt = CACHE + '/from-scratch/' + token + '/pipeline-resources.json'
-            resource_command.extend(['--bundle', random_study['bundle'], '--output', resource_receipt])
-        elif skip_train:
-            resource_receipt = name_under(root, logs / 'pipeline-resources.json')
-            resource_command.extend(['--output', resource_receipt])
-        profiler_environment = {key: os.environ.get(key) or '1' for key in (
-            'OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS',
-            'VECLIB_MAXIMUM_THREADS', 'NUMEXPR_NUM_THREADS')}
-        stage('pipeline-resources', resource_command, environment=profiler_environment)
-        if skip_train or from_scratch:
-            record['resource_measurement'] = {'path': resource_receipt,
-                'sha256': sha(relative_path(root, resource_receipt)),
-                'historical_release_resources_unchanged': True, 'physical_pi_measured': False}
+
         if not from_scratch:
             stage('report-acoustic-evidence', [python, '-m', 'scripts.iris_report'])
         options = {} if not from_scratch else {
             'bundle': relative_path(root, random_study['bundle']),
             'selection': relative_path(root, random_study['selection']),
             'protocol': relative_path(root, random_study['protocol']), 'study_kind': 'random',
-            'evaluation_receipts': [HERE + '/reproduction-from-scratch-' + token + '.json', resource_receipt]}
+            'evaluation_receipts': [HERE + '/reproduction-from-scratch-' + token + '.json']}
         if not skip_train:
             before_software = stage('snapshot-before-software', action=lambda: freeze_release(
                 root=root, input_receipt=input_receipt, output=logs / 'before-software-release.json', **options))
@@ -1268,24 +1258,10 @@ def run_workflow(*, root=ROOT, skip_train=False, publish=False, from_scratch=Fal
         derived = {'MODEL_CARD.md', 'docs/EXPERIMENT-iris-release-v1.md', 'EXPERIMENTS.md',
                    HERE + '/software-verification.json'}
         immutable = {name: expected for name, expected in before_software['bindings'].items() if name not in derived}
-        ui = root / 'SpeakerUI'
-        ui_environment = None
-        if ui_command is None:
-            from scripts.runtime.speaker_tools import node_tools
-            toolchain = []
-            def bootstrap_ui():
-                node, pnpm, environment = node_tools(root)
-                toolchain.extend(([str(node), str(pnpm)], environment))
-                return {'node': name_under(root, node), 'pnpm': name_under(root, pnpm)}
-            stage('ui-toolchain', action=bootstrap_ui)
-            ui_command, ui_environment = toolchain
-        for name, args in (('install', ('install', '--frozen-lockfile')), ('test', ('test',)),
-                           ('check', ('check',)), ('build', ('build',))):
-            stage('ui-' + name, [*ui_command, *args], cwd=ui, environment=ui_environment)
         stage('python-tests', [python, '-m', 'pytest', *(test_modules or DEFAULT_TESTS), '-q'])
         stage('verify-after-build', action=lambda: verify_bindings(root, immutable))
         software = {'schema_version': 1, 'passed': True,
-                    'checks': ['python-tests', 'ui-install', 'ui-test', 'ui-check', 'ui-build'],
+                    'checks': ['python-tests'],
                     'test_modules': list(test_modules or DEFAULT_TESTS),
                     'physical_pi_measured': False, 'live_microphone_measured': False}
         record['software_verification'] = software
@@ -1303,9 +1279,9 @@ def run_workflow(*, root=ROOT, skip_train=False, publish=False, from_scratch=Fal
         release = stage('verify-final-lineage', action=lambda: validate_release(root, release_path))
         release_sha = sha(release_path)
         if packager is None:
-            from scripts.mvp_delivery import package_release
+            from scripts.model_package import package_release
             packager = package_release
-        output = root / 'dist' / EXPERIMENT / token / 'iris-pi.zip'
+        output = root / 'dist' / EXPERIMENT / token / 'iris-model.zip'
         output.parent.mkdir(parents=True, exist_ok=True)
         extras = {'evidence/reproduction-release.json': release_path.read_bytes(),
                   'evidence/reproduction-inputs.json': input_receipt.read_bytes()}

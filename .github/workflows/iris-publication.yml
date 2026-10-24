@@ -40,15 +40,15 @@ jobs:
           python -B -m unittest scripts.test.test_iris_publication_data -v
           python -B presentation/validate.py --require-integration
           git diff --check
-      - name: Pinned UI/browser tooling
+      - name: Pinned static-presentation browser tooling
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6, official ref readback
         with:
           node-version: '24.13.0'
-      - name: Install unchanged UI lock and browser
+      - name: Install presentation-only lock and browser, not the application
         run: |
           npm install --global pnpm@12.5.1
-          pnpm --dir SpeakerUI install --frozen-lockfile
-          pnpm --dir SpeakerUI exec playwright install --with-deps chromium
+          pnpm --dir presentation install --frozen-lockfile
+          pnpm --dir presentation exec playwright install --with-deps chromium
       - name: Exercise six chapters, ten selectors, local Manim export and reduced motion
         run: node presentation/qa.mjs
       - name: Anonymous exact-commit ONNX readback before public publication

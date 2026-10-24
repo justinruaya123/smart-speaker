@@ -59,7 +59,7 @@ def streaming_scores(rows,model,norm,*,reader=None):
 
 
 def stream_metrics(records,threshold):
-    from scripts.runtime.mvp_wake import RollingWake
+    from scripts.train.iris_wake_reference import RollingWake
     positives=sum(r['positive'] for r in records);negative_seconds=sum(r['seconds'] for r in records if not r['positive'])
     correct=false=duplicates=0
     for row in records:

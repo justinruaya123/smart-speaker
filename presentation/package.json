@@ -1,0 +1,13 @@
+{
+  "name": "iris-model-presentation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.5.1",
+  "scripts": {
+    "qa": "node qa.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

@@ -27,21 +27,21 @@ def fixture(root):
     protocol = put(root, 'experiments/iris-release-v1/protocol.json', {'experiment': 'iris-release-v1'})
     receipt = put(root, 'experiments/iris-release-v1/reproduction-inputs.json', {
         'schema_version': 1, 'experiment': 'iris-release-v1', 'files': [
-            {'path': str(inputs.relative_to(root)), 'sha256': sha(inputs), 'bytes': inputs.stat().st_size, 'role': 'vcm_initializer',
+            {'path': (inputs.relative_to(root)).as_posix(), 'sha256': sha(inputs), 'bytes': inputs.stat().st_size, 'role': 'vcm_initializer',
              'remote': {'repo_id': 'example/iris', 'repo_type': 'model', 'revision': 'a' * 40,
                         'filename': 'reproduction/initializer.pt'}}],
         'source_files': ['scripts/train/iris_diversity.py'],
         'data_requirements': [{'source': 'restricted original recordings', 'status': 'access required'}]})
     bundle = root / '.cache/iris-release-v1/diversity/release-export'
-    graph = put(root, str(bundle.relative_to(root) / 'model.onnx'), 'finite direct model')
-    put(root, str(bundle.relative_to(root) / 'bundle.json'), {
+    graph = put(root, (bundle.relative_to(root) / 'model.onnx').as_posix(), 'finite direct model')
+    put(root, (bundle.relative_to(root) / 'bundle.json').as_posix(), {
         'parameters': 969928, 'files': {'model.onnx': sha(graph)}})
     wake = root / '.cache/iris-release-v1/wake/export'
-    wake_graph = put(root, str(wake.relative_to(root) / 'wake.onnx'), 'our hey iris')
-    put(root, str(wake.relative_to(root) / 'iris.json'), {'files': {'wake.onnx': sha(wake_graph)}})
+    wake_graph = put(root, (wake.relative_to(root) / 'wake.onnx').as_posix(), 'our hey iris')
+    put(root, (wake.relative_to(root) / 'iris.json').as_posix(), {'files': {'wake.onnx': sha(wake_graph)}})
     owner = root / '.cache/iris-release-v1/owner/export'
-    owner_graph = put(root, str(owner.relative_to(root) / 'owner.onnx'), 'owner embedding')
-    put(root, str(owner.relative_to(root) / 'owner.json'), {'files': {'owner.onnx': sha(owner_graph)}})
+    owner_graph = put(root, (owner.relative_to(root) / 'owner.onnx').as_posix(), 'owner embedding')
+    put(root, (owner.relative_to(root) / 'owner.json').as_posix(), {'files': {'owner.onnx': sha(owner_graph)}})
     vad_graph = put(root, '.cache/iris-release-v1/inputs/vad/silero-vad.onnx', 'pinned VAD')
     put(root, 'artifacts/wake-models.json', {'files': {'silero-vad.onnx': {'sha256': sha(vad_graph)}}})
     put(root, 'artifacts/silero-LICENSE.txt', 'MIT source notice')
@@ -71,22 +71,21 @@ class Stages:
             put(self.root, 'experiments/iris-release-v1/width-selection-before-repeat.json',
                 {'stage': 'repeat', 'model': 'compact', 'arms': ['ce', 'supcon'], 'seed': 67})
         if 'scripts.test.iris_resources' in command:
-            output = command[command.index('--output') + 1] if '--output' in command else 'experiments/iris-release-v1/pipeline-resources.json'
-            put(self.root, output, {'physical_pi_measured': False, 'component_timing': 'fixture'})
+            pytest.fail('Model-only workflows cannot run deployment resource benchmarks')
         if 'scripts.test.iris_decision_parity' in command:
             output = command[command.index('--output') + 1] if '--output' in command else 'experiments/iris-release-v1/decision-parity.json'
             put(self.root, output, {'passed': True, 'models': 'fixture'})
-        if self.mutate and 'build' in command:
+        if self.mutate and 'scripts.test.iris_decision_parity' in command:
             self.mutate.write_text('source changed during build')
         return subprocess.CompletedProcess(command, 0)
 
 
 def packager(bundle, output, **kwargs):
     from scripts.archive_io import write_archive
-    entries = {'start.py': b'pass\n', 'models/default/model.onnx': b'model',
+    entries = {'models/default/model.onnx': (bundle / 'model.onnx').read_bytes(),
                'models/default/wake/iris.json': b'{}', 'models/default/owner/owner.json': b'{}'}
     entries.update(kwargs['extra_files'])
-    return write_archive(entries, output, {'actions_enabled': True, 'physical_pi_measured': False})
+    return write_archive(entries, output, {'format': 'smart-speaker-model-v1', 'qualified': False, 'actions_enabled': False, 'physical_pi_measured': False})
 
 
 def test_missing_input_uses_exact_published_revision(tmp_path):
@@ -210,9 +209,9 @@ def test_skip_restores_missing_selected_export_from_pinned_input_alias(tmp_path)
     files = fixture(tmp_path)
     snapshot = put(tmp_path, '.cache/iris-release-v1/inputs/selected/vcm/model.onnx', files['graph'].read_text())
     inputs = json.loads(files['receipt'].read_text())
-    inputs['files'].append({'path': str(snapshot.relative_to(tmp_path)), 'sha256': sha(snapshot), 'bytes': snapshot.stat().st_size})
-    inputs['cache_aliases'] = [{'path': str(files['graph'].relative_to(tmp_path)),
-                               'source': str(snapshot.relative_to(tmp_path)), 'sha256': sha(snapshot)}]
+    inputs['files'].append({'path': (snapshot.relative_to(tmp_path)).as_posix(), 'sha256': sha(snapshot), 'bytes': snapshot.stat().st_size})
+    inputs['cache_aliases'] = [{'path': (files['graph'].relative_to(tmp_path)).as_posix(),
+                               'source': (snapshot.relative_to(tmp_path)).as_posix(), 'sha256': sha(snapshot)}]
     files['receipt'].write_text(json.dumps(inputs))
     freeze(tmp_path, files)
     files['graph'].unlink()
@@ -238,14 +237,15 @@ def test_skip_evaluates_rebuilds_and_hash_verifies_final_archive(tmp_path):
     commands = [item['command'] for item in result['stages'] if 'command' in item]
     assert not any('train' in c or 'generate' in c for c in commands)
     assert sum('evaluate' in c for c in commands) == 3
-    assert ['pnpm', 'build'] in commands
-    resource = next(c for c in commands if 'scripts.test.iris_resources' in c)
-    assert '--output' in resource and '/workflow/' in resource[resource.index('--output') + 1]
-    assert result['resource_measurement']['historical_release_resources_unchanged'] is True
+    assert not any(part in ('pnpm', 'node', 'npm', 'scripts.test.iris_resources') for c in commands for part in c)
+    assert 'resource_measurement' not in result
     assert result['decision_parity']['historical_release_parity_unchanged'] is True
     with zipfile.ZipFile(tmp_path / result['package']['path']) as archive:
         assert 'evidence/current-host-decision-parity.json' in archive.namelist()
-        assert 'evidence/current-host-pipeline-resources.json' in archive.namelist()
+        assert 'evidence/current-host-pipeline-resources.json' not in archive.namelist()
+        assert 'start.py' not in archive.namelist()
+        manifest = json.loads(archive.read('MANIFEST.json'))
+        assert manifest['qualified'] is False and manifest['actions_enabled'] is False
 
 
 def test_normal_schedule_runs_four_primary_and_two_dev_selected_repeat_fits(tmp_path):
@@ -265,30 +265,23 @@ def test_reports_render_after_acoustics_and_software_before_final_freeze(tmp_pat
     from scripts.iris_release import run_workflow
     fixture(tmp_path)
     stages = Stages(tmp_path)
-    ui_outputs = [tmp_path / 'SpeakerUI' / name for name in ('dist', 'dist-server')]
-    assert all(not path.exists() for path in ui_outputs)
     def execute(command, **kwargs):
-        if 'pytest' in command:
-            assert all(path.is_dir() for path in ui_outputs), 'Compile SpeakerUI before Python package inventory tests'
-        result = stages(command, **kwargs)
-        if 'build' in command:
-            for path in ui_outputs:
-                path.mkdir(parents=True)
-        return result
+        assert not any(str(part) in ('pnpm', 'node', 'npm') for part in command)
+        assert 'scripts.test.iris_resources' not in command
+        assert not (tmp_path / 'SpeakerUI').exists()
+        return stages(command, **kwargs)
     result = run_workflow(root=tmp_path, runner=execute, packager=packager,
-                          python=sys.executable, ui_command=['pnpm'], test_modules=['fixture.py'])
-    names = [s['name'] for s in result['stages']]
-    assert names.index('owner-evaluate') < names.index('decision-parity') < names.index('pipeline-resources') < names.index('report-acoustic-evidence')
-    assert names.index('owner-evaluate') < names.index('report-acoustic-evidence') < names.index('ui-build')
-    assert all(names.index(name) < names.index('python-tests') for name in ('ui-install', 'ui-test', 'ui-check', 'ui-build'))
-    assert names.index('ui-build') < names.index('report-final-evidence') < names.index('freeze-selected-release')
+                         python=sys.executable, ui_command=['pnpm'], test_modules=['fixture.py'])
+    names = [stage['name'] for stage in result['stages']]
+    assert names.index('owner-evaluate') < names.index('decision-parity') < names.index('report-acoustic-evidence')
+    assert names.index('python-tests') < names.index('report-final-evidence') < names.index('freeze-selected-release')
+    assert not any(name.startswith('ui-') or name == 'pipeline-resources' for name in names)
     receipt = json.loads((tmp_path / 'experiments/iris-release-v1/software-verification.json').read_text())
-    assert receipt['passed'] is True
-    assert receipt['checks'] == ['python-tests', 'ui-install', 'ui-test', 'ui-check', 'ui-build']
+    assert receipt['passed'] is True and receipt['checks'] == ['python-tests']
     assert not any('utc' in key or 'duration' in key for key in receipt)
 
 
-def test_profiler_thread_defaults_respect_overrides_without_changing_training(tmp_path, monkeypatch):
+def test_model_workflow_preserves_thread_overrides_without_deployment_profiler(tmp_path, monkeypatch):
     from scripts.iris_release import run_workflow
     keys = ('OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS',
             'VECLIB_MAXIMUM_THREADS', 'NUMEXPR_NUM_THREADS')
@@ -302,10 +295,11 @@ def test_profiler_thread_defaults_respect_overrides_without_changing_training(tm
         return stages(command, **kwargs)
     run_workflow(root=tmp_path, runner=execute, packager=packager,
                  python=sys.executable, ui_command=['pnpm'], test_modules=['fixture.py'])
-    environment = next(env for command, env in observed if 'scripts.test.iris_resources' in command)
-    assert environment['OPENBLAS_NUM_THREADS'] == '3'
-    assert all(environment[key] == '1' for key in keys if key != 'OPENBLAS_NUM_THREADS')
-    assert all('OMP_NUM_THREADS' not in env for command, env in observed if 'train' in command)
+    assert not any('scripts.test.iris_resources' in command for command, _ in observed)
+    for command, environment in observed:
+        assert environment['OPENBLAS_NUM_THREADS'] == '3'
+        if 'train' in command:
+            assert all(key not in environment for key in keys if key != 'OPENBLAS_NUM_THREADS')
 
 
 def test_failed_software_stage_records_failure_and_never_packages(tmp_path):
@@ -364,13 +358,13 @@ def test_final_publication_references_verified_input_capsule_without_reupload(tm
                 {'status': 'published_and_verified', 'repositories': [
                     {'repo_type': 'model', 'repo_id': 'example/iris', 'revision': 'a' * 40, 'verified': True,
                      'files': [{'path': 'reproduction/initializer.pt', 'sha256': item['sha256']}]}]})
-    inputs['input_publication_receipt'] = {'path': str(proof.relative_to(tmp_path)), 'sha256': sha(proof)}
+    inputs['input_publication_receipt'] = {'path': (proof.relative_to(tmp_path)).as_posix(), 'sha256': sha(proof)}
     files['receipt'].write_text(json.dumps(inputs))
     freeze(tmp_path, files)
     workflow = run_workflow(root=tmp_path, skip_train=True, runner=Stages(tmp_path), packager=packager,
                              python=sys.executable, ui_command=['pnpm'], test_modules=['fixture.py'])
     plan = build_publication_plan(root=tmp_path, workflow=workflow)
-    assert not any(x['local_path'] == str(files['inputs'].relative_to(tmp_path)) for x in plan['files'])
+    assert not any(x['local_path'] == (files['inputs'].relative_to(tmp_path)).as_posix() for x in plan['files'])
     assert any(x['path_in_repo'] == 'reproduction/publication-inputs.json' for x in plan['files'])
     destinations = {x['path_in_repo'] for x in plan['files']}
     assert not any('reproduction/source/' in name for name in destinations)
@@ -380,34 +374,16 @@ def test_final_publication_references_verified_input_capsule_without_reupload(tm
     assert plan['source_visibility'] == 'preserve_existing'
 
 
-def test_reconstruction_inventory_contains_all_application_source_reads(tmp_path, monkeypatch):
-    from scripts import speaker_publish
+def test_reconstruction_inventory_contains_all_model_source_reads():
     from scripts.iris_release import DEFAULT_INPUTS
+    from scripts.repository_boundary import model_source_files
     project = Path(__file__).resolve().parents[2]
-    inventory = set(json.loads((project / DEFAULT_INPUTS).read_text())['source_files'])
-    for name in ('SpeakerUI/dist/index.html', 'SpeakerUI/dist-server/server/main.js'):
-        put(tmp_path, name, 'generated build output')
-    for notice in (project / 'SpeakerUI').glob('*LICENSE*'):
-        put(tmp_path, 'SpeakerUI/' + notice.name, 'source notice')
-    original_bytes, original_text = Path.read_bytes, Path.read_text
-    observed = set()
-    def capture(path):
-        if path.is_relative_to(tmp_path):
-            observed.add(path.relative_to(tmp_path).as_posix())
-            return True
-        return False
-    def read_bytes(path):
-        return b'isolated source input' if capture(path) else original_bytes(path)
-    def read_text(path, *args, **kwargs):
-        return 'mode = "demo"\nenabled = true\n' if capture(path) else original_text(path, *args, **kwargs)
-    monkeypatch.setattr(speaker_publish, 'ROOT', tmp_path)
-    monkeypatch.setattr(Path, 'read_bytes', read_bytes)
-    monkeypatch.setattr(Path, 'read_text', read_text)
-    for target in ('inference', 'benchmark', 'full'):
-        for mode in ('include', 'skip', 'only'):
-            speaker_publish.application_files(target, mode)
-    required = {name for name in observed if not name.startswith(('SpeakerUI/dist/', 'SpeakerUI/dist-server/'))}
-    assert required <= inventory, 'Missing application source inputs: ' + ', '.join(sorted(required - inventory))
+    original = json.loads((project / DEFAULT_INPUTS).read_text())['source_files']
+    inventory = model_source_files(original)
+    assert 'scripts/model_package.py' in inventory
+    assert all(not name.startswith(('SpeakerUI/', 'scripts/runtime/')) for name in inventory)
+    assert all((project / name).is_file() for name in inventory)
+    assert 'scripts/train/iris_validation.py' in inventory
 
 
 @pytest.mark.parametrize('available', [True, False])
@@ -439,7 +415,7 @@ def test_input_capsule_reuses_verified_immutable_preupload_and_pins_new_files(tm
     from scripts import iris_publish
     first = put(tmp_path, '.cache/iris-release-v1/inputs/first.pt', 'immutable earlier input')
     second = put(tmp_path, '.cache/iris-release-v1/inputs/second.pt', 'new selected weights')
-    inventory = [{'path': str(p.relative_to(tmp_path)), 'sha256': sha(p), 'bytes': p.stat().st_size,
+    inventory = [{'path': (p.relative_to(tmp_path)).as_posix(), 'sha256': sha(p), 'bytes': p.stat().st_size,
                   'publication': {'repo_type': 'model', 'repo_id': 'example/iris',
                                   'path_in_repo': 'reproduction/' + p.name}} for p in (first, second)]
     inputs = put(tmp_path, 'experiments/iris-release-v1/reproduction-inputs.json', {'files': inventory})
@@ -463,9 +439,9 @@ def test_input_capsule_reuses_verified_immutable_preupload_and_pins_new_files(tm
         return result
     monkeypatch.setattr(iris_publish, 'publish_plan', publish)
     result = iris_publish.publish_reproduction_inputs(root=tmp_path, input_receipt=inputs,
-                verified_receipts=[{'path': str(proof.relative_to(tmp_path)), 'sha256': sha(proof)}])
-    assert not any(item['local_path'] == str(first.relative_to(tmp_path)) for item in captured)
-    assert any(item['local_path'] == str(second.relative_to(tmp_path)) for item in captured)
+                verified_receipts=[{'path': (proof.relative_to(tmp_path)).as_posix(), 'sha256': sha(proof)}])
+    assert not any(item['local_path'] == (first.relative_to(tmp_path)).as_posix() for item in captured)
+    assert any(item['local_path'] == (second.relative_to(tmp_path)).as_posix() for item in captured)
     pinned = json.loads(inputs.read_text())
     assert [item['remote']['revision'] for item in pinned['files']] == ['a' * 40, 'b' * 40]
     merged = json.loads((tmp_path / result['receipt']).read_text())
@@ -479,11 +455,11 @@ def test_input_capsule_reuse_rejects_changed_identity_before_network(tmp_path, m
     from scripts import iris_publish
     source = put(tmp_path, '.cache/iris-release-v1/inputs/frozen.pt', 'frozen bytes')
     inputs = put(tmp_path, 'experiments/iris-release-v1/reproduction-inputs.json', {'files': [
-        {'path': str(source.relative_to(tmp_path)), 'sha256': sha(source),
+        {'path': (source.relative_to(tmp_path)).as_posix(), 'sha256': sha(source),
          'publication': {'repo_type': 'model', 'repo_id': 'example/iris', 'path_in_repo': 'frozen.pt'}}]})
     proof = put(tmp_path, 'experiments/iris-release-v1/publication-preupload.json',
                 {'status': 'published_and_verified', 'repositories': []})
-    pointer = {'path': str(proof.relative_to(tmp_path)), 'sha256': sha(proof)}
+    pointer = {'path': (proof.relative_to(tmp_path)).as_posix(), 'sha256': sha(proof)}
     (source if changed == 'input' else proof).write_text('changed bytes')
     monkeypatch.setattr(iris_publish, 'publish_plan', lambda **_: pytest.fail('network before identity check'))
     with pytest.raises(ValueError, match='identity'):
@@ -494,7 +470,7 @@ def test_publish_requires_explicit_audio_redistribution_and_bound_notice(tmp_pat
     from scripts.iris_publish import validate_publication
     audio = put(tmp_path, '.cache/iris-release-v1/generated.wav', 'audio')
     plan = {'schema_version': 1, 'verification': {'passed': True}, 'files': [
-        {'local_path': str(audio.relative_to(tmp_path)), 'path_in_repo': 'audio/example.wav',
+        {'local_path': (audio.relative_to(tmp_path)).as_posix(), 'path_in_repo': 'audio/example.wav',
          'sha256': sha(audio), 'repo_type': 'dataset', 'repo_id': 'example/iris'}]}
     with pytest.raises(ValueError, match='redistribution'):
         validate_publication(tmp_path, plan)
@@ -558,7 +534,7 @@ def test_audio_map_resolves_original_immutable_row_and_checks_hash(tmp_path, mon
     files = fixture(tmp_path)
     audio = put(tmp_path, '.cache/iris-release-v1/inputs/audio/pinned.wav', 'original whole recording')
     receipt = json.loads(files['receipt'].read_text())
-    receipt['audio_map'] = {'old/run/recording.wav': {'path': str(audio.relative_to(tmp_path)), 'sha256': sha(audio)}}
+    receipt['audio_map'] = {'old/run/recording.wav': {'path': (audio.relative_to(tmp_path)).as_posix(), 'sha256': sha(audio)}}
     put(tmp_path, manifest_name, receipt)
     monkeypatch.setenv('IRIS_REPRODUCTION_INPUTS', manifest_name)
     row = {'audio': 'old/run/recording.wav', 'sha256': sha(audio)}
@@ -704,8 +680,8 @@ def completed_owner_fixture(root):
     from scripts.iris_release import ROOT
     from scripts.train.iris_owner import DEFAULT, PCM_NORMALIZATION
     import shutil
-    sources = ('scripts/models/iris_owner.py', 'scripts/runtime/iris_owner.py', 'scripts/train/iris_owner.py',
-               'scripts/runtime/audio.py', 'scripts/runtime/speaker_session.py', 'scripts/iris_release.py',
+    sources = ('scripts/models/iris_owner.py', 'scripts/train/iris_owner_reference.py', 'scripts/train/iris_owner.py',
+               'scripts/train/iris_audio.py', 'scripts/train/iris_session.py', 'scripts/iris_release.py',
                'pipeline.toml', 'requirements.lock')
     for name in sources:
         destination = root / name
@@ -716,7 +692,7 @@ def completed_owner_fixture(root):
     shutil.copyfile(root / 'scripts/iris_release.py', prefit)
     views = [put(root, '.cache/iris-release-v1/inputs/base-views/' + name + '.jsonl', '{}\n')
              for name in ('train', 'dev', 'calibration', 'test', 'personal-test')]
-    view_records = [{'path': str(p.relative_to(root)), 'sha256': sha(p)} for p in views]
+    view_records = [{'path': (p.relative_to(root)).as_posix(), 'sha256': sha(p)} for p in views]
     reservation = put(root, '.cache/iris-release-v1/inputs/owner-reservations.json', {})
     cache = '.cache/iris-release-v1/owner/'
     manifest = put(root, cache + 'manifest.jsonl', '{"id":"human"}\n')
@@ -735,7 +711,7 @@ def completed_owner_fixture(root):
     fingerprint = hashlib.sha256(json.dumps(binding, sort_keys=True).encode()).hexdigest()
     implementation = put(root, 'experiments/iris-release-v1/owner-implementation-fixture.json',
                          {'binding': binding, 'fingerprint': fingerprint})
-    pointer = {'path': str(implementation.relative_to(root)), 'sha256': sha(implementation), 'fingerprint': fingerprint}
+    pointer = {'path': (implementation.relative_to(root)).as_posix(), 'sha256': sha(implementation), 'fingerprint': fingerprint}
     execution = put(root, 'experiments/iris-release-v1/owner-execution.json', {'implementation_before_fitting': pointer})
     checkpoint = put(root, cache + 'selected.pt', 'published selected weights')
     selected = put(root, cache + 'selection-before-test.json', {'checkpoint_sha256': sha(checkpoint),
@@ -746,9 +722,9 @@ def completed_owner_fixture(root):
         destination = root / '.cache/iris-release-v1/inputs/owner-fixture' / path.name
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(path, destination)
-        files.append({'path': str(destination.relative_to(root)), 'sha256': sha(destination)})
-        aliases.append({'path': str(path.relative_to(root)), 'source': files[-1]['path'], 'sha256': sha(path)})
-    files.append({'path': str(prefit.relative_to(root)), 'sha256': sha(prefit)})
+        files.append({'path': (destination.relative_to(root)).as_posix(), 'sha256': sha(destination)})
+        aliases.append({'path': (path.relative_to(root)).as_posix(), 'source': files[-1]['path'], 'sha256': sha(path)})
+    files.append({'path': (prefit.relative_to(root)).as_posix(), 'sha256': sha(prefit)})
     receipt = put(root, 'experiments/iris-release-v1/reproduction-inputs.json', {'files': files, 'cache_aliases': aliases})
     driver = root / 'scripts/iris_release.py'
     driver.write_text(driver.read_text() + '\n# Unrelated packaging metadata changed after fitting.\n')
@@ -766,7 +742,7 @@ def test_completed_owner_reuse_allows_unrelated_driver_change_without_raw_data(t
     assert not (tmp_path / '.cache/iris-release-v1/owner/audio').exists()
 
 
-@pytest.mark.parametrize('name', ['scripts/models/iris_owner.py', 'scripts/runtime/audio.py',
+@pytest.mark.parametrize('name', ['scripts/models/iris_owner.py', 'scripts/train/iris_audio.py',
                                   '.cache/iris-release-v1/owner/manifest.jsonl', 'scripts/iris_release.py'])
 def test_completed_owner_reuse_rejects_model_frontend_manifest_or_resolver_change(tmp_path, name):
     from scripts.iris_release import verify_completed_owner
@@ -788,7 +764,7 @@ def completed_diversity_fixture(root):
              'initializer_sha256': '.cache/iris-release-v1/inputs/compact-initializer.pt',
              'model_source_sha256': 'scripts/models/mvp_static.py',
              'contrastive_source_sha256': 'scripts/models/speaker_demo.py',
-             'frontend_sha256': 'vcm/frontend.py', 'policy_source_sha256': 'scripts/runtime/mvp_static.py'}
+             'frontend_sha256': 'vcm/frontend.py', 'policy_source_sha256': 'scripts/train/iris_validation.py'}
     binding = {key: sha(put(root, name, 'frozen source or data')) for key, name in paths.items()}
     source = 'def train():\n    return "frozen fit"\n\ndef evaluate():\n    return "old cache"\n'
     trainer = put(root, 'scripts/train/iris_diversity.py', source)
@@ -800,14 +776,14 @@ def completed_diversity_fixture(root):
                   'model': 'compact', 'arm': 'ce', 'seed': 53, 'test_used_for_selection': False,
                   'checkpoint': prefix + 'best.pt'}),
               put(root, prefix + 'run-inputs.json', binding), put(root, prefix + 'history.json', [])]
-    files = [{'path': str(prefit.relative_to(root)), 'sha256': sha(prefit)}]
+    files = [{'path': (prefit.relative_to(root)).as_posix(), 'sha256': sha(prefit)}]
     aliases = []
     for path in states:
         destination = root / '.cache/iris-release-v1/inputs/fit-fixture' / path.name
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(path, destination)
-        files.append({'path': str(destination.relative_to(root)), 'sha256': sha(destination)})
-        aliases.append({'path': str(path.relative_to(root)), 'source': files[-1]['path'], 'sha256': sha(path)})
+        files.append({'path': (destination.relative_to(root)).as_posix(), 'sha256': sha(destination)})
+        aliases.append({'path': (path.relative_to(root)).as_posix(), 'source': files[-1]['path'], 'sha256': sha(path)})
     receipt = put(root, 'experiments/iris-release-v1/reproduction-inputs.json', {'files': files, 'cache_aliases': aliases})
     trainer.write_text(source.replace('old cache', 'bound atomic replay'))
     return receipt, trainer
@@ -903,8 +879,8 @@ def test_from_scratch_creates_separate_release_without_published_initializer(tmp
             protocol = put(tmp_path, 'experiments/iris-release-v1/reproduction-random-protocol.json', {'initialization': 'random'})
             selection = put(tmp_path, '.cache/iris-release-v1/from-scratch/selection.json', {'test_used': False})
             put(tmp_path, 'experiments/iris-release-v1/reproduction-from-scratch-' + identifier + '.json',
-                {'bundle': str(files['bundle'].relative_to(tmp_path)), 'protocol': str(protocol.relative_to(tmp_path)),
-                 'selection': str(selection.relative_to(tmp_path)), 'historical_v2_reproduced': False})
+                {'bundle': (files['bundle'].relative_to(tmp_path)).as_posix(), 'protocol': (protocol.relative_to(tmp_path)).as_posix(),
+                 'selection': (selection.relative_to(tmp_path)).as_posix(), 'historical_v2_reproduced': False})
         return stages(command, **kwargs)
     result = run_workflow(root=tmp_path, from_scratch=True, runner=execute, packager=packager,
                           python=sys.executable, ui_command=['pnpm'], test_modules=['fixture.py'])

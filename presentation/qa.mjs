@@ -1,5 +1,6 @@
 /* Existing pinned Playwright only. Run from repo root:
- * IRIS_PLAYWRIGHT_ROOT=/absolute/SpeakerUI node presentation/qa.mjs
+ * pnpm --dir presentation install --frozen-lockfile
+ * node presentation/qa.mjs
  * Self-owned loopback server; no microphone, external requests or providers.
  */
 import assert from 'node:assert/strict';
@@ -12,7 +13,7 @@ import { fileURLToPath } from 'node:url';
 const root=resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const site=resolve(root,'docs/site');
 assert.ok(existsSync(resolve(site,'index.html')), 'a complete real deck is required');
-const source=process.env.IRIS_PLAYWRIGHT_ROOT || resolve(root,'SpeakerUI');
+const source=process.env.IRIS_PLAYWRIGHT_ROOT || resolve(root,'presentation');
 const require=createRequire(resolve(source,'package.json'));
 const { chromium }=require('playwright');
 const mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.png':'image/png','.svg':'image/svg+xml','.mp4':'video/mp4','.woff2':'font/woff2','.woff':'font/woff','.ttf':'font/ttf'};

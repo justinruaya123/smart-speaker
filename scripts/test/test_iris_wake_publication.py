@@ -81,7 +81,7 @@ def test_streaming_uses_exact_native_hysteresis():
     m = publication()
     assert hasattr(m, 'stream_pcm'), 'Missing actual native stream replay'
     import numpy as np
-    from scripts.runtime.mvp_wake import RollingWake
+    from scripts.train.iris_wake_reference import RollingWake
     values = iter([0., .99, .99] + [0.] * 200)
     gate = RollingWake(lambda pcm: next(values), threshold=.9)
     result = m.stream_pcm(gate, np.zeros(1280, dtype='float32'))

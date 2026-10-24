@@ -18,7 +18,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-from scripts.runtime.pcv_schema import baseline_cases
+from scripts.train.iris_schema import baseline_cases
 
 MODEL_HASHES = {
     'model.onnx': 'c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce',

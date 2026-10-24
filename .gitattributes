@@ -44,3 +44,7 @@ experiments/optionb-epoch44-main-v1/** -text
 submission/feedback/*.mp3 binary
 submission/feedback/*.wav binary
 submission/feedback/manifest.json -text
+
+# Relocated producer verification environment stays byte-identical to its original pins.
+scripts/train/pyproject.toml -text
+scripts/train/uv.lock -text

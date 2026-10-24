@@ -126,7 +126,7 @@ def freeze_adaptation(available, *, out=EXPERIMENT):
                   policy=dict(release=.3, consecutive=2, cooldown_samples=16000),
                   window_samples=25600, step_samples=1280,
                   source_bindings={p: digest(ROOT / p) for p in (
-                      'scripts/runtime/mvp_wake.py', 'scripts/models/mvp_wake.py',
+                      'scripts/train/iris_wake_reference.py', 'scripts/models/mvp_wake.py',
                       'scripts/train/iris_wake_helpers.py', 'vcm/frontend.py')},
                   positive_recall_minimum=.9, false_wakes_maximum=0, duplicate_wakes_maximum=0,
                   splits={s: dict(voices=list(v), positive=sum(r['split'] == s and r['wake_positive'] for r in rows),
@@ -182,7 +182,7 @@ def freeze_baseline(available, *, out=EXPERIMENT):
                   model_sha256=digest(folder / 'iris.onnx'), policy_sha256=digest(folder / 'iris.json'),
                   baseline_policy={k: policy[k] for k in ('threshold', 'release', 'consecutive', 'cooldown_samples')},
                   source_bindings={p: digest(ROOT / p) for p in (
-                      'scripts/runtime/mvp_wake.py', 'scripts/models/mvp_wake.py',
+                      'scripts/train/iris_wake_reference.py', 'scripts/models/mvp_wake.py',
                       'scripts/train/iris_wake_helpers.py', 'vcm/frontend.py')},
                   window_samples=25600, step_samples=1280,
                   stream='Reset each clip; 32000 leading and 48000 trailing zero samples; feed 640 samples; actual HeyIris CPU ONNX',
@@ -468,7 +468,7 @@ def calibrate_export(protocol_path=None, cache=None, out=EXPERIMENT):
     import torch
     import onnxruntime as ort
     from scripts.models.mvp_wake import WakeNet
-    from scripts.runtime.mvp_wake import HeyIris
+    from scripts.train.iris_wake_reference import HeyIris
     protocol_path = Path(protocol_path or EXPERIMENT / 'companion-protocol.json')
     cache = Path(cache or CACHE / 'companion')
     out = Path(out)
@@ -633,7 +633,7 @@ def evaluate_panel(protocol_path, folder, cache, result_path, *, cases=None, loc
     import platform
     import sys
     import onnxruntime as ort
-    from scripts.runtime.mvp_wake import HeyIris
+    from scripts.train.iris_wake_reference import HeyIris
     protocol_path, folder, cache, result_path = map(Path, (protocol_path, folder, cache, result_path))
     if result_path.exists():
         raise ValueError('Evaluation already exists: refusing test reselection/rerun')

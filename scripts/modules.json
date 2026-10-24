@@ -3,6 +3,14 @@
     "path": "archive_io.py",
     "runtime": false
   },
+  "iris.iris_openwakeword_publication": {
+    "path": "iris_openwakeword_publication.py",
+    "runtime": false
+  },
+  "iris.iris_publication_data": {
+    "path": "iris_publication_data.py",
+    "runtime": false
+  },
   "iris.iris_publish": {
     "path": "iris_publish.py",
     "runtime": false
@@ -17,6 +25,18 @@
   },
   "iris.iris_reproduce": {
     "path": "iris_reproduce.py",
+    "runtime": false
+  },
+  "iris.iris_reproduction": {
+    "path": "iris_reproduction.py",
+    "runtime": false
+  },
+  "iris.iris_wake_publication": {
+    "path": "iris_wake_publication.py",
+    "runtime": false
+  },
+  "iris.model_package": {
+    "path": "model_package.py",
     "runtime": false
   },
   "iris.models.iris_owner": {
@@ -35,76 +55,20 @@
     "path": "models/speaker_demo.py",
     "runtime": false
   },
-  "iris.mvp_delivery": {
-    "path": "mvp_delivery.py",
+  "iris.optionb_epoch44": {
+    "path": "optionb_epoch44.py",
     "runtime": false
   },
   "iris.plot_benchmarks": {
     "path": "plot_benchmarks.py",
     "runtime": false
   },
-  "iris.runtime.audio": {
-    "path": "runtime/audio.py",
-    "runtime": true
+  "iris.report.optionb_tiny_presentation": {
+    "path": "report/optionb_tiny_presentation.py",
+    "runtime": false
   },
-  "iris.runtime.iris_owner": {
-    "path": "runtime/iris_owner.py",
-    "runtime": true
-  },
-  "iris.runtime.iris_pi_benchmark": {
-    "path": "runtime/iris_pi_benchmark.py",
-    "runtime": true
-  },
-  "iris.runtime.mvp_static": {
-    "path": "runtime/mvp_static.py",
-    "runtime": true
-  },
-  "iris.runtime.mvp_wake": {
-    "path": "runtime/mvp_wake.py",
-    "runtime": true
-  },
-  "iris.runtime.pcv_benchmark_adapter": {
-    "path": "runtime/pcv_benchmark_adapter.py",
-    "runtime": true
-  },
-  "iris.runtime.pcv_schema": {
-    "path": "runtime/pcv_schema.py",
-    "runtime": true
-  },
-  "iris.runtime.speaker_config": {
-    "path": "runtime/speaker_config.py",
-    "runtime": true
-  },
-  "iris.runtime.speaker_package": {
-    "path": "runtime/speaker_package.py",
-    "runtime": true
-  },
-  "iris.runtime.speaker_session": {
-    "path": "runtime/speaker_session.py",
-    "runtime": true
-  },
-  "iris.runtime.speaker_start": {
-    "path": "runtime/speaker_start.py",
-    "runtime": true
-  },
-  "iris.runtime.speaker_tools": {
-    "path": "runtime/speaker_tools.py",
-    "runtime": true
-  },
-  "iris.runtime.speaker_worker": {
-    "path": "runtime/speaker_worker.py",
-    "runtime": true
-  },
-  "iris.runtime.wake_gate": {
-    "path": "runtime/wake_gate.py",
-    "runtime": true
-  },
-  "iris.runtime.wake_models": {
-    "path": "runtime/wake_models.py",
-    "runtime": true
-  },
-  "iris.speaker_publish": {
-    "path": "speaker_publish.py",
+  "iris.repository_boundary": {
+    "path": "repository_boundary.py",
     "runtime": false
   },
   "iris.test.iris_benchmark": {
@@ -119,28 +83,24 @@
     "path": "test/iris_metrics.py",
     "runtime": false
   },
-  "iris.test.iris_package_replay": {
-    "path": "test/iris_package_replay.py",
-    "runtime": false
-  },
-  "iris.test.iris_resources": {
-    "path": "test/iris_resources.py",
+  "iris.test.iris_openwakeword_reference": {
+    "path": "test/iris_openwakeword_reference.py",
     "runtime": false
   },
   "iris.test.test_iris_archive": {
     "path": "test/test_iris_archive.py",
     "runtime": false
   },
-  "iris.test.test_iris_bootstrap": {
-    "path": "test/test_iris_bootstrap.py",
-    "runtime": false
-  },
-  "iris.test.test_iris_configuration": {
-    "path": "test/test_iris_configuration.py",
-    "runtime": false
-  },
   "iris.test.test_iris_diversity": {
     "path": "test/test_iris_diversity.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_epoch44_publication": {
+    "path": "test/test_iris_epoch44_publication.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_feedback_assets": {
+    "path": "test/test_iris_feedback_assets.py",
     "runtime": false
   },
   "iris.test.test_iris_metrics": {
@@ -151,6 +111,10 @@
     "path": "test/test_iris_models.py",
     "runtime": false
   },
+  "iris.test.test_iris_openwakeword": {
+    "path": "test/test_iris_openwakeword.py",
+    "runtime": false
+  },
   "iris.test.test_iris_owner": {
     "path": "test/test_iris_owner.py",
     "runtime": false
@@ -159,12 +123,16 @@
     "path": "test/test_iris_package_replay.py",
     "runtime": false
   },
-  "iris.test.test_iris_pi_benchmark": {
-    "path": "test/test_iris_pi_benchmark.py",
+  "iris.test.test_iris_pi_source_contract": {
+    "path": "test/test_iris_pi_source_contract.py",
     "runtime": false
   },
   "iris.test.test_iris_plots": {
     "path": "test/test_iris_plots.py",
+    "runtime": false
+  },
+  "iris.test.test_iris_publication_data": {
+    "path": "test/test_iris_publication_data.py",
     "runtime": false
   },
   "iris.test.test_iris_publish_privacy": {
@@ -179,8 +147,8 @@
     "path": "test/test_iris_reproduce.py",
     "runtime": false
   },
-  "iris.test.test_iris_resources": {
-    "path": "test/test_iris_resources.py",
+  "iris.test.test_iris_reproduction": {
+    "path": "test/test_iris_reproduction.py",
     "runtime": false
   },
   "iris.test.test_iris_session": {
@@ -191,12 +159,56 @@
     "path": "test/test_iris_wake_models.py",
     "runtime": false
   },
+  "iris.test.test_iris_wake_publication": {
+    "path": "test/test_iris_wake_publication.py",
+    "runtime": false
+  },
   "iris.test.test_iris_wake_release": {
     "path": "test/test_iris_wake_release.py",
     "runtime": false
   },
-  "iris.test.test_iris_worker": {
-    "path": "test/test_iris_worker.py",
+  "iris.test.test_model_evaluation_audio": {
+    "path": "test/test_model_evaluation_audio.py",
+    "runtime": false
+  },
+  "iris.test.test_model_only_boundary": {
+    "path": "test/test_model_only_boundary.py",
+    "runtime": false
+  },
+  "iris.test.test_model_package": {
+    "path": "test/test_model_package.py",
+    "runtime": false
+  },
+  "iris.test.test_model_publication_boundary": {
+    "path": "test/test_model_publication_boundary.py",
+    "runtime": false
+  },
+  "iris.test.test_model_reference_boundary": {
+    "path": "test/test_model_reference_boundary.py",
+    "runtime": false
+  },
+  "iris.test.test_model_training_bootstrap": {
+    "path": "test/test_model_training_bootstrap.py",
+    "runtime": false
+  },
+  "iris.test.test_optionb_epoch44": {
+    "path": "test/test_optionb_epoch44.py",
+    "runtime": false
+  },
+  "iris.test.test_optionb_tiny_presentation": {
+    "path": "test/test_optionb_tiny_presentation.py",
+    "runtime": false
+  },
+  "iris.train.evaluation_audio": {
+    "path": "train/evaluation_audio.py",
+    "runtime": false
+  },
+  "iris.train.iris_audio": {
+    "path": "train/iris_audio.py",
+    "runtime": false
+  },
+  "iris.train.iris_benchmark_serializer": {
+    "path": "train/iris_benchmark_serializer.py",
     "runtime": false
   },
   "iris.train.iris_diversity": {
@@ -207,8 +219,28 @@
     "path": "train/iris_export.py",
     "runtime": false
   },
+  "iris.train.iris_openwakeword_reference": {
+    "path": "train/iris_openwakeword_reference.py",
+    "runtime": false
+  },
   "iris.train.iris_owner": {
     "path": "train/iris_owner.py",
+    "runtime": false
+  },
+  "iris.train.iris_owner_reference": {
+    "path": "train/iris_owner_reference.py",
+    "runtime": false
+  },
+  "iris.train.iris_schema": {
+    "path": "train/iris_schema.py",
+    "runtime": false
+  },
+  "iris.train.iris_session": {
+    "path": "train/iris_session.py",
+    "runtime": false
+  },
+  "iris.train.iris_validation": {
+    "path": "train/iris_validation.py",
     "runtime": false
   },
   "iris.train.iris_wake": {
@@ -217,6 +249,14 @@
   },
   "iris.train.iris_wake_helpers": {
     "path": "train/iris_wake_helpers.py",
+    "runtime": false
+  },
+  "iris.train.iris_wake_reference": {
+    "path": "train/iris_wake_reference.py",
+    "runtime": false
+  },
+  "iris.training_tools": {
+    "path": "training_tools.py",
     "runtime": false
   }
 }

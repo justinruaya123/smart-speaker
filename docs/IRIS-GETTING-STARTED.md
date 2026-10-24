@@ -1,140 +1,19 @@
-# Iris getting started
+# Iris: model and application repositories
 
-This publication uses the **original 258,912-parameter, width 160, epoch 44 FP32** VCM at `submission/models/optionb-tiny`. **The synthetic wake smoke gate failed: native 1/32 positives, trained companion 21/32 with 2/68 false wakes. No replacement was promoted; this is not a working-acoustic-release claim.** It does not select the older 969k Iris bundle or launch training. Read the [new model card](MODEL-CARD-iris-epoch44.md) for fixed scope, exposed human errors and failed qualification.
+- **smart-speaker (this repository):** training, calibration/export verification, immutable evidence and model distribution.
+- **[SpeakerUI](https://github.com/justinruaya123/SpeakerUI):** the Ambient application, local inference worker, gateway, configuration/integrations, benchmarks, packaging and device deployment.
 
-## Install and check
+For the current application, follow [SpeakerUI README](https://github.com/justinruaya123/SpeakerUI/blob/main/README.md) and [operations](https://github.com/justinruaya123/SpeakerUI/blob/main/docs/OPERATIONS.md). Run application commands from that checkout, never this one. Its trusted asset lock pins exact model bytes; no sibling checkout or shared environment is required. Repository access/privacy has not changed.
 
-Use a clean, preferably shallow clone of `main`, Git and Python 3.11+; no release ZIP or full dataset is needed. Both public launchers prepare/reuse a local Python 3.12 environment from `scripts/runtime/epoch44/`, provisioning uv locally if unavailable. The original full runtime/scientific locks remain separate and unchanged. The UI provisions Node24.13.0/pnpm12.5.1 only when `--mode ui` is called. Do not put keys in command history or Git. First-time setup/downloads require the network; recognition itself uses the CPU ONNX models already in Git.
-
-```sh
-git clone --depth 1 --branch main --single-branch https://github.com/justinruaya123/smart-speaker.git
-cd smart-speaker
-```
-
-On Raspberry Pi 4 use **64-bit Raspberry Pi OS Bookworm/Trixie (aarch64)**. The launcher may use the OS's Python 3.11/3.13 to bootstrap its compatible local environment. On Pi use `python3` in the examples; on Windows use `python`. A 32-bit OS is not supported by the pinned ARM64 wheels. Base setup installs ten packages, without NCNN, OpenCV, SciPy, Torch or a dataset. Microphone/device/UI modes add SoundDevice; actual Linux microphone/playback access needs `sudo apt install libportaudio2`. The pinned ARM64 SoundFile wheel bundles libsndfile, so that OS package is not an unconditional check/benchmark prerequisite.
-
-The inference launcher owns its setup path. For an already installed pinned runtime, use that environment's Python explicitly (`.venv/Scripts/python.exe` on Windows, `.venv/bin/python` on POSIX):
+## Verify models here
 
 ```sh
-python inference.py --check
-python inference.py --check --no-setup
-python -m scripts.optionb_epoch44 verify --load
+python -B -m scripts.optionb_epoch44 verify
+python -B reproduce.py
 ```
 
-The first command may prepare the environment. `--no-setup` forbids setup rather than silently changing packages. The check must identify epoch 44/258,912, the frozen graph/policy and CPU provider. It opens no microphone, trains nothing, executes no action and does not claim acoustic qualification. Artifact verification checks fifteen original payloads; ONNX loading produces one[1,32] feature fixture.
+These verify original artifacts; they never fit or bootstrap the application. [Original-source fitting/evaluation preparation](REPRODUCIBILITY-optionb-epoch44.md) remains explicit and preserves the failed CPU exact-fit comparison. [Repository boundary and migration](REPOSITORY-BOUNDARY.md) explains producer packaging and historical source locks.
 
-## UI and silent recorded audio
+## Historical monorepo runbook
 
-```sh
-python inference.py --mode ui --no-audio
-python inference.py --wav /absolute/path/to/mono16k.wav
-python inference.py --wav /absolute/path/to/hey-iris-and-command.wav --wake-wav
-```
-
-Use the actual UI microphone settings to select an input; supported device/audio controls are discoverable with `python inference.py --help`. The UI uses the combined gateway so `/ws/runtime` stays on the same origin. CLI/WAV/checks are always action-free and silent; an inherited playback flag cannot make benchmark/replay audio actuate or speak.
-
-The sequence is **Hey Iris → one supported command → guarded action → visible receipt**. The VCM selects one complete class, then the existing experimental owner/overlap gate may veto the application. An accepted raw command and a successful action are not interchangeable. Tentative guesses never execute. A rejected capture/ownership/slot decision must remain rejected.
-
-For full wake-and-request file injection, use a mono 16 kHz WAV containing **“Hey Iris”, a separating pause, then one supported command** and pass `--wake-wav`. Without that flag, `--wav` is command-only recognition and does not test wake detection. The file path uses the same native rolling wake detector, command VAD and frozen Tiny decision as the worker. It supplies two seconds of silent detector warm-up and six seconds of silent endpoint/timeout flush; original speech samples and reported input duration are unchanged. Events must show `wake_detected`, `command_ready`, then a final accepted typed command. Merely exiting successfully or loading the models is not a successful injection.
-
-The public CLI file path explicitly declares `benchmark-compatible`, `owner_gating_enabled=false` and `actions_enabled=false`. It is a silent recognition test, not proof of ownership, playback or device actuation. The UI's owner-protected profile retains the independent speaker veto; do not bypass that veto or call one successful software injection acoustic qualification. The failed wake-release gate remains in force.
-
-Start with actions disabled. Copy [the root example](../config.example.toml) only to your ignored private `config.toml` and inspect the current launcher/config help before explicitly enabling microphone actions. Provider keys, tokens and precise home data stay server-side and outside published assets. The user-authorized HA allowlist is literally:
-
-```dotenv
-HA_ENTITY_IDS=light.hue_color_lamp_1,light.dining_light,camera.dining_area_main_camera_tc70_mainstream
-```
-
-All recognized light commands target the Hue lamp; CALL selects the dining camera **video only**, not telephony or arbitrary contacts. TEMPERATURE is **always a synthetic target**, with a separate read-only observed sensor if configured. No climate service write is permitted. OpenWeather is the weather source; caches keep real observation/retrieval times. Missing services may use a visible “Synthetic — no device changed” fallback, never a fabricated current observation or a replacement for an unknown real-provider outcome. No automatic retry.
-
-Local timers, alarms and reminders are real persisted server jobs. Alarms use Asia/Manila. Static presentation examples create none of those jobs. Provider receipt/acknowledgment does not itself prove observed physical state.
-
-## Prepare original evaluation inputs without fitting
-
-Published metadata is not audio. Use the exact original source checkout/environment to reconstruct permitted inputs; do not substitute invented WAVs or use another model's manifests. Existing [pinned original-source instructions](REPRODUCIBILITY-optionb-epoch44.md) specify the environment locks, source identities and platform limits.
-
-From the publication checkout, choose a new source destination:
-
-```sh
-git clone --single-branch --branch snapshot/optionb-tiny-epoch44 \
-  https://github.com/justinruaya123/smart-speaker.git .cache/optionb-epoch44-source
-git -C .cache/optionb-epoch44-source checkout --detach \
-  3c05b3beb46f06c3108089e0d8c79474670c6cb7
-```
-
-From **that source checkout**, after its pinned environment setup:
-
-```sh
-uv run --no-sync python -B -m scripts.submission.optionb_reproduce prepare \
-  --splits test holdout --output .cache/iris-publication-evaluation/run-01
-```
-
-The unchanged preparer verifies upstream revision/Parquet/WAV/decoded-PCM hashes. It does no fitting. Use a new output path and retain its receipt. Restricted source audio remains local under its terms. The full TEST/HOLDOUT preparation has 4,614 rows (4,418+196), not 4,614 human trials; the original-human subset contains1,146 recordings. Ambiguous references stay explicitly unscored.
-
-From the publication checkout, the integrated wrapper can prepare and export in one action-free command, using the existing pinned original interpreter:
-
-```sh
-python -B reproduce.py prepare-evaluation \
-  --source-checkout PINNED_SOURCE --source-python PINNED_PYTHON \
-  --output .cache/iris-publication-evaluation/run-01
-```
-
-If you already ran the original preparer above, export without downloading or fitting again:
-
-```sh
-python -B reproduce.py export-evaluation --source-checkout PINNED_SOURCE \
-  --output .cache/iris-publication-evaluation/run-01
-```
-
-`PINNED_SOURCE` and `PINNED_PYTHON` are actual absolute source/interpreter paths. `--output` is relative to that original source checkout. The default export folder is `PINNED_SOURCE/.cache/iris-publication-evaluation/run-01/portable/`, containing `holdout-196.jsonl`, `human-test-holdout.jsonl` and `manifest-receipt.json`. Export rechecks original reference/WAV/decoded-PCM identities; existing output is not overwritten. Use `human-test-holdout.jsonl` for the 1,146-row human cohort and **the pinned source checkout as `--data-root`**. Ambiguous rows remain unscored, and repeats do not inflate acoustic denominators.
-
-## Benchmark the published artifact
-
-The default requires **no external source checkout, user manifest or full dataset**:
-
-```sh
-python benchmark.py --output .cache/benchmark-run-01
-```
-
-On first use this installs PyArrow as a benchmark-only extra, downloads the **14,553,313-byte (14.55 MB) official holdout** from `airimonda/ai231-me2-voice-commands` at immutable revision `25111444af3adff7588d86ab27c304bb080895cf`, and verifies SHA-256 `9917e336ec596eaaddb476e266f36451326e3f8e5a2cb3dafbb675c33be133aa`. Only its 196 original recordings are cached; no full TEST, training, supplemental, LibriSpeech or private model inputs are requested. Original WAV bytes and frozen epoch44 references are preserved, including ambiguous unscored rows. Human and synthetic inputs remain distinct in trials. This holdout is already exposed regression evidence, not fresh blind accuracy or acoustic qualification. Upstream research/consent restrictions still apply; no restricted audio is republished.
-
-Later calls reuse and verify the cache. `--no-setup` forbids both installing dependencies and downloading missing default benchmark assets; use `.venv/bin/python` (POSIX) or `.venv/Scripts/python.exe` (Windows) for this cached/offline path. Missing/corrupted inputs fail rather than silently replacing identities.
-
-For a separately supplied validated manifest and original source root, the existing explicit path remains available without automatic recording downloads:
-
-```sh
-python benchmark.py --model-choice epoch44 \
-  --manifest PATH --data-root ROOT --output NEWDIR --repeats 3
-```
-
-`PATH`, `ROOT` and `NEWDIR` are placeholders to replace with actual paths. The output directory must not already exist. Three timing repeats do not triple acoustic denominators. The driver uses the original graph/policy; it must emit metrics/trials with source/model/policy hashes, hardware, timing scope, raw/accepted complete commands, wrong/negative accepts and ambiguous exclusions. It never captures, plays audio, calls providers, chooses thresholds or fits a model.
-
-The CLI prepares the appropriate minimal locked runtime before importing scientific libraries. It does not require inference or a ZIP to have run first. An explicit missing manifest rejects before setup or downloads. Supplying `--manifest` does not install PyArrow or fetch a recording corpus; only the default bounded-holdout path needs the Arrow extra. The separate full original-input preparation above is optional and can require larger downloads.
-
-The original preserved PC repeat is historical 5.36/8.69 ms p50/p95, not the current runtime latency. The separately measured2026-10-24 reference-driver run is 9.34/15.34 ms **under unquiesced publication load**, not a new-adapter, idle-host or end-to-end result. Current adapter timing has its own [audited product-lock receipt](../presentation/evidence/desktop-product.json): p50 **5.3902499967080075 ms**, p95 **10.56562999983725 ms**, peak whole-process RSS **84.6796875 MiB**, NumPy2.5.3 / ORT1.30.0. It was not quiesced and measures direct VCM only, not wake/owner/UI/providers or human interaction latency. All1,146 WAV/PCM identities and3,438 typed decisions matched frozen gold in the independent receipt. This does not pass the failed wake gate. Pi remains unmeasured.
-
-## Reproduce a fit: separate scientific task
-
-Do not use benchmarking as a claim that the selected weights were independently refitted. [The pinned reproduction runbook](REPRODUCIBILITY-optionb-epoch44.md) records two repeatable CUDA fits that selected epoch 28, not original CPU epoch 44. Their exact comparison to the original failed; the absent success lock is preserved. Artifact verification, source reconstruction, GPU repeatability and original CPU exact retraining are four distinct statements.
-
-The previous `start.py`, older root model card and historical continuation workflow describe earlier product defaults. They remain evidence, not the quickstart for the selected 258k release. Do not copy their969k/2M numbers or promote their models into this launch.
-
-`python train.py` still invokes the **separate historical Iris continuation/reproduction workflow**, not a refit or automatic replacement of the frozen Tiny epoch44 model. It is the only one of these entrypoints that prepares research dependencies and may download the much larger training inputs/private project initializers. Access requirements and actual training/export failures remain visible. Running inference first no longer makes a minimal `.venv` falsely count as training-ready: training upgrades an explicitly runtime-managed environment when requested, but leaves an existing unmanaged research environment alone. Never use `--skip-train` to claim a new fit or `--publish` unless publication is separately intended.
-
-## Presentation and developer checks
-
-The [static deck](site/index.html) is six native HTML chapters backed by [generated JSON](site/assets/iris.json). Serve it from a static host; for local review:
-
-```sh
-python -m http.server 8765 --bind 127.0.0.1 --directory docs/site
-```
-
-Open localhost port8765. Viewing needs only a browser, not Python, a GPU, backend or microphone. Python above is just the optional authoring server. Arrow/Page keys and 1–6 navigate, F toggles fullscreen; use-case tabs use arrows/Home/End. Current chapter persists locally. Reduced motion shows actual rendered posters; animation is explicit opt-in. The real Manim Slides exports load only on “Inspect stages.”
-
-```sh
-python -B scripts/iris_publication_data.py --check
-python -B -m unittest scripts.test.test_iris_publication_data -v
-python -B presentation/validate.py
-```
-
-The isolated [presentation authoring instructions](../presentation/README.md) explain real rendering/export, existing-Playwright browser QA, viewer-license notices and the actual compatibility fallback. No Manim dependency is installed into the scientific/runtime environment. CI validates prebaked assets and deploys only `docs/site` after a validated push to main; PRs cannot deploy. Release and rollback are recorded separately by the release owner.
+The [unchanged runbook at the original source revision](https://github.com/justinruaya123/smart-speaker/blob/94c0021d7e22c9aa719246ac97105d7140a9f2a2/docs/IRIS-GETTING-STARTED.md) documents the old combined checkout. It is historical reconstruction material, not current launch instructions. Existing model data, protocols, failed gates and source snapshots are preserved; no acoustic or physical Pi qualification is added by this split.

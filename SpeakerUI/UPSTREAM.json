@@ -1,9 +1,0 @@
-{
-  "repository": "https://github.com/justinruaya123/SpeakerUI",
-  "branch": "codex/voice-scaffold",
-  "commit": "aa1d8295462d4b6e733da45c081b7802569e80a1",
-  "imported": "2026-10-02",
-  "method": "Tracked source snapshot; maintained in smart-speaker, no nested Git repository",
-  "files": 223,
-  "archive_sha256": "bd5dc8f7613214d8042caded8cf44a6119dae233e2612be2d059159a7f581582"
-}

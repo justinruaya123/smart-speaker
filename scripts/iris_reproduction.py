@@ -43,7 +43,7 @@ def snapshot_rows(root):
 
 def portable_row(row):
     """Keep unresolved references unscored, never treat them as known UNKNOWNs."""
-    from scripts.runtime.pcv_schema import validate_command
+    from scripts.train.iris_schema import validate_command
     expected = row['expected']
     if expected is not None:
         validate_command(expected)
@@ -60,7 +60,7 @@ def portable_row(row):
 
 def export_evaluation(source, run, output=None):
     """Read back exact prepared rows + original WAV/PCM; write only new manifests."""
-    from scripts.runtime.iris_pi_benchmark import read_pcm
+    from scripts.train.evaluation_audio import read_pcm
     source = Path(source).absolute()
     run_relative(run)
     prepared = checked_path(source, run)

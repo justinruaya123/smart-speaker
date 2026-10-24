@@ -22,8 +22,8 @@ def _binding(runtime,bench,data):
         native=json.loads((runtime.root/'ncnn/engine.json').read_text())
         files['ncnn/engine.json']=_sha(runtime.root/'ncnn/engine.json')
         files.update({'ncnn/'+name:_sha(runtime.root/'ncnn'/name) for name in native['files']})
-    sources=('scripts/test/iris_benchmark.py','scripts/runtime/mvp_static.py',
-             'scripts/runtime/pcv_benchmark_adapter.py','scripts/runtime/pcv_schema.py','vcm/frontend.py')
+    sources=('scripts/test/iris_benchmark.py','scripts/train/iris_validation.py',
+             'scripts/train/iris_benchmark_serializer.py','scripts/train/iris_schema.py','vcm/frontend.py')
     return dict(schema_version=1,population=196,data_sha256=_sha(data),engine=runtime.engine,
         model_files=files,source_files={name:_sha(ROOT/name) for name in sources},
         scorer_files={p.relative_to(bench).as_posix():_sha(p) for p in
@@ -62,7 +62,7 @@ def clean(value):
 
 
 def parsed_trial(clip,event):
-    from scripts.runtime.pcv_benchmark_adapter import log_record
+    from scripts.train.iris_benchmark_serializer import log_record
     from vcmbench import schema
     from vcmbench.pi import LineParser
     record=log_record(event);parsed=LineParser().parse(json.dumps(record),0.)
@@ -79,7 +79,7 @@ def parsed_trial(clip,event):
 
 
 def official_score(runtime,folder):
-    from scripts.runtime.pcv_schema import output
+    from scripts.train.iris_schema import output
     folder=Path(folder);folder.mkdir(exist_ok=True,parents=True)
     portable=ROOT/'.cache/iris-release-v1/inputs/official-benchmark'
     bench=portable if portable.exists() else ROOT/'.cache/vcm-benchmark'/COMMIT

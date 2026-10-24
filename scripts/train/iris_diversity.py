@@ -65,7 +65,7 @@ def designed_voices():
 
 
 def generation_plan(catalog):
-    from scripts.runtime.pcv_schema import baseline_cases, canonical
+    from scripts.train.iris_schema import baseline_cases, canonical
     lookup = {canonical(c['command']): c['command_id'] for c in catalog}
     personal = [c for c in catalog if c['command'] and
         (c['command']['slots'].get('light_id') == 'light.ceiling' or
@@ -397,7 +397,7 @@ def _predict(model,rows,arrays,device,norm):
 
 
 def _apply(records,catalog,policy):
-    from scripts.runtime.mvp_static import decide
+    from scripts.train.iris_validation import decide
     for r in records:
         d=decide(r['logits'],catalog,policy)
         r['raw_index']=d['class_index'];r['accepted_index']=d['class_index'] if d['command'] else None
@@ -405,7 +405,7 @@ def _apply(records,catalog,policy):
 
 
 def _policy(records,catalog,cfg):
-    from scripts.runtime.mvp_static import fit_policy
+    from scripts.train.iris_validation import fit_policy
     trained=[c['command_id'] for c in catalog if c['training_recordings']]
     policy=fit_policy(records,trained,catalog=catalog,risk=cfg['demo_risk'],
         threshold_strategy='observed',grouping='class',min_correct=2)
@@ -451,7 +451,7 @@ def train(model='compact',arm='ce',seed=53,device='cuda'):
         initializer_sha256=digest(initializer),model=model,arm=arm,seed=seed,
         trainer_sha256=digest(Path(__file__)),model_source_sha256=digest(ROOT/'scripts/models/mvp_static.py'),
         contrastive_source_sha256=digest(ROOT/'scripts/models/speaker_demo.py'),
-        frontend_sha256=digest(ROOT/'vcm/frontend.py'),policy_source_sha256=digest(ROOT/'scripts/runtime/mvp_static.py'))
+        frontend_sha256=digest(ROOT/'vcm/frontend.py'),policy_source_sha256=digest(ROOT/'scripts/train/iris_validation.py'))
     cached=completed_selection(out,expected)
     if cached is not None:return cached
     torch.set_num_threads(4);torch.manual_seed(seed);random.seed(seed)
@@ -539,7 +539,7 @@ def select():
 def export():
     import torch
     from scripts.models.mvp_static import StaticCommandNet
-    from scripts.runtime.mvp_static import Runtime
+    from scripts.train.iris_validation import Runtime
     from scripts.train.iris_export import export_onnx,export_ncnn
     selected=select()
     if selected.get('stage')=='repeat':raise ValueError('Run seed67 repetition first')
@@ -585,7 +585,7 @@ def promotion_guards(results,official,baseline):
 
 
 def evaluate():
-    from scripts.runtime.mvp_static import Runtime
+    from scripts.train.iris_validation import Runtime
     from scripts.test.iris_metrics import replay_rows,summarize
     cfg=freeze();lock=json.loads((HERE/'selection-before-test.json').read_text())
     out=CACHE/'selected-export'

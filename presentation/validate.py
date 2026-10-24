@@ -136,7 +136,7 @@ def validate_site(root=ROOT, require_integration=False):
         committed = subprocess.check_output(['git', '-C', str(root), 'show', 'HEAD:' + relative])
         if committed.startswith(b'version https://git-lfs.github.com/spec') or hashlib.sha256(committed).hexdigest() != expected:
             raise ValueError('frozen payload is absent, substituted or an LFS pointer in Git')
-    pending = [p for p in ('inference.py', 'docs/RELEASE-iris-publication-v1.md', 'docs/REVERT-iris-publication-v1.md') if not (root / p).is_file()]
+    pending = [p for p in ('scripts/model_package.py', 'docs/RELEASE-iris-publication-v1.md', 'docs/REVERT-iris-publication-v1.md') if not (root / p).is_file()]
     if require_integration and pending:
         raise ValueError(f'release-owner integration paths missing: {pending}')
     return {'chapters': main.chapters, 'use_cases': len(data['use_cases']), 'readme_diagrams': diagrams,

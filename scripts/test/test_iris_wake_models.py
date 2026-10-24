@@ -25,7 +25,7 @@ def test_wake_network_is_small_and_has_no_imported_weights():
 
 
 def test_streaming_wake_requires_consecutive_scores_and_rearms_after_release():
-    m=importlib.import_module('scripts.runtime.mvp_wake')
+    m=importlib.import_module('scripts.train.iris_wake_reference')
     scores=iter([.99,.1,.99,.99]+[.99]*30+[.1]*25+[.99,.99])
     stream=m.RollingWake(lambda pcm:next(scores),threshold=.9,release=.3,consecutive=2,cooldown_samples=16000)
     stream.push(np.zeros(24320,dtype='float32'))

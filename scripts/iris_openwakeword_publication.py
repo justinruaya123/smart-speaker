@@ -78,7 +78,7 @@ def acquire(assets=ASSETS):
     # Only public immutable URLs from the pinned provenance register. No login,
     # account creation, credential lookup, guessed direct-download or installer.
     import urllib.request
-    from scripts.runtime.iris_openwakeword import FILES
+    from scripts.train.iris_openwakeword_reference import FILES
     assets = Path(assets)
     assets.mkdir(parents=True, exist_ok=True)
     provenance = json.loads((EXPERIMENT / 'provenance.json').read_text())
@@ -99,7 +99,7 @@ def acquire(assets=ASSETS):
 
 
 def lock(corpus_root, assets=ASSETS):
-    from scripts.runtime.iris_openwakeword import FILES
+    from scripts.train.iris_openwakeword_reference import FILES
     groups = cohort_inputs(corpus_root)  # hashes/metadata only, no decoded PCM
     for name, expected in FILES.items():
         if digest(Path(assets) / name) != expected:
@@ -107,7 +107,7 @@ def lock(corpus_root, assets=ASSETS):
     value = dict(schema_version=1, frozen_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),
                  protocol_sha256=PROTOCOL_SHA, graph_sha256=FILES,
                  source_sha256={p: digest(ROOT / p) for p in (
-                     'scripts/runtime/iris_openwakeword.py',
+                     'scripts/train/iris_openwakeword_reference.py',
                      'scripts/iris_openwakeword_publication.py',
                      'scripts/iris_wake_publication.py',
                      'scripts/test/iris_openwakeword_reference.py')},
@@ -120,7 +120,7 @@ def lock(corpus_root, assets=ASSETS):
 
 
 def checked_lock(corpus_root, assets=ASSETS):
-    from scripts.runtime.iris_openwakeword import FILES
+    from scripts.train.iris_openwakeword_reference import FILES
     saved = json.loads((EXPERIMENT / 'selection-before-regression.json').read_text())
     groups = cohort_inputs(corpus_root)
     if (saved['protocol_sha256'] != PROTOCOL_SHA or saved['graph_sha256'] != FILES
@@ -134,7 +134,7 @@ def checked_lock(corpus_root, assets=ASSETS):
 def evaluate(corpus_root, assets=ASSETS):
     import numpy as np
     import onnxruntime as ort
-    from scripts.runtime.iris_openwakeword import HeyIrisOpenWakeWord
+    from scripts.train.iris_openwakeword_reference import HeyIrisOpenWakeWord
     groups = checked_lock(corpus_root, assets)
     if (EXPERIMENT / 'results.json').exists():
         raise ValueError('Regression already completed; never retune/rerun into old evidence')

@@ -11,8 +11,8 @@ ASSETS = ROOT / '.cache/iris-openwakeword-publication-v1/models'
 def test_additive_adapter_exists_and_cpu_loads():
     if not ASSETS.exists():
         pytest.skip('Run python -m scripts.iris_openwakeword_publication acquire for public hash-pinned assets')
-    assert find_spec('scripts.runtime.iris_openwakeword') is not None, 'Missing additive adapter'
-    from scripts.runtime.iris_openwakeword import HeyIrisOpenWakeWord
+    assert find_spec('scripts.train.iris_openwakeword_reference') is not None, 'Missing additive adapter'
+    from scripts.train.iris_openwakeword_reference import HeyIrisOpenWakeWord
     model = HeyIrisOpenWakeWord(ASSETS)
     assert all(s.get_providers() == ['CPUExecutionProvider'] for s in model.sessions.values())
     assert model.sessions['hey_iris.onnx'].get_inputs()[0].shape[1:] == [16, 96]
@@ -26,7 +26,7 @@ def test_additive_adapter_exists_and_cpu_loads():
 def test_invalid_pcm_is_rejected_without_advancing():
     if not ASSETS.exists():
         pytest.skip('Public assets not acquired')
-    from scripts.runtime.iris_openwakeword import HeyIrisOpenWakeWord
+    from scripts.train.iris_openwakeword_reference import HeyIrisOpenWakeWord
     model = HeyIrisOpenWakeWord(ASSETS)
     for invalid in (np.zeros((2, 3)), np.array([np.nan]), np.array([np.inf]),
                     np.array([1.01]), np.zeros(16001), np.zeros(3, np.int16)):
@@ -36,7 +36,7 @@ def test_invalid_pcm_is_rejected_without_advancing():
 
 
 def test_identity_fails_before_onnx_load(tmp_path):
-    from scripts.runtime.iris_openwakeword import HeyIrisOpenWakeWord
+    from scripts.train.iris_openwakeword_reference import HeyIrisOpenWakeWord
     (tmp_path / 'hey_iris.onnx').write_bytes(b'not a model')
     with pytest.raises(ValueError, match='identity'):
         HeyIrisOpenWakeWord(tmp_path)
@@ -45,7 +45,7 @@ def test_identity_fails_before_onnx_load(tmp_path):
 def test_upstream_reference_numeric_and_chunk_parity():
     if not ASSETS.exists():
         pytest.skip('Public assets not acquired')
-    from scripts.runtime.iris_openwakeword import HeyIrisOpenWakeWord
+    from scripts.train.iris_openwakeword_reference import HeyIrisOpenWakeWord
     from scripts.test.iris_openwakeword_reference import UpstreamFeatureReference
     model = HeyIrisOpenWakeWord(ASSETS)
     reference = UpstreamFeatureReference(model.sessions)
@@ -90,8 +90,12 @@ def test_recorded_regression_is_bound_and_never_promoted():
     assert hashlib.sha256((experiment / 'protocol.json').read_bytes()).hexdigest() == PROTOCOL_SHA
     lock = json.loads((experiment / 'selection-before-regression.json').read_text())
     result = json.loads((experiment / 'results.json').read_text())
+    # This is an immutable historical regression receipt, not a lock on relocated HEAD.
+    import subprocess
     for path, expected in lock['source_sha256'].items():
-        assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == expected
+        original = subprocess.check_output(['git', 'show',
+            '94c0021d7e22c9aa719246ac97105d7140a9f2a2:' + path], cwd=ROOT)
+        assert hashlib.sha256(original).hexdigest() == expected
     assert lock['candidate_pcm_decoded_or_inferred_before_lock'] is False
     assert lock['policy'] == {'threshold': .5, 'release': .3, 'consecutive': 2, 'cooldown_samples': 16000}
     assert result['promoted'] is False and result['installed'] is False and result['qualified'] is False

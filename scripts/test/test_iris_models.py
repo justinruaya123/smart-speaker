@@ -5,7 +5,7 @@ import pytest
 import torch
 
 def test_observed_policy_grid_can_separate_near_one_errors_without_rejecting_all():
-    from scripts.runtime.mvp_static import fit_policy,decide
+    from scripts.train.iris_validation import fit_policy,decide
     import numpy as np
     catalog=[{'command':None},{'command':{'intent':'PAUSE','slots':{}}}]
     def row(probability,expected):
@@ -21,7 +21,7 @@ def test_observed_policy_grid_can_separate_near_one_errors_without_rejecting_all
 
 
 def test_class_policy_does_not_transfer_one_songs_errors_to_a_different_song():
-    from scripts.runtime.mvp_static import fit_policy,decide
+    from scripts.train.iris_validation import fit_policy,decide
     import numpy as np
     catalog=[{'command':None},
              {'command':{'intent':'PLAY_MUSIC','slots':{'song_id':'song.a'}}},
@@ -38,7 +38,7 @@ def test_class_policy_does_not_transfer_one_songs_errors_to_a_different_song():
 
 
 def test_missing_class_limit_never_falls_back_to_a_looser_global_threshold():
-    from scripts.runtime.mvp_static import decide
+    from scripts.train.iris_validation import decide
     catalog=[{'command':None},{'command':{'intent':'PAUSE','slots':{}}}]
     policy=dict(threshold=.2,margin=0.,trained_classes=[0,1],by_class={},grouping='class')
     assert decide([0.,8.],catalog,policy)['command'] is None
@@ -48,7 +48,7 @@ def test_missing_class_limit_never_falls_back_to_a_looser_global_threshold():
 @pytest.mark.parametrize('keys',[{}, {'01':{'threshold':.9,'margin':0.}}])
 def test_runtime_rejects_incomplete_or_noncanonical_class_policy(tmp_path,keys):
     import json
-    from scripts.runtime.mvp_static import Runtime,digest
+    from scripts.train.iris_validation import Runtime,digest
     (tmp_path/'model.onnx').write_bytes(b'not loaded for invalid metadata')
     files={'catalog.json':[{'command_id':0,'command':None},{'command_id':1,'command':{'intent':'PAUSE','slots':{}}}],
            'normalization.json':{'mean':[0]*40,'std':[1]*40},
@@ -61,7 +61,7 @@ def test_runtime_rejects_incomplete_or_noncanonical_class_policy(tmp_path,keys):
 
 
 def test_catalog_preserves_atomic_commands_and_baseline_wordings():
-    m = importlib.import_module('scripts.runtime.mvp_static')
+    m = importlib.import_module('scripts.train.iris_validation')
     a = {'intent': 'BRIGHTNESS', 'slots': {'percent': 20, 'light_id': 'light.all'}}
     b = {'intent': 'BRIGHTNESS', 'slots': {'light_id': 'light.all', 'percent': 60}}
     c = m.build_catalog([{'text': 'twenty', 'command': a}, {'text': '20', 'command': a}, {'text': 'sixty', 'command': b}])
@@ -74,7 +74,7 @@ def test_catalog_preserves_atomic_commands_and_baseline_wordings():
 
 
 def test_confidence_policy_preserves_rejection_and_unsupported_classes():
-    m = importlib.import_module('scripts.runtime.mvp_static')
+    m = importlib.import_module('scripts.train.iris_validation')
     catalog = m.build_catalog([{'text': 'pause', 'command': {'intent': 'PAUSE', 'slots': {}}}])
     p = {'threshold': .6, 'margin': .2, 'trained_classes': [0, 1]}
     assert m.decide([0., 4.], catalog, p)['command']['intent'] == 'PAUSE'
@@ -87,7 +87,7 @@ def test_confidence_policy_preserves_rejection_and_unsupported_classes():
 
 
 def test_calibration_never_uses_test_or_synthetic_as_human_evidence():
-    m = importlib.import_module('scripts.runtime.mvp_static')
+    m = importlib.import_module('scripts.train.iris_validation')
     rows = [dict(split='dev', synthetic=False, expected_index=1, logits=[0.,4.]),
             dict(split='calibration', synthetic=False, expected_index=0, logits=[4.,0.])]
     p = m.fit_policy(rows, [0, 1])
@@ -138,7 +138,7 @@ def test_ncnn_preserves_selected_model_on_variable_lengths(tmp_path):
 def test_runtime_uses_finite_policy_and_rejects_bad_capture(tmp_path):
     from scripts.models.mvp_static import StaticCommandNet
     m=importlib.import_module('scripts.train.iris_export')
-    runtime=importlib.import_module('scripts.runtime.mvp_static')
+    runtime=importlib.import_module('scripts.train.iris_validation')
     net=StaticCommandNet(2,128).eval()
     with torch.no_grad():net.classifier.weight.zero_();net.classifier.bias.copy_(torch.tensor([0.,8.]))
     m.export_onnx(net,tmp_path/'model.onnx')
@@ -160,7 +160,7 @@ def test_runtime_uses_finite_policy_and_rejects_bad_capture(tmp_path):
 
 
 def test_family_calibration_preserves_easy_commands_without_rescuing_confusions():
-    m=importlib.import_module('scripts.runtime.mvp_static')
+    m=importlib.import_module('scripts.train.iris_validation')
     catalog=m.build_catalog([{'text':'pause','command':{'intent':'PAUSE','slots':{}}},
                             {'text':'timer','command':{'intent':'TIMER','slots':{'duration_seconds':10}}}])
     rows=[dict(split='dev',synthetic=False,expected_index=1,logits=[0.,4.,0.]),
@@ -190,28 +190,12 @@ def test_metrics_keep_unknown_ambiguity_and_wrong_accept_denominators():
 
 
 
-def test_direct_worker_keeps_one_authoritative_decision():
-    from scripts.runtime.speaker_worker import AudioService
-    command = {'intent':'PAUSE', 'slots':{}}
-    class Direct:
-        decision_authority = 'atomic_command'
-    events=[]
-    service=AudioService(Direct(), events.append, settings={'inference':{'mode':'demo', 'intent_threshold':.95,'slot_threshold':.9},'actions':{'enabled':False}})
-    event={'event':'command','decision_authority':'atomic_command',
-           'output':{'accepted':True, 'command':command, 'reason':None},
-           'diagnostic_candidate':{'candidate':command, 'class_probability':.8}}
-    service.emit(event)
-    assert events[-1]['application']['accepted'] is True
-    assert events[-1]['application']['command'] == command
-    service.emit({**event,'output':{'accepted':False,'command':None,'reason':'uncertain_or_unsupported'}})
-    assert events[-1]['application']['accepted'] is False
-    assert events[-1]['application']['command'] is None
 
 
 
 def test_rejection_obeys_existing_typed_output_schema():
-    m=importlib.import_module('scripts.runtime.mvp_static')
-    from scripts.runtime.pcv_schema import output
+    m=importlib.import_module('scripts.train.iris_validation')
+    from scripts.train.iris_schema import output
     catalog=m.build_catalog([{'text':'pause','command':{'intent':'PAUSE','slots':{}}}])
     decision=m.decide([4.,0.],catalog,{'threshold':.9,'margin':0.,'trained_classes':[0,1]})
     assert output(decision['command'],decision['reason']) == {
@@ -220,7 +204,7 @@ def test_rejection_obeys_existing_typed_output_schema():
 
 
 def test_practical_policy_reports_known_errors_but_keeps_unknown_constraint():
-    m=importlib.import_module('scripts.runtime.mvp_static')
+    m=importlib.import_module('scripts.train.iris_validation')
     rows=[dict(split='dev',synthetic=False,expected_index=1,logits=[0.,4.,0.]) for _ in range(39)]
     rows += [dict(split='calibration',synthetic=False,expected_index=2,logits=[0.,4.,0.]),
              dict(split='calibration',synthetic=False,expected_index=0,logits=[0.,.1,0.])]
@@ -231,13 +215,6 @@ def test_practical_policy_reports_known_errors_but_keeps_unknown_constraint():
 
 
 
-def test_direct_worker_does_not_import_historical_decoder_or_torch():
-    import subprocess,sys
-    from pathlib import Path
-    result=subprocess.run([sys.executable,'-c',
-        'import sys; import scripts.runtime.speaker_worker; print("pcvcm.decoder" in sys.modules, "torch" in sys.modules)'],
-        cwd=Path(__file__).resolve().parents[2],capture_output=True,text=True,check=True)
-    assert result.stdout.strip()=='False False'
 
 
 

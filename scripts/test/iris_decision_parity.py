@@ -22,8 +22,8 @@ def verify(root=ROOT,output=None):
     import torch
     from scripts.iris_release import read,resolve_audio,sha
     from scripts.models.mvp_static import StaticCommandNet
-    from scripts.runtime.mvp_static import Runtime,decide
-    from scripts.runtime.pcv_schema import output as typed_output
+    from scripts.train.iris_validation import Runtime, decide
+    from scripts.train.iris_schema import output as typed_output
     from vcm.frontend import features
 
     here=root/'experiments/iris-release-v1'
@@ -37,7 +37,7 @@ def verify(root=ROOT,output=None):
     manifests={split:cache/'diversity/views'/f'{split}.jsonl'
                for split in ('holdout','personal-test','voice-test')}
     sources=['scripts/test/iris_decision_parity.py','scripts/models/mvp_static.py',
-             'scripts/runtime/mvp_static.py','scripts/runtime/pcv_schema.py','vcm/frontend.py']
+             'scripts/train/iris_validation.py','scripts/train/iris_schema.py','vcm/frontend.py']
     bindings={name:sha(root/name) for name in sources}
     model_files=[bundle/'bundle.json',*[bundle/name for name in read(bundle/'bundle.json')['files']],
         bundle/'ncnn/engine.json',*[bundle/'ncnn'/name for name in read(bundle/'ncnn/engine.json')['files']]]
