@@ -1,0 +1,125 @@
+{
+  "model": "baseline A, heads_s53 epoch38",
+  "parameters": 175653,
+  "scope": {
+    "verbatims": 102,
+    "complete_commands": 34,
+    "intent_families": 18
+  },
+  "human_DEV": {
+    "correct": 132,
+    "supported": 167
+  },
+  "old_slot_DEV": {
+    "correct": 108,
+    "supported": 108
+  },
+  "new_synthetic_TEST_by_form": {
+    "clean": {
+      "correct": 203,
+      "supported": 204,
+      "rows": 204,
+      "rejected": 1,
+      "wrong_accepted": 0,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "supported_macro": 0.9950980392156863,
+      "covered_classes": 34
+    },
+    "context": {
+      "correct": 98,
+      "supported": 204,
+      "rows": 204,
+      "rejected": 105,
+      "wrong_accepted": 1,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "supported_macro": 0.48039215686274517,
+      "covered_classes": 34
+    },
+    "negative": {
+      "correct": 0,
+      "supported": 0,
+      "rows": 32,
+      "rejected": 0,
+      "wrong_accepted": 0,
+      "negative_rows": 32,
+      "negative_false_accepts": 0,
+      "supported_macro": null,
+      "covered_classes": 0
+    }
+  },
+  "official_exposed_scope_groups": {
+    "formerly_supported_now_outside_demo": {
+      "correct": 0,
+      "supported": 0,
+      "rows": 24,
+      "rejected": 0,
+      "wrong_accepted": 0,
+      "negative_rows": 24,
+      "negative_false_accepts": 1,
+      "supported_macro": null,
+      "covered_classes": 0
+    },
+    "original_unknown": {
+      "correct": 0,
+      "supported": 0,
+      "rows": 16,
+      "rejected": 0,
+      "wrong_accepted": 0,
+      "negative_rows": 16,
+      "negative_false_accepts": 7,
+      "supported_macro": null,
+      "covered_classes": 0
+    },
+    "retained_human_supported": {
+      "correct": 71,
+      "supported": 77,
+      "rows": 77,
+      "rejected": 3,
+      "wrong_accepted": 3,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "supported_macro": 0.9197530864197531,
+      "covered_classes": 27
+    },
+    "retained_supported": {
+      "correct": 155,
+      "supported": 162,
+      "rows": 162,
+      "rejected": 4,
+      "wrong_accepted": 3,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "supported_macro": 0.95679012345679,
+      "covered_classes": 27
+    }
+  },
+  "voice_coverage": {
+    "train_voices": [
+      "en-US-GuyNeural",
+      "en-US-JennyNeural",
+      "en-GB-SoniaNeural",
+      "en-AU-NatashaNeural",
+      "en-SG-WayneNeural",
+      "en-PH-JamesNeural"
+    ],
+    "dev_voices": [
+      "en-US-AriaNeural",
+      "en-CA-LiamNeural"
+    ],
+    "test_voices": [
+      "en-US-ChristopherNeural",
+      "en-IE-EmilyNeural"
+    ]
+  },
+  "qualified": false,
+  "actions_enabled": false,
+  "caveats": [
+    "Best-retention baseline within this shared-model study, not a global winner across different ontologies.",
+    "Does not support named kitchen/ceiling lighting. Expanded candidates failed retention.",
+    "Exact synthetic102-wording TEST has two declared TTS voice IDs and two recordings per wording.",
+    "Official human and all previously exposed TEST results are regression, not fresh-human qualification.",
+    "Snapshot is not an application default change or production qualification."
+  ]
+}

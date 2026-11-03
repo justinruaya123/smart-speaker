@@ -1,0 +1,134 @@
+{
+  "experiment_id": "shared-demo-slots-v1",
+  "requirements": [
+    "ME-01",
+    "ME-02",
+    "ME-03",
+    "ME-04",
+    "ME-06",
+    "ME-07",
+    "ME-08",
+    "UC-04",
+    "UC-06",
+    "UC-08"
+  ],
+  "authorization": "Shared VCM retaining other commands; three demo percentages and three complete alarm times; compare something better without changing installed artifacts.",
+  "percentages": [
+    0,
+    50,
+    100
+  ],
+  "alarm_times": [
+    "06:00",
+    "12:30",
+    "21:45"
+  ],
+  "timezone": "Asia/Manila",
+  "limitations": [
+    "Not arbitrary numeric/time composition; frozen prior studies and installed defaults unchanged.",
+    "Perfect future-speaker recognition is not guaranteed. Phonetic distance is a design heuristic, not acoustic proof.",
+    "Old exposed official202 and original DEV/TEST are regression evidence. New declared TEST voice IDs do not prove physical voice independence from opaque historical synthesis.",
+    "No microphone, actions, ASR, LLM or cloud recognition. Cloud synthesis is development-only."
+  ],
+  "data": {
+    "train_voices": [
+      "en-US-GuyNeural",
+      "en-US-JennyNeural",
+      "en-GB-SoniaNeural",
+      "en-AU-NatashaNeural",
+      "en-SG-WayneNeural",
+      "en-PH-JamesNeural"
+    ],
+    "dev_voices": [
+      "en-US-AriaNeural",
+      "en-CA-LiamNeural"
+    ],
+    "test_voices": [
+      "en-US-ChristopherNeural",
+      "en-IE-EmilyNeural"
+    ],
+    "rate": "+0%",
+    "negative_prompts": [
+      "Set volume to twenty percent",
+      "Brightness sixty percent",
+      "Set an alarm for six p m",
+      "Set an alarm for twelve thirty a m",
+      "Set an alarm for nine forty five a m",
+      "Set an alarm for six",
+      "Set an alarm for eight a m",
+      "Set an alarm for nine p m",
+      "Set volume to fifty degrees",
+      "Brightness fifty degrees",
+      "Set volume",
+      "Set an alarm",
+      "Do not set volume to fifty percent",
+      "Do not set an alarm for six a m",
+      "Fifty percent",
+      "Thank you for listening"
+    ]
+  },
+  "training": {
+    "modes": [
+      "flat",
+      "heads"
+    ],
+    "seed": 53,
+    "width": 128,
+    "pooling": "mean_max",
+    "initialization": "random; same seed and initial encoder weights; no pretrained slot-head transplant",
+    "foundation_epochs": 6,
+    "mixed_epochs": 42,
+    "steps_per_epoch": 96,
+    "batch_size": 32,
+    "foundation_quotas": {
+      "human_positive": 24,
+      "human_negative": 8
+    },
+    "mixed_quotas": {
+      "human_positive": 8,
+      "human_negative": 4,
+      "synthetic_positive": 8,
+      "demo_slot_positive": 8,
+      "synthetic_negative": 4
+    },
+    "learning_rate": 0.002,
+    "weight_decay": 0.01,
+    "lr_end_fraction": 0.025,
+    "head_auxiliary_weight": 0.5,
+    "gradient_clip": 5.0,
+    "augmentation": "Frozen legacy feature-domain train augmentation; same sampled IDs/NumPy sequence in matched fits.",
+    "parameter_limit_exclusive": 220000
+  },
+  "selection": {
+    "population": "DEV only; supported-only ranking; never TEST",
+    "retention_guard": "Retained-supported human DEV correct count >= unchanged parent raw correct count on the same scope and recording IDs. No OOS veto.",
+    "ranking": [
+      "mean(retained-human supported accuracy, new-demo-slot complete macro accuracy)",
+      "new-demo-slot macro accuracy",
+      "retained-human correct count",
+      "new-demo all-positive macro accuracy",
+      "negative count of wrong supported slots"
+    ],
+    "fallback": "If neither candidate passes retention guard, deliver best DEV diagnostic as research-only and preserve parent; do not promote defaults.",
+    "policy": "fixed argmax; action head authoritative; missing required slot rejects; never rescue intent from slot scores; no calibration or test retuning"
+  },
+  "evaluation": {
+    "fresh_declared_voice_test": "all new 440 tasks, only after immutable model/export lock",
+    "legacy": "official202 and original reserved cohorts exposed regression; report retained versus now-outside-demo populations separately",
+    "required_targets": [
+      "volume_set_0",
+      "volume_set_50",
+      "volume_set_100",
+      "brightness_0",
+      "brightness_50",
+      "brightness_100",
+      "alarm_06:00",
+      "alarm_12:30",
+      "alarm_21:45"
+    ],
+    "native_parity": true,
+    "human_demo_qualification": false
+  },
+  "actions_enabled": false,
+  "update_artifacts": false
+}

@@ -1,0 +1,6 @@
+{
+  "action_authoritative": true,
+  "calibrated": false,
+  "method": "argmax",
+  "missing_required_slot": "reject"
+}

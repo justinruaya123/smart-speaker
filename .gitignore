@@ -192,3 +192,7 @@ Desktop.ini
 !/submission/feedback/success.wav
 !/submission/feedback/failure.mp3
 !/submission/feedback/failure.wav
+
+# Explicit retained baseline A; other candidate weights stay ignored.
+!/submission/models/shared-demo-a/model.onnx
+!/submission/checkpoints/shared-demo-a-selected.pt

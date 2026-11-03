@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "scope": "baseline A artifact preservation and producer-main integration, not acoustic qualification",
+  "model_sha256": "9b98acefa8bad6610d98501ff0310c9b2a2ec1594619b4b5b7d2c7a80dc888a6",
+  "parameters": 175653,
+  "selected_epoch": 38,
+  "protected_bindings": 21,
+  "original_audio_replay": {
+    "rows": 642,
+    "matching_saved_decisions": 642,
+    "maximum_absolute_logit_difference": 7.62939453125e-06,
+    "atol": 3e-05,
+    "rtol": 3e-05,
+    "exact_synthetic": {
+      "correct": 203,
+      "total": 204
+    },
+    "context_synthetic": {
+      "correct": 98,
+      "total": 204
+    },
+    "exposed_human_supported": {
+      "correct": 71,
+      "total": 77
+    },
+    "invalid_capture_controls": 6,
+    "native_cli_passed": true,
+    "new_fitting": false,
+    "fresh_human_qualification": false
+  },
+  "checkpoint": {
+    "passed": true,
+    "checkpoint_epoch": 38,
+    "parameters": 175653,
+    "strict_cpu_load": true,
+    "weights_only": true,
+    "finite_forward_shape": [
+      1,
+      37
+    ],
+    "source_root": "C:\\Users\\Justin\\AppData\\Local\\hermes\\cache\\scratch\\me2-baseline-a-staged-01",
+    "torch_version": "2.10.0+cu128"
+  },
+  "main_regression": {
+    "passed": 225,
+    "skipped": 4,
+    "failed": 0,
+    "tests": [
+      "test_model_only_boundary.py",
+      "test_model_training_bootstrap.py",
+      "test_model_package.py",
+      "test_model_reference_boundary.py",
+      "test_model_evaluation_audio.py",
+      "test_model_publication_boundary.py",
+      "test_iris_release.py",
+      "test_iris_archive.py"
+    ]
+  },
+  "original_epoch44": {
+    "verified_payloads": 15,
+    "unchanged": true
+  },
+  "producer_defaults_changed": false,
+  "consumer_default_change": "separately authorized; must pin the immutable producer publication",
+  "actions_enabled": false,
+  "qualified": false,
+  "limitations": [
+    "Saved TEST and human recordings are already exposed regression evidence.",
+    "Exact source closure lives under submission/shared-demo-a/source; current producer application/training boundaries remain intact.",
+    "Main GitHub workflow includes a pre-existing failed/missing acoustic release gate; publication is not qualification or permission to bypass it."
+  ]
+}

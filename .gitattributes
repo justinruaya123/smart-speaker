@@ -48,3 +48,10 @@ submission/feedback/manifest.json -text
 # Relocated producer verification environment stays byte-identical to its original pins.
 scripts/train/pyproject.toml -text
 scripts/train/uv.lock -text
+
+# Exact retained baseline A bytes, including its isolated recovery-source closure.
+submission/models/shared-demo-a/** -text
+submission/checkpoints/shared-demo-a-selected.pt -text
+submission/shared-demo-a/** -text
+experiments/shared-demo-slots-v1/protocol.json -text
+experiments/shared-demo-slots-v1/supported-commands.csv -text

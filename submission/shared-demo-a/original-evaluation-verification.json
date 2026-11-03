@@ -1,0 +1,16 @@
+{
+  "bindings": {
+    "D:\\School\\AI231\\smart-speaker\\.cache\\shared-demo-slots-v1\\evaluation\\native-events.jsonl": "af12a735081e516ec7c61487a644da58189c92378eb677c9a45583d9ea4ee495",
+    "D:\\School\\AI231\\smart-speaker\\.cache\\shared-demo-slots-v1\\evaluation\\per-slot.csv": "fe44ac1bb0531444ee172a352484fe98b819a14e2e5eef45a1c79876b5e0c3e5",
+    "D:\\School\\AI231\\smart-speaker\\.cache\\shared-demo-slots-v1\\evaluation\\predictions.jsonl": "1144bd7180e68c5043591d2e2bab9ebec5ed9a774c9ca85227a9b076d3f21074",
+    "D:\\School\\AI231\\smart-speaker\\.cache\\shared-demo-slots-v1\\evaluation\\reference-rows.jsonl": "d593adcf8dd733087cb91f9ab00c45247e413e45e21645a8d1118b6cae031fa0",
+    "D:\\School\\AI231\\smart-speaker\\.cache\\shared-demo-slots-v1\\evaluation\\results.json": "19b4bafa29065a2a4467cd4953bc9941a1cf8eb01dad39e1f8b19cada9e3d02a"
+  },
+  "exposed_official_rows": 202,
+  "native_rows": 642,
+  "new_declared_voice_TEST_rows": 440,
+  "passed": true,
+  "prediction_rows": 642,
+  "selection_lock_sha256": "6956c5c6192207fb527de2fc5ae26229a7a863338431cbde797cdcbac3adb7eb",
+  "slot_cells": 9
+}

@@ -1,0 +1,138 @@
+{
+  "snapshot_id": "shared-demo-a-epoch38",
+  "model": "shared-demo-slots-v1 / heads_s53 / baseline A",
+  "parameters": 175653,
+  "selected_epoch": 38,
+  "training_seed": 53,
+  "full_training": {
+    "epochs": 48,
+    "optimizer_updates": 4608
+  },
+  "vocabulary": {
+    "verbatims": 102,
+    "complete_commands": 34,
+    "intent_families": 18
+  },
+  "bundle": "submission/models/shared-demo-a",
+  "checkpoint": "submission/checkpoints/shared-demo-a-selected.pt",
+  "architecture_source": "scripts/models/demo_slots_v1.py",
+  "inference_module": "scripts.runtime.demo_slots_v1",
+  "inference_source_files": [
+    "scripts/runtime/__init__.py",
+    "scripts/runtime/demo_slots_v1.py",
+    "scripts/runtime/demo_slots_contract.py",
+    "scripts/runtime/pcv_schema.py",
+    "vcm/__init__.py",
+    "vcm/frontend.py",
+    "vcm/catalog.py"
+  ],
+  "policy": "fixed action-authoritative argmax, missing required slot rejects",
+  "retention_eligible": true,
+  "qualified": false,
+  "actions_enabled": false,
+  "default_changed": false,
+  "training_source_parent_commit": "3c05b3beb46f06c3108089e0d8c79474670c6cb7",
+  "scope_notes": [
+    "Explicit user-authorized preservation of already trained selected weights; not a new fit or installation.",
+    "Best retention in this shared-model study, not a universal best across incompatible catalogs.",
+    "Kitchen/Ceiling named targets are unsupported; expanded models are separate ineligible diagnostics.",
+    "Original selection/evaluation receipts preserve machine-local paths as historical provenance, not portable runtime dependencies.",
+    "Audio/features/raw prediction logs/private settings are excluded; no new corpus reproduction is claimed.",
+    "Frozen original inference/architecture source is nested under source_root, preserving current main model-only boundaries and leaving current vcm and training modules unchanged."
+  ],
+  "tested_inference_environment": {
+    "python": "3.12.2",
+    "numpy": "2.5.3",
+    "onnxruntime": "1.30.0",
+    "einops": "0.8.2",
+    "soundfile": "0.14.0"
+  },
+  "bindings": {
+    "submission/models/shared-demo-a/commands.json": {
+      "sha256": "4d5000d8e53b86a81a9aac4c097513509a9b0cdfd2f4298864d830cc8794a061",
+      "bytes": 3131
+    },
+    "submission/models/shared-demo-a/model.onnx": {
+      "sha256": "9b98acefa8bad6610d98501ff0310c9b2a2ec1594619b4b5b7d2c7a80dc888a6",
+      "bytes": 743751
+    },
+    "submission/models/shared-demo-a/normalization.json": {
+      "sha256": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09",
+      "bytes": 429040
+    },
+    "submission/models/shared-demo-a/policy.json": {
+      "sha256": "c07eb25e7f35e0018a93d904a3ce235ede50276a0784b4869684b92df0b142b3",
+      "bytes": 123
+    },
+    "submission/models/shared-demo-a/recipe.json": {
+      "sha256": "1e5e2a653c99b74c5e7333ab17af3f4b5e1db0906a390160f2ccb007599dd481",
+      "bytes": 1174
+    },
+    "submission/checkpoints/shared-demo-a-selected.pt": {
+      "sha256": "0164568747c67657836659dc1322947d6282d829717b93efe218269b2b456069",
+      "bytes": 1855643
+    },
+    "submission/shared-demo-a/commands.csv": {
+      "sha256": "4874a5e2178d053f22aaefd704703e4fb62eb01425b087105e02683b535b4022",
+      "bytes": 10199
+    },
+    "submission/shared-demo-a/metrics.json": {
+      "sha256": "72fe407ca9b1f7f8bfa161071fb86b6f592a0126781ce6a14cbc940a7b9194f0",
+      "bytes": 3224
+    },
+    "submission/shared-demo-a/original-evaluation-verification.json": {
+      "sha256": "53ad5bb05a81b7188733b1843963a87eba7c8e06f4477684a59eb8b144804c30",
+      "bytes": 1130
+    },
+    "submission/shared-demo-a/original-selection-before-test.json": {
+      "sha256": "6956c5c6192207fb527de2fc5ae26229a7a863338431cbde797cdcbac3adb7eb",
+      "bytes": 7532
+    },
+    "submission/shared-demo-a/per-verbatim.csv": {
+      "sha256": "eb0145116f02cb9841464031186807551dc2c93dbd14a892e413bb7501531395",
+      "bytes": 12627
+    },
+    "submission/shared-demo-a/protocol.json": {
+      "sha256": "b11eed2f8bd8e5747aec972add23251c49fdcceed7237dd964939c7539c9a429",
+      "bytes": 4377
+    },
+    "submission/shared-demo-a/source/scripts/runtime/__init__.py": {
+      "sha256": "d4c03dc0251ebdebbe93a07beab5380fc096431883632863db12576b46f0da8c",
+      "bytes": 35
+    },
+    "submission/shared-demo-a/source/scripts/runtime/demo_slots_v1.py": {
+      "sha256": "4e4ca9b261144aa2a4c47597e083d1834b5855930e2a1efa922b20e829976a80",
+      "bytes": 4131
+    },
+    "submission/shared-demo-a/source/scripts/runtime/demo_slots_contract.py": {
+      "sha256": "3545d4e97d50b434f00ed10eab85101ff2ac4de2fe508336681f30e5468ca6dd",
+      "bytes": 4660
+    },
+    "submission/shared-demo-a/source/scripts/runtime/pcv_schema.py": {
+      "sha256": "603ec943eae1e7330dd2eb82f05bbd7c206382ecf13c0fb8f8801a7ecd0e134c",
+      "bytes": 11918
+    },
+    "submission/shared-demo-a/source/vcm/__init__.py": {
+      "sha256": "2e5d0dbf35dcf6a061aead6d7d66d9de8c59ede9e801c9a9d20dbc724d851e1d",
+      "bytes": 100
+    },
+    "submission/shared-demo-a/source/vcm/frontend.py": {
+      "sha256": "cfeabf0f6b2b4f280dbd0a44b65aaab7b68907ff57d4ff95f65f5dfa23abe97a",
+      "bytes": 2206
+    },
+    "submission/shared-demo-a/source/vcm/catalog.py": {
+      "sha256": "d7d8c2a4cb0a026e30c83e206213f165c7418c20d97ad9e29ce2dae43a518906",
+      "bytes": 6174
+    },
+    "submission/shared-demo-a/source/scripts/models/demo_slots_v1.py": {
+      "sha256": "e30b8b7ce91f65c5abaa2736792096e9ec45621ea53fb19f80da9c98b232e52a",
+      "bytes": 2224
+    },
+    "submission/shared-demo-a/source/scripts/models/vcm.py": {
+      "sha256": "48e85eaee92bd0383bf3ee05bc347eec0390f802a0711fcf7aeac8d0b085e162",
+      "bytes": 11501
+    }
+  },
+  "source_root": "submission/shared-demo-a/source",
+  "publication_base_commit": "6533fee"
+}

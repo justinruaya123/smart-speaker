@@ -1,0 +1,103 @@
+definition_id,intent,slots,verbatim,spoken_form,new_demo_train_voices,clean_correct,clean_recordings,clean_accuracy_percent,clean_test_voices,context_correct,context_recordings,context_accuracy_percent,context_test_voices
+DEMO-B1-001,PLAY_MUSIC,{},Play music,Play music,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-002,PLAY_MUSIC,{},Start music,Start music,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-003,PLAY_MUSIC,{},Play some music,Play some music,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-004,WEATHER,{},Weather,Weather,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-005,WEATHER,{},What's the weather?,What's the weather?,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-006,WEATHER,{},Tell me the weather,Tell me the weather,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-007,TIME,{},Time,Time,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-008,TIME,{},What time is it?,What time is it?,6,2,2,100.0,2,1,2,50.0,2
+DEMO-B1-009,TIME,{},Tell me the time,Tell me the time,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-010,LIGHT_ON,"{""light_id"": ""light.all""}",Lights on,Lights on,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-011,LIGHT_ON,"{""light_id"": ""light.all""}",Power on the lights,Power on the lights,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-012,LIGHT_ON,"{""light_id"": ""light.all""}",Turn on the lights,Turn on the lights,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-013,LIGHT_OFF,"{""light_id"": ""light.all""}",Lights out,Lights out,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-014,LIGHT_OFF,"{""light_id"": ""light.all""}",Kill the lights,Kill the lights,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-015,LIGHT_OFF,"{""light_id"": ""light.all""}",Shut off the lights,Shut off the lights,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-016,PAUSE,{},Pause,Pause,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-017,PAUSE,{},Pause audio,Pause audio,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-018,PAUSE,{},Pause song,Pause song,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-019,STOP,{},Stop,Stop,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-020,STOP,{},Stop playing,Stop playing,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-021,STOP,{},End playback,End playback,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-022,NEXT,{},Next song,Next song,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-023,NEXT,{},Skip song,Skip song,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-024,NEXT,{},Play next song,Play next song,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-025,VOLUME,"{""operation"": ""up""}",Volume up,Volume up,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-026,VOLUME,"{""operation"": ""up""}",Increase the volume,Increase the volume,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-027,VOLUME,"{""operation"": ""up""}",Turn the volume up,Turn the volume up,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-028,VOLUME,"{""operation"": ""down""}",Volume down,Volume down,6,2,2,100.0,2,1,2,50.0,2
+DEMO-B1-029,VOLUME,"{""operation"": ""down""}",Lower the volume,Lower the volume,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-030,VOLUME,"{""operation"": ""down""}",Turn the volume down,Turn the volume down,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-031,CALL,"{""contact_id"": ""contact.home""}",Call,Call,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-032,CALL,"{""contact_id"": ""contact.home""}",Make a call,Make a call,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-033,CALL,"{""contact_id"": ""contact.home""}",Make a phone call,Make a phone call,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-034,MESSAGE,{},Message,Message,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-035,MESSAGE,{},Send a message,Send a message,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-036,MESSAGE,{},Send my message,Send my message,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-037,LIST_REMINDERS,{},Reminders,Reminders,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-038,LIST_REMINDERS,{},Show my reminders,Show my reminders,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-039,LIST_REMINDERS,{},List my reminders,List my reminders,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-040,TIMER,"{""duration_seconds"": 10}",Timer 10 seconds,Timer ten seconds,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-041,TIMER,"{""duration_seconds"": 30}",Timer 30 seconds,Timer thirty seconds,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-042,TIMER,"{""duration_seconds"": 60}",Timer 1 minute,Timer one minute,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-043,TIMER,"{""duration_seconds"": 10}",Countdown for 10 seconds,Countdown for ten seconds,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-044,TIMER,"{""duration_seconds"": 30}",Countdown for 30 seconds,Countdown for thirty seconds,6,2,2,100.0,2,1,2,50.0,2
+DEMO-B1-045,TIMER,"{""duration_seconds"": 60}",Countdown for 1 minute,Countdown for one minute,6,2,2,100.0,2,1,2,50.0,2
+DEMO-B1-046,TIMER,"{""duration_seconds"": 10}",Start a timer for 10 seconds,Start a timer for ten seconds,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-047,TIMER,"{""duration_seconds"": 30}",Start a timer for 30 seconds,Start a timer for thirty seconds,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-048,TIMER,"{""duration_seconds"": 60}",Start a timer for 1 minute,Start a timer for one minute,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-049,ALARM,"{""time"": ""06:00"", ""timezone"": ""Asia/Manila""}",Alarm 6:00 AM,Alarm six a m,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-050,ALARM,"{""time"": ""12:30"", ""timezone"": ""Asia/Manila""}",Alarm 12:30 PM,Alarm twelve thirty p m,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-051,ALARM,"{""time"": ""21:45"", ""timezone"": ""Asia/Manila""}",Alarm 9:45 PM,Alarm nine forty five p m,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-052,ALARM,"{""time"": ""06:00"", ""timezone"": ""Asia/Manila""}",Wake me up at 6:00 AM,Wake me up at six a m,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-053,ALARM,"{""time"": ""12:30"", ""timezone"": ""Asia/Manila""}",Wake me up at 12:30 PM,Wake me up at twelve thirty p m,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-054,ALARM,"{""time"": ""21:45"", ""timezone"": ""Asia/Manila""}",Wake me up at 9:45 PM,Wake me up at nine forty five p m,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-055,ALARM,"{""time"": ""06:00"", ""timezone"": ""Asia/Manila""}",Set an alarm for 6:00 AM,Set an alarm for six a m,6,2,2,100.0,2,1,2,50.0,2
+DEMO-B1-056,ALARM,"{""time"": ""12:30"", ""timezone"": ""Asia/Manila""}",Set an alarm for 12:30 PM,Set an alarm for twelve thirty p m,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-057,ALARM,"{""time"": ""21:45"", ""timezone"": ""Asia/Manila""}",Set an alarm for 9:45 PM,Set an alarm for nine forty five p m,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-058,TEMPERATURE,"{""degrees"": 18, ""unit"": ""C""}",Temperature 18 degrees,Temperature eighteen degrees,6,2,2,100.0,2,1,2,50.0,2
+DEMO-B1-059,TEMPERATURE,"{""degrees"": 22, ""unit"": ""C""}",Temperature 22 degrees,Temperature twenty two degrees,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-060,TEMPERATURE,"{""degrees"": 26, ""unit"": ""C""}",Temperature 26 degrees,Temperature twenty six degrees,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-061,TEMPERATURE,"{""degrees"": 18, ""unit"": ""C""}",Change the temperature to 18 degrees,Change the temperature to eighteen degrees,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-062,TEMPERATURE,"{""degrees"": 22, ""unit"": ""C""}",Change the temperature to 22 degrees,Change the temperature to twenty two degrees,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-063,TEMPERATURE,"{""degrees"": 26, ""unit"": ""C""}",Change the temperature to 26 degrees,Change the temperature to twenty six degrees,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-064,TEMPERATURE,"{""degrees"": 18, ""unit"": ""C""}",Set the temperature to 18 degrees,Set the temperature to eighteen degrees,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-065,TEMPERATURE,"{""degrees"": 22, ""unit"": ""C""}",Set the temperature to 22 degrees,Set the temperature to twenty two degrees,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-066,TEMPERATURE,"{""degrees"": 26, ""unit"": ""C""}",Set the temperature to 26 degrees,Set the temperature to twenty six degrees,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-067,BRIGHTNESS,"{""light_id"": ""light.all"", ""percent"": 0}",Brightness 0 percent,Brightness zero percent,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-068,BRIGHTNESS,"{""light_id"": ""light.all"", ""percent"": 50}",Brightness 50 percent,Brightness fifty percent,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-069,BRIGHTNESS,"{""light_id"": ""light.all"", ""percent"": 100}",Brightness 100 percent,Brightness one hundred percent,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-070,BRIGHTNESS,"{""light_id"": ""light.all"", ""percent"": 0}",Adjust brightness to 0 percent,Adjust brightness to zero percent,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-071,BRIGHTNESS,"{""light_id"": ""light.all"", ""percent"": 50}",Adjust brightness to 50 percent,Adjust brightness to fifty percent,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-072,BRIGHTNESS,"{""light_id"": ""light.all"", ""percent"": 100}",Adjust brightness to 100 percent,Adjust brightness to one hundred percent,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-073,BRIGHTNESS,"{""light_id"": ""light.all"", ""percent"": 0}",Brightness level 0 percent,Brightness level zero percent,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-074,BRIGHTNESS,"{""light_id"": ""light.all"", ""percent"": 50}",Brightness level 50 percent,Brightness level fifty percent,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-075,BRIGHTNESS,"{""light_id"": ""light.all"", ""percent"": 100}",Brightness level 100 percent,Brightness level one hundred percent,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-076,COLOR,"{""color"": ""red"", ""light_id"": ""light.all""}",Change color to Red,Change color to red,6,2,2,100.0,2,1,2,50.0,2
+DEMO-B1-077,COLOR,"{""color"": ""blue"", ""light_id"": ""light.all""}",Change color to Blue,Change color to blue,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-078,COLOR,"{""color"": ""green"", ""light_id"": ""light.all""}",Change color to Green,Change color to green,6,2,2,100.0,2,1,2,50.0,2
+DEMO-B1-079,COLOR,"{""color"": ""red"", ""light_id"": ""light.all""}",Switch color to Red,Switch color to red,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-080,COLOR,"{""color"": ""blue"", ""light_id"": ""light.all""}",Switch color to Blue,Switch color to blue,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-081,COLOR,"{""color"": ""green"", ""light_id"": ""light.all""}",Switch color to Green,Switch color to green,6,2,2,100.0,2,1,2,50.0,2
+DEMO-B1-082,COLOR,"{""color"": ""red"", ""light_id"": ""light.all""}",Set color to Red,Set color to red,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-083,COLOR,"{""color"": ""blue"", ""light_id"": ""light.all""}",Set color to Blue,Set color to blue,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-084,COLOR,"{""color"": ""green"", ""light_id"": ""light.all""}",Set color to Green,Set color to green,6,2,2,100.0,2,1,2,50.0,2
+DEMO-B1-085,CREATE_REMINDER,"{""task_id"": ""task.drink_water""}",Reminder Drink water,Reminder Drink water,6,2,2,100.0,2,1,2,50.0,2
+DEMO-B1-086,CREATE_REMINDER,"{""task_id"": ""task.study""}",Reminder Study,Reminder Study,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-087,CREATE_REMINDER,"{""task_id"": ""task.exercise""}",Reminder Exercise,Reminder Exercise,6,2,2,100.0,2,2,2,100.0,2
+DEMO-B1-088,CREATE_REMINDER,"{""task_id"": ""task.drink_water""}",Remind me to Drink water,Remind me to Drink water,6,1,2,50.0,2,1,2,50.0,2
+DEMO-B1-089,CREATE_REMINDER,"{""task_id"": ""task.study""}",Remind me to Study,Remind me to Study,6,2,2,100.0,2,1,2,50.0,2
+DEMO-B1-090,CREATE_REMINDER,"{""task_id"": ""task.exercise""}",Remind me to Exercise,Remind me to Exercise,6,2,2,100.0,2,1,2,50.0,2
+DEMO-B1-091,CREATE_REMINDER,"{""task_id"": ""task.drink_water""}",Create a reminder to Drink water,Create a reminder to Drink water,6,2,2,100.0,2,1,2,50.0,2
+DEMO-B1-092,CREATE_REMINDER,"{""task_id"": ""task.study""}",Create a reminder to Study,Create a reminder to Study,6,2,2,100.0,2,0,2,0.0,2
+DEMO-B1-093,CREATE_REMINDER,"{""task_id"": ""task.exercise""}",Create a reminder to Exercise,Create a reminder to Exercise,6,2,2,100.0,2,2,2,100.0,2
+DEMO-VOLUME-0-0,VOLUME,"{""operation"": ""set"", ""percent"": 0}",Set volume to 0 percent,Set volume to zero percent,6,2,2,100.0,2,2,2,100.0,2
+DEMO-VOLUME-0-1,VOLUME,"{""operation"": ""set"", ""percent"": 0}",Volume 0 percent,Volume zero percent,6,2,2,100.0,2,2,2,100.0,2
+DEMO-VOLUME-0-2,VOLUME,"{""operation"": ""set"", ""percent"": 0}",Adjust volume to 0 percent,Adjust volume to zero percent,6,2,2,100.0,2,2,2,100.0,2
+DEMO-VOLUME-50-0,VOLUME,"{""operation"": ""set"", ""percent"": 50}",Set volume to 50 percent,Set volume to fifty percent,6,2,2,100.0,2,2,2,100.0,2
+DEMO-VOLUME-50-1,VOLUME,"{""operation"": ""set"", ""percent"": 50}",Volume 50 percent,Volume fifty percent,6,2,2,100.0,2,2,2,100.0,2
+DEMO-VOLUME-50-2,VOLUME,"{""operation"": ""set"", ""percent"": 50}",Adjust volume to 50 percent,Adjust volume to fifty percent,6,2,2,100.0,2,2,2,100.0,2
+DEMO-VOLUME-100-0,VOLUME,"{""operation"": ""set"", ""percent"": 100}",Set volume to 100 percent,Set volume to one hundred percent,6,2,2,100.0,2,1,2,50.0,2
+DEMO-VOLUME-100-1,VOLUME,"{""operation"": ""set"", ""percent"": 100}",Volume 100 percent,Volume one hundred percent,6,2,2,100.0,2,2,2,100.0,2
+DEMO-VOLUME-100-2,VOLUME,"{""operation"": ""set"", ""percent"": 100}",Adjust volume to 100 percent,Adjust volume to one hundred percent,6,2,2,100.0,2,2,2,100.0,2
