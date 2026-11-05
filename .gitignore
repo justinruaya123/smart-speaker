@@ -2,6 +2,8 @@
 /.venv
 /.runtime
 /.cache
+# Preserve the first baseline-A failed relative-output attempt without staging its downloads.
+/submission/shared-demo-a/source/.cache/
 /dist/
 /.worktrees/
 .pytest_cache/
