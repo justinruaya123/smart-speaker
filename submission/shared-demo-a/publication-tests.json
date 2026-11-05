@@ -1,5 +1,9 @@
 {
-  "guard_tests": 22,
+  "guard_tests": 26,
+  "final_scoped_passed": 198,
+  "final_scoped_skipped": 4,
+  "cache_path_regressions_red_green": true,
+  "full_reproduction_audit": "reproduction-v1/independent-audit.json",
   "guard_tests_passed": true,
   "full_suite_failures": [
     "FAILED scripts/test/test_iris_feedback_assets.py::test_low_amplitude_beep_design_is_distinct_and_click_free",

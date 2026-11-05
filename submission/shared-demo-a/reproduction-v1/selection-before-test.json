@@ -1,0 +1,16 @@
+{
+  "checkpoint_sha256": "8e759891e55cc98f0381f20bf6299d796b12bf8cc0f2aefdccdb14a740cc29a5",
+  "dataset_acquisition_sha256": "cff7e1aa46ee0ed3aa1e5f03c53c5c47263f3ec5a42a04017cfd741407f1a764",
+  "normalization_sha256": "697a4c5fb75f642b86589f2475863a6cb473cb8f20da780ee2c139e9d6785885",
+  "policy": "unchanged action-authoritative argmax, missing required slots reject",
+  "reference_sha256": "2ee5d28b4a4fac7927dc1d5579fe564c8c3efc641faffd8d035da860d96e4024",
+  "source": {
+    "dataset_lock_sha256": "d05956535fc3702f7dd8fb96176e0c2505f8f0bb21d68dc8dcff435bb8a0b2dc",
+    "reference_sha256": "2ee5d28b4a4fac7927dc1d5579fe564c8c3efc641faffd8d035da860d96e4024",
+    "runner_sha256": "a1a9e7b895cf8e430e2b41803d64e31699d386895fe797fd964e9585fd01530f",
+    "snapshot_sha256": "d7c60bd98627f5d7385d0045a93ada18a3547f84e3bcf0eeed30edfe762e6076",
+    "training_source_sha256": "6cea57f9463e3cfab839361318e70ab191164b3fdb525e808dfc97d2c9b8f151"
+  },
+  "test_features_extracted": false,
+  "training_comparison_sha256": "603c20f88e40dae7772a4bd0099271201731853d4a04ce98f19aa824cb1d09df"
+}

@@ -1,0 +1,17 @@
+{
+  "feature_rows": 28090,
+  "features_sha256": "c222b5b4df1f61a36c34cef094bf58709e9a6f5ef047fdb60b84797490b44600",
+  "human_normalization_rows": 1889,
+  "normalization_sha256": "697a4c5fb75f642b86589f2475863a6cb473cb8f20da780ee2c139e9d6785885",
+  "optimizer_steps": 0,
+  "passed": true,
+  "prepared_sha256": "3b3403a45a45b428d5d2ca718bc6cfd98850ac885ca6ad3ebdca875fce7c413a",
+  "source": {
+    "dataset_lock_sha256": "d05956535fc3702f7dd8fb96176e0c2505f8f0bb21d68dc8dcff435bb8a0b2dc",
+    "reference_sha256": "2ee5d28b4a4fac7927dc1d5579fe564c8c3efc641faffd8d035da860d96e4024",
+    "runner_sha256": "a1a9e7b895cf8e430e2b41803d64e31699d386895fe797fd964e9585fd01530f",
+    "snapshot_sha256": "d7c60bd98627f5d7385d0045a93ada18a3547f84e3bcf0eeed30edfe762e6076",
+    "training_source_sha256": "6cea57f9463e3cfab839361318e70ab191164b3fdb525e808dfc97d2c9b8f151"
+  },
+  "test_features_extracted": false
+}

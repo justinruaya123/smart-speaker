@@ -1,0 +1,27 @@
+{
+  "parameters": 175653,
+  "selected_epoch": 38,
+  "optimizer_steps": 4608,
+  "draws": 147456,
+  "device": "cuda",
+  "amp_bfloat16": true,
+  "weights_changed": true,
+  "sequence_sha256": "b410cc231bc94e49089aab8f217c17df2dc6112fa7b74b0331d89fc9b7354549",
+  "source_draws": {
+    "demo_slot_positive": 32256,
+    "human_negative": 20736,
+    "human_positive": 46080,
+    "synthetic_negative": 16128,
+    "synthetic_positive": 32256
+  },
+  "initial_encoder_sha256": "3349bddebcede830251d4ff1efd6377cda281b7e3e1d11130126b14d83add10b",
+  "elapsed_seconds": 1699.9729085,
+  "fitting_splits": [
+    "train"
+  ],
+  "selection_split": "dev",
+  "test_inferred": false,
+  "actions_enabled": false,
+  "installed": false,
+  "full_sample_counts_bound_by_independent_audit": true
+}

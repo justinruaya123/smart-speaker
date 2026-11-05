@@ -1,0 +1,23 @@
+{
+  "actions_enabled": false,
+  "checkpoint_sha256": "8e759891e55cc98f0381f20bf6299d796b12bf8cc0f2aefdccdb14a740cc29a5",
+  "checks": {
+    "draws": true,
+    "final_sample_counts": true,
+    "final_tensors": true,
+    "full_curve": true,
+    "initial_encoder_sha256": true,
+    "optimizer_steps": true,
+    "original_selected_tensors": true,
+    "selected_epoch": true,
+    "selected_sample_counts": true,
+    "selected_tensors": true,
+    "sequence_sha256": true,
+    "source_draws": true
+  },
+  "parameters": 175653,
+  "passed": true,
+  "qualified": false,
+  "selected_epoch": 38,
+  "selected_tensor_sha256": "2947c654e89b889495ebdbeaaee06255dd9eeaf9712ab14f03dcee5b352e74ec"
+}

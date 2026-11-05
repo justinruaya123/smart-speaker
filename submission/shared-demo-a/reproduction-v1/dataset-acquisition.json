@@ -1,0 +1,53 @@
+{
+  "files": {
+    "INHERITED-CITATION-AUDIT.md": {
+      "bytes": 18263,
+      "sha256": "8c1d3e96b38b44161cfde86e3d31abdfc3c3303b466fa08b87578b23f6684ace"
+    },
+    "README.md": {
+      "bytes": 9700,
+      "sha256": "904c6db1232868327e5086c5df9edaccb1486cde19f42736b367dedfdb1f3df7"
+    },
+    "authored-synthesis.tar": {
+      "bytes": 370534400,
+      "sha256": "84aadd1afb5e59efd2d8add75810bfe875935edf308a658ecf027f882dccad6e"
+    },
+    "citations.bib": {
+      "bytes": 5769,
+      "sha256": "81deafc9ac08abbbae3b8961b253d03da12b0cf0834612301b8183b45a7a3289"
+    },
+    "new-dev.jsonl.gz": {
+      "bytes": 67362,
+      "sha256": "6a41f9a51dd50ff47412296ee7a7460ad71c20e2ab20b88f810e496b608a983c"
+    },
+    "normalization.json": {
+      "bytes": 429040,
+      "sha256": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09"
+    },
+    "official.jsonl.gz": {
+      "bytes": 20058,
+      "sha256": "5d6560ba6f2eb9a91760719c29d59deee27240b5491b722a9023247b8843f0b5"
+    },
+    "original-dev.jsonl.gz": {
+      "bytes": 246057,
+      "sha256": "4754fb207455c4cccf6d04dc2998a2fe70106c2d8160faa66a9dcd6b751fda2b"
+    },
+    "source-cards.json": {
+      "bytes": 763,
+      "sha256": "707d698e4342ee248edb5b15bc494f24502d2a68e0ce8314e42f4ca28c00e722"
+    },
+    "test.jsonl.gz": {
+      "bytes": 47801,
+      "sha256": "92fe765c186d6ce352f09d9400177908db63a4ea0c8f37e19931de04b98db749"
+    },
+    "train.jsonl.gz": {
+      "bytes": 3831899,
+      "sha256": "69f8aa658e3e8f82739e371f0ea4018b72aad02699159cbc3c027ff2d6fced79"
+    }
+  },
+  "manifest_sha256": "98ea697e4cea02157a04835843ce1f9d8ca6f8b1420eecff4180dc7498aeed5a",
+  "publication_revision": "13d388c31985be7f42af56b46570281728ecc054",
+  "repository": "justinruaya123/ai231-smart-speaker",
+  "requested_branch": "main",
+  "resolved_revision": "13d388c31985be7f42af56b46570281728ecc054"
+}
