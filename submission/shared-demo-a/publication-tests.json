@@ -1,0 +1,34 @@
+{
+  "guard_tests": 22,
+  "guard_tests_passed": true,
+  "full_suite_failures": [
+    "FAILED scripts/test/test_iris_feedback_assets.py::test_low_amplitude_beep_design_is_distinct_and_click_free",
+    "FAILED scripts/test/test_iris_feedback_assets.py::test_builder_preserves_existing_output",
+    "FAILED scripts/test/test_iris_models.py::test_ncnn_preserves_selected_model_on_variable_lengths",
+    "FAILED scripts/test/test_iris_package_replay.py::test_wrong_hash_is_rejected_before_extraction",
+    "FAILED scripts/test/test_iris_package_replay.py::test_existing_output_is_preserved_before_any_archive_read",
+    "FAILED scripts/test/test_iris_pi_source_contract.py::test_native_arm64_workflow_exercises_public_source_commands_only",
+    "FAILED scripts/test/test_iris_pi_source_contract.py::test_pi_quickstart_documents_shallow_clone_and_bounded_default_benchmark",
+    "FAILED scripts/test/test_iris_plots.py::test_fresh_checkout_regenerates_from_receipts_without_cache",
+    "FAILED scripts/test/test_iris_plots.py::test_changed_official_population_rejects_mislabelled_plot",
+    "FAILED scripts/test/test_iris_publish_privacy.py::test_pinned_source_input_evidence_can_be_published_privately[reproduction/inputs/provenance/diversity-prefit-trainer.py]",
+    "FAILED scripts/test/test_iris_publish_privacy.py::test_pinned_source_input_evidence_can_be_published_privately[reproduction/inputs/official-benchmark/scorer.py]",
+    "FAILED scripts/test/test_iris_publish_privacy.py::test_source_and_document_links_resolve_to_github_main[../SpeakerUI/server/README.md-https://github.com/justinruaya123/smart-speaker/blob/main/SpeakerUI/server/README.md]",
+    "FAILED scripts/test/test_iris_reproduce.py::test_changed_recipe_cache_is_never_overwritten",
+    "FAILED scripts/test/test_iris_wake_models.py::test_wake_export_preserves_ort_ncnn_logits"
+  ],
+  "full_suite_summary": [
+    "14 failed, 621 passed, 8 skipped, 6 warnings in 103.08s (0:01:43)"
+  ],
+  "untouched_baseline_comparison_pending": false,
+  "initial_shallow_oracle_failure_preserved": true,
+  "untouched_main_revision": "4028871f4fe9c07a7d9d7b946de3bf3512e0fdcd",
+  "untouched_main_summary": [
+    "14 failed, 606 passed, 8 skipped, 6 warnings in 99.95s (0:01:39)"
+  ],
+  "identical_baseline_failure_nodes": true,
+  "new_failure_nodes": [],
+  "independent_review_completed": false,
+  "independent_review_failure": "Provider rejected reviewer context; no completed external verdict. Parent performed direct integrity review and seven additional RED-GREEN reference/source guards.",
+  "fresh_environment_packages_compatible": 39
+}
