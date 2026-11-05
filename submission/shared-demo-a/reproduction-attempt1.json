@@ -1,0 +1,23 @@
+{
+  "attempt": 1,
+  "source_revision": "86f2630da4cec76a0ddca96623783d6342b8d538",
+  "dataset_revision": "13d388c31985be7f42af56b46570281728ecc054",
+  "status": "preparation_failed_before_features_and_optimizer",
+  "dataset_files_verified": 12,
+  "manifest_sha256": "98ea697e4cea02157a04835843ce1f9d8ca6f8b1420eecff4180dc7498aeed5a",
+  "downloaded_shard_sha256": "977e6c6be208818a35496ac6e1a2b2da62f3387acba377664e0f48dbdc2cec9e",
+  "downloaded_shard_bytes": 315293385,
+  "bytes_match": true,
+  "cache_entry_is_valid_symlink": true,
+  "root_causes": [
+    "Verifier rejected a legitimate HF snapshot-to-blob symlink despite correct SHA256",
+    "Relative output resolved against isolated source cwd rather than repository root"
+  ],
+  "optimizer_updates": 0,
+  "raw_features_extracted": false,
+  "source_or_data_guard_relaxed": false,
+  "correction": "Allow only hash-verified cache symlinks whose resolved target stays under the declared cache; anchor output inside root .cache",
+  "failed_log_sha256": "fdaa0da2a0c065865692398a1e8edae5ff30b17eb81fe743513ca2cecf81835a",
+  "preserved_output": "submission/shared-demo-a/source/.cache/fresh-main-01",
+  "regression_tests": "four additional RED-to-GREEN symlink/path tests; 26 guard tests pass"
+}

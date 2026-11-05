@@ -109,3 +109,33 @@ def test_preparation_source_cannot_change():
 
 def test_preparation_source_positive_case():
     assert engine().verify_preparation_source({'source':{'reference':'same'}},{'reference':'same'})
+
+
+def test_relative_output_is_anchored_to_repository():
+    module=engine()
+    assert module.output_directory(Path('.cache/run'))==module.ROOT/'.cache/run'
+
+
+def test_output_cannot_escape_ignored_root():
+    with pytest.raises(ValueError,match='output'):
+        engine().output_directory(Path('../outside'))
+
+
+def test_accepts_hash_verified_hf_cache_symlink(tmp_path):
+    cache=tmp_path/'cache'; cache.mkdir()
+    blob=cache/'blob'; blob.write_bytes(b'actual')
+    link=cache/'snapshot'; link.symlink_to(blob)
+    record=dict(sha256=hashlib.sha256(b'actual').hexdigest(),bytes=6)
+    assert engine().verify_file(link,record,cache_root=cache)==link
+    blob.write_bytes(b'forged')
+    with pytest.raises(ValueError,match='identity'):
+        engine().verify_file(link,record,cache_root=cache)
+
+
+def test_rejects_cache_symlink_escape(tmp_path):
+    cache=tmp_path/'cache';cache.mkdir()
+    outside=tmp_path/'outside';outside.write_bytes(b'actual')
+    link=cache/'snapshot';link.symlink_to(outside)
+    record=dict(sha256=hashlib.sha256(b'actual').hexdigest())
+    with pytest.raises(ValueError,match='identity'):
+        engine().verify_file(link,record,cache_root=cache)

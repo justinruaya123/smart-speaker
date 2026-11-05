@@ -39,9 +39,10 @@ def read_rows(path):
         return [json.loads(line) for line in stream if line.strip()]
 
 
-def verify_file(path,record):
+def verify_file(path,record,*,cache_root=None):
     path=Path(path)
-    if not path.is_file() or path.is_symlink() or ('bytes' in record and path.stat().st_size!=record['bytes']) or sha(path)!=record['sha256']:
+    unsafe_link=(path.is_symlink() and (cache_root is None or not path.resolve().is_relative_to(Path(cache_root).resolve())))
+    if not path.is_file() or unsafe_link or ('bytes' in record and path.stat().st_size!=record['bytes']) or sha(path)!=record['sha256']:
         raise ValueError('File identity mismatch: '+str(path))
     return path
 
@@ -182,7 +183,7 @@ def acquire_audio(out,rows,revision,local):
         paths[row['id']]=target
     for (repo,rev,name,digest),members in groups.items():
         path=Path(hf_hub_download(repo,name,repo_type='dataset',revision=rev,cache_dir=str(out/'hf-cache')))
-        verify_file(path,dict(sha256=digest))
+        verify_file(path,dict(sha256=digest),cache_root=out/'hf-cache')
         wanted=defaultdict(list)
         for row in members: wanted[row['location']['row']].append(row)
         offset=0
@@ -358,11 +359,19 @@ def evaluate(out):
     return result
 
 
+def output_directory(value):
+    value=Path(value)
+    out=(value if value.is_absolute() else ROOT/value).resolve()
+    if not out.is_relative_to((ROOT/'.cache').resolve()) or out==(ROOT/'.cache').resolve():
+        raise ValueError('Reproduction output must be a run inside repository .cache')
+    return out
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('stage',choices=['prepare','smoke','train','evaluate','all'])
     parser.add_argument('--output',type=Path,required=True)
-    args=parser.parse_args(); out=args.output.resolve()
+    args=parser.parse_args(); out=output_directory(args.output)
     if args.stage in ('prepare','all'):
         out.mkdir(parents=True,exist_ok=False)
         write(out/'source-acquisition.json',dict(git_branch=subprocess.check_output(['git','branch','--show-current'],cwd=ROOT,text=True).strip(),
