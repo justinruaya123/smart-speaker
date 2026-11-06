@@ -1,5 +1,88 @@
 # Iris
 
+**Local voice commands in 175,653 parameters.**
+
+Iris is a compact voice-command model (VCM) for a fixed-vocabulary smart speaker. It maps mono 16 kHz speech directly to an intent and typed slots, without ASR, a transcript, an LLM or a remote recognition fallback. One shared encoder covers **18 intent families, 34 complete commands and 102 canonical wordings**.
+
+The current retained model is **baseline A: `shared-demo-slots-v1 / heads_s53`, epoch 38**. Its trained ONNX graph and recovery checkpoint are committed here. It is a research demo, **not production-qualified**; qualification and actions remain disabled.
+
+[Model and exact hashes](submission/shared-demo-a/snapshot.json) · [All wordings](submission/shared-demo-a/commands.csv) · [Training and reproduction](docs/REPRODUCIBILITY-shared-demo-a.md) · [Actual reproduction results](docs/EXPERIMENT-shared-demo-a-reproduction-v1.md)
+
+## What the VCM recognizes
+
+| Family | Finite acoustic coverage |
+|---|---|
+| Music and media | Play, pause, stop, next; volume up/down or 0/50/100% |
+| Lights | Global on/off; brightness 0/50/100%; red, green or blue |
+| Time | Current time; timers 10/30/60 seconds; alarms 06:00/12:30/21:45, Asia/Manila |
+| Temperature | 18/22/26 degrees Celsius |
+| Reminders | Drink water, study, exercise; list reminders |
+| Other requests | Weather, fixed home-camera CALL target and preset MESSAGE request |
+
+These are command targets, not proof that a device action happened. SpeakerUI supplies the configured application behavior; CALL is camera-only, not telephony. Arbitrary names, song titles, reminder dictation and numeric combinations are unsupported. **Kitchen/Ceiling names are not in A's catalog.** Old brightness 20/60 and alarm 08:00/21:00 belong to the preserved legacy catalog, not nearest-value aliases.
+
+## Model and training recipe
+
+| Item | Retained A recipe |
+|---|---|
+| Frontend | 40-bin causal log-mel; normalization fitted only on 1,889 human TRAIN recordings |
+| Encoder | Width-128 causal CNN; temporal stride 2; four kernel-7 blocks with dilations 1/2/4/8; masked mean/max pooling |
+| Heads | 29 action outputs + 4 percentage outputs + 4 alarm-time outputs, including missing/UNKNOWN categories |
+| Full fit | Random initialization, seed 53; 6 human-foundation + 42 mixed epochs; 96 updates/epoch, batch 32; **4,608 optimizer updates** |
+| Optimizer | AdamW, LR 0.002 with mixed cosine decay to 0.00005, weight decay 0.01; CUDA BF16 |
+| Loss | Action cross-entropy + 0.5 percentage loss + 0.5 alarm-time loss |
+| Decision | Action-authoritative argmax; missing required slots reject; no slot rescue or calibrated confidence threshold |
+
+TRAIN contains **25,958 recordings: 1,889 human and 24,069 synthetic**. Sampling balances sources rather than following raw file proportions. The added demo voices use six TRAIN TTS identities across US, British, Australian, Singaporean and Philippine provider locales, with two separate DEV voices and **two reserved TEST voices**. Inherited human/synthetic sources remain part of training. Provider identities do not certify independent human speakers or accent fidelity.
+
+DEV selects weights before TEST. A is the retained winner within this restricted shared-slot study, **not a guarantee of per-intent nonregression** or a universal winner across different catalogs. The later PH/named-device child did not replace it. [Frozen protocol](submission/shared-demo-a/protocol.json) · [Study and comparisons](docs/EXPERIMENT-shared-demo-slots-v1.md).
+
+## Measured command correctness
+
+A result is correct only when the entire intent and every required slot match.
+
+| Population | Complete commands correct | Interpretation |
+|---|---:|---|
+| Exact synthetic TEST phrases | **203/204 (99.51%)** | 102 wordings, two reserved TEST voices |
+| Same phrases with authored added context | **98/204 (48.04%)** | Extra spoken context remains a major weakness |
+| Supported exposed-human regression | **71/77 (92.21%)** | Previously evaluated human recordings, not fresh blind qualification |
+| Retained-human DEV | **132/167 (79.04%)** | Development evidence used for selection |
+
+The exposed-human task-negative false accepts remain **5/19**. Small perfect TTS cells and high softmax scores do not establish live-speaker reliability. A does not literally filter arbitrary unknown words. Fresh human microphone, wake/owner and physical Raspberry Pi acceptance remain unmeasured. [Frozen metrics](submission/shared-demo-a/metrics.json) · [Per-verbatim results](submission/shared-demo-a/per-verbatim.csv) · [Full error accounting](docs/EXPERIMENT-shared-demo-a-reproduction-v1.md#same-outcomes-including-limitations).
+
+## Reproduce A or run the application
+
+The measured fresh-main reproduction used CPython **3.13.14**, Torch 2.10.0+cu128 and an RTX 3080 with CUDA BF16. It completed all 48 epochs from random initialization, matched the selected tensors and exported **byte-identical ONNX**, with all 642 original evaluation decisions unchanged. Native checkpoint serialization differs; CPU/cross-OS equality is not claimed.
+
+After cloning this repository, use the pinned scientific environment and a new output directory:
+
+```sh
+uv venv --python 3.13.14 .venv
+uv pip install --python .venv/Scripts/python.exe --index-strategy unsafe-best-match -r submission/shared-demo-a/requirements-training.txt
+.venv/Scripts/python.exe -B scripts/shared_demo_a.py all --output .cache/baseline-a-reproduction-01
+```
+
+These Windows commands perform real fitting, not just weight loading. The [runbook](docs/REPRODUCIBILITY-shared-demo-a.md) gives POSIX interpreter paths, backend requirements, immutable input acquisition and failure gates. Plain `python reproduce.py` still verifies historical epoch44; it does **not** select A or train it.
+
+**This repository owns models, training, data provenance and export. [SpeakerUI](https://github.com/justinruaya123/SpeakerUI) owns inference, the Ambient UI, wake/VAD/owner orchestration and integrations.** Install and run the application from its own checkout:
+
+```sh
+git clone https://github.com/justinruaya123/SpeakerUI.git
+cd SpeakerUI
+python -m scripts.model_assets
+python inference.py --check
+python inference.py --mode ui --no-audio
+```
+
+SpeakerUI pins A's producer assets and verifies their hashes. Its `benchmark.py` remains an explicit historical epoch44 comparison, not an A qualification result. A's parameter count excludes separate wake/VAD/owner companions. Optional services need their own configuration; local recognition is not a claim that setup or every provider is offline.
+
+Data and weights retain source-specific research, consent and redistribution restrictions; see the [treated dataset and citations](https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/tree/main/shared-demo-a-v1). No blanket open license applies. Historical model cards and the appendix describe older models, not A.
+
+<details>
+<summary>Historical epoch44 reference (different model, catalog and benchmarks)</summary>
+
+# Iris
+
 **Say Hey Iris. Give a supported command. Iris recognizes it locally and shows what happened.**
 
 A finite voice-command model: **258,912 parameters · original epoch 44 · FP32 · 31 commands + UNKNOWN**. Recognition is local; optional services supply actions and external data. No transcript, ASR or LLM runs in the product. **Wake smoke gate FAILED; no replacement was promoted. This is an unqualified research build, not a working-acoustic-release claim.** Pi and fresh human live-microphone reliability remain unmeasured.
@@ -262,3 +345,5 @@ Cite the exact repository revision and frozen model hash. Primary dataset: **DOI
   note = {258912 parameters; FP32; graph SHA256 c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce; cite exact source revision used}
 }
 ```
+
+</details>

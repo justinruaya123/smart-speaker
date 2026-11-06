@@ -103,6 +103,56 @@ class PublicationDataTests(unittest.TestCase):
         self.assertFalse(data['wake']['verdict']['publish_companion'])
 
 
+class CurrentVCMReadmeTests(unittest.TestCase):
+    def overview(self):
+        from presentation.build_readme import render
+        data = json.loads((ROOT / 'docs/site/assets/iris.json').read_bytes())
+        return render(data).partition('<details>\n<summary>Historical epoch44 reference')[0]
+
+    def test_retained_a_is_the_concise_current_model_not_the_old_presentation(self):
+        snapshot = json.loads((ROOT / 'submission/shared-demo-a/snapshot.json').read_bytes())
+        text = self.overview()
+        self.assertIn(f"{snapshot['parameters']:,} parameters", text)
+        self.assertIn('heads_s53', text)
+        self.assertIn('34 complete commands', text)
+        self.assertIn('102 canonical wordings', text)
+        self.assertNotIn('258,912 parameters', text)
+        self.assertLess(len(text.split()), 900)
+
+    def test_performance_keeps_exact_context_and_human_populations_visible(self):
+        metrics = json.loads((ROOT / 'submission/shared-demo-a/metrics.json').read_bytes())
+        text = self.overview()
+        groups = [metrics['new_synthetic_TEST_by_form']['clean'],
+                  metrics['new_synthetic_TEST_by_form']['context'],
+                  metrics['official_exposed_scope_groups']['retained_human_supported']]
+        for group in groups:
+            self.assertIn(f"{group['correct']}/{group['supported']}", text)
+        self.assertIn('two reserved TEST voices', text)
+        self.assertIn('not production-qualified', text)
+        self.assertIn('not a guarantee of per-intent nonregression', text)
+        self.assertIn('Kitchen/Ceiling', text)
+
+    def test_training_command_explicitly_targets_a_and_keeps_scientific_setup_separate(self):
+        text = self.overview()
+        self.assertIn('scripts/shared_demo_a.py all', text)
+        self.assertIn('3.13.14', text)
+        self.assertIn('4,608', text)
+        self.assertIn('6 human-foundation', text)
+        self.assertIn('42 mixed', text)
+        self.assertIn('REPRODUCIBILITY-shared-demo-a.md', text)
+        self.assertIn('SpeakerUI', text)
+
+    def test_historical_storyboard_stays_inside_a_labelled_appendix(self):
+        from presentation import build_readme
+        self.assertTrue(hasattr(build_readme, 'render_epoch44'))
+        data = json.loads((ROOT / 'docs/site/assets/iris.json').read_bytes())
+        result = build_readme.render(data)
+        legacy = build_readme.render_epoch44(data)
+        self.assertIn('<summary>Historical epoch44 reference', result)
+        self.assertTrue(result.endswith(legacy + '\n</details>\n'))
+        self.assertEqual(result.count('```mermaid\n'), 12)
+
+
 class AnimationAssetTests(unittest.TestCase):
     def test_real_render_and_slide_export_have_local_assets(self):
         for name in ('pipeline', 'model'):
