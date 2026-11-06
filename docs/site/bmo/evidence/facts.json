@@ -1,0 +1,627 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-11-07",
+  "subject": "Baseline A / SharedDemoSlotVCM-v1",
+  "prototype_only": true,
+  "architecture": {
+    "name": "SharedDemoSlotVCM-v1",
+    "parameters": 175653,
+    "published_selected_epoch": 38,
+    "mode": "heads",
+    "model_config": {
+      "classes": 29,
+      "dilations": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "dropout": 0.1,
+      "head_sizes": [
+        29,
+        4,
+        4
+      ],
+      "input_temporal_stride": 2,
+      "kernels": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "mode": "heads",
+      "output_size": 37,
+      "parameter_limit_exclusive": 220000,
+      "pooling": "mean_max",
+      "unknown_class": 0,
+      "width": 128
+    },
+    "onnx_bytes": 743751,
+    "onnx_sha256": "9b98acefa8bad6610d98501ff0310c9b2a2ec1594619b4b5b7d2c7a80dc888a6",
+    "complete_supported_commands": 34,
+    "intent_families": 18,
+    "canonical_wordings": 102,
+    "unknown_outcome": true,
+    "frontend": {
+      "sample_rate_hz": 16000,
+      "channels": 1,
+      "window_ms": 25,
+      "hop_ms": 10,
+      "fft_size": 512,
+      "mel_bins": 40,
+      "low_hz": 20,
+      "high_hz": 7600,
+      "centered": false,
+      "normalization": "Frozen equal-utterance mean/std from 1,889 human TRAIN recordings"
+    },
+    "encoder": "Width-128 causal residual CNN, four kernel-7 blocks with dilations 1/2/4/8; each block has two depthwise+pointwise stages, framewise LayerNorm and SiLU; masked mean+max pooling",
+    "percentage_values": [
+      0,
+      50,
+      100
+    ],
+    "alarm_times": [
+      "06:00",
+      "12:30",
+      "21:45"
+    ],
+    "alarm_timezone": "Asia/Manila",
+    "decision_policy": "Fixed argmax; action head authoritative; missing required slot rejects; no confidence calibration",
+    "asr": false,
+    "llm": false,
+    "cloud_recognition": false,
+    "installed": false,
+    "qualified": false,
+    "actions_enabled": false,
+    "sources": [
+      "published-recipe.json",
+      "published-protocol.json",
+      "published-original-selection-before-test.json"
+    ]
+  },
+  "dataset": {
+    "repository": "justinruaya123/ai231-smart-speaker",
+    "prefix": "shared-demo-a-v1",
+    "publication_revision": "13d388c31985be7f42af56b46570281728ecc054",
+    "rtx_reconstruction_resolved_revision": "39d5032248becc8a6efdd80738a4a4ef59f6d969",
+    "manifest_sha256": "98ea697e4cea02157a04835843ce1f9d8ca6f8b1420eecff4180dc7498aeed5a",
+    "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/tree/39d5032248becc8a6efdd80738a4a4ef59f6d969/shared-demo-a-v1",
+    "license": "other",
+    "license_name": "source-specific-research-terms",
+    "license_summary": "Source-specific research/education terms; not a uniformly open-licensed audio corpus. Restricted third-party audio/features are not newly mirrored.",
+    "views": {
+      "new-dev": {
+        "groups": {
+          "demo_slot_positive": 108,
+          "synthetic_negative": 32,
+          "synthetic_positive": 300
+        },
+        "kind": {
+          "synthetic": 440
+        },
+        "rows": 440
+      },
+      "official": {
+        "groups": {
+          "human_negative": 19,
+          "human_positive": 77,
+          "synthetic_negative": 21,
+          "synthetic_positive": 85
+        },
+        "kind": {
+          "human": 96,
+          "synthetic": 106
+        },
+        "rows": 202
+      },
+      "original-dev": {
+        "groups": {
+          "human_negative": 89,
+          "human_positive": 167,
+          "synthetic_negative": 360,
+          "synthetic_positive": 1076
+        },
+        "kind": {
+          "human": 256,
+          "synthetic": 1436
+        },
+        "rows": 1692
+      },
+      "test": {
+        "groups": {
+          "demo_slot_positive": 108,
+          "synthetic_negative": 32,
+          "synthetic_positive": 300
+        },
+        "kind": {
+          "synthetic": 440
+        },
+        "rows": 440
+      },
+      "train": {
+        "groups": {
+          "demo_slot_positive": 324,
+          "human_negative": 685,
+          "human_positive": 1204,
+          "synthetic_negative": 3107,
+          "synthetic_positive": 20638
+        },
+        "kind": {
+          "human": 1889,
+          "synthetic": 24069
+        },
+        "rows": 25958
+      }
+    },
+    "combined_dev": {
+      "rows": 2132,
+      "human": 256,
+      "synthetic": 1876
+    },
+    "calibration": {
+      "used_for_fitting": false,
+      "current_reproduction_rows": 0,
+      "historical_excluded_human_rows": 210,
+      "reason": "Fixed argmax requires no threshold calibration; historical prepared calibration arrays were excluded from optimizer and selection"
+    },
+    "feature_cache": {
+      "rows": 28090,
+      "train_pool_rows": 25958,
+      "dev_rows": 2132,
+      "distinct_ids": 28090,
+      "distinct_pcm_hashes": 28090,
+      "test_features_before_selection": false,
+      "note": "TRAIN plus DEV feature identities, not fitting-only rows. No duplicate PCM hashes in these prepared views."
+    },
+    "new_demo_forms": {
+      "train": {
+        "clean": 612,
+        "context": 612,
+        "negative": 96,
+        "total": 1320
+      },
+      "dev": {
+        "clean": 204,
+        "context": 204,
+        "negative": 32,
+        "total": 440
+      },
+      "test": {
+        "clean": 204,
+        "context": 204,
+        "negative": 32,
+        "total": 440
+      }
+    },
+    "declared_new_provider_voice_ids": {
+      "train": 6,
+      "dev": 2,
+      "test": 2,
+      "interpretation": "Microsoft Edge ShortNames, not independent human speakers; historical physical voice aliases unresolved"
+    },
+    "independent_human_speaker_count": null,
+    "independent_human_speaker_count_status": "Not established by the inspected Baseline A identity evidence",
+    "audio_hours": null,
+    "audio_hours_status": "Not audited in frozen Baseline A manifests",
+    "authored_synthesis_files": 3964,
+    "authored_synthesis_breakdown": {
+      "System_Speech": 1764,
+      "Microsoft_Edge": 2200
+    },
+    "existing_Qwen_dev_only_rows": 184,
+    "upstream_revisions": [
+      {
+        "repository": "airimonda/ai231-me2-voice-commands",
+        "revision": "25111444af3adff7588d86ab27c304bb080895cf",
+        "role": "Inherited TRAIN/DEV"
+      },
+      {
+        "repository": "airimonda/ai231-me2-voice-commands",
+        "revision": "bfca0bbebfe17e00d6a685d1da573615d29ecdce",
+        "role": "Exposed official202 regression"
+      },
+      {
+        "repository": "martinnavs/ai231-fil-supplemental-data",
+        "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+        "role": "Inherited synthetic inputs"
+      }
+    ],
+    "sources": [
+      "published-dataset.lock.json",
+      "published-dataset-README.md"
+    ]
+  },
+  "training": {
+    "seed": 53,
+    "initialization": "random",
+    "epochs": 48,
+    "foundation_epochs": 6,
+    "mixed_epochs": 42,
+    "steps_per_epoch": 96,
+    "batch_size": 32,
+    "optimizer_updates": 4608,
+    "sample_draws": 147456,
+    "epochs_meaning": "Fixed-budget sampling epochs, not full passes through all recordings",
+    "optimizer": "AdamW",
+    "learning_rate": 0.002,
+    "mixed_phase_lr_schedule": "cosine decay",
+    "final_learning_rate": 5e-05,
+    "weight_decay": 0.01,
+    "gradient_clip": 5.0,
+    "mixed_precision": "CUDA BF16",
+    "loss": "action cross-entropy + 0.5 percentage cross-entropy + 0.5 alarm-time cross-entropy; missing/not-applicable targets supervised",
+    "foundation_quotas": {
+      "human_negative": 8,
+      "human_positive": 24
+    },
+    "mixed_quotas": {
+      "demo_slot_positive": 8,
+      "human_negative": 4,
+      "human_positive": 8,
+      "synthetic_negative": 4,
+      "synthetic_positive": 8
+    },
+    "sampler": "Source quotas, then uniformly choose command, voice label, wording and recording; shuffle batch",
+    "augmentation": {
+      "channel_gain": "All synthetic draws; 70% probability for human draws. Four-point frequency curve N(0,0.25), global gain N(0,0.3)",
+      "silence_context_probability": 0.65,
+      "max_prefix_frames": 120,
+      "max_suffix_frames": 120,
+      "normalized_gaussian_noise_std": 0.015,
+      "frequency_mask_probability": 0.3,
+      "frequency_mask_width_bins": [
+        1,
+        4
+      ]
+    },
+    "selection": "DEV-only supported-first ranking with retained-human floor 128/167; fixed argmax; no negative false-accept veto",
+    "rtx_run_distinct_sampled_train_ids": 15499,
+    "rtx_run_distinct_sampled_by_kind": {
+      "human": 1850,
+      "synthetic": 13649
+    },
+    "source_files": [
+      "published-protocol.json",
+      "rtx4080-result.json"
+    ]
+  },
+  "published_results": {
+    "checkpoint": "Published heads_s53 epoch 38",
+    "test_population_status": "Previously evaluated synthetic reserved voices and exposed official regression; not fresh human qualification",
+    "metrics": {
+      "human_official": {
+        "rows": 96,
+        "supported": 77,
+        "correct": 71,
+        "wrong_accepted": 3,
+        "rejected": 3,
+        "negative_rows": 19,
+        "negative_false_accepts": 5,
+        "exact_supported_accuracy_percent": 92.2078,
+        "false_accept_rate_percent": 26.3158
+      },
+      "official": {
+        "rows": 202,
+        "supported": 162,
+        "correct": 155,
+        "wrong_accepted": 3,
+        "rejected": 4,
+        "negative_rows": 40,
+        "negative_false_accepts": 8,
+        "exact_supported_accuracy_percent": 95.679,
+        "false_accept_rate_percent": 20.0
+      },
+      "synthetic_clean": {
+        "rows": 204,
+        "supported": 204,
+        "correct": 203,
+        "wrong_accepted": 0,
+        "rejected": 1,
+        "negative_rows": 0,
+        "negative_false_accepts": 0,
+        "exact_supported_accuracy_percent": 99.5098,
+        "false_accept_rate_percent": null
+      },
+      "synthetic_context": {
+        "rows": 204,
+        "supported": 204,
+        "correct": 98,
+        "wrong_accepted": 1,
+        "rejected": 105,
+        "negative_rows": 0,
+        "negative_false_accepts": 0,
+        "exact_supported_accuracy_percent": 48.0392,
+        "false_accept_rate_percent": null
+      },
+      "synthetic_negative": {
+        "rows": 32,
+        "supported": 0,
+        "correct": 0,
+        "wrong_accepted": 0,
+        "rejected": 0,
+        "negative_rows": 32,
+        "negative_false_accepts": 0,
+        "exact_supported_accuracy_percent": null,
+        "false_accept_rate_percent": 0.0
+      },
+      "synthetic_test": {
+        "rows": 440,
+        "supported": 408,
+        "correct": 301,
+        "wrong_accepted": 1,
+        "rejected": 106,
+        "negative_rows": 32,
+        "negative_false_accepts": 0,
+        "exact_supported_accuracy_percent": 73.7745,
+        "false_accept_rate_percent": 0.0
+      }
+    },
+    "demo_slot_subset": {
+      "correct": 106,
+      "supported": 108,
+      "wrong_accepted": 0,
+      "rejected": 2,
+      "exact_accuracy_percent": 98.1481
+    },
+    "original_unknown": {
+      "false_accepts": 7,
+      "negative_rows": 16
+    },
+    "retained_human_dev": {
+      "correct": 132,
+      "supported": 167,
+      "parent_correct": 128
+    },
+    "published_model_replay": {
+      "actions_enabled": false,
+      "all_original_decisions_match": true,
+      "evidence_kind": "independent_published_artifact_replay",
+      "fresh_retraining_passed": false,
+      "model_sha256": "9b98acefa8bad6610d98501ff0310c9b2a2ec1594619b4b5b7d2c7a80dc888a6",
+      "optimizer_updates": 0,
+      "original_decisions_matched": 642,
+      "qualified": false,
+      "rows": 642
+    },
+    "desktop_latency": {
+      "p50_ms": 3.434,
+      "p95_ms": 5.595,
+      "cpu_threads": 1,
+      "measurement": "Historical native desktop replay, not Raspberry Pi",
+      "includes": [
+        "frontend",
+        "normalizer",
+        "graph",
+        "decoder"
+      ],
+      "excludes": [
+        "disk",
+        "utterance/capture duration",
+        "endpoint wait"
+      ]
+    },
+    "source_files": [
+      "rtx4080-result.json",
+      "published-original-selection-before-test.json"
+    ]
+  },
+  "rtx4080_reproduction": {
+    "publication_status": "Unpublished local run evidence",
+    "run_id": "fresh-repro-20261107-03",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpu_memory": "16 GB",
+    "platform": "Windows 11",
+    "python": "3.13.14",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "git_revision": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+    "hf_revision": "39d5032248becc8a6efdd80738a4a4ef59f6d969",
+    "status": "exact_fit_comparison_failed",
+    "full_fit_completed": true,
+    "epochs": 48,
+    "optimizer_updates": 4608,
+    "draws": 147456,
+    "fit_seconds": 776.2074768000748,
+    "selected_epoch": 36,
+    "published_reference_epoch": 38,
+    "exact_fit_comparison_passed": false,
+    "comparison_checks": {
+      "draws": true,
+      "final_sample_counts": true,
+      "final_tensors": false,
+      "full_curve": false,
+      "initial_encoder_sha256": true,
+      "optimizer_steps": true,
+      "original_selected_tensors": false,
+      "selected_epoch": false,
+      "selected_sample_counts": false,
+      "selected_tensors": false,
+      "sequence_sha256": true,
+      "source_draws": true
+    },
+    "same_host_prior_matching_runs": 3,
+    "same_host_match_note": "This run and three prior same-host runs matched; cross-GPU published reference equality failed",
+    "candidate_test_evaluated": false,
+    "success_selection_lock_exists": false,
+    "published_graph_replay_decisions_matched": 642,
+    "published_graph_replay_rows": 642,
+    "installed": false,
+    "actions_enabled": false,
+    "physical_pi_or_microphone_used": false,
+    "committed": false,
+    "pushed": false,
+    "source_files": [
+      "rtx4080-result.json",
+      "rtx4080-environment.json"
+    ]
+  },
+  "raspberry_pi": {
+    "status": "Not measured",
+    "latency_p50_ms": null,
+    "latency_p95_ms": null,
+    "peak_ram_mb": null,
+    "temperature_c": null,
+    "power_w": null,
+    "live_microphone_accuracy_percent": null,
+    "physical_device_tested": false
+  },
+  "warnings": [
+    "Do not assign published epoch-38 test scores to the different RTX epoch-36 candidate; its test evaluation was blocked after exact-fit comparison failed.",
+    "28,090 is TRAIN+DEV cached feature rows; the fitting pool is 25,958. Actual sampled unique IDs are a separate count.",
+    "Clean and context forms are distinct recordings; the inspected prepared TRAIN/DEV cache contains no duplicate PCM hashes.",
+    "Synthetic voice IDs are not independent human speakers; total independent-speaker coverage and hours remain unestablished.",
+    "Strong clean synthetic results do not erase context failures or original-UNKNOWN false accepts.",
+    "Raspberry Pi resource and live microphone metrics are explicit null placeholders.",
+    "Preserved raw receipts include original local filesystem paths and hardware details; RTX receipt also contains separate unrelated default-artifact verification, which is not Baseline A.",
+    "The evidence is packaged for a local prototype. No publication, commit or push is authorized by this evidence-assembly task."
+  ],
+  "sources": [
+    {
+      "local_file": "published-recipe.json",
+      "original_location": "submission/models/shared-demo-a/recipe.json",
+      "origin": "github",
+      "bytes": 1174,
+      "sha256": "1e5e2a653c99b74c5e7333ab17af3f4b5e1db0906a390160f2ccb007599dd481",
+      "published": true,
+      "repository": "justinruaya123/smart-speaker",
+      "commit": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/submission/models/shared-demo-a/recipe.json"
+    },
+    {
+      "local_file": "published-protocol.json",
+      "original_location": "submission/shared-demo-a/protocol.json",
+      "origin": "github",
+      "bytes": 4377,
+      "sha256": "b11eed2f8bd8e5747aec972add23251c49fdcceed7237dd964939c7539c9a429",
+      "published": true,
+      "repository": "justinruaya123/smart-speaker",
+      "commit": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/submission/shared-demo-a/protocol.json"
+    },
+    {
+      "local_file": "published-dataset.lock.json",
+      "original_location": "submission/shared-demo-a/dataset.lock.json",
+      "origin": "github",
+      "bytes": 275,
+      "sha256": "d05956535fc3702f7dd8fb96176e0c2505f8f0bb21d68dc8dcff435bb8a0b2dc",
+      "published": true,
+      "repository": "justinruaya123/smart-speaker",
+      "commit": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/submission/shared-demo-a/dataset.lock.json"
+    },
+    {
+      "local_file": "published-original-selection-before-test.json",
+      "original_location": "submission/shared-demo-a/original-selection-before-test.json",
+      "origin": "github",
+      "bytes": 7532,
+      "sha256": "6956c5c6192207fb527de2fc5ae26229a7a863338431cbde797cdcbac3adb7eb",
+      "published": true,
+      "repository": "justinruaya123/smart-speaker",
+      "commit": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/submission/shared-demo-a/original-selection-before-test.json"
+    },
+    {
+      "local_file": "rtx4080-result.json",
+      "original_location": "experiments/shared-demo-a-portability-v1/delete-repeat-03-result.json",
+      "origin": "local_unpublished",
+      "bytes": 21845,
+      "sha256": "77cf626676958202da223428c9fff6dc82e3921e8cd4faff481123a119e5780a",
+      "published": false,
+      "local_workspace": "C:\\Users\\SCL-Jus\\.codex\\worktrees\\iris-main-reproduction\\smart-speaker",
+      "run_id": "fresh-repro-20261107-03",
+      "run_source_commit": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+      "publication_status": "Unpublished local reproduction evidence; not committed or pushed by the run"
+    },
+    {
+      "local_file": "rtx4080-environment.json",
+      "original_location": "experiments/shared-demo-a-portability-v1/delete-repeat-03-environment.json",
+      "origin": "local_unpublished",
+      "bytes": 3170,
+      "sha256": "af78d42e9d2effa6a3c48fd651a99f12c0000063486b91e1361ba715c39068f1",
+      "published": false,
+      "local_workspace": "C:\\Users\\SCL-Jus\\.codex\\worktrees\\iris-main-reproduction\\smart-speaker",
+      "run_id": "fresh-repro-20261107-03",
+      "run_source_commit": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+      "publication_status": "Unpublished local reproduction evidence; not committed or pushed by the run"
+    },
+    {
+      "local_file": "published-dataset-README.md",
+      "original_location": "shared-demo-a-v1/README.md",
+      "origin": "huggingface",
+      "bytes": 9700,
+      "sha256": "904c6db1232868327e5086c5df9edaccb1486cde19f42736b367dedfdb1f3df7",
+      "published": true,
+      "repository": "justinruaya123/ai231-smart-speaker",
+      "revision": "39d5032248becc8a6efdd80738a4a4ef59f6d969",
+      "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/blob/39d5032248becc8a6efdd80738a4a4ef59f6d969/shared-demo-a-v1/README.md"
+    },
+    {
+      "local_file": "facts.json",
+      "origin": "derived_read_only_audit",
+      "published": false,
+      "derived_from": [
+        "published-recipe.json",
+        "published-protocol.json",
+        "published-dataset.lock.json",
+        "published-original-selection-before-test.json",
+        "rtx4080-result.json",
+        "rtx4080-environment.json",
+        "published-dataset-README.md"
+      ],
+      "additional_original_sources": [
+        {
+          "repository": "justinruaya123/smart-speaker",
+          "commit": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+          "path": "submission/shared-demo-a/source/scripts/models/demo_slots_v1.py"
+        },
+        {
+          "repository": "justinruaya123/smart-speaker",
+          "commit": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+          "path": "submission/shared-demo-a/source/scripts/models/vcm.py"
+        },
+        {
+          "repository": "justinruaya123/smart-speaker",
+          "commit": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+          "path": "submission/shared-demo-a/source/vcm/frontend.py"
+        },
+        {
+          "repository": "justinruaya123/smart-speaker",
+          "commit": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+          "path": "submission/shared-demo-a/source/scripts/train/demo_slots_fit.py"
+        },
+        {
+          "repository": "justinruaya123/smart-speaker",
+          "commit": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+          "path": "submission/shared-demo-a/source/scripts/train/speaker_optionb_tiny.py"
+        },
+        {
+          "repository": "justinruaya123/smart-speaker",
+          "commit": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+          "path": "submission/shared-demo-a/source/scripts/train/optionb_synthetic_data.py"
+        },
+        {
+          "repository": "justinruaya123/smart-speaker",
+          "commit": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+          "path": "docs/EXPERIMENT-shared-demo-slots-v1.md"
+        },
+        {
+          "repository": "justinruaya123/ai231-smart-speaker",
+          "revision": "39d5032248becc8a6efdd80738a4a4ef59f6d969",
+          "path": "shared-demo-a-v1/manifest.json"
+        },
+        {
+          "origin": "local_unpublished",
+          "local_workspace": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo",
+          "path": ".cache/baseline-a-delete-repeat-03/heads_s53/training-result.json",
+          "use": "Read-only count of sampled training IDs; no training executed"
+        },
+        {
+          "origin": "local_unpublished",
+          "local_workspace": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo",
+          "path": ".cache/baseline-a-delete-repeat-03/prepared-train-dev.json",
+          "use": "Read-only count of distinct IDs/PCM and split membership"
+        }
+      ]
+    }
+  ]
+}

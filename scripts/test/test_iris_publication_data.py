@@ -172,12 +172,14 @@ class AnimationAssetTests(unittest.TestCase):
 
 
 class StaticPublicationTests(unittest.TestCase):
-    def test_pages_is_main_only_and_separate_acoustic_gate_is_required(self):
+    def test_pages_is_main_only_and_acoustic_qualification_stays_independent(self):
         workflow = ROOT / '.github/workflows/iris-publication.yml'
         self.assertTrue(workflow.is_file(), 'main-only Pages workflow is required')
         body = workflow.read_text(encoding='utf-8')
         self.assertIn("github.event_name == 'push' && github.ref == 'refs/heads/main'", body)
-        self.assertIn('needs: [validate, acoustic-release]', body)
+        self.assertIn('needs: [validate]', body)
+        self.assertIn('  acoustic-release:', body)
+        self.assertNotIn('continue-on-error', body)
         self.assertIn('path: docs/site', body)
         self.assertIn('presentation/validate.py --release-gate', body)
         self.assertNotIn('pull_request_target', body)

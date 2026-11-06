@@ -1,0 +1,46 @@
+{
+  "actions_enabled": false,
+  "architecture": "SharedDemoSlotVCM-v1",
+  "binding": {
+    "commands.json": "4d5000d8e53b86a81a9aac4c097513509a9b0cdfd2f4298864d830cc8794a061",
+    "model.onnx": "9b98acefa8bad6610d98501ff0310c9b2a2ec1594619b4b5b7d2c7a80dc888a6",
+    "normalization.json": "335e3ae313f2b5025109fba2b255a094584b5dc05611ed42acd7b15704b33a09",
+    "policy.json": "c07eb25e7f35e0018a93d904a3ce235ede50276a0784b4869684b92df0b142b3"
+  },
+  "checkpoint_sha256": "0164568747c67657836659dc1322947d6282d829717b93efe218269b2b456069",
+  "installed": false,
+  "mode": "heads",
+  "model_config": {
+    "classes": 29,
+    "dilations": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "dropout": 0.1,
+    "head_sizes": [
+      29,
+      4,
+      4
+    ],
+    "input_temporal_stride": 2,
+    "kernels": [
+      7,
+      7,
+      7,
+      7
+    ],
+    "mode": "heads",
+    "output_size": 37,
+    "parameter_limit_exclusive": 220000,
+    "pooling": "mean_max",
+    "unknown_class": 0,
+    "width": 128
+  },
+  "parameters": 175653,
+  "qualified": false,
+  "research_only": true,
+  "retention_eligible": true,
+  "selected_epoch": 38
+}

@@ -12,7 +12,7 @@ import { dirname, resolve, extname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root=resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const site=resolve(root,'docs/site');
-assert.ok(existsSync(resolve(site,'index.html')), 'a complete real deck is required');
+assert.ok(existsSync(resolve(site,'reference.html')), 'the preserved historical deck is required');
 const source=process.env.IRIS_PLAYWRIGHT_ROOT || resolve(root,'presentation');
 const require=createRequire(resolve(source,'package.json'));
 const { chromium }=require('playwright');
@@ -20,7 +20,7 @@ const mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json
 const server=createServer(async(req,res)=>{
   try {
     const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
-    const file=resolve(site,'.'+(pathname==='/'?'/index.html':pathname));
+    const file=resolve(site,'.'+(pathname==='/'?'/reference.html':pathname));
     if(!file.startsWith(site+sep)) {res.writeHead(403).end();return;}
     const data=await readFile(file);res.writeHead(200,{'Content-Type':mime[extname(file)]||'application/octet-stream'}).end(data);
   } catch {res.writeHead(404).end();}

@@ -1,4 +1,4 @@
-name: Iris publication
+name: BMO documentation Pages
 
 on:
   pull_request:
@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: iris-publication-${{ github.ref }}
+  group: bmo-documentation-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -38,6 +38,7 @@ jobs:
           python -B scripts/iris_publication_data.py --check
           python -B presentation/build_readme.py --check
           python -B -m unittest scripts.test.test_iris_publication_data -v
+          python -B -m unittest scripts.test.test_bmo_pages -v
           python -B presentation/validate.py --require-integration
           git diff --check
       - name: Pinned static-presentation browser tooling
@@ -51,6 +52,8 @@ jobs:
           pnpm --dir presentation exec playwright install --with-deps chromium
       - name: Exercise six chapters, ten selectors, local Manim export and reduced motion
         run: node presentation/qa.mjs
+      - name: Exercise BMO at a GitHub Pages project prefix
+        run: node presentation/bmo_qa.mjs
       - name: Anonymous exact-commit ONNX readback before public publication
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: python -B presentation/validate.py --remote --require-integration
@@ -83,9 +86,11 @@ jobs:
         run: python -B presentation/validate.py --release-gate
 
   deploy:
-    name: Deploy verified Iris Pages
+    name: Deploy verified BMO documentation
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: [validate, acoustic-release]
+    # Documentation reports failed acoustic outcomes; it does not promote a model.
+    # Keep the independent acoustic-release job and its failing receipt unchanged.
+    needs: [validate]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:

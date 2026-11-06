@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from scripts.iris_publication_data import build_publication, MODEL_HASHES
 from presentation.build_readme import render as render_readme
+from presentation.bmo_validate import validate_bmo
 
 
 class References(HTMLParser):
@@ -88,7 +89,7 @@ def validate_site(root=ROOT, require_integration=False):
             parser = References()
             parser.feed(body)
             refs = parser.links
-            if source.name == 'index.html':
+            if source == site / 'reference.html':
                 main = parser
             elif source.stem in ('pipeline', 'model') and parser.videos != 5:
                 raise ValueError('real five-stage Manim Slides export missing')
@@ -139,7 +140,8 @@ def validate_site(root=ROOT, require_integration=False):
     pending = [p for p in ('scripts/model_package.py', 'docs/RELEASE-iris-publication-v1.md', 'docs/REVERT-iris-publication-v1.md') if not (root / p).is_file()]
     if require_integration and pending:
         raise ValueError(f'release-owner integration paths missing: {pending}')
-    return {'chapters': main.chapters, 'use_cases': len(data['use_cases']), 'readme_diagrams': diagrams,
+    bmo = validate_bmo(root)
+    return {'chapters': main.chapters, 'bmo': bmo, 'use_cases': len(data['use_cases']), 'readme_diagrams': diagrams,
             'assets_checked': count, 'missing_assets': missing, 'pi': data['benchmarks']['pi'],
             'integration_paths_missing': pending, 'frozen_git_payloads': len(MODEL_HASHES)}
 
