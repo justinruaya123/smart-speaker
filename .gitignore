@@ -198,3 +198,6 @@ Desktop.ini
 # Explicit retained baseline A; other candidate weights stay ignored.
 !/submission/models/shared-demo-a/model.onnx
 !/submission/checkpoints/shared-demo-a-selected.pt
+
+# One already-published synthetic recording for the BMO documentation replay.
+!/docs/site/bmo/data/sample.wav
