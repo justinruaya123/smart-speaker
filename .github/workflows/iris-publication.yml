@@ -53,6 +53,7 @@ jobs:
       - name: Exercise six chapters, ten selectors, local Manim export and reduced motion
         run: node presentation/qa.mjs
       - name: Exercise BMO at a GitHub Pages project prefix
+        if: success() || failure()
         run: node presentation/bmo_qa.mjs
       - name: Anonymous exact-commit ONNX readback before public publication
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
