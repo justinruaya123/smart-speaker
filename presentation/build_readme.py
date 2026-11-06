@@ -4,15 +4,17 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT_SUMMARY = r'''# Iris
+CURRENT_SUMMARY = r'''# BMO
 
 **Local voice commands in 175,653 parameters.**
 
-Iris is a compact voice-command model (VCM) for a fixed-vocabulary smart speaker. It maps mono 16 kHz speech directly to an intent and typed slots, without ASR, a transcript, an LLM or a remote recognition fallback. One shared encoder covers **18 intent families, 34 complete commands and 102 canonical wordings**.
+BMO is a compact voice-command model (VCM) for a fixed-vocabulary smart speaker. It maps mono 16 kHz speech directly to an intent and typed slots, without ASR, a transcript, an LLM or a remote recognition fallback. One shared encoder covers **18 intent families, 34 complete commands and 102 canonical wordings**.
 
 The current retained model is **baseline A: `shared-demo-slots-v1 / heads_s53`, epoch 38**. Its trained ONNX graph and recovery checkpoint are committed here. It is a research demo, **not production-qualified**; qualification and actions remain disabled.
 
 [Model and exact hashes](submission/shared-demo-a/snapshot.json) · [All wordings](submission/shared-demo-a/commands.csv) · [Training and reproduction](docs/REPRODUCIBILITY-shared-demo-a.md) · [Actual reproduction results](docs/EXPERIMENT-shared-demo-a-reproduction-v1.md)
+
+[BMO interactive documentation](https://justinruaya123.github.io/smart-speaker/) — architecture, dataset recipes/citations, RTX 4080 training and VCM benchmarks. [Pages instructions](docs/BMO-PAGES.md).
 
 ## What the VCM recognizes
 
@@ -91,7 +93,7 @@ PREFIX = r'''# Iris
 
 A finite voice-command model: **258,912 parameters · original epoch 44 · FP32 · 31 commands + UNKNOWN**. Recognition is local; optional services supply actions and external data. No transcript, ASR or LLM runs in the product. **Wake smoke gate FAILED; no replacement was promoted. This is an unqualified research build, not a working-acoustic-release claim.** Pi and fresh human live-microphone reliability remain unmeasured.
 
-[Two-minute slides and script](docs/PRESENTATION-optionb-tiny-2minute.md) · [Detailed animated presentation](docs/site/index.html) · [Getting started](docs/IRIS-GETTING-STARTED.md) · [Model card](docs/MODEL-CARD-iris-epoch44.md) · [Verified JSON](docs/site/assets/iris.json)
+[Two-minute slides and script](docs/PRESENTATION-optionb-tiny-2minute.md) · [Historical animated presentation](docs/site/reference.html) · [Getting started](docs/IRIS-GETTING-STARTED.md) · [Model card](docs/MODEL-CARD-iris-epoch44.md) · [Verified JSON](docs/site/assets/iris.json)
 
 ## Repositories and quickstart
 
@@ -165,7 +167,7 @@ Two depthwise/pointwise stages per block; kernel 7, dilation 1/2/4/8, LayerNorm 
 
 ## Ten use cases
 
-All31 positive classes are assigned exactly once by the [generator/tests](scripts/iris_publication_data.py). The [deck](docs/site/index.html#uses) shows ten selectors in one pipeline/JSON/output frame. These are **supported wording definitions and illustrated outputs**, not observed recognition/provider results.
+All31 positive classes are assigned exactly once by the [generator/tests](scripts/iris_publication_data.py). The [historical deck](docs/site/reference.html#uses) shows ten selectors in one pipeline/JSON/output frame. These are **supported wording definitions and illustrated outputs**, not observed recognition/provider results.
 
 | ID | Category | Output/source boundary |
 |---|---|---|

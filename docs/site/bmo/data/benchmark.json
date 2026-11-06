@@ -1,0 +1,717 @@
+{
+  "schema_version": 1,
+  "title": "Baseline A VCM benchmark",
+  "baseline": {
+    "name": "Baseline A",
+    "architecture": "SharedDemoSlotVCM-v1",
+    "candidate": "heads_s53",
+    "selected_epoch": 38,
+    "parameters": 175653,
+    "code_revision": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+    "model_sha256": "9b98acefa8bad6610d98501ff0310c9b2a2ec1594619b4b5b7d2c7a80dc888a6",
+    "research_only": true,
+    "qualified": false,
+    "actions_enabled": false,
+    "onnx_bytes": 743751
+  },
+  "scope": {
+    "complete_commands": 34,
+    "canonical_wordings": 102,
+    "intent_families": 18,
+    "outputs": "29 action-template logits + 4 percentage logits + 4 alarm logits",
+    "decision_policy": "Fixed argmax. Action is authoritative; required missing slot rejects. No threshold calibration or slot rescue.",
+    "accuracy_definition": "Exact complete-command match on supported recordings, with supported rejections and wrong accepted commands separate. Negative false accepts use the negative denominator.",
+    "test_recordings": 440,
+    "test_supported": 408,
+    "test_negative": 32,
+    "official_recordings": 202,
+    "official_human": 96,
+    "official_synthetic": 106,
+    "fresh_human_qualification": false,
+    "sources": [
+      "metrics",
+      "study_report",
+      "view_test",
+      "view_official"
+    ]
+  },
+  "accuracy": [
+    {
+      "id": "synthetic_clean",
+      "label": "Clean synthetic wordings",
+      "scope": "synthetic_test",
+      "rows": 204,
+      "supported": 204,
+      "correct": 203,
+      "wrong_accepted": 0,
+      "rejected_supported": 1,
+      "accuracy": 0.9950980392156863,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "negative_false_accept_rate": null,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_test"
+      ]
+    },
+    {
+      "id": "synthetic_context",
+      "label": "Added-context synthetic wordings",
+      "scope": "synthetic_test",
+      "rows": 204,
+      "supported": 204,
+      "correct": 98,
+      "wrong_accepted": 1,
+      "rejected_supported": 105,
+      "accuracy": 0.4803921568627451,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "negative_false_accept_rate": null,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_test"
+      ]
+    },
+    {
+      "id": "synthetic_all_supported",
+      "label": "Combined clean + context",
+      "scope": "synthetic_test",
+      "rows": 408,
+      "supported": 408,
+      "correct": 301,
+      "wrong_accepted": 1,
+      "rejected_supported": 106,
+      "accuracy": 0.7377450980392157,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "negative_false_accept_rate": null,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_test"
+      ]
+    },
+    {
+      "id": "synthetic_negatives",
+      "label": "Authored synthetic negatives",
+      "scope": "synthetic_test",
+      "rows": 32,
+      "supported": 0,
+      "correct": 0,
+      "wrong_accepted": 0,
+      "rejected_supported": 0,
+      "accuracy": null,
+      "negative_rows": 32,
+      "negative_false_accepts": 0,
+      "negative_false_accept_rate": 0.0,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_test"
+      ]
+    },
+    {
+      "id": "official_human_supported",
+      "label": "Exposed official human supported",
+      "scope": "official_regression",
+      "rows": 77,
+      "supported": 77,
+      "correct": 71,
+      "wrong_accepted": 3,
+      "rejected_supported": 3,
+      "accuracy": 0.922077922077922,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "negative_false_accept_rate": null,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_official"
+      ]
+    },
+    {
+      "id": "official_human_negatives",
+      "label": "Exposed official human negatives",
+      "scope": "official_regression",
+      "rows": 19,
+      "supported": 0,
+      "correct": 0,
+      "wrong_accepted": 0,
+      "rejected_supported": 0,
+      "accuracy": null,
+      "negative_rows": 19,
+      "negative_false_accepts": 5,
+      "negative_false_accept_rate": 0.2631578947368421,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_official"
+      ]
+    },
+    {
+      "id": "official_all_supported",
+      "label": "Exposed official supported (human + synthetic)",
+      "scope": "official_regression",
+      "rows": 162,
+      "supported": 162,
+      "correct": 155,
+      "wrong_accepted": 3,
+      "rejected_supported": 4,
+      "accuracy": 0.9567901234567902,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "negative_false_accept_rate": null,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_official"
+      ]
+    },
+    {
+      "id": "official_all_negatives",
+      "label": "Exposed official task negatives",
+      "scope": "official_regression",
+      "rows": 40,
+      "supported": 0,
+      "correct": 0,
+      "wrong_accepted": 0,
+      "rejected_supported": 0,
+      "accuracy": null,
+      "negative_rows": 40,
+      "negative_false_accepts": 8,
+      "negative_false_accept_rate": 0.2,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_official"
+      ]
+    },
+    {
+      "id": "official_original_unknown",
+      "label": "Exposed original UNKNOWN",
+      "scope": "official_regression",
+      "rows": 16,
+      "supported": 0,
+      "correct": 0,
+      "wrong_accepted": 0,
+      "rejected_supported": 0,
+      "accuracy": null,
+      "negative_rows": 16,
+      "negative_false_accepts": 7,
+      "negative_false_accept_rate": 0.4375,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_official"
+      ]
+    },
+    {
+      "id": "official_outside_demo",
+      "label": "Exposed formerly supported, now outside demo",
+      "scope": "official_regression",
+      "rows": 24,
+      "supported": 0,
+      "correct": 0,
+      "wrong_accepted": 0,
+      "rejected_supported": 0,
+      "accuracy": null,
+      "negative_rows": 24,
+      "negative_false_accepts": 1,
+      "negative_false_accept_rate": 0.041666666666666664,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_official"
+      ]
+    }
+  ],
+  "slot_cells": [
+    {
+      "id": "alarm_06:00",
+      "label": "ALARM 06:00",
+      "scope": "synthetic_test",
+      "rows": 12,
+      "supported": 12,
+      "correct": 11,
+      "wrong_accepted": 0,
+      "rejected_supported": 1,
+      "accuracy": 0.9166666666666666,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "negative_false_accept_rate": null,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_test"
+      ],
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "06:00",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "alarm_12:30",
+      "label": "ALARM 12:30",
+      "scope": "synthetic_test",
+      "rows": 12,
+      "supported": 12,
+      "correct": 12,
+      "wrong_accepted": 0,
+      "rejected_supported": 0,
+      "accuracy": 1.0,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "negative_false_accept_rate": null,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_test"
+      ],
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "12:30",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "alarm_21:45",
+      "label": "ALARM 21:45",
+      "scope": "synthetic_test",
+      "rows": 12,
+      "supported": 12,
+      "correct": 12,
+      "wrong_accepted": 0,
+      "rejected_supported": 0,
+      "accuracy": 1.0,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "negative_false_accept_rate": null,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_test"
+      ],
+      "command": {
+        "intent": "ALARM",
+        "slots": {
+          "time": "21:45",
+          "timezone": "Asia/Manila"
+        }
+      }
+    },
+    {
+      "id": "brightness_0",
+      "label": "BRIGHTNESS 0",
+      "scope": "synthetic_test",
+      "rows": 12,
+      "supported": 12,
+      "correct": 12,
+      "wrong_accepted": 0,
+      "rejected_supported": 0,
+      "accuracy": 1.0,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "negative_false_accept_rate": null,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_test"
+      ],
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 0
+        }
+      }
+    },
+    {
+      "id": "brightness_50",
+      "label": "BRIGHTNESS 50",
+      "scope": "synthetic_test",
+      "rows": 12,
+      "supported": 12,
+      "correct": 12,
+      "wrong_accepted": 0,
+      "rejected_supported": 0,
+      "accuracy": 1.0,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "negative_false_accept_rate": null,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_test"
+      ],
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 50
+        }
+      }
+    },
+    {
+      "id": "brightness_100",
+      "label": "BRIGHTNESS 100",
+      "scope": "synthetic_test",
+      "rows": 12,
+      "supported": 12,
+      "correct": 12,
+      "wrong_accepted": 0,
+      "rejected_supported": 0,
+      "accuracy": 1.0,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "negative_false_accept_rate": null,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_test"
+      ],
+      "command": {
+        "intent": "BRIGHTNESS",
+        "slots": {
+          "light_id": "light.all",
+          "percent": 100
+        }
+      }
+    },
+    {
+      "id": "volume_0",
+      "label": "VOLUME 0",
+      "scope": "synthetic_test",
+      "rows": 12,
+      "supported": 12,
+      "correct": 12,
+      "wrong_accepted": 0,
+      "rejected_supported": 0,
+      "accuracy": 1.0,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "negative_false_accept_rate": null,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_test"
+      ],
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "set",
+          "percent": 0
+        }
+      }
+    },
+    {
+      "id": "volume_50",
+      "label": "VOLUME 50",
+      "scope": "synthetic_test",
+      "rows": 12,
+      "supported": 12,
+      "correct": 12,
+      "wrong_accepted": 0,
+      "rejected_supported": 0,
+      "accuracy": 1.0,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "negative_false_accept_rate": null,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_test"
+      ],
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "set",
+          "percent": 50
+        }
+      }
+    },
+    {
+      "id": "volume_100",
+      "label": "VOLUME 100",
+      "scope": "synthetic_test",
+      "rows": 12,
+      "supported": 12,
+      "correct": 11,
+      "wrong_accepted": 0,
+      "rejected_supported": 1,
+      "accuracy": 0.9166666666666666,
+      "negative_rows": 0,
+      "negative_false_accepts": 0,
+      "negative_false_accept_rate": null,
+      "metric": "Exact complete-command match; wrong values/targets are incorrect.",
+      "sources": [
+        "metrics",
+        "study_report",
+        "predictions",
+        "view_test"
+      ],
+      "command": {
+        "intent": "VOLUME",
+        "slots": {
+          "operation": "set",
+          "percent": 100
+        }
+      }
+    }
+  ],
+  "slot_summary": {
+    "supported": 108,
+    "correct": 106,
+    "wrong_accepted": 0,
+    "rejected_supported": 2,
+    "accuracy": 0.9814814814814815,
+    "cells": 9,
+    "recordings_per_cell": 12,
+    "scope": "Three volume values, three brightness values, three full alarm times; clean + context across two synthetic voice IDs. This is a subset of synthetic TEST, not 108 additional recordings.",
+    "sources": [
+      "study_report"
+    ]
+  },
+  "paired_context_consistency": {
+    "both_correct_pairs": 98,
+    "pairs": 204,
+    "fraction": 0.4803921568627451,
+    "interpretation": "Clean and added-context versions both correct. Authored wrappers only; not arbitrary OOV deletion or word alignment.",
+    "sources": [
+      "study_report"
+    ]
+  },
+  "latency": {
+    "platform": "Historical desktop Windows CPU ONNX runtime",
+    "cpu_threads": 1,
+    "cpu_model": null,
+    "cpu_model_status": "Not recorded in preserved compact timing report.",
+    "p50_ms": 3.434,
+    "p95_ms": 5.595,
+    "includes": [
+      "frontend",
+      "normalization",
+      "ONNX graph",
+      "complete-command decoder"
+    ],
+    "excludes": [
+      "disk I/O",
+      "utterance duration",
+      "microphone capture",
+      "endpoint wait"
+    ],
+    "timing_sample_count": null,
+    "timing_sample_count_status": "Report and original verification preserve 642 native events; exact percentile repetition/warmup protocol not reconstructed from raw timing events here.",
+    "raw_events_sha256": "af12a735081e516ec7c61487a644da58189c92378eb677c9a45583d9ea4ee495",
+    "raw_events_available_in_deck": false,
+    "runtime": "onnxruntime 1.23.2",
+    "python": "3.13.14",
+    "os": "Windows-11-10.0.26200-SP0",
+    "historical_environment_gpu": "NVIDIA GeForce RTX 3080; identifies original training environment, not the CPU latency execution device.",
+    "re_measured_in_this_deck": false,
+    "raspberry_pi": false,
+    "sources": [
+      "study_report",
+      "verification"
+    ]
+  },
+  "verification": {
+    "published_decision_rows": 642,
+    "synthetic_test_rows": 440,
+    "exposed_official_rows": 202,
+    "torch_onnx_native_parity": true,
+    "original_focused_tests_passed": 100,
+    "scope": "Software/original-audio replay evidence; not physical Pi or live microphone verification.",
+    "sources": [
+      "study_report",
+      "verification",
+      "predictions"
+    ]
+  },
+  "comparison": {
+    "title": "One matched-seed architecture control on DEV",
+    "comparable_population": "Same shared-demo-slots-v1 DEV recordings, frozen labels, frontend, normalizer, sampling, optimizer budget and seed 53.",
+    "rows": [
+      {
+        "name": "Flat control",
+        "parameters": 175139,
+        "selected_epoch": 40,
+        "human_dev_correct": 130,
+        "human_dev_supported": 167,
+        "slot_dev_correct": 108,
+        "slot_dev_supported": 108,
+        "all_demo_dev_correct": 400,
+        "all_demo_dev_supported": 408
+      },
+      {
+        "name": "Baseline A three heads",
+        "parameters": 175653,
+        "selected_epoch": 38,
+        "human_dev_correct": 132,
+        "human_dev_supported": 167,
+        "slot_dev_correct": 108,
+        "slot_dev_supported": 108,
+        "all_demo_dev_correct": 400,
+        "all_demo_dev_supported": 408
+      }
+    ],
+    "limitations": [
+      "Development selection results, not independent test comparisons.",
+      "One matched seed; no replicated superiority claim.",
+      "Older 31-command, expanded personal-name and Iris tasks use different ontologies/populations and are not directly ranked against this 34-command restricted task.",
+      "No external SOTA benchmark claim."
+    ],
+    "sources": [
+      "study_report"
+    ]
+  },
+  "rtx4080_reproduction": {
+    "hardware": "NVIDIA GeForce RTX 4080 SUPER",
+    "run_id": "fresh-repro-20261107-03",
+    "date": "2026-11-07",
+    "original_evidence_status": "Local run receipt, not published baseline evidence at pinned commit.",
+    "fit_seconds": 776.207,
+    "fit_seconds_scope": "Full 48-epoch fitter wall time, including per-epoch DEV selection and checkpoint writes; not inference latency.",
+    "epochs": 48,
+    "optimizer_steps": 4608,
+    "draws": 147456,
+    "selected_epoch": 36,
+    "published_epoch": 38,
+    "exact_fit_comparison_passed": false,
+    "candidate_test_evaluated": false,
+    "published_model_replay_matching_decisions": 642,
+    "published_model_replay_rows": 642,
+    "interpretation": "Training completed but selected different weights/epoch. All accuracy numbers above belong to the preserved published epoch38 graph, whose separate replay matched 642/642 decisions.",
+    "sources": [
+      "rtx_result",
+      "rtx_environment"
+    ]
+  },
+  "raspberry_pi": {
+    "status": "Not measured; explicit placeholders",
+    "p50_ms": null,
+    "p95_ms": null,
+    "peak_ram_mb": null,
+    "power_watts": null,
+    "temperature_c": null,
+    "realtime_factor": null,
+    "live_accuracy": null,
+    "qualification": false
+  },
+  "caveats": [
+    "Clean 203/204 must always be shown alongside context 98/204; added speech is the principal failed robustness gate.",
+    "0/32 authored synthetic false accepts does not erase 7/16 false accepts on exposed original UNKNOWN or establish open-set safety.",
+    "Official human results are exposed regression, not a newly collected blind human test.",
+    "The nine slot cells cover three percentages and three alarm times, not arbitrary numbers, times or names.",
+    "Synthetic voice ShortNames are not human participants.",
+    "A retained research baseline is not a global winner or a qualified physical device."
+  ],
+  "sources": [
+    {
+      "id": "metrics",
+      "title": "Published Baseline A metrics",
+      "path": "submission/shared-demo-a/metrics.json",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/submission/shared-demo-a/metrics.json"
+    },
+    {
+      "id": "model_recipe",
+      "title": "Published epoch38 model identity",
+      "path": "submission/models/shared-demo-a/recipe.json",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/submission/models/shared-demo-a/recipe.json"
+    },
+    {
+      "id": "study_report",
+      "title": "Original study benchmark and timing report",
+      "path": "docs/EXPERIMENT-shared-demo-slots-v1.md",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/docs/EXPERIMENT-shared-demo-slots-v1.md"
+    },
+    {
+      "id": "selection",
+      "title": "Original selection before TEST",
+      "path": "submission/shared-demo-a/original-selection-before-test.json",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/submission/shared-demo-a/original-selection-before-test.json"
+    },
+    {
+      "id": "verification",
+      "title": "Original 642-row evaluation verification",
+      "path": "submission/shared-demo-a/original-evaluation-verification.json",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/submission/shared-demo-a/original-evaluation-verification.json"
+    },
+    {
+      "id": "predictions",
+      "title": "Published 642-row reproduced decisions",
+      "path": "submission/shared-demo-a/reproduction-v1/reproduced-predictions.json",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/submission/shared-demo-a/reproduction-v1/reproduced-predictions.json"
+    },
+    {
+      "id": "view_test",
+      "title": "Frozen synthetic TEST references",
+      "path": null,
+      "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/blob/13d388c31985be7f42af56b46570281728ecc054/shared-demo-a-v1/test.jsonl.gz"
+    },
+    {
+      "id": "view_official",
+      "title": "Frozen official regression references",
+      "path": null,
+      "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/blob/13d388c31985be7f42af56b46570281728ecc054/shared-demo-a-v1/official.jsonl.gz"
+    },
+    {
+      "id": "rtx_result",
+      "title": "Local RTX 4080 SUPER reproduction receipt",
+      "path": "docs/site/bmo/evidence/rtx4080-result.json",
+      "url": null,
+      "site_path": "../evidence/rtx4080-result.json",
+      "publication_status": "Local evidence copied into this deck; not evidence that was published at model commit 4efe542."
+    },
+    {
+      "id": "rtx_environment",
+      "title": "Local RTX 4080 SUPER environment receipt",
+      "path": "docs/site/bmo/evidence/rtx4080-environment.json",
+      "url": null,
+      "site_path": "../evidence/rtx4080-environment.json",
+      "publication_status": "Local evidence copied into this deck; not evidence that was published at model commit 4efe542."
+    }
+  ]
+}

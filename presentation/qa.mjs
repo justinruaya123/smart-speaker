@@ -12,7 +12,7 @@ import { dirname, resolve, extname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root=resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const site=resolve(root,'docs/site');
-assert.ok(existsSync(resolve(site,'index.html')), 'a complete real deck is required');
+assert.ok(existsSync(resolve(site,'reference.html')), 'the preserved historical deck is required');
 const source=process.env.IRIS_PLAYWRIGHT_ROOT || resolve(root,'presentation');
 const require=createRequire(resolve(source,'package.json'));
 const { chromium }=require('playwright');
@@ -20,7 +20,7 @@ const mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json
 const server=createServer(async(req,res)=>{
   try {
     const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
-    const file=resolve(site,'.'+(pathname==='/'?'/index.html':pathname));
+    const file=resolve(site,'.'+(pathname==='/'?'/reference.html':pathname));
     if(!file.startsWith(site+sep)) {res.writeHead(403).end();return;}
     const data=await readFile(file);res.writeHead(200,{'Content-Type':mime[extname(file)]||'application/octet-stream'}).end(data);
   } catch {res.writeHead(404).end();}
@@ -60,7 +60,7 @@ try {
       const panel=document.querySelector('#case-panel').getBoundingClientRect();
       const summary=document.querySelector('.summary').getBoundingClientRect();
       const code=document.querySelector('#case-json');
-      return {overlap:panel.bottom>summary.top+2 || code.scrollWidth>code.clientWidth+2,panel_bottom:panel.bottom,summary_top:summary.top,code_scroll:code.scrollWidth,code_width:code.clientWidth};
+      return {overlap:panel.bottom>summary.top+2 || code.scrollWidth>code.clientWidth+2,panel_bottom:panel.bottom,panel_height:panel.height,panel_top:panel.top,tabs_height:document.querySelector('#case-tabs').getBoundingClientRect().height,summary_top:summary.top,code_scroll:code.scrollWidth,code_width:code.clientWidth};
     });
     assert.equal(overlap.overlap,false,`${id} output/JSON must fit its consistent frame: ${JSON.stringify(overlap)}`);
     await page.screenshot({path:resolve(output,`${id}.png`)});report.use_cases.push(id);
@@ -80,13 +80,13 @@ try {
         }).map(e=>e.id||e.tagName+':'+e.textContent.slice(0,40));
       });
       await page.screenshot({path:resolve(output,`${viewport.width}-${id}.png`)});
-      if(id==='model'||id==='evidence') {
+      if(id==='model'||id==='evidence'||id==='run') {
         const collisions=await page.evaluate(()=>{
           const panel=document.querySelector('[data-chapter]:not([hidden])');
           const end=panel.querySelector('.chapter-foot').getBoundingClientRect().top;
           const margin=4*document.querySelector('#stage').getBoundingClientRect().width/1920;
-          const content=panel.querySelector('.inspector,.evidence-grid');
-          return [...content.querySelectorAll('h3,p,dl,figcaption,caption,span')].filter(e=>e.getBoundingClientRect().bottom>end-margin).map(e=>({text:e.id||e.textContent.slice(0,100),bottom:e.getBoundingClientRect().bottom,footer_top:end}));
+          const content=panel.querySelector('.inspector,.evidence-grid,.run-grid');
+          return [...content.querySelectorAll('h3,p,dl,figcaption,caption,span,pre,ul,.source-links')].filter(e=>e.getBoundingClientRect().bottom>end-margin).map(e=>({text:e.id||e.textContent.slice(0,100),bottom:e.getBoundingClientRect().bottom,footer_top:end}));
         });
         assert.deepEqual(collisions,[],`${viewport.width} ${id}/footer collisions`);
       }

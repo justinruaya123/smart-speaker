@@ -30,6 +30,8 @@ The browser checks use presentation's own pinned Playwright1.62.1, not the appli
 
 ## Release gate
 
-The completed native and same-size companion synthetic wake tests both failed; neither replacement nor a working acoustic release is claimed. `python presentation/validate.py --release-gate` intentionally exits1 for that receipt. Pages deployment requires this separate gate as well as static/browser checks. Do not bypass it because the visuals/software tests pass.
+The completed native and same-size companion synthetic wake tests both failed; neither replacement nor a working acoustic release is claimed. `python presentation/validate.py --release-gate` intentionally exits1 for that receipt. The BMO documentation implementation separates static publication from acoustic qualification: Pages requires static, provenance and browser checks; the independent `acoustic-release` job keeps its unchanged failing behavior. Publishing documentation never promotes a model, enables actions or passes Pi acceptance. This explicitly supersedes the earlier policy that blocked documentation deployment on the acoustic result.
+
+The primary four-slide BMO deck is `docs/site/index.html`; this historical six-chapter presentation is preserved byte-for-byte as `docs/site/reference.html`. Run `python -B presentation/bmo_validate.py` and `node presentation/bmo_qa.mjs` for BMO checks. The latter checks a `/smart-speaker/` project prefix. See [BMO Pages](../docs/BMO-PAGES.md) for serving, evidence and deployment details.
 
 Serve the finished deck using `python -m http.server 8765 --directory docs/site`, then open localhost:8765. Python is needed by the authoring server, not by the viewer. Any ordinary static host works; no viewer GPU, microphone or model runtime is used. Run the stdlib validator and optional existing-Playwright browser QA described in `presentation/qa.mjs`.

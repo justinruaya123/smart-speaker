@@ -1,0 +1,842 @@
+{
+  "schema_version": 1,
+  "title": "Baseline A dataset and synthesis recipe",
+  "baseline": {
+    "name": "Baseline A",
+    "architecture": "SharedDemoSlotVCM-v1",
+    "candidate": "heads_s53",
+    "selected_epoch": 38,
+    "parameters": 175653,
+    "code_revision": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+    "model_sha256": "9b98acefa8bad6610d98501ff0310c9b2a2ec1594619b4b5b7d2c7a80dc888a6",
+    "research_only": true,
+    "qualified": false,
+    "actions_enabled": false
+  },
+  "dataset": {
+    "repository": "justinruaya123/ai231-smart-speaker",
+    "prefix": "shared-demo-a-v1",
+    "publication_revision": "13d388c31985be7f42af56b46570281728ecc054",
+    "manifest_sha256": "98ea697e4cea02157a04835843ce1f9d8ca6f8b1420eecff4180dc7498aeed5a",
+    "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/blob/13d388c31985be7f42af56b46570281728ecc054/shared-demo-a-v1/README.md",
+    "doi": null,
+    "doi_status": "No derivative DOI assigned in preserved release.",
+    "license": "other",
+    "license_name": "source-specific-research-terms",
+    "terms": "Source-specific research/education collection, not uniformly MIT/CC0/Apache audio. Restricted third-party audio/features are not newly mirrored by the locator release.",
+    "sample_format": "Mono 16 kHz PCM; file and decoded-PCM hashes identify recordings.",
+    "audio_hours": null,
+    "audio_hours_status": "Not measured for the exact A views. Upstream dataset hours must not be substituted.",
+    "unique_human_speakers": null,
+    "unique_human_speakers_status": "Independent human speaker count not audited for exact A views.",
+    "independent_synthetic_voice_count": null,
+    "independent_synthetic_voice_count_status": "Declared IDs and provider names do not establish independent physical people or references.",
+    "sources": [
+      "dataset_card",
+      "dataset_lock",
+      "dataset_manifest"
+    ]
+  },
+  "splits": [
+    {
+      "id": "train",
+      "label": "TRAIN",
+      "total": 25958,
+      "human": 1889,
+      "synthetic": 24069,
+      "purpose": "Optimizer input pool; sampling uses replacement.",
+      "sources": [
+        "view_train",
+        "dataset_card"
+      ]
+    },
+    {
+      "id": "original-dev",
+      "label": "Original DEV",
+      "total": 1692,
+      "human": 256,
+      "synthetic": 1436,
+      "purpose": "Development selection, never optimizer fitting.",
+      "sources": [
+        "view_original-dev",
+        "dataset_card"
+      ]
+    },
+    {
+      "id": "new-dev",
+      "label": "New DEV",
+      "total": 440,
+      "human": 0,
+      "synthetic": 440,
+      "purpose": "Demo development selection, never optimizer fitting.",
+      "sources": [
+        "view_new-dev",
+        "dataset_card"
+      ]
+    },
+    {
+      "id": "test",
+      "label": "Reserved synthetic TEST",
+      "total": 440,
+      "human": 0,
+      "synthetic": 440,
+      "purpose": "Previously evaluated reserved synthetic voices; reproduction is regression.",
+      "sources": [
+        "view_test",
+        "dataset_card"
+      ]
+    },
+    {
+      "id": "official",
+      "label": "Exposed official regression",
+      "total": 202,
+      "human": 96,
+      "synthetic": 106,
+      "purpose": "Previously exposed publisher benchmark; not a fresh blind human test.",
+      "sources": [
+        "view_official",
+        "dataset_card"
+      ]
+    }
+  ],
+  "combined_development": {
+    "total": 2132,
+    "human": 256,
+    "synthetic": 1876
+  },
+  "cached_feature_rows": {
+    "total": 28090,
+    "train": 25958,
+    "development": 2132,
+    "unique_recording_ids": 28090,
+    "unique_pcm_hashes": 28090,
+    "interpretation": "TRAIN plus both DEV views, not 28090 fitting rows. Authored clean/context recordings are separate audio; not duplicated feature rows.",
+    "sources": [
+      "view_train",
+      "view_original-dev",
+      "view_new-dev"
+    ]
+  },
+  "source_datasets": [
+    {
+      "id": "airimonda",
+      "title": "AI231 ME2 Voice Commands",
+      "repository": "airimonda/ai231-me2-voice-commands",
+      "author": "airimonda",
+      "year": 2026,
+      "doi": "10.57967/hf/10723",
+      "doi_role": "upstream composite dataset, not this derivative",
+      "training_development_revision": "25111444af3adff7588d86ab27c304bb080895cf",
+      "official_regression_revision": "bfca0bbebfe17e00d6a685d1da573615d29ecdce",
+      "url": "https://huggingface.co/datasets/airimonda/ai231-me2-voice-commands/tree/25111444af3adff7588d86ab27c304bb080895cf",
+      "terms": "Source-specific research/education terms; inherited sources retain their own restrictions.",
+      "sources": [
+        "dataset_card",
+        "primary_card",
+        "dataset_manifest"
+      ]
+    },
+    {
+      "id": "martinnavs",
+      "title": "AI231 ME2 Filipino-accented synthetic commands",
+      "repository": "martinnavs/ai231-fil-supplemental-data",
+      "author": "martinnavs",
+      "year": 2026,
+      "revision": "230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "doi": null,
+      "doi_status": "No verified DOI in preserved sources.",
+      "url": "https://huggingface.co/datasets/martinnavs/ai231-fil-supplemental-data/tree/230c8b8d58caf78e4bc90886d9c6fa77fe6024b8",
+      "terms": "Research and education only; no redistribution or commercial use. Reference consent/license and acquired CosyVoice2 weights license unverified.",
+      "baseline_a_train_rows": 15444,
+      "selected_shard_rows": {
+        "default": 14120,
+        "gap_fill": 1320,
+        "numeral_wordings": 4
+      },
+      "upstream_gap_fill_available_rows": 1849,
+      "sources": [
+        "supplement_notice",
+        "supplement_receipt",
+        "view_train"
+      ]
+    }
+  ],
+  "source_composition": [
+    {
+      "split": "train",
+      "source_id": "airimonda",
+      "kind": "human",
+      "rows": 1889,
+      "sources": [
+        "view_train"
+      ]
+    },
+    {
+      "split": "train",
+      "source_id": "airimonda",
+      "kind": "synthetic",
+      "rows": 5982,
+      "sources": [
+        "view_train"
+      ]
+    },
+    {
+      "split": "train",
+      "source_id": "martinnavs",
+      "kind": "synthetic",
+      "rows": 15444,
+      "sources": [
+        "view_train"
+      ]
+    },
+    {
+      "split": "train",
+      "source_id": "system_speech",
+      "kind": "synthetic",
+      "rows": 1323,
+      "sources": [
+        "view_train"
+      ]
+    },
+    {
+      "split": "train",
+      "source_id": "edge_speech",
+      "kind": "synthetic",
+      "rows": 1320,
+      "sources": [
+        "view_train"
+      ]
+    },
+    {
+      "split": "original-dev",
+      "source_id": "airimonda",
+      "kind": "human",
+      "rows": 256,
+      "sources": [
+        "view_original-dev"
+      ]
+    },
+    {
+      "split": "original-dev",
+      "source_id": "airimonda",
+      "kind": "synthetic",
+      "rows": 811,
+      "sources": [
+        "view_original-dev"
+      ]
+    },
+    {
+      "split": "original-dev",
+      "source_id": "legacy_qwen",
+      "kind": "synthetic",
+      "rows": 184,
+      "sources": [
+        "view_original-dev"
+      ]
+    },
+    {
+      "split": "original-dev",
+      "source_id": "system_speech",
+      "kind": "synthetic",
+      "rows": 441,
+      "sources": [
+        "view_original-dev"
+      ]
+    },
+    {
+      "split": "new-dev",
+      "source_id": "edge_speech",
+      "kind": "synthetic",
+      "rows": 440,
+      "sources": [
+        "view_new-dev"
+      ]
+    },
+    {
+      "split": "test",
+      "source_id": "edge_speech",
+      "kind": "synthetic",
+      "rows": 440,
+      "sources": [
+        "view_test"
+      ]
+    },
+    {
+      "split": "official",
+      "source_id": "airimonda",
+      "kind": "human",
+      "rows": 96,
+      "sources": [
+        "view_official"
+      ]
+    },
+    {
+      "split": "official",
+      "source_id": "airimonda",
+      "kind": "synthetic",
+      "rows": 106,
+      "sources": [
+        "view_official"
+      ]
+    }
+  ],
+  "generation_sources": [
+    {
+      "id": "edge_speech",
+      "title": "Authored Microsoft Edge speech",
+      "provider": "Microsoft Edge Speech",
+      "model_id": null,
+      "model_id_status": "Provider ShortNames recorded; service model/build revision not recorded.",
+      "tool_url": "https://github.com/rany2/edge-tts",
+      "total_rows": 2200,
+      "counts": {
+        "train": 1320,
+        "dev": 440,
+        "test": 440
+      },
+      "voice_ids": {
+        "train": [
+          "en-US-GuyNeural",
+          "en-US-JennyNeural",
+          "en-GB-SoniaNeural",
+          "en-AU-NatashaNeural",
+          "en-SG-WayneNeural",
+          "en-PH-JamesNeural"
+        ],
+        "dev": [
+          "en-US-AriaNeural",
+          "en-CA-LiamNeural"
+        ],
+        "test": [
+          "en-US-ChristopherNeural",
+          "en-IE-EmilyNeural"
+        ]
+      },
+      "declared_voices": 10,
+      "rate": "+0%",
+      "seed": null,
+      "pitch": null,
+      "volume": null,
+      "temperature": null,
+      "top_p": null,
+      "tool_version": null,
+      "service_revision": null,
+      "prompt_recipe": {
+        "canonical_wordings": 102,
+        "complete_commands": 34,
+        "forms_per_wording": 2,
+        "negative_prompts_per_voice": 16,
+        "rows_per_voice": 220,
+        "formula": "102 wordings x 2 forms + 16 negatives = 220 recordings per voice",
+        "clean": "{text}",
+        "context_by_split": {
+          "train": "Please, {text}, thank you",
+          "dev": "Okay, {text}, thanks",
+          "test": "Hello there, {text}, much appreciated"
+        },
+        "negative_prompts": [
+          "Set volume to twenty percent",
+          "Brightness sixty percent",
+          "Set an alarm for six p m",
+          "Set an alarm for twelve thirty a m",
+          "Set an alarm for nine forty five a m",
+          "Set an alarm for six",
+          "Set an alarm for eight a m",
+          "Set an alarm for nine p m",
+          "Set volume to fifty degrees",
+          "Brightness fifty degrees",
+          "Set volume",
+          "Set an alarm",
+          "Do not set volume to fifty percent",
+          "Do not set an alarm for six a m",
+          "Fifty percent",
+          "Thank you for listening"
+        ],
+        "counts_by_split": {
+          "train": {
+            "clean": 612,
+            "context": 612,
+            "negative": 96
+          },
+          "dev": {
+            "clean": 204,
+            "context": 204,
+            "negative": 32
+          },
+          "test": {
+            "clean": 204,
+            "context": 204,
+            "negative": 32
+          }
+        }
+      },
+      "split_policy": "Six TRAIN, two DEV, two TEST declared ShortNames; disjoint within this authored study. Opaque historical aliases prevent proving independent physical voices.",
+      "terms": "edge-tts code license does not license Microsoft voices or generated audio; output redistribution terms not independently legally audited.",
+      "regeneration": "Use frozen WAV/PCM hashes for exact replay; stochastic/service regeneration is not exact-byte recovery.",
+      "sources": [
+        "protocol",
+        "dataset_card",
+        "view_train",
+        "view_new-dev",
+        "view_test"
+      ]
+    },
+    {
+      "id": "system_speech",
+      "title": "Authored Microsoft System.Speech",
+      "provider": "Microsoft",
+      "model_id": null,
+      "model_id_status": "Desktop voice names recorded; voice binaries/OS engine version not recorded.",
+      "api_url": "https://learn.microsoft.com/en-us/dotnet/api/system.speech.synthesis.speechsynthesizer",
+      "total_rows": 1764,
+      "counts": {
+        "train": 1323,
+        "original_dev": 441
+      },
+      "voices": {
+        "train": "Microsoft David Desktop",
+        "dev": "Microsoft Zira Desktop"
+      },
+      "rate_by_split": {
+        "train": [
+          -1,
+          0,
+          1
+        ],
+        "dev": [
+          0
+        ]
+      },
+      "rate_unit": "System.Speech integer SpeechSynthesizer.Rate units, not percent",
+      "seed": null,
+      "voice_binary_revision": null,
+      "prompt_recipe": {
+        "parent_canonical_wordings": 93,
+        "parent_complete_commands": 31,
+        "wrappers": [
+          "{text}",
+          "Please, {text}",
+          "{text}, please",
+          "Um, {text}"
+        ],
+        "negative_prompts": 69,
+        "negative_categories": {
+          "negation": 18,
+          "unsupported_slot": 28,
+          "missing_slot": 13,
+          "general_oos": 10
+        },
+        "formula": "93 parent wordings x 4 forms + 69 negatives = 441 prompts; three TRAIN rates and one DEV rate yield 1764 recordings",
+        "restriction": "Historical Option B labels are preserved separately from restricted Baseline A targets. Not all 93 parent wordings are positives under A."
+      },
+      "split_policy": "David TRAIN and Zira DEV; no System.Speech TEST rows. Rate variants do not create additional speakers.",
+      "terms": "Synthetic Microsoft-voice research artifacts; no invented MIT/CC0/Apache recording license.",
+      "sources": [
+        "sapi_prompts",
+        "dataset_card",
+        "view_train",
+        "view_original-dev"
+      ]
+    },
+    {
+      "id": "legacy_qwen",
+      "title": "Existing Qwen designed completion DEV recordings",
+      "provider": "Qwen",
+      "total_rows": 184,
+      "counts": {
+        "train": 0,
+        "original_dev": 184,
+        "test": 0
+      },
+      "audio_repository": "justinruaya123/ai231-smart-speaker",
+      "audio_revision": "44a1a23081a8b042c5d43a73cf233c03c8151049",
+      "audio_prefix": "iris-release-v1/reproduction/inputs/audio/",
+      "models": [
+        {
+          "id": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+          "revision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+          "url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign/tree/5ecdb67327fd37bb2e042aab12ff7391903235d3"
+        },
+        {
+          "id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+          "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+          "url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base/tree/fd4b254389122332181a7c3db7f27e918eec64e3"
+        }
+      ],
+      "model_assets_license": "Apache-2.0; does not determine every generated-output/reference right",
+      "voice_design_prompts": null,
+      "design_seeds": null,
+      "generation_seeds": null,
+      "sampling_parameters": null,
+      "prompt_inventory": null,
+      "independent_voice_count": null,
+      "unknowns_reason": "The available source receipt pins model assets. The exact legacy 184 rows preserve audio hashes/targets, but do not preserve these generation settings.",
+      "split_policy": "Existing DEV-only comparisons; no Qwen recording fits A.",
+      "do_not_substitute": "The separate Iris release recipe of 24 voices and 3384 clips is not the recipe/count for these 184 legacy DEV recordings.",
+      "sources": [
+        "dataset_card",
+        "qwen_assets",
+        "view_original-dev"
+      ]
+    },
+    {
+      "id": "martinnavs",
+      "title": "Inherited CosyVoice2 supplement",
+      "provider": "martinnavs dataset publisher",
+      "model_family": "CosyVoice2 zero-shot voice cloning",
+      "model_id": null,
+      "model_revision": null,
+      "model_license_status": "Unverified for acquired weights in preserved publisher card",
+      "declared_reference_voices": 17,
+      "reference_ids": [
+        "references:tagalog1.mp3",
+        "references:tagalog2.mp3",
+        "references:tagalog3.mp3",
+        "references:tagalog4.mp3",
+        "references:tagalog5.mp3",
+        "references:tagalog6.mp3",
+        "references:tagalog7.mp3",
+        "references:tagalog8.mp3",
+        "references:tagalog9.mp3",
+        "references:tagalog10.mp3",
+        "references:tagalog11.mp3",
+        "references:tagalog12.mp3",
+        "references:tagalog13.mp3",
+        "references:tagalog14.mp3",
+        "references:tagalog15.mp3",
+        "references:tagalog16.mp3",
+        "references:ilonggo1.mp3"
+      ],
+      "reference_prompt_description": "Short English reading of the Please call Stella paragraph.",
+      "generation_prompts": "93 parent Option B command wordings; gap-fill jobs top up thin wordings; four numeral-wording clips also selected.",
+      "baseline_a_train_rows": 15444,
+      "seed": null,
+      "seed_status": "Publisher explicitly says sampling is not seeded; same jobs produce different audio.",
+      "sampling_parameters": null,
+      "qa": "Default and four numeral clips passed publisher transcription checks; gap_fill publishes all QA outcomes. A selects 1320 exact gap_fill locators. This audit did not independently listen or revalidate the upstream QA.",
+      "split_policy": "TRAIN only; reference-voice overlap with older SilencioPH group synthesis not checked.",
+      "terms": "Reference source/consent/license unrecorded; no redistribution or commercial use. Accent description is not measured output accent.",
+      "sources": [
+        "supplement_notice",
+        "supplement_receipt",
+        "view_train"
+      ]
+    },
+    {
+      "id": "airimonda_synthetic",
+      "title": "Inherited group synthesis in primary composite",
+      "provider": "Upstream AI231 contributors",
+      "attribution": [
+        "markandrian30/AI231",
+        "MEX2/Data"
+      ],
+      "reference_sources": [
+        "LibriSpeech",
+        "SilencioPH"
+      ],
+      "model_id": null,
+      "model_revision": null,
+      "sampling_parameters": null,
+      "generation_prompts": null,
+      "generation_seeds": null,
+      "voice_reference_identity_audit": null,
+      "counts": {
+        "train": 5982,
+        "original_dev": 811,
+        "official": 106
+      },
+      "unknowns_reason": "Pinned inherited card identifies cloned-reference sources but does not establish the exact generator and settings for every A input. Later composite cards cannot fill these frozen-row gaps.",
+      "split_policy": "Use frozen row and declared speaker/voice splits. Synthetic IDs are not independent human subjects.",
+      "sources": [
+        "primary_card",
+        "inherited_citations",
+        "view_train",
+        "view_original-dev",
+        "view_official"
+      ]
+    }
+  ],
+  "treatment": {
+    "reference_labels": "Preserve expected source truth separately from demo_expected and action/percentage/alarm targets; no unsupported-value rounding.",
+    "annotations": "Some inherited human labels are folder/publisher/ASR-derived and not independently listened to.",
+    "normalization": "Only the 1889 original human TRAIN recordings fit the normalizer.",
+    "optimizer_input_pool": 25958,
+    "selection_input_pool": 2132,
+    "calibration": {
+      "historical_rows": 210,
+      "human_positive": 92,
+      "human_negative": 118,
+      "used_for_optimizer": false,
+      "used_for_selection": false,
+      "current_policy": "Fixed argmax; no threshold calibration."
+    },
+    "split_policy": "Frozen recording and declared speaker/voice separation; exact ID/file/PCM overlap rejected within study. Old official and now-replayed TEST are exposed regression, not fresh qualification.",
+    "sources": [
+      "dataset_card",
+      "protocol",
+      "study_report"
+    ]
+  },
+  "citations": [
+    {
+      "id": "fsc",
+      "title": "Speech Model Pre-Training for End-to-End Spoken Language Understanding",
+      "authors": "Loren Lugosch, Mirco Ravanelli, Patrick Ignoto, Vikrant Singh Tomar and Yoshua Bengio",
+      "year": 2019,
+      "venue": "Interspeech",
+      "doi": "10.21437/Interspeech.2019-2396",
+      "doi_role": "paper",
+      "url": "https://www.isca-archive.org/interspeech_2019/lugosch19_interspeech.html",
+      "dataset_url": "https://fluent.ai/fluent-speech-commands-a-dataset-for-spoken-language-understanding-research/",
+      "terms": "Academic/noncommercial; CC BY-NC-ND 4.0 and Fluent Public License restrictions.",
+      "role": "Inherited scholarly recording attribution; exact A-only per-source count not audited.",
+      "sources": [
+        "dataset_card",
+        "inherited_citations",
+        "bibtex"
+      ]
+    },
+    {
+      "id": "slurp",
+      "title": "SLURP: A Spoken Language Understanding Resource Package",
+      "authors": "Emanuele Bastianelli, Andrea Vanzo, Pawel Swietojanski and Verena Rieser",
+      "year": 2020,
+      "venue": "EMNLP",
+      "doi": "10.18653/v1/2020.emnlp-main.588",
+      "doi_role": "paper",
+      "url": "https://aclanthology.org/2020.emnlp-main.588/",
+      "dataset_url": "https://github.com/pswietojanski/slurp",
+      "terms": "Text CC BY 4.0; audio CC BY-NC 4.0. Original inherited archive mapping incomplete.",
+      "role": "Inherited scholarly recording attribution; exact A-only per-source count not audited.",
+      "sources": [
+        "dataset_card",
+        "inherited_citations",
+        "bibtex"
+      ]
+    },
+    {
+      "id": "snips",
+      "title": "Spoken Language Understanding on the Edge",
+      "authors": "Alaa Saade et al.",
+      "year": 2019,
+      "venue": "EMC2 / NeurIPS",
+      "doi": null,
+      "doi_status": "No primary-verified DOI retained.",
+      "url": "https://www.emc2-ai.org/assets/docs/neurips-19/emc2-neurips19-paper-19.pdf",
+      "dataset_url": "https://github.com/sonos/spoken-language-understanding-research-datasets",
+      "terms": "Noncommercial academic/research; unmodified redistribution under same terms with full citation; modified-dataset publication prohibited.",
+      "role": "Inherited scholarly recording attribution; original dataset/config mapping incomplete.",
+      "sources": [
+        "dataset_card",
+        "inherited_citations",
+        "bibtex"
+      ]
+    },
+    {
+      "id": "common_voice",
+      "title": "Common Voice: A Massively-Multilingual Speech Corpus",
+      "authors": "Rosana Ardila et al.",
+      "year": 2020,
+      "venue": "LREC",
+      "doi": null,
+      "doi_status": "No proceedings or release-19 dataset DOI verified in preserved audit.",
+      "url": "https://aclanthology.org/2020.lrec-1.520/",
+      "terms": "Acquisition-era release, clip and terms mapping incomplete. Present publisher terms do not establish retroactive clearance.",
+      "role": "Composite identifies Common Voice 19 English; exact A-only per-source count not audited.",
+      "sources": [
+        "dataset_card",
+        "inherited_citations",
+        "bibtex"
+      ]
+    },
+    {
+      "id": "timers",
+      "title": "Timers and Such: A Practical Benchmark for Spoken Language Understanding with Numbers",
+      "authors": "Loren Lugosch, Piyush Papreja, Mirco Ravanelli, Abdelwahab Heba and Titouan Parcollet",
+      "year": 2021,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "doi": "10.5281/zenodo.4623772",
+      "doi_role": "Timers and Such v1.0 dataset archive, not paper",
+      "url": "https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/34173cb38f07f89ddbebc2ac9128303f-Abstract-round1.html",
+      "dataset_url": "https://zenodo.org/records/4623772",
+      "terms": "CC0 per original paper; inherited clip-to-version mapping incomplete.",
+      "role": "Inherited scholarly recording attribution; exact A-only per-source count not audited.",
+      "sources": [
+        "dataset_card",
+        "inherited_citations",
+        "bibtex"
+      ]
+    },
+    {
+      "id": "multisensor",
+      "title": "Multi-Sensor Voice Command Dataset",
+      "authors": "Manuele Rusci, Hugo Van hamme and Tinne Tuytelaars",
+      "year": 2024,
+      "venue": "KU Leuven RDR",
+      "doi": "10.48804/IEKKVZ",
+      "doi_role": "dataset",
+      "url": "https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/IEKKVZ",
+      "terms": "Custom CC BY 4.0 plus derivative-download tracking; inherited original version unresolved.",
+      "role": "Inherited scholarly recording attribution; exact A-only per-source count not audited.",
+      "sources": [
+        "dataset_card",
+        "inherited_citations",
+        "bibtex"
+      ]
+    },
+    {
+      "id": "qwen_paper",
+      "title": "Qwen3-TTS Technical Report",
+      "authors": "Hangrui Hu et al.",
+      "year": 2026,
+      "venue": "arXiv",
+      "doi": "10.48550/arXiv.2601.15621",
+      "doi_role": "paper/preprint",
+      "url": "https://arxiv.org/abs/2601.15621",
+      "terms": "Generator model assets Apache-2.0; generated audio/reference rights separate.",
+      "role": "Offline DEV generation attribution; not a VCM initializer or inference dependency.",
+      "sources": [
+        "dataset_card",
+        "inherited_citations",
+        "bibtex"
+      ]
+    },
+    {
+      "id": "librispeech",
+      "title": "LibriSpeech: An ASR Corpus Based on Public Domain Audio Books",
+      "authors": "Vassil Panayotov, Guoguo Chen, Daniel Povey and Sanjeev Khudanpur",
+      "year": 2015,
+      "venue": "ICASSP",
+      "doi": "10.1109/ICASSP.2015.7178964",
+      "doi_role": "paper",
+      "url": "https://www.openslr.org/12",
+      "terms": "CC BY 4.0 recording source; does not independently establish clone-output consent/terms.",
+      "role": "Inherited synthesis reference attribution, not additional direct A human fitting rows.",
+      "sources": [
+        "dataset_card",
+        "inherited_citations",
+        "bibtex"
+      ]
+    }
+  ],
+  "unknowns": [
+    "No exact A audio-hours audit.",
+    "No independent human/physical synthetic-voice count audit for the entire inherited mixture.",
+    "No recovered original corpus clip/version mapping for every inherited scholarly source.",
+    "No independent listening truth for every inherited human label.",
+    "No complete historical clone-reference consent/license/alias audit.",
+    "No exact legacy Qwen-184 generation prompts/seeds/sampling settings in available frozen receipts.",
+    "No Edge service build/model revision or System.Speech voice-binary revision."
+  ],
+  "sources": [
+    {
+      "id": "dataset_card",
+      "title": "Frozen Baseline A dataset card",
+      "path": null,
+      "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/blob/13d388c31985be7f42af56b46570281728ecc054/shared-demo-a-v1/README.md",
+      "site_path": "../evidence/published-dataset-README.md"
+    },
+    {
+      "id": "dataset_manifest",
+      "title": "Frozen ordered-view manifest",
+      "path": null,
+      "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/blob/13d388c31985be7f42af56b46570281728ecc054/shared-demo-a-v1/manifest.json"
+    },
+    {
+      "id": "dataset_lock",
+      "title": "Published dataset lock",
+      "path": "submission/shared-demo-a/dataset.lock.json",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/submission/shared-demo-a/dataset.lock.json"
+    },
+    {
+      "id": "protocol",
+      "title": "Original study protocol",
+      "path": "submission/shared-demo-a/protocol.json",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/submission/shared-demo-a/protocol.json"
+    },
+    {
+      "id": "study_report",
+      "title": "Original Baseline A study report",
+      "path": "docs/EXPERIMENT-shared-demo-slots-v1.md",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/docs/EXPERIMENT-shared-demo-slots-v1.md"
+    },
+    {
+      "id": "model_recipe",
+      "title": "Published epoch38 recipe",
+      "path": "submission/models/shared-demo-a/recipe.json",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/submission/models/shared-demo-a/recipe.json"
+    },
+    {
+      "id": "sapi_prompts",
+      "title": "Frozen System.Speech prompt construction",
+      "path": "submission/shared-demo-a/source/scripts/train/optionb_synthetic_data.py",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/submission/shared-demo-a/source/scripts/train/optionb_synthetic_data.py"
+    },
+    {
+      "id": "qwen_assets",
+      "title": "Pinned Qwen synthesis asset receipt",
+      "path": "data/sources/qwen-synthetic-completion.source.json",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/data/sources/qwen-synthetic-completion.source.json"
+    },
+    {
+      "id": "supplement_notice",
+      "title": "Preserved pinned supplement card",
+      "path": "data/sources/fil-supplemental-NOTICE.txt",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/data/sources/fil-supplemental-NOTICE.txt"
+    },
+    {
+      "id": "supplement_receipt",
+      "title": "Pinned supplement acquisition receipt",
+      "path": "data/sources/fil-supplemental.source.json",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/data/sources/fil-supplemental.source.json"
+    },
+    {
+      "id": "primary_card",
+      "title": "Preserved inherited primary card",
+      "path": "experiments/pcv-source-refresh-v1/source-card.txt",
+      "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/experiments/pcv-source-refresh-v1/source-card.txt"
+    },
+    {
+      "id": "inherited_citations",
+      "title": "Preserved citation audit; historical models, attribution only",
+      "path": null,
+      "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/blob/13d388c31985be7f42af56b46570281728ecc054/shared-demo-a-v1/INHERITED-CITATION-AUDIT.md"
+    },
+    {
+      "id": "bibtex",
+      "title": "Preserved bibliography",
+      "path": null,
+      "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/blob/13d388c31985be7f42af56b46570281728ecc054/shared-demo-a-v1/citations.bib"
+    },
+    {
+      "id": "view_train",
+      "title": "Frozen train ordered rows",
+      "path": null,
+      "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/blob/13d388c31985be7f42af56b46570281728ecc054/shared-demo-a-v1/train.jsonl.gz"
+    },
+    {
+      "id": "view_original-dev",
+      "title": "Frozen original-dev ordered rows",
+      "path": null,
+      "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/blob/13d388c31985be7f42af56b46570281728ecc054/shared-demo-a-v1/original-dev.jsonl.gz"
+    },
+    {
+      "id": "view_new-dev",
+      "title": "Frozen new-dev ordered rows",
+      "path": null,
+      "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/blob/13d388c31985be7f42af56b46570281728ecc054/shared-demo-a-v1/new-dev.jsonl.gz"
+    },
+    {
+      "id": "view_test",
+      "title": "Frozen test ordered rows",
+      "path": null,
+      "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/blob/13d388c31985be7f42af56b46570281728ecc054/shared-demo-a-v1/test.jsonl.gz"
+    },
+    {
+      "id": "view_official",
+      "title": "Frozen official ordered rows",
+      "path": null,
+      "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/blob/13d388c31985be7f42af56b46570281728ecc054/shared-demo-a-v1/official.jsonl.gz"
+    }
+  ]
+}

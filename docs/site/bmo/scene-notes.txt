@@ -1,0 +1,32 @@
+BMO architecture scene
+
+The geometry represents the frozen SharedDemoSlotVCM-v1 graph, not physical hardware.
+Its visible tensor shapes are symbolic; exact dimensions are given by the DOM labels
+and accompanying stage controls. The sample trace has 40 x 296 normalized features,
+and the stem/four residual blocks each produce 128 x 148 values after frame decimation.
+
+Connections and pulse motion show operation order only. Playback duration does not
+represent measured model latency. The scene never performs training or device actions.
+
+Without a trace, front faces show neutral grids. With data/trace.json, colors represent
+recorded tensor values or documented bin means. Each tensor is independently scaled
+between its own minimum and maximum. Color brightness cannot compare magnitudes
+across different stages. Head strips show raw logits, not calibrated probabilities.
+
+Each collapsed residual volume contains four inner planes for DW/PW twice. Expanded
+view shows depthwise kernel-7 causal convolution, pointwise kernel-1 convolution,
+frame-wise LayerNorm and SiLU, repeated twice. Input bypasses those operations and is
+added to their output, then scaled by 1/sqrt(2). Training dropout is inactive at replay.
+
+All three head branches run. Whether a slot is used depends on the authoritative
+action head and the finite-command validator. Whole-utterance pooling is shown;
+the animation does not claim streaming or KV-cache deployment.
+
+Controls: drag to orbit; scroll to zoom; click a volume or label to select a stage;
+when the canvas is focused, arrow keys rotate and Home resets. There is no automatic
+camera orbit or autonomous animation. The parent deck supplies playback progression.
+
+Module API: createModelScene(container, {onSelect}) returns setStage(index,progress),
+setExpanded(boolean), setTrace(trace), resetView(), setActive(boolean), and dispose().
+Only requestAnimationFrame renders requested by state changes, resize, or interaction.
+WebGL unavailable: native explanatory fallback while the parent stage UI stays usable.

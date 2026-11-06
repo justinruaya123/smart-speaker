@@ -1,0 +1,545 @@
+{
+  "experiment": "shared-demo-a-portability-v1",
+  "run_id": "fresh-repro-20261107-03",
+  "date": "2026-11-07",
+  "requirements": [
+    "ME-01",
+    "ME-02",
+    "ME-04",
+    "ME-07",
+    "ME-08"
+  ],
+  "status": "exact_fit_comparison_failed",
+  "fresh_clone": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo",
+  "git_revision": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+  "hf_revision": "39d5032248becc8a6efdd80738a4a4ef59f6d969",
+  "user_requested_deletion_completed": {
+    "targets": [
+      {
+        "path": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-01\\repo",
+        "removed": true,
+        "prior_revision": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+        "completed_utc": "2026-11-06T19:37:53.0376169Z"
+      },
+      {
+        "path": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-02\\repo",
+        "removed": true,
+        "prior_revision": "4efe5425901b96b1d80d990a95270ee7b1ddb58a",
+        "completed_utc": "2026-11-06T19:38:11.8322258Z"
+      }
+    ],
+    "preserved_backup": "C:\\Users\\SCL-Jus\\.codex\\worktrees\\iris-main-reproduction\\smart-speaker\\.cache\\delete-repeat-03\\preserved-evidence.zip",
+    "preserved_backup_sha256": "c4d3d95ef78c4daf95c569fa9795c32113cf31eec60050a05a74a2a081814444",
+    "research_checkout_preserved": true,
+    "free_bytes": 19718086656
+  },
+  "full_hf_download": {
+    "complete": true,
+    "files": 4500,
+    "bytes": 5316646986,
+    "parquet_footers": 18,
+    "receipt_sha256": "ac47a93a5c0cbc0e50a92ec260a8deabe48b5fd31de718b3a4523980d1279add"
+  },
+  "original_pinned_sources": {
+    "files": 192,
+    "complete": true,
+    "receipt_sha256": "4c658947e5906261a593bec422a87a55758f56d088e7b9b4bbaa5c738774c17d"
+  },
+  "historical_audio_features_or_training_initializers_reused": false,
+  "frozen_source_unchanged": true,
+  "reused_software_only": [
+    "uv software package cache hardlinked into a new isolated root .venv",
+    "Pinned Intel SDE executable"
+  ],
+  "feature_gate": {
+    "feature_rows": 28090,
+    "features_sha256": "c222b5b4df1f61a36c34cef094bf58709e9a6f5ef047fdb60b84797490b44600",
+    "human_normalization_rows": 1889,
+    "normalization_sha256": "697a4c5fb75f642b86589f2475863a6cb473cb8f20da780ee2c139e9d6785885",
+    "optimizer_steps": 0,
+    "passed": true,
+    "prepared_sha256": "27d87307db94608fa0e6b5e5915b3435b4557387006eb6495a1c72afa63805de",
+    "source": {
+      "dataset_lock_sha256": "d05956535fc3702f7dd8fb96176e0c2505f8f0bb21d68dc8dcff435bb8a0b2dc",
+      "reference_sha256": "2ee5d28b4a4fac7927dc1d5579fe564c8c3efc641faffd8d035da860d96e4024",
+      "runner_sha256": "a1a9e7b895cf8e430e2b41803d64e31699d386895fe797fd964e9585fd01530f",
+      "snapshot_sha256": "d7c60bd98627f5d7385d0045a93ada18a3547f84e3bcf0eeed30edfe762e6076",
+      "training_source_sha256": "6cea57f9463e3cfab839361318e70ab191164b3fdb525e808dfc97d2c9b8f151"
+    },
+    "test_features_extracted": false
+  },
+  "guard_tests": {
+    "tests": 26,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "default_artifact_verification": {
+    "status": "frozen_epoch44_verified",
+    "verified_payloads": 15,
+    "selected_epoch": 44,
+    "parameters": 258912,
+    "model_sha256": "c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce",
+    "original_source_revision": "3c05b3beb46f06c3108089e0d8c79474670c6cb7",
+    "source_bindings_apply_to": "the original snapshot checkout, not current Iris main",
+    "optimizer_updates": 0,
+    "inference_checked": false,
+    "original_CPU_model_retrained": false,
+    "actions_enabled": false,
+    "qualified": false
+  },
+  "full_fit": {
+    "completed": true,
+    "epochs": 48,
+    "optimizer_updates": 4608,
+    "draws": 147456,
+    "seed": 53,
+    "parameters": 175653,
+    "selected_epoch": 36,
+    "reference_selected_epoch": 38,
+    "elapsed_seconds": 776.2074768000748,
+    "device": "cuda",
+    "amp_bfloat16": true,
+    "comparison": {
+      "actions_enabled": false,
+      "checkpoint_sha256": "bc044fb87b3dbfecb7424440678c0cb2cf3206bbfbb046ee210dce816577b563",
+      "checks": {
+        "draws": true,
+        "final_sample_counts": true,
+        "final_tensors": false,
+        "full_curve": false,
+        "initial_encoder_sha256": true,
+        "optimizer_steps": true,
+        "original_selected_tensors": false,
+        "selected_epoch": false,
+        "selected_sample_counts": false,
+        "selected_tensors": false,
+        "sequence_sha256": true,
+        "source_draws": true
+      },
+      "parameters": 175653,
+      "passed": false,
+      "qualified": false,
+      "selected_epoch": 36,
+      "selected_tensor_sha256": "b0b4cfa21651158f354f53ab9cc888b6de235bb3ca627cbe5529a6cdb9426c18"
+    }
+  },
+  "comparisons_with_three_prior_same_host_runs": [
+    {
+      "prior_run": "fresh-repro-20261107-01/.cache/baseline-a-fresh-20261107/",
+      "recovery_zip": "C:\\Users\\SCL-Jus\\.codex\\worktrees\\iris-main-reproduction\\smart-speaker\\.cache\\delete-repeat-03\\preserved-evidence.zip",
+      "used_only_for_post_fit_comparison": true,
+      "selected_epoch_equal": true,
+      "selected_tensors_equal": true,
+      "best_checkpoint_bytes_equal": true,
+      "final_checkpoint_bytes_equal": true,
+      "all_48_curve_events_equal_excluding_elapsed_time": true
+    },
+    {
+      "prior_run": "fresh-repro-20261107-02/.cache/baseline-a-repeat-02-seq/",
+      "recovery_zip": "C:\\Users\\SCL-Jus\\.codex\\worktrees\\iris-main-reproduction\\smart-speaker\\.cache\\delete-repeat-03\\preserved-evidence.zip",
+      "used_only_for_post_fit_comparison": true,
+      "selected_epoch_equal": true,
+      "selected_tensors_equal": true,
+      "best_checkpoint_bytes_equal": true,
+      "final_checkpoint_bytes_equal": true,
+      "all_48_curve_events_equal_excluding_elapsed_time": true
+    },
+    {
+      "prior_run": "C:\\Users\\SCL-Jus\\.codex\\worktrees\\iris-main-reproduction\\smart-speaker\\.cache\\baseline-a-exact-20261106",
+      "used_only_for_post_fit_comparison": true,
+      "selected_epoch_equal": true,
+      "selected_tensors_equal": true,
+      "best_checkpoint_bytes_equal": true,
+      "final_checkpoint_bytes_equal": true,
+      "all_48_curve_events_equal_excluding_elapsed_time": true
+    }
+  ],
+  "published_model_replay": {
+    "actions_enabled": false,
+    "all_original_decisions_match": true,
+    "evidence_kind": "independent_published_artifact_replay",
+    "fresh_retraining_passed": false,
+    "model_sha256": "9b98acefa8bad6610d98501ff0310c9b2a2ec1594619b4b5b7d2c7a80dc888a6",
+    "optimizer_updates": 0,
+    "original_decisions_matched": 642,
+    "qualified": false,
+    "rows": 642
+  },
+  "published_model_metrics": {
+    "human_official": {
+      "correct": 71,
+      "covered_classes": 27,
+      "negative_false_accepts": 5,
+      "negative_rows": 19,
+      "rejected": 3,
+      "rows": 96,
+      "same_intent_wrong_slots": 0,
+      "supported": 77,
+      "supported_macro": 0.9197530864197531,
+      "wrong_accepted": 3
+    },
+    "official": {
+      "correct": 155,
+      "covered_classes": 27,
+      "negative_false_accepts": 8,
+      "negative_rows": 40,
+      "rejected": 4,
+      "rows": 202,
+      "same_intent_wrong_slots": 0,
+      "supported": 162,
+      "supported_macro": 0.95679012345679,
+      "wrong_accepted": 3
+    },
+    "synthetic_clean": {
+      "correct": 203,
+      "covered_classes": 34,
+      "negative_false_accepts": 0,
+      "negative_rows": 0,
+      "rejected": 1,
+      "rows": 204,
+      "same_intent_wrong_slots": 0,
+      "supported": 204,
+      "supported_macro": 0.9950980392156863,
+      "wrong_accepted": 0
+    },
+    "synthetic_context": {
+      "correct": 98,
+      "covered_classes": 34,
+      "negative_false_accepts": 0,
+      "negative_rows": 0,
+      "rejected": 105,
+      "rows": 204,
+      "same_intent_wrong_slots": 1,
+      "supported": 204,
+      "supported_macro": 0.48039215686274517,
+      "wrong_accepted": 1
+    },
+    "synthetic_negative": {
+      "correct": 0,
+      "covered_classes": 0,
+      "negative_false_accepts": 0,
+      "negative_rows": 32,
+      "rejected": 0,
+      "rows": 32,
+      "same_intent_wrong_slots": 0,
+      "supported": 0,
+      "supported_macro": null,
+      "wrong_accepted": 0
+    },
+    "synthetic_test": {
+      "correct": 301,
+      "covered_classes": 34,
+      "negative_false_accepts": 0,
+      "negative_rows": 32,
+      "rejected": 106,
+      "rows": 440,
+      "same_intent_wrong_slots": 1,
+      "supported": 408,
+      "supported_macro": 0.7377450980392157,
+      "wrong_accepted": 1
+    }
+  },
+  "selection_lock_exists": false,
+  "candidate_test_evaluated": false,
+  "fresh_clone_final_status": "clean",
+  "research_checkout_changes_preserved": true,
+  "installed_artifacts_unchanged": {
+    "artifacts/vcm.fp32.onnx": "a7fa48af1d8a24a24c08c8a98cf19e303fffdda3d0281fd7f11ea80223fd6eba",
+    "artifacts/bundle.json": "735626cebe6281406df93eb711b43621bfa84ce4880d68775aa730c2a97de3b1",
+    "models/selected/model.onnx": "871c4a218684d50d132d8458b178e30c53ebff92c82b194bf3adaaa8652b1599"
+  },
+  "installed": false,
+  "actions_enabled": false,
+  "physical_pi_or_microphone_used": false,
+  "committed": false,
+  "pushed": false,
+  "execution": {
+    "status": "exact_fit_comparison_failed",
+    "stages": [
+      {
+        "stage": "guard-tests",
+        "argv": [
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "scripts/test/test_shared_demo_a_reproduction.py",
+          "--basetemp",
+          ".cache/delete-03-pytest",
+          "--junitxml",
+          ".cache/delete-03-guards.xml"
+        ],
+        "cwd": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo",
+        "exit_code": 0,
+        "started_utc": "2026-11-06T19:53:10.479000+00:00",
+        "completed_utc": "2026-11-06T19:53:14.601118+00:00",
+        "elapsed_seconds": 4.122123999986798,
+        "log_sha256": "d5ed31cd8c9e5849fb233be1684aae24c29bab062c5cdf6a444d15d388e3d3f9"
+      },
+      {
+        "stage": "default-artifact-verification",
+        "argv": [
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo\\.venv\\Scripts\\python.exe",
+          "-B",
+          "reproduce.py"
+        ],
+        "cwd": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo",
+        "exit_code": 0,
+        "started_utc": "2026-11-06T19:53:14.608013+00:00",
+        "completed_utc": "2026-11-06T19:53:14.908148+00:00",
+        "elapsed_seconds": 0.3001259001903236,
+        "log_sha256": "f0432dd8a331edabc90d005b777717a5d4e060824bcfc1e72792e4afa3299c9f"
+      },
+      {
+        "stage": "prepare-skylakex",
+        "argv": [
+          "C:\\Users\\SCL-Jus\\.codex\\worktrees\\iris-main-reproduction\\smart-speaker\\.cache\\shared-demo-a-portability-v1\\sde\\sde-external-10.13.1-2026-07-28-win\\sde.exe",
+          "-skx",
+          "--",
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo\\.venv\\Scripts\\python.exe",
+          "-B",
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo\\.cache\\delete-test-03\\prepare_frozen.py"
+        ],
+        "cwd": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo",
+        "exit_code": 0,
+        "started_utc": "2026-11-06T19:56:34.877243+00:00",
+        "completed_utc": "2026-11-06T20:04:30.979687+00:00",
+        "elapsed_seconds": 476.1024583999533,
+        "log_sha256": "7417f6b5405ebaa944d26564541b34d826c874ec006e4c16ebe3216414ab3cac"
+      },
+      {
+        "stage": "optimizer-smoke",
+        "argv": [
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo\\.venv\\Scripts\\python.exe",
+          "-B",
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo\\scripts\\shared_demo_a.py",
+          "smoke",
+          "--output",
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo\\.cache\\baseline-a-delete-repeat-03"
+        ],
+        "cwd": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo",
+        "exit_code": 0,
+        "started_utc": "2026-11-06T20:04:30.986352+00:00",
+        "completed_utc": "2026-11-06T20:05:03.147097+00:00",
+        "elapsed_seconds": 32.160747800022364,
+        "log_sha256": "003a0ceb71c79af4d15b6354aa09165d8daa99dcf91f432a851dd62ab1a7be3c"
+      },
+      {
+        "stage": "full-fit",
+        "argv": [
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo\\.venv\\Scripts\\python.exe",
+          "-B",
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo\\scripts\\shared_demo_a.py",
+          "train",
+          "--output",
+          "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo\\.cache\\baseline-a-delete-repeat-03"
+        ],
+        "cwd": "C:\\Users\\SCL-Jus\\Documents\\Grad\\smart-speaker\\.cache\\fresh-repro-20261107-03\\repo",
+        "exit_code": 1,
+        "started_utc": "2026-11-06T20:05:03.155931+00:00",
+        "completed_utc": "2026-11-06T20:18:24.996342+00:00",
+        "elapsed_seconds": 801.8404224000406,
+        "log_sha256": "a01af8de4e8a0076e5c932190f0b3bae83cb3073d56895690e1a2446af3275f7"
+      }
+    ],
+    "training_comparison": {
+      "actions_enabled": false,
+      "checkpoint_sha256": "bc044fb87b3dbfecb7424440678c0cb2cf3206bbfbb046ee210dce816577b563",
+      "checks": {
+        "draws": true,
+        "final_sample_counts": true,
+        "final_tensors": false,
+        "full_curve": false,
+        "initial_encoder_sha256": true,
+        "optimizer_steps": true,
+        "original_selected_tensors": false,
+        "selected_epoch": false,
+        "selected_sample_counts": false,
+        "selected_tensors": false,
+        "sequence_sha256": true,
+        "source_draws": true
+      },
+      "parameters": 175653,
+      "passed": false,
+      "qualified": false,
+      "selected_epoch": 36,
+      "selected_tensor_sha256": "b0b4cfa21651158f354f53ab9cc888b6de235bb3ca627cbe5529a6cdb9426c18"
+    },
+    "selection_lock_exists": false,
+    "candidate_test_evaluated": false,
+    "protocol_sha256": "705e6b97e154591e10db0ffc1afd6ae4db1959f786206545bcaec93291deee7d"
+  },
+  "integrity": {
+    ".cache\\baseline-a-delete-repeat-03\\dataset-acquisition.json": {
+      "bytes": 1863,
+      "sha256": "120c981627ca6c6fa3b193b41583034d4fc0c2465337d4390a1af2df3a5ed4e2"
+    },
+    ".cache\\baseline-a-delete-repeat-03\\heads_s53\\best.pt": {
+      "bytes": 1825883,
+      "sha256": "bc044fb87b3dbfecb7424440678c0cb2cf3206bbfbb046ee210dce816577b563"
+    },
+    ".cache\\baseline-a-delete-repeat-03\\heads_s53\\config.json": {
+      "bytes": 1107,
+      "sha256": "6b1ed2857a0cc2257632969eeef10009b774d4e4234637f26a625d28b3844aa4"
+    },
+    ".cache\\baseline-a-delete-repeat-03\\heads_s53\\last.pt": {
+      "bytes": 3416751,
+      "sha256": "9af7438e5071244e7885fc5dbc816be1353bcf9dce592a5b9523dff74758aec7"
+    },
+    ".cache\\baseline-a-delete-repeat-03\\heads_s53\\training-curve.jsonl": {
+      "bytes": 26090,
+      "sha256": "dde1d8497fbecf64a19ad06658fb3cf0e2c97f921338a9abad519d0a027a6e18"
+    },
+    ".cache\\baseline-a-delete-repeat-03\\heads_s53\\training-result.json": {
+      "bytes": 1247079,
+      "sha256": "bf5a49db88c4b0d5a6d6086edf1869ab987d15192ead8fafbca35dc81a9b5784"
+    },
+    ".cache\\baseline-a-delete-repeat-03\\normalization.json": {
+      "bytes": 425170,
+      "sha256": "697a4c5fb75f642b86589f2475863a6cb473cb8f20da780ee2c139e9d6785885"
+    },
+    ".cache\\baseline-a-delete-repeat-03\\preparation.json": {
+      "bytes": 897,
+      "sha256": "feb3113d4fb169c09d4a79bd26fb831f156025a7849df2201e708a9253faa0b1"
+    },
+    ".cache\\baseline-a-delete-repeat-03\\prepared-train-dev.json": {
+      "bytes": 44661775,
+      "sha256": "27d87307db94608fa0e6b5e5915b3435b4557387006eb6495a1c72afa63805de"
+    },
+    ".cache\\baseline-a-delete-repeat-03\\source-acquisition.json": {
+      "bytes": 572,
+      "sha256": "5467590e656eaa4dd4071b8446f1e17d7641eef88b7965593670b1727127db1e"
+    },
+    ".cache\\baseline-a-delete-repeat-03\\train-dev-features.pt": {
+      "bytes": 1595798383,
+      "sha256": "c222b5b4df1f61a36c34cef094bf58709e9a6f5ef047fdb60b84797490b44600"
+    },
+    ".cache\\baseline-a-delete-repeat-03\\training-comparison.json": {
+      "bytes": 687,
+      "sha256": "ce2183c6b44ec2abda58a523a1cd8cd17744bf79963d70e5a3a9d6e37e91362a"
+    },
+    ".cache\\delete-03-guards.xml": {
+      "bytes": 3896,
+      "sha256": "52ad605c4355e424636abcfa6f16aeb083b1470e22c3f57c571fcb52ab46b37e"
+    },
+    ".cache\\delete-test-03\\collect_result.py": {
+      "bytes": 10876,
+      "sha256": "121cd0a76e78673541147e655d1b2b767834123cb907a7483aeaf47db6247256"
+    },
+    ".cache\\delete-test-03\\default-artifact-verification.json": {
+      "bytes": 571,
+      "sha256": "3e5705dedf223b5b21baaa0b9768be7916d0d09bcceed5442b84e9885eead66a"
+    },
+    ".cache\\delete-test-03\\default-artifact-verification.log": {
+      "bytes": 525,
+      "sha256": "f0432dd8a331edabc90d005b777717a5d4e060824bcfc1e72792e4afa3299c9f"
+    },
+    ".cache\\delete-test-03\\environment.json": {
+      "bytes": 3170,
+      "sha256": "af78d42e9d2effa6a3c48fd651a99f12c0000063486b91e1361ba715c39068f1"
+    },
+    ".cache\\delete-test-03\\execution.json": {
+      "bytes": 5136,
+      "sha256": "2e3879e978b6c5413182165b7d69b8a3d227813641e10fcfa3f6053d434bac49"
+    },
+    ".cache\\delete-test-03\\full-fit.json": {
+      "bytes": 816,
+      "sha256": "56c9e300ad689d501b0d83ad4eed90255f92bfd11d61f2b43451ecc2ea9b2c6b"
+    },
+    ".cache\\delete-test-03\\full-fit.log": {
+      "bytes": 26989,
+      "sha256": "a01af8de4e8a0076e5c932190f0b3bae83cb3073d56895690e1a2446af3275f7"
+    },
+    ".cache\\delete-test-03\\guard-tests.json": {
+      "bytes": 723,
+      "sha256": "8ae4408fc13face04af0f5646986aa5972165d14aa8573d6cf536ac2f22a63f2"
+    },
+    ".cache\\delete-test-03\\guard-tests.log": {
+      "bytes": 236,
+      "sha256": "d5ed31cd8c9e5849fb233be1684aae24c29bab062c5cdf6a444d15d388e3d3f9"
+    },
+    ".cache\\delete-test-03\\optimizer-smoke.json": {
+      "bytes": 824,
+      "sha256": "0f109b456afe2b6b5e48a181ad9bd81c505db9c79cea7373ff7cbe88966149b0"
+    },
+    ".cache\\delete-test-03\\optimizer-smoke.log": {
+      "bytes": 921,
+      "sha256": "003a0ceb71c79af4d15b6354aa09165d8daa99dcf91f432a851dd62ab1a7be3c"
+    },
+    ".cache\\delete-test-03\\prefetch-before.json": {
+      "bytes": 339,
+      "sha256": "f989ffd19f3b5fc9d52d69cb19564d283c66ff38fb4e8b69c2728341705bd0c6"
+    },
+    ".cache\\delete-test-03\\prefetch-completed.json": {
+      "bytes": 70166,
+      "sha256": "4c658947e5906261a593bec422a87a55758f56d088e7b9b4bbaa5c738774c17d"
+    },
+    ".cache\\delete-test-03\\prepare-skylakex.json": {
+      "bytes": 872,
+      "sha256": "b433317b3e1ccaa18a3bd1a1ef656dae7ed68e42a5427f794a44cdb289929453"
+    },
+    ".cache\\delete-test-03\\prepare-skylakex.log": {
+      "bytes": 1641,
+      "sha256": "7417f6b5405ebaa944d26564541b34d826c874ec006e4c16ebe3216414ab3cac"
+    },
+    ".cache\\delete-test-03\\prepare_frozen.py": {
+      "bytes": 760,
+      "sha256": "4f5f2285abb123d562ad6f9c98713b9c1e4439bb070a20d62f2a9e4e55649aaa"
+    },
+    ".cache\\delete-test-03\\protocol-before-run.json": {
+      "bytes": 4132,
+      "sha256": "705e6b97e154591e10db0ffc1afd6ae4db1959f786206545bcaec93291deee7d"
+    },
+    ".cache\\delete-test-03\\published-replay.json": {
+      "bytes": 1104,
+      "sha256": "78a0e72d766d8bbff7482db4e2b251e7dd1046bf87ebe03ff770f46ed7f0b081"
+    },
+    ".cache\\delete-test-03\\published-replay.log": {
+      "bytes": 2231,
+      "sha256": "acb3facfe0c29f440516da1db01697666591e2a24dfcae9897e7bb45739d6c9b"
+    },
+    ".cache\\delete-test-03\\replay_published_model.py": {
+      "bytes": 4981,
+      "sha256": "cfeda6ca820a1ff043f1181c07c72c63468cbeec8cdaee917303ff12eda8a02d"
+    },
+    ".cache\\delete-test-03\\repository-acquisition.json": {
+      "bytes": 899,
+      "sha256": "0ee29a43c833cfe75d2619dfdcd7d3a7a6fb5be2cd8b3d12967086c86402bbe7"
+    },
+    ".cache\\delete-test-03\\run_published_replay.py": {
+      "bytes": 1817,
+      "sha256": "770e29e56aaaf3534c599586929cb25535cbbfd70d077ea907af97942fb3b5bb"
+    },
+    ".cache\\delete-test-03\\run_reproduction.py": {
+      "bytes": 10402,
+      "sha256": "d926723d5ddf62e1dc76102b77b51a31a6a8c247dc8fc6ba7b84c4c84ace42d0"
+    },
+    ".cache\\hf-main\\download-verification.json": {
+      "bytes": 1912267,
+      "sha256": "ac47a93a5c0cbc0e50a92ec260a8deabe48b5fd31de718b3a4523980d1279add"
+    },
+    ".cache\\hf-main\\git-lfs-completion.json": {
+      "bytes": 716,
+      "sha256": "c4051a744ad9421d12edf232bb4195c35268e570e528455349d9d25f6726c57a"
+    },
+    ".cache\\hf-main\\inventory.json": {
+      "bytes": 1396285,
+      "sha256": "2f90faee5cdb2fde199a225fe30bc8b8992eafa895b4d165ff9bd794c2f27092"
+    },
+    ".cache\\published-a-replay-delete-repeat-03\\evaluation.json": {
+      "bytes": 75847,
+      "sha256": "b15be354908cc7a31b04b81d1a4f9bd7294ac8b74d0570fb650b4b1435d0f2d5"
+    },
+    ".cache\\published-a-replay-delete-repeat-03\\frozen-model-before-replay.json": {
+      "bytes": 1299,
+      "sha256": "244418184ed0eeaa1ecbee189eb84b3f409076d26f37ed056f6bb5fdc2eed835"
+    },
+    ".cache\\published-a-replay-delete-repeat-03\\predictions.json": {
+      "bytes": 365546,
+      "sha256": "5ee2b9d03b4103426a2757dc225378004d3ca0f3c9471752e38853a66841a75e"
+    }
+  },
+  "verified_utc": "2026-11-06T20:20:44.323531+00:00"
+}

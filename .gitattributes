@@ -55,3 +55,9 @@ submission/checkpoints/shared-demo-a-selected.pt -text
 submission/shared-demo-a/** -text
 experiments/shared-demo-slots-v1/protocol.json -text
 experiments/shared-demo-slots-v1/supported-commands.csv -text
+
+# Static documentation and its frozen receipts must hash identically on Windows/Linux.
+docs/site/** -text whitespace=cr-at-eol
+docs/site/bmo/vendor/** -whitespace
+presentation/evidence/** -text
+presentation/iris_scenes.py -text

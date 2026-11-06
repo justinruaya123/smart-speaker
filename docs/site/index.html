@@ -1,122 +1,61 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Iris: a local finite-command smart speaker. Original 258,912-parameter epoch44 model, traceable evidence, explicit result provenance.">
-  <meta name="color-scheme" content="dark">
-  <title>Iris — finite commands, visible outcomes</title>
-  <link rel="icon" href="assets/iris-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/deck.css">
-  <script defer src="assets/deck.js"></script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090d11"><meta name="description" content="BMO: an interactive four-slide explanation of the Baseline A voice-command model, its data, RTX 4080 training and evaluation.">
+  <title>BMO — Voice-command model</title><link rel="icon" href="data:,">
+  <link rel="stylesheet" href="bmo/deck.css"><script src="bmo/wordings.js" defer></script><script type="module" src="bmo/deck.js"></script>
 </head>
 <body>
-  <a class="skip" href="#chapter-content">Skip to chapter</a>
-  <div id="viewport"><main id="stage" aria-label="Iris publication presentation">
-    <header class="deck-header">
-      <a class="wordmark" href="#iris" aria-label="Iris first chapter">iris<span aria-hidden="true">·</span></a>
-      <nav aria-label="Chapters">
-        <a href="#iris" data-go="iris" aria-current="page">Iris</a>
-        <a href="#pipeline" data-go="pipeline">Pipeline</a>
-        <a href="#model" data-go="model">Model</a>
-        <a href="#uses" data-go="uses">Use cases</a>
-        <a href="#evidence" data-go="evidence">Evidence</a>
-        <a href="#run" data-go="run">Run it</a>
-      </nav>
-      <span class="edition">EPOCH 44 / FP32</span>
-    </header>
-    <div id="chapter-content" tabindex="-1">
-      <section class="chapter intro" id="iris" data-chapter aria-labelledby="iris-title">
-        <div class="intro-copy">
-          <p class="eyebrow">A LOCAL, FINITE VOICE ASSISTANT</p>
-          <h1 id="iris-title">Say Hey Iris.<br>See the result.</h1>
-          <p class="lede">Give a supported command. Iris recognizes it locally and shows the result — including when it is only synthetic.</p>
-          <div class="badges" id="hero-badges"><span>Loading verified model data…</span></div>
-          <p class="quiet">No transcript. No LLM.<br>Optional services for actions and external data.</p>
-        </div>
-        <figure class="product-shot">
-          <img src="assets/iris-ui.png" width="1024" height="600" alt="Actual compiled Iris SpeakerUI with a labeled non-actuating UI fixture. Not a live microphone or device result.">
-          <figcaption>Actual SpeakerUI · software fixture · no live microphone or physical-device claim</figcaption>
-        </figure>
-        <p class="chapter-foot">Finite scope is a feature boundary, not a promise of human reliability.</p>
-      </section>
-      <section class="chapter" id="pipeline" data-chapter hidden aria-labelledby="pipeline-title">
-        <div class="chapter-heading"><div><p class="eyebrow">02 / FROM SOUND TO A RECEIPT</p><h2 id="pipeline-title">Recognition is not an action.</h2></div><span class="source-tag">Local model / explicit providers</span></div>
-        <div class="animation-layout">
-          <div class="animation" data-animation="pipeline">
-            <div class="animation-frame">
-              <img class="poster" src="animations/pipeline-poster.png" alt="Hey Iris, PCM and VAD capture, whole-command VCM, owner and slot guard, one action dispatcher, receipt. Owner/overlap is a separate companion.">
-              <video hidden controls preload="none" poster="animations/pipeline-poster.png" aria-label="Manim pipeline animation"><source src="animations/pipeline.mp4" type="video/mp4"></video>
-              <iframe hidden title="Interactive real Manim Slides pipeline export" data-src="animations/pipeline.html" allowfullscreen></iframe>
-            </div>
-            <div class="animation-controls"><button data-play>Play animation</button><button data-inspect>Inspect stages</button><button data-still>Still view</button><a href="animations/pipeline.mp4" download>MP4 ↓</a></div>
-          </div>
-          <aside class="inspector">
-            <h3>One authoritative path</h3>
-            <ol><li>One wake, one command.</li><li>Atomic command + existing owner/overlap veto.</li><li>Typed validation and one persistent dispatcher.</li><li>Receipt first; completion cue after final result.</li></ol>
-            <p>WAVs, tentative previews and benchmarks never actuate.</p>
-            <p class="mint">Synthetic — no device changed.</p>
-            <p class="quiet">A provider acknowledgment is not an observed device state. Unknown outcomes are not retried.</p>
-          </aside>
-        </div>
-        <p class="chapter-foot">Wake acknowledgments: Yes / Hmm / Yeah / Here. Host-owned playback; replays stay silent.</p>
-      </section>
-      <section class="chapter" id="model" data-chapter hidden aria-labelledby="model-title">
-        <div class="chapter-heading"><div><p class="eyebrow">03 / THE ORIGINAL OPTIONB MODEL</p><h2 id="model-title">One head. Complete commands.</h2></div><span class="source-tag">Frozen bytes, not a refit</span></div>
-        <div class="animation-layout">
-          <div class="animation" data-animation="model">
-            <div class="animation-frame">
-              <img class="poster" src="animations/model-poster.png" alt="40-bin log-mel time features, stride two, causal kernel-five stem, four width160 two-stage depthwise/pointwise residual blocks with dilations1/2/4/8, valid-length mean/max pooling and one32-way head.">
-              <video hidden controls preload="none" poster="animations/model-poster.png" aria-label="Manim model architecture animation"><source src="animations/model.mp4" type="video/mp4"></video>
-              <iframe hidden title="Interactive real Manim Slides model export" data-src="animations/model.html" allowfullscreen></iframe>
-            </div>
-            <div class="animation-controls"><button data-play>Play animation</button><button data-inspect>Inspect stages</button><button data-still>Still view</button><a href="animations/model.mp4" download>MP4 ↓</a></div>
-          </div>
-          <aside class="inspector">
-            <h3>Model card</h3><dl id="model-facts"></dl>
-            <p class="quiet">31 complete commands / 18 intent families / 93 wording definitions. No dynamic slot composition.</p>
-            <p class="mint">Qualification: not passed.</p>
-          </aside>
-        </div>
-        <p class="chapter-foot" id="companion-foot">Loading companion footprints…</p>
-      </section>
-      <section class="chapter" id="uses" data-chapter hidden aria-labelledby="uses-title">
-        <div class="chapter-heading"><div><p class="eyebrow">04 / FINITE VALUES, USEFUL SURFACES</p><h2 id="uses-title">Ten use cases. One contract.</h2></div><span class="source-tag">Illustrated outputs, not live results</span></div>
-        <div class="use-layout">
-          <div id="case-tabs" role="tablist" aria-label="Use-case categories" aria-orientation="vertical"></div>
-          <div class="case-body" id="case-panel" role="tabpanel" tabindex="0" aria-live="polite">
-            <div class="case-heading"><span class="eyebrow" id="case-id"></span><h3 id="case-title"></h3><span id="case-count" class="quiet"></span></div>
-            <p class="spoken" id="case-wording"></p>
-            <div class="mini-flow" id="case-diagram" aria-label="Selected use-case pipeline"></div>
-            <div class="case-detail"><div><span class="eyebrow">EXACT TYPED COMMAND</span><pre id="case-json"></pre></div><div class="output-surface"><span class="source-tag" id="case-source"></span><h3 id="case-output"></h3><p id="case-detail"></p></div></div>
-            <p class="quiet case-disclaimer" id="case-disclaimer">Static storyboard example only. No recognition, request, job or device change occurs in this deck.</p>
-          </div>
-        </div>
-        <details class="summary"><summary>All ten categories / complete 31-command coverage</summary><table id="use-summary"><caption>Every positive acoustic class is assigned exactly once.</caption><thead><tr><th>Category</th><th>Complete commands</th><th>Source boundary</th></tr></thead><tbody></tbody></table></details>
-      </section>
-      <section class="chapter evidence" id="evidence" data-chapter hidden aria-labelledby="evidence-title">
-        <div class="chapter-heading"><div><p class="eyebrow">05 / MEASURED, NOT IMPLIED</p><h2 id="evidence-title">Keep the denominators visible.</h2></div><span class="source-tag">Exposed regression, not fresh blind</span></div>
-        <div class="evidence-grid">
-          <div><h3>Frozen data</h3><table id="split-table"><caption>Normalizer: human TRAIN only.</caption><thead><tr><th>Split</th><th>Human</th><th>Synthetic</th></tr></thead><tbody></tbody></table><p class="quiet" id="recipe-line"></p></div>
-          <div><h3>Original fit</h3><figure class="loss-figure"><svg id="loss-chart" viewBox="0 0 700 220" role="img" aria-label="Actual48-epoch training loss from historical receipt"></svg><figcaption>Actual CPU loss · selected epoch44<br>Exact CPU refit unverified; CUDA epoch28.</figcaption></figure><h3 class="subhead">Human command policy</h3><table id="cohort-table"><caption>Correct / positives. Wrong includes negative accepts.</caption><thead><tr><th>Cohort</th><th>Correct</th><th>Wrong</th><th>Negatives</th></tr></thead><tbody></tbody></table></div>
-          <div class="benchmark"><h3>Desktop · p50 / p95</h3><div id="desktop-results"></div><div class="pi-slot"><span class="eyebrow">RASPBERRY PI</span><p id="pi-result">Not measured</p></div></div>
-        </div>
-        <p class="chapter-foot" id="evidence-foot">Timing excludes speaking, file decode, wake/VAD waiting, gateway, UI, feedback and providers.</p>
-      </section>
-      <section class="chapter run" id="run" data-chapter hidden aria-labelledby="run-title">
-        <div class="chapter-heading"><div><p class="eyebrow">06 / RUN THE ARTIFACT. READ THE LIMITS.</p><h2 id="run-title">A small model, an explicit boundary.</h2></div><a class="source-tag" href="https://github.com/justinruaya123/smart-speaker">Source repository ↗</a></div>
-        <div class="run-grid"><div><h3>Run in SpeakerUI</h3><pre class="commands">git clone https://github.com/justinruaya123/SpeakerUI.git
-cd SpeakerUI
-python -m scripts.model_assets --evaluation
-python inference.py --check
-python inference.py --mode ui --no-audio
-python benchmark.py --output .cache/bench-01</pre><p class="quiet">SpeakerUI owns inference and benchmarks; smart-speaker owns model training/distribution. Its pinned asset installer needs no sibling checkout. First setup may use the network; recognition is local.</p><p class="quiet">Full input-preparation and pinned original-source reproduction instructions are linked below. A published-artifact benchmark does not prove exact retraining.</p></div><div><h3>Before you rely on it</h3><ul class="limits"><li>Finite wording/value scope, not arbitrary speech.</li><li>Synthetic wake smoke gate failed; no replacement promoted. Human live-microphone and Pi qualification remain unmeasured.</li><li>Thermostat targets are synthetic; observed sensors stay separate.</li><li>External failures must retain provenance; no invented current weather.</li></ul><h3 class="subhead">Sources &amp; rights</h3><p>Composite dataset DOI <a href="https://doi.org/10.57967/hf/10723">10.57967/hf/10723</a>; exact primary and supplemental revisions in the source audit. Consent and research-use restrictions remain.</p><div class="source-links"><a href="https://github.com/justinruaya123/smart-speaker/blob/main/docs/IRIS-GETTING-STARTED.md">Getting started ↗</a><a href="https://github.com/justinruaya123/smart-speaker/blob/main/docs/MODEL-CARD-iris-epoch44.md">Model card ↗</a><a href="https://github.com/justinruaya123/smart-speaker/blob/main/docs/IRIS-CITATIONS.md">Citation audit ↗</a><a href="assets/iris.json" download>Verified publication JSON ↓</a></div></div></div>
-        <p class="chapter-foot">Native HTML + pre-rendered Manim / manim-slides. All viewer assets local. No microphone, backend, Python or GPU required.</p>
-      </section>
-    </div>
-    <footer class="deck-footer"><span id="chapter-count" aria-live="polite">01 / 06</span><span class="keyboard-hint">← → chapters · 1–6 jump · F fullscreen</span><div class="footer-controls"><button id="previous" aria-label="Previous chapter">←</button><button id="next" aria-label="Next chapter">→</button><button id="fullscreen" aria-label="Toggle fullscreen">Fullscreen</button><button id="motion" aria-pressed="false">Motion off</button></div></footer>
-    <p id="load-error" hidden role="alert"></p>
-    <noscript><p class="no-script">This interactive deck needs JavaScript. Download <a href="assets/iris.json">the source JSON</a>, view the <a href="animations/model-poster.png">model poster</a>, or read the repository README.</p></noscript>
-  </main></div>
-</body>
-</html>
+<a class="skip" href="#content">Skip to presentation</a>
+<div class="viewport"><div class="deck">
+  <header class="deck-header"><a class="wordmark" href="#architecture" aria-label="BMO, first slide">BMO</a><span class="project-name">Voice-command model</span><div class="header-actions"><button id="notes-toggle" class="quiet-button" aria-pressed="false">Presenter notes</button><button id="fullscreen" class="icon-button" aria-label="Enter fullscreen" title="Fullscreen (F)"><svg viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button></div></header>
+  <main id="content" tabindex="-1">
+    <section class="slide architecture active" data-slide="architecture" aria-labelledby="architecture-title">
+      <div class="slide-heading"><div><h1 id="architecture-title">Sound in. A complete command out.</h1><p>A small shared encoder learns the sound. Three heads choose the action and its values.</p></div><div class="headline-stat"><strong>175,653</strong><span>parameters · Baseline A</span></div></div>
+      <div class="architecture-layout">
+        <div class="model-region"><div id="model-scene" aria-label="Interactive three-dimensional model architecture"></div><div class="scene-tools"><span>Drag to rotate · scroll to zoom</span><button id="expand-block" class="small-button" aria-pressed="false">Inside a block</button><button id="reset-view" class="icon-button" aria-label="Reset 3D view" title="Reset view"><svg viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 3 7M3 4v7h7"/></svg></button></div></div>
+        <aside class="stage-detail" aria-live="polite"><div class="stage-count"><span id="stage-counter">01</span> / 08</div><h2 id="stage-title">Listen in small frames</h2><div id="stage-shape" class="tensor-shape">40 mel bins × 296 frames</div><p id="stage-copy">A 2.976-second recording becomes a grid of frequency energy. Each frame covers 25 ms; a new frame starts every 10 ms.</p><div id="stage-extra" class="stage-extra">16,000 samples / second · mono</div><div class="decision" id="decision"><span>Recorded result</span><strong>BRIGHTNESS <b>50%</b></strong><small>All lights · exact supported command</small></div></aside>
+      </div>
+      <div class="model-steps" role="group" aria-label="Model stages">
+        <button data-stage="0" aria-pressed="true"><span>01</span>Features</button><button data-stage="1" aria-pressed="false"><span>02</span>Stem</button><button data-stage="2" aria-pressed="false"><span>03</span>Block 1</button><button data-stage="3" aria-pressed="false"><span>04</span>Block 2</button><button data-stage="4" aria-pressed="false"><span>05</span>Block 3</button><button data-stage="5" aria-pressed="false"><span>06</span>Block 4</button><button data-stage="6" aria-pressed="false"><span>07</span>Pooling</button><button data-stage="7" aria-pressed="false"><span>08</span>Heads</button>
+      </div>
+      <div class="playback-row"><button class="primary-button" id="play-model"><svg viewBox="0 0 24 24"><path d="m9 5 10 7-10 7Z"/></svg><span>Play forward pass</span></button><button class="secondary-button" id="step-model">Step</button><button class="quiet-button" id="replay-audio"><svg viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5ZM15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg><span>Hear the sample</span></button><span class="sample-text">“Adjust brightness to fifty percent”</span><button class="source-link" data-source="architecture">Model details ↗</button></div>
+      <p class="footnote" id="trace-status">Recorded model replay · animation is slowed for explanation · whole-utterance output</p>
+      <div class="presenter-note" hidden><strong>Say:</strong> BMO recognizes a finite command directly from audio. The convolutional encoder is causal, but this published graph pools a complete utterance. The three outputs are an action, percentage and alarm-time category—not text transcription. Click “Inside a block” to explain depthwise filtering, channel mixing and the residual connection.</div>
+    </section>
+
+    <section class="slide dataset" data-slide="dataset" aria-labelledby="dataset-title" hidden>
+      <div class="slide-heading"><div><h1 id="dataset-title">One frozen corpus. Clear boundaries.</h1><p>Human speech anchors the model. Synthetic recordings broaden the finite command inventory.</p></div><div class="headline-stat"><strong>34</strong><span>complete commands + UNKNOWN</span></div></div>
+      <div class="data-layout">
+        <div class="corpus-view"><div class="segmented" role="group" aria-label="Dataset partition"><button data-partition="train" aria-pressed="true">Train</button><button data-partition="dev" aria-pressed="false">Development</button><button data-partition="test" aria-pressed="false">Synthetic test</button></div><div class="corpus-number"><strong id="corpus-count">25,958</strong><span id="corpus-role">eligible training recordings</span></div><div class="composition" role="img" id="composition" aria-label="1,889 human recordings and 24,069 synthetic recordings"><div class="human-fill" id="human-fill"></div><div class="synthetic-fill" id="synthetic-fill"></div></div><div class="composition-labels"><div><i class="dot human"></i><strong id="human-count">1,889</strong><span>human</span></div><div><i class="dot synthetic"></i><strong id="synthetic-count">24,069</strong><span>synthetic</span></div></div><p class="partition-explanation" id="partition-explanation">Used for fitting. Frozen normalization comes from the 1,889 human training utterances.</p><div class="partition-flow"><span>TRAIN <small>learn weights</small></span><svg viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg><span>DEV <small>choose checkpoint</small></span><svg viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg><span>TEST <small>report results</small></span></div><p class="footnote">Bar shows composition within the selected partition. Voice IDs are not human speakers.</p></div>
+        <div class="wording-view"><div class="section-label"><h2>102 ways to say it</h2><button class="source-link" id="all-wordings">Browse all ↗</button></div><p class="subtle">Three canonical wordings for each of 34 commands.</p><label class="field-label" for="example-select">Explore a command</label><select id="example-select"><option value="brightness">Brightness · 50%</option><option value="alarm">Alarm · 12:30</option><option value="light">Lights · on</option></select><div id="example-wordings" class="example-wordings"></div><div class="structured-output"><span>Shared command target</span><code id="example-json"></code></div></div>
+      </div>
+      <div class="data-bottom"><div><strong>202 exposed regression recordings</strong><span>96 human / 106 synthetic · separate from the reserved synthetic test</span></div><div><strong>Edge · System.Speech · CosyVoice2</strong><span>Qwen: DEV only · source-specific research terms</span></div><div class="data-links"><button class="source-link" data-source="generation">Generation recipe ↗</button><button class="source-link" data-source="citations">Dataset citations ↗</button></div></div>
+      <div class="presenter-note" hidden><strong>Say:</strong> These are recording counts, not independent speakers. The test partition was reserved from fitting but has already been evaluated. Human regression recordings were previously exposed. The full assignment targets ten use cases; the measured model supports a finite subset within 18 intent families.</div>
+    </section>
+
+    <section class="slide training" data-slide="training" aria-labelledby="training-title" hidden>
+      <div class="slide-heading"><div><h1 id="training-title">48 epochs. One RTX 4080 SUPER.</h1><p>From random weights, with fixed source quotas and development-only checkpoint selection.</p></div><div class="headline-stat"><strong>12<span>m</span> 56<span>s</span></strong><span>measured fitting time · 16 GB</span></div></div>
+      <div class="training-layout">
+        <div class="training-left"><div class="section-label"><h2>Follow the recorded run</h2><span>Seed 53 · BF16</span></div><div id="history-chart" class="history-chart"><svg id="history-svg" viewBox="0 0 720 230" role="img" aria-label="Recorded RTX 4080 training history"></svg><div class="chart-legend"><span><i class="dot human"></i>Training loss</span><span class="selected-epoch">DEV selected epoch 36</span></div></div><label class="epoch-label" for="epoch-slider"><span>Epoch <strong id="epoch-value">36</strong> / 48</span><span id="epoch-phase">Mixed training</span></label><input id="epoch-slider" type="range" min="1" max="48" step="1" value="36"><div class="phase-strip"><span>6 human-only</span><span>42 mixed</span></div><div class="epoch-metrics"><div><span>Learning rate</span><strong id="epoch-lr">—</strong></div><div><span>Training loss</span><strong id="epoch-loss">—</strong></div><div><span>Optimizer updates</span><strong id="epoch-updates">3,456</strong></div></div></div>
+        <div class="batch-view"><div class="section-label"><h2 id="batch-title">One mixed batch</h2><span>32 examples</span></div><div id="batch-grid" class="batch-grid" role="img" aria-label="Training batch quota illustration"></div><div id="batch-legend" class="batch-legend"></div><div class="update-flow"><span id="batch-token">Batch</span><svg viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg><span id="loss-token">Three losses</span><svg viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg><span id="weights-token">Update weights</span></div><button id="animate-update" class="secondary-button">Animate one update</button><p class="footnote">Quota illustration · no training runs in the browser</p></div>
+      </div>
+      <div class="recipe-line"><div><span>Optimizer</span><strong>AdamW <small>· decay 0.01 · clip 5</small></strong></div><div><span>Learning rate</span><strong>0.002 → 0.00005</strong></div><div><span>Objective</span><strong>CE<sub>action</sub> + ½ CE<sub>percent</sub> + ½ CE<sub>alarm</sub></strong></div></div>
+      <div class="reproduction-note"><i class="dot amber"></i><p><strong>Published checkpoint: epoch 38.</strong> The 4080 refit selected epoch 36; exact weights differ. That candidate has no test evaluation.</p><button class="source-link" data-source="training">Run receipt ↗</button></div>
+      <div class="presenter-note" hidden><strong>Say:</strong> An epoch is 96 fixed-size batches, not a full pass through the corpus. The run made 4,608 updates and 147,456 sampled draws. The original published model's test scores are on the next slide. A deterministic 4080 refit is different from exact reproduction of the original GPU run.</div>
+    </section>
+
+    <section class="slide evidence" data-slide="evidence" aria-labelledby="evidence-title" hidden>
+      <div class="slide-heading"><div><h1 id="evidence-title">What works. What still needs testing.</h1><p>Complete-command results for the published epoch-38 model, including failures.</p></div><div class="headline-stat"><strong>0.744<span> MB</span></strong><span>FP32 ONNX graph</span></div></div>
+      <div class="evidence-layout"><div class="results-view"><div class="section-label"><h2>Exact command matches</h2><button class="source-link" id="result-mode" aria-pressed="false">Show errors</button></div><div id="result-bars"></div><div class="negative-note"><svg viewBox="0 0 24 24"><path d="m12 3 10 18H2L12 3Zm0 6v5m0 3v.1"/></svg><span><strong>5 / 19</strong> human negatives falsely accepted</span></div><p class="footnote">Human recordings are exposed regression data. Synthetic test cohorts were previously evaluated.</p></div><div class="pi-view"><div class="section-label"><h2>Raspberry Pi 4</h2><span class="status-placeholder">Measurements pending</span></div><p>Fill these from the physical device.</p><dl><div><dt>Latency p50 / p95</dt><dd>TBD</dd></div><div><dt>Real-time factor</dt><dd>TBD</dd></div><div><dt>Peak RAM</dt><dd>TBD</dd></div><div><dt>Live microphone accuracy</dt><dd>TBD</dd></div></dl><p class="footnote">Desktop timing is not a Pi benchmark.</p></div></div>
+      <div class="submission-row"><a href="https://github.com/justinruaya123/smart-speaker/tree/4efe5425901b96b1d80d990a95270ee7b1ddb58a" target="_blank" rel="noopener"><span>01</span>Repository ↗</a><a href="https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/tree/13d388c31985be7f42af56b46570281728ecc054/shared-demo-a-v1" target="_blank" rel="noopener"><span>02</span>Dataset & terms ↗</a><a href="https://github.com/justinruaya123/smart-speaker/tree/4efe5425901b96b1d80d990a95270ee7b1ddb58a/submission/models/shared-demo-a" target="_blank" rel="noopener"><span>03</span>Weights & recipe ↗</a><button data-source="submission"><span>04</span>Submission checklist ↗</button></div><div class="evidence-foot"><span>Historical VCM CPU p50 / p95: 3.434 / 5.595 ms · one thread · Pi unmeasured</span><button class="source-link" data-source="benchmark">VCM benchmark & controls ↗</button></div>
+      <div class="presenter-note" hidden><strong>Say:</strong> Clean synthetic phrases are strong, but added context sharply reduces exact matches. Rejection errors matter as much as accepted commands. Pi validation, live speech, speaker accounting and a comparable-size baseline remain distinct evidence requirements; a packaged model does not prove them.</div>
+    </section>
+  </main>
+  <footer class="deck-footer"><button id="previous" class="icon-button" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button><nav aria-label="Slides"><a href="#architecture" aria-current="page">Architecture</a><a href="#dataset">Dataset</a><a href="#training">Training</a><a href="#evidence">Evidence</a></nav><div class="footer-end"><span id="page-counter">01 / 04</span><button id="next" class="icon-button" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></footer>
+</div></div>
+<dialog id="source-dialog" aria-labelledby="source-title"><div class="dialog-heading"><h2 id="source-title"></h2><button class="icon-button close-dialog" aria-label="Close details"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div><div id="source-content"></div></dialog>
+<dialog id="wording-dialog" aria-labelledby="wording-title"><div class="dialog-heading"><div><h2 id="wording-title">102 canonical wordings</h2><p>34 complete commands · frozen Baseline A inventory</p></div><button class="icon-button close-dialog" aria-label="Close wordings"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div><label for="wording-search">Find a wording or intent</label><input id="wording-search" type="search" placeholder="Brightness, alarm, lights…"><div id="wording-count"></div><div id="wording-list"></div></dialog>
+<audio id="sample-audio" preload="none" src="bmo/data/sample.wav"></audio>
+</body></html>
