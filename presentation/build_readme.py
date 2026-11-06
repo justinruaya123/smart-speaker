@@ -4,11 +4,11 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT_SUMMARY = r'''# Iris
+CURRENT_SUMMARY = r'''# BMO
 
 **Local voice commands in 175,653 parameters.**
 
-Iris is a compact voice-command model (VCM) for a fixed-vocabulary smart speaker. It maps mono 16 kHz speech directly to an intent and typed slots, without ASR, a transcript, an LLM or a remote recognition fallback. One shared encoder covers **18 intent families, 34 complete commands and 102 canonical wordings**.
+BMO is a compact voice-command model (VCM) for a fixed-vocabulary smart speaker. It maps mono 16 kHz speech directly to an intent and typed slots, without ASR, a transcript, an LLM or a remote recognition fallback. One shared encoder covers **18 intent families, 34 complete commands and 102 canonical wordings**.
 
 The current retained model is **baseline A: `shared-demo-slots-v1 / heads_s53`, epoch 38**. Its trained ONNX graph and recovery checkpoint are committed here. It is a research demo, **not production-qualified**; qualification and actions remain disabled.
 

@@ -125,7 +125,7 @@ def validate_site(root=ROOT, require_integration=False):
     if readme != render_readme(data):
         raise ValueError('README is not generated from the same ten-case storyboard')
     diagrams = readme.count('```mermaid\n')
-    if not readme.startswith('# Iris\n') or diagrams != 12:
+    if not readme.startswith('# BMO\n') or diagrams != 12:
         raise ValueError('README requires two architecture and ten use-case diagrams')
     if re.findall(r'^## (.+)$', readme, re.M)[-1] != 'Citation':
         raise ValueError('Citation must be the final README heading')
