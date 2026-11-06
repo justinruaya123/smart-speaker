@@ -476,6 +476,9 @@ td:not(:first-child),th:not(:first-child) {
   padding-left:30px}
 .evidence-foot {
   font-size:22px}
+.run .chapter-heading {
+  height:110px;
+  margin-bottom:12px}
 .run-grid {
   display:grid;
   grid-template-columns:1.05fr .95fr;
@@ -495,7 +498,7 @@ td:not(:first-child),th:not(:first-child) {
   padding-left:28px;
   margin:0}
 .limits li {
-  margin:0 0 10px;
+  margin:0 0 6px;
   font-size:24px;
   line-height:1.35}
 .source-links {
