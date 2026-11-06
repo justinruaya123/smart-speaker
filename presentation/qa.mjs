@@ -60,7 +60,7 @@ try {
       const panel=document.querySelector('#case-panel').getBoundingClientRect();
       const summary=document.querySelector('.summary').getBoundingClientRect();
       const code=document.querySelector('#case-json');
-      return {overlap:panel.bottom>summary.top+2 || code.scrollWidth>code.clientWidth+2,panel_bottom:panel.bottom,summary_top:summary.top,code_scroll:code.scrollWidth,code_width:code.clientWidth};
+      return {overlap:panel.bottom>summary.top+2 || code.scrollWidth>code.clientWidth+2,panel_bottom:panel.bottom,panel_height:panel.height,panel_top:panel.top,tabs_height:document.querySelector('#case-tabs').getBoundingClientRect().height,summary_top:summary.top,code_scroll:code.scrollWidth,code_width:code.clientWidth};
     });
     assert.equal(overlap.overlap,false,`${id} output/JSON must fit its consistent frame: ${JSON.stringify(overlap)}`);
     await page.screenshot({path:resolve(output,`${id}.png`)});report.use_cases.push(id);
