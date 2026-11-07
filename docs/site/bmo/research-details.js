@@ -19,6 +19,18 @@ function refs(data, ids) {
 function sourceNames(data, id) {
   return ({airimonda:'airimonda composite',martinnavs:'martinnavs / CosyVoice2',system_speech:'Microsoft System.Speech',edge_speech:'Microsoft Edge Speech'})[id] || id;
 }
+function providerLinks(generator) {
+  return `<div class="tts-reference-links">${generator.reference_links.map(item=>anchor(item.url,item.title)).join('')}</div>`;
+}
+function modelCitations(data) {
+  return `<h3>TTS models and providers</h3>${data.generation_sources.map(generator=>`<article class="citation"><h3>${esc(generator.citation_title)}</h3><p>${esc(generator.citation_summary)}</p>${generator.models?`<ul class="citation-models">${generator.models.map(model=>`<li>${anchor(model.url,model.id)}<code>${esc(model.revision)}</code></li>`).join('')}</ul>`:''}${providerLinks(generator)}</article>`).join('')}`;
+}
+function distillation(data) {
+  return `<h3>BMO training and distillation</h3><p>${esc(data.distillation.summary)}</p><p><code>${esc(data.distillation.objective)}</code></p>${refs(data,data.distillation.sources)}`;
+}
+function datasetLinks(data) {
+  return `<p>${anchor(data.dataset.repository_url,'Hugging Face dataset repository: '+data.dataset.repository)}<br>${anchor(data.dataset.release_url,'Frozen shared-demo-a-v1 snapshot')} · ${anchor(data.dataset.url,'Dataset card and terms')}</p>`;
+}
 function generation(data) {
   const providers = data.generation_sources.map((g, index) => {
     let body = '';
@@ -40,9 +52,9 @@ function generation(data) {
     } else {
       body += `<p>${number(g.counts.train)} TRAIN / ${number(g.counts.original_dev)} original DEV / ${number(g.counts.official)} official synthetic rows.</p><p>Inherited reference sources: ${esc(g.reference_sources.join(', '))}. ${esc(g.unknowns_reason)}</p>`;
     }
-    return `<details class="method-section" ${index===0?'open':''}><summary>${esc(g.title)}</summary>${body}<p>${esc(g.split_policy)}</p>${g.terms?`<p class="detail-muted">${esc(g.terms)}</p>`:''}${refs(data,g.sources)}</details>`;
+    return `<details class="method-section" ${index===0?'open':''}><summary>${esc(g.title)}</summary>${body}<p>${esc(g.split_policy)}</p>${g.terms?`<p class="detail-muted">${esc(g.terms)}</p>`:''}${providerLinks(g)}${refs(data,g.sources)}</details>`;
   }).join('');
-  return `<p><strong>25,958 TRAIN recordings → frozen 40-bin frontend → balanced sampling.</strong> Generation supplies recordings; the VCM itself starts from random weights.</p>
+  return `${datasetLinks(data)}${distillation(data)}<p><strong>25,958 TRAIN recordings → frozen 40-bin frontend → balanced sampling.</strong> Generation supplies recordings; the VCM itself starts from random weights.</p>
     ${table(['TRAIN source','Kind','Rows'],data.source_composition.filter(s=>s.split==='train').map(s=>[sourceNames(data,s.source_id),s.kind,number(s.rows)]))}
     <p>${esc(data.dataset.terms)}</p>
     <h3>How the authored data was made</h3><ol class="recipe-sequence"><li>Freeze typed targets and exact wordings.</li><li>Generate each complete clean or context-wrapped utterance with its declared voice.</li><li>Keep voice IDs separate across TRAIN, DEV and TEST; preserve negative prompts.</li><li>Store the original audio, source text and file/PCM hashes. Reproduce from these frozen bytes.</li></ol>
@@ -53,7 +65,7 @@ function generation(data) {
 function citations(data) {
   const upstream = data.source_datasets.map(s=>`<article class="citation"><h3>${anchor(s.url,s.title)}</h3><p>${esc(s.author)} (${esc(s.year)}). <code>${esc(s.repository)}</code></p><p>${s.doi?anchor('https://doi.org/'+s.doi,'Dataset DOI: '+s.doi):esc(s.doi_status)}</p><p>${esc(s.terms)}</p>${refs(data,s.sources)}</article>`).join('');
   const bibliography = data.citations.map(c=>`<article class="citation"><h3>${anchor(c.url,c.title)}</h3><p>${esc(c.authors)} (${esc(c.year)}), ${esc(c.venue)}.</p><p>${esc(c.role)}</p><p>${c.doi?anchor('https://doi.org/'+c.doi,c.doi_role+': '+c.doi):esc(c.doi_status)}${c.dataset_url?' · '+anchor(c.dataset_url,'Dataset / publisher'):''}</p><p class="detail-muted">${esc(c.terms)}</p></article>`).join('');
-  return `<p>Cite the original datasets and authors, plus the exact derivative revision used. An upstream DOI does not identify this derivative.</p><h3>Frozen Baseline A release</h3><p>${anchor(data.dataset.url,data.dataset.repository+' / '+data.dataset.prefix)}<br><code>${esc(data.dataset.publication_revision)}</code></p><p>${esc(data.dataset.doi_status)} ${esc(data.dataset.terms)}</p>${upstream}<h3>Inherited scholarly attribution</h3><p>These sources are credited by the preserved composite. Exact A-only per-source clip counts and every original clip/version mapping are not audited.</p>${bibliography}<h3>Reference attribution with incomplete metadata</h3><p>SilencioPH and the inherited AI231 contributor synthesis remain credited through the preserved source audit. No author list, publication DOI, clone consent or model revision is invented for missing metadata.</p>${refs(data,['inherited_citations','primary_card','supplement_notice','qwen_assets','bibtex'])}<p>${anchor(new URL('./data/dataset-recipe.json',import.meta.url),'Full source and citation record')}</p>`;
+  return `<p>Cite the original datasets and authors, plus the exact derivative revision used. An upstream DOI does not identify this derivative.</p><h3>Frozen Baseline A release</h3>${datasetLinks(data)}<p><code>${esc(data.dataset.publication_revision)}</code></p><p>${esc(data.dataset.doi_status)} ${esc(data.dataset.terms)}</p>${modelCitations(data)}${distillation(data)}${upstream}<h3>Inherited scholarly attribution</h3><p>These sources are credited by the preserved composite. Exact A-only per-source clip counts and every original clip/version mapping are not audited.</p>${bibliography}<h3>Reference attribution with incomplete metadata</h3><p>SilencioPH and the inherited AI231 contributor synthesis remain credited through the preserved source audit. No author list, publication DOI, clone consent or model revision is invented for missing metadata.</p>${refs(data,['inherited_citations','primary_card','supplement_notice','qwen_assets','bibtex'])}<p>${anchor(new URL('./data/dataset-recipe.json',import.meta.url),'Full source and citation record')}</p>`;
 }
 function benchmark(data) {
   const positive = data.accuracy.filter(r=>r.supported>0), negative=data.accuracy.filter(r=>r.negative_rows>0);

@@ -171,6 +171,10 @@ class BmoPagesTests(unittest.TestCase):
         self.change_json('data/benchmark.json', lambda d: d['accuracy'][0].__setitem__('accuracy', 1))
         self.reject('denominator')
 
+    def test_tts_generation_cannot_be_relabelled_as_teacher_distillation(self):
+        self.change_json('data/dataset-recipe.json', lambda d: d['distillation'].__setitem__('teacher_model', 'invented-teacher'))
+        self.reject('distillation teacher')
+
     def test_malformed_evidence_fails_with_validation_error(self):
         self.change_json('data/benchmark.json', lambda d: d['baseline'].pop('model_sha256'))
         self.reject('invalid or missing BMO evidence')

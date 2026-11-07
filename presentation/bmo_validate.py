@@ -298,6 +298,18 @@ def validate_research_details(bmo):
         require(bool(record.get('generation_sources', True)), 'generation evidence must be present')
         if filename == 'dataset-recipe.json':
             require(record['dataset']['license_name'] == 'source-specific-research-terms', 'dataset detail must retain source-specific terms')
+            require(record['dataset']['repository_url'] == 'https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker',
+                    'explicit Hugging Face dataset repository required')
+            distillation = record['distillation']
+            require(distillation['used'] is False and distillation['teacher_model'] is None,
+                    'frozen BMO fit must not acquire a distillation teacher')
+            for generator in record['generation_sources']:
+                require(bool(generator['reference_links']) and bool(generator['citation_summary']),
+                        'each TTS source requires explicit references')
+                for reference in generator['reference_links']:
+                    parsed = urlsplit(reference['url'])
+                    require(parsed.scheme == 'https' and bool(parsed.netloc), 'HTTPS TTS source reference required')
+
             require(record['dataset']['audio_hours'] is None and record['dataset']['unique_human_speakers'] is None,
                     'unaudited dataset detail counts must remain null')
             expected = {'train': (25958, 1889, 24069), 'original-dev': (1692, 256, 1436),

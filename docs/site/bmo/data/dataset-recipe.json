@@ -35,7 +35,9 @@
       "dataset_card",
       "dataset_lock",
       "dataset_manifest"
-    ]
+    ],
+    "repository_url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker",
+    "release_url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/tree/13d388c31985be7f42af56b46570281728ecc054/shared-demo-a-v1"
   },
   "splits": [
     {
@@ -379,6 +381,14 @@
         "view_train",
         "view_new-dev",
         "view_test"
+      ],
+      "citation_title": "Microsoft Edge Speech",
+      "citation_summary": "Ten provider voice IDs generated TRAIN, DEV and TEST audio. The hosted service has no recorded checkpoint/build ID.",
+      "reference_links": [
+        {
+          "title": "Edge speech client and voice selection",
+          "url": "https://github.com/rany2/edge-tts"
+        }
       ]
     },
     {
@@ -436,6 +446,14 @@
         "dataset_card",
         "view_train",
         "view_original-dev"
+      ],
+      "citation_title": "Microsoft System.Speech",
+      "citation_summary": "Microsoft David Desktop supplied TRAIN audio; Microsoft Zira Desktop supplied DEV audio. Voice-binary versions were not recorded.",
+      "reference_links": [
+        {
+          "title": "Microsoft System.Speech voice API",
+          "url": "https://learn.microsoft.com/en-us/dotnet/api/system.speech.synthesis.speechsynthesizer.getinstalledvoices?view=net-10.0-pp"
+        }
       ]
     },
     {
@@ -477,6 +495,14 @@
         "dataset_card",
         "qwen_assets",
         "view_original-dev"
+      ],
+      "citation_title": "Qwen3-TTS VoiceDesign and Base",
+      "citation_summary": "The preserved assets cover legacy DEV synthesis: 184 DEV recordings and zero TRAIN recordings. Per-row generation settings were not preserved.",
+      "reference_links": [
+        {
+          "title": "Hu et al. (2026), Qwen3-TTS Technical Report",
+          "url": "https://arxiv.org/abs/2601.15621"
+        }
       ]
     },
     {
@@ -520,6 +546,18 @@
         "supplement_notice",
         "supplement_receipt",
         "view_train"
+      ],
+      "citation_title": "CosyVoice2",
+      "citation_summary": "The supplement identifies CosyVoice2 voice cloning. The official 0.5B model below is a family reference; the acquired weights ID and revision are unverified.",
+      "reference_links": [
+        {
+          "title": "FunAudioLLM/CosyVoice2-0.5B (family reference)",
+          "url": "https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B"
+        },
+        {
+          "title": "Du et al. (2024), CosyVoice 2 paper",
+          "url": "https://arxiv.org/abs/2412.10117"
+        }
       ]
     },
     {
@@ -553,6 +591,14 @@
         "view_train",
         "view_original-dev",
         "view_official"
+      ],
+      "citation_title": "Inherited AI231 synthesis",
+      "citation_summary": "The frozen source card credits cloned references but does not identify the exact TTS generator for every inherited recording.",
+      "reference_links": [
+        {
+          "title": "Pinned inherited synthesis source card",
+          "url": "https://github.com/justinruaya123/smart-speaker/blob/4efe5425901b96b1d80d990a95270ee7b1ddb58a/experiments/pcv-source-refresh-v1/source-card.txt"
+        }
       ]
     }
   ],
@@ -838,5 +884,16 @@
       "path": null,
       "url": "https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/blob/13d388c31985be7f42af56b46570281728ecc054/shared-demo-a-v1/official.jsonl.gz"
     }
-  ]
+  ],
+  "distillation": {
+    "used": false,
+    "teacher_model": null,
+    "summary": "BMO starts from random weights and learns typed command labels with cross-entropy. TTS models supplied offline recordings; this frozen fit has no teacher-student distillation loss.",
+    "objective": "CE(action) + 0.5 CE(percent) + 0.5 CE(alarm)",
+    "sources": [
+      "protocol",
+      "study_report",
+      "model_recipe"
+    ]
+  }
 }
