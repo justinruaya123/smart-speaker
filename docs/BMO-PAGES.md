@@ -16,7 +16,7 @@ Open `http://127.0.0.1:8770/`. The viewer needs only a modern browser, JavaScrip
 
 Use the footer navigation or arrow keys for slides, F for fullscreen and Presenter notes for narration. On architecture, Play/Step follows the recorded forward pass; Inside a block expands the two depthwise/pointwise convolution units and residual addition. Drag rotates, wheel zooms, canvas arrow keys rotate and Home resets. The log-mel SVG displays the same synthetic recording: 16 × 48 measured display-bin means over the original 40 × 296 grid. Its cursor follows actual audio playback. The sample is an already-published synthetic recording, not microphone input. Playback speed is explanatory, not measured model latency.
 
-Dataset controls show partitions, all 102 exact wordings, generation recipes and citations. The training scrubber shows all 48 measured RTX 4080 SUPER epochs. The evidence slide exposes correct/rejected/wrong counts, the comparable-size development control, historical CPU timing and explicit Pi placeholders.
+The Dataset slide links directly to the Hugging Face repository. Its panels show the frozen release, all 102 wordings, generation recipes, and explicit TTS model/provider citations. Pinned Qwen assets remain distinct from the unverified CosyVoice2 acquisition revision. The distillation section cites BMO's supervised cross-entropy recipe; no teacher checkpoint is attributed to this fit. The training scrubber shows all 48 measured RTX 4080 SUPER epochs. The evidence slide exposes correct/rejected/wrong counts, the comparable-size development control, historical CPU timing and explicit Pi placeholders.
 
 ## Source-backed content
 

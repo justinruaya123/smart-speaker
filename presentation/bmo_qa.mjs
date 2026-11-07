@@ -89,6 +89,10 @@ try {
 
   report.controls.push('measured log-mel values and audio cursor, recorded 3D playback, residual expansion and wrap, heads, audio');
   await page.getByRole('navigation', {name:'Slides'}).getByRole('link', {name:'Dataset',exact:true}).click();
+  assert.equal(await page.locator('#dataset-repository').getAttribute('href'), 'https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker');
+  const datasetFit = await page.evaluate(() => document.querySelector('.data-bottom').getBoundingClientRect().bottom <= document.querySelector('.deck-footer').getBoundingClientRect().top);
+  assert.equal(datasetFit, true, 'dataset links must fit above the footer');
+
   await page.getByRole('button', {name:'Development',exact:true}).click();
   assert.equal(await page.locator('#corpus-count').textContent(), '2,132');
   await page.getByRole('button', {name:'Synthetic test',exact:true}).click();
@@ -101,6 +105,15 @@ try {
     await page.locator(`[data-source="${id}"]`).click();
     await page.waitForFunction(() => document.querySelector('#source-content').textContent.length > 250);
     assert.ok(await page.locator('#source-content a[href^="https://"]').count() > 1);
+    if (id === 'citations') {
+      const recipe = JSON.parse(await readFile(resolve(site, 'bmo/data/dataset-recipe.json'), 'utf8'));
+      const expected = [recipe.dataset.repository_url, recipe.dataset.release_url,
+        ...recipe.generation_sources.flatMap(generator => [...generator.reference_links.map(item => item.url), ...(generator.models || []).map(model => model.url)])];
+      const links = await page.locator('#source-content a').evaluateAll(nodes => nodes.map(node => node.href));
+      for (const target of expected) assert.ok(links.includes(target), `citation panel must link ${target}`);
+      assert.match(await page.locator('#source-content').textContent(), /no teacher-student distillation loss/);
+    }
+
     await page.getByRole('button', {name:'Close details',exact:true}).click();
   }
   report.controls.push('partitions, exact wording search, generation recipe and citations');

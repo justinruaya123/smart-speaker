@@ -6,8 +6,8 @@
       "sha256": "178ade9aa2b661851252731b8ffef3509c7e68404f34c212305240aebe001a59"
     },
     "data/dataset-recipe.json": {
-      "bytes": 31901,
-      "sha256": "258ceedebc75beb0c4af8538fcbd7d4bb1aeb5f3a4e8016d78924f3414040f50"
+      "bytes": 34893,
+      "sha256": "9863c9167d78767a4225ce50f332d0fa0387631baee04516bad44c96bb4573f8"
     },
     "data/extract_trace.py": {
       "bytes": 23077,
@@ -30,8 +30,8 @@
       "sha256": "7fab979e0f4cfe3b024bd7b3c0af58f942303eed17d6d75dd38331b1d309f86e"
     },
     "deck.css": {
-      "bytes": 25182,
-      "sha256": "b104106be8362d0ddb0ad4929ed312f1473aaab48cb0a3e92a6d79b57a3c320d"
+      "bytes": 25828,
+      "sha256": "c55b16d7f03f4dd29cf886964db4ea118dfe6f19420e495dd602b4c9faabbc67"
     },
     "deck.js": {
       "bytes": 22308,
@@ -78,8 +78,8 @@
       "sha256": "8fb5e2b0f4eeef1bd1807a8bc31a2be376a5b10e11379bbbbb0a2e9f34571eb0"
     },
     "research-details.js": {
-      "bytes": 10595,
-      "sha256": "a293032da6b27c2e976ba93663749a0f3177ac84d3bd31d5e59ac27a92019901"
+      "bytes": 11756,
+      "sha256": "842a6d8b5ca1e73385275fd9d9bf7e92246bfad559dccca529ccd3d17402a0a3"
     },
     "scene-notes.txt": {
       "bytes": 2045,
