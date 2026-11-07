@@ -56,7 +56,9 @@ A result is correct only when the entire intent and every required slot match.
 | Supported exposed-human regression | **71/77 (92.21%)** | Previously evaluated human recordings, not fresh blind qualification |
 | Retained-human DEV | **132/167 (79.04%)** | Development evidence used for selection |
 
-The exposed-human task-negative false accepts remain **5/19**. Small perfect TTS cells and high softmax scores do not establish live-speaker reliability. A does not literally filter arbitrary unknown words. Fresh human microphone, wake/owner and physical Raspberry Pi acceptance remain unmeasured. [Frozen metrics](submission/shared-demo-a/metrics.json) · [Per-verbatim results](submission/shared-demo-a/per-verbatim.csv) · [Full error accounting](docs/EXPERIMENT-shared-demo-a-reproduction-v1.md#same-outcomes-including-limitations).
+The exposed-human task-negative false accepts remain **5/19**. Small perfect TTS cells and high softmax scores do not establish live-speaker reliability. A does not literally filter arbitrary unknown words. Fresh human microphone, wake/owner and physical Raspberry Pi acoustic acceptance remain unmeasured. [Frozen metrics](submission/shared-demo-a/metrics.json) · [Per-verbatim results](submission/shared-demo-a/per-verbatim.csv) · [Full error accounting](docs/EXPERIMENT-shared-demo-a-reproduction-v1.md#same-outcomes-including-limitations).
+
+<!-- PI5_REPLAY -->
 
 ## Reproduce A or run the application
 
@@ -275,8 +277,20 @@ def render_epoch44(data):
     return ''.join(parts)
 
 
+def render_pi5():
+    record = json.loads((ROOT / 'docs/site/bmo/data/pi5-replay.json').read_text(encoding='utf-8'))
+    latest = next(run for run in record['runs'] if run['id'] == record['current_run_id'])
+    case = latest['cases']['baseline-a-mnn']
+    metrics, shared = case['metrics'], case['shared_inventory']['accepted']
+    full, latency = metrics['accepted'], metrics['latency_ms']['end_to_end']
+    return f'''## Pi 5 recorded replay
+
+**{latency['p50']:.2f}/{latency['p95']:.2f} ms p50/p95**, **{metrics['peak_process_rss_mib']:.2f} MiB process-RSS** (A/MNN CPU, two threads). Historical **{full['exact_n']}/{full['scored_n']} ({100*full['complete_command_accuracy']:.2f}%)**; shared-catalog **{shared['exact_n']}/{shared['scored_n']} ({100*shared['complete_command_accuracy']:.2f}%)**. Separate 196-clip holdout; 27 out-of-catalog references, two ambiguous exclusions. Repeat 2/2; three timing passes, first-pass scoring. Both repeats agree. Processing-only, not live accuracy/qualification. [Scores/scope](https://justinruaya123.github.io/smart-speaker/#dataset) · [Both-run receipt](docs/site/bmo/data/pi5-replay.json).
+'''
+
+
 def render(data):
-    return (CURRENT_SUMMARY +
+    return (CURRENT_SUMMARY.replace('<!-- PI5_REPLAY -->', render_pi5()) +
             '<details>\n<summary>Historical epoch44 reference (different model, catalog and benchmarks)</summary>\n\n' +
             render_epoch44(data) + '\n</details>\n')
 

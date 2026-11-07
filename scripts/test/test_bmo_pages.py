@@ -55,6 +55,25 @@ class BmoPagesTests(unittest.TestCase):
         self.assertEqual(summary['published_epoch'], 38)
         self.assertEqual(summary['refit_epoch'], 36)
         self.assertIsNone(summary['pi'])
+        self.assertTrue(summary['pi5_recorded_replay']['recorded_replay'])
+        self.assertFalse(summary['pi5_recorded_replay']['qualified'])
+
+    def test_readme_replay_summary_matches_receipt_and_stays_concise(self):
+        from presentation.build_readme import render
+        record = json.loads((ROOT / 'docs/site/bmo/data/pi5-replay.json').read_text(encoding='utf-8'))
+        run = next(row for row in record['runs'] if row['id'] == record['current_run_id'])
+        case = run['cases']['baseline-a-mnn']
+        latency = case['metrics']['latency_ms']['end_to_end']
+        overview = render(json.loads((ROOT / 'docs/site/assets/iris.json').read_text(encoding='utf-8'))).partition('<details>')[0]
+        self.assertIn(f"{latency['p50']:.2f}/{latency['p95']:.2f} ms p50/p95", overview)
+        for score in (case['metrics']['accepted'], case['shared_inventory']['accepted']):
+            self.assertIn(f"{score['exact_n']}/{score['scored_n']} ({100*score['complete_command_accuracy']:.2f}%)", overview)
+        self.assertIn('Processing-only, not live accuracy/qualification', overview)
+        self.assertLess(len(overview.split()), 900)
+
+    def test_pi5_catalogs_remain_immutable(self):
+        self.change_json('data/pi5-replay.json', lambda data: data['catalogs']['epoch44'].pop())
+        self.reject('immutable catalogs')
 
     def test_root_relative_asset_is_rejected_even_when_file_exists(self):
         self.change('index.html', 'href="bmo/deck.css"', 'href="/bmo/deck.css"')
@@ -146,6 +165,34 @@ class BmoPagesTests(unittest.TestCase):
     def test_source_specific_terms_are_required(self):
         self.change_json('evidence/facts.json', lambda d: d['dataset'].__setitem__('license_name', 'MIT'))
         self.reject('source.specific|terms')
+
+    def test_measured_pi5_cannot_claim_live_microphone_or_qualification(self):
+        self.change_json('data/pi5-replay.json', lambda d: d['scope'].__setitem__('qualified', True))
+        self.reject('Pi 5.*qualified')
+
+    def test_pi5_reference_membership_remains_frozen(self):
+        self.change_json('data/pi5-replay.json', lambda d: d['references'][0].__setitem__('scored', False))
+        self.reject('Pi 5.*reference')
+
+    def test_pi5_shared_denominator_cannot_replace_full_score(self):
+        self.change_json('data/pi5-replay.json', lambda d: d['runs'][-1]['cases']['baseline-a-mnn']['metrics']['accepted'].__setitem__('scored_n', 167))
+        self.reject('Pi 5.*denominator')
+
+    def test_pi5_false_accepts_cannot_be_hidden(self):
+        self.change_json('data/pi5-replay.json', lambda d: d['runs'][-1]['cases']['baseline-a-mnn']['shared_inventory']['accepted'].__setitem__('false_accept_n', 0))
+        self.reject('Pi 5.*counts')
+
+    def test_pi5_timing_must_match_all_observations(self):
+        self.change_json('data/pi5-replay.json', lambda d: d['runs'][-1]['cases']['baseline-a-mnn']['metrics']['latency_ms']['end_to_end'].__setitem__('p50', 1))
+        self.reject('Pi 5.*quantile')
+
+    def test_pi5_visible_metric_cannot_drift_from_receipt(self):
+        self.change('index.html', 'data-pi5="latency">4.76 / 9.37 ms', 'data-pi5="latency">1.00 / 2.00 ms')
+        self.reject('Pi 5.*visible metric')
+
+    def test_pi5_cannot_relabel_desktop_as_physical_hardware(self):
+        self.change_json('data/pi5-replay.json', lambda d: d['hardware'].__setitem__('physical_pi_measured', False))
+        self.reject('Pi 5.*actual hardware')
 
     def test_unmeasured_pi_cannot_acquire_a_numeric_result(self):
         self.change_json('evidence/facts.json', lambda d: d['raspberry_pi'].__setitem__('latency_p50_ms', 1))

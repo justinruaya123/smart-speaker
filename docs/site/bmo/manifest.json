@@ -13,6 +13,10 @@
       "bytes": 23077,
       "sha256": "57fa501df03e12b7f8a2ff0720d03c6886b94aa4d3283bedfae1165f1ef4b07a"
     },
+    "data/pi5-replay.json": {
+      "bytes": 1090087,
+      "sha256": "b7057ad920a0119876a6d8e947bbd2a5ae1231f6a819ea3cdb8c331bc270cd52"
+    },
     "data/provenance.json": {
       "bytes": 5162,
       "sha256": "bb39781f523697f967bab97bef830fb4bef64fd820bcd0bfb2517fb7f2606437"
@@ -30,8 +34,8 @@
       "sha256": "7fab979e0f4cfe3b024bd7b3c0af58f942303eed17d6d75dd38331b1d309f86e"
     },
     "deck.css": {
-      "bytes": 25828,
-      "sha256": "c55b16d7f03f4dd29cf886964db4ea118dfe6f19420e495dd602b4c9faabbc67"
+      "bytes": 27203,
+      "sha256": "5b75f06f29d536a03240f5857fd1bb50a75e2ffe12e82503bfbd19ec88454db4"
     },
     "deck.js": {
       "bytes": 22308,
@@ -78,16 +82,16 @@
       "sha256": "8fb5e2b0f4eeef1bd1807a8bc31a2be376a5b10e11379bbbbb0a2e9f34571eb0"
     },
     "research-details.js": {
-      "bytes": 11756,
-      "sha256": "842a6d8b5ca1e73385275fd9d9bf7e92246bfad559dccca529ccd3d17402a0a3"
+      "bytes": 14972,
+      "sha256": "28f971492c5067753c859aef7d9dc7bd9837371ecfaa1708745901ccfc362112"
     },
     "scene-notes.txt": {
       "bytes": 2045,
       "sha256": "99d5e40678cdc1625347115bc45acc640e2bfdfe96de502f0dc5d39d1deecd3e"
     },
     "sources.js": {
-      "bytes": 9512,
-      "sha256": "f4c0ebad8a4642bd0aaa68fa13f601f10fedc278244756feecded9cbb76e755e"
+      "bytes": 9904,
+      "sha256": "5da3397b0073c3945398f85c253bae2239c3e94db48d347c308994b26889eb7f"
     },
     "vendor/THREE-LICENSE.txt": {
       "bytes": 1081,

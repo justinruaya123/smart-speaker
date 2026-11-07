@@ -67,7 +67,24 @@ function citations(data) {
   const bibliography = data.citations.map(c=>`<article class="citation"><h3>${anchor(c.url,c.title)}</h3><p>${esc(c.authors)} (${esc(c.year)}), ${esc(c.venue)}.</p><p>${esc(c.role)}</p><p>${c.doi?anchor('https://doi.org/'+c.doi,c.doi_role+': '+c.doi):esc(c.doi_status)}${c.dataset_url?' · '+anchor(c.dataset_url,'Dataset / publisher'):''}</p><p class="detail-muted">${esc(c.terms)}</p></article>`).join('');
   return `<p>Cite the original datasets and authors, plus the exact derivative revision used. An upstream DOI does not identify this derivative.</p><h3>Frozen Baseline A release</h3>${datasetLinks(data)}<p><code>${esc(data.dataset.publication_revision)}</code></p><p>${esc(data.dataset.doi_status)} ${esc(data.dataset.terms)}</p>${modelCitations(data)}${distillation(data)}${upstream}<h3>Inherited scholarly attribution</h3><p>These sources are credited by the preserved composite. Exact A-only per-source clip counts and every original clip/version mapping are not audited.</p>${bibliography}<h3>Reference attribution with incomplete metadata</h3><p>SilencioPH and the inherited AI231 contributor synthesis remain credited through the preserved source audit. No author list, publication DOI, clone consent or model revision is invented for missing metadata.</p>${refs(data,['inherited_citations','primary_card','supplement_notice','qwen_assets','bibtex'])}<p>${anchor(new URL('./data/dataset-recipe.json',import.meta.url),'Full source and citation record')}</p>`;
 }
-function benchmark(data) {
+function pi5Replay(record) {
+  const latest = record.runs.find(run => run.id === record.current_run_id);
+  const labels = {'baseline-a-mnn':'A epoch38 · MNN CPU','baseline-a-onnx':'A epoch38 · ONNX CPU','epoch44-onnx':'Historical epoch44 · ONNX CPU'};
+  const score = value => `${value.exact_n}/${value.scored_n} (${(100*value.complete_command_accuracy).toFixed(2)}%)`;
+  const measured = run => table(['Configuration','Full historical score','Shared catalog only','p50 / p95, ms','Median RTF','Process RSS, MiB'],Object.keys(labels).map(name => {
+    const row = run.cases[name], m = row.metrics, t = m.latency_ms.end_to_end;
+    return [labels[name],score(m.accepted),score(row.shared_inventory.accepted),`${t.p50.toFixed(2)} / ${t.p95.toFixed(2)}`,m.rtf.p50.toFixed(5),m.peak_process_rss_mib.toFixed(2)];
+  }));
+  const parity = latest.baseline_backend_parity;
+  return `<h3>Physical Raspberry Pi 5 · recorded replay</h3><p><strong>Measured 2026-11-07 on the real Pi 5 Model B.</strong> Two engine threads; 196 original recordings × 3 timing passes per configuration. Accuracy counts each recording once; two ambiguous references remain excluded. This is a separate historical exposed holdout, not a training split, the 642-recording producer regression set, or fresh live speech.</p><h3>Repeat 2 · ${esc(latest.id)}</h3>${measured(latest)}
+    <p><strong>27 scored references are outside A's frozen inventory:</strong> named Kitchen/Bedroom lights, 20/60% brightness and alarms at 08:00/21:00. The full historical denominator remains 194. The separately labeled shared-catalog diagnostic keeps only exact references supported by both immutable inventories: 156 positives + 11 negatives = 167. No relabeling, retuning or denominator replacement.</p>
+    <p>On shared positives, A matched 149/156; epoch44 matched 147/156. A falsely accepted 5/11 negatives versus epoch44's 1/11. This small negative set is different from the 5/19 human cohort above and excludes wake/owner gating; it is not an operational false-action rate.</p>
+    ${record.runs.filter(run => run.id !== latest.id).map(run=>`<h3>Previous measured repeat · ${esc(run.id)}</h3>${measured(run)}`).join('')}
+    <p>Both repeats retain identical recognition scores. ONNX/MNN typed-output differences: <strong>${parity.decision_mismatch_trials}/588</strong>; all 196 first-pass logit vectors meet the original combined absolute/relative tolerance. Timing varies with host load; these sequential runs left the UI running.</p>
+    <p>Time covers PCM validation, frontend/normalization, inference and finite decision. It excludes audio duration/decoding, wake/VAD/owner waits, UI IPC, providers and TTS. RAM is whole benchmark-process peak RSS, not model-only RAM. No microphone, playback, training, device action or model replacement. <strong>Pi 4, power, live-microphone accuracy and acoustic qualification remain unmeasured.</strong></p>
+    <p>${anchor(new URL('./data/pi5-replay.json',import.meta.url),'Both runs: raw/accepted counts, original references, decisions, timing samples and source hashes')}</p><p>The SpeakerUI checkout had disclosed local source changes; this is not a clean-base-commit reproduction claim.</p>`;
+}
+function benchmark(data, pi5) {
   const positive = data.accuracy.filter(r=>r.supported>0), negative=data.accuracy.filter(r=>r.negative_rows>0);
   const accuracy = table(['Cohort','Exact / supported','Rejected','Wrong accepted'],positive.map(r=>[r.label,`${r.correct}/${r.supported} (${(100*r.accuracy).toFixed(2)}%)`,r.rejected_supported,r.wrong_accepted]));
   const negatives = table(['Negative cohort','False accepts / negatives','Rate'],negative.map(r=>[r.label,`${r.negative_false_accepts}/${r.negative_rows}`,`${(100*r.negative_false_accept_rate).toFixed(2)}%`]));
@@ -78,12 +95,13 @@ function benchmark(data) {
     <h3>Unknown and unsupported requests</h3>${negatives}<h3>Nine finite slot cells</h3>${table(['Command cell','Exact / supported','Rejected'],data.slot_cells.map(r=>[r.label,`${r.correct}/${r.supported}`,r.rejected_supported]))}<p>${esc(data.slot_summary.scope)}</p>
     <h3>Comparable-size control</h3><p>${esc(data.comparison.comparable_population)}</p>${comparison}${list(data.comparison.limitations)}
     <h3>Historical desktop VCM timing</h3><p><strong>${latency.p50_ms.toFixed(3)} ms p50 / ${latency.p95_ms.toFixed(3)} ms p95</strong> · ${latency.cpu_threads} CPU thread · ${esc(latency.runtime)}.</p><p>Includes ${esc(latency.includes.join(', '))}. Excludes ${esc(latency.excludes.join(', '))}.</p><p>CPU model: ${esc(latency.cpu_model_status)} ${esc(latency.timing_sample_count_status)} This is historical CPU evidence, not a new RTX 4080 inference or Raspberry Pi measurement.</p>
-    <h3>Raspberry Pi benchmark</h3><p>p50/p95, real-time factor, peak RAM, power, temperature and live-microphone accuracy remain <strong>TBD / not measured</strong>.</p>
+    ${pi5Replay(pi5)}
     <h3>Limits of the evidence</h3>${list(data.caveats)}${refs(data,['metrics','study_report','verification','selection','predictions'])}<p>${anchor(new URL('./data/benchmark.json',import.meta.url),'Full VCM benchmark record')} · ${anchor(new URL('./data/training-history.json',import.meta.url),'Separate RTX 4080 training receipt')}</p>`;
 }
 export async function researchPage(key) {
   if (key==='generation') return {title:'Dataset generation recipe',html:generation(await load('dataset-recipe'))};
   if (key==='citations') return {title:'Dataset citations and source terms',html:citations(await load('dataset-recipe'))};
-  if (key==='benchmark') return {title:'VCM benchmark: correctness, cost and controls',html:benchmark(await load('benchmark'))};
+  if (key==='pi5') return {title:'Pi 5 replay: measured processing, unchanged references',html:pi5Replay(await load('pi5-replay'))};
+  if (key==='benchmark') return {title:'VCM benchmark: correctness, cost and controls',html:benchmark(await load('benchmark'),await load('pi5-replay'))};
   throw new Error('Unknown research detail.');
 }

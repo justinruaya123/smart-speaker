@@ -161,6 +161,10 @@
       "bytes": 23077,
       "sha256": "57fa501df03e12b7f8a2ff0720d03c6886b94aa4d3283bedfae1165f1ef4b07a"
     },
+    "bmo/data/pi5-replay.json": {
+      "bytes": 1090087,
+      "sha256": "b7057ad920a0119876a6d8e947bbd2a5ae1231f6a819ea3cdb8c331bc270cd52"
+    },
     "bmo/data/provenance.json": {
       "bytes": 5162,
       "sha256": "bb39781f523697f967bab97bef830fb4bef64fd820bcd0bfb2517fb7f2606437"
@@ -178,8 +182,8 @@
       "sha256": "7fab979e0f4cfe3b024bd7b3c0af58f942303eed17d6d75dd38331b1d309f86e"
     },
     "bmo/deck.css": {
-      "bytes": 25828,
-      "sha256": "c55b16d7f03f4dd29cf886964db4ea118dfe6f19420e495dd602b4c9faabbc67"
+      "bytes": 27203,
+      "sha256": "5b75f06f29d536a03240f5857fd1bb50a75e2ffe12e82503bfbd19ec88454db4"
     },
     "bmo/deck.js": {
       "bytes": 22308,
@@ -222,24 +226,24 @@
       "sha256": "22e3994ae0c10a7410c14616df9b747ac0a040f5f722d6dd463ddf00aa86cd01"
     },
     "bmo/manifest.json": {
-      "bytes": 4034,
-      "sha256": "1ab4c787ad9b4d785d7e0a08520e95ca9dd1256b920dce9c45b0fba9ef4fb5a9"
+      "bytes": 4182,
+      "sha256": "bcd4f60848d7ac43f76b460686b80683bf1414ba09d9c57d2be4c37be3ed12c6"
     },
     "bmo/model-scene.js": {
       "bytes": 28219,
       "sha256": "8fb5e2b0f4eeef1bd1807a8bc31a2be376a5b10e11379bbbbb0a2e9f34571eb0"
     },
     "bmo/research-details.js": {
-      "bytes": 11756,
-      "sha256": "842a6d8b5ca1e73385275fd9d9bf7e92246bfad559dccca529ccd3d17402a0a3"
+      "bytes": 14972,
+      "sha256": "28f971492c5067753c859aef7d9dc7bd9837371ecfaa1708745901ccfc362112"
     },
     "bmo/scene-notes.txt": {
       "bytes": 2045,
       "sha256": "99d5e40678cdc1625347115bc45acc640e2bfdfe96de502f0dc5d39d1deecd3e"
     },
     "bmo/sources.js": {
-      "bytes": 9512,
-      "sha256": "f4c0ebad8a4642bd0aaa68fa13f601f10fedc278244756feecded9cbb76e755e"
+      "bytes": 9904,
+      "sha256": "5da3397b0073c3945398f85c253bae2239c3e94db48d347c308994b26889eb7f"
     },
     "bmo/vendor/THREE-LICENSE.txt": {
       "bytes": 1081,
@@ -262,8 +266,8 @@
       "sha256": "7be3dc48ada768e74aebb18084d62abe30a1cf99154ce59ff8775cdb0edc3f52"
     },
     "index.html": {
-      "bytes": 15823,
-      "sha256": "0bb5e97363251231c4f6a4926d7dcce361a1303c725d7d33d838ff3dbcd24c4e"
+      "bytes": 16508,
+      "sha256": "d831368bbecbd9422795022a977bad1b9e29a90119deec791966b03e99e0820b"
     },
     "reference.html": {
       "bytes": 12692,

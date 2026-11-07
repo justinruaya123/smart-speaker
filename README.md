@@ -50,7 +50,12 @@ A result is correct only when the entire intent and every required slot match.
 | Supported exposed-human regression | **71/77 (92.21%)** | Previously evaluated human recordings, not fresh blind qualification |
 | Retained-human DEV | **132/167 (79.04%)** | Development evidence used for selection |
 
-The exposed-human task-negative false accepts remain **5/19**. Small perfect TTS cells and high softmax scores do not establish live-speaker reliability. A does not literally filter arbitrary unknown words. Fresh human microphone, wake/owner and physical Raspberry Pi acceptance remain unmeasured. [Frozen metrics](submission/shared-demo-a/metrics.json) · [Per-verbatim results](submission/shared-demo-a/per-verbatim.csv) · [Full error accounting](docs/EXPERIMENT-shared-demo-a-reproduction-v1.md#same-outcomes-including-limitations).
+The exposed-human task-negative false accepts remain **5/19**. Small perfect TTS cells and high softmax scores do not establish live-speaker reliability. A does not literally filter arbitrary unknown words. Fresh human microphone, wake/owner and physical Raspberry Pi acoustic acceptance remain unmeasured. [Frozen metrics](submission/shared-demo-a/metrics.json) · [Per-verbatim results](submission/shared-demo-a/per-verbatim.csv) · [Full error accounting](docs/EXPERIMENT-shared-demo-a-reproduction-v1.md#same-outcomes-including-limitations).
+
+## Pi 5 recorded replay
+
+**4.76/9.37 ms p50/p95**, **84.55 MiB process-RSS** (A/MNN CPU, two threads). Historical **155/194 (79.90%)**; shared-catalog **155/167 (92.81%)**. Separate 196-clip holdout; 27 out-of-catalog references, two ambiguous exclusions. Repeat 2/2; three timing passes, first-pass scoring. Both repeats agree. Processing-only, not live accuracy/qualification. [Scores/scope](https://justinruaya123.github.io/smart-speaker/#dataset) · [Both-run receipt](docs/site/bmo/data/pi5-replay.json).
+
 
 ## Reproduce A or run the application
 

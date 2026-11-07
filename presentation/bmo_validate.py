@@ -349,6 +349,82 @@ def validate_research_details(bmo):
                     'benchmark must separate published results from refit candidate')
 
 
+def validate_pi5_replay(bmo, html):
+    """Audit new actual-host evidence without promoting historical null placeholders."""
+    record = read_json(bmo / 'data/pi5-replay.json')
+    canonical = lambda value: json.dumps(value, sort_keys=True, separators=(',', ':'), allow_nan=False)
+    require(record['schema_version'] == 1 and record['evidence_kind'] == 'physical_pi5_recorded_command_replay', 'Pi 5 replay schema')
+    require(record['hardware']['physical_pi_measured'] is True and 'Raspberry Pi 5' in record['hardware']['device_model'], 'Pi 5 must identify actual hardware')
+    scope = record['scope']
+    require(scope['physical_pi_measured'] is True and all(scope[key] is False for key in
+            ('physical_microphone_measured', 'wake_tested', 'owner_gating_tested', 'providers_called', 'audio_played', 'actions_enabled', 'qualified', 'pi4_measured', 'power_measured')),
+            'Pi 5 replay cannot claim live/qualified/actions or Pi 4 measurements')
+    require(scope['training_updates'] == 0 and scope['live_microphone_accuracy'] is None, 'Pi 5 live/training scope')
+    refs = record['references']
+    require(hashlib.sha256(canonical(refs).encode()).hexdigest() == '11a28f4888185ece5c3d14b09d1d8310007fdb79e4cbf14c81c0b0be001d7e09', 'Pi 5 original reference projection changed')
+    require(len(refs) == 196 and len({row['id'] for row in refs}) == 196, 'Pi 5 recording identities')
+    require(hashlib.sha256(canonical(record['catalogs']).encode()).hexdigest() == '3f55b6d38beb053bf7d52299f9f4ff9f5df5d7847bcb2bd2c0edf2bb24328a74', 'Pi 5 immutable catalogs changed')
+    catalog = {key: {canonical(command) for command in values} for key, values in record['catalogs'].items()}
+    wording_body = (bmo / 'wordings.js').read_text(encoding='utf-8')
+    wording_rows = json.loads(re.fullmatch(r'\s*window\.BMO_WORDINGS\s*=\s*(\[.*\]);?\s*', wording_body, re.S)[1])
+    require(catalog['baseline_a'] == {canonical(row['command']) for row in wording_rows} | {'null'}, 'Pi 5 catalog differs from frozen A wordings')
+    common = catalog['baseline_a'] & catalog['epoch44']
+    full = [i for i, row in enumerate(refs) if row['scored']]
+    shared = [i for i in full if canonical(refs[i]['expected']) in common]
+    require(len(full) == 194 and len(shared) == 167 and record['reference_contract']['outside_baseline_inventory_n'] == 27, 'Pi 5 denominator/coverage mismatch')
+
+    def check_score(decisions, indices, score):
+        positive = [i for i in indices if refs[i]['expected'] is not None]
+        negative = [i for i in indices if refs[i]['expected'] is None]
+        exact_positive = sum(decisions[i] == refs[i]['expected'] for i in positive)
+        false = sum(decisions[i] is not None for i in negative)
+        exact = exact_positive + len(negative) - false
+        wrong = sum(decisions[i] is not None and decisions[i] != refs[i]['expected'] for i in positive)
+        rejected = sum(decisions[i] is None for i in positive)
+        require((score['scored_n'], score['positive_n'], score['negative_n'], score['exact_positive_n'], score['wrong_positive_n'], score['rejected_positive_n'], score['false_accept_n'], score['exact_n']) ==
+                (len(indices), len(positive), len(negative), exact_positive, wrong, rejected, false, exact), 'Pi 5 score counts/denominator mismatch')
+        require(score['complete_command_accuracy'] == exact / len(indices), 'Pi 5 score percentage mismatch')
+
+    def quantile(values, fraction):
+        values = sorted(values)
+        index = (len(values) - 1) * fraction
+        low = int(index)
+        return values[low] + (values[min(low + 1, len(values) - 1)] - values[low]) * (index - low)
+
+    require(len(record['runs']) == 2, 'two preserved Pi 5 repeats required')
+    for run in record['runs']:
+        require(set(run['cases']) == {'baseline-a-mnn', 'baseline-a-onnx', 'epoch44-onnx'}, 'Pi 5 configuration matrix')
+        parity = run['baseline_backend_parity']
+        require(parity['decision_mismatch_trials'] == 0 and parity['logits_within_tolerance'] is True and parity['sources_with_logits'] == 196, 'Pi 5 native parity failed')
+        for name, case in run['cases'].items():
+            metrics = case['metrics']
+            require(metrics['source_n'] == 196 and metrics['observation_n'] == 588 and metrics['threads'] == 2 and metrics['repeats'] == 3,
+                    'Pi 5 timing/recording denominators')
+            require(metrics['actions_enabled'] is False and metrics['qualified'] is False and metrics['physical_pi_measured'] is True, 'Pi 5 measurement/qualification scope')
+            expected_hash = MODEL_SHA256 if name.startswith('baseline-a') else 'c1cd773b92337fd2a453554b047fa555c692fb981b5975700a32260388d4b9ce'
+            require(metrics['model_sha256'] == expected_hash, 'Pi 5 model identity')
+            first = case['first_pass']
+            require(len(first) == 196 and all(row['raw_available'] for row in first), 'Pi 5 first-pass evidence')
+            for mode, decisions in [('accepted', [row['output']['command'] for row in first]), ('raw', [row['raw'] for row in first])]:
+                check_score(decisions, full, metrics[mode])
+                check_score(decisions, shared, case['shared_inventory'][mode])
+            times = case['end_to_end_ms']
+            require(len(times) == 588 and all(type(t) in (int, float) and math.isfinite(t) and t >= 0 for t in times), 'Pi 5 finite timing observations')
+            for key, fraction in [('p50', .5), ('p95', .95)]:
+                require(math.isclose(metrics['latency_ms']['end_to_end'][key], quantile(times, fraction), rel_tol=1e-12, abs_tol=1e-9), 'Pi 5 timing quantile mismatch')
+            require(case['offline_guard']['network'] == 0 and case['offline_guard']['setup'] == 0, 'Pi 5 offline guard')
+        require(run['cases']['baseline-a-onnx']['first_pass'] == run['cases']['baseline-a-mnn']['first_pass'], 'Pi 5 typed decision parity mismatch')
+    latest = next(run for run in record['runs'] if run['id'] == record['current_run_id'])['cases']['baseline-a-mnn']
+    metrics, score = latest['metrics'], latest['shared_inventory']['accepted']
+    latency = metrics['latency_ms']['end_to_end']
+    displayed = {'latency': f"{latency['p50']:.2f} / {latency['p95']:.2f} ms", 'rtf': f"{metrics['rtf']['p50']:.5f}",
+                 'rss': f"{metrics['peak_process_rss_mib']:.2f} MiB", 'shared': f"{score['exact_n']} / {score['scored_n']} · {100*score['complete_command_accuracy']:.2f}%"}
+    for key, text in displayed.items():
+        values = re.findall(r'data-pi5="' + key + r'">([^<]+)<', html)
+        require(values and all(value == text for value in values), 'Pi 5 visible metric differs from receipt: ' + key)
+    return {'device': 'Raspberry Pi 5', 'recorded_replay': True, 'qualified': False, 'latest_run': record['current_run_id']}
+
+
 def _validate_bmo(root):
     root = Path(root)
     site = root / 'docs/site'
@@ -366,11 +442,12 @@ def _validate_bmo(root):
     history = validate_history(bmo)
     validate_facts(bmo)
     validate_research_details(bmo)
+    pi5 = validate_pi5_replay(bmo, html)
     files = inventory(bmo)
     require(read_json(bmo / 'manifest.json') == {'format': 'bmo-static-assets-v1', 'files': files}, 'BMO asset manifest is stale')
     return {'slides': len(parser.slides), 'wordings': wordings, 'commands': commands,
             'training_epochs': history['epoch_count'], 'published_epoch': 38, 'refit_epoch': 36,
-            'assets': len(files), 'pi': None, 'scope': 'static documentation; no acoustic qualification'}
+            'assets': len(files), 'pi': None, 'pi5_recorded_replay': pi5, 'scope': 'static documentation; no acoustic qualification'}
 
 
 def validate_bmo(root=ROOT):

@@ -28,7 +28,7 @@ const origin = `http://127.0.0.1:${server.address().port}`;
 const url = origin + prefix;
 const output = resolve(root, '.cache/bmo-pages-qa');
 await mkdir(output, {recursive:true});
-const browser = await chromium.launch({headless:true, args:['--use-angle=swiftshader', '--enable-unsafe-swiftshader']});
+const browser = await chromium.launch({headless:true, ...(process.env.IRIS_BROWSER_EXECUTABLE ? {executablePath:process.env.IRIS_BROWSER_EXECUTABLE} : {}), args:['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--mute-audio']});
 const errors = [], external = [];
 const report = {prefix, browser:browser.version(), slides:[], mobile:[], controls:[], errors, external};
 try {
@@ -93,6 +93,18 @@ try {
   const datasetFit = await page.evaluate(() => document.querySelector('.data-bottom').getBoundingClientRect().bottom <= document.querySelector('.deck-footer').getBoundingClientRect().top);
   assert.equal(datasetFit, true, 'dataset links must fit above the footer');
 
+  const pi5 = JSON.parse(await readFile(resolve(site, 'bmo/data/pi5-replay.json'), 'utf8'));
+  const latest = pi5.runs.find(run => run.id === pi5.current_run_id).cases['baseline-a-mnn'];
+  const piLatency = latest.metrics.latency_ms.end_to_end;
+  const expectedLatency = `${piLatency.p50.toFixed(2)} / ${piLatency.p95.toFixed(2)} ms`;
+  assert.equal(await page.locator('.dataset-replay [data-pi5="latency"]').textContent(), expectedLatency);
+  assert.match(await page.locator('.dataset-replay').textContent(), /167.*Shared catalog/);
+  await page.locator('[data-source="pi5"]').click();
+  await page.waitForFunction(() => document.querySelector('#source-content').textContent.includes('27 scored'));
+  assert.match(await page.locator('#source-content').textContent(), /155\/194.*79\.90%/);
+  assert.match(await page.locator('#source-content').textContent(), /155\/167.*92\.81%/);
+  await page.getByRole('button', {name:'Close details',exact:true}).click();
+  report.controls.push('measured Pi 5 replay, full/shared denominators and both repeat receipts');
   await page.getByRole('button', {name:'Development',exact:true}).click();
   assert.equal(await page.locator('#corpus-count').textContent(), '2,132');
   await page.getByRole('button', {name:'Synthetic test',exact:true}).click();
@@ -127,6 +139,8 @@ try {
   await page.waitForFunction(() => !document.querySelector('#animate-update').disabled);
   report.controls.push('48-epoch scrubber, phase quotas, one-update illustration');
   await page.getByRole('navigation', {name:'Slides'}).getByRole('link', {name:'Evidence',exact:true}).click();
+  assert.equal(await page.locator('.pi-view [data-pi5="latency"]').textContent(), expectedLatency);
+  assert.match(await page.locator('.pi-view').textContent(), /Live microphone accuracyTBD/);
   await page.locator('#result-mode').click();
   assert.match(await page.locator('#result-bars').textContent(), /106/);
   await page.locator('[data-source="benchmark"]').click();
