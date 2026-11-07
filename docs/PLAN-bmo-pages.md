@@ -14,3 +14,12 @@ Constraints: preserve current research worktrees, installed artifacts, scientifi
 - [x] Verify all four slides and controls through the in-app browser at a GitHub-style project prefix, run source validators, review the scoped diff, prepare the approved documentation changes for GitHub publication. Deployment success is verified from the actual workflow and public URL after merge.
 
 Review focus: project-subpath fetches; WebGL failure and motion controls; source-specific dataset rights; cross-GPU result attribution; no implication that documentation publication qualifies the acoustic model or Pi hardware.
+
+## Concise deck and log-mel update — 2026-11-07
+
+Keep the existing four-slide layout and pinned epoch-38 model. Its matched DEV win (132/167 human commands versus 130/167 for the 175,139-parameter flat control; both 400/408 demo-supported) is the selection reason. The trained graph already exists on main; expose a direct download and preserve its SHA-256. Do not replace it with the unevaluated epoch-36 refit.
+
+- [x] Shorten visible explanations into complete sentences; retain the full recipe, benchmark and citation panels.
+- [x] Render the recorded log-mel thumbnail as an accessible SVG on Architecture. Identify its 16 × 48 display means over the original 40 × 296 feature grid and link playback position to the recorded audio.
+- [x] Add the short DEV selection reason and model link to the generated README and deck.
+- [ ] Validate the recorded-data rendering, responsive layout, immutable model bytes and project-prefix interactions; push, merge and verify Pages.

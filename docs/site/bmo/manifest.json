@@ -30,12 +30,12 @@
       "sha256": "7fab979e0f4cfe3b024bd7b3c0af58f942303eed17d6d75dd38331b1d309f86e"
     },
     "deck.css": {
-      "bytes": 24019,
-      "sha256": "2e013d4c68c1ae2514619f25846f926551eb55b2d25d040836325629aac48f97"
+      "bytes": 25182,
+      "sha256": "b104106be8362d0ddb0ad4929ed312f1473aaab48cb0a3e92a6d79b57a3c320d"
     },
     "deck.js": {
-      "bytes": 22501,
-      "sha256": "31fd57d14c87e6325da68cf7f0eeab7b47112cd6952efed0f4e933b9d33fd2c1"
+      "bytes": 22308,
+      "sha256": "70e7ce28380e0e481970c73e12fb03f37c191d4b9218ac7fec8ce1e2dccc8d1c"
     },
     "evidence/facts.json": {
       "bytes": 22809,
@@ -68,6 +68,10 @@
     "evidence/rtx4080-result.json": {
       "bytes": 21845,
       "sha256": "77cf626676958202da223428c9fff6dc82e3921e8cd4faff481123a119e5780a"
+    },
+    "logmel.js": {
+      "bytes": 2869,
+      "sha256": "22e3994ae0c10a7410c14616df9b747ac0a040f5f722d6dd463ddf00aa86cd01"
     },
     "model-scene.js": {
       "bytes": 28219,

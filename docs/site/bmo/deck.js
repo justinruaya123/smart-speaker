@@ -1,3 +1,4 @@
+import { renderLogMel, setLogMelTime } from './logmel.js';
 import { createModelScene } from './model-scene.js';
 import { sourcePages } from './sources.js';
 import { researchPage } from './research-details.js';
@@ -13,14 +14,14 @@ let updateTimers = [];
 const model = createModelScene($('model-scene'), { onSelect: index => setStage(index, true) });
 
 const stageContent = [
-  ['Listen in small frames', '40 mel bins × 296 frames', 'A 2.976-second recording becomes a grid of frequency energy. Each frame covers 25 ms; a new frame starts every 10 ms.', '16,000 samples / second · mono'],
-  ['Learn the first sound patterns', '40 × 296 → 128 × 148', 'Keep every second frame. A kernel-5 causal convolution expands 40 input channels to 128, followed by LayerNorm and SiLU.', '25,856 learned parameters · time length halves'],
-  ['Filter each channel. Then mix.', '128 channels × 148 frames', 'Block 1 uses dilation 1. Each of two stages filters channels separately, mixes them with a pointwise convolution, then applies LayerNorm and SiLU.', '35,072 parameters · residual: (input + output) / √2'],
-  ['Look farther back in time', '128 channels × 148 frames', 'Block 2 uses dilation 2: the same kernel samples every second position. It preserves the tensor shape and adds its input back at the end.', 'Two depthwise + pointwise stages · kernel 7'],
-  ['Build a wider sound context', '128 channels × 148 frames', 'Block 3 uses dilation 4. Wider spacing connects more distant sound patterns while retaining 128 channels and the same number of frames.', 'Left padding only · no future context inside convolutions'],
-  ['Combine the longest context', '128 channels × 148 frames', 'Block 4 uses dilation 8. The four blocks share one encoder; the action and value heads use the same learned acoustic representation.', 'Four blocks × 35,072 parameters'],
-  ['Summarize the whole utterance', '128 means + 128 maxima = 256', 'Masked temporal mean and maximum summarize each channel. Joining them gives one 256-value vector for all three output heads.', 'This pooling stage needs the complete utterance'],
-  ['Choose the action', '29 action + 4 percent + 4 alarm', 'Action: brightness. Percent: 50%. The alarm head runs but is unused here. Missing required values reject.', '37 logits · fixed argmax · 9,509 head parameters']
+  ['Listen in small frames', '40 mel bins × 296 frames', 'A 2.976-second recording becomes 40 frequency bands, sampled every 10 ms.', '16,000 samples / second · mono'],
+  ['Learn the first sound patterns', '40 × 296 → 128 × 148', 'A kernel-5 causal convolution turns 40 bands into 128 channels. LayerNorm and SiLU follow.', '25,856 learned parameters · time length halves'],
+  ['Filter each channel. Then mix.', '128 channels × 148 frames', 'Two stages filter each channel, mix channels, then apply LayerNorm and SiLU.', '35,072 parameters · residual: (input + output) / √2'],
+  ['Look farther back in time', '128 channels × 148 frames', 'Dilation 2 samples every second position. The block preserves shape and adds its input back.', 'Two depthwise + pointwise stages · kernel 7'],
+  ['Build a wider sound context', '128 channels × 148 frames', 'Dilation 4 connects more distant sound patterns while preserving all 128 channels.', 'Left padding only · no future context inside convolutions'],
+  ['Combine the longest context', '128 channels × 148 frames', 'Dilation 8 gives the widest context. All three heads share this encoder.', 'Four blocks × 35,072 parameters'],
+  ['Summarize the whole utterance', '128 means + 128 maxima = 256', 'Mean and maximum pooling join into one 256-value vector for the three heads.', 'This pooling stage needs the complete utterance'],
+  ['Choose the action', '29 action + 4 percent + 4 alarm', 'The model selects brightness at 50%. Missing required values reject the command.', '37 logits · fixed argmax · 9,509 head parameters']
 ];
 
 function fit() {
@@ -110,6 +111,8 @@ $('replay-audio').addEventListener('click', async () => {
   catch { $('replay-audio').querySelector('span').textContent = 'Audio unavailable'; }
 });
 $('sample-audio').addEventListener('play', () => $('replay-audio').querySelector('span').textContent = 'Pause sample');
+$('sample-audio').addEventListener('timeupdate', () => setLogMelTime($('logmel-plot'), $('sample-audio').currentTime, trace?.sample.duration_seconds));
+$('sample-audio').addEventListener('ended', () => setLogMelTime($('logmel-plot'), 0, trace?.sample.duration_seconds));
 ['pause', 'ended'].forEach(event => $('sample-audio').addEventListener(event, () => $('replay-audio').querySelector('span').textContent = 'Hear the sample'));
 $('notes-toggle').addEventListener('click', () => {
   const on = $('notes-toggle').getAttribute('aria-pressed') !== 'true';
@@ -136,9 +139,9 @@ document.addEventListener('keydown', e => {
 document.addEventListener('visibilitychange', () => { if (document.hidden) { pauseModel(); $('sample-audio').pause(); model.setActive(false); } else model.setActive(currentSlide === 0); });
 
 const partitions = {
-  train: { total: 25958, human: 1889, synthetic: 24069, role: 'eligible training recordings', explanation: 'Used for fitting. Frozen normalization comes from the 1,889 human training utterances.' },
-  dev: { total: 2132, human: 256, synthetic: 1876, role: 'development recordings', explanation: 'Chooses the checkpoint before test. The 4080 refit selected epoch 36; the published model selected epoch 38.' },
-  test: { total: 440, human: 0, synthetic: 440, role: 'reserved synthetic recordings', explanation: '204 clean commands + 204 context-added commands + 32 negatives. Reserved from fitting, but previously evaluated.' }
+  train: { total: 25958, human: 1889, synthetic: 24069, role: 'eligible training recordings', explanation: 'The 1,889 human TRAIN recordings set the frozen normalization.' },
+  dev: { total: 2132, human: 256, synthetic: 1876, role: 'development recordings', explanation: 'DEV selects the checkpoint before TEST.' },
+  test: { total: 440, human: 0, synthetic: 440, role: 'reserved synthetic recordings', explanation: 'TEST has 204 clean, 204 context-added and 32 negative recordings. It was previously evaluated.' }
 };
 function setPartition(name) {
   const p = partitions[name];
@@ -276,7 +279,7 @@ $('wording-search').addEventListener('input', renderWordings);
 fit(); setStage(0); setPartition('train'); renderExamples(); setEpoch(36); showResults();
 selectSlide(Math.max(0, names.indexOf(location.hash.slice(1))), false);
 fetch(new URL('./data/trace.json', import.meta.url)).then(r => { if (!r.ok) throw new Error('Trace unavailable'); return r.json(); }).then(data => {
-  trace = data; model.setTrace(trace);
-  $('trace-status').textContent = 'Actual recorded activations · 37 / 37 logits verified · animation speed is explanatory, not measured latency';
+  trace = data; model.setTrace(trace); renderLogMel($('logmel-plot'), trace);
+  $('trace-status').textContent = '37 logits match. Replay is slowed.';
 }).catch(() => { $('trace-status').textContent = 'Recorded activations could not load. Geometry still describes the model; reload this page to retry.'; });
 fetch(new URL('./data/training-history.json', import.meta.url)).then(r => { if (!r.ok) throw new Error('History unavailable'); return r.json(); }).then(data => { history = data; setEpoch(36); }).catch(() => { $('history-chart').textContent = 'The recorded training history could not load. Reload this page to retry.'; });
