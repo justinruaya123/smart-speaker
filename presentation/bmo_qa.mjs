@@ -55,7 +55,7 @@ try {
   for (const cell of display) assert.equal(cell.value, logmel.values[cell.row][cell.column], 'heatmap must preserve each measured display value');
   assert.ok(display[0].y > display.at(-1).y, 'high mel bands must be above low bands');
   assert.match(await page.locator('.model-choice').textContent(), /132\/167.*130\/167/);
-  assert.equal(await page.getByRole('heading', {name:'Measure complete commands.',exact:true}).count(), 1);
+  assert.equal(await page.locator('#evidence-title').textContent(), 'Measure complete commands.');
 
   for (const id of ['architecture','dataset','training','evidence']) {
     await page.getByRole('navigation', {name:'Slides'}).getByRole('link', {name:id, exact:false}).click();
