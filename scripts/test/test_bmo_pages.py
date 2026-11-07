@@ -190,6 +190,16 @@ class BmoPagesTests(unittest.TestCase):
         self.change('index.html', 'data-pi5="latency">4.76 / 9.37 ms', 'data-pi5="latency">1.00 / 2.00 ms')
         self.reject('Pi 5.*visible metric')
 
+    def test_pi5_evidence_shows_holdout_instead_of_live_microphone_placeholder(self):
+        html = (self.site / 'index.html').read_text(encoding='utf-8')
+        self.assertIn('<dt>Holdout exact match</dt>', html)
+        self.assertNotIn('Live microphone accuracy', html)
+        self.validator.validate_bmo(self.root)
+
+    def test_pi5_holdout_cannot_substitute_the_shared_catalog_score(self):
+        self.change('index.html', 'data-pi5="holdout">155 / 194 · 79.90%', 'data-pi5="holdout">155 / 167 · 92.81%')
+        self.reject('Pi 5.*visible metric.*holdout')
+
     def test_pi5_cannot_relabel_desktop_as_physical_hardware(self):
         self.change_json('data/pi5-replay.json', lambda d: d['hardware'].__setitem__('physical_pi_measured', False))
         self.reject('Pi 5.*actual hardware')

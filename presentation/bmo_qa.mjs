@@ -140,7 +140,10 @@ try {
   report.controls.push('48-epoch scrubber, phase quotas, one-update illustration');
   await page.getByRole('navigation', {name:'Slides'}).getByRole('link', {name:'Evidence',exact:true}).click();
   assert.equal(await page.locator('.pi-view [data-pi5="latency"]').textContent(), expectedLatency);
-  assert.match(await page.locator('.pi-view').textContent(), /Live microphone accuracyTBD/);
+  const holdout = latest.metrics.accepted;
+  assert.equal(await page.locator('.pi-view [data-pi5="holdout"]').textContent(), `${holdout.exact_n} / ${holdout.scored_n} · ${(100*holdout.complete_command_accuracy).toFixed(2)}%`);
+  assert.match(await page.locator('.pi-view').textContent(), /Holdout exact match/);
+  assert.doesNotMatch(await page.locator('.pi-view').textContent(), /Live microphone accuracy|TBD/);
   await page.locator('#result-mode').click();
   assert.match(await page.locator('#result-bars').textContent(), /106/);
   await page.locator('[data-source="benchmark"]').click();

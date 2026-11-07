@@ -416,9 +416,11 @@ def validate_pi5_replay(bmo, html):
         require(run['cases']['baseline-a-onnx']['first_pass'] == run['cases']['baseline-a-mnn']['first_pass'], 'Pi 5 typed decision parity mismatch')
     latest = next(run for run in record['runs'] if run['id'] == record['current_run_id'])['cases']['baseline-a-mnn']
     metrics, score = latest['metrics'], latest['shared_inventory']['accepted']
+    holdout = metrics['accepted']
     latency = metrics['latency_ms']['end_to_end']
     displayed = {'latency': f"{latency['p50']:.2f} / {latency['p95']:.2f} ms", 'rtf': f"{metrics['rtf']['p50']:.5f}",
-                 'rss': f"{metrics['peak_process_rss_mib']:.2f} MiB", 'shared': f"{score['exact_n']} / {score['scored_n']} · {100*score['complete_command_accuracy']:.2f}%"}
+                 'rss': f"{metrics['peak_process_rss_mib']:.2f} MiB", 'shared': f"{score['exact_n']} / {score['scored_n']} · {100*score['complete_command_accuracy']:.2f}%",
+                 'holdout': f"{holdout['exact_n']} / {holdout['scored_n']} · {100*holdout['complete_command_accuracy']:.2f}%"}
     for key, text in displayed.items():
         values = re.findall(r'data-pi5="' + key + r'">([^<]+)<', html)
         require(values and all(value == text for value in values), 'Pi 5 visible metric differs from receipt: ' + key)
@@ -435,7 +437,7 @@ def _validate_bmo(root):
     require((bmo / 'vendor/THREE-LICENSE.txt').is_file(), 'vendored Three.js license must be preserved')
     html = (site / 'index.html').read_text(encoding='utf-8')
     parser = validate_references(site, bmo, html)
-    require('TBD' in html and 'published' in html.lower() and 'refit differs and has no test score' in html,
+    require('Pi 4, power and live wake/owner acceptance remain unmeasured' in html and 'published' in html.lower() and 'refit differs and has no test score' in html,
             'visible Pi/published-versus-refit limitations required')
     wordings, commands = validate_wordings(bmo)
     validate_trace(bmo)
