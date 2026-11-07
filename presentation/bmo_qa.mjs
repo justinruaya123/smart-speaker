@@ -47,6 +47,16 @@ try {
   assert.equal(await page.title(), 'BMO — Architecture');
   assert.equal(await page.locator('[data-slide]').count(), 4);
   assert.equal(await page.locator('img').count(), 0);
+  const recordedTrace = JSON.parse(await readFile(resolve(site, 'bmo/data/trace.json'), 'utf8'));
+  const logmel = recordedTrace.stages.find(item => item.id === 'logmel').thumbnail;
+  await page.waitForSelector('#logmel-plot[data-source="recorded-logmel-bin-means"]');
+  const display = await page.locator('#logmel-plot rect').evaluateAll(nodes => nodes.map(node => ({value:Number(node.dataset.value),row:Number(node.dataset.melRow),column:Number(node.dataset.timeColumn),y:Number(node.getAttribute('y'))})));
+  assert.equal(display.length, logmel.rows * logmel.cols);
+  for (const cell of display) assert.equal(cell.value, logmel.values[cell.row][cell.column], 'heatmap must preserve each measured display value');
+  assert.ok(display[0].y > display.at(-1).y, 'high mel bands must be above low bands');
+  assert.match(await page.locator('.model-choice').textContent(), /132\/167.*130\/167/);
+  assert.equal(await page.getByRole('heading', {name:'Measure complete commands.',exact:true}).count(), 1);
+
   for (const id of ['architecture','dataset','training','evidence']) {
     await page.getByRole('navigation', {name:'Slides'}).getByRole('link', {name:id, exact:false}).click();
     assert.equal(await page.locator(`[data-slide="${id}"]`).isVisible(), true);
@@ -62,11 +72,22 @@ try {
   assert.equal(await page.getByRole('button', {name:'03 Block 1',exact:true}).getAttribute('aria-pressed'), 'true');
   await page.getByRole('button', {name:'Whole model',exact:true}).click();
   await page.getByRole('button', {name:'08 Heads',exact:true}).click();
+  const architectureFit = await page.evaluate(() => {
+    const steps = document.querySelector('.model-steps').getBoundingClientRect().top;
+    const footer = document.querySelector('.deck-footer').getBoundingClientRect().top;
+    return {decision:document.querySelector('#decision').getBoundingClientRect().bottom <= steps,
+      explanation:document.querySelector('.architecture > .footnote').getBoundingClientRect().bottom <= footer};
+  });
+  assert.deepEqual(architectureFit, {decision:true,explanation:true}, 'model output and concise explanation must fit before controls');
+
   assert.match(await page.locator('#decision').textContent(), /BRIGHTNESS\s*50%/);
   await page.getByRole('button', {name:'Hear the sample',exact:true}).click();
   await page.waitForFunction(() => document.querySelector('#sample-audio').duration > 2.9);
   assert.equal(await page.locator('#sample-audio').evaluate(a => a.duration), 2.976);
-  report.controls.push('recorded 3D playback, residual expansion and wrap, heads, audio');
+  await page.waitForFunction(() => document.querySelector('.logmel-cursor')?.getAttribute('visibility') === 'visible');
+  assert.ok(Number(await page.locator('.logmel-cursor').getAttribute('x1')) > 29, 'the spectrogram cursor must follow the actual audio');
+
+  report.controls.push('measured log-mel values and audio cursor, recorded 3D playback, residual expansion and wrap, heads, audio');
   await page.getByRole('navigation', {name:'Slides'}).getByRole('link', {name:'Dataset',exact:true}).click();
   await page.getByRole('button', {name:'Development',exact:true}).click();
   assert.equal(await page.locator('#corpus-count').textContent(), '2,132');

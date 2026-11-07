@@ -347,7 +347,7 @@ def _validate_bmo(root):
     require((bmo / 'vendor/THREE-LICENSE.txt').is_file(), 'vendored Three.js license must be preserved')
     html = (site / 'index.html').read_text(encoding='utf-8')
     parser = validate_references(site, bmo, html)
-    require('TBD' in html and 'published' in html.lower() and 'candidate has no test evaluation' in html,
+    require('TBD' in html and 'published' in html.lower() and 'refit differs and has no test score' in html,
             'visible Pi/published-versus-refit limitations required')
     wordings, commands = validate_wordings(bmo)
     validate_trace(bmo)

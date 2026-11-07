@@ -8,13 +8,13 @@ CURRENT_SUMMARY = r'''# BMO
 
 **Local voice commands in 175,653 parameters.**
 
-BMO is a compact voice-command model (VCM) for a fixed-vocabulary smart speaker. It maps mono 16 kHz speech directly to an intent and typed slots, without ASR, a transcript, an LLM or a remote recognition fallback. One shared encoder covers **18 intent families, 34 complete commands and 102 canonical wordings**.
+BMO maps mono 16 kHz speech directly to typed commands, without ASR or cloud recognition. One shared encoder covers **18 intent families, 34 complete commands and 102 canonical wordings**.
 
-The current retained model is **baseline A: `shared-demo-slots-v1 / heads_s53`, epoch 38**. Its trained ONNX graph and recovery checkpoint are committed here. It is a research demo, **not production-qualified**; qualification and actions remain disabled.
+The chosen model is **baseline A: `shared-demo-slots-v1 / heads_s53`, epoch 38**. It scored **132/167 human DEV commands versus 130/167** for the similarly sized flat control; both scored 400/408 on supported demo DEV commands. It is not production-qualified; actions remain disabled.
 
-[Model and exact hashes](submission/shared-demo-a/snapshot.json) · [All wordings](submission/shared-demo-a/commands.csv) · [Training and reproduction](docs/REPRODUCIBILITY-shared-demo-a.md) · [Actual reproduction results](docs/EXPERIMENT-shared-demo-a-reproduction-v1.md)
+[Download the model](submission/models/shared-demo-a/model.onnx) · [Exact hashes](submission/shared-demo-a/snapshot.json) · [All wordings](submission/shared-demo-a/commands.csv) · [Training and reproduction](docs/REPRODUCIBILITY-shared-demo-a.md) · [Actual reproduction results](docs/EXPERIMENT-shared-demo-a-reproduction-v1.md)
 
-[BMO interactive documentation](https://justinruaya123.github.io/smart-speaker/) — architecture, dataset recipes/citations, RTX 4080 training and VCM benchmarks. [Pages instructions](docs/BMO-PAGES.md).
+[Interactive documentation](https://justinruaya123.github.io/smart-speaker/) covers architecture, datasets, training and benchmarks. [Pages instructions](docs/BMO-PAGES.md).
 
 ## What the VCM recognizes
 
@@ -27,7 +27,7 @@ The current retained model is **baseline A: `shared-demo-slots-v1 / heads_s53`, 
 | Reminders | Drink water, study, exercise; list reminders |
 | Other requests | Weather, fixed home-camera CALL target and preset MESSAGE request |
 
-These are command targets, not proof that a device action happened. SpeakerUI supplies the configured application behavior; CALL is camera-only, not telephony. Arbitrary names, song titles, reminder dictation and numeric combinations are unsupported. **Kitchen/Ceiling names are not in A's catalog.** Old brightness 20/60 and alarm 08:00/21:00 belong to the preserved legacy catalog, not nearest-value aliases.
+SpeakerUI supplies the configured actions; CALL is camera-only. Arbitrary names, dictation and numeric combinations are unsupported. **Kitchen/Ceiling names are not in A's catalog.** Legacy brightness 20/60 and alarm 08:00/21:00 remain outside this catalog.
 
 ## Model and training recipe
 
@@ -43,7 +43,7 @@ These are command targets, not proof that a device action happened. SpeakerUI su
 
 TRAIN contains **25,958 recordings: 1,889 human and 24,069 synthetic**. Sampling balances sources rather than following raw file proportions. The added demo voices use six TRAIN TTS identities across US, British, Australian, Singaporean and Philippine provider locales, with two separate DEV voices and **two reserved TEST voices**. Inherited human/synthetic sources remain part of training. Provider identities do not certify independent human speakers or accent fidelity.
 
-DEV selects weights before TEST. A is the retained winner within this restricted shared-slot study, **not a guarantee of per-intent nonregression** or a universal winner across different catalogs. The later PH/named-device child did not replace it. [Frozen protocol](submission/shared-demo-a/protocol.json) · [Study and comparisons](docs/EXPERIMENT-shared-demo-slots-v1.md).
+DEV selects weights before TEST. A's DEV win is not a guarantee of per-intent nonregression. The later PH/named-device child did not replace it. [Frozen protocol](submission/shared-demo-a/protocol.json) · [Study and comparisons](docs/EXPERIMENT-shared-demo-slots-v1.md).
 
 ## Measured command correctness
 
