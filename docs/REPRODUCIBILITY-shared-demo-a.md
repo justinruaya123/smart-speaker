@@ -10,7 +10,13 @@ TRAIN:25,958 rows (1,889human/24,069synthetic). DEV:2,132 (256human/1,876synthet
 
 `submission/shared-demo-a/dataset.lock.json` pins the published manifest. Acquisition resolves **Hugging Face main** once to an immutable revision, verifies its files, and records that revision. Third-party historical revision pins remain necessary: substituting today's upstream main would change the experiment. GitHub acquisition must use main and record its actual commit. Both download caches and training outputs must be new.
 
-## Commands
+The same 12 files were confirmed published on [dataset commit `39d5032`](https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/tree/39d5032248becc8a6efdd80738a4a4ef59f6d969/shared-demo-a-v1). Its manifest SHA-256 still matches `dataset.lock.json`. This is a publication check, not a new training run. Upstream audio remains at the original pinned sources.
+
+## Desktop one-command workflow
+
+On Windows x64 with Git, Python, `uv`, internet access and a CUDA/BF16-capable RTX 3080, clone `main` on a drive with room for the environment and datasets, then run `python all_in_one.py` in the clone. It calls the full `all` pipeline below and then `inference.py` on its new export. The expected output is `BRIGHTNESS` for `light.all` at 50%; the replay executes no actions. The new run directory is printed before setup. Neither SpeakerUI nor Raspberry Pi tooling is used.
+
+## Manual commands
 
 Use a fresh main clone, CPython3.13.14, uv and an RTX3080-compatible CUDA host. The historical scientific dependency versions are separate from the newer application runtime lock:
 

@@ -64,7 +64,9 @@ The exposed-human task-negative false accepts remain **5/19**. Small perfect TTS
 
 The measured fresh-main reproduction used CPython **3.13.14**, Torch 2.10.0+cu128 and an RTX 3080 with CUDA BF16. It completed all 48 epochs from random initialization, matched the selected tensors and exported **byte-identical ONNX**, with all 642 original evaluation decisions unchanged. Native checkpoint serialization differs; CPU/cross-OS equality is not claimed.
 
-After cloning this repository, use the pinned scientific environment and a new output directory:
+**Desktop quickstart (Windows, RTX 3080, Git, Python and `uv` on PATH):** run `python all_in_one.py` from a fresh clone on a drive with room for the CUDA environment, downloads and training outputs. It creates the pinned environment and a new run under `.cache`, rebuilds A, checks the export against its frozen SHA-256, then calls `inference.py` on the published brightness WAV. No SpeakerUI or Pi runtime is needed. To replay another mono 16 kHz WAV after setup, run `python inference.py --wav recording.wav`; pass `--bundle <run>/cli-bundle` to use that run's export instead of the retained model.
+
+For manual execution of the individual setup and training steps:
 
 ```sh
 uv venv --python 3.13.14 .venv

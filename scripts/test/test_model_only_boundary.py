@@ -9,7 +9,8 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def test_model_repository_has_no_application_entrypoints():
-    for name in ('SpeakerUI', 'scripts/runtime', 'inference.py', 'benchmark.py', 'start.py',
+    # inference.py is the offline model-replay CLI; application entrypoints remain excluded.
+    for name in ('SpeakerUI', 'scripts/runtime', 'benchmark.py', 'start.py',
                  'scripts/mvp_delivery.py', 'scripts/speaker_publish.py', 'scripts/iris_final_package.py'):
         assert not (ROOT / name).exists(), name
 
