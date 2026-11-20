@@ -47,6 +47,16 @@ try {
   assert.equal(await page.title(), 'BMO — Architecture');
   assert.equal(await page.locator('[data-slide]').count(), 4);
   assert.equal(await page.locator('img').count(), 0);
+  const cues = ['0:00–0:30','0:30–1:00','1:00–1:30','1:30–2:00'];
+  const presenter = page.getByRole('button', {name:'Presenter notes',exact:true});
+  await presenter.click();
+  for (const [i,id] of ['architecture','dataset','training','evidence'].entries()) {
+    await page.locator(`nav a[href="#${id}"]`).click();
+    const note = page.locator(`[data-slide="${id}"] .presenter-note`);
+    assert.ok(await note.isVisible()); assert.ok((await note.textContent()).includes(cues[i]));
+  }
+  await presenter.click(); await page.locator('nav a[href="#architecture"]').click();
+  assert.ok(await page.locator('.sample-lead #replay-audio').isVisible());
   const recordedTrace = JSON.parse(await readFile(resolve(site, 'bmo/data/trace.json'), 'utf8'));
   const logmel = recordedTrace.stages.find(item => item.id === 'logmel').thumbnail;
   await page.waitForSelector('#logmel-plot[data-source="recorded-logmel-bin-means"]');
@@ -55,7 +65,7 @@ try {
   for (const cell of display) assert.equal(cell.value, logmel.values[cell.row][cell.column], 'heatmap must preserve each measured display value');
   assert.ok(display[0].y > display.at(-1).y, 'high mel bands must be above low bands');
   assert.match(await page.locator('.model-choice').textContent(), /132\/167.*130\/167/);
-  assert.equal(await page.locator('#evidence-title').textContent(), 'Measure complete commands.');
+  assert.equal(await page.locator('#evidence-title').textContent(), 'Extra words change the result');
 
   for (const id of ['architecture','dataset','training','evidence']) {
     await page.getByRole('navigation', {name:'Slides'}).getByRole('link', {name:id, exact:false}).click();

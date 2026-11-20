@@ -64,31 +64,9 @@ The exposed-human task-negative false accepts remain **5/19**. Small perfect TTS
 
 The measured fresh-main reproduction used CPython **3.13.14**, Torch 2.10.0+cu128 and an RTX 3080 with CUDA BF16. It completed all 48 epochs from random initialization, matched the selected tensors and exported **byte-identical ONNX**, with all 642 original evaluation decisions unchanged. Native checkpoint serialization differs; CPU/cross-OS equality is not claimed.
 
-**Desktop quickstart (Windows, RTX 3080, Git, Python and `uv` on PATH):** run `python all_in_one.py` from a fresh clone on a drive with room for the CUDA environment, downloads and training outputs. It creates the pinned environment and a new run under `.cache`, rebuilds A, checks the export against its frozen SHA-256, then calls `inference.py` on the published brightness WAV. No SpeakerUI or Pi runtime is needed. To replay another mono 16 kHz WAV after setup, run `python inference.py --wav recording.wav`; pass `--bundle <run>/cli-bundle` to use that run's export instead of the retained model.
+**Desktop rebuild (Windows, RTX 3080):** with Git, Python and `uv` installed, run `python all_in_one.py` in a fresh clone on a drive with space for the dataset. It runs `scripts/shared_demo_a.py all`, verifies the export and replays a WAV through `inference.py`. For another recording use `python inference.py --wav recording.wav --bundle <run>/cli-bundle`. [Prerequisites and manual steps](docs/REPRODUCIBILITY-shared-demo-a.md). Plain `python reproduce.py` verifies historical epoch44, not A.
 
-For manual execution of the individual setup and training steps:
-
-```sh
-uv venv --python 3.13.14 .venv
-uv pip install --python .venv/Scripts/python.exe --index-strategy unsafe-best-match -r submission/shared-demo-a/requirements-training.txt
-.venv/Scripts/python.exe -B scripts/shared_demo_a.py all --output .cache/baseline-a-reproduction-01
-```
-
-These Windows commands perform real fitting, not just weight loading. The [runbook](docs/REPRODUCIBILITY-shared-demo-a.md) gives POSIX interpreter paths, backend requirements, immutable input acquisition and failure gates. Plain `python reproduce.py` still verifies historical epoch44; it does **not** select A or train it.
-
-**This repository owns models, training, data provenance and export. [SpeakerUI](https://github.com/justinruaya123/SpeakerUI) owns inference, the Ambient UI, wake/VAD/owner orchestration and integrations.** Install and run the application from its own checkout:
-
-```sh
-git clone https://github.com/justinruaya123/SpeakerUI.git
-cd SpeakerUI
-python -m scripts.model_assets
-python inference.py --check
-python inference.py --mode ui --no-audio
-```
-
-SpeakerUI pins A's producer assets and verifies their hashes. Its `benchmark.py` remains an explicit historical epoch44 comparison, not an A qualification result. A's parameter count excludes separate wake/VAD/owner companions. Optional services need their own configuration; local recognition is not a claim that setup or every provider is offline.
-
-Data and weights retain source-specific research, consent and redistribution restrictions; see the [treated dataset and citations](https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/tree/main/shared-demo-a-v1). No blanket open license applies. Historical model cards and the appendix describe older models, not A.
+[SpeakerUI](https://github.com/justinruaya123/SpeakerUI) owns the application. In its checkout run `python -m scripts.model_assets`, then `python inference.py --check`. It pins A by hash; wake, VAD and owner checks are separate from the VCM. Audio and weights retain their [source-specific research terms](https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/tree/main/shared-demo-a-v1).
 
 '''
 PREFIX = r'''# Iris

@@ -229,7 +229,7 @@ $('animate-update').addEventListener('click', () => {
   updateTimers.push(setTimeout(stopUpdate, 2900));
 });
 
-const results = [{ name: 'Human commands', correct: 71, n: 77, rejected: 3, wrong: 3, color: '#b7dde2', note: 'Previously exposed regression recordings' }, { name: 'Clean synthetic', correct: 203, n: 204, rejected: 1, wrong: 0, color: '#a2bcad', note: 'Exact supported wordings' }, { name: 'Added spoken context', correct: 98, n: 204, rejected: 105, wrong: 1, color: '#ebc88a', note: 'Separate context-added recordings' }];
+const results = [{ name: 'Clean synthetic', correct: 203, n: 204, rejected: 1, wrong: 0, color: '#a2bcad', note: 'Exact supported wordings' }, { name: 'Added spoken context', correct: 98, n: 204, rejected: 105, wrong: 1, color: '#ebc88a', note: 'Separate context-added recordings' }, { name: 'Human commands', correct: 71, n: 77, rejected: 3, wrong: 3, color: '#b7dde2', note: 'Previously exposed regression recordings' }];
 function showResults(errors = false) {
   const container = $('result-bars'); container.replaceChildren();
   results.forEach(r => {
