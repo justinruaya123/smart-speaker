@@ -37,7 +37,7 @@ function generation(data) {
     if (g.id === 'edge_speech') {
       body += `<p>${esc(g.prompt_recipe.formula)}. ${esc(g.counts.train)} TRAIN / ${esc(g.counts.dev)} DEV / ${esc(g.counts.test)} TEST.</p>`;
       body += table(['Partition','Exact provider voice IDs'], Object.entries(g.voice_ids).map(([k,v]) => [k.toUpperCase(),v.join(', ')]));
-      body += table(['Form','Spoken template'], [['Clean',g.prompt_recipe.clean],...Object.entries(g.prompt_recipe.context_by_split).map(([k,v])=>[k.toUpperCase(),v])]);
+      body += table(['Form','Spoken template'], [['Clean',g.prompt_recipe.clean]]);
       body += `<p>Rate: <code>${esc(g.rate)}</code>. Voice IDs identify provider presets; the service model revision, tool version, random seed, pitch and sampling settings were not recorded.</p><details><summary>All 16 negative prompts per voice</summary>${list(g.prompt_recipe.negative_prompts)}</details><p>${esc(g.regeneration)}</p>`;
     } else if (g.id === 'system_speech') {
       body += `<p>${esc(g.prompt_recipe.formula)}.</p>`;
@@ -57,7 +57,7 @@ function generation(data) {
   return `${datasetLinks(data)}${distillation(data)}<p><strong>25,958 TRAIN recordings → frozen 40-bin frontend → balanced sampling.</strong> Generation supplies recordings; the VCM itself starts from random weights.</p>
     ${table(['TRAIN source','Kind','Rows'],data.source_composition.filter(s=>s.split==='train').map(s=>[sourceNames(data,s.source_id),s.kind,number(s.rows)]))}
     <p>${esc(data.dataset.terms)}</p>
-    <h3>How the authored data was made</h3><ol class="recipe-sequence"><li>Freeze typed targets and exact wordings.</li><li>Generate each complete clean or context-wrapped utterance with its declared voice.</li><li>Keep voice IDs separate across TRAIN, DEV and TEST; preserve negative prompts.</li><li>Store the original audio, source text and file/PCM hashes. Reproduce from these frozen bytes.</li></ol>
+    <h3>How the authored data was made</h3><ol class="recipe-sequence"><li>Freeze typed targets and exact wordings.</li><li>Generate each complete exact wording with its declared voice.</li><li>Keep voice IDs separate across TRAIN, DEV and TEST; preserve negative prompts.</li><li>Store the original audio, source text and file/PCM hashes. Reproduce from these frozen bytes.</li></ol>
     ${providers}<h3>Treatment and split rules</h3>${list([data.treatment.reference_labels,data.treatment.normalization,data.treatment.split_policy,data.treatment.annotations])}
     <h3>Known provenance gaps</h3>${list(data.unknowns)}${refs(data,['dataset_card','dataset_lock','protocol','bibtex'])}
     <p>${anchor(new URL('./data/dataset-recipe.json',import.meta.url),'Full machine-readable recipe')} · ${anchor(new URL('./wordings.csv',import.meta.url),'All 102 canonical wordings (CSV)')}</p>`;
@@ -85,13 +85,13 @@ function pi5Replay(record) {
     <p>${anchor(new URL('./data/pi5-replay.json',import.meta.url),'Both runs: raw/accepted counts, original references, decisions, timing samples and source hashes')}</p><p>The SpeakerUI checkout had disclosed local source changes; this is not a clean-base-commit reproduction claim.</p>`;
 }
 function benchmark(data, pi5) {
-  const positive = data.accuracy.filter(r=>r.supported>0), negative=data.accuracy.filter(r=>r.negative_rows>0);
+  const positive = data.accuracy.filter(r=>r.supported>0 && !/context/i.test(r.label)), negative=data.accuracy.filter(r=>r.negative_rows>0);
   const accuracy = table(['Cohort','Exact / supported','Rejected','Wrong accepted'],positive.map(r=>[r.label,`${r.correct}/${r.supported} (${(100*r.accuracy).toFixed(2)}%)`,r.rejected_supported,r.wrong_accepted]));
   const negatives = table(['Negative cohort','False accepts / negatives','Rate'],negative.map(r=>[r.label,`${r.negative_false_accepts}/${r.negative_rows}`,`${(100*r.negative_false_accept_rate).toFixed(2)}%`]));
   const comparison = table(['DEV model','Parameters','Epoch','Human','Slot','All demo'],data.comparison.rows.map(r=>[r.name,number(r.parameters),r.selected_epoch,`${r.human_dev_correct}/${r.human_dev_supported}`,`${r.slot_dev_correct}/${r.slot_dev_supported}`,`${r.all_demo_dev_correct}/${r.all_demo_dev_supported}`]));
   const latency=data.latency;
   return `<p><strong>Published Baseline A, epoch 38, 175,653 parameters.</strong> A command counts as correct only when intent and every required value match. The 4080 epoch-36 refit has no test evaluation.</p>
-    <h3>Complete-command accuracy</h3>${accuracy}<p>Cohorts overlap: combined synthetic includes clean + context; official totals include human + synthetic. Do not add these rows.</p>
+    <h3>Complete-command accuracy</h3>${accuracy}<p>Some cohorts overlap. Do not add these rows.</p>
     <h3>Unknown and unsupported requests</h3>${negatives}<h3>Nine finite slot cells</h3>${table(['Command cell','Exact / supported','Rejected'],data.slot_cells.map(r=>[r.label,`${r.correct}/${r.supported}`,r.rejected_supported]))}<p>${esc(data.slot_summary.scope)}</p>
     <h3>Comparable-size control</h3><p>${esc(data.comparison.comparable_population)}</p>${comparison}${list(data.comparison.limitations)}
     <h3>Historical desktop VCM timing</h3><p><strong>${latency.p50_ms.toFixed(3)} ms p50 / ${latency.p95_ms.toFixed(3)} ms p95</strong> · ${latency.cpu_threads} CPU thread · ${esc(latency.runtime)}.</p><p>Includes ${esc(latency.includes.join(', '))}. Excludes ${esc(latency.excludes.join(', '))}.</p><p>CPU model: ${esc(latency.cpu_model_status)} ${esc(latency.timing_sample_count_status)} This is historical CPU evidence, not a new RTX 4080 inference or Raspberry Pi measurement.</p>

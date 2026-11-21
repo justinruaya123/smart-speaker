@@ -14,7 +14,7 @@ The chosen model is **baseline A: `shared-demo-slots-v1 / heads_s53`, epoch 38**
 
 [Download the model](submission/models/shared-demo-a/model.onnx) · [Exact hashes](submission/shared-demo-a/snapshot.json) · [All wordings](submission/shared-demo-a/commands.csv) · [Training and reproduction](docs/REPRODUCIBILITY-shared-demo-a.md) · [Actual reproduction results](docs/EXPERIMENT-shared-demo-a-reproduction-v1.md)
 
-[Interactive documentation](https://justinruaya123.github.io/smart-speaker/) covers architecture, datasets, training and benchmarks. [Pages instructions](docs/BMO-PAGES.md).
+[ME2 slides](https://justinruaya123.github.io/smart-speaker/) · [Interactive model explorer](https://justinruaya123.github.io/smart-speaker/explorer.html). [Pages instructions](docs/BMO-PAGES.md).
 
 ## What the VCM recognizes
 
@@ -265,7 +265,7 @@ def render_pi5():
     full, latency = metrics['accepted'], metrics['latency_ms']['end_to_end']
     return f'''## Pi 5 recorded replay
 
-**{latency['p50']:.2f}/{latency['p95']:.2f} ms p50/p95**, **{metrics['peak_process_rss_mib']:.2f} MiB process-RSS** (A/MNN CPU, two threads). Historical **{full['exact_n']}/{full['scored_n']} ({100*full['complete_command_accuracy']:.2f}%)**; shared-catalog **{shared['exact_n']}/{shared['scored_n']} ({100*shared['complete_command_accuracy']:.2f}%)**. Separate 196-clip holdout; 27 out-of-catalog references, two ambiguous exclusions. Repeat 2/2; three timing passes, first-pass scoring. Both repeats agree. Processing-only, not live accuracy/qualification. [Scores/scope](https://justinruaya123.github.io/smart-speaker/#dataset) · [Both-run receipt](docs/site/bmo/data/pi5-replay.json).
+**{latency['p50']:.2f}/{latency['p95']:.2f} ms p50/p95**, **{metrics['peak_process_rss_mib']:.2f} MiB process-RSS** (A/MNN CPU, two threads). Historical **{full['exact_n']}/{full['scored_n']} ({100*full['complete_command_accuracy']:.2f}%)**; shared-catalog **{shared['exact_n']}/{shared['scored_n']} ({100*shared['complete_command_accuracy']:.2f}%)**. Separate 196-clip holdout; 27 out-of-catalog references, two ambiguous exclusions. Repeat 2/2; three timing passes, first-pass scoring. Both repeats agree. Processing-only, not live accuracy/qualification. [Scores/scope](https://justinruaya123.github.io/smart-speaker/explorer.html#dataset) · [Both-run receipt](docs/site/bmo/data/pi5-replay.json).
 '''
 
 

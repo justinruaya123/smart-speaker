@@ -1,6 +1,8 @@
 # BMO documentation on GitHub Pages
 
-The primary site is the four-slide BMO deck: architecture, dataset, RTX 4080 training, and VCM evidence. It uses SpeakerUI Ambient colors/system typography and code-rendered Three.js geometry. There are no AI-generated images or runtime CDN dependencies. The previous six-chapter presentation is preserved as [reference.html](site/reference.html); its original model, assets and receipts remain historical evidence.
+The primary site is the two-slide ME2 submission: [technical overview](site/index.html#overview) and [submission checklist](site/index.html#submission). Use the top tabs or left/right arrows. Each slide has optional presenter notes. Missing A100 and Pi 4 measurements are marked explicitly.
+
+The [separate interactive explorer](site/explorer.html) retains the four-slide BMO deck: architecture, dataset, RTX 4080 training, and VCM evidence. It uses SpeakerUI Ambient colors/system typography and code-rendered Three.js geometry. There are no AI-generated images or runtime CDN dependencies. The previous six-chapter presentation is preserved as [reference.html](site/reference.html); its original model, assets and receipts remain historical evidence.
 
 The Pages project URL is `https://justinruaya123.github.io/smart-speaker/`. That URL is a deployment target, not proof that a particular revision is live. Check the successful deployment and public page before claiming publication.
 
@@ -12,7 +14,7 @@ From the repository root:
 python -m http.server 8770 --bind 127.0.0.1 --directory docs/site
 ```
 
-Open `http://127.0.0.1:8770/`. The viewer needs only a modern browser, JavaScript and WebGL for the 3D scene; the stage explanations remain available if WebGL cannot initialize. Serve over HTTP rather than opening `index.html` as a file. All imports, audio, fetches and evidence links resolve relative to the site/module, so deployment below `/smart-speaker/` works without a domain-specific base URL or backend.
+Open `http://127.0.0.1:8770/` for the assignment, or `http://127.0.0.1:8770/explorer.html` for the controls described below. The explorer needs only a modern browser, JavaScript and WebGL for the 3D scene; the stage explanations remain available if WebGL cannot initialize. Serve over HTTP rather than opening `index.html` as a file. All imports, audio, fetches and evidence links resolve relative to the site/module, so deployment below `/smart-speaker/` works without a domain-specific base URL or backend.
 
 Use the footer navigation or arrow keys for slides, F for fullscreen and Presenter notes for narration. On architecture, Play/Step follows the recorded forward pass; Inside a block expands the two depthwise/pointwise convolution units and residual addition. Drag rotates, wheel zooms, canvas arrow keys rotate and Home resets. The log-mel SVG displays the same synthetic recording: 16 × 48 measured display-bin means over the original 40 × 296 grid. Its cursor follows actual audio playback. The sample is an already-published synthetic recording, not microphone input. Playback speed is explanatory, not measured model latency.
 

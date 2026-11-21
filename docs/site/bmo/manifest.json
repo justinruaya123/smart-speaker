@@ -38,8 +38,8 @@
       "sha256": "16aa6731222c94aa128d540aec23ac9d376047837231af589b7002cace4779c8"
     },
     "deck.js": {
-      "bytes": 22308,
-      "sha256": "38090e13ed5c6ff40375ebe02f76b2f42fb7196f4c7ace72daf43496e0ead0ed"
+      "bytes": 22162,
+      "sha256": "0bd31c997b111c40d0686ba5af0a5756953cf641369689eaf32c2ebc57a292ca"
     },
     "evidence/facts.json": {
       "bytes": 22809,
@@ -82,16 +82,16 @@
       "sha256": "8fb5e2b0f4eeef1bd1807a8bc31a2be376a5b10e11379bbbbb0a2e9f34571eb0"
     },
     "research-details.js": {
-      "bytes": 14972,
-      "sha256": "28f971492c5067753c859aef7d9dc7bd9837371ecfaa1708745901ccfc362112"
+      "bytes": 14811,
+      "sha256": "6ecd82f51a955b56eab4fa59ddcff0370b76443fdc378105a085323297ec7c89"
     },
     "scene-notes.txt": {
       "bytes": 2045,
       "sha256": "99d5e40678cdc1625347115bc45acc640e2bfdfe96de502f0dc5d39d1deecd3e"
     },
     "sources.js": {
-      "bytes": 9904,
-      "sha256": "5da3397b0073c3945398f85c253bae2239c3e94db48d347c308994b26889eb7f"
+      "bytes": 9650,
+      "sha256": "e70cab1e23f51d84c679c26047b66d4c656ae9bc8d164d353bc9059ef02b374c"
     },
     "vendor/THREE-LICENSE.txt": {
       "bytes": 1081,

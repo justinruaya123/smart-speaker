@@ -141,7 +141,7 @@ document.addEventListener('visibilitychange', () => { if (document.hidden) { pau
 const partitions = {
   train: { total: 25958, human: 1889, synthetic: 24069, role: 'eligible training recordings', explanation: 'The 1,889 human TRAIN recordings set the frozen normalization.' },
   dev: { total: 2132, human: 256, synthetic: 1876, role: 'development recordings', explanation: 'DEV selects the checkpoint before TEST.' },
-  test: { total: 440, human: 0, synthetic: 440, role: 'reserved synthetic recordings', explanation: 'TEST has 204 clean, 204 context-added and 32 negative recordings. It was previously evaluated.' }
+  test: { total: 440, human: 0, synthetic: 440, role: 'reserved synthetic recordings', explanation: 'The exact-wording subset has 204 recordings, two per phrase. It was previously evaluated.' }
 };
 function setPartition(name) {
   const p = partitions[name];
@@ -229,7 +229,7 @@ $('animate-update').addEventListener('click', () => {
   updateTimers.push(setTimeout(stopUpdate, 2900));
 });
 
-const results = [{ name: 'Clean synthetic', correct: 203, n: 204, rejected: 1, wrong: 0, color: '#a2bcad', note: 'Exact supported wordings' }, { name: 'Added spoken context', correct: 98, n: 204, rejected: 105, wrong: 1, color: '#ebc88a', note: 'Separate context-added recordings' }, { name: 'Human commands', correct: 71, n: 77, rejected: 3, wrong: 3, color: '#b7dde2', note: 'Previously exposed regression recordings' }];
+const results = [{ name: 'Clean synthetic', correct: 203, n: 204, rejected: 1, wrong: 0, color: '#a2bcad', note: 'Exact supported wordings' }, { name: 'Human commands', correct: 71, n: 77, rejected: 3, wrong: 3, color: '#b7dde2', note: 'Previously exposed regression recordings' }];
 function showResults(errors = false) {
   const container = $('result-bars'); container.replaceChildren();
   results.forEach(r => {

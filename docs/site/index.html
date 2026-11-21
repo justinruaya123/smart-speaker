@@ -1,63 +1,210 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#090d11"><meta name="description" content="BMO: an interactive four-slide explanation of the Baseline A voice-command model, its data, RTX 4080 training and evaluation.">
-  <title>BMO — Voice-command model</title><link rel="icon" href="data:,">
-  <link rel="stylesheet" href="bmo/deck.css"><script src="bmo/wordings.js" defer></script><script type="module" src="bmo/deck.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,">
+<title>ME2 — Voice Controlled Smart Device</title>
+<style>*{box-sizing:border-box}body{margin:0;font:clamp(16px,1.24vw,22px)/1.38 system-ui,sans-serif;color:#162534;background:#f9fbfc}main,nav{max-width:1480px;margin:auto;padding:1.4rem 4vw}h1{font-size:clamp(28px,3vw,52px);letter-spacing:-.04em;line-height:1.06;margin:.35em 0}h2{font-size:1.22em;color:#124a82;border-bottom:2px solid #2870a8;padding-bottom:.26em;margin:.8em 0 .2em}.meta,summary{color:#465967}.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 3vw}table{width:100%;border-collapse:collapse}th,td{text-align:left;vertical-align:top;padding:.32em .4em;border-bottom:1px solid #c9d4da}th{width:33%;font-weight:620}a{color:#074e85;text-underline-offset:.15em}nav{border-bottom:1px solid #c9d4da;display:flex;align-items:center;gap:1rem;padding-block:.65em}nav a{padding:.4em .15em}nav a[aria-current]{font-weight:bold}nav small{margin-left:auto}details{margin-top:1.3em;font-size:.95em}summary{cursor:pointer;width:fit-content;padding:.45em 0}details p{max-width:80ch}code{overflow-wrap:anywhere}@media(max-width:850px){.grid{grid-template-columns:1fr}nav small{display:none}}@media print{nav,details{display:none}.page,.page[hidden]{display:block!important;break-after:page}main{padding:0}.grid{grid-template-columns:1fr 1fr}body{font-size:11pt}@page{size:landscape;margin:10mm}}</style>
 </head>
 <body>
-<a class="skip" href="#content">Skip to presentation</a>
-<div class="viewport"><div class="deck">
-  <header class="deck-header"><a class="wordmark" href="#architecture" aria-label="BMO, first slide">BMO</a><span class="project-name">Voice-command model</span><div class="header-actions"><button id="notes-toggle" class="quiet-button" aria-pressed="false">Presenter notes</button><button id="fullscreen" class="icon-button" aria-label="Enter fullscreen" title="Fullscreen (F)"><svg viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button></div></header>
-  <main id="content" tabindex="-1">
-    <section class="slide architecture active" data-slide="architecture" aria-labelledby="architecture-title">
-      <div class="slide-heading"><div><h1 id="architecture-title">“Adjust brightness to fifty percent”</h1><div class="sample-lead"><button class="quiet-button" id="replay-audio"><svg viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5ZM15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg><span>Hear the sample</span></button><span>Recorded output: <b>BRIGHTNESS · 50%</b></span></div></div><div class="headline-stat"><strong>175,653</strong><span>parameters · Baseline A</span></div></div>
-      <div class="architecture-layout">
-        <div class="model-region"><div id="model-scene" aria-label="Interactive three-dimensional model architecture"></div><figure class="logmel-figure" aria-labelledby="logmel-caption"><figcaption id="logmel-caption"><span>Color shows log-mel energy.</span><span>40 bands · 10 ms frames</span></figcaption><svg id="logmel-plot" viewBox="0 0 480 72" role="img" aria-label="Recorded log-mel spectrogram of the sample"><title>The recorded log-mel view is loading.</title></svg></figure><div class="scene-tools"><span>Drag to rotate · scroll to zoom</span><button id="expand-block" class="small-button" aria-pressed="false">Inside a block</button><button id="reset-view" class="icon-button" aria-label="Reset 3D view" title="Reset view"><svg viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 3 7M3 4v7h7"/></svg></button></div></div>
-        <aside class="stage-detail" aria-live="polite"><div class="stage-count"><span id="stage-counter">01</span> / 08</div><h2 id="stage-title">Listen in small frames</h2><div id="stage-shape" class="tensor-shape">40 mel bins × 296 frames</div><p id="stage-copy">A 2.976-second recording becomes 40 frequency bands, sampled every 10 ms.</p><div id="stage-extra" class="stage-extra">16,000 samples / second · mono</div><div class="decision" id="decision"><span>Recorded result</span><strong>BRIGHTNESS <b>50%</b></strong><small>All lights · exact supported command</small></div></aside>
-      </div>
-      <div class="model-steps" role="group" aria-label="Model stages">
-        <button data-stage="0" aria-pressed="true"><span>01</span>Features</button><button data-stage="1" aria-pressed="false"><span>02</span>Stem</button><button data-stage="2" aria-pressed="false"><span>03</span>Block 1</button><button data-stage="3" aria-pressed="false"><span>04</span>Block 2</button><button data-stage="4" aria-pressed="false"><span>05</span>Block 3</button><button data-stage="5" aria-pressed="false"><span>06</span>Block 4</button><button data-stage="6" aria-pressed="false"><span>07</span>Pooling</button><button data-stage="7" aria-pressed="false"><span>08</span>Heads</button>
-      </div>
-      <div class="playback-row"><button class="primary-button" id="play-model"><svg viewBox="0 0 24 24"><path d="m9 5 10 7-10 7Z"/></svg><span>Play forward pass</span></button><button class="secondary-button" id="step-model">Step</button><button class="source-link" data-source="architecture">Model details ↗</button></div>
-      <p class="footnote"><span id="trace-status">37 logits match. Replay is slowed.</span><span class="model-choice"><strong>Chosen on DEV.</strong> It scored 132/167 human commands versus 130/167 for the similarly sized flat model.</span></p>
-
-      <div class="presenter-note" hidden><strong>0:00–0:30 · Play the clip.</strong> Listen for two things: what to change, and by how much. The words are “adjust brightness to fifty percent.” The model gets sound, not a transcript. These bands are the recording. Follow them through the encoder to the output: brightness, all lights, fifty percent. This is a replay; no light switches on.</div>
-    </section>
-
-    <section class="slide dataset" data-slide="dataset" aria-labelledby="dataset-title" hidden>
-      <div class="slide-heading"><div><h1 id="dataset-title">34 commands, 102 wordings</h1><p>Six synthetic training voices recorded each phrase. Two separate voices tested it.</p></div><div class="headline-stat"><strong>34</strong><span>complete commands + UNKNOWN</span></div></div>
-      <div class="data-layout">
-        <div class="corpus-view"><div class="segmented" role="group" aria-label="Dataset partition"><button data-partition="train" aria-pressed="true">Train</button><button data-partition="dev" aria-pressed="false">Development</button><button data-partition="test" aria-pressed="false">Synthetic test</button></div><div class="corpus-number"><strong id="corpus-count">25,958</strong><span id="corpus-role">eligible training recordings</span></div><div class="composition" role="img" id="composition" aria-label="1,889 human recordings and 24,069 synthetic recordings"><div class="human-fill" id="human-fill"></div><div class="synthetic-fill" id="synthetic-fill"></div></div><div class="composition-labels"><div><i class="dot human"></i><strong id="human-count">1,889</strong><span>human</span></div><div><i class="dot synthetic"></i><strong id="synthetic-count">24,069</strong><span>synthetic</span></div></div><p class="partition-explanation" id="partition-explanation">Used for fitting. Frozen normalization comes from the 1,889 human training utterances.</p><div class="partition-flow"><span>TRAIN <small>learn weights</small></span><svg viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg><span>DEV <small>choose checkpoint</small></span><svg viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg><span>TEST <small>report results</small></span></div><p class="footnote">Bar shows composition within the selected partition. Voice IDs are not human speakers.</p></div>
-        <div class="wording-view"><div class="section-label"><h2>102 ways to say it</h2><button class="source-link" id="all-wordings">Browse all ↗</button></div><p class="subtle">Each of 34 commands has three wordings.</p><label class="field-label" for="example-select">Explore a command</label><select id="example-select"><option value="brightness">Brightness · 50%</option><option value="alarm">Alarm · 12:30</option><option value="light">Lights · on</option></select><div id="example-wordings" class="example-wordings"></div><div class="structured-output"><span>Shared command target</span><code id="example-json"></code></div></div>
-      </div>
-      <div class="dataset-replay" aria-label="Separate Raspberry Pi 5 recorded-audio benchmark"><div><strong>Pi 5 · recorded replay</strong><span>196 clips × 3 passes · MNN CPU · 2 threads</span></div><div><strong data-pi5="latency">4.76 / 9.37 ms</strong><span>p50 / p95 · VCM processing only</span></div><div><strong data-pi5="shared">155 / 167 · 92.81%</strong><span>Shared catalog · separate exposed holdout</span></div><button class="source-link" data-source="pi5">Scores &amp; scope ↗</button></div>
-      <div class="data-bottom"><div><strong>202 exposed regression recordings</strong><span>96 human / 106 synthetic · separate from TEST</span></div><div><strong>Edge · System.Speech · CosyVoice2</strong><span>Qwen: DEV only · source-specific research terms</span></div><div class="data-links"><a id="dataset-repository" class="source-link" href="https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker" target="_blank" rel="noopener">Hugging Face dataset ↗</a><button class="source-link" data-source="generation">Generation recipe ↗</button><button class="source-link" data-source="citations">Citations &amp; TTS models ↗</button></div></div>
-      <div class="presenter-note" hidden><strong>0:30–1:00 · Select Brightness · 50%.</strong> These three phrases ask for the same setting. Each of our 102 phrases has recordings from six synthetic training voices. Two different voices were reserved for development and two more for testing. The wider training set also includes 1,889 human recordings. Counting recordings is not the same as counting people.</div>
-    </section>
-
-    <section class="slide training" data-slide="training" aria-labelledby="training-title" hidden>
-      <div class="slide-heading"><div><h1 id="training-title">From the first batch to epoch 48</h1><p>RTX 4080 SUPER refit · 6 human-only epochs, then 42 mixed.</p></div><div class="headline-stat"><strong>12<span>m</span> 56<span>s</span></strong><span>measured fitting time · 16 GB</span></div></div>
-      <div class="training-layout">
-        <div class="training-left"><div class="section-label"><h2>Inspect the recorded run</h2><span>Seed 53 · BF16</span></div><div id="history-chart" class="history-chart"><svg id="history-svg" viewBox="0 0 720 230" role="img" aria-label="Recorded RTX 4080 training history"></svg><div class="chart-legend"><span><i class="dot human"></i>Training loss</span><span class="selected-epoch">DEV selected epoch 36</span></div></div><label class="epoch-label" for="epoch-slider"><span>Epoch <strong id="epoch-value">36</strong> / 48</span><span id="epoch-phase">Mixed training</span></label><input id="epoch-slider" type="range" min="1" max="48" step="1" value="36"><div class="phase-strip"><span>6 human-only</span><span>42 mixed</span></div><div class="epoch-metrics"><div><span>Learning rate</span><strong id="epoch-lr">—</strong></div><div><span>Training loss</span><strong id="epoch-loss">—</strong></div><div><span>Optimizer updates</span><strong id="epoch-updates">3,456</strong></div></div></div>
-        <div class="batch-view"><div class="section-label"><h2 id="batch-title">One mixed batch</h2><span>32 examples</span></div><div id="batch-grid" class="batch-grid" role="img" aria-label="Training batch quota illustration"></div><div id="batch-legend" class="batch-legend"></div><div class="update-flow"><span id="batch-token">Batch</span><svg viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg><span id="loss-token">Three losses</span><svg viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg><span id="weights-token">Update weights</span></div><button id="animate-update" class="secondary-button">Animate one update</button><p class="footnote">This illustrates the sampling quotas.</p></div>
-      </div>
-      <div class="recipe-line"><div><span>Optimizer</span><strong>AdamW <small>· decay 0.01 · clip 5</small></strong></div><div><span>Learning rate</span><strong>0.002 → 0.00005</strong></div><div><span>Objective</span><strong>CE<sub>action</sub> + ½ CE<sub>percent</sub> + ½ CE<sub>alarm</sub></strong></div></div>
-      <div class="reproduction-note"><i class="dot amber"></i><p><strong>RTX 3080: published epoch 38 reproduced byte for byte.</strong> The 4080 refit differs and has no test score.</p><button class="source-link" data-source="training">Run receipt ↗</button></div>
-      <div class="presenter-note" hidden><strong>1:00–1:30 · Scrub from epoch 1 to 48.</strong> The first six epochs use human recordings. Then the batches mix human and synthetic examples. We choose the weights on development data, before looking at test results. On the 3080, training reproduced the published epoch-38 model byte for byte. The curve on screen is the 4080 run: it chose epoch 36 instead.</div>
-    </section>
-
-    <section class="slide evidence" data-slide="evidence" aria-labelledby="evidence-title" hidden>
-      <div class="slide-heading"><div><h1 id="evidence-title">Extra words change the result</h1><p>Published epoch 38 · a match requires the right command and every value.</p></div><div class="headline-stat"><strong>0.744<span> MB</span></strong><span>FP32 ONNX graph</span></div></div>
-      <div class="evidence-layout"><div class="results-view"><div class="section-label"><h2>Exact command matches</h2><button class="source-link" id="result-mode" aria-pressed="false">Show errors</button></div><div id="result-bars"></div><div class="negative-note"><svg viewBox="0 0 24 24"><path d="m12 3 10 18H2L12 3Zm0 6v5m0 3v.1"/></svg><span><strong>5 / 19</strong> human negatives falsely accepted</span></div><p class="footnote">These human and synthetic recordings were previously evaluated.</p></div><div class="pi-view"><div class="section-label"><h2>Raspberry Pi 5</h2><span class="status-placeholder">Recorded replay · measured</span></div><p>Baseline A · MNN CPU · 2 threads · repeat 2</p><dl><div><dt>Latency p50 / p95</dt><dd data-pi5="latency">4.76 / 9.37 ms</dd></div><div><dt>Median real-time factor</dt><dd data-pi5="rtf">0.00189</dd></div><div><dt>Peak process RSS</dt><dd data-pi5="rss">84.55 MiB</dd></div><div><dt>Holdout exact match</dt><dd data-pi5="holdout">155 / 194 · 79.90%</dd></div></dl><p class="footnote">Processing only; not full interaction latency. Pi 4, power and live wake/owner acceptance remain unmeasured.</p></div></div>
-      <div class="submission-row"><a href="https://github.com/justinruaya123/smart-speaker/tree/4efe5425901b96b1d80d990a95270ee7b1ddb58a" target="_blank" rel="noopener"><span>01</span>Repository ↗</a><a href="https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/tree/13d388c31985be7f42af56b46570281728ecc054/shared-demo-a-v1" target="_blank" rel="noopener"><span>02</span>Dataset & terms ↗</a><a href="https://github.com/justinruaya123/smart-speaker/tree/4efe5425901b96b1d80d990a95270ee7b1ddb58a/submission/models/shared-demo-a" target="_blank" rel="noopener"><span>03</span>Weights & recipe ↗</a><button data-source="submission"><span>04</span>Submission checklist ↗</button></div><div class="evidence-foot"><span>Historical CPU p50 / p95: 3.434 / 5.595 ms · one thread</span><button class="source-link" data-source="benchmark">VCM benchmark & controls ↗</button></div>
-      <div class="presenter-note" hidden><strong>1:30–2:00 · Switch to Show errors.</strong> With the exact words, the model got 203 of 204 recordings right. Add a greeting and a closing to those phrases and it gets 98 right. Most misses are rejections. On the Pi 5, processing a recorded command took about five milliseconds at the median. That excludes speaking and waiting. With five false accepts on 19 human negatives, we keep actions off.</div>
-    </section>
-  </main>
-  <footer class="deck-footer"><button id="previous" class="icon-button" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button><nav aria-label="Slides"><a href="#architecture" aria-current="page">Architecture</a><a href="#dataset">Dataset</a><a href="#training">Training</a><a href="#evidence">Evidence</a></nav><div class="footer-end"><span id="page-counter">01 / 04</span><button id="next" class="icon-button" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></footer>
-</div></div>
-<dialog id="source-dialog" aria-labelledby="source-title"><div class="dialog-heading"><h2 id="source-title"></h2><button class="icon-button close-dialog" aria-label="Close details"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div><div id="source-content"></div></dialog>
-<dialog id="wording-dialog" aria-labelledby="wording-title"><div class="dialog-heading"><div><h2 id="wording-title">102 canonical wordings</h2><p>34 complete commands · frozen Baseline A inventory</p></div><button class="icon-button close-dialog" aria-label="Close wordings"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div><label for="wording-search">Find a wording or intent</label><input id="wording-search" type="search" placeholder="Brightness, alarm, lights…"><div id="wording-count"></div><div id="wording-list"></div></dialog>
-<audio id="sample-audio" preload="none" src="bmo/data/sample.wav"></audio>
-</body></html>
+<nav aria-label="Slides">
+<a href="#overview">01 · Technical overview</a>
+<a href="#submission">02 · To be submitted</a>
+<small>AI231 / ME2</small>
+</nav>
+<main>
+<article class="page" id="overview" data-slide="overview">
+<h1>ME2 — Voice Controlled Smart Device</h1>
+<p class="meta">Justin Ruaya · 1 October 2026 assignment · Target: always-on, on-device keyword and intent recognition.</p>
+<div class="grid">
+<div>
+<section>
+<h2>Model</h2>
+<table>
+<tbody>
+<tr>
+<th scope="row">Input</th>
+<td>16 kHz mono → 40 log-mel bands × T frames (296 in the sample)</td>
+</tr>
+<tr>
+<th scope="row">Encoder</th>
+<td>4 causal CNN blocks · 128 channels · whole-utterance pooling, no KV cache</td>
+</tr>
+<tr>
+<th scope="row">Heads</th>
+<td>Action (29) · percentage (4) · alarm time (4)</td>
+</tr>
+<tr>
+<th scope="row">Output</th>
+<td>Typed command → actuator disabled</td>
+</tr>
+<tr>
+<th scope="row">Parameters / weights</th>
+<td>175,653 · 0.744 MB FP32 ONNX</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>Validation on the Raspberry Pi 4</h2>
+<table>
+<tbody>
+<tr>
+<th scope="row">Keyword / intent accuracy</th>
+<td>Not measured on Pi 4</td>
+</tr>
+<tr>
+<th scope="row">False-accept rate</th>
+<td>Not measured on Pi 4</td>
+</tr>
+<tr>
+<th scope="row">Latency p95 / RTF</th>
+<td>Not measured on Pi 4</td>
+</tr>
+<tr>
+<th scope="row">Runtime / threads</th>
+<td>No Pi 4 run recorded</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
+<div>
+<section>
+<h2>Dataset</h2>
+<table>
+<tbody>
+<tr>
+<th scope="row">Source</th>
+<td>
+<a href="https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/tree/39d5032248becc8a6efdd80738a4a4ef59f6d969/shared-demo-a-v1">AI231 smart-speaker · Hugging Face</a>
+</td>
+</tr>
+<tr>
+<th scope="row">Hours / utterances</th>
+<td>Hours not audited · 25,958 training recordings</td>
+</tr>
+<tr>
+<th scope="row">Speakers</th>
+<td>6 synthetic training voices · 2 dev · 2 test; independent human count not audited</td>
+</tr>
+<tr>
+<th scope="row">Labels</th>
+<td>18 intent families · 34 commands · 102 wordings; two learned value heads</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>Training on the A100 cluster</h2>
+<table>
+<tbody>
+<tr>
+<th scope="row">Cluster</th>
+<td>No A100 run or node ID. Measured: 1 × RTX 3080, seed 53, 28 min 20 s fitting.</td>
+</tr>
+<tr>
+<th scope="row">Objective</th>
+<td>Action cross-entropy + ½ percentage loss + ½ alarm-time loss</td>
+</tr>
+<tr>
+<th scope="row">Optimiser</th>
+<td>AdamW · initial learning rate 0.002</td>
+</tr>
+<tr>
+<th scope="row">Steps / loss</th>
+<td>4,608 updates · final training loss 0.03379 (epoch 48); epoch 38 selected</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
+</div>
+<details>
+<summary>Presenter notes · 0:00–1:00</summary>
+<p>The command model maps speech directly to an action and its values. The wake keyword is a separate stage. The causal encoder still waits for the full utterance before making its decision. We trained on human recordings and synthetic voices. The verified fit ran on a 3080, not an A100. We have no Raspberry Pi 4 measurements to report.</p>
+</details>
+</article>
+<article id="submission" class="page" data-slide="submission">
+<h1>To be submitted</h1>
+<div class="grid">
+<div>
+<section>
+<h2>Submission artifacts</h2>
+<table>
+<tbody>
+<tr>
+<th scope="row">GitHub repository</th>
+<td>
+<a href="https://github.com/justinruaya123/smart-speaker">justinruaya123/smart-speaker</a> · public; no repository-wide MIT licence declared</td>
+</tr>
+<tr>
+<th scope="row">Dataset location</th>
+<td>
+<a href="https://huggingface.co/datasets/justinruaya123/ai231-smart-speaker/tree/39d5032248becc8a6efdd80738a4a4ef59f6d969/shared-demo-a-v1">Pinned dataset</a> · source-specific research terms; no derivative DOI</td>
+</tr>
+<tr>
+<th scope="row">A100 cluster</th>
+<td>No A100 node, GPU allocation, wall-clock or seed record. <a href="https://github.com/justinruaya123/smart-speaker/blob/0ff56097a6f5f3beb8824091ffe9bfc196db68b1/submission/shared-demo-a/reproduction-v1/training-summary.json">RTX run log</a>
+</td>
+</tr>
+<tr>
+<th scope="row">Model weights</th>
+<td>
+<a href="https://github.com/justinruaya123/smart-speaker/blob/0ff56097a6f5f3beb8824091ffe9bfc196db68b1/submission/models/shared-demo-a/model.onnx">Epoch-38 ONNX</a> · research only; <a href="https://github.com/justinruaya123/smart-speaker/blob/0ff56097a6f5f3beb8824091ffe9bfc196db68b1/submission/models/shared-demo-a/recipe.json">recipe and restrictions</a>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
+<div>
+<section>
+<h2>What the reviewer will look for</h2>
+<table>
+<tbody>
+<tr>
+<th scope="row">1 · Public repo & reproduction</th>
+<td>Verified on RTX 3080: <code>python all_in_one.py</code>
+</td>
+</tr>
+<tr>
+<th scope="row">2 · Licensed, citable dataset</th>
+<td>Partial · access terms documented; derivative DOI missing</td>
+</tr>
+<tr>
+<th scope="row">3 · Logs & final checkpoint</th>
+<td>
+<a href="https://github.com/justinruaya123/smart-speaker/blob/0ff56097a6f5f3beb8824091ffe9bfc196db68b1/submission/shared-demo-a/reproduction-v1/training-curve.jsonl">Committed training log</a> · <a href="https://github.com/justinruaya123/smart-speaker/blob/0ff56097a6f5f3beb8824091ffe9bfc196db68b1/submission/checkpoints/shared-demo-a-selected.pt">selected checkpoint</a>
+</td>
+</tr>
+<tr>
+<th scope="row">4 · Pi 4 latency script</th>
+<td>Not verified · no Pi 4 timing receipt</td>
+</tr>
+<tr>
+<th scope="row">5 · Held-out speakers</th>
+<td>203/204 exact commands on two reserved synthetic voices; fresh human speakers not verified</td>
+</tr>
+<tr>
+<th scope="row">6 · Comparable baseline</th>
+<td>Same human dev set: A 132/167 (175,653 parameters); flat 130/167 (175,139)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
+</div>
+<details>
+<summary>Presenter notes · 1:00–2:00</summary>
+<p>The reproduction command rebuilds the selected model. The training log and checkpoint are linked here. Two synthetic voices were held out: the model recognized 203 of their 204 exact commands. That does not establish accuracy on new human speakers. The flat model has nearly the same parameter count, so the development comparison uses the same 167 recordings. The dataset DOI and the required hardware runs are still missing.</p>
+</details>
+</article>
+</main>
+<script>
+const pages=[...document.querySelectorAll('.page')], nav=[...document.querySelectorAll('nav a')];
+function render(){const n=location.hash==='#submission'?1:0;pages.forEach((p,i)=>{p.hidden=i!==n;if(p.hidden)p.querySelector('details').open=false;});nav.forEach((a,i)=>{if(i===n)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});window.scrollTo(0,0);}
+addEventListener('hashchange',render);addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey)return;if(['ArrowRight','ArrowLeft'].includes(e.key)){e.preventDefault();location.hash=e.key==='ArrowRight'?'submission':'overview';}});render();</script>
+</body>
+</html>

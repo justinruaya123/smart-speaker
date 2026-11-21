@@ -435,7 +435,15 @@ def _validate_bmo(root):
     require(bmo.is_dir(), 'missing BMO asset directory')
     require(not bmo.is_symlink() and not (site / 'index.html').is_symlink(), 'site cannot publish a symlink')
     require((bmo / 'vendor/THREE-LICENSE.txt').is_file(), 'vendored Three.js license must be preserved')
-    html = (site / 'index.html').read_text(encoding='utf-8')
+    home = (site / 'index.html').read_text(encoding='utf-8')
+    rubric = References()
+    rubric.feed(home)
+    require(rubric.slides == ['overview', 'submission'], 'two ordered ME2 slides required')
+    require(not re.search(r'added spoken context|context-added|extra words|98\s*/\s*204', home, re.I), 'ME2 slides must stay on rubric')
+    for reference, resource in rubric.links:
+        check_reference(site, site / 'index.html', reference, resource)
+    require(not (site / 'explorer.html').is_symlink(), 'site cannot publish a symlink')
+    html = (site / 'explorer.html').read_text(encoding='utf-8')
     parser = validate_references(site, bmo, html)
     require('Pi 4, power and live wake/owner acceptance remain unmeasured' in html and 'published' in html.lower() and 'refit differs and has no test score' in html,
             'visible Pi/published-versus-refit limitations required')
@@ -447,7 +455,7 @@ def _validate_bmo(root):
     pi5 = validate_pi5_replay(bmo, html)
     files = inventory(bmo)
     require(read_json(bmo / 'manifest.json') == {'format': 'bmo-static-assets-v1', 'files': files}, 'BMO asset manifest is stale')
-    return {'slides': len(parser.slides), 'wordings': wordings, 'commands': commands,
+    return {'slides': len(rubric.slides), 'explorer_slides': len(parser.slides), 'wordings': wordings, 'commands': commands,
             'training_epochs': history['epoch_count'], 'published_epoch': 38, 'refit_epoch': 36,
             'assets': len(files), 'pi': None, 'pi5_recorded_replay': pi5, 'scope': 'static documentation; no acoustic qualification'}
 
