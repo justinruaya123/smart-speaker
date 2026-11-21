@@ -25,7 +25,7 @@ const server = createServer(async (req, res) => {
 });
 await new Promise(r => server.listen(0, '127.0.0.1', r));
 const origin = `http://127.0.0.1:${server.address().port}`;
-const url = origin + prefix + 'explorer.html';
+const url = origin + prefix;
 const output = resolve(root, '.cache/bmo-pages-qa');
 await mkdir(output, {recursive:true});
 const browser = await chromium.launch({headless:true, ...(process.env.IRIS_BROWSER_EXECUTABLE ? {executablePath:process.env.IRIS_BROWSER_EXECUTABLE} : {}), args:['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--mute-audio']});
@@ -41,21 +41,6 @@ try {
   page.on('pageerror', e => errors.push(e.message));
   page.on('console', e => { if (e.type() === 'error') errors.push(e.text()); });
   page.on('response', r => { if (r.status() >= 400) errors.push(`${r.status()} ${r.url()}`); });
-  await page.goto(origin + prefix);
-  assert.equal(await page.locator('[data-slide]').count(), 2);
-  for (const width of [390, 1280]) {
-    await page.setViewportSize({width,height:800});
-    await page.locator('a[href="#overview"]').click();
-    await page.locator('#overview').waitFor({state:'visible'});
-    await page.keyboard.press('ArrowRight');
-    await page.locator('#submission').waitFor({state:'visible'});
-    assert.equal(await page.locator('#submission section').last().locator('tr').count(), 6);
-    await page.locator('#submission summary').click();
-    assert.ok(await page.locator('#submission details p').isVisible());
-    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
-    assert.doesNotMatch(await page.locator('main').textContent(), /added spoken context|extra words|98\s*\/\s*204/i);
-  }
-  await page.setViewportSize({width:1600,height:900});
   await page.goto(url);
   await page.waitForFunction(() => document.querySelector('#epoch-loss')?.textContent === '0.0554');
   await page.locator('#model-scene canvas').waitFor();
@@ -80,7 +65,7 @@ try {
   for (const cell of display) assert.equal(cell.value, logmel.values[cell.row][cell.column], 'heatmap must preserve each measured display value');
   assert.ok(display[0].y > display.at(-1).y, 'high mel bands must be above low bands');
   assert.match(await page.locator('.model-choice').textContent(), /132\/167.*130\/167/);
-  assert.equal(await page.locator('#evidence-title').textContent(), 'Exact command recognition');
+  assert.equal(await page.locator('#evidence-title').textContent(), 'Extra words change the result');
 
   for (const id of ['architecture','dataset','training','evidence']) {
     await page.getByRole('navigation', {name:'Slides'}).getByRole('link', {name:id, exact:false}).click();
@@ -170,7 +155,7 @@ try {
   assert.match(await page.locator('.pi-view').textContent(), /Holdout exact match/);
   assert.doesNotMatch(await page.locator('.pi-view').textContent(), /Live microphone accuracy|TBD/);
   await page.locator('#result-mode').click();
-  assert.equal(await page.locator('#result-bars .result').count(), 2);
+  assert.match(await page.locator('#result-bars').textContent(), /106/);
   await page.locator('[data-source="benchmark"]').click();
   await page.waitForFunction(() => document.querySelector('#source-content').textContent.includes('71'));
   assert.match(await page.locator('#source-content').textContent(), /Pi|Raspberry/);

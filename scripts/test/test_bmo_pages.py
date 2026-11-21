@@ -24,7 +24,7 @@ class BmoPagesTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.site = self.root / 'docs/site'
         shutil.copytree(ROOT / 'docs/site/bmo', self.site / 'bmo')
-        for name in ('index.html', 'explorer.html', 'reference.html'):
+        for name in ('index.html', 'reference.html'):
             shutil.copyfile(ROOT / 'docs/site' / name, self.site / name)
         self.validator.write_manifest(self.root)
 
@@ -48,8 +48,7 @@ class BmoPagesTests(unittest.TestCase):
 
     def test_complete_site_is_self_contained_and_reports_evidence_scope(self):
         summary = self.validator.validate_bmo(self.root)
-        self.assertEqual(summary['slides'], 2)
-        self.assertEqual(summary['explorer_slides'], 4)
+        self.assertEqual(summary['slides'], 4)
         self.assertEqual(summary['wordings'], 102)
         self.assertEqual(summary['commands'], 34)
         self.assertEqual(summary['training_epochs'], 48)
@@ -77,15 +76,15 @@ class BmoPagesTests(unittest.TestCase):
         self.reject('immutable catalogs')
 
     def test_root_relative_asset_is_rejected_even_when_file_exists(self):
-        self.change('explorer.html', 'href="bmo/deck.css"', 'href="/bmo/deck.css"')
+        self.change('index.html', 'href="bmo/deck.css"', 'href="/bmo/deck.css"')
         self.reject('project.prefix')
 
     def test_missing_slide_is_not_publishable(self):
-        self.change('explorer.html', 'data-slide="training"', 'data-removed="training"')
+        self.change('index.html', 'data-slide="training"', 'data-removed="training"')
         self.reject('four.*slides')
 
     def test_wrong_page_identity_is_not_publishable(self):
-        self.change('explorer.html', '<title>BMO', '<title>Iris')
+        self.change('index.html', '<title>BMO', '<title>Iris')
         self.reject('identity')
 
     def test_missing_module_and_document_relative_fetch_are_rejected(self):
@@ -99,7 +98,7 @@ class BmoPagesTests(unittest.TestCase):
         self.reject('missing.*trace.json')
 
     def test_external_runtime_resource_is_rejected_but_https_citations_work(self):
-        self.change('explorer.html', 'src="bmo/deck.js"', 'src="https://cdn.example/deck.js"')
+        self.change('index.html', 'src="bmo/deck.js"', 'src="https://cdn.example/deck.js"')
         self.reject('external.*resource')
 
     def test_css_import_cannot_add_an_external_font(self):
@@ -133,7 +132,7 @@ class BmoPagesTests(unittest.TestCase):
 
     def test_raster_artwork_is_rejected(self):
         (self.site / 'bmo/picture.png').write_bytes(b'not an authorized code-rendered visual')
-        self.change('explorer.html', '</main>', '<img src="bmo/picture.png" alt="art"></main>')
+        self.change('index.html', '</main>', '<img src="bmo/picture.png" alt="art"></main>')
         self.reject('raster|imagery')
 
     def test_recorded_trace_cannot_drift_even_with_new_manifest(self):
@@ -188,17 +187,17 @@ class BmoPagesTests(unittest.TestCase):
         self.reject('Pi 5.*quantile')
 
     def test_pi5_visible_metric_cannot_drift_from_receipt(self):
-        self.change('explorer.html', 'data-pi5="latency">4.76 / 9.37 ms', 'data-pi5="latency">1.00 / 2.00 ms')
+        self.change('index.html', 'data-pi5="latency">4.76 / 9.37 ms', 'data-pi5="latency">1.00 / 2.00 ms')
         self.reject('Pi 5.*visible metric')
 
     def test_pi5_evidence_shows_holdout_instead_of_live_microphone_placeholder(self):
-        html = (self.site / 'explorer.html').read_text(encoding='utf-8')
+        html = (self.site / 'index.html').read_text(encoding='utf-8')
         self.assertIn('<dt>Holdout exact match</dt>', html)
         self.assertNotIn('Live microphone accuracy', html)
         self.validator.validate_bmo(self.root)
 
     def test_pi5_holdout_cannot_substitute_the_shared_catalog_score(self):
-        self.change('explorer.html', 'data-pi5="holdout">155 / 194 · 79.90%', 'data-pi5="holdout">155 / 167 · 92.81%')
+        self.change('index.html', 'data-pi5="holdout">155 / 194 · 79.90%', 'data-pi5="holdout">155 / 167 · 92.81%')
         self.reject('Pi 5.*visible metric.*holdout')
 
     def test_pi5_cannot_relabel_desktop_as_physical_hardware(self):

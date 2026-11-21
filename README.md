@@ -8,7 +8,7 @@ The chosen model is **baseline A: `shared-demo-slots-v1 / heads_s53`, epoch 38**
 
 [Download the model](submission/models/shared-demo-a/model.onnx) · [Exact hashes](submission/shared-demo-a/snapshot.json) · [All wordings](submission/shared-demo-a/commands.csv) · [Training and reproduction](docs/REPRODUCIBILITY-shared-demo-a.md) · [Actual reproduction results](docs/EXPERIMENT-shared-demo-a-reproduction-v1.md)
 
-[ME2 slides](https://justinruaya123.github.io/smart-speaker/) · [Interactive model explorer](https://justinruaya123.github.io/smart-speaker/explorer.html). [Pages instructions](docs/BMO-PAGES.md).
+[Interactive documentation](https://justinruaya123.github.io/smart-speaker/) covers architecture, datasets, training and benchmarks. [Pages instructions](docs/BMO-PAGES.md).
 
 ## What the VCM recognizes
 
@@ -54,7 +54,7 @@ The exposed-human task-negative false accepts remain **5/19**. Small perfect TTS
 
 ## Pi 5 recorded replay
 
-**4.76/9.37 ms p50/p95**, **84.55 MiB process-RSS** (A/MNN CPU, two threads). Historical **155/194 (79.90%)**; shared-catalog **155/167 (92.81%)**. Separate 196-clip holdout; 27 out-of-catalog references, two ambiguous exclusions. Repeat 2/2; three timing passes, first-pass scoring. Both repeats agree. Processing-only, not live accuracy/qualification. [Scores/scope](https://justinruaya123.github.io/smart-speaker/explorer.html#dataset) · [Both-run receipt](docs/site/bmo/data/pi5-replay.json).
+**4.76/9.37 ms p50/p95**, **84.55 MiB process-RSS** (A/MNN CPU, two threads). Historical **155/194 (79.90%)**; shared-catalog **155/167 (92.81%)**. Separate 196-clip holdout; 27 out-of-catalog references, two ambiguous exclusions. Repeat 2/2; three timing passes, first-pass scoring. Both repeats agree. Processing-only, not live accuracy/qualification. [Scores/scope](https://justinruaya123.github.io/smart-speaker/#dataset) · [Both-run receipt](docs/site/bmo/data/pi5-replay.json).
 
 
 ## Reproduce A or run the application
