@@ -186,8 +186,8 @@
       "sha256": "16aa6731222c94aa128d540aec23ac9d376047837231af589b7002cace4779c8"
     },
     "bmo/deck.js": {
-      "bytes": 22308,
-      "sha256": "38090e13ed5c6ff40375ebe02f76b2f42fb7196f4c7ace72daf43496e0ead0ed"
+      "bytes": 22167,
+      "sha256": "f5ee702ab72f126dadfe7cfc73e7f86a756950a3253957aa7775fe6b8095c5f2"
     },
     "bmo/evidence/facts.json": {
       "bytes": 22809,
@@ -227,7 +227,7 @@
     },
     "bmo/manifest.json": {
       "bytes": 4182,
-      "sha256": "c68d8db5f3bb461f92838d501901fbabced2127d99b74d6e0f45574b1afb07e7"
+      "sha256": "2f425ade192a49a84f002a68c4e540a6da9896dd5ffd74199c684e8d9620248c"
     },
     "bmo/model-scene.js": {
       "bytes": 28219,
@@ -266,8 +266,8 @@
       "sha256": "7be3dc48ada768e74aebb18084d62abe30a1cf99154ce59ff8775cdb0edc3f52"
     },
     "index.html": {
-      "bytes": 16769,
-      "sha256": "4f47cf62538878fb1026e8b7056e126ac40cb4d726bff8edbd6edaf7f77cd3a5"
+      "bytes": 16671,
+      "sha256": "16d0f902865a021a1fad76bfc42a8675af191208d4f41c5484841eab99f9b0af"
     },
     "reference.html": {
       "bytes": 12692,

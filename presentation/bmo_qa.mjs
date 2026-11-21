@@ -65,7 +65,7 @@ try {
   for (const cell of display) assert.equal(cell.value, logmel.values[cell.row][cell.column], 'heatmap must preserve each measured display value');
   assert.ok(display[0].y > display.at(-1).y, 'high mel bands must be above low bands');
   assert.match(await page.locator('.model-choice').textContent(), /132\/167.*130\/167/);
-  assert.equal(await page.locator('#evidence-title').textContent(), 'Extra words change the result');
+  assert.equal(await page.locator('#evidence-title').textContent(), 'Command recognition results');
 
   for (const id of ['architecture','dataset','training','evidence']) {
     await page.getByRole('navigation', {name:'Slides'}).getByRole('link', {name:id, exact:false}).click();
@@ -154,8 +154,12 @@ try {
   assert.equal(await page.locator('.pi-view [data-pi5="holdout"]').textContent(), `${holdout.exact_n} / ${holdout.scored_n} · ${(100*holdout.complete_command_accuracy).toFixed(2)}%`);
   assert.match(await page.locator('.pi-view').textContent(), /Holdout exact match/);
   assert.doesNotMatch(await page.locator('.pi-view').textContent(), /Live microphone accuracy|TBD/);
+  const resultBars = page.locator('#result-bars');
+  const resultNames = ['Clean synthetic', 'Human commands'];
+  assert.deepEqual(await resultBars.locator('h3').allTextContents(), resultNames);
   await page.locator('#result-mode').click();
-  assert.match(await page.locator('#result-bars').textContent(), /106/);
+  assert.deepEqual(await resultBars.locator('h3').allTextContents(), resultNames);
+  assert.deepEqual(await resultBars.locator('.result-head strong').allTextContents(), ['1 / 204', '6 / 77']);
   await page.locator('[data-source="benchmark"]').click();
   await page.waitForFunction(() => document.querySelector('#source-content').textContent.includes('71'));
   assert.match(await page.locator('#source-content').textContent(), /Pi|Raspberry/);
