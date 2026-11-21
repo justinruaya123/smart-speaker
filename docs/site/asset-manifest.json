@@ -161,6 +161,10 @@
       "bytes": 23077,
       "sha256": "57fa501df03e12b7f8a2ff0720d03c6886b94aa4d3283bedfae1165f1ef4b07a"
     },
+    "bmo/data/pi5-epoch44-20261121.json": {
+      "bytes": 37755,
+      "sha256": "0a38aa44744f6d5dd78a9b61fee3504624dd0b75af69025150aad7a0cea0e9b6"
+    },
     "bmo/data/pi5-replay.json": {
       "bytes": 1090087,
       "sha256": "b7057ad920a0119876a6d8e947bbd2a5ae1231f6a819ea3cdb8c331bc270cd52"
@@ -226,8 +230,8 @@
       "sha256": "22e3994ae0c10a7410c14616df9b747ac0a040f5f722d6dd463ddf00aa86cd01"
     },
     "bmo/manifest.json": {
-      "bytes": 4182,
-      "sha256": "b3bc5f828daf0f3cf83387aa8527fbc7f297ba024e9b6735086da7e92a1b5660"
+      "bytes": 4217,
+      "sha256": "a13aa7fe461dd609fca03aa3670e815ba229b6b64cb5d4087d09590813970487"
     },
     "bmo/model-scene.js": {
       "bytes": 28219,
@@ -270,8 +274,8 @@
       "sha256": "23cc6e5cba7f1d80694799400c70a8d89b09b485e8fe1f26a1033e9d65c97cfc"
     },
     "index.html": {
-      "bytes": 8433,
-      "sha256": "0a4fab307a87d3c1a7e4907ebffa2b2153d0710d018b46a206e3054711091a86"
+      "bytes": 8903,
+      "sha256": "e4d221cc005f23a55a8d03d2a467f6501c3045e9b983d3e08ed841e5b792c996"
     },
     "reference.html": {
       "bytes": 12692,
